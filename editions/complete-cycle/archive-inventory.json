@@ -1,0 +1,2340 @@
+{
+  "archive": "archive/well-tempered-clAIvier-complete-source.zip",
+  "archive_bytes": 9876750,
+  "archive_sha256": "6e3312c1c4c11fe98b921f0b637f4daebe2e75c56a01e97165fa433c9135fde6",
+  "archive_file_count": 466,
+  "uncompressed_bytes": 83625133,
+  "verification": "ZIP integrity, safe paths, complete 24 prelude + 24 fugue pairs per edition, all 96 manifest score hashes and canonical second-edition copies checked. Musical quality is not certified.",
+  "files": [
+    {
+      "path": "README.txt",
+      "bytes": 5988,
+      "sha256": "7eadb8cf7f39d7355b34c8f600430f45eea64bac2f5cf92a77b292ba72cc177d"
+    },
+    {
+      "path": "audits/01-fugue-audit.json",
+      "bytes": 8217,
+      "sha256": "2819b0da3d9434a3e8d4a4b83e08b3bf5c5465cb97a6bdc3629534ffac1119bf"
+    },
+    {
+      "path": "audits/02-fugue-audit.json",
+      "bytes": 9852,
+      "sha256": "a7de32a29b9bc639db07ae480639c7423e708cbe85356bf2605a6b2db42c211c"
+    },
+    {
+      "path": "audits/03-fugue-audit.json",
+      "bytes": 11786,
+      "sha256": "b6e2d03ea094703c78d1439aeb940e93652d00d2477ea07ae725782787455c52"
+    },
+    {
+      "path": "audits/04-fugue-audit.json",
+      "bytes": 16381,
+      "sha256": "041c33a3ecad09919ea1d33b650eb5cc5f85612c93065f42cd500e67bf7e9f1a"
+    },
+    {
+      "path": "audits/05-fugue-audit.json",
+      "bytes": 25740,
+      "sha256": "33f38c78c29355d59de522e905aee8c00a9fd29486d428a963cfadc26a78f42c"
+    },
+    {
+      "path": "audits/06-fugue-audit.json",
+      "bytes": 28402,
+      "sha256": "b35dbb0476e396c9c241753a1d477f8e14787e97351e2979a7aaf0a1948281ea"
+    },
+    {
+      "path": "audits/07-fugue-audit.json",
+      "bytes": 32000,
+      "sha256": "abc1d64d2d3a0d901fde79ac33fed13ca8b2acc384231c31ccda1b998747d8bc"
+    },
+    {
+      "path": "audits/08-fugue-audit.json",
+      "bytes": 35986,
+      "sha256": "687b1d67872bfa3767543f2d5196fa4367a3d7feff583950b3238a6fa03c2cc7"
+    },
+    {
+      "path": "audits/09-fugue-audit.json",
+      "bytes": 40164,
+      "sha256": "a95d4518dd39d94bbf8e11ad53e4f75702197238522cd3836339d39c698cb3f0"
+    },
+    {
+      "path": "audits/10-fugue-audit.json",
+      "bytes": 43208,
+      "sha256": "bb5ec91ed975445b0630f0757b88ab31b1211663795049b940042d0b6bc8fec4"
+    },
+    {
+      "path": "audits/11-fugue-audit.json",
+      "bytes": 47082,
+      "sha256": "c3a1283fc15d1ab67bb25e2931ed7441b29cea8a4dee448de7328b841f17cbc0"
+    },
+    {
+      "path": "audits/12-fugue-audit.json",
+      "bytes": 52430,
+      "sha256": "d49fe0914f2bae8486c89374a20d40e781c5858efb34e638c2cfd65e4bb82716"
+    },
+    {
+      "path": "audits/13-fugue-audit.json",
+      "bytes": 56116,
+      "sha256": "abbd94b77a5d31f67dded850593d8b10ab6e11fc6808b4b27c114daa993e94b1"
+    },
+    {
+      "path": "audits/14-fugue-audit.json",
+      "bytes": 61273,
+      "sha256": "14a2005d076a808be2fbe6352b7ae98f467869ae8587a07c80271accc3a138bd"
+    },
+    {
+      "path": "audits/15-fugue-audit.json",
+      "bytes": 66605,
+      "sha256": "49a2430a53103a6530a28d4fb92d097bc9134b91fd79b0dd01aa91c87c3d8e53"
+    },
+    {
+      "path": "audits/16-fugue-audit.json",
+      "bytes": 71579,
+      "sha256": "a1ec45998b83546a74dec1e5e536aae266636c8ad8033616f9aac4985b2f0648"
+    },
+    {
+      "path": "audits/17-fugue-audit.json",
+      "bytes": 77050,
+      "sha256": "592aae6b39dd5805d5c1c5c963717d0ebb46529dae299bef291dfca01e110c9d"
+    },
+    {
+      "path": "audits/18-fugue-audit.json",
+      "bytes": 83077,
+      "sha256": "bc1ceb641bd2f066ba62bc7c4c2ca3d8800ef95ff7869ccb7637208bbc7f9bfb"
+    },
+    {
+      "path": "audits/19-fugue-audit.json",
+      "bytes": 89327,
+      "sha256": "29d709a03aefa04934eab3d699d7d38145009bf474c48dbf2d346f41820d2381"
+    },
+    {
+      "path": "audits/20-fugue-audit.json",
+      "bytes": 95739,
+      "sha256": "2ed46c0e6d238aa9e5642187a23ac48954149d7b1a1bf0dc0597060738d7716e"
+    },
+    {
+      "path": "audits/21-fugue-audit.json",
+      "bytes": 102888,
+      "sha256": "788b56ed27f87920205c0638b9df6d960b795290db8a65d86cae11891e8ddec9"
+    },
+    {
+      "path": "audits/22-fugue-audit.json",
+      "bytes": 109366,
+      "sha256": "50fbb49dba5f8675088182a1ee422df14e1ef89d0a1de555db6da8b769e74051"
+    },
+    {
+      "path": "audits/23-fugue-audit.json",
+      "bytes": 116471,
+      "sha256": "70477c943ce7978b48fd3de4b3092494d11bb6fe9f1d377d4a437323e18940eb"
+    },
+    {
+      "path": "audits/24-fugue-audit.json",
+      "bytes": 125158,
+      "sha256": "8752b7dfeba35176e0042b9af101a9b586fd2c9a44ba2232174b7c872c6e93ae"
+    },
+    {
+      "path": "audits/exports/animated-cycle-verification.json",
+      "bytes": 19256,
+      "sha256": "71110c4a29b67ffdd8dd28b789dd614b717939d2c04f42c01ef3604a21388882"
+    },
+    {
+      "path": "audits/exports/animation-index.csv",
+      "bytes": 9187,
+      "sha256": "f554aa97ed2845be4352de4ab283c4a9a58bd6a9c03956d641df0fd5d22f6750"
+    },
+    {
+      "path": "audits/exports/cycle-export-verification.json",
+      "bytes": 20728,
+      "sha256": "3d5a7f4bbbda096de6ce966ba12b360bd0c962b9f34172f2795ac50b761269b3"
+    },
+    {
+      "path": "audits/exports/freeze_manifest.json",
+      "bytes": 5055,
+      "sha256": "1c48ccd90834327b27f0b2b4d207b2b4d7d6790e83026aafd5d9a1733c3c96fa"
+    },
+    {
+      "path": "audits/exports/listening-index.csv",
+      "bytes": 3245,
+      "sha256": "ebbf1f6db0e7fe77cefa2b3070ea02e53ea7a09a3a27c40c837b1561f30e8388"
+    },
+    {
+      "path": "audits/exports/piano-cycle-verification.json",
+      "bytes": 28401,
+      "sha256": "200df337814a544c80b079c5fcd430f72baf60b88f7a271f4498158d187d8f32"
+    },
+    {
+      "path": "audits/exports/second-edition-media-qc.json",
+      "bytes": 23445,
+      "sha256": "2815678b6a3a9adef5543f661534c6f480f4eea70abd0920e6aa8ae55b09ea18"
+    },
+    {
+      "path": "baseline/scores/01-fugue-c-major.json",
+      "bytes": 35381,
+      "sha256": "16c7956c47417858a7696ab1c39c6ac274f03b3ad2b826bc8f0842c7864cc987"
+    },
+    {
+      "path": "baseline/scores/01-prelude-c-major.json",
+      "bytes": 119633,
+      "sha256": "f7cd917db4ad2fb53c1c0289f6cb062e2ce058a078056061aec718b0abf74d6d"
+    },
+    {
+      "path": "baseline/scores/02-fugue-c-minor.json",
+      "bytes": 52273,
+      "sha256": "c62416c36d58669d810f25c5027f8d43406629469eae1d298f16248498c89cc0"
+    },
+    {
+      "path": "baseline/scores/02-prelude-c-minor.json",
+      "bytes": 181555,
+      "sha256": "50da56916d849c87da1bffbb6a9a00637a4cdaead5e810e08d1249a4fbe5bf02"
+    },
+    {
+      "path": "baseline/scores/03-fugue-csharp-major.json",
+      "bytes": 63301,
+      "sha256": "fa8421795fb180d4def4f9f7bda6a18a8672b1e88e8a3171b9efc11ab4231870"
+    },
+    {
+      "path": "baseline/scores/03-prelude-csharp-major.json",
+      "bytes": 78041,
+      "sha256": "2f1a078a495b167e77bffa4200c71d7334afae295e88596faa45646252112ac6"
+    },
+    {
+      "path": "baseline/scores/04-fugue-csharp-minor.json",
+      "bytes": 189652,
+      "sha256": "273bb32cfbcd88cd1d8b7a12cbd2af89e159fb8264dbeb7eddf9b2d66890eaf6"
+    },
+    {
+      "path": "baseline/scores/04-prelude-csharp-minor.json",
+      "bytes": 39140,
+      "sha256": "8afb2839675e6468efec8b78717cb1a7ec4489936744e72a8db8a34cd676bf8c"
+    },
+    {
+      "path": "baseline/scores/05-fugue-d-major.json",
+      "bytes": 102364,
+      "sha256": "01b2bd69d9fa60940b8b37daec509150e9deca0b885e6c2a1ac028b5f151b851"
+    },
+    {
+      "path": "baseline/scores/05-prelude-d-major.json",
+      "bytes": 92608,
+      "sha256": "9b2ebfcca981ec0fca2024a92986eaa810c8e0e64c429d8310a09e971fc9deeb"
+    },
+    {
+      "path": "baseline/scores/06-fugue-d-minor.json",
+      "bytes": 120091,
+      "sha256": "ba120793882fd08053051c5a3fa1b03401052883af1564db6dabc7f4172e2dbf"
+    },
+    {
+      "path": "baseline/scores/06-prelude-d-minor.json",
+      "bytes": 86183,
+      "sha256": "5eb317a86935ef203e00dbc28d3699089854e0ad66486f0be8f883f36f47fbf2"
+    },
+    {
+      "path": "baseline/scores/07-fugue-eflat-major.json",
+      "bytes": 132370,
+      "sha256": "8280e3d4de499e6aa10c69cc2335ada247b3b63c985782df935a388a3d1025f5"
+    },
+    {
+      "path": "baseline/scores/07-prelude-eflat-major.json",
+      "bytes": 63116,
+      "sha256": "7d202f0ad3488bc5407bd73db4009095b90e88bdaff606088e3807d5becb9fb2"
+    },
+    {
+      "path": "baseline/scores/08-fugue-eflat-minor.json",
+      "bytes": 138290,
+      "sha256": "9b63921c859f05c73fe84730823d58e1345424795b71be61fca1d189184d79a3"
+    },
+    {
+      "path": "baseline/scores/08-prelude-eflat-minor.json",
+      "bytes": 120509,
+      "sha256": "864cb98044329cb2b6ce2d1ccfa1ba41018e1039b4bf7c62494313c32f1890bb"
+    },
+    {
+      "path": "baseline/scores/09-fugue-e-major.json",
+      "bytes": 164631,
+      "sha256": "d6130f1a25919c556d133becc61ec1da661e58c71ebef1b6e90866e875ca6d95"
+    },
+    {
+      "path": "baseline/scores/09-prelude-e-major.json",
+      "bytes": 156045,
+      "sha256": "fcb468783c7a456663f436ab63d651ed2dd98edaf9ebc4484750ced3af55d3f4"
+    },
+    {
+      "path": "baseline/scores/10-fugue-e-minor.json",
+      "bytes": 151245,
+      "sha256": "9ba6d07fffe802759551d0953ae305db74f896681b1950f55fa3e5ce8aaf40c1"
+    },
+    {
+      "path": "baseline/scores/10-prelude-e-minor.json",
+      "bytes": 79257,
+      "sha256": "b5dcdc213cec45511ccb97e64f5fba82c59e5a7a092c104c919f970ba96e215d"
+    },
+    {
+      "path": "baseline/scores/11-fugue-f-major.json",
+      "bytes": 159081,
+      "sha256": "762f058d7a8fdfa222fb91f527b86c4d773c94b000b6f3fb75a615261af6bf79"
+    },
+    {
+      "path": "baseline/scores/11-prelude-f-major.json",
+      "bytes": 117051,
+      "sha256": "3898364e2c6622ebef5d10ea4bb896237efd1ef97920bb52b718fb3a1a2dafbb"
+    },
+    {
+      "path": "baseline/scores/12-fugue-f-minor.json",
+      "bytes": 182553,
+      "sha256": "ec7b7b775bb71bd69ae147a3a52655ede61b2049c0b1c52102f13896452ad527"
+    },
+    {
+      "path": "baseline/scores/12-prelude-f-minor.json",
+      "bytes": 103991,
+      "sha256": "f0139e5d573c9bdab838dcdfab185c086e16a2073bd4758d67cb4dcb35197649"
+    },
+    {
+      "path": "baseline/scores/13-fugue-fsharp-major.json",
+      "bytes": 198763,
+      "sha256": "ba11365dfada135faee38801b6d6382ea5d1571d146e7efcf499d61cd9feaa46"
+    },
+    {
+      "path": "baseline/scores/13-prelude-fsharp-major.json",
+      "bytes": 116805,
+      "sha256": "6fe83bcb53476a5abc743d262ffe717b05056edb098b14cdf2c020a633634597"
+    },
+    {
+      "path": "baseline/scores/14-fugue-fsharp-minor.json",
+      "bytes": 200698,
+      "sha256": "0536a7eb510c186a3f8b618971458bb43a3147a539197af4fdcfa9420c137eb4"
+    },
+    {
+      "path": "baseline/scores/14-prelude-fsharp-minor.json",
+      "bytes": 126874,
+      "sha256": "f2d759811dbd770b833b3aa4a4248dcab9f5dd632f4a6426ab1a28a2b13a4fac"
+    },
+    {
+      "path": "baseline/scores/15-fugue-g-major.json",
+      "bytes": 200524,
+      "sha256": "b69e4f82f3c0ead9fa78591a8a4e334a2600492c1f10e14ed2917a50d621af52"
+    },
+    {
+      "path": "baseline/scores/15-prelude-g-major.json",
+      "bytes": 171120,
+      "sha256": "19fff9f2cabe871ea7821534ef4d73c1d7a9eae79281fa1693f78d02ac24ffac"
+    },
+    {
+      "path": "baseline/scores/16-fugue-g-minor.json",
+      "bytes": 208783,
+      "sha256": "fe533d1527352524cd47336e3c57fd666fccac5f0a2e097cdde6ac60ddd19d48"
+    },
+    {
+      "path": "baseline/scores/16-prelude-g-minor.json",
+      "bytes": 103999,
+      "sha256": "7c14be17af60ead2af3af60a6d7f37cfdb83321a55c47a38a74a509b26d03df0"
+    },
+    {
+      "path": "baseline/scores/17-fugue-aflat-major.json",
+      "bytes": 232656,
+      "sha256": "ebd37a245738abbcad1406b48e429a782126ff409252e335d7bbbddc4d5758a6"
+    },
+    {
+      "path": "baseline/scores/17-prelude-aflat-major.json",
+      "bytes": 110131,
+      "sha256": "0af9c90f0da9a4235ec423776ec1732f4e3e262ec7e4a0e2026f8a0e3634ad46"
+    },
+    {
+      "path": "baseline/scores/18-fugue-gsharp-minor.json",
+      "bytes": 228911,
+      "sha256": "c8a96c9b6836bb71c7b36a31e3898985520d1ff54647f416c4436d7868495f1a"
+    },
+    {
+      "path": "baseline/scores/18-prelude-gsharp-minor.json",
+      "bytes": 138927,
+      "sha256": "08ae9867a5398e928413306c39793c8efacd2aa9598f68086394716f31378f82"
+    },
+    {
+      "path": "baseline/scores/19-fugue-a-major.json",
+      "bytes": 260295,
+      "sha256": "f712afd86e61c9984044da6b3fcb576409cf913a36048ee4702d09535fb6727a"
+    },
+    {
+      "path": "baseline/scores/19-prelude-a-major.json",
+      "bytes": 163652,
+      "sha256": "540929151b7ca51e81be601153612e65ab9fee9407538eeebd0d34e2c9f0e210"
+    },
+    {
+      "path": "baseline/scores/20-fugue-a-minor.json",
+      "bytes": 242246,
+      "sha256": "fc57874005d47b12d602d07d1ae0f6a742b8028f0a9eb30949ddce791bc3a853"
+    },
+    {
+      "path": "baseline/scores/20-prelude-a-minor.json",
+      "bytes": 91588,
+      "sha256": "1ac7fe7e74c1e5d736088fe58372c729747467bed3301be7718b3ba9efefa51d"
+    },
+    {
+      "path": "baseline/scores/21-fugue-bflat-major.json",
+      "bytes": 274488,
+      "sha256": "0842085a773d9f69dd8997439c03ba09f8130df1a33e5f6da62b329a91475886"
+    },
+    {
+      "path": "baseline/scores/21-prelude-bflat-major.json",
+      "bytes": 81732,
+      "sha256": "71a8e4f059905ab3cbd7ebb5a2c40a0e953411d37add8f9ef525e16054c91099"
+    },
+    {
+      "path": "baseline/scores/22-fugue-bflat-minor.json",
+      "bytes": 278714,
+      "sha256": "6ea4a8fc67fc3acd175480c4f35c8fc762b834d8758dace58738cc2658704b43"
+    },
+    {
+      "path": "baseline/scores/22-prelude-bflat-minor.json",
+      "bytes": 127637,
+      "sha256": "fc460f7348f15cba5321f32035ed569ea4d55de3baa07be19c4b0b488d3dd24b"
+    },
+    {
+      "path": "baseline/scores/23-fugue-b-major.json",
+      "bytes": 292430,
+      "sha256": "48692cbefc17f69ef800f56d4e88630ddeef2d4e7d3ee8ac7a36d4a10a8e1712"
+    },
+    {
+      "path": "baseline/scores/23-prelude-b-major.json",
+      "bytes": 229107,
+      "sha256": "77f74fab93190170f23085e4d1f5e3a045982914476ef5bf278d1f5eaad1c5fb"
+    },
+    {
+      "path": "baseline/scores/24-fugue-b-minor.json",
+      "bytes": 284738,
+      "sha256": "030c0fed6e5f899104c19bca71225dff2035d8ecadf302df6c0cb42bd40141a7"
+    },
+    {
+      "path": "baseline/scores/24-prelude-b-minor.json",
+      "bytes": 234066,
+      "sha256": "ca0416f3f6d4a45ab62a8ef9ea8d9f85a4b3221655f8dfb16acb1ea5970b2b34"
+    },
+    {
+      "path": "cycle-manifest.json",
+      "bytes": 357256,
+      "sha256": "88d408b0ea17720c88eabecf6bf6f280419f46ae0d7d3cc9ef07340c07f70e5f"
+    },
+    {
+      "path": "scores/01-fugue-c-major.json",
+      "bytes": 56072,
+      "sha256": "9b9c8e3849eede17cfbf3c77a533f861a7ab03c5637caf9c4fc0dbdf402387e8"
+    },
+    {
+      "path": "scores/01-fugue-c-major.ly",
+      "bytes": 3512,
+      "sha256": "0abb7ca8cafa3fdec8c07c31d27b6820851a92a85f95bb23e207793d61500146"
+    },
+    {
+      "path": "scores/01-fugue-c-major.mid",
+      "bytes": 1384,
+      "sha256": "1336c00930d95956df0d5c73bdd014da0230383df46f731db3fffc90ea2925b4"
+    },
+    {
+      "path": "scores/01-fugue-c-major.musicxml",
+      "bytes": 33489,
+      "sha256": "4f251bfa0811bc00a4191f4a9b3ecfa5f20e61e4e9fdb13513c8e5ec8cf7dcf5"
+    },
+    {
+      "path": "scores/01-fugue-c-major.pdf",
+      "bytes": 75098,
+      "sha256": "ea6eb5b06d5ba76a8a345ea8c9a1214b18d8490ba92a3a53ec041b7a8ad236f3"
+    },
+    {
+      "path": "scores/01-prelude-c-major.json",
+      "bytes": 130844,
+      "sha256": "6d9f9f52f6b1e12257a324f333ce99d39802bfd1d9adeff403e8c08c91609d49"
+    },
+    {
+      "path": "scores/01-prelude-c-major.ly",
+      "bytes": 4474,
+      "sha256": "c287b84cf18f0a1d009626a6689b8c1f873e7e0214234b4be52e4904b137cd05"
+    },
+    {
+      "path": "scores/01-prelude-c-major.mid",
+      "bytes": 3585,
+      "sha256": "5252ed286519fc5ec583c4dee0c27eb378cf7b85bc6d4452cf16ba17abdcebd5"
+    },
+    {
+      "path": "scores/01-prelude-c-major.musicxml",
+      "bytes": 76714,
+      "sha256": "3c2b2bbc899d236bec3c2aff8129087e7e36a7ca9c4038d90175c927481fe4e6"
+    },
+    {
+      "path": "scores/01-prelude-c-major.pdf",
+      "bytes": 86803,
+      "sha256": "139916dc9469d981058900a0df5534bb7fbf2df25b1f23555662d1772513ba82"
+    },
+    {
+      "path": "scores/02-fugue-c-minor.json",
+      "bytes": 74290,
+      "sha256": "f9eab1aeb268c5950e69d50012acf6db0e9a330689e4ee0492c36bfa64f9b0f9"
+    },
+    {
+      "path": "scores/02-fugue-c-minor.ly",
+      "bytes": 4463,
+      "sha256": "4b9991acb0972058eaf0bbe078395d45ed06330261c1fef6e37e85ed2849eeb7"
+    },
+    {
+      "path": "scores/02-fugue-c-minor.mid",
+      "bytes": 2062,
+      "sha256": "e0c58e4d3691d5867373a8612be9fff4e5306943f4d11f5875bc1c321c1f44d9"
+    },
+    {
+      "path": "scores/02-fugue-c-minor.musicxml",
+      "bytes": 49536,
+      "sha256": "3506fd14690664f7462fb3438f2b5c0c4dd5ef3e71e366e20b940b5bf9fff3fe"
+    },
+    {
+      "path": "scores/02-fugue-c-minor.pdf",
+      "bytes": 78916,
+      "sha256": "95b1d08c80a09d2d37b5fd80d66e45658cf82f8c09b8a4f7d5b538b80d8f33b4"
+    },
+    {
+      "path": "scores/02-prelude-c-minor.json",
+      "bytes": 189635,
+      "sha256": "312557f10658bbe83723044cc9220d07ddbda23c7c2abbdc865f0f1ea1168830"
+    },
+    {
+      "path": "scores/02-prelude-c-minor.ly",
+      "bytes": 5991,
+      "sha256": "4cd18e70288f5945b9b3c46fdb5b4d87f6294439954946d40f040a44d99f0dc4"
+    },
+    {
+      "path": "scores/02-prelude-c-minor.mid",
+      "bytes": 5092,
+      "sha256": "8afce941f38815660f213e75cb9823e1ef0f2236966b4d5bbdaee17fb6859fc9"
+    },
+    {
+      "path": "scores/02-prelude-c-minor.musicxml",
+      "bytes": 118695,
+      "sha256": "61a9280cad2ed9c4ddfcb82293734e09cda2955d9ac30353289d175be52d2dd0"
+    },
+    {
+      "path": "scores/02-prelude-c-minor.pdf",
+      "bytes": 81713,
+      "sha256": "57bb2200fddf300d7e989a63a3690b18f9544ba54d52bf630b7cd6159c312a6c"
+    },
+    {
+      "path": "scores/03-fugue-csharp-major.json",
+      "bytes": 88090,
+      "sha256": "9c88264f5e41e7d208217ab9b77c06a93d0dcc6c6c1a92a0686ff1873ed3039b"
+    },
+    {
+      "path": "scores/03-fugue-csharp-major.ly",
+      "bytes": 5533,
+      "sha256": "569d65c57522d740c73aa98c555553c16192490ff85bccbd3b13370f6fc12cbf"
+    },
+    {
+      "path": "scores/03-fugue-csharp-major.mid",
+      "bytes": 2492,
+      "sha256": "f5c5e6d8e048c6e4d99b9e2ad85d0e15d2e5f15b860d74920687dcfd484aa826"
+    },
+    {
+      "path": "scores/03-fugue-csharp-major.musicxml",
+      "bytes": 66697,
+      "sha256": "05c07987ab09ba4dff42d6122c80090cfc513850ac3f441eb80192690c8bfca5"
+    },
+    {
+      "path": "scores/03-fugue-csharp-major.pdf",
+      "bytes": 82067,
+      "sha256": "178d3f299373e094c26b0a425d34e2b48fcb8d1a909c860d2620e6728315b1d8"
+    },
+    {
+      "path": "scores/03-prelude-csharp-major.json",
+      "bytes": 82341,
+      "sha256": "0ac00528aa9463d30d04191e357fbfc830091f36cf8270baa3416cf2eb7205e6"
+    },
+    {
+      "path": "scores/03-prelude-csharp-major.ly",
+      "bytes": 5590,
+      "sha256": "823c7b92460b34cebad2a541d0799b2a67a48c5490077a65a3d8598fe72e7bd8"
+    },
+    {
+      "path": "scores/03-prelude-csharp-major.mid",
+      "bytes": 2513,
+      "sha256": "221e5a503447c82dfb80199951336768bfbad39eed37de45fff5f4b51dadeeae"
+    },
+    {
+      "path": "scores/03-prelude-csharp-major.musicxml",
+      "bytes": 118202,
+      "sha256": "6504e3b0c0196247602bb981d2ae3ae4542f200d0f245244a91a562f6d6ed2c4"
+    },
+    {
+      "path": "scores/03-prelude-csharp-major.pdf",
+      "bytes": 77688,
+      "sha256": "7d08d669fbcff854c0b2be5a66a79208f9cbe998f85cdd7ecc2536314e61d720"
+    },
+    {
+      "path": "scores/04-fugue-csharp-minor.json",
+      "bytes": 289410,
+      "sha256": "937006abf2df6351d80d1c14ee139e77348a3d557f8fb660cc082661ad03e25f"
+    },
+    {
+      "path": "scores/04-fugue-csharp-minor.ly",
+      "bytes": 13427,
+      "sha256": "dafcd0d2f12887979e0993411bc07dacc20488e4d0ddcdd59b61233a73848c0e"
+    },
+    {
+      "path": "scores/04-fugue-csharp-minor.mid",
+      "bytes": 12006,
+      "sha256": "08ff49f3e521634fd11bbc8633dded96f65badbbd8da9e72e6702d63fb4dd765"
+    },
+    {
+      "path": "scores/04-fugue-csharp-minor.musicxml",
+      "bytes": 286691,
+      "sha256": "ef12d788f64bf58caa18fad69f0b70e042b91b0ae8ae59e84b995486f4f90b01"
+    },
+    {
+      "path": "scores/04-fugue-csharp-minor.pdf",
+      "bytes": 125213,
+      "sha256": "c92536845cd9ea0017a9657d64c1999bb54774d25e7e234062a2ec666b7f6453"
+    },
+    {
+      "path": "scores/04-prelude-csharp-minor.json",
+      "bytes": 50073,
+      "sha256": "19311021193d84c4ede39e554c785e431e7e3750e5b7b8a7f1b4d05514d2d89d"
+    },
+    {
+      "path": "scores/04-prelude-csharp-minor.ly",
+      "bytes": 4594,
+      "sha256": "553749750323b8dbe94e91c0ff57a0577979385e651913f894b737c0961eb867"
+    },
+    {
+      "path": "scores/04-prelude-csharp-minor.mid",
+      "bytes": 3545,
+      "sha256": "7a52bbf22f7fa2fbbd38a5e9b7bf3428b70ac04609e65c4332cd004fa1aae97b"
+    },
+    {
+      "path": "scores/04-prelude-csharp-minor.musicxml",
+      "bytes": 79631,
+      "sha256": "af53eb27772803435620a7da6150ea6ce68add94e9849151049f7338213ae10d"
+    },
+    {
+      "path": "scores/04-prelude-csharp-minor.pdf",
+      "bytes": 70286,
+      "sha256": "b1a5a35a2e3fc2100cd374b0875862203b831dd06736ec9bf4ff813aa9c278c5"
+    },
+    {
+      "path": "scores/05-fugue-d-major.json",
+      "bytes": 182644,
+      "sha256": "6401ff66f5ac1d1b8de8e1930e90960b3a7923662dd3cae465011e12cfba370c"
+    },
+    {
+      "path": "scores/05-fugue-d-major.ly",
+      "bytes": 8962,
+      "sha256": "1996e3ce6efcb3ed85d517bb297052cf200f7e0b80c4efff3980704727033279"
+    },
+    {
+      "path": "scores/05-fugue-d-major.mid",
+      "bytes": 5619,
+      "sha256": "9a89ce5a1e09f5ee7b9078c979d1fd38c1921029ef7907f4b96badd7846b07dc"
+    },
+    {
+      "path": "scores/05-fugue-d-major.musicxml",
+      "bytes": 141823,
+      "sha256": "b7aad99c4149880ee49f60495596cea55f5d05032f69bf07ddc3bab5780b8b26"
+    },
+    {
+      "path": "scores/05-fugue-d-major.pdf",
+      "bytes": 100485,
+      "sha256": "4123352e6dbfa46b271bed3836ac25f37f32090ac0e6fd7c80df7823847c230d"
+    },
+    {
+      "path": "scores/05-prelude-d-major.json",
+      "bytes": 99453,
+      "sha256": "f6aa3acaf0113ec23cf1b0e0e47d1c08226043dc48c9bd4463a5d1c7c6f60902"
+    },
+    {
+      "path": "scores/05-prelude-d-major.ly",
+      "bytes": 3909,
+      "sha256": "cd71bede645a3f49437f67e27375b6d0d51a77d7fb655f2fb752c4f24e452ff7"
+    },
+    {
+      "path": "scores/05-prelude-d-major.mid",
+      "bytes": 2739,
+      "sha256": "4a0102a12af9e8185d3db2afa42f4d96d9ac1e39473a946a10d454074786d4f5"
+    },
+    {
+      "path": "scores/05-prelude-d-major.musicxml",
+      "bytes": 60213,
+      "sha256": "d6733160bfd09901382f613fcf5bad095f4d04ba99f246277649368d32ef31ea"
+    },
+    {
+      "path": "scores/05-prelude-d-major.pdf",
+      "bytes": 66320,
+      "sha256": "b8a27b9ee259b1cad66c5d0c339e03270bdafe15084fddac8d1f337c9b975633"
+    },
+    {
+      "path": "scores/06-fugue-d-minor.json",
+      "bytes": 199101,
+      "sha256": "499b2e725a897f3160a1ec550cb9871e6e725b0072ca4765332711a45546430f"
+    },
+    {
+      "path": "scores/06-fugue-d-minor.ly",
+      "bytes": 9692,
+      "sha256": "e21a41f8735539949c84f62b9691dcca5a944b0ad0ef73b1fc99b6e26e409d37"
+    },
+    {
+      "path": "scores/06-fugue-d-minor.mid",
+      "bytes": 6286,
+      "sha256": "6f57eb309dc841f39c6dc7173c9182f4559126934951f2dcadd4ef6e153e441d"
+    },
+    {
+      "path": "scores/06-fugue-d-minor.musicxml",
+      "bytes": 161100,
+      "sha256": "2dd87113a89c504346c9b950d1e70c253e1e6c25f5eac5a8df174fdb9fbe4c6c"
+    },
+    {
+      "path": "scores/06-fugue-d-minor.pdf",
+      "bytes": 105368,
+      "sha256": "fcacc999399c6c2ffc4324c464dd30a4f66d94ff0ca146ad6cb5bc02da4f8d21"
+    },
+    {
+      "path": "scores/06-prelude-d-minor.json",
+      "bytes": 97788,
+      "sha256": "530f04c4e005d73a7945470a26dbfaae532095a0ffec7e47b139de6d8584179f"
+    },
+    {
+      "path": "scores/06-prelude-d-minor.ly",
+      "bytes": 3932,
+      "sha256": "489b65477b18365e56316baaa60865a076600752d5e42f7bdb29b71bdfa8dfa9"
+    },
+    {
+      "path": "scores/06-prelude-d-minor.mid",
+      "bytes": 2534,
+      "sha256": "cf36d11de982b4079150ad9abf0d302b8334a610f07a67b01ed73412fe3e9164"
+    },
+    {
+      "path": "scores/06-prelude-d-minor.musicxml",
+      "bytes": 54972,
+      "sha256": "091b7d5554aa6094064ee5b7f6ff2acce562ad02d9b153d7b6fcd74074226341"
+    },
+    {
+      "path": "scores/06-prelude-d-minor.pdf",
+      "bytes": 63444,
+      "sha256": "984100438c103863d4ae10bb7c42031538daa0761a97dcd7ba8cfc61abf8fdff"
+    },
+    {
+      "path": "scores/07-fugue-eflat-major.json",
+      "bytes": 234912,
+      "sha256": "68ca0c1600ffcd6b3c33b452f79faa3abebe7e450d5faf74ceb1efaac98713e1"
+    },
+    {
+      "path": "scores/07-fugue-eflat-major.ly",
+      "bytes": 12123,
+      "sha256": "22bb21345ff879f931a5b7064191f6d08920231c94149c8fc6d83fe629ff43c0"
+    },
+    {
+      "path": "scores/07-fugue-eflat-major.mid",
+      "bytes": 7504,
+      "sha256": "410f4827dce43e863c03373b68777ab54774b9b9cbff066c35d8219de1b52813"
+    },
+    {
+      "path": "scores/07-fugue-eflat-major.musicxml",
+      "bytes": 205457,
+      "sha256": "edf66172166b00a64b4750a173cc2ca17d344a4617278e2f6423462b69623aab"
+    },
+    {
+      "path": "scores/07-fugue-eflat-major.pdf",
+      "bytes": 114715,
+      "sha256": "13192f892f0c8f293667b9f32a4eb0bc9d9b12acc002e2eab1fc3773edf12a34"
+    },
+    {
+      "path": "scores/07-prelude-eflat-major.json",
+      "bytes": 72118,
+      "sha256": "1625e25feda77bb02363744ce51e0e2d12273f18f453831a471bc19b3f35954f"
+    },
+    {
+      "path": "scores/07-prelude-eflat-major.ly",
+      "bytes": 3622,
+      "sha256": "276b0f84be09feb981bd16806e1fe1db01034960c5ef866ae7418f6833842ce7"
+    },
+    {
+      "path": "scores/07-prelude-eflat-major.mid",
+      "bytes": 1877,
+      "sha256": "da9382a80a617f22c2de9cbccb6bee4df955938bca18d42e156e3a90894b8806"
+    },
+    {
+      "path": "scores/07-prelude-eflat-major.musicxml",
+      "bytes": 43056,
+      "sha256": "9a3049d6ea27a16c81b62c1b0b797781221fa2a0d7eb1bca7883c49e8d682478"
+    },
+    {
+      "path": "scores/07-prelude-eflat-major.pdf",
+      "bytes": 75563,
+      "sha256": "02feec78c595ecffbef010332eeabe0d1a8b242946fcb99f15a697e69d1ada7f"
+    },
+    {
+      "path": "scores/08-fugue-eflat-minor.json",
+      "bytes": 390387,
+      "sha256": "1f07aa3bbf3c9559585a1808689d21904662a09076a53409c68e4e8e020a4ccf"
+    },
+    {
+      "path": "scores/08-fugue-eflat-minor.ly",
+      "bytes": 17999,
+      "sha256": "b07ed4553c440e2af3755ba18cbef10728750802cd00956a81b8ff0fd8ebe693"
+    },
+    {
+      "path": "scores/08-fugue-eflat-minor.mid",
+      "bytes": 11117,
+      "sha256": "91e94a125f11755cf4d4368ce32082036d865af883a28b38bafd263c9170e7de"
+    },
+    {
+      "path": "scores/08-fugue-eflat-minor.musicxml",
+      "bytes": 345382,
+      "sha256": "66fa23eb909079546ac316fe7121d61a969b8ba938d238333c7eebbc30a3c0bf"
+    },
+    {
+      "path": "scores/08-fugue-eflat-minor.pdf",
+      "bytes": 136356,
+      "sha256": "dee5bfbead160ffb7a56951f6ef7ef7eff2f45f74d123496eb31659749c320dc"
+    },
+    {
+      "path": "scores/08-prelude-eflat-minor.json",
+      "bytes": 128607,
+      "sha256": "f2696bde87f658b7bf8fd17ce77e754a6e798c75f61923e37ca1d8a266a8c4ec"
+    },
+    {
+      "path": "scores/08-prelude-eflat-minor.ly",
+      "bytes": 4514,
+      "sha256": "bf3c39e4ab123771a2250598780f77df1cd3813382f6319ae29fd48d24d81b8b"
+    },
+    {
+      "path": "scores/08-prelude-eflat-minor.mid",
+      "bytes": 3639,
+      "sha256": "4674f6d6690d76d378c8fee0ff6374628b380f0e272684246d3b0614ff4202d0"
+    },
+    {
+      "path": "scores/08-prelude-eflat-minor.musicxml",
+      "bytes": 92691,
+      "sha256": "f5b8eff7a4942786e68151058bd3ac599d634ce113be5f95367b02acc5af7786"
+    },
+    {
+      "path": "scores/08-prelude-eflat-minor.pdf",
+      "bytes": 89982,
+      "sha256": "115253c875231b81cca00bebe0a0b40db67f967c50702c41e0a861214a1740c9"
+    },
+    {
+      "path": "scores/09-fugue-e-major.json",
+      "bytes": 458391,
+      "sha256": "e77d2c540f58233bac7e3f32f217eeb55e7f2d59e8bf2b88a9ab13c7ec06d608"
+    },
+    {
+      "path": "scores/09-fugue-e-major.ly",
+      "bytes": 19719,
+      "sha256": "daa49ea6745c6a449e28b520a886000f991a4e16e79f88e69df87738a6482eb6"
+    },
+    {
+      "path": "scores/09-fugue-e-major.mid",
+      "bytes": 13283,
+      "sha256": "5914e0cf08053dc224bf04a0f1a7671fa02fa511412d193270f38c7233baf8f9"
+    },
+    {
+      "path": "scores/09-fugue-e-major.musicxml",
+      "bytes": 386871,
+      "sha256": "ea9d6d5b17a88b8c30e24dfc7e14c5cc4f9823cbbdb10faa5efebc2aec9b77ae"
+    },
+    {
+      "path": "scores/09-fugue-e-major.pdf",
+      "bytes": 148617,
+      "sha256": "ae74350f7bf2319364635343dc01a643f4dd15c97f3bf419dcdb6a51e9f5c710"
+    },
+    {
+      "path": "scores/09-prelude-e-major.json",
+      "bytes": 165563,
+      "sha256": "45a3347ca24ef81b13f7f352e5ac431c52a472420d1d9c1efb2f76f3d713a012"
+    },
+    {
+      "path": "scores/09-prelude-e-major.ly",
+      "bytes": 5538,
+      "sha256": "09c602571495da514a7cd7a5f2dcdadc2ccaebb37ad528f23fb6873a549eaac1"
+    },
+    {
+      "path": "scores/09-prelude-e-major.mid",
+      "bytes": 4338,
+      "sha256": "f26b5728b89ed1e2179ca3617364f2dbabe235dc9fce1db9e590c7d099b3f09c"
+    },
+    {
+      "path": "scores/09-prelude-e-major.musicxml",
+      "bytes": 102838,
+      "sha256": "282bb41dc5921f6bcdca40fb3fa5e21c9661c121ada08eac2af2dc74e7d0c232"
+    },
+    {
+      "path": "scores/09-prelude-e-major.pdf",
+      "bytes": 78205,
+      "sha256": "653dbc1eabca96cac538fb2e72305cabcb78ec00649b717d9b701a66e19f3b7c"
+    },
+    {
+      "path": "scores/10-fugue-e-minor.json",
+      "bytes": 437857,
+      "sha256": "eebe4c1c25c9dda36ef4bba31deef4d2324fe6d1cb5e61ba035559cbbf5c67b6"
+    },
+    {
+      "path": "scores/10-fugue-e-minor.ly",
+      "bytes": 19353,
+      "sha256": "dc4eb5bc497547e1971108b72a254efc7bfa79afbdcb9300c3309d15b0decc25"
+    },
+    {
+      "path": "scores/10-fugue-e-minor.mid",
+      "bytes": 12531,
+      "sha256": "4c51f2d42311fb978856d2bf6475f0cc56543f06473e57780b76e225c798bd4f"
+    },
+    {
+      "path": "scores/10-fugue-e-minor.musicxml",
+      "bytes": 378437,
+      "sha256": "0a9b9b87b90895bb60df6d1728e18413afcc65dacbf206c5c2b2363bc12d911c"
+    },
+    {
+      "path": "scores/10-fugue-e-minor.pdf",
+      "bytes": 144601,
+      "sha256": "c018f9be6baace995420b2017483b6f1497bcbd5c19cf3e51f1cbbd1999a9ceb"
+    },
+    {
+      "path": "scores/10-prelude-e-minor.json",
+      "bytes": 84682,
+      "sha256": "fd3b895e50cbbd416d6cb3fd9b23caabf4b1d603fca71bd3b761b4ac0e4bc911"
+    },
+    {
+      "path": "scores/10-prelude-e-minor.ly",
+      "bytes": 3604,
+      "sha256": "b132b946ebae79e0925caf0695f2664048bdade8b26872c68385d42145756356"
+    },
+    {
+      "path": "scores/10-prelude-e-minor.mid",
+      "bytes": 2387,
+      "sha256": "1870e6b52f0bf272cd6b2a4ed4563ad63869541c3df54e6c1164592d3db8a01e"
+    },
+    {
+      "path": "scores/10-prelude-e-minor.musicxml",
+      "bytes": 56128,
+      "sha256": "8abf81f66ae5c957838d4e2c9728335b636c3c57b2230deac4f95d75c4685201"
+    },
+    {
+      "path": "scores/10-prelude-e-minor.pdf",
+      "bytes": 65286,
+      "sha256": "b8dcaf93127234295f3bdd66f7e1ebe2778ca16d9984990ff7b13dc5645df78c"
+    },
+    {
+      "path": "scores/11-fugue-f-major.json",
+      "bytes": 484023,
+      "sha256": "7418f7afd753203035224dfdf92a70e7ee510c39cc0624ab42b212247278d4dd"
+    },
+    {
+      "path": "scores/11-fugue-f-major.ly",
+      "bytes": 21447,
+      "sha256": "6968619a5f6e6b31bdc6ff112be88425d4db55cef7081d53775c04b6c552cc76"
+    },
+    {
+      "path": "scores/11-fugue-f-major.mid",
+      "bytes": 13851,
+      "sha256": "d61b1c621ee804673458776b4ce753a76c6cf7c924be37200d7f2d6184899a8f"
+    },
+    {
+      "path": "scores/11-fugue-f-major.musicxml",
+      "bytes": 410910,
+      "sha256": "2c7e952fd8d3b9daa4bdb7756c1e13cfac423cbd149a2e54f8c60a97fcfc0a5a"
+    },
+    {
+      "path": "scores/11-fugue-f-major.pdf",
+      "bytes": 151964,
+      "sha256": "a3b63fd298e772c9f5528bb5bc3b37bfc072d4f76fdcf0007751bb11d1a52118"
+    },
+    {
+      "path": "scores/11-prelude-f-major.json",
+      "bytes": 128733,
+      "sha256": "83a88b1d7cd1c66e1303e0c306764da1a0e167ca0881d451b22d2ea0033b2b52"
+    },
+    {
+      "path": "scores/11-prelude-f-major.ly",
+      "bytes": 4344,
+      "sha256": "2bd4d749253bbc8dfedf90dd5ba5821040671092c00556329951b027cc50e3dd"
+    },
+    {
+      "path": "scores/11-prelude-f-major.mid",
+      "bytes": 3330,
+      "sha256": "cb06c3506d2f4d0346f6d44941e033bb84b7cfcc0586e05b90d3cd6f82d9a274"
+    },
+    {
+      "path": "scores/11-prelude-f-major.musicxml",
+      "bytes": 74820,
+      "sha256": "c8c520d01936772d92eba9f1fc4df8204c0b58441eecce09e98f8c5d232bd638"
+    },
+    {
+      "path": "scores/11-prelude-f-major.pdf",
+      "bytes": 68033,
+      "sha256": "af15319d7a3db181e000064310f3cf0acd8605de7515c2bd84c19760fc06f5ad"
+    },
+    {
+      "path": "scores/12-fugue-f-minor.json",
+      "bytes": 653177,
+      "sha256": "7c445ceca27df98412a7f1430c7becd630e46c88a6144e7d5a9036102ed78c4e"
+    },
+    {
+      "path": "scores/12-fugue-f-minor.ly",
+      "bytes": 28733,
+      "sha256": "4820ca60705092dfc51dcfb10e2ec2b1ba7ce1155c610f090dc6aff38e640cd2"
+    },
+    {
+      "path": "scores/12-fugue-f-minor.mid",
+      "bytes": 18622,
+      "sha256": "aebdc1e800cb0da35395588bc2f2d6d49cda4160e97fcf74a59ec7ae5f3199c1"
+    },
+    {
+      "path": "scores/12-fugue-f-minor.musicxml",
+      "bytes": 570294,
+      "sha256": "af9ff0f4c0b200cc134dd795e09ae8a471c53df45ef9ec31f0d8f30b32a9b48e"
+    },
+    {
+      "path": "scores/12-fugue-f-minor.pdf",
+      "bytes": 180077,
+      "sha256": "8baf37c60ecdf7afc53c9e9fb9f360d220a911836e00fc7ec2cc42660b5b5872"
+    },
+    {
+      "path": "scores/12-prelude-f-minor.json",
+      "bytes": 107069,
+      "sha256": "42a6f3635b7ab12f4cb984190ab027ca779b89fe36cf2aac814b64688627412d"
+    },
+    {
+      "path": "scores/12-prelude-f-minor.ly",
+      "bytes": 4071,
+      "sha256": "aa709cfb21956aa8bd301cb7b07d88e8cb1a806e400c9fa2ba9230e9fada2279"
+    },
+    {
+      "path": "scores/12-prelude-f-minor.mid",
+      "bytes": 2684,
+      "sha256": "e825d8590f163b2d255cffc6d993d4cdaa7bf5fa873251116509272d0ef78045"
+    },
+    {
+      "path": "scores/12-prelude-f-minor.musicxml",
+      "bytes": 59655,
+      "sha256": "99acc7844dbebabc17b5c32a99a614b67cbe6f57b85630e1b4cacb3cf23a7538"
+    },
+    {
+      "path": "scores/12-prelude-f-minor.pdf",
+      "bytes": 80311,
+      "sha256": "b03497df0d1151c87adbb439123591a213677c9b70400e43afcc8bfa32d2c4e1"
+    },
+    {
+      "path": "scores/13-fugue-fsharp-major.json",
+      "bytes": 590978,
+      "sha256": "687d9bfce667d0d58b6bc5eb97054710eb4ec79d8dcacd450c3544d198b846b1"
+    },
+    {
+      "path": "scores/13-fugue-fsharp-major.ly",
+      "bytes": 30386,
+      "sha256": "5fa213e802718da0ceb94129da8b0730eed2864a17935c7ee0390af889670a30"
+    },
+    {
+      "path": "scores/13-fugue-fsharp-major.mid",
+      "bytes": 17175,
+      "sha256": "46744e8378e0f46da72804d0b19bd53b502ab774c2e44a9432c16eba68cbfb1e"
+    },
+    {
+      "path": "scores/13-fugue-fsharp-major.musicxml",
+      "bytes": 576503,
+      "sha256": "54131b549354aa0597beaf7dc6f9af3c8bb68751448de2fe82440404b4e11a8c"
+    },
+    {
+      "path": "scores/13-fugue-fsharp-major.pdf",
+      "bytes": 178667,
+      "sha256": "f3a96907e6b4b8886286dc217e9d42e64eaa908152ac1da701f0013df43812b2"
+    },
+    {
+      "path": "scores/13-prelude-fsharp-major.json",
+      "bytes": 123108,
+      "sha256": "18259f54a3228e98f97e00e3749a229d3896492150c909fa336004f4947c5042"
+    },
+    {
+      "path": "scores/13-prelude-fsharp-major.ly",
+      "bytes": 4998,
+      "sha256": "24e1304d44446ccfbb2941f2b6c37f604f26300d8aa98cffe9ab3fb488e88334"
+    },
+    {
+      "path": "scores/13-prelude-fsharp-major.mid",
+      "bytes": 3605,
+      "sha256": "07052029473c234f390ed01bfe920669e8d352933f4d2b9f9e1e3e73b2368a2a"
+    },
+    {
+      "path": "scores/13-prelude-fsharp-major.musicxml",
+      "bytes": 94931,
+      "sha256": "36531a38a1e193be621dad5fcab444f2128ca267f24517135400335fbf4ffb59"
+    },
+    {
+      "path": "scores/13-prelude-fsharp-major.pdf",
+      "bytes": 76575,
+      "sha256": "8cee286281fd96e5efc077efb0e6751538927d10e06b2c0602d850a58e41a5dc"
+    },
+    {
+      "path": "scores/14-fugue-fsharp-minor.json",
+      "bytes": 684464,
+      "sha256": "e91be2119005759162ad0d63b4857d3046839525420a744a7ae8ed993e23f83f"
+    },
+    {
+      "path": "scores/14-fugue-fsharp-minor.ly",
+      "bytes": 33112,
+      "sha256": "907ba5f3befa3b5ffbb4979ad114cf9e735d505ea7080a2dad5a69e2b227bb8c"
+    },
+    {
+      "path": "scores/14-fugue-fsharp-minor.mid",
+      "bytes": 19672,
+      "sha256": "26959a1db8326aa7086e9b9dd7de6d73251da34db16ff27005e5134d093c9b86"
+    },
+    {
+      "path": "scores/14-fugue-fsharp-minor.musicxml",
+      "bytes": 649848,
+      "sha256": "61eb23c87f28f4ac5b3c67362134387218fb68c3362f6bfad1bc892a17ac4fce"
+    },
+    {
+      "path": "scores/14-fugue-fsharp-minor.pdf",
+      "bytes": 197739,
+      "sha256": "03fbed999b726471edfb93107b983729c66f0b78ab409482a68a47e88d84b515"
+    },
+    {
+      "path": "scores/14-prelude-fsharp-minor.json",
+      "bytes": 140263,
+      "sha256": "7f16adf08af65726a47af81723e9ae55414995494fb6e8792feeddb496790137"
+    },
+    {
+      "path": "scores/14-prelude-fsharp-minor.ly",
+      "bytes": 5006,
+      "sha256": "2aab4d169abbefeac0e1322b10cfa2c69fc0025e467feb4f8645e5976aa70364"
+    },
+    {
+      "path": "scores/14-prelude-fsharp-minor.mid",
+      "bytes": 3453,
+      "sha256": "8cacd70175157166fff649769dce94ffb7191898af92e0d767067f26335e4050"
+    },
+    {
+      "path": "scores/14-prelude-fsharp-minor.musicxml",
+      "bytes": 81033,
+      "sha256": "153b25a334aa8ea841065eef877a5910312707325dd1093d65b37aae0e88f9e3"
+    },
+    {
+      "path": "scores/14-prelude-fsharp-minor.pdf",
+      "bytes": 88564,
+      "sha256": "cd255f6ec607c0dd52833fbc9e236f3136fda5b4e9a461040a44d9d5e6c28ec9"
+    },
+    {
+      "path": "scores/15-fugue-g-major.json",
+      "bytes": 684322,
+      "sha256": "c40bd54c59fdba1519014c614eae1f9630018af7bf35db00cd5086aa59bd7bf9"
+    },
+    {
+      "path": "scores/15-fugue-g-major.ly",
+      "bytes": 31952,
+      "sha256": "574b11960b8b128dd6642052cead4c6691608071fb7234ae9905f83064d5dea9"
+    },
+    {
+      "path": "scores/15-fugue-g-major.mid",
+      "bytes": 19628,
+      "sha256": "8de481af1536ff3d235db3d5c3f6b1062694c913c467b1666c3ff31e43f5a3ed"
+    },
+    {
+      "path": "scores/15-fugue-g-major.musicxml",
+      "bytes": 656390,
+      "sha256": "ae2b30c4103737ad89b3e1fef2c82f06ffc237d16eef443edbf65864c458f762"
+    },
+    {
+      "path": "scores/15-fugue-g-major.pdf",
+      "bytes": 194680,
+      "sha256": "f715898739faa78515f36dff3e45fbafe9e4c6d33d462d415f167a7fae810b32"
+    },
+    {
+      "path": "scores/15-prelude-g-major.json",
+      "bytes": 178624,
+      "sha256": "055f9bb2ca862a5cc15d4e66632ea6823f00bb84dca79abe289f7a388f893ab0"
+    },
+    {
+      "path": "scores/15-prelude-g-major.ly",
+      "bytes": 5813,
+      "sha256": "a8c2f5857764124b04d7605468f17e648fa872730d96ef17271bad6936b93f80"
+    },
+    {
+      "path": "scores/15-prelude-g-major.mid",
+      "bytes": 5171,
+      "sha256": "ea492cc22ef114f5c025cf4b26654ad6d4f1ac68459cb9b3982dff00600729a5"
+    },
+    {
+      "path": "scores/15-prelude-g-major.musicxml",
+      "bytes": 126017,
+      "sha256": "bd91f0627063d8675f8393e301eefd030ff4eb6c5e71817526a5d20b091d7a73"
+    },
+    {
+      "path": "scores/15-prelude-g-major.pdf",
+      "bytes": 81034,
+      "sha256": "b518395a30c872836f5d49acdb07d4910368b2606b04a0ca9737d1ddc0d5aa2c"
+    },
+    {
+      "path": "scores/16-fugue-g-minor.json",
+      "bytes": 723119,
+      "sha256": "ef4f34732e24a03cf2233749ce9e1d561fed81eab4358243ff1face65b718893"
+    },
+    {
+      "path": "scores/16-fugue-g-minor.ly",
+      "bytes": 34955,
+      "sha256": "3f9e454f191a3229078fd012b66e4b4ef6eced3e3346dd2d7acd216bf21cac16"
+    },
+    {
+      "path": "scores/16-fugue-g-minor.mid",
+      "bytes": 20697,
+      "sha256": "8ef3c935d510d7281c3f7df60cdc6cc7375a20a4620cd2bf27481f6fb6b9a979"
+    },
+    {
+      "path": "scores/16-fugue-g-minor.musicxml",
+      "bytes": 691676,
+      "sha256": "6e5b25434a44f1e341b71e5d0345cc2668b1b8e4321bf482e785012ce8a0c147"
+    },
+    {
+      "path": "scores/16-fugue-g-minor.pdf",
+      "bytes": 200570,
+      "sha256": "1fa7a9c5ecdf933238ed7ec5041ab1139d6bbdec0adb825cccfb522d0a3a32cd"
+    },
+    {
+      "path": "scores/16-prelude-g-minor.json",
+      "bytes": 117969,
+      "sha256": "0868432c905dd28aa8ad1e6135a3442aacdc173bacc9178d35f887ac021adc64"
+    },
+    {
+      "path": "scores/16-prelude-g-minor.ly",
+      "bytes": 4132,
+      "sha256": "d78cd6cd4afd3599db92248fe09a7b2cdc3e6d068a12c1271c1348085d056a5c"
+    },
+    {
+      "path": "scores/16-prelude-g-minor.mid",
+      "bytes": 3005,
+      "sha256": "726475a0a9b2d43c227fb35eab2cdd39947e237d65395512598d0aac1ff0489b"
+    },
+    {
+      "path": "scores/16-prelude-g-minor.musicxml",
+      "bytes": 67318,
+      "sha256": "59e0177a8fa61b35d0de4d203a7b5dfa93f82c83a9d60291edc357b81b8bbbe4"
+    },
+    {
+      "path": "scores/16-prelude-g-minor.pdf",
+      "bytes": 67157,
+      "sha256": "961769c999bfe4fc2552a0e46f448ac58f3ca50bf20842fba837cbecc9db387b"
+    },
+    {
+      "path": "scores/17-fugue-aflat-major.json",
+      "bytes": 747670,
+      "sha256": "61ab09a1a4fc37f979ab5da5a908c20d7db209f247925f72d8d8d06690873ffd"
+    },
+    {
+      "path": "scores/17-fugue-aflat-major.ly",
+      "bytes": 39460,
+      "sha256": "a8555256a7045b8558ab3dd37f431b8d00484912e039c704b8e97ede3945793a"
+    },
+    {
+      "path": "scores/17-fugue-aflat-major.mid",
+      "bytes": 21596,
+      "sha256": "1240fa4ffd68f99376c31f1988bd548fd921c97f22a9ac7b23eeb2bcc64119bc"
+    },
+    {
+      "path": "scores/17-fugue-aflat-major.musicxml",
+      "bytes": 771951,
+      "sha256": "fe7ecc94efbf9e9a151916f54398ea078c4d285be2252cf78ca58eb179b01aea"
+    },
+    {
+      "path": "scores/17-fugue-aflat-major.pdf",
+      "bytes": 205179,
+      "sha256": "2adc6316462b445c138d59fafcdf1dbfc47ec1798da03384085754ec275429cb"
+    },
+    {
+      "path": "scores/17-prelude-aflat-major.json",
+      "bytes": 118755,
+      "sha256": "a58169f12aa663c1fe80ffccee621bf83125d976a1de73714660ea4abd28feae"
+    },
+    {
+      "path": "scores/17-prelude-aflat-major.ly",
+      "bytes": 4242,
+      "sha256": "88fd076643332136e161414bd2b3ecefcc70392527bfb2e93b05bf694f3af296"
+    },
+    {
+      "path": "scores/17-prelude-aflat-major.mid",
+      "bytes": 3270,
+      "sha256": "5ba631896f5609f06a349e8161244a888220e8343872414d7ef425829de4dc98"
+    },
+    {
+      "path": "scores/17-prelude-aflat-major.musicxml",
+      "bytes": 72310,
+      "sha256": "d9a2cf3cd0ac92a48065be8661c3899b19c556bb3907951354aaf5e0c369737e"
+    },
+    {
+      "path": "scores/17-prelude-aflat-major.pdf",
+      "bytes": 68197,
+      "sha256": "9a1b7c125dbe46e75e8213d540a2aba0fdc918340e6015c17852784e8b93cd33"
+    },
+    {
+      "path": "scores/18-fugue-gsharp-minor.json",
+      "bytes": 646394,
+      "sha256": "438b4c742f94affce0c7fa164f300d114ab956285819feb4df3ba219744dc54c"
+    },
+    {
+      "path": "scores/18-fugue-gsharp-minor.ly",
+      "bytes": 36135,
+      "sha256": "99da5761bbae80a797de70e6a67faa910ed79b99ecdd0d6c85a211d5aec61616"
+    },
+    {
+      "path": "scores/18-fugue-gsharp-minor.mid",
+      "bytes": 18899,
+      "sha256": "d0ff6345c959d70c7488bfd01e6668a1ece8cb305d77029fad417402b03ffc86"
+    },
+    {
+      "path": "scores/18-fugue-gsharp-minor.musicxml",
+      "bytes": 663907,
+      "sha256": "5c5e2c9c75cdb3d9d504c89ca706bf91cd7c14bdaa5bc8beb52706c25bf06846"
+    },
+    {
+      "path": "scores/18-fugue-gsharp-minor.pdf",
+      "bytes": 182148,
+      "sha256": "b45b2e7ee9ebb5ae9cda6c505a09fedbd88ba867bcc9088963f4fe7ba3c523b7"
+    },
+    {
+      "path": "scores/18-prelude-gsharp-minor.json",
+      "bytes": 146833,
+      "sha256": "fb7f545f2c07d41597b5f32d8e237067600e894f825ea2a094fae15b034843ea"
+    },
+    {
+      "path": "scores/18-prelude-gsharp-minor.ly",
+      "bytes": 4708,
+      "sha256": "778d1e2d8be872286a0a1aa059564b30445004a6a7234310a481afd28b600df8"
+    },
+    {
+      "path": "scores/18-prelude-gsharp-minor.mid",
+      "bytes": 4143,
+      "sha256": "469e5578c6dafc87c7f50c2ce1cdadd1523d4bf658821e5e8ebbbf82892449e9"
+    },
+    {
+      "path": "scores/18-prelude-gsharp-minor.musicxml",
+      "bytes": 93034,
+      "sha256": "4b78e2ba83d2fc42ceaddc9c7dabb8a963d71dc6de41d8640a7f2f55f685baf3"
+    },
+    {
+      "path": "scores/18-prelude-gsharp-minor.pdf",
+      "bytes": 70835,
+      "sha256": "547c4092c2e7789c9b5342b6c8b9ec2d63f173cc1686b4dac613b1076f9756e3"
+    },
+    {
+      "path": "scores/19-fugue-a-major.json",
+      "bytes": 852866,
+      "sha256": "c2ab19d2931632eca6c8e70aeb38db3796661f5ce1b9948f9ffe644867702516"
+    },
+    {
+      "path": "scores/19-fugue-a-major.ly",
+      "bytes": 44504,
+      "sha256": "d7e7ea80a680dd440bd791da12bc4007f288e68a844be27901bc1578164cc7a7"
+    },
+    {
+      "path": "scores/19-fugue-a-major.mid",
+      "bytes": 24680,
+      "sha256": "355bb78ba01a386488eacbb6549a188418c55d5bcffb3de0c6a0547f3be91867"
+    },
+    {
+      "path": "scores/19-fugue-a-major.musicxml",
+      "bytes": 879452,
+      "sha256": "77d067a3b1cc222177d42b2988b0c211a8b83ef383fdaf56776c9c5e326975e3"
+    },
+    {
+      "path": "scores/19-fugue-a-major.pdf",
+      "bytes": 221611,
+      "sha256": "1fd124bdc7482d6698a61383b770a48fddfc6041bc9a9aa89c423c9f68ff2177"
+    },
+    {
+      "path": "scores/19-prelude-a-major.json",
+      "bytes": 172432,
+      "sha256": "7c7ba67b55d5468119ddb2219460e34e8d71e92128fbb7fa23002b961215ce23"
+    },
+    {
+      "path": "scores/19-prelude-a-major.ly",
+      "bytes": 5818,
+      "sha256": "c7db907cc73aca616cffd9b0a83e8f023cc9c16cd13eed09a88ceff29aba3057"
+    },
+    {
+      "path": "scores/19-prelude-a-major.mid",
+      "bytes": 5018,
+      "sha256": "96c350f5c7b82789d6337ea4de0adaaddbf4806e1dc79c94015c947322acd6d4"
+    },
+    {
+      "path": "scores/19-prelude-a-major.musicxml",
+      "bytes": 113474,
+      "sha256": "43f16c0f8ebefcb5c856820d90361f429337fbccf78a65a0a70c140a926946e0"
+    },
+    {
+      "path": "scores/19-prelude-a-major.pdf",
+      "bytes": 78935,
+      "sha256": "107bac78bf751190f65a6e784a9a93fbf9dff8ef6b9c6995387d51a3e16f8761"
+    },
+    {
+      "path": "scores/20-fugue-a-minor.json",
+      "bytes": 826810,
+      "sha256": "666b1c3a63465ca1b49ca0db51c38446b3bad9a66709fcac6e4e972139efb5b8"
+    },
+    {
+      "path": "scores/20-fugue-a-minor.ly",
+      "bytes": 43585,
+      "sha256": "925974483bc3f56446c492949fe3e764923ae65879be728fe3fa4e90d3a29a18"
+    },
+    {
+      "path": "scores/20-fugue-a-minor.mid",
+      "bytes": 23889,
+      "sha256": "bc02c19328ecdc52bde327f4cea077e3b24e1c8dbc98bd5037a206cc61bd0a84"
+    },
+    {
+      "path": "scores/20-fugue-a-minor.musicxml",
+      "bytes": 849408,
+      "sha256": "d6294e75df709666156c3c59528dc9889edcd4aad70ebb915365f988ae833dcf"
+    },
+    {
+      "path": "scores/20-fugue-a-minor.pdf",
+      "bytes": 218523,
+      "sha256": "ed5579450a076d4a0514b4b6d23f742f4364d4b93f539448090a0c53f924871b"
+    },
+    {
+      "path": "scores/20-prelude-a-minor.json",
+      "bytes": 100159,
+      "sha256": "d95cb18b470ec3b48ac4ece1a4e9cf123f6769eeacb21460871374023fb74be9"
+    },
+    {
+      "path": "scores/20-prelude-a-minor.ly",
+      "bytes": 4188,
+      "sha256": "d61cfe41e76d5f64c929d3f56b1a3c96da0e79db8e9e20e58194d2275938df71"
+    },
+    {
+      "path": "scores/20-prelude-a-minor.mid",
+      "bytes": 2750,
+      "sha256": "6196ba50d29c28d1aaeb1fcd6ea00a426f501afdfdf6d0d89f24f3bc620bc95a"
+    },
+    {
+      "path": "scores/20-prelude-a-minor.musicxml",
+      "bytes": 71289,
+      "sha256": "64cd74dfe94e2b06663ccb0ce1a93d2edbe7297c16589ebbb6fecb50593cfda2"
+    },
+    {
+      "path": "scores/20-prelude-a-minor.pdf",
+      "bytes": 82091,
+      "sha256": "08abf598510875881c8930dd6440f381c566250a458d193777f8e17a4a34cb52"
+    },
+    {
+      "path": "scores/21-fugue-bflat-major.json",
+      "bytes": 894836,
+      "sha256": "5eb69df8e043522dac08633215050bfeab4950e2185b8ba71ed2dcdc6c4cba4c"
+    },
+    {
+      "path": "scores/21-fugue-bflat-major.ly",
+      "bytes": 49789,
+      "sha256": "3974e5b0f7bdc94a43d217dd5cdf2324ec851070582b8a70ffeb895f62223645"
+    },
+    {
+      "path": "scores/21-fugue-bflat-major.mid",
+      "bytes": 25982,
+      "sha256": "8b776ffe88433f35960386c74b8af50120fa3fed7634bbd6806bd1afff6f8de4"
+    },
+    {
+      "path": "scores/21-fugue-bflat-major.musicxml",
+      "bytes": 962189,
+      "sha256": "00dd7bc4c0a23ea9e1b4fc05675cab1b7ca31342f13e7bda2e53a367e709a25d"
+    },
+    {
+      "path": "scores/21-fugue-bflat-major.pdf",
+      "bytes": 235962,
+      "sha256": "95c2df46f07d5f4eb23d80e6954b853a25dbca163995aeb524c9316b8cc5e820"
+    },
+    {
+      "path": "scores/21-prelude-bflat-major.json",
+      "bytes": 86675,
+      "sha256": "29dcb8ec40dfb497028b7fd34d6655135bcc126a1f28d48be15f39a7ce214dfd"
+    },
+    {
+      "path": "scores/21-prelude-bflat-major.ly",
+      "bytes": 4125,
+      "sha256": "d373140bdb3275dd2741c941eb39e83532813073c5f6d264aaceed55d0ce7bc6"
+    },
+    {
+      "path": "scores/21-prelude-bflat-major.mid",
+      "bytes": 2382,
+      "sha256": "c9f129608cd78c50e96658f6c78442f09a2f5c5273b118e2133f6b4d9ef276b4"
+    },
+    {
+      "path": "scores/21-prelude-bflat-major.musicxml",
+      "bytes": 57658,
+      "sha256": "d598273167f1c292a32b17dd08f733c805183ab73f9cf4f2ea47f4e54f2c8778"
+    },
+    {
+      "path": "scores/21-prelude-bflat-major.pdf",
+      "bytes": 67593,
+      "sha256": "15afc6cb0edf9d5427b58952c566b7f17a82737ac358a1f93f7ff2c3b7aac498"
+    },
+    {
+      "path": "scores/22-fugue-bflat-minor.json",
+      "bytes": 937119,
+      "sha256": "57d858e5a6345be95509011dabda2c00ff2cf2ef7ec4e07400505920e4be3139"
+    },
+    {
+      "path": "scores/22-fugue-bflat-minor.ly",
+      "bytes": 54626,
+      "sha256": "444e1097d359cc89cab8ffa0f024f4bcdf9483410f679effd17d6118d86b98ac"
+    },
+    {
+      "path": "scores/22-fugue-bflat-minor.mid",
+      "bytes": 27166,
+      "sha256": "5326f4611a057577c8c49afc57808c3a5fe35f1750409a0a6d1fc9895a7a100e"
+    },
+    {
+      "path": "scores/22-fugue-bflat-minor.musicxml",
+      "bytes": 1036844,
+      "sha256": "e6abe24112b2ead0020b2de55dfda1578be828a8e854542da08da1495a0d647e"
+    },
+    {
+      "path": "scores/22-fugue-bflat-minor.pdf",
+      "bytes": 242928,
+      "sha256": "64ef062928693c96c70775a2672fb212534235d576306c3d7e329dfb80fcb80e"
+    },
+    {
+      "path": "scores/22-prelude-bflat-minor.json",
+      "bytes": 134374,
+      "sha256": "2073c5da335c0b1090ce4dcba35a9a3cee3bc1f6054a5e16a05f59a905bfabb2"
+    },
+    {
+      "path": "scores/22-prelude-bflat-minor.ly",
+      "bytes": 4871,
+      "sha256": "37595263ba5f797b6a555760fff24acdf012326e6c0119946464e2f667f6ac01"
+    },
+    {
+      "path": "scores/22-prelude-bflat-minor.mid",
+      "bytes": 3336,
+      "sha256": "f5ae136c47919758234459486e25ec63b22a9dc12495b71da51948e4924d18c3"
+    },
+    {
+      "path": "scores/22-prelude-bflat-minor.musicxml",
+      "bytes": 78813,
+      "sha256": "8b52e79cf49302561d41d77b25ff9051c8faccd78c3ee41c2ffbfe25d5a740e9"
+    },
+    {
+      "path": "scores/22-prelude-bflat-minor.pdf",
+      "bytes": 87621,
+      "sha256": "63c92e239ad780ecb8ef24ebf9786012534c57b101263f04ca974dffb751598e"
+    },
+    {
+      "path": "scores/23-fugue-b-major.json",
+      "bytes": 994933,
+      "sha256": "7ed0ff48ce626b42d143c784aa94de4e2684a18fabeb68972bccfb5b7f30c49f"
+    },
+    {
+      "path": "scores/23-fugue-b-major.ly",
+      "bytes": 57911,
+      "sha256": "c6f552259475a22c4ef82ffdadac19069429e05e3b7773772430f26e006170e0"
+    },
+    {
+      "path": "scores/23-fugue-b-major.mid",
+      "bytes": 28985,
+      "sha256": "6ce282a79d43d4231d20f215bb197748376abd4989f29da9fe2528b2c01bcb37"
+    },
+    {
+      "path": "scores/23-fugue-b-major.musicxml",
+      "bytes": 1106660,
+      "sha256": "64525a26c0a4f92485c4686dc124814b42d2f808a88ab276f28f8395f6a8e36a"
+    },
+    {
+      "path": "scores/23-fugue-b-major.pdf",
+      "bytes": 256371,
+      "sha256": "4f077c7ec0cdeff85020385b1ccb47ba3961364eaeb548d37c5e193c1da24480"
+    },
+    {
+      "path": "scores/23-prelude-b-major.json",
+      "bytes": 240004,
+      "sha256": "fa29910a8db39a4665c8375373ecd63cfa7d464f219a9cc5449b2a9ea95462ec"
+    },
+    {
+      "path": "scores/23-prelude-b-major.ly",
+      "bytes": 7725,
+      "sha256": "b5d15984d4c2ca3f696b435a57ecf5d76985612270c4b3892d3dc4eef8dc6032"
+    },
+    {
+      "path": "scores/23-prelude-b-major.mid",
+      "bytes": 6554,
+      "sha256": "5a546dccec4cab141e31fdd7d71e21dd44a4c569aee3f5f1f1842acfb24599cb"
+    },
+    {
+      "path": "scores/23-prelude-b-major.musicxml",
+      "bytes": 157016,
+      "sha256": "8a9f244b223698b64ebdc9da6e5709be50309292ac8cd412fdc21c7f74e9dc9d"
+    },
+    {
+      "path": "scores/23-prelude-b-major.pdf",
+      "bytes": 89546,
+      "sha256": "9a1f58bc85e8fea1dacd8f81d5bf2e538edd01a190bd89490239dcaef5bb87f9"
+    },
+    {
+      "path": "scores/24-fugue-b-minor.json",
+      "bytes": 1046801,
+      "sha256": "29c32ace1a857009e1985c60c5b6ebcc9497e0c22263a4227a198946e2397e74"
+    },
+    {
+      "path": "scores/24-fugue-b-minor.ly",
+      "bytes": 58872,
+      "sha256": "f4e02a82d11a46f749c069f0ead487632d6ef0b0e63f369686390cfaf9d30900"
+    },
+    {
+      "path": "scores/24-fugue-b-minor.mid",
+      "bytes": 30051,
+      "sha256": "2ad2c511fe2c6c9dbf18807b709de6bae82e7f059ea9c3605f46b0ffe07b0d5e"
+    },
+    {
+      "path": "scores/24-fugue-b-minor.musicxml",
+      "bytes": 1144418,
+      "sha256": "d57726eeeb97b16513132e2675fedcb7447c49d3a37dcb1c76a36cde42d9e431"
+    },
+    {
+      "path": "scores/24-fugue-b-minor.pdf",
+      "bytes": 264779,
+      "sha256": "4c7d6aef6c8a91ed03498389f740c30c094cae6d5dedd71e6195e1343ddc3d85"
+    },
+    {
+      "path": "scores/24-prelude-b-minor.json",
+      "bytes": 254556,
+      "sha256": "5d383339d4ee7bbe7995c5210c57015142698384cd38271ba24b567dbb3c2c59"
+    },
+    {
+      "path": "scores/24-prelude-b-minor.ly",
+      "bytes": 7569,
+      "sha256": "10cd1fe3265648113915c6b7dcbcbee982a469574641fbcba8393549fab6003c"
+    },
+    {
+      "path": "scores/24-prelude-b-minor.mid",
+      "bytes": 6894,
+      "sha256": "661332000c99130435a8492abea3304f9d4695032487709c4563f65bcf9b21cd"
+    },
+    {
+      "path": "scores/24-prelude-b-minor.musicxml",
+      "bytes": 154963,
+      "sha256": "8e6fc39d97f41f24a689f9bea9581e3d689d87041113b3b15af33b4377a94792"
+    },
+    {
+      "path": "scores/24-prelude-b-minor.pdf",
+      "bytes": 101774,
+      "sha256": "37d7a4dab0140eaa91ad6940254181cb7d5a62da14a36e537a4eab6ec59cca8a"
+    },
+    {
+      "path": "tools/animate_cycle.py",
+      "bytes": 43405,
+      "sha256": "7bbf0a148db977f1dd92881db3407487ef70a009c2e00d5e8174ab567740798b"
+    },
+    {
+      "path": "tools/animate_spatial_stage.py",
+      "bytes": 19196,
+      "sha256": "f1e1b9c0ce5a59242e0bd1f7d83d91bbebff3057a69db1a8896a1519a2789bcc"
+    },
+    {
+      "path": "tools/apply_dense_revision.py",
+      "bytes": 1419,
+      "sha256": "645b4c11f1150b5356af2739dd2f120c1cccab02088c1787fdfcfc04bfadb822"
+    },
+    {
+      "path": "tools/audit_music.py",
+      "bytes": 20969,
+      "sha256": "537ad732242df974e172e210a6cccb53f2ef6579af7a3231c1bd5ade14139b66"
+    },
+    {
+      "path": "tools/build_delivery.py",
+      "bytes": 10256,
+      "sha256": "393c6a299a60edcb94038a72d86215e5b491b6180b72de8497b826e49f068848"
+    },
+    {
+      "path": "tools/build_film_design.py",
+      "bytes": 45336,
+      "sha256": "ba529b34b899164114b8ce563f7158c8abc00a021fe9482e2c0a04fc29cbaf7c"
+    },
+    {
+      "path": "tools/build_revision_sampler.py",
+      "bytes": 20724,
+      "sha256": "700cf6115ee5b2ff4f2f39a70019003d5d186b9c652a0c4a8a2a718ca360778c"
+    },
+    {
+      "path": "tools/build_second_edition_lessons.py",
+      "bytes": 9226,
+      "sha256": "fd020c4b685643230ab7f751d3bd0ff5f9a863c184d294fa076cb56541afbfcd"
+    },
+    {
+      "path": "tools/build_slop_handoff.py",
+      "bytes": 10457,
+      "sha256": "12db652462fcf6f58d32ba4de80df339633bf0c8127d4cfa9a11dbc3fe142ce4"
+    },
+    {
+      "path": "tools/compose_cycle_fugues.py",
+      "bytes": 39111,
+      "sha256": "222372f02afb984dd67b12ef1f060e2c5fa63cea313d3eddec5558c957e5d79a"
+    },
+    {
+      "path": "tools/compose_cycle_preludes.py",
+      "bytes": 29569,
+      "sha256": "ad7f831233970a232a041a6aa750ecc24b7078ff0bb6f8d63a7c4f1252f5fd12"
+    },
+    {
+      "path": "tools/compose_iv.py",
+      "bytes": 25746,
+      "sha256": "69d30d37985ab251ce52b7d0364cdca9de206623fa5213df634abc3c743ffaab"
+    },
+    {
+      "path": "tools/compose_prelude_iv.py",
+      "bytes": 8138,
+      "sha256": "0caea3d9272e60d391ad856617dc88f8dbfac0d13532e57844ed1d1074595152"
+    },
+    {
+      "path": "tools/finish_dense_paragraphs.py",
+      "bytes": 2113,
+      "sha256": "63663745156a2b37e03dd1e5a531f54753d071a60b763b336d96c4dad00dc70b"
+    },
+    {
+      "path": "tools/package_cycle.py",
+      "bytes": 38846,
+      "sha256": "1d061c1231e9abd0b57a72e97329fc6ce5f88bf6696ca40da255b3f212c94672"
+    },
+    {
+      "path": "tools/package_cycle_video.py",
+      "bytes": 8237,
+      "sha256": "e931c990826ee839d8a31293b055ca97b7cf7d4a4bbd9858fdb7330d928c803a"
+    },
+    {
+      "path": "tools/package_film_xxiv.py",
+      "bytes": 27983,
+      "sha256": "4031395bac372197cee4e05a08bc3c5a40ed31f26889cdebe992e7223878c4e2"
+    },
+    {
+      "path": "tools/package_project.py",
+      "bytes": 8065,
+      "sha256": "55ea28b8641caf89437ef3ba85102f9df3ab073613c29dc51fa0cf7b974eb2c3"
+    },
+    {
+      "path": "tools/rebind_film_audio.py",
+      "bytes": 5155,
+      "sha256": "8dfd215e663edd1b88913832972d709c4d9b32816158a974cd71df6fbfb6a173"
+    },
+    {
+      "path": "tools/refine_fugue_rhythm.py",
+      "bytes": 11644,
+      "sha256": "2015ff10f9a520ccbdaf5aa90a9d91b818418adc0262e529961163312fd4c5d7"
+    },
+    {
+      "path": "tools/refine_prelude_inversions.py",
+      "bytes": 2796,
+      "sha256": "b3336d2c7c6b78360385bc225f1dc3070b00d13c3ed8cf40dcd650833034dba3"
+    },
+    {
+      "path": "tools/refine_small_tendencies.py",
+      "bytes": 5925,
+      "sha256": "3ee99ffa6795fe620a389caecd893a573b27cd7e6660334fc8f8dac87c2807d6"
+    },
+    {
+      "path": "tools/render_frozen_cycle.py",
+      "bytes": 2678,
+      "sha256": "ff82668409d37ed4f0d3d77a5b2c3e14b524187f0303bb0ed8c376862e6cd9f0"
+    },
+    {
+      "path": "tools/render_music.py",
+      "bytes": 22542,
+      "sha256": "4c3013d72fed93fa1d907e3869f76d5287b7aa31e2fc7381553ef5a7e3ff4a9d"
+    },
+    {
+      "path": "tools/render_spatial_audio.py",
+      "bytes": 6586,
+      "sha256": "0edd7c68f6bc9c234978c4beef3120362f0fcc2e59e00eab424e559c974099f4"
+    },
+    {
+      "path": "tools/repair_dense_tendencies.py",
+      "bytes": 6452,
+      "sha256": "fe51e2338fbdddf57812a0f3497c605185f0cce661ac846d9444fe1824454ab1"
+    },
+    {
+      "path": "tools/repair_inner_melody.py",
+      "bytes": 3688,
+      "sha256": "36858d0e812800eb0a2004fb76aa0d91fdad27d094ddf1b04ca78263a8c40033"
+    },
+    {
+      "path": "tools/repair_review_findings.py",
+      "bytes": 11303,
+      "sha256": "68a1bdb72beff86608204ed6ae35aba675fc314011b028e98a791e74cdf5833d"
+    },
+    {
+      "path": "tools/review_cycle.py",
+      "bytes": 26660,
+      "sha256": "fac56db0cbcf0d2940d71e219252dc366f8b9d3f43209d72222a3c2ba00bd030"
+    },
+    {
+      "path": "tools/review_second_edition.py",
+      "bytes": 50072,
+      "sha256": "d45c73970a77a6ee48aa624ff1405ba7caf206fdf5a58a4a6f6fdec9d2fbe89f"
+    },
+    {
+      "path": "tools/revise_dense_fugues.py",
+      "bytes": 21427,
+      "sha256": "d1c2049b7be9657dced7b4db5ebd30c1a264d292528f2ffe5f00de2201cb224c"
+    },
+    {
+      "path": "tools/revise_preludes.py",
+      "bytes": 39363,
+      "sha256": "ed7129c7053a91fc37fb888dc5e61754e0282e5f86a1e1638335cdeca60091dd"
+    },
+    {
+      "path": "tools/revise_rhythmic_counterpoint.py",
+      "bytes": 18709,
+      "sha256": "a69a1b1b03d89cd795e631346d8ef6cd7a6090da895d74304d37a45d2968f5be"
+    },
+    {
+      "path": "tools/revise_small_fugues.py",
+      "bytes": 19511,
+      "sha256": "c9baeb036b4787db9abafbd5c240290f51be5df69837dc08acee1603b648cfa1"
+    },
+    {
+      "path": "tools/shape_performance.py",
+      "bytes": 4766,
+      "sha256": "a7c645790946a5e066f9909f204dd4a7f0755c342caa9c0359823951a2702a43"
+    },
+    {
+      "path": "tools/verify_cycle_exports.py",
+      "bytes": 3408,
+      "sha256": "f6c7eb745d0254d60d9cb522b55fa6b160115e53f1208321f10377b214b827fa"
+    },
+    {
+      "path": "tools/verify_preludes_second_edition.py",
+      "bytes": 3503,
+      "sha256": "8fd800117170cd0d02cdb2dca43a223be88da11075e0b6f419155c9764229f39"
+    },
+    {
+      "path": "tools/verify_second_edition_media.py",
+      "bytes": 4380,
+      "sha256": "5e7899ceadeef0aa3290e8cb099a0e14d81be55f63f0e57a16a901d2ecbb585d"
+    },
+    {
+      "path": "well-tempered-clAIvier-cycle-guide.pdf",
+      "bytes": 78856,
+      "sha256": "dc595f99eef59ce5c88c56e84d86e85f4aefb9e907f88e8f48aa61cfc6fd638f"
+    },
+    {
+      "path": "work/cycle_fugues/01-fugue.json",
+      "bytes": 56072,
+      "sha256": "9b9c8e3849eede17cfbf3c77a533f861a7ab03c5637caf9c4fc0dbdf402387e8"
+    },
+    {
+      "path": "work/cycle_fugues/02-fugue.json",
+      "bytes": 74290,
+      "sha256": "f9eab1aeb268c5950e69d50012acf6db0e9a330689e4ee0492c36bfa64f9b0f9"
+    },
+    {
+      "path": "work/cycle_fugues/03-fugue.json",
+      "bytes": 88090,
+      "sha256": "9c88264f5e41e7d208217ab9b77c06a93d0dcc6c6c1a92a0686ff1873ed3039b"
+    },
+    {
+      "path": "work/cycle_fugues/04-fugue.json",
+      "bytes": 289410,
+      "sha256": "937006abf2df6351d80d1c14ee139e77348a3d557f8fb660cc082661ad03e25f"
+    },
+    {
+      "path": "work/cycle_fugues/05-fugue.json",
+      "bytes": 182644,
+      "sha256": "6401ff66f5ac1d1b8de8e1930e90960b3a7923662dd3cae465011e12cfba370c"
+    },
+    {
+      "path": "work/cycle_fugues/06-fugue.json",
+      "bytes": 199101,
+      "sha256": "499b2e725a897f3160a1ec550cb9871e6e725b0072ca4765332711a45546430f"
+    },
+    {
+      "path": "work/cycle_fugues/07-fugue.json",
+      "bytes": 234912,
+      "sha256": "68ca0c1600ffcd6b3c33b452f79faa3abebe7e450d5faf74ceb1efaac98713e1"
+    },
+    {
+      "path": "work/cycle_fugues/08-fugue.json",
+      "bytes": 390387,
+      "sha256": "1f07aa3bbf3c9559585a1808689d21904662a09076a53409c68e4e8e020a4ccf"
+    },
+    {
+      "path": "work/cycle_fugues/09-fugue.json",
+      "bytes": 458391,
+      "sha256": "e77d2c540f58233bac7e3f32f217eeb55e7f2d59e8bf2b88a9ab13c7ec06d608"
+    },
+    {
+      "path": "work/cycle_fugues/10-fugue.json",
+      "bytes": 437857,
+      "sha256": "eebe4c1c25c9dda36ef4bba31deef4d2324fe6d1cb5e61ba035559cbbf5c67b6"
+    },
+    {
+      "path": "work/cycle_fugues/11-fugue.json",
+      "bytes": 484023,
+      "sha256": "7418f7afd753203035224dfdf92a70e7ee510c39cc0624ab42b212247278d4dd"
+    },
+    {
+      "path": "work/cycle_fugues/12-fugue.json",
+      "bytes": 653177,
+      "sha256": "7c445ceca27df98412a7f1430c7becd630e46c88a6144e7d5a9036102ed78c4e"
+    },
+    {
+      "path": "work/cycle_fugues/13-fugue.json",
+      "bytes": 590978,
+      "sha256": "687d9bfce667d0d58b6bc5eb97054710eb4ec79d8dcacd450c3544d198b846b1"
+    },
+    {
+      "path": "work/cycle_fugues/14-fugue.json",
+      "bytes": 684464,
+      "sha256": "e91be2119005759162ad0d63b4857d3046839525420a744a7ae8ed993e23f83f"
+    },
+    {
+      "path": "work/cycle_fugues/15-fugue.json",
+      "bytes": 684322,
+      "sha256": "c40bd54c59fdba1519014c614eae1f9630018af7bf35db00cd5086aa59bd7bf9"
+    },
+    {
+      "path": "work/cycle_fugues/16-fugue.json",
+      "bytes": 723119,
+      "sha256": "ef4f34732e24a03cf2233749ce9e1d561fed81eab4358243ff1face65b718893"
+    },
+    {
+      "path": "work/cycle_fugues/17-fugue.json",
+      "bytes": 747670,
+      "sha256": "61ab09a1a4fc37f979ab5da5a908c20d7db209f247925f72d8d8d06690873ffd"
+    },
+    {
+      "path": "work/cycle_fugues/18-fugue.json",
+      "bytes": 646394,
+      "sha256": "438b4c742f94affce0c7fa164f300d114ab956285819feb4df3ba219744dc54c"
+    },
+    {
+      "path": "work/cycle_fugues/19-fugue.json",
+      "bytes": 852866,
+      "sha256": "c2ab19d2931632eca6c8e70aeb38db3796661f5ce1b9948f9ffe644867702516"
+    },
+    {
+      "path": "work/cycle_fugues/20-fugue.json",
+      "bytes": 826810,
+      "sha256": "666b1c3a63465ca1b49ca0db51c38446b3bad9a66709fcac6e4e972139efb5b8"
+    },
+    {
+      "path": "work/cycle_fugues/21-fugue.json",
+      "bytes": 894836,
+      "sha256": "5eb69df8e043522dac08633215050bfeab4950e2185b8ba71ed2dcdc6c4cba4c"
+    },
+    {
+      "path": "work/cycle_fugues/22-fugue.json",
+      "bytes": 937119,
+      "sha256": "57d858e5a6345be95509011dabda2c00ff2cf2ef7ec4e07400505920e4be3139"
+    },
+    {
+      "path": "work/cycle_fugues/23-fugue.json",
+      "bytes": 994933,
+      "sha256": "7ed0ff48ce626b42d143c784aa94de4e2684a18fabeb68972bccfb5b7f30c49f"
+    },
+    {
+      "path": "work/cycle_fugues/24-fugue.json",
+      "bytes": 1046801,
+      "sha256": "29c32ace1a857009e1985c60c5b6ebcc9497e0c22263a4227a198946e2397e74"
+    },
+    {
+      "path": "work/cycle_preludes/01-prelude.json",
+      "bytes": 130844,
+      "sha256": "6d9f9f52f6b1e12257a324f333ce99d39802bfd1d9adeff403e8c08c91609d49"
+    },
+    {
+      "path": "work/cycle_preludes/02-prelude.json",
+      "bytes": 189635,
+      "sha256": "312557f10658bbe83723044cc9220d07ddbda23c7c2abbdc865f0f1ea1168830"
+    },
+    {
+      "path": "work/cycle_preludes/03-prelude.json",
+      "bytes": 82341,
+      "sha256": "0ac00528aa9463d30d04191e357fbfc830091f36cf8270baa3416cf2eb7205e6"
+    },
+    {
+      "path": "work/cycle_preludes/04-prelude.json",
+      "bytes": 50073,
+      "sha256": "19311021193d84c4ede39e554c785e431e7e3750e5b7b8a7f1b4d05514d2d89d"
+    },
+    {
+      "path": "work/cycle_preludes/05-prelude.json",
+      "bytes": 99453,
+      "sha256": "f6aa3acaf0113ec23cf1b0e0e47d1c08226043dc48c9bd4463a5d1c7c6f60902"
+    },
+    {
+      "path": "work/cycle_preludes/06-prelude.json",
+      "bytes": 97788,
+      "sha256": "530f04c4e005d73a7945470a26dbfaae532095a0ffec7e47b139de6d8584179f"
+    },
+    {
+      "path": "work/cycle_preludes/07-prelude.json",
+      "bytes": 72118,
+      "sha256": "1625e25feda77bb02363744ce51e0e2d12273f18f453831a471bc19b3f35954f"
+    },
+    {
+      "path": "work/cycle_preludes/08-prelude.json",
+      "bytes": 128607,
+      "sha256": "f2696bde87f658b7bf8fd17ce77e754a6e798c75f61923e37ca1d8a266a8c4ec"
+    },
+    {
+      "path": "work/cycle_preludes/09-prelude.json",
+      "bytes": 165563,
+      "sha256": "45a3347ca24ef81b13f7f352e5ac431c52a472420d1d9c1efb2f76f3d713a012"
+    },
+    {
+      "path": "work/cycle_preludes/10-prelude.json",
+      "bytes": 84682,
+      "sha256": "fd3b895e50cbbd416d6cb3fd9b23caabf4b1d603fca71bd3b761b4ac0e4bc911"
+    },
+    {
+      "path": "work/cycle_preludes/11-prelude.json",
+      "bytes": 128733,
+      "sha256": "83a88b1d7cd1c66e1303e0c306764da1a0e167ca0881d451b22d2ea0033b2b52"
+    },
+    {
+      "path": "work/cycle_preludes/12-prelude.json",
+      "bytes": 107069,
+      "sha256": "42a6f3635b7ab12f4cb984190ab027ca779b89fe36cf2aac814b64688627412d"
+    },
+    {
+      "path": "work/cycle_preludes/13-prelude.json",
+      "bytes": 123108,
+      "sha256": "18259f54a3228e98f97e00e3749a229d3896492150c909fa336004f4947c5042"
+    },
+    {
+      "path": "work/cycle_preludes/14-prelude.json",
+      "bytes": 140263,
+      "sha256": "7f16adf08af65726a47af81723e9ae55414995494fb6e8792feeddb496790137"
+    },
+    {
+      "path": "work/cycle_preludes/15-prelude.json",
+      "bytes": 178624,
+      "sha256": "055f9bb2ca862a5cc15d4e66632ea6823f00bb84dca79abe289f7a388f893ab0"
+    },
+    {
+      "path": "work/cycle_preludes/16-prelude.json",
+      "bytes": 117969,
+      "sha256": "0868432c905dd28aa8ad1e6135a3442aacdc173bacc9178d35f887ac021adc64"
+    },
+    {
+      "path": "work/cycle_preludes/17-prelude.json",
+      "bytes": 118755,
+      "sha256": "a58169f12aa663c1fe80ffccee621bf83125d976a1de73714660ea4abd28feae"
+    },
+    {
+      "path": "work/cycle_preludes/18-prelude.json",
+      "bytes": 146833,
+      "sha256": "fb7f545f2c07d41597b5f32d8e237067600e894f825ea2a094fae15b034843ea"
+    },
+    {
+      "path": "work/cycle_preludes/19-prelude.json",
+      "bytes": 172432,
+      "sha256": "7c7ba67b55d5468119ddb2219460e34e8d71e92128fbb7fa23002b961215ce23"
+    },
+    {
+      "path": "work/cycle_preludes/20-prelude.json",
+      "bytes": 100159,
+      "sha256": "d95cb18b470ec3b48ac4ece1a4e9cf123f6769eeacb21460871374023fb74be9"
+    },
+    {
+      "path": "work/cycle_preludes/21-prelude.json",
+      "bytes": 86675,
+      "sha256": "29dcb8ec40dfb497028b7fd34d6655135bcc126a1f28d48be15f39a7ce214dfd"
+    },
+    {
+      "path": "work/cycle_preludes/22-prelude.json",
+      "bytes": 134374,
+      "sha256": "2073c5da335c0b1090ce4dcba35a9a3cee3bc1f6054a5e16a05f59a905bfabb2"
+    },
+    {
+      "path": "work/cycle_preludes/23-prelude.json",
+      "bytes": 240004,
+      "sha256": "fa29910a8db39a4665c8375373ecd63cfa7d464f219a9cc5449b2a9ea95462ec"
+    },
+    {
+      "path": "work/cycle_preludes/24-prelude.json",
+      "bytes": 254556,
+      "sha256": "5d383339d4ee7bbe7995c5210c57015142698384cd38271ba24b567dbb3c2c59"
+    },
+    {
+      "path": "work/revision/01-interim-independent-review.json",
+      "bytes": 4530,
+      "sha256": "9dc255092c5f8a4d18e2148a661149912abd5e907f42642a7d47fd1a079b5752"
+    },
+    {
+      "path": "work/revision/03-interim-independent-review.json",
+      "bytes": 4437,
+      "sha256": "ac43b8e3e114320d15491f14fd1ba603c315318a9c067da6d0b1df5a3873fb11"
+    },
+    {
+      "path": "work/revision/04-fugue-melodic.json",
+      "bytes": 191908,
+      "sha256": "076697101536502021083a1b2f61ea95fd80811be1fdc94096cbfd43c33889c8"
+    },
+    {
+      "path": "work/revision/04-fugue-shaped.json",
+      "bytes": 288695,
+      "sha256": "5b126c5e72ec491394ee54591d6f1d15a7b7736089e686d2fa67052644bf0af9"
+    },
+    {
+      "path": "work/revision/08-interim-independent-review.json",
+      "bytes": 7408,
+      "sha256": "a33ab4e16a57d95a97d2745ed10d0ddf044899444e4fbefa69e0542b550a0207"
+    },
+    {
+      "path": "work/revision/09-interim-independent-review.json",
+      "bytes": 15255,
+      "sha256": "099f50b29d51885ab40b69c87f596057b0f4d33e3af47d9b83df55a3da6f3b01"
+    },
+    {
+      "path": "work/revision/10-interim-independent-review.json",
+      "bytes": 6857,
+      "sha256": "c0b0e5c47b3f93e8f2977929967b7c90fdcfaab8797b5b772c6ff096a8f786f9"
+    },
+    {
+      "path": "work/revision/11-interim-independent-review.json",
+      "bytes": 10096,
+      "sha256": "cce5b608eb1227ac7386cec3d42e5f2afb3ffaba8b969f8bdb9d304854d91638"
+    },
+    {
+      "path": "work/revision/12-interim-independent-review.json",
+      "bytes": 8374,
+      "sha256": "18ac2409c4bdc8b1b795b9c23a6f771884a03ef55c86d281e80dbad392f82a22"
+    },
+    {
+      "path": "work/revision/13-interim-independent-review.json",
+      "bytes": 18572,
+      "sha256": "d5593df9068f5efbf1356b55a644b18fde4eb6b00ac42c306de0aaaba3b3affa"
+    },
+    {
+      "path": "work/revision/14-interim-independent-review.json",
+      "bytes": 13720,
+      "sha256": "1a208007788357aec5ea21da5eca8ec40d0bf16c483a79118f09836aad45a119"
+    },
+    {
+      "path": "work/revision/15-directed-core-spec.json",
+      "bytes": 5675,
+      "sha256": "160d4ab58d16fb71ab706e0b04e21e30f7d5a3182c9c7ddd7ebea3253f5c45e1"
+    },
+    {
+      "path": "work/revision/18-directed-core-spec.json",
+      "bytes": 5691,
+      "sha256": "1c8e94177aed26c02d278a606d040bac13fc23fc11542a99a36a095f48094d64"
+    },
+    {
+      "path": "work/revision/comparison-manifest.json",
+      "bytes": 18337,
+      "sha256": "dbb0079ee78c8eba2ddadb7cdc17da14c4536561a1471bca74f5616b6b3deaae"
+    },
+    {
+      "path": "work/revision/cycle-guide-visual-review.json",
+      "bytes": 4386,
+      "sha256": "9bdb35a0e0eada37d0c82c7aaa91ee2a9b46c059192f20da345c30d3dc29da50"
+    },
+    {
+      "path": "work/revision/delivery-summary.json",
+      "bytes": 825,
+      "sha256": "103096f83b39fa7ce3428b3e9ff975590d340dbd02bab3114b5ec84b5a2be6b2"
+    },
+    {
+      "path": "work/revision/dense-final-edits.json",
+      "bytes": 12164106,
+      "sha256": "88da4c3921fa3f7afba467f290eacb292572b4344c1d4692f2c095fa7c7977f8"
+    },
+    {
+      "path": "work/revision/dense-reproduction-verification.json",
+      "bytes": 395,
+      "sha256": "fb683bd989ebad5007d41054d5a8df4d48239e6610070ab215621a94996efb77"
+    },
+    {
+      "path": "work/revision/dense-structural-revision-report.json",
+      "bytes": 33689,
+      "sha256": "c5c67f489698f04f80d327725cbc485dc086c6dfaeb66aa323880025de191c26"
+    },
+    {
+      "path": "work/revision/dense-structural-revision-report.txt",
+      "bytes": 4179,
+      "sha256": "f58431452e76f164f08525a622e4e6c9b004ff421418957b4b100041fb85819d"
+    },
+    {
+      "path": "work/revision/dense-tendency-repairs.json",
+      "bytes": 9728,
+      "sha256": "a2d502dfe2ca4e049afef953190c61ac8cd7d28aac03414ebacebd1455643adc"
+    },
+    {
+      "path": "work/revision/dense_fugues/08-dense-audit.json",
+      "bytes": 38447,
+      "sha256": "6f6368dab7474cfdbf36e21809ad86adbf3eab4f09c59ff153349bcf88ff21d6"
+    },
+    {
+      "path": "work/revision/dense_fugues/09-dense-audit.json",
+      "bytes": 47515,
+      "sha256": "3cd8090d9519d83b5ded5186d31087a6a6b366aac056b300a771380adb3b6c92"
+    },
+    {
+      "path": "work/revision/dense_fugues/10-dense-audit.json",
+      "bytes": 50190,
+      "sha256": "e602756bd16bb4660110ded4694cb8256c620f4bd3d435ffc68837f7c127291e"
+    },
+    {
+      "path": "work/revision/dense_fugues/11-dense-audit.json",
+      "bytes": 54046,
+      "sha256": "4da43dacd4417c5b45fad83043e16e1eb2d42f8be38bc701477b4c1c0c450c5c"
+    },
+    {
+      "path": "work/revision/dense_fugues/12-dense-audit.json",
+      "bytes": 59017,
+      "sha256": "12c7aeca17bd889b248a67d87044d2ccbf85fd1de74b69c4a9a09ac669b45244"
+    },
+    {
+      "path": "work/revision/dense_fugues/13-dense-audit.json",
+      "bytes": 62736,
+      "sha256": "069097c040fc67becbbd9d9534e74af69163a90b94c02ee23010a76dc02625e4"
+    },
+    {
+      "path": "work/revision/dense_fugues/14-dense-audit.json",
+      "bytes": 67437,
+      "sha256": "8f8274031c84ae8b2e40853fb36146122892fa1b94537edc9d2a501eb3a7d2a3"
+    },
+    {
+      "path": "work/revision/dense_fugues/15-dense-audit.json",
+      "bytes": 72751,
+      "sha256": "af95ee7260c9f5394e7f88dc3154a0868ddda69f8a4dae6ece56dee82a70f9ef"
+    },
+    {
+      "path": "work/revision/dense_fugues/16-dense-audit.json",
+      "bytes": 66376,
+      "sha256": "ac7ca4ec1baeca80237d99e1c05e42e4a096f268d0d219dcd84d93606d65b552"
+    },
+    {
+      "path": "work/revision/dense_fugues/17-dense-audit.json",
+      "bytes": 71810,
+      "sha256": "2d2002c4c706a94d70e978d580b6a345a3badbd8b352dca657ca6645d9522f95"
+    },
+    {
+      "path": "work/revision/dense_fugues/18-dense-audit.json",
+      "bytes": 88445,
+      "sha256": "61f6e74650762d1caf2a488ab70fff91d6eadf119cb69b5e1248e0af20b65ff5"
+    },
+    {
+      "path": "work/revision/dense_fugues/19-dense-audit.json",
+      "bytes": 83669,
+      "sha256": "21b578dc69b587b8b70d860b845b2b311ecf430fdd7af47963f4039ece93f3fb"
+    },
+    {
+      "path": "work/revision/dense_fugues/20-dense-audit.json",
+      "bytes": 100710,
+      "sha256": "f3c62be00e41fd1ab772addeaedf9d2245bcafb7044d12f4d67ba5d22be72940"
+    },
+    {
+      "path": "work/revision/dense_fugues/21-dense-audit.json",
+      "bytes": 96906,
+      "sha256": "439cdeb2d8297705164bc82952cfc2043e9aee304f3956131582cbcad5302e9d"
+    },
+    {
+      "path": "work/revision/dense_fugues/22-dense-audit.json",
+      "bytes": 113983,
+      "sha256": "691a3de67f42947e06c0e5b5f750e4220a10c4efb29f100a0b67a41c09236b19"
+    },
+    {
+      "path": "work/revision/dense_fugues/23-dense-audit.json",
+      "bytes": 113724,
+      "sha256": "99ac41d068f28384816fd0357d7280011920f89a4f48a339d1c9dddf8d8a66cc"
+    },
+    {
+      "path": "work/revision/dense_fugues/24-dense-audit.json",
+      "bytes": 118391,
+      "sha256": "a5d48d8ef3a7bf28bfd554fb3d37254acae21d6ccd6ea5682f6170ba09484207"
+    },
+    {
+      "path": "work/revision/final-context-repairs.json",
+      "bytes": 7876,
+      "sha256": "d3b6b19f6bc4610f181aade36ee6cbac80e0fabf82d870f05740f8f88fd83124"
+    },
+    {
+      "path": "work/revision/listening-and-scope.txt",
+      "bytes": 7981,
+      "sha256": "da652a6447e4906cae738062a025c99de31f625f2bf5c2c2df3613075ded60ea"
+    },
+    {
+      "path": "work/revision/prelude-context-verification.json",
+      "bytes": 11188,
+      "sha256": "cf86d05d3309212e4fdefc2ce22159e2ef4312d14fb02dbe94a83cff571b3e65"
+    },
+    {
+      "path": "work/revision/prelude-inverted-dominant-repair.json",
+      "bytes": 3492,
+      "sha256": "8119a6a34521e2130d354076e08e1a0b808c5b6f251e1cc8fc1ee6c397267ae3"
+    },
+    {
+      "path": "work/revision/prelude-revision.json",
+      "bytes": 54536,
+      "sha256": "6fec562445be0080483c8553414da9b6f4459a537b95c1b88ce127479bb43e7a"
+    },
+    {
+      "path": "work/revision/prelude-revision.txt",
+      "bytes": 9755,
+      "sha256": "5307d501f7389f89cb2ec54c23e30b824f4aacbf6b0497d3a346a079c6dca84b"
+    },
+    {
+      "path": "work/revision/second-edition-review.json",
+      "bytes": 3315117,
+      "sha256": "b515b8e784785355a44e5a83b6758f51a24d35409a4b7f65e50cf9575bb10823"
+    },
+    {
+      "path": "work/revision/second-edition-review.txt",
+      "bytes": 8179,
+      "sha256": "2dd1f6bbbc86f15c4b8ae6e419f16cc7fa7b840bfca673197b4913c368d252ca"
+    },
+    {
+      "path": "work/revision/small_fugues/01-audit.json",
+      "bytes": 6973,
+      "sha256": "e8d8a960c8892ecad1b3d29945ab4d59634c251ec0732c722be7caedab240a2a"
+    },
+    {
+      "path": "work/revision/small_fugues/02-audit.json",
+      "bytes": 8610,
+      "sha256": "146a6b6629273d535c80423fc31927b8d9ae520651d83939850ce41ad62033b4"
+    },
+    {
+      "path": "work/revision/small_fugues/03-audit.json",
+      "bytes": 10592,
+      "sha256": "6cde2c33a02da08440b74f2e03fe92d71f236c34a34fed60d7ad9db1f0ce53f5"
+    },
+    {
+      "path": "work/revision/small_fugues/05-audit.json",
+      "bytes": 21961,
+      "sha256": "f7b2ac38c5434148259ea098a0d131f756369264a80ff164f5b16afc73f85a55"
+    },
+    {
+      "path": "work/revision/small_fugues/06-audit.json",
+      "bytes": 30645,
+      "sha256": "6ba51ab16292d7d0ec692795f245a58ec951f0ef2a5e5fbb42391e686d78e03f"
+    },
+    {
+      "path": "work/revision/small_fugues/07-audit.json",
+      "bytes": 39935,
+      "sha256": "2b3a2db175c5e9aa314e262b55874a114d475682e97a7da64b47f826b51402d0"
+    },
+    {
+      "path": "work/revision/small_fugues/reviewed-phrase-repairs.json",
+      "bytes": 1599,
+      "sha256": "40986d16d030376d61ac1fcc0eef66dca6ec98919a48b3d165bc8e4fdfb9f40d"
+    },
+    {
+      "path": "work/revision/small_fugues/rhythm-independent-review.json",
+      "bytes": 18068,
+      "sha256": "9290a7f2df9e4eccebe9d15cfbc206006df4d1cf1e4a02932b033ffc9aa0226e"
+    },
+    {
+      "path": "work/revision/small_fugues/structural-revision-review.json",
+      "bytes": 6852,
+      "sha256": "01f848e04e468726ec8768844b4707cc3221856c9fb2ec1661e9a0cbd461d477"
+    },
+    {
+      "path": "work/revision/visual-review-record.json",
+      "bytes": 1164,
+      "sha256": "b2708c6d29403b5707e5872914aa24dc76791a4890effa22615e13b2881620ba"
+    },
+    {
+      "path": "work/revision/xxiv-final-candidate-report.json",
+      "bytes": 3969,
+      "sha256": "7e1b3e4c8f1045eb35dee7c93aee2eb3b30a4ce339b92fbf70af837777cdcb2e"
+    },
+    {
+      "path": "work/revision/xxiv-final-candidate.json",
+      "bytes": 1042811,
+      "sha256": "92ed42733224b972833d5191207712b0b55ee79779f4434806727cf51a25cddc"
+    }
+  ]
+}

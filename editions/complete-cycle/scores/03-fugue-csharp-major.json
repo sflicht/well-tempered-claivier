@@ -1,0 +1,4131 @@
+{
+  "metadata": {
+    "title": "The Well-Tempered clAIvier",
+    "subtitle": "III. Fugue in C# major \u2014 Bright hinges",
+    "number": 3,
+    "movement_number": 3,
+    "piece_type": "fugue",
+    "character": "Bright hinges",
+    "key": "C#",
+    "mode": "major",
+    "meter": [
+      4,
+      4
+    ],
+    "bpm": 120,
+    "composer": "ChatGPT / composed for Sam",
+    "instrument": "Piano; optional spatial chamber ensemble",
+    "draft": true,
+    "edition": "Second working edition",
+    "structural_step": 1,
+    "voice_order": "high_to_low",
+    "markers": [
+      {
+        "t": 0,
+        "label": "Continuous exposition"
+      },
+      {
+        "t": 8,
+        "label": "Continuous exposition"
+      },
+      {
+        "t": 16,
+        "label": "Continuous exposition"
+      },
+      {
+        "t": 24,
+        "label": "Continuous exposition"
+      },
+      {
+        "t": 32,
+        "label": "Subject-head sequence"
+      },
+      {
+        "t": 40,
+        "label": "Shadow in the relative minor"
+      },
+      {
+        "t": 48,
+        "label": "Subject-head sequence"
+      },
+      {
+        "t": 56,
+        "label": "Subdominant preparation"
+      },
+      {
+        "t": 64,
+        "label": "Stretto"
+      },
+      {
+        "t": 76,
+        "label": "Four-part final return"
+      },
+      {
+        "t": 84,
+        "label": "Final cadence"
+      }
+    ],
+    "style_note": "Revised thematic rhythm, linear counterpoint and prepared dissonance; mechanical checks do not establish Bach-level artistic quality."
+  },
+  "voices": [
+    {
+      "name": "Voice 01",
+      "abbr": "V01",
+      "clef": "treble",
+      "events": [
+        {
+          "t": 8,
+          "d": 1,
+          "p": 80,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 9,
+          "d": 1,
+          "p": 84,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "bis",
+          "gate": 0.88
+        },
+        {
+          "t": 10,
+          "d": 1,
+          "p": 82,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 11,
+          "d": 1,
+          "p": 87,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 12,
+          "d": 0.5,
+          "p": 89,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 12.5,
+          "d": 0.5,
+          "p": 87,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "dis",
+          "gate": 0.91
+        },
+        {
+          "t": 13,
+          "d": 1,
+          "p": 85,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 80,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "gis",
+          "gate": 0.995
+        },
+        {
+          "t": 16,
+          "d": 1,
+          "p": 82,
+          "v": 76,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 17,
+          "d": 0.5,
+          "p": 80,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 17.5,
+          "d": 0.5,
+          "p": 82,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "ais",
+          "gate": 0.91
+        },
+        {
+          "t": 18,
+          "d": 1.5,
+          "p": 84,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.995
+        },
+        {
+          "t": 19.5,
+          "d": 0.25,
+          "p": 85,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 19.75,
+          "d": 0.25,
+          "p": 84,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.91
+        },
+        {
+          "t": 20,
+          "d": 0.5,
+          "p": 85,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 20.5,
+          "d": 0.5,
+          "p": 84,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.91
+        },
+        {
+          "t": 21,
+          "d": 1,
+          "p": 82,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 22,
+          "d": 2,
+          "p": 77,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.995
+        },
+        {
+          "t": 24,
+          "d": 2,
+          "p": 80,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 26,
+          "d": 2,
+          "p": 82,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 28,
+          "d": 1.5,
+          "p": 80,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 29.5,
+          "d": 0.5,
+          "p": 82,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.98
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 84,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.97
+        },
+        {
+          "t": 32,
+          "d": 2,
+          "p": 77,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.97
+        },
+        {
+          "t": 34,
+          "d": 1,
+          "p": 75,
+          "label": "Subject-head fragment",
+          "v": 68,
+          "source": "authored",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 35,
+          "d": 1,
+          "p": 78,
+          "label": "Subject-head fragment",
+          "v": 68,
+          "source": "authored",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 36,
+          "d": 2,
+          "p": 80,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 38,
+          "d": 1,
+          "p": 73,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 39,
+          "d": 1,
+          "p": 77,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 40,
+          "d": 1,
+          "p": 78,
+          "v": 76,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 41,
+          "d": 0.5,
+          "p": 77,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 41.5,
+          "d": 0.5,
+          "p": 78,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fis",
+          "gate": 0.91
+        },
+        {
+          "t": 42,
+          "d": 1,
+          "p": 80,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 43,
+          "d": 1,
+          "p": 81,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gisis",
+          "gate": 0.88
+        },
+        {
+          "t": 44,
+          "d": 0.5,
+          "p": 82,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "ais",
+          "gate": 0.91
+        },
+        {
+          "t": 44.5,
+          "d": 0.5,
+          "p": 80,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 45,
+          "d": 3,
+          "p": 78,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fis",
+          "gate": 0.995
+        },
+        {
+          "t": 48,
+          "d": 0.5,
+          "p": 78,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.91
+        },
+        {
+          "t": 48.5,
+          "d": 0.5,
+          "p": 80,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.98
+        },
+        {
+          "t": 49,
+          "d": 1,
+          "p": 82,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 50,
+          "d": 1,
+          "p": 80,
+          "label": "Subject-head fragment",
+          "v": 68,
+          "source": "authored",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 51,
+          "d": 1,
+          "p": 84,
+          "label": "Subject-head fragment",
+          "v": 68,
+          "source": "authored",
+          "spell": "bis",
+          "gate": 0.88
+        },
+        {
+          "t": 52,
+          "d": 2,
+          "p": 80,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 54,
+          "d": 1,
+          "p": 78,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 55,
+          "d": 1,
+          "p": 82,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 56,
+          "d": 2,
+          "p": 78,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 75,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.97
+        },
+        {
+          "t": 60,
+          "d": 2,
+          "p": 77,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.97
+        },
+        {
+          "t": 62,
+          "d": 2.5,
+          "p": 78,
+          "v": 66,
+          "source": "prepared suspension",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 1.0
+        },
+        {
+          "t": 64.5,
+          "d": 1.5,
+          "p": 77,
+          "v": 66,
+          "source": "suspension resolution",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 1.0
+        },
+        {
+          "t": 66,
+          "d": 1,
+          "p": 78,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 67,
+          "d": 1,
+          "p": 77,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 78,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 69,
+          "d": 1,
+          "p": 82,
+          "v": 83,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 70,
+          "d": 1,
+          "p": 80,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 71,
+          "d": 1,
+          "p": 85,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 72,
+          "d": 0.5,
+          "p": 87,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "dis",
+          "gate": 0.91
+        },
+        {
+          "t": 72.5,
+          "d": 0.5,
+          "p": 85,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 73,
+          "d": 1,
+          "p": 83,
+          "v": 83,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "b",
+          "gate": 0.88
+        },
+        {
+          "t": 74,
+          "d": 2,
+          "p": 78,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "fis",
+          "gate": 0.995
+        },
+        {
+          "t": 76,
+          "d": 1,
+          "p": 78,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 77,
+          "d": 3,
+          "p": 80,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 80,
+          "d": 1.5,
+          "p": 85,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 81.5,
+          "d": 0.5,
+          "p": 84,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.98
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 82,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 84,
+          "d": 2,
+          "p": 82,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 86,
+          "d": 2,
+          "p": 87,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.97
+        },
+        {
+          "t": 88,
+          "d": 4,
+          "p": 85,
+          "label": "Cadential tonic arrival",
+          "v": 71,
+          "source": "authored",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 92,
+          "d": 4,
+          "p": 85,
+          "v": 64,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "cis",
+          "gate": 1.0
+        }
+      ],
+      "piano_pan": 72
+    },
+    {
+      "name": "Voice 02",
+      "abbr": "V02",
+      "clef": "treble",
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 73,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 77,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 75,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 80,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 4,
+          "d": 0.5,
+          "p": 82,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "ais",
+          "gate": 0.91
+        },
+        {
+          "t": 4.5,
+          "d": 0.5,
+          "p": 80,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 78,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 73,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "cis",
+          "gate": 0.995
+        },
+        {
+          "t": 8,
+          "d": 1,
+          "p": 65,
+          "v": 76,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 9,
+          "d": 0.5,
+          "p": 63,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "dis",
+          "gate": 0.91
+        },
+        {
+          "t": 9.5,
+          "d": 0.5,
+          "p": 65,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 10,
+          "d": 1.5,
+          "p": 67,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fisis",
+          "gate": 0.995
+        },
+        {
+          "t": 11.5,
+          "d": 0.25,
+          "p": 68,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 11.75,
+          "d": 0.25,
+          "p": 67,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fisis",
+          "gate": 0.91
+        },
+        {
+          "t": 12,
+          "d": 0.5,
+          "p": 68,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 12.5,
+          "d": 0.5,
+          "p": 67,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fisis",
+          "gate": 0.91
+        },
+        {
+          "t": 13,
+          "d": 1,
+          "p": 65,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 60,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.995
+        },
+        {
+          "t": 16,
+          "d": 2,
+          "p": 65,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.97
+        },
+        {
+          "t": 18,
+          "d": 1,
+          "p": 66,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 68,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 20,
+          "d": 1.5,
+          "p": 73,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 21.5,
+          "d": 0.5,
+          "p": 72,
+          "v": 66,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.98
+        },
+        {
+          "t": 22,
+          "d": 1,
+          "p": 70,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 23,
+          "d": 1,
+          "p": 68,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 24,
+          "d": 2,
+          "p": 68,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 26,
+          "d": 0.5,
+          "p": 73,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 26.5,
+          "d": 0.5,
+          "p": 72,
+          "v": 66,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.98
+        },
+        {
+          "t": 27,
+          "d": 1,
+          "p": 70,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 28,
+          "d": 2,
+          "p": 73,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 30,
+          "d": 2.5,
+          "p": 72,
+          "v": 66,
+          "source": "prepared suspension",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 1.0
+        },
+        {
+          "t": 32.5,
+          "d": 4.0,
+          "p": 70,
+          "v": 61,
+          "source": "prepared suspension",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 1.0
+        },
+        {
+          "t": 36.5,
+          "d": 1.0,
+          "p": 68,
+          "v": 66,
+          "source": "suspension resolution",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 1.0
+        },
+        {
+          "t": 37.5,
+          "d": 0.5,
+          "p": 66,
+          "v": 66,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.98
+        },
+        {
+          "t": 38,
+          "d": 1,
+          "p": 65,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 39,
+          "d": 1,
+          "p": 68,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 56,
+          "d": 2,
+          "p": 66,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 58,
+          "d": 4,
+          "p": 68,
+          "v": 63,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 62,
+          "d": 2,
+          "p": 70,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 64,
+          "d": 2,
+          "p": 68,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 66,
+          "d": 1,
+          "p": 66,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 67,
+          "d": 1,
+          "p": 68,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 68,
+          "d": 2,
+          "p": 66,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 70,
+          "d": 2,
+          "p": 65,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.97
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 68,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 74,
+          "d": 1.5,
+          "p": 70,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 75.5,
+          "d": 0.5,
+          "p": 71,
+          "v": 68,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "b",
+          "gate": 0.98
+        },
+        {
+          "t": 76,
+          "d": 1,
+          "p": 73,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 77,
+          "d": 1,
+          "p": 77,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 78,
+          "d": 1,
+          "p": 75,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 79,
+          "d": 1,
+          "p": 80,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 80,
+          "d": 0.5,
+          "p": 82,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "ais",
+          "gate": 0.91
+        },
+        {
+          "t": 80.5,
+          "d": 0.5,
+          "p": 80,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 81,
+          "d": 1,
+          "p": 78,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 73,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "cis",
+          "gate": 0.995
+        },
+        {
+          "t": 84,
+          "d": 2,
+          "p": 70,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 86,
+          "d": 1.5,
+          "p": 68,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 87.5,
+          "d": 0.5,
+          "p": 66,
+          "v": 67,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.98
+        },
+        {
+          "t": 88,
+          "d": 4,
+          "p": 65,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.97
+        },
+        {
+          "t": 92,
+          "d": 4,
+          "p": 65,
+          "v": 60,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "eis",
+          "gate": 1.0
+        }
+      ],
+      "piano_pan": 68
+    },
+    {
+      "name": "Voice 03",
+      "abbr": "V03",
+      "clef": "bass",
+      "events": [
+        {
+          "t": 16,
+          "d": 1,
+          "p": 61,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 17,
+          "d": 1,
+          "p": 65,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 18,
+          "d": 1,
+          "p": 63,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 68,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 20,
+          "d": 0.5,
+          "p": 70,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "ais",
+          "gate": 0.91
+        },
+        {
+          "t": 20.5,
+          "d": 0.5,
+          "p": 68,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 21,
+          "d": 1,
+          "p": 66,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 22,
+          "d": 2,
+          "p": 61,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "cis",
+          "gate": 0.995
+        },
+        {
+          "t": 24,
+          "d": 1,
+          "p": 53,
+          "v": 76,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 25,
+          "d": 0.5,
+          "p": 51,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "dis",
+          "gate": 0.91
+        },
+        {
+          "t": 25.5,
+          "d": 0.5,
+          "p": 53,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 26,
+          "d": 1.5,
+          "p": 55,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fisis",
+          "gate": 0.995
+        },
+        {
+          "t": 27.5,
+          "d": 0.25,
+          "p": 56,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 27.75,
+          "d": 0.25,
+          "p": 55,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fisis",
+          "gate": 0.91
+        },
+        {
+          "t": 28,
+          "d": 0.5,
+          "p": 56,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 28.5,
+          "d": 0.5,
+          "p": 55,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fisis",
+          "gate": 0.91
+        },
+        {
+          "t": 29,
+          "d": 1,
+          "p": 53,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 48,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.995
+        },
+        {
+          "t": 32,
+          "d": 0.5,
+          "p": 49,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 32.5,
+          "d": 0.5,
+          "p": 51,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.98
+        },
+        {
+          "t": 33,
+          "d": 1,
+          "p": 53,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 34,
+          "d": 0.5,
+          "p": 54,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.91
+        },
+        {
+          "t": 34.5,
+          "d": 0.5,
+          "p": 56,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.98
+        },
+        {
+          "t": 35,
+          "d": 1,
+          "p": 58,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 36,
+          "d": 0.5,
+          "p": 60,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.91
+        },
+        {
+          "t": 36.5,
+          "d": 0.5,
+          "p": 58,
+          "v": 66,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.98
+        },
+        {
+          "t": 37,
+          "d": 3,
+          "p": 56,
+          "v": 63,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 40,
+          "d": 1,
+          "p": 58,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 41,
+          "d": 1,
+          "p": 61,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 42,
+          "d": 0.5,
+          "p": 60,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "bis",
+          "gate": 0.91
+        },
+        {
+          "t": 42.5,
+          "d": 0.25,
+          "p": 61,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 42.75,
+          "d": 0.25,
+          "p": 63,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "dis",
+          "gate": 0.91
+        },
+        {
+          "t": 43,
+          "d": 1,
+          "p": 65,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 44,
+          "d": 0.5,
+          "p": 66,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "fis",
+          "gate": 0.91
+        },
+        {
+          "t": 44.5,
+          "d": 0.5,
+          "p": 65,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 45,
+          "d": 1,
+          "p": 63,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 46,
+          "d": 2,
+          "p": 58,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "ais",
+          "gate": 0.995
+        },
+        {
+          "t": 48,
+          "d": 1.5,
+          "p": 63,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.97
+        },
+        {
+          "t": 49.5,
+          "d": 0.5,
+          "p": 61,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.98
+        },
+        {
+          "t": 50,
+          "d": 1,
+          "p": 60,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.88
+        },
+        {
+          "t": 51,
+          "d": 1,
+          "p": 63,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 52,
+          "d": 0.5,
+          "p": 65,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 52.5,
+          "d": 0.5,
+          "p": 63,
+          "v": 66,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.98
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 61,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 54,
+          "d": 2,
+          "p": 58,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 56,
+          "d": 2,
+          "p": 58,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 58,
+          "d": 4,
+          "p": 56,
+          "v": 63,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 62,
+          "d": 2,
+          "p": 54,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 64,
+          "d": 1.5,
+          "p": 56,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 65.5,
+          "d": 0.5,
+          "p": 58,
+          "v": 67,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.98
+        },
+        {
+          "t": 66,
+          "d": 2,
+          "p": 60,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.97
+        },
+        {
+          "t": 68,
+          "d": 1.5,
+          "p": 58,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 69.5,
+          "d": 0.5,
+          "p": 60,
+          "v": 68,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.98
+        },
+        {
+          "t": 70,
+          "d": 2,
+          "p": 61,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 74,
+          "d": 1.5,
+          "p": 54,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 75.5,
+          "d": 0.5,
+          "p": 56,
+          "v": 68,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.98
+        },
+        {
+          "t": 76,
+          "d": 1,
+          "p": 58,
+          "v": 76,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 77,
+          "d": 0.5,
+          "p": 56,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 77.5,
+          "d": 0.5,
+          "p": 58,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "ais",
+          "gate": 0.91
+        },
+        {
+          "t": 78,
+          "d": 1.5,
+          "p": 60,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.995
+        },
+        {
+          "t": 79.5,
+          "d": 0.25,
+          "p": 61,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 79.75,
+          "d": 0.25,
+          "p": 60,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.91
+        },
+        {
+          "t": 80,
+          "d": 0.5,
+          "p": 61,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "cis",
+          "gate": 0.91
+        },
+        {
+          "t": 80.5,
+          "d": 0.5,
+          "p": 60,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "bis",
+          "gate": 0.91
+        },
+        {
+          "t": 81,
+          "d": 1,
+          "p": 58,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 53,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "eis",
+          "gate": 0.995
+        },
+        {
+          "t": 84,
+          "d": 2,
+          "p": 54,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 86,
+          "d": 6,
+          "p": 56,
+          "v": 63,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 92,
+          "d": 4,
+          "p": 56,
+          "v": 60,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "gis",
+          "gate": 1.0
+        }
+      ],
+      "piano_pan": 63
+    },
+    {
+      "name": "Voice 04",
+      "abbr": "V04",
+      "clef": "bass",
+      "events": [
+        {
+          "t": 24,
+          "d": 1,
+          "p": 44,
+          "v": 87,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 25,
+          "d": 1,
+          "p": 48,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "bis",
+          "gate": 0.88
+        },
+        {
+          "t": 26,
+          "d": 1,
+          "p": 46,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 27,
+          "d": 1,
+          "p": 51,
+          "v": 85,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 28,
+          "d": 0.5,
+          "p": 53,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 28.5,
+          "d": 0.5,
+          "p": 51,
+          "v": 83,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "dis",
+          "gate": 0.91
+        },
+        {
+          "t": 29,
+          "d": 1,
+          "p": 49,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 44,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "gis",
+          "gate": 0.995
+        },
+        {
+          "t": 32,
+          "d": 1,
+          "p": 46,
+          "label": "Subject-head fragment",
+          "v": 72,
+          "source": "authored",
+          "spell": "ais",
+          "gate": 0.88
+        },
+        {
+          "t": 33,
+          "d": 1,
+          "p": 49,
+          "label": "Subject-head fragment",
+          "v": 70,
+          "source": "authored",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 34,
+          "d": 2,
+          "p": 51,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.97
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 44,
+          "label": "Subject-head fragment",
+          "v": 73,
+          "source": "authored",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 48,
+          "label": "Subject-head fragment",
+          "v": 71,
+          "source": "authored",
+          "spell": "bis",
+          "gate": 0.88
+        },
+        {
+          "t": 38,
+          "d": 2,
+          "p": 49,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 40,
+          "d": 2,
+          "p": 46,
+          "v": 72,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 42,
+          "d": 2,
+          "p": 41,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.97
+        },
+        {
+          "t": 44,
+          "d": 0.5,
+          "p": 39,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.91
+        },
+        {
+          "t": 44.5,
+          "d": 0.5,
+          "p": 41,
+          "v": 68,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.98
+        },
+        {
+          "t": 45,
+          "d": 3,
+          "p": 42,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 48,
+          "d": 1,
+          "p": 39,
+          "label": "Subject-head fragment",
+          "v": 72,
+          "source": "authored",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 49,
+          "d": 1,
+          "p": 42,
+          "label": "Subject-head fragment",
+          "v": 70,
+          "source": "authored",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 50,
+          "d": 2,
+          "p": 44,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 49,
+          "label": "Subject-head fragment",
+          "v": 73,
+          "source": "authored",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 53,
+          "label": "Subject-head fragment",
+          "v": 71,
+          "source": "authored",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 54,
+          "d": 1.5,
+          "p": 54,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 55.5,
+          "d": 0.5,
+          "p": 53,
+          "v": 69,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.98
+        },
+        {
+          "t": 56,
+          "d": 1.5,
+          "p": 51,
+          "v": 72,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis",
+          "gate": 0.97
+        },
+        {
+          "t": 57.5,
+          "d": 0.5,
+          "p": 49,
+          "v": 69,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.98
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 48,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.97
+        },
+        {
+          "t": 60,
+          "d": 1.5,
+          "p": 49,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 61.5,
+          "d": 0.5,
+          "p": 48,
+          "v": 68,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.98
+        },
+        {
+          "t": 62,
+          "d": 1.5,
+          "p": 46,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 63.5,
+          "d": 0.5,
+          "p": 48,
+          "v": 67,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.98
+        },
+        {
+          "t": 64,
+          "d": 1,
+          "p": 49,
+          "v": 88,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "cis",
+          "gate": 0.88
+        },
+        {
+          "t": 65,
+          "d": 1,
+          "p": 53,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "eis",
+          "gate": 0.88
+        },
+        {
+          "t": 66,
+          "d": 1,
+          "p": 51,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "dis",
+          "gate": 0.88
+        },
+        {
+          "t": 67,
+          "d": 1,
+          "p": 56,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "gis",
+          "gate": 0.88
+        },
+        {
+          "t": 68,
+          "d": 0.5,
+          "p": 58,
+          "v": 88,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "ais",
+          "gate": 0.91
+        },
+        {
+          "t": 68.5,
+          "d": 0.5,
+          "p": 56,
+          "v": 85,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "gis",
+          "gate": 0.91
+        },
+        {
+          "t": 69,
+          "d": 1,
+          "p": 54,
+          "v": 85,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 70,
+          "d": 2,
+          "p": 49,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "cis",
+          "gate": 0.995
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 47,
+          "v": 73,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b",
+          "gate": 0.97
+        },
+        {
+          "t": 74,
+          "d": 2,
+          "p": 46,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 76,
+          "d": 1,
+          "p": 42,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 77,
+          "d": 0.5,
+          "p": 41,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis",
+          "gate": 0.91
+        },
+        {
+          "t": 77.5,
+          "d": 0.5,
+          "p": 42,
+          "v": 68,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.98
+        },
+        {
+          "t": 78,
+          "d": 2,
+          "p": 44,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.97
+        },
+        {
+          "t": 80,
+          "d": 1.5,
+          "p": 42,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis",
+          "gate": 0.97
+        },
+        {
+          "t": 81.5,
+          "d": 0.5,
+          "p": 44,
+          "v": 67,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "gis",
+          "gate": 0.98
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 46,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 84,
+          "d": 2,
+          "p": 46,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais",
+          "gate": 0.97
+        },
+        {
+          "t": 86,
+          "d": 2,
+          "p": 48,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis",
+          "gate": 0.97
+        },
+        {
+          "t": 88,
+          "d": 4,
+          "p": 49,
+          "label": "Cadential tonic bass",
+          "v": 74,
+          "source": "authored",
+          "spell": "cis",
+          "gate": 0.97
+        },
+        {
+          "t": 92,
+          "d": 4,
+          "p": 49,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "cis",
+          "gate": 1.0
+        }
+      ],
+      "piano_pan": 59
+    }
+  ],
+  "subjects": {
+    "subject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 60
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 64
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 62
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 67
+        },
+        {
+          "t": 4,
+          "d": 0.5,
+          "p": 69
+        },
+        {
+          "t": 4.5,
+          "d": 0.5,
+          "p": 67
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 65
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 60
+        }
+      ],
+      "mode": "major"
+    },
+    "countersubject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 57
+        },
+        {
+          "t": 1,
+          "d": 0.5,
+          "p": 55
+        },
+        {
+          "t": 1.5,
+          "d": 0.5,
+          "p": 57
+        },
+        {
+          "t": 2,
+          "d": 1.5,
+          "p": 59
+        },
+        {
+          "t": 3.5,
+          "d": 0.25,
+          "p": 60
+        },
+        {
+          "t": 3.75,
+          "d": 0.25,
+          "p": 59
+        },
+        {
+          "t": 4,
+          "d": 0.5,
+          "p": 60
+        },
+        {
+          "t": 4.5,
+          "d": 0.5,
+          "p": 59
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 57
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 52
+        }
+      ],
+      "mode": "major"
+    },
+    "subject_relative": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 60
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 63
+        },
+        {
+          "t": 2,
+          "d": 0.5,
+          "p": 62
+        },
+        {
+          "t": 2.5,
+          "d": 0.25,
+          "p": 63
+        },
+        {
+          "t": 2.75,
+          "d": 0.25,
+          "p": 65
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 67
+        },
+        {
+          "t": 4,
+          "d": 0.5,
+          "p": 68
+        },
+        {
+          "t": 4.5,
+          "d": 0.5,
+          "p": 67
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 65
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 60
+        }
+      ],
+      "mode": "minor",
+      "relationship": "Diatonic modal variant of the main subject"
+    },
+    "countersubject_relative": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 56
+        },
+        {
+          "t": 1,
+          "d": 0.5,
+          "p": 55
+        },
+        {
+          "t": 1.5,
+          "d": 0.5,
+          "p": 56
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 58
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 59
+        },
+        {
+          "t": 4,
+          "d": 0.5,
+          "p": 60
+        },
+        {
+          "t": 4.5,
+          "d": 0.5,
+          "p": 58
+        },
+        {
+          "t": 5,
+          "d": 3,
+          "p": 56
+        }
+      ],
+      "mode": "minor",
+      "relationship": "Countersubject for the relative-key variant"
+    }
+  },
+  "subject_entries": [
+    {
+      "voice": 1,
+      "t": 0,
+      "transpose": 13,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 0,
+      "t": 8,
+      "transpose": 20,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Real answer"
+    },
+    {
+      "voice": 1,
+      "t": 8,
+      "transpose": 8,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 2,
+      "t": 16,
+      "transpose": 1,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 0,
+      "t": 16,
+      "transpose": 25,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 3,
+      "t": 24,
+      "transpose": -16,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Real answer"
+    },
+    {
+      "voice": 2,
+      "t": 24,
+      "transpose": -4,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 2,
+      "t": 40,
+      "transpose": -2,
+      "scale": 1,
+      "subject_id": "subject_relative",
+      "label": "Relative-key subject"
+    },
+    {
+      "voice": 0,
+      "t": 40,
+      "transpose": 22,
+      "scale": 1,
+      "subject_id": "countersubject_relative",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 3,
+      "t": 64,
+      "transpose": -11,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 0,
+      "t": 68,
+      "transpose": 18,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 1,
+      "t": 76,
+      "transpose": 13,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 2,
+      "t": 76,
+      "transpose": 1,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    }
+  ],
+  "sections": [
+    {
+      "t": 0,
+      "d": 8,
+      "label": "Continuous exposition",
+      "detail": "Subject in Voice 02",
+      "voices": [
+        1
+      ]
+    },
+    {
+      "t": 8,
+      "d": 8,
+      "label": "Continuous exposition",
+      "detail": "Real answer in Voice 01; recurring invertible countersubject",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 16,
+      "d": 8,
+      "label": "Continuous exposition",
+      "detail": "Subject in Voice 03; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 24,
+      "d": 8,
+      "label": "Continuous exposition",
+      "detail": "Real answer in Voice 04; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 32,
+      "d": 8,
+      "label": "Subject-head sequence",
+      "detail": "A two-note head of the subject is passed through a directed harmonic sequence; rhythm and intervals are tonally adapted.",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 40,
+      "d": 8,
+      "label": "Shadow in the relative minor",
+      "detail": "Relative-key subject in Voice 03; recurring invertible countersubject; A# minor, a change of tonal mode as well as root",
+      "voices": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 48,
+      "d": 8,
+      "label": "Subject-head sequence",
+      "detail": "A two-note head of the subject is passed through a directed harmonic sequence; rhythm and intervals are tonally adapted.",
+      "voices": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 56,
+      "d": 8,
+      "label": "Subdominant preparation",
+      "detail": "A directed bass and harmonic progression prepares the next thematic entry.",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 64,
+      "d": 12,
+      "label": "Stretto",
+      "detail": "Two complete subjects overlap for 4 beats at an entry distance of 4 beats; the overlap includes motion in the first subject.",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 76,
+      "d": 8,
+      "label": "Four-part final return",
+      "detail": "Subject in Voice 02; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 84,
+      "d": 12,
+      "label": "Final cadence",
+      "detail": "All 4 parts complete the dominant-to-tonic cadence; the outside voices arrive on tonic.",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "harmony": [
+    {
+      "t": 0,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 1,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 2,
+      "chord": "ii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 3,
+      "chord": "iii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 4,
+      "chord": "ii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 5,
+      "chord": "ii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 6,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 7,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 8,
+      "chord": "IV",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 9,
+      "chord": "iii",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 10,
+      "chord": "V",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 11,
+      "chord": "V",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 12,
+      "chord": "vi",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 13,
+      "chord": "IV",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 14,
+      "chord": "I",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 15,
+      "chord": "I",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 16,
+      "chord": "vi",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 17,
+      "chord": "iii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 18,
+      "chord": "vii_dim",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 19,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 20,
+      "chord": "vi",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 21,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 22,
+      "chord": "vi",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 23,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 24,
+      "chord": "vi",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 25,
+      "chord": "I",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 26,
+      "chord": "vii_dim",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 27,
+      "chord": "V",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 28,
+      "chord": "IV",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 29,
+      "chord": "IV",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 30,
+      "chord": "I",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 31,
+      "chord": "I",
+      "key": 8,
+      "mode": "major",
+      "key_name": "G#"
+    },
+    {
+      "t": 32,
+      "chord": "vi",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 33,
+      "chord": "vi",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 34,
+      "chord": "ii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 35,
+      "chord": "ii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 36,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 37,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 38,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 39,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 40,
+      "chord": "VI",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 41,
+      "chord": "i",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 42,
+      "chord": "v",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 43,
+      "chord": "V",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 44,
+      "chord": "iv",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 45,
+      "chord": "iv",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 46,
+      "chord": "VI",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 47,
+      "chord": "VI",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 48,
+      "chord": "iv",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 49,
+      "chord": "iv",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 50,
+      "chord": "VII",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 51,
+      "chord": "VII",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 52,
+      "chord": "III",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 53,
+      "chord": "III",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 54,
+      "chord": "VI",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 55,
+      "chord": "VI",
+      "key": 10,
+      "mode": "minor",
+      "key_name": "A#"
+    },
+    {
+      "t": 56,
+      "chord": "ii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 57,
+      "chord": "ii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 58,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 59,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 60,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 61,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 62,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 63,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 64,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 65,
+      "chord": "iii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 66,
+      "chord": "vii_dim",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 67,
+      "chord": "iii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 68,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 69,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 70,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 71,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 72,
+      "chord": "ii",
+      "key": 6,
+      "mode": "major",
+      "key_name": "F#"
+    },
+    {
+      "t": 73,
+      "chord": "ii",
+      "key": 6,
+      "mode": "major",
+      "key_name": "F#"
+    },
+    {
+      "t": 74,
+      "chord": "I",
+      "key": 6,
+      "mode": "major",
+      "key_name": "F#"
+    },
+    {
+      "t": 75,
+      "chord": "I",
+      "key": 6,
+      "mode": "major",
+      "key_name": "F#"
+    },
+    {
+      "t": 76,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 77,
+      "chord": "iii",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 78,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 79,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 80,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 81,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 82,
+      "chord": "vi",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 83,
+      "chord": "vi",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 84,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 85,
+      "chord": "IV",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 86,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 87,
+      "chord": "V",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 88,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 89,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 90,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    },
+    {
+      "t": 91,
+      "chord": "I",
+      "key": 1,
+      "mode": "major",
+      "key_name": "C#"
+    }
+  ],
+  "motivic_fragments": [
+    {
+      "voice": 3,
+      "t": 32,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "vi"
+    },
+    {
+      "voice": 0,
+      "t": 34,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "ii"
+    },
+    {
+      "voice": 3,
+      "t": 36,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "V"
+    },
+    {
+      "voice": 0,
+      "t": 38,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "I"
+    },
+    {
+      "voice": 3,
+      "t": 48,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "iv"
+    },
+    {
+      "voice": 0,
+      "t": 50,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "VII"
+    },
+    {
+      "voice": 3,
+      "t": 52,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "III"
+    },
+    {
+      "voice": 0,
+      "t": 54,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "VI"
+    }
+  ],
+  "composition_record": {
+    "method": "Authored formal revision with exact subject variants, tonal head-fragment sequences and constraint-assisted supporting voices.",
+    "total_beats": 96,
+    "parts": 4,
+    "solver_sections": [
+      {
+        "t": 0,
+        "voices": 1,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 8,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 16,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 24,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 32,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 40,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 48,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 56,
+        "voices": 4,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 64,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 72,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 76,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 84,
+        "voices": 4,
+        "status": "OPTIMAL"
+      }
+    ],
+    "revision_notes": [
+      "Main-subject overlap enlarged to 4 beats, including active tail material."
+    ],
+    "limitations": [
+      "Structural frame uses triads before the separate diminution/suspension pass.",
+      "Symbolic checks do not establish equivalence to Bach or perceptual independence."
+    ],
+    "second_edition_rhythmic_revision": {
+      "number": 3,
+      "method": "Recurring thematic variants admitted across all their statements; stepwise free-line connections; prepared suspensions. Independent event and structural-grid screens retain the baseline constraints. No random notes or concealed staggered parallels.",
+      "edits": [
+        {
+          "kind": "recurring subject",
+          "template": "subject",
+          "change": "passing cell at beat 4",
+          "statements": 7
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject",
+          "change": "passing cell at beat 1",
+          "statements": 4
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject",
+          "change": "passing cell at beat 4",
+          "statements": 4
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject",
+          "change": "neighbor figure at beat 2",
+          "statements": 4
+        },
+        {
+          "kind": "recurring subject",
+          "template": "subject_relative",
+          "change": "passing cell at beat 2",
+          "statements": 1
+        },
+        {
+          "kind": "recurring subject",
+          "template": "subject_relative",
+          "change": "passing cell at beat 4",
+          "statements": 1
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject_relative",
+          "change": "passing cell at beat 1",
+          "statements": 1
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject_relative",
+          "change": "passing cell at beat 4",
+          "statements": 1
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 1,
+          "t": 21.5,
+          "p": 72
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 1,
+          "t": 26.5,
+          "p": 72
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 0,
+          "t": 29.5,
+          "p": 82
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 32.5,
+          "p": 51
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 34.5,
+          "p": 56
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 1,
+          "t": 37.5,
+          "p": 66
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 36.5,
+          "p": 58
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 3,
+          "t": 44.5,
+          "p": 41
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 0,
+          "t": 48.5,
+          "p": 80
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 49.5,
+          "p": 61
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 52.5,
+          "p": 63
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 3,
+          "t": 55.5,
+          "p": 53
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 3,
+          "t": 57.5,
+          "p": 49
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 3,
+          "t": 61.5,
+          "p": 48
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 3,
+          "t": 63.5,
+          "p": 48
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 65.5,
+          "p": 58
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 69.5,
+          "p": 60
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 1,
+          "t": 75.5,
+          "p": 71
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 2,
+          "t": 75.5,
+          "p": 56
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 3,
+          "t": 77.5,
+          "p": 42
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 0,
+          "t": 81.5,
+          "p": 84
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 3,
+          "t": 81.5,
+          "p": 44
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 1,
+          "t": 87.5,
+          "p": 66
+        },
+        {
+          "kind": "prepared suspension",
+          "voice": 1,
+          "t": 32,
+          "resolution": 32.5,
+          "pitches": [
+            72,
+            70
+          ]
+        },
+        {
+          "kind": "prepared suspension",
+          "voice": 1,
+          "t": 36,
+          "resolution": 36.5,
+          "pitches": [
+            70,
+            68
+          ]
+        },
+        {
+          "kind": "prepared suspension",
+          "voice": 0,
+          "t": 64,
+          "resolution": 64.5,
+          "pitches": [
+            78,
+            77
+          ]
+        }
+      ],
+      "counts": {
+        "recurring subject": 3,
+        "recurring countersubject": 5,
+        "free passing connection": 23,
+        "prepared suspension": 3
+      },
+      "rejected_candidate_findings": {
+        "actual_parallel": 7,
+        "unexplained_dissonance": 15
+      },
+      "baseline_context_flags": [],
+      "remaining_context_flags": [],
+      "before_notes": 202,
+      "after_notes": 253,
+      "offbeat_attacks": 54
+    },
+    "performance_revision": {
+      "description": "Deterministic subject/countersubject balance, phrase arches, metrical articulation, connected suspensions, cadence release and keyboard-register stereo placement.",
+      "timing": "No onset displacement, random timing, tempo changes, or written-duration changes.",
+      "soundfont": "FluidR3_GM.sf2 General MIDI study samples; not an acoustic performance.",
+      "written_notes_unchanged": true
+    }
+  }
+}

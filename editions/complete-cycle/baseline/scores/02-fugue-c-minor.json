@@ -1,0 +1,2651 @@
+{
+  "metadata": {
+    "title": "The Well-Tempered clAIvier",
+    "subtitle": "II. Fugue in C minor \u2014 The turning path",
+    "number": 2,
+    "movement_number": 2,
+    "piece_type": "fugue",
+    "character": "The turning path",
+    "key": "C",
+    "mode": "minor",
+    "meter": [
+      4,
+      4
+    ],
+    "bpm": 94,
+    "composer": "ChatGPT / composed for Sam",
+    "instrument": "Piano; optional spatial chamber ensemble",
+    "draft": true,
+    "structural_step": 1,
+    "voice_order": "high_to_low",
+    "markers": [
+      {
+        "t": 0,
+        "label": "Exposition"
+      },
+      {
+        "t": 8,
+        "label": "Exposition"
+      },
+      {
+        "t": 16,
+        "label": "Exposition"
+      },
+      {
+        "t": 24,
+        "label": "Sequential episode"
+      },
+      {
+        "t": 32,
+        "label": "Development"
+      },
+      {
+        "t": 44,
+        "label": "Linking episode"
+      },
+      {
+        "t": 52,
+        "label": "Development"
+      },
+      {
+        "t": 60,
+        "label": "Stretto"
+      },
+      {
+        "t": 76,
+        "label": "Final episode"
+      },
+      {
+        "t": 84,
+        "label": "Final return"
+      },
+      {
+        "t": 92,
+        "label": "Final cadence"
+      }
+    ],
+    "style_note": "First complete compositional draft. Constraint checks establish specific observable properties, not Bach-level artistic quality."
+  },
+  "voices": [
+    {
+      "name": "Voice 01",
+      "abbr": "V01",
+      "clef": "treble",
+      "events": [
+        {
+          "t": 8,
+          "d": 1,
+          "p": 79,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 9,
+          "d": 1,
+          "p": 86,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 10,
+          "d": 1,
+          "p": 84,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 11,
+          "d": 1,
+          "p": 82,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 12,
+          "d": 1,
+          "p": 81,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "a"
+        },
+        {
+          "t": 13,
+          "d": 1,
+          "p": 77,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 79,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 16,
+          "d": 1,
+          "p": 80,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "aes"
+        },
+        {
+          "t": 17,
+          "d": 1,
+          "p": 82,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 18,
+          "d": 1,
+          "p": 80,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "aes"
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 79,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 20,
+          "d": 1,
+          "p": 77,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 21,
+          "d": 1,
+          "p": 79,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 22,
+          "d": 2,
+          "p": 80,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "aes"
+        },
+        {
+          "t": 24,
+          "d": 4,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 28,
+          "d": 4,
+          "p": 79,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 32,
+          "d": 1,
+          "p": 79,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 33,
+          "d": 3,
+          "p": 82,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 79,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 38,
+          "d": 1,
+          "p": 82,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 39,
+          "d": 1,
+          "p": 75,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 40,
+          "d": 2,
+          "p": 79,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 42,
+          "d": 2,
+          "p": 82,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 44,
+          "d": 4,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f"
+        },
+        {
+          "t": 48,
+          "d": 2,
+          "p": 76,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "e"
+        },
+        {
+          "t": 50,
+          "d": 2,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f"
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 79,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 86,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 54,
+          "d": 1,
+          "p": 84,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 55,
+          "d": 1,
+          "p": 82,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 56,
+          "d": 1,
+          "p": 81,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "a"
+        },
+        {
+          "t": 57,
+          "d": 1,
+          "p": 77,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 79,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 60,
+          "d": 1,
+          "p": 80,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 61,
+          "d": 1,
+          "p": 82,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 62,
+          "d": 2,
+          "p": 84,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 64,
+          "d": 1,
+          "p": 82,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 65,
+          "d": 1,
+          "p": 86,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d"
+        },
+        {
+          "t": 66,
+          "d": 1,
+          "p": 84,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 67,
+          "d": 1,
+          "p": 91,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 89,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 69,
+          "d": 1,
+          "p": 87,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 70,
+          "d": 1,
+          "p": 86,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 71,
+          "d": 1,
+          "p": 82,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 84,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 74,
+          "d": 2,
+          "p": 80,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 76,
+          "d": 2,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 78,
+          "d": 2,
+          "p": 84,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 80,
+          "d": 2,
+          "p": 83,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b"
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 84,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 84,
+          "d": 1,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 85,
+          "d": 1,
+          "p": 79,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 86,
+          "d": 1,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 87,
+          "d": 1,
+          "p": 82,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 88,
+          "d": 1,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 89,
+          "d": 1,
+          "p": 82,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 90,
+          "d": 2,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 92,
+          "d": 2,
+          "p": 77,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "f"
+        },
+        {
+          "t": 94,
+          "d": 6,
+          "p": 79,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "g"
+        },
+        {
+          "t": 100,
+          "d": 4,
+          "p": 79,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "g"
+        }
+      ]
+    },
+    {
+      "name": "Voice 02",
+      "abbr": "V02",
+      "clef": "treble",
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 60,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 67,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 65,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 63,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 62,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 58,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 60,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 8,
+          "d": 1,
+          "p": 63,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 9,
+          "d": 1,
+          "p": 65,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 10,
+          "d": 1,
+          "p": 63,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 11,
+          "d": 1,
+          "p": 62,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 12,
+          "d": 1,
+          "p": 60,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 13,
+          "d": 1,
+          "p": 62,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 63,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 16,
+          "d": 2,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 18,
+          "d": 1,
+          "p": 62,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d"
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 20,
+          "d": 2,
+          "p": 58,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 22,
+          "d": 1,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 23,
+          "d": 1,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 24,
+          "d": 4,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 28,
+          "d": 2,
+          "p": 59,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b"
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 32,
+          "d": 2,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 34,
+          "d": 2,
+          "p": 61,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "des"
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 65,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 72,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 38,
+          "d": 1,
+          "p": 70,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 39,
+          "d": 1,
+          "p": 68,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "aes"
+        },
+        {
+          "t": 40,
+          "d": 1,
+          "p": 67,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 41,
+          "d": 1,
+          "p": 63,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 42,
+          "d": 2,
+          "p": 65,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 44,
+          "d": 2,
+          "p": 61,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "des"
+        },
+        {
+          "t": 46,
+          "d": 2,
+          "p": 58,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 48,
+          "d": 4,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 58,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 57,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "a"
+        },
+        {
+          "t": 54,
+          "d": 1,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 55,
+          "d": 1,
+          "p": 62,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d"
+        },
+        {
+          "t": 56,
+          "d": 1,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 57,
+          "d": 1,
+          "p": 62,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d"
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 60,
+          "d": 1,
+          "p": 60,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 61,
+          "d": 1,
+          "p": 58,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 62,
+          "d": 1,
+          "p": 56,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 63,
+          "d": 1,
+          "p": 60,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 64,
+          "d": 2,
+          "p": 62,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d"
+        },
+        {
+          "t": 66,
+          "d": 2,
+          "p": 63,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 68,
+          "d": 3,
+          "p": 70,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 71,
+          "d": 3,
+          "p": 67,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 74,
+          "d": 1,
+          "p": 60,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 75,
+          "d": 1,
+          "p": 63,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 76,
+          "d": 2,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 78,
+          "d": 2,
+          "p": 65,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f"
+        },
+        {
+          "t": 80,
+          "d": 2,
+          "p": 62,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d"
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 84,
+          "d": 1,
+          "p": 60,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 85,
+          "d": 1,
+          "p": 67,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 86,
+          "d": 1,
+          "p": 65,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 87,
+          "d": 1,
+          "p": 63,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 88,
+          "d": 1,
+          "p": 62,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 89,
+          "d": 1,
+          "p": 58,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 90,
+          "d": 2,
+          "p": 60,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 92,
+          "d": 2,
+          "p": 60,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "c"
+        },
+        {
+          "t": 94,
+          "d": 1,
+          "p": 59,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "b"
+        },
+        {
+          "t": 95,
+          "d": 1,
+          "p": 62,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "d"
+        },
+        {
+          "t": 96,
+          "d": 4,
+          "p": 63,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "ees"
+        },
+        {
+          "t": 100,
+          "d": 4,
+          "p": 63,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "ees"
+        }
+      ]
+    },
+    {
+      "name": "Voice 03",
+      "abbr": "V03",
+      "clef": "bass",
+      "events": [
+        {
+          "t": 16,
+          "d": 1,
+          "p": 48,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 17,
+          "d": 1,
+          "p": 55,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 18,
+          "d": 1,
+          "p": 53,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 51,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 20,
+          "d": 1,
+          "p": 50,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 21,
+          "d": 1,
+          "p": 46,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 22,
+          "d": 2,
+          "p": 48,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 24,
+          "d": 2,
+          "p": 44,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 26,
+          "d": 2,
+          "p": 41,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f"
+        },
+        {
+          "t": 28,
+          "d": 2,
+          "p": 43,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 39,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 32,
+          "d": 1,
+          "p": 39,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 33,
+          "d": 1,
+          "p": 43,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 34,
+          "d": 2,
+          "p": 46,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bes"
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 49,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "des"
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 51,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 38,
+          "d": 1,
+          "p": 49,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "des"
+        },
+        {
+          "t": 39,
+          "d": 1,
+          "p": 48,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 40,
+          "d": 1,
+          "p": 46,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 41,
+          "d": 1,
+          "p": 48,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 42,
+          "d": 2,
+          "p": 49,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "des"
+        },
+        {
+          "t": 44,
+          "d": 4,
+          "p": 49,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "des"
+        },
+        {
+          "t": 48,
+          "d": 2,
+          "p": 48,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 50,
+          "d": 2,
+          "p": 44,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 39,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 41,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 54,
+          "d": 1,
+          "p": 39,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 55,
+          "d": 1,
+          "p": 38,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 56,
+          "d": 1,
+          "p": 36,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 57,
+          "d": 1,
+          "p": 38,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 39,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 60,
+          "d": 1,
+          "p": 48,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 61,
+          "d": 1,
+          "p": 55,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 62,
+          "d": 1,
+          "p": 53,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 63,
+          "d": 1,
+          "p": 51,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "ees"
+        },
+        {
+          "t": 64,
+          "d": 1,
+          "p": 50,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "d"
+        },
+        {
+          "t": 65,
+          "d": 1,
+          "p": 46,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 66,
+          "d": 2,
+          "p": 48,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "c"
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 50,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d"
+        },
+        {
+          "t": 69,
+          "d": 2,
+          "p": 43,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 71,
+          "d": 3,
+          "p": 51,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 74,
+          "d": 2,
+          "p": 48,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 76,
+          "d": 2,
+          "p": 48,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c"
+        },
+        {
+          "t": 78,
+          "d": 2,
+          "p": 44,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "aes"
+        },
+        {
+          "t": 80,
+          "d": 2,
+          "p": 43,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g"
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 39,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ees"
+        },
+        {
+          "t": 84,
+          "d": 1,
+          "p": 44,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "aes"
+        },
+        {
+          "t": 85,
+          "d": 1,
+          "p": 46,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bes"
+        },
+        {
+          "t": 86,
+          "d": 1,
+          "p": 44,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "aes"
+        },
+        {
+          "t": 87,
+          "d": 1,
+          "p": 43,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 88,
+          "d": 1,
+          "p": 41,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "f"
+        },
+        {
+          "t": 89,
+          "d": 1,
+          "p": 43,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "g"
+        },
+        {
+          "t": 90,
+          "d": 2,
+          "p": 44,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "aes"
+        },
+        {
+          "t": 92,
+          "d": 2,
+          "p": 44,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "aes"
+        },
+        {
+          "t": 94,
+          "d": 1,
+          "p": 43,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "g"
+        },
+        {
+          "t": 95,
+          "d": 1,
+          "p": 47,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "b"
+        },
+        {
+          "t": 96,
+          "d": 4,
+          "p": 48,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Final cadence",
+          "spell": "c"
+        },
+        {
+          "t": 100,
+          "d": 4,
+          "p": 48,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "c"
+        }
+      ]
+    }
+  ],
+  "subjects": {
+    "subject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 60
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 67
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 65
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 63
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 62
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 58
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 60
+        }
+      ]
+    },
+    "countersubject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 56
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 58
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 56
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 55
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 53
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 55
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 56
+        }
+      ]
+    }
+  },
+  "subject_entries": [
+    {
+      "voice": 1,
+      "t": 0,
+      "transpose": 0,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 0,
+      "t": 8,
+      "transpose": 19,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Real answer"
+    },
+    {
+      "voice": 1,
+      "t": 8,
+      "transpose": 7,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 2,
+      "t": 16,
+      "transpose": -12,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 0,
+      "t": 16,
+      "transpose": 24,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 1,
+      "t": 36,
+      "transpose": 5,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Related-key subject"
+    },
+    {
+      "voice": 2,
+      "t": 36,
+      "transpose": -7,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 0,
+      "t": 52,
+      "transpose": 19,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Related-key subject"
+    },
+    {
+      "voice": 2,
+      "t": 52,
+      "transpose": -17,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 2,
+      "t": 60,
+      "transpose": -12,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 0,
+      "t": 66,
+      "transpose": 24,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 1,
+      "t": 84,
+      "transpose": 0,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 2,
+      "t": 84,
+      "transpose": -12,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    }
+  ],
+  "sections": [
+    {
+      "t": 0,
+      "d": 8,
+      "label": "Exposition",
+      "detail": "Subject in Voice 02",
+      "voices": [
+        1
+      ]
+    },
+    {
+      "t": 8,
+      "d": 8,
+      "label": "Exposition",
+      "detail": "Real answer in Voice 01; recurring invertible countersubject",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 16,
+      "d": 8,
+      "label": "Exposition",
+      "detail": "Subject in Voice 03; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 24,
+      "d": 8,
+      "label": "Sequential episode",
+      "detail": "Independent lines move from the submediant through the subdominant and dominant to the tonic.",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 32,
+      "d": 12,
+      "label": "Development",
+      "detail": "Four-beat connecting bar; Related-key subject in Voice 02; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 44,
+      "d": 8,
+      "label": "Linking episode",
+      "detail": "Independent lines move from the submediant through the subdominant and dominant to the tonic.",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 52,
+      "d": 8,
+      "label": "Development",
+      "detail": "Related-key subject in Voice 01; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 60,
+      "d": 16,
+      "label": "Stretto",
+      "detail": "Two complete subjects overlap for two beats; entry distance 6 beats.",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 76,
+      "d": 8,
+      "label": "Final episode",
+      "detail": "Independent lines move from the submediant through the subdominant and dominant to the tonic.",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 84,
+      "d": 8,
+      "label": "Final return",
+      "detail": "Subject in Voice 02; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 92,
+      "d": 8,
+      "label": "Final cadence",
+      "detail": "Subdominant and dominant lead to a root-position tonic.",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "harmony": [
+    {
+      "t": 0,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 1,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 2,
+      "chord": "ii_dim",
+      "key": 0
+    },
+    {
+      "t": 3,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 4,
+      "chord": "ii_dim",
+      "key": 0
+    },
+    {
+      "t": 5,
+      "chord": "III",
+      "key": 0
+    },
+    {
+      "t": 6,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 7,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 8,
+      "chord": "iv",
+      "key": 7
+    },
+    {
+      "t": 9,
+      "chord": "v",
+      "key": 7
+    },
+    {
+      "t": 10,
+      "chord": "iv",
+      "key": 7
+    },
+    {
+      "t": 11,
+      "chord": "III",
+      "key": 7
+    },
+    {
+      "t": 12,
+      "chord": "ii_dim",
+      "key": 7
+    },
+    {
+      "t": 13,
+      "chord": "III",
+      "key": 7
+    },
+    {
+      "t": 14,
+      "chord": "iv",
+      "key": 7
+    },
+    {
+      "t": 15,
+      "chord": "iv",
+      "key": 7
+    },
+    {
+      "t": 16,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 17,
+      "chord": "III",
+      "key": 0
+    },
+    {
+      "t": 18,
+      "chord": "ii_dim",
+      "key": 0
+    },
+    {
+      "t": 19,
+      "chord": "III",
+      "key": 0
+    },
+    {
+      "t": 20,
+      "chord": "VII",
+      "key": 0
+    },
+    {
+      "t": 21,
+      "chord": "v",
+      "key": 0
+    },
+    {
+      "t": 22,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 23,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 24,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 25,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 26,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 27,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 28,
+      "chord": "V",
+      "key": 0
+    },
+    {
+      "t": 29,
+      "chord": "V",
+      "key": 0
+    },
+    {
+      "t": 30,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 31,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 32,
+      "chord": "VII",
+      "key": 5
+    },
+    {
+      "t": 33,
+      "chord": "VII",
+      "key": 5
+    },
+    {
+      "t": 34,
+      "chord": "iv",
+      "key": 5
+    },
+    {
+      "t": 35,
+      "chord": "iv",
+      "key": 5
+    },
+    {
+      "t": 36,
+      "chord": "VI",
+      "key": 5
+    },
+    {
+      "t": 37,
+      "chord": "v",
+      "key": 5
+    },
+    {
+      "t": 38,
+      "chord": "iv",
+      "key": 5
+    },
+    {
+      "t": 39,
+      "chord": "III",
+      "key": 5
+    },
+    {
+      "t": 40,
+      "chord": "ii_dim",
+      "key": 5
+    },
+    {
+      "t": 41,
+      "chord": "v",
+      "key": 5
+    },
+    {
+      "t": 42,
+      "chord": "iv",
+      "key": 5
+    },
+    {
+      "t": 43,
+      "chord": "iv",
+      "key": 5
+    },
+    {
+      "t": 44,
+      "chord": "VI",
+      "key": 5
+    },
+    {
+      "t": 45,
+      "chord": "VI",
+      "key": 5
+    },
+    {
+      "t": 46,
+      "chord": "iv",
+      "key": 5
+    },
+    {
+      "t": 47,
+      "chord": "iv",
+      "key": 5
+    },
+    {
+      "t": 48,
+      "chord": "V",
+      "key": 5
+    },
+    {
+      "t": 49,
+      "chord": "V",
+      "key": 5
+    },
+    {
+      "t": 50,
+      "chord": "i",
+      "key": 5
+    },
+    {
+      "t": 51,
+      "chord": "i",
+      "key": 5
+    },
+    {
+      "t": 52,
+      "chord": "VI",
+      "key": 7
+    },
+    {
+      "t": 53,
+      "chord": "v",
+      "key": 7
+    },
+    {
+      "t": 54,
+      "chord": "iv",
+      "key": 7
+    },
+    {
+      "t": 55,
+      "chord": "III",
+      "key": 7
+    },
+    {
+      "t": 56,
+      "chord": "ii_dim",
+      "key": 7
+    },
+    {
+      "t": 57,
+      "chord": "v",
+      "key": 7
+    },
+    {
+      "t": 58,
+      "chord": "iv",
+      "key": 7
+    },
+    {
+      "t": 59,
+      "chord": "iv",
+      "key": 7
+    },
+    {
+      "t": 60,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 61,
+      "chord": "v",
+      "key": 0
+    },
+    {
+      "t": 62,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 63,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 64,
+      "chord": "VII",
+      "key": 0
+    },
+    {
+      "t": 65,
+      "chord": "VII",
+      "key": 0
+    },
+    {
+      "t": 66,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 67,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 68,
+      "chord": "VII",
+      "key": 0
+    },
+    {
+      "t": 69,
+      "chord": "III",
+      "key": 0
+    },
+    {
+      "t": 70,
+      "chord": "v",
+      "key": 0
+    },
+    {
+      "t": 71,
+      "chord": "III",
+      "key": 0
+    },
+    {
+      "t": 72,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 73,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 74,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 75,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 76,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 77,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 78,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 79,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 80,
+      "chord": "V",
+      "key": 0
+    },
+    {
+      "t": 81,
+      "chord": "V",
+      "key": 0
+    },
+    {
+      "t": 82,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 83,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 84,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 85,
+      "chord": "v",
+      "key": 0
+    },
+    {
+      "t": 86,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 87,
+      "chord": "III",
+      "key": 0
+    },
+    {
+      "t": 88,
+      "chord": "ii_dim",
+      "key": 0
+    },
+    {
+      "t": 89,
+      "chord": "v",
+      "key": 0
+    },
+    {
+      "t": 90,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 91,
+      "chord": "VI",
+      "key": 0
+    },
+    {
+      "t": 92,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 93,
+      "chord": "iv",
+      "key": 0
+    },
+    {
+      "t": 94,
+      "chord": "V",
+      "key": 0
+    },
+    {
+      "t": 95,
+      "chord": "V",
+      "key": 0
+    },
+    {
+      "t": 96,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 97,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 98,
+      "chord": "i",
+      "key": 0
+    },
+    {
+      "t": 99,
+      "chord": "i",
+      "key": 0
+    }
+  ],
+  "composition_record": {
+    "method": "Explicit original subjects, invertible recurring countersubject, constrained independent counterpoint, polychoral expositions and constructive all-part ensemble.",
+    "total_beats": 104,
+    "parts": 3,
+    "solver_sections": [
+      {
+        "t": 0,
+        "voices": 1,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 8,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 16,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 24,
+        "voices": 3,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 32,
+        "voices": 3,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 44,
+        "voices": 3,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 52,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 60,
+        "voices": 3,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 76,
+        "voices": 3,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 84,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 92,
+        "voices": 3,
+        "status": "FEASIBLE"
+      }
+    ],
+    "limitations": [
+      "Structural sonorities are conservative triads; later dense episodes deliberately prolong common tones.",
+      "Inner voice crossings are allowed; the principal upper and lower lines remain stable.",
+      "The short stretto overlaps a terminal tonic with the subject head; it is not a close four-way stretto.",
+      "Automated interval checks do not establish stylistic or aesthetic equivalence to Bach."
+    ]
+  }
+}

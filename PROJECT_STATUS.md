@@ -40,18 +40,41 @@ These observations supersede any more optimistic language in earlier notes.
 - Use restrained phrase dynamics, clearer foreground/continuation balance,
   and connected articulation appropriate to the piano.
 
-Independent score and form reviews and a performance-only helper are being
-prepared under `work/fugue_viii_concise_revision/`. A proposed 60–64-bar form
-is not yet a completed musical edition. The 100-bar audition remains the
-reproducible current version until a new score is composed and reviewed.
+Independent score and form reviews, a performance-only helper, and composed
+opening, tonal-episode and return components are saved under
+`work/fugue_viii_concise_revision/`. The proposed shorter form is 60 bars:
+112 opening beats, a 32-beat episode, a 32-beat return and 64 final beats.
+The final 64 beats are still missing. The component scores have not been
+assembled or rendered as a complete new edition. The 100-bar audition
+remains the reproducible current version until the revision is completed
+and reviewed.
+
+## Restored complete-cycle drafts
+
+The earlier complete 48-movement drafts have been recovered and restored:
+
+- `editions/complete-cycle/baseline/scores/`: all 48 first-draft event scores.
+- `editions/complete-cycle/scores/`: all 48 second-working-draft event scores.
+- `editions/complete-cycle/tools/`: 38 historical tools.
+- `archive/well-tempered-clAIvier-complete-source.zip`: the unchanged
+  9,876,750-byte archive containing 466 files, including 48 MIDI, 48 MusicXML,
+  48 LilyPond and 49 PDF files.
+
+`editions/complete-cycle/README.md` and `CYCLE_INDEX.md` explain the provenance
+and provide the movement index. These complete draft editions precede the
+replacement auditions above. Sam rejected the earlier fugues' artistic
+quality, including their claimed large-scale counterpoint. Recovering all
+48 pieces preserves the project history; it does not restore those claims.
 
 ## Wider cycle
 
-The 24 preludes and fugues remain an unfinished project. Fugue N is intended
-to contain N+1 contrapuntal parts. The short new Fugue I and Prelude IV are
-auditions, and Fugue IV's planned five-voice 6/8 form remains a brief.
-The earlier shared fugue-generation method is retired. The final
-twenty-five-voice composition and spatial film have not been completed.
+All 24 prelude–fugue pairs exist in the restored historical draft editions;
+their substantive recomposition remains unfinished. Fugue N is intended to
+contain N+1 contrapuntal parts. The later short Fugue I and Prelude IV are
+replacement auditions, and the replacement Fugue IV's planned five-voice
+6/8 form remains a brief. The earlier shared fugue-generation method is
+retired. A convincing replacement twenty-five-voice composition and the
+spatial film have not been completed.
 
 Future work should preserve the WTC as a substantive musical reference,
 while allowing individual pieces distinct subjects, meters and forms.

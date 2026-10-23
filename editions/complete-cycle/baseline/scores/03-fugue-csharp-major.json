@@ -1,0 +1,3166 @@
+{
+  "metadata": {
+    "title": "The Well-Tempered clAIvier",
+    "subtitle": "III. Fugue in C# major \u2014 Bright hinges",
+    "number": 3,
+    "movement_number": 3,
+    "piece_type": "fugue",
+    "character": "Bright hinges",
+    "key": "C#",
+    "mode": "major",
+    "meter": [
+      4,
+      4
+    ],
+    "bpm": 120,
+    "composer": "ChatGPT / composed for Sam",
+    "instrument": "Piano; optional spatial chamber ensemble",
+    "draft": true,
+    "structural_step": 1,
+    "voice_order": "high_to_low",
+    "markers": [
+      {
+        "t": 0,
+        "label": "Exposition"
+      },
+      {
+        "t": 8,
+        "label": "Exposition"
+      },
+      {
+        "t": 16,
+        "label": "Exposition"
+      },
+      {
+        "t": 24,
+        "label": "Exposition"
+      },
+      {
+        "t": 32,
+        "label": "Sequential episode"
+      },
+      {
+        "t": 36,
+        "label": "Development"
+      },
+      {
+        "t": 44,
+        "label": "Linking episode"
+      },
+      {
+        "t": 48,
+        "label": "Development"
+      },
+      {
+        "t": 56,
+        "label": "Development"
+      },
+      {
+        "t": 64,
+        "label": "Stretto"
+      },
+      {
+        "t": 80,
+        "label": "Final episode"
+      },
+      {
+        "t": 88,
+        "label": "Final return"
+      },
+      {
+        "t": 96,
+        "label": "Final cadence"
+      }
+    ],
+    "style_note": "First complete compositional draft. Constraint checks establish specific observable properties, not Bach-level artistic quality."
+  },
+  "voices": [
+    {
+      "name": "Voice 01",
+      "abbr": "V01",
+      "clef": "treble",
+      "events": [
+        {
+          "t": 16,
+          "d": 1,
+          "p": 85,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 17,
+          "d": 1,
+          "p": 89,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 18,
+          "d": 1,
+          "p": 87,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 92,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 20,
+          "d": 1,
+          "p": 94,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 21,
+          "d": 1,
+          "p": 90,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 22,
+          "d": 2,
+          "p": 85,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 24,
+          "d": 1,
+          "p": 77,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 25,
+          "d": 1,
+          "p": 75,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 26,
+          "d": 2,
+          "p": 79,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fisis"
+        },
+        {
+          "t": 28,
+          "d": 1,
+          "p": 80,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 29,
+          "d": 1,
+          "p": 77,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 72,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 32,
+          "d": 1,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 33,
+          "d": 1,
+          "p": 78,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 34,
+          "d": 1,
+          "p": 75,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 35,
+          "d": 1,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 79,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fisis"
+        },
+        {
+          "t": 38,
+          "d": 2,
+          "p": 82,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 40,
+          "d": 4,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 44,
+          "d": 2,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 46,
+          "d": 2,
+          "p": 75,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 48,
+          "d": 1,
+          "p": 78,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 49,
+          "d": 1,
+          "p": 82,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 50,
+          "d": 1,
+          "p": 80,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 51,
+          "d": 1,
+          "p": 85,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 87,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 83,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "b"
+        },
+        {
+          "t": 54,
+          "d": 2,
+          "p": 78,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 56,
+          "d": 1,
+          "p": 82,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 57,
+          "d": 1,
+          "p": 84,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 87,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 60,
+          "d": 4,
+          "p": 85,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 64,
+          "d": 1,
+          "p": 82,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 65,
+          "d": 1,
+          "p": 84,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 66,
+          "d": 2,
+          "p": 87,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 82,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 69,
+          "d": 1,
+          "p": 87,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 70,
+          "d": 1,
+          "p": 85,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 71,
+          "d": 1,
+          "p": 89,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 72,
+          "d": 1,
+          "p": 87,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 73,
+          "d": 1,
+          "p": 92,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 74,
+          "d": 1,
+          "p": 94,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 75,
+          "d": 1,
+          "p": 90,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 76,
+          "d": 2,
+          "p": 85,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 78,
+          "d": 2,
+          "p": 85,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 80,
+          "d": 2,
+          "p": 73,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 78,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 84,
+          "d": 4,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 88,
+          "d": 2,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 90,
+          "d": 2,
+          "p": 80,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 92,
+          "d": 1,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 93,
+          "d": 1,
+          "p": 78,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 94,
+          "d": 2,
+          "p": 77,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 96,
+          "d": 2,
+          "p": 78,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 98,
+          "d": 2,
+          "p": 80,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 100,
+          "d": 4,
+          "p": 77,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 104,
+          "d": 4,
+          "p": 77,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "eis"
+        }
+      ]
+    },
+    {
+      "name": "Voice 02",
+      "abbr": "V02",
+      "clef": "treble",
+      "events": [
+        {
+          "t": 8,
+          "d": 1,
+          "p": 68,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 9,
+          "d": 1,
+          "p": 72,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 10,
+          "d": 1,
+          "p": 70,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 11,
+          "d": 1,
+          "p": 75,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 12,
+          "d": 1,
+          "p": 77,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 13,
+          "d": 1,
+          "p": 73,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 68,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 16,
+          "d": 1,
+          "p": 70,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 17,
+          "d": 1,
+          "p": 68,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 18,
+          "d": 2,
+          "p": 72,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 20,
+          "d": 1,
+          "p": 73,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 21,
+          "d": 1,
+          "p": 70,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 22,
+          "d": 2,
+          "p": 65,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 24,
+          "d": 1,
+          "p": 65,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 25,
+          "d": 1,
+          "p": 67,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fisis"
+        },
+        {
+          "t": 26,
+          "d": 1,
+          "p": 70,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 27,
+          "d": 1,
+          "p": 72,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 28,
+          "d": 4,
+          "p": 68,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 32,
+          "d": 2,
+          "p": 70,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 34,
+          "d": 2,
+          "p": 68,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 68,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 72,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 38,
+          "d": 1,
+          "p": 70,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 39,
+          "d": 1,
+          "p": 75,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 40,
+          "d": 1,
+          "p": 77,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 41,
+          "d": 1,
+          "p": 73,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 42,
+          "d": 2,
+          "p": 68,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 44,
+          "d": 1,
+          "p": 68,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 45,
+          "d": 2,
+          "p": 70,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 47,
+          "d": 1,
+          "p": 72,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 48,
+          "d": 1,
+          "p": 71,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b"
+        },
+        {
+          "t": 49,
+          "d": 1,
+          "p": 70,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 50,
+          "d": 2,
+          "p": 73,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 70,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 71,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b"
+        },
+        {
+          "t": 54,
+          "d": 2,
+          "p": 70,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 56,
+          "d": 1,
+          "p": 73,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 57,
+          "d": 1,
+          "p": 77,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 58,
+          "d": 1,
+          "p": 75,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 59,
+          "d": 1,
+          "p": 80,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 60,
+          "d": 1,
+          "p": 82,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 61,
+          "d": 1,
+          "p": 78,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 62,
+          "d": 2,
+          "p": 73,
+          "label": "Related-key subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 80,
+          "d": 4,
+          "p": 70,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 84,
+          "d": 2,
+          "p": 68,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 86,
+          "d": 2,
+          "p": 65,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        }
+      ]
+    },
+    {
+      "name": "Voice 03",
+      "abbr": "V03",
+      "clef": "bass",
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 61,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 65,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 63,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 68,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 70,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 66,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 61,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 8,
+          "d": 1,
+          "p": 53,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 9,
+          "d": 1,
+          "p": 51,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 10,
+          "d": 2,
+          "p": 55,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fisis"
+        },
+        {
+          "t": 12,
+          "d": 1,
+          "p": 56,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 13,
+          "d": 1,
+          "p": 53,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 48,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 16,
+          "d": 1,
+          "p": 49,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 17,
+          "d": 3,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 20,
+          "d": 1,
+          "p": 54,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 21,
+          "d": 3,
+          "p": 58,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 24,
+          "d": 2,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 26,
+          "d": 1,
+          "p": 61,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 27,
+          "d": 2,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 29,
+          "d": 1,
+          "p": 61,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 32,
+          "d": 1,
+          "p": 58,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 33,
+          "d": 1,
+          "p": 54,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 34,
+          "d": 2,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 37,
+          "d": 3,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 40,
+          "d": 1,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 41,
+          "d": 3,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 44,
+          "d": 1,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 45,
+          "d": 1,
+          "p": 61,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 46,
+          "d": 2,
+          "p": 63,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 48,
+          "d": 1,
+          "p": 59,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b"
+        },
+        {
+          "t": 49,
+          "d": 1,
+          "p": 61,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 50,
+          "d": 2,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 52,
+          "d": 4,
+          "p": 54,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 56,
+          "d": 1,
+          "p": 54,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 57,
+          "d": 3,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 60,
+          "d": 1,
+          "p": 53,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 61,
+          "d": 1,
+          "p": 54,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 62,
+          "d": 2,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 64,
+          "d": 1,
+          "p": 53,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 65,
+          "d": 1,
+          "p": 56,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 66,
+          "d": 2,
+          "p": 60,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 61,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 69,
+          "d": 1,
+          "p": 54,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 70,
+          "d": 2,
+          "p": 53,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 56,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 74,
+          "d": 2,
+          "p": 54,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 76,
+          "d": 1,
+          "p": 56,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 77,
+          "d": 1,
+          "p": 58,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 78,
+          "d": 1,
+          "p": 56,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 79,
+          "d": 1,
+          "p": 53,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 80,
+          "d": 1,
+          "p": 53,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 81,
+          "d": 1,
+          "p": 61,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 58,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 84,
+          "d": 1,
+          "p": 60,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 85,
+          "d": 3,
+          "p": 56,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 88,
+          "d": 1,
+          "p": 61,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 89,
+          "d": 1,
+          "p": 65,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 90,
+          "d": 1,
+          "p": 63,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 91,
+          "d": 1,
+          "p": 68,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 92,
+          "d": 1,
+          "p": 70,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 93,
+          "d": 1,
+          "p": 66,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 94,
+          "d": 2,
+          "p": 61,
+          "label": "Subject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 96,
+          "d": 2,
+          "p": 58,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 98,
+          "d": 6,
+          "p": 56,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 104,
+          "d": 4,
+          "p": 56,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "gis"
+        }
+      ]
+    },
+    {
+      "name": "Voice 04",
+      "abbr": "V04",
+      "clef": "bass",
+      "events": [
+        {
+          "t": 24,
+          "d": 1,
+          "p": 44,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 25,
+          "d": 1,
+          "p": 48,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 26,
+          "d": 1,
+          "p": 46,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 27,
+          "d": 1,
+          "p": 51,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 28,
+          "d": 1,
+          "p": 53,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 29,
+          "d": 1,
+          "p": 49,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 44,
+          "label": "Real answer",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 32,
+          "d": 1,
+          "p": 49,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 33,
+          "d": 1,
+          "p": 51,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 34,
+          "d": 1,
+          "p": 48,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 35,
+          "d": 1,
+          "p": 49,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 41,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 39,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 38,
+          "d": 2,
+          "p": 43,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fisis"
+        },
+        {
+          "t": 40,
+          "d": 1,
+          "p": 44,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 41,
+          "d": 1,
+          "p": 41,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 42,
+          "d": 2,
+          "p": 36,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 44,
+          "d": 1,
+          "p": 41,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 45,
+          "d": 1,
+          "p": 46,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 46,
+          "d": 1,
+          "p": 43,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fisis"
+        },
+        {
+          "t": 47,
+          "d": 1,
+          "p": 44,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 48,
+          "d": 1,
+          "p": 51,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 49,
+          "d": 1,
+          "p": 49,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 50,
+          "d": 2,
+          "p": 53,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 54,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 51,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 54,
+          "d": 2,
+          "p": 46,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 56,
+          "d": 1,
+          "p": 46,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 57,
+          "d": 1,
+          "p": 44,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 48,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 60,
+          "d": 1,
+          "p": 49,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 61,
+          "d": 1,
+          "p": 46,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 62,
+          "d": 2,
+          "p": 41,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 64,
+          "d": 1,
+          "p": 49,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 65,
+          "d": 1,
+          "p": 53,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 66,
+          "d": 1,
+          "p": 51,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "dis"
+        },
+        {
+          "t": 67,
+          "d": 1,
+          "p": 56,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 58,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 69,
+          "d": 1,
+          "p": 54,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "fis"
+        },
+        {
+          "t": 70,
+          "d": 2,
+          "p": 49,
+          "label": "Stretto subject",
+          "v": 86,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 48,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 74,
+          "d": 2,
+          "p": 46,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 76,
+          "d": 1,
+          "p": 41,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 77,
+          "d": 1,
+          "p": 42,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "fis"
+        },
+        {
+          "t": 78,
+          "d": 2,
+          "p": 41,
+          "v": 77,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "eis"
+        },
+        {
+          "t": 80,
+          "d": 2,
+          "p": 46,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 82,
+          "d": 2,
+          "p": 51,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "dis"
+        },
+        {
+          "t": 84,
+          "d": 1,
+          "p": 44,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "gis"
+        },
+        {
+          "t": 85,
+          "d": 1,
+          "p": 36,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 86,
+          "d": 2,
+          "p": 37,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 88,
+          "d": 1,
+          "p": 46,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 89,
+          "d": 1,
+          "p": 44,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "gis"
+        },
+        {
+          "t": 90,
+          "d": 2,
+          "p": 48,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "bis"
+        },
+        {
+          "t": 92,
+          "d": 1,
+          "p": 49,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "cis"
+        },
+        {
+          "t": 93,
+          "d": 1,
+          "p": 46,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "ais"
+        },
+        {
+          "t": 94,
+          "d": 2,
+          "p": 41,
+          "label": "Countersubject",
+          "v": 80,
+          "source": "authored",
+          "spell": "eis"
+        },
+        {
+          "t": 96,
+          "d": 2,
+          "p": 46,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "ais"
+        },
+        {
+          "t": 98,
+          "d": 2,
+          "p": 48,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "bis"
+        },
+        {
+          "t": 100,
+          "d": 4,
+          "p": 49,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "cis"
+        },
+        {
+          "t": 104,
+          "d": 4,
+          "p": 49,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "cis"
+        }
+      ]
+    }
+  ],
+  "subjects": {
+    "subject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 60
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 64
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 62
+        },
+        {
+          "t": 3,
+          "d": 1,
+          "p": 67
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 69
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 65
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 60
+        }
+      ]
+    },
+    "countersubject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 57
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 55
+        },
+        {
+          "t": 2,
+          "d": 2,
+          "p": 59
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 60
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 57
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 52
+        }
+      ]
+    }
+  },
+  "subject_entries": [
+    {
+      "voice": 2,
+      "t": 0,
+      "transpose": 1,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 1,
+      "t": 8,
+      "transpose": 8,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Real answer"
+    },
+    {
+      "voice": 2,
+      "t": 8,
+      "transpose": -4,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 0,
+      "t": 16,
+      "transpose": 25,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 1,
+      "t": 16,
+      "transpose": 13,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 3,
+      "t": 24,
+      "transpose": -16,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Real answer"
+    },
+    {
+      "voice": 0,
+      "t": 24,
+      "transpose": 20,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 1,
+      "t": 36,
+      "transpose": 8,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Related-key subject"
+    },
+    {
+      "voice": 3,
+      "t": 36,
+      "transpose": -16,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 0,
+      "t": 48,
+      "transpose": 18,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Related-key subject"
+    },
+    {
+      "voice": 3,
+      "t": 48,
+      "transpose": -6,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 1,
+      "t": 56,
+      "transpose": 13,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Related-key subject"
+    },
+    {
+      "voice": 3,
+      "t": 56,
+      "transpose": -11,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 3,
+      "t": 64,
+      "transpose": -11,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 0,
+      "t": 70,
+      "transpose": 25,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 2,
+      "t": 88,
+      "transpose": 1,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 3,
+      "t": 88,
+      "transpose": -11,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    }
+  ],
+  "sections": [
+    {
+      "t": 0,
+      "d": 8,
+      "label": "Exposition",
+      "detail": "Subject in Voice 03",
+      "voices": [
+        2
+      ]
+    },
+    {
+      "t": 8,
+      "d": 8,
+      "label": "Exposition",
+      "detail": "Real answer in Voice 02; recurring invertible countersubject",
+      "voices": [
+        1,
+        2
+      ]
+    },
+    {
+      "t": 16,
+      "d": 8,
+      "label": "Exposition",
+      "detail": "Subject in Voice 01; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "t": 24,
+      "d": 8,
+      "label": "Exposition",
+      "detail": "Real answer in Voice 04; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 32,
+      "d": 4,
+      "label": "Sequential episode",
+      "detail": "Independent lines move through a descending-fifths harmonic sequence.",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 36,
+      "d": 8,
+      "label": "Development",
+      "detail": "Related-key subject in Voice 02; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 44,
+      "d": 4,
+      "label": "Linking episode",
+      "detail": "Independent lines move through a descending-fifths harmonic sequence.",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 48,
+      "d": 8,
+      "label": "Development",
+      "detail": "Related-key subject in Voice 01; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 56,
+      "d": 8,
+      "label": "Development",
+      "detail": "Related-key subject in Voice 02; recurring invertible countersubject",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 64,
+      "d": 16,
+      "label": "Stretto",
+      "detail": "Two complete subjects overlap for two beats; entry distance 6 beats.",
+      "voices": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 80,
+      "d": 8,
+      "label": "Final episode",
+      "detail": "Independent lines move through a descending-fifths harmonic sequence.",
+      "voices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 88,
+      "d": 8,
+      "label": "Final return",
+      "detail": "Subject in Voice 03; recurring invertible countersubject",
+      "voices": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "t": 96,
+      "d": 8,
+      "label": "Final cadence",
+      "detail": "Subdominant, dominant and tonic close the fugue.",
+      "voices": [
+        0,
+        2,
+        3
+      ]
+    }
+  ],
+  "harmony": [
+    {
+      "t": 0,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 1,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 2,
+      "chord": "ii",
+      "key": 1
+    },
+    {
+      "t": 3,
+      "chord": "iii",
+      "key": 1
+    },
+    {
+      "t": 4,
+      "chord": "ii",
+      "key": 1
+    },
+    {
+      "t": 5,
+      "chord": "ii",
+      "key": 1
+    },
+    {
+      "t": 6,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 7,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 8,
+      "chord": "IV",
+      "key": 8
+    },
+    {
+      "t": 9,
+      "chord": "iii",
+      "key": 8
+    },
+    {
+      "t": 10,
+      "chord": "V",
+      "key": 8
+    },
+    {
+      "t": 11,
+      "chord": "V",
+      "key": 8
+    },
+    {
+      "t": 12,
+      "chord": "vi",
+      "key": 8
+    },
+    {
+      "t": 13,
+      "chord": "IV",
+      "key": 8
+    },
+    {
+      "t": 14,
+      "chord": "I",
+      "key": 8
+    },
+    {
+      "t": 15,
+      "chord": "I",
+      "key": 8
+    },
+    {
+      "t": 16,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 17,
+      "chord": "iii",
+      "key": 1
+    },
+    {
+      "t": 18,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 19,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 20,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 21,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 22,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 23,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 24,
+      "chord": "vi",
+      "key": 8
+    },
+    {
+      "t": 25,
+      "chord": "iii",
+      "key": 8
+    },
+    {
+      "t": 26,
+      "chord": "vii_dim",
+      "key": 8
+    },
+    {
+      "t": 27,
+      "chord": "iii",
+      "key": 8
+    },
+    {
+      "t": 28,
+      "chord": "vi",
+      "key": 8
+    },
+    {
+      "t": 29,
+      "chord": "IV",
+      "key": 8
+    },
+    {
+      "t": 30,
+      "chord": "I",
+      "key": 8
+    },
+    {
+      "t": 31,
+      "chord": "I",
+      "key": 8
+    },
+    {
+      "t": 32,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 33,
+      "chord": "ii",
+      "key": 1
+    },
+    {
+      "t": 34,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 35,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 36,
+      "chord": "vi",
+      "key": 8
+    },
+    {
+      "t": 37,
+      "chord": "iii",
+      "key": 8
+    },
+    {
+      "t": 38,
+      "chord": "V",
+      "key": 8
+    },
+    {
+      "t": 39,
+      "chord": "V",
+      "key": 8
+    },
+    {
+      "t": 40,
+      "chord": "vi",
+      "key": 8
+    },
+    {
+      "t": 41,
+      "chord": "IV",
+      "key": 8
+    },
+    {
+      "t": 42,
+      "chord": "I",
+      "key": 8
+    },
+    {
+      "t": 43,
+      "chord": "I",
+      "key": 8
+    },
+    {
+      "t": 44,
+      "chord": "vi",
+      "key": 8
+    },
+    {
+      "t": 45,
+      "chord": "ii",
+      "key": 8
+    },
+    {
+      "t": 46,
+      "chord": "V",
+      "key": 8
+    },
+    {
+      "t": 47,
+      "chord": "I",
+      "key": 8
+    },
+    {
+      "t": 48,
+      "chord": "IV",
+      "key": 6
+    },
+    {
+      "t": 49,
+      "chord": "iii",
+      "key": 6
+    },
+    {
+      "t": 50,
+      "chord": "V",
+      "key": 6
+    },
+    {
+      "t": 51,
+      "chord": "V",
+      "key": 6
+    },
+    {
+      "t": 52,
+      "chord": "vi",
+      "key": 6
+    },
+    {
+      "t": 53,
+      "chord": "IV",
+      "key": 6
+    },
+    {
+      "t": 54,
+      "chord": "I",
+      "key": 6
+    },
+    {
+      "t": 55,
+      "chord": "I",
+      "key": 6
+    },
+    {
+      "t": 56,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 57,
+      "chord": "iii",
+      "key": 1
+    },
+    {
+      "t": 58,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 59,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 60,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 61,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 62,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 63,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 64,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 65,
+      "chord": "iii",
+      "key": 1
+    },
+    {
+      "t": 66,
+      "chord": "vii_dim",
+      "key": 1
+    },
+    {
+      "t": 67,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 68,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 69,
+      "chord": "ii",
+      "key": 1
+    },
+    {
+      "t": 70,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 71,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 72,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 73,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 74,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 75,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 76,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 77,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 78,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 79,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 80,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 81,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 82,
+      "chord": "ii",
+      "key": 1
+    },
+    {
+      "t": 83,
+      "chord": "ii",
+      "key": 1
+    },
+    {
+      "t": 84,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 85,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 86,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 87,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 88,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 89,
+      "chord": "iii",
+      "key": 1
+    },
+    {
+      "t": 90,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 91,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 92,
+      "chord": "vi",
+      "key": 1
+    },
+    {
+      "t": 93,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 94,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 95,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 96,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 97,
+      "chord": "IV",
+      "key": 1
+    },
+    {
+      "t": 98,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 99,
+      "chord": "V",
+      "key": 1
+    },
+    {
+      "t": 100,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 101,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 102,
+      "chord": "I",
+      "key": 1
+    },
+    {
+      "t": 103,
+      "chord": "I",
+      "key": 1
+    }
+  ],
+  "composition_record": {
+    "method": "Explicit original subjects, invertible recurring countersubject, constrained independent counterpoint, polychoral expositions and constructive all-part ensemble.",
+    "total_beats": 108,
+    "parts": 4,
+    "solver_sections": [
+      {
+        "t": 0,
+        "voices": 1,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 8,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 16,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 24,
+        "voices": 4,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 32,
+        "voices": 4,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 36,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 44,
+        "voices": 4,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 48,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 56,
+        "voices": 4,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 64,
+        "voices": 3,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 80,
+        "voices": 4,
+        "status": "FEASIBLE"
+      },
+      {
+        "t": 88,
+        "voices": 3,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 96,
+        "voices": 3,
+        "status": "FEASIBLE"
+      }
+    ],
+    "limitations": [
+      "Structural sonorities are conservative triads; later dense episodes deliberately prolong common tones.",
+      "Inner voice crossings are allowed; the principal upper and lower lines remain stable.",
+      "The short stretto overlaps a terminal tonic with the subject head; it is not a close four-way stretto.",
+      "Automated interval checks do not establish stylistic or aesthetic equivalence to Bach."
+    ]
+  }
+}

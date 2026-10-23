@@ -8,9 +8,31 @@ not establish artistic success.
 
 This repository contains the composition sources, editable event scores,
 rendering and pedagogical-animation tools, and the record of revisions.
-It is a working composition project, **not a completed or validated cycle**.
+It preserves **two complete 48-movement draft editions** alongside later
+replacement auditions. The cycle remains an active composition project;
+the existence of all 48 scores does not establish their artistic success.
+
+## Complete-cycle drafts
+
+The earlier complete cycle is restored as browsable sources:
+
+- [First draft: 48 event scores](editions/complete-cycle/baseline/scores/).
+- [Second working draft: 48 event scores](editions/complete-cycle/scores/).
+- [Historical composition and rendering tools: 38 files](editions/complete-cycle/tools/).
+- [Complete-cycle provenance](editions/complete-cycle/README.md) and
+  [movement index](CYCLE_INDEX.md).
+
+The unchanged [complete-source archive](archive/well-tempered-clAIvier-complete-source.zip)
+is 9,876,750 bytes and contains 466 files, including 48 MIDI, 48 MusicXML,
+48 LilyPond and 49 PDF files. These are historical draft materials. Sam
+rejected the earlier fugues' musical quality and the claim that their dense
+textures constituted convincing independent counterpoint; their restoration
+preserves the work and its provenance, rather than endorsing those claims.
 
 ## Current music
+
+The following are later replacement auditions and studies, distinct from
+the complete-cycle drafts above.
 
 | Piece | Source | Status |
 | --- | --- | --- |
@@ -26,9 +48,9 @@ similar stretches, excessive length, and too much distance from the WTC's
 musical language. [Project status](PROJECT_STATUS.md) records the resulting
 revision priorities.
 
-The next new five-voice Fugue IV has a [subject and form brief](work/fugue_viii_passage_revision/next-fugue-iv-brief.txt),
-but is not yet composed. The twenty-five-voice finale and its spatial film
-remain goals.
+The next replacement five-voice Fugue IV has a [subject and form brief](work/fugue_viii_passage_revision/next-fugue-iv-brief.txt),
+but is not yet composed. A convincing replacement twenty-five-voice finale
+and its spatial film remain goals.
 
 ## Score format
 
@@ -111,15 +133,19 @@ updated explicitly when the shorter revision is completed.
 - `work/fugue_viii_complete/`: the original 100-bar source and musical review.
 - `work/fugue_viii_passage_revision/`: the delivered local recomposition of VIII.
 - `work/fugue_viii_concise_revision/`: the next revision's review and performance work.
+- `editions/complete-cycle/`: both complete-cycle draft score sets, historical tools and provenance.
+- `archive/well-tempered-clAIvier-complete-source.zip`: the unchanged 466-file historical source archive.
 - `diagnosis/`: critical reassessment of the earlier approach.
 - `legacy-method/`: retired generators, retained as historical evidence.
 - `output/`: generated recordings, videos and export files; excluded from Git.
 
 The older `README.txt`, `RESET_STATUS.json` and artistic notes are preserved
 as historical snapshots. This README and `PROJECT_STATUS.md` give the current
-state. Earlier complete-cycle recordings and all 48 original event scores
-are not present in this working checkout; do not infer their inclusion from
-the retained legacy generator files.
+state. Both complete-cycle draft score sets are available under
+`editions/complete-cycle/`; their original notation and MIDI exports are
+also preserved in the unchanged archive. The shorter VIII revision has
+composed opening, episode and return components, but its final 64 beats
+are still missing. It has not been assembled or rendered as a new edition.
 
 ## Musical and technical review
 

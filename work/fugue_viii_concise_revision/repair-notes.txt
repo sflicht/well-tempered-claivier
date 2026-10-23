@@ -1,0 +1,63 @@
+FUGUE VIII — CONCISE OPENING CHECKPOINT
+23 October 2026
+
+Files: build_opening.py, opening.json, opening-checks.json.
+The original passage-revised score is not changed.
+
+The opening contains structural beats 0–112 plus the clarinet's complete
+continuation through beat 116. It retains source beats 0–56 and 72–128
+with a sixteen-beat cut, then composes the affected harmonic joins.
+This component is work in progress, not a complete new edition.
+
+First cadence, beats 39–48:
+- C-natural/C-flat and D-flat/D-natural conflicts are repaired at their
+  actual notes. Viola39 and clarinet43 use C-flat; bassoon45 uses D-natural.
+- The bass now traverses A-flat minor, F half-diminished and B-flat dominant.
+  Selected supporting notes identify these functions; a separate low
+  cello fifth–seventh–root phrase avoids duplicating the bassoon arpeggio.
+- The upper dance head bends at two points to the predominant. Its old
+  exact-fragment label is removed because the pitches are changed.
+
+Cut and reentry, beats 52–64:
+- The first dance tails turn their last D-flat into D-natural before the
+  E-flat-minor arrival at56. They are labeled explicit cadential variants.
+- Fresh oboe and cello continuations replace phrases whose beginnings were
+  removed by the cut. The bass names the tonic at56 and B-flat dominant
+  at60. The old C-flat bass at the splice is not retained.
+- Flute and violin endings use D-natural, the viola's cadential variant
+  resolves its fourth to D and anticipates E-flat, and the oboe's answer
+  is adjusted tonally. The old beat78 D/Db disagreement is thus recomposed
+  as a whole local approach at new62, rather than hidden by transposition.
+
+Retort paragraph, beats 64–98:
+- All five three-beat retorts survive with exactly their original notes
+  and entry spacing. The cello register and opposing continuation remain.
+- Horn68–72 replaces a duplicated held low F with A-flat–G-flat–C-flat–
+  B-flat. Its prepared fourth resolves while the bassoon keeps a shorter
+  passing ninth. The staged relative-major cadence remains.
+
+Boundary into the new episode:
+- Clarinet108–116 is the full retained relative-major rising figure.
+- At112–116 its notes are Db5:1.5, Cb5:.5, Ab4:1, F4:1.
+- The next component must leave this voice empty until116. The surrounding
+  D-flat dominant may support the carried phrase before a G-flat resolution.
+
+Checks performed:
+- No cut slices a note; no negative event times or overlapping notes within
+  a voice. All voices end by112 except the intentional clarinet extension.
+- All 18 complete-theme/variant annotations and eight exact fragments match
+  actual pitch, onset and duration. Altered originals are removed rather
+  than silently retaining incorrect labels. Five retorts remain literal.
+- The old source hash is guarded by the builder.
+
+Review scope:
+The notes have been inspected; the audio has not been auditioned. This is
+not a strict historical-counterpoint certificate. Short passing seconds,
+appoggiaturas, occasional unisons and parallel movement remain. Additional
+review should judge the integrated whole and the sound before promotion.
+
+I also inspected the separate tonal-episode.json, including the carried
+clarinet phrase. The episode composer's proposed local6/7 harmony repair,
+local10 violin repair and removal of the local17 clarinet/cello close clash
+addressed its clearest immediate issues. I did not find another severe
+chromatic split or persistent low close clash requiring a checkpoint delay.

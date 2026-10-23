@@ -1,0 +1,43 @@
+TONAL EPISODE CHECKPOINT — WORK IN PROGRESS
+
+Local beats0–32 map to complete beats112–144. This is an eight-bar
+composed subsection, not a complete revised fugue. It has not been rendered
+or listened to. The accompanying form-review.txt is a proposal.
+
+The parent supplies the carried clarinet major-bridge tail at local0–4:
+D-flat5 1.5, C-flat5 .5, A-flat4 1, F4 1. It is deliberately absent from
+this block's voice2 event list. It must be included in assembly and in
+any stand-alone audio audition of this subsection.
+
+The route is D-flat7, G-flat, C-flat, F half-diminished, B-flat7,
+E-flat minor, A-flat minor, B-flat7. Seven four-beat dance heads are
+passed through seven written voices, including an explicitly documented
+F half-diminished adaptation. The seven exact head annotations were
+checked against the literal note events. Each part is monophonic.
+With the carried clarinet tail included, three to six parts are active.
+
+The inner E-flat4 at local11–16 is one held note, prepared before its
+seventh relation to the predominant and resolving to D4 at local16.
+The high C-flat5 at27–28.5 crosses the final dominant as a prepared flat
+ninth, resolving to B-flat4. Cello D3 and violin A-flat5 at the last beat
+are intended to resolve into the retained return's E-flat3 and G-flat5.
+
+Self-review changed the first answer's continuation to clarify its
+D-flat/G-flat route; replaced an unnecessarily persistent ninth at10
+with the third above the moving bass; shortened an inner continuation
+that collided closely with the B-flat dominant head; and changed the
+late upper descent into a genuinely held C-flat suspension. The last
+bass C-flat was lowered to C-flat2 so the move to B-flat1 is a semitone.
+
+Some brief passing seconds, voice crossings, and momentary unisons
+remain. The note checks establish the stated source and annotations;
+they do not establish strict historical counterpoint or musical success.
+
+INDEPENDENT SCORE CHECK
+
+The harmonic reviewer inspected the episode with the carried clarinet
+tail. They agreed that the stated local repairs addressed the clearest
+issues and found no further severe chromatic split or persistent close
+low-register clash requiring delay. They explicitly retained the caveat
+that some extended diatonic sonorities and parallel motion remain.
+The checkpoint is not certified strict counterpoint.

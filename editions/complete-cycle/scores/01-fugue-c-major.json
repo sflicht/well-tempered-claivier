@@ -1,0 +1,2695 @@
+{
+  "metadata": {
+    "title": "The Well-Tempered clAIvier",
+    "subtitle": "I. Fugue in C major \u2014 A conversation",
+    "number": 1,
+    "movement_number": 1,
+    "piece_type": "fugue",
+    "character": "A conversation",
+    "key": "C",
+    "mode": "major",
+    "meter": [
+      4,
+      4
+    ],
+    "bpm": 112,
+    "composer": "ChatGPT / composed for Sam",
+    "instrument": "Piano; optional spatial chamber ensemble",
+    "draft": true,
+    "edition": "Second working edition",
+    "structural_step": 1,
+    "voice_order": "high_to_low",
+    "markers": [
+      {
+        "t": 0,
+        "label": "Continuous exposition"
+      },
+      {
+        "t": 8,
+        "label": "Continuous exposition"
+      },
+      {
+        "t": 16,
+        "label": "Subject-head sequence"
+      },
+      {
+        "t": 24,
+        "label": "Relative-key development"
+      },
+      {
+        "t": 32,
+        "label": "Minor-coloured sequential answer"
+      },
+      {
+        "t": 40,
+        "label": "Return to C"
+      },
+      {
+        "t": 48,
+        "label": "Stretto"
+      },
+      {
+        "t": 64,
+        "label": "Closing conversation"
+      },
+      {
+        "t": 72,
+        "label": "Final cadence"
+      }
+    ],
+    "style_note": "Revised thematic rhythm, linear counterpoint and prepared dissonance; mechanical checks do not establish Bach-level artistic quality."
+  },
+  "voices": [
+    {
+      "name": "Voice 01",
+      "abbr": "V01",
+      "clef": "treble",
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 72,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 76,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "e",
+          "gate": 0.88
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 79,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 3,
+          "d": 0.5,
+          "p": 74,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 3.5,
+          "d": 0.5,
+          "p": 76,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 77,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 5,
+          "d": 0.5,
+          "p": 76,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 5.5,
+          "d": 0.5,
+          "p": 74,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 72,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "c",
+          "gate": 0.995
+        },
+        {
+          "t": 8,
+          "d": 0.5,
+          "p": 76,
+          "v": 76,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 8.5,
+          "d": 0.5,
+          "p": 78,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fis",
+          "gate": 0.91
+        },
+        {
+          "t": 9,
+          "d": 1.5,
+          "p": 79,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "g",
+          "gate": 0.995
+        },
+        {
+          "t": 10.5,
+          "d": 1.0,
+          "p": 78,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fis",
+          "gate": 0.88
+        },
+        {
+          "t": 11.5,
+          "d": 0.25,
+          "p": 79,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "g",
+          "gate": 0.91
+        },
+        {
+          "t": 11.75,
+          "d": 0.25,
+          "p": 78,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "fis",
+          "gate": 0.91
+        },
+        {
+          "t": 12,
+          "d": 1,
+          "p": 76,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "e",
+          "gate": 0.88
+        },
+        {
+          "t": 13,
+          "d": 1,
+          "p": 74,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "d",
+          "gate": 0.88
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 76,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "e",
+          "gate": 0.995
+        },
+        {
+          "t": 16,
+          "d": 1,
+          "p": 69,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "a",
+          "gate": 0.88
+        },
+        {
+          "t": 17,
+          "d": 1,
+          "p": 72,
+          "label": "Subject-head fragment",
+          "v": 68,
+          "source": "authored",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 18,
+          "d": 0.5,
+          "p": 77,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f",
+          "gate": 0.91
+        },
+        {
+          "t": 18.5,
+          "d": 0.5,
+          "p": 79,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "g",
+          "gate": 0.98
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 81,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "a",
+          "gate": 0.88
+        },
+        {
+          "t": 20,
+          "d": 1,
+          "p": 79,
+          "label": "Subject-head fragment",
+          "v": 71,
+          "source": "authored",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 21,
+          "d": 1,
+          "p": 83,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "b",
+          "gate": 0.88
+        },
+        {
+          "t": 22,
+          "d": 2,
+          "p": 84,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c",
+          "gate": 0.97
+        },
+        {
+          "t": 24,
+          "d": 1,
+          "p": 77,
+          "v": 76,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 25,
+          "d": 0.5,
+          "p": 76,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 25.5,
+          "d": 0.5,
+          "p": 77,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "f",
+          "gate": 0.91
+        },
+        {
+          "t": 26,
+          "d": 1.5,
+          "p": 79,
+          "v": 73,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "g",
+          "gate": 0.995
+        },
+        {
+          "t": 27.5,
+          "d": 0.25,
+          "p": 81,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "a",
+          "gate": 0.91
+        },
+        {
+          "t": 27.75,
+          "d": 0.25,
+          "p": 79,
+          "v": 72,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "g",
+          "gate": 0.91
+        },
+        {
+          "t": 28,
+          "d": 1.5,
+          "p": 77,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "f",
+          "gate": 0.995
+        },
+        {
+          "t": 29.5,
+          "d": 0.5,
+          "p": 76,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 77,
+          "v": 71,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "f",
+          "gate": 0.995
+        },
+        {
+          "t": 32,
+          "d": 2,
+          "p": 81,
+          "v": 67,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "a",
+          "gate": 0.97
+        },
+        {
+          "t": 34,
+          "d": 1,
+          "p": 79,
+          "label": "Subject-head fragment",
+          "v": 68,
+          "source": "authored",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 35,
+          "d": 1,
+          "p": 83,
+          "label": "Subject-head fragment",
+          "v": 68,
+          "source": "authored",
+          "spell": "b",
+          "gate": 0.88
+        },
+        {
+          "t": 36,
+          "d": 2,
+          "p": 79,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g",
+          "gate": 0.97
+        },
+        {
+          "t": 38,
+          "d": 1,
+          "p": 77,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 39,
+          "d": 1,
+          "p": 81,
+          "label": "Subject-head fragment",
+          "v": 69,
+          "source": "authored",
+          "spell": "a",
+          "gate": 0.88
+        },
+        {
+          "t": 40,
+          "d": 2.5,
+          "p": 81,
+          "v": 69,
+          "source": "prepared suspension",
+          "label": "Free counterpoint",
+          "spell": "a",
+          "gate": 1.0
+        },
+        {
+          "t": 42.5,
+          "d": 3.0,
+          "p": 79,
+          "v": 66,
+          "source": "suspension resolution",
+          "label": "Free counterpoint",
+          "spell": "g",
+          "gate": 1.0
+        },
+        {
+          "t": 45.5,
+          "d": 0.5,
+          "p": 77,
+          "v": 65,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "f",
+          "gate": 0.98
+        },
+        {
+          "t": 46,
+          "d": 2,
+          "p": 76,
+          "v": 66,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "e",
+          "gate": 0.97
+        },
+        {
+          "t": 48,
+          "d": 2,
+          "p": 76,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "e",
+          "gate": 0.97
+        },
+        {
+          "t": 50,
+          "d": 2,
+          "p": 74,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d",
+          "gate": 0.97
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 72,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 53,
+          "d": 1,
+          "p": 72,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 54,
+          "d": 1,
+          "p": 76,
+          "v": 83,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "e",
+          "gate": 0.88
+        },
+        {
+          "t": 55,
+          "d": 1,
+          "p": 79,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 56,
+          "d": 0.5,
+          "p": 74,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 56.5,
+          "d": 0.5,
+          "p": 76,
+          "v": 83,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 57,
+          "d": 1,
+          "p": 77,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 58,
+          "d": 0.5,
+          "p": 76,
+          "v": 83,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 58.5,
+          "d": 0.5,
+          "p": 74,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 59,
+          "d": 2,
+          "p": 72,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "c",
+          "gate": 0.995
+        },
+        {
+          "t": 61,
+          "d": 0.5,
+          "p": 72,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c",
+          "gate": 0.91
+        },
+        {
+          "t": 61.5,
+          "d": 0.5,
+          "p": 74,
+          "v": 67,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "d",
+          "gate": 0.98
+        },
+        {
+          "t": 62,
+          "d": 1.5,
+          "p": 76,
+          "v": 68,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "e",
+          "gate": 0.97
+        },
+        {
+          "t": 63.5,
+          "d": 0.5,
+          "p": 74,
+          "v": 66,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "d",
+          "gate": 0.98
+        },
+        {
+          "t": 64,
+          "d": 1,
+          "p": 72,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 65,
+          "d": 1,
+          "p": 76,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "e",
+          "gate": 0.88
+        },
+        {
+          "t": 66,
+          "d": 1,
+          "p": 79,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 67,
+          "d": 0.5,
+          "p": 74,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 67.5,
+          "d": 0.5,
+          "p": 76,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 77,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 69,
+          "d": 0.5,
+          "p": 76,
+          "v": 81,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 69.5,
+          "d": 0.5,
+          "p": 74,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 70,
+          "d": 2,
+          "p": 72,
+          "v": 80,
+          "source": "thematic second edition",
+          "label": "Subject",
+          "spell": "c",
+          "gate": 0.995
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 72,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "c",
+          "gate": 0.97
+        },
+        {
+          "t": 74,
+          "d": 2.5,
+          "p": 74,
+          "v": 67,
+          "source": "prepared suspension",
+          "label": "Free counterpoint",
+          "spell": "d",
+          "gate": 1.0
+        },
+        {
+          "t": 76.5,
+          "d": 3.5,
+          "p": 72,
+          "label": "Cadential tonic arrival",
+          "v": 67,
+          "source": "suspension resolution",
+          "spell": "c",
+          "gate": 1.0
+        },
+        {
+          "t": 80,
+          "d": 4,
+          "p": 72,
+          "v": 63,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "c",
+          "gate": 1.0
+        }
+      ],
+      "piano_pan": 70
+    },
+    {
+      "name": "Voice 02",
+      "abbr": "V02",
+      "clef": "bass",
+      "events": [
+        {
+          "t": 8,
+          "d": 1,
+          "p": 55,
+          "v": 87,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 9,
+          "d": 1,
+          "p": 59,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "b",
+          "gate": 0.88
+        },
+        {
+          "t": 10,
+          "d": 1,
+          "p": 62,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "d",
+          "gate": 0.88
+        },
+        {
+          "t": 11,
+          "d": 0.5,
+          "p": 57,
+          "v": 85,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "a",
+          "gate": 0.91
+        },
+        {
+          "t": 11.5,
+          "d": 0.5,
+          "p": 59,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "b",
+          "gate": 0.91
+        },
+        {
+          "t": 12,
+          "d": 1,
+          "p": 60,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 13,
+          "d": 0.5,
+          "p": 59,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "b",
+          "gate": 0.91
+        },
+        {
+          "t": 13.5,
+          "d": 0.5,
+          "p": 57,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "a",
+          "gate": 0.91
+        },
+        {
+          "t": 14,
+          "d": 2,
+          "p": 55,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Real answer",
+          "spell": "g",
+          "gate": 0.995
+        },
+        {
+          "t": 16,
+          "d": 2,
+          "p": 57,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "a",
+          "gate": 0.97
+        },
+        {
+          "t": 18,
+          "d": 1,
+          "p": 50,
+          "label": "Subject-head fragment",
+          "v": 70,
+          "source": "authored",
+          "spell": "d",
+          "gate": 0.88
+        },
+        {
+          "t": 19,
+          "d": 1,
+          "p": 53,
+          "label": "Subject-head fragment",
+          "v": 71,
+          "source": "authored",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 20,
+          "d": 2,
+          "p": 55,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g",
+          "gate": 0.97
+        },
+        {
+          "t": 22,
+          "d": 1,
+          "p": 48,
+          "label": "Subject-head fragment",
+          "v": 71,
+          "source": "authored",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 23,
+          "d": 1,
+          "p": 52,
+          "label": "Subject-head fragment",
+          "v": 72,
+          "source": "authored",
+          "spell": "e",
+          "gate": 0.88
+        },
+        {
+          "t": 24,
+          "d": 1,
+          "p": 57,
+          "v": 87,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "a",
+          "gate": 0.88
+        },
+        {
+          "t": 25,
+          "d": 1,
+          "p": 60,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 26,
+          "d": 0.5,
+          "p": 64,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 26.5,
+          "d": 0.25,
+          "p": 62,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 26.75,
+          "d": 0.25,
+          "p": 60,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "c",
+          "gate": 0.91
+        },
+        {
+          "t": 27,
+          "d": 0.5,
+          "p": 59,
+          "v": 85,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "b",
+          "gate": 0.91
+        },
+        {
+          "t": 27.5,
+          "d": 0.5,
+          "p": 60,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "c",
+          "gate": 0.91
+        },
+        {
+          "t": 28,
+          "d": 1,
+          "p": 62,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "d",
+          "gate": 0.88
+        },
+        {
+          "t": 29,
+          "d": 1,
+          "p": 60,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 30,
+          "d": 2,
+          "p": 57,
+          "v": 82,
+          "source": "thematic second edition",
+          "label": "Relative-key subject",
+          "spell": "a",
+          "gate": 0.995
+        },
+        {
+          "t": 32,
+          "d": 1,
+          "p": 50,
+          "label": "Subject-head fragment",
+          "v": 72,
+          "source": "authored",
+          "spell": "d",
+          "gate": 0.88
+        },
+        {
+          "t": 33,
+          "d": 1,
+          "p": 53,
+          "label": "Subject-head fragment",
+          "v": 70,
+          "source": "authored",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 34,
+          "d": 1,
+          "p": 55,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 35,
+          "d": 1,
+          "p": 47,
+          "v": 69,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b",
+          "gate": 0.88
+        },
+        {
+          "t": 36,
+          "d": 1,
+          "p": 48,
+          "label": "Subject-head fragment",
+          "v": 73,
+          "source": "authored",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 37,
+          "d": 1,
+          "p": 52,
+          "label": "Subject-head fragment",
+          "v": 71,
+          "source": "authored",
+          "spell": "e",
+          "gate": 0.88
+        },
+        {
+          "t": 38,
+          "d": 2,
+          "p": 53,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f",
+          "gate": 0.97
+        },
+        {
+          "t": 40,
+          "d": 2,
+          "p": 53,
+          "v": 72,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f",
+          "gate": 0.97
+        },
+        {
+          "t": 42,
+          "d": 1.5,
+          "p": 55,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g",
+          "gate": 0.97
+        },
+        {
+          "t": 43.5,
+          "d": 0.5,
+          "p": 53,
+          "v": 68,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "f",
+          "gate": 0.98
+        },
+        {
+          "t": 44,
+          "d": 3.5,
+          "p": 52,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "e",
+          "gate": 0.97
+        },
+        {
+          "t": 47.5,
+          "d": 0.5,
+          "p": 50,
+          "v": 67,
+          "source": "linear diminution",
+          "label": "Free counterpoint",
+          "spell": "d",
+          "gate": 0.98
+        },
+        {
+          "t": 48,
+          "d": 1,
+          "p": 48,
+          "v": 88,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "c",
+          "gate": 0.88
+        },
+        {
+          "t": 49,
+          "d": 1,
+          "p": 52,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "e",
+          "gate": 0.88
+        },
+        {
+          "t": 50,
+          "d": 1,
+          "p": 55,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 51,
+          "d": 0.5,
+          "p": 50,
+          "v": 86,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 51.5,
+          "d": 0.5,
+          "p": 52,
+          "v": 85,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 52,
+          "d": 1,
+          "p": 53,
+          "v": 88,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "f",
+          "gate": 0.88
+        },
+        {
+          "t": 53,
+          "d": 0.5,
+          "p": 52,
+          "v": 85,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "e",
+          "gate": 0.91
+        },
+        {
+          "t": 53.5,
+          "d": 0.5,
+          "p": 50,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "d",
+          "gate": 0.91
+        },
+        {
+          "t": 54,
+          "d": 2,
+          "p": 48,
+          "v": 84,
+          "source": "thematic second edition",
+          "label": "Stretto subject",
+          "spell": "c",
+          "gate": 0.995
+        },
+        {
+          "t": 56,
+          "d": 2,
+          "p": 50,
+          "v": 73,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "d",
+          "gate": 0.97
+        },
+        {
+          "t": 58,
+          "d": 2,
+          "p": 52,
+          "v": 71,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "e",
+          "gate": 0.97
+        },
+        {
+          "t": 60,
+          "d": 2,
+          "p": 53,
+          "v": 73,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "f",
+          "gate": 0.97
+        },
+        {
+          "t": 62,
+          "d": 2,
+          "p": 52,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "e",
+          "gate": 0.97
+        },
+        {
+          "t": 64,
+          "d": 0.5,
+          "p": 57,
+          "v": 78,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "a",
+          "gate": 0.91
+        },
+        {
+          "t": 64.5,
+          "d": 0.5,
+          "p": 59,
+          "v": 74,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "b",
+          "gate": 0.91
+        },
+        {
+          "t": 65,
+          "d": 1.5,
+          "p": 60,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "c",
+          "gate": 0.995
+        },
+        {
+          "t": 66.5,
+          "d": 1.0,
+          "p": 59,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "b",
+          "gate": 0.88
+        },
+        {
+          "t": 67.5,
+          "d": 0.25,
+          "p": 60,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "c",
+          "gate": 0.91
+        },
+        {
+          "t": 67.75,
+          "d": 0.25,
+          "p": 59,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "b",
+          "gate": 0.91
+        },
+        {
+          "t": 68,
+          "d": 1,
+          "p": 57,
+          "v": 78,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "a",
+          "gate": 0.88
+        },
+        {
+          "t": 69,
+          "d": 1,
+          "p": 55,
+          "v": 75,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 70,
+          "d": 2,
+          "p": 57,
+          "v": 74,
+          "source": "thematic second edition",
+          "label": "Countersubject",
+          "spell": "a",
+          "gate": 0.995
+        },
+        {
+          "t": 72,
+          "d": 2,
+          "p": 57,
+          "v": 72,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "a",
+          "gate": 0.97
+        },
+        {
+          "t": 74,
+          "d": 1,
+          "p": 55,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "g",
+          "gate": 0.88
+        },
+        {
+          "t": 75,
+          "d": 1,
+          "p": 47,
+          "v": 70,
+          "source": "supporting counterpoint",
+          "label": "Free counterpoint",
+          "spell": "b",
+          "gate": 0.88
+        },
+        {
+          "t": 76,
+          "d": 4,
+          "p": 48,
+          "label": "Cadential tonic bass",
+          "v": 73,
+          "source": "authored",
+          "spell": "c",
+          "gate": 0.97
+        },
+        {
+          "t": 80,
+          "d": 4,
+          "p": 48,
+          "v": 65,
+          "source": "supporting counterpoint",
+          "label": "Final tonic",
+          "spell": "c",
+          "gate": 1.0
+        }
+      ],
+      "piano_pan": 62
+    }
+  ],
+  "subjects": {
+    "subject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 60
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 64
+        },
+        {
+          "t": 2,
+          "d": 1,
+          "p": 67
+        },
+        {
+          "t": 3,
+          "d": 0.5,
+          "p": 62
+        },
+        {
+          "t": 3.5,
+          "d": 0.5,
+          "p": 64
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 65
+        },
+        {
+          "t": 5,
+          "d": 0.5,
+          "p": 64
+        },
+        {
+          "t": 5.5,
+          "d": 0.5,
+          "p": 62
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 60
+        }
+      ],
+      "mode": "major"
+    },
+    "countersubject": {
+      "events": [
+        {
+          "t": 0,
+          "d": 0.5,
+          "p": 57
+        },
+        {
+          "t": 0.5,
+          "d": 0.5,
+          "p": 59
+        },
+        {
+          "t": 1,
+          "d": 1.5,
+          "p": 60
+        },
+        {
+          "t": 2.5,
+          "d": 1.0,
+          "p": 59
+        },
+        {
+          "t": 3.5,
+          "d": 0.25,
+          "p": 60
+        },
+        {
+          "t": 3.75,
+          "d": 0.25,
+          "p": 59
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 57
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 55
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 57
+        }
+      ],
+      "mode": "major"
+    },
+    "subject_relative": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 60
+        },
+        {
+          "t": 1,
+          "d": 1,
+          "p": 63
+        },
+        {
+          "t": 2,
+          "d": 0.5,
+          "p": 67
+        },
+        {
+          "t": 2.5,
+          "d": 0.25,
+          "p": 65
+        },
+        {
+          "t": 2.75,
+          "d": 0.25,
+          "p": 63
+        },
+        {
+          "t": 3,
+          "d": 0.5,
+          "p": 62
+        },
+        {
+          "t": 3.5,
+          "d": 0.5,
+          "p": 63
+        },
+        {
+          "t": 4,
+          "d": 1,
+          "p": 65
+        },
+        {
+          "t": 5,
+          "d": 1,
+          "p": 63
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 60
+        }
+      ],
+      "mode": "minor",
+      "relationship": "Diatonic modal variant of the main subject"
+    },
+    "countersubject_relative": {
+      "events": [
+        {
+          "t": 0,
+          "d": 1,
+          "p": 56
+        },
+        {
+          "t": 1,
+          "d": 0.5,
+          "p": 55
+        },
+        {
+          "t": 1.5,
+          "d": 0.5,
+          "p": 56
+        },
+        {
+          "t": 2,
+          "d": 1.5,
+          "p": 58
+        },
+        {
+          "t": 3.5,
+          "d": 0.25,
+          "p": 60
+        },
+        {
+          "t": 3.75,
+          "d": 0.25,
+          "p": 58
+        },
+        {
+          "t": 4,
+          "d": 1.5,
+          "p": 56
+        },
+        {
+          "t": 5.5,
+          "d": 0.5,
+          "p": 55
+        },
+        {
+          "t": 6,
+          "d": 2,
+          "p": 56
+        }
+      ],
+      "mode": "minor",
+      "relationship": "Countersubject for the relative-key variant"
+    }
+  },
+  "subject_entries": [
+    {
+      "voice": 0,
+      "t": 0,
+      "transpose": 12,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 1,
+      "t": 8,
+      "transpose": -5,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Real answer"
+    },
+    {
+      "voice": 0,
+      "t": 8,
+      "transpose": 19,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 1,
+      "t": 24,
+      "transpose": -3,
+      "scale": 1,
+      "subject_id": "subject_relative",
+      "label": "Relative-key subject"
+    },
+    {
+      "voice": 0,
+      "t": 24,
+      "transpose": 21,
+      "scale": 1,
+      "subject_id": "countersubject_relative",
+      "label": "Countersubject"
+    },
+    {
+      "voice": 1,
+      "t": 48,
+      "transpose": -12,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 0,
+      "t": 53,
+      "transpose": 12,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Stretto subject"
+    },
+    {
+      "voice": 0,
+      "t": 64,
+      "transpose": 12,
+      "scale": 1,
+      "subject_id": "subject",
+      "label": "Subject"
+    },
+    {
+      "voice": 1,
+      "t": 64,
+      "transpose": 0,
+      "scale": 1,
+      "subject_id": "countersubject",
+      "label": "Countersubject"
+    }
+  ],
+  "sections": [
+    {
+      "t": 0,
+      "d": 8,
+      "label": "Continuous exposition",
+      "detail": "Subject in Voice 01",
+      "voices": [
+        0
+      ]
+    },
+    {
+      "t": 8,
+      "d": 8,
+      "label": "Continuous exposition",
+      "detail": "Real answer in Voice 02; recurring invertible countersubject",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 16,
+      "d": 8,
+      "label": "Subject-head sequence",
+      "detail": "A two-note head of the subject is passed through a directed harmonic sequence; rhythm and intervals are tonally adapted.",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 24,
+      "d": 8,
+      "label": "Relative-key development",
+      "detail": "Relative-key subject in Voice 02; recurring invertible countersubject; A minor, a change of tonal mode as well as root",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 32,
+      "d": 8,
+      "label": "Minor-coloured sequential answer",
+      "detail": "A two-note head of the subject is passed through a directed harmonic sequence; rhythm and intervals are tonally adapted.",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 40,
+      "d": 8,
+      "label": "Return to C",
+      "detail": "A directed bass and harmonic progression prepares the next thematic entry.",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 48,
+      "d": 16,
+      "label": "Stretto",
+      "detail": "Two complete subjects overlap for 3 beats at an entry distance of 5 beats; the overlap includes motion in the first subject.",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 64,
+      "d": 8,
+      "label": "Closing conversation",
+      "detail": "Subject in Voice 01; recurring invertible countersubject",
+      "voices": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 72,
+      "d": 12,
+      "label": "Final cadence",
+      "detail": "All 2 parts complete the dominant-to-tonic cadence; the outside voices arrive on tonic.",
+      "voices": [
+        0,
+        1
+      ]
+    }
+  ],
+  "harmony": [
+    {
+      "t": 0,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 1,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 2,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 3,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 4,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 5,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 6,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 7,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 8,
+      "chord": "vi",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 9,
+      "chord": "I",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 10,
+      "chord": "iii",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 11,
+      "chord": "vii_dim",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 12,
+      "chord": "ii",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 13,
+      "chord": "I",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 14,
+      "chord": "vi",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 15,
+      "chord": "vi",
+      "key": 7,
+      "mode": "major",
+      "key_name": "G"
+    },
+    {
+      "t": 16,
+      "chord": "vi",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 17,
+      "chord": "vi",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 18,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 19,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 20,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 21,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 22,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 23,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 24,
+      "chord": "VI",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 25,
+      "chord": "i",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 26,
+      "chord": "III",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 27,
+      "chord": "VII",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 28,
+      "chord": "ii_dim",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 29,
+      "chord": "i",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 30,
+      "chord": "VI",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 31,
+      "chord": "VI",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 32,
+      "chord": "iv",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 33,
+      "chord": "iv",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 34,
+      "chord": "VII",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 35,
+      "chord": "VII",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 36,
+      "chord": "III",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 37,
+      "chord": "III",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 38,
+      "chord": "VI",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 39,
+      "chord": "VI",
+      "key": 9,
+      "mode": "minor",
+      "key_name": "A"
+    },
+    {
+      "t": 40,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 41,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 42,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 43,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 44,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 45,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 46,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 47,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 48,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 49,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 50,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 51,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 52,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 53,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 54,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 55,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 56,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 57,
+      "chord": "ii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 58,
+      "chord": "iii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 59,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 60,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 61,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 62,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 63,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 64,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 65,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 66,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 67,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 68,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 69,
+      "chord": "iii",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 70,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 71,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 72,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 73,
+      "chord": "IV",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 74,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 75,
+      "chord": "V",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 76,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 77,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 78,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    },
+    {
+      "t": 79,
+      "chord": "I",
+      "key": 0,
+      "mode": "major",
+      "key_name": "C"
+    }
+  ],
+  "motivic_fragments": [
+    {
+      "voice": 0,
+      "t": 16,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "vi"
+    },
+    {
+      "voice": 1,
+      "t": 18,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "ii"
+    },
+    {
+      "voice": 0,
+      "t": 20,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "V"
+    },
+    {
+      "voice": 1,
+      "t": 22,
+      "d": 2,
+      "source_subject": "subject",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "I"
+    },
+    {
+      "voice": 1,
+      "t": 32,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "iv"
+    },
+    {
+      "voice": 0,
+      "t": 34,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "VII"
+    },
+    {
+      "voice": 1,
+      "t": 36,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "III"
+    },
+    {
+      "voice": 0,
+      "t": 38,
+      "d": 2,
+      "source_subject": "subject_relative",
+      "source_note_indices": [
+        0,
+        1
+      ],
+      "technique": "tonal sequential head fragment",
+      "harmony": "VI"
+    }
+  ],
+  "composition_record": {
+    "method": "Authored formal revision with exact subject variants, tonal head-fragment sequences and constraint-assisted supporting voices.",
+    "total_beats": 84,
+    "parts": 2,
+    "solver_sections": [
+      {
+        "t": 0,
+        "voices": 1,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 8,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 16,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 24,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 32,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 40,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 48,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 64,
+        "voices": 2,
+        "status": "OPTIMAL"
+      },
+      {
+        "t": 72,
+        "voices": 2,
+        "status": "OPTIMAL"
+      }
+    ],
+    "revision_notes": [
+      "Main-subject overlap enlarged to 3 beats, including active tail material."
+    ],
+    "limitations": [
+      "Structural frame uses triads before the separate diminution/suspension pass.",
+      "Symbolic checks do not establish equivalence to Bach or perceptual independence."
+    ],
+    "second_edition_rhythmic_revision": {
+      "number": 1,
+      "method": "Recurring thematic variants admitted across all their statements; stepwise free-line connections; prepared suspensions. Independent event and structural-grid screens retain the baseline constraints. No random notes or concealed staggered parallels.",
+      "edits": [
+        {
+          "kind": "recurring subject",
+          "template": "subject",
+          "change": "passing cell at beat 3",
+          "statements": 5
+        },
+        {
+          "kind": "recurring subject",
+          "template": "subject",
+          "change": "passing cell at beat 5",
+          "statements": 5
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject",
+          "change": "passing cell at beat 0",
+          "statements": 2
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject",
+          "change": "delayed resolution at beat 2",
+          "statements": 2
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject",
+          "change": "neighbor figure at beat 2.5",
+          "statements": 2
+        },
+        {
+          "kind": "recurring subject",
+          "template": "subject_relative",
+          "change": "passing cell at beat 3",
+          "statements": 1
+        },
+        {
+          "kind": "recurring subject",
+          "template": "subject_relative",
+          "change": "passing cell at beat 2",
+          "statements": 1
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject_relative",
+          "change": "passing cell at beat 1",
+          "statements": 1
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject_relative",
+          "change": "neighbor figure at beat 2",
+          "statements": 1
+        },
+        {
+          "kind": "recurring countersubject",
+          "template": "countersubject_relative",
+          "change": "delayed resolution at beat 5",
+          "statements": 1
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 0,
+          "t": 18.5,
+          "p": 79
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 0,
+          "t": 45.5,
+          "p": 77
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 1,
+          "t": 43.5,
+          "p": 53
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 1,
+          "t": 47.5,
+          "p": 50
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 0,
+          "t": 61.5,
+          "p": 74
+        },
+        {
+          "kind": "free passing connection",
+          "voice": 0,
+          "t": 63.5,
+          "p": 74
+        },
+        {
+          "kind": "prepared suspension",
+          "voice": 0,
+          "t": 76,
+          "resolution": 76.5,
+          "pitches": [
+            74,
+            72
+          ]
+        },
+        {
+          "kind": "prepared suspension",
+          "voice": 0,
+          "t": 42,
+          "resolution": 42.5,
+          "pitches": [
+            81,
+            79
+          ]
+        }
+      ],
+      "counts": {
+        "recurring subject": 4,
+        "recurring countersubject": 6,
+        "free passing connection": 6,
+        "prepared suspension": 2
+      },
+      "rejected_candidate_findings": {
+        "unexplained_dissonance": 11
+      },
+      "baseline_context_flags": [],
+      "remaining_context_flags": [],
+      "before_notes": 110,
+      "after_notes": 138,
+      "offbeat_attacks": 33
+    },
+    "performance_revision": {
+      "description": "Deterministic subject/countersubject balance, phrase arches, metrical articulation, connected suspensions, cadence release and keyboard-register stereo placement.",
+      "timing": "No onset displacement, random timing, tempo changes, or written-duration changes.",
+      "soundfont": "FluidR3_GM.sf2 General MIDI study samples; not an acoustic performance.",
+      "written_notes_unchanged": true
+    }
+  }
+}

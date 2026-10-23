@@ -39,3 +39,7 @@ work/animation/
 *library-save-receipt*
 *library-upload*
 .DS_Store
+
+# Immutable recovered full-cycle source delivery
+!archive/well-tempered-clAIvier-complete-source.zip
+recovered-full-cycle/
