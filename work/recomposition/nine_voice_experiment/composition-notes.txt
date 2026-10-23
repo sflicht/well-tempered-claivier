@@ -1,0 +1,136 @@
+THE PROCESSION FINDS A DANCE FLOOR
+Nine-line chamber audition paragraph
+
+20 bars of 4/4, quarter = 108. Written duration: 44.444 seconds.
+The audio includes approximately three seconds of release after the notes.
+
+This is a new experiment, not a completed fugue or a claim that the
+twenty-five-part problem has been solved. The chamber version is the primary
+audition. The piano version plays the same nine lines with one timbre; it is
+a piano realization, not an arrangement for two human hands.
+
+MATERIAL
+
+1. The remembered procession
+
+The opening eight pitches of the traditional Dies irae are F-E-F-D-E-C-D-D.
+Here their measured durations, in quarter beats, are
+1.5, 0.5, 1, 1, 0.5, 0.5, 1, 2. That measured rhythm is new; the pitch
+fragment is borrowed. The horn first presents it at beat 0.
+
+Source: GregoBase, Vatican version; Graduale Romanum (1908), p. 83*.
+https://gregobase.selapa.net/chant.php?id=3441
+https://gregobase.selapa.net/download.php?format=gabc&id=3441
+Opening GABC: (c4) DI(f)ES(e) i(f)rae,(d) di(e)es(c) il(d)la,(d)
+
+The historical chant is traditional. New measured setting, developments,
+modal variants, counterthemes, and orchestration were composed for this
+experiment.
+
+2. The interruption
+
+The original dance head is D-E-F / A-G-F / D-A. Its first bar groups the
+eighth-note pulse as 3+3+2; the A-G recoil is dotted and short. Its second
+bar starts with a rest, then C-B-flat-A / F-E-D-C. The violin enters with
+this idea at beat 2, halfway through the opening bar.
+
+3. The bridge
+
+The original broad line is A-D-E-F-A / G-E-C. It first appears in the viola
+against the horn's chant. Its fourth, stepwise rise, high point, and fall
+become material for longer and shorter continuations; it is not a permanent
+accompaniment pattern.
+
+THE MUSICAL SITUATION
+
+0:00-0:09, beats 0-16: The procession is interrupted.
+Horn chant and viola bridge begin together. The violin interrupts at beat 2;
+the clarinet, cello, oboe, and bassoon enter at different phrase positions.
+The flute arrives with only the dance head at beat 12.
+
+0:09-0:18, beats 16-32: Nine players; their functions change.
+The flute adopts the chant while the oboe takes the dance. The viola follows
+the flute's chant one beat later. The horn's dance begins at beat 18.
+Clarinet has the original bridge; violin has a differently timed ascent and
+fall; cello's twelve-beat arch crosses the next bar group before a late
+dance head; the double bass bends its own bridge down and back up toward
+its high-register chant.
+
+0:18-0:27, beats 32-48: The wrong turn.
+The viola's E-natural at 32 becomes E-flat at 33 and D at 34. That chromatic
+descent travels through horn at 33.5/34/35 and bassoon at 34/35/36. The
+flattened second spreads into the chant and dance. The double bass descends
+through the register, then reverses direction and climbs.
+
+0:27-0:36, beats 48-64: The procession hurries.
+Flute gives the chant head in half durations at 48; violin follows at 49.
+Horn starts the dance head at 48, double bass at 49, cello at 50. The cello
+has a distinct C-D-E-C approach so it does not prematurely double the horn
+head. Each of those low lines has a different continuation. F-sharp and
+C-sharp begin entering during the second half of this paragraph.
+
+0:36-0:40, beats 64-72: The procession changes its mind.
+The oboe's chant is now major, while the flute plays the major dance. Viola
+has the hurried major chant. Bass begins the major bridge; clarinet follows
+a beat later in a different tonal position and carries its phrase beyond
+beat 72. Violin descends, horn climbs by steps, and cello climbs from its
+held D to its largest high point. Flute and bassoon briefly share the dance
+head in octaves at 64-68; this is a shared arrival gesture, not independent
+counterpoint between those two lines during those four beats.
+
+0:40-0:44.4, beats 72-80: Release.
+Different ascending and descending continuations arrive at a brief final
+D-major sonority. The clarinet completes its late bridge and joins through
+a seven-beat continuation. The final two beats are deliberately chordal.
+
+ORCHESTRATION AND ARTICULATION
+
+Flute, oboe, clarinet, violin, viola, horn, bassoon, cello, and double bass
+have explicit individual timbres and stable stereo positions. The horn and
+cello are separated for their delayed pursuit, with the bass near center.
+The high winds and horn start softer than the strings and clarinet/bassoon.
+
+The chant is deadpan and lightly tenuto; the dance is clipped with weight
+at its 3+3+2 group beginnings; the bridge has a longer arc toward its high
+point. For a head following a pickup, the accent origin follows the actual
+head, not the start of the larger phrase. The ninth entrance is comparatively
+light; density alone does not trigger a large dynamic accent.
+
+WHAT REVIEW CHANGED
+
+The first literal checkpoint had a real defect: at beat 16, flute and viola
+doubled the chant in octaves while four other lines gave synchronized
+transpositions of the bridge. A similar parallel-family alignment occurred
+at the major return. That made too much of the intended many-line texture
+into three harmonized patterns.
+
+Those particular phrases were rewritten. The delayed viola, long cello
+continuation, bent bass arch, and independently shaped violin line now
+separate the first full texture. At the return, a late clarinet entry and
+different horn, cello, and violin directions replace the simultaneous
+parallel arches. The delayed low entries and the traveling chromatic
+descent were retained. The cello approach, actual accent origins, and
+horn/cello stereo separation were also revised.
+
+LIMITS AND THE AUDITION QUESTION
+
+The piece permits modal dissonance, register crossings, occasional parallel
+gestures, and a brief chordal arrival. It was not flattened to satisfy the
+earlier triad-only counterpoint screen. All nine parts were authored as
+phrases and remained revisable; no fixed three-part core was filled with
+additional chord tones.
+
+That construction method is not evidence that the combination sounds good.
+Some family rhythms still align deliberately, and high density may obscure
+the most useful relationships. The two-bar phrase families may still be too
+prominent; the major-mode turn may sound like a cheap joke instead of an
+earned release. Those are material audition risks, not resolved questions.
+
+The most informative passage to hear is beats 32-64: does the traveling
+E-E-flat-D descent create pressure, and do the overlapping hurried chant and
+low dance entries make the music more alive? If their interaction is merely
+busy, this paragraph needs recomposition. Nine tracks and thematic labels
+would not establish otherwise.
+
+The literal score and rendered notation have been inspected. No direct
+auditory evaluation is claimed in this session.

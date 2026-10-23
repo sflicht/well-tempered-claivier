@@ -1,0 +1,66 @@
+FUGUE I — RECOMPOSITION STUDY
+
+A new two-part composition in C major, 25 bars of 4/4, quarter = 116.
+Written duration: 51.724 seconds. Exactly two monophonic lines.
+
+WHY THE PREVIOUS IDEA WAS REJECTED
+The old subject began C-E-G in quarters and returned to a sustained tonic
+within two bars. Its self-contained tonic excursion encouraged complete
+little blocks connected by externally supplied episodes. Adding notes to
+that outline did not supply a strong upbeat or a reason to continue.
+
+THE NEW MUSICAL IDEA
+After an opening eighth rest: C5 eighth, E5 eighth, D5-C5 sixteenths,
+B4-C5-G4-A4 eighths; B4-C5-D5-G4 eighths, E5 dotted eighth, D5 sixteenth,
+C5-B4 eighths. Its final B resolves into the next phrase, not within a
+closed subject. The rising third and quick recoil recur in the episodes;
+the G-A-B-C-D ascent supplies the final cadential tail.
+
+The companion crosses several of the subject's moving notes with longer
+held notes. It is actually exchanged above and below the subject, in the
+G-major entry and the tonic return. The weak fifths that turn into fourths
+when the parts exchange are passing notes, rather than accented pillars.
+The complete recurring companion core begins with the subject's first
+played upbeat. The half-beat before it is a free connection appropriate
+to the previous phrase; it is not counted as an exact thematic statement.
+
+FORM AND HARMONIC DIRECTION
+Bars 1–4: upper C subject; real G answer below, companion above. The
+upper subject's B moves into C while the answer approaches its G upbeat.
+
+Bars 5–8: the recoil and rising tail lead into a G-major upper statement,
+now with the same companion below. The two parts exchange their functions.
+
+Bars 9–12: a low bass head sequence rises from G to A. Its final F-sharp
+continues through G-sharp into the A-minor subject. The minor version has
+a flattened third and the ascending form of degrees 6 and 7. Its raised
+leading note is essential to the continuing line.
+
+Bars 13–16: the head moves through A, F and D. The third stage passes
+into the lower part; the upper part becomes a longer-note partner. A
+chromatic resolution C-sharp/G to D/F-sharp leads into the dominant route
+back to C. This is one continuous development rather than a set of three
+new full-subject entries.
+
+Bars 17–20: C returns first in the lower part while the companion makes
+its largest registral arch. The upper statement and lower companion then
+complete the exchange. Each subject's terminal leading note again moves
+onward to the tonic in its own line.
+
+Bars 21–25: the head starts half a beat earlier, then passes down under
+an upper B held across the barline. The cadence recalls the head's recoil
+and turns F-F-sharp-G toward the dominant. Over the final G, the ascending
+tail and held B receive the concluding C withheld by complete statements.
+
+WHAT IS NOT CLAIMED
+There is no claimed stretto or 25-part achievement here. There are six
+complete subject/answer statements and five complete companion cores.
+No old cycle notes or generated chord-plan passages were reused. The
+Python source encodes literal authored phrase pairs and transpositions of
+recurring thematic material; no constraint solver chose the pitches.
+
+The technical review is a check for errors, not evidence of rhythmic zest
+or beauty. The work still uses conventional tonal sequences and is a
+compact audition study. Its exact phrase energy and whether the subject
+is memorable must be judged by listening. No auditory evaluation is
+claimed in this session.

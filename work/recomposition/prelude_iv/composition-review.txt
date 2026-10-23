@@ -1,0 +1,124 @@
+PRELUDE IV IN C-SHARP MINOR — RECOMPOSITION STUDY
+
+Status: a newly composed audition draft. The prior canonical Prelude IV is
+preserved. This report describes score-based decisions; it does not claim
+that the rendered audio has been heard or that the piece reaches Bach's level.
+
+The old problem
+---------------
+The previous prelude's opening used a broad cantabile melody above repeated
+inner/bass chord figures. Its rhythmic energy changed by adding a different
+texture: an eighth-note arpeggio at bar 9, then a semiquaver block at bar 17.
+Those were changes of surface. They did not grow from an opening gesture
+whose metre, continuation and harmonic pressure already demanded motion.
+
+The new proposition
+-------------------
+32 bars of 3/4, quarter note = 96; 60 seconds of written music. Two complete
+keyboard lines are literally authored, bar by bar. The code converts these
+lines to timed events and notation. It does not choose pitches, solve chord
+templates, or automatically repair them.
+
+Opening upper line:
+E5 eighth; C#5 and D#5 sixteenths; E5 eighth; G#5 dotted eighth;
+F#5, E5, D#5 sixteenths.
+
+Its duration pattern is 2,1,1,2,3,1,1,1 in sixteenth-note units. The upward
+reach C#–D#–E–G# arrives at G# halfway through beat 2, holds it over the start
+of beat 3, and releases through a descending tail. This displacement gives
+the long note a destination and the short notes a continuation. It is not
+an added accent pattern imposed on otherwise neutral notes.
+
+The first answer continues D#–C#–B–A–G#, then turns B#–D#–B# into the next
+C#. Against this descent the bass rises C#–E–F#–G#–A. The upper phrase and
+bass line therefore determine one another's joints. The opening does not
+restart its melody at the barline.
+
+Formal and harmonic argument
+----------------------------
+Bars 1–4: establish C# minor. The upper descent and ascending bass reach A,
+then the fourth bar turns F# minor toward the G# dominant. Its held F# over
+the changed G# bass resolves down to E before the final dominant turn.
+
+Bars 5–8: the bass takes the opening gesture. The upper line holds and
+continues over that active line. The route to E major is specific: E over
+B resolves to D# in bar 7; bar 8 prepares another E–D# 4–3 over B. The
+last E in bar 8 anticipates the tonic so the upper line completes its
+cadential turn before moving to G# at the new phrase. The
+arrival at bar 9 has E in the bass and G# in the upper line: the third
+remains on top, so this is an E-major arrival rather than a perfect cadence.
+
+Bars 9–12: the gesture is recast in E major. The last E of bar 9 is tied
+into bar 10, where it forms a seventh above F# and resolves to D#. B then
+points back toward E; the C#-minor inflection in bar 11 turns to E7 through
+the written D natural. Bar 12 answers on A and ends C#–D#–E#–F#, with E#
+then F# against C# in the bass. This explicitly introduces the raised
+leading note of F# minor and its resolution before the following phrase.
+
+Bars 13–16: the idea takes root in F# minor. A second tied seventh, F# over
+G#, resolves to E. The progression passes through the C# dominant, D major,
+and B minor before returning to the C# dominant. These are phrase functions
+supported by the written accidentals and bass, not labels applied to a
+diatonic loop.
+
+Bars 17–20: the bass answers again in the lower register. Bar 19 turns
+toward A. The E tied into bar 20 resolves to D# above F#, recovering the
+pitch collection of C# minor. The upper line then climbs E–F#–G#–A–B–C#–D#;
+the bass ends G#–A–B. Both arrive at the original upper E and bass C# in
+bar 21. This scalar expansion is the bridge into the return.
+
+Bars 21–24: the first phrase returns recognisably. Its dominant ending
+opens the final paragraph rather than supplying the final tonic.
+
+Bars 25–29: C# rises to C#6, the highest note, over A: the expected tonic
+closure is redirected toward VI. The bass then becomes more mobile, with
+F#–D#–B–A–G#–F# in bar 26. Bar 27's held A forms a 4–3 over E, and its E
+continues as a fourth above B before the following D#. Bar 29 gives the
+actual D#–F#–A–C# components of the half-diminished predominant across the
+two lines before moving into the dominant pedal.
+
+Bars 30–32: the G# pedal supports the last ascent and descending reply.
+The accented C# at bar 31 is a deliberate cadential 4–3 appoggiatura,
+resolving to B#; it is not a prepared suspension. The final C# bass enters
+one octave lower, and the upper E–D#–C# figure closes the phrase.
+
+What makes the contrast audible in the score
+-------------------------------------------
+The opening and its F#-minor recasting retain the same recognisable rhythm.
+The bass takes that rhythm in bars 5–6 and 17–18 while the upper line
+continues in longer values. The three written ties into bars 10, 14 and 20
+make harmonic tension cross a barline. Bar 20 expands the stepwise material
+upward; bars 25–29 raise the register and increase the bass's rate of motion.
+These changes give the return and final pedal different roles from the
+opening. There is no inserted arpeggio section or unrelated fast-note block.
+
+Technical review and its limits
+-------------------------------
+The descriptive event audit, before the final E4 anticipation in bar 8,
+found no malformed/overlapping monophonic
+events, no literal shared-attack parallel perfect intervals, no parallel
+perfects on its quarter-note grid, and no outer-voice similar motion into
+a perfect interval with an upper leap. Four strong-beat dissonances remain:
+the three prepared sevenths at bars 10, 14 and 20, and the cadential 4–3
+appoggiatura at bar 31. These have been reviewed at their actual notes.
+
+Those checks are cleanup, not evidence of compelling music. This is a
+compact, deliberately repetitive prelude study, with a literal four-bar
+return and two principal lines. It does not solve the cycle's higher-part
+fugal writing. Its musical success still needs to be judged by listening:
+whether the cell has enough character, the sequences earn their length,
+and the final paragraph feels like an intensified consequence.
+
+Files
+-----
+prelude-iv-new.json       Complete authored event source and literal bars
+prelude-iv-new.pdf        Engraved score
+prelude-iv-new.mp3        Piano rendering
+prelude-iv-new.mid        MIDI
+prelude-iv-new.musicxml   Editable notation interchange
+generic-audit.json        Descriptive review candidates, not certification
+
+The saved generic audit precedes the final single-note anticipation edit;
+the final delivery checks are performed on the frozen source and renders.
+
+The reproducible literal source is clAIvier/tools/recompose_prelude_iv.py.

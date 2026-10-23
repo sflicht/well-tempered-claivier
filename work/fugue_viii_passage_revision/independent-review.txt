@@ -1,0 +1,161 @@
+FUGUE VIII — INDEPENDENT SCORE REVIEW OF THE FIRST NINE-PART PARAGRAPH
+23 October 2026
+
+SCOPE AND METHOD
+
+This review compares the frozen complete score with the proposed passage
+revision, concentrating on score beats 80–112 and its connection through
+beat 114. The surrounding music at 64–80 and 114–128 supplies context.
+
+I inspected actual note pitches, durations, simultaneous combinations,
+registers, phrase continuations, and thematic annotations. I did not listen
+to either rendition and did not use an external audio model. This report
+does not certify audible clarity, beauty, strict historical counterpoint,
+or equivalence to Bach.
+
+Original score SHA256:
+63021ec26e8a931fb00b4229b6398673f59f673f618c4b0e4d40965fcc423deb
+
+Reviewed revised score SHA256:
+8875eb04af5b75105fa2dddb1fae68b11a59fbc9fbd32a73fdccc6c16a85daa6
+
+VERDICT
+
+The revision gives this paragraph more specific melodic and rhythmic
+activity, better distinguishes several previously merged lines, and turns
+its arrival into overlapping resolutions. It is ready for a direct
+before-and-after audition. I request no additional local note changes
+before that comparison.
+
+The evidence supports a meaningful improvement in the written construction.
+It does not establish that all nine parts will be independently audible or
+that the new passage sounds better.
+
+WHAT THE ORIGINAL PARAGRAPH NEEDED
+
+1. Many continuing lines followed a shared quarter-note gait. Viola and
+   cello at beats 80–84 duplicated the same rising scale in octaves.
+   Different tracks therefore did not always produce different musical
+   behavior.
+
+2. The cello dance head at 88–92 occupied Eb2–Bb2 among active lower parts.
+   This created a plausible masking risk. That risk was inferred from the
+   register and texture, not established by listening.
+
+3. Several important moments merged voices: at 94 flute and oboe shared F5
+   while lower parts reinforced F in octaves; at 100 oboe, clarinet, and
+   violin attacked Ab4 together.
+
+4. Most parts stopped together at 112. The Db7 at 111 was already functional
+   and resolved to Gb at 112; it was not a harmonic mistake. The weakness
+   was the broad simultaneous release of a thick texture.
+
+WHAT THE REVISION CHANGES
+
+A three-beat retort compresses and extends the chant's head. It appears in
+clarinet at 80, violin at 82.5, cello at 85, viola at 88, and horn at 91.
+Its dotted and shorter notes recur recognizably, while the starts cross
+different positions in the four-beat measure. The following continuations
+diverge rather than simply repeat one rhythmic scaffold.
+
+This retort is properly described as a derived motif or fragment, not as
+five new complete subject statements. The revised annotations reflect that
+distinction.
+
+The full bass chant at 80 and bassoon chant at 92 remain. Consequently the
+shorter exchanges coexist with longer thematic sentences rather than
+replacing all material with quick fragments.
+
+The cello retort is raised into a tenor register. Its subsequent dance
+head at 88–92 is one octave above the former low version. That should give
+the two gestures a better opportunity to emerge, but the actual balance
+still needs to be heard.
+
+The revised cello continuation at 92–96 rises through Gb3, Bb3, Db4, and Eb4
+before falling to Bb3. Oboe moves downward over the same span. The cello
+reaches its apex later and sustains across a different boundary. This is a
+concrete horizontal difference, not simply a different instrument patch.
+
+The oboe's relative-major chant begins at 100 rather than 96. The flute
+makes its higher entrance at 96, so these two events are no longer imposed
+at the same point. The flute's short Ab6 at 109 in the first revision draft
+was removed to leave more registral space for the work's later crest.
+
+At the Gb arrival, the parts do not all stop at the bar line:
+- Violin carries Cb5 from 111 across 112, resolving to Bb4 at 112.5.
+- Horn carries Ab3 across 112, resolving to Gb3 at 112.5.
+- Flute holds F6 from 110 through 112, rising to Gb6 at 113.
+
+These notes belong to the preceding dominant and acquire different
+relationships to the new bass. Their
+delayed resolutions have an identifiable harmonic purpose. The flute's
+upward resolution is a retardation; the violin and horn resolve downward.
+They should not all be described indiscriminately as the same suspension.
+
+REPAIRS MADE DURING THIS REVIEW
+
+The first revised draft contained several local problems. The composer
+implemented the following targeted changes, all confirmed in the final
+reviewed file:
+
+- The cello retort at 85–88 moved up an octave, avoiding its previous low
+  Gb3 against sustained F3 in horn/bassoon.
+
+- Bassoon at 86 now holds Gb3 for 1.5 beats before Eb3 at 87.5. This removes
+  the Cb3/Bb2 semitone created when horn moved under the former bassoon note.
+
+- Horn at 94 now plays Db3, and clarinet at 94.5 plays Db4. This avoids the
+  old horn F3/bassoon Gb3 clash and the competing D/Db inflection during
+  that short first-inversion sonority.
+
+- Viola at 98 plays Db4 instead of Cb4, eliminating its full-beat minor
+  second against horn Bb3 while preserving a distinct arcing continuation.
+
+- Cello at 92–95.5 previously doubled oboe in exact octaves, including the
+  same rest. Its new rising continuation removes that substantive copy.
+
+- Flute at 109–110 now descends Eb6–Db6 before its F6 hold. The earlier Ab6
+  would have brought this local arrival close to the later work's Bb6
+  climax in register. This is a proportional form decision, not a rule
+  that every early high note is prohibited.
+
+These changes were chosen for local melodic or harmonic reasons. The
+review did not attempt to eliminate all shared pitches, all dissonances,
+or every simultaneous attack.
+
+WHAT REMAINS UNCERTAIN OR IMPERFECT
+
+The passage still uses expanded modal and tonal sonorities, occasional
+parallel motion, transient unisons, and scalar movement. This was not an
+exhaustive audit of every dissonance treatment or consecutive perfect
+interval. There is no claim that its harmony follows all of Bach's
+conventions. Its language should be described honestly as the project's
+developing contrapuntal style.
+
+The increased dotted-note and offbeat activity might create a more general
+busy surface if the timbres and balance fail to expose the exchanges.
+More differentiated notation does not guarantee stronger rhythmic zest
+in the recording.
+
+The high flute may still dominate while inner gestures recede. The cello's
+new register is more favorable on paper, but an expressive handoff is an
+auditory question. Nine parts need not remain nine equally prominent solo
+lines at every instant; nevertheless, a listener should be able to follow
+the intended changes of foreground.
+
+The final simultaneous convergences and partial doubling near a cadence
+are not automatically defects. The relevant question is whether the lines
+have meaningful identities and destinations over the paragraph.
+
+RECOMMENDED COMPARISON
+
+Compare the same surrounding span, beats 64–128, in the original and
+revised stereo chamber renditions with consistent playback treatment.
+Listen for the three-beat retort passing between players, the cello's
+independent ascent, and the resolutions continuing across the Gb arrival.
+Use isolated parts only to learn those events, then return to the ensemble
+to judge whether they communicate without visual assistance.
+
+The complete form and final climax were not re-reviewed here. This is a
+focused score review supporting an audition, not approval of the cycle.
+

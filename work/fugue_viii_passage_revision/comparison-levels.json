@@ -1,0 +1,72 @@
+{
+  "purpose": "Same-note-clock, same-instrumentation before/after comparison.",
+  "start_beat": 64,
+  "end_beat": 128,
+  "start_seconds_in_complete_work": 35.55555555555556,
+  "excerpt_seconds": 35.55555555555556,
+  "source_score_hashes": {
+    "before": "63021ec26e8a931fb00b4229b6398673f59f673f618c4b0e4d40965fcc423deb",
+    "after": "8875eb04af5b75105fa2dddb1fae68b11a59fbc9fbd32a73fdccc6c16a85daa6"
+  },
+  "original_integrated_loudness": [
+    {
+      "input_i": "-14.33",
+      "input_tp": "-2.81",
+      "input_lra": "5.50",
+      "input_thresh": "-24.33",
+      "output_i": "-20.59",
+      "output_tp": "-9.25",
+      "output_lra": "5.50",
+      "output_thresh": "-30.59",
+      "normalization_type": "dynamic",
+      "target_offset": "0.59"
+    },
+    {
+      "input_i": "-14.43",
+      "input_tp": "-2.43",
+      "input_lra": "5.40",
+      "input_thresh": "-24.43",
+      "output_i": "-20.55",
+      "output_tp": "-8.78",
+      "output_lra": "5.30",
+      "output_thresh": "-30.55",
+      "normalization_type": "dynamic",
+      "target_offset": "0.55"
+    }
+  ],
+  "linear_gains": {
+    "before": 0.5205950088015484,
+    "after": 0.5266232148938974
+  },
+  "common_peak_safety_gain": 1,
+  "target_lufs": -20.0,
+  "processing": "Only constant gain and equal 15ms edge fades. Stereo preserved. No dynamics compression.",
+  "musical_scope": "An audition, not an automatic musical-quality judgment.",
+  "comparison_video_seconds": 76.189698,
+  "measured_after_fixed_gain": {
+    "before": {
+      "input_i": "-20.04",
+      "input_tp": "-8.48",
+      "input_lra": "5.60",
+      "input_thresh": "-30.04",
+      "output_i": "-20.59",
+      "output_tp": "-9.25",
+      "output_lra": "5.50",
+      "output_thresh": "-30.59",
+      "normalization_type": "dynamic",
+      "target_offset": "0.59"
+    },
+    "after": {
+      "input_i": "-20.05",
+      "input_tp": "-8.00",
+      "input_lra": "5.40",
+      "input_thresh": "-30.05",
+      "output_i": "-20.54",
+      "output_tp": "-8.78",
+      "output_lra": "5.30",
+      "output_thresh": "-30.54",
+      "normalization_type": "dynamic",
+      "target_offset": "0.54"
+    }
+  }
+}

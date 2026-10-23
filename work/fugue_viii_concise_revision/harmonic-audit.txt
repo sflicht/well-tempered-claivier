@@ -1,0 +1,121 @@
+FUGUE VIII — INDEPENDENT HARMONIC AUDIT
+23 October 2026
+Source: work/fugue_viii_passage_revision/08-fugue-passage-revised.json
+Scope: written score inspection; no audio listening and no historical-style certification.
+Quarter-note beats are zero-based; bar = floor(beat/4) + 1.
+
+MAIN FINDING
+
+The user's distinction between improved counterpoint and unsatisfactory harmony
+is supported by the notes. The later rewrite gives several parts recognizable
+motivic work, but many untouched continuations simply traverse the same scale
+at similar speeds. Combining them often yields most of a diatonic collection
+rather than a clearly directed chord with a few intelligible moving tensions.
+Some collisions are also literal major/minor versions of the same degree.
+The chamber samples can expose these problems more harshly, but timbre alone
+cannot account for them. The piano-first decision is sensible; the score still
+needs harmonic decisions.
+
+PRIORITY REPAIRS IN THE RETAINED BEATS 0–112
+
+1. Beat 39, bar 10: simultaneous C4 and Cb4.
+   Viola attacks C4 for one beat; bassoon attacks Cb4 for half a beat.
+   Both are new attacks, and the viola's raised sixth has no compelling local
+   function. The surrounding pitches are Eb5, Bb5, F4, F3 and Db3.
+   Simple candidate repair: viola C4 -> Cb4. This makes its preceding Db4
+   descend by a whole step and avoids an unexplained split sixth. Brief
+   unison with bassoon is preferable to preserving an accidental conflict.
+
+2. Beats 43.5–46, bar 11 into bar 12: an unclear first dominant cadence.
+   At 43.5 clarinet C4 overlaps bassoon Cb3. At 45 oboe D5 and then viola D4
+   at 45.5 overlap bassoon Db3 for a full beat. Thus the first explicit major
+   dominant third is opposed by its minor version. This is not merely the
+   piano's decay: these pitches coexist in the written durations.
+   Candidate repairs:
+   - Clarinet beat 43 C4 -> Cb4, producing Db4–Cb4–Bb3 at 42–44.
+   - Bassoon beat 45 Db3 -> D3, producing Bb2–D3–F3–Bb2 at 44–48.
+   - Recompose the surrounding 40–48 bass/horn route to establish Bb7
+     clearly. Horn Gb3 at 45 and cello F2 beneath the bass Ab2 blur the
+     intended hierarchy. Do not merely change all pitches to a chord;
+     decide which moving notes prepare or resolve against the Bb dominant.
+   Beat 40 also sustains cello Cb3 for two beats above Bb1 in the bass.
+   A flat ninth could be intentional, but this one arrives before the
+   dominant's identity is clear, while several unrelated passing tones pile up.
+
+3. Beats 60–72, bars 16–18: repeated low-middle clustering.
+   Horn F3 at 60–62 collides with bassoon Gb3 at 61–62.
+   At 67, horn and viola both have Gb3, bassoon F3 and cello Ab3.
+   At 68, bassoon Eb3, viola F3, cello Gb3 and horn Ab3 sound together
+   for half a beat, with three of those notes continuing for a full beat.
+   The bass holds Eb2 at 68–70. This is the entire first four scale degrees
+   compressed into the low-middle register, rather than one clear suspension
+   against a stable harmonic implication.
+   Repair the inner paragraph as a combination, not as isolated seconds.
+   Keep the violin chant and a purposeful bass; give horn a slower route,
+   move the cello continuation into a distinct tenor arch, and let one of
+   the remaining middle parts breathe or answer later. Raising one line
+   can reduce roughness, but does not alone give the aggregate a function.
+   The repeated quarter-note scalar continuations here are also a strong
+   source of the user's harmonic and rhythmic sameness objection.
+
+4. Beat 78, bar 20: D-natural bass against Db in several other lines.
+   Bass D2 lasts one beat. Horn Db3 also lasts one beat; the oboe passes
+   through Db5 at 78.5. Cello holds Cb3, and several other lines hold Eb.
+   This sounds on paper like two different cadence plans superimposed:
+   Bb-major dominant leading tone versus the natural-minor thematic scale.
+   Choose a route. If D2 stays, adapt the conflicting notes to a Bb-dominant
+   environment, including a tonal alteration of the oboe's dance reply if
+   necessary. If the Db material is important, change the bass and use an
+   explicit Db7 approach to the upcoming Gb bass at 80. Do not retain the
+   written clash solely to preserve a literal-transposition annotation.
+
+5. Beats 80–112: retain the new retort, but clarify its harmonic support.
+   The three-beat retort and staggered arrivals are the most specific work
+   in the retained paragraph. A broad route can be heard in the written
+   bass: Eb minor / Gb at 80, Ab minor around 88, Cb at 92, Ab minor at 96,
+   Gb at 100, Ab-minor predominant at 104, Db7 at 108, Gb at 112.
+   Several of the new passing dissonances are short and directionally
+   meaningful. Do not erase them with a blanket consonance rule.
+   Priority is the supporting free continuations. At 84 the bass F2 is
+   joined by F3/F4/F5 plus Eb and Ab, so it lacks a clear third/fifth
+   combination. At 85 Eb bass is loaded with F, Gb, Ab and Cb as well as
+   Eb. These are possible extended sonorities, but their density makes the
+   phrase sound more modal and static than cadential. Assign a specific
+   passing inversion or predominant to 84–86 and adjust the longer notes
+   accordingly, while retaining the short retort's profile.
+   The 108–114 cadence is comparatively coherent: Gb4 approaches F4 over
+   Db, Cb participates in the dominant seventh, and the delayed upper
+   resolutions make the arrival unfold. Keep its useful directional work.
+
+FORM AND TONAL DIRECTION
+
+A 64-bar condensation is a stronger response than trimming a few seconds.
+Keep the exposition and improved retort; shorten the long relative-major
+excursion to a genuine respite with a cadence. Then give the music a clear
+Ab-minor predominant -> Bb dominant -> Eb-minor return. A compressed chase
+can intensify that return, followed by a concise cadence, perhaps with a
+brief Picardy change. The original sixteen-bar major concluding region
+creates a separate final act after several previous climaxes and returns.
+
+The existing 176–240 chromatic paragraph is an especially good deletion or
+recomposition candidate. Its Fb-colored material often meets unchanged Eb
+lines directly: at 188 cello Eb3 lasts two beats against bassoon Fb3 and
+bass Fb2; at 200 clarinet Eb3 attacks against horn Fb3. At 232 both violin
+and horn Cb4 collide with viola/bassoon Bb3 above the Bb dominant. These
+are prolonged enough to be compositional decisions, not MIDI defects.
+The planned condensation can remove the detour without losing the best
+new retort passage.
+
+WTC DIRECTION AS A COMPOSITIONAL BRIEF
+
+The present work's long near-modal regions, two contrasting thematic worlds,
+low-register scalar crowds, repeated late returns and prolonged major
+apotheosis collectively place it well away from the stated WTC starting
+point. Bringing it nearer should mean more consequential tonal answers,
+sequential episodes that actually move to a new region, dissonances whose
+preparation and destination can be followed, and a tighter return/cadence.
+A harpsichord patch, trill ornaments, or uniform terraced dynamics would not
+by themselves make those decisions.
+
+These are score-grounded candidates. They are not proof of what the user
+heard at a particular instant, and the resulting revision needs audition.

@@ -1,0 +1,79 @@
+INDEPENDENT FORMAL REVIEW — FUGUE VIII
+The procession finds a dance floor
+
+Reviewed score: 08-fugue-complete.json
+SHA-256: 63021ec26e8a931fb00b4229b6398673f59f673f618c4b0e4d40965fcc423deb
+Date: 2026-10-23
+Scope: Actual written pitches, rhythms, phrase boundaries, entrances, rests,
+tonal arrivals and guide captions. This is a symbolic score review; no audio
+listening evaluation was performed. Beat references below are zero-based.
+
+FORMAL CONCLUSION
+
+The 400-beat, 100-bar score now constitutes a complete formal audition at
+quarter note = 108 (3:42.22 before the rendering's release tail). There is no
+outstanding structural repair requested. Its long form has an exposed opening,
+a first dense argument, two distinct reductions of texture, a directed return,
+a developing major arch and a complete final cadence. This conclusion concerns
+composition and form, not artistic equivalence to Bach or listening success.
+
+OBSERVED MUSICAL EVENTS
+
+• Beats 0–48 give the chant space to become recognizable. The horn begins alone;
+  the dance interrupts at 26, and the first nine-player passage is the short
+  cadential punctuation at 44–48. The later exposition distributes the chant
+  across all nine players instead of treating the extra parts as a final effect.
+
+• The first sustained nine-line paragraph occupies almost all of 80–112. Its
+  separate trajectories include the flute's long descent, the clarinet's rise,
+  the bass chant and shorter dance heads. The revised flute hold and cello apex
+  change rhythmic relationships within that paragraph.
+
+• The arrival at 112 is a real relative-major cadence: D-flat dominant seventh
+  gives way to G-flat major. The following sixteen beats contain only three to
+  five active parts, changing the space around the phrases. This contrast is
+  sufficient; further thinning was not requested.
+
+• At 176 the F–F-flat–E-flat slip travels through viola, horn and bassoon with
+  unequal delays. At 208, hurried chant statements coexist with a low dance
+  chase entering one beat apart. Their continuations diverge. The full texture
+  lasts through 240, then the cadence resolves into only two or three active
+  parts over 240–260. The cello begins an augmented chant at 242.
+
+• The gathering at 272 earns its dominant pedal through a moving bass before
+  the pedal begins at 280. The return at 288 has staggered chant entrances and
+  crossing 8-, 12- and 16-beat sentences. Ten of its first 48 beats include a
+  resting player. The horn introduces the major third at 333 before the formal
+  key change at 336; other parts adopt the new color at different times.
+
+• The major arrival does not exhaust the final arch. Horn and cello rest at
+  340–344, bassoon at 340–348: six lines grow to eight, then nine. The flute's
+  augmented rising companion at 352–368 saves concert B-flat6 for 360–363.
+  Other long phrases cross that crest and turn at different times; oboe,
+  violin, horn and cello sentences continue beyond 368. The flute's subsequent
+  sixteen-beat descent releases register while shorter material remains active.
+
+• The final four bars have explicit bass roots: A-flat at 384, F at 388,
+  B-flat at 392 and E-flat at 396. The F half-diminished and B-flat seventh
+  harmonies are present in the actual notes. Upper leading notes and accented
+  dissonances resolve at 396.5, 397 and 397.5; the final two beats share the
+  E-flat-major chord. These are delayed resolutions, not all prepared or tied
+  suspensions. The shared ending is a legitimate destination of the moving
+  approach.
+
+GUIDE AGREEMENT
+
+The listening-guide captions match the inspected passages, including the
+3+3+2 dance accents, the chromatic exchange, the two-speed chase, the quiet
+augmentation, the developing major paragraph at 352–376 and the final cadence
+at 384–400. Voice counts describe written activity only; they do not establish
+contrapuntal quality or musical beauty.
+
+REMAINING LISTENING QUESTIONS
+
+The principal unresolved questions are audible balance and clarity, rhythmic
+vitality in the many stepwise continuations, and whether the delayed high point
+feels earned. All nine players remain active from 348 to the end; register,
+phrase direction and thematic exchange must make that long span develop in
+sound. These are reasons for a focused listening pass, not grounds for claiming
+the piece has already reached the user's artistic standard.

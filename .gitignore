@@ -1,0 +1,41 @@
+# Reproducible media and notation exports
+output/
+*.wav
+*.mp3
+*.mp4
+*.pdf
+*.mid
+*.musicxml
+*.ly
+*.zip
+*.png
+*.jpg
+*.jpeg
+*.cues.json
+*.animation.json
+*.render.json
+*.engraving.log
+
+# Installed dependencies, caches and temporary rendering output
+vendor/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+work/animation/
+**/pdf-qa/
+**/frames/
+**/audio_review/
+**/baseline-render.json
+**/comparison-concat.txt
+**/package-manifest.json
+**/*performance-demo*
+
+# Machine-local transfer data and credentials
+.env
+.env.*
+*.pem
+*.key
+*library-save-receipt*
+*library-upload*
+.DS_Store

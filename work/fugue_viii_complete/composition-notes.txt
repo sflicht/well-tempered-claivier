@@ -1,0 +1,177 @@
+FUGUE VIII — THE PROCESSION FINDS A DANCE FLOOR
+The Well-Tempered clAIvier
+Complete-form audition, 100 bars
+
+Frozen score: 08-fugue-complete.json
+Score SHA256: 63021ec26e8a931fb00b4229b6398673f59f673f618c4b0e4d40965fcc423deb
+Author script: tools/compose_fugue_viii_complete.py
+Author script SHA256: e7ef7a0a56f92e7fae957084f587ed61afad6a4108ce8e01b2f2d6863beb2b64
+
+THE PIECE
+
+This is a complete nine-part Fugue VIII in E-flat minor, arriving in E-flat
+major. It lasts 400 quarter-note beats at quarter = 108: 3 minutes 42.22
+seconds of written music, before the rendered release. Its nine monophonic
+parts are flute, oboe, clarinet, violin, viola, horn, bassoon, cello and double
+bass. The open score is at sounding pitch. A piano rendering can use the same
+notes; the chamber colors make the exchanges easier to distinguish.
+
+The piece grows from the earlier twenty-bar experiment into a new hundred-bar
+form. Its argument is a solemn procession interrupted by a dance, unsettled by
+a chromatic turn, suddenly hurried, then remembered almost alone. The return
+combines those experiences. The final rising figure takes much longer to reach
+its high point than the short dance heads moving beneath it.
+
+The composition is written as literal, revisable phrases. The later players
+were not added as chord-compatible filling around an unchanged small ensemble.
+Every player takes thematic material and also follows distinct continuations.
+Some short passages deliberately share a melody in octaves. Those are changes
+of color within the form; the sustained contrapuntal paragraphs depend on the
+different entries, rhythms, contours, continuations and endings around them.
+
+THE THREE RECURRING IDEAS
+
+1. The measured chant. The opening eight-note Dies irae head appears here as
+   G-flat, F, G-flat, E-flat, F, D-flat, E-flat, E-flat. Its measured rhythm,
+   modal changes, register, continuations and transformations are newly
+   composed. The historical melody is credited in the score data, with the
+   D-centered reference pitches distinguished from this edition's concert
+   pitches. This is a traditional melody quotation, not a Bach quotation.
+
+2. The clipped dance. Its head is E-flat, F, G-flat, B-flat, A-flat, G-flat,
+   E-flat, B-flat. Accents fall at the beginning, after one and a half beats,
+   and after three beats: a 3 + 3 + 2 grouping of half-beats. One short-long
+   displacement inside the head prevents it becoming an evenly tapped scale.
+   The dance can enter away from a bar boundary; its accents follow its own
+   entrance. Its complete eight-beat statement and its four-beat head are
+   labeled separately.
+
+3. The broad rising figure. B-flat rises through E-flat, F and G-flat toward
+   another B-flat, then falls. It begins as a companion to the chant and later
+   resists the fast chase. In the final major section it acquires G-natural
+   and D-natural, and the flute doubles its note lengths. That expansion
+   supplies the delayed crest rather than merely adding more simultaneous
+   notes to the dance.
+
+FORM AND LISTENING LANDMARKS
+
+Times below follow the written tempo and exclude any introductory silence.
+
+Bars 1-12 / beats 0-48 / 0:00-0:26.7
+Procession and interruption. The horn has the chant alone for two bars. The
+oboe answers and the viola introduces the rising companion. The cello's
+lower chant and the violin's clipped interruption arrive later. The final
+player, the bass, enters with a bent form of the rising figure. The paragraph
+reaches an actual B-flat dominant.
+
+Bars 13-28 / beats 48-112 / 0:26.7-1:02.2
+The dance takes hold. Clarinet and violin briefly state it in octaves, then
+the roles move again. Every player has received a full chant statement by
+beat 100. The dense paragraph around beats 80-104 includes a descending
+flute, rising clarinet, bass chant, moving cello and delayed upper entries.
+The cello's long ascent has its own sustained apex. The flute's G-flat is
+held across the bass movement and resolves to F. The final eight beats gather
+around D-flat seventh and lead into G-flat major.
+
+Bars 29-44 / beats 112-176 / 1:02.2-1:37.8
+A room opens. The relative-major arrival falls to five lines, then three.
+Players leave actual space between their phrases. Warm octave colors occur
+within this quieter section, while other parts rise and fall independently.
+The ensemble returns gradually through the minor subdominant and reaches a
+clear B-flat-major dominant before the next paragraph.
+
+Bars 45-60 / beats 176-240 / 1:37.8-2:13.3
+The ground shifts. The concert-pitch F-F-flat-E-flat slip begins in the viola
+at beat 176, the horn at 177.5, and the bassoon at 178. These are unequal
+delays through three registers. The resulting chromatic friction is
+intentional; its notes move toward a destination.
+
+The disturbance has room to spread before the chase at beat 208 (1:55.6).
+Flute and violin take diminished chant statements a beat apart. Horn, bass
+and cello enter the dance head at beats 208, 209 and 210, then leave that
+common head for continuations of sixteen, eleven and ten beats. The broad
+rising figure and other independent phrases continue around both chases.
+The paragraph turns through subdominant and dominant harmony toward a cut.
+
+Bars 61-68 / beats 240-272 / 2:13.3-2:31.1
+Only a memory. Clarinet, violin and cello resolve the previous cadence before
+the texture opens. The cello's augmented chant begins at beat 242 and lasts
+sixteen beats. Sparse answering phrases overlap it without filling every
+available space. The viola returns, then horn and bass, and the harmony
+begins gathering again.
+
+Bars 69-72 / beats 272-288 / 2:31.1-2:40.0
+Gathering. The bass walks before it holds its eight-beat B-flat pedal.
+The bassoon sustains and turns above the viola's descent instead of copying
+it. Clarinet and horn phrases cross the return boundary, so the return does
+not reset every melodic sentence at once.
+
+Bars 73-84 / beats 288-336 / 2:40.0-3:06.7
+Return in pursuit. The violin takes the returning chant, then bassoon and
+oboe enter later. Other players continue longer sentences. An upward chant
+inversion, a remembered chromatic variant and displaced dance heads change
+the foreground. Near the end the horn introduces G-natural, the major third,
+before the other parts adopt it. The key signature changes at beat 336.
+
+Bars 85-96 / beats 336-384 / 3:06.7-3:33.3
+The procession takes flight. The horn and cello breathe after beat 340;
+bassoon waits until 348. Continuing phrases keep the new major color moving.
+The complete nine-line texture regathers at 348.
+
+At beat 352 (3:15.6) the flute begins the exact major rising figure at twice
+its original duration. It reaches B-flat6 at beat 360 (3:20.0) for three
+beats, then falls. Its high ninth above the bass's A-flat region moves down
+to A-flat. The violin, horn, clarinet and cello have other arches and other
+peak times. Several of their phrases continue through beat 368. The tonic
+arrival there begins sixteen beats of melodic release, including a lower
+major chant in the bassoon, before the final turn home.
+
+Bars 97-100 / beats 384-400 / 3:33.3-3:42.2
+Last turn home. The bass establishes A-flat major, F half-diminished, B-flat
+seventh and E-flat major. C-flat in the half-diminished bar briefly recalls
+the opening minor world. The tonic bass arrives at beat 396 (3:40.0), while
+appoggiaturas and leading-note resolutions continue above it. Those are
+freshly attacked delayed resolutions, not all prepared suspensions. The
+final two beats settle into a shared E-flat-major chord.
+
+REVISION RECORD
+
+Two independent score reviews examined formal pacing and local counterpoint.
+They led to specific changes rather than a blanket removal of dissonance:
+
+- The early cello route was rewritten where it had doubled the bassoon and
+  then split into a low semitone without a useful resolution.
+- The flute acquired a held-note resolution across the moving bass; the
+  cello's ascent acquired an early, longer apex. These changes reduced an
+  overly regular quarter-note march within the first dense paragraph.
+- The bassoon's gathering tail was rewritten as a sustained and turning
+  line where it had converged into the viola's same unison descent.
+- Four later low-register points were clarified: one bassoon pitch, two
+  cello pitches, and a shorter cello appoggiatura followed by its resolution.
+- The deliberately displaced chromatic cascade was retained. Its friction
+  belongs to moving imitated lines and is part of the dramatic disturbance.
+- Final-bar descriptions were corrected to call the new attacks
+  appoggiaturas or delayed resolutions, rather than prepared suspensions.
+
+WHAT THIS EDITION ESTABLISHES
+
+The score contains 2,800 sounding events across nine monophonic parts, fifty
+complete thematic entries and twenty-six exact dance-head annotations. All
+nine parts reach the written endpoint at beat 400. It includes nine formal
+sections and thirty-five teaching captions tied to actual score locations.
+Thematic transformations are explicit in the source; spelling and captions
+refer to the final concert-pitch score. The code's D-centered sketch is
+transposed consistently by one semitone, including all subject templates.
+
+The compositional review is based on the literal score. These notes do not
+claim that the generated audio has been heard or that the music meets the
+standard of Bach. Export checks and thematic matches cannot establish that.
+The strongest remaining artistic question is how clearly the middle
+registers and changing foregrounds survive in sound during the densest
+paragraphs. The chamber colors support that separation; the piano version
+is a useful, more exposed comparison. This complete movement gives that
+listening judgment a full dramatic arc to assess.
+
+The work here completes Fugue VIII as a full-form audition. It does not
+represent completion or renewed approval of the other forty-seven pieces
+in the larger cycle.

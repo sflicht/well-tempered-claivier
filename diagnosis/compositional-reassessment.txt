@@ -1,0 +1,266 @@
+THE WELL-TEMPERED clAIvier — COMPOSITIONAL REASSESSMENT
+
+Basis: the final second-edition event scores. This is direct score analysis,
+not an auditory review. Quarter-beat positions are zero-based. The companion
+xxiv-actual-texture.json records the exact source hash and calculations.
+
+DECISION
+
+XXIV does not fulfill the artistic brief of a fugue in 25 independent parts.
+It is more accurately a fugal study distributed across 25 staves, culminating
+in a largely chordal texture around a single thematic line. Its complete
+subject entries establish that the staves have participated in an imitation;
+they do not establish sustained contrapuntal identity.
+
+The user's distinction between rhythmic interest and rhythmic zest is also
+well supported by the writing. Different durations have been added without
+rebuilding the gesture, metrical direction, phrase continuation, and harmonic
+pressure that would make those durations consequential.
+
+XXIV: WHAT THE NOTES ACTUALLY DO
+
+The first complete 25-part span runs from quarter beat 412 to 484, or bars
+104–121. All 25 staves sound throughout. Yet the sounding aggregate contains
+exactly three pitch classes at every moment. There are 800 note attacks,
+all on integer quarter beats. Among 775 consecutive within-part transitions,
+only seven move by a semitone or whole tone; 103 move by an octave. The mean
+number of distinct sounding pitches is 12.60, with the 25 staves sharing and
+redistributing these pitches.
+
+In fact, from beat 412 through 516 every sounding note belongs to the
+currently declared three-note chord. There are no non-chord passing tones
+or prepared suspensions in this entire 104-beat climactic region.
+
+These statistics are not a general definition of counterpoint. A sustained
+tonic or a triadic passage can be expressive, and quarter-note rhythms can
+have great force. Here the statistics identify a specific compositional
+mechanism visible in the individual parts: almost continuous redistribution
+of current chord tones, rather than connected melodic arguments.
+
+Examples at the start of the tutti:
+
+- Voice 1 has the augmented subject from beat 412 to 436. No other voice
+  has a complete subject or countersubject anywhere in that 24-beat span.
+- Voice 2 plays B5 for three beats, D5 for one, B5 for six, B4 for two,
+  B5 for five. These jumps place chord members in different registers;
+  they have little relation to a developed melodic sentence.
+- Voice 25 plays B1 for six beats, G1 for six, then B1 for twenty beats.
+  It supplies a bass foundation, not a continuing fugal line.
+- The harmony is uninterrupted tonic from beat 426 to 452: 26 quarter
+  beats across the labels 'Complete ensemble' and 'Gathered development'.
+  Changing section labels and adding attacks do not give this prolongation
+  a new rhetorical direction.
+- From beat 444 to 516, the only exact thematic annotations are two
+  two-note head fragments, at beats 444 and 500. There is no complete
+  subject or countersubject in that 72-beat paragraph.
+- The long dominant, beats 484–500, has 20 sounding parts, exactly three
+  pitch classes at each instant, no attack between quarter beats, and no
+  complete theme or annotated fragment. It is held and redistributed
+  dominant harmony; its length is not itself an intensification.
+
+The present design contains five successive expositions for five groups,
+followed by a small number of further entries and a massed harmonic arrival.
+The second edition retained more earlier voices, but most retained voices
+were generated as permissible chord-tone continuations. Their pitch changes
+made the occupancy statistics look better while leaving the basic problem
+intact. There are no duplicated whole-part files, and the rhythmic onset
+patterns in the first tutti differ; neither fact establishes musical
+independence.
+
+The constraint system's mistake was conceptual. It could forbid certain
+bad motions and reward motion among available chord tones. It could not
+decide why a line should make this gesture, at this moment, toward this
+destination. Passing the screen was then allowed to stand in for that
+missing compositional judgment.
+
+PRELUDE IV: SECTIONAL ACTIVITY WITHOUT A COMPELLING CELL
+
+The opening upper line is C-sharp5 dotted half, G-sharp5 quarter; then
+A5–G-sharp5–F-sharp5–E5 in quarters; then D-sharp5 dotted quarter,
+E5 eighth, F-sharp5 quarter, D-sharp5 quarter; then E5 dotted half and a rest.
+Below it, long bass notes and inner chord members largely confirm each
+bar's harmony. This establishes a broad tune over accompaniment, but the
+rhythm has little initial impulse that demands the next phrase.
+
+Bar 9 changes the inner part into a regular E-major arpeggio. Bar 17
+changes the upper part into running sixteenths over a held tonic bass.
+Those are changes of surface activity, not clear consequences of the
+opening gesture. The later return is raised into a brighter register, but
+the extra height substitutes too readily for thematic transformation.
+
+The 'Invocation', 'First light', and 'Current' labels propose an expressive
+narrative more strongly than the musical transitions establish one. A new
+prelude should earn those changes through the development of a specific
+cell, a stronger bass trajectory, and phrase endings that create the need
+for the following phrase.
+
+FUGUE I: A SUBJECT THAT ENDS BEFORE IT HAS GENERATED MUCH
+
+Its subject is C5–E5–G5 in quarters, D5–E5 in eighths, F5 quarter,
+E5–D5 in eighths, and C5 half. It makes a complete tonic excursion and
+settles back onto the tonic. This is usable material, but its rounded shape
+and emphatic closure give the next voice little urgent unfinished business.
+
+The surrounding episodes can be labeled as fragments and the answer can be
+verified note-for-note while the piece still lacks a strong rhythmic motor.
+The replacement should make the bass an interlocutor: an entry, interruption,
+continuation, or harmonic challenge should change what the upper line does.
+A recurring eighth/sixteenth figure needs an accentual shape and a destination;
+more short notes are not a substitute for those things.
+
+A DIFFERENT ARCHITECTURE FOR THE EVENTUAL 25-PART WORK
+
+Begin by composing the actual contrapuntal combination that will justify
+the climax. Work backwards from that combination to the expositions and
+forward through the release. Do not write 25 separate introductory entries
+and hope that the last tutti will retroactively make them necessary.
+
+The material needs several compatible but strongly contrasting behaviours:
+for example, a broad subject, an urgent upbeat figure, a chain of prepared
+suspensions, a repeated-note rhythm, and a mobile bass line. These are
+possible compositional roles, not a formula of five choirs times five parts.
+The roles must migrate between parts; each part must keep its own phrase
+and registral continuity while the listener's attention moves among them.
+
+First make a four- or five-part combination that is musically persuasive
+without orchestration. Establish the particular inversions, entry distances,
+and exchanges that its actual notes permit. Extend that material to eight
+and twelve parts, then further, only where the additions create a new
+relationship. Doubling a chord member, relocating a line, or splitting one
+musical role between more staves is not an increase in contrapuntal substance.
+
+The approach to the climax should let several unfinished phrases accumulate
+pressure together. Useful means include closer but intelligible entries,
+prepared dissonances whose resolutions generate further suspensions,
+changes of harmonic pace, and an arrival postponed for a specific melodic
+reason. A common final cadence can then resolve several lines at once.
+Beginning a loud tutti on an already-settled tonic cannot supply that history.
+
+Rhythmic zest must be authored at the level of gesture: an upbeat that
+leans into a destination, an accent that another voice answers, an apparently
+finished phrase carried onward by an overlapping entry, and a cadence whose
+release is felt against continuing motion. Metric clarity and variation
+must cooperate. Random displacement and constant sixteenths would repeat the
+same methodological failure in a faster surface.
+
+The next useful review is therefore a close examination of the new small
+pieces: rhythmic identity, harmonic necessity, phrase connection, genuine
+exchange between parts, and any literal bad notes. Numerical summaries may
+expose defects, as they did here; they cannot certify that those defects have
+been replaced by convincing music.
+
+FOLLOW-UP: WHAT TO RETAIN IN III AND VIII
+
+Sam's positive listening response to Preludes III and VIII matters. The score
+offers specific compositional identities worth preserving; the response is
+not a reason to declare the whole existing method successful, or to rewrite
+every prelude into the same faster texture.
+
+Prelude III, in C-sharp major and 12/8, maintains a sparse bell-like mechanism.
+Within its opening six-quarter-beat bar the upper attacks occur at 0, 1.5,
+3.5 and 5; the upper inner part answers at 0.5, 2.5 and 4.5, and the lower
+inner part at 1 and 4. The bass holds across the six beats. The notes leave
+space, so the shifting attacks and registral relations constitute the piece's
+identity. That mechanism survives changes of harmony and register and the
+final gathering of the separate strands into a sustained chord. It is a
+coherent textural idea; its promise does not depend on a claim of strict
+four-part fugue counterpoint. Preserve the space and the recognisable figure.
+
+Prelude VIII, in E-flat minor and 12/8, contrasts continuous inner eighth
+notes with a slower upper melody. Its opening B-flat–A-flat–G-flat is a
+falling gesture rather than an isolated chord-member selection. The following
+bar embellishes G-flat and reaches A-flat before returning; the slow line can
+continue while the inner motion sustains the compound pulse. At bar 11 the
+upper A-flat is genuinely held across the new harmony before resolving to
+G-flat. Preserve this separation of time scales and the falling-and-returning
+melodic arc. Its expressive potential does not require more busy notes.
+
+Fugue VIII's attractive climax and its failure of nine-part counterpoint
+are compatible judgments. At q184–216, bars 47–54, the first full ensemble
+contains no complete subject or countersubject annotation. Its lowest
+E-flat2 is held from q184 to 200, for sixteen quarter beats. Several inner
+lines cycle through E-flat/G-flat/B-flat and then members of the next chord.
+For instance, Voice 3 repeatedly alternates G-flat4 and E-flat4; Voice 5
+holds G-flat3 for nine beats beginning at q191. The upper registral opening
+and the return of the full sonority after a bar of silence can provide an
+effective arrival, which the user indeed likes.
+
+Unlike XXIV's first tutti, this passage does include fractional-beat passing
+motion: sixteen attacks fall between quarter beats, and passing tones at
+times enlarge the three-pitch-class aggregate. These details improve the
+surface but do not turn nine participating staves into nine continuing
+thematic arguments. The useful revision should retain the arrival's pacing
+and sonority while composing actual interacting phrases into its supporting
+parts. It should not destroy a successful harmonic moment merely because
+that moment was mislabeled as contrapuntal achievement.
+
+FOLLOW-UP: WHY THE FUGUES SOUND ALIKE
+
+The further listening criticism that the fugues sound alike is supported by
+their shared compositional machinery. The differences in their named subjects,
+keys and tempos are real, but these parameters sit inside nearly the same
+phrase design, harmonic vocabulary, formal sequence and method of filling
+supporting parts. This is a failure of the model of composition, not a need
+for another cosmetic rhythmic pass.
+
+The source compose_cycle_fugues.py contains 23 generated subject designs;
+Fugue IV was handled separately. All 23 begin on the tonic at beat zero and
+end on a tonic half note. Twenty are exactly twelve quarter beats long; the
+other three are eight. Their original durations are exclusively quarters and
+halves. Their differing melodic contours therefore share the same emphatic
+start, limited rhythmic vocabulary and rounded terminal gesture. The two-beat
+tonic ending was explicitly selected to make the same terminal-tail overlap
+available in every fugue. The requirement of an easily solved combination
+has shaped the subjects toward one generic rhetorical profile.
+
+The common formal plan in FugueBuilder.compose is equally consequential:
+group expositions of at most five voices; a four-chord episode; related-key
+entries; the two-beat tail overlap; a bar of silence; a common-tone tutti;
+a final return and cadence. Entry order, episode length and key order change
+according to voice count or the movement number modulo three, rather than
+according to what the particular subject demands. The major episodes use
+vi–ii–V–I; the minor episodes VI–iv–V–i. The same-mode related-key entries
+generally move to keys five and seven semitones above the home tonic. Every
+score generated here is in 4/4. The bright-major/slower-minor tempo pattern
+adds a broad binary distinction, not twenty-three different personalities.
+
+The original recurring countersubject is also solved, not independently
+invented: its simultaneous intervals with the subject are restricted to
+thirds and sixths, and its pitches are selected using the same register,
+step-distance and generic contour preferences. Ordinary episodes pin no
+subject-derived melodic fragment; the solver is handed a chord progression
+and asked for legal motion. The title 'Sequential episode' does not make
+those motions a necessary development of this fugue's material.
+
+The dense-section code makes the fundamental error especially explicit.
+dense_episode first writes a three-part harmonic core, then inserts the
+other staves one at a time from the current chord's pitch classes, requiring
+a minimum number of changes. Its standard harmony is I–vi–IV–I, or i–VI–iv–i,
+with eight beats per chord. XXIV's special variant pins a single augmented
+subject over a four-part core and fills the other twenty-one staves around
+it. Later revisions retain these cores and replace or extend the filler.
+Calling a part 'independent' because it changes pitch several times mistakes
+activity for a connected musical thought.
+
+The rhythmic revision reinforces why the second edition could not repair
+this. revise_rhythmic_counterpoint.py preserves the existing anchors and
+applies a quota of one subject alteration to even-numbered pieces, two to
+odd-numbered pieces, and up to three to the countersubject. Candidate changes
+fill an existing leap, ornament a held note or delay an existing resolution.
+The choices are screened for not adding an interval finding. That can improve
+an individual connection, but it cannot supply a missing phrase argument or
+make twenty-three forms grow out of twenty-three different subjects.
+
+The new edition must therefore not be assembled from this expansion method.
+Increasing the number of staves must increase the number of meaningful
+simultaneous relationships, not merely the number of chord-tone constraints.
+Each new fugue needs its own distinctive subject, answer, continuation and
+formal necessity. The final dense combination must be composed as interacting
+phrases before it can justify a twenty-five-part exposition or climax. A good
+two-voice study can begin rebuilding compositional judgment, but it does not
+prove that the old system will scale successfully after all.
+
+Source locations for this diagnosis: compose_cycle_fugues.py, THEMES,
+FugueBuilder.__init__, episode, stretto, ensemble, compose, dense_episode and
+dense_subject_episode; revise_dense_fugues.py, improve_tutti and
+new_development; revise_rhythmic_counterpoint.py, linear_variants and run.

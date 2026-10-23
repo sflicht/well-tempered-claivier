@@ -1,0 +1,19 @@
+{
+  "title": "Fugue VIII \u2014 before and after",
+  "segments": [
+    {
+      "kind": "card",
+      "duration": 2.5,
+      "title": "A \u2014 Earlier paragraph",
+      "text": "The same sixteen bars, with the same instruments and matched playback loudness. Original bars 17\u201332."
+    },
+    {
+      "kind": "score",
+      "start": 64,
+      "end": 128,
+      "title": "A \u2014 Earlier paragraph",
+      "text": "Follow the middle lines, the dance replies, and the approach to the warmer arrival.",
+      "music_gain": 0.5205950088015484
+    }
+  ]
+}

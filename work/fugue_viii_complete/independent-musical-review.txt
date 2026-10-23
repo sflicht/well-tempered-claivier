@@ -1,0 +1,100 @@
+INDEPENDENT SCORE REVIEW
+Fugue VIII: The procession finds a dance floor
+Complete-form audition, 23 October 2026
+
+REVIEWED SOURCE
+08-fugue-complete.json
+Whole-file SHA256:
+63021ec26e8a931fb00b4229b6398673f59f673f618c4b0e4d40965fcc423deb
+
+Canonical voice-event SHA256:
+68b47525b548a6a6492ee213e497c77c2aadeac149bc460b78fc174e2954368b
+Canonicalization: preserve voice and event order; retain each voice's name
+and each event's t, d, p, spell, v, gate; encode with Python json.dumps,
+sort_keys=True, separators=(',', ':'). The event hash excludes annotations
+and other presentation metadata.
+
+SCOPE AND VERDICT
+This is a review of the literal score and its combinations, not an audio
+listening evaluation. I examined pitches, durations, overlapping phrases,
+imitative entries, selected low-register dissonances, and harmonic arrivals.
+All beat numbers below count quarter notes from zero; pitches are concert
+pitches in the saved E-flat score.
+
+The 400-beat piece now contains substantial nine-part imitative writing and
+an intelligible route from exposed chant through dance, disturbance, retreat,
+return, and a delayed major-mode arch. Its claim to counterpoint has concrete
+support in the notes. The nine tracks and their entry labels alone would not
+establish that claim. This remains an audition, with no certification of
+Bach-level invention, beauty, or the listener's emotional response.
+
+WHAT MAKES THE DENSE WRITING MORE CREDIBLE
+The chant begins alone in the horn. Its eight-beat opening is heard before
+the first answer, and the dance interrupts later rather than competing from
+the first note. Every instrument has carried a complete chant statement by
+beat 100.
+
+The first dense paragraph around 80-104 combines recognizable material with
+continuations that have different lengths and destinations. The revision to
+the flute at 88-90 creates an actual held-and-resolved gesture; the cello at
+92-104 reaches and holds its apex before its neighbors finish. These changes
+address a real weakness of the earlier quarter-note marching, rather than
+merely adding more attacks.
+
+At 208-224, flute and violin begin compressed chant statements one beat
+apart. Horn, double bass and cello exchange the dance head at 208, 209 and
+210, then continue through phrases of different lengths. This is a useful
+example of shared material becoming several concurrent musical actions.
+
+The return from 288 uses overlapping 8-, 12- and 16-beat sentences and delayed
+entries. In the late major paragraph, the enlarged flute bridge at 352-368
+crosses longer lines whose peaks and releases occur at different times.
+The flute reaches its highest held point at 360-363; several other parts
+are still rising or completing sentences. The ensemble settles into its
+common final chord at 398-400, after the contrapuntal approach has done the work.
+
+REPAIRS MADE DURING THIS REVIEW
+1. Low-register voice leading: the cello's 84-88 route no longer follows the
+   bassoon into a doubled descent and then an unresolved semitone split.
+   At 90, bassoon Eb3 replaces an undirected D3/Db3 clash with the horn.
+   At 324, cello Gb3 replaces a leading note that collided with the bassoon's
+   Eb3 and leapt away without resolving. At 379, cello Eb3 similarly replaces
+   an unresolved low D3 against Eb3. At 332, cello Cb3 now lasts half a beat
+   before resolving to Bb2 while the Gb bass still sounds.
+2. Rhythmic differentiation: flute 88-90 and cello 92-104 were reshaped as
+   described above. The cello's longer apex and unequal releases now supply
+   a different phrase rhythm inside the dense paragraph.
+3. Accidental copying: bassoon 281-288 originally duplicated the viola's
+   descent in unison. It now holds and turns above that descent, then resolves
+   D4 upward to Eb4 at 288. The brief oboe/cello octave convergence nearby
+   can remain as part of the dominant gathering.
+4. Pedagogical accuracy: the final fourth and ninth figures are newly
+   attacked appoggiaturas or delayed resolutions. They are not all prepared,
+   tied suspensions. The final-bar descriptions now reflect that distinction.
+
+DISSONANCE AND HARMONIC DIRECTION
+The staggered chromatic F-Fb-Eb motions beginning at 176 are intentionally
+separated across instruments and octaves. Their successive semitone motions
+provide a reason for the friction; they should not be flattened into simple
+chords merely because their notes overlap.
+
+The relative-major arrival is explicit: Db7 at 111 leads to Gb at 112.
+The dense dark section reaches Bb7 at 239; its clarinet seventh resolves to
+Gb at 240 as the ensemble thins and the cello begins the enlarged memory.
+The final bass route is Ab at 384, F at 388, Bb at 392 and Eb at 396, with
+the borrowed Cb helping darken the F half-diminished region before release.
+The fourth, ninth and leading-note gestures resolve at different times over
+the final tonic. Extended vertical sonorities are part of this idiom;
+the low-register repairs above distinguish directed friction from accidents.
+
+LIMITS TO KEEP IN VIEW DURING LISTENING
+Several continuations still favor stepwise scalar arches and quarter-note
+motion. Differing schedules do not by themselves make nine equally memorable
+melodies. The deliberate octave presentations at 48-56 and 144-152 are colors,
+not evidence of independence. The rendering must make the important handoffs
+audible, especially inside 208-224 and 352-376; source inspection cannot tell
+us whether the mix achieves that or whether the late arrival moves a listener.
+
+No further local score repair is recommended before a complete audition.
+The useful next evidence is what can actually be followed and felt in the
+rendered performance, rather than another numerical voice-count certificate.

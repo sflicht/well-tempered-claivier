@@ -1,0 +1,95 @@
+INDEPENDENT SCORE REVIEW — NEW FUGUE I AND PRELUDE IV STUDIES
+
+Scope: literal notes, harmonic direction, rhythmic identity, phrase joins
+and continuing roles in the two new scores. This is score-based review;
+I have not heard the audio. No numerical or interval checklist can establish
+that these pieces are aesthetically successful, much less comparable to Bach.
+
+Sources reviewed:
+
+Fugue I: work/recomposition/fugue_i/01-fugue-recomposed.json
+SHA-256 e45c9cc8a60582985ed6107c167b1c36cfacd30511b6911351ac7975b9a0411c
+
+Prelude IV: work/recomposition/prelude_iv/prelude-iv-new.json
+SHA-256 81bbb8c75851577c1e2aebd29c994ed3f44edfc293ba1c651a01624982ab000e
+
+Quarter-beat positions below are zero-based. Bar numbers are one-based.
+
+FUGUE I — WHAT ACTUALLY CHANGED
+
+The new subject begins off the downbeat and contains a recognizable
+eighth/sixteenth gesture: C–E–D–C–B–C, followed by a rising continuation.
+Its final B is unresolved until the following C. That is a consequential
+change from the old rounded tonic half-note ending: the subject leaves
+unfinished melodic business that continues as the second voice enters.
+
+The accompanying line has longer notes and a different accentual shape.
+The two voices exchange material and initiative rather than separating
+permanently into an animated upper line and a chord-confirming bass.
+The episodes are now literal phrases written for their joins. The closing
+head exchanges and continuing bass give a credible local reason to move
+toward the final dominant pedal.
+
+Two transcription/connection issues were identified during review and were
+already corrected in the author's next state. The upper G-subject entry at
+q24.5 had been an octave too low, producing a fourteen-semitone drop into
+the entry and a thirteen-semitone recovery afterwards. Restoring its octave
+preserves the phrase's register. At q59–60 the former G4→F#5 major-seventh
+jump was replaced by G4→F#4. The current continuation is F#4–G4–D5–C5–B4–A4–
+F#4–B4. Against the bass, F#4 resolves the earlier C#/G tension; the move to
+G4 over C3 reaches a fifth by contrary motion; the following upward fifth
+to D5 is answered by a descent. This join now makes melodic sense.
+
+I find no further material literal-note objection in the reviewed final
+state. The tonal route remains compact and conventional. The subject and
+episodes show more deliberate rhythmic direction, but the piece is a modest
+two-voice study; it has not yet demonstrated a long, accumulating expressive
+argument or anything about the feasibility of twenty-five-part counterpoint.
+Listening should decide whether its motor is lively and its repetitions
+earn their place, rather than treating cleaner authorship as a quality award.
+
+PRELUDE IV — WHAT ACTUALLY CHANGED
+
+The new 3/4 prelude is founded on one recurring gesture, with sixteenth-unit
+durations 2,1,1,2,3,1,1,1. Its long target begins halfway through beat 2,
+continues across beat 3, then releases into a descending tail. The durations
+therefore establish a local direction rather than being a stock fast surface.
+The gesture moves into the bass in bars 5–6 and 17–18 while the upper voice
+continues in longer values. These are real exchanges of musical initiative.
+
+The final opening bass C#3–E3, F#3–G#3, A3–C#3 supplies an ascending arc
+against the descending upper response. At bars 4, 16 and 24 a held upper
+note is made into a seventh by the bass change and resolves down to a sixth.
+Other ties at bars 9→10, 13→14 and 19→20 similarly join phrases through
+prepared dissonance. The suspensions now do compositional work: one part
+continues while the other changes the harmonic situation.
+
+The earlier bar-12 harmonic problem was removed before this final review:
+the D#–E#–F# lead articulates C# dominant and the approach to F# minor.
+Bar 20 expands an ascent through several harmonies, regaining the opening
+register before the tonic return. The later C#6 arrival is prepared by that
+return and the ongoing gesture, rather than being the sole signal of climax.
+The closing D#-rooted half-diminished implication and G# dominant pedal give
+the final span a clear tonal destination.
+
+I recommended one final phrase fix, adopted by the author. Bar 8 originally
+ended D#4→G#4 into E major. The bass reached E, but the exposed upper leading
+tone did not complete its own motion. Changing the final sixteenth to E4
+gives C#4–D#4–F#4–E4, an anticipation of the arrival, before G#4 opens the
+next cell. That small change improves the actual melodic join without
+replacing the piece's rhythmic identity.
+
+I find no further material literal-note or phrase-join fix in the final
+reviewed state. The piece remains brief and substantially sequential, with
+familiar harmonic paths. Its advance is specific: a gesture governs its
+continuations, the bass sometimes owns that gesture, and suspensions and
+registral movement connect phrases. Whether those means produce the desired
+zest is now a question for audition. This study also gives no reason to
+discard the distinct spaces and slower arcs the user likes in III and VIII.
+
+DECISION
+
+Both studies are suitable for a candid listening comparison as fresh,
+limited compositions. Neither is a replacement cycle or a certification of
+success. Preserve the user's positive response to the promising preludes;
+rebuild the fugues' compositional method separately and from the ground up.

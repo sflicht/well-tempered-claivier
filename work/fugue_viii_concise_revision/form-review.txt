@@ -1,0 +1,160 @@
+FUGUE VIII — FORM EDITOR’S PROPOSAL
+23 October 2026. Written-score review; no audio audition performed.
+
+RECOMMENDATION
+
+Use a 60-bar form: 240 quarter beats at quarter=108 gives 133.333 seconds
+of music, about 2:16 with the present audio tail. This removes 40 percent
+of the current 100-bar form while preserving the new retort paragraph.
+The cuts require composed joins; the coordinates below are a structural
+map, not permission to concatenate arbitrary MIDI slices.
+
+EXACT STRUCTURAL MAP (half-open beat intervals)
+
+New beats   New bars  Source / work
+0–48         1–12    Old 0–48, exposition; retain its shape, repair harmony.
+48–56       13–14    Old 48–56, the complete first dance statements.
+56–112      15–28    Old 72–128 shifted -16 beats; compose the join at56.
+112–144     29–36    NEW eight-bar functional modulating episode.
+144–176     37–44    Adapt old288–320 shifted -144 beats, with fresh lead-in.
+176–208     45–52    NEW eight-bar continuation and compact culmination.
+208–224     53–56    NEW four-bar predominant–dominant approach.
+224–240     57–60    NEW four-bar tonic-minor cadence and close.
+
+Delete old56–72 and all old128–288. Do not append old320–400. In particular,
+remove the long chromatic-slip section, the second quiet augmented-memory
+reset, the separate gathering, and the sixteen-bar major apotheosis/coda.
+Their repeated retreat/regather/crest pattern costs time and weakens the
+identity of the strongest arrival.
+
+THE IMPORTANT SURVIVOR
+
+The reviewed retort paragraph old80–114 becomes new64–98, or approximately
+0:35.56–0:54.44. The old112–120 relative-major chant becomes new96–104.
+Keep the retort relay, improved cello register, contrary continuation,
+and staggered resolutions. The surviving quiet space after that cadence
+lasts four bars (new96–112), rather than the former sixteen-bar room.
+The score critic may still change harmonically faulty pitches; the point
+is to preserve its identity and pacing, not declare every note untouchable.
+
+JOIN AT NEW56 (OLD56 -> OLD72)
+
+The first two full dance statements at old48 end at old56, so the cut
+preserves their complete shapes. It removes their octave continuation and
+another four-bar preparatory circuit before the stronger retort paragraph.
+
+Do not paste old72’s bass C-flat under the surviving old55 material without
+recomposing. The projected old72 vertical collection is C-flat, D-flat,
+E-flat, G-flat, B-flat; it is precisely the sort of extended sonority that
+could perpetuate the present harmonic complaint.
+
+Recompose approximately new52–60 around a short B-flat dominant -> E-flat
+minor arrival. An explicit D-natural in a resolving upper/middle line gives
+that join a tonal direction; the old dance tails have D-flats, so their
+last notes cannot simply be left unchanged against the new dominant.
+Possible local work: dance-tail D-flat -> D-natural before its E-flat;
+move the low cello G-flat off the dominant beat; let bassoon A-flat resolve
+to G-flat; recompose the first two beats after the cut to keep the upper
+lines coherent. These are harmonic intentions, not a proved nine-part
+combination. Have the independent harmonic audit check the actual notes.
+
+The flute’s complete rising figure and viola’s complete chant start at
+old72/new56 and can survive this join. The horn’s dance head also begins
+there. The old oboe and cello are mid-continuation at old72; give them
+fresh continuations into their old76/new60 material instead of pretending
+that cut tails are fresh themes.
+
+JOIN AT NEW112 / EIGHT-BAR EPISODE
+
+The clarinet’s old124–132 major rising theme becomes new108–116 and crosses
+the proposed new episode boundary. Preserve or deliberately recompose the
+whole statement; do not truncate it and keep an exact-entry annotation.
+Its second bar (new112–116) contains D-flat, C-flat, A-flat, F: these are
+natural members of D-flat seventh. That suggests the following compact
+bass/harmony route, one bar each, with passing motion within each bar:
+
+New112–116: D-flat7, continuing the clarinet phrase.
+New116–120: G-flat, a brief relative-major confirmation.
+New120–124: F7, an applied dominant with purposeful A-natural.
+New124–128: B-flat minor, reached through A-natural -> B-flat.
+New128–132: E-flat7, with G-natural directed to A-flat.
+New132–136: A-flat minor, the minor subdominant.
+New136–140: F half-diminished (F, A-flat, C-flat, E-flat), predominant.
+New140–144: B-flat7, directed to E-flat minor at new144.
+
+This route gives named destinations rather than a long drift through notes
+from one scale. It is a plan for bass and voice-leading, not a chord grid
+onto which six filler lines should be placed. Compose an imitative pair
+from the retort or dance tail, a complementary moving bass, then add the
+necessary independently shaped lines. Use four or five voices for much of
+this episode; the absent voices earn their next entries. A quieter passage
+must still move harmonically.
+
+The oboe’s old126 C-flat and cello’s old126 D-flat finish at old128/new112.
+Both can participate naturally in the new D-flat7 phrase. Avoid simultaneous
+rearticulation of every voice at112. Let a phrase cross the boundary.
+
+RETURN AT NEW144 (OLD288)
+
+The violin chant, delayed bassoon chant, inner chant, upper inversion and
+quick fragments in old288–320 give a useful returning contrapuntal core.
+They should be edited as a combined paragraph, not accepted as consonant
+merely because their individual lines are interesting.
+
+Two old phrases begin at284 and cross288: clarinet’s rising theme284–292
+and horn’s continuation284–292. Their first bars are absent if old288–320
+is copied literally. Either compose the preparatory material at new140–144
+and carry it across, or give those parts genuine new continuations at144.
+Do not label an entry at new140 unless the whole eight-beat template exists.
+The bass’s old280–288 dominant pedal likewise must be replaced by the new
+approach, not carried into the tonic as an accidental sustained low B-flat.
+
+Keep the old304–312 cello’s altered-chant F-flat only if its actual harmonic
+context justifies it. There is no need to preserve the earlier chromatic
+subplot now that its exposition has been deleted. Replacing this with the
+ordinary chant could make the return more unified, but inspect the new
+combination with the simultaneous upper inversion.
+
+The cutoff at old320/new176 falls inside several continuing sentences.
+The new continuation176–208 should inherit their directions and resolve
+their tensions. Do not reset all nine parts together at176.
+
+NEW FINAL SIXTEEN BARS:176–240
+
+176–192 (bars45–48): a brief release after the returning dense paragraph.
+Reduce to five or six moving voices, use an actual subdominant diversion,
+and retain a short motif in imitation. Keep momentum; no new slow-memory
+section or long reset.
+
+192–208 (bars49–52): bring the absent voices back successively. Combine
+one measured chant, one quick theme and distinct responding lines, with
+entries composed against the entire sounding texture. This is the compact
+nine-part culmination. Its apex should arise from voice-leading tension,
+register and the contraction of entry intervals. Do not increase every
+velocity or hold a nine-note sonority as the main event.
+
+208–224 (bars53–56): a single directional predominant–dominant approach.
+Possible harmonic functions: A-flat minor -> F half-diminished -> cadential
+six-four over B-flat -> B-flat7. A changing bass in the first two bars and
+at most two bars of dominant pedal avoids another long harmonic plateau.
+Suspensions must be prepared and resolve in individual lines.
+
+224–240 (bars57–60): tonic-minor arrival with motion inside the release,
+followed by one short final cadence. Four bars is an upper limit, not an
+invitation to keep restating the same chord. Let some voices finish early.
+Stay in E-flat minor; if a Picardy third is wanted, reserve G-natural for
+the final arrival only. Avoid a large E-flat-major victory section.
+
+STYLE AND PERFORMANCE IMPLICATIONS
+
+The main path toward the WTC inspiration is a better relation between
+subject, bass movement, dissonance and cadence: purposeful sequences,
+clear applied dominants, motivated episodes and compact form. Switching
+to harpsichord or attaching Baroque terminology does not supply this.
+
+Piano should be the primary audition. Use restrained foreground/background
+voicing, short phrase-specific breaths and a coherent dynamic range.
+Treat the nine written voices as lines whose roles change. A constant
+loudness hierarchy by instrument would harden the same registral problems.
+The chamber version can wait until the composition works in its primary
+keyboard medium. No claim about the resulting sound is made in this report.

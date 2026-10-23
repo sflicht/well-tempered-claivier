@@ -1,0 +1,89 @@
+{
+  "purpose": "Musical edit scope; not a quality certification",
+  "source_sha256": "8875eb04af5b75105fa2dddb1fae68b11a59fbc9fbd32a73fdccc6c16a85daa6",
+  "changed_region_beats": [
+    80,
+    114
+  ],
+  "unchanged_before_and_after": true,
+  "voices": [
+    {
+      "name": "Flute",
+      "earlier_events_in_region": 33,
+      "revised_events_in_region": 36
+    },
+    {
+      "name": "Oboe",
+      "earlier_events_in_region": 36,
+      "revised_events_in_region": 42
+    },
+    {
+      "name": "Clarinet",
+      "earlier_events_in_region": 31,
+      "revised_events_in_region": 49
+    },
+    {
+      "name": "Violin",
+      "earlier_events_in_region": 35,
+      "revised_events_in_region": 41
+    },
+    {
+      "name": "Viola",
+      "earlier_events_in_region": 32,
+      "revised_events_in_region": 39
+    },
+    {
+      "name": "Horn",
+      "earlier_events_in_region": 25,
+      "revised_events_in_region": 38
+    },
+    {
+      "name": "Bassoon",
+      "earlier_events_in_region": 29,
+      "revised_events_in_region": 40
+    },
+    {
+      "name": "Cello",
+      "earlier_events_in_region": 37,
+      "revised_events_in_region": 48
+    },
+    {
+      "name": "Double bass",
+      "earlier_events_in_region": 29,
+      "revised_events_in_region": 31
+    }
+  ],
+  "written_active_parts_80_112": [
+    {
+      "start": 80,
+      "end": 80.5,
+      "parts": 8
+    },
+    {
+      "start": 80.5,
+      "end": 84.0,
+      "parts": 9
+    },
+    {
+      "start": 84.0,
+      "end": 84.5,
+      "parts": 8
+    },
+    {
+      "start": 84.5,
+      "end": 95.5,
+      "parts": 9
+    },
+    {
+      "start": 95.5,
+      "end": 96.0,
+      "parts": 8
+    },
+    {
+      "start": 96.0,
+      "end": 112,
+      "parts": 9
+    }
+  ],
+  "caveat": "Written active parts exclude articulation gates and do not establish perceptually separate musical streams."
+}

@@ -1,0 +1,104 @@
+THE PROCESSION FINDS A DANCE FLOOR
+Independent review of the nine-line audition experiment
+
+Reviewed score: nine-line-experiment.json
+SHA-256: edbf957e4831143228596cbcddfb334c8f63da45b63195b13eebb67fbeb54d07
+
+Scope: direct reading of the literal pitches, durations, phrase connections
+and combined textures. I have not heard the rendered audio. This review
+does not establish that the experiment sounds good or achieves an ecstatic
+climax. Quarter-beat positions are zero-based.
+
+DECISION
+
+The revised checkpoint is suitable for audition. It contains nine authored
+lines which exchange and overlap three ideas, including genuine imitative
+passages and differing phrase trajectories. It is not a completed fugue or
+proof of continuous nine-part independence. Its harmonic density and the
+audibility of the competing gestures remain questions for listening.
+
+The title now describes a concrete musical situation. A newly measured chant,
+a dry dance with a 3+3+2 accent pattern, and a broad rising idea can interrupt
+and transform one another. This gives the writing a more specific character
+than the previous cycle's interchangeable exposition/episode/tutti machinery.
+The material still sometimes moves in phrase families, but the revisions
+below prevent the first full ensemble from simply presenting three harmonized
+layers under nine instrumental names.
+
+WHAT THE INITIAL CHECKPOINT GOT WRONG, AND WHAT CHANGED
+
+At q16 the first version doubled the entire flute chant in the viola two
+octaves below it. Clarinet, violin, cello and double bass simultaneously
+played transposed versions of the same rising phrase, with the same rhythm
+and contour. Hand-authoring those notes did not, by itself, make their
+combined texture independent. A similar group of aligned rising phrases
+returned at q64. These were substantive echoes of the old method's problem.
+
+The revised q16 texture is materially different. The viola continues its
+descent, enters the chant at q17 and carries it across q24. The cello takes
+twelve beats to complete a rise and descent before its next dance head at
+q28. The violin has its own differently timed ascent and turn; the bass
+bends its opening arch downward before rising toward its next entry.
+The clarinet alone retains the original broad rising shape at q16. Thus
+the accompanying voices now have different destinations and different
+times of reaching them, rather than merely different starting pitches.
+
+At q64 the bass alone starts the original major-mode bridge. The clarinet
+begins its bridge at q65, crosses q72 and continues at q73. The violin
+descends against the returning flute dance; horn and cello take distinct
+routes upward. In particular, the cello leaves its preceding held D3,
+rises through F#3–A3–B3–C#4 to F#4 and then descends. This gives its earlier
+low material a real registral development.
+
+THE STRONGEST ACTUAL INTERACTIONS
+
+The E-flat turn has a melodic cause. The viola passes E4–Eb4–D4 at q32–34;
+the horn follows through E3–Eb3–D3, with Eb at q34; the bassoon reaches Eb3
+at q35 before descending onward. The adjacent forms of E rub against one
+another while the semitone descent moves through the ensemble. Those are
+directed passing tensions rather than an arbitrary permission to use any
+pitch. At q33, for example, the A bass and F/C/Eb/G upper content make a
+specific dominant-ninth color over A. The harmony changes as the lines
+continue, rather than staying inside one redistributed triad.
+
+The q48–56 paragraph offers the clearest imitative interplay. The flute
+hurries the chant at q48; the violin pursues it at q49. Concurrently, the
+dance head enters horn at q48, double bass at q49 and cello at q50. These
+participants then continue differently. This is a particular musical event,
+not simply nine simultaneous versions of a rhythm template.
+
+One local defect was corrected during review. The cello's original q48
+pickup was D3–E3–F3–G3, duplicating the horn's first three notes at the same
+time and prematurely announcing most of the purported third entry. The new
+C3–D3–E3–C3 approach separates its preparation from the D3 head at q50.
+The revised accent origins also follow the delayed heads, so the performed
+3+3+2 stresses belong to each entrance rather than the enclosing phrase box.
+
+REMAINING LIMITS AND LISTENING QUESTIONS
+
+Some two-bar organization and simultaneous family entries remain, notably
+the chant variants around q24 and the broad arches around q40. They can
+provide local coherence, but the danger is hearing continuous modal texture
+instead of particular voices changing one another's course. Different solo
+melodies are not sufficient evidence of a successful combined composition.
+
+The flute and bassoon still play the major dance head in exact octaves from
+q64 to q68. They then diverge: the bassoon gives its next four beats to the
+hurried chant. That one-bar agreement can function as an arrival gesture;
+it should not be represented as nine independently moving parts at every
+instant. Likewise, the final two-beat D-major chord is a shared resolution,
+not an achievement of counterpoint merely because all nine players sound.
+
+The ensemble frequently fills much of the modal collection. This is a
+different harmonic language from the old all-triad texture, but saturation
+could flatten the contrast between buildup, disruption and release. The
+important listening question is whether the E-flat disturbance and later
+F-sharp/C-sharp turn actually change the perceived direction, and whether
+the first clear common arrival feels earned. Additional activity or more
+semitone clashes would not automatically improve either result.
+
+No further fatal literal-note issue warrants delaying the first audition.
+The defensible present claim is a playful nine-line contrapuntal experiment
+with several specific interactions, revised to remove an exposed instance
+of grouped harmony masquerading as independence. The actual expressive
+success of those interactions remains open.

@@ -1,0 +1,153 @@
+{
+  "title": "Fugue VIII \u2014 guided listening",
+  "scope": "Exact-score excerpts. Solo examples retain timbres, notes and timing; excerpt levels are normalized for clarity.",
+  "segments": [
+    {
+      "kind": "card",
+      "duration": 4,
+      "title": "Three ideas, nine players",
+      "text": "Learn the chant, the dance and the rising companion. Then compare isolated exchanges with the complete ensemble.",
+      "focus_voice": 5,
+      "subject_id": "chant"
+    },
+    {
+      "kind": "score",
+      "start": 0,
+      "end": 8,
+      "solo": [
+        5
+      ],
+      "title": "The chant \u2014 horn",
+      "text": "A measured tune with a small fall and a repeated final note. Remember its contour."
+    },
+    {
+      "kind": "card",
+      "duration": 3,
+      "title": "The dance interrupts",
+      "text": "Its accents divide the opening bar into 3 + 3 + 2 eighth notes. The second bar changes the shape.",
+      "focus_voice": 6,
+      "subject_id": "dance"
+    },
+    {
+      "kind": "score",
+      "start": 34,
+      "end": 42,
+      "solo": [
+        6
+      ],
+      "title": "The dance \u2014 bassoon",
+      "text": "The long-short articulation and displaced accents give this idea a different gait from the chant."
+    },
+    {
+      "kind": "score",
+      "start": 8,
+      "end": 16,
+      "solo": [
+        4
+      ],
+      "title": "The rising companion \u2014 viola",
+      "text": "A broad rise reaches its high point, then turns down. This third idea will move between instruments."
+    },
+    {
+      "kind": "score",
+      "start": 8,
+      "end": 16,
+      "title": "Three lines together",
+      "text": "The oboe answers the chant. The viola rises beneath it while the horn continues its own sentence."
+    },
+    {
+      "kind": "card",
+      "duration": 3,
+      "title": "Follow the long phrases",
+      "text": "First hear three paths from the first dense paragraph. Then hear the same passage with all nine parts.",
+      "focus_voice": 8,
+      "subject_id": "chant"
+    },
+    {
+      "kind": "score",
+      "start": 80,
+      "end": 96,
+      "solo": [
+        0,
+        2,
+        8
+      ],
+      "title": "Flute, clarinet and bass",
+      "text": "The flute descends, the clarinet works upward, and the bass carries the chant. Their phrase lengths differ."
+    },
+    {
+      "kind": "score",
+      "start": 80,
+      "end": 96,
+      "title": "Restore the nine parts",
+      "text": "Follow one of those paths through the surrounding dance heads, held notes and continuations."
+    },
+    {
+      "kind": "score",
+      "start": 112,
+      "end": 128,
+      "title": "The texture opens",
+      "text": "The relative-major arrival releases the first dense paragraph. Fewer lines leave room around each new entrance."
+    },
+    {
+      "kind": "score",
+      "start": 176,
+      "end": 184,
+      "solo": [
+        4,
+        5,
+        6
+      ],
+      "title": "A chromatic slip travels downward",
+      "text": "Viola, horn and bassoon pass F\u2013F-flat\u2013E-flat through three registers, with unequal delays."
+    },
+    {
+      "kind": "score",
+      "start": 176,
+      "end": 184,
+      "title": "The slip inside the ensemble",
+      "text": "The same three lines now sit inside the longer phrases around them. Trace the inner colors."
+    },
+    {
+      "kind": "score",
+      "start": 208,
+      "end": 216,
+      "solo": [
+        5,
+        8,
+        7
+      ],
+      "title": "The low dance chase",
+      "text": "Horn, bass and cello enter one beat apart with the dance head, then take different continuations."
+    },
+    {
+      "kind": "score",
+      "start": 208,
+      "end": 216,
+      "title": "Two speeds collide",
+      "text": "Restore all nine parts. The flute and violin hurry the chant above the low chase; other lines keep a broader pace."
+    },
+    {
+      "kind": "score",
+      "start": 240,
+      "end": 260,
+      "title": "The quiet memory",
+      "text": "After the cadence resolves, the cello begins the chant at twice its original note lengths. The texture thins sharply."
+    },
+    {
+      "kind": "score",
+      "start": 352,
+      "end": 376,
+      "title": "The major return keeps developing",
+      "text": "The last convergence continues beyond the change to major. Follow the different phrase peaks as the passage grows."
+    },
+    {
+      "kind": "score",
+      "start": 384,
+      "end": 400,
+      "title": "The final cadence",
+      "text": "The lines close into the last turn home. A shared ending is the destination of the preceding movement.",
+      "duration": 11.88888888888889
+    }
+  ]
+}

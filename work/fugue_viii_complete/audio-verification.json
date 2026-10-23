@@ -1,0 +1,38 @@
+{
+  "score_sha256": "63021ec26e8a931fb00b4229b6398673f59f673f618c4b0e4d40965fcc423deb",
+  "wav_checks": [
+    {
+      "file": "Fugue-VIII.wav",
+      "sample_rate": 44100,
+      "duration_seconds": 225.2,
+      "peak_int16": 28834,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Fugue-VIII-chamber.wav",
+      "sample_rate": 44100,
+      "duration_seconds": 225.2,
+      "peak_int16": 28834,
+      "clipped_samples": 0
+    }
+  ],
+  "optional_external_review": {
+    "status": "Not uploaded; external review requires explicit user permission after automatic approval review rejection",
+    "prepared_final_recording_excerpts": [
+      {
+        "file": "Fugue-VIII-review-opening.mp3",
+        "start_seconds_in_complete_recording": 0,
+        "requested_seconds": 9,
+        "size_bytes": 54614,
+        "sha256": "e3f15eef0b1ba8fecd578679ff27e161425b96ef57c78ff7f6d49e3f00e16397"
+      },
+      {
+        "file": "Fugue-VIII-review-nine-parts.mp3",
+        "start_seconds_in_complete_recording": 44.44444444444444,
+        "requested_seconds": 8.88888888888889,
+        "size_bytes": 53987,
+        "sha256": "290bdb4319f25f966673dd8ecc9bf3182e69f2fc06e31cec6b5d76de97b50595"
+      }
+    ]
+  }
+}

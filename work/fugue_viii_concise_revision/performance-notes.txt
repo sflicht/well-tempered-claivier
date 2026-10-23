@@ -1,0 +1,95 @@
+FUGUE VIII — RESTRAINED PIANO PERFORMANCE PASS
+23 October 2026
+
+Scope
+
+This is a performance-only helper for the shorter revision being composed.
+It does not correct harmony or claim that a sampled rendering sounds good.
+No recording was listened to during this work.
+
+Concrete findings in the prior source
+
+The complete composer assigned baseline MIDI velocities of 58, 60, 63, 67,
+66, 62, 65, 67, and 68 to flute, oboe, clarinet, violin, viola, horn, bassoon,
+cello, and bass respectively. The piano renderer carried the same values
+over unchanged. Thus all voices used the same piano sample, but retained
+an instrument-dependent dynamic bias. In the actual passage-revised score,
+the mean event velocity was about 59 in flute and 69 in bass, before
+considering other causes of perceived loudness. That does not prove a
+perceptual fault, but it is an avoidable inheritance from the orchestration.
+
+Most free continuations used a .98 release gate; many short dance notes
+used .77. On the same piano sample this gives the families a large change
+in articulation. The helper preserves a rhythmic difference while reducing
+that contrast. A MIDI gate is a note-off instruction, not an exact model
+of the time a real piano sound ceases.
+
+The renderer has no separate piano velocity override. It reads event v
+and gate for both piano and chamber output. The helper therefore writes a
+separate performance score. The original composition score is retained,
+and the shaped score should be used only for the piano render. The helper
+does not modify render_music.py.
+
+What the helper does
+
+1. Removes the original per-instrument baseline bias. Source dynamic
+   direction and individual rhythmic emphasis remain at a restrained
+   scale. The reference piano velocity is 61.
+2. Gives annotated thematic material a small prominence, at most three
+   velocity units. When many themes coincide that bonus falls to 1.5.
+3. Reduces free continuations modestly when five or more written notes
+   are sounding. This supports a moving foreground without permanently
+   assigning a voice to accompaniment.
+4. Applies a small arch within an existing phrase annotation, building
+   toward its middle and easing toward its end. This does not infer a
+   cadence, change rhythm, or decide where musical emphasis belongs.
+5. Restrains the very high register and low non-thematic bass slightly.
+6. Uses short-note gates around .89 for the dance/retort and .94 for
+   connected figures. Longer notes have gates around .97–.99. Repeated
+   pitches and written breaths receive explicit releases. No gate
+   exceeds the written duration, and no sustain pedal is added.
+
+The method is deliberately transparent and deterministic. It is an
+audition starting point, not a substitute for a pianist's phrasing.
+
+Usage
+
+  python3 tools/shape_fugue_viii_piano.py INPUT.json OUTPUT-piano.json --report REPORT.json
+
+An optional --plan JSON file may supply:
+
+  {
+    "source_voice_base_velocities": {"Flute": 58, "Oboe": 60},
+    "velocity_envelope": [
+      {"t": 0, "offset": 0},
+      {"t": 80, "offset": 2},
+      {"t": 112, "offset": -2}
+    ]
+  }
+
+The example envelope is illustrative, not a prescribed plan for the new
+shortened form. Defaults match the old composer's nine baselines. Override
+them if the new composition uses a different baseline convention.
+
+Verification
+
+The helper asserts that all source information except event v and gate is
+unchanged. This includes pitches, onsets, written durations, spellings,
+theme annotations, phrase maps, voice identities, instruments, and pans.
+It records the source and output hashes. It refuses in-place source edits
+and refuses to apply itself a second time to an already shaped score.
+
+A demonstration on the unchanged 100-bar passage revision passed that
+assertion. Its resulting voice means were about 58.8–61.4 rather than
+59.0–69.0; these numbers document the change and do not establish audible
+balance. All of the original 2,877 notes were retained. Demonstration
+files are scratch evidence, not the proposed shorter musical revision.
+
+Files
+
+tools/shape_fugue_viii_piano.py
+work/fugue_viii_concise_revision/piano-shaping-original-demonstration.json
+work/fugue_viii_concise_revision/piano-shaping-original-demonstration-report.json
+
+Root may include the helper and this explanation in the final source
+package; the full demonstration score need not be delivered.

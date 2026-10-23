@@ -1,0 +1,213 @@
+FUGUE METHOD — FROM-SCRATCH REASSESSMENT
+
+STATUS
+
+This is a proposed compositional method and a diagnosis of the earlier work.
+It is not a report of a successful nine- or twenty-five-part proof. No such
+proof has been composed or established. The new two-part Fugue I remains a
+small audition candidate, not evidence that the method scales.
+
+DIAGNOSIS: WE OPTIMIZED THE WRONG MUSICAL OBJECT
+
+The old system's primary object is a sequence of chord-compatible pitch
+assignments, not a network of melodies whose encounters create the harmony.
+That makes the user's "all the fugues sound the same" a structural criticism,
+not a request for more varied ornament.
+
+The source makes this explicit:
+
+- In tools/compose_cycle_fugues.py, solve_counterpoint() selects a triad at
+  every quarter-note position and confines every free pitch to that triad.
+  Its objective favors proximity to one shared contour,
+  [0,2,3,2,0,-2,-3,-2,0,3,2,0], and inexpensive melodic motion.
+
+- FugueBuilder uses essentially one construction for the cycle: successive
+  small-group expositions, related-key entries, a short overlap, a full
+  ensemble section, return and cadence. Changing the key, seed, opening
+  scale degrees and tempo does not change this underlying rhetoric.
+
+- The subjects were deliberately given a sustained terminal tonic so the
+  same minimal overlap would work. That design convenience removes precisely
+  the forward pressure a good subject can create.
+
+- dense_episode() writes three parts first. dense_subject_episode() writes
+  four. The remaining lines are inserted into their fixed harmony, with a
+  minimum number of pitch changes as a proxy for independence.
+
+- The dense revision still retains three or four "core" parts, then fills
+  the missing voices. Its new development again prescribes a common
+  progression and projects a short subject contour into its chord tones.
+
+- Rhythmic refinement comes after these structural decisions. It preserves
+  the anchors and inserts permitted local figures.
+
+The result can pass increasingly sophisticated error screens while retaining
+the same musical personality. The voices added last are structurally
+subordinate by construction. Renaming their nearest available chord tones
+"derived counterpoint" does not change that.
+
+A DIFFERENT CONSTRUCTION ORDER
+
+1. Stop treating 24 movements as a batch.
+
+There should be one compositional lead and a sequential cycle of write,
+render, listen, then reject or revise. Independent agents can expose defects
+or investigate possibilities; they should not independently complete
+movements whose aesthetic decisions have never been heard together.
+
+The immediate problem should be one convincing nine-part paragraph, followed
+by its complete fugue. The new two-part I is only a small audition candidate.
+Its existence does not validate a scalable method.
+
+2. Design the difficult combination before writing a complete movement.
+
+For the nine-part work, write a short list of specific musical events that
+the eventual convergence must accomplish. For example:
+
+- A subject enters while an earlier statement is still moving.
+- Its entry changes which line controls the bass.
+- One companion's delayed resolution crosses the next entry.
+- A previously heard fragment becomes the continuation that carries the
+  sequence to a new tonal arrival.
+- The final arrival requires the participating lines to finish at different
+  moments.
+
+Then write the actual subject and companion phrases needed for that
+particular situation. Do not decide on nine generic active tracks and fill
+them.
+
+This is a legitimate place to fail early. A beautiful isolated subject may
+have insufficient contrapuntal possibilities for this project. Conversely,
+a subject that admits dozens of legal overlays may be musically inert.
+
+3. Compose the nine-line paragraph as a coupled problem.
+
+A two- or three-line trial is useful for learning how a subject behaves. It
+must remain revisable when the fourth, fifth and later parts enter. Do not
+freeze it as an already complete composition with empty slots around it.
+
+Before completing pitches, give each of the nine continuous lines an actual
+phrase trajectory: entry, continuation, interruption or suspension, response,
+and destination. These trajectories should cross the proposed section
+boundaries.
+
+As each voice is written, revise any earlier line whose interval function or
+melodic destination changes. The added voice must be allowed to alter the
+contrapuntal argument. That is the crucial difference from insertion into
+fixed harmony. All parts remain revisable throughout this process.
+
+The target is not nine simultaneous complete subjects. Free counterpoint is
+legitimate. But its phrases should be composed in response to the thematic
+events, not selected from the chord currently underneath them.
+
+4. Build the fugue around that paragraph only after it works.
+
+Compose the exposition to teach the relationships the later combination will
+transform. Compose episodes from the actual difficulty of moving from one
+combination to the next: a fragment extends, a cadence is deferred, a bass
+entry displaces another line, a sequence carries the continuation elsewhere.
+
+A broad tonal plan is useful. A predetermined chord at every beat is
+premature. Harmony should constrain and emerge from the authored lines
+together.
+
+5. Treat 25 parts as a new compositional problem.
+
+A successful nine-part fugue would not justify adding sixteen parts to it.
+
+For 25, investigate a multiple-subject design with contrasting rates of
+motion, conceived for the full ensemble from the start. Slower thematic
+lines, active subjects and shorter responses can coexist, with their
+functions exchanged over time. No group should remain permanent harmonic
+padding.
+
+Spatial choirs could introduce material, but their eventual convergence must
+involve new cross-group contrapuntal relationships. Five simultaneous
+self-contained five-part fugues would not by itself solve the user's
+challenge.
+
+Before attempting the whole work, the necessary evidence would be a
+sustained 25-line convergence that moves through a real harmonic and
+thematic development. A static tonic field is not that evidence.
+
+WHAT ALGORITHMS CAN USEFULLY DO
+
+The useful search object is a placement or transformation of an authored
+phrase, not an individual chord tone.
+
+Given actual phrases, software can enumerate entry intervals, offsets,
+registral permutations and specified augmentations; then identify precisely
+where each combination fails. A result might say: "This entry distance
+produces an unprepared seventh in bar 3; postponing the second entry destroys
+the intended suspension."
+
+For nine voices there are 36 voice pairs; for 25 there are 300. Checking
+these relationships is worthwhile. But pairwise compatibility is
+insufficient: a new lowest part can change the dissonance status of
+previously compatible upper parts. The program therefore also needs actual
+bass context, metrical position, preparation, continuation and resolution.
+
+Useful outputs would include:
+
+- Compatible and incompatible phrase combinations, with exact offending
+  events.
+- Unresolved directed notes and failed continuations.
+- The consequences of exchanging two voices' registral positions.
+- Passages that reduce to prolonged doubling or static support.
+- Alternative placements of already authored material.
+
+The search must be allowed to return no satisfactory combination. It must
+not quietly repair failure by holding common tones, changing all difficult
+notes into chord tones or thinning the music back to three parts.
+
+None of these outputs chooses the most compelling phrase.
+
+CONCRETE EXAMPLE: AN ADDED VOICE CHANGES THE COUNTERPOINT
+
+Consider an initial two-line plan:
+
+Beat 1: Upper E4, held into beat 2; lower C4.
+Beat 2: Upper E4 continues; lower A3.
+Beat 3: Upper C4; lower E3.
+
+The vertical intervals are a third, fifth and sixth.
+
+Now introduce a new lowest line A2-F2-F2. On beat 2, the already sounding E4
+becomes a prepared seventh above F2. The old leap E4-C4 no longer supplies
+the intended resolution, and the proposed E3 on beat 3 introduces another
+seventh above F2.
+
+A coherent revision is:
+
+Beat 1: Upper E4, held into beat 2; middle C4; new bass A2.
+Beat 2: Upper E4 continues; middle A3, held into beat 3; new bass F2, held
+        into beat 3.
+Beat 3: Upper D4; middle A3 continues; new bass F2 continues.
+
+The new bass creates a 7-6 suspension; the upper line must resolve E4-D4.
+The fourth A3-D4 between the upper parts is supported by the actual bass.
+Adding the third voice changes the function and continuation of both
+existing lines.
+
+An insertion routine could avoid all this by choosing a safer bass note.
+That would miss the musical opportunity.
+
+FAILURE CONDITIONS
+
+The new method has failed if:
+
+- The many-part passage depends on long static harmony merely to accommodate
+  its voice count.
+- Removing most voices leaves every significant thematic exchange intact,
+  with the discarded parts supplying only thickness.
+- Added voices cannot force any reconsideration of the earlier lines.
+- Rhythmic energy still has to be applied afterward as ornament.
+- The subjects are interchangeable between movements without fundamentally
+  changing their forms.
+- The dry, plainly balanced rendering is unconvincing and needs orchestral
+  color or reverberation to suggest importance.
+- We cannot identify which concrete musical event makes the convergence more
+  compelling than the preceding, thinner texture.
+
+Those are reasons to reject and recompose the material, not reasons to
+increase the solver budget or strengthen the success language.

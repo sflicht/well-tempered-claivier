@@ -1,0 +1,92 @@
+THE WELL-TEMPERED clAIvier — RECOMPOSITION BRIEF
+
+Sam's correction, 22 October 2026
+
+The second edition does not satisfy the artistic brief. Its 25-staff finale
+does not establish 25-part counterpoint. The work also lacks the rhythmic zest
+and convincing musical development required even of the earliest pieces.
+
+The cycle remains 24 preludes and fugues through the major and minor keys,
+with N+1 actual contrapuntal parts in Fugue N. Increasing the number of parts
+should open increasingly intense expressive possibilities. Sam's intended
+destination is an almost religious ecstasy earned by the music. The early
+two-part work must already sustain a complete, compelling musical argument.
+
+POSITIVE LISTENING REFERENCES
+
+Sam likes Prelude III and Prelude VIII and hears promise in them. Preserve
+these as positive reference pieces while inspecting what makes their musical
+writing cohere. Do not assume that the whole cycle requires replacement.
+Sam also likes Fugue VIII's climactic harmonic arrival, while finding that
+its nine-part texture remains harmony rather than nine-part counterpoint.
+Preserve the useful harmonic destination when rebuilding its moving lines.
+
+Sam's later listening assessment is broader: the preludes are generally more
+promising, the fugues sound too similar, and the approach to many-part fugues
+must be rethought from scratch. Retain the preludes for selective development.
+Retire the shared fugue-generation and harmonic-insertion method. Do not
+assemble another complete cycle by ornamenting or extending that method.
+
+The Beethoven reference supplied by Sam concerns the creative use of fugal
+passages within symphonic arguments. Take from it a demand for a different
+dramatic purpose and formal course in each work: fugal writing can gather,
+interrupt, destabilize, transform or reconcile material. This is inspiration
+for musical form; it does not relax the required reality of the N+1 parts.
+
+Sam has granted broad creative freedom to define an AI Fugue genre. Original
+tunes, borrowed melodies, nonclassical influences, recycled AI-generated
+material and cheeky Bach/Beethoven allusions are all optional possibilities.
+Do not convert these permissions into requirements. Take responsibility for
+piece-specific musical choices, permit playfulness and risk, and avoid
+turning the project into another uniformly solemn exercise.
+
+WHAT MUST CHANGE
+
+Compose the actual gestures and their consequences. A subject needs a
+recognizable character, a metrical shape and useful harmonic implications.
+Its companion must contribute a continuing line. Each episode must have
+a reason to arise from the preceding material and to lead where it leads.
+
+Write the joins between phrases as carefully as the phrases themselves.
+An answer should change the situation. A cadence should resolve a tension
+that the preceding lines created. A rising register, a louder rendering or
+an expressive section title cannot supply that missing history.
+
+Rhythmic zest is not a quota of short notes or offbeat attacks. It depends on
+impulse, accent, contour, repetition, exchange, harmonic pace and destination.
+An even stream of notes can have strong propulsion. Irregular notes can be
+inert. Do not optimize a numerical rhythm-variety score as a proxy for drive.
+
+For the large fugues, compose the intended contrapuntal combination before
+committing to its exposition. Establish particular themes, countersubjects,
+inversions and entry distances that actually work together. Added parts must
+carry coherent continuations and create new relationships. Chord doubling,
+octave relocation and the distribution of one role among more staves do not
+fulfill the additional-voice requirement.
+
+Use checks to find specific errors in composed material. Do not let a solver
+select generic chord tones and then mistake the resulting admissibility for
+composition. A clean audit cannot certify a fugue, independence, beauty or
+the desired emotional effect.
+
+CURRENT WORK
+
+Two fresh, deliberately authored studies: Prelude IV in C-sharp minor and
+Fugue I in C major. Their source notes, piano demonstrations and scores are
+provided for musical assessment. They are not a third completed edition.
+The previous 48-work edition is retained as an unsuccessful historical draft.
+Its fugues are not accepted as the compositional foundation of the reset.
+No revised nine-part or twenty-five-part fugue has been completed. The two-part
+study supplies no evidence that a successful method scales to larger forces.
+
+REVIEW STANDARD
+
+Inspect the identifiable gesture, phrase connections, bass direction,
+exchange of initiative, use of related keys and the necessity of the return.
+Check actual dissonances and melodic joins without flattening intentional
+passing motion or suspensions. Then judge the recordings perceptually.
+
+Direct audio input is unsupported in the current assistant session. Score
+inspection and successful playback decoding must not be described as having
+listened to the music. The user's listening feedback is an essential part
+of the present assessment, not a conclusion supplied by technical checks.

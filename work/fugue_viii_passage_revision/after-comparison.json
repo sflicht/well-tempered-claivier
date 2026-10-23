@@ -1,0 +1,19 @@
+{
+  "title": "Fugue VIII \u2014 before and after",
+  "segments": [
+    {
+      "kind": "card",
+      "duration": 2.5,
+      "title": "B \u2014 Rewritten paragraph",
+      "text": "The same sixteen bars, with the same instruments and matched playback loudness. Original bars 17\u201332."
+    },
+    {
+      "kind": "score",
+      "start": 64,
+      "end": 128,
+      "title": "B \u2014 Rewritten paragraph",
+      "text": "Follow the clipped exchanges, the held upper line, and the staggered releases into the arrival.",
+      "music_gain": 0.5266232148938974
+    }
+  ]
+}

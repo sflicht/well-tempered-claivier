@@ -1,0 +1,161 @@
+FUGUE VIII — A THREE-BEAT REPLY INSIDE NINE-PART WRITING
+Passage revision, 23 October 2026
+
+PURPOSE
+
+This is a literal recomposition of the first sustained nine-part paragraph
+of the 100-bar Fugue VIII, with a small extension across its following
+cadence. It addresses the sameness of the free continuations, the hidden
+cello reply, and the tendency for different written parts to behave alike.
+It was not produced by randomizing rhythms, fitting extra lines to a fixed
+small-voice core, or optimizing an independence score.
+
+The source remains a working audition. Neither the composer nor the
+independent score critic listened to the audio. Their judgments concern
+written musical relations, not demonstrated perceptual clarity or beauty.
+The previously attempted Fal listening reports did not direct this rewrite.
+
+THE NEW MUSICAL DEVICE
+
+A three-beat retort is derived from the chant's initial neighbor turn:
+G-flat, F, G-flat, E-flat, B-flat, E-flat. Its durations are .75, .25, .5,
+.5, .5, .5 quarter-note beats. The first four pitches preserve the chant's
+turn; its compressed rhythm and dropped-fourth/return extension turn it
+into a short question. The short-long relations are composed as a gesture.
+They are not random accent offsets.
+
+The retort enters at unequal distances:
+
+Voice       Score beat   Full-recording time    Register
+Clarinet       80           0:44.444             G-flat4 head
+Violin         82.5         0:45.833             G-flat5 head
+Cello          85           0:47.222             G-flat4 head
+Viola          88           0:48.889             G-flat4 head
+Horn           91           0:50.556             C-flat4 head
+
+The entries therefore cut across barlines. The first replies overlap by
+half a beat; later replies change the spacing. Their continuations diverge.
+The exact three-beat template is stored for verification, but the five
+occurrences are labeled as DERIVED MOTIVIC FRAGMENTS, not five additional
+complete chant statements.
+
+WHAT THE OTHER PARTS DO
+
+Double bass retains its complete measured chant at 80–88. Its continuation
+has an unequal harmonic rhythm rather than the previous quarter-note walk.
+It moves through A-flat minor, C-flat, a passing first inversion and E-flat
+minor, then opens toward G-flat. The tonic G-flat at 100 is approached
+plagally. Only the later span 104–112 establishes the stronger D-flat-seventh
+cadence into the quiet relative-major section.
+
+Flute has a newly shaped falling ribbon above the short replies. Its large
+upward leap waits until 96, after the initial relay, instead of placing the
+highest register at the paragraph's first instant. At 110 it begins a held
+F6, which continues across the bass's arrival at 112 and resolves to G-flat6
+at 113. A provisional A-flat6 turn was removed during review to preserve
+more register for the full piece's later B-flat6 crest.
+
+Oboe completes its unchanged dance statement 76–84 before a breath and a
+leaping answer. Its relative-major chant moves from 96 to 100. This aligns
+the remembered melody with a local G-flat arrival and separates it from
+the first upper leap.
+
+Clarinet begins the retort, then takes a longer upward question and a fall.
+At 100, a contracted rising companion replaces its old quarter-note ladder.
+
+Violin postpones its retort until 82.5, then abandons the imitation for a
+longer fall and a different turning phrase. At 111 it begins C-flat5 over
+the dominant. That note crosses the new tonic at 112 and resolves down to
+B-flat4 at 112.5.
+
+Viola's opening continuation rises while cello falls; they no longer play
+the same octave scale at 80–84. Its retort at 88 quickly gives way to a
+different upward turn and a delayed six-five motion over the passing
+B-flat bass. A broken-fourth answer later distinguishes it from the horn.
+
+Horn alternates broad rising and falling gestures, then takes the retort
+at 91 in a higher register. Its last A-flat3 is prepared over D-flat and
+held through the arrival of G-flat; it resolves down to G-flat3 at 112.5.
+
+Bassoon replaces its old scalar fall with concise turns and a held rebound.
+It keeps the complete chant at 92–100. That measured statement supplies a
+different timescale while the short retorts disperse.
+
+Cello first opposes the viola, then takes the retort at 85 in its tenor
+register. Its dance head at 88 is one octave above the earlier rendition's
+E-flat2–B-flat2 position. The following phrase rises through G-flat3,
+B-flat3, D-flat4 and E-flat4 while the oboe descends; an accidental octave
+copy in the provisional draft was removed during independent review.
+
+THE CADENCE OPENS IN STAGES
+
+The bass reaches G-flat at 112 (1:02.222), while oboe, clarinet, bassoon and
+cello also begin their new quieter phrases. Three continuing lines have
+different resolutions:
+
+- Violin C-flat5 resolves to B-flat4 at 112.5 (1:02.500).
+- Horn A-flat3 resolves to G-flat3 at 112.5 (1:02.500).
+- Flute F6 resolves upward to G-flat6 at 113 (1:02.778).
+
+The horn leaves at 113, violin at 113.5, and flute at 114. The texture therefore
+reduces from eight written lines immediately after the arrival to five in
+three steps. This replaces the former single cutoff of the upper phrases.
+The three sustained tones are actually carried across the boundary in the
+score; they are not merely reattacked appoggiaturas described as ties.
+
+INDEPENDENT REVIEW AND REPAIRS
+
+The critic examined the literal notes and recommended targeted repairs:
+- Raise the cello retort 85–88 an octave to avoid low F/G-flat collisions.
+- Replace horn F3 at 94 with D-flat3 and clarinet D4 at 94.5 with D-flat4,
+  clarifying the passing G-flat/B-flat sonority.
+- Let bassoon rebound to G-flat3 at 86 rather than hold C-flat3 against a
+  following low B-flat in horn.
+- Use D-flat4 rather than C-flat4 in viola at 98, removing an unnecessarily
+  persistent close C-flat/B-flat clash with horn while retaining its arc.
+- Replace cello's provisional octave copy of oboe 92–95.5 with its own rise.
+- Lower the provisional high flute turn at 109–110 to E-flat6–D-flat6.
+
+The critic confirmed these changes and requested no further local repair.
+The independent report should accompany this composition note.
+
+LIMITS OF THE CLAIM
+
+This is still nine-part writing with tonal extensions, chromatic/diatonic
+friction, temporary unisons and octave convergences. It is not a certificate
+of strict historical counterpoint. Short convergence at a cadence is
+intentional; perpetual separation is not itself a musical virtue.
+
+The new imitation gives a listener more specific material to follow, and
+the register changes are intended to expose the replies. Whether these
+changes actually achieve greater vitality, clarity, or emotional effect
+must be judged in the recording. Individual pitches and rhythms cannot
+establish that nine voices are perceived as nine musical personalities.
+
+SCOPE AND REPRODUCIBILITY
+
+The work remains 100 bars / 400 quarter beats in 4/4 at quarter = 108. All nine written
+parts remain monophonic. The complete-form score contains 50 exact complete
+thematic entries and 28 verified fragments, including the five new retorts.
+The source checks verify notation and annotation consistency only.
+
+The rewrite changes 80–112 in eight parts and 84–112 in oboe, preserving the
+complete oboe statement 76–84. Flute, violin and horn extend to 114, 113.5 and
+113 respectively. All events outside these declared windows are identical
+to the preceding frozen score. The surrounding form and the later music
+are preserved for a direct comparison.
+
+Source: work/fugue_viii_complete/08-fugue-complete.json
+Source SHA256:
+63021ec26e8a931fb00b4229b6398673f59f673f618c4b0e4d40965fcc423deb
+
+Revision: work/fugue_viii_passage_revision/08-fugue-passage-revised.json
+Revision SHA256:
+8875eb04af5b75105fa2dddb1fae68b11a59fbc9fbd32a73fdccc6c16a85daa6
+
+Reproduce with:
+python3 work/fugue_viii_passage_revision/recompose_passage.py
+
+The revision script reads the frozen source and writes a separate new score.
+It verifies the source hash, monophony, 400-beat duration, and exact annotations.
+It does not render sound or alter the older delivered files.

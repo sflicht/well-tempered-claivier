@@ -1,0 +1,272 @@
+THE WELL-TEMPERED clAIvier
+Listener-led reassessment and a reset of the fugue method
+
+STATUS
+
+The existing cycle does not meet the requested artistic or contrapuntal
+standard. The claim that its twenty-five-staff finale establishes real
+twenty-five-part counterpoint is withdrawn. The same problem affects the
+nine-part climax of Fugue VIII. Its harmonic arrival can be valuable while
+the surrounding lines still fail the contrapuntal brief.
+
+The preludes are the more promising strand according to the listener. III
+and VIII should be retained as positive reference pieces. The task is now
+selective development of the preludes and a fundamental restart of the
+fugue method. This package contains two short new audition studies and the
+reasoning behind that restart. It is not a third complete edition.
+
+1. WHY THE FUGUES SOUND TOO SIMILAR
+
+The sameness is built into the source. All twenty-four existing fugues use
+4/4. Twenty-three subjects produced by the common generator end with the
+same two-beat tonic. Many begin with a tonic-to-third or tonic-to-fifth
+gesture, using a closely related quarter/half-note vocabulary. Their
+minor and major variants use different pitches and tempos, but the common
+construction gives them very similar phrase behaviour.
+
+The shared builder supplies successive entries, similar related-key
+statements, similar episodes, a minimal overlap over the terminal tonic,
+a full-ensemble paragraph, a return and a cadence. It makes these choices
+before the particular subject has earned them. The later rhythmic pass
+preserves the same anchors and inserts admissible passing figures or
+delayed notes. That cannot create a new large-scale argument.
+
+Common metre is not itself a defect. The deeper issue is that the subjects
+are repeatedly made to perform the same dramatic job, and the form rarely
+changes in response to their particular musical possibilities.
+
+Source evidence: tools/compose_cycle_fugues.py, especially THEMES,
+FugueBuilder.compose(), episode(), stretto(), and ensemble(); and
+tools/revise_rhythmic_counterpoint.py. The relevant old source is included
+as historical evidence in the package. It is not the new composition method.
+
+2. WHY THE MANY-PART CONSTRUCTION FAILS
+
+The old solver selects a triad at each quarter-note position, restricts
+free pitches to that chord, then rewards inexpensive motion around a
+shared contour. For dense music it writes a three- or four-part core and
+inserts the remaining lines against that fixed harmony. A minimum number
+of pitch changes becomes a proxy for a continuing musical part.
+
+This gives the added lines an inferior musical status from the outset:
+they cannot substantially change the phrases, harmonic implications or
+destination of the already completed core. They can be technically
+different tracks while doing little beyond redistributing chord tones.
+
+In XXIV's first sustained full-ensemble span, bars 104-121, every sounding
+instant contains only three pitch classes. There is almost no stepwise
+movement, and the bass includes a twenty-beat B. The high subject is
+accompanied by many chord-member movements rather than a substantial
+network of other developing phrases. In VIII's first full ensemble,
+bars 47-54, the E-flat bass lasts four bars and several inner voices
+recycle the triad. VIII has some passing motion and the listener likes
+the arrival; this remains a reason to preserve that arrival.
+
+A pedal, triad or long note is not intrinsically bad counterpoint. Nor
+must every part continually state a complete subject. The problem here
+is what the actual surrounding lines do over time. Numerical variety,
+absence of identical tracks and successful interval screens do not supply
+the missing musical relationships.
+
+3. WHAT A DIFFERENT METHOD MUST COMPOSE
+
+Begin with a particular difficult contrapuntal encounter, not a quota of
+tracks. For Fugue VIII, the first proof should be a convincing nine-line
+paragraph that travels into and through the valued arrival. Write the
+actual thematic material and continuations needed for that paragraph.
+Then derive the exposition, episodes and approach from the relationships
+the listener needs to learn before that encounter can make its effect.
+
+At every stage all lines remain revisable. A new bass can turn a held
+upper consonance into a suspension and require a different resolution;
+an entering subject can redirect an unfinished phrase; a returning
+fragment can become the continuation that carries the harmony onward.
+The new voice participates in making those decisions. It does not fill
+an empty lane around decisions that are already complete.
+
+For twenty-five parts, a multiple-subject design with contrasting rates
+of motion is a plausible research direction. Broad thematic lines,
+quicker imitative material, suspensions and shorter responses can coexist.
+These functions should move among the parts. Five isolated five-part
+choirs, added together, would leave the central question unanswered:
+what new contrapuntal relations occur when the ensembles meet?
+
+The full combination needs its own harmonic journey. A static tonic
+field that accommodates twenty-five lines is not sufficient. A smaller
+combination is useful for learning the material's possibilities, but it
+must remain open to rewriting as the complete texture develops.
+
+The target is sustained musical agency in all the parts, with clear
+foreground and background that can change. Equal busyness in every
+voice would be another poor design. Rests, broad notes and selective
+attention are legitimate; permanent harmonic padding counted as extra
+counterpoint is the failure to avoid.
+
+4. WHERE COMPUTATION CAN HELP
+
+The search object should be a placement or transformation of a composed
+phrase. Software can explore entry intervals and distances, inversions,
+registral exchanges and deliberately chosen augmentations. It can expose
+exactly where a proposed combination produces a bad melodic join, loses
+a suspension's preparation, or frustrates a directed note's resolution.
+
+There are 300 unordered voice pairs in twenty-five parts. Checking them
+is useful, but pairwise compatibility alone is insufficient: the current
+bass, metre, preparation and continuation determine how intervals function
+in the entire texture. A new lower voice can change the interpretation
+of two upper lines that previously worked together.
+
+The program must be able to report that a musical proposal does not work.
+It must not quietly rescue every proposal by changing difficult notes
+into chord tones, holding a common tone, or thinning the music to three
+significant lines. Composer and critic must then revise or reject the
+actual musical idea. No computed score can decide whether its arrival
+feels earned.
+
+The companion document fugue-method-from-scratch.txt gives a concrete
+three-line suspension example and detailed failure conditions.
+
+5. RHYTHMIC ZEST AND EXPRESSIVE ACCUMULATION
+
+The earlier revision confused more rhythmic events with more momentum.
+An even stream can be alive when its accents, contour and harmonic
+destination give it direction. Irregular durations can remain inert.
+The phrase needs an impulse, an obstacle or delay, and a continuation.
+Another voice should be able to interrupt, answer, complete or redirect it.
+
+Bach's five-part C-sharp-minor fugue, BWV 849, provides a useful score
+reference. Its broad thematic motion and flowing eighth-note material
+have distinct identities, and their functions migrate through the parts.
+The separate-staff score makes the alternation of activity, holding and
+rest particularly clear. The compositional lesson drawn here is to plan
+specific encounters between recognizable behaviours, rather than to
+equate the number of busy staves with intensity.
+
+Primary score consulted: J. S. Bach, BWV 849, separate-staff edition,
+https://www.musanim.com/pdf/bwv849f_openScore.pdf
+Also: Mutopia edition, source Breitkopf & Hartel, 1866,
+https://www.mutopiaproject.org/ftp/BachJS/BWV849/bwv849b/bwv849b-a4.pdf
+
+The desired ecstatic progression should be earned by accumulating
+unfinished phrases, closer meaningful entries, prepared dissonance,
+changing harmonic pace and an arrival that resolves several histories
+together. Increasing volume or register can support that event once the
+lines have created it. It cannot supply the event on its own.
+
+6. WHAT THE TWO NEW AUDITIONS ACTUALLY CHANGE
+
+Fugue I in C major: 25 bars of 4/4, quarter = 116; 51.7 seconds of
+written music. Its subject begins on an eighth-note upbeat and ends on
+B, continuing into C as the next phrase begins. A recurring longer-note
+companion is exchanged above and below the subject. The bass initiates
+a developmental sequence and leads the tonic return. A descending-third
+development passes the thematic head into the lower voice. The closing
+tail returns to the subject's rising motion.
+
+Prelude IV in C-sharp minor: 32 bars of 3/4, quarter = 96; 60 seconds of
+written music. One springing gesture drives toward a note held across
+the third beat, followed by a descending tail. The bass takes the gesture
+in bars 5-6 and 17-18. A rising bridge restores the register before the
+return. Prepared dissonances and actual phrase joins were reviewed, with
+a final E anticipation completing the approach to the E-major statement.
+
+Both studies use literal phrase-level note authorship. That is a change
+in construction, not evidence that the music is good. They remain compact,
+conventional tonal studies with artistic risks. The new Fugue I is not a
+prototype automatically expandable into larger fugues, and neither piece
+has been accepted as a replacement in a completed third edition.
+
+7. CURRENT LIMITS AND THE NEW NINE-PLAYER EXPERIMENT
+
+The separate 20-bar experiment "The procession finds a dance floor" now
+offers a more adventurous many-part audition: a measured Dies irae head,
+an original clipped dance, and a broad rising idea exchange instrumental
+roles. Its D-centered modal language bends through E-flat before a major
+release. The traditional eight-note chant fragment is credited in the
+score; the dance and rising idea are original.
+
+The first checkpoint repeated a central flaw of the old approach: several
+parallel bridge statements and an octave-doubled chant made the first
+nine-player entrance behave as grouped harmony. The revision replaces
+those alignments with delayed imitation, a twelve-beat cello phrase,
+distinct violin and bass continuations, and different trajectories at
+the return. A short shared octave gesture is retained as an arrival color;
+it is not counted as proof of an additional independent melodic path.
+
+The clearest interactions are specific. E-natural falls to E-flat and D
+successively in viola, horn and bassoon. At beat 48 the flute hurries the
+chant; the violin follows a beat later. The dance head starts in horn at
+48, double bass at 49 and cello at 50, then those low parts continue in
+different directions. This is more than a count of moving staves, but
+the passage remains an audition experiment, not a complete Fugue VIII
+or a demonstration of successful twenty-five-part writing.
+
+No revised twenty-five-part fugue has been composed in this reset. The
+many-part problem still includes developing convincing material into a
+complete Fugue VIII and, eventually, the larger works. Preserve the liked
+arrival as a destination to earn, without treating its old inner writing
+as compulsory.
+
+Before another full cycle is assembled, independently conceived fugues
+must establish distinct characters and forms through their actual notes.
+New titles, different metres and instruments are insufficient evidence.
+The material should make different forms necessary.
+
+Direct audio input was unavailable in this assistant session. The work
+was reviewed through the score; recordings were generated and technically
+decoded. Those actions are not a listening assessment. The listener's
+reports remain essential evidence of the result's perceptual success.
+
+All three new auditions have exact-note animated performances with brief
+listening captions. Their note displays and thematic cues follow the
+written score. The complete revised cycle and monumental-space film remain
+project goals. Existing visual assets are not evidence that the underlying
+many-part music succeeds.
+
+8. THE BEETHOVEN REFERENCE: GIVE FUGAL WRITING A DRAMATIC PURPOSE
+
+Sam supplied https://www.youtube.com/watch?v=i7lr1cSQi5o and clarified that
+the intended inspiration is Beethoven's creative use of fugal passages in
+his symphonies. The video was not directly watched or heard in this session.
+The following is an application of Sam's point to this project, rather than
+a report of that video's specific examples.
+
+Each fugue needs a particular reason to unfold as it does. Possible
+contrasting premises include a dance whose imitation gradually overturns
+its accents; a lament whose long phrases gather into a suspension chain;
+two previously separate ideas whose eventual combination supplies the
+arrival; or a subject that survives interruption and returns transformed.
+These are candidate musical problems, not a new set of titles to paste
+onto the same generator. The actual notes must establish the premise.
+
+This changes how form should be chosen. A subject need not always receive
+the same number and spacing of answers, followed by the same episode and
+climax. Material can demand a compressed exposition, an extended episode,
+a delayed combination, a sudden thinning, or a return that changes the
+meaning of the opening. The varied formal functions need to arise from
+the particular subjects and their interactions.
+
+The twenty-four works should therefore be conceived individually. Their
+shared key cycle and increasing number of voices give them an overarching
+design; they do not require a shared sequence of compositional events.
+The high-part works still need the promised sustained real counterpoint.
+A dramatic orchestral tutti or a brief fugal allusion would not satisfy
+that constraint by itself.
+
+For VIII, this suggests making the valued harmonic arrival the consequence
+of earlier contrapuntal activity, with a distinctive route into it. For
+XXIV, the eventual convergence should transform material the listener has
+learned, creating new relationships when the ensemble meets. This is the
+compositional use of the monumental space and orchestration to pursue once
+the musical relations themselves have been written and heard.
+
+9. CREATIVE FREEDOM
+
+Sam subsequently made the latitude explicit: this project can define an
+AI Fugue genre, with original tunes, borrowed melodies, recycled AI material,
+cheeky allusions and nonclassical influences available as choices. None is
+mandatory. The aim is forty-eight pieces with character, pleasure, surprise
+and the possibility of grandeur. The accompanying ARTISTIC_DIRECTION.txt
+sets out a permissive direction rather than another specification to pass.
+The critical findings above retire a failed method; they should not make
+the new music timid or uniformly solemn.

@@ -1,0 +1,644 @@
+{
+  "purpose": "Export fidelity; not an aesthetic or counterpoint-quality certification",
+  "score_file": "08-fugue-passage-revised.json",
+  "score_sha256": "8875eb04af5b75105fa2dddb1fae68b11a59fbc9fbd32a73fdccc6c16a85daa6",
+  "score": {
+    "written_parts": 9,
+    "bars": 100,
+    "quarter_beats": 400,
+    "pitched_notes_per_part": [
+      258,
+      360,
+      346,
+      358,
+      342,
+      293,
+      318,
+      353,
+      249
+    ],
+    "monophonic_parts": true
+  },
+  "themes": {
+    "literal_entries_and_fragments_verified": 78,
+    "annotations": [
+      {
+        "voice": 5,
+        "beat": 0.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 8.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 4,
+        "beat": 8.0,
+        "theme": "bridge",
+        "fragment": false
+      },
+      {
+        "voice": 7,
+        "beat": 20.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 28.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 6,
+        "beat": 34.0,
+        "theme": "dance",
+        "fragment": false
+      },
+      {
+        "voice": 0,
+        "beat": 36.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 48.0,
+        "theme": "dance",
+        "fragment": false
+      },
+      {
+        "voice": 3,
+        "beat": 48.0,
+        "theme": "dance",
+        "fragment": false
+      },
+      {
+        "voice": 6,
+        "beat": 48.0,
+        "theme": "bridge",
+        "fragment": false
+      },
+      {
+        "voice": 4,
+        "beat": 56.0,
+        "theme": "bridge",
+        "fragment": false
+      },
+      {
+        "voice": 7,
+        "beat": 56.0,
+        "theme": "dance",
+        "fragment": false
+      },
+      {
+        "voice": 3,
+        "beat": 64.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 0,
+        "beat": 72.0,
+        "theme": "bridge",
+        "fragment": false
+      },
+      {
+        "voice": 4,
+        "beat": 72.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 76.0,
+        "theme": "dance",
+        "fragment": false
+      },
+      {
+        "voice": 8,
+        "beat": 80.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 6,
+        "beat": 92.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 100.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 112.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 124.0,
+        "theme": "major_bridge",
+        "fragment": false
+      },
+      {
+        "voice": 3,
+        "beat": 128.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 4,
+        "beat": 136.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 0,
+        "beat": 144.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 6,
+        "beat": 144.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 148.0,
+        "theme": "major_bridge",
+        "fragment": false
+      },
+      {
+        "voice": 7,
+        "beat": 152.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 180.0,
+        "theme": "altered_chant",
+        "fragment": false
+      },
+      {
+        "voice": 4,
+        "beat": 184.0,
+        "theme": "altered_chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 192.0,
+        "theme": "altered_chant",
+        "fragment": false
+      },
+      {
+        "voice": 7,
+        "beat": 192.0,
+        "theme": "altered_chant",
+        "fragment": false
+      },
+      {
+        "voice": 0,
+        "beat": 208.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 3,
+        "beat": 209.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 212.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 212.0,
+        "theme": "bridge",
+        "fragment": false
+      },
+      {
+        "voice": 0,
+        "beat": 224.0,
+        "theme": "inverted_chant",
+        "fragment": false
+      },
+      {
+        "voice": 6,
+        "beat": 226.0,
+        "theme": "inverted_chant",
+        "fragment": false
+      },
+      {
+        "voice": 7,
+        "beat": 242.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 284.0,
+        "theme": "bridge",
+        "fragment": false
+      },
+      {
+        "voice": 3,
+        "beat": 288.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 6,
+        "beat": 292.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 300.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 4,
+        "beat": 302.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 0,
+        "beat": 304.0,
+        "theme": "inverted_chant",
+        "fragment": false
+      },
+      {
+        "voice": 7,
+        "beat": 304.0,
+        "theme": "altered_chant",
+        "fragment": false
+      },
+      {
+        "voice": 5,
+        "beat": 308.0,
+        "theme": "inverted_chant",
+        "fragment": false
+      },
+      {
+        "voice": 2,
+        "beat": 312.0,
+        "theme": "chant",
+        "fragment": false
+      },
+      {
+        "voice": 1,
+        "beat": 336.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 0,
+        "beat": 352.0,
+        "theme": "major_bridge",
+        "fragment": false
+      },
+      {
+        "voice": 6,
+        "beat": 368.0,
+        "theme": "major_chant",
+        "fragment": false
+      },
+      {
+        "voice": 3,
+        "beat": 26.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 3,
+        "beat": 40.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 5,
+        "beat": 72.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 2,
+        "beat": 80.0,
+        "theme": "chant_retort",
+        "fragment": true
+      },
+      {
+        "voice": 3,
+        "beat": 82.5,
+        "theme": "chant_retort",
+        "fragment": true
+      },
+      {
+        "voice": 7,
+        "beat": 85.0,
+        "theme": "chant_retort",
+        "fragment": true
+      },
+      {
+        "voice": 4,
+        "beat": 88.0,
+        "theme": "chant_retort",
+        "fragment": true
+      },
+      {
+        "voice": 7,
+        "beat": 88.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 5,
+        "beat": 91.0,
+        "theme": "chant_retort",
+        "fragment": true
+      },
+      {
+        "voice": 1,
+        "beat": 156.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 3,
+        "beat": 164.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 6,
+        "beat": 196.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 3,
+        "beat": 200.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 5,
+        "beat": 208.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 8,
+        "beat": 209.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 7,
+        "beat": 210.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 4,
+        "beat": 220.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 1,
+        "beat": 276.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 3,
+        "beat": 298.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 6,
+        "beat": 312.0,
+        "theme": "dance",
+        "fragment": true
+      },
+      {
+        "voice": 1,
+        "beat": 320.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 3,
+        "beat": 338.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 2,
+        "beat": 344.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 4,
+        "beat": 346.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 6,
+        "beat": 348.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 7,
+        "beat": 356.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 4,
+        "beat": 366.0,
+        "theme": "major_dance",
+        "fragment": true
+      },
+      {
+        "voice": 1,
+        "beat": 370.0,
+        "theme": "major_dance",
+        "fragment": true
+      }
+    ]
+  },
+  "musicxml": {
+    "file": "Fugue-VIII-revised.musicxml",
+    "all_pitches_onsets_and_written_durations_match": true,
+    "tied_notes_reassembled_per_part": [
+      258,
+      360,
+      346,
+      358,
+      342,
+      293,
+      318,
+      353,
+      249
+    ]
+  },
+  "midi": [
+    {
+      "file": "Fugue-VIII-revised.mid",
+      "all_note_events_velocities_gates_programs_pans_match": true
+    },
+    {
+      "file": "Fugue-VIII-revised-chamber.mid",
+      "all_note_events_velocities_gates_programs_pans_match": true
+    }
+  ],
+  "cues": [
+    {
+      "file": "Fugue-VIII-revised-animated.cues.json",
+      "all_visual_note_events_match_written_score": true,
+      "source_hash_matches": true
+    },
+    {
+      "file": "after-comparison.cues.json",
+      "all_visual_note_events_match_written_score": true,
+      "source_hash_matches": true
+    }
+  ],
+  "media": [
+    {
+      "file": "Fugue-VIII-revised-chamber.mp3",
+      "full_decode_passed": true,
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "225.227755"
+      }
+    },
+    {
+      "file": "Fugue-VIII-revised.mp3",
+      "full_decode_passed": true,
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "225.227755"
+      }
+    },
+    {
+      "file": "Fugue-VIII-before.mp3",
+      "full_decode_passed": true,
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "35.604898"
+      }
+    },
+    {
+      "file": "Fugue-VIII-after.mp3",
+      "full_decode_passed": true,
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "35.604898"
+      }
+    },
+    {
+      "file": "Fugue-VIII-before-after.mp4",
+      "full_decode_passed": true,
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "76.189698"
+      }
+    },
+    {
+      "file": "Fugue-VIII-revised-animated.mp4",
+      "full_decode_passed": true,
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "225.250000"
+      }
+    }
+  ],
+  "original_comparison_cues": {
+    "file": "before-comparison.cues.json",
+    "all_visual_note_events_match_written_score": true,
+    "source_hash_matches": true
+  },
+  "visual_inspection": {
+    "pdf": "All three rendered pages visually inspected; no clipping or overlapping notation observed.",
+    "video": "Frames extracted from the final encoded before/after video and the full cadence animation visually inspected; labels, note display, and layout readable.",
+    "audio_listening": "Not performed. Decode and event checks establish export fidelity, not musical quality."
+  }
+}

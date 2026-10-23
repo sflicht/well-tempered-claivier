@@ -1,0 +1,69 @@
+NEXT COMPLETE COMPOSITION: FUGUE IV IN C-SHARP MINOR
+Compositional brief prepared 23 October 2026.
+Status: proposed subject and form, not a completed or verified score.
+
+PURPOSE
+Give the cycle a different rhythmic and dramatic personality after VIII:
+a quick 6/8 gigue whose momentum comes from interruptions and displaced
+emphasis. Remain in minor at the end. Do not recycle VIII's slow chant,
+4/4 dance, or minor-to-major apotheosis.
+
+SUBJECT CANDIDATE A (RECOMMENDED)
+Durations are quarter-note beats. Each bar contains 3 quarter-note beats.
+Bar 1: C#4 .5; E4 .5; G#4 1; F#4 .5; E4 .5.
+Bar 2: D#4 .5; B#3 .5; C#4 1; G#3 .5; rest .5.
+
+The long note begins before the second dotted-quarter pulse and crosses it.
+A rising broken triad, the displacement, and the final falling fourth
+supply three related ingredients for episodes. The range is one octave.
+
+PROPOSED REAL DOMINANT ANSWER
+Bar 1: G#4 .5; B4 .5; D#5 1; C#5 .5; B4 .5.
+Bar 2: A#4 .5; F-double-sharp4 .5; G#4 1; D#4 .5; rest .5.
+
+The accompaniment must follow the temporary dominant region and return
+purposefully to C#; it cannot merely repeat tonic-minor chord notes.
+A one-bar stretto has not been established. B# in the subject may conflict
+with B-natural in the answer. Compose each overlap before claiming it works.
+
+ALTERNATIVE B (NOT SELECTED)
+Broader 3/2 question, durations also in quarter beats:
+Bar 1: C#4 2; B#3 1; C#4 1; E4 2.
+Bar 2: D#4 1.5; F#4 .5; E4 1; D#4 1; G#3 2.
+Its slow-theme/active-accompaniment risk is too close to VIII for this slot.
+
+RECOMMENDED FORM
+Dotted quarter=72 (quarter=108 in the present renderer).
+120 bars of 6/8 =360 quarter beats =200 seconds, before final resonance.
+
+Bars 1–20: five entries and real continuations, with breaths that let each
+new entry register. Proposed order: tenor, upper alto, bass, soprano,
+remaining middle voice.
+21–36: argumentative pairs; descending-fourth episodes and displaced
+pulse; A major toward E major.
+37–52: warmer E-major passage with an actual major-mode transformation,
+not arbitrary note transposition.
+53–72: F#-minor disturbance; occasional three-quarter-note accents against
+the compound pulse, released at a meaningful cadence.
+73–84: quieter exchange with moving bass; incomplete replies approach G#.
+85–108: C#-minor return; augmented subject, quicker thematic statement,
+and three individually shaped counterlines. Stretto only where the
+written combination proves coherent.
+109–120: energy unwinds through continuing counterpoint; minor cadence
+with staggered resolutions rather than a long block-chord finish.
+
+FIVE ROLES, TO ROTATE BETWEEN PARTS
+Soprano working range G#4–E6: long arcs and held tensions.
+Upper alto E4–C#6: displaced accents and late resolutions.
+Middle C#4–G#5: clipped replies, short sequences, audible breaths.
+Tenor G#3–E5: first statement, later larger leaps and answering gestures.
+Bass C#2–C#4: thematic movement, changing pace, late augmentation.
+These are flexible working ranges, not rigid pitch lanes. No voice should
+be assigned a permanent pad or accompaniment function.
+
+FIRST COMPOSITIONAL TASK
+Write the subject–answer duet and two contrasting countersubjects, then
+compose the five-entry exposition and a candidate late combination.
+Inspect those actual combinations before extending the complete form.
+This brief does not establish their consonance, memorability, or sound.
+
