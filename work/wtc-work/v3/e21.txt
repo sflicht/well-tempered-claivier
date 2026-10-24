@@ -1,0 +1,10 @@
+41|s=C#6:4 B5:4 A5:4|a=E5:4 G#4:4 C#5:4|t=C#4:4 E4:4 F#4:4|br=G#3:2 E3:1 D#3:1 B2:2 F#3:6|b=C#2:4 G#2:4 A2:4|tag=41 Subject N (Br) C#m - the return
+42|s=A5:4 F#5:6 E5:2|a=C#5:4 A4:4 D#5:4|t=F#4:4 D#4:8|br=A3:4 F#3:2 D#3:2 B#2:2 C#3:2|b=F#2:4 D#2:4 G#2:4
+43|s=G#5:6 A5:6|a=E5:6 C#5:6|t=G#3:6 A3:6|br=E3:6 C#3:6|b=C#3:6 A2:6|tag=43 episode: C#m - A
+44|s=A5:6 F#5:6|a=C#5:6 B4:6|t=A3:12|br=C#3:6 D#3:6|b=F#2:6 B2:6|tag=44 F#m - B7 (A held as prepared 7th)
+45|s=E5:6 G#5:6|a=B4:6 C#5:6|t=G#3:12|br=B2:6 E3:6|b=E2:6 C#3:6|tag=45 E - C#m
+46|s=A5:4 F#5:6 E5:2|a=C#5:4 D#5:8|t=F#3:4 A3:4 B#3:4|br=C#3:4 F#3:4 D#3:4|b=F#2:4 D#2:4 G#2:4|tag=46 F#m - D#o7 - G#7
+47|s=G#5:2 E5:1 D#5:1 B4:2 F#5:6|a=C#5:4 G#4:2 A4:6~|t=E4:6 F#4:6|br=G#3:6 F#3:6|b=G#2:4 E2:2 D#2:2 B1:4|tag=47 Subject N (S, C#m) against the bass in augmentation
+48|s=A5:4 F#5:2 D#5:2 B#4:2 C#5:2|a=A4:12|t=F#4:4 D#4:4 F#4:4|br=F#3:4 B2:4 D#3:4|b=F#2:12|tag=48 augmentation continues (head to tail)
+49|s=F#5:4 E5:4 C#5:4|a=A4:4 C#5:4 A4:4|t=C#4:8 A3:4|br=F#3:8 C#3:4|b=A2:8 F#2:4|tag=49 augmented tail
+50|s=D#5:4 G#5:8|a=A4:4 F#4:4 E4:4|t=F#3:4 G#3:8|br=D#3:8 E3:4|b=D#2:4 B#1:4 C#2:4|tag=50 augmented tail closes on C#m

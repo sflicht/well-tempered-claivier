@@ -1,0 +1,6 @@
+16th-groups checked 64 chord-fit 18
+nonfit 46 ['b2.2 RH F4/D#4/D4/F4', 'b3.2 RH D#5/D5/C5/B4', 'b3.3 RH C5/D5/F5/E5', 'b3.4 RH G5/A5/G5/F5', 'b4.1 RH D5/F5/D#5/D5', 'b4.3 RH G5/F5/D5/C5', 'b5.1 RH D#5/G5/F5/D#5', 'b5.2 RH D5/C5/B4/C5', 'b5.3 RH G#5/C6/A#5/G#5', 'b5.4 RH G5/F5/E5/F5', 'b6.1 RH D5/F5/D#5/D5', 'b6.2 RH C5/A#4/A4/A#4', 'b6.3 RH G5/A#5/G#5/G5', 'b8.2 RH C5/A#4/A4/C5', 'b9.2 RH A#4/A4/G4/F#4', 'b9.3 RH G4/A4/C5/B4', 'b9.4 RH D5/E5/D5/C5', 'b10.1 RH A4/C5/A#4/A4', 'b10.3 RH D5/C5/A4/G4', 'b11.1 RH D5/C5/A#4/A4', 'b11.2 RH G4/A4/A#4/C5', 'b12.1 RH C5/A#4/G#4/G4', 'b12.2 RH F4/G4/G#4/A#4', 'b14.3 RH F4/A#4/C5/C#5', 'b15.3 RH A#4/F4/G4/E4', 'b17.1 RH C#5/G5/F5/E5', 'b17.2 RH F5/G5/F5/E5', 'b22.2 RH C5/A#4/A4/C5', 'b27.3 RH G#5/G5/F5/D#5', 'b28.1 RH G5/G#5/F#5/A5', 'b28.2 RH F5/A#5/E5/B5', 'b28.3 RH C6/G5/F5/D5', 'b30.2 RH F4/D#4/D4/F4', 'b4.2 LH D4/D#4/F4/D4', 'b7.2 LH B3/C4/D4/D#4', 'b7.3 LH D4/C4/A3/A#3', 'b7.4 LH G3/F3/G3/A3', 'b8.1 LH C4/A3/A#3/G3', 'b8.3 LH G3/A3/C4/D4', 'b10.2 LH A3/A#3/C4/A3', 'b15.1 LH C4/G3/F3/E3', 'b16.1 LH G3/C4/A#3/C#4', 'b17.3 LH E3/A#2/C3/C#3', 'b17.4 LH C3/A#2/C3/C#3', 'b22.4 LH A#3/G#3/G3/A#3', 'b31.1 LH F3/D#3/D3/F3']
+par_bass 0 []
+par_top 0 []
+bass_leap 1 ['b6.3 A4->G5']
+cross 0 []

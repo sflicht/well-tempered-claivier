@@ -1,0 +1,25 @@
+bars : 33
+voices : 2
+beats_3plus_voices : 0
+pcs_hist : {}
+beats_4plus_pcs_pct : 0.0
+beats_fit_tertian_chord_pct : 0.0
+non_tertian_beats : []
+beat_dissonance_both_attacking(unprepared) : []
+chordal_tritones_attacked_together(dim/dom7 member) : []
+beat_dissonance_one_held(prep/passing) : 0
+beat_dissonance_one_held_list : []
+m2/M7_clashes_on_attacks(eighth grid) : 0
+m2/M7_clash_list : []
+parallel_5ths_8ves(eighth grid, attack to attack) : []
+parallel_5ths_8ves(16th grid) : 6
+par16_list : ['b9.1.00 R.H.L.H.', 'b16.3.00 R.H.L.H.', 'b22.1.00 R.H.L.H.', 'b30.1.00 R.H.L.H.', 'b32.3.00 R.H.L.H.', 'b33.1.00 R.H.L.H.']
+voice_crossings : 0
+crossing_list : []
+cross_relations(different voices,<1 beat) : 17
+xrel_list : ['b4 R.H./L.H. D#5/E3', 'b5 R.H./L.H. G#4/A2', 'b5 R.H./L.H. G#4/A2', 'b5 R.H./L.H. F#4/F3', 'b9 R.H./L.H. E5/D#3', 'b9 R.H./L.H. E5/D#3', 'b11 R.H./L.H. F#5/F3', 'b11 R.H./L.H. F#5/F3', 'b12 R.H./L.H. A4/G#2', 'b15 R.H./L.H. E4/D#3', 'b15 R.H./L.H. E5/D#3', 'b16 R.H./L.H. G#4/A3', 'b16 R.H./L.H. A4/G#3', 'b25 R.H./L.H. F#5/F3', 'b30 R.H./L.H. D#4/E3', 'b30 R.H./L.H. E4/D#3', 'b32 R.H./L.H. E4/D#3']
+pair_independence : {'R.H.L.H.': {'onset_jaccard': 0.5, 'similar': 129, 'contrary': 122, 'oblique': 266, 'parallel_3rd6th_share_of_similar': 0.6}}
+voices_summary : {'R.H.': {'notes': 517, 'range': 'A#3-C6', 'mean_vel': 75.9, 'max_vel': 91, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 2}, 'L.H.': {'notes': 259, 'range': 'C2-C4', 'mean_vel': 71.9, 'max_vel': 87, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 3}}
+bar_pairs_>60%_identical_pitch_grid : [(1, 15, 0.69)]
+longest_identical_rhythm_run_per_voice : ['R.H.:32bars@1', 'L.H.:32bars@1']
+attacks_per_bar : [24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 8]

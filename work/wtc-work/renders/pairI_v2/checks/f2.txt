@@ -1,0 +1,28 @@
+bars : 32
+voices : 2
+beats_3plus_voices : 0
+pcs_hist : {}
+beats_4plus_pcs_pct : 0.0
+beats_fit_tertian_chord_pct : 0.0
+non_tertian_beats : []
+beat_dissonance_both_attacking(unprepared) : []
+chordal_tritones_attacked_together(dim/dom7 member) : []
+beat_dissonance_one_held(prep/passing) : 0
+m2/M7_clashes_on_attacks(eighth grid) : 2
+parallel_5ths_8ves(eighth grid, attack to attack) : ['b12.3.50 UL 5th F5/A#2->G5/C3']
+parallel_5ths_8ves(16th grid) : 1
+voice_crossings : 0
+cross_relations(different voices,<1 beat) : 1
+pair_independence : {'UL': {'onset_jaccard': 0.57, 'similar': 108, 'contrary': 117, 'oblique': 149, 'parallel_3rd6th_share_of_similar': 0.68}}
+voices_summary : {'U': {'notes': 346, 'range': 'D#4-F6', 'mean_vel': 74.5, 'max_vel': 95, 'silent_pct': np.float64(0.8), 'silent_bars': 0, 'distinct_durations': 4}, 'L': {'notes': 278, 'range': 'D2-F4', 'mean_vel': 73.4, 'max_vel': 93, 'silent_pct': np.float64(6.6), 'silent_bars': 2, 'distinct_durations': 4}}
+bar_pairs_>60%_identical_pitch_grid : [(1, 29, 1.0), (2, 30, 1.0)]
+longest_identical_rhythm_run_per_voice : ['U:2bars@5', 'L:2bars@5']
+attacks_per_bar : [7, 10, 21, 21, 20, 20, 21, 21, 21, 21, 20, 20, 20, 23, 21, 23, 21, 26, 20, 20, 14, 21, 23, 24, 14, 25, 19, 28, 18, 21, 18, 2]
+16th-groups checked 60 chord-fit 7
+nonfit 53 ['b2.1 RH D#5/D5/C5/D5', 'b3.2 RH F5/G5/G#5/F5', 'b3.3 RH G5/G#5/G5/F5', 'b3.4 RH D#5/C5/D5/F5', 'b4.2 RH C5/A#4/G#4/A#4', 'b5.1 RH D#5/D5/C5/D5', 'b5.3 RH G#4/G4/F4/G4', 'b6.1 RH D5/C5/A#4/C5', 'b6.3 RH G4/F4/D#4/F4', 'b8.1 RH G5/F5/D#5/F5', 'b9.2 RH G#5/A#5/C6/G#5', 'b9.3 RH A#5/C6/A#5/G#5', 'b9.4 RH G5/D#5/F5/G#5', 'b10.2 RH D#5/D5/C5/D5', 'b11.1 RH G5/F5/D#5/D5', 'b11.3 RH C5/C#5/D#5/C5', 'b12.1 RH A#4/C5/C#5/A#4', 'b12.3 RH F5/E5/G5/A#5', 'b13.3 RH C#5/F5/G5/G#5', 'b15.3 RH G5/C5/C#5/F5', 'b17.3 RH C5/A#4/G#4/G4', 'b18.3 RH F5/D#5/C#5/C5', 'b18.4 RH A#4/G#4/A#4/C5', 'b19.1 RH C5/B4/A4/A#4', 'b19.3 RH A4/A#4/C5/B4', 'b22.1 RH A#5/A5/G5/A5', 'b23.1 RH D5/C5/A#4/D5', 'b23.2 RH D#5/F5/D5/D#5', 'b23.3 RH B4/C5/D5/D#5', 'b23.4 RH F5/D5/D#5/F5', 'b24.1 RH G5/A#5/G#5/G5', 'b24.2 RH F5/D#5/D5/F5', 'b24.3 RH G5/G#5/A#5/G5', 'b24.4 RH G#5/A#5/C6/B5', 'b26.1 RH D#6/D6/C6/D6', 'b27.2 RH A#5/C6/C#6/B5', 'b27.4 RH G#5/G5/F5/D#5', 'b28.3 RH D5/D#5/B4/C5', 'b30.1 RH D#5/D5/C5/D5', 'b31.3 RH C5/A#4/G#4/C5', 'b4.1 LH D#3/F3/G3/F3', 'b7.2 LH F3/D#3/D3/F3', 'b7.3 LH D#3/D3/D#3/F3', 'b7.4 LH G3/A#3/G#3/F3', 'b8.2 LH A#3/C4/D4/C4', 'b10.1 LH G3/G#3/A#3/G#3', 'b14.1 LH E3/C3/A#2/G#2', 'b16.1 LH A#2/F3/E3/C3', 'b18.1 LH F3/G3/G#3/A#3', 'b22.3 LH A#3/A3/G3/A3', 'b26.3 LH D2/D#2/F2/G#2', 'b28.2 LH G2/F3/G2/G#3', 'b30.3 LH D#4/D4/C4/D4']
+par_bass 0 []
+par_top 0 []
+bass_leap 0 []
+cross 0 []
+voices-per-bar: 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[(1, 2), (2, 30)]

@@ -1,0 +1,28 @@
+bars : 28
+voices : 2
+beats_3plus_voices : 0
+pcs_hist : {}
+beats_4plus_pcs_pct : 0.0
+beats_fit_tertian_chord_pct : 0.0
+non_tertian_beats : []
+beat_dissonance_both_attacking(unprepared) : ['b3.3 R.H.C4/L.H.D3', 'b6.4 R.H.G#4/L.H.A#2', 'b8.3 R.H.G#4/L.H.A#2', 'b11.2 R.H.A#4/L.H.F3', 'b11.3 R.H.G#4/L.H.A#2', 'b12.2 R.H.D#4/L.H.A#3', 'b12.4 R.H.D#4/L.H.A#3', 'b20.1 R.H.C5/L.H.G2', 'b20.3 R.H.G#5/L.H.G2', 'b21.3 R.H.C5/L.H.G2', 'b26.3 R.H.C5/L.H.G2']
+chordal_tritones_attacked_together(dim/dom7 member) : ['b2.2 R.H.F4/L.H.B3']
+beat_dissonance_one_held(prep/passing) : 8
+m2/M7_clashes_on_attacks(eighth grid) : 3
+parallel_5ths_8ves(eighth grid, attack to attack) : ['b1.3.00 R.H.L.H. 8ve C5/C4->C4/C3', 'b2.1.00 R.H.L.H. 8ve C5/C4->B3/B2', 'b6.1.50 R.H.L.H. 8ve D#4/D#3->F5/F3', 'b26.4.00 R.H.L.H. 8ve G4/G2->G5/G3', 'b28.1.00 R.H.L.H. 8ve G5/G3->C4/C2']
+parallel_5ths_8ves(16th grid) : 8
+voice_crossings : 0
+cross_relations(different voices,<1 beat) : 13
+pair_independence : {'R.H.L.H.': {'onset_jaccard': 0.32, 'similar': 59, 'contrary': 39, 'oblique': 328, 'parallel_3rd6th_share_of_similar': 0.27}}
+voices_summary : {'R.H.': {'notes': 441, 'range': 'G#3-B5', 'mean_vel': 77.0, 'max_vel': 100, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 2}, 'L.H.': {'notes': 140, 'range': 'G#1-D#4', 'mean_vel': 74.9, 'max_vel': 96, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 5}}
+bar_pairs_>60%_identical_pitch_grid : [(23, 24, 0.69)]
+longest_identical_rhythm_run_per_voice : ['R.H.:27bars@1', 'L.H.:6bars@13']
+attacks_per_bar : [22, 22, 22, 22, 19, 19, 19, 19, 19, 19, 22, 22, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 11]
+16th-groups checked 110 chord-fit 109
+nonfit 1 ['b11.1 RH F5/D#4/A#4/F5']
+par_bass 5 ['b11.2 D#4/A#2->A#4/F3', 'b15.1 C4/C3->C#4/C#3', 'b26.1 G#4/G#3->F4/F2', 'b26.2 F4/F2->C5/C3', 'b26.3 C5/C3->G4/G2']
+par_top 2 ['b12.1 F5/F3->D#5/D#3', 'b18.1 G#4/G#2->D5/D3']
+bass_leap 4 ['b12.1 G#4->A#3', 'b14.1 G4->G#3', 'b16.3 G4->G#3', 'b27.1 C5->D4']
+cross 0 []
+voices-per-bar: 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[(2, 28)]

@@ -1,0 +1,2 @@
+prelude-iv_v3 gain=-3.7dB after_mp3=[LUFS, peak: -19.5 -5.0 ]
+fugue-iv_v3 gain=-2.1dB after_mp3=[LUFS, peak: -19.6 -3.3 ]

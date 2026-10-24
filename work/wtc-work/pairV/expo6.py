@@ -1,0 +1,12 @@
+# ===== v2 EXPOSITION b1-12: accumulating 1-2-3-4-5-6 voices; every voice continues after its entry
+# entries: A subj A4 (b1) | T ans E3 (b3) | B subj A2 (b5) | S ans E5 (b7) | Br subj A3 (b9) | Cb ans E2 (b11)
+put(1,A=SA4[0]); put(2,A=SA4[1])
+put(3,T=AE3[0],A=csA()[0]); put(4,T=AE3[1],A=csA()[1])
+put(5,B=SA2[0],T=csD()[0],A='A5:6 G5:2 D6:4 A5:4')
+put(6,B=SA2[1],T=csD()[1],A='F#5:2 G5:2 A5:4 D6:4 G5:2 E5:2')
+put(7,S=AE5[0],B=csA(-2)[0],T='E4:4 C#4:2 D4:2 E4:4 A3:4',A='C#5:4 E5:8 C#5:4')
+put(8,S=AE5[1],B=csA(-2)[1],T='C#4:6 D4:2 C#4:4 D4:2 B3:2',A='C#5:3 D5:1 E5:4 A4:4 D5:4')
+put(9, Br=SA3[0],A=csD(1)[0],S='D6:6 E6:2 F#6:4 A5:4',T='D4:4 F#4:4 A4:2 B4:2 D5:4',B='F#3:4 D3:8 D3:4')
+put(10,Br=SA3[1],A=csD(1)[1],S='D6:4 F#6:4 D6:4 B5:4',T='D5:4 A4:4 B4:4 D4:4',B='F#3:4 D3:4 B2:4 B2:2 A2:2')
+put(11,Cb=AE2[0],Br=csA(-1)[0],B='E3:10 F#3:2 G#3:4',T='C#5:2 D5:2 A4:4 E4:6 F#4:2',A='E5:6 D5:2 E5:4 C#6:4',S='C#6:2 B5:2 C#6:2 E6:2 A6:3 G#6:1 E6:4')
+put(12,Cb=AE2[1],Br=csA(-1)[1],B='C#4:4 E3:4 F#3:4 A2:2 C#3:2',T='C#5:8 A4:8',A='E5:8 C#5:4 F#5:4',S='E6:8 A6:4 F#6:4')

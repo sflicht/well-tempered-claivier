@@ -1,0 +1,6 @@
+16th-groups checked 129 chord-fit 129
+nonfit 0 []
+par_bass 16 ['b8.4 C4/C3->D#4/D#3', 'b9.1 D#4/D#3->C4/C3', 'b9.4 C4/C3->G4/G3', 'b13.2 D#4/G#2->G4/C3', 'b13.3 G4/C3->D#4/G#2', 'b13.4 D#4/G#2->G4/C3', 'b16.2 F4/F3->G#4/G#3', 'b16.3 G#4/G#3->F4/F3', 'b19.1 A#4/A#3->G#4/G#2', 'b20.1 C5/C3->A#4/A#2', 'b23.4 D4/D3->F4/F3', 'b29.2 G4/G2->C5/C3', 'b30.2 C4/C2->D#4/D#3', 'b31.2 C4/C2->F4/F3', 'b32.4 C4/C2->E4/E3', 'b33.1 E4/E3->C4/C2']
+par_top 1 ['b30.1 D5/D3->C5/C2']
+bass_leap 1 ['b11.1 C4->A#4']
+cross 0 []

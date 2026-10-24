@@ -1,0 +1,2 @@
+fugue-v_v1 raw=-16.9 gain=-2.3 true_peak=-3.6 dBFS dur=134.086531
+prelude-v_v1 raw=-14.9 gain=-4.3 true_peak=-5.7 dBFS dur=95.294694

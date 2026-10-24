@@ -1,0 +1,10 @@
+23|s=F#5:2 A5:1 G#5:1 E5:2 D#5:6|a=C#5:6 B4:6~|t=F#3:12|br=C#3:6 D#3:6|b=A2:6 B2:6|tag=23 episode: F#m - B
+24|s=E5:6 G#5:6|a=B4:6 C#5:6|t=G#3:12|br=B2:6 E3:6|b=E2:6 C#3:6|tag=24 E - C#m
+25|s=C#6:2 B5:1 A#5:1 G#5:2 A#5:6|a=G#4:6 C#5:6|t=E4:12|br=G#3:6 F#3:6~|b=C#2:6 A#2:6|tag=25 sequence: C#m - F#7
+26|s=B5:6 G#5:6|a=F#5:6 B4:6|t=F#4:6 D#4:6|br=F#3:6 B2:6|b=D#2:6 G#2:6|tag=26 B - G#m
+27|s=C#6:6 B#5:6|a=A4:6 D#5:6|t=F#4:12|br=F#3:6 D#3:6|b=A2:6 G#2:6|tag=27 F#m - G#7
+28|s=G#5:4 B5:8|a=R:6 D#5:2 B4:1 A#4:1 F#4:2|t=G#4:2 E4:1 D#4:1 B3:2 F#4:4 R:2|br=E3:4 D#3:8|b=C#2:4 G#2:8|tag=28 stretto: Subject N (T, C#m) + answer (A, G#m)
+29|s=A5:6 B#5:6|a=C#5:6 E5:4 C#5:2~|t=A4:4 F#4:2 D#4:2 B#3:4|br=F#3:12|b=F#2:6 G#2:6|tag=29 stretto tail over F#m - G#7
+30|s=C#6:6 G#5:6|a=C#5:6 B4:6|t=C#4:6 E4:6|br=E3:12|b=A2:6 G#2:6|tag=30 DECEPTIVE: G#7 -> A (bVI)
+31|s=F#5:6 E5:6~|a=A#4:2 F#4:4 G#4:6~|t=D#4:6 E4:6|br=F#3:6 G#3:6|b=D#3:2 B2:1 A#2:1 F#2:2 C#3:6|tag=31 Subject N (Bass, G#m answer)
+32|s=E5:6 D#5:2 C#5:2 B4:2|a=G#4:6 A#4:4 G#4:2|t=C#4:12|br=G#3:6 A#3:6|b=E3:4 C#3:2 A#2:2 F##2:2 G#2:2

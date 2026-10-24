@@ -1,0 +1,15 @@
+{
+  "input": "src/prelude-iv_second-edition.json",
+  "voices": 3,
+  "midi": "/workspace/wtc-work/renders/prelude-iv_second-edition.mid",
+  "musicxml": "/workspace/wtc-work/renders/prelude-iv_second-edition.musicxml",
+  "lilypond": "/workspace/wtc-work/renders/prelude-iv_second-edition.ly",
+  "pdf": "/workspace/wtc-work/renders/prelude-iv_second-edition.pdf",
+  "piano_audio": {
+    "duration_seconds": 99.0,
+    "raw_peak": 0.1368408203125,
+    "soundfont": "/usr/share/sounds/sf2/FluidR3_GM.sf2",
+    "sample_rate": 44100
+  },
+  "mp3": "/workspace/wtc-work/renders/prelude-iv_second-edition.mp3"
+}

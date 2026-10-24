@@ -1,0 +1,8 @@
+36|a=C#5:6 D5:1 C#5:1 B4:1 C#5:1 D5:1 E5:1
+37|a=D5:3 C#5:1 B4:2 G#4:2 E#4:4
+41|a=E4:6 F#4:1 G#4:1 A4:1 G#4:1 F#4:1 G#4:1
+42|a=C#5:3 B4:1 A4:2 F#4:2 D#4:4|t=R:12
+47|a=A4:6 B4:1 A4:1 G#4:1 A4:1 B4:1 C#5:1
+48|a=D5:3 C#5:1 B4:2 G#4:2 F#4:4
+51|s=G#5:2 E5:1 D#5:1 B#4:2 F#5:6|a=R:4 G#4:2 E4:1 D#4:1 B#3:2 F#4:2|t=R:12|br=R:8 G#3:2 E3:1 D#3:1|b=G#2:12|tag=51 STRETTO ON THE FINAL PEDAL: N-dom at 4-unit offsets (S, A, Br) over G#2
+52|s=D#5:6 B#4:6|a=F#4:4 D#4:4 B#3:4|t=R:12|br=B#2:2 F#3:6 D#3:4|b=G#2:12|tag=52 stretto tails close on G#7

@@ -1,0 +1,1 @@
+../venv/bin/python build_prelude.py prelude-iv_v6.json >/dev/null && ../venv/bin/python chk.py prelude-iv_v6.json -v | grep -E "both_att|clash_list|par16_list|par_list|xrel_list|crossing_list|identical|^parallel_5ths|one_held_list" | cut -c1-400

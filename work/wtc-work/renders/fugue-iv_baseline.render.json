@@ -1,0 +1,15 @@
+{
+  "input": "src/fugue-iv_baseline.json",
+  "voices": 5,
+  "midi": "/workspace/wtc-work/renders/fugue-iv_baseline.mid",
+  "musicxml": "/workspace/wtc-work/renders/fugue-iv_baseline.musicxml",
+  "lilypond": "/workspace/wtc-work/renders/fugue-iv_baseline.ly",
+  "pdf": "/workspace/wtc-work/renders/fugue-iv_baseline.pdf",
+  "piano_audio": {
+    "duration_seconds": 225.39512471655328,
+    "raw_peak": 0.14385986328125,
+    "soundfont": "/usr/share/sounds/sf2/FluidR3_GM.sf2",
+    "sample_rate": 44100
+  },
+  "mp3": "/workspace/wtc-work/renders/fugue-iv_baseline.mp3"
+}

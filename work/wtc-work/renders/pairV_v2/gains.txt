@@ -1,0 +1,1 @@
+fugue-v_v2 raw=-16.8 gain=-2.4 true_peak=-3.7 dBFS dur=134.086531

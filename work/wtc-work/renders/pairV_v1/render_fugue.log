@@ -1,0 +1,15 @@
+{
+  "input": "renders/pairV_v1/fugue-v_v1.json",
+  "voices": 6,
+  "midi": "/workspace/wtc-work/renders/pairV_v1/fugue-v_v1.mid",
+  "musicxml": "/workspace/wtc-work/renders/pairV_v1/fugue-v_v1.musicxml",
+  "lilypond": "/workspace/wtc-work/renders/pairV_v1/fugue-v_v1.ly",
+  "pdf": "/workspace/wtc-work/renders/pairV_v1/fugue-v_v1.pdf",
+  "piano_audio": {
+    "duration_seconds": 134.05555555555554,
+    "raw_peak": 0.184051513671875,
+    "soundfont": "/usr/share/sounds/sf2/FluidR3_GM.sf2",
+    "sample_rate": 44100
+  },
+  "mp3": "/workspace/wtc-work/renders/pairV_v1/fugue-v_v1.mp3"
+}

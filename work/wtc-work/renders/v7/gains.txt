@@ -1,0 +1,3 @@
+prelude-iv_v6 raw=-16.8 gain=-2.45dB after_mp3=-19.5 LUFS (re-tuned)
+fugue-iv_v6 raw=-15.5 gain=-3.7dB after_mp3=-19.5 LUFS, true peak -5.1 dBFS
+fugue-iv_v7 raw=-15.5 gain=-3.8dB after_mp3=-19.5 LUFS, true peak -5.2 dBFS (re-tuned)

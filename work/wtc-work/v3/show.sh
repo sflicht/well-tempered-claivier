@@ -1,0 +1,1 @@
+../venv/bin/python build_fugue.py fugue-iv_v3.json >/dev/null && ../venv/bin/python chk.py fugue-iv_v3.json -v | grep -E "^bars|beats_4plus|chordal_trit|both_attack|one_held_list|clash_list|parallel|par16_list|par_list|xrel_list|crossing_list|identical|cross_rel"
