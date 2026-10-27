@@ -51,7 +51,7 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
    staggered so that every voice reaches the final cadence together. No single
    player could perform it.
 
-10. **[built] The listening room.** A web page that plays every movement from
+10. **[built] The listening room.** (https://claude.ai/artifact/BBJMS7b46MiEycNBM24yhB, built by `tools/build_listening_page.py`) A web page that plays every movement from
     its score in the browser, with a temperament switch, voice solo/mute,
     subject entries marked on a piano roll, and critic numbers per movement.
 

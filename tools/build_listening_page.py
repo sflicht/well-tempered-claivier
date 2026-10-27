@@ -19,18 +19,32 @@ from render_music import TEMPERAMENTS, temperament_offsets  # noqa: E402
 from critic import analyse  # noqa: E402
 
 
-def compact(path):
+def merged(data):
+    """Merge voices named 'X / layer' into one display voice 'X'."""
+    out, index = [], {}
+    for v in data['voices']:
+        key = v.get('name', '').split(' / ')[0]
+        if key not in index:
+            index[key] = len(out)
+            out.append({'name': key, 'abbr': key[:3], 'events': []})
+        out[index[key]]['events'].extend(v['events'])
+    for v in out:
+        v['events'].sort(key=lambda e: float(e['t']))
+    return out
+
+
+def compact(path, group_voices=False, stats_score=None):
     data = json.loads((ROOT / path).read_text())
     meta = data.get('metadata', {})
     voices = []
-    for v in data['voices']:
+    for v in (merged(data) if group_voices else data['voices']):
         ev = [[round(float(e['t']), 4), round(float(e['d']), 4), int(e['p']), int(e.get('v', 72))]
               for e in v['events'] if e.get('p') is not None]
         voices.append({'n': v.get('name', ''), 'a': v.get('abbr', v.get('name', '')[:3]), 'e': ev})
     entries = [[int(x['voice']), round(float(x['t']), 4), x.get('label', '')] for x in data.get('subject_entries', [])]
     meter = meta.get('meter', [4, 4])
     try:
-        R = analyse(data)
+        R = analyse(json.loads((ROOT / stats_score).read_text()) if stats_score else data)
         s = R['summary']
         stats = {'bars': R['bars'], 'voices': R['voices'], 'sec': R['duration_s'],
                  'par': s['parallels_error'], 'unres': s['dissonance_unresolved'],
@@ -49,7 +63,7 @@ def main():
     for g in manifest['groups']:
         pieces = []
         for p in g['pieces']:
-            d = compact(p['score'])
+            d = compact(p['score'], p.get('group_voices', False), p.get('stats_score'))
             d.update({'id': p['id'], 'title': p['title'], 'notes': p.get('notes', ''), 'tag': p.get('tag', ''),
                       'src': p['score']})
             pieces.append(d)

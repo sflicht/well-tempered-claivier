@@ -195,14 +195,14 @@ theme('A1', 29, 1.5, I5, 'I5 inversus (e-flat), off the beat')                  
 put('S2', 29, 4, 'Ab5:4 F5:4 Ab5:4 Gb5:4 F5:4')                                             # into the false-return cadence (b30.3)
 
 # ================================================================ APPROACH (b31-35): heads one beat apart, bottom to top, over a rising bass
-put('B2', 31, 1, 'Gb2:16 Ab2:16 A2:16 Bb2:20')                                               # i6 - iv - vii7/V - V
-theme('B1', 31, 1, 'Eb3:4 Bb3:4 Cb4:3 Bb3:1', 'head', 1); put('B1', 31, 4, 'Ab3:4 Cb3:8 Eb3:24 F3:8')
-theme('T2', 31, 2, 'Bb3:4 Eb3:4 D3:3 Eb3:1', 'head inversus', 1); put('T2', 32, 1, 'Eb3:8 Ab3:8 Gb3:16 Bb3:12')
-theme('A2', 31, 3, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('A2', 32, 2, 'Ab4:12 Gb4:16 F4:4')
-theme('S2', 31, 4, 'Bb5:4 Eb5:4 D5:3 Eb5:1', 'head inversus', 1); put('S2', 32, 3, 'Eb5:24 F5:12')
-theme('Bar', 32, 1, 'Ab3:4 Eb4:4 Fb4:3 Eb4:1', 'head (a-flat)', 1); put('Bar', 32, 4, 'Db4:4 C4:16')
-theme('T1', 32, 2, 'Eb4:4 Ab3:4 G3:3 Ab3:1', 'head inversus (a-flat)', 1); put('T1', 33, 1, 'Eb4:16 D4:16')
-theme('A1', 32, 3, 'Ab4:4 Eb5:4 Fb5:3 Eb5:1', 'head (a-flat)', 1); put('A1', 33, 2, 'Gb5:12 Bb4:8')
+put('B2', 31, 1, 'Gb2:16 Ab2:20 A2:12 Bb2:20')                                               # i6 - iv - vii7/V - V
+theme('B1', 31, 1, 'Eb3:4 Bb3:4 Cb4:3 Bb3:1', 'head', 1); put('B1', 31, 4, 'Gb3:4 Cb3:8 Eb3:12 C3:12 D3:8')
+theme('T2', 31, 2, 'Bb3:4 Eb3:4 D3:3 Eb3:1', 'head inversus', 1); put('T2', 32, 1, 'Eb3:8 Ab3:8 Gb3:16 F3:12')
+theme('A2', 31, 3, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('A2', 32, 2, 'Ab4:16 Gb4:12 Bb4:4')
+theme('S2', 31, 4, 'Bb5:4 Eb5:4 D5:3 Eb5:1', 'head inversus', 1); put('S2', 32, 3, 'Eb5:24')
+theme('Bar', 32, 1, 'Ab3:4 Eb4:4 Fb4:3 Eb4:1', 'head (a-flat)', 1); put('Bar', 32, 4, 'Db4:4 Cb4:4 C4:12 Bb3:4')
+theme('T1', 32, 2, 'Eb4:4 Ab3:4 G3:3 Ab3:1', 'head inversus (a-flat)', 1); put('T1', 33, 1, 'Eb4:16 F4:16')
+theme('A1', 32, 3, 'Ab4:4 Eb5:4 Fb5:3 Eb5:1', 'head (a-flat)', 1); put('A1', 33, 2, 'Gb5:12')
 theme('S1', 34, 1, 'Bb5:4 F6:4 Gb6:3 F6:1', 'head on the dominant', 1); put('S1', 34, 4, 'F6:4 Eb6:4 D6:12')
 # b36: general pause (F-2nd's b46 silence)
 
