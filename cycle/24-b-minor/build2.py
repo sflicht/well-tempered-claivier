@@ -28,11 +28,11 @@ def wave2(sc):
     sc.entries.append(('S2', sc.pos(13, 2), 'CS1 (in D)', 'CS1', 1, 3, False))
     P('B1', 13, 1, tr(BASS, 3, 2))
     P('T2', 13, 1, "F4:8 E4:8 D4:8 Eb4:4 D4:4")
-    P('T2', 15, 1, "G3:4 A3:8 R:4")
+    P('T2', 15, 1, "D4:4 R:12")
     # sixteenths (Alto V, new)
     P('A5', 13, 1, "A3:1 D4:1 F4:1 E4:1 D4:1 C#4:1 D4:1 A3:1 B3:1 G#3:1 B3:1 D4:1 E4:1 D4:1 C#4:1 B3:1")
     P('A5', 14, 1, "A3:1 C4:1 D4:1 F#4:1 A4:1 F#4:1 D4:1 C4:1 Bb3:1 Eb4:1 G4:1 Eb4:1 C4:1 D4:1 C4:1 A3:1")
-    P('A5', 15, 1, "G3:1 Bb3:1 D4:1 B3:1 C4:1 A3:1 C#4:1 E4:1 R:8")
+    P('A5', 15, 1, "G3:1 Bb3:1 D4:1 F4:1 C4:1 A3:1 C#4:1 E4:1 R:8")
     # ---- episode B15.3-B17: Dm - G7 - C - F#o7 - B7 - Em
     P('A1', 15, 3, "D5:4 B4:4")                       # subject's final note, then into the chain
     P('A1', 16, 1, "B4:4 C5:8 A4:4~")

@@ -188,6 +188,18 @@ put('A2', 24, 3, 'F#4:6 B4:6 A4:6 G4:6 F#4:6 E4:6')
 put('S1', 22, 3, 'D5:6 C#5:4 B4:2 D5:6 E5:4 C#5:2 D5:6 C#5:6 B4:12')
 
 
+# ================================================================ V. RECOGNITION (b26-29): chorale line 3 (= line 1) over its own diminutions
+# Coro I sings the subject in G major, whose beat-notes ARE the chorale line; Coro II sings it in E minor a tenth below.
+# For two bars the choirs agree (parallel tenths) -- the one deliberate unanimity of the piece.
+put('CH', 26, 1, CH1)
+theme('A1', 26, 1, RG, 'Coro I: subject in G major = the chorale line in diminution')
+theme('Bar2', 26, 1, octv('E4:6 E4:4 D#4:2 E4:2 F#4:2 G4:2 B4:4 A4:2 B4:4 G4:2 C5:6 B4:2 A4:2 G4:2 F#4:2 E4:2 D4:2', -1),
+      'Coro II: subject in E minor a tenth below (natural-minor tail)')
+put('T2', 26, 1, 'B3:12 C4:6 D4:6 G4:12 D4:6 A3:6')
+theme('B2', 28, 2, octv(RA, -2), 'Coro II: answer (B minor), bass')
+theme('S1', 28, 4, tr(IG, 7, 4), 'Coro I: inversion in D major, soprano')
+
+
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
     meta = {'title': 'The Well-Tempered clAIvier',
