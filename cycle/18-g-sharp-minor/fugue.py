@@ -193,11 +193,30 @@ put('Br1', 35, 1, 'A#3:8 B#3:16 E#3:8 C#4:8 A#3:8')
 # Bmaj7 E#o7 A#7 D#m); Basso II enters with the deep bass.
 put('B2', 37, 1, tr('D#3:8 G#2:8 C#3:8 F#2:8 B2:8 E2:8 A#2:8 D#2:8 G#2:8', -5, -3))
 put('S2', 37, 1, tr('F#5:16 E5:16 D#5:16 C#5:16 B4:8', 7, 4))
-put('S3', 37, 1, tr('A#4:8 B4:16 A#4:16 G#4:16 F##4:8 G#4:8', 7, 4))
+put('S3', 37, 2, tr('B4:16 A#4:16 G#4:16 F##4:8 G#4:8', 7, 4))
 put('A3', 37, 1, tr('A#3:8 D#4:8 E4:8 C#4:2 R:2 C#4:2 R:2 C#4:4 R:4 B3:8 E4:8 D#4:16', 7, 4))
 put('T1', 37, 1, tr('F#3:8 R:8 G#3:8 F#3:8 D#3:8 R:8 R:8 A#3:8 G#3:8', 7, 4))
 put('Br1', 38, 2, tr('F#3:2 R:2 F#3:4 R:8', 7, 4))
 put('A4', 37, 2.5, tr('D#5:4 R:4 F#5:2 R:2 F#5:2 R:2 F#5:4 R:12 R:8 A#4:2 R:2 A#4:2 R:2 A#4:4 R:4', -5, -3))
+
+# b40-42: block 1's combination returns with the parts exchanged (invertible at the octave):
+# the door subject on top (Soprano IV), the subject in the tenor.
+theme('S4', 40, 1, octv(K_DOR, 1), 'III: door subject on top (parts exchanged)', 2)
+theme('T2', 40, 2, octv(S_DOR, -1), 'III: subject in the tenor (parts exchanged)', 3)
+put('B1', 40, 1, 'G#2:16 D#3:8 G#2:8 E#2:8 C#3:8 F#2:8 D#3:8 G#2:8')
+put('S3', 40, 1, 'G#5:20 F#5:4 D#5:8 G#5:16 F#5:8 D#5:16')
+put('A4', 40, 1, 'B4:16 R:16 G#4:8 E#4:8 F#4:16 B4:8')
+put('Br3', 40, 1, 'D#3:16 R:8 D#3:8 E#3:16 A#2:8 F#3:8 D#3:8')
+
+# b43-44: approach.  The bass climbs B B# C# C## D# (the lower door); B#o7 C# C##o7 D# D#7 -> summit.
+put('B1', 43, 1, 'B2:8 B#2:8 C#3:8 C##3:8 D#3:8 D#2:8')
+put('S3', 43, 2, 'D#5:8 E#5:16 F##5:16')
+put('S4', 43, 1, 'F#5:16 G#5:16 A#5:16')
+put('A1', 43, 1, 'D#4:8 A#4:8 G#4:8 B4:8 A#4:8 C#5:8')
+put('T2', 43, 2, 'R:8 C#4:8 E#4:8 A#3:16')
+put('T4', 43, 3, 'E#3:16 R:16')
+put('S2', 43, 1, 'B5:8 D#6:8 C#6:16 R:16')
+put('A2', 43, 1, 'F#4:16 E#4:16 D#4:16')
 
 # ================================================================ SUMMIT (composed first)
 SUM = 45

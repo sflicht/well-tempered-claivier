@@ -377,6 +377,10 @@ def section_H(b0):
     T = T_(b0)
     T('P1', 4, cantus(9, -1), 'cantus line 9 (Ped. I, canon dux)')
     T('P2', 9, cantus(9, -2, last=8), 'cantus line 9 (Ped. II, canon comes, 5 beats)')
+    T('HS2', 0, S9, 'line 9 Vorimitation: subject 9 (HW S2)')
+    T('HB', 2, oc(A9, -1), 'line 9 Vorimitation: answer (HW B)')
+    T('RA', 4, tr(S9, 7, 4), 'line 9 Vorimitation: subject 9 on G (RP A)')
+    T('RBr', 10, oc(A9, -1), 'line 9: answer (RP Bar)')
     # H-END
 
 

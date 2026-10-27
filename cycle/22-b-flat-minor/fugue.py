@@ -265,7 +265,7 @@ put('S3', 45, 1, 'Bb5:4 Ab5:4 Gb5:8 F5:8 Eb5:8 Db5:4 C5:4 A4:8 F4:8 Ab4:8')
 # subject (suspensions, anticipations), never between the same two notes at the same moment; the
 # low voices breathe on b48.3 and strike the axis chord on b48.4.
 put('B3', 45, 1, 'Bb2:16~ Bb2:12 C3:4 F2:16~ F2:8 R:4 B2:4')
-put('B1', 45, 1, 'F2:8 Db3:8~ Db3:8 Bb2:4 A2:4 Bb2:16 A2:4 C3:4 R:4 Ab2:4')
+put('B1', 45, 1, 'F2:8 Db3:8~ Db3:8 Bb2:4 A2:4 Bb2:12 A2:4 R:12 Ab2:4')
 put('Bar4', 45, 1, 'Db4:16~ Db4:4 C4:4 A3:8 C4:8 F3:8 C4:8 R:4 F3:4')
 
 if __name__ == '__main__':

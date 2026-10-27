@@ -1589,7 +1589,7 @@
      "v": 82,
      "gate": 0.975,
      "bar": 80,
-     "label": "S1 inv. (over the pedal)"
+     "label": "S1 inv. (head, over the pedal)"
     },
     {
      "t": 320.0,
@@ -7482,15 +7482,6 @@
      "bar": 76
     },
     {
-     "t": 302.0,
-     "d": 2.0,
-     "p": 61,
-     "spell": "des",
-     "v": 75,
-     "gate": 0.975,
-     "bar": 76
-    },
-    {
      "t": 306.0,
      "d": 0.5,
      "p": 56,
@@ -11287,7 +11278,7 @@
   {
    "voice": 1,
    "t": 318.0,
-   "label": "S1 inv. (over the pedal)"
+   "label": "S1 inv. (head, over the pedal)"
   },
   {
    "voice": 10,
@@ -12019,7 +12010,7 @@
     "C4:8 R:8",
     "R:8 C4:8",
     "F3:8 Ab3:8",
-    "C4:8 Db4:8",
+    "C4:8 R:8",
     "R:8 Ab3:2 G3:2 Ab3:2 Bb3:2",
     "C4:2 Db4:2 C4:2 F4:2 C4:2 Bb3:2 Ab3:2 Bb3:2",
     "C4:2 R:14",

@@ -215,6 +215,10 @@ put('BI', P2, 3, 'Ab2:4 C3:4')
 seq('BI', P2 + 1, 'F2:4 G2:4 C3:4 Ab2:4', 'C3:4 B2:4 C3:4 Bb2:4', 'Eb3:4 Ab2:4 F2:4 E2:4', 'F2:4 Bb2:4 Eb3:4 G2:4',
     'Ab2:4 Bb2:4 C3:8', 'F2:4 Bb2:8 C3:4', 'F2:8 R:8')
 
+def hd(s, k):
+    return ' '.join(s.split()[:k])
+
+
 # ================================================================ III. B-A-C-H, b43-60
 # B-A-C-H transposed to F minor (D-flat C E-flat D-natural): the same intervals as Bach's own B-flat A C B,
 # so that it combines with S1, S2 and the main theme exactly as in Bach's D minor.  Its answer (real, at the
@@ -282,8 +286,6 @@ theme('TI', Q + 2, 3, S3, 'S3 B-A-C-H')
 # with the critic in the loop, then checked by hand): S1 inverted (Soprano III) and S1's head high (Soprano II)
 # and low (Baritone II) around the bass S1, its inverted head in Tenor II; S2's head against its own inversion,
 # both from A-flat (Alto II, Alto III), the inverted head again in Tenor II.
-def hd(s, k):
-    return ' '.join(s.split()[:k])
 S1R = tr(S1, 7, 4)                  # S1's real answer:   C G F E-flat F G C
 S1IR = tr(S1I, -7, -4)              # inverted answer:    F B-flat C D-flat C B-flat F
 theme('SIII', Q, 2, octv(S1I, -1), 'S1 inv.')
@@ -344,7 +346,7 @@ theme('BrII', F + 5, 3, octv(hd(MTI, 4), -1), 'main theme inv. (head)')
 # S1's inverted head high in Soprano I before its main theme (b73.3), the inverted main theme's head in Tenor II
 # (b74.3) and S2's inverted head in Tenor II again under the main theme (b77.3).
 theme('SI', F, 3, hd(S1I, 3), 'S1 inv. (head)')
-theme('TII', F + 1, 3, octv(hd(MTI, 5), -1), 'main theme inv. (head)')
+theme('TII', F + 1, 3, octv(hd(MTI, 4), -1), 'main theme inv. (head)')
 theme('TII', F + 4, 3, octv(hd(S2I, 13), -1), 'S2 inv. (head)')
 # ---- over the dominant pedal (a long cadential 6/4, b80.3-82.4, then V7(9), b83-84): S1 at normal speed (Tenor I)
 # against the two augmentations, the inverted main theme (Alto III), and B-A-C-H's head (Tenor II), which spells
@@ -353,7 +355,7 @@ theme('TI', F + 7, 3, S1, 'S1 (with its inversion)')
 theme('AIII', F + 8, 3, MTI, 'main theme inv.')
 theme('TII', F + 8, 3, 'Db4:8 C4:8 Eb4:8 D4:6 E4:2 F4:8', 'S3 B-A-C-H (head)')
 put('TII', F + 11, 1, 'E4:8 F4:8')
-theme('SII', F + 7, 3, hd(S1I, 5), 'S1 inv. (over the pedal)')
+theme('SII', F + 7, 3, hd(S1I, 5), 'S1 inv. (head, over the pedal)')
 # the last dominant (b84.1): Soprano I G rising to C, Alto II G.
 put('SI', F + 11, 1, 'G5:8 C6:8')
 put('AII', F + 11, 1, 'G4:8')

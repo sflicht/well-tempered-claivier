@@ -215,7 +215,44 @@ def summit():
     theme('D4', z + 49 + Fr(2, 3), dshift(SG, 3), 'Gigue subject (D level)')
 
 
-SECTIONS = [summit]
+# Tonal answer of the allemande (E level; the upbeat E->A is answered A->E)
+AA = 'A4:1 E5:2 D#5:1 F#5:1 E5:1 G#5:1 F#5:1 A5:1 G#5:2 F#5:1 D#5:1 E5:1 C#5:1 B4:2'
+
+
+def allemande():
+    """I. Allemande: Coro I alone (q0-36), a five-voice exposition in 4/4, sixteenth upbeats."""
+    z = S1
+    theme('T1', z + Fr(7, 4), oc(SA, -1), 'Allemande subject')
+    theme('H1', z + Fr(23, 4), oc(AA, -1), 'Allemande answer')
+    theme('D1', z + Fr(39, 4), oc(SA, 1), 'Allemande subject')
+    theme('Q1', z + Fr(55, 4), oc(AA, -2), 'Allemande answer')
+    theme('B1', z + Fr(71, 4), oc(SA, -2), 'Allemande subject (bass)')
+    put('T1', z + 6, 'E3:2 B2:2 C#3:2 A2:2 B2:4 C#3:2 E3:2')
+    put('T1', z + 10, 'A3:2 E3:2 A2:2 C#3:2 D3:2 E3:2 D3:2 E3:2')
+    put('H1', z + 10, 'C#4:2 E4:1 C#4:1 A3:4 A4:2 G#4:1 E4:1 F#4:2 G#4:2')
+    put('D1', z + 14, 'G#5:1 F#5:1 G#5:1 A5:1 B5:4 E6:1 D#6:1 B5:2 A5:2 G#5:1 F#5:1')
+    put('H1', z + 14, 'B4:4 B4:2 C#5:1 B4:1 G#4:2 A4:2 B4:2 A4:1 G#4:1')
+    put('T1', z + 14, 'G#3:4 A3:4 B3:4 C#4:2 B3:2')
+    put('Q1', z + 18, 'C#4:1 B3:1 C#4:1 D4:1 E4:4 A4:1 G#4:1 E4:2 D4:2 C#4:1 B3:1')
+    put('D1', z + 18, 'C#5:4 C#5:2 D5:2 E5:4 F#5:2 B4:2')
+    put('H1', z + 18, 'E4:4 E4:2 F#4:2 E4:2 B4:2 A4:2 G#4:2')
+    # @@alle
+
+
+SECTIONS = [allemande, summit]
+
+
+BPM = 66
+TEMPO_MAP = []
+
+
+def staff_meters():
+    """Per-staff time signatures for the LilyPond score: [t_quarters, num, den] changes per voice."""
+    return {}
+
+
+def velocity_shape(b):
+    return 0
 
 
 def build(write=True):
@@ -223,6 +260,33 @@ def build(write=True):
         f()
     total16 = Fr(END) * 4
     bars = {n: assemble(n, total16) for n in NAMES}
+    if not write:
+        return bars
+    meta = {
+        'title': 'The Well-Tempered clAIvier',
+        'subtitle': 'Fugue XIX in A major, twenty voices: Ballo a quattro cori (Suite in una fuga)',
+        'composer': 'Claude / Sam (subject after the opening of the Bourree I of Bach\'s English Suite in A, BWV 806)',
+        'instrument': 'Four five-part string bands: Allemande, Courante, Sarabande, Gigue (open score, twenty keyboards)',
+        'key': 'A', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
+        'tempo_text': 'Ballo: one pulse for four dances', 'movement_number': 19, 'piece_type': 'fugue',
+        'edition': 'third', 'tempo_map': TEMPO_MAP,
+        'score_layout': {'paper': 'a2', 'staff_size': 15, 'staff_distance': 8, 'staff_meters': staff_meters()},
+    }
+    base = {1: 70, 2: 68, 3: 66, 4: 70}
+    voices = [(LONG[n], ABBR[n], CLEF[n], base[CHOIR_OF[n]] - (2 if n[0] in 'QB' else 0)) for n in NAMES]
+    named = {LONG[n]: bars[n] for n in NAMES}
+    entries = []
+    for v, q, label, dq in ENTRIES:
+        b0 = int(q // 4) + 1
+        entries.append((LONG[v], b0, q - 4 * (b0 - 1), label, max(1, round(float(dq) / 4))))
+    data = W.build_score(HERE / 'fugue.json', meta, voices, named, entries=entries, subject=SA,
+                         dynamics=velocity_shape, entry_boost=6)
+    # stereo placement for the plain render: the four bands left to right
+    pans = {1: 18, 2: 48, 3: 80, 4: 110}
+    for k, v in enumerate(data['voices']):
+        n = NAMES[k]
+        v['piano_pan'] = pans[CHOIR_OF[n]] + 4 * 'DHTQB'.index(n[0]) - 8
+    (HERE / 'fugue.json').write_text(__import__('json').dumps(data, indent=1))
     return bars
 
 
