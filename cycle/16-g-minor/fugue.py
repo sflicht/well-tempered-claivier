@@ -216,6 +216,20 @@ def section_A(b0):
 
 
 
+def section_B(b0):
+    """Line 2, 'da saßen wir mit Schmerzen': the Rückpositiv enters, the dotted subject in canon at the
+    octave three beats apart (sighs), then the line in the pedal, Ped. I leading this time, Ped. II
+    following seven beats later an octave below."""
+    T = T_(b0)
+    T('RT', 0, S2, 'line 2 Vorimitation: subject 2 (RP T)')
+    T('RA', 3, oc(S2, 1), 'line 2 Vorimitation: subject 2 in canon at the octave (RP A)')
+    T('RB', 8, oc(S2, -2), 'line 2 Vorimitation: subject 2 (RP B)')
+    T('RS', 12, tr(S2, 7, 4), 'line 2 Vorimitation: answer (RP S)')
+    T('P1', 14, cantus(2, -1), 'cantus line 2 (Ped. I, canon dux)')
+    T('P2', 21, cantus(2, -2), 'cantus line 2 (Ped. II, canon comes at the octave, 7 beats)')
+    # B-END
+
+
 def summit(s0):
     """Line 10 ('täglich von ihn' erleiden') in canon in the pedal: Ped. II leads with the chorale as the
     bass on the strong beats; Ped. I follows three beats later, an octave higher, so that every move of
@@ -275,6 +289,7 @@ def summit(s0):
 
 
 section_A(1)
+section_B(12)
 summit(SUM)
 
 
