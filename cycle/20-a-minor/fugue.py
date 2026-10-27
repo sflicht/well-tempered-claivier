@@ -365,7 +365,7 @@ def gen4():
     theme('Va3', 35, 1, oc(HEAD, -1), 'Va III: subject (A minor)')
     put('Vl7', 35, 1, 'E6:4 G#5:4 E6:8')
     put('Vl4', 35, 1, 'E5:8 R:8')
-    put('Vl3', 35, 1, 'A4:4 G#4:4 E4:8')
+    put('Vl3', 35, 1, 'A4:4 E4:12')
     put('Vl2', 35, 1, 'C5:4 E5:12')
     put('Vc1', 35, 1, 'A3:4 B3:4 E3:8')
     put('Vc3', 35, 1, 'C3:4 R:12')
@@ -383,19 +383,95 @@ def gen4():
     put('Vl6', 37, 1, 'C5:1 A4:1 E5:1 G#4:1 D5:2 C5:2 B4:2 A4:2 G#4:4')
     put('Vl9', 37, 2.25, 'G4:2 F#4:2 F4:2 E4:5')                      # SPLIT 19: Vl IX from Vl VI
     theme('Cb1', 37, 1, oc(HEAD, -2), 'Cb I: subject (A minor)')
-    put('Vl7', 37, 1, 'E6:12 D6:4')
-    put('Vl4', 37, 1, 'A5:4 G#5:4 A5:6 B5:2')
+    put('Vl7', 37, 1, 'E6:16')
+    put('Vl4', 37, 1, 'A5:4 G#5:4 E5:8')
     put('Va1', 37, 1, 'E4:16')
     put('Vc2', 37, 1, 'A3:4 B3:4 C4:4 E4:4')
     put('Va3', 37, 1, 'A3:4')
-    put('Va5', 37, 1, 'E3:4')
     # b38: the double bass's tail splits: cello V takes the upper strand, the double bass keeps
     # the lament and sinks to E2 for the summit.
     put('Cb1', 38, 1, 'C3:1 A2:1 E3:1 G#2:1 R:1 G2:2 F#2:2 F2:2 E2:5')
     put('Vc5', 38, 2, 'D3:2 C3:2 B2:2 A2:2 G#2:4')                    # SPLIT 20: Vc V from Cb I
 
 
-SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4]
+
+def approach():
+    # b38: under the double bass's tail (now the bass of the texture) a thin four-part frame,
+    # the breath before the summit.
+    put('Vl7', 38, 1, 'C6:4 B5:4 A5:4 E6:4')
+    put('Vl4', 38, 1, 'E5:4 D5:4 C5:4 B4:4')
+    put('Vl2', 38, 1, 'A4:12 B4:4')
+    put('Va1', 38, 1, 'E4:16')
+    put('Vc2', 38, 1, 'A3:4 G#3:4 A3:4 E3:4')
+
+
+def summit():
+    # The summit (b39-47).  Bass: the subject in four-fold augmentation in the first double bass
+    # (E2 ... from b39.3).  At b43.2 its tail splits for the last time: the second double bass,
+    # the twenty-first voice, catches the lament (A1 G#1 G1 F#1 F1 E1) in half notes, a quarter
+    # behind the first, which keeps the upper strand (C2 E2 D2 C2 B1 A1 G#1).
+    theme('Cb1', 39, 1, aug(oc(HEAD, -3), 4), 'Cb I: subject x4', 4)
+    put('Cb1', 43, 1, 'C2:8 E2:8 D2:8 C2:8 B1:8 A1:8 G#1:16 A1:16')
+    put('Cb2', 43, 2, 'A1:8 G#1:8 G1:8 F#1:8 F1:8 E1:20 A1:16')          # SPLIT 21: Cb II from Cb I
+    # cello V (from b38) is the bass for the two beats before the augmentation enters.
+    # b39: the dominant.  Every voice holds a tone of E major and turns once around it with the
+    # subject's opening gesture (E-D#-E, or the upper neighbour), each at its own sixteenth, so
+    # that no two voices an octave or a fifth apart ever move at the same moment.
+    put('Vc5', 39, 1, 'E2:8 B2:8')
+    put('Vl7', 39, 1, 'E6:1 D#6:1 E6:14')
+    put('Vl8', 39, 1, 'E5:5 D#5:1 E5:10')
+    put('Vl9', 39, 1, 'E4:9 D#4:1 E4:6')
+    put('Va1', 39, 1, 'E4:13 D#4:1 E4:2')
+    put('Va5', 39, 1, 'B3:3 C#4:1 B3:12')
+    put('Vc2', 39, 1, 'E4:7 D#4:1 E4:8')
+    put('Vc4', 39, 1, 'B3:9 A#3:1 B3:6')
+    put('Vl4', 39, 1, 'G#5:3 A5:1 G#5:12')
+    put('Vl5', 39, 1, 'B4:6 C#5:1 B4:9')
+    put('Vl2', 39, 1, 'B4:10 C#5:1 B4:5')
+    put('Va3', 39, 1, 'B3:14 C#4:1 B3:1')
+    put('Va2', 39, 1, 'B3:1 C#4:1 B3:14')
+    put('Vc1', 39, 1, 'B2:5 C#3:1 B2:10')
+    put('Vl3', 39, 1, 'B5:2 C#6:1 B5:13')
+    put('Vl6', 39, 1, 'G#4:7 A4:1 G#4:8')
+    put('Va4', 39, 1, 'G#3:11 A3:1 G#3:4')
+    put('Vc3', 39, 1, 'G#3:13 A3:1 G#3:2')
+    # b40: the texture parts for the solo violin, which states the subject at its first pitch
+    # (E5) inside the tutti; most voices let go after the second beat.
+    theme('Vl1', 40, 1, HEAD, 'Vl I: subject at its first pitch (E5)')
+    put('Vl7', 40, 1, 'E6:16')
+    put('Vl8', 40, 1, 'E5:4')
+    put('Vl4', 40, 1, 'G#5:8 A5:4 G#5:4')
+    put('Vl3', 40, 1, 'B5:8')
+    put('Vl5', 40, 1, 'B4:8')
+    put('Vl2', 40, 1, 'B4:4')
+    put('Vl6', 40, 1, 'G#4:4')
+    put('Vl9', 40, 1, 'E4:8')
+    put('Va1', 40, 1, 'E4:16')
+    put('Vc2', 40, 1, 'E4:8')
+    put('Va5', 40, 1, 'B3:8 E4:8')
+    put('Va3', 40, 1, 'B3:8')
+    put('Va2', 40, 1, 'B3:4')
+    put('Va4', 40, 1, 'G#3:10 A3:4 G#3:2')
+    put('Vc4', 40, 1, 'B3:8')
+    put('Vc1', 40, 1, 'B2:8')
+    put('Vc3', 40, 1, 'G#3:4')
+    put('Vc5', 40, 1, 'E3:8')
+    # b41-47: slow harmony (Am | F/C | B half-diminished | the lament of the double basses | E | A)
+    # carried by suspensions that resolve at staggered moments, each voice on its own beat.
+    theme('Vl3', 41, 1, tr(HEAD, 5, 3), 'Vl III: subject on A (stretto with the solo violin)')
+    for v, toks in SUMMIT_LINES:
+        put(v, 41, 1, toks)
+
+
+# The summit's lines from b41, one voice per entry (added and checked one at a time).
+SUMMIT_LINES = [
+    ('Vl7', 'E6:8 F6:4 C6:4 D6:8 F6:8 E6:4 A5:8 B5:4 B5:4 D6:4 E6:4 D6:4 D6:4 F6:10 E6:2 F6:4 E6:12 C6:16'),
+    # the solo violin, after its subject: a slow line of suspensions, C-B-C-B-C-B-A-G#-A
+    ('Vl1', 'C5:16 C5:4 B4:12 C5:12 B4:4 B4:8 C5:8 C5:4 B4:8 A4:4 A4:4 G#4:8 B4:4 A4:16'),
+    ('Vl8', 'A5:8 A5:4 G5:4 F5:8 A5:8 E5:16 E5:4 D5:4 C5:4 D5:4 D5:12 C5:4 B4:16 C5:16'),
+]
+
+SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4, approach, summit]
 
 TEMPO_MAP = []
 

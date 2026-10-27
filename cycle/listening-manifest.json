@@ -282,14 +282,21 @@
    ]
   },
   {
-   "name": "Fugue XXIV \u00b7 B minor (new, twenty-five voices)",
+   "name": "Pair XXIV \u00b7 B minor (new, twenty-five voices)",
    "pieces": [
+    {
+     "id": "prelude-24",
+     "title": "Prelude XXIV \u00b7 Preludio per i 24 tuoni",
+     "score": "cycle/24-b-minor/prelude.json",
+     "tag": "new",
+     "notes": "The cycle's farewell, and the doorway to its last fugue. Bach's B-minor prelude in Book I is a trio over a walking bass; this one walks through all 24 keys in the Well-Tempered Clavier's own order, two bars each: 48 bars, for 'the 48'.\n\nIn each key one of the upper voices quotes the opening of Bach's Book I fugue in that key, at Bach's own pitches, all 24 checked against the scores. The order holds a gift: each major key turns into its parallel minor, and each minor key's Neapolitan chord becomes the next major tonic, so the tonics climb by semitones from C to B, the twelve notes of Fugue XXIV's subject. In bar 44 the bass spells B-A-C-H. The prelude slows from bar 45 and stops on F-sharp major, whose A-sharp the fugue's first note resolves."
+    },
     {
      "id": "fugue-24",
      "title": "Fugue XXIV \u00b7 twenty-five voices",
      "score": "cycle/24-b-minor/fugue.json",
      "tag": "new",
-     "notes": "Bach ends Book I with a B-minor fugue whose subject uses all twelve notes. This subject does the same: three dotted 'leans' and a chromatic climb, ending on the leading note. Its exact mirror is also twelve-tone.\n\nThe voices gather one at a time over 41 bars: exposition, a mirror stretto (subject against its own inversion), a dominant pedal over which the heads of Fugues V and VIII appear, and the subject in two-fold augmentation in the bass. At bar 43 the 25th voice, the contrabass, enters with the subject at quarter speed, and over it the subjects of Fugues V, VIII, II and IV each arrive at the point where the cantus's note makes their own key a harmony. After the arrival on B major, Fugue V's subject returns in B major, Fugue I's stretto ladder climbs once more, the subject's and the mirror's tails close in on one B, and all twenty-five voices gather on the last chord.\n\nWherever a voice could only have doubled another at the unison, it rests: at the convergence about ten to fourteen independent lines sound at once, and all twenty-five are heard together only on the last chord.\n\nNo prelude yet."
+     "notes": "Bach ends Book I with a B-minor fugue whose subject uses all twelve notes. This subject does the same: three dotted 'leans' and a chromatic climb, ending on the leading note. Its exact mirror is also twelve-tone.\n\nThe voices gather one at a time over 41 bars: exposition, a mirror stretto (subject against its own inversion), a dominant pedal over which the heads of Fugues V and VIII appear, and the subject in two-fold augmentation in the bass. At bar 43 the 25th voice, the contrabass, enters with the subject at quarter speed, and over it the subjects of Fugues V, VIII, II and IV each arrive at the point where the cantus's note makes their own key a harmony. After the arrival on B major, Fugue V's subject returns in B major, Fugue I's stretto ladder climbs once more, the subject's and the mirror's tails close in on one B, and all twenty-five voices gather on the last chord.\n\nWherever a voice could only have doubled another at the unison, it rests: at the convergence about ten to fourteen independent lines sound at once, and all twenty-five are heard together only on the last chord."
     }
    ]
   },

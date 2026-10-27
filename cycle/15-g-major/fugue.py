@@ -277,18 +277,24 @@ put('S1', 22, 1, 'E5:4 G5:4 G5:4 F#5:4 F#5:8 B5:8')
 # chorale notes long-short -- with a tail of running triplets that comes to rest on the dominant B.
 S3 = ('B4:8/3 E5:4/3 E5:8/3 D5:4/3 F#5:8/3 G5:4/3 E5:8/3 D5:4/3 '
       'C5:4/3 B4:4/3 A4:4/3 B4:4/3 G4:4/3 E4:4/3 F#4:4/3 G4:4/3 A4:4/3 B4:4')
-# Exposition from the top down, a bar apart, answered modally a fourth below (E minor / B phrygian).
-# Exposition a bar apart, answered modally (B phrygian): the alto -- who has just sung the cantus --
-# leads, then soprano (a fifth higher), tenor, bass.
+# Exposition a bar apart: the alto -- who has just sung the cantus -- leads in E minor; the soprano
+# answers *really*, a fifth higher in B minor (C#, and the choirs beneath tonicise B minor with its
+# leading tone A#); the tenor brings E minor back and the bass answers modally, turned by a B7 (D#)
+# back to E minor for the cantus.
 theme('A3', 24, 1, S3, 'III: subject 3 (line 3 diminished)', 2)
-theme('S3', 25, 1, dshift(S3, 4), 'III: subject 3, modal answer', 2)
+theme('S3', 25, 1, W.transpose(S3, 7, 4), 'III: subject 3, real answer in B minor', 2)
 theme('T3', 26, 1, oc(S3, -1), 'III: subject 3', 2)
 theme('B3', 27, 1, dshift(oc(S3, -1), -3), 'III: subject 3, modal answer', 2)
-# Choirs I and II under the siciliano: Em C D Em | D7 Em D7 G | Em Bm D7 Bm | D7 Em D7 G | Em Bm Am F#o7
-put('B1', 24, 1, 'E2:4 C3:4 D3:4 G2:4 D2:4 B1:4 D2:4 G1:4 E2:4 B2:4 D3:4 B2:4 D2:4 G2:4 A1:4 G1:4')
-put('A2', 24, 1, 'G4:8 F#4:4 G4:4 A4:4 E5:4 A4:4 D5:4 B4:8 A4:4 D5:4 D5:4 B4:4 D5:8 E5:4 D5:4 C5:8')
-put('T2', 24, 1, 'B3:4 C4:4 A3:4 B3:4 A3:4 G3:4 A3:4 G3:4 G3:4 D3:4 A3:4 D3:4 A3:4 G3:4 A3:4')
-put('S2', 27, 1, 'A5:4 E5:4 A5:4 D6:4 B5:8 A5:8')
+# Choirs I and II under the siciliano (held notes against the triplets):
+#   Em C D G | D7 G A7 Bm7/D | G Bm/D F#7/C# (B-A# suspension) | Bm G G B7 (D#) | Em ...
+put('B1', 24, 1, 'E2:4 C3:4 D3:4 G2:4 D2:4 G2:4 A2:4 D2:4 G2:4 D2:4 C#2:8 B1:4 G1:8 B1:4')
+put('A2', 24, 1, 'G4:8 F#4:4 G4:4 A4:4 G4:8 F#4:4 G4:4 B4:8 A#4:4 B4:20 D5:4 C5:8')
+put('T2', 24, 1, 'B3:4 C4:4 A3:4 B3:4 D4:8 A3:8 B3:4 D4:4 F#3:8 B3:12 F#3:4')
+put('S2', 27, 1, 'D5:4 G5:4 E5:4 D#5:4 E5:4 B5:4 A5:8')
+# The voices of Coro III do not fall silent after their entries, and Coro I joins in: free lines in
+# held notes against the triplets (the section grows from four voices to seven).
+put('T1', 25, 2, 'B3:4 E4:4 D4:4 D4:8')
+put('A3', 26, 1, 'D5:8 R:8 D4:12 R:4 G4:4 D4:4 A3:8')
 # b28-31: line 3 as cantus in the Coro IV tenor (its first notes), Em -> D:  Em Bm Am F#o7 | C Am G/B G |
 # D D/F# Em Em/G | A A7/C# D (cadence in D, b31.3).
 cantus('T4', 28, 1, oc(L3, -1), 'IV: chorale line 3 (cantus)', 4)
@@ -298,6 +304,9 @@ put('B1', 29, 1, 'C3:4 A2:4 B2:4 G2:4 D3:4 F#2:4 E2:4 G2:4 A2:4 C#3:4 D3:8')
 theme('A3', 29, 1, dshift(inv(S3, 'B4'), -4), 'III: subject 3 inverted (stretto)', 2)
 theme('S3', 29, 4, dshift(inv(S3, 'B4'), 4), 'III: subject 3 inverted (stretto)', 2)
 put('A2', 29, 1, 'C5:4 C5:4 D5:4 B4:4 A4:4 A4:4 B4:4 B4:4 C#5:4 A4:4 A4:8')
+put('S1', 29, 1, 'E5:8 G5:10 F#5:2 R:4 E5:8')     # Coro I soprano: a 4-3 suspension over D7
+put('B3', 30, 1, 'A3:8 G3:4 E3:4 A3:16')
+put('T3', 31, 3, 'F#3:8')
 
 
 # ================================================================ SECTION IV: Coro IV, line 4 (b32-38)

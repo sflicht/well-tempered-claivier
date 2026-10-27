@@ -152,3 +152,119 @@ def assemble(v, nbars):
 # =====================================================================================================
 # SECTIONS are defined below as functions of their starting bar; the summit was composed first.
 # =====================================================================================================
+
+# ---------------------------------------------------------------- companions (hand-written, as degrees)
+# Countersubject: enters on beat 2 of the subject (after the previous entrant's landing note) and rises
+# while the subject falls, then falls while it rises: do re mi | fa re ti(below) sol(below).
+CS_DEG = [(0, 6), (1, 6), (2, 6), (3, 6), (1, 6), (-1, 6), (-3, 6)]
+# Module bass under a subject entry: do (held) fa sol | re sol (held) sol(octave lower).
+BASS_DEG = [(0, 12), (3, 6), (4, 6), (1, 6), (4, 12), (-3, 6)]
+
+
+def cs(tonic, mode='major', octave=3):
+    """Countersubject in a key; in minor the ti (index 5) is the raised leading tone."""
+    return realize(CS_DEG, tonic, mode, octave, raise7=(5,) if mode == 'minor' else ())
+
+
+def bassline(tonic, mode='major', octave=2):
+    return realize(BASS_DEG, tonic, mode, octave, raise7=())
+
+
+def lit(s):
+    return ' '.join(s.replace('|', ' ').split())
+
+
+# =====================================================================================================
+# I. EXPOSITION (bars 1-10).  Tenor, alto, soprano, bass; each answer enters on the previous voice's
+# landing note ("do"), which it gently re-hears (A-flat as the subdominant of E-flat, and back).
+# =====================================================================================================
+def exposition():
+    CSAb = cs('Ab', octave=3)
+    CSEb = cs('Eb', octave=3)
+    theme('LT1', 1, 0, subj('Ab', octave=3), 'subject (tenor)', 2)
+    put('LT1', 3, 0, lit('Ab3:6 ' + CSEb + ' | Bb3:6 ' + CSAb + ' | G3:4 Bb3:2 Db4:6 C4:6 Bb3:6 | Ab3:12 F3:12 |'
+                         ' Bb3:6 C4:6 Db4:12 | Db4:6 Ab3:6 Bb3:12'))
+    theme('RA1', 3, 0, subj('Eb', octave=4), 'answer (alto)', 2)
+    put('RA1', 5, 0, lit('Eb4:6 C4:6 F4:4 Eb4:2 Eb4:6 | F4:6 Db4:4 C4:2 Bb3:6 Eb4:6 | Bb3:6 ' + oc(CSEb, 1) +
+                         ' | G4:6 Ab4:18 | F4:6 Eb4:6 Db4:12'))
+    theme('LS1', 5, 0, subj('Ab', octave=4), 'subject (soprano)', 2)
+    put('LS1', 7, 0, lit('Ab4:2 G4:4 Bb4:6 Eb5:6 Bb4:4 Ab4:2 | C5:6 D5:6 F5:4 Eb5:2 D5:6 | Eb5:6 C5:6 F5:4 Eb5:2 Db5:6 |'
+                         ' Db5:6 C5:6 Bb4:12'))
+    theme('RB1', 7, 0, subj('Eb', octave=2), 'answer (bass)', 2)
+    put('RB1', 9, 0, lit('Eb2:6 Ab2:6 Db3:6 Bb2:6 | Db3:6 Eb3:12 Eb2:6'))
+
+
+exposition()
+
+
+# =====================================================================================================
+# II. THE RUNNING GAG (bars 11-30).  Nine deceptive cadences in a row, each dropping the tonic a third:
+# A-flat -> f -> D-flat -> b-flat -> G-flat -> e-flat -> C-flat -> a-flat -> F-flat (= E) -> c-sharp.
+# Every subject lands on "do" over the submediant, and a new voice enters on that chord's root.
+# =====================================================================================================
+CHAIN = [  # bar, key, mode, entering voice, octave, CS voice, CS octave, bass voice (or None), bass octave
+    (11, 'F', 'minor', 'LA2', 4, 'LT1', 3, 'RB1', 2),
+    (13, 'Db', 'major', 'RS', 5, 'LA2', 4, 'RB1', 2),
+    (15, 'Bb', 'minor', 'LT2', 3, 'RS', 4, 'RB1', 1),
+    (17, 'Gb', 'major', 'RBr', 2, 'LA2', 4, None, 0),
+    (19, 'Eb', 'minor', 'LA1', 4, 'RBr', 3, 'RB1', 2),
+    (21, 'Cb', 'major', 'RB2', 3, 'LA1', 4, None, 0),
+    (23, 'Ab', 'minor', 'LS2', 4, 'RB2', 2, None, 0),
+    (25, 'E', 'major', 'RT1', 3, 'LS2', 5, 'RB1', 2),
+    (29, 'C#', 'minor', 'LBr2', 3, 'RT1', 4, None, 0),
+]
+NAMEKEY = {'F': 'F minor', 'Db': 'D-flat major', 'Bb': 'B-flat minor', 'Gb': 'G-flat major', 'Eb': 'E-flat minor',
+           'Cb': 'C-flat major', 'Ab': 'A-flat minor', 'E': 'E major (= F-flat)', 'C#': 'C-sharp minor (= D-flat minor)'}
+
+
+def chain_skeleton():
+    for k, (bar, key, mode, v, o, csv, cso, bv, bo) in enumerate(CHAIN):
+        theme(v, bar, 0, subj(key, mode, octave=o), f'deceptive cadence {k + 1}: subject in {NAMEKEY[key]}', 2)
+        if k:
+            pk, pm, pv, po = CHAIN[k - 1][1], CHAIN[k - 1][2], CHAIN[k - 1][3], CHAIN[k - 1][4]
+            put(pv, bar, 0, realize([(0, 6)], pk, pm, po))          # the landing "do", on the wrong chord
+        c = cs(key, mode, octave=cso)
+        if bv is None and k != 6:                                  # subject in the bass: end on re, not sol
+            c = ' '.join(c.split()[:-1] + [realize([(1, 6)], key, mode, cso)])
+        put(csv, bar, 6, c)
+        if bv:
+            b = bassline(key, mode, octave=bo)
+            if bo == 1:                                            # keep the low "sol" an octave up
+                t = b.split(); b = ' '.join(t[:-2] + [t[-2].split(':')[0] + ':18'])
+            put(bv, bar, 0, b)
+
+
+chain_skeleton()
+
+
+def chain_free():
+    """Free counterpoint around the chain (written by hand, module by module)."""
+    # E4, F minor (bars 11-12): the first real joke - the full cadence prepared since bar 9 lands on f.
+    put('LS1', 11, 0, 'Ab4:6 R:18')
+    put('RA1', 11, 0, lit('C4:12 Db4:6 C4:6 | Db4:6 C4:6 Bb3:6 C4:6'))
+    # E5, D-flat major (bars 13-14)
+    put('LS1', 13, 0, lit('Ab4:18 Bb4:6~ | Bb4:6 C5:6 Eb5:4 Db5:2 C5:6'))
+    put('LT1', 13, 0, lit('F3:12 Gb3:6 Eb3:6 | Eb3:6 Eb3:6 F3:6 C3:6'))
+    # E6, B-flat minor (bars 15-16)
+    put('LS1', 15, 0, lit('F5:12 Gb5:6 F5:6~ | F5:12 Eb5:6 C5:6'))
+    put('LT1', 15, 0, lit('Db3:12 Eb3:6 C3:6~ | C3:6 A2:6 C3:12'))
+    # E7, G-flat major (bars 17-18): the subject in the bass
+    put('LS1', 17, 0, lit('Db5:12 Gb5:6 Db5:6 | Eb5:12 F5:8 Eb5:4'))
+    # E8, E-flat minor (bars 19-20)
+    put('LS1', 19, 0, lit('Gb5:12 Eb5:12 | F5:18 D5:6'))
+    put('LT2', 19, 0, lit('Bb3:12 Cb4:6 Bb3:6 | Bb3:12 Ab3:6 F3:6'))
+    # E9, C-flat major (bars 21-22): the subject in the bass again
+    put('LS1', 21, 0, lit('Eb5:12 Fb5:6 Gb5:6 | Fb5:6 Eb5:8 Db5:10'))
+    put('LT2', 21, 0, lit('Gb3:12 R:12 | Ab3:6 Bb3:6 Db4:12'))
+    # E10, A-flat minor (bars 23-24): home - but in the minor, and pianissimo.  Three voices only.
+    put('LA1', 23, 0, lit('Eb4:12 Fb4:6 Eb4:6 | Db4:6 Fb4:6 Db4:12'))
+    # E11, E major (= F-flat, bars 25-28): the farthest key, and the softest.  After the entry, the dream:
+    # the tune's first bar in augmentation, floating over an imperfect (first-inversion) landing.
+    put('LA1', 25, 0, lit('B4:12 C#5:6 B4:6 | C#5:6 B4:12 A4:6 | G#4:12 B4:8 A4:4 | G#4:6 E4:12 F#4:6'))
+    theme('LS2', 27, 0, realize([(d, 2 * u) for d, u in SUBJ_DEG[:8]], 'E', 'major', 4),
+          'the dream: the first bar of the subject in augmentation (E major)', 2)
+    put('RB1', 27, 0, lit('G#2:12 E2:6 B2:6 | C#3:6 A2:6 B2:12'))
+    put('RT1', 27, 0, lit('E3:12 G#3:6 F#3:6 | E3:6 C#3:6 D#3:12'))
+
+
+chain_free()

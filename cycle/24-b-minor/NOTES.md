@@ -8,7 +8,7 @@ second review). The rendered audio lasts 4:04. Sources: `fugue.py` assembles `bu
 material is in `xxiv.py`. Built score: `fugue.json`. Renders: `renders/fugue.{pdf,mid,musicxml,ly,mp3}`
 (Bach–Lehman, PDF engraved by LilyPond), `renders/fugue-equal.mp3` (equal temperament) and
 `renders/fugue-spatial.mp3` (ring layout). The stage-1 study is `convergence.py` → `convergence.json`.
-No prelude was written.
+The prelude (`prelude.py` → `prelude.json`) is described in **Prelude XXIV** at the end of this file.
 
 I cannot hear the renders. Nothing here describes how the piece sounds. Every statement comes
 from the score and the tools.
@@ -300,3 +300,184 @@ them from memory).
   designed for each other. Fugue VIII keeps its E-flat spelling over a D#-minor harmony.
 - I have not heard the piece. The tempo map and the dynamic plan (velocity offsets per bar) are
   untested by ear.
+
+---
+
+# Prelude XXIV in B minor: *Preludio per i 24 tuoni*
+
+48 bars of 4/4 for one keyboard player: two upper voices over a walking bass in eighths, the
+texture of Bach's B-minor Prelude in Book I (BWV 869, Andante). Source `prelude.py` (every note
+a literal bar string) → `prelude.json`. Renders: `renders/prelude.{pdf,ly,mid,musicxml,mp3}`
+(Bach–Lehman; PDF engraved by LilyPond with a key signature for each key) and
+`renders/prelude-equal.mp3` (equal temperament). Quarter = 80; a breath into bar 25; a
+ritardando from bar 45 (80 → 66 at bar 47) and a broadening to 46 on the last chord. The
+rendered audio lasts 2:30. Heads checked by `verify_prelude_heads.py` (below). I have not heard
+the renders; everything here comes from the score and the tools.
+
+## Concept
+
+The cycle's farewell walks once more through all 24 keys, in the order of the Well-Tempered
+Clavier, two bars per key (48 bars, a nod to "the 48"), and stops on the dominant of B minor.
+The prelude ends on F♯–A♯–C♯ with A♯4 in Upper voice II; Fugue XXIV begins with B4 alone in
+Alto III, so the fugue's first note resolves the prelude's last. (The fugue subject itself ends
+on A♯ and leaves its B to what follows.)
+
+The WTC order gives the walk two moves, used twelve times each:
+
+- **major → parallel minor.** The tonic stays. The major key cadences (V–I) and the last beat
+  brings the minor sixth in a predominant, a vii°7 or a V(♭9) (bars 2, 6, 10, 14, 22, 26, 30,
+  38, 42), or the major key's dominant simply resolves into the minor tonic (bars 18, 34, 46).
+- **minor → its Neapolitan.** ♭II of each minor key is the next major key (c → D♭ = C♯,
+  c♯ → D, d → E♭, e♭ → F♭ = E, e → F, f → G♭ = F♯, f♯ → G, g → A♭, g♯ → A, a → B♭,
+  b♭ → C♭ = B). The second bar of each minor key cadences on beat 3 and puts the Neapolitan
+  on beat 4, where it becomes the next tonic. In c, d, e and a the Neapolitan also opens that
+  bar (N6 – V7 – i – N6), so it is heard first as a predominant, with the ♭2 falling to the
+  leading tone by a diminished third (D♭–B in bar 4, F–D♯ in 20, B♭–G♯ in 40).
+
+So the tonics climb the chromatic scale from C to B: the twelve pitch classes of the fugue's
+twelve-tone subject, whose tail also climbs (G G♯ A A♯ → B). The tritone key F♯ is the walk's
+midpoint (bar 25); BWV 869 is binary, and the breath in the tempo map marks the half. There
+are no repeats (time).
+
+**B-A-C-H.** In bar 44 (B♭ minor → B major) the bass walks in quarters under held upper
+voices: B♭ (i), A (V6), C (V4/3), H = B♮, which is the Neapolitan of B♭ minor in root position
+and, tied over, the tonic of H-dur. Upper voice II holds F4 for three beats and Upper voice I,
+after the last notes of Bach's head, holds E♭5 from beat 3, so the bass is the moving line
+(velocity +3 in the bar, the bass +6).
+
+## The 24 quotations
+
+In each key one upper voice quotes the head of Bach's Book I fugue subject in that key at
+Bach's own pitch classes; the other voice answers in BWV 869's manner (held notes and
+suspensions, a few passing eighths), and when the head is slow (C♯ minor) the roles reverse and
+the answer moves in eighths. "UI"/"UII" = Upper voice I/II; "8va" = an octave above Bach's
+pitch; "×½" = note values halved (for the alla breve and 6/4 subjects, so that Bach's half-note
+pulse becomes our quarter). Every quoted note has Bach's pitch and duration (only the last
+note may be held longer).
+
+| bars | key | BWV | voice, entry | notes quoted | form |
+|---|---|---|---|---|---|
+| 1–2 | C | 846 | UII, 1.1½ | 13 | exact |
+| 3–4 | c | 847 | UI, 3.1½ | 9 | exact |
+| 5–6 | C♯ | 848 | UI, 5.2½ | 12 | exact |
+| 7–8 | c♯ | 849 | UI, 7.1 | 4 (the "cross") | two 8vas up, ×½ |
+| 9–10 | D | 850 | UII, 9.2 | 14 | 8va |
+| 11–12 | d | 851 | UI, 11.1½ | 11 (its B♭ G A continue over N6 – V7 – i) | 8va |
+| 13–14 | E♭ | 852 | UII, 13.1 | 10 | exact |
+| 15–16 | e♭ | 853 (Bach: D♯ minor) | UI, 15.1 | 8 | 8va, spelled in E♭ minor |
+| 17–18 | E | 854 | UI, 17.2½ | 13 (and its sixteenth rest) | 8va |
+| 19–20 | e | 855 | UII, 19.1 | 12 | exact |
+| 21–22 | F | 856 | UI, 21.1 | 10 | 8va |
+| 23–24 | f | 857 | UII, 23.2 | 6 (C D♭ C B E F = vii°7/V – V – i) | exact |
+| 25–26 | F♯ | 858 | UI, 25.1½ | 10 | exact |
+| 27–28 | f♯ | 859 | UII, 27.2 | 6 | 8va, ×½ |
+| 29–30 | G | 860 | UI, 29.1 | 12 | 8va |
+| 31–32 | g | 861 | UII, 31.1½ | 11 (both phrases, with the rest between) | exact |
+| 33–34 | A♭ | 862 | UI, 33.2 | 10 | 8va |
+| 35–36 | g♯ | 863 | UII, 35.2 | 9 | 8va |
+| 37–38 | A | 864 | UI, 37.1 | 9 (the A, its rest, the rising fourths) | exact |
+| 39–40 | a | 865 | UII, 39.1½ | 9 | 8va |
+| 41–42 | B♭ | 866 | UII, 41.1½ | 10 | exact |
+| 43–44 | b♭ | 867 | UI, 43.1 | 7 (the rest, then the minor-ninth leap) | exact, ×½ |
+| 45–46 | B | 868 | UI, 45.1½ | 11 | 8va |
+| 47–48 | b | 869 | UII, 47.1½ | 11 (Bach's C♮ over the N6) | exact |
+
+13 heads are in Upper voice I (on top), 11 in Upper voice II; each head gets +6 velocity for
+the bar of its entry. Each entry is declared in `prelude.json` (`subject_entries`, with labels
+naming the BWV number), and `prelude.py` stops the build if a quotation in the bars differs
+from its `HEADS` entry under the stated transform.
+
+## Sources and verification of the heads
+
+- **MuseData / Humdrum kern** encodings of all 24 fugues of WTC I (David Huron, 1994), files
+  `kern/wtc1f01.krn` … `wtc1f24.krn` of https://github.com/humdrum-tools/bach-wtc, downloaded
+  into an empty scratch directory and read only as data.
+- **Mutopia Project MIDI** (public domain) for the 15 fugues Mutopia has: BWV 846–851, 853,
+  855–857, 860–862, 865, 869 (the files already in the scratchpad's `wtc_ref/`). Mutopia has
+  no fugue file for BWV 852, 854, 858, 859, 863, 864, 866, 867, 868.
+- BWV 867 also against the LilyPond example in the English Wikipedia article "Prelude and Fugue
+  in B-flat minor, BWV 867" (B♭ F, rest, G♭ F E♭ D♭ C ...).
+
+`python3 -I cycle/24-b-minor/verify_prelude_heads.py --kern <kern dir> --midi <midi dir>`
+reports, for all 24: the score quotation equals the head (pitch and duration of every note and
+rest); the head equals the opening solo statement in the kern file (pitches and durations,
+ties merged); and, for the 15 with Mutopia files, the MIDI agrees (pitches; durations within a
+sixteenth, since MIDI note-offs are performance lengths). Result: 0 mismatches. So 9 heads
+(BWV 852, 854, 858, 859, 863, 864, 866, 868, and 867 apart from the Wikipedia example) rest on
+one machine-readable source; none was guessed. The 18 heads not yet in
+`cycle/reference/bach-subjects.md` were appended there as rows, each with its source.
+
+## Harmony and cadences, key by key
+
+Every key is established within its two bars by its head over its tonic and at least one
+dominant–tonic progression: in the major keys a cadence on beat 3 of the second bar (C, C♯, D,
+F♯, G, A♭, B♭) or a V–I on the second downbeat (E♭, as V4/2–I6; E, F, B); in the minor keys
+the cadence on beat 3 of the second bar (all but b♭, which cadences V7–i on the downbeat of
+bar 44 before B-A-C-H, and b, which ends on its dominant), often with a V–i inside the head
+itself (f: C D♭ C B E F; g: its F♯–G). A major is the weakest: its rising
+fourths outline I – iii – IV – V – vi and its dominant (38.3) resolves into A minor, so the
+key is stated by the tonic, the subdominant and the dominant, not by a closing V–I.
+
+The bass walks in eighths throughout, except quarters at a few cadences, in bar 44 (B-A-C-H)
+and in the last bar (iv6 – N6 – V). Its line favours scales and turns over leaps: the C-major
+bass rises in tenths with BWV 846; the C-minor bass descends C B♭ A♭ G into the dominant; the
+E-major and F♯-major basses are scales (E F♯ G♯ A B, F♯ E♯ F♯ G♯ A♯ B C♯); the A-minor bass
+falls C B A G♯; the A♭-major cadence walks E♭ D♭ C B♭ A♭.
+
+## Critic numbers (`tools/critic.py cycle/24-b-minor/prelude.json`)
+
+| measure | value | target |
+|---|---|---|
+| parallels_error / weak | 0 / 0 | 0 |
+| beat_parallels | 0 | ≤ 2 |
+| dissonance_unresolved | 0 | ≤ 3 |
+| stepwise_pct | 66.0 (Upper I 74, Upper II 70, bass 57) | ≥ 65 |
+| leap ≥ 4th | 14.1 % | — |
+| bad_doublings / tripled pc on beats | 0 / 1.2 % | — |
+| low_register_seconds | 0 | — |
+| keyboard_unplayable | 0 % (max 3 notes) | 0 |
+| mean moving voices | 3.0 (all three voices move in all 48 bars) | — |
+
+The critic adds 14 notes of the kind "chord seventh not resolved down" (warnings, not errors),
+at 3.3, 6.1, 22.4, 23.4 (2), 24.1, 29.2, 34.2, 34.4, 38.4, 44.3 (2), 45.2 and 46.4. Most are
+a dissonant note that leaves by step upward or by leap to another chord tone, several of them
+inside Bach's heads (the C♯ head's appoggiatura at 6.1, the F-minor head's B–E at 24.1); the
+V4/2 chords at 23.4 and 46.4 move their bass seventh on through passing notes; 44.3 is the
+deliberate pivot, where the E♭ of V4/3 in B♭ minor is held as the third of C♭ = B major. Melodic flags (a leap over an octave at 43.3½, tritone leaps
+at 36.1½ and 48.1) are all inside Bach's heads (BWV 867's minor ninth, BWV 863's C𝄪, BWV 869).
+
+## Method
+
+The harmonic template (the two moves) was planned first, then each key was written by hand
+around its head: bass and harmony to the head, then the answering voice. `critic.py`, a grid
+view of the three voices per eighth and a per-bar count of stepwise intervals (scratch scripts)
+were used to find parallels, clashes and leapy bars; each fix was rewritten by hand. A first
+complete draft measured stepwise 58 % (bass 46 %), with 9 consecutive and 7 beat-to-beat
+parallel octaves or fifths; the bass was then rewritten towards scales and the answering voices given passing
+eighths where the harmony allowed. Software placed no note. `wtclib` transposition and rhythm
+scaling are used only to *check* the quotations against `HEADS`.
+
+## Credits
+
+Texture and character after J. S. Bach, Prelude in B minor, BWV 869 (WTC I). Quoted: the heads
+of the 24 fugue subjects of J. S. Bach, *Das wohltemperirte Clavier* I, BWV 846–869 (sources
+above). The key order is Bach's. The B-A-C-H motif is Bach's name. Bass, answering voices,
+harmonisation and joins: Claude, for Sam.
+
+## Weak spots
+
+- **The bass is the least stepwise line** (57 %): two-bar keys need a cadence every eight
+  beats and a pivot on the eighth, and several bars still arpeggiate (27, 29, 31–33).
+- **The template is regular.** Every key cadences near beat 3 of its second bar and pivots on
+  beat 4; the heads vary the surface, but over 48 bars the harmonic rhythm may sound
+  predictable. That regularity is the "ground" of the walk, but I cannot judge it by ear.
+- **Heads in the middle.** Eleven heads are in Upper voice II under the other voice; the
+  answering voice is mostly held there, and the head has +6 velocity, but audibility is untested.
+- **Tempo versus the originals.** At quarter = 80 the quick subjects (BWV 850's run, 855, 856,
+  860, 864) are slower than Bach's tempi and lose some of their dance; the three subjects at
+  half values (849, 859, 867) are faster than his.
+- **Enharmonic seams.** The pivot notes are re-struck at the barline in the new spelling
+  (D♭5 → C♯5 at bar 5, C♭6 → B5 at bar 17, G♭ → F♯ at bar 25); at bars 34–35 the leading tone
+  of A♭ is written G3 and resolves to G♯3 under the new G♯-minor signature, which reads as a
+  chromatic step.
+- **Length.** 2:30 rendered, at the 2.5-minute limit; there is no room for Bach's repeats.

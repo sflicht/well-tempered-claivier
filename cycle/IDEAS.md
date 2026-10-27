@@ -138,7 +138,7 @@ device of its own:
     After John Bull's hexachord fantasia, each voice owns one of the 24 keys;
     one passage is built to break in meantone, to show why the Well-Tempered
     Clavier was needed.
-37. **[in progress] Prelude XXIV: per i 24 tuoni.** A walking-bass trio
+37. **[built] Prelude XXIV: per i 24 tuoni.** A walking-bass trio
     through all 24 keys in the WTC order, two bars each (48 bars), quoting the
     head of Bach's Book I fugue in each key, landing in B minor for the last
     fugue.

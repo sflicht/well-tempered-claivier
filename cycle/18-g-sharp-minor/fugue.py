@@ -327,10 +327,46 @@ theme('A3', DAWN + 2, 1, A_ION, 'IV: answer (E-flat Mixolydian)', 3)
 theme('A4', DAWN + 4, 2, S_ION, 'IV: subject', 3)
 theme('T3', DAWN + 6, 2, octv(A_ION, -1), 'IV: answer', 3)
 theme('B1', DAWN + 8, 3, octv(S_ION, -2), 'IV: subject in the bass: the light reaches the depth', 3)
+put('B1', 69, 3, 'Ab2:' + str(24 * 2 + 8))
 put('B2', DAWN, 1, 'Ab2:8 G2:8 C3:8 Db3:8 Bb2:16 Ab2:8 F2:8 Eb2:8 Ab2:8 F2:16 Eb2:8 Ab2:8 G2:8 '
                    'Ab2:8 Db3:8 Bb2:16 Ab2:8 Db2:8 Eb2:8 Ab2:8 F2:16 R:8')
 put('A3', DAWN + 5, 1, 'C4:8')
-put('S1', DAWN + 3, 1, 'Eb6:8 Ab5:8 Db6:8 Bb5:8 C6:8 Bb5:8 Ab5:16 Bb5:16 C6:8 Db6:8 Bb5:8 C6:16 Db6:8')
+# the ending: V7 at 69.2 (one leading tone, in the bass subject; one seventh, in Soprano I), then the
+# voices gather on A-flat major one by one, by step, through b71.
+END = 71
+def arrive(v, bar, beat, toks):
+    put(v, bar, beat, toks)
+put('B2', 68, 1, 'Ab1:8 Bb1:8 Eb2:24')   # I - ii - V(6/4-5/3) under the bass entry
+arrive('B2', 69, 3, 'Ab1:' + str(24 * 2 + 8))
+arrive('S1', 69, 2, 'Db6:8 C6:' + str(24 * 2 + 8))
+arrive('S3', 69, 2, 'Bb5:16 Ab5:' + str(24 * 2))
+arrive('S4', 69, 1, 'Eb5:' + str(24 * 3))
+arrive('A1', 69, 2, 'Bb4:8 Ab4:' + str(24 * 2 + 8))
+arrive('T3', 69, 2, 'Bb3:8 C4:' + str(24 * 2 + 8))
+arrive('Br3', 69, 2, 'Eb3:' + str(24 * 2 + 16))
+arrive('Br2', 70, 1, 'G3:4 Ab3:' + str(24 + 20))
+arrive('S2', 70, 1, 'Db5:4 C5:' + str(24 + 20))
+arrive('T2', 70, 3, 'Bb3:4 Ab3:' + str(24 + 4))
+arrive('A3', 70, 1.5, 'F5:4 Eb5:' + str(24 + 16))
+arrive('T4', 70, 2, 'C3:' + str(24 + 16))
+arrive('A5', 70, 2, 'F4:4 Eb4:' + str(24 + 12))
+arrive('A2', 70, 2.5, 'Bb4:4 Ab4:' + str(24 + 8))
+arrive('A4', 70, 3, 'G4:4 Ab4:' + str(24 + 4))
+arrive('Br1', 70, 3, 'Db4:4 C4:' + str(24 + 4))
+arrive('S5', 70, 3.5, 'Bb4:4 C5:' + str(24))
+put('S1', DAWN + 3, 1, 'Eb6:8 Ab5:8 Db6:8 Bb5:8 C6:8 Bb5:8 Ab5:16 Bb5:16 C6:8 Db6:8 Bb5:8 C6:16 Db6:8 '
+                       'Eb6:16 Bb5:8 Ab5:16 C6:8 F6:8 Eb6:16')   # the descant climbs to F6, then Eb6 - Db6 (7th) - C6
+
+# ---- the voices wake, one at a time (b60-69): singing lines in half notes and suspensions
+put('T1', 60, 1, 'C4:8 Db4:8 Bb3:8 '      # 9-8 over the tonic at 61.1, 4-3 over the dominant at 62.1
+                 'Bb3:4 Ab3:20 '
+                 'Ab3:4 G3:4 C4:8 R:8 '
+                 'Eb4:8 Db4:16 '
+                 'Db4:8 Eb4:4 F4:4 Db4:8 '
+                 'R:8 Eb4:8 F4:8 '
+                 'F4:8 Eb4:8 C4:8 '
+                 'Db4:8 C4:16 '
+                 'C4:8 Db4:8 Eb4:56')
 
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}

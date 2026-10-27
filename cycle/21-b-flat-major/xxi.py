@@ -174,3 +174,9 @@ class Score:
                 toks.append(f'R:{nbars * 16 - cur}')
             out[v] = W.concat_bars(' '.join(toks), METER)
         return out
+
+
+# T in D minor (the friends' key in section B): the same letters, minor mode, leading tone C#.
+T_DM = "R:2 D5:1 E5:1 F5:2 E5:1 D5:1 C#5:2 D5:1 E5:1 F5:1 G5:1 A5:1 Bb5:1 Bb5:4 A5:2 G5:2 F5:3 E5:1 D5:4"
+# its answer in A minor (a fifth higher, real)
+T_AM = "R:2 A4:1 B4:1 C5:2 B4:1 A4:1 G#4:2 A4:1 B4:1 C5:1 D5:1 E5:1 F5:1 F5:4 E5:2 D5:2 C5:3 B4:1 A4:4"

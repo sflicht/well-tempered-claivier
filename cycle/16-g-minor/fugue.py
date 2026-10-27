@@ -444,7 +444,7 @@ def summit(s0):
     T('OA', 20, 'E6:6 F6:2 F#6:8 G6:16')
     T('RB', 20, 'C3:8 R:8 Bb2:16')
     T('OA', 17, 'F#6:4 G6:4')
-    T('OS', 28, 'Eb6:16 D6:24')
+    T('OS', 28, 'Eb6:16 D6:32')
     T('OA', 28, 'G6:32 G6:16')
     T('HS1', 28, 'C5:16 D5:8 C5:8 B4:16')
     T('HBr', 28, 'Eb3:8 C3:8 Bb2:8 D3:24')
@@ -454,6 +454,11 @@ def summit(s0):
                  ('RS', 'D5'), ('OT', 'D5'), ('HS2', 'G5'), ('RA', 'G5')):
         T(v, 36, p + ':16') if v != 'HS2' else None
     T('HS2', 30, 'F#5:8 G5:32')                                        # the leading tone of the dim-7th over the pedal
+    T('OA', 4, 'D5:8 D5:4 E5:4')
+    T('OB', 4, 'Bb3:8 A3:8')
+    T('RA', 18, 'G4:4 E4:4 C5:8 A4:8 Bb4:8')
+    T('HB', 20, 'A3:12 D3:4')
+    T('HBr', 4, 'G3:8 D4:8')
     # FREE-END
 
 

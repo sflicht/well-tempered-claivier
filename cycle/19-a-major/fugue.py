@@ -159,7 +159,6 @@ def summit():
     put('D4', z + 0, 'C#5:8/3 E5:4/3 A5:8/3 G#5:4/3 B4:4 R:8/3')
     put('D4', z + 16, 'A4:8/3 F#4:4/3 A4:4')
     put('H4', z + 0, 'E4:8/3 A4:4/3 B4:8/3 E4:4/3 E4:4 C#4:8/3 D4:4/3 E4:4 E4:8/3 G#4:4/3 A4:8/3 E4:4/3 F#4:4 R:16 B3:4 R:8/3')
-    put('H2', z + 0, 'E5:12 A4:4 C#5:4 B4:4 C#5:6 B4:2 B4:4 C#5:4 A4:8 F#4:6 G#4:2 E4:8 F#4:4 F#4:4')
     put('D1', z + 4, 'R:2 E5:1 F#5:1 G#5:2 E5:2 C#5:2 E5:2 F#5:2 D5:2 F#5:2 D5:2 E5:2 C#5:2 A4:2 D5:1 E5:1 F#5:2 D5:2 R:16 F#5:8')
     put('Q2', z + 0, 'R:8 G#3:6 A3:2 A3:4 G#3:4 A3:4 A3:8 E3:4 A3:8 D4:4 B3:8 C#4:4 A3:6 G#3:2')
     put('T2', z + 0, 'E4:6 D4:2 C#4:4 D4:4 C#4:6 D4:2 C#4:4 F#3:8 A3:4 F#3:8 D4:6 C#4:2 B3:4 R:4 D4:4 C#4:4')
@@ -267,10 +266,53 @@ def courante():
     theme('T2', z + 11, SC, 'Courante subject')
     theme('Q2', z + 17, oc(AC, -1), 'Courante answer')
     theme('B2', z + 23, oc(SC, -2), 'Courante subject (bass)')
+    put('B1', z + 0, 'A2:8 E2:8 A2:8 E2:8 D2:4 E2:8 A2:4 F#2:6 E2:2 E2:4 B1:4 A1:4 C#2:4')
+    put('B1', z + 18, 'E2:8 D2:4 E2:8')
+    # the allemande band takes up the courante: in F# minor (C# level) on top, then at the D level in the bass
+    theme('D1', z + 29, oc(dshift(SC, -2), 1), 'Courante subject in Coro I (C# level)')
+    theme('B1', z + 35, oc(dshift(SC, -4), -1), 'Courante subject in Coro I (D level, bass)')
+    put('D2', z + 14, 'D5:6 E5:2 C#5:4 E5:4 E5:4 F#5:4 F#5:4 G#5:8 E5:4 C#5:8 C#5:4 B4:4 B4:4 A4:4')
+    put('H2', z + 20, 'F#4:6 E4:2 E4:4 E4:4 C#5:6 B4:2 A4:4 B4:8 E4:4 D5:8 D5:4 C#5:8 C#5:4')
+    put('T2', z + 26, 'B4:4 A4:4 G#4:4 A4:4 B4:8 A4:4 A4:8 G#4:4 A4:4 G#4:4 A4:4')
+    put('Q2', z + 36, 'E4:8 E4:4 E4:4 D4:4 D4:4 C#4:8 B3:4 B3:4 C#4:4 B3:4')
+    put('D2', z + 36, 'R:24 E5:8 E5:4 B4:4 A4:6 G#4:2')
     # @@cour
 
 
-SECTIONS = [allemande, courante, summit]
+def sarabande():
+    """III. Sarabande (q84-120): Coro III's exposition in 3/4, with Coro I and II accompanying in
+    sarabande rhythm."""
+    z = S3
+    theme('D3', z, oc(SS, 1), 'Sarabande subject')
+    theme('H3', z + 9, dshift(SS, -4), 'Sarabande answer at the subdominant (D level)')
+    theme('B3', z + 18, oc(dshift(mir(SS), -3), -2), 'Sarabande mirror (E level, bass): the future ground')
+    put('B1', z + 2, 'E2:4 E2:4 F#2:4 D2:4 C#2:4 E2:8 A2:4 B1:8 G#2:4 F#2:8 A2:12')
+    put('T3', z + 0, 'C#4:4 C#4:6 B3:2 G#3:4 A3:4 F#3:4 A3:4 G#3:4 G#3:4 A3:4 B3:8 B3:4 A3:8 C#4:12 G#3:4 G#3:4 G#3:4 A3:4 F#3:8 B3:4 C#4:4 C#4:4 B3:4 A3:8 E4:4 E4:4 D4:4 B3:12')
+    put('Q3', z + 0, 'E3:4 E3:6 E3:2 G#3:4 F#3:4 F#3:4 E3:4 E3:4 D3:4 E3:4 F#3:8 R:12 C#3:12')
+    put('H2', z + 0, 'C#5:4 C#5:6 B4:2 R:12 E4:4 B4:8 A4:4 F#4:8 E4:4 F#4:8 C#5:12 B4:12 C#5:4 B4:8 E4:4 E4:8 B4:4 C#5:8 A4:4 F#4:8 G#4:12')
+    put('H2', z + 0, 'E4:4 F#4:4 E4:4 R:12 E4:4 B4:8 A4:4 F#4:8 E4:4 F#4:8 C#5:12 B4:12 C#5:4 B4:8 E4:4 E4:8 B4:4 C#5:8 A4:4 F#4:8 G#4:12')
+    put('D3', z + 18, 'G#5:4 F#5:6 E5:2 R:12 C#5:4 C#5:6 B4:2 D5:4 C#5:8 E5:4 D5:4 D5:4 G#4:12')
+    put('T2', z + 0, 'R:12 R:12 A3:4 B3:4 B3:4 R:12 R:12 C#4:4 B3:4 C#4:4 R:12 R:12 D4:4 C#4:8 R:12 R:12 B3:12')
+    put('H1', z + 0, 'C#4:4 D4:4 E4:4 R:12 R:12 R:12 R:12 C#4:12 E4:4 E4:8 R:12 E4:4 E4:8 E4:4 E4:8 E4:4 F#4:8 E4:12')
+    put('D2', z + 6, 'R:12 C#6:4 D6:8 R:12 R:12 B5:4 A5:6 G#5:2 R:12 R:12 E5:4 E5:8 R:12 B5:12')
+    put('Q2', z + 0, 'A3:4 A3:4 G#3:4 R:12 R:12 R:12 R:12 A3:4 G#3:4 A3:4 G#3:4 G#3:4 G#3:4 R:12 E3:4 E3:8 R:12 A3:4 G#3:4 F#3:4 R:12')
+    put('Q3', z + 18, 'G#3:4 A3:4 G#3:4 E3:4 D3:8 B3:4 A3:8 E3:4 E3:8 R:12 G#3:12')
+    # @@sara
+
+
+def gigue():
+    """IV. Gigue (q120-156): Coro IV's exposition in 12/8, then, as in the second half of Bach's
+    gigues, the subject inverted; the other bands join in gigue rhythm."""
+    z = S4
+    theme('D4', z - Fr(1, 3), oc(SG, 1), 'Gigue subject')
+    theme('H4', z + 4 - Fr(1, 3), dshift(SG, 4), 'Gigue answer (modal)')
+    theme('T4', z + 8 - Fr(1, 3), SG, 'Gigue subject')
+    theme('Q4', z + 12 - Fr(1, 3), oc(dshift(SG, 4), -1), 'Gigue answer (modal)')
+    theme('B4', z + 16 - Fr(1, 3), oc(SG, -2), 'Gigue subject (bass)')
+    # @@giga
+
+
+SECTIONS = [allemande, courante, sarabande, gigue, summit]
 
 
 BPM = 66

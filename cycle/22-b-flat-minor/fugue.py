@@ -271,6 +271,11 @@ put('Bar4', 45, 1, 'Db4:16~ Db4:4 C4:4 A3:8 C4:8 F3:8 C4:8 R:4 F3:4')
 # move between the same notes at the same moment; their held notes become suspensions on the beats.
 put('S2', 45, 1, 'Db5:14 Eb5:4 Db5:4 Eb5:16 Db5:4 C5:14 Ab4:8')
 put('Ms3', 45, 1, 'F4:10 Eb4:4 F4:10 A4:10 G4:6 F4:6 A4:6 G4:6 F4:6')
+put('A1', 45, 1, 'Db4:6 Eb4:6 F4:6 Eb4:4 F4:16 G4:4 A4:4 F4:12 G4:2 F4:4')
+put('A2', 45, 1, 'Db4:24 Eb4:14 F4:18 R:4 F4:4')
+put('Ms2', 45, 1, 'Bb4:18 Ab4:4 Bb4:10 C5:6 A4:6 R:16 B4:4')
+put('Ms4', 45, 1, 'R:8 Gb4:2 F4:2 Eb4:2 Db4:2 Eb4:8 Db4:8 C4:8 Eb4:4 F4:4 R:12 Ab4:4')
+put('T1', 45, 1, 'F3:26 A3:4 Bb3:12 A3:4 F3:8 R:4 B3:6')
 
 if __name__ == '__main__':
     import os
