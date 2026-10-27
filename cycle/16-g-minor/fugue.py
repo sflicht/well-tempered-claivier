@@ -208,9 +208,9 @@ def section_A(b0):
     T('P1', 32, cantus(1, -1), 'cantus line 1 (Ped. I, canon comes at the octave, 10 beats)')
     T('HS2', 24, W.invert_diatonic(S1, 'D5', GNAT), 'line 1: subject 1 inverted (HW S2)')
     T('HT', 14, 'F3:8 G3:8 A3:4 F3:4 G3:4 A3:4 A3:8 G3:8')
-    T('HA', 15, 'D5:4 D5:2 C5:2 Bb4:2 C5:2 C5:4 Bb4:4 G4:2 A4:2 Bb4:2 A4:2 F4:4 R:8 Bb4:2 A4:2 G4:2 F4:2 Eb4:2 D4:2 Eb4:2 F4:2 G4:2 F4:2 Eb4:2 D4:2 C4:4 D4:4 Eb4:4 D4:2 C4:2 D4:8')
-    T('HS1', 26, 'G5:4 A5:4 G5:4 F5:4 F5:4 E5:4 D5:8 Eb5:4 D5:4 C5:4 D5:8 C5:4 Bb4:4')
-    T('HS2', 32, 'F5:6 Eb5:2 D5:4 C5:4 Bb4:6 C5:2 A4:4 Bb4:8 A4:4 Bb4:8')
+    T('HA', 15, 'D5:4 D5:2 C5:2 Bb4:2 C5:2 C5:4 D5:4 G4:2 A4:2 Bb4:2 A4:2 F4:4 R:8 Bb4:2 A4:2 G4:2 F4:2 Eb4:4 D4:4 F4:4 G4:4 F4:4 Eb4:4 D4:8')
+    T('HS1', 26, 'G5:4 A5:4 G5:4 F5:4 F5:4 E5:4 D5:8 G5:4 Eb5:4 F5:4 Eb5:4 D5:4 F5:8')
+    T('HS2', 32, 'F5:6 Eb5:2 D5:4 C5:4 D5:6 C5:2 Bb4:8 A4:4 Bb4:8')
     T('P2', 40, 'Bb2:4 G2:4 Eb2:4 D2:4 F2:8 Bb1:16')
     # A-END
 
@@ -234,8 +234,7 @@ def section_B(b0):
     T('RT', 18, S2, 'line 2: subject 2 over the cantus (RP T)')
     T('RT', 26, S2, 'line 2: subject 2 over the cantus (RP T)')
     T('RS', 18, 'C5:4 D5:4 F#5:6 E5:2 D5:4 C5:4 C5:4 F5:4 F#5:4 G5:4 E5:4 D5:4 C#5:4 D5:8 C5:4 Bb4:4 A4:4 Bb4:8')
-    T('RA', 18, 'F4:8 A4:8 F4:4 E4:4 F4:4 E4:4 D4:8 G4:4 F4:4 E4:4 E4:4 D4:24')
-    T('RBr', 21, 'F3:4 E3:4 D3:4 C3:4 E3:4 F3:4 G3:4 A3:4 A3:4 F3:4 E3:4 D3:4 Bb2:4 C3:4')
+    T('RA', 18, 'F4:8 A4:8 F4:4 E4:4 F4:4 E4:4 D4:8 G4:4 F4:4 E4:4 E4:4 G4:24')
     # B-END
 
 
@@ -261,7 +260,79 @@ def section_C(b0):
     T('OS', 12, W.invert_diatonic(S1, 'D5', GNAT), 'line 3: subject 1 inverted (OW S)')
     T('RT', 18, oc(W.invert_diatonic(S1, 'D5', GNAT), -1), 'line 3: subject 1 inverted (RP T)')
     T('HA', 24, W.invert_diatonic(S1, 'D5', GNAT), 'line 3: subject 1 inverted (HW A)')
+    T('HS1', 24, 'Bb5:4 A5:4 G5:4 F5:4 F5:4 G5:4 A5:8')
+    T('RA', 18, 'F4:8 G4:4 A4:4 Bb4:8 A4:8')
+    T('OA', 12, 'Bb4:8 G4:4 A4:4 Bb4:4 A4:4 F4:8')
+    # 'da weinten wir': the sigh of line 2 passed in echo, Oberwerk - Rückpositiv - Hauptwerk
+    T('OS', 30, W.invert_diatonic(S2, 'A4', GNAT), 'line 4: subject 2 inverted (OW S)')
+    T('RT', 36, oc(S2, -1), 'line 4: subject 2 (RP T)')
+    T('HS1', 42, W.invert_diatonic(S2, 'A4', GNAT), 'line 4: subject 2 inverted (HW S1)')
+    T('OA', 30, 'F4:6 Eb4:2 D4:4 C4:4 D4:4 D4:4')
+    T('RA', 36, 'F4:8 E4:4 F4:4 D4:4 E4:4')
     # C-END
+
+
+A5 = tr(S5, 7, 4)            # answer at the fifth (D, Dorian)
+
+
+def section_D(b0):
+    """Line 5, 'wir hingen auf mit schwerem Mut' (we hung up, with heavy heart): the subject is hung
+    across the beats in syncopes; three manuals.  The canon closes to three beats: Ped. II leads as the
+    bass, Ped. I follows an octave higher, every move of the bass met by a held note above it."""
+    T = T_(b0)
+    T('P2', 10, cantus(5, -2), 'cantus line 5 (Ped. II, canon dux)')
+    T('P1', 13, cantus(5, -1), 'cantus line 5 (Ped. I, canon comes, 3 beats)')
+    T('HT', 0, S5, 'line 5 Vorimitation: subject 5 (HW T)')
+    T('RA', 4, A5, 'line 5 Vorimitation: answer (RP A)')
+    T('OS', 8, oc(S5, 1), 'line 5 Vorimitation: subject 5 (OW S)')
+    T('RT', 12, dsh(S5, 3), 'line 5: subject 5 on C (RP T)')
+    T('HS2', 16, W.invert_diatonic(S5, 'Bb4', GNAT), 'line 5: subject 5 inverted (HW S2)')
+    T('OA', 20, dsh(S5, 3), 'line 5: subject 5 on C (OW A)')
+    T('HBr', 22, oc(S5, -1), 'line 5: subject 5 (HW Bar)')
+    T('HT', 8, 'Bb4:4 A4:4 G4:8 F#4:4 G4:4 A4:8 G4:8')
+    T('OS', 16, 'F5:8 Eb5:4 D5:4 C5:8 D5:8 D5:8')
+    T('RA', 12, 'D5:4 C5:4 Bb4:8 A4:8 G4:8 D4:8')
+    T('HS2', 24, 'G4:8 F#4:4 G4:4 G4:8')
+    # D-END
+
+
+A6 = tr(S6, 7, 4)            # answer at the fifth (in D, with G-sharp)
+
+
+def section_E(b0):
+    """Line 6, 'die Harfen und die Orgeln gut': the harps are rushing scales (tirate), the organs the
+    pedal canon, Ped. I leading this time; at 'Orgeln' (B-flat - C-sharp) the canon makes an augmented
+    sixth.  Then the organ is 'hung up': it stops dead."""
+    T = T_(b0)
+    T('P1', 6, cantus(6, -1), 'cantus line 6 (Ped. I, canon dux)')
+    T('P2', 9, cantus(6, -2), 'cantus line 6 (Ped. II, canon comes, 3 beats)')
+    T('OS', 0, oc(S6, 1), 'line 6 Vorimitation: subject 6, the harps (OW S)')
+    T('RA', 2, A6, 'line 6 Vorimitation: answer (RP A)')
+    T('HT', 4, oc(S6, -1), 'line 6 Vorimitation: subject 6 (HW T)')
+    T('RS', 8, A6, 'line 6: answer (RP S)')
+    T('HA', 10, S6, 'line 6: subject 6 (HW A)')
+    T('OA', 16, S6, 'line 6: subject 6 (OW A)')
+    T('RT', 18, oc(A6, -1), 'line 6: answer (RP T)')
+    T('OB', 12, 'D4:8 C4:4 Bb3:4 A3:8 Bb3:8 G3:8 A3:8')
+    T('RBr', 12, 'F3:8 G3:8 F#3:8 G3:8 E3:8 F#3:8')
+    # 'die Orgeln': the organ is hung up -- bar 47 is silent; then a harp, alone, on the dominant
+    T('RS', 32, 'D5:1 F#5:1 A5:1 C6:1 Eb6:2 C6:1 A5:1 F#5:1 A5:1 C6:1 A5:1 F#5:2 D5:2')
+    # E-END
+
+
+A7 = tr(S7, 7, 4)            # answer at the fifth
+
+
+def section_F(b0):
+    """Line 7, 'an ihre Bäum der Weiden' (on their willow trees): the subject sways in triplets; the
+    canon is again three beats apart, Ped. II leading as the bass."""
+    T = T_(b0)
+    T('P2', 6, cantus(7, -2), 'cantus line 7 (Ped. II, canon dux)')
+    T('P1', 9, cantus(7, -1), 'cantus line 7 (Ped. I, canon comes, 3 beats)')
+    T('HA', 0, S7, 'line 7 Vorimitation: subject 7 (HW A)')
+    T('OT', 2, oc(A7, -1), 'line 7 Vorimitation: answer (OW T)')
+    T('HBr', 6, oc(A7, -1), 'line 7 Vorimitation: answer (HW Bar)')
+    # F-END
 
 
 def summit(s0):
@@ -325,6 +396,9 @@ def summit(s0):
 section_A(1)
 section_B(12)
 section_C(21)
+section_D(33)
+section_E(40)
+section_F(49)
 summit(SUM)
 
 

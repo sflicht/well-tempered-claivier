@@ -126,11 +126,64 @@ theme('Br1', SUM + 2, 1, octv(K_DOR, -1), 'Door subject (knocks) in the baritone
 
 # Phase A free lines (b45-52), added one voice at a time.
 L = SUM
-put('B2', L + 3, 1, 'G#2:8 A#2:8 B2:8 C#3:8 D#3:8 A#2:16 C#3:4 G#2:4 R:16 F#2:8 G#2:8 C#3:8')
+put('B2', L + 3, 1, 'G#2:8 A#2:8 B2:8 C#3:8 D#3:8 A#2:16 R:4 G#2:4 R:16 F#2:8 G#2:8 C#3:8 F#2:8 D#2:8')
 # free lines, one voice at a time
-put('S1', L, 1, 'D#6:8 C#6:8 B5:8 G#5:8 A#5:8 G#5:8 D#6:16 C#6:8')
-put('S3', L, 1, 'G#5:8 E#5:8 F#5:8 E#5:8 F#5:8 R:8 D#5:12 E#5:4 F#5:8 D#5:8 A#5:8 B5:8 G#5:8 F#5:8 E#5:8 F#5:8 G#5:8 A#5:8 G#5:8 A#5:8 G#5:8 E#5:8')
+put('T4', L, 1, 'G#3:8 C#3:8 D#3:8 G#3:8 A#3:12 G#3:4')
+put('T2', L, 1, 'B3:8 C#4:8 F#3:8 R:16 E#3:8')
+put('B1', L + 4, 3, 'R:8 C#3:8 R:8 A#2:8')
+put('A1', L, 1, 'B4:8 A#4:8 R:8')
+put('S2', L + 4, 2, 'A#5:8 R:8')
+put('S5', L + 2, 1, 'R:8 G#4:2 A#4:2 G#4:2 F##4:2 R:8 R:8 A#4:2 G#4:2 F#4:2 G#4:2 R:8 G#4:2 A#4:2 B4:2 G#4:2 R:16 R:16 C#5:2 B#4:2 C#5:2 D#5:2 R:16 D#5:2 C#5:2 D#5:2 C#5:2')
+put('A2', L, 1, 'R:16 D#4:2 D#4:2 D#4:4 R:8 F#4:2 F#4:2 F#4:4 R:8 R:24 R:16 D#4:2 D#4:2 D#4:4 R:8 D#4:2 D#4:2 D#4:4 R:8 R:16 E#4:2 E#4:2 E#4:4 R:8 A#3:2 A#3:2 A#3:4 R:8')
+put('A3', L + 1, 2, 'R:8 E#4:8 D#4:16 R:8 G#4:8 E#4:8 R:8')
+put('T1', L + 3, 3, 'F#4:8 C#4:8 R:8 C#4:16 D#4:4 B#3:4 C#4:8 C#4:20 B#3:4 C#4:8')
+put('S4', L, 1, 'D#5:12 C#5:8 B4:4 B4:4 A#4:8 C#5:12 C#5:4 B4:12 F#5:4 R:4 R:24 R:8 A#4:8 R:8 R:8 D#5:8 E#5:8 C#5:16 G#4:16')
+put('S1', L, 1, 'D#6:8 C#6:8 B5:8 G#5:8 F#5:8 G#5:8 D#6:8 R:16')
+put('S3', L, 1, 'G#5:8 E#5:8 D#5:8 R:24 D#5:16 R:8 D#5:8 A#5:8 R:8 G#5:8 D#6:8 R:8 F#5:8 G#5:8 A#5:8 C#6:8 A#5:8 G#5:8 E#5:8')
 
+
+
+# ================================================================ SUMMIT, phase B: "Vor der Tuer" (b52-56)
+# 52.2 D#m/F#: the subject's last F# ... 52.3 D#: ... becomes F##, the leading tone (the last door note).
+# Over a knocking D# pedal the door subject enters four times, two beats apart (D#4, A#3, D#4, A#4);
+# a chromatic line falls against the rises; three tutti knocks; silence; then the door opens (b57).
+KA = 'A#3:2 R:2 A#3:2 R:2 A#3:4 B3:4 B#3:4 C#4:4 C##4:4 D#4:8'          # the door subject on the dominant's fifth
+KD = 'D#4:2 R:2 D#4:2 R:2 D#4:4 E4:4 E#4:4 F#4:4 F##4:4 G#4:8'         # = K
+KNOCK3 = lambda n: f'{n}:2 R:2 {n}:2 R:2 {n}:4 R:12'                   # the last three knocks, then silence
+B = SUM + 7   # bar 52
+theme('A3', B + 1, 1, KD, 'Door subject 1 (stretto), on D#', 2)
+theme('T1', B + 1, 3, KA, 'Door subject 2, on A#', 2)
+theme('A2', B + 2, 2, KD, 'Door subject 3, on D#', 2)
+theme('S5', B + 3, 1, tr(KA, 12, 7), 'Door subject 4, on A#', 2)
+put('S1', B, 3, 'R:8 A#5:16 C#6:16 B#5:8 A#5:8 D#6:16 C#6:8 ' + KNOCK3('D#6'))
+put('S2', B, 1, 'R:16 F##5:8 G#5:12 F##5:12 R:16 F##5:8 E#5:8 E5:8 D#5:8 ' + KNOCK3('A#5'))
+theme('A2', B + 3, 3.5, 'F##4:4', 'resolution', 0) if False else put('A2', B + 3, 3.5, 'F##4:4')
+
+
+def knk(v, bar, q, pitch, form='k3'):
+    """a knock figure (from the door subject's head) placed at quarter q (0-5) of a bar"""
+    f = {'k3': f'{pitch}:2 {pitch}:2 {pitch}:4', 'k2': f'{pitch}:2 R:2 {pitch}:4'}[form]
+    VO[v].append((Fr(bar - 1) * BAR + Fr(q) * 4, f))
+
+
+# the relay of knocks travels voice to voice (round the ring of players), on D# and A#, b53-55
+for v, bar, q, pch, f in [
+        ('Br3', 53, 0, 'D#3', 'k3'), ('S4', 53, 0, 'D#5', 'k2'), ('T3', 53, 0, 'A#3', 'k3'), ('S3', 53, 1, 'A#4', 'k3'),
+        ('B1', 53, 1, 'A#2', 'k2'), ('Br2', 53, 2, 'A#3', 'k3'), ('A1', 53, 2, 'D#5', 'k3'), ('A5', 53, 2, 'F##4', 'k2'),
+        ('A4', 53, 3, 'A#4', 'k2'), ('Br1', 53, 3, 'D#3', 'k3'), ('T4', 53, 4, 'A#2', 'k3'), ('S5', 53, 4, 'D#5', 'k3'),
+        ('Br3', 54, 0, 'A#2', 'k3'), ('S4', 54, 0, 'A#4', 'k2'), ('T3', 54, 0, 'D#3', 'k3'), ('T2', 54, 0, 'D#4', 'k2'),
+        ('S3', 54, 1, 'D#5', 'k3'), ('B1', 54, 2, 'G#2', 'k3'), ('Br2', 54, 2, 'G#3', 'k2'), ('A1', 54, 2, 'B#4', 'k3'),
+        ('A4', 54, 3, 'D#5', 'k3'), ('Br1', 54, 3, 'D#3', 'k2'), ('T4', 54, 4, 'A#3', 'k3'), ('A5', 54, 4, 'A#4', 'k2'),
+        ('Br3', 55, 0, 'D#3', 'k3'), ('S4', 55, 0, 'D#5', 'k2'), ('T3', 55, 0, 'A#3', 'k3'), ('S3', 55, 1, 'A#5', 'k3'),
+        ('B1', 55, 1, 'A#2', 'k2'), ('T2', 55, 1, 'D#4', 'k3'), ('Br2', 55, 2, 'A#3', 'k3'), ('A4', 55, 3, 'D#4', 'k3'),
+        ('Br1', 55, 3, 'A#2', 'k2'), ('T4', 55, 4, 'D#3', 'k3'), ('A5', 55, 4, 'A#3', 'k2'),
+        ]:
+    knk(v, bar, q, pch, f)
+for v, pch in [('S3', 'F##5'), ('S4', 'A#4'), ('A1', 'D#5'), ('A3', 'D#4'), ('A4', 'A#3'), ('A5', 'D#4'), ('A2', 'A#4'),
+               ('T1', 'A#3'), ('T2', 'D#3'), ('T3', 'A#2'), ('T4', 'D#3'), ('Br1', 'A#2'), ('Br2', 'D#3'), ('Br3', 'D#2'),
+               ('B1', 'A#1')]:
+    put(v, B + 4, 1, KNOCK3(pch))
+put('B2', B + 1, 1, 'D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 ' + KNOCK3('D#1'))
 
 
 def build(nbars, path=None):

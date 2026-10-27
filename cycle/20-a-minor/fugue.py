@@ -186,13 +186,76 @@ def solo_strings():
     # strand.  The violin's sweep narrows: three strings, two (bariolage), then one line.
     put('Vc1', 13, 1, 'A3:8 G3:8 F3:16 E3:16')
     put('Vl1', 13, 1, 'E4:1 C5:1 E5:1 C5:1 E4:1 C5:1 E5:1 C5:1 E4:1 C5:1 G5:1 C5:1 E4:1 C5:1 G5:1 C5:1')
-    put('Va1', 14, 1, 'D4:8 B3:8 B3:8 C4:8')
+    put('Va1', 14, 1, 'D4:8 B3:8 B3:16')
     put('Vl1', 14, 1, 'D5:1 F5:1 D5:1 F5:1 D5:1 F5:1 D5:1 F5:1 D5:1 A5:1 D5:1 A5:1 D5:1 A5:1 D5:1 A5:1')
     put('Vl2', 15, 1, 'E5:8 D5:8')
     put('Vl1', 15, 1, 'G#5:4 B5:4 E6:4 B5:4')
 
 
-SECTIONS = [solo_opening, solo_strings]
+def gen2():
+    # Each of the four string-voices states the subject or answer; inside its tail the lower
+    # strand is caught by a new voice (the lament A G# G F# F E), which then goes its own way.
+    # b16-17: cello I, subject in A minor; at b17.2 the double bass catches the lament (G2...).
+    theme('Vc1', 16, 1, oc(HEAD, -2), 'Vc I: subject (A minor)')
+    put('Vc1', 17, 1, 'C3:1 A2:1 E3:1 G#2:1 D3:2 C3:2 B2:2 A2:2 G#2:4')
+    put('Cb1', 17, 2.25, 'G2:2 F#2:2 F2:2 E2:5')                 # SPLIT 5: Cb I born from Vc I
+    put('Va1', 16, 1, 'C4:4 B3:4 C4:4 D4:4 E4:4 D4:8 E4:4')
+    put('Vl2', 16, 1, 'C5:6 B4:4 A4:4 G#4:2 A4:2 B4:4 A4:6 D5:4')       # suspensions, off the beat
+    put('Vl1', 16, 1, 'A5:4 G#5:2 E5:2 E5:2 A5:2 D6:2 B5:2 E5:2 G#5:2 B5:2 D6:2 D6:2 C6:2 B5:4')
+    # b18-19: viola I, Bach's tonal answer; at b19.2 cello II catches the lament (D4 C#4 C4 B3).
+    theme('Va1', 18, 1, AHEAD, 'Va I: answer (E minor)')
+    put('Va1', 19, 1, 'G#4:1 E4:1 B4:1 D#4:1 A4:2 G4:2 F#4:2 E4:2 D#4:4')
+    put('Vc2', 19, 2.25, 'D4:2 C#4:2 C4:2 B3:5')                 # SPLIT 6: Vc II born from Va I
+    put('Cb1', 18, 1, 'A1:8 G1:4 B1:4 E1:12 B1:4')
+    put('Vc1', 18, 1, 'A2:4 C3:4 B2:4 D#3:4 E3:8 A3:4 F#3:4')
+    put('Vl2', 18, 1, 'C5:8 R:6 F#4:2 B4:6 A4:10')
+    put('Vl1', 18, 1, 'A5:6 G5:2 B5:4 A5:2 F#5:2 G#5:2 E5:2 B5:4 F#5:8')
+
+    # b20-21: violin II, the subject at its first pitch (E5); at b21.2 viola II catches the lament.
+    # Under the tail a dominant pedal (E) in the bass.
+    theme('Vl2', 20, 1, HEAD, 'Vl II: subject (A minor)')
+    put('Vl2', 21, 1, 'C5:1 A4:1 E5:1 G#4:1 D5:2 C5:2 B4:2 A4:2 G#4:4')
+    put('Va2', 21, 2.25, 'G4:2 F#4:2 F4:2 E4:5')                 # SPLIT 7: Va II born from Vl II
+    put('Vl1', 20, 1, 'G#5:4 B5:2 A5:1 G#5:1 A5:4 D6:2 B5:2 R:10 C6:2 B5:4')
+    put('Va1', 20, 1, 'E4:6 F4:2 E4:4 B3:4 E4:4 R:12')
+    put('Vc2', 20, 1, 'B3:2 C4:2 B3:2 G#3:2 C4:4 G#3:2 E3:2 R:12 B3:4')
+    put('Vc1', 20, 1, 'E3:4 E3:4 C3:4 E3:4~ E3:8 A2:4 B2:4')
+    put('Cb1', 20, 1, 'E2:16~ E2:16')
+    # b22-23: violin I, the answer an octave above its first statement; at b23.2 the new violin
+    # III takes the UPPER strand (A5 G5 F#5 E5 D#5) and the solo violin keeps the lower one.
+    theme('Vl1', 22, 1, oc(AHEAD, 1), 'Vl I: answer (E minor)')
+    put('Vl1', 23, 1, 'G#5:1 E5:1 B5:1 D#5:1 R:1 D5:2 C#5:2 C5:2 B4:5')
+    put('Vl3', 23, 2, 'A5:2 G5:2 F#5:2 E5:2 D#5:4')               # SPLIT 8: Vl III born from Vl I
+    # the others under the answer: a walking cello, a slow bass, suspensions above
+    put('Cb1', 22, 1, 'A1:8 G1:4 B1:4 E2:16~')                   # tonic pedal of E minor, b23-24
+    put('Vc1', 22, 1, 'E3:4 C3:4 E3:4 B2:4 G#2:8 A2:4 B2:4')
+    put('Vc2', 22, 1, 'C4:8 B3:4 A3:4 B3:4 A3:12')
+    put('Va2', 22, 1, 'C4:6 E4:2 E4:4 D#4:4 E4:4')
+    put('Va1', 22, 1, 'R:4 A4:4 B4:8 B4:6 A4:6 F#4:4')
+    put('Vl2', 22, 1, 'A4:8 R:8')
+
+
+
+# Tails turned towards the next key of the cascade (gen 3): the last upper-strand note becomes the
+# seventh of the next dominant instead of the leading tone.
+TAIL_EM = 'G5:1 E5:1 B5:1 D#5:1 A5:1 D5:1 G5:1 C#5:1 F#5:1 C5:1 E5:1 B4:1 D5:4'        # -> E7 (A minor)
+
+
+def gen3():
+    # The cascade: eight entries one bar apart, each a fifth lower than the last, from the top of
+    # the texture to the bottom (E minor, A minor, D minor, G, C, F, D minor, A minor); every tail
+    # splits, so the voices double from eight to sixteen.  Each tail turns towards the next key.
+    # b24: violin III, subject in E minor (B5) over the tonic pedal.
+    theme('Vl3', 24, 1, tr(HEAD, 7, 4), 'Vl III: subject (E minor)')
+    put('Cb1', 24, 1, 'E2:16')
+    put('Vc1', 24, 1, 'E3:2 G3:2 B2:4 G3:4 A3:2 B3:2')
+    put('Vc2', 24, 1, 'B3:6 A3:2 G3:4 B3:4')
+    put('Va1', 24, 1, 'E4:6 D#4:2 E4:4 D#4:4')
+    put('Va2', 24, 1, 'R:4 B3:12')
+    put('Vl2', 24, 1, 'G4:4 F#4:4 B4:6 A4:2')
+
+
+SECTIONS = [solo_opening, solo_strings, gen2, gen3]
 
 TEMPO_MAP = []
 

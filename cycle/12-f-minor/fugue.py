@@ -278,25 +278,25 @@ theme('BrI', Q + 1, 2, 'C3:8 G3:12 F3:4 Eb3:16 F3:16 G3:16 C4:8', 'S1 answer (st
 theme('BII', Q + 1, 3, 'F2:8 C3:12 Bb2:4 Ab2:16 Bb2:16 C3:16 F2:4', 'S1')
 theme('TI', Q + 2, 3, S3, 'S3 B-A-C-H')
 
-# ---- the other voices of the summit are subjects too (placements found by search, then checked by hand):
-# a stretto of S1 in all its forms around the bass S1 -- inverted (Soprano III), inverted answer (Alto II),
-# tonal and real answers (Tenor III, Soprano II), its head rectus and inverted (Alto III, Tenor II) -- and the
-# head of the inverted main theme in Baritone II.
+# ---- the other voices of the summit are subjects too (placements found by a search over quoted subject forms
+# with the critic in the loop, then checked by hand): S1 inverted (Soprano III) and S1's head high (Soprano II)
+# and low (Baritone II) around the bass S1, its inverted head in Tenor II; S2's head against its own inversion,
+# both from A-flat (Alto II, Alto III), the inverted head again in Tenor II.
 def hd(s, k):
     return ' '.join(s.split()[:k])
 S1R = tr(S1, 7, 4)                  # S1's real answer:   C G F E-flat F G C
 S1IR = tr(S1I, -7, -4)              # inverted answer:    F B-flat C D-flat C B-flat F
-theme('AII', Q, 1, S1IR, 'S1 inv. answer')
 theme('SIII', Q, 2, octv(S1I, -1), 'S1 inv.')
-theme('AIII', Q, 4, octv(hd(S1, 4), 1), 'S1 (head)')
-theme('TIII', Q, 4, S1A, 'S1 answer (tonal)')
-theme('SII', Q + 1, 1, octv(S1R, 1), 'S1 answer (real)')
+theme('SII', Q, 4, octv(hd(S1, 4), 2), 'S1 (head)')
 theme('TII', Q + 1, 1, octv(hd(S1I, 4), -2), 'S1 inv. (head)')
-theme('BrII', Q + 1, 4, octv(hd(MTI, 5), -1), 'main theme inv. (head)')
-# Bass I carries the bass into the combination and hands its F to S1 (lower neighbour E-flat).
-seq('BI', Q, 'F2:8 Ab2:4 G2:4', 'F2:4 Eb2:4 R:8')
-# Soprano I after the main theme: G over the dominant, F at the cadence.
-put('SI', Q + 4, 3, 'Bb5:4 Ab5:4 G5:16 F5:8')
+theme('BrII', Q + 1, 1, hd(S1, 4), 'S1 (head)')
+theme('AII', Q + 1, 4, hd(S2, 15), 'S2 (head), against its inversion')
+theme('AIII', Q + 1, 4, hd(S2I, 15), 'S2 inv. (head)')
+theme('TII', Q + 4, 1, octv(hd(S2I, 15), -1), 'S2 inv. (head)')
+# Bass I carries the bass into the combination and hands its F to S1.
+seq('BI', Q, 'F2:8 Ab2:4 G2:4', 'F2:8 R:8')
+# Soprano I after the main theme: B-flat A-flat, G over the dominant.
+put('SI', Q + 4, 3, 'Bb5:4 Ab5:4 G5:16')
 
 
 
@@ -310,24 +310,17 @@ theme('SII', M, 1, octv(MTI, 1), 'main theme inv.')
 theme('BI', M, 2, octv(S2I, -2), 'S2 inv. (running bass)')
 theme('AI', M + 1, 3, octv(S1I, -1), 'S1 inv.')
 theme('TII', M + 2, 3, S3I, 'S3 inv. (H-C-A-B)')
-# ---- free voices of the mirror statement (hand-written)
-# Alto III: F, A-flat held into the B-flat-minor chord (a seventh), C, B-flat, then climbs E-flat F G A-flat
-# (the mirror's rising lines) and settles on F.
-# Soprano III: C, A-flat, F, G held as a ninth over the tonic, F, then A-flat.
-seq('SIII', M, 'R:8 C5:8~', 'C5:8 Ab5:8', 'F5:8 G5:8~', 'G5:4 F5:12', 'Ab5:8 R:8')
-# Tenor I (after its B-A-C-H): E-flat, C, C held as a ninth over the B-flat seventh, G held as a ninth over F and
-# resolved upward (the mirror's retardations).
-put('TI', M, 3, 'Eb4:8')
-seq('TI', M + 1, 'C4:12 Bb3:4~', 'Bb3:16~', 'Bb3:4 Ab3:4 Bb3:8', 'Ab3:8 G3:8~', 'G3:4 Ab3:8 Bb3:4', 'F3:8 R:8')
-seq('AIII', M + 1, 'F4:8 Ab4:8~', 'Ab4:8 C5:8', 'C5:8 Bb4:8', 'Eb5:4 F5:4 G5:8', 'Ab5:8 F5:8~', 'F5:8 R:8')
-
-# Tenor III: A-flat, then D-flat held as a suspension over the dominant (resolving to C after the main theme's
-# own D-flat-C has passed).
-put('TIII', M + 1, 1, 'Ab3:16 Db4:12 C4:12')
-# The mirror's cadence (b71.3-72): Soprano III holds C over the dominant and falls to B-flat; Alto II A-flat,
-# D-flat (iv7 - ii-half-dim) before they rest for the entries of the finale.
-put('SIII', M + 4, 3, 'C5:16 Bb4:8')
-put('AII', M + 5, 1, 'Ab4:8 Db5:8')
+# ---- with the mirror, the rectus forms: S1 against its inversion (Soprano III, Alto III, starting together),
+# S1 inverted on top (Soprano I), the inverted main theme in canon two beats later in Tenor I, S2's head and its
+# inversion (Alto II, Tenor III), and S1's head twice more (Alto II, Tenor III).
+theme('AII', M, 1, hd(S2, 15), 'S2 (head)')
+theme('SIII', M, 2, octv(S1, 1), 'S1')
+theme('AIII', M, 2, octv(S1I, -1), 'S1 inv. (with S1)')
+theme('TI', M, 3, octv(MTI, -1), 'main theme inv. (canon, 2 beats)')
+theme('SI', M, 4, S1I, 'S1 inv.')
+theme('TIII', M, 4, octv(hd(S2I, 15), -1), 'S2 inv. (head)')
+theme('AII', M + 2, 3, octv(hd(S1, 4), 1), 'S1 (head)')
+theme('TIII', M + 3, 3, hd(S1, 4), 'S1 (head)')
 
 # ================================================================ IV c. STRETTO FINALE over S1 in augmentation, and coda
 # S1 in augmentation (twice as slow) is the bass of the whole finale: its dominant C (b80.3-82.3) is the last
