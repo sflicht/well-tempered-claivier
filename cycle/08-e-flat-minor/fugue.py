@@ -200,11 +200,38 @@ theme('B1', 31, 1, 'Eb3:4 Bb3:4 Cb4:3 Bb3:1', 'head', 1); put('B1', 31, 4, 'Gb3:
 theme('T2', 31, 2, 'Bb3:4 Eb3:4 D3:3 Eb3:1', 'head inversus', 1); put('T2', 32, 1, 'Eb3:8 Ab3:8 Gb3:16 F3:12')
 theme('A2', 31, 3, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('A2', 32, 2, 'Ab4:16 Gb4:12 Bb4:4')
 theme('S2', 31, 4, 'Bb5:4 Eb5:4 D5:3 Eb5:1', 'head inversus', 1); put('S2', 32, 3, 'Eb5:24')
-theme('Bar', 32, 1, 'Ab3:4 Eb4:4 Fb4:3 Eb4:1', 'head (a-flat)', 1); put('Bar', 32, 4, 'Db4:4 Cb4:4 C4:12 Bb3:4')
+theme('Bar', 32, 1, 'Ab3:4 Eb4:4 Fb4:3 Eb4:1', 'head (a-flat)', 1); put('Bar', 32, 4, 'Db4:4 Cb4:4 C4:12')
 theme('T1', 32, 2, 'Eb4:4 Ab3:4 G3:3 Ab3:1', 'head inversus (a-flat)', 1); put('T1', 33, 1, 'Eb4:16 F4:16')
 theme('A1', 32, 3, 'Ab4:4 Eb5:4 Fb5:3 Eb5:1', 'head (a-flat)', 1); put('A1', 33, 2, 'Gb5:12')
 theme('S1', 34, 1, 'Bb5:4 F6:4 Gb6:3 F6:1', 'head on the dominant', 1); put('S1', 34, 4, 'F6:4 Eb6:4 D6:12')
 # b36: general pause (F-2nd's b46 silence)
+
+# ================================================================ ARRIVAL + STRETTO MAESTRALE (b37-42)
+# b37.1 is the only block chord in the fugue: nine voices, E-flat minor, wide open; every note begins a line.
+# Bass II then sings the subject at QUARTER speed (Eb | Bb | Cb.Bb | Ab Gb | F D | Eb) -- the bass route of the
+# second edition's arrival (Eb ... Cb ... Ab ... F ... Eb) made thematic -- under eleven more statements:
+# rectus, inversus, inversion at the 5th, augmentation x2 (inverted, and major), at one- to three-beat distances.
+theme('B2', 37, 1, aug(octv(SQ, -2), 4), 'S quarter speed (x4): the arrival bass', 6)
+put('B1', 37, 1, 'Bb2:8 Cb3:4 Ab2:4')
+put('Bar', 37, 1, 'Gb3:12 Ab3:4')
+put('T2', 37, 1, 'Bb3:16')
+put('T1', 37, 1, 'Eb4:12 Cb4:4 Bb3:8')
+put('A2', 37, 1, 'Gb4:16')
+put('A1', 37, 1, 'Bb4:8')
+put('S2', 37, 1, 'Eb5:4')
+put('S1', 37, 1, 'Gb6:8 F6:4')
+theme('S2', 37, 2, octv(S, 1), 'S rectus')                                        # Eb5
+theme('A1', 37, 3, octv(I, 1), 'I inversus')                                      # Eb5 Ab4 Gb4 Ab4 Bb4 Cb5 D5 F5 Eb5
+theme('S1', 37, 4, octv(I, 2), 'I inversus')                                      # Eb6 ...
+theme('Bar', 38, 1, aug(octv(I5, -1), 2), 'I5 inversus, augmentation x2', 3)       # Bb3 Eb3 D3 Eb3 F3 Gb3 Ab3 Cb4 Bb3
+theme('T2', 38, 4, octv(tr(S, 7, 4), -1), 'S rectus on B-flat (real answer form)')  # Bb3 F4 Gb4 F4 Eb4 Db4 C4 A3 Bb3
+theme('A2', 39, 1, S, 'S rectus')                                                 # Eb4
+theme('B1', 39, 2, aug(octv(SM, -1), 2), 'SM rectus, G-flat major, augmentation x2', 3)  # Gb3 Db4 Eb4 Db4 Cb4 Bb3 Ab3 F3 Gb3
+theme('T1', 40, 2, S, 'S rectus')                                                 # Eb4
+theme('T2', 40, 4, octv(I5, -1), 'I5 inversus')                                  # Bb3 Eb3 D3 Eb3 F3 Gb3 Ab3 Cb4 Bb3
+theme('S1', 41, 1, octv(tr(S, 7, 4), 1), 'S rectus on B-flat: the peak G-flat6 at b41.3')   # Bb5 F6 Gb6 ...
+theme('A1', 41, 3, tr(S, 7, 4), 'S rectus on B-flat')                               # Bb4 F5 Gb5 ...
+put('S1', 42, 2.5, 'Bb5:10')
 
 
 def build(nbars):

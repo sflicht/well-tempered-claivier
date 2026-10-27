@@ -9,7 +9,7 @@ a few early reflections, and a long decorrelated late reverb. Listen on
 headphones.
 
 Usage: render_spatial.py score.json --output out.mp3 [--temperament bach-lehman]
-       [--layout arc|ring|choir] [--rt60 3.2]
+       [--layout arc|ring|choir|antiphonal] [--rt60 3.2]
 """
 from __future__ import annotations
 
@@ -129,6 +129,11 @@ def late_ir(rt60, seed=7):
 def layout_positions(n, kind):
     if kind == 'ring':
         return [(-180 + 360 * (k + .5) / n, 6.0) for k in range(n)]
+    if kind == 'antiphonal':  # first half of the voices left, second half right (cori spezzati)
+        h = (n + 1) // 2
+        left = [(-80 + 55 * k / max(1, h - 1), 6.0 + (k % 2)) for k in range(h)]
+        right = [(25 + 55 * k / max(1, n - h - 1), 6.0 + (k % 2)) for k in range(n - h)]
+        return left + right
     if kind == 'choir':  # two rows facing the listener
         out = []
         for k in range(n):
@@ -151,7 +156,7 @@ def main():
     ap.add_argument('--soundfont', type=Path, default=Path('/usr/share/sounds/sf2/FluidR3_GM.sf2'))
     ap.add_argument('--temperament', default='bach-lehman', choices=sorted(rm.TEMPERAMENTS))
     ap.add_argument('--a4', type=float, default=440.0)
-    ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir'])
+    ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir', 'antiphonal'])
     ap.add_argument('--rt60', type=float, default=3.2)
     ap.add_argument('--wet', type=float, default=0.32)
     a = ap.parse_args()
