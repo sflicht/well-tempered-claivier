@@ -101,17 +101,17 @@ device of its own:
 24. **[in progress] Pair XI: concerto fuga à 12.** Brandenburg 2's finale as
     a twelve-voice fugal concerto, concertino of four against a ripieno of
     eight.
-26. **[in progress] Pair XII: the unfinished fugue, finished à 13.** The
+25. **[in progress] Pair XII: the unfinished fugue, finished à 13.** The
     Art of Fugue breaks off just after B-A-C-H joins the first two subjects;
     Nottebohm showed the three combine with the main theme. Fugue XII
     completes that quadruple fugue in F minor, in thirteen real voices.
-27. **[in progress] Pair XIII: fuga canonica à 14 on the Goldberg ground.**
+26. **[in progress] Pair XIII: fuga canonica à 14 on the Goldberg ground.**
     Canons at every interval, as in the Goldberg Variations, accumulating over
     the ground in F-sharp, ending in a quodlibet with the two folk songs of
     Variation 30.
-28. **[in progress] Pair XIV: Ricercar a 15 on the Royal Theme.** Frederick
+27. **[in progress] Pair XIV: Ricercar a 15 on the Royal Theme.** Frederick
     the Great asked Bach for six voices; this answers with fifteen, including
     the Musical Offering's canonic devices and a canon per tonos.
-25. **[in progress] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
+28. **[in progress] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
     BWV 869), strata moving at different rates, the convergence composed
     first, the cycle's subjects gathered at the end.
