@@ -404,7 +404,7 @@ put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'F#3:4 A#2:8',                                               # b77
     'D#3:4 B2:8',                                                # b78
     'G#2:12',                                                    # b79
-    'F#2:12',                                                    # b80
+    'A#2:12',                                                    # b80
 ])
 entry('Sog', 35, 'Subject (soggetto returns, tenor)')
 entry('IVdx', 33, 'Canon IV dux: subject')
@@ -531,6 +531,14 @@ put('IIIdx', 77, [shift(b, -7) for b in KRAUT2] + [
     'F#4:12',                                                  # b80
 ])
 entry('IIIdx', 77, 'Kraut und Ruben (second phrase), with it', n=4)
+
+# The close: canon III's pair and the soggetto carry the last bars; the voices that have fallen
+# silent re-enter on the final chord, so that it sounds in fourteen real parts.
+put('IIIco', 78, ['R:4 B3:8', 'B3:4 C#4:8', 'C#4:12'])
+for _v, _p in (('Ico', 'C#3'), ('Vco', 'A#3'), ('IVco', 'A#4'), ('IVdx', 'C#5'), ('VIco', 'C#6'),
+               ('Vdx', 'F#6'), ('IIdx', 'A#6')):
+    put(_v, 80, [f'{_p}:12'])
+put('IIco', 80, ['R:4 A#5:8'])
 
 # ---- fundamentum for the rest (plain ground; ornamented later where the texture asks for it)
 put('Fund', 33, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])

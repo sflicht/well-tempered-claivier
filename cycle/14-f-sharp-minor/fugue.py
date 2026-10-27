@@ -288,7 +288,7 @@ def build(path=None):
             'key': 'F#', 'mode': 'minor', 'meter': list(METER), 'bpm': 70,
             'tempo_text': 'Grave, alla breve', 'movement_number': 14, 'piece_type': 'fugue', 'edition': 'third',
             'motto': 'Quaerendo invenietis',
-            'score_layout': {'paper': 'a2', 'staff_size': 13, 'staff_distance': 8},
+            'score_layout': {'paper': 'a2', 'staff_size': 17, 'staff_distance': 9},
             'markers': [{'t': q(1), 'label': 'Exordium (Coro I)'},
                         {'t': q(22), 'label': 'Canon per augmentationem et contrario motu'},
                         {'t': q(43), 'label': 'Canon per tonos'},
