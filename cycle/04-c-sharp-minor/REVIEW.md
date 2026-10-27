@@ -40,11 +40,11 @@ reference data. They are not committed. The method is in the table above.
 - **The left-hand hemiola in 24–25.** Three groups of eight sixteenths span two bars of 3/4.
   This is a Baroque device and it is audible.
 - **The pre-dominant chain 30–31.** A Neapolitan sixth (`F#3 A3 D4`) leads to a French sixth
-  (`A C# D# F##`). It is rich and idiomatic. Keep it and fix its resolution (problems 7 and 13).
+  (`A C# D# F##`). It is rich and idiomatic. Keep it and fix its resolution (problems 7 and 14).
 - **The closing tetrachord in 37** (`G#5:3 F#5:3 E5:3 D#5:3` → C#5). It is M's tail in
   triple augmentation, and an elegant way to end.
 - **The idea of moving M into the tenor** (5, 10, 16, 29). Keep the idea and change its
-  execution (problem 15).
+  execution (problems 16 and 19).
 - The prelude is clean: 0 parallels and fully playable. Its length (about 71 s) is right.
 
 ### Fugue
@@ -140,9 +140,11 @@ and a fix.
 - **Fix:** After recomposing, add a beat-level parallel check and a doubling check to the
   workflow (better still, to `tools/critic.py`). Target Bach's levels: 0–1 accented parallels
   and about 12 % tripling. Specific fixes:
-  - Bar 36: give Br a line in contrary motion to the bass (`F#3:4 G#3:4 A3:4`).
+  - Bar 36: Br `F#3:4 G#3:4 F#3:4` with T `A3:2 C#4:2 C#4:2 B3:2 A3:2 B3:2`. Checked on a
+    scratch copy: this removes all three bar-36 parallels and adds none.
   - Bar 50: re-voice T so it stops shadowing S (`D4:4 B3:4 F#4:4`, a complete G#7 on beat 3
-    with the seventh passed to the alto's E4 at 51.1).
+    with the seventh passed to the alto's E4 at 51.1). Checked: it removes the 50.3 octaves and
+    adds no new error.
   - Bar 20: S `F#5:4 G#5:6 A5:2`, so the cadence on F#m arrives with A5 (then re-join bar 21
     by step).
   - Bar 54.2: keep a single B# (for example S `C#6:6 D#6:6`, A `A4:6 B#4:6`).

@@ -46,7 +46,13 @@ PERF = {0, 7}
 ROUGH = {1: 1.0, 2: .8, 5: .45, 6: .7, 10: .8, 11: 1.0}
 
 
+RES = 1   # grid units per sixteenth (set to 2 for 32nd-note material)
+
+
 def strength(t):
+    if t % RES:
+        return -1
+    t //= RES
     r = t % 16
     if r == 0:
         return 3
@@ -103,7 +109,7 @@ def pair_cost(A, B, detail=False):
         st = strength(t)
         # roughness / crossing / unison on every sixteenth slice
         if ic in DISS:
-            cost += ROUGH[ic] * (1.4 if st >= 2 else (1.0 if st == 1 else .6)) * .8
+            cost += ROUGH[ic] * (1.4 if st >= 2 else (1.0 if st == 1 else .6)) * .8 / RES
         if pa == pb:
             cost += 1.0
         side = pa > pb
@@ -124,7 +130,7 @@ def pair_cost(A, B, detail=False):
                 if pic in PERF and ic == pic:
                     same = (pa - ppa) * (pb - ppb) > 0
                     if same:
-                        c = 60 if (t % 2 == 0 and pt % 2 == 0) else 30
+                        c = 60 if (t % (2 * RES) == 0 and pt % (2 * RES) == 0) else 30
                         cost += c
                         if detail:
                             why.append((t, f'parallel {"8" if ic == 0 else "5"}'))
@@ -164,14 +170,14 @@ def pair_cost(A, B, detail=False):
             # X attacked now, Y held
             ny = Y[ky]
             _, ynext = nbrs(Y, ky)
-            susp = ynext is not None and (ynext[3] - ny[3]) in (-1, -2) and ynext[0] - t <= 8
+            susp = ynext is not None and (ynext[3] - ny[3]) in (-1, -2) and ynext[0] - t <= 8 * RES
             if passing(X, kx):
                 c = 3 if st >= 2 else 0.5
             elif susp and st >= 1:
                 c = 0.5
             elif leaves_by_step(X, kx):
                 c = 8 if st >= 2 else 4
-            elif ynext is not None and _step(ny[3], ynext[3]) and ynext[0] - t <= 4:
+            elif ynext is not None and _step(ny[3], ynext[3]) and ynext[0] - t <= 4 * RES:
                 c = 6  # held note moves away by step soon (retardation-like)
             else:
                 c = 30
