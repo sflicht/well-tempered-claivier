@@ -39,7 +39,7 @@ engraved PDFs are in each pair's `renders/` folder.
 | [XX](cycle/20-a-minor/) | A minor | à 21, *Fuga per un violino solo, moltiplicata*: a solo-violin fugue (after BWV 1003) whose implied voices split off one by one into twenty-one real strings, then fold back into the lone violin | a solo-violin preludio | first version |
 | [XXI](cycle/21-b-flat-major/) | B♭ major | à 22, *Capriccio sopra la lontananza* after BWV 992: voice n is partial n of B♭; the horns crack to the 7th partial where Bach writes G; it ends on the posthorn's harmonic series, partials 1–22, in just intonation | *Arioso*, the friends' coaxing | first version |
 | XXII | B♭ minor | à 23, *Ma fin est mon commencement*: a tombeau for Bach as a crab fugue, the second half the first backwards | a tombeau | in progress |
-| XXIII | B major | à 24, *ut re mi fa sol la per tutti i tuoni* after John Bull: each voice owns one of the 24 keys | after the English virginalists | in progress |
+| [XXIII](cycle/23-b-major/) | B major | à 24, *Fantasia ut re mi fa sol la per tutti i tuoni* after John Bull: each voice owns one of the 24 keys and sings the hexachord in it, in Bull's order of keys; a passage built to break in meantone (the A♭–E♭ wolf) | *A Ground upon Ut re mi fa sol la* | first version |
 | [XXIV](cycle/24-b-minor/) | B minor | à 25, twelve-tone subject (after BWV 869) and its twelve-tone mirror; the subject at quarter speed in the 25th voice while the subjects of Fugues V, VIII, II and IV arrive over it; Fugue I's ladder in the release | *per i 24 tuoni*: a walking-bass trio through all 24 keys in the WTC's order, two bars each, quoting the head of Bach's Book I fugue in each key | new |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:

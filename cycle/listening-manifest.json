@@ -389,6 +389,25 @@
    ]
   },
   {
+   "name": "Pair XXIII \u00b7 B major (new, twenty-four voices)",
+   "pieces": [
+    {
+     "id": "prelude-23",
+     "title": "Prelude XXIII \u00b7 A Ground upon Ut re mi fa sol la",
+     "score": "cycle/23-b-major/prelude.json",
+     "tag": "new",
+     "notes": "Divisions on a ground in the manner of the English virginalists (Byrd, Bull): the six-note hexachord ut-re-mi-fa-sol-la repeats as a ground while the figuration gets quicker, plainsong, quavers, the ground moved to the treble, semiquaver runs, and a short close."
+    },
+    {
+     "id": "fugue-23",
+     "title": "Fugue XXIII \u00b7 Fantasia ut re mi fa sol la per tutti i tuoni (24 voices)",
+     "score": "cycle/23-b-major/fugue.json",
+     "tag": "new",
+     "notes": "Around 1610 John Bull wrote a keyboard fantasia in which the hexachord ut-re-mi-fa-sol-la is carried as a long-note cantus through all twelve pitch levels, an experiment that only works if every key is usable, a century before Bach's Well-Tempered Clavier proved the point. Here twenty-four voices stand for the twenty-four keys: each voice sings the hexachord once, in long notes, in its own key, rising for a major key and falling for a minor one, in the order of keys of Bull's fantasia (checked in the 1899 Fitzwilliam Virginal Book edition), transposed to B.\n\nIn the exposition the B voice sings the hexachord in breves while the subject enters over each note in that note's key. Then a tour through eleven major/relative-minor pairs, as mirror canons, each pair carrying a subject entry in its key. At the summit the subject and its mirror sound in stretto over G-sharp-minor breves in the bass, arriving in B.\n\nTry this: switch the temperament to meantone and listen to bars 66-71 (A-flat major / F minor), which open on a bare A-flat\u2013E-flat fifth in six voices. In quarter-comma meantone that fifth is the 'wolf', 38 cents too wide, the reason keyboard players before Bach could not use every key; in Bach-Lehman it is a pure fifth."
+    }
+   ]
+  },
+  {
    "name": "Pair XXIV \u00b7 B minor (new, twenty-five voices)",
    "pieces": [
     {

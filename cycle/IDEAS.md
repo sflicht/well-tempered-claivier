@@ -139,7 +139,7 @@ device of its own:
 35. **[in progress] Pair XXII à 23: Ma fin est mon commencement.** A tombeau
     for Bach as a crab fugue: the second half is the first half backwards in
     every voice, ending on the lone note it began with.
-36. **[in progress] Pair XXIII à 24: ut re mi fa sol la per tutti i tuoni.**
+36. **[first version] Pair XXIII à 24: ut re mi fa sol la per tutti i tuoni.**
     After John Bull's hexachord fantasia, each voice owns one of the 24 keys;
     one passage is built to break in meantone, to show why the Well-Tempered
     Clavier was needed.
