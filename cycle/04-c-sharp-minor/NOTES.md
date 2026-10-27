@@ -34,6 +34,7 @@ planted in the prelude, bars 19-20. Both JSON scores carry this credit in `metad
 | bar where all 5 voices first sound | 33 | **10** | n/a | n/a |
 | onset slots with 3+ simultaneous attacks | 41.4 % | **35.8 %** (BWV 849: 22.4 %) | n/a | n/a |
 | bars | 56 | 50 | 38 | 38 |
+| bad_doublings (doubled 7th or leading tone on a beat) | — | **1** (was 4 before the follow-up) | — | — |
 
 How these numbers were taken:
 - **Keyboard.** 42 of the fugue's 50 unplayable onsets become playable if the held bass note
@@ -48,6 +49,13 @@ How these numbers were taken:
   - the E-major modal entry (7/9);
   - the in-key stretto voice at bar 30 (5/9);
   - the dominant form with B# for B (7/9).
+
+**Follow-up: doubled sevenths and leading tones.** Three free notes were re-voiced:
+- 12.3: S B4 instead of D#5, so the leading tone of E is no longer doubled;
+- 40.1: Br D#3 instead of a held C#3, so the seventh of D#ø7 is no longer doubled;
+- 43.3: Br A#2 instead of E3, so the seventh of F##o7 is no longer doubled.
+
+bad_doublings went from 4 to 1. The remaining one is at 44.3: the subject's long F# sounds in S and A at once in the octave canon over the pedal. It cannot be removed without changing the tested stretto. Parallels stay at 0, beat_parallels at 1, unresolved at 0.
 
 ## Form map: Fugue
 

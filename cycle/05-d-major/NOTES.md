@@ -201,3 +201,5 @@ The last five rows come from scratch scripts, not `critic.py`.
 - **Prelude hand gap.** The distance between the hands is still large: mean 22 semitones, against 16 in BWV 850's prelude. The RH now stays at or below D6, but the LH bass line sits low.
 - **Prelude tritones.** The climb (bb. 24–31) keeps v1's arpeggiated V7 figures, hence the tritone-leap count.
 - **Prelude return.** Bar 33 reuses bar 1's RH over the new bass.
+
+**Doublings (follow-up).** `bad_doublings` 9 → 1. I re-voiced free notes at bb. 16.4, 24.4, 38.3, 39.3, 42.3, 44.1, 45.2 and 49.2 to a root, a fifth, a rest or a passing note. The one that remains, b. 53.1, is the tonic-pedal D2 against the soprano's ×4 D6 over G–B♭–E (the minor-iv colour); the critic reads that chord as Eø7 with its seventh doubled. Other checks are unchanged: parallels 0, beat_parallels 0, unresolved 0, tripled 9.0%, `low_register_seconds` 9.
