@@ -5,7 +5,8 @@ from lab2 import *
 from s14_harmfit import fit, beat_notes
 AUG = ground(1, 0, 2); SOP = ground(5, 31)
 cands = []
-for form in ('rect', 'inv'):
+FORMS = sys.argv[1].split(",") if len(sys.argv) > 1 else ["rect", "inv"]
+for form in FORMS:
     for shift in range(-19, 13):
         for b in range(1, 13):
             for beat in (1, 2, 3):

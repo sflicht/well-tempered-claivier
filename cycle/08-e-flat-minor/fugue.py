@@ -157,7 +157,7 @@ put('S2', 16, 1, 'Db5:4 Gb5:8 Eb5:4 F5:4 Db5:4')
 theme('B1', 17, 3, octv(tr(SM, -5, -4), -1), 'SM rectus, D-flat major (answer)')   # Db3 Ab3 Bb3 Ab3 Gb3 F3 Eb3 C3 Db3
 CS1DB = 'Ab5:1 Gb5:1 F5:4 Db5:4 Bb5:2 Ab5:2 Gb5:4 F5:2 Eb5:2'          # countersubject in D-flat major
 put('S2', 17, 3.5, CS1DB)
-put('B2', 17, 3, 'F2:8 Gb2:8 Ab2:4 Db2:4')
+put('B2', 17, 3, 'Db2:4 Bb1:4 Gb2:8 Ab2:4 Db2:4')
 # b19-21: Baritone states the subject in augmentation (b-flat, real form) as the bass
 theme('Bar', 19, 1, aug(octv(tr(S, 7, 4), -2), 2), 'S augmentation x2 (b-flat)', 3)
 theme('A2', 19, 2, 'F4:2 Eb4:2 Db4:4 C4:4 Bb3:8 Gb4:4 F4:4 Eb4:8 Db4:4 C4:4', 'CS augmentation x2 (b-flat)', 3)   # the countersubject at half speed
@@ -276,8 +276,8 @@ put('A1', 14, 1.5, 'Bb4:6 Ab4:4 F4:4')                        # the first relay 
 put('Bar', 14, 4, 'Ab3:4 Gb3:4 R:4 Bb3:4 Eb4:2 Db4:2')
 
 # b16-18: tenor II and baritone join the G-flat / D-flat entries; Alto I continues after its subject
-put('T2', 16, 1, 'Bb3:4 Db4:4 Cb4:4 Eb4:4 Db4:8 Ab3:4 F3:4 Db4:8 Eb4:4 F4:4')
-put('Bar', 16, 1, 'Db3:4 Gb3:8 Ab3:8 Gb3:4 F3:4 Db3:4 Bb2:8 Gb3:4 F3:4')
+put('T2', 16, 1, 'Bb3:4 Db4:4 Cb4:4 Eb4:4 F4:4 Db4:4 Ab3:4 F3:4 Db4:8 Gb4:4 F4:4')
+put('Bar', 16, 1, 'Db3:8 Eb3:4 Ab3:8 Bb3:4 F3:4 Db3:4 Bb2:8 Eb3:4 Ab3:4')
 put('A1', 18, 1.5, 'Db5:6 Ab4:8')
 
 
