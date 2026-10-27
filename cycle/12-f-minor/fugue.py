@@ -88,7 +88,7 @@ def exact_inv(s, start):
     return ' '.join(out)
 
 
-S1I = mirror(S1)                                   # C4 F3 G3 Ab3 G3 F3 C4 (as an octave-free shape)
+S1I = mirror(S1)                                   # C6 F5 G5 Ab5 G5 F5 C6 (S1 mirrored about A-flat 4)
 MTI = mirror(MT)                                   # C5 F4 Ab4 C5 Db5 C5 Bb4 Ab4 G4 Ab4 Bb4 C5
 S3I = exact_inv(S3, 'E4')                          # E4 F4 D4 Eb4 Db4 C4 Db4 Eb4 Db4 C4  ("H-C-A-B")
 # S2's chromatic lower neighbour (C Bb A Bb) mirrors to an upper neighbour (F G Ab G): A-natural -> A-flat
@@ -200,8 +200,11 @@ theme('SII', P2 + 13, 2, octv(S1A, 1), 'S1 answer (with S2)')
 theme('TIII', P2 + 16, 3, S1, 'S1')
 # Alto II: S2's head imitated one beat after the running bass, two octaves higher.
 put('AII', P2 + 13, 3, 'Ab4:2 Bb4:2 Ab4:2 G4:2 F4:2 E4:2 F4:4')
+# Tenor I and Soprano II complete the cadence (V7 - i6, b41-42); then a bar's silence before B-A-C-H.
+seq('TI', P2 + 15, 'Eb4:12 D4:4', 'C4:16', 'E4:16', 'F4:12 Eb4:4', 'Db4:8 F4:8', 'E4:16', 'F4:8 R:8')
+seq('SII', P2 + 19, 'R:8 Bb4:8', 'G4:8 Bb4:8', 'Ab4:8 R:8')
 # Alto I: the slow inner line of the combination (6-5 and 7-6 motions), cadential 6/4 - V at b37.3-38.
-seq('AI', P2 + 13, 'R:12 C5:4', 'C5:12 Ab4:4', 'C5:8 Bb4:8', 'Ab4:16', 'G4:16', 'Ab4:8 Db5:8', 'Db5:16',
+seq('AI', P2 + 13, 'R:12 C5:4', 'C5:12 Ab4:4', 'C5:8 Bb4:8', 'Ab4:16', 'G4:16', 'Ab4:4 Bb4:12', 'Db5:16',
     'C5:16', 'C5:8 R:8')
 # Bass I after its S2: G, C (V), A-flat.
 put('BI', P2 + 19, 2, 'G2:12')
@@ -222,10 +225,42 @@ theme('TII', P3, 3, S3, 'S3 B-A-C-H')
 theme('AII', P3 + 1, 1, S3A, 'S3 answer (stretto, half note)')
 theme('SIII', P3 + 3, 3, octv(S3, 1), 'S3 B-A-C-H')
 theme('BII', P3 + 4, 2, octv(S3A, -2), 'S3 answer (stretto, 3 beats)')
+# Free voices of the B-A-C-H exposition (it enters alone after a bar's silence; voices gather around it).
+seq('BrII', P3 + 1, 'Ab2:8 Eb3:8', 'Bb2:8 F2:8', 'F2:8 C3:8', 'Ab2:4 R:12')
+seq('TIII', P3 + 1, 'F3:8 G3:8', 'F3:8 C4:8', 'C4:8 G3:8', 'D4:8 C4:8', 'B3:4 Bb3:8 C4:4', 'C4:16', 'C4:4 D4:8 C4:4')
+seq('AI', P3 + 2, 'F5:16', 'F5:8 G5:8', 'F5:8 R:8')
+seq('SI', P3 + 5, 'R:8 D6:4 C6:4', 'C6:16', 'C6:4 G5:12')
+seq('BrI', P3 + 4, 'R:8 C3:8', 'D3:12 F3:4', 'F3:4 G3:12', 'G3:4 D3:8 E3:4')
 # Bach's own triple combination (XIX b233-239), transposed: S2, then S1 five beats later, then B-A-C-H.
-theme('TI', P3 + 8, 2, octv(S2, -1), 'S2 (running)')
+theme('AI', P3 + 8, 2, S2, 'S2 (running)')
 theme('BI', P3 + 9, 3, octv(S1, -1), 'S1')
 theme('AIII', P3 + 10, 3, S3, 'S3 B-A-C-H')
+theme('SII', P3 + 9, 1, tr(S1, 7 + 12, 4 + 7), 'S1 answer (stretto, 2 beats)')
+# Free voices of the triple combination.
+# Soprano III: S2's head in its answer form (imitation at five beats); Alto II: a held A-flat.
+put('SIII', P3 + 9, 3, 'Eb5:2 F5:2 Eb5:2 D5:2 C5:2 B4:2 C5:4')
+seq('AII', P3 + 11, 'Ab4:16')
+put('BII', P3 + 8, 2, 'F2:4 Ab2:4 G2:4 F2:4 Eb2:4')
+seq('SI', P3 + 8, 'G5:4 Ab5:4 C6:8~', 'C6:16~', 'C6:8 G5:8', 'Ab5:16', 'C6:12 Db6:4', 'C6:16', 'C6:8 R:8')
+seq('TI', P3 + 9, 'Ab3:8 C4:8', 'C4:8 Bb3:8', 'Bb3:8 Ab3:8', 'F3:8 Bb3:8', 'G3:16', 'F3:8 R:8')
+seq('TII', P3 + 9, 'R:8 F3:8', 'E3:8 Eb3:8', 'Eb3:8 C3:8')
+
+# ---- approach to the summit (b57.3-60): a chromatic lament bass (passus duriusculus) F E E-flat D D-flat C:
+# i - V6 - i4/2 - vii-dim-4/3 of V - German sixth (D-flat F A-flat B: B-A-C-H's two neighbours of C) -
+# cadential 6/4 - V; then
+# a half bar of silence before the main theme enters.
+put('BII', P3 + 14, 3, 'F2:8')
+seq('BII', P3 + 15, 'E2:8 Eb2:8', 'D2:8 Db2:8', 'C2:8 R:8')
+put('BI', P3 + 14, 3, 'C3:8')
+seq('BI', P3 + 15, 'C3:8 Ab2:8', 'Ab2:16')
+put('TI', P3 + 14, 3, 'Ab3:8')
+seq('TI', P3 + 15, 'G3:8 C4:8', 'D4:8 R:8')
+put('AIII', P3 + 14, 3, 'F4:8')
+seq('AIII', P3 + 15, 'G4:8 F4:8', 'F4:16', 'F4:4 E4:4 R:8')
+put('AII', P3 + 14, 3, 'C5:8')
+seq('AII', P3 + 15, 'C5:16', 'B4:16', 'C5:8 R:8')
+put('SI', P3 + 14, 3, 'C6:8~')
+seq('SI', P3 + 15, 'C6:16', 'Ab5:16', 'Ab5:4 G5:4 R:8')
 
 # ================================================================ IV. THE QUADRUPLE COMBINATION (composed first)
 # Nottebohm's combination, found here by search over all placements of the main theme against Bach's own
@@ -295,22 +330,78 @@ theme('SIII', F, 3, octv(S3, 1), 'S3 B-A-C-H')
 theme('SI', F + 3, 3, octv(MT, 1), 'main theme')
 theme('AI', F + 4, 3, MT, 'main theme (canon at the octave, 1 bar)')
 theme('TII', F + 7, 1, S3, 'S3 B-A-C-H')
+# S2's head, rectus, against its own mirror (Tenor I) -- both from A-flat; S1 inverted at normal speed against its
+# own augmentation in the bass (per augmentationem et contrarium motum, as in Contrapunctus VII).
+put('AII', F, 3, 'Ab4:2 Bb4:2 Ab4:2 G4:2 F4:2 E4:2 F4:2 C4:2 F4:2 G4:2 Ab4:2 G4:2 F4:2 Ab4:2 G4:2')
+theme('BrI', F + 2, 3, W.transpose(S1I, -24, -14), 'S1 inv.')
+# Free voices of the finale.
+seq('SII', F, 'R:8 F5:8', 'F5:8 Ab5:8', 'Ab5:8 G5:8', 'Bb5:8 R:8')
+seq('BrII', F, 'R:8 F3:8', 'F3:8 G3:8', 'Ab3:4 R:12')
+# Tenor II: B-A-C-H in diminution (quarters) a bar after Soprano III's B-A-C-H in half notes, at the same pitch
+# (canon per diminutionem), then G.
+put('TII', F + 1, 3, 'Db4:4 C4:4 Eb4:4 D4:4 G4:16')
+# Alto II: S2's mirror head again, taking over from Tenor I as its inverted S2 ends.
+put('AII', F + 5, 1, 'Ab4:2 G4:2 Ab4:2 Bb4:2 C5:2 Db5:2 C5:2 F5:2 C5:2 Bb4:2 Ab4:2 Bb4:2 C5:2 Ab4:2 Bb4:2')
+# S1 at a third speed: in diminution (answer form) in Soprano III, against its augmentation (bass) and its
+# inversion at normal speed (Baritone I).  Baritone II: B-A-C-H's answer head over the dominant pedal; its
+# A-natural (the H) sinks to A-flat as the tonic arrives.
+theme('SIII', F + 5, 2, W.scale_rhythm(tr(S1, 7 + 12, 4 + 7), Fr(1, 2)), 'S1 dim. (answer)', 2)
+put('BrII', F + 7, 3, 'Ab3:8 G3:8 Bb3:8 A3:8 Ab3:8')
 # Coda over the tonic pedal.  Soprano I signs the name at its own pitch, B-flat A C B-natural: iv - V7/iv - i -
 # vii-dim-7/V - V - and its A becomes the Picardy third of the last chord.
 seq('SI', F + 10, 'Bb5:8 A5:8', 'C6:8 B5:8', 'C6:16', 'A5:16')
+# The other voices of the coda (V7 over the pedal - V7/iv - i - vii-dim-7/V - V7 - I).  B-A-C-H's own seventh-
+# resolution: Tenor II's B-flat falls to A with the signature's last note.
+put('SII', F + 9, 3, 'Ab5:8')
+seq('SII', F + 10, 'G5:8 F5:8', 'F5:16', 'E5:16', 'F5:16')
+put('SIII', F + 9, 3, 'C5:8')
+seq('SIII', F + 10, 'C5:8 Eb5:8~', 'Eb5:8 D5:8', 'C5:16', 'C5:16')
+put('AI', F + 9, 3, 'C4:8')
+seq('AI', F + 10, 'C4:16', 'C4:8 F4:8', 'G4:16', 'C4:16')
+seq('TII', F + 11, 'Ab4:16', 'Bb4:16', 'A4:16')
+seq('BrII', F + 10, 'R:8 F3:8', 'F3:8 Ab3:8', 'G3:16', 'F3:16')
+put('BI', F + 9, 3, 'C3:8')
+seq('BI', F + 10, 'C3:16', 'C3:8 Ab2:8', 'C3:16', 'C3:16')
 
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
+    q = lambda bar, beat=1: (bar - 1) * 4 + (beat - 1)
     meta = {'title': 'The Well-Tempered clAIvier',
             'subtitle': 'Fugue XII in F minor, thirteen voices: Fuga a 4 soggetti, compiuta',
             'composer': 'Claude / Sam, completing J. S. Bach (BWV 1080) after G. Nottebohm',
             'instrument': 'Thirteen voices (open score)',
-            'key': 'F', 'mode': 'minor', 'meter': list(METER), 'bpm': 80,
+            'key': 'F', 'mode': 'minor', 'meter': list(METER), 'bpm': 66,
             'tempo_text': 'Grave e sostenuto', 'movement_number': 12, 'piece_type': 'fugue', 'edition': 'third',
             'score_layout': {'paper': 'a2', 'staff_size': 13, 'staff_distance': 8},
-            'tempo_map': []}
+            'markers': [{'t': q(P1), 'label': 'I. S1, stile antico'}, {'t': q(P2, 2), 'label': 'II. S2'},
+                        {'t': q(P3, 3), 'label': 'III. B-A-C-H'}, {'t': q(Q), 'label': 'IV. Main theme: the four subjects'},
+                        {'t': q(M), 'label': 'Contrapunctus inversus'}, {'t': q(F, 3), 'label': 'Stretto finale'},
+                        {'t': q(F + 9, 3), 'label': 'Coda'}],
+            # S1 Grave; S2 a little faster; B-A-C-H; broadening through the lament into a half bar of silence;
+            # the main theme broad; the mirror and finale moving; the dominant pedal and coda broaden to the end.
+            'tempo_map': [[q(P1), 66], [q(P2), 76], [q(P3), 72], [q(P3 + 14), 72], [q(P3 + 17), 58, 'ramp'],
+                          [q(Q), 62], [q(Q + 2), 68, 'ramp'], [q(M), 68], [q(F), 70], [q(F + 7, 3), 70],
+                          [q(F + 9, 3), 58, 'ramp'], [q(F + 13), 46, 'ramp'], [q(F + 14), 46]]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 62) for i in range(len(NAMES))]
-    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=S1)
+    dyn = {P1: -10, P1 + 6: -7, P1 + 12: -4, P2: -6, P2 + 6: -4, P2 + 13: 0, P3: -6, P3 + 4: -2, P3 + 8: 2,
+           P3 + 14: 6, Q - 1: 8, Q: 0, Q + 2: 4, Q + 3: 8, M: 6, F: 8, F + 3: 12, F + 7: 14, F + 9: 8, F + 12: 4}
+
+    def dynamics(b):
+        v = 0
+        for k in sorted(dyn):
+            if b + 1 >= k:
+                v = dyn[k]
+        return v
+    data = W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=S1, dynamics=dynamics)
+    # print each declared entry's label at its first note (the renderer shows event labels at entrances)
+    for vn, b0, off, lab, n in ENTRIES:
+        t0 = float((b0 - 1) * 4 + off)
+        for e in data['voices'][LONG.index(vn)]['events']:
+            if abs(e['t'] - t0) < 1e-6:
+                e['label'] = lab
+                break
+    (HERE / 'fugue.json').write_text(__import__('json').dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

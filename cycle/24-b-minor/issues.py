@@ -40,6 +40,7 @@ for t in range(0, S.end, S.beat):
 s = R['summary']
 print(f"TOTAL parallels {s['parallels_error']}/{s['parallels_weak']}  beatpar {s['beat_parallels']}  unresolved {len(un)}  "
       f"bad_doublings {len(bad)}  low {s['low_register_seconds']}  stepwise {s['stepwise_pct']}  moving {s['mean_moving_voices']}")
+print('MOVING', ' '.join(f"{r['bar']}:{r['moving']}" for r in R['texture'] if lo <= r['bar'] <= hi))
 if a.quiet:
     sys.exit()
 for x in R['parallels']:

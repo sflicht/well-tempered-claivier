@@ -189,6 +189,10 @@ put('S1', 22, 3, 'D5:6 C#5:4 B4:2 D5:6 E5:4 C#5:2 D5:6 C#5:6 B4:12')
 
 # second pass: Coro I's tenor and baritone join the first tutti
 put('Bar1', 22, 3, 'F#3:12 A3:6')
+# third pass: Coro I's tenor sings through the chorale line, its alto returns for the cadence, Coro II's bass touches E
+put('T1', 20, 1, 'B3:12 G3:6 C4:6 E4:12 R:6 E4:12 R:6 B3:12 R:6 G4:6 D4:6 E4:6 D4:6')
+put('A1', 23, 1, 'A4:6 B4:12 G4:6')
+put('B2', 21, 4, 'E2:6')
 
 
 # ================================================================ V. RECOGNITION (b26-29): chorale line 3 (= line 1) over its own diminutions
@@ -204,6 +208,10 @@ theme('S1', 28, 4, tr(IG, 7, 4), 'Coro I: inversion in D major, soprano')
 put('A1', 28, 1, 'G4:2 A4:2 B4:2 B4:6 G4:6 F#4:6 F#4:4 G4:2 A4:6 G4:6 A4:6 F#4:6')
 put('T2', 28, 1, 'B3:6 D4:6 B3:6 D4:18 B3:6 A3:6 C#4:6 F#4:6')
 put('Bar2', 28, 1, 'G3:6 F#3:6 E3:6 F#3:6')
+# third pass: a Coro I bass under the recognition (E - B - G - E - G over the tenths), Coro I's baritone and tenor join
+put('B1', 26, 1, 'E2:6 B1:18 G2:6 E2:6 G2:12 G2:6')
+put('Bar1', 26, 4, 'D3:12 C3:6 D3:6')
+put('T1', 28, 1, 'D4:6 B3:6 E4:6 A3:6 A3:12 R:6 D4:6')
 
 # ================================================================ VI. CHORALE LINE 4 (b30-37) over the subject at half speed
 # Coro II sings the G-major subject; one beat later Coro I's bass sings it at half speed (a prolation stretto),
@@ -226,6 +234,11 @@ put('B2', 35, 1, 'A2:6 B2:6 A2:6 G2:6 E2:6 A2:6 B2:12 E2:6')
 put('Bar2', 32, 1, 'G3:6 A3:6 B3:6 G3:6 F#3:6 A3:6')
 put('S2', 33, 1, 'A4:6 A4:4 B4:2 G4:6 B4:6 R:6 C5:6 D5:6')
 put('A2', 35, 1, 'C4:6 G4:6 E4:6 B3:6 E4:18')
+# third pass: Coro I's alto and tenor fill the augmentation passage; Coro II's baritone and soprano join the cadence
+put('A1', 32, 1, 'F#4:6 D5:6 B4:12')
+put('T1', 32, 1, 'D4:12 R:12 A3:6 C4:6 R:12 C4:6 R:6 G3:6 G#3:6')
+put('Bar2', 35, 1, 'R:6 G3:6 A3:6 D4:6')
+put('S2', 35, 1, 'A4:6')
 
 
 # ================================================================ VII. CHORALE LINE 5 (b37-43): B minor, the choirs closer
@@ -244,15 +257,20 @@ put('CH', 38, 1, CH5)
 theme('T1', 38, 1, octv('B4:6 B4:4 A#4:2 B4:2 C#5:2 D5:2 F#5:4 E5:2 F#5:4 D5:2 G5:6 F#5:2 E5:2 D5:2 C#5:2 B4:2 A4:2', -1),
       'Coro I: answer (B minor), tenor (tail in natural minor, against the chorale A)')
 theme('Bar2', 39, 3, octv(tr(INV, 7, 4), -2), 'Coro II: inverted answer (B minor), baritone as the bass')
-put('B2', 38, 1, 'B2:6 D3:4 C#3:2 B2:6 D3:6 B2:6 G2:6')
-put('S1', 38, 1, 'F#5:6 F#5:4 E5:2 D5:6 D5:4 C#5:2 D5:6 E5:6 F#5:6 E5:6 D5:6 D5:4 E5:2 D5:6 C#5:6 B4:6 B4:6 A4:12 B4:6 B4:6')
-put('A2', 38, 1, 'D4:4 C#4:2 F#4:6 A4:4 G4:2 B4:18 F#4:12')
-put('A1', 40, 1, 'F#4:6 F#4:4 G4:2 G4:6 E4:18')
+put('B2', 38, 1, 'B2:6 F#2:6 B2:6 D3:6 B2:6 G2:6')
+put('S1', 38, 1, 'F#5:6 F#5:4 E5:2 D5:6 D5:4 C#5:2 D5:12 F#5:6 E5:6 D5:6 D5:4 E5:2 D5:6 C#5:6 B4:6 B4:6 A4:12 B4:6 B4:6')
+put('A2', 38, 1, 'B4:2 F#4:2 B4:2 D5:4 C#5:2 B4:6 A4:6~ A4:4 B4:2 E5:4 D5:2 A4:6 C#5:6')   # Coro II alto: the countersubject (B minor, natural-minor tail) against Coro I's answer
+put('A1', 40, 1, 'F#4:6 F#4:4 G4:2 G4:6 E4:6 E4:12')
 put('T2', 40, 1, 'B3:6 B3:4 A#3:2 B3:6 C#4:6 D4:6 B3:6 D4:6')
 put('T1', 40, 1, 'D4:6 D4:4 C#4:2 D4:6 F#4:6 G4:12 F#4:6 D4:6 F#4:6 G4:6')
 put('Bar2', 41, 3, 'B2:6 D3:6 B2:6 G2:6')
-put('Bar1', 38, 1, 'F#3:30 E3:6')                                  # held inner dominant under the B-minor answer
-put('A2', 40, 1, 'B4:18')
+# third pass: a B pedal in Coro I's bass under the answer; Coro I's baritone and alto, Coro II's alto and bass join
+put('B1', 38, 1, 'B1:24 B1:12')
+put('Bar1', 38, 1, 'D3:12 F#3:12 D3:6 B2:6')
+put('A1', 38, 2, 'F#4:12 R:6 F#4:6 B4:6')
+put('A2', 40, 1, 'B4:6 R:6 B4:6')
+put('B2', 40, 1, 'B1:6')
+put('B2', 41, 3, 'B1:12')
 # the gap (b42.3-43.1): Coro I calls with the subject's head, Coro II answers with the inversion's head
 put('A1', 42, 3, 'E4:6 E4:4 D#4:2 E4:6')
 put('T1', 42, 3, 'G4:6 F#4:6 G4:6')
@@ -264,7 +282,7 @@ put('B1', 42, 3, 'E3:6 B2:6 E3:6')
 RN = 'E4:6 E4:4 D#4:2 E4:2 F#4:2 G4:2 B4:4 A4:2 B4:4 G4:2 C5:6 B4:2 A4:2 G4:2 F#4:2 E4:2 D4:2'   # natural-minor tail
 put('CH', 44, 1, CH6)
 theme('B2', 43, 2, octv(RN, -2), 'Coro II: subject in the bass (natural-minor tail, against the chorale D)')
-put('B2', 45, 2, 'G2:12 B2:6 E2:6 C3:6 A2:6 E2:6 C3:6 A2:6')
+put('B2', 45, 2, 'G2:24 C3:6 A2:6 E2:6 C3:6 A2:6')
 theme('A1', 45, 2, octv(IG, -1), 'Coro I: inversion in G major, alto')
 # half cadence: the subject and its inversion together (a mirror pair) in B minor over a dominant pedal
 theme('S1', 47, 3, RA[:RA.index('C#5:2 B4:2 A#4:2')].strip(), 'Coro I: answer (B minor), with its mirror below', 2)
@@ -274,53 +292,53 @@ put('Bar1', 43, 2, 'B3:6 B3:4 A3:2 G3:6 D4:12 G3:12 A3:6 B3:6')
 put('T2', 43, 2, 'E4:6 E4:4 F#4:2 G4:6 F#4:6 G4:6 E4:12 A4:6 G4:6 B4:4 A4:2 G4:6 G4:4 F#4:2 E4:6 A4:6 G4:12 A4:6')
 put('S2', 44, 1, 'B4:6 D5:6 C5:6 E5:6 F#5:6 D5:6 D5:4 C5:2 B4:6 B4:6 E5:6 D5:6 B4:6 E5:6 C5:6')
 put('Bar2', 47, 3, 'F#3:6 E3:6 D3:6 E3:6 D3:6 E3:6 F#3:6')
-put('Bar2', 45, 2, 'D3:12 D3:6 E3:12')
+put('Bar2', 45, 2, 'G3:6 R:12 G3:6')
+# third pass: Coro I's baritone's second entry, the subject in D major, three beats after Coro I's alto's inversion
+theme('Bar1', 45, 3, 'D3:6 D3:4 C#3:2 D3:2 E3:2 F#3:2 A3:4 G3:2 A3:4 F#3:2 B3:6 A3:2 G3:2 F#3:2 E3:2 D3:2 C#3:2', 'Coro I: subject in D major, baritone (its second entry)', 2)
 put('A1', 44, 1, 'D5:6 B4:6 G4:12')                               # Coro I alto exchanges D-B with Coro II's soprano
 
-# ================================================================ IX. CHORALE LINE 7 (b49-55): the final stretto
-CH7F = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:6 A5:6 G5:60'     # last line; the final G held to the end
+# ================================================================ IX. CHORALE LINE 7 (b49-56): the final stretto, both choirs
+# Coro II's bass sings the G-major inversion (b49.1); Coro I's soprano the inversion under the chorale (b50.1);
+# Coro II's baritone the subject (b51.3), with Coro I's tenor singing the countersubject against it, as in the
+# exposition.  Coda: Coro I's baritone takes up the subject's head as Coro II's alto sings the inversion's head (b53.3);
+# then the eleven lines reach the closing chord one or two at a time, each by step.
+CH7F = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:6 A5:6 G5:84'     # last line; its final G arrives first (b53.3)
 put('CH', 50, 1, CH7F)
 theme('B2', 49, 1, octv(IG, -2), 'Coro II: inversion in G major, bass (final stretto 1)')
-theme('S2', 50, 1, INV, 'Coro II: inversion (E minor), soprano, under the chorale (final stretto 2)')
-theme('T1', 51, 3, octv(R, -1), 'Coro I: subject (E minor), tenor: the final cadence (final stretto 3)')
-put('B1', 51, 1, 'E2:6 B2:6 C3:6 B2:6 E2:6 G2:6 E3:6 A2:6 G2:6 B2:6 E2:60')
+theme('S1', 50, 1, INV, 'Coro I: inversion (E minor), soprano, under the chorale (final stretto 2)')
+theme('Bar2', 51, 3, octv(R, -1), 'Coro II: subject (E minor), baritone, under the chorale: the final cadence (final stretto 3)')
+put('T1', 51, 3, cs('B3', 0, -1))                                   # Coro I tenor: the countersubject against it
 
-put('S1', 49, 2, 'C5:6 B4:6 D5:6 E5:18 G5:6 E5:6 F#5:6 E5:6 F#5:6 G5:6 G5:4 F#5:2 E5:6 D5:6 E5:6 B4:6')
-put('A2', 49, 2, 'F#4:6 G4:6 D4:6 G4:6 E4:6 G4:12 B3:12 G3:6 B3:12 E4:12 F#4:6 E4:6 F#4:6 G4:6')
+# b49: the approach
+put('S1', 49, 2, 'C5:6 B4:6 D5:6')
+put('A2', 49, 2, 'F#4:6 G4:6 D4:6')
+put('Bar2', 49, 2, 'A3:6 G3:6 B3:6 B3:6 R:24 F#3:6')
+put('T1', 49, 1, 'A3:6 D4:18 G3:6 R:6 B3:6 R:6 B3:12')
+# b50-53: every line moves in every bar; the free voices answer each other between the two choirs
+put('S2', 50, 1, 'G5:6 A5:6 B5:6 G5:12 F#5:18 G5:18 A5:6 A5:6')
+put('A1', 50, 1, 'E5:6 A4:6 D5:6 E5:6 E5:6 R:24 B4:12 D5:6')
+put('A2', 50, 1, 'G4:6 R:12 G4:6 R:6 B4:6 R:6 B4:6 R:6 G4:12 R:6 B4:12')
+put('T2', 50, 1, 'E4:6 C4:6 G3:18 R:6 A3:6 B3:12 R:12 D4:6 F#3:6 B3:12 A3:6 B3:72')
+put('Bar1', 50, 1, 'E3:6 R:18 B2:6 R:12 F#3:6 R:6 G3:6 R:6 D3:6')
+put('B2', 51, 1, 'E3:6 R:18 G2:6')
+put('B1', 51, 1, 'E2:6 B2:6 C3:6 B2:6 E2:6 G2:6 E3:6 A2:6 B2:12 E2:84')
+put('S1', 52, 1, 'E5:18 F#5:12')
 
-put('Bar2', 49, 2, 'A3:6 G3:6 B3:12 A3:6 B3:6 G3:12 F#3:6 A3:6')
-put('S2', 52, 1, 'G4:4 A4:2 B4:6 G4:6')
-put('A1', 52, 1, 'E5:6 D5:4 C5:2 B4:6 D5:6 G4:6')
-
-# second pass: more lines in the final tutti
-put('T2', 50, 1, 'E4:6 C4:6 D4:6 D4:4 C4:2')
-put('Bar1', 50, 1, 'E3:6 A2:6')
-put('A1', 51, 1, 'B4:12')
-# third pass: the remaining voices join (b49-54), so that nine or ten lines move in every bar of the last chorale line
-put('T1', 49, 1, 'A3:6 D4:18 G3:6 A3:6 D3:6')                    # Coro I tenor, before its last entry at b51.3
-put('A1', 50, 4, 'E5:6')
-put('Bar1', 51, 1, 'B2:12')
-put('Bar1', 52, 1, 'B2:12')
-put('Bar1', 53, 1, 'B2:30')
-put('T2', 52, 1, 'E4:6 G3:12 A3:6')
-put('T2', 53, 1, 'E3:6 B3:6 G3:24')
-put('S2', 53, 1, 'B4:12')
-put('S2', 54, 4, 'E5:6')
-put('Bar2', 54, 4, 'A3:6')
-
-# coda (b53-55): the tenor's last note begins the subject's head again, sung against the inversion's head (the mirror):
-# question and answer at once, over the tonic pedal; then iv - i with all eleven voices.
-theme('T1', 53, 3, 'E3:6 E3:4 D#3:2 E3:2 F#3:2 G3:2 B3:4 A3:2', 'Coda: subject head (elided with the final cadence)', 1)
-theme('S1', 53, 3, 'B4:6 B4:4 C5:2 B4:2 A4:2 G4:2 E4:4 F#4:2', 'Coda: inversion head, the mirror of the tenor', 1)
-put('T1', 54, 3, 'G3:6 E3:6 G3:24')
-put('S1', 54, 3, 'G4:6 A4:6 G4:24')
-put('A1', 53, 3, 'E5:36 B4:24')
-put('A2', 53, 4, 'G4:18 E4:36')
-put('S2', 55, 1, 'E5:24')
-put('T2', 54, 3, 'B3:6 C4:6 E4:24')
-put('Bar2', 55, 1, 'B3:24')
-put('Bar1', 54, 4, 'C3:6 B2:24')
-put('B2', 54, 4, 'A2:6 E3:24')
+# coda (b53.3-56): the mirror of the heads over the tonic pedal, then the arrivals.  Each line reaches its note of the
+# closing chord by step on its own beat: the chorale and Coro II's baritone at b53.3 (the cadence), Coro I's baritone
+# and Coro II's tenor at b54.1, Coro I's tenor and Coro II's alto at b54.3, Coro II's bass at b54.4, Coro I's alto at
+# b55.1, Coro II's soprano at b55.2, Coro I's soprano at b55.3.  (Coro I's bass takes the tonic by the cadential leap
+# at b53.3 and holds it as a pedal.)
+theme('T1', 53, 3, 'E4:6 E4:4 D#4:2 E4:2 F#4:2 G4:2 B4:4 A4:2', 'Coda: subject head, Coro I tenor (elided with its countersubject)', 1)
+theme('A2', 53, 3, 'B4:6 B4:4 C5:2 B4:2 A4:2 G4:2 E4:4 F#4:2', 'Coda: inversion head, Coro II alto, the mirror', 1)
+put('Bar2', 53, 3, 'E3:84')
+put('T1', 54, 3, 'G4:60')
+put('A2', 54, 3, 'E4:60')
+put('Bar1', 53, 3, 'G3:6 F#3:6 G3:72')
+put('B2', 53, 3, 'G2:12 R:16 C3:2 B2:54')
+put('A1', 53, 3, 'G4:6 R:28 C5:2 B4:48')
+put('S2', 55, 1, 'R:4 C5:2 B4:42')
+put('S1', 53, 3, 'E5:6 R:40 F#5:2 E5:36')
 
 
 def build(nbars):

@@ -19,58 +19,68 @@ I_TAIL4 = aug("D#5:2 D5:2 C#5:2 C5:2", 4)   # the last four notes of I, x4
 def release(sc, b0=52):
     P = sc.put
     r = lambda k: b0 + k
-    # ---- bar 52: B major; the arrival's lines let go at different moments
+    # ---- the cantus's B becomes a pedal: one note, ten bars
+    for k in range(9):
+        P('B5', r(k), 1, "B1:16~")
+    P('B5', r(9), 1, "B1:16")
+    # ---- bar 52: B major; the arrival's lines let go one after another, eight keep going
     sc.theme('T3', r(0), 1, V_B, 'Fugue V guest (in B major)', 'V', semis=-3)
-    P('S1', r(0), 1, "B5:12 D#6:4"); P('S1', r(1), 1, "D#6:8 G#5:4 C#6:2 B5:2")
-    P('S2', r(0), 1, "D#6:8")
+    P('S1', r(0), 1, "B5:16"); P('S1', r(1), 1, "C#6:4 B5:8 C#6:2 B5:2")
+    P('S2', r(0), 1, "D#6:16~"); P('S2', r(1), 1, "D#6:8 E6:4 F#6:4"); P('S2', r(2), 1, "F#6:4 D#6:8 G#5:4")
+    P('S2', r(3), 1, "A#5:2 G#5:6 F#5:8")
     P('S3', r(0), 1, "D#5:4")
     P('S4', r(0), 1, "B4:4")
-    P('S5', r(0), 1, "B5:4")
-    P('A1', r(0), 1, "D#4:8")
+    P('S5', r(0), 1, "B5:8")
+    P('A1', r(0), 1, "D#4:8 E4:4 F#4:4"); P('A1', r(1), 1, "F#4:8 G#4:4 F#4:4"); P('A1', r(2), 1, "D#4:4")
     P('A2', r(0), 1, "F#4:12")
     P('A3', r(0), 1, "D#5:8")
     P('A4', r(0), 1, "B4:4")
-    P('A5', r(0), 1, "B3:8")
+    P('A5', r(0), 1, "B3:8 C#4:4 D#4:4"); P('A5', r(1), 1, "D#4:12 C#4:4")
     P('T1', r(0), 1, "B3:12")
     P('T2', r(0), 1, "F#3:4")
     P('T4', r(0), 1, "D#4:4")
     P('Br1', r(0), 1, "B3:4")
-    P('Br2', r(0), 1, "F#3:16"); P('Br2', r(1), 1, "F#3:8")
+    P('Br2', r(0), 1, "F#3:16~"); P('Br2', r(1), 1, "F#3:12")
     P('Br3', r(0), 1, "D#3:4")
     P('Br4', r(0), 1, "F#3:4")
     P('Br5', r(0), 1, "B3:8")
     P('B1', r(0), 1, "D#3:8 B2:8"); P('B1', r(1), 1, "B2:8 G#2:4 A#2:4")
     P('B3', r(0), 1, "B3:4")
-    for k in range(6):
-        P('B5', r(k), 1, "B1:16")                    # the cantus's B, re-bowed each bar
-    P('B5', r(6), 1, "B1:32")
     # ---- bars 53-55: Fugue I, rung 1 (Br2 leads, T5 follows an octave higher, 3 eighths later)
     sc.theme('Br2', r(1), 4.5, octv(I_B, -1), 'Fugue I guest (in B major), canon leader', 'FI', semis=-13)
     sc.theme('T5', r(2), 2, I_B, 'Fugue I guest, canon at the octave (its rung R3)', 'FI', semis=-1)
-    P('S1', r(2), 1, "B5:8 D#6:8"); P('S1', r(3), 1, "C#6:4 B5:4 D#6:4 C#6:4")
-    P('B1', r(2), 1, "B2:12 G#2:4"); P('B1', r(3), 1, "A#2:4 C#3:4 B2:4 A#2:4")
-    # ---- bars 55-58: rung 2, an octave higher (A2 leads, S1 follows)
+    P('S4', r(2), 1, "R:8 F#5:6 E5:2"); P('S4', r(3), 1, "E5:8 D#5:4 C#5:4")
+    P('B1', r(2), 1, "B2:12 G#2:4"); P('B1', r(3), 1, "F#2:4 C#3:4 D#3:4 A#2:4")
+    P('Br4', r(2), 1, "D#3:12 E3:4"); P('Br4', r(3), 1, "E3:8 F#3:8")
+    P('Br4', r(4), 1, "D#3:12 E3:4"); P('Br4', r(5), 1, "E3:8 D#3:8")
+    # ---- bars 55-58: rung 2, an octave higher (A2 leads, S1 follows); Br2 and T5 walk down
     sc.theme('A2', r(3), 4.5, I_B, 'Fugue I guest, second rung', 'FI', semis=-1)
     sc.theme('S1', r(4), 2, octv(I_B, 1), 'Fugue I guest, canon at the octave above', 'FI', semis=11)
-    P('B1', r(4), 1, "B2:8 A2:4 G#2:4"); P('B1', r(5), 1, "F#2:4 E2:4 D#2:4 A#2:4")
-    # ---- bars 58-59: the mirror wedge over B and E
+    P('Br2', r(4), 1, "E4:8 D#4:8"); P('Br2', r(5), 1, "C#4:10 B3:6")
+    P('T5', r(4), 2, "D#5:4 C#5:4 B4:4"); P('T5', r(5), 1, "A#4:4 G#4:4 F#4:8")
+    P('B1', r(4), 1, "B2:8 A2:4 G#2:4"); P('B1', r(5), 1, "A#2:4 E2:4 F#2:8")
+    # ---- bars 58-59: the mirror wedge over B and E: Em(maj7) - E7 - A - French sixth
     P('T1', r(6), 1, S_TAIL4); P('A3', r(6), 1, I_TAIL4)
-    P('Br2', r(6), 1, "E3:32")
+    P('Br2', r(6), 1, "E3:16~"); P('Br2', r(7), 1, "E3:16")
+    P('A2', r(5), 4.5, "E5:2~"); P('A2', r(6), 1, "E5:16~"); P('A2', r(7), 1, "E5:16~")
     P('S1', r(6), 2, "E6:20 F#6:8~")
-    # ---- bars 60-61: the final chord gathers every voice (beats 1, 3, then 5)
-    final = {'S1': 'F#6', 'T1': 'B4', 'A3': 'B4', 'Br2': 'D#3', 'B5': 'B1', 'B1': 'B2', 'B2': 'F#2',
-             'S3': 'B5', 'A2': 'F#4', 'T3': 'D#4', 'Br4': 'B2', 'B3': 'D#2', 'S5': 'D#5',
-             'S2': 'D#6', 'S4': 'F#5', 'A1': 'B4', 'A4': 'D#4', 'A5': 'F#4', 'T2': 'F#3', 'T4': 'B3',
-             'T5': 'F#3', 'Br1': 'B3', 'Br3': 'F#3', 'Br5': 'D#3', 'B4': 'B1'}
-    first = ('S1', 'T1', 'A3', 'Br2', 'B5', 'B1', 'B2')
-    second = ('S3', 'A2', 'T3', 'Br4', 'B3', 'S5')
-    for v, p in final.items():
-        if v in first:
-            P(v, r(8), 1, f"{p}:32")
-        elif v in second:
-            P(v, r(8), 3, f"{p}:24")
-        else:
-            P(v, r(9), 1, f"{p}:16")
+    P('B1', r(6), 1, "B2:8 E2:8"); P('B1', r(7), 1, "A2:8 F#2:8~")
+    # ---- bars 60-61: the last chord.  Each voice arrives by step on its own beat: the wedge
+    #      and the bass on 1, then two or three voices on every beat, each from a neighbour note
+    P('T1', r(8), 1, "B4:32"); P('A3', r(8), 1, "B4:32"); P('Br2', r(8), 1, "D#3:32")
+    P('S1', r(8), 1, "F#6:32"); P('B1', r(8), 1, "F#2:32"); P('A2', r(8), 1, "E5:4 D#5:28")
+    arrive = [  # (voice, bar offset, beat of the neighbour note, neighbour, final); it resolves one beat later.
+        # at every beat one line falls into the chord and one or two rise into it (contrary motion)
+        ('S3', 8, 1, 'C#6', 'B5'), ('Br4', 8, 1, 'A#2', 'B2'),
+        ('T3', 8, 2, 'E4', 'D#4'), ('S4', 8, 2, 'E#5', 'F#5'), ('B2', 8, 2, 'C#3', 'B2'),
+        ('S2', 8, 3, 'E6', 'D#6'), ('A5', 8, 3, 'E#4', 'F#4'), ('Br5', 8, 3, 'C#3', 'D#3'),
+        ('A1', 8, 4, 'C#5', 'B4'), ('T2', 8, 4, 'E3', 'F#3'), ('B3', 8, 4, 'C#2', 'D#2'),
+        ('S5', 9, 1, 'E5', 'D#5'), ('T4', 9, 1, 'A#3', 'B3'), ('B4', 9, 1, 'C#2', 'B1'),
+        ('A4', 9, 2, 'E4', 'D#4'), ('Br1', 9, 2, 'A#3', 'B3'), ('Br3', 9, 2, 'E#3', 'F#3'),
+        ('T5', 9, 3, 'E#4', 'F#4')]
+    for v, k, beat, a, f in arrive:
+        left = 16 * (10 - (r(k) - b0)) - 4 * (beat - 1)      # sixteenths to the end of the piece
+        P(v, r(k), beat, f"{a}:4 {f}:{left - 4}")
 
 B, C, Cs, D, Ds, E, F, Fs, G, Gs, A, As = 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 

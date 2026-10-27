@@ -22,41 +22,55 @@ def wave4(sc):
     P('Br3', 26, 1, "A3:12")
     P('Br4', 26, 1, "E4:6")
     P('B1', 27, 4, "R:2 C3:2"); P('B1', 28, 1, "Bb2:6 G#2:2 F#2:4 A2:4")   # Bass I returns: a slow line above the leaping bass
-    P('A3', 27, 1, "B4:6 Bb4:8 C5:2")
+    P('A3', 27, 1, "G#4:6 A#4:8 C5:2")
+    P('S1', 27, 3, "D6:8~")                                    # Soprano I returns, above the E half-diminished
     P('Br1', 28, 3, "R:2 A2:2 A2:2 A2:2")      # Baritone I enters: U, landing on a leaning F#
     # ---- bars 29-31: S in E minor (Alto V) with CS1 (Alto II, new); S1 descant; R in T4
     sc.theme('A5', 29, 1, S_E, 'Subject in E minor', 'S', semis=-7)
     P('A2', 29, 1, CS1_E + '~')
     sc.entries.append(('A2', sc.pos(29, 2), 'CS1 (E minor)', 'CS1', 1, -7, False))
     P('Br1', 29, 1, "F#3:6 E3:2 C#3:6 F#3:2"); P('Br1', 30, 1, "E3:6 C3:6 D3:4"); P('Br1', 31, 1, "E3:4 G3:2 B2:2 E3:4")
-    P('B2', 29, 1, "E2:8 F#2:6 B1:2"); P('B2', 30, 1, "E2:6 A2:2 D2:4 E2:4"); P('B2', 31, 1, "A2:2 A#2:2 D3:2 B2:2 E2:4 C#2:4"); P('B2', 32, 1, "F#2:8 G#2:6 C#2:2")
-    P('S1', 29, 1, "G5:8 F#5:6 B5:2"); P('S1', 30, 1, "B5:6 C6:6 B5:4"); P('S1', 31, 1, "A5:2 G5:4 F#5:2 G#5:8"); P('S1', 33, 1, "C#6:8 D#6:8")
+    P('B2', 29, 1, "E2:8 F#2:6 B1:2"); P('B2', 30, 1, "E2:6 A2:2 D2:4 E2:4"); P('B2', 31, 1, "A2:2 A#2:2 D3:2 B2:2 E2:4 C#2:4"); P('B2', 32, 1, "F#2:8 G#2:6 C#2:2~")
+    P('S1', 29, 1, "G5:8 F#5:6 B5:2"); P('S1', 30, 1, "B5:6 C6:6 B5:4"); P('S1', 31, 1, "A5:2 G5:4 F#5:2 G#5:8")
     P('A4', 29, 1, "B4:4 E5:10 D#5:2"); P('A4', 30, 1, "D5:6 C5:2")
+    P('A1', 29, 1, "R:2 E4:2 E4:2 E4:2 C#5:8~"); P('A1', 30, 1, "C#5:2 B4:6 D5:4 B4:4")   # Alto I returns, knocking (U)
+    P('T3', 29, 3, "F#3:8~"); P('T3', 30, 1, "F#3:6 E3:2")
+    P('T2', 28, 3, "B3:8~"); P('T2', 29, 1, "B3:16~"); P('T2', 30, 1, "B3:16")   # Tenor II returns: a long breath
+    P('T2', 31, 1, "C4:4 G3:4 B3:4 C#4:4~"); P('T2', 32, 1, "C#4:8 G#3:8")
     P('T4', 30, 1, "B3:1 A3:1 G#3:1 A3:1 B3:1 D4:1 E4:1 D4:1 A3:1 C4:1 F3:1 A3:1 G#3:1 B3:1 E4:1 D4:1"); P('T4', 31, 1, "A3:4 B3:12"); P('T4', 32, 1, "A3:4")
     P('A2', 32, 1, "A4:8 G#4:8")
     P('A5', 31, 3, "E4:4 E#4:4"); P('A5', 32, 1, "F#4:8 D#4:6 C#4:2")
-    # ---- bars 32-34: dominant pedal on C#; the head of the subject climbs the registers
+    # ---- bars 32-36: dominant pedal on C# (Bass II holds it from 32.4.5 to 36.4); over it the
+    # subject's head climbs T5 -> A3 -> S4, CS1 sounds complete in S3, Fugue V's head (in C# major)
+    # and Fugue VIII's head (in F# minor) join, and the pedal choir grows one voice a bar.
+    # Harmony: 32 i | V/V-V ; 33-34 i6/4 | V(7) ; 35 V7 | i6/4 ; 36 V7 . . i  (-> 37 i, subject x2)
     P('T5', 32, 1, "F#3:4 A3:2 G#3:2 B#2:6 C#3:2")          # Tenor V enters: head in F# minor
-    P('S3', 32, 1, "R:4 C#5:8 B#4:2 G#5:2~")                  # CS1's opening, in F#
+    P('S3', 32, 1, "R:4 C#5:8 B#4:2 G#5:2~")                  # CS1, complete, in F# minor (S3, b32-34)
+    P('S3', 33, 1, "G#5:4 F#5:8 E5:4"); P('S3', 34, 1, "D5:4 C#5:8 B4:4~")
+    P('S3', 35, 1, "B4:8 A4:8"); P('S3', 36, 1, "A4:4 G#4:8 A4:4")
     P('T3', 32, 3, "G#3:1 A#3:1 B#3:1 C#4:1 D#4:1 C#4:1 B#3:1 G#3:1")
-
-    P('B3', 33, 1, "C#2:8 R:2 C#2:2 C#2:2 C#2:2")             # Bass III enters: the pedal, knocking
-    P('A3', 33, 1, "F#4:4 A4:2 G#4:2 B#3:6 C#4:2")           # head, an octave higher
-    P('T5', 33, 1, "C#3:8 G#3:8~"); P('T5', 34, 1, "G#3:4 F#3:4 D#3:6 E#3:2")
-    P('S3', 33, 1, "G#5:4 F#5:12")
-    P('A2', 33, 1, "C#5:8 G#4:8")
-    P('A5', 33, 1, "C#4:4")
-    P('B4', 33, 1, "R:10 C#3:2 C#3:2 C#3:2")             # Bass IV enters knocking (U)
-    P('Br5', 33, 1, "F#2:16")                            # Baritone V enters
-
-    P('B3', 34, 1, "C#2:8 R:2 C#2:2 C#2:2 C#2:2")
-    P('S4', 34, 1, "F#5:4 A5:2 G#5:2 B#4:6 C#5:2")           # Soprano IV enters: head, top register
-    P('A3', 34, 1, "C#4:16")
-    P('S1', 34, 1, "C#6:8 D#6:6 C#6:2")
-    P('S3', 34, 1, "C#5:8 F#5:8")
-    P('A2', 34, 1, "A4:8")
-    P('B4', 34, 1, "A3:8 G#3:8")
-    P('Br5', 34, 1, "F#2:6 G#2:10")
+    P('S1', 32, 1, "A5:4 C#6:12~"); P('S1', 33, 1, "C#6:8 D#6:8"); P('S1', 34, 1, "C#6:8 D#6:6 C#6:2")
+    P('S1', 35, 1, "C#6:8 F#6:8"); P('S1', 36, 1, "E#6:8 C#6:8~")
+    for k in (33, 34, 35):
+        P('B2', k, 1, "C#2:16~")
+    P('B2', 36, 1, "C#2:16")
+    # bar 33: head in Alto III
+    P('A3', 33, 1, "F#4:4 A4:2 G#4:2 B#3:6 C#4:2")
+    P('A3', 34, 1, "C#4:16"); P('A3', 35, 1, "C#4:12 B#3:4"); P('A3', 36, 1, "C#4:16")
+    P('T5', 33, 1, "C#3:12 G#3:4~"); P('T5', 34, 1, "G#3:4 F#3:4 E#3:4 G#3:4~"); P('T5', 35, 1, "G#3:8 A3:8")
+    P('T5', 36, 1, "G#3:16")
+    P('A2', 33, 1, "C#5:8 G#4:8~"); P('A2', 34, 1, "G#4:4 A4:4")
+    P('A5', 33, 1, "C#4:8")
+    P('T2', 33, 1, "A3:16~"); P('T2', 34, 1, "A3:8 G#3:8~"); P('T2', 35, 1, "G#3:8 C#4:8"); P('T2', 36, 1, "C#4:16")
+    P('B3', 33, 4.5, "C#3:2"); P('B3', 34, 1, "C#3:2 C#3:2 A3:6 G#3:6")      # Bass III enters: U, knocking on the pedal
+    P('Br5', 33, 1, "F#2:12 G#2:4"); P('Br5', 34, 1, "A2:8 C#3:8~"); P('Br5', 35, 1, "C#3:8"); P('Br5', 36, 3, "C#3:8~")              # Baritone V enters
+    # bar 34: head in Soprano IV; Fugue V's head (in C# major) in Alto I
+    P('S4', 34, 1, "F#5:4 A5:2 G#5:2 B#4:6 C#5:2")
+    P('S4', 35, 1, "C#5:8 A5:8"); P('S4', 36, 1, "C#6:8 B5:4 A5:4")
+    P('A1', 34, 3, "G#4:4 C#5:2 C#5:1 C#5:1"); P('A1', 35, 1, "E#5:2 E#5:1 E#5:1 G#5:4 F#5:8")   # Fugue V's head (D major -> C# major)
+    P('A1', 36, 1, "G#5:16"); P('A1', 37, 1, "A5:8")
+    # bar 35.3: Fugue VIII's head (E-flat minor -> F# minor) in Baritone II, resolving into bar 37
+    P('Br2', 35, 3, "F#3:4 C#4:4"); P('Br2', 36, 1, "D4:3 C#4:1 B3:2 A3:2 G#3:2 E#3:2 F#3:4")
 
 
 B, C, Cs, D, Ds, E, F, Fs, G, Gs, A, As = 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10

@@ -173,8 +173,28 @@ put('Idx', 17, [
     'C#5:4 G#4:6 E#4:2',                                       # b26 V6
     'R:12',                                                    # b27 vi
     'R:12',                                                    # b28 V
+    'R:12',                                                    # b29 I6
+    'R:12',                                                    # b30 ii6
+    'R:4 C#5:8',                                               # b31 V7
+    'C#5:6 B4:2 C#5:4',                                        # b32 I
+    'R:12',                                                    # b33 I
+    'R:12',                                                    # b34 V6
+    'R:12',                                                    # b35
+    'R:12',                                                    # b36
+    'R:12',                                                    # b37
+    'R:12',                                                    # b38
+    'R:12',                                                    # b39
+    'R:12',                                                    # b40
+    'F#3:4 A#3:4 F#3:4',                                       # b41 I   (canon I returns, low and broad)
+    'G#3:12',                                                  # b42 V6
+    'R:12',                                                    # b43 vi
+    'R:12',                                                    # b44
+    'R:12',                                                    # b45
+    'R:12',                                                    # b46
+    'R:12',                                                    # b47
+    'R:12',                                                    # b48
 ])
-CANON_SPAN['I'] = (9, 28)
+CANON_SPAN['I'] = (9, 48)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -202,8 +222,28 @@ put('IIdx', 17, subj(1) + [
     'C#5:2 E#5:2 D#5:2 C#5:2 D#5:2 E#5:2',                     # b26 V6
     'A#4:2 B4:2 C#5:2 B4:2 A#4:2 G#4:2',                       # b27 vi
     'E#5:2 D#5:2 C#5:2 D#5:2 E#5:2 G#5:2',                     # b28 V
+    'C#6:4 B5:2 C#6:2 A#5:2 G#5:2',                            # b29 I6
+    'G#5:2 A#5:2 B5:2 A#5:2 G#5:2 F#5:2',                      # b30 ii6
+    'E#5:4 G#5:2 F#5:2 E#5:2 G#5:2~',                          # b31 V7
+    'G#5:2 F#5:2 E#5:2 D#5:2 C#5:2 D#5:2',                     # b32 I: 9-8
+    'R:12',                                                    # b33 I   (canon II breathes for canon IV)
+    'R:12',                                                    # b34 V6
+    'R:12',                                                    # b35 vi
+    'R:4 E#4:2 F#4:2 G#4:2 E#4:2',                             # b36 V   (returns, low)
+    'A#3:2 F#4:2 E#4:2 C#4:2 F#4:2 D#4:2',                     # b37 I6  (broken chords in the tenor)
+    'R:12',                                                    # b38 ii6
+    'C#4:4 B3:2 A#3:2 G#3:4',                                  # b39 V7
+    'R:12',                                                    # b40 I
+    'R:12',                                                    # b41
+    'R:12',                                                    # b42
+    'D#4:2 E#4:2 F#4:2 E#4:2 D#4:2 C#4:2',                     # b43 vi
+    'R:12',                                                    # b44 V
+    'C#6:2 B5:2 A#5:2 G#5:2 F#5:2 G#5:2',                      # b45 I6
+    'F#5:2 E#5:2 D#5:2 F#5:2 E#5:2 D#5:2',                     # b46 ii6
+    'C#5:2 B4:2 G#4:2 B4:2 C#5:2 D#5:2',                       # b47 V7
+    'R:12',                                                    # b48 I
 ])
-CANON_SPAN['II'] = (17, 28)
+CANON_SPAN['II'] = (17, 48)
 entry('IIdx', 17, 'Canon II dux: subject')
 entry('IIco', 18, 'Canon II comes: subject at the 2nd above')
 
@@ -213,10 +253,93 @@ put('Fund', 25, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2
 put('IIIdx', 25, subj(-1) + [
     'D#4:2 E#4:1 F#4:1 G#4:2 A#4:2 G#4:2 F#4:2',               # b27 vi   (Var. 9: gentle semiquaver turns)
     'E#4:2 F#4:1 G#4:1 A#4:2 G#4:2 F#4:2 E#4:2',               # b28 V
+    'C#4:2 D#4:1 E#4:1 F#4:2 E#4:2 C#4:4',                     # b29 I6
+    'B3:2 C#4:1 D#4:1 E#4:2 F#4:2 D#4:2 B3:2',                 # b30 ii6
+    'B3:2 C#4:1 D#4:1 E#4:2 D#4:2 C#4:2 B3:2',                 # b31 V7
+    'A#3:2 B3:1 C#4:1 D#4:2 C#4:2 A#3:4',                      # b32 I
+    'R:12',                                                    # b33 I
+    'R:12',                                                    # b34 V6
+    'F#4:2 G#4:1 A#4:1 B4:2 A#4:2 G#4:2 F#4:2',               # b35 vi  (above the soggetto's subject)
+    'E#4:2 D#4:1 C#4:1 D#4:2 E#4:2 G#4:4',                     # b36 V
+    'R:12',                                                    # b37 I6
+    'D#5:4 F#5:2 E#5:1 D#5:1 C#5:2 D#5:2',                     # b38 ii6
+    'R:12',                                                    # b39 V7
+    'R:12',                                                    # b40 I
+    'R:12',                                                    # b41
+    'R:12',                                                    # b42
+    'R:12',                                                    # b43
+    'R:12',                                                    # b44
+    'R:12',                                                    # b45
+    'B3:4 A#3:2 G#3:2 F#3:4',                                  # b46 ii6  (returns in the tenor)
+    'R:12',                                                    # b47 V7
+    'R:12',                                                    # b48 I
 ])
-CANON_SPAN['III'] = (25, 28)
+CANON_SPAN['III'] = (25, 48)
 entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
 entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
+
+# =============================================================================================
+# Var. 5 (b33-40): Canon IV, at the 4th below by inversion, four bars apart (the tonal mirror
+# F#<->C#, as in Var. 12), entering on top while canon II breathes.
+put('IVdx', 33, subj(1) + [
+    'F#5:8 G#5:4~',                                            # b35 vi   (the tie becomes the comes's 4-3)
+    'G#5:4 F#5:2 E#5:2 C#5:2 E#5:2',                           # b36 V
+    'A#5:6 C#6:2 F#6:2 C#6:2',                                 # b37 I6   (a descant over its own mirror)
+    'B5:4 D#6:4 B5:4',                                         # b38 ii6
+    'G#5:6 F#5:2 E#5:4',                                       # b39 V7
+    'R:12',                                                    # b40 I
+    'R:12',                                                    # b41 I
+    'G#5:4 C#6:8',                                             # b42 V6
+    'F#6:12',                                                  # b43 vi
+    'R:12',                                                    # b44 V
+    'F#6:4 C#6:2 A#5:2 C#6:4',                                 # b45 I6
+    'R:12',                                                    # b46 ii6
+    'C#6:4 B5:4 A#5:4',                                        # b47 V7
+    'C#6:4 D#6:2 C#6:2 A#5:4',                                 # b48 I
+])
+CANON_SPAN['IV'] = (33, 48)
+put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
+    'C#5:4 B4:2 A#4:2 G#4:2 F#4:2',                            # b41
+    'B4:4 A#4:2 G#4:2 C#5:4',                                  # b42
+    'G#4:2 F#4:2 D#4:4 F#4:4',                                 # b43
+    'C#4:8 D#4:4',                                             # b44
+    'A#3:6 B3:2 C#4:4',                                        # b45
+    'R:12', 'R:12',                                            # b46-47
+    'R:4 A#3:4 C#4:4',                                         # b48
+])
+entry('Sog', 35, 'Subject (soggetto returns, tenor)')
+entry('IVdx', 33, 'Canon IV dux: subject')
+entry('IVco', 37, 'Canon IV comes: subject inverted, a 4th below')
+
+# =============================================================================================
+# Var. 6 (b41-48): Canon V, at the 5th below by inversion (mirror F#<->B), three bars apart
+# (Var. 15's sighs).
+put('Vdx', 41, subj(1) + [
+    'A#5:2 G#5:2 F#5:4 F#5:2 E#5:2',                           # b43 vi   (sighs)
+    'C#6:6 B5:2 A#5:2 G#5:2',                                  # b44 V
+    'R:12',                                                    # b45 I6   (canon V breathes in bars 5 and 8)
+    'R:12',                                                    # b46 ii6
+    'R:12',                                                    # b47 V7 (clears the register for canon VI)
+    'R:12',                                                    # b48 I
+])
+CANON_SPAN['V'] = (41, 48)
+entry('Vdx', 41, 'Canon V dux: subject')
+entry('Vco', 44, 'Canon V comes: subject inverted, a 5th below')
+
+# =============================================================================================
+# Variation 7 (bars 49-56): thirteen voices.  Canon VI (at the sixth below, eight bars apart, so
+# the comes plays every dux bar over the same bass note) enters at the top.
+put('VIdx', 49, subj(1) + [
+])
+CANON_SPAN['VI'] = (49, 50)
+entry('VIdx', 49, 'Canon VI dux: subject')
+entry('VIco', 57, 'Canon VI comes: subject at the 6th below')
+
+# ---- fundamentum for the rest (plain ground; ornamented later where the texture asks for it)
+put('Fund', 33, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
+put('Fund', 41, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:8 B1:4', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
+for _b in (49, 57, 65, 73, 81):
+    put('Fund', _b, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
 
 # =============================================================================================
 # Assembly

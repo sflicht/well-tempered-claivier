@@ -33,8 +33,8 @@ from conv_a import part_a, plan_a  # noqa
 from conv_b import part_b, plan_b  # noqa
 from conv_c import part_c, plan_c  # noqa
 
-NB = 61
-C0 = 40          # bar of the convergence's lead-in (c0); the cantus enters at C0 + 1
+NB = 63
+C0 = 42          # bar of the convergence's lead-in (c0); the cantus enters at C0 + 1
 
 
 def build_plan():
@@ -56,8 +56,8 @@ def build_plan():
     plan += rows(58, [(0, 2, [D, F, A], 'Dm'), (2, 4, [G, B, D, F], 'G7'), (4, 6, [C, E, G], 'C'),
                       (6, 8, [Fs, A, C, E], 'F#o7'), (8, 10, [B, Ds, Fs, A], 'B7')])
     plan += [r for r in build3.PLAN3 if r[0] < 100]
-    plan += [r for r in build4.PLAN4 if r[0] < 136]
-    plan += [r for r in build5.PLAN5 if r[0] < 156]
+    plan += [r for r in build4.PLAN4 if r[0] < 144]
+    plan += [r for r in build5.PLAN5 if r[0] < 164]
     c0 = (C0 - 1) * 4
     plan += plan_a(c0) + plan_b(c0 + 20) + [r for r in plan_c(c0 + 36) if r[0] < c0 + 48]
     plan += release.plan_release(c0 + 48)
@@ -72,12 +72,12 @@ def dyn(b):
         return -10 + int(4 * (x - 1) / 16)
     if x <= 25:
         return -6
-    if x <= 39:
-        return -6 + int(10 * (x - 25) / 14)
-    if x <= 51:
-        return 4 + int(6 * (x - 40) / 11)
-    if x <= 59:
-        return 6 - int(12 * (x - 52) / 7)
+    if x <= 41:
+        return -6 + int(10 * (x - 25) / 16)
+    if x <= 53:
+        return 4 + int(6 * (x - 42) / 11)
+    if x <= 61:
+        return 6 - int(12 * (x - 54) / 7)
     return -2
 
 
@@ -101,7 +101,7 @@ def main():
         'subtitle': 'Fugue XXIV in B minor, twenty-five voices',
         'composer': 'Claude / Sam (guest subjects from Fugues I, II, IV, V, VIII of this edition)', 'instrument': 'Twenty-five voices (open score)', 'key': 'B', 'mode': 'minor',
         'meter': [4, 4], 'bpm': 63, 'tempo_text': 'Largo, poi con fuoco',
-        'tempo_map': [[100, 63], [136, 69, 'ramp'], [152, 69], [c0 + 4, 58, 'ramp'], [c0 + 36, 58],
+        'tempo_map': [[100, 63], [144, 69, 'ramp'], [160, 69], [c0 + 4, 58, 'ramp'], [c0 + 36, 58],
                       [c0 + 48, 50, 'ramp'], [c0 + 80, 46, 'ramp'], [c0 + 88, 38, 'ramp']],
         'movement_number': 24, 'piece_type': 'fugue', 'edition': 'third',
         'credits': 'Guest subjects quoted from this edition: Fugue I (C major), II (C minor), '
@@ -111,7 +111,7 @@ def main():
                     {'t': 68, 'label': 'inversion (E minor) in stretto with the subject'},
                     {'t': 82, 'label': 'subject in C, bass'}, {'t': 100, 'label': 'subject in A with the inversion'},
                     {'t': 112, 'label': 'subject in E with CS1'}, {'t': 124, 'label': 'dominant pedal, heads climb'},
-                    {'t': 136, 'label': 'subject x2 (F# minor)'}, {'t': c0, 'label': 'convergence'},
+                    {'t': 144, 'label': 'subject x2 (F# minor)'}, {'t': c0, 'label': 'convergence'},
                     {'t': c0 + 4, 'label': 'cantus: subject x4'}, {'t': c0 + 5.5, 'label': 'Fugue V'},
                     {'t': c0 + 20, 'label': 'Fugue VIII'}, {'t': c0 + 30, 'label': 'Fugue II'},
                     {'t': c0 + 39, 'label': 'Fugue IV'}, {'t': c0 + 44, 'label': 'arrival'},
