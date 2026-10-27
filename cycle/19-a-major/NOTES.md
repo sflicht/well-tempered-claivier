@@ -68,7 +68,7 @@ Bar numbers are 4/4 bars of the file; "q" is the quarter position. Each band's o
 | 120–156 (31–39) | **IV. Gigue**, all in 12/8 | Coro IV's exposition from the top down, one gigue bar apart (subject, modal answer, alternating) over a continuo in the sarabande basse. The second half is the mirror in a **five-voice stretto at half-bar distance**, top down (dessus A, haute-contre E, taille A, quinte E, basse A). The last bass mirror closes on the tonic at q155. | A |
 | 156–180 (40–45) | **V. Ballo a due, a tre**, each band in its own metre | The courante subject (Coro II taille) under the allemande subject (Coro I dessus). The allemande answers in its basse and taille. From q167 the sarabande joins with the head of its subject (Coro III dessus), which stops on the dominant G♯ at q179–180. Coro IV is silent, so that its entry in the ball is fresh. | A, E, F♯ m → E |
 | 180–236 (46–59) | **The ball (summit)**: all four dances at once | See the next section. | A, F♯ m, D, B m, E, A |
-| 236–264 (60–66) | **Coda**, 2/2 (the bourrée) | The allemande band alone plays Bach's bourrée: the tune in the dessus, the bass imitation from q243 (the reveal). Its IV–V cadence brings in all twenty voices on the dominant at q258; they bow on the tonic at q260. | A |
+| 236–264 (60–66) | **Coda**, 2/2 (the bourrée) | The allemande band alone plays Bach's bourrée: the tune in the dessus, the bass imitation from q243 (the reveal). Its IV–V cadence brings in the other bands on the dominant at q258, and all twenty voices bow on the tonic at q260. | A |
 
 ## The summit (q180–236): who dances what
 
@@ -81,7 +81,7 @@ Bar numbers are 4/4 bars of the file; "q" is the quarter position. Each band's o
 | 211⅔–224 | Coro IV basse | the **gigue** mirror | D major, then B minor (with A♯) |
 | 223¾–236 | Coro I basse | the **allemande** mirror in sixteenths | E, then A; then a IV–V–I close |
 
-The only overlap is Coro II's basse at q192–196, a three-note anticipation in the tenor register above the sarabande ground. The plan of keys (I–vi–IV–ii–V–I) is the circle the ground walks.
+There are two small exceptions. Coro II's basse sings three notes at q192–196, an octave above the sarabande ground (B2 E3 C♯3 over F♯2 E2 A2). At q197 the two grounds overlap for one beat at the handover. The plan of keys (I–vi–IV–ii–V–I) is the circle the ground walks.
 
 **Statements over the ground** (each in its own band's rhythm and metre):
 - Σ1, A:
@@ -108,7 +108,7 @@ The only overlap is Coro II's basse at q192–196, a three-note anticipation in 
 **Audibility.** These are design decisions; I cannot check them by ear.
 - Each band keeps its own rhythmic profile, so the four dances are separable by rhythm as well as by register: sixteenths, half notes, beat-2 long notes, triplets.
 - In the spatial render, by direction as well.
-- Every thematic statement in the summit starts after a rest or a long note in its voice, and carries an `entry_boost` of +6 velocity.
+- Every thematic statement carries an `entry_boost` of +6 velocity.
 
 ## Notation: per-staff time signatures (tool change)
 
@@ -179,12 +179,15 @@ Finally the tune itself: Bach's bourrée, bars 1–3, both hands at pitch, and a
 
 - **The 3 beat parallels** are all in b55 (q216–219), between free lines in different bands: courante taille and gigue taille, allemande haute-contre and courante taille, courante dessus and the gigue basse's ground.
 - **The 11 unresolved dissonances, with their justification:**
-  - b9.4 and b18.2: passing collisions between bands in the expositions (an allemande line under the courante subject; a courante basse note under the answer).
-  - b51.4, b52.2 (×2), b54.2: held notes in the courante band against the moving allemande and gigue figures. The courante holds its long note across the other dances' passing figures; this is the polymetre itself.
-  - b56.2 (×3): the courante quinte's A3 against B3 in three other voices, an appoggiatura that resolves after the beat.
-  - b57.1 and b57.3: a suspension in the sarabande taille (D4, F♯4) over the allemande dessus's running D♯5 and G♯5.
-  - All are inner-voice events. None is in the outer parts at a cadence.
-- **The 2 bad doublings** are doubled sevenths at q185 and q194, in the summit's first section. A tied suspension coincides with the same pitch class in a running voice for one beat.
+  - b9.4 (q35): the allemande haute-contre's D4 against the upbeat E5 of the first courante entry.
+  - b18.2 (q69): a passing B2 in the courante basse under the haute-contre's C♯5.
+  - b51.4 (q203): the courante haute-contre's A4 held under the courante dessus's B5.
+  - b52.2 (q205, ×2): the gigue dessus's G♯4 against D4 in the allemande taille and F♯5 in the courante dessus.
+  - b54.2 (q213): the gigue haute-contre's B4 against the courante dessus's A5.
+  - b56.2 (q221, ×3): the courante quinte's A3 against B3/B4 in three voices, over the B-minor ground.
+  - b57.1 and b57.3 (q225–226): the sarabande taille holds D4, then F♯4, against the allemande dessus's running D♯5 and G♯5.
+  - In each case one band holds a long note while another band's figure passes against it; this is the polymetre at work. None falls at a cadence.
+- **The 2 bad doublings** are doubled sevenths at q185 and q194, in the summit's first section, where a held note in one band and a passing note in another meet on the beat.
 
 **Prelude** (22 bars, 3 voices):
 

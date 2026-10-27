@@ -104,7 +104,7 @@ def pair3(sc):
     # F major / D minor (bars 24-29): S high in the soprano over the fa of the cantus; dotted alto, walking bass
     sc.theme('S3', 27, 1, in_key(S, 'B4', 'F5'), 'S in F', 'S')
     sc.put('T6', 24, 1, 'A3:16 C4:8 D4:8 C4:16 D4:16 G3:8 A3:8 A3:8 B3:8')
-    sc.put('B4', 25, 1, 'C3:8 G2:8 D3:8 F2:8 Bb2:8 G2:8 C3:16 F2:8 G2:8')
+    sc.put('B4', 25, 1, 'C3:8 G2:8 D3:8 F2:8 Bb2:4 A2:4 G2:8 C3:16 F2:8 G2:8')
     sc.put('S4', 24, 2, 'G5:2 A5:2 C6:4 A5:4 G5:6 F5:2 G5:4 Bb5:4 A5:8')
     sc.put('A2', 25, 1, 'Bb4:6 C5:2 Bb4:4 G4:4 F4:6 G4:2 A4:4 F4:4 F4:6 Eb4:2 F4:8 E4:6 D4:2 C4:4 E4:4 F4:8')
 
@@ -120,7 +120,7 @@ def pair4(sc):
 def pair5(sc):
     # A major / F-sharp minor (bars 35-40), S in the bass; then the seam (41-43): the bass falls F#-E-D-C#, halts on F#7 (the home dominant) and swerves through G7 into C
     sc.theme('B2', 35, 1, octv(in_key(S, 'B4', 'A4'), -2), 'S in A (bass)', 'S')
-    sc.put('B2', 37, 1, 'A2:8 C#3:8 F#2:8 B2:8 E2:8 C#3:8 F#2:8 D3:8 F#2:8 E2:8 D2:8 C#2:8 F#2:8 G2:8')
+    sc.put('B2', 37, 1, 'A2:4 B2:4 C#3:8 F#2:4 G#2:2 A2:2 B2:8 E2:8 C#3:8 F#2:8 D3:8 F#2:8 E2:8 D2:8 C#2:8 F#2:8 G2:8')
     sc.put('A2', 35, 1, 'C#5:2 C#5:2 C#5:2 E5:2 D5:4 F#4:4 B4:2 B4:2 B4:2 E5:2 D5:4 E5:4 C#5:2 C#5:2 C#5:2 A4:2 A4:8 A4:8')
     sc.put('A2', 41, 1, 'C#5:16 D5:8 B4:8 A#4:8 B4:8')
     sc.put('T6', 37, 1, 'E4:16 A4:16 G#4:8 A4:8 A4:8 D4:8 F#4:16 F#4:8 G#4:8 E4:8 D4:8')
@@ -156,7 +156,7 @@ def pair8(sc):
 def pair9(sc):
     # F-sharp major / D-sharp minor (bars 60-66): S in the soprano on the fa
     sc.theme('S2', 63, 3, in_key(S, 'B4', 'F#5'), 'S in F-sharp', 'S')
-    sc.put('B2', 61, 1, 'F#2:8 C#3:8 G#2:8 D#2:8 A#2:8 D#3:8~ D#3:8 G#2:8 A#2:8 D#3:8 G#2:8')
+    sc.put('B2', 61, 1, 'F#2:8 C#3:8 G#2:8 D#2:8 A#2:4 B2:2 C#3:2 D#3:8~ D#3:8 G#2:8 A#2:4 B2:2 C#3:2 D#3:8 G#2:8')
     sc.put('T3', 61, 1, 'A#3:8 B3:8~ B3:8 D#4:8 F#4:8 D#4:8 D#4:8 E#4:8 E#4:8 F#4:8')
     sc.put('A5', 61, 1, 'D#4:8 G#4:8 G#4:8 F#4:8 A#4:8 F#4:8 F#4:8')
     sc.put('S6', 61, 1, 'C#6:8 G#5:8 B5:8 A#5:8 A#5:8')
