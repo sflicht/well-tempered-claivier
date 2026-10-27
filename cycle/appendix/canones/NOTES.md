@@ -88,7 +88,7 @@ release, so:
   appoggiatura.
 - **Eighths swap on-beat and off-beat**, so a weak passing eighth would
   become an accented one in the other half. A first draft with eighth-note
-  figuration showed exactly that (14 accented dissonances in bars 17–24).
+  figuration showed exactly that (15 on-beat dissonances in bars 18–24).
   **Sixteenths** behave better: positions within a beat map 0↔3 and 1↔2.
   The double therefore keeps positions 0 and 3 of every beat consonant and
   puts every passing or neighbour note on positions 1–2, which stay weak

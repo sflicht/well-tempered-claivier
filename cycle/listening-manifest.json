@@ -95,6 +95,13 @@
      "score": "cycle/appendix/canones/table-canon.json",
      "tag": "new",
      "notes": "Two players read one page from opposite sides of a table. The second voice is the first played backwards and upside down, so the whole score turned through 180 degrees is the same piece. It begins in A minor and ends in C major, mirrored around D, the hinge note sounded in unison in bar 17.\n\nA sarabande, then a double in sixteenths, the hinge, the double rotated, and finally the ground of the Goldberg Variations, which the second player arrives at simply by reading the first player's line upside down and backwards."
+    },
+    {
+     "id": "tempo-canon",
+     "title": "Canon per tempora \u00b7 Four clocks, one hour",
+     "score": "cycle/appendix/canones/tempo-canon.json",
+     "tag": "new",
+     "notes": "One melody at four speeds at once, in the ratio 4:3:2:1, bass slowest, voices an octave apart. The melody opens with the Westminster Quarters, so each new entry (bars 1, 9, 17, 25) is another clock beginning to chime, each faster than the last.\n\nThe entries are staggered so that all four clocks strike the final E at the same instant in bar 33. Bach's augmentation canons use only the ratio 1:2; no single player could perform four tempi at once."
     }
    ]
   },

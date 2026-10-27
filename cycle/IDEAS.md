@@ -47,7 +47,7 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
    second voice is the first played backwards and upside down, so the page
    rotated 180° is the same piece.
 
-9. **[stopped] Canon per tempora.** (Search scripts exist in `cycle/appendix/canones/`; the work was stopped before a score was written.) One melody at four simultaneous speeds,
+9. **[built] Canon per tempora.** ("Four clocks, one hour": the melody opens with the Westminster Quarters; speeds 4:3:2:1; all four voices strike the final E together.) One melody at four simultaneous speeds,
    staggered so that every voice reaches the final cadence together. No single
    player could perform it.
 

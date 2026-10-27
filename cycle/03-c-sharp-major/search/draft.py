@@ -37,12 +37,12 @@ put('B', at(9), "A#2:6 B#2:6 C#3:6 E#3:6 "
 # ---- Episode 1 (11-12): C# -> A#m.  Bass stamps the head round the circle of fifths;
 # soprano: inverted (falling) run, tenor: rectus (rising) run, hocketing; alto rests.
 put('B', at(11), "C#3:4 C#3:2 E#3:4 E#3:2 F#3:4 F#3:2 D#3:4 E#3:2 B#2:4 B#2:2 D#3:4 D#3:2 E#3:4 E#3:2 G##2:4 E#2:2")
-put('S', at(11), "C#6:2 B#5:2 A#5:2 G#5:4 A#5:14 B#5:2 A#5:2 G#5:2 F#5:4 A#5:2 B#5:12")
+put('S', at(11), "C#6:2 B#5:2 A#5:2 G#5:4 A#5:14 B#5:2 A#5:2 G#5:2 F#5:6 D#5:12")
 put('T', at(11), "E#4:12 C#4:2 D#4:2 E#4:2 F#4:4 E#4:2 D#4:12 B#3:2 C#4:2 D#4:2 E#4:4")
 # ---- M1 (13-14): rectus in A# minor, tenor; CS (minor) alto; V7-VI deceptive arrival
 S_AM = "A#3:4 A#3:2 C#4:4 C#4:2 E#4:4 R:2 E#3:4 F##3:1 G##3:1 A#3:2 B#3:2 C#4:2 D#4:4 C#4:2 A#3:4 G##3:2 A#3:4"
 CS_AM = "C#4:4 D#4:2 E#4:6 C#5:4 B#4:2 E#4:6 C#5:2 B#4:2 A#4:2 F#4:4 E#4:2 C#4:4 B#3:2 C#4:4"
 put('T', at(12, 11), "E#3:2"); put('T', at(13), S_AM)
-put('A', at(13), CS_AM)
-put('B', at(13), "F#2:6 E#2:6 A#2:6 C#3:6 A#2:6 B#2:4 C#3:2 E#3:6 A#2:4")
-put('S', at(13), "A#5:16 G##5:2 A#5:6 C#6:6 B#5:4 A#5:8 C#6:4")
+put('S', at(13), T(CS_AM, 12, 7))                     #     CS (minor) soprano; D#5 (7th) -> C#5
+put('B', at(13), "F#2:6 C#3:6 A#2:6 C#3:6 A#2:6 B#2:4 C#3:2 E#3:6 A#2:4")
+put('A', at(13), "F#4:6 E#4:6 A#4:4 G##4:2 A#4:6 E#5:6 A#4:10 E#4:6")
