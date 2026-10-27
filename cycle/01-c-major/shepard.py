@@ -49,12 +49,16 @@ def keyframe(keys, x):
     return last
 
 
-def pedal_figure(events, pcs, struck):
+def pedal_figure(events, pcs, struck, attacked):
     """Hold harmonic figure notes until the harmony changes or the note recurs.
 
     The pedal is changed at a half-bar line unless the bass is not struck
-    there and the new half bar's notes all belong to the held harmony (the
-    final bar).  Non-harmonic notes keep their written length.
+    there, the harmony continues (the new half bar's notes belong to the held
+    chord) AND the held note itself belongs to the new half bar -- or nothing
+    at all is struck in it, as in the last bar.  Second review: the earlier
+    subset rule let the diminished seventh's E# ring through its own
+    resolution at 36.3; a note now never outlives its harmony.
+    Non-harmonic notes keep their written length.
     """
     evs = sorted(events, key=lambda e: e['t'])
     out = []
@@ -64,7 +68,8 @@ def pedal_figure(events, pcs, struck):
         end = end_written
         if h < len(pcs) and e['p'] % 12 in pcs[h]:
             k = h + 1
-            while k < len(pcs) and not struck[k] and pcs[k] <= pcs[h]:
+            while (k < len(pcs) and not struck[k]
+                   and ((pcs[k] <= pcs[h] and e['p'] % 12 in pcs[k]) or not attacked[k])):
                 k += 1
             pedal_end = k * HALF
             nxt = next((f['t'] for f in evs[i + 1:] if f['p'] == e['p'] and f['t'] < pedal_end), pedal_end)
@@ -92,9 +97,21 @@ def deal_slots(events):
     return slots
 
 
-def layers(e, role, mix_keys, sigma_keys):
+def floor_for(e, role, floors):
+    """Lowest layer allowed for this note (second review: over the D# pedal
+    the tenor and figure keep out of the pedal's octaves)."""
+    h = int(e['t'] // HALF) + 1
+    lo = LOW
+    for h0, h1, roles, pitch in floors:
+        if h0 <= h <= h1 and role in roles:
+            lo = max(lo, pitch)
+    return lo
+
+
+def layers(e, role, mix_keys, sigma_keys, floors=()):
     """Octave layers of one written note: [(q, velocity)]."""
     x = 1 + e['t'] / HALF                 # half-bar position
+    lo = floor_for(e, role, floors)
     g = keyframe(mix_keys, x)
     s = keyframe(sigma_keys, x)
     c = CENTRE[role]
@@ -103,6 +120,8 @@ def layers(e, role, mix_keys, sigma_keys):
     k_hi = math.floor((HIGH - e['p']) / 12)
     for k in range(k_lo, k_hi + 1):
         q = e['p'] + 12 * k
+        if q < lo and q != e['p']:
+            continue
         A = (1 - g) * (1.0 if k == 0 else 0.0) + g * math.exp(-0.5 * ((q - c) / s) ** 2)
         v = e['v'] * math.sqrt(A)
         if v >= 9:
@@ -110,17 +129,23 @@ def layers(e, role, mix_keys, sigma_keys):
     return out
 
 
-def performance_score(notation, pcs, struck, meta, mix_keys, sigma_keys):
+def performance_score(notation, pcs, struck, meta, mix_keys, sigma_keys, floors=()):
     core = {v['name']: v['events'] for v in notation['voices']}
+    attacked = [False] * len(pcs)          # any core note struck in half bar h?
+    for name in ('Bass', 'Tenor', 'Figure'):
+        for e in core[name]:
+            h = int(e['t'] // HALF + 1e-9)
+            if h < len(attacked):
+                attacked[h] = True
     streams = []        # (role, label, events)
     streams.append(('Bass', 'Bass', core['Bass']))
     streams.append(('Tenor', 'Tenor', core['Tenor']))
-    for k, slot in enumerate(deal_slots(pedal_figure(core['Figure'], pcs, struck))):
+    for k, slot in enumerate(deal_slots(pedal_figure(core['Figure'], pcs, struck, attacked))):
         streams.append(('Figure', f'Figure {k + 1}', slot))
     voices = {}
     for role, label, evs in streams:
         for e in evs:
-            for q, v in layers(e, role, mix_keys, sigma_keys):
+            for q, v in layers(e, role, mix_keys, sigma_keys, floors):
                 band = q // 12 - 1          # octave number of the sounding note
                 key = (label, band)
                 n = {'t': e['t'], 'd': e['d'], 'p': q, 'v': v, 'gate': e.get('gate', .95),
@@ -140,6 +165,7 @@ def performance_score(notation, pcs, struck, meta, mix_keys, sigma_keys):
     m = dict(meta)
     m['shepard'] = {'centres': CENTRE, 'range': [LOW, HIGH], 'keyframe_unit': 'half bar (1 = H1)',
                     'mix_keyframes': mix_keys, 'sigma_keyframes': sigma_keys,
+                    'layer_floors': [list(f) for f in floors],
                     'rule': 'A = (1-g)[q==p] + g*exp(-((q-c)/s)^2/2); v = v_written*sqrt(A); drop v<9'}
     return {'metadata': m, 'voices': out,
             'performance_of': 'prelude-notation.json (same notes, octave-layered and pedalled)'}

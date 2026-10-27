@@ -23,9 +23,10 @@ Form (36 bars, q = 80):
   15-18 g: B subject in augmentation, A subject (beat 4), S inversion (b17, beat 1.5)
   19-20 Episode 3 (third permutation; bass V4/2 -> 6 suspensions), g -> f
   21-22 Mirror trio in f: the b7-8 block upside down; cadence to c
-  23-24 Stretto at the octave, half a bar (c)  25-26 Build: 4-3 chain over the lament bass; dominant
+  23-24 Stretto: S subject, B the mirror answer 2.5 beats later, A the countersubject over it (c)
+  25-26 Build: lament bass C-Bb-Ab-G-F-F#-G; dominant
   27-28 Peak: stretto a 3 (S, B, A at half-bar distances)
-  29-30 V7 -> deceptive VI (29.3.5) -> Neapolitan -> V
+  29-30 V7 -> deceptive VI (29.4, a full quarter) -> Neapolitan -> V
   31-35 Coda: J. S. Bach's BWV 847 subject augmented in the bass (from 31.2) as a moving
         tonic pedal; A the mirror answer (31.3.5); final cadence; 36 C major (Picardy)
 """
@@ -121,7 +122,7 @@ B.bar('Episode 3',  # 19
 B.bar('',  # 20
       soprano='F5:2 Ab5:2 E5:2 C5:2 F5:2 Ab5:2 E5:2 C5:2',
       alto=   'Ab4:1 G4:1 F4:1 G4:1 G4:2 E4:1 G4:1 Ab4:1 G4:1 F4:1 G4:1 Bb4:2 G4:1 E4:1',
-      bass=   'Ab2:2 C3:4 Bb2:2 Ab2:4 C3:4')
+      bass=   'Ab2:2 C3:4 Bb2:2 Ab2:2 Db3:2 C3:4')
 B.bar('Mirror trio (f)',  # 21
       soprano='C5:4 Db5:2 Bb4:2 F5:2 Ab4:2 F5:2 G4:2',
       alto=   'Ab3:2 F3:4 G3:2 Ab3:4 Bb3:4',
@@ -130,18 +131,18 @@ B.bar('',  # 22
       soprano='Ab4:1 Bb4:1 C5:1 Bb4:1 Ab4:2 Bb4:1 C5:1 Db5:2 C5:2 B4:2 D5:2',
       alto=   'Ab3:2 E3:2 F3:4 Bb3:2 C4:2 D4:2 F4:2',
       bass=   'C3:2 G2:2 F2:1 Eb2:1 Db2:1 Eb2:1 F2:1 G2:1 Ab2:2 G2:4')
-B.bar('Stretto: S (c), A half a bar later',  # 23
+B.bar('Stretto: S (c); B mirror answer (c) at 23.3.5; A countersubject',  # 23
       soprano='C5:4 B4:2 D5:2 G4:2 Eb5:2 G4:2 F5:2',
-      alto=   'Eb4:2 C4:2 D4:2 B3:2 C4:4 B3:2 D4:2',
-      bass=   'C3:1 D3:1 Eb3:1 C3:1 G2:4 C3:2 Ab2:2 G2:2 F2:2')
+      alto=   'Eb4:4 D4:2 F4:2 Eb4:2 C4:2 D4:1 Eb4:1 F4:1 G4:1',
+      bass=   'C3:4 G2:4 C3:2 G2:4 Ab2:2')
 B.bar('',  # 24
       soprano='Eb5:1 D5:1 C5:1 D5:1 Eb5:2 D5:1 C5:1 B4:2 C5:4 G4:2',
-      alto=   'G3:2 Eb4:2 G3:2 F4:2 Eb4:1 D4:1 C4:1 D4:1 Eb4:2 D4:1 C4:1',
-      bass=   'Eb2:2 G2:2 C3:2 Ab2:2 G2:2 C3:2 F2:2 G2:2')
-B.bar('Build: 4-3 chain over lament bass',  # 25
-      soprano='F5:2 Eb5:6 D5:4 C5:4',
-      alto=   'B3:2 C4:4 G3:2 D4:1 F4:1 C4:1 F4:1 Ab3:1 C4:1 B3:1 D4:1',
-      bass=   'G2:2 C3:4 Bb2:4 Ab2:4 G2:2')
+      alto=   'Ab4:1 F4:1 G4:1 Ab4:1 G4:1 F4:1 Eb4:1 C4:1 D4:1 F4:1 G4:2 D4:2 C4:1 Bb3:1',
+      bass=   'F2:2 C3:2 Eb2:2 C3:2 D2:2 Eb2:1 F2:1 G2:1 F2:1 Eb2:2')
+B.bar('Build: end of the mirror answer (B) and countersubject (A); lament bass C-Bb-Ab-G',  # 25
+      soprano='C5:2 Eb5:2 G5:2 F5:2 Eb5:2 G5:2 F5:2 D5:2',
+      alto=   'Ab3:1 Bb3:1 C4:1 D4:1 Eb4:2 B3:2 C4:2 Eb4:2 C4:2 F4:2',
+      bass=   'F2:1 G2:1 Ab2:2 G2:4 C3:2 Bb2:2 Ab2:2 G2:2')
 B.bar('',  # 26
       soprano='B4:1 D5:1 F5:1 Ab5:1 A5:2 C6:2 B5:1 C6:1 D6:1 C6:1 B5:1 C6:1 D6:1 B5:1',
       alto=   'Ab4:4 Eb5:2 C5:2 D5:4 F5:4',
@@ -154,10 +155,10 @@ B.bar('',  # 28
       soprano='Eb6:1 D6:1 C6:1 D6:1 Eb6:2 D6:1 C6:1 B5:2 C6:4 G5:2',
       alto=   'C5:4 B4:2 D5:2 G4:2 Eb5:2 G4:2 F5:2',
       bass=   'G2:2 Eb3:2 G2:2 F3:2 Eb3:1 D3:1 C3:1 D3:1 Eb3:2 D3:1 C3:1')
-B.bar('deceptive cadence (VI) at 29.3.5',  # 29
-      soprano='F5:2 Eb5:2 G5:4 F5:2 Eb5:2 Ab5:2 C6:2',
+B.bar('deceptive cadence: VI on beat 4',  # 29
+      soprano='F5:2 Eb5:2 G5:4 F5:4 Eb5:2 C6:2',
       alto=   'Eb5:1 D5:1 C5:1 D5:1 Eb5:2 D5:1 C5:1 B4:2 C5:4 Ab4:2',
-      bass=   'B2:2 C3:4 G2:2 G2:2 Ab2:2 F2:4')
+      bass=   'B2:2 C3:4 G2:2 G2:4 Ab2:4')
 B.bar('',  # 30
       soprano='Db6:2 F5:2 Ab5:4 G5:2 F5:1 Eb5:1 D5:2 B4:2',
       alto=   'Db5:8 D5:4 F4:2 G4:2',
@@ -184,8 +185,8 @@ B.bar('final cadence',  # 35
       bass=   'Eb2:4 F2:4 G2:8')
 B.bar('',  # 36
       soprano='E5:16',
-      alto=   'C5:16',
-      bass=   'C2:16')
+      alto=   'C5:4 G4:12',
+      bass=   'C2:8 C3:8')
 
 
 ENTRIES = [  # (voice, bar, beat offset in quarters, label, bars to emphasise)
@@ -198,7 +199,7 @@ ENTRIES = [  # (voice, bar, beat offset in quarters, label, bars to emphasise)
     ('soprano', 17, 0.5, 'Inversion (mirror answer, g), soprano', 2),
     ('soprano', 21, 0, 'Mirror trio (f): inversion, soprano; CS2 mirrored in the alto, CS in the bass', 2),
     ('soprano', 23, 0, 'Stretto: subject (c), soprano', 2),
-    ('alto', 23, 2, 'Stretto: subject (c), alto, half a bar later', 2),
+    ('bass', 23, 2.5, 'Stretto: mirror answer (c), bass, 2.5 beats later', 2),
     ('soprano', 27, 0, 'Peak stretto a 3: subject (c), soprano', 2),
     ('bass', 27, 2, 'Peak stretto a 3: subject (c), bass', 2),
     ('alto', 28, 0, 'Peak stretto a 3: subject (c), alto', 2),
@@ -209,7 +210,7 @@ ENTRIES = [  # (voice, bar, beat offset in quarters, label, bars to emphasise)
 MARKS = [(1, 'Fugue a 3'), (7, 'third voice: bass subject'), (9, 'Episode 1'), (11, 'E-flat'),
          (13, 'Episode 2'), (15, 'G minor: subject, augmentation, inversion'), (19, 'Episode 3'),
          (21, 'Mirror trio (F minor)'), (23, 'Stretto'), (25, 'cresc.'), (27, 'Peak: stretto a 3'),
-         (29, 'deceptive cadence'), (30, 'Neapolitan'), (31, 'Coda: BWV 847 subject in the bass')]
+         (29, 'deceptive cadence (beat 4)'), (30, 'Neapolitan'), (31, 'Coda: BWV 847 subject in the bass')]
 
 LEVEL = {1: 0, 7: 2, 9: -2, 11: 1, 13: -2, 15: 2, 19: -2, 21: -4, 23: 2, 25: 5, 26: 8,
          27: 12, 29: 8, 30: 6, 31: 6, 34: 7, 35: 4, 36: 3}

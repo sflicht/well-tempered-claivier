@@ -15,6 +15,7 @@ def wave5(sc, b0=37):
     P('B4', b(0), 1, "A3:12 B3:4")
     P('T5', b(0), 1, "F#3:4")
     P('A3', b(0), 1, "C#4:12 F#4:4")
+    P('S2', b(0), 1, "C#6:4")
     P('S1', b(0), 1, "C#6:12 D6:4")       # (tied from bar 36)
     P('S3', b(0), 1, "F#5:4 R:4 C#5:8~")                     # CS1 in augmentation begins (C# held)
     P('S4', b(0), 1, "C#5:4 B4:2 A4:6 D5:4")

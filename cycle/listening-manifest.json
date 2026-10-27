@@ -182,6 +182,25 @@
    ]
   },
   {
+   "name": "Pair X \u00b7 E minor (new, eleven voices)",
+   "pieces": [
+    {
+     "id": "prelude-10",
+     "title": "Prelude X \u00b7 Aria e Presto",
+     "score": "cycle/10-e-minor/prelude.json",
+     "tag": "new",
+     "notes": "After WTC I's E-minor prelude (BWV 855), an aria over a steady figure that breaks into a Presto. The aria paraphrases lines of the chorale 'O Lamm Gottes, unschuldig' over a chromatic lament ground and a walking eighth-note figure. The Presto is in two-part invertible counterpoint through E minor, B minor, A minor and G, then a canon and a dominant pedal. It stops on D sharp and runs straight into the fugue."
+    },
+    {
+     "id": "fugue-10",
+     "title": "Fugue X \u00b7 a due cori con corale",
+     "score": "cycle/10-e-minor/fugue.json",
+     "tag": "new",
+     "notes": "An homage to the opening chorus of the St Matthew Passion: two five-voice choirs, with the chorale 'O Lamm Gottes, unschuldig' (soprano of Bach's harmonisation BWV 401) floating above in long notes, phrase by phrase. The fugue subject's main notes are the chorale's first line moved down a third, so fugue and chorale are relatives.\n\nChoir I's exposition is followed by a dialogue of fragments, 'Sehet! / Wen? / den Br\u00e4utigam / Wie? / als wie ein Lamm', in the manner of Bach's chorus. Choir II then gives a mirror exposition in inversion.\n\nUnder the chorale's last line the choirs swap forms in a final stretto, all eleven lines moving. The eleven voices arrive at the last chord one or two per beat, each by step. In the binaural render Choir I is on the left, Choir II on the right and the chorale in front."
+    }
+   ]
+  },
+  {
    "name": "Pair XI \u00b7 F major (new, twelve voices)",
    "pieces": [
     {

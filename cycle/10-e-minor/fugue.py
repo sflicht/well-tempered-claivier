@@ -267,7 +267,7 @@ put('Bar2', 41, 3, 'B2:6 D3:6 B2:6 G2:6')
 # third pass: a B pedal in Coro I's bass under the answer; Coro I's baritone and alto, Coro II's alto and bass join
 put('B1', 38, 1, 'B1:24 B1:12')
 put('Bar1', 38, 1, 'D3:12 F#3:12 D3:6 B2:6')
-put('A1', 38, 2, 'F#4:12 R:6 F#4:6 B4:6')
+put('A1', 38, 2, 'F#4:12 R:12 B4:6')
 put('A2', 40, 1, 'B4:6 R:6 B4:6')
 put('B2', 40, 1, 'B1:6')
 put('B2', 41, 3, 'B1:12')
@@ -293,15 +293,17 @@ put('T2', 43, 2, 'E4:6 E4:4 F#4:2 G4:6 F#4:6 G4:6 E4:12 A4:6 G4:6 B4:4 A4:2 G4:6
 put('S2', 44, 1, 'B4:6 D5:6 C5:6 E5:6 F#5:6 D5:6 D5:4 C5:2 B4:6 B4:6 E5:6 D5:6 B4:6 E5:6 C5:6')
 put('Bar2', 47, 3, 'F#3:6 E3:6 D3:6 E3:6 D3:6 E3:6 F#3:6')
 put('Bar2', 45, 2, 'G3:6 R:12 G3:6')
-# third pass: Coro I's baritone's second entry, the subject in D major, three beats after Coro I's alto's inversion
-theme('Bar1', 45, 3, 'D3:6 D3:4 C#3:2 D3:2 E3:2 F#3:2 A3:4 G3:2 A3:4 F#3:2 B3:6 A3:2 G3:2 F#3:2 E3:2 D3:2 C#3:2', 'Coro I: subject in D major, baritone (its second entry)', 2)
+# third pass: Coro I's baritone's second entry, the subject in D major, one beat after Coro I's alto's inversion
+theme('Bar1', 45, 3, 'D3:6 D3:4 C#3:2 D3:2 E3:2 F#3:2 A3:4 G3:2 A3:4 F#3:2 B3:6 A3:2 G3:2 F#3:2 E3:2 D3:2 C3:2',
+      'Coro I: subject in D major, baritone, its second entry (last note C natural, against the chorale C)', 2)
 put('A1', 44, 1, 'D5:6 B4:6 G4:12')                               # Coro I alto exchanges D-B with Coro II's soprano
 
 # ================================================================ IX. CHORALE LINE 7 (b49-56): the final stretto, both choirs
 # Coro II's bass sings the G-major inversion (b49.1); Coro I's soprano the inversion under the chorale (b50.1);
 # Coro II's baritone the subject (b51.3), with Coro I's tenor singing the countersubject against it, as in the
-# exposition.  Coda: Coro I's baritone takes up the subject's head as Coro II's alto sings the inversion's head (b53.3);
-# then the eleven lines reach the closing chord one or two at a time, each by step.
+# exposition; all eleven lines move in b51-53.  Coda: Coro I's tenor turns its countersubject into the subject's
+# head as Coro II's alto sings the inversion's head (b53.3); then the eleven lines reach the closing chord one or two
+# at a time, each by step.
 CH7F = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:6 A5:6 G5:84'     # last line; its final G arrives first (b53.3)
 put('CH', 50, 1, CH7F)
 theme('B2', 49, 1, octv(IG, -2), 'Coro II: inversion in G major, bass (final stretto 1)')

@@ -3480,15 +3480,6 @@
      "bar": 38
     },
     {
-     "t": 228.0,
-     "d": 1.5,
-     "p": 66,
-     "spell": "fis",
-     "v": 67,
-     "gate": 0.975,
-     "bar": 39
-    },
-    {
      "t": 229.5,
      "d": 1.5,
      "p": 71,
@@ -5989,8 +5980,8 @@
     {
      "t": 278.5,
      "d": 0.5,
-     "p": 49,
-     "spell": "cis",
+     "p": 48,
+     "spell": "c",
      "v": 77,
      "gate": 0.94,
      "bar": 47
@@ -12171,7 +12162,7 @@
   {
    "voice": 3,
    "t": 267.0,
-   "label": "Coro I: subject in D major, baritone (its second entry)"
+   "label": "Coro I: subject in D major, baritone, its second entry (last note C natural, against the chorale C)"
   },
   {
    "voice": 9,
@@ -12299,7 +12290,7 @@
     "G4:6 A4:6 G4:6 A4:6",
     "G4:6 R:6 C5:4 E5:2 R:6",
     "R:6 F#4:12 R:6",
-    "F#4:6 B4:6 R:12",
+    "R:6 B4:6 R:12",
     "F#4:6 F#4:4 G4:2 G4:6 E4:6",
     "E4:12 R:12",
     "R:12 E4:6 E4:4 D#4:2",
@@ -12423,7 +12414,7 @@
     "D4:12 G3:12",
     "A3:6 B3:6 D3:6 D3:4 C#3:2",
     "D3:2 E3:2 F#3:2 A3:4 G3:2 A3:4 F#3:2 B3:6",
-    "A3:2 G3:2 F#3:2 E3:2 D3:2 C#3:2 R:12",
+    "A3:2 G3:2 F#3:2 E3:2 D3:2 C3:2 R:12",
     "R:24",
     "R:24",
     "E3:6 R:18",

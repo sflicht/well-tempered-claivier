@@ -193,8 +193,12 @@ put('Idx', 17, [
     'R:12',                                                    # b46
     'R:12',                                                    # b47
     'R:12',                                                    # b48
+    'R:12',                                                    # b49
+    'R:12',                                                    # b50
+    'A#4:4 R:4 F#4:4',                                         # b51
+    'G#4:8 R:4',                                               # b52
 ])
-CANON_SPAN['I'] = (9, 48)
+CANON_SPAN['I'] = (9, 52)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -242,8 +246,12 @@ put('IIdx', 17, subj(1) + [
     'F#5:2 E#5:2 D#5:2 F#5:2 E#5:2 D#5:2',                     # b46 ii6
     'C#5:2 B4:2 G#4:2 B4:2 C#5:2 D#5:2',                       # b47 V7
     'R:12',                                                    # b48 I
+    'R:12',                                                    # b49 I
+    'R:4 G#4:2 A#4:2 B4:2 C#5:2',                              # b50 V6
+    'D#5:2 C#5:2 D#5:2 E#5:2 F#5:4',                           # b51 vi
+    'R:12',                                                    # b52 V
 ])
-CANON_SPAN['II'] = (17, 48)
+CANON_SPAN['II'] = (17, 52)
 entry('IIdx', 17, 'Canon II dux: subject')
 entry('IIco', 18, 'Canon II comes: subject at the 2nd above')
 
@@ -273,8 +281,10 @@ put('IIIdx', 25, subj(-1) + [
     'B3:4 A#3:2 G#3:2 F#3:4',                                  # b46 ii6  (returns in the tenor)
     'R:12',                                                    # b47 V7
     'R:12',                                                    # b48 I
+    'R:12', 'R:12', 'R:12',                                    # b49-51
+    'R:8 E#4:4',                                               # b52 V
 ])
-CANON_SPAN['III'] = (25, 48)
+CANON_SPAN['III'] = (25, 52)
 entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
 entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
 
@@ -295,7 +305,7 @@ put('IVdx', 33, subj(1) + [
     'F#6:4 C#6:2 A#5:2 C#6:4',                                 # b45 I6
     'R:12',                                                    # b46 ii6
     'C#6:4 B5:4 A#5:4',                                        # b47 V7
-    'C#6:4 D#6:2 C#6:2 A#5:4',                                 # b48 I
+    'F#5:6 G#5:2 F#5:2 E#5:2',                                 # b48 I
 ])
 CANON_SPAN['IV'] = (33, 48)
 put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
@@ -306,6 +316,10 @@ put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'A#3:6 B3:2 C#4:4',                                        # b45
     'R:12', 'R:12',                                            # b46-47
     'R:4 A#3:4 C#4:4',                                         # b48
+    'A#3:2 F#3:2 A#3:2 C#4:2 D#4:2 C#4:2',                     # b49 I    (V7: under canon VI's entry)
+    'G#3:4 C#4:2 B3:2 G#3:4',                                  # b50 V6
+    'A#3:2 B3:2 D#4:2 C#4:2 A#3:2 F#3:2',                      # b51 vi
+    'A#3:4 G#3:4 C#4:4',                                       # b52 V
 ])
 entry('Sog', 35, 'Subject (soggetto returns, tenor)')
 entry('IVdx', 33, 'Canon IV dux: subject')
@@ -330,8 +344,12 @@ entry('Vco', 44, 'Canon V comes: subject inverted, a 5th below')
 # Variation 7 (bars 49-56): thirteen voices.  Canon VI (at the sixth below, eight bars apart, so
 # the comes plays every dux bar over the same bass note) enters at the top.
 put('VIdx', 49, subj(1) + [
+    'F#5:4 D#6:8~',                                            # b51 vi   (the dux turns lyrical: its
+    'D#6:2 C#6:2 G#5:4 E#5:4',                                 # b52 V     suspensions return a 6th lower
+    'F#5:4 A#5:8~',                                            # b53 I6    in the middle of the summit)
+    'A#5:2 G#5:2 B5:4 D#6:4',                                  # b54 ii6
 ])
-CANON_SPAN['VI'] = (49, 50)
+CANON_SPAN['VI'] = (49, 54)
 entry('VIdx', 49, 'Canon VI dux: subject')
 entry('VIco', 57, 'Canon VI comes: subject at the 6th below')
 

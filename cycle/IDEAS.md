@@ -95,7 +95,7 @@ device of its own:
     well-tempered keyboard corrects it; a ten-voice stile-antico ricercar
     whose motif travels round a ring of voices (Spem in alium), rendered
     binaurally in a circle.
-23. **[in progress] Pair X: St Matthew homage à 11.** Two choirs in fugal
+23. **[built] Pair X: St Matthew homage à 11.** Two choirs in fugal
     dialogue beneath the chorale *O Lamm Gottes*, the subject derived from
     the chorale.
 24. **[built] Pair XI: concerto fuga à 12.** Brandenburg 2's finale as

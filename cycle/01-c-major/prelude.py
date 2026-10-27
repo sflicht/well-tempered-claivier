@@ -208,6 +208,16 @@ CANTUS = {
     6: 'F6:8 D6:4 B5:4',
     7: 'C6:16',
 }
+# Second review: the Royal Theme (H9-H14) is also sung by the cantus, held, in
+# the half notes of the Musical Offering and an octave above the figure's top
+# voice, so its diminished-seventh drop (Ab -> B) is heard plainly before the
+# octave layers begin.  The cantus is thus heard once early, and its entry at
+# the da capo becomes a return.  Keys: absolute bar numbers.
+ROYAL_CANTUS = {
+    5: 'C6:8 Eb6:8',
+    6: 'G6:8 Ab6:8',
+    7: 'B5:8 C6:8',
+}
 SUBJECT = ('G4:2 C5:3 D5:1 E5:2 C5:2 G5:4 F5:1 E5:1 D5:1 C5:1 '
            'D5:2 G4:2 A4:1 B4:1 C5:1 B4:1 E5:2 F5:2 G5:2')
 
@@ -266,8 +276,15 @@ DYN = [
 ]
 
 # Shepard-Risset settings (see shepard.py), keyframed by half bar.
-SHEPARD_MIX = [(1, 0), (9, 0), (11, .25), (13, .5), (15, .75), (17, .9), (19, 1),
+# Second review: the fade-in now starts at the Db pivot (H15), so the c-minor
+# bars and their Royal Theme are heard plain.
+SHEPARD_MIX = [(1, 0), (15, 0), (16, .3), (17, .6), (18, .85), (19, 1),
                (91, 1), (92, .85), (93, .65), (95, .45), (96, .25), (97, .1), (99, 0), (115, 0)]
+# Second review, item P1: in the loud, wide-bell stretch (H61-H80, bars 31-40)
+# the tenor and figure keep no octave layers below D#3, so dominant sevenths do
+# not turn into loud whole tones in octaves 2-3.  Over the D# pedal itself
+# (H68-H73) the floor is G3: everything below belongs to the pedal alone.
+LAYER_FLOORS = [(61, 80, ('Tenor', 'Figure'), 51), (68, 73, ('Tenor', 'Figure'), 55)]
 SHEPARD_SIGMA = [(1, 7), (9, 7), (19, 8), (33, 9), (35, 7.5), (42, 7.5), (43, 9.5),
                  (55, 10.5), (64, 12), (68, 13.5), (78, 13.5), (84, 11.5), (92, 9),
                  (99, 7.5), (115, 7.5)]
@@ -308,7 +325,8 @@ def build_bars():
         bars['Bass'].append(f'{c1[0]} {c2[0]}')
         bars['Tenor'].append(f'{c1[1]} {c2[1]}')
         bars['Figure'].append(f'{c1[2]} {c2[2]}')
-        bars['Cantus'].append(CANTUS.get(k // 2 + 1 - DA_CAPO_BAR, 'R:16'))
+        bar_no = k // 2 + 1
+        bars['Cantus'].append(ROYAL_CANTUS.get(bar_no) or CANTUS.get(bar_no - DA_CAPO_BAR, 'R:16'))
     return bars
 
 
@@ -341,6 +359,8 @@ def shape_velocities(voices):
                 v = base + 3
             elif name == 'Tenor':
                 v = base - 5 + (2 if u == 0 else 0)
+            elif name == 'Cantus' and t < 8 * 4:        # the Royal Theme, bars 5-7
+                v = base + 12 + (2 if (t % 4) == 0 else 0)
             elif name == 'Cantus':
                 v = base + 20 + (3 if (t % 4) == 0 else 0) + (2 if e['d'] >= 1 else 0)
             else:
@@ -418,6 +438,8 @@ def notation_score():
     t_subject = (DA_CAPO_BAR - 2) * 4 + 3        # upbeat on beat 4 of the bar before
     t_head = (DA_CAPO_BAR + 2) * 4 + 3.5
     for e in voices['Cantus']:
+        if abs(e['t'] - 16) < 1e-9:
+            e['label'] = 'Royal Theme (Musical Offering)'
         if abs(e['t'] - t_subject) < 1e-9:
             e['label'] = 'Fugue I subject, augmented'
         if abs(e['t'] - t_head) < 1e-9:
@@ -441,7 +463,8 @@ def main():
     notation = notation_score()
     (HERE / 'prelude-notation.json').write_text(json.dumps(notation, indent=1))
     pcs, struck = cell_harmony()
-    perf = shepard.performance_score(notation, pcs, struck, meta(True), SHEPARD_MIX, SHEPARD_SIGMA)
+    perf = shepard.performance_score(notation, pcs, struck, meta(True), SHEPARD_MIX, SHEPARD_SIGMA,
+                                     LAYER_FLOORS)
     (HERE / 'prelude.json').write_text(json.dumps(perf, indent=1))
     print(json.dumps({'bars': NBARS, 'core_notes': sum(len(v['events']) for v in notation['voices']),
                       'performance_voices': len(perf['voices']),

@@ -72,7 +72,7 @@ UPPER = [
     "R:2 F#4:4 R:4 A#4:3 R:5 D#4:3 R:3",     # 13
     "R:2 F##4:4 R:4 A#4:3 R:5 D#4:3 R:3",    # 14
     "R:2 B#3:4 R:4 D#4:3 R:5 G#3:3 R:3",     # 15
-    "R:2 B#3:4 R:4 D#4:3 R:5 G#3:3 R:3",     # 16
+    "R:2 B#3:4 R:4 D#4:3 R:5 F#4:3 R:3",     # 16  FIX 5 (G#3 -> F#4: V7 before the return, falls to E#4)
     "R:2 E#4:4 R:4 G#4:3 R:5 C#4:3 R:3",     # 17
     "R:2 A#4:4 R:4 C#5:3 R:5 F#4:3 R:3",     # 18
     "R:2 A4:4 R:4 C#5:3 R:5 F#4:3 R:3",      # 19
@@ -105,7 +105,7 @@ LOWER = [
     "R:4 C#4:5 R:7 C#4:5 R:3",     # 19
     "R:4 C#4:5 R:7 G#3:5 R:3",     # 20  FIX 2 (E#4 C#4 -> C#4 G#3)
     "R:4 A#3:5 R:7 F#3:5 R:3",     # 21
-    "R:4 G#3:5 R:7 E#3:5 R:3",     # 22
+    "R:4 E#3:5 R:7 G#3:5 R:3",     # 22  FIX 6 (bells swapped: completes the cadential 6/4)
     "R:4 D#3:5 R:7 F#3:5 R:3",     # 23
     "E#3:24",                      # 24
 ]
@@ -123,6 +123,8 @@ SECOND_DRAFT = {
     ('L', 20): "R:4 E#4:5 R:7 C#4:5 R:3",                   # FIX 2
     ('M', 21): "A#5:3 R:3 D#5:2 R:6 D#6:4 R:2 F#5:3 R:1",   # FIX 3
     ('U', 5): "R:2 A#3:4 R:4 C#4:3 R:5 F#3:3 R:3",          # FIX 4
+    ('U', 16): "R:2 B#3:4 R:4 D#4:3 R:5 G#3:3 R:3",         # FIX 5 (second review)
+    ('L', 22): "R:4 G#3:5 R:7 E#3:5 R:3",                  # FIX 6 (second review)
 }
 
 # Phrase dynamics (velocity offset per bar), transcribed from the second

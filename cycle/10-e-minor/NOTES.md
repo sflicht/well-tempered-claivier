@@ -1,17 +1,41 @@
 # Pair X in E minor: Aria e Presto, and Fuga a due cori con corale (eleven voices)
 
 **Files.**
-- Sources: `prelude.py`, `fugue.py`. Built scores: `prelude.json` (35 bars, 4/4, one keyboard), `fugue.json` (55 bars, 12/8, eleven staves).
+- Sources: `prelude.py`, `fugue.py`. Built scores: `prelude.json` (35 bars, 4/4, one keyboard), `fugue.json` (56 bars, 12/8, eleven staves).
 - `renders/`: `prelude.*` and `fugue.*` (PDF, MIDI, MusicXML, MP3) in Bach/Lehman temperament; `*-equal.mp3` in equal temperament (audio only); `fugue-spatial.mp3`, binaural, layout `antiphonal-centre`.
 - Build: `python3 prelude.py`, `python3 fugue.py`, then the render commands in `cycle/CONVENTIONS.md`.
 
-**Length.** The Prelude is about 110 s and the Fugue about 243 s (rendered durations, with the tempo maps). The Prelude ends on the dominant and runs straight into the Fugue.
+**Length.** The Prelude is about 110 s and the Fugue about 249 s (rendered durations, with the tempo maps). The Prelude ends on the dominant and runs straight into the Fugue.
 
 **Tempo maps** (`metadata.tempo_map`, t in quarters).
 - Prelude: the Aria is at ♩ = 56 and slows to 48 into its cadence (b16.3–17). The Presto is at ♩ = 132 from b18 (t = 68). It broadens only over the last two bars (→ 96), into the attacca.
-- Fugue: ♩. = 56 (♩ = 84). There is a breath into the Recognition (b25 → 76, then a tempo at b26). The last chorale line broadens: 84 at b48, 80 at b51, 74 at b54, and 54 at the final chord.
+- Fugue: ♩. = 56 (♩ = 84). There is a breath into the Recognition (b25 → 76, then a tempo at b26). The last chorale line broadens: 84 at b48, 80 at b51, 74 at b54, 60 at b56 and 50 at the end.
 
 I have not heard any of this. Everything below comes from the scores, `tools/critic.py`, `tools/reduce.py` and my own checks.
+
+**Second pass on the Fugue (coordinator's request).**
+
+| Moving voices per bar | Before | After |
+|---|---|---|
+| Final line, b50–53 | 10, 9, 9, 9 | **10, 11, 11, 11** |
+| Tutti mean (both choirs + chorale: b20–23, 26–29, 32–35, 38–41, 44–47, 50–53) | 6.79 | **8.21** |
+| Whole fugue | 5.67 | 6.05 |
+| Bars in which all eleven voices move | 0 | 3 (b51–53) |
+
+What changed:
+- **Final stretto (b49–56).** The choirs now trade forms, so each has its own entry under line 7:
+  - Coro I's soprano sings the inversion with the chorale (b50.1).
+  - Coro II's baritone sings the subject, the final cadence (b51.3).
+  - Coro I's tenor sings the **countersubject** against it, as in the exposition.
+  - Coro II's bass still sings the G-major inversion before them (b49.1).
+- **Free lines in b50–53.** The other voices were rewritten as short answering phrases, so every line attacks in every bar from b51 to b53.
+- **Coda (b53.3–56).** The tenor turns the countersubject into the subject's head as Coro II's alto sings the inversion's head (the mirror, across the choirs). Then the lines reach the closing chord one or two at a time, each by step on its own beat. The last four arrive by an upper-neighbour eighth (C–B, C–B, C–B, F♯–E), so their final notes fall on successive beats from b54.4 to b55.3. Bar 56 is added for the full chord.
+- **The held fillers are gone.** These were Bar1's B2 in b51–54, Bar1's F♯3 in b38–39 and A2's B4 in b40. In their place:
+  - Coro II's alto sings the **countersubject in B minor** against Coro I's answer (b38–39; natural-minor tail against the chorale's A).
+  - Coro I's baritone gets its **second entry**: the subject in D major at b45.3, with its last note C♮ against the chorale's C.
+  - New moving lines: Coro I's tenor in b20–24 and b32–34, a Coro I bass under the Recognition (b26–28), and lines for Coro I's alto and Coro II's baritone, bass and soprano at the cadences of lines 4–5.
+- **b48 stays at three voices.** It is a deliberate breath: the mirror pair over the dominant pedal, before the last line.
+- **Method.** Every added note was written by hand and checked with the critic one voice at a time. Each parallel or unresolved dissonance was fixed by changing the new line.
 
 ## Concept
 
@@ -88,55 +112,77 @@ There is one player throughout: the right hand takes the aria and the upper Pres
 | 17–25 | **IV. Coro II's mirror exposition**: all inversions, from the bass up | B2 (b) 17.1 → T2 (b) 18.1 → Bar2 (e) 20.2, under **line 2** (20.1) → A2 (b) 22.3 → S2 (b) 24.3, with Coro II alone. Coro I's S1 and A1 accompany b17–23. |
 | 26–29 | **V. Recognition**: **line 3** (= line 1) | A1 sings the subject in G major, whose beat-notes are the chorale. Bar2 sings it in E minor a tenth below (the one deliberate stretch of parallel tenths). Then B2 answer 28.2 and S1 inversion in D 28.4. |
 | 30–37 | **VI. Line 4** (= line 2) at 32.1 | A2 G-major subject 30.3. B1 the same at **half speed** 30.4 (a prolation stretto, one beat apart), carrying line 4. T2 G-major inversion 32.3. T1 subject (e) 35.1, cadencing in E minor at b37. |
-| 37–43 | **VII. Line 5** at 38.1, B minor | One-beat exchange: Coro II asks, Coro I answers (37.2–37.4). T1 answer 38.1 (A♮ tail against the chorale's A). Bar2 inverted answer, as the bass, 39.3. Dialogue in the gap: A1 head / S2 inversion head, 42.3–43.1. |
-| 43–49 | **VIII. Line 6** at 44.1 | B2 subject (natural-minor tail) 43.2. A1 G-major inversion 45.2. Half cadence: S1 answer and A2 inverted answer **as a mirror pair** over a B pedal, 47.3. |
-| 49–55 | **IX. Line 7** at 50.1: final stretto and coda | B2 G-major inversion 49.1 → S2 inversion (e) 50.1 → T1 subject (e) 51.3 → coda 53.3: T1 subject head against S1 inversion head (the mirror, as question and answer at once) over the tonic pedal. Then iv–i with all eleven voices sounding. |
+| 37–43 | **VII. Line 5** at 38.1, B minor | One-beat exchange: Coro II asks, Coro I answers (37.2–37.4). T1 answer 38.1 (A♮ tail against the chorale's A), with A2 singing the countersubject in B minor against it. Bar2 inverted answer 39.3. Dialogue in the gap: A1 head / S2 inversion head, 42.3–43.1. |
+| 43–49 | **VIII. Line 6** at 44.1 | B2 subject (natural-minor tail) 43.2. A1 G-major inversion 45.2; one beat later Bar1 subject in D major 45.3 (its second entry). Half cadence: S1 answer and A2 inverted answer **as a mirror pair** over a B pedal, 47.3. b48 is left at three voices as a breath. |
+| 49–56 | **IX. Line 7** at 50.1: final stretto and coda | B2 (Coro II) G-major inversion 49.1 → S1 (Coro I) inversion (e) 50.1 → Bar2 (Coro II) subject (e) 51.3 with T1 (Coro I) countersubject → coda 53.3: T1 subject head against A2 inversion head (the mirror, across the choirs) over the tonic pedal. Then the eleven lines reach the closing chord in turn (b53.3–55.3). |
 
-Thematic statements per staff. In the critic's `themes` check every statement has exact rhythm and intervals, with these exceptions: the natural-minor tails (15/16 intervals); the G-major forms, which are diatonic (modal) transfers and so match the minor subject's intervals only 10/16 (rhythm 16/16); the cut mirror pair at b47 (13–14/16); and the dialogue heads.
+Thematic statements per staff. In the critic's `themes` check every statement has exact rhythm and intervals, with these exceptions: the natural-minor tails (15/16 intervals); the G-major forms, which are diatonic (modal) transfers and so match the minor subject's intervals only 10/16 (rhythm 16/16); the cut mirror pair at b47 (13–14/16); Bar1's D-major entry (last note C♮); and the dialogue heads.
 
 | Staff | Statements |
 |---|---|
-| S1 | 3 + coda head |
+| S1 | 4 |
 | A1 | 3 + "Sehet!" head |
-| T1 | 5 + coda head |
-| Bar1 | 1 |
+| T1 | 4 + coda head, + countersubject b51.3 |
+| Bar1 | 2 |
 | B1 | 2 (one at half speed) |
-| S2 | 2 + "Wen?" head |
-| A2 | 3 |
+| S2 | 1 + "Wen?" head |
+| A2 | 3 + coda head, + countersubject b38 |
 | T2 | 2 |
-| Bar2 | 3 |
+| Bar2 | 4 |
 | B2 | 4 |
 | CH | 7 lines |
 
 ## Final stretto: what is in it and why it holds
 
+- **Entries.** B2 (Coro II) G-major inversion 49.1 → S1 (Coro I) inversion 50.1, with the chorale's last line → Bar2 (Coro II) subject 51.3, with T1 (Coro I) countersubject → coda 53.3: T1 (Coro I) subject head and A2 (Coro II) inversion head together. Each choir has both forms.
 - **Beat-level verticals (from the score, b50.1–53.2).**
-  - Against the chorale, the inversion (S2) gives E6/B4, E6/B4, D6/B4, C6/E4, B5/E4, B5/D♯4, A5/E4, A5/A4.
-  - Against the chorale, the subject (T1) gives A5/E3, A5/E3, B5/E3, B5/B3, D6/B3, **D6/C4**, B5/B3, A5/F♯3.
+  - Against the chorale, the inversion (S1) gives E6/B4, E6/B4, D6/B4, C6/E4, B5/E4, B5/D♯4, A5/E4, A5/A4.
+  - Against the chorale, the subject (Bar2) gives A5/E3, A5/E3, B5/E3, B5/B3, D6/B3, **D6/C4**, B5/B3, A5/F♯3.
+  - Against the chorale, the countersubject (T1) gives A5/B3, A5/G4, B5/E4, B5/D4, D6/D4, D6/A4, B5/D♯4, A5/F♯4.
   - Against the chorale, the bass inversion (B2) gives G2, F♯2, G2, C3.
-  - Every sonority is a 3rd, 5th, 6th or octave (compound), with two exceptions. Two 4ths stand above a real bass (b50.1 over G2, b51.3 over C3). The one 9th, at b52.4, is the 7th of D7/A. This agrees with the fit test: the inversion at the chorale's start has 0 clashes, and the subject six beats later has 1, at that D7.
-- **Stretto distances.** B2 → S2: 4 beats. S2 → T1: 6 beats. Then the coda pair is simultaneous (T1 subject head against S1 inversion head).
-- **The two choirs.**
-  - Coro II has the inversion twice (b49, b50).
-  - Coro I has the subject (b51.3) and the subject/inversion heads (b53.3).
-  - Coro II's last subject comes one line earlier (B2 b43.2, under line 6). See the weak spots.
-- **Rejected.** Bar1 subject at b49.3 (two beats before line 7) made parallel octaves with the chorale (C6/C4 → B5/B3), so I dropped it. The b47 mirror pair is cut at b49.1, 13 of 16 notes, so that it does not run into B2's inversion.
-- **Density in the last line, third pass.** Voices moving per bar for b49–55: 5, **10, 9, 9, 9**, 8, 8. Voices sounding: 5, 10, 9, 9, 9, **11, 11**. B1 rests in b49–50 and returns on the tonic at b51.1. The chorale holds its last G and Coro I's bass holds the E pedal from b53.3, so no bar has all eleven voices *attacking*. All eleven *sound* in the closing iv–i (b54.4–55).
+  - Every sonority is a 3rd, 5th, 6th or octave (compound), with these exceptions:
+    - Two 4ths above a real bass (b50.1, b51.3).
+    - The countersubject's held B3 at b51.3 (a prepared 9th, as in the exposition).
+    - The 9th at b52.4, which is the 7th of D7/A.
+  - This agrees with the fit test: the inversion at the chorale's start has 0 clashes, and the subject six beats later has 1, at that D7.
+- **Where the countersubject meets the inversion (b51.4).** It sings G4 against the inversion's A4. Over B7 the A is the chord seventh and the G a 6–5 appoggiatura that falls to F♯ on the next eighth.
+- **Stretto distances.** B2 → S1: 4 beats. S1 → Bar2: 6 beats. Then the coda heads enter together.
+- **Rejected.**
+  - Bar1 subject at b49.3, two beats before line 7: parallel octaves with the chorale (C6/C4 → B5/B3).
+  - A second subject entry under line 7 in either choir: none of the forms fits beside the b51.3 subject without parallels or 2nds on the beat. The test was beat by beat; the rejected placements are listed in the session notes.
+- **The cut.** The b47 mirror pair is cut at b49.1 (13 of 16 notes), so that it does not run into B2's inversion.
+- **The one beat-to-beat octave.** T1's last countersubject note F♯4 → head E4 against the subject's F♯3 (E3 D♯3) → E3 at b53.2–53.3. There is a D♯ eighth between them. It is the only beat parallel left in the fugue.
+- **Arrivals at the closing chord (E2 B2 E3 G3 B3 E4 G4 B4 B4 E5 G5).**
+
+  | Beat | Arrives | By |
+  |---|---|---|
+  | b53.3 | chorale G5 | A5 |
+  | b53.3 | Bar2 E3 (subject's end) | D♯3 |
+  | b54.1 | Bar1 G3 | F♯3 |
+  | b54.1 | T2 B3 | A3 |
+  | b54.3 | T1 G4 | A4 |
+  | b54.3 | A2 E4 | F♯4 |
+  | b54.4 | B2 B2 | C3 |
+  | b55.1 | A1 B4 | C5 |
+  | b55.2 | S2 B4 | C5 |
+  | b55.3 | S1 E5 | F♯5 |
+
+  Coro I's bass reaches E2 at b53.3 by the cadential leap B→E and holds it as a pedal. It is the one line that does not arrive by step.
 
 ## Critic numbers (final)
 
 | | Fugue | Prelude | Target |
 |---|---|---|---|
 | parallels_error / weak | 0 / 0 | 0 / 0 | 0 |
-| beat_parallels | 0 | 0 | ≤ 6 |
+| beat_parallels | 1 (b53.2–53.3, see above) | 0 | ≤ 2 |
 | dissonance_unresolved | 0 | 0 | 0 |
-| pc_tripled_on_beats_pct | 32.5 | 1.6 | ≤ 25 (fugue: judged by bad_doublings) |
-| bad_doublings | 3 (b15.2.5, b35.4, b50.4: doubled 7ths) | 0 | ≤ 5 |
-| low_register_seconds | 5 | 0 | ≤ 12 |
-| stepwise_pct | 61.7 | 52.6 (keyboard figuration) | ≥ 62 |
-| mean_moving_voices | 5.67 over the whole fugue | 2.46 (of 3) | — |
-| tutti mean (both choirs + chorale: b20–23, 26–29, 32–35, 38–41, 44–47, 50–53) | **6.79** | — | ≥ 7 (report) |
-| crossings | 18 notes (all between the two choirs except T2 above A2 at b52.1) | 0 | — |
+| pc_tripled_on_beats_pct | 43.0 | 1.6 | ≤ 25 (fugue: judged by bad_doublings) |
+| bad_doublings | 3 (b15.2.5, b35.4, b52.4: doubled 7ths) | 0 | ≤ 5 |
+| low_register_seconds | 11 | 0 | ≤ 12 |
+| stepwise_pct | 60.9 | 52.6 (keyboard figuration) | ≥ 60 |
+| mean_moving_voices | 6.05 over the whole fugue (5.67 before the second pass) | 2.46 (of 3) | — |
+| tutti mean (both choirs + chorale: b20–23, 26–29, 32–35, 38–41, 44–47, 50–53) | **8.21** (6.79 before) | — | ≥ 8 |
+| crossings | 32 notes, mostly between the two choirs; inside a choir, A1 rises above S1 for a few beats in b50–52, where S1's inversion dips to E4 | 0 | — |
 
 Moving voices by section:
 
@@ -144,13 +190,15 @@ Moving voices by section:
 |---|---|
 | Exposition | 2.9 (one choir, accumulating) |
 | Dialogue | 6.7 |
-| III | 5.3 |
-| IV | 5.6 |
-| V | 5.0 |
-| VI | 6.0 |
-| VII | 6.5 |
-| VIII | 6.3 |
-| IX | 8.3 |
+| III (Coro I + chorale only) | 5.3 |
+| IV | 6.3 |
+| V | 6.8 |
+| VI | 6.9 |
+| VII | 7.7 |
+| VIII | 6.7 |
+| IX (b49–56, including the closing bars) | 7.0 |
+
+In b50–53 the moving voices per bar are 10, 11, 11, 11.
 
 `reduce.py` shows a directed harmonic route:
 - e → (b) → G → e for lines 1–4.
@@ -163,25 +211,33 @@ Moving voices by section:
 - Every note is a literal token string in `prelude.py` or `fugue.py`.
 - Thematic statements are explicit transforms (`transpose`, `invert_diatonic`, `scale_rhythm`) of the hand-written subject, or are written out by hand: RG, IG, the natural-minor tails, and the G-major Presto statement.
 - Scratch scripts in the session scratchpad only **checked** candidates that I wrote: the critic run on a trial line, and a fit test listing which whole-statement placements clash with a chorale line. No script chose or inserted notes, and nothing generates notes at build time.
-- The third pass (b38–40, b44, b49–54) added hand-written inner lines one voice at a time. Each was re-checked, and each parallel the critic found was fixed by changing my new line, not the existing ones.
+- The later passes added hand-written lines one voice at a time:
+  - Third pass: b38–40, b44 and b49–54.
+  - Second-pass request: b20–24, b26–29, b32–35, b38–41, b45–47 and b49–56. This includes the swap of forms in the final stretto and the new coda.
+  - Each line was re-checked. Each parallel the critic found was fixed by changing the new line, except where noted.
 
 ## Weak spots (honest)
 
-1. **Not a full eleven-part texture most of the time.**
-   - The whole-fugue mean is 5.7 moving voices. In tutti it is 6.8, below the 7 asked for.
-   - The Recognition (b26–29: 5, 4, 6, 5) is bass-less by design. I tried a Coro I bass under it, and it made parallel 5ths and 8ves with the tenths, so I removed it.
-   - b48 has three voices: the mirror pair over the pedal.
-2. **"All eleven lines moving" in the final phrase is not met.** The best is 10 (b50), then 9. Some of the third-pass inner lines are held tones rather than real counterpoint: Bar1 B2 in b51–54, Bar1 F♯3 in b38–39, A2 B4 in b40. They also lower stepwise motion (61.7 %).
-3. **The final stretto is lopsided between the choirs.** Coro II has no subject under line 7, and Coro I's inversion there is only a head (b53.3).
-4. **Unequal staves.** Bar1 has a single entry (b7) and 58 notes. S2 has 74 notes. B2 and T1 carry most of the late entries.
-5. **Altered statements.**
-   - Natural-minor tails in four statements against the chorale: b14 T1, b26 Bar2, b38 T1 (A♮), b43 B2.
-   - Two statements are cut to 13 notes (b47.3 S1/A2).
-6. **Tripling.** Pitch classes are tripled on 32.5 % of beats (eleven voices on triads). There are 3 doubled sevenths (b15, b35, b50). In the final tutti there are single-beat unisons between the choirs: S2/S1 B4 at b53.2, A2/S2 G4 at b51.1, T1/Bar2 at b52.1. None of them is sustained as colla parte doubling.
-7. **Register.** The chorale sits an octave above a sung ripieno (top E6), and S1 reaches B5. In the renders these are keyboard voices, not singers.
-8. **Prelude.**
+1. **Density is uneven.**
+   - The tutti mean is now 8.2.
+   - The Recognition (b26–29: 7, 6, 8, 6) is lighter by design. It is built on the two choirs' tenths and has a new, simple Coro I bass.
+   - b44–46 are at 6–7.
+   - The exposition (one choir, entering voice by voice) and b48 (a three-voice breath before the last line) are thin on purpose.
+2. **Some added lines are short answering phrases.** Many of the voices added to b50–53 sing one to three notes and then rest. That is how every line moves in every bar there. It is closer to the dialogue style of BWV 244/1 than to eleven continuous lines.
+3. **Pedals and holds.**
+   - Coro I's bass holds a B pedal under the B-minor answer (b38–39).
+   - After their arrivals, the voices hold the closing chord.
+   - Coro I's bass reaches the final tonic by the cadential leap, not by step.
+4. **One beat-to-beat octave** at b53.2–53.3: the countersubject's end against the subject's end.
+5. **Altered and cut statements.**
+   - Natural-minor tails against the chorale: b14 T1, b26 Bar2, b38 T1 (A♮) with its countersubject, b43 B2, and Bar1's D-major entry (C♮ at the end).
+   - Two statements are cut to 13 notes (b47.3).
+6. **Unequal staves.** Coro II's soprano has only one full entry, at b24.3; its b50 inversion moved to Coro I's soprano. T2 and B1 have two each.
+7. **Tripling.** Pitch classes are tripled on 43 % of beats (eleven voices on triads), and there are 3 doubled sevenths. Single-beat unisons between the choirs are frequent in b50–55. None is a sustained colla parte doubling.
+8. **Register.** The chorale sits an octave above a sung ripieno (top E6), and S1 reaches B5. In the renders these are keyboard voices, not singers.
+9. **Prelude.**
    - The Presto canon (b28–29) and the pedal bars give non-tertian verticals in `reduce.py`. They are linear, and clean by the critic.
    - The Prelude runs about 1′50″, against the ~2′ asked for.
    - Stepwise motion is 52.6 %, because the Presto is arpeggiated figuration.
-9. **Spatial.** With `antiphonal-centre`, Coro I is on the left (−80…−25°), Coro II on the right (+25…+80°) and the chorale at the centre front. I cannot judge from the files whether the centre chorale stands out enough or swamps the choirs.
-10. **Unheard.** I cannot hear the renders. Balance, the 12/8 lilt at ♩. = 56, and whether the chorale reads as a cantus firmus are all for Sam's ears.
+10. **Spatial.** With `antiphonal-centre`, Coro I is on the left (−80…−25°), Coro II on the right (+25…+80°) and the chorale at the centre front. I cannot judge from the files whether the centre chorale stands out enough or swamps the choirs.
+11. **Unheard.** I cannot hear the renders. Balance, the 12/8 lilt at ♩. = 56, the staggered close, and whether the chorale reads as a cantus firmus are all for Sam's ears.

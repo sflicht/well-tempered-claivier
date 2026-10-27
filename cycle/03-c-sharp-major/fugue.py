@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fugue III in C-sharp major, four voices: "Giga a 4, rectus et inversus".
 
-12/8, dotted quarter = 88 (quarter = 132), 45 bars.  A gigue in two halves:
+12/8, dotted quarter = 96 (quarter = 144), 45 bars.  A gigue in two halves:
 Part 1 (bars 1-20) presents the subject rectus and cadences in G# major;
 Part 2 (bars 21-39) presents it inversus and turns home; in the coda
 (bars 40-45) a passage of Part 1 and its mirror image from Part 2 sound at
@@ -161,7 +161,10 @@ put('S', at(19), "B#5:6 D#6:6 C#6:6 B#5:4 A#5:2 G#5:4 G#5:2 B#5:4 B#5:2 D#6:4")
 
 # ======================= PART 2: inversus  (G# -> C#) ===========================
 # Exposition in the mirrored order: bass, tenor, alto, soprano.
-put('B', at(21), T(nopick(INV_G), -12, -7))                        # E1* inversus (G#)
+put('B', at(21), nopick(INV_D))           # E1* inversus, real mirror: A# minor (VI after Part 1's G#)
+put('S', at(21), "R:6 C#6:4 R:8 A#5:4 R:2 R:12 G#5:4 R:8 R:6 A#5:4 R:14 R:6 A#5:4 R:12")
+# high bells over the lone bass (21-22) and over the tenor+bass pair (23-24): A#5 turns
+# bar 23's second beat into vi and bar 24's into a full viiø7 (the pair itself is untouched)
 put('T', at(22, 11), pick(INV_C_T)); put('T', at(23), nopick(INV_C_T))   # E2* (C#)
 put('B', at(23), CSI_C_B)          # bars 23-24, tenor + bass: the inversus half of the coda
 put('A', at(24, 11), T(pick(INV_G), 12, 7)); put('A', at(25), T(nopick(INV_G), 12, 7))  # E3* (G#)
@@ -179,7 +182,7 @@ put('S', at(28, 9), BWV848_REST)
 put('S', at(29, 9), "B#5:6")
 put('T', at(28, 2), pick(INV_C_T)); put('T', at(28, 3), drop_last(nopick(INV_C_T)))
 put('A', at(29), "C#5:6 E#5:6 A#4:6 F#5:6 E#5:4")
-put('B', at(29), "C#3:12 B#2:6 G#2:6")
+put('B', at(29), "A#2:6 E#2:6 B#2:6 G#2:6")
 
 # Episode* (30-31), mirror of Episode 1: the soprano stamps the head up the circle of
 # fifths (C# G#7 D#m A#7), alternately inverted (falling) and rectus (rising); the
@@ -205,7 +208,7 @@ put('B', at(34, 8), "R:2 D#3:6")
 # Dominant pedal (35-36): the bass stamps G#; the hop passes soprano -> tenor; I6/4 - V7.
 put('B', at(35), "G#2:4 G#2:2 G#2:4 G#2:2 G#2:4 G#2:2 G#2:4 G#2:2 "
                  "G#2:4 G#2:2 G#2:4 G#2:2 G#2:4 G#2:2 G#2:4")
-put('S', at(35), "D#6:4 R:2 D#5:4 E#5:1 F#5:1 G#5:6 F#5:6 G#5:4 A#5:2 B#5:6 C#6:4 B#5:2 D#6:6")
+put('S', at(35), "D#6:4 R:2 D#5:4 E#5:1 F#5:1 G#5:6 B#5:6 G#5:4 A#5:2 B#5:6 C#6:4 B#5:2 D#6:6")
 put('A', at(35), "F#4:6 G#4:6 B#4:6 D#5:6 D#5:6 F#5:6 E#5:6 F#5:6")
 put('T', at(35), "D#4:12 F#4:4 R:2 F#3:4 G#3:1 A#3:1 B#3:6 G#3:12 B#3:6")
 
@@ -230,6 +233,7 @@ put('T', at(39, 11), pick(INV_C_T)); put('T', at(40), nopick(INV_C_T))
 put('B', at(40), CSI_C_B)
 # 42-44: last stretto -- rectus (soprano) and its real mirror (bass) three beats later.
 put('S', at(41, 11), pick(SP)); put('S', at(42), nopick(SP))
+put('B', at(42), "A#2:6 B#2:6 C#3:6")                               # bar 9's bass: vi - iii6/4 - I
 put('B', at(42, 9), nopick(INV_D))                                   # (enters on its first stamp)
 put('A', at(42), "E#4:6 G#4:6 C#5:6 E#4:6 E#4:6 C#5:6 E#4:12 G#4:6 C#5:12 B#4:6")
 put('T', at(42), "C#4:6 E#3:12 G#3:6 G#3:6 F#3:6 C#4:4 D#4:2 C#4:6 G#3:18 F#3:6")
@@ -238,9 +242,9 @@ put('T', at(42), "C#4:6 E#3:12 G#3:6 G#3:6 F#3:6 C#4:4 D#4:2 C#4:6 G#3:18 F#3:6"
 put('S', at(44), "D#5:6 E#5:6 G#5:4 A#5:2 G#5:2 F#5:2 G#5:2")
 put('B', at(44, 9), "G#2:6")
 put('S', at(45), "C#6:4 C#6:2 E#6:4 E#6:2 C#6:6")
-put('A', at(45), "E#5:4 E#5:2 G#5:4 G#5:2 E#5:6")
-put('T', at(45), "E#3:4 E#3:2 E#3:4 G#3:2 G#3:6")
-put('B', at(45), "C#2:4 C#3:2 C#2:4 C#3:2 C#3:6")
+put('A', at(45), "E#5:4 E#5:2 G#5:4 G#5:2 G#5:6")
+put('T', at(45), "E#3:4 E#3:2 E#3:4 G#3:2 E#3:6")
+put('B', at(45), "C#2:4 C#3:2 C#2:4 C#3:2 C#2:6")
 
 NBARS = 45
 
@@ -250,7 +254,7 @@ ENTRIES = [
     ('Tenor', 5, 0, 'rectus', 2), ('Bass', 7, 0, 'rectus: answer (G#)', 2),
     ('Alto', 9, 0, 'rectus (coda source)', 2), ('Tenor', 13, 0, 'rectus (A# minor)', 2),
     ('Soprano', 17, 0, 'rectus (G#)', 2),
-    ('Bass', 21, 0, 'inversus (G#)', 2), ('Tenor', 23, 0, 'inversus (coda source)', 2),
+    ('Bass', 21, 0, 'inversus, real mirror (A# minor)', 2), ('Tenor', 23, 0, 'inversus (coda source)', 2),
     ('Alto', 25, 0, 'inversus (G#)', 2), ('Soprano', 27, 0, 'inversus', 2),
     ('Tenor', 28, 1.5, 'inversus stretto (displaced)', 2), ('Soprano', 28, 3, 'BWV 848 guest', 1),
     ('Alto', 32, 0, 'rectus (F#), stretto', 2), ('Bass', 32, 4.5, 'inversus, real mirror (D# minor), stretto', 2),
@@ -288,9 +292,10 @@ def build(out=HERE / 'fugue.json'):
     meta = {
         'title': 'The Well-Tempered clAIvier', 'subtitle': 'III. Fugue in C-sharp major',
         'composer': 'Claude / composed for Sam', 'instrument': 'Piano (four voices)',
-        'key': 'C#', 'mode': 'major', 'meter': list(METER), 'bpm': 132,
-        'tempo_text': 'Giga a 4, rectus et inversus. Allegro (dotted quarter = 88)',
-        'tempo_map': [[end_q - 12, 132], [end_q, 99, 'ramp']],
+        'key': 'C#', 'mode': 'major', 'meter': list(METER), 'bpm': 144,
+        'tempo_text': 'Giga a 4, rectus et inversus. Allegro (dotted quarter = 96)',
+        # a breath into the reflection (bar 40), a tempo, and a final ritardando
+        'tempo_map': [[232.5, 144], [234, 120, 'ramp'], [234, 144], [end_q - 12, 144], [end_q, 108, 'ramp']],
         'character': 'Gigue and its reflection',
         'score_tagline': 'Third edition - Fugue III (see NOTES.md)',
         'markers': [{'t': 0.0, 'label': 'Part 1: rectus'}, {'t': 60.0, 'label': 'Episode'},
@@ -305,8 +310,14 @@ def build(out=HERE / 'fugue.json'):
     data = build_score(out, meta, voices, bars, entries=entries, subject=SUBJ,
                        dynamics=lambda b: DYN[b], tags=[])
     pans = {'Soprano': 74, 'Alto': 66, 'Tenor': 60, 'Bass': 54}
+    # The reflection (bars 40-41, with the pickups at the end of 39): bring out the
+    # subject and its mirror (alto, tenor), recede the countersubject pair.
+    lift = {'Soprano': -4, 'Alto': 8, 'Tenor': 8, 'Bass': -4}
     for v in data['voices']:
         v['piano_pan'] = pans[v['name']]
+        for e in v['events']:
+            if 39 * 6 - 0.5 <= e['t'] < 41 * 6:
+                e['v'] = max(24, min(118, e['v'] + lift[v['name']]))
     Path(out).write_text(json.dumps(data, indent=1))
     return data
 

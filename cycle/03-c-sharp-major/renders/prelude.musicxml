@@ -2420,9 +2420,9 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>F</step>
           <alter>1</alter>
-          <octave>3</octave>
+          <octave>4</octave>
         </pitch>
         <duration>360</duration>
         <type>eighth</type>
@@ -4485,7 +4485,7 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>E</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
@@ -4498,7 +4498,7 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>E</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
@@ -4522,7 +4522,7 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
+          <step>G</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
@@ -4535,7 +4535,7 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
+          <step>G</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>

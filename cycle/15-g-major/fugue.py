@@ -77,6 +77,28 @@ def aug(s, k):
     return W.scale_rhythm(s, k)
 
 
+def dshift(toks, steps, scale=GMAJ):
+    """Diatonic (modal) transposition inside G major; chromatic notes keep their offset."""
+    out = []
+    t0 = scale[0]
+    for t in toks.split():
+        p, d, sp, tie = W.parse_tok(t)
+        if p is None:
+            out.append(t)
+            continue
+        pc = p % 12
+        nl = 'CDEFGAB'[('CDEFGAB'.index(sp[0].upper()) + steps) % 7]
+        alt = 0
+        if pc not in scale:
+            alt = 1 if (pc - 1) % 12 in scale else -1
+        base = p - alt
+        deg = ((base - t0) // 12) * 7 + scale.index(base % 12)
+        nd = deg + steps
+        q = t0 + (nd // 7) * 12 + ((scale[nd % 7] - t0) % 12) + alt
+        out.append(f"{W.name_of(q, nl)}:{t.rsplit(':', 1)[1]}")
+    return ' '.join(out)
+
+
 # ---------------------------------------------------------------- placement
 VO = {n: [] for n in NAMES}
 ENTRIES = []
@@ -163,5 +185,23 @@ put('A1', 6, 1, CS1G)
 put('S1', 6, 1, 'B4:4 G5:4 F#5:2 E5:2 D5:4 D5:4 B4:2 C5:2 E5:2 C5:2 A4:4')
 theme('B1', 8, 1, oc(A1, -2), 'I: answer in D (bass)', 2)
 put('T1', 8, 1, oc(CS1D, -1))
-put('S1', 8, 1, 'F#5:4 G5:2 E5:2 E5:4 D5:4 D5:4 C#5:4 D5:2 B4:2 C#5:2 E5:2')
+put('S1', 8, 1, 'F#5:4 G5:2 E5:2 E5:4 D5:4 D5:4 C#5:4 D5:2 B4:2 E5:2 C#5:2')
 put('A1', 8, 1, 'A4:4 B4:4 E4:2 A4:2 F#4:4 A4:4 G4:4 F#4:2 G#4:2 A4:4')
+
+# b10: codetta, A major -> D7 -> G; the bass falls D C B A F# into the cantus' first chord.
+put('S1', 10, 1, 'A5:2 G5:2 F#5:2 E5:2 D5:2 C5:2 B4:2 A4:2')
+put('A1', 10, 1, 'A4:4 A4:2 G4:2 G4:4 F#4:4')
+put('T1', 10, 1, 'F#4:2 E4:2 D4:4 D4:4 C4:4 B3:4')
+put('B1', 10, 1, 'D3:4 C3:4 B2:4 A2:2 F#2:2')
+# b11-14: line 1 as cantus, high above (Coro II soprano, its first notes), over a stretto of the
+# subject two beats apart on rising degrees: tenor in C (modal, b11.2), alto in D (modal, b11.4),
+# soprano in D an octave higher, off the beat (b12.1.5): the entries close in, 2 beats then 1.5.
+theme('S2', 11, 1, L1 + ' G5:8', 'II: chorale line 1 (cantus)', 4)
+theme('T1', 11, 2, dshift(oc(S1, -1), 3), 'I: subject in C (stretto)', 2)
+theme('A1', 11, 4, dshift(oc(S1, -1), 4), 'I: subject in D (stretto)', 2)
+theme('S1', 12, 1.5, dshift(S1, 4), 'I: subject in D (stretto, off the beat)', 2)
+put('B1', 11, 1, 'G2:8 D3:8 C3:4 E3:4 D3:4 C3:4 B2:8 C3:8 D3:4 C3:4 G2:8')
+# free continuations into the cadence (b14.3, G)
+put('T1', 13, 2, 'B3:4 G4:8 D4:4 A3:4 B3:8')
+put('A1', 14, 1, 'A3:4 D4:12')
+put('S1', 14, 1.5, 'B4:2 A4:4 G4:8')
