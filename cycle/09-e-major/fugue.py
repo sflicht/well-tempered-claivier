@@ -85,20 +85,30 @@ theme('S2', 11, 1, dshift(S, 3), 'S on E')
 theme('A2', 13, 1, dshift(S, -6), 'S on C#')
 theme('T2', 15, 1, dshift(S, -10), 'S on F#')
 theme('Bar2', 17, 1, dshift(S, -7), 'S on B')
-theme('B2', 19, 1, W.transpose(W.scale_rhythm(F, 2), -24, -14), 'BWV 878 x2')
 
-
-# ---- exposition: free continuations (draft)
-put('S1', 5, 1, 'C#5:8 B4:16 C#5:8 E5:8 F#5:16 E5:8 B4:8 A4:16 G#4:8 A4:8 C#5:16 B4:8')   # b5-12
-put('S1', 15, 3, 'E5:16 C#5:8 B4:8 C#5:8 C#5:8 B4:8')                                     # b15.3-18
-put('A1', 7, 1, 'G#4:8 B4:8 B4:4 A4:4 G#4:8 F#4:8 D#4:16 E4:16 A4:16 G#4:8 A4:24 G#4:8 B4:8 G#4:8 E4:8 F#4:8 E4:8 A4:16 F#4:8')  # b7-18
-put('T1', 10, 3, 'B3:8 C#4:8 E4:8 F#4:4 E4:4 D#4:8 F#4:8 B3:24 G#3:8')                      # b10.3-14
-put('T1', 17, 3, 'C#4:16 B3:8')
-put('Bar1', 11, 3, 'E3:8 F#3:8')
-put('Bar1', 13, 1, 'C#3:8 F#3:16 B2:8')
-put('B1', 13, 1, 'A2:8 B2:16 G#2:8 B2:8 E2:8 G#2:8 F#2:8 E2:8 A2:8 C#3:8 B2:8')             # b13-18 bass
-put('S2', 15, 1, 'F#5:8 G#5:16 A5:8 G#5:16 F#5:16')                                      # b15-18
-put('A2', 17, 1, 'E4:16 F#4:8 D#4:8')
+# ---- FIRST TUTTI (b19-25): ten voices over the ancestor in augmentation
+theme('S1', 19, 1, 'B4:16 C#5:8 E5:8 D#5:8 C#5:8 B4:8', "BWV 878 answer at normal speed (Bach's answer form)", 4)
+put('S1', 22, 3, 'D#5:8 E5:16 F#5:8 B4:8 E5:16')
+theme('T1', 19, 1, 'E4:8 A4:16 G#4:8', 'S head on E', 2)
+put('T1', 21, 1, 'A4:16 R:16 G#4:16 R:16 E4:16')
+put('B1', 19, 1, 'B2:8 R:8')
+theme('B1', 20, 1, 'F#3:8 B3:16 A3:8', 'S head on F#', 2)
+put('B1', 22, 1, 'B3:8 R:8 R:8 B2:24 G#2:16')
+put('S2', 19, 1, 'E5:8 D#5:8 F#5:8 G#5:8 C#6:24 B5:16 G#5:8 B5:32')
+put('A2', 19, 1, 'B3:16 E4:16')
+theme('A2', 21, 3, 'C#4:8 F#4:16 E4:8', 'S head on C#', 2)
+put('A2', 23, 3, 'E4:8 R:16 B3:16')
+put('T2', 19, 1, 'G#3:8 R:8')
+theme('T2', 22, 3, 'F#3:8 B3:16 A3:8', 'S head on F#', 2)
+put('T2', 24, 3, 'A3:8 G#3:16')
+put('Bar2', 21, 1, 'F#3:16')
+theme('Bar2', 23, 1, 'B2:8 E3:16 D#3:8', 'S head on B', 2)
+put('Bar2', 25, 1, 'E3:16')
+put('A1', 19, 1, 'G#4:8 F#4:16 E4:8 C#4:8 E4:8 D#4:8 R:8 R:8')
+theme('A1', 23, 3, 'B4:8 F#4:16 G#4:8', 'I head on B', 2)
+put('A1', 25, 3, 'G#4:8')
+put('Bar1', 19, 3, 'A2:8 C#3:8 B2:8 R:16 F#3:8 R:8 R:16 R:16 B2:16')
+theme('B2', 19, 1, W.transpose(W.scale_rhythm(F, 2), -24, -14), 'BWV 878 subject (Fischer/Bach) in augmentation x2', 7)
 
 
 def build(nbars):

@@ -585,8 +585,23 @@ def analyse(data, bars=None):
         lo, hi = bars
         for k in ('parallels', 'beat_parallels', 'direct', 'dissonance', 'melody', 'crossing'):
             R[k] = [x for x in R[k] if lo <= x['t'] // S.bar + 1 <= hi]
+    steps = leaps = reps = nint = 0
+    for v in S.voices:
+        for a, b in zip(v, v[1:]):
+            if b['s'] - a['e'] > S.beat:
+                continue
+            iv = abs(b['p'] - a['p'])
+            nint += 1
+            steps += 1 <= iv <= 2
+            leaps += iv >= 5
+            reps += iv == 0
     c = collections.Counter
     R['summary'] = {
+        # melodic profile: Bach's fugues (BWV 869/878) move by step ~71-75%, leap a 4th+ ~14%;
+        # lines built from chord tones leap far more.
+        'stepwise_pct': round(100 * steps / max(1, nint), 1),
+        'leap_4th_plus_pct': round(100 * leaps / max(1, nint), 1),
+        'repeated_note_pct': round(100 * reps / max(1, nint), 1),
         'parallels_error': sum(1 for x in par if x['sev'] == 'error'),
         'parallels_weak': sum(1 for x in par if x['sev'] == 'warn'),
         'doubling_runs': sum(1 for x in par if x['sev'] == 'doubling'),

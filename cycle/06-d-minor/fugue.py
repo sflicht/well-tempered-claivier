@@ -140,9 +140,9 @@ entry('S1', 21, 'Subject (F major)')
 tag(25, 'Var. 4 (A minor): ground in Alto II')
 put(25, A2=G('A4'))
 entry('A2', 25, 'Ground (Alto II), A minor', n=8)
-put(25, S1='C6:6 B5:2 A5:4  F5:4 E5:4 D5:4  C5:4 E5:4 F#5:4  D5:4 E5:4 B5:4~  B5:4 A5:4 F5:4'
-           '  D5:8 C5:4  E5:4 G#5:4 A5:4~  A5:4 E5:8')
-put(25, S2='E5:8 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 B4:4~  B4:4 A4:4 D5:4  B4:8 A4:4'
+put(25, S1='C6:8 A5:4  F5:8 E5:4  C5:4 E5:4 F#5:4  D5:4 E5:4 B5:4~  B5:4 A5:4 D6:4~'
+           '  D6:8 C6:4  A5:4 G#5:4 A5:4~  A5:4 E5:8')
+put(25, S2='E5:8 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 G#4:4~  G#4:4 A4:4 R:4  R:4 B4:4 A4:4'
            '  C5:4 B4:4 C5:4  C5:4 A4:8')
 put(25, T1='C4:4 E4:4 F4:4  D4:4 E4:8')
 tag(27, 'Inversus (Tenor I), under the ground')
@@ -152,8 +152,60 @@ put(25, T2='E3:4 A3:4 F3:4  A3:4 B3:8  C4:4 A3:4 R:4  A3:8 R:4')
 tag(29, 'Subject (Tenor II), under the ground')
 put(29, T2=S('E3'))
 entry('T2', 29, 'Subject (A minor)')
-put(25, B='A2:4 C3:4 D3:4  D2:4 E2:8  A2:4 G2:4 B2:4  D3:4 A2:4 G#2:4  R:4 F2:4 D3:4'
+put(25, B='A2:4 C3:4 D3:4  F2:4 E2:8  A2:4 G2:4 B2:4  D3:4 A2:4 R:4  R:4 F2:4 D3:4'
           '  B2:4 E2:4 A2:4~  A2:4 E2:8~  E2:4 A2:4 C3:4')
+
+# ===========================================================================
+# VARIATIO 5 (bars 33-40), G minor (the subdominant, the darkest place).
+# Ground in Alto I.  Inversus (Tenor I) and subject (Tenor II) again under the
+# ground; the upper voices sing a slower descant.  The Bass falls silent for a
+# beat before each VI root so that it does not shadow the ground in octaves.
+# Harmonisation: Gm/Bb, Eb, Cm, D, D7 | G7, A (V of V), Cm, G-Gm, D7/C |
+# D, Ebmaj7, A-half-dim7, Am/C, D, Dsus4-D | Gm/D, Gm, Dm/A (plagal hinge).
+tag(33, 'Var. 5 (G minor): ground in Alto I')
+put(33, A1=G('G4'))
+entry('A1', 33, 'Ground (Alto I), G minor', n=8)
+put(33, S1='G5:6 F5:2 Eb5:4  Eb5:4 D5:4 C5:4  B4:4 D5:4 G5:4~  G5:8 F#5:4  F#5:4 G5:8'
+           '  E5:4 D5:4 A5:4~  A5:4 F#5:4 G5:4  Bb5:4 G5:4 D5:4')
+put(33, S2='Bb4:12  C5:4 A4:8  G4:4 B4:4 A4:4  G4:4 D5:8~  D5:4 Bb4:4 C5:4  C5:4 A4:4 D5:4~'
+           '  D5:8 Bb4:4~  Bb4:12')
+put(36, A2='R:8 F#4:4  A4:4 G4:8  A4:4 R:4 A4:4~  A4:4 C5:4 G4:4~  G4:8 F4:4')
+put(33, T1='D3:4 G3:8~  G3:4 D4:4 A3:4')
+tag(35, 'Inversus (Tenor I)')
+put(35, T1=I('D4') + '  A3:4 D4:8  Bb3:12')
+entry('T1', 35, 'Inversus')
+put(33, T2='R:12')
+tag(37, 'Subject (Tenor II)')
+put(37, T2=S('D3'))
+entry('T2', 37, 'Subject (G minor)')
+put(33, B='Bb2:4 G2:4 Eb3:4  C3:4 D3:8  G2:8 A2:4  C3:4 G2:4 C3:4  R:4 Eb2:4 G2:4~  G2:4 D2:8'
+          '  D2:12  D2:4 G2:8')
+
+# ===========================================================================
+# VARIATIO 6 (bars 41-48), D minor again: the return.  Ground in Soprano II.
+# Stretto gathers: inversus above the ground (Soprano I), subject below it
+# (Tenor I), answer (Tenor II), whose tail runs on into the summit.
+# Harmonisation: Dm, Bb, Gm, A, A7 | F, F6, E (V of V), Gm, D-Dm, A |
+# Bbmaj7, C7, Em, Am-A, Asus | A, Dm, D, Gm-G#dim7, A(sus4).
+tag(41, 'Var. 6 (D minor, the return): ground in Soprano II')
+put(41, S2=G('D5'))
+entry('S2', 41, 'Ground (Soprano II)', n=8)
+put(41, S1='F5:4 A5:4 Bb5:4~  Bb5:4 A5:4 E5:4')
+tag(43, 'Inversus (Soprano I) over the ground')
+put(43, S1=I('A5') + '  E5:4 A5:4 F5:4  A5:4 Bb5:4 G5:4')
+entry('S1', 43, 'Inversus')
+put(41, A2='F4:4 D4:4 F4:4  Bb4:4 G4:8  A4:4 F4:4 R:4')
+put(47, A1='R:4 C#5:4 D5:4~  D5:4 F5:4 E5:4')
+put(41, T1='A3:8 D4:4~  D4:4 A3:8  C4:4 D4:4 E4:4  D4:8 C#4:4')
+tag(45, 'Subject (Tenor I) under the ground')
+put(45, T1=S('A3'))
+entry('T1', 45, 'Subject')
+put(41, T2='R:8 F3:4  G3:4 E3:4 G3:4  F3:4 C4:4 E3:4  R:8 E3:4~  E3:4 F3:4 E3:4  G3:4 E3:4 R:4')
+tag(47, 'Answer (Tenor II), into the summit')
+put(47, T2=S('E3'))
+entry('T2', 47, 'Answer')
+put(41, B='D3:8 Bb2:4  G2:4 A2:8  F2:4 A2:4 E2:4  G2:4 D3:4 R:4  R:4 Bb2:4 C3:4  E2:4 A2:8~'
+          '  A2:8 D3:4~  D3:8 A2:4')
 
 # ---------------------------------------------------------------------------
 BPM = 66

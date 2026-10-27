@@ -99,6 +99,25 @@
    ]
   },
   {
+   "name": "Pair VIII \u00b7 E-flat minor (rebuilt, nine voices)",
+   "pieces": [
+    {
+     "id": "prelude-8",
+     "title": "Prelude VIII \u00b7 Night loom",
+     "score": "cycle/08-e-flat-minor/prelude.json",
+     "tag": "fixed",
+     "notes": "Rebuilt on the 12/8 'Night loom' prelude from the first complete draft, which Sam liked, in place of the French overture that had replaced it. The melody is the fugue subject played backwards and upside down; the woven eighth-note figure changes shape almost every half bar. The bass ends with the subject's head and stops on the dominant, so the fugue's first note completes it."
+    },
+    {
+     "id": "fugue-8",
+     "title": "Fugue VIII \u00b7 nine real voices",
+     "score": "cycle/08-e-flat-minor/fugue.json",
+     "tag": "fixed",
+     "notes": "The subject's first six notes are the head of Bach's D-sharp-minor fugue subject (BWV 853), now credited. All nine voices enter in the exposition at shrinking distances, including a subject and its inversion one beat apart. The middle has augmentations, a 'dance' episode in which subject and countersubject run in sixteenths and thirty-seconds, and a false return in mirror image.\n\nA chain of entries one beat apart climbs to a bar of silence. Then comes the arrival: one nine-voice chord whose every note begins a line, over the bass of the arrival Sam liked in the second draft, now singing the subject at quarter speed. Eleven more statements, upright, inverted and augmented, sound above it with all nine voices moving for seven bars. A deceptive cadence leads to a quiet C-flat interlude. Then Bach's complete subject enters as a guest under ours, with the prelude's melody in the bass.\n\nAgainst the old 100-bar version: parallel fifths/octaves 218 -> 0, accented parallels 294 -> 0, low-register clashes 286 -> 11."
+    }
+   ]
+  },
+  {
    "name": "Appendix \u00b7 canons and contrapuncti (new)",
    "pieces": [
     {

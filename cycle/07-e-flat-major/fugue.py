@@ -26,7 +26,7 @@ BPM = 88
 NAMES = ['I Soprano', 'I Alto', 'I Tenor', 'I Bass', 'II Soprano', 'II Alto', 'II Tenor', 'II Bass']
 AB = {'S1': 'I Soprano', 'A1': 'I Alto', 'T1': 'I Tenor', 'B1': 'I Bass',
       'S2': 'II Soprano', 'A2': 'II Alto', 'T2': 'II Tenor', 'B2': 'II Bass'}
-NBARS = 64
+NBARS = 50
 REST = 'R:16'
 BARS = {n: [REST] * NBARS for n in NAMES}
 TAGS = [''] * NBARS
@@ -278,18 +278,112 @@ put(29, S1='Bb4:2 D5:1 F5:1 R:4 D5:2 F5:1 Bb5:1 R:4',
         A1='F4:2 A4:2 R:4 F4:2 A4:2 R:4',
         T1='D4:4 R:4 D4:4 R:4',
         B1='Bb2:4 R:4 Bb2:4 R:4')
-put(29, S2='R:4 Eb5:2 C5:1 Ab4:1 R:4 Ab5:2 Eb5:1 C5:1',
-        A2='R:4 Ab4:2 Db5:2 R:4 C5:2 Db5:2',
-        T2='R:4 C4:4 R:4 Eb4:4',
+put(29, S2='R:4 Eb5:2 C5:1 Ab4:1 R:4 Ab5:2 Eb5:1 C5:1~',
+        A2='R:4 Ab4:2 Db5:2 R:4 Ab4:4~',
+        T2='R:4 C4:4 R:4 Eb4:4~',
         B2='R:4 Ab2:4 R:4 Ab2:4')
 tag(29, 'a beat')
 
 
 # the two chords superimposed (A-flat over B-flat), then the concession:
 # 9-8 and 11-10 in Coro II, its bass walking down B-flat-seven, into E-flat.
-put(30, S1='F5:16', A1='F4:12 D4:4', T1='Bb3:12 F3:4', B1='Bb2:16',
-        S2='C5:4 Bb4:12', A2='Ab4:16', T2='Eb4:4 D4:4 C4:4 Bb3:4', B2='Ab3:4 F3:4 D3:4 Bb2:4')
+put(30, S1='F5:16', A1='Bb4:8 F4:4 D4:4', T1='Bb3:12 F3:4', B1='Bb2:16',
+        S2='C5:4 D5:8 Bb4:4', A2='Ab4:16', T2='Eb4:4 D4:4 C4:4 Bb3:4', B2='Bb2:8 F3:4 Bb2:4')
 tag(30, 'Reconciliation: A-flat over B-flat = the home dominant')
+
+
+# ===========================================================================
+# 5. THE JOKE (b31-36).  Reconciled, Coro I turns pompous: a French-overture
+# dotted style over its bass, which begins the subject in AUGMENTATION.  Coro II
+# twice cuts it short with the whole subject in DIMINUTION, chattered in a
+# single bar (first rectus in the soprano, then inverted in the basses).  Coro I
+# resumes each time, flustered (the first time on a deceptive C minor).  Then
+# it gives up, and the choirs toss the diminished head across the hall a beat
+# apart.  The augmentation's last bar is never sung -- until the coda.
+AUG = scale_rhythm(SUBJ, 2)          # Eb4:8 G4:4 Bb4:4 C5:8 Bb4:8 C5:4 D5:2 C5:2 Bb4:4 D5:4 F5:8 Eb5:4 D5:4
+DIM = scale_rhythm(SUBJ, '1/2')      # the whole subject in one bar
+put(31, B1=T8('Eb4:8 G4:4 Bb4:4', -2),
+        S1='Eb5:6 D5:2 Eb5:4 F5:4', A1='Eb4:6 F4:2 Bb4:4 F4:4', T1='G3:6 Ab3:2 Bb3:4 Bb3:4',
+        S2='Bb4:4 R:12', A2='G4:4 R:12', T2='Bb3:4 R:12', B2='Eb3:4 R:12')
+entry('B1', 31, 0, 'Coro I augmentation (pompous)', 4)
+tag(31, 'The joke: augmentation interrupted by diminution')
+put(32, S2=DIM, A2='Bb3:4 Eb4:4 C4:4 Bb3:4', T2='G3:4 Ab3:8 F3:4', B2='Eb3:4 Ab2:8 Bb2:4')
+entry('S2', 32, 0, 'Coro II diminution (interrupting)', 1)
+put(33, B1=T8('C5:8 Bb4:8', -2),
+        S1='Eb5:6 F5:2 D5:8', A1='G4:6 Ab4:2 Bb4:8', T1='Eb4:8 Bb3:8')
+put(34, B2=T8(invert_diatonic(DIM, 'G4', EB), -1),
+        S2='G5:4 F5:2 G5:2 F5:2 Eb5:6', A2='Eb5:4 Bb4:8 C5:4', T2='Eb4:4 F4:6 G4:2 C4:4')
+entry('B2', 34, 0, 'Coro II diminution, inverted (interrupting again)', 1)
+put(35, B1=T8('C5:4 D5:2 C5:2 Bb4:4 D5:4', -2),
+        S1='Ab5:6 G5:2 G5:4 F5:4', A1='Eb4:6 F4:2 Eb4:4 Bb4:4', T1='C4:6 Bb3:2 Bb3:4 Bb3:4')
+# a beat each: the diminished head, rectus on the left, inverted on the right
+put(36, S2='F5:2 D5:1 Bb4:1 Bb4:4 Ab4:4 R:4',
+        A2='Bb4:4 R:4 D5:4 R:4',
+        T2='D4:4 R:4 F4:2 D4:1 Bb3:1 R:4',
+        B2='Bb2:4 R:4 Bb2:4 R:4',
+        S1='R:4 Bb4:2 D5:1 F5:1 F5:4 Eb5:4',
+        A1='R:4 F4:4 R:4 D4:2 F4:1 Ab4:1',
+        T1='R:4 D4:4 R:8',
+        B1='R:4 Bb2:8 Bb1:4')
+tag(36, 'a beat')
+
+
+# ===========================================================================
+# 6. THE SUMMIT: STRETTO A 8 (b37-42).  Every one of the eight voices enters,
+# half a bar apart, choir against choir: Coro I rectus (c, then A-flat three
+# times), Coro II inversus (on F, then E-flat three times), found by searching
+# levels and voice orders for which every overlapping pair is clean, then
+# written out with the free parts by hand.  It breaks in deceptively on
+# C minor and climbs to the soprano's B-flat.
+SUB_c = 'C3:4 Eb3:2 G3:2 Ab3:4 G3:4 Ab3:2 Bb3:1 Ab3:1 G3:2 Bb3:2 D4:4 C4:2 Bb3:2'   # rectus, c level
+INV_F = 'F4:4 D4:2 Bb3:2 Ab3:4 Bb3:4 Ab3:2 G3:1 Ab3:1 Bb3:2 G3:2 Eb3:4 F3:2 G3:2'   # inversus on F
+SUB_Ab = transpose(SUBJ, -7, -4)                                                   # rectus, A-flat level
+put(37, T2='R:8 ' + INV_F + ' R:8  R:8 D4:4 C4:4  R:16  Ab3:8 R:8',
+        T1=SUB_c + ' C4:4 G3:4 R:8  Bb3:4 R:4 Bb3:4 Eb4:4  Bb3:4 Bb3:4 R:8  R:8 C4:4 Ab3:4',
+        S1='Eb5:8 C5:4 R:4  ' + T8(SUB_Ab, 1) + '  R:8 F5:4 C5:4  Bb4:8 R:8  R:8 Ab4:4 Bb4:4',
+        A1='G4:8 F4:4 Bb3:4  Eb4:8 Ab4:4 R:4  ' + SUB_Ab + '  F4:4 G4:4 F4:4 G4:4  Eb4:4 F4:4 Eb4:4 D4:4',
+        B1='R:8 F2:4 Bb2:4  C3:4 G2:4 Bb2:4 Eb2:4  Ab2:4 Eb3:4 Bb2:4 Eb2:4  ' + T8(SUB_Ab, -1) + '  Eb3:8 F3:4 Bb2:4',
+        B2='R:8 Ab2:4 R:4  Ab2:4 Eb3:4 D3:4 Eb3:4  R:8 ' + T8(INV, -1) + ' R:8  Ab2:8 R:8',
+        A2='R:16  R:8 ' + INV + ' F4:4 G4:4  R:16  C4:8 R:8',
+        S2='R:16  R:16  R:8 D5:4 C5:4  R:8 ' + T8(INV, 1))
+for v, b, off, lab in (('T1', 37, 0, 'stretto a 8: Coro I rectus (c)'), ('T2', 37, 2, 'stretto a 8: Coro II inversus (on F)'),
+                       ('S1', 38, 0, 'stretto a 8: Coro I rectus (A-flat)'), ('A2', 38, 2, 'stretto a 8: Coro II inversus (E-flat)'),
+                       ('A1', 39, 0, 'stretto a 8: Coro I rectus (A-flat)'), ('B2', 39, 2, 'stretto a 8: Coro II inversus (E-flat)'),
+                       ('B1', 40, 0, 'stretto a 8: Coro I rectus (A-flat)'), ('S2', 40, 2, 'stretto a 8: Coro II inversus (E-flat)')):
+    entry(v, b, off, lab)
+tag(37, 'Summit: stretto a 8, all voices enter half a bar apart')
+
+
+# ===========================================================================
+# 7. CODA (b43-50).  The first line of "Wachet auf" in long notes in Coro I's
+# tenor, where BWV 645 puts the chorale; the subject's heads and tails around
+# it in both choirs.  Under the chorale's C, Coro I's bass at last finishes the
+# augmentation it was never allowed to finish (F - E-flat - D).  The final
+# cadence is the reconciliation chord again (A-flat over B-flat), and Coro II
+# has the last word: an echo of the head, upside down.
+CHORALE_1 = 'Eb3:8 G3:8  Bb3:12 Bb3:4  Bb3:8 Bb3:8  C4:16  Bb3:16'   # Nicolai 1599, line 1
+put(43, T1=CHORALE_1,
+        B1='Eb2:8 G2:8  G2:8 Ab2:4 F2:4  G2:8 Eb2:8  ' + T8('F5:8 Eb5:4 D5:4', -2) + '  Bb2:16',
+        S1='Eb5:4 G5:2 Bb5:2 C6:4 Bb5:4  Ab5:4 G5:4 F5:4 D5:4  Eb5:8 G5:4 F5:4  Ab5:8 Eb5:4 F5:4  D5:8 F5:8',
+        A1='G4:8 Eb4:4 G4:4  F4:4 Eb4:4 C4:4 Bb3:4  Bb3:4 C4:4 D4:4 Bb3:4  C4:8 C4:4 Bb3:4  Bb3:16',
+        S2='R:4 Bb5:4 G5:2 Eb5:2 D5:4  Eb5:4 Bb4:4 C5:4 Ab4:4  G4:4 Ab4:4 Bb4:8  C5:8 G4:4 Ab4:4  F4:16',
+        A2='R:4 Eb5:4 Bb4:2 G4:2 Ab4:4  G4:4 F4:4 Eb4:4 F4:4  Eb4:4 F4:4 G4:4 Eb4:4  Eb4:8 C4:4 D4:4  D4:16',
+        T2='R:8 G3:4 Ab3:4  Eb3:4 D3:4 Eb3:4 D3:4  Eb3:8 D3:4 G3:4  Ab3:8 G3:4 F3:4  F3:16',
+        B2='R:8 C3:4 Ab2:4  C3:4 Bb2:4 Ab2:4 Bb2:4  C3:4 Bb2:4 G2:8  Ab2:4 Ab2:4 Bb2:8  Ab3:16')
+entry('T1', 43, 0, 'Chorale "Wachet auf", line 1 (tenor)', 5)
+entry('B1', 46, 0, 'Coro I finishes its augmentation', 1)
+tag(43, 'Coda: "Wachet auf" in the tenor; the augmentation finished')
+# the reconciliation chord as the final cadence, then E-flat, and the echo
+put(48, S1='Bb4:8 D5:8  Eb5:8 R:8  Eb5:16',
+        A1='F4:8 F4:8  G4:8 R:8  G4:16',
+        T1='Bb3:8 Ab3:8  G3:8 R:8  Bb3:16',
+        B1='Bb2:16  Eb2:8 R:8  Eb2:16',
+        S2='C5:8 Bb4:8  Bb4:8 Bb4:4 G4:2 Eb4:2  Eb4:16',
+        A2='Eb4:8 D4:8  Eb4:8 R:8  Bb3:16',
+        T2='Ab3:8 F3:8  Eb3:8 R:8  G3:16',
+        B2='Ab3:4 F3:4 D3:4 Bb2:4  Eb3:8 R:8  Eb3:16')
+entry('S2', 49, 2, 'Coro II: the echo, upside down', 1)
+tag(48, 'Final cadence: A-flat over B-flat, then E-flat')
 
 # === SECTIONS-END ===
 
