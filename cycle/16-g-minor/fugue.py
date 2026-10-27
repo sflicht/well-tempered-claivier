@@ -492,10 +492,19 @@ def build(nbars, path=None):
                          subject=S1, dynamics=dynamics)
 
 
-BPM = 80
-TEMPO = {'tempo_map': []}
-DYN = {1: 0}
-BASEVEL = [60, 60, 60, 60, 64, 62, 62, 62, 62, 64, 60, 60, 60, 60, 62, 70, 72]
+BPM = 72
+# Tempo map, t in quarters.  Grave at the start; the echoes of bars 21-23 slower; a broadening into
+# 'gut' (b45-46), the general pause of bar 47 and the lone harp of bar 48 held back; a slight push
+# under the guest; the summit broadens; a final ritardando over the tonic pedal.
+TEMPO = {'tempo_map': [[0, 72], [80, 63], [92, 72],
+                       [176, 72], [184, 58, 'ramp'], [192, 72],
+                       [264, 76], [276, 72], [296, 64, 'ramp'],
+                       [300, 62], [304, 56, 'ramp'], [312, 44, 'ramp']],
+         'score_layout': {'paper': 'a2', 'staff_size': 14, 'staff_distance': 8, 'hide_empty_staves': True}}
+# phrase dynamics (velocity offsets by bar)
+DYN = {1: -4, 12: 0, 21: -2, 24: -1, 33: 0, 40: 2, 47: -8, 49: 0, 55: 2, 61: 3, 67: 4, 70: 8, 75: 6, 76: 3, 78: 8}
+# registration: Hauptwerk strong, Rückpositiv middle, Oberwerk soft (the echo manual), pedal full
+BASEVEL = [56, 55, 55, 55, 66, 64, 64, 64, 64, 64, 61, 60, 60, 60, 60, 70, 72]
 
 if __name__ == '__main__':
     end = max((s + dur16(t)) for v in VO.values() for s, t in v)
