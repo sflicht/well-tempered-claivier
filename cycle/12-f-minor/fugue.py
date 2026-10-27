@@ -337,9 +337,9 @@ theme('BrI', F + 2, 3, W.transpose(S1I, -24, -14), 'S1 inv.')
 # Free voices of the finale.
 seq('SII', F, 'R:8 F5:8', 'F5:8 Ab5:8', 'Ab5:8 G5:8', 'Bb5:8 R:8')
 seq('BrII', F, 'R:8 F3:8', 'F3:8 G3:8', 'Ab3:4 R:12')
-# Tenor II: B-A-C-H in diminution (quarters) a bar after Soprano III's B-A-C-H in half notes, at the same pitch
-# (canon per diminutionem), then G.
-put('TII', F + 1, 3, 'Db4:4 C4:4 Eb4:4 D4:4 G4:16')
+# Tenor II: G over the dominant (b75.3); Bass I: F, E (the leading tone in the bass register) under it.
+put('TII', F + 2, 3, 'G4:8')
+put('BI', F + 2, 1, 'F3:8 E3:8')
 # Alto II: S2's mirror head again, taking over from Tenor I as its inverted S2 ends.
 put('AII', F + 5, 1, 'Ab4:2 G4:2 Ab4:2 Bb4:2 C5:2 Db5:2 C5:2 F5:2 C5:2 Bb4:2 Ab4:2 Bb4:2 C5:2 Ab4:2 Bb4:2')
 # S1 at a third speed: in diminution (answer form) in Soprano III, against its augmentation (bass) and its
@@ -347,6 +347,11 @@ put('AII', F + 5, 1, 'Ab4:2 G4:2 Ab4:2 Bb4:2 C5:2 Db5:2 C5:2 F5:2 C5:2 Bb4:2 Ab4
 # A-natural (the H) sinks to A-flat as the tonic arrives.
 theme('SIII', F + 5, 2, W.scale_rhythm(tr(S1, 7 + 12, 4 + 7), Fr(1, 2)), 'S1 dim. (answer)', 2)
 put('BrII', F + 7, 3, 'Ab3:8 G3:8 C4:8 Bb3:8 Ab3:8')
+# Under the main theme's entry (b75.3-78.2, V - ii-half-dim 6/5 - i6): Alto I's C D-flat C (the B-A-C-H
+# semitone, its D-flat the dominant's flat ninth), Alto III and Tenor III in slow notes around the tonic chord.
+put('AI', F + 2, 3, 'C5:8 Db5:6 C5:6')
+put('AIII', F + 3, 3, 'F4:8 Ab4:12 G4:4 F4:8')
+put('TIII', F + 3, 3, 'C4:8 Db4:8 C4:16')
 # The dominant pedal (b80.3-82.2): cadential 6/4 - V7 - i7/C - V9 - i; B-A-C-H (Tenor II) spells the dominant's
 # flat ninth, root, minor and major ninth before rising E-F into the tonic with the bass.  Above it the upper
 # voices hold C and move by step: B-flat (7th) to A-flat, E to F and back, the 9-8 of Tenor I into the tonic.

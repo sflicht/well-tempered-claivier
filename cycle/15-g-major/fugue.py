@@ -239,4 +239,23 @@ put('S1', 20, 1, 'E5:4 D5:2 C5:2 B4:8')
 put('A2', 20, 1, 'C4:4 D4:4 E4:8 F#4:4 E4:4 F#4:4 A4:4 G4:4 A4:4 B4:8 B4:4 A4:4 B4:8')
 put('T2', 20, 1, 'E3:4 F#3:4 G3:8 F#3:4 G3:4 A3:8 E4:4 F#4:4 G4:8 D#4:8 F#4:8')
 put('S2', 21, 1, 'D5:8 A5:4 F#5:4 G5:4 E5:4 D5:4 B4:4 F#5:8 A5:8')
-put('S1', 22, 1, 'E5:4 G5:4 G5:4 F#5:4 F#5:8 D#5:8')
+put('S1', 22, 1, 'E5:4 G5:4 G5:4 F#5:4 F#5:8 B5:8')
+
+
+# ================================================================ SECTION III: Coro III, line 3 (b24-32)
+# S3, Coro III: line 3 (B E E D F# G E D) as a shepherds' siciliano in triplets -- each pair of
+# chorale notes long-short -- with a tail of running triplets that comes to rest on the dominant B.
+S3 = ('B4:8/3 E5:4/3 E5:8/3 D5:4/3 F#5:8/3 G5:4/3 E5:8/3 D5:4/3 '
+      'C5:4/3 B4:4/3 A4:4/3 B4:4/3 G4:4/3 E4:4/3 F#4:4/3 G4:4/3 A4:4/3 B4:4')
+# Exposition from the top down, a bar apart, answered modally a fourth below (E minor / B phrygian).
+# Exposition a bar apart, answered modally (B phrygian): the alto -- who has just sung the cantus --
+# leads, then soprano (a fifth higher), tenor, bass.
+theme('A3', 24, 1, S3, 'III: subject 3 (line 3 diminished)', 2)
+theme('S3', 25, 1, dshift(S3, 4), 'III: subject 3, modal answer', 2)
+theme('T3', 26, 1, oc(S3, -1), 'III: subject 3', 2)
+theme('B3', 27, 1, dshift(oc(S3, -1), -3), 'III: subject 3, modal answer', 2)
+# Choirs I and II under the siciliano: Em C D Em | D7 Em D7 G | Em Bm D7 Bm | D7 Em D7 G | Em Bm Am F#o7
+put('B1', 24, 1, 'E2:4 C3:4 D3:4 G2:4 D2:4 E2:4 A1:4 G1:4 E2:4 B2:4 D3:4 B2:4 D2:4 B1:4 D2:4 G2:4')
+put('A2', 24, 1, 'G4:8 F#4:4 G4:4 A4:4 E5:4 A4:4 D5:4 B4:8 A4:4 D5:4 A4:4 G4:4 A4:4 G4:4 B4:4 B4:4 A4:8')
+put('T2', 24, 1, 'B3:4 C4:4 A3:4 B3:4 A3:4 G3:4 A3:4 B3:4 E3:4 F#3:4 D4:4 F#3:4 D4:4 E4:4 D4:8 E4:4 D4:4 C4:8')
+put('S2', 27, 1, 'D6:4 B5:4 A5:4 B5:4 E5:4 F#5:4 E5:8')
