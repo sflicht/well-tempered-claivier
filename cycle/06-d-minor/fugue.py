@@ -146,7 +146,7 @@ put(25, A2=G('A4'))
 entry('A2', 25, 'Ground (Alto II), A minor', n=8)
 # Soprano I runs in eighths through Var. 4 (a diminution of its first, slower line).
 put(25, S1='C6:2 B5:2 C6:2 E5:2 A5:2 G5:2  F5:2 G5:2 F5:4 E5:2 D5:2  C5:2 D5:2 E5:2 A5:2 F#5:2 E5:2'
-           '  D5:2 C5:2 E5:2 A5:2 B5:4~  B5:2 E5:2 F5:2 A5:2 D6:2 B5:2  D6:2 B5:2 D6:2 E6:2 C6:2 A5:2'
+           '  D5:2 C5:2 E5:2 A5:2 B5:4  E5:2 G#5:2 A5:2 C6:2 D6:2 B5:2  D6:2 B5:2 D6:2 E6:2 C6:2 A5:2'
            '  G5:2 E5:2 G#5:2 E5:2 A5:2 C6:2  B5:2 A5:2 C6:2 B5:2 A5:2 E5:2')
 put(25, S2='R:4 E5:4 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 G#4:4~  G#4:4 C5:4 R:4  R:4 B4:4 C5:4~'
            '  C5:4 B4:4 C5:4  C5:2 B4:2 A4:8')
