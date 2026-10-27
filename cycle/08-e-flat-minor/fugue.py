@@ -13,6 +13,7 @@ near the end (bars 45-47).
 """
 from __future__ import annotations
 
+import json
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -70,10 +71,14 @@ def put(v, bar, beat, toks):
     VO[v].append((pos(bar, beat), toks))
 
 
+SPANS = []          # (voice, start, end) of every thematic statement, in quarters (for the balance pass)
+
+
 def theme(v, bar, beat, toks, label, nbars=None):
     put(v, bar, beat, toks)
     n = nbars if nbars is not None else max(1, round(float(dur16(toks)) / 16))
     ENTRIES.append((LONG[NAMES.index(v)], bar, (Fr(beat) - 1), label, n))
+    SPANS.append((v, float(pos(bar, beat)) / 4, float(pos(bar, beat) + dur16(toks)) / 4))
 
 
 def assemble(v, nbars):
@@ -178,7 +183,7 @@ theme('A2', 22, 4, SD, 'S diminution (e-flat)', 1)
 put('S2', 22, 4.25, CSD)                                                         # Bb5 Ab5 Gb5 F5 Eb5 Cb6 Bb5 Ab5 Gb5 F5
 theme('S1', 23, 2.5, octv(tr(SD, 5, 3), 1), 'S diminution (a-flat)', 1)          # Ab5 Eb6 Fb6 Eb6 Db6 Cb6 Bb5 G5 Ab5
 put('A1', 23, 2.75, octv(tr(CSD, 5, 3), -1))                                     # CS diminution below (Eb5 Db5 Cb5 Bb4 Ab4 Fb5 ...)
-put('B1', 22, 3.75, 'R:1 Eb3:4 Ab2:4 Bb2:2 Ab2:8 Eb2:2 Cb3:4 Db3:4 Eb3:8')    # bass of the sequence, to the dominant of a-flat
+put('B1', 22, 3.75, 'R:1 Eb3:4 Ab2:4 Bb2:2 Ab2:8 Eb2:2 Ab2:4 Db3:4 Eb3:8')    # bass of the sequence, to the dominant of a-flat
 put('T1', 22, 1, 'Db4:4 Eb4:4 C4:2 Bb3:6 Eb4:4 Bb3:2 Cb4:4 Db4:4 Eb4:6 Db4:4 Bb3:8')   # long-breath line
 theme('S2', 24, 1, octv(tr(W.invert_diatonic(SD, 'Eb4', SC), 5, 3), 1), 'I diminution (a-flat), the dance turns over', 1)
 
@@ -219,7 +224,7 @@ theme('B2', 37, 1, aug(octv(SQ, -2), 4), 'S quarter speed (x4): the arrival bass
 put('B1', 37, 1, 'Bb2:12')
 put('Bar', 37, 1, 'Gb3:16')
 put('T2', 37, 1, 'Bb3:12')
-put('T1', 37, 1, 'Eb4:16 F4:8')
+put('T1', 37, 1, 'Eb4:16 D4:8')
 put('A2', 37, 1, 'Gb4:12')
 put('A1', 37, 1, 'Bb4:8')
 put('S2', 37, 1, 'Eb5:4')
@@ -236,20 +241,20 @@ theme('T2', 40, 3, octv(I5, -1), 'I5 inversus')                                 
 theme('S1', 41, 1, octv(tr(S, 7, 4), 1), 'S rectus on B-flat: the peak G-flat6 at b41.3')   # Bb5 F6 Gb6 ...
 theme('A1', 41, 3, tr(S, 7, 4), 'S rectus on B-flat')                               # Bb4 F5 Gb5 ...
 put('S1', 42, 2.5, 'Bb5:10')
-put('S2', 39, 1, 'Eb5:12 Db5:8 Cb5:4 Db5:4 Eb5:4 F5:4 Bb5:4 Ab5:4 Gb5:4')          # long-breath line through the maestrale
+put('S2', 39, 1, 'Eb5:12 Db5:8 Cb5:4 Db5:4 Eb5:4 F5:4 Bb5:4 Ab5:8')          # long-breath line through the maestrale
 put('T1', 41, 3.5, 'D4:6 Gb4:16')
 put('B1', 42, 1, 'Gb3:8 Eb3:8')
 put('Bar', 42, 1, 'Eb3:8 Gb3:8')                                                # voice exchange with Bass I under the common-tone diminished 7th
 # second pass: every voice keeps moving through b38-41
-put('A2', 38, 1, 'F4:4 Ab4:4 R:4 Bb4:4')
+put('A2', 38, 1, 'R:4 Ab4:4 R:4 Bb4:4')
 put('B1', 38, 1, 'D3:8 Bb3:4 Eb3:4 Ab3:4')
 put('T1', 38, 3, 'R:6 C4:2 Cb4:4 Eb4:4 Gb4:4')      # chromatic fall, then a climb into its own entry
 put('S1', 39, 1.5, 'Cb6:6 Gb5:4 Ab5:4 R:4 Ab5:4 Bb5:4 Eb6:4')
-put('A1', 39, 2, 'Cb5:8 R:4 Bb4:4')                               # two short sighs between its own entries
-put('A2', 40, 3, 'Gb4:8 Bb4:8 F5:4 D5:4 A4:4')
+put('A1', 39, 2, 'Gb5:8 R:4 Bb4:4')                               # two short sighs between its own entries
+put('A2', 40, 3, 'Gb4:8 Bb4:8 F5:4 D5:4 Bb4:4')
 put('Bar', 41, 1, 'Bb2:4 D3:4')
 put('T2', 42, 1, 'Eb4:4 C4:8 Eb4:8 Bb3:4')
-put('S2', 42, 1, 'Eb5:4 Gb5:12')
+put('S2', 42, 1, 'Gb5:16')
 put('Bar', 43, 1, 'Ab3:4 F3:4')
 
 # ================================================================ AFTERMATH (b43-44): iv6 - V7 - deceptive VI, then subito pp in C-flat major
@@ -271,7 +276,7 @@ put('B1', 45, 1, 'Ab2:4')                                                       
 put('B1', 48, 2, 'Bb2:8 Eb3:4')
 put('A2', 45, 1, 'Cb4:4 Bb3:4')
 put('S2', 45, 1, 'Eb5:4')
-put('S1', 46, 2, 'Gb6:8 F6:4 Eb6:12 R:4 D6:4')                                              # descant over the three subjects
+put('S1', 47, 1, 'Eb6:12 R:4 D6:4')                                              # descant over the three subjects
 put('Bar', 45, 2, 'Gb3:8 Ab3:4 Bb3:4 Cb4:4 Eb4:4 D4:4 Gb3:4 Cb4:12 Gb3:4 Bb3:12')                    # baritone line under Bach's subject
 put('A1', 46, 2, aug(CS, 2).rsplit(' ', 1)[0])                                             # the countersubject, augmented, partners its subject again
 # ================================================================ CODA (b49-50): heads over a two-bar tonic pedal; lines end one by one
@@ -279,7 +284,7 @@ put('B2', 49, 1, 'Eb2:32')
 put('B1', 49, 1, 'Bb2:8 Ab2:16 Bb2:4')
 put('Bar', 49, 1, 'Gb3:8 Ab3:8 Cb3:8 Eb3:6')
 put('T2', 49, 1, 'Bb3:8 Eb4:8 D4:8 Eb4:6')
-theme('T1', 49, 1, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('T1', 49, 4, 'Ab4:4 F4:4 G4:10')
+theme('T1', 49, 1, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('T1', 49, 4, 'Ab4:4 F4:8 G4:6')
 theme('A2', 49, 2, 'Eb5:4 Ab4:4 Gb4:3 Ab4:1', 'head inversus', 1); put('A2', 50, 1, 'Cb5:8 Bb4:6')
 put('A1', 49, 1, 'R:8 Ab5:16 G5:8')
 theme('S1', 49, 3, 'Eb6:4 Bb5:4 Cb6:3 Bb5:13', 'head', 1)
@@ -299,10 +304,10 @@ put('Bar', 16, 1, 'Db4:8 Cb4:4 Bb3:4 Db4:4 Db3:4 F3:4 Db3:4 Bb2:8 C3:4 F3:4')
 put('B2', 19, 1, 'Bb1:4 F2:12 Bb1:4 Eb2:2 Db2:2 C2:4 Bb1:4 F2:8 Bb1:4 F2:4')
 put('A1', 19, 1, 'Db5:8 Bb4:4 A4:4 Bb4:4 Gb4:2 Ab4:2 Bb4:4 Db5:4 F5:4 Gb5:8 F5:4')
 # b22-24: a dotted tenor line under the sixteenth-note stretto, leading into its own augmentation at b25
-put('T2', 22, 1, 'Bb3:6 Ab3:2 Eb3:4 Gb3:4 Ab3:4 F3:4 Ab3:8 Eb3:4 Ab3:4 Db4:4 Bb3:4')
+put('T2', 22, 1, 'Bb3:6 Ab3:2 Eb3:4 Gb3:4 Ab3:4 F3:4 Ab3:16 Db4:4 Bb3:4')
 # b24-26: a soprano descant over the a-flat augmentation
 put('S1', 24, 2, 'Fb6:4 Eb6:4 Db6:4 Cb6:4 Eb6:4 Ab5:4 Cb6:4 Db6:4 Ab5:4 Bb5:4 Ab5:4')
-put('A1', 24, 2, 'Fb5:4')
+put('A1', 24, 2, 'Db5:4')
 put('A2', 24, 2, 'Fb4:4')
 put('A2', 25, 1, 'Eb4:8 Cb5:8 Bb4:4 Ab4:6 Gb4:2 Eb4:4 R:8 Eb4:4')     # a sixth up, then a long stepwise descent
 put('Bar', 25, 1, 'Cb4:8 Ab3:4 Eb3:4 R:4 Eb4:4 Gb3:8 G3:4 Eb3:8 Ab3:4')       # inner line under the tenor augmentation
@@ -333,7 +338,41 @@ def build(nbars):
             if b + 1 >= k:
                 v = dyn[k]
         return v
-    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=SQ, dynamics=dynamics)
+    data = W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=SQ, dynamics=dynamics)
+    balance(data)
+    (HERE / 'fugue.json').write_text(json.dumps(data, indent=1))
+    return data
+
+
+# ---------------------------------------------------------------- balance pass (second review, F4-F6)
+# Per-voice velocity offsets that the per-bar `dyn` cannot express. Pitches and rhythms are untouched.
+HEADS = [('Bar', 148), ('T2', 151), ('A2', 152), ('B1', 153), ('T1', 157), ('T2', 158), ('A1', 162)]   # maestrale statements
+
+
+def balance(data):
+    def is_theme(v, t):
+        return any(sv == v and a <= t < b for sv, a, b in SPANS)
+
+    for i, voice in enumerate(data['voices']):
+        v = NAMES[i]
+        for e in voice['events']:
+            t, d = float(e['t']), 0
+            # F5: in the maestrale, the first two beats of each inner statement +10, free lines -4
+            if 148 <= t < 164:
+                if any(v == hv and h <= t < h + 2 for hv, h in HEADS):
+                    d += 10
+                elif not is_theme(v, t):
+                    d -= 4
+            # F4: Bach's guest subject (Tenor I, 45.3-47.4) +10; the augmented countersubject above it -4
+            if v == 'T1' and 178 <= t < 192:
+                d += 10
+            if v == 'A1' and 181 <= t < 192:
+                d -= 4
+            # F6: the subito pp of the C-flat passage starts with its subject (43.3.5), not at the barline
+            if 170.5 <= t < 172:
+                d -= 16
+            if d:
+                e['v'] = max(24, min(118, int(e['v']) + d))
 
 
 if __name__ == '__main__':

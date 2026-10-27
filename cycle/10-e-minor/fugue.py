@@ -18,6 +18,7 @@ major, the key in which the ripieno sings it in BWV 244 no. 1.
 """
 from __future__ import annotations
 
+import json
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -225,9 +226,9 @@ put('B2', 30, 2, 'B2:6 G2:6')
 put('A1', 30, 2, 'D4:6 E4:6 D4:18 F#4:6 E4:6')
 put('T2', 30, 3, 'B3:6 D4:6 D4:4 C4:2 B3:6 A3:6 G3:6')
 put('S1', 31, 3, 'G5:12 F#5:6 F#5:4 E5:2 D5:6 D5:6 D5:4 C5:2 C5:6 B4:6 D5:6 E5:12 B4:6 D5:4 E5:2 '
-                 'E5:6 B4:6 C5:6 D5:6 E5:18 F#5:6 G5:6')
+                 'E5:6 B4:6 C5:6 D5:6 E5:12 E5:3 E5:2 D#5:1 E5:1 F#5:1 G5:1 B5:2 A5:1 G5:6')   # b36.3: the "Sehet" head in diminution
 put('A2', 32, 3, 'G4:6 B4:4 A4:2 F#4:6 E4:12 F#4:6 E4:6 A4:6 D4:12')
-put('A1', 34, 3, 'G4:6 B4:6 C5:6 B4:4 A4:2 G4:6 A4:4 B4:2 G4:6 A4:6 G4:6 A4:6 G4:6')
+put('A1', 34, 3, 'G4:6 B4:6 C5:6 B4:4 A4:2 G4:6 A4:4 B4:2 G4:6 A4:6 G4:6 B4:6 G4:6')
 put('B2', 35, 1, 'A2:6 B2:6 A2:6 G2:6 E2:6 A2:6 B2:12 E2:6')
 
 # second pass: Coro II joins the augmentation passage with its own lines and "Wen?" figures
@@ -276,6 +277,10 @@ put('A1', 42, 3, 'E4:6 E4:4 D#4:2 E4:6')
 put('T1', 42, 3, 'G4:6 F#4:6 G4:6')
 put('S2', 42, 4, 'B4:4 C5:2 B4:6')
 put('B1', 42, 3, 'E3:6 B2:6 E3:6')
+# second review: rhythmic contrast in the gap before line 6 -- Coro I's soprano sings the "Sehet" head in diminution,
+# Coro II's soprano answers with the "Wen?" head in diminution (sixteenths, the only ones besides b36.3)
+put('S1', 43, 1, 'E5:3 E5:2 D#5:1 E5:1 F#5:1 G5:1 B5:2 A5:1 G5:6')
+put('S2', 43, 3, 'B4:3 B4:2 C5:1 B4:1 A4:1 G4:1 E4:2 F#4:1')
 
 
 # ================================================================ VIII. CHORALE LINE 6 (b43-49): toward the dominant
@@ -291,7 +296,7 @@ put('B1', 47, 3, 'B1:24')
 put('Bar1', 43, 2, 'B3:6 B3:4 A3:2 G3:6 D4:12 G3:12 A3:6 B3:6')
 put('T2', 43, 2, 'E4:6 E4:4 F#4:2 G4:6 F#4:6 G4:6 E4:12 A4:6 G4:6 B4:4 A4:2 G4:6 G4:4 F#4:2 E4:6 A4:6 G4:12 A4:6')
 put('S2', 44, 1, 'B4:6 D5:6 C5:6 E5:6 F#5:6 D5:6 D5:4 C5:2 B4:6 B4:6 E5:6 D5:6 B4:6 E5:6 C5:6')
-put('Bar2', 47, 3, 'F#3:6 E3:6 D3:6 E3:6 D3:6 E3:6 F#3:6')
+put('Bar2', 47, 3, 'F#3:6 E3:6 F#3:6 D3:6 B2:6 E3:6 F#3:6')   # second review: no D under the mirror pair's D's
 put('Bar2', 45, 2, 'G3:6 R:12 G3:6')
 # third pass: Coro I's baritone's second entry, the subject in D major, one beat after Coro I's alto's inversion
 theme('Bar1', 45, 3, 'D3:6 D3:4 C#3:2 D3:2 E3:2 F#3:2 A3:4 G3:2 A3:4 F#3:2 B3:6 A3:2 G3:2 F#3:2 E3:2 D3:2 C3:2',
@@ -316,13 +321,11 @@ put('S1', 49, 2, 'C5:6 B4:6 D5:6')
 put('A2', 49, 2, 'F#4:6 G4:6 D4:6')
 put('Bar2', 49, 2, 'A3:6 G3:6 B3:6 B3:6 R:24 F#3:6')
 put('T1', 49, 1, 'A3:6 D4:18 G3:6 R:6 B3:6 R:6 B3:12')
-# b50-53: every line moves in every bar; the free voices answer each other between the two choirs
-put('S2', 50, 1, 'G5:6 A5:6 B5:6 G5:12 F#5:18 G5:18 A5:6 A5:6')
-put('A1', 50, 1, 'E5:6 A4:6 D5:6 E5:6 E5:6 R:24 B4:12 D5:6')
-put('A2', 50, 1, 'G4:6 R:12 G4:6 R:6 B4:6 R:6 B4:6 R:6 G4:12 R:6 B4:12')
+# b50-53 (second review): the free voices above and around the two final entries are silent, so that Soprano I's
+# inversion is the voice directly under the chorale and Baritone II's subject is heard; Tenor II and the basses carry
+# the harmony, and all eleven lines converge only at the cadence (b53.3) and in the coda.
+put('A1', 52, 2, 'B4:12 D5:6')
 put('T2', 50, 1, 'E4:6 C4:6 G3:18 R:6 A3:6 B3:12 R:12 D4:6 F#3:6 B3:12 A3:6 B3:72')
-put('Bar1', 50, 1, 'E3:6 R:18 B2:6 R:12 F#3:6 R:6 G3:6 R:6 D3:6')
-put('B2', 51, 1, 'E3:6 R:18 G2:6')
 put('B1', 51, 1, 'E2:6 B2:6 C3:6 B2:6 E2:6 G2:6 E3:6 A2:6 B2:12 E2:84')
 put('S1', 52, 1, 'E5:18 F#5:12')
 
@@ -349,12 +352,12 @@ def build(nbars):
             'subtitle': 'Fugue X in E minor, eleven voices: Fuga a due cori con corale',
             'composer': 'Claude / Sam (chorale: Nikolaus Decius, "O Lamm Gottes, unschuldig"; after J. S. Bach, BWV 244 no. 1)',
             'instrument': 'Two five-part choirs and a ripieno chorale (open score, eleven keyboards)',
-            'key': 'E', 'mode': 'minor', 'meter': list(METER), 'bpm': 84,
-            'tempo_text': 'Andante, sempre legato (dotted quarter = 56)',
-            # t in quarters (one 12/8 bar = 6): a breath before the Recognition (b26), then the final
-            # chorale line (b50-56) broadens to the last chord
-            'tempo_map': [[144, 84], [150, 76, 'ramp'], [150, 84], [282, 84], [300, 80, 'ramp'], [318, 74, 'ramp'],
-                          [330, 60, 'ramp'], [336, 50, 'ramp']],
+            'key': 'E', 'mode': 'minor', 'meter': list(METER), 'bpm': 90,
+            'tempo_text': 'Andante, sempre legato (dotted quarter = 60)',
+            # t in quarters (one 12/8 bar = 6): a breath before the Recognition (b26); the broadening begins only
+            # with the coda (b53), so the final stretto keeps its pace (second review)
+            'tempo_map': [[144, 90], [150, 82, 'ramp'], [150, 90], [312, 90], [324, 78, 'ramp'], [330, 64, 'ramp'],
+                          [336, 54, 'ramp']],
             'movement_number': 10, 'piece_type': 'fugue', 'edition': 'third'}
     voices = [(LONG[i], NAMES[i], CLEF[i], 64 if n != 'CH' else 74) for i, n in enumerate(NAMES)]
     # phrase dynamics by section (bar -> velocity offset, all voices)
@@ -367,7 +370,32 @@ def build(nbars):
             if b + 1 >= k:
                 v = dyn[k]
         return v
-    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=R, dynamics=dynamics)
+    data = W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=R, dynamics=dynamics)
+    # Second review: on one piano the two choirs must be told apart by touch.  Coro II plays 6 softer outside its own
+    # statements; its "Wen?" and "Wie?" interjections are accented and detached; Baritone II's final subject (b51.3,
+    # the cadence of the stretto) is lifted.  Only velocities and gates change here, never pitches or rhythms.
+    bq = 6
+    spans = {}
+    for vn, b0, off, lab, n in ENTRIES:
+        spans.setdefault(vn, []).append(((b0 - 1) * bq + float(off), (b0 - 1 + n) * bq + float(off)))
+    coro2 = [LONG[NAMES.index(n)] for n in ('S2', 'A2', 'T2', 'Bar2', 'B2')]
+    questions = [(11 * bq + 3, 11 * bq + 6), (12 * bq + 3, 12 * bq + 4.5)]      # "Wen?" b12.3-4, "Wie?" b13.3
+    final_subject = (50 * bq + 3, 52 * bq + 3)                                 # Baritone II, b51.3-53.2
+    for v in data['voices']:
+        if v['name'] not in coro2:
+            continue
+        for e in v['events']:
+            t = e['t']
+            if not any(a <= t < z for a, z in spans.get(v['name'], [])):
+                e['v'] -= 6
+            if any(a <= t < z for a, z in questions):
+                e['v'] += 8
+                e['gate'] = 0.7
+            if v['abbr'] == 'Bar2' and final_subject[0] <= t < final_subject[1]:
+                e['v'] += 8
+            e['v'] = max(24, min(118, int(e['v'])))
+    (HERE / 'fugue.json').write_text(json.dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

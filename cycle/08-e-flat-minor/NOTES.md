@@ -51,14 +51,14 @@ What was added, by section:
   - An inner Baritone line.
   - Short Alto I and Alto II links in b24.
 - **b28–31:** Alto II and Bass I around the e♭ inversion entries. Tenor I comes back four bars before its head (it used to rest for seven bars).
-- **Arrival b38–43:** free lines in every gap between statements, so that every staff moves in every bar. Tenor I's C–C♭ descent and climb into its entry (b38.3) is one; Soprano I's C♭6–G♭5–A♭5 (b39) another; Alto I's C♭ sigh (b39–40), Alto II (b40.3–42), Soprano II, Tenor II and Baritone in b41–43 the rest.
+- **Arrival b38–43:** free lines in every gap between statements, so that every staff moves in every bar. Tenor I's C–C♭ descent and climb into its entry (b38.3) is one; Soprano I's C♭6–G♭5–A♭5 (b39) another; Alto I's sighs (G♭5 at b39.2 and B♭4 at b40.1, after the second review), Alto II (b40.3–42.1), Soprano II, Tenor II and Baritone in b41–43 the rest.
 - **Return b45–48:**
   - Alto I sings the **countersubject in augmentation** against Soprano II's half-speed subject (the b19 pairing again).
   - A Baritone line runs under Bach's subject.
   - Soprano II moves in b49.
 - **Exposition:** voices that have entered keep singing. Alto I in b5–6, Tenor I in b9–11 and the Baritone in b8 and b11.
 
-**b40 statement.** Tenor I's subject at b40.2 is now complete. Its final E♭4 (b41.3) leans on the D2 of the bass as an appoggiatura and falls back to D4. The voice then leaps to G♭4 for the common-tone diminished seventh.
+**b40 statement.** Tenor I's subject at b40.2 is now complete. Its final E♭4 (b41.3) leans on the D2 of the bass as an appoggiatura and falls back to D4. The voice then leaps to G♭4 for the tonic of b42.
 
 **C♭ passage.** I did not lengthen it. A second C♭ bar would push the guest entry and the whole return back by a bar and re-time the tempo map. With the arrival now nine-voice for seven bars, the contrast with the three-voice pp bar (b44) is already as stark as it can be. It remains about 1¾ bars (b43.3–45.1).
 
@@ -93,6 +93,7 @@ I have not heard any of this. Everything below comes from the scores, `tools/cri
   - The thematic additions (the augmented countersubject at b46, the completed b40 statement) and the hand-composed lines did not come from the script. Examples of hand-composed lines: Bass II at b19, Alto II at b25, Alto I at b39–40, Alto II at b40–42.
   - This is not the retired `fill()` or `polish.py`. Nothing generates notes at build time. But it is fair to say that a tool proposed many of the second-pass inner lines.
 - In the Prelude, a helper only appends the eighth-note value to the six hand-chosen pitches of each half bar.
+- **Balance pass (since the second review).** `fugue.py` and `prelude.py` now adjust note velocities per voice after `build_score`, for the few places the per-bar `dyn` cannot express. Each adjustment is listed in "Second review". No pitch or rhythm is touched by it. Every note change in the second review was written by hand.
 
 ## Credits
 
@@ -128,10 +129,10 @@ I have not heard any of this. Everything below comes from the scores, `tools/cri
 | 28–30 | False return in e♭ | Mirror of b19–21. Bass II sings the inversion at half speed as the bass, Baritone the inverted countersubject (a rising scale) at half speed. Soprano I's G♭-major subject enters off the beat (b28.2.5) and Alto I's inversion at the 5th off the beat (b29.1.5). vii°7 – V6 – V7 – i. |
 | 31–35 | Approach | Bass rises G♭ – A♭ – A♮ (vii°7/V) – B♭. Seven subject heads enter one beat apart from Bass I upward (b31.1–b32.3). Soprano I's head arrives on the dominant at b34.1 (peak G♭6). The voices then drop out until Soprano I's D6 is left alone (b35.2–35.4). |
 | 36 | General pause | |
-| 37–42 | **Arrival and stretto maestrale** | b37.1 is the only block chord in the piece: nine voices, E-flat minor, wide open. Every note of it begins a line. Bass II then sings the subject at quarter speed (E♭ \| B♭ \| C♭·B♭ \| A♭ G♭ \| F D \| E♭). This is the bass route of the second edition's arrival, now made thematic. Above it come eleven more statements: rectus and inversus; inversion at the 5th in augmentation (Baritone, b38); the major subject in augmentation (Bass I, b39.2); and normal-speed entries one to three beats apart in all the remaining voices, including Tenor I's complete subject at b40.2. Since the second pass, free lines fill every gap, and **all nine voices move in every bar from b37 to b43**. Harmony: i \| V \| ♭VI–V \| iv–i6 \| vii°7 over F, then V6, with Soprano I's peak G♭6 at **b41.3** \| i with a common-tone diminished seventh (A♮/C♮). |
+| 37–42 | **Arrival and stretto maestrale** | b37.1 is the only block chord in the piece: nine voices, E-flat minor, wide open. Every note of it begins a line. Bass II then sings the subject at quarter speed (E♭ \| B♭ \| C♭·B♭ \| A♭ G♭ \| F D \| E♭). This is the bass route of the second edition's arrival, now made thematic. Above it come eleven more statements: rectus and inversus; inversion at the 5th in augmentation (Baritone, b38); the major subject in augmentation (Bass I, b39.2); and normal-speed entries one to three beats apart in all the remaining voices, including Tenor I's complete subject at b40.2. Since the second pass, free lines fill every gap, and **all nine voices move in every bar from b37 to b43**. Harmony: i \| V \| ♭VI–V \| iv–i6 \| vii°7 over F, then V6, with Soprano I's peak G♭6 at **b41.3** \| i (since the second review a plain E-flat-minor chord at b42.1; Soprano I's C6 and A5 pass over it). By ear, about six things will register: the chord, Soprano II's entry into it, the two mirror entries, the quarter-speed bass, and Soprano I's subject on B♭ with the peak. The other inner statements are texture, and a balance pass lifts their first two beats (see "Second review"). |
 | 43–44 | Aftermath | iv6 – V7 – **deceptive ♭VI** (b43.3), still nine voices in b43. Then subito pp: the major subject in C♭ (Alto II), the countersubject in C♭ (Soprano II), and one bass line. |
-| 45–48 | Return and guest | Via A♭ minor (b45.1). Bass II sings the subject's **retrograde inversion** at half speed, which is the Prelude's melody (b45.2). Tenor I sings **BWV 853's complete subject** (b45.3). Soprano II sings our subject at half speed an octave above, three beats later (b46.2). Soprano I adds a descant. V–i at b48.4. |
-| 49–50 | Coda | Three heads in stretto (Tenor I, Alto II, Soprano I) over a two-bar tonic pedal. iv – vii°7 – V9 over the pedal – I (Picardy G). The lines end at different moments. |
+| 45–48 | Return and guest | Via A♭ minor (b45.1). Bass II sings the subject's **retrograde inversion** at half speed, which is the Prelude's melody (b45.2). Tenor I sings **BWV 853's complete subject** (b45.3). Soprano II sings our subject at half speed an octave above, three beats later (b46.2). Soprano I's descant waits until b47, so the part of Bach's subject that differs from ours is heard. V–i at b48.4. |
+| 49–50 | Coda | Three heads in stretto (Tenor I, Alto II, Soprano I) over a two-bar tonic pedal. iv – vii°7 – V9 over the pedal – I (Picardy G, arriving in Tenor I and Alto I together at b50.3). The lines end at different moments. |
 
 ### Prelude (21 bars, 12/8)
 
@@ -141,7 +142,7 @@ I have not heard any of this. Everything below comes from the scores, `tools/cri
 | 5–8 | The same line in G♭ major, arriving in G♭ at b8. |
 | 9–13 | Circle of fifths. The held melody note becomes a prepared 7th twice (b10, b11). Half cadence at b13. |
 | 14–17 | The bass sings the retrograde inversion while the soprano sings it in G♭ major in tenths (plus octaves) above. The figure lies between them, playable by the left hand. |
-| 18–21 | i6/4 – V7 – deceptive VI – iv – V, a rising tirade to the 7th (b20). The last bar's bass is the subject's head, E♭ B♭ C♭ B♭, and the Prelude stops on V (D5 on top). The Fugue's solo E♭4 completes it. |
+| 18–21 | i6/4 – V7 – deceptive VI – iv – V, a rising tirade to C♭6, the ♭9 of V7 and the piece's high point (b20.4; since the second review), resolving to B♭5 over the tonic at b21.1. The last bar's bass is the subject's head, E♭ B♭ C♭ B♭, and the Prelude stops on V (D5 on top). The Fugue's solo E♭4 completes it. |
 
 ## 2. Devices (with bars)
 
@@ -173,7 +174,7 @@ I have not heard any of this. Everything below comes from the scores, `tools/cri
    - The exposition introduces all nine voices by b12.
    - All nine voices move in every bar of b37–43 and in b49; eight move at b32 and b50.
    - The mean is 6.0 moving voices per bar over the whole fugue (4.6 before the second pass) and 6.3 in b14–31.
-2. **The climax was homophony.** Replaced by the stretto maestrale (b37–42): twelve statements, 0 doubling runs, and a single deliberate block chord (b37.1) whose every note begins a line.
+2. **The climax was homophony.** Replaced by the stretto maestrale (b37–42): twelve statements on paper (about six audible as entries; see the second review, F5), 0 doubling runs, and a single deliberate block chord (b37.1) whose every note begins a line.
 3. **Collisions in the procession** must not recur. See the table in §4: 2nds, 7ths and 9ths between low notes went from 286 to 11; beat-to-beat parallels from 294 to 0. The texture is now as full as the procession's (6.0 against 7.1 moving voices), so this comparison means more than it did.
 4. **The retired method and fragmented lines.**
    - All lines are literal; no `fill()` and no `polish.py`.
@@ -198,7 +199,7 @@ I have not heard any of this. Everything below comes from the scores, `tools/cri
     - The Prelude's last bass gesture is the Fugue subject's head.
 11. **The C♭ passage was a splice.** It is now prepared by the C♭ (♭VI) of b39, entered by a real deceptive cadence (V7 – ♭VI, b43.3), scored for three voices pp, and left through A♭ minor, with which it shares C♭ (b45.1). It is still about 1¾ bars, not the 2 that REVIEW.md asked for (see "C♭ passage" above).
 12. **The ending and bass mud.**
-    - The Picardy third is approached by step (A♭ – G in Tenor I and Alto I, as 7ths resolving).
+    - The Picardy third is approached by step and arrives together at b50.3: Alto I A♭–G, Tenor I A♭–F–G. Until the second review the tenor's G4 came a beat early.
     - The lowest note in the piece is B♭1 (b43).
     - No octave-doubled bass anywhere.
     - The retrograde inversion sits at the E♭3 level, so the bass of b45–47 does not go below G♭2.
@@ -209,7 +210,8 @@ Problems 13–15 do not apply here: 13 concerned P-v1's playability and is fixed
 
 | Score | Bars | Parallel errors | Beat-to-beat parallels | Beats with a tripled pitch class | Low 2nds/7ths/9ths | Unresolved | Mean moving voices | ≥5 pitch classes | ≥6 pitch classes | Free phrases ≤1.5 beats | Need >2 hands |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| **Fugue VIII new (third pass)** | 50 | **0** | **0** | **23.5 %** | **11** | **1** | **6.04** | 10.6 % | 1.8 % | 6 % | 37 % (accepted) |
+| **Fugue VIII new (after the second review)** | 50 | **0** | **0** | **24.0 %** | **11** | **1** | **6.02** | 10.1 % | 1.9 % | 7 % | 37 % (accepted) |
+| Fugue VIII third pass | 50 | 0 | 0 | 23.5 % | 11 | 1 | 6.04 | 10.6 % | 1.8 % | 6 % | 37 % |
 | Fugue VIII second pass | 50 | 0 | 0 | 24.0 % | 11 | 1 | 6.04 | 11.6 % | 1.7 % | 1 % | 38 % |
 | Fugue VIII first pass | 50 | 0 | 0 | 23.3 % | 8 | 1 | 4.62 | 3.6 % | 0.9 % | 0 % | 26 % |
 | Fugue v3 | 32 | 0 | 10 | 18.5 % | 14 | 2 | 4.5 | 1.8 % | 0.2 % | 45 % | 14 % |
@@ -219,26 +221,26 @@ Problems 13–15 do not apply here: 13 concerned P-v1's playability and is fixed
 | BWV 878 (4 voices) | 86 | 0 | 2 | 1.3 % | 9 | 1 | 3.6 | 0 % | 0 % | 0 % | 0 % |
 | BWV 869 (4 voices) | 76 | 0 | 1 | 1.7 % | 3 | 16 | 3.2 | 0.1 % | 0 % | 7 % | 0 % |
 | BWV 849 (5 voices, from MIDI) | | | | | | | | 1.3 % | 0 % | | |
-| **Prelude VIII new** | 21 | **0** | **0** | 8.3 % | **0** | **0** | 3.0 | 0 % | 0 % | 0 % | **0 %** |
+| **Prelude VIII new** | 21 | **0** | **0** | 7.1 % | **0** | **0** | 3.0 | 0 % | 0 % | 0 % | 0.8 % (two onsets of the b20 tirade) |
 | Prelude v1 (overture) | 16 | 0 | 9 | 23.4 % | 0 | 0 | 4.9 | | | | 47 % |
 | Prelude first draft | 24 | 3 | 13 | 17.7 % | 0 | 0 | 3.0 | | | | 19 % |
 
-Coordinator's targets after the third pass, all met:
+Coordinator's targets, all still met after the second review:
 
 | Measure | Target | Result |
 |---|---|---|
 | Doubled 7ths / doubled leading tones (`bad_doublings`) | ≤ 6 | **2** (first pass 9, second pass 34; BWV 869 0, BWV 878 1, Fugue v3 4) |
 | Parallel errors | 0 | 0 (also 0 weak and 0 doubling runs) |
 | Beat-to-beat parallels | ≤ 3 | 0 |
-| Mean moving voices | ≥ 5.8 | 6.04 |
+| Mean moving voices | ≥ 5.8 | 6.02 |
 | Bars with all nine moving | ≥ 7 | 8 (b37–43, b49) |
-| Tripled pitch class | ≤ 25 % | 23.5 % (42 of 179 beats) |
+| Tripled pitch class | ≤ 25 % | 24.0 % (43 of 179 beats) |
 | Low 2nds/7ths/9ths | ≤ 12 | 11 |
 | Unresolved | ≤ 1, justified | 1, justified (below) |
 
 **Stepwise motion** (`stepwise_pct`, reported, not a target): 60.0 %. BWV 878 has 75.0 %, BWV 869 70.9 %, Fugue v3 58.2 %. The first pass had 65.6 % and the second 60.6 %: the inner lines added for density leap more than Bach's do (20 % of intervals are a 4th or more).
 
-Melody flags are much as in the first pass. There are 8 augmented 2nds, all inside harmonic-minor statements or first-pass lines; the second-pass ones I introduced were rewritten out. There are 2 seventh leaps, 2 large leaps not recovered and 1 compound same-way leap; the first pass had 1 tritone leap instead of the unrecovered leaps. Voice crossings rose from 10 to 29, mostly Alto I above Soprano II in the return and the coda.
+Melody flags are much as in the first pass. There are 8 augmented 2nds, all inside harmonic-minor statements or first-pass lines; the second-pass ones I introduced were rewritten out. There are 2 seventh leaps, 1 large leap not recovered and 1 compound same-way leap; the first pass had 1 tritone leap instead of the unrecovered leap. Voice crossings rose from 10 to 29, mostly Alto I above Soprano II in the return and the coda.
 
 Tripled pitch classes were the binding constraint. With nine voices on a triad a tripled pitch class is unavoidable unless five pitch classes sound. About a dozen tripled beats in b7–25 were therefore re-voiced to make room for the arrival, where 23 of the 28 beats of b37–43 are tripled.
 
@@ -268,10 +270,49 @@ Tripled pitch classes were the binding constraint. With nine voices on a triad a
   - At b26 Soprano II's C♭-major subject holds its last note as an anticipation.
   - The approach (b31–34) uses heads (the first three beats), not complete statements.
 - **Held notes.** Some free notes are long: Alto II, Tenor II and Baritone hold the b37.1 chord tones for 3–4 beats while the first three entries begin; Soprano II holds E♭5 for 3 beats in b39–40.
-- **b42 is a tonic coloured by a common-tone diminished seventh** (A♮ and C♮ from the two answer-form entries), not a plain E-flat-minor chord. The plain tonic arrives at b42.4. It may sound brighter than expected.
+- **b42.1** is now a plain E-flat-minor chord. The free A4 that made it a diminished seventh is gone, so Soprano I's C6 and A5, passing notes of its answer, colour it without replacing it.
 - **Placements were checked by the critic, not by ear.** The probes used the stretto finder, after the coordinator's octave fix. The critic does not check doubled leading tones or cross-relations, so I avoided those by hand, possibly not everywhere.
 - **The Prelude is 21 bars, not 24–28.** Its figure is broken-chord arpeggiation by design (the Night loom). The bass leaps a 7th twice (b3, b4).
 
 ## 6. Before → after summary
 
-Fugue v3 was a 4-voice fugue on 9 staves, with an octave-doubled homophonic climax, 45 % fragmentary filler and a static octave stretto. The new Fugue VIII states the subject in every voice four to eight times, at four speeds and in both directions. It closes with Bach's own subject as a guest over the Prelude's melody in the bass. After the second pass it averages 6.0 moving voices per bar (6.3 in b14–31), and all nine voices move through b37–43. It scores 0 parallels, 0 beat-to-beat parallels, 2 doubled sevenths, 23.5 % tripled beats, 11 low-register clashes and 1 justified unresolved dissonance.
+Fugue v3 was a 4-voice fugue on 9 staves, with an octave-doubled homophonic climax, 45 % fragmentary filler and a static octave stretto. The new Fugue VIII states the subject in every voice four to eight times, at four speeds and in both directions. It closes with Bach's own subject as a guest over the Prelude's melody in the bass. It now averages 6.0 moving voices per bar (6.3 in b14–31), and all nine voices move through b37–43. It scores 0 parallels, 0 beat-to-beat parallels, 2 doubled sevenths, 24.0 % tripled beats, 11 low-register clashes and 1 justified unresolved dissonance. After the second review the final chord's Picardy third arrives together, the climax has 4 struck adjacent semitones instead of 7 (all thematic), and b42.1 is a clean tonic.
+
+## 7. Second review (`REVIEW-2.md`): each item and what changed
+
+I agreed with every ranked item and applied all eight as proposed, with one extra repair. Every note change is hand-written in the source, and the "do not touch" passages are untouched:
+- Prelude: the texture, b10–11 and the b21 bass head.
+- Fugue: b33–37 and the guest's entry at 45.3.
+
+| # | Item | What changed | Result |
+|---|---|---|---|
+| F1 / 1 | Picardy G4 a beat early at b50.2 | Tenor I `'Ab4:4 F4:8 G4:6'` | G4 now arrives at b50.3 together with Alto I's G5. b50.2 is a clean V9 over the pedal. |
+| F2 / 2 | Struck semitones at the climax, b38–41 | Five free-line edits: Alto II b38 rests on beat 1; Tenor I b37 ends D4, not F4; Alto I b39.2 G♭5, not C♭5; Soprano II's long line holds A♭5 into b42 (`'… Bb5:4 Ab5:8'`); Soprano II b42 `'Gb5:16'` | Struck adjacent semitones in b38–41 fall from 7 to 4 (the reviewer counted 3; my scan also counts S1 D6/A1 E♭5 at 38.4). All 4 are thematic against thematic. Slices with five or more pitch classes in b38 fall from 8 of 16 to 3; b39 is unchanged at 13, the price of three statements meeting there. All nine voices still move in every bar of b37–43. |
+| F3 / 3 | b42.1 heard as a diminished seventh | Alto II ends B♭4, not A4 | E-flat minor at b42.1; Soprano I's C6 and A5 pass over it. |
+| F4 / 4 | The guest's own tail masked | Soprano I's descant starts at b47 (`'Eb6:12 R:4 D6:4'`). Balance pass: Tenor I +10 in 45.3–47.4, Alto I −4 in 46.2–47.4 | b46 has five moving voices instead of six, so the mean is 6.02 instead of 6.04. |
+| F5 / 5 | Seven of twelve maestrale statements are texture | Balance pass in b38–41. The first two beats of the seven inner statements get +10, on top of the existing +5 entry accent: Baritone 38.1, Tenor II 38.4, Alto II 39.1, Bass I 39.2, Tenor I 40.2, Tenor II 40.3, Alto I 41.3. Free (non-thematic) notes in b38–41 get −4. | The form map and §3 now say plainly that about six things register by ear. The rest is a moving harmonic mass between an audible bass and an audible top. |
+| F6 / 8 | Subito pp began at the barline, mid-subject | Balance pass: every note struck from 43.3½ to the end of bar 43 gets −16. This is the bar-44 level, so the C♭ subject and countersubject start pp. | The cadence chord at 43.3 keeps its weight. |
+| P1 / 6 | Prelude has no high point | b20 tirade `'D5:6 F5:6 D5:1 Eb5:1 F5:1 Gb5:1 Ab5:1 Bb5:1 Cb6:6'`; b21 melody `'Bb5:6 Ab5:6 Gb5:6 D5:6'` | C♭6 (the ♭9 of V7) is now the piece's peak and resolves to B♭5 over the tonic. Still 0 parallels, 0 beat-to-beat parallels, 0 unresolved, 0 bad doublings. Cost: two onsets need a wide stretch (0.8 % of onsets beyond two hands). |
+| P2 / 7 | Reprise b14–17 hides the bass canon in tenths | Prelude balance pass: Bass +8, Melody −4 in b14–17 | |
+| P3 | Small points (b8.1 C♭5, the bass sevenths) | Left as the reviewer judged them acceptable | |
+
+**One more repair.** Re-checking after these edits flagged a tritone leap from the third pass: Alto I B♭4–F♭5 at b24.2. Alto I now goes to D♭5. Two notes changed to keep that clean: Bass I's A♭2 at b24.1 is restored, and Tenor II holds A♭3 through b23.3–24.2.
+
+**Before → after (fugue, critic).**
+
+| Measure | Before | After |
+|---|---|---|
+| Parallels | 0 | 0 |
+| Beat-to-beat parallels | 0 | 0 |
+| Unresolved | 1 | 1 |
+| Bad doublings | 2 | 2 |
+| Low 2nds/7ths/9ths | 11 | 11 |
+| Tripled pitch class | 23.5 % | 24.0 % |
+| Mean moving voices | 6.04 | 6.02 |
+| Bars with all nine moving | 8 | 8 |
+| Stepwise | 60.0 % | 60.0 % |
+| Melody flags | 1 tritone leap | none |
+
+Struck adjacent semitones in b38–41 went from 7 to 4.
+
+I still have not heard any of it. The balance pass is the least certain part, because I cannot judge how +10 on an inner entry sounds against eight other lines.

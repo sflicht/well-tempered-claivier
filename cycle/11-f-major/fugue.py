@@ -24,6 +24,7 @@ would, and that limitation is the joke of bars 41-46.
 """
 from __future__ import annotations
 
+import json
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -239,7 +240,10 @@ Sd_cad = ' '.join(Sd.split()[:-5]) + ' A4:4 D5:4'          # subject with a V-i 
 theme('Vne', 26, 1.5, oc(Sd_cad, -2), 'stretto I (d): subject (Violone), cadence', 2)
 put('V1a', 27, 1, 'Bb4:4 D5:4 C#5:4 E5:4 F5:4')
 put('Va1', 27, 1, 'D4:8 A3:8 A3:4')
-put('V2a', 27, 1, 'F4:8 G4:8 F4:4')
+put('V2a', 27, 1, 'F4:8 E4:4 C#4:4 D4:4')
+# the countersubject in d against the violone's cadential entry (its passing seventh left out, since the
+# oboe has C-sharp there), so that the ripieno sounds as a body here, not in rotation
+put('V1b', 26, 2, 'F5:4 D6:8 Bb5:6 G5:6 A5:4 F5:2')
 put('Vc', 26, 1.5, 'R:14 R:16 F3:4')
 
 
@@ -305,19 +309,19 @@ theme('Vne', 41, 1.5, 'G2:1 G2:1 C3:2 C3:1 C3:1 Eb3:2 Eb3:1 G3:5', 'joke: head i
 theme('Vc', 42, 1.5, 'C3:1 C3:1 F3:2 F3:1 F3:1 A3:2 A3:1 C4:5', 'joke: head in F (Violoncello)', 1)
 theme('Va1', 43, 1.5, 'A3:1 A3:1 D4:2 D4:1 D4:1 F4:2 F4:1 A4:5', 'joke: head in d (Viola 1)', 1)
 theme('V2a', 44, 1.5, 'E4:1 E4:1 A4:2 A4:1 A4:1 C5:2 C5:1 E5:5', 'joke: head in a (Violino II.1)', 1)
-theme('V1a', 45, 1.5, 'B4:1 B4:1 E5:2 E5:1 E5:1 G#5:2 G#5:1 B5:5', 'joke: head in E (Violino I.1)', 1)
+theme('V1a', 45, 1.5, 'B3:1 B3:1 E4:2 E4:1 E4:1 G#4:2 G#4:1 B4:5', 'joke: head in E (Violino I.1)', 1)
 # the slow lines under the climbing heads, and a bass once the heads have left it
 put('V1b', 41, 1, 'Eb5:8 D5:4 Eb5:4 C5:8 A4:8 A4:16 A4:12 G#4:4')
 put('Va2', 41, 1, 'Eb4:8 C4:8 F4:8 C4:8 F4:8 A3:8 C4:12 B3:4')
 put('Vne', 43, 1, 'D3:16 A2:12 B2:4')
 # bar 45: E7 -> E major, struck twice; the trumpet's F-major head against it
-put('Vne', 45, 1, 'E2:8 E2:4 R:4 E2:8')
-put('Vc', 45, 1, 'B2:8 B2:4 R:4 B2:8')
-put('Va2', 45, 1, 'B3:8 B3:4 R:4 B3:8')
-put('V2b', 45, 1, 'E4:8 E4:4 R:4 E4:8')
-put('V1b', 45, 1, 'E5:4 D5:4 E5:4 R:4 E5:8')
-put('Va1', 45, 1, 'R:8 E3:4 R:4 E3:8')
-put('V1a', 46, 1, 'G#5:8')
+put('Vne', 45, 1, 'E2:8 E2:8 E2:8')
+put('Vc', 45, 1, 'B2:8 B2:8 B2:8')
+put('Va2', 45, 1, 'B3:8 B3:8 B3:8')
+put('V2b', 45, 1, 'E4:8 E4:8 E4:8')
+put('V1b', 45, 1, 'E5:4 D5:4 E5:8 E5:8')
+put('Va1', 45, 1, 'R:8 E3:8 E3:8')
+put('V1a', 46, 1, 'G#4:8')
 # bar 47: after the general pause, the basses' correction and the trumpet's meek echo
 put('Vne', 47, 1, 'R:2 E3:1 E3:1 A2:4')
 put('Tr', 47, 2.5, 'E6:1 E6:1 A5:4')
@@ -335,7 +339,7 @@ put('Vno', 48, 2, oc(CSa, 1))
 put('Vc', 48, 2, 'A2:8 G2:4 D3:4 F3:4 E3:4 E2:4 A2:4 Bb2:4 D3:4 F2:4 Bb2:4 D3:4 A2:8 Bb2:4 B2:4 C3:4 C2:4')
 # bar 52: the ripieno gathers, sevenths prepared and resolved over Bb - B - C
 put('Vne', 52, 1, 'G2:8 C3:8')
-put('Va2', 52, 1, 'D4:4 Bb3:4 C4:4 Bb3:4')
+put('Va2', 52, 1, 'D4:4 R:4 C4:4 Bb3:4')     # rests on 52.2 so the cello's B-natural is not struck against B-flat
 put('V2b', 52, 1, 'G4:16')
 put('V1b', 52, 1, 'Bb4:4 D5:4 C5:8')
 put('V1a', 52, 1, 'F5:8 E5:8')
@@ -367,8 +371,6 @@ put('Vc', 53, 1, 'F2:4')
 # further statements of the CS in diminution, falling (CS) or mirrored (CSI), in F or B-flat, placed where
 # the search found them compatible with everything above; each is the hand-written CS, halved
 put('V2b', 54, 1.5, W.transpose(CSIdim, 24, 14))       # F, rising, high
-put('Va1', 54, 3.5, CSdim)                             # F, falling, leads into its inversion entry
-put('Vno', 55, 2.5, W.transpose(CSdim, 5, 3))          # B-flat, falling, after its stretto entry
 put('V1a', 55, 4.5, oc(CSdim, 2))                      # F, falling
 put('Ob', 56, 2.5, ' '.join(W.transpose(CSIdim, 17, 10).split()[:-1]) + ' C5:4')  # B-flat, rising; ends on C
 
@@ -376,7 +378,7 @@ put('Ob', 56, 2.5, ' '.join(W.transpose(CSIdim, 17, 10).split()[:-1]) + ' C5:4')
 # second violins and viola 1 sing slow syncopated lines under the fanfare; the cello walks in the tenor
 put('Fl', 53, 1, 'A6:14')
 
-# b54-55: the first violins descend slowly under the recorder (F6 E6 D6 C6 Bb5, the Bb resolving into the
+# b54-55: the first violins descend slowly above the recorder (F6 E6 D6 C6 Bb5, the Bb resolving into the
 # CS statement's A); viola 2 and violins II.2 bridge to their entries
 put('V1a', 54, 1, 'A6:6 Bb6:2 G6:8 F6:6 G6:2 F6:4 C6:2')
 put('Va2', 54, 1, 'A3:8 Bb3:8 A3:4 G3:4 A3:4 G3:2')
@@ -420,14 +422,14 @@ put('Vno', 61, 1.5, 'F4:2 D5:3 C5:1 Bb4:3 G4:3 A4:2 F4:8 C4:8 C4:16')         # 
 put('V1a', 61, 1, 'C6:4 D6:7 Eb6:3 C6:2')
 put('V1b', 61, 1.5, 'A5:2 Bb5:10 A5:2')
 put('Vc', 61, 1, 'F3:4 Bb2:7 Eb3:3 F3:2 C3:4 F3:4 G3:8 A3:16')
-# b62: the concertino and continuo make the cadence (IV6 - V7 - I) while the ripieno is silent; the
-# recorder climbs C-D-E-F, the trumpet's tattoo is on C, and the ripieno joins for the last chord.
+# b62: the concertino and continuo make the cadence (IV6 - V7 - I); the recorder climbs C-D-E-F, the
+# trumpet's tattoo is on C, the second violins join on V7 and the whole ripieno strikes the last chord.
 put('Fl', 62, 1, 'C6:4 D6:4 E6:8 F6:16')
 put('Tr', 62, 2.5, 'C6:1 C6:1 C6:8 C6:16')
 put('V1a', 63, 1, 'A5:16')
 put('V1b', 63, 1, 'F5:16')
-put('V2a', 63, 1, 'C5:16')
-put('V2b', 63, 1, 'F4:16')
+put('V2a', 62, 3, 'C5:8 C5:16')                        # second violins join on V7
+put('V2b', 62, 3, 'G4:8 F4:16')
 put('Va1', 63, 1, 'F3:16')
 put('Va2', 63, 1, 'C4:16')
 
@@ -451,16 +453,29 @@ def build(nbars, path=None):
             if b + 1 >= k:
                 v = DYN[k]
         return v
-    return W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES,
-                         subject=S, dynamics=dynamics)
+    out = path or HERE / 'fugue.json'
+    data = W.build_score(out, meta, voices, bars, entries=ENTRIES, subject=S, dynamics=dynamics)
+    # per-voice accents (velocity only): the trumpet leads the twelve-voice fanfare and its wrong-key head
+    for abbr, b0, beat0, b1, beat1, dv in ACCENTS:
+        t0, t1 = (b0 - 1) * 4 + beat0 - 1, (b1 - 1) * 4 + beat1 - 1
+        for e in data['voices'][NAMES.index(abbr)]['events']:
+            if t0 <= e['t'] < t1:
+                e['v'] = min(118, e['v'] + dv)
+    Path(out).write_text(json.dumps(data, indent=1))
+    return data
 
 
-# tempo: a held breath on the wrong E-major chord and its general pause (b46), a tempo for the correction,
-# and a broadening over the last two bars (q=100 -> 76 -> 56 on the final chord)
-TEMPO = {'tempo_map': [[176, 100], [182, 84, 'ramp'], [182, 56], [184, 100],
-                       [240, 100], [248, 76, 'ramp'], [248, 70], [252, 52, 'ramp']]}
-# phrase dynamics (velocity offsets): solo episodes lighter, tutti heavier, the twelve-voice stretto loudest
-DYN = {1: 0, 9: 3, 17: -4, 23: 4, 28: -4, 35: 3, 41: 0, 47: -6, 48: -2, 53: 6, 58: 0, 59: 4, 62: 2, 63: 6}
+# tempo: a held breath on the wrong E-major chord and a long general pause (b46, two beats at q=40), a
+# tempo for the correction; at the end only a slight broadening into the last chord (100 -> 90, held at 84)
+# so that the ripieno's entry on the final chord lands as a tutti stroke, not late
+TEMPO = {'tempo_map': [[176, 100], [182, 84, 'ramp'], [182, 40], [184, 100],
+                       [244, 100], [248, 90, 'ramp'], [248, 84]]}
+# phrase dynamics (velocity offsets): on one piano timbre density and loudness are the only concertino/
+# ripieno cues, so the solo episodes are clearly lighter (-8) and the ripieno sections clearly heavier
+DYN = {1: 0, 9: 5, 17: -8, 23: 6, 28: 0, 29: -8, 35: 6, 41: 0, 47: -6, 48: -6, 52: 2, 53: 8, 58: 4,
+       59: 6, 62: 6, 63: 8}
+# (voice, bar, beat, to bar, to beat, velocity +): the trumpet over the tutti and its wrong-key head
+ACCENTS = [('Tr', 45, 3.5, 46, 3, 10), ('Tr', 53, 1.5, 55, 1, 8)]
 BASEVEL = [70, 66, 66, 66, 62, 60, 60, 58, 60, 58, 64, 64]
 
 if __name__ == '__main__':

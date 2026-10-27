@@ -16,8 +16,13 @@ the pitch it started from.  That jump is the problem the well-tempered keyboard 
   cycle 1 (b1-8)    the theme
   cycle 2 (b9-16)   the pipes: the tune over an alto countermelody in eighths
   cycle 3 (b17-24)  the tune moves into the alto, an octave lower, under a new descant
-  cycle 4 (b25-32)  da capo: the same notes as cycle 1, three commas lower; a breath
+  cycle 4 (b25-32)  da capo of the pipes: the same notes as cycle 2, two commas lower; a breath
   coda (b33-36)     the loop once more, in Bach-Lehman
+
+A musette drone (a fifth staff, E2, struck at b1, 9, 17 and 25 and held by the sostenuto pedal) stays at
+the opening pitch: it is the yardstick.  Against it the sinking tonic beats ever faster (about 2, 4 and 6
+Hz on the drone's octave partial in cycles 2, 3 and 4).  In the breath of b32 the drone sounds alone, at
+the opening pitch, and the tempered coda enters in tune with it.
 
 Every note is written here.  The tuning is performance, not composition: tune_prelude.py derives
 every note's 'cents' from these notes and the chord chart below (CYCLE_HARMONY, CODA_HARMONY), and
@@ -34,7 +39,7 @@ sys.path.insert(0, str(HERE.parents[1] / 'tools'))
 import wtclib as W  # noqa: E402
 
 METER = (12, 8)
-VOICES = ['Soprano', 'Alto', 'Tenor', 'Bass']
+VOICES = ['Soprano', 'Alto', 'Tenor', 'Bass', 'Drone']
 
 
 def e(s):
@@ -53,7 +58,7 @@ TUNE = ['B4:4 C#5:2 B4:4 E5:2 G#5:12~',
         'G#5:4 F#5:2 E5:18']
 BASS = ['E3:12 B2:12', 'C#3:24', 'F#2:24', 'B2:24', 'E3:12 G#2:12', 'A2:24', 'B2:24', 'E3:12 E2:12']
 A1 = ['E4:12 B4:12', 'G#4:18 E4:6~', 'E4:12 F#4:12~', 'F#4:18 D#4:6', 'E4:12 B4:12', 'A4:12 C#5:12',
-      'G#4:12 A4:12', 'E4:12 G#4:12']
+      'G#4:12 B4:6 D#4:6', 'E4:12 G#4:12']
 T1 = ['B3:6 G#3:6 B3:6 G#3:6', 'C#4:6 G#3:6 C#4:6 G#3:6', 'A3:12 F#3:12~', 'F#3:6 B3:6 A3:12',
       'G#3:6 B3:6 E3:12', 'A3:12 E3:12', 'G#3:6 B3:6 A3:6 F#3:6', 'G#3:12 E3:12']
 # ------------------------------------------------------------------ cycle 2: the pipes (alto countermelody in eighths)
@@ -80,7 +85,7 @@ S3 = ['G#4:4 A4:2 G#4:4 B4:2 E5:12~',
 T3 = ['G#3:24', 'C#4:12 G#3:12', 'A3:12 F#3:12~', 'F#3:12 A3:12', 'G#3:12 E3:12', 'A3:12 C#4:12',
       'G#3:12 B3:12', 'G#3:12 E3:12']
 
-# ------------------------------------------------------------------ cycle 4: da capo (the same notes as cycle 1), with a breath
+# ------------------------------------------------------------------ cycle 4: da capo of cycle 2 (the pipes), with a breath
 # before the keyboard 'corrects' it
 END4 = {'Soprano': 'G#5:4 F#5:2 E5:12 R:6', 'Alto': 'E4:12 G#4:6 R:6', 'Tenor': 'G#3:12 E3:6 R:6', 'Bass': 'E3:12 E2:6 R:6'}
 # ------------------------------------------------------------------ coda (b33-36): the same loop on the well-tempered keyboard
@@ -102,10 +107,15 @@ for k in range(8):
 for k in range(8):
     B.bar(f'{17 + k} cycle 3 (tune in the alto)', Soprano=S3[k], Alto=TUNE_LOW[k], Tenor=T3[k], Bass=BASS[k])
 for k in range(7):
-    B.bar(f'{25 + k} cycle 4 (da capo)', Soprano=TUNE[k], Alto=A1[k], Tenor=T1[k], Bass=BASS[k])
+    B.bar(f'{25 + k} cycle 4 (da capo of the pipes)', Soprano=TUNE[k], Alto=A2[k], Tenor=T2[k], Bass=BASS[k])
 B.bar('32 cycle 4 ends, a breath', **END4)
 for k in range(4):
-    B.bar(f'{33 + k} coda (well-tempered)', **{v: CODA[v][k] for v in VOICES})
+    B.bar(f'{33 + k} coda (well-tempered)', **{v: CODA[v][k] for v in CODA})
+# The musette drone: a fixed E2 (Bach-Lehman, never retuned) struck at the start of each cycle, the yardstick
+# the pump sinks away from.  In the breath of b32 it sounds alone, at the opening pitch, and the coda joins it.
+for b in (1, 9, 17, 25):
+    B.put('Drone', b, ['E2:24'])
+B.put('Drone', 32, ['R:18 E2:6~', 'E2:24'])
 
 
 def harmony_chart():
@@ -122,16 +132,17 @@ def build():
             'key': 'E', 'mode': 'major', 'meter': list(METER), 'bpm': 84,
             'tempo_text': 'Pastorale, dotted quarter = 56',
             'movement_number': 9, 'piece_type': 'prelude', 'edition': 'third',
-            # each cycle breathes at its cadence; cycle 4 slows into the breath; the coda a tempo, then broad
+            # each cycle breathes at its cadence; cycle 4 a tempo, slowing only into the breath; the coda, then broad
             'tempo_map': [[42, 84], [48, 76, 'ramp'], [48, 84], [90, 84], [96, 76, 'ramp'], [96, 84], [138, 84],
-                          [144, 74, 'ramp'], [186, 74], [192, 58, 'ramp'], [192, 80], [204, 80], [216, 52, 'ramp']],
+                          [144, 76, 'ramp'], [144, 84], [186, 84], [192, 58, 'ramp'], [192, 80], [204, 80], [216, 52, 'ramp']],
             'harmony': harmony_chart(), 'tuning': {'just_until_q': 192.0, 'then': 'bach-lehman'}}
-    voices = [('Soprano', 'S', 'treble', 60), ('Alto', 'A', 'treble', 58), ('Tenor', 'T', 'bass', 54), ('Bass', 'B', 'bass', 58)]
+    voices = [('Soprano', 'S', 'treble', 60), ('Alto', 'A', 'treble', 58), ('Tenor', 'T', 'bass', 54), ('Bass', 'B', 'bass', 58),
+              ('Drone', 'Dr', 'bass', 48)]
     # the tune is brought out wherever it is (entry_boost): soprano in cycles 1, 2, 4 and the coda, alto in cycle 3
     tune = [('Soprano', 1, 0, 'tune (cycle 1)', 8), ('Soprano', 9, 0, 'tune (cycle 2)', 8),
             ('Alto', 17, 0, 'tune (cycle 3, alto)', 8), ('Soprano', 25, 0, 'tune (cycle 4, da capo)', 8),
             ('Soprano', 33, 0, 'tune head (coda, tempered)', 2)]
-    dyn = {1: -4, 9: 0, 13: 2, 17: -6, 21: -4, 25: -2, 29: -6, 31: -10, 33: -2, 35: -6}
+    dyn = {1: -4, 9: 0, 13: 2, 17: -6, 21: -4, 25: -2, 29: -6, 31: -10, 33: -6, 35: -8}
 
     def dynamics(b):
         v = 0

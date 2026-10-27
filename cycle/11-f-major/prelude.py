@@ -117,7 +117,7 @@ sec('C5:2 C5:2 F5:2 F5:2 F5:2 A5:2 A5:2 C6:4 '
 sec('C6:2 C6:2 F6:2 R:6 F5:2 F5:2 Bb5:2 R:6 '
     'G5:2 G5:2 C6:2 E5:2 G5:2 Bb5:2 A5:6 R:6 '
     'R:2 C6:1 C6:1 F6:20',
-    'F2:6 C3:2 C3:2 F3:2 Bb2:6 F3:2 F3:2 Bb2:2 '
+    'F2:6 A2:2 A2:2 F3:2 Bb2:6 D3:2 D3:2 Bb2:2 '
     'C3:6 C3:2 C3:2 C2:2 F2:6 R:6 '
     'R:4 F2:20')
 
@@ -142,10 +142,10 @@ if __name__ == '__main__':
             'key': 'F', 'mode': 'major', 'meter': list(METER), 'bpm': 90,
             'tempo_text': 'Allegretto giocoso (dotted quarter = 60)',
             'movement_number': 11, 'piece_type': 'prelude', 'edition': 'third',
-            # a breath on the lone "C C" before the D-flat surprise; a broadening into the last cadence
-            # and a held last bar
+            # a breath on the lone "C C" before the D-flat surprise; a broadening into the last cadence;
+            # the last bar a tempo at the fugue's speed, so that "C C | F" is the trumpet's call itself
             'tempo_map': [[66, 90], [72, 66, 'ramp'], [72, 90], [108, 90], [117, 70, 'ramp'],
-                          [120, 74], [126, 56, 'ramp']]}
+                          [120, 100]]}
     voices = [('Right hand', 'RH', 'treble', 70), ('Left hand', 'LH', 'bass', 64)]
     W.build_score(HERE / 'prelude.json', meta, voices, BARS, dynamics=dyn, subject=P,
                   entries=[('Right hand', 1, 0, 'theme (F)', 2), ('Left hand', 2, 3, 'answer (C)', 2),

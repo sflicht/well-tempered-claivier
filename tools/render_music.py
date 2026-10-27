@@ -282,23 +282,34 @@ def create_lilypond(data, output):
             '\\score {', '  \\new StaffGroup <<']
     markers = notation_markers(meta)
     printed_labels = notation_labels(data)
+    # Optional staff sharing: a voice with "share_staff": <name or abbr of another voice> is
+    # engraved on that voice's staff as a second layer (stems down), e.g. the lower notes of a
+    # violinist's double stops.  Its rests are printed only in bars where it has notes.
+    # Scores without "share_staff" are engraved exactly as before.
+    hosts = {}
     for i, voice in enumerate(voices):
-        name = escape_lily(voice.get("name", f"Voice {i+1}"))
-        abbr = escape_lily(voice.get("abbr", str(i+1)))
-        clef = voice.get("clef", "treble")
-        text += [f'    \\new Staff \\with {{ instrumentName = "{name}" shortInstrumentName = "{abbr}" }} {{',
-                 f'      \\clef "{clef}" \\key {keynames.get(key, "cis")} \\{mode} \\time {beats}/{denominator}']
-        if i == 0:
-            text.append(f'      \\tempo "{escape_lily(meta.get("tempo_text", "Con moto, sempre chiaro"))}" 4 = {round(bpm_of(meta))}')
+        ref = voice.get("share_staff")
+        if ref is None:
+            continue
+        h = next((k for k, v in enumerate(voices) if k != i and ref in (v.get("name"), v.get("abbr"))), None)
+        if h is None or voices[h].get("share_staff") is not None:
+            raise ValueError(f"share_staff of voice {i} names no host staff: {ref!r}")
+        hosts.setdefault(h, []).append(i)
+    guests = {g for gs in hosts.values() for g in gs}
+
+    def music_lines(i, voice, indent, spacer_rests=False):
+        lines = []
         bar_items, currentbar = [], 0
         in_tuplet = False
-        for s in voice_segments(voice, end, bar_len, split_at=markers.keys() if i == 0 else ()):
+        segs = voice_segments(voice, end, bar_len, split_at=markers.keys() if i == 0 else ())
+        bars_with_notes = {s["t"] // bar_len for s in segs if s.get("p") is not None}
+        for s in segs:
             bar = s["t"] // bar_len
             if bar != currentbar:
                 if in_tuplet:
                     bar_items.append('}')
                     in_tuplet = False
-                text.append('      ' + ' '.join(bar_items) + ' |')
+                lines.append(indent + ' '.join(bar_items) + ' |')
                 bar_items, currentbar = [], bar
             if s.get('triplet') and not in_tuplet:
                 bar_items.append('\\tuplet 3/2 4 {')
@@ -311,19 +322,51 @@ def create_lilypond(data, output):
             if s['t'] in key_changes:
                 new_key, new_mode = key_changes[s['t']]
                 bar_items.append(f'\\key {keynames[new_key]} \\{new_mode}')
-            token = (lily_pitch(s["p"], meta, s.get("spell")) if s.get("p") is not None else 'r') + s["durstr"]
+            rest = 's' if spacer_rests and bar not in bars_with_notes else 'r'
+            token = (lily_pitch(s["p"], meta, s.get("spell")) if s.get("p") is not None else rest) + s["durstr"]
             if s.get("tie_start"):
                 token += '~'
             label = printed_labels.get((i, s['t'])) if s.get('first') else None
             if label:
-                token += '^\\markup { \\tiny \\italic "' + escape_lily(label) + '" }'
+                token += ('^' if not spacer_rests else '_') + '\\markup { \\tiny \\italic "' + escape_lily(label) + '" }'
             if s.get("first") and s.get("dynamic"):
                 token += '\\' + s["dynamic"]
             bar_items.append(token)
         if in_tuplet:
             bar_items.append('}')
-        text.append('      ' + ' '.join(bar_items) + ' \\bar "|."')
-        text.append('    }')
+        lines.append(indent + ' '.join(bar_items) + ' \\bar "|."')
+        return lines
+
+    for i, voice in enumerate(voices):
+        if i in guests:
+            continue
+        name = escape_lily(voice.get("name", f"Voice {i+1}"))
+        abbr = escape_lily(voice.get("abbr", str(i+1)))
+        clef = voice.get("clef", "treble")
+        head = f'\\clef "{clef}" \\key {keynames.get(key, "cis")} \\{mode} \\time {beats}/{denominator}'
+        tempo = f'\\tempo "{escape_lily(meta.get("tempo_text", "Con moto, sempre chiaro"))}" 4 = {round(bpm_of(meta))}'
+        if i not in hosts:
+            text += [f'    \\new Staff \\with {{ instrumentName = "{name}" shortInstrumentName = "{abbr}" }} {{',
+                     f'      {head}']
+            if i == 0:
+                text.append(f'      {tempo}')
+            text += music_lines(i, voice, '      ')
+            text.append('    }')
+            continue
+        gs = hosts[i]
+        gname = ' / '.join([name] + [escape_lily(voices[g].get("name", f"Voice {g+1}")) for g in gs])
+        gabbr = '/'.join([abbr] + [escape_lily(voices[g].get("abbr", str(g+1))) for g in gs])
+        text += [f'    \\new Staff \\with {{ instrumentName = "{gname}" shortInstrumentName = "{gabbr}" }} <<',
+                 f'      \\new Voice {{ \\voiceOne {head}']
+        if i == 0:
+            text.append(f'      {tempo}')
+        text += music_lines(i, voice, '      ')
+        text.append('      }')
+        for g in gs:
+            text.append(f'      \\new Voice {{ \\voiceTwo \\key {keynames.get(key, "cis")} \\{mode}')
+            text += music_lines(g, voices[g], '      ', spacer_rests=True)
+            text.append('      }')
+        text.append('    >>')
     indent_mm = layout.get('indent_mm', 18)
     text += ['  >>', '  \\layout {', f'    indent = {indent_mm}\\mm', '    short-indent = 6\\mm',
              '    \\context { \\Score \\override BarNumber.break-visibility = ##(#f #f #t) }',
@@ -438,16 +481,22 @@ def create_musicxml(data, output):
     Path(output).write_bytes(ET.tostring(root, encoding='utf-8', xml_declaration=True))
 
 
-def performance_events(data, chamber=False):
-    """Return events at quarter-note times; offsets preserve written note lengths."""
+def performance_events(data, chamber=False, instruments=False):
+    """Return events at quarter-note times; offsets preserve written note lengths.
+    instruments=True plays each voice with its own General MIDI 'gm_program' (piano, 0,
+    when a voice names none) and its 'pan' if given; the default is unchanged."""
     voices = normalized_voices(data)
     events = []
     programs = [73, 68, 71, 42, 70, 41, 72] if chamber else [0]
     for i, voice in enumerate(voices):
         channel = CHANNELS[i % 15] + 16 * (i // 15)
         program = int(voice.get('gm_program', programs[i % len(programs)])) if chamber else 0
+        if instruments and not chamber:
+            program = int(voice.get('gm_program', 0))
         events.append((Fraction(0), -2, channel, 'program', program, 0))
         pan = int(voice.get('pan', round(40 + 48 * i / max(1, len(voices)-1)))) if chamber else int(voice.get('piano_pan',64))
+        if instruments and not chamber:
+            pan = int(voice.get('pan', voice.get('piano_pan', 64)))
         events.append((Fraction(0), -1, channel, 'pan', pan, 0))
         bent = 0
         for e in voice['events']:
@@ -468,7 +517,7 @@ def performance_events(data, chamber=False):
     return sorted(events)
 
 
-def create_midi(data, output, chamber=False):
+def create_midi(data, output, chamber=False, instruments=False):
     import mido
     meta = meta_of(data)
     beats, den = meter_of(meta)
@@ -514,7 +563,7 @@ def create_midi(data, output, chamber=False):
         else:
             conductor.append(mido.MetaMessage('set_tempo', tempo=val, time=tick - last))
         last = tick
-    events = performance_events(data, chamber=chamber)
+    events = performance_events(data, chamber=chamber, instruments=instruments)
     for i, voice in enumerate(data['voices']):
         channel = CHANNELS[i % 15] + 16*(i//15)
         track = mido.MidiTrack()
@@ -580,7 +629,7 @@ def apply_temperament(synth, name, channels, a4=440.0):
         fluidsynth.fluid_synth_activate_tuning(synth.synth, ch, 0, 0, 1)
 
 
-def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament=None, a4=440.0):
+def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament=None, a4=440.0, instruments=False):
     import fluidsynth
     import numpy as np
     from scipy.io import wavfile
@@ -595,7 +644,7 @@ def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament
     synth.setting('synth.reverb.damp', 0.6)
     synth.setting('synth.reverb.level', 0.16)
     synth.setting('synth.chorus.active', 0)
-    events = performance_events(data, chamber)
+    events = performance_events(data, chamber, instruments=instruments)
     for t, _, channel, kind, pitch, velocity in events:
         if kind == 'program':
             synth.program_select(channel, sfid, 0, pitch)
@@ -640,6 +689,8 @@ def main():
     ap.add_argument('--temperament', default='equal', choices=sorted(TEMPERAMENTS),
                     help='historical keyboard temperament for the audio render')
     ap.add_argument('--a4', type=float, default=440.0, help='reference pitch, e.g. 415 for Baroque pitch')
+    ap.add_argument('--instruments', action='store_true',
+                    help="play each voice with its own 'gm_program' (default: piano for every voice)")
     args = ap.parse_args()
     data = json.loads(args.input.read_text())
     normalized_voices(data)
@@ -652,7 +703,7 @@ def main():
     else:
         create_lilypond(data, ly)
         create_musicxml(data, xml)
-        create_midi(data, midi)
+        create_midi(data, midi, instruments=args.instruments)
         result.update({'midi':str(midi), 'musicxml':str(xml), 'lilypond':str(ly)})
     if not args.no_pdf:
         proc = subprocess.run(['lilypond','-dno-point-and-click','-o',str(prefix),str(ly)], capture_output=True, text=True)
@@ -662,7 +713,7 @@ def main():
         result['pdf'] = str(prefix.with_suffix('.pdf'))
     if not args.no_audio:
         result['piano_audio'] = render_audio(data, prefix.with_suffix('.wav'), prefix.with_suffix('.mp3'), args.soundfont,
-                                             temperament=args.temperament, a4=args.a4)
+                                             temperament=args.temperament, a4=args.a4, instruments=args.instruments)
         result['mp3'] = str(prefix.with_suffix('.mp3'))
         if args.chamber:
             chamber = prefix.parent / (prefix.name+'-chamber')

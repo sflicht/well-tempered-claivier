@@ -26,6 +26,7 @@ upper Presto line; left hand = ground + figure / lower Presto line.
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -63,11 +64,15 @@ B.bar('10', RH='G4:4 C5:4 D5:6 C5:2', Figure=fig('G3 C4 G3 C4', 'A3 C4 A3 F#3'),
 # phrase 4 = line 6 (sonst muessten wir verzagen): B C B | B A G A | A C B
 B.bar('11 line 6', RH='B4:8 C5:4 B4:4', Figure=FIGS[0], Bass=GROUND[0])
 B.bar('12', RH='B4:6 C5:1 B4:1 B4:2 A4:2 G4:2 A4:2', Figure=FIGS[1], Bass=GROUND[1])
-B.bar('13 half cadence', RH='C5:4 A4:4 B4:8', Figure=FIGS[2], Bass=GROUND[2])
+B.bar('13 half cadence', RH='C5:2 D5:1 C5:1 A4:4 B4:6 A4:1 B4:1', Figure=FIGS[2], Bass=GROUND[2])   # turned, so b13 no longer repeats b4
 # phrase 5 = line 7 (Erbarm dich unser, o Jesu): C B A G E | C E D# E
-B.bar('14 line 7', RH='C5:4 B4:4 B4:6 A4:2', Figure=FIGS[0], Bass=GROUND[0])
-B.bar('15', RH='G4:8 E5:6 D5:2', Figure=FIGS[1], Bass=GROUND[1])
-B.bar('16', RH='C5:4 E5:4 D#5:8', Figure=FIGS[2], Bass=GROUND[2])
+# the last phrase: the figure doubles its speed (sixteenths), gathering the aria towards its cadence and the Presto
+B.bar('14 line 7', RH='C5:4 B4:4 B4:6 A4:2', Bass=GROUND[0],
+      Figure='G3:1 B3:1 E4:1 B3:1 G3:1 B3:1 E4:1 B3:1 F#3:1 A3:1 B3:1 A3:1 F#3:1 A3:1 B3:1 F#3:1')
+B.bar('15', RH='G4:8 E5:6 D5:2', Bass=GROUND[1],
+      Figure='G3:1 B3:1 D4:1 B3:1 G3:1 B3:1 D4:1 B3:1 E3:1 G3:1 B3:1 G3:1 E3:1 G3:1 B3:1 G3:1')
+B.bar('16', RH='C5:4 E5:4 D#5:8', Bass=GROUND[2],
+      Figure='E3:1 A3:1 C4:1 A3:1 E3:1 A3:1 C4:1 A3:1 F#3:1 A3:1 B3:1 A3:1 F#3:1 A3:1 B3:1 A3:1')
 B.bar('17 cadence', RH='E5:16', Figure=fig(EM, 'G3 B3 E4 B3'), Bass='E3:16')
 
 
@@ -134,7 +139,16 @@ def build():
             if b + 1 >= k:
                 v = dyn[k]
         return v
-    return W.build_score(HERE / 'prelude.json', meta, voices, bars, tags=B.tags, dynamics=dynamics)
+    data = W.build_score(HERE / 'prelude.json', meta, voices, bars, tags=B.tags, dynamics=dynamics)
+    # Second review: the canon at one beat (b28-30.1) is played as an echo -- the left hand 8 softer -- so that its
+    # struck neighbour-note clashes read as a shadow of the right hand.  Velocities only.
+    for v in data['voices']:
+        if v['abbr'] == 'Bs':
+            for e in v['events']:
+                if 108 <= e['t'] < 117:
+                    e['v'] = max(24, e['v'] - 8)
+    (HERE / 'prelude.json').write_text(json.dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

@@ -107,14 +107,14 @@ SUM = 45
 # third above the last, two beats apart, climbing from the bass to the top.
 # The two highest entries already carry the first light (B#, Mixolydian).
 CHAIN = [  # (voice, bar, beat, tokens) -- modal transpositions inside the Dorian collection, written out
-    ('B1', SUM + 0, 1, 'G#2:8 A#2:8 B2:8 E#3:12 D#3:4 C#3:8 B2:4 A#2:4 G#2:8 F#2:8'),     # on G#
+    ('B1', SUM + 0, 1, 'G#2:8 A#2:8 B2:8 E#3:12 D#3:4 C#3:8 B2:4 A#2:4 G#2:8 F#2:8'),     # on G#, the depth
     ('T1', SUM + 0, 3, 'B3:8 C#4:8 D#4:8 G#4:12 F#4:4 E#4:8 D#4:4 C#4:4 B3:8 A#3:8'),     # on B
-    ('Br1', SUM + 1, 2, 'D#3:8 E#3:8 F#3:8 B3:12 A#3:4 G#3:8 F#3:4 E#3:4 D#3:8 C#3:8'),   # on D#
-    ('A1', SUM + 2, 1, 'F#4:8 G#4:8 A#4:8 D#5:12 C#5:4 B4:8 A#4:4 G#4:4 F#4:8 E#4:8'),    # on F#
-    ('T2', SUM + 2, 3, 'A#3:8 B3:8 C#4:8 F#4:12 E#4:4 D#4:8 C#4:4 B3:4 A#3:8 G#3:8'),     # on A#
-    ('S3', SUM + 3, 2, 'C#5:8 D#5:8 E#5:8 A#5:12 G#5:4 F#5:8 E#5:4 D#5:4 C#5:8 B4:8'),    # on C#
-    ('A3', SUM + 4, 1, 'E#4:8 F#4:8 G#4:8 C#5:12 B#4:4 A#4:8 G#4:4 F#4:4 E#4:8 D#4:8'),   # on E#, first light (B#)
-    ('S1', SUM + 4, 3, 'G#5:8 A#5:8 B#5:8 E#6:12 D#6:4 C#6:8 B#5:4 A#5:4 G#5:8 F#5:8'),   # on G#, Mixolydian
+    ('S2', SUM + 1, 2, 'D#5:8 E#5:8 F#5:8 B5:12 A#5:4 G#5:8 F#5:4 E#5:4 D#5:8 C#5:8'),    # on D#, high
+    ('T3', SUM + 2, 1, 'F#3:8 G#3:8 A#3:8 D#4:12 C#4:4 B3:8 A#3:4 G#3:4 F#3:8 E#3:8'),    # on F#, low
+    ('A1', SUM + 2, 3, 'A#4:8 B4:8 C#5:8 F#5:12 E#5:4 D#5:8 C#5:4 B4:4 A#4:8 G#4:8'),     # on A#
+    ('Br2', SUM + 3, 2, 'C#3:8 D#3:8 E#3:8 A#3:12 G#3:4 F#3:8 E#3:4 D#3:4 C#3:8 B2:8'),   # on C#, low
+    ('A3', SUM + 4, 1, 'E#4:8 F#4:8 G#4:8 C#5:12 B#4:4 A#4:8 G#4:4 F#4:4 E#4:8 D#4:8'),   # on E#: first light (B#)
+    ('S1', SUM + 4, 3, 'G#5:8 A#5:8 B#5:8 E#6:12 D#6:4 C#6:8 B#5:4 A#5:4 G#5:8 F#5:8'),   # on G#, Mixolydian, the top
 ]
 for v, b, bt, t in CHAIN:
     theme(v, b, bt, t, 'Summit chain: subject (Dorian) a third higher every two beats', 3)

@@ -9,7 +9,8 @@ a few early reflections, and a long decorrelated late reverb. Listen on
 headphones.
 
 Usage: render_spatial.py score.json --output out.mp3 [--temperament bach-lehman]
-       [--layout arc|ring|choir|antiphonal] [--rt60 3.2]
+       [--layout arc|ring|choir|antiphonal|antiphonal-centre|score] [--instruments] [--rt60 3.2]
+       (--layout score reads each voice's 'spatial': [azimuth_deg, distance_m])
 """
 from __future__ import annotations
 
@@ -30,8 +31,8 @@ import render_music as rm  # noqa: E402
 RATE = 44100
 
 
-def stem(data, i, soundfont, temperament, a4):
-    """Mono render of voice i alone."""
+def stem(data, i, soundfont, temperament, a4, instruments=False):
+    """Mono render of voice i alone (instruments=True: with the voice's own 'gm_program')."""
     import fluidsynth
     one = dict(data)
     v = dict(data['voices'][i])
@@ -41,7 +42,7 @@ def stem(data, i, soundfont, temperament, a4):
     sfid = synth.sfload(str(soundfont))
     synth.setting('synth.reverb.active', 0)
     synth.setting('synth.chorus.active', 0)
-    events = rm.performance_events(one)
+    events = rm.performance_events(one, instruments=instruments)
     for t, _, ch, kind, p, vel in events:
         if kind == 'program':
             synth.program_select(ch, sfid, 0, p)
@@ -128,7 +129,11 @@ def late_ir(rt60, seed=7):
     return irs
 
 
-def layout_positions(n, kind):
+def layout_positions(n, kind, voices=None):
+    if kind == 'score':  # each voice's own 'spatial': [azimuth_deg, distance_m]; others on the arc
+        arc = layout_positions(n, 'arc')
+        return [tuple(float(x) for x in v['spatial']) if v.get('spatial') else arc[k]
+                for k, v in enumerate(voices or [{}] * n)]
     if kind == 'ring':
         return [(-180 + 360 * (k + .5) / n, 6.0) for k in range(n)]
     if kind == 'antiphonal-centre':  # two choirs left/right, the last voice (e.g. a chorale) in front
@@ -160,14 +165,16 @@ def main():
     ap.add_argument('--soundfont', type=Path, default=Path('/usr/share/sounds/sf2/FluidR3_GM.sf2'))
     ap.add_argument('--temperament', default='bach-lehman', choices=sorted(rm.TEMPERAMENTS))
     ap.add_argument('--a4', type=float, default=440.0)
-    ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir', 'antiphonal', 'antiphonal-centre'])
+    ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir', 'antiphonal', 'antiphonal-centre', 'score'])
+    ap.add_argument('--instruments', action='store_true',
+                    help="play each voice with its own 'gm_program' (default: piano for every voice)")
     ap.add_argument('--rt60', type=float, default=3.2)
     ap.add_argument('--wet', type=float, default=0.32)
     a = ap.parse_args()
     data = json.loads(a.score.read_text())
     n = len(data['voices'])
-    pos = layout_positions(n, a.layout)
-    stems = [stem(data, i, a.soundfont, a.temperament, a.a4) for i in range(n)]
+    pos = layout_positions(n, a.layout, data['voices'])
+    stems = [stem(data, i, a.soundfont, a.temperament, a.a4, a.instruments) for i in range(n)]
     length = max(len(s) for s in stems) + int(RATE * a.rt60)
     L = np.zeros(length)
     R = np.zeros(length)

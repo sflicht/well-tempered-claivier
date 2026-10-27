@@ -31,6 +31,9 @@ THE RULES (in this order)
    tempered tonic are the same pitch.  From metadata['tuning']['just_until_q'] on (the coda), every
    note takes the Bach-Lehman offset of its pitch class, computed from
    tools/render_music.py temperament_offsets('bach-lehman').
+6. The musette drone (voice 'Drone') is a fixed-pitch instrument: it always takes the Bach-Lehman
+   offset, so it stays at the opening pitch while the rest of the consort sinks away from it.  Its
+   growing mismatch with the tonic is the point, so it is left out of the purity check.
 
 WHY IT DRIFTS
 I -> vi keeps E and G#, so C# lands a pure major sixth above E (5/3).  vi -> ii7 keeps C# (and E, the
@@ -151,6 +154,10 @@ def tune(data):
         for e in sorted(v['events'], key=lambda e: e['t']):
             t, p = float(e['t']), int(e['p'])
             pc = p % 12
+            if v['name'] == 'Drone':
+                e['cents'] = round(LEHMAN[pc], 3)
+                stats['drone'] = stats.get('drone', 0) + 1
+                continue
             if t >= t_just:
                 e['cents'] = round(LEHMAN[pc], 3)
                 stats['tempered'] += 1
@@ -184,7 +191,8 @@ def purity(data, segs):
     """Largest deviation from a pure interval between two chord tones sounding together in a chord."""
     worst = 0.0
     where = None
-    notes = [(float(e['t']), float(e['t']) + float(e['d']), int(e['p']), e['cents']) for v in data['voices'] for e in v['events']]
+    notes = [(float(e['t']), float(e['t']) + float(e['d']), int(e['p']), e['cents'])
+             for v in data['voices'] if v['name'] != 'Drone' for e in v['events']]
     for t0, t1, r, q, R, off, how in segs:
         triad = {(r + i) % 12 for i in TEMPLATES[q] if i != SEVENTH.get(q)}
         times = sorted({t0} | {n[0] for n in notes if t0 <= n[0] < t1})
@@ -215,6 +223,11 @@ def report(segs, data):
     coda = LEHMAN[4] - (first)
     print('  %-26s %+8.2f   (Bach-Lehman E = %+.2f c from ET; the opening E was placed there)' % ('coda (bars 33-36)', coda, LEHMAN[4]))
     print('  the correction at bar 33: the tonic jumps up by %.2f c' % (LEHMAN[4] - (first + rows[-1][2])))
+    e2 = 440.0 * 2 ** ((40 - 69) / 12) * 2 ** (LEHMAN[4] / 1200)      # the drone, E2 at its Bach-Lehman pitch
+    print('  the drone (E2, fixed at %+.2f c) against the tonic at each cycle start: beat rate on its octave partial' % LEHMAN[4])
+    for k, a, b, d in rows:
+        print('    cycle %d: tonic %+7.2f c from the drone, E3 beats against the drone at %.1f Hz' % (
+            k, a, abs(2 * e2 * (2 ** (a / 1200) - 1))))
     return rows
 
 

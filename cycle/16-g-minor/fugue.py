@@ -176,6 +176,41 @@ def assemble(v, nbars):
 SUM = 80          # bar s0 of the summit (the bar in which Ped. II's upbeat D sounds); provisional
 
 
+def at(b0, t):
+    """Bar and beat for t beats after the downbeat of bar b0."""
+    return b0 + int(t // 4), Fr(t) - 4 * int(t // 4) + 1
+
+
+def T_(b0):
+    def T(v, t, toks, label=None):
+        bar, beat = at(b0, t)
+        if label:
+            theme(v, bar, beat, toks, label)
+        else:
+            put(v, bar, beat, toks)
+    return T
+
+
+A1 = tr(S1, -5, -3)          # real answer, a fourth lower (D minor, ending on F)
+
+
+def section_A(b0):
+    """Line 1, 'An Wasserflüssen Babylon': Vorimitation on the Hauptwerk, then the line in the pedal,
+    Ped. II leading as the bass, Ped. I following ten beats later an octave higher."""
+    T = T_(b0)
+    T('HA', 0, S1, 'line 1 Vorimitation: subject 1 (HW A)')
+    T('HT', 6, oc(A1, -1), 'line 1 Vorimitation: answer (HW T)')
+    T('HB', 12, oc(S1, -2), 'line 1 Vorimitation: subject 1 (HW B)')
+    T('HS1', 18, oc(A1, 1), 'line 1 Vorimitation: answer (HW S1)')
+    T('HA', 8, 'D5:2 C5:1 Bb4:1 A4:2 G4:2 F4:2 E4:2 F4:2 G4:2 A4:2 Bb4:2 C5:2 Bb4:6')   # the 'waters'
+    # the chorale line in the pedal: Ped. II leads (bass), Ped. I follows ten beats later, an octave up
+    T('P2', 22, cantus(1, -2), 'cantus line 1 (Ped. II, canon dux)')
+    T('P1', 32, cantus(1, -1), 'cantus line 1 (Ped. I, canon comes at the octave, 10 beats)')
+    T('HS2', 24, W.invert_diatonic(S1, 'D5', GNAT), 'line 1: subject 1 inverted (HW S2)')
+    # A-END
+
+
+
 def summit(s0):
     """Line 10 ('täglich von ihn' erleiden') in canon in the pedal: Ped. II leads with the chorale as the
     bass on the strong beats; Ped. I follows three beats later, an octave higher, so that every move of
@@ -234,6 +269,7 @@ def summit(s0):
     # FREE-END
 
 
+section_A(1)
 summit(SUM)
 
 
