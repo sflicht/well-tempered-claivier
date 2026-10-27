@@ -145,7 +145,7 @@ put(28,
       'G5:4 E5:2 E5:1 E5:1 A5:4 F#5:2 F#5:1 F#5:1  A5:4 E5:2 E5:1 E5:1 A5:4 F#5:2 F#5:1 F#5:1',
     A='B4:8~ B4:2 A4:6  G4:8~ G4:2 F#4:6  E4:8~ E4:2 D#4:6  E4:8 D#4:8',
     Br='G3:2 A3:2 D4:2 C4:2 A3:2 B3:2 C4:2 A3:2  E3:2 G3:2 B3:2 A3:2 F#3:2 A3:2 D4:2 C4:2 '
-       'G3:2 E3:2 C4:2 A3:2 D#3:2 E3:2 F#3:2 A3:2  C4:2 B3:2 A3:2 E3:2 F#3:2 A3:2 B3:2 A3:2',
+       'G3:2 E3:2 C4:2 E3:2 D#3:2 E3:2 F#3:2 A3:2  C4:2 B3:2 A3:2 E3:2 F#3:2 A3:2 B3:2 A3:2',
     Cb='G2:8 F#2:8  E2:8 D2:8  C2:8 B1:8  A1:4 C2:4 B1:8')
 tag(28, 'Episode 3: tattoo cells over a 4-3 chain, falling bass')
 
@@ -156,7 +156,7 @@ tag(28, 'Episode 3: tattoo cells over a 4-3 chain, falling bass')
 EM_SUBJ = 'B4:4 E5:2 E5:1 E5:1 G5:2 G5:1 G5:1 B5:4 B5:3 A5:1 G5:2 F#5:2 E5:1 D5:1 C5:1 B4:1 C5:1 D5:1 E5:2'
 EM_INV5 = 'E4:4 B3:2 B3:1 B3:1 G3:2 G3:1 G3:1 E3:4 E3:3 F#3:1 G3:2 A3:2 B3:1 C4:1 D4:1 E4:1 D4:1 C4:1 B3:2'
 put(32, A=EM_SUBJ + ' E5:4 C5:4 C#5:8',
-        Br='R:7 ' + EM_INV5 + ' R:1 G3:4 A#3:4',
+        Br='R:7 ' + EM_INV5 + ' R:1 G3:4 E3:4',
         S='G5:6 A5:2 D6:6 E6:2  D6:4 C6:4 E6:4 D6:4  A5:4 E6:4 B5:4 A#5:4',
         T='G4:12 E5:4  B4:4 C5:4 G4:8  E4:16',
         Cb='E2:4 C2:4 B1:4 E2:4  G1:4 A1:4 C2:4 B1:4  A1:8 C#2:4 F#2:4')
@@ -169,12 +169,12 @@ tag(32, 'Stretto II (E minor): rectus + inversion, off the beat')
 # (baritone).
 put(35,
     S='F#6:3 E6:1 D6:2 C#6:2 B5:1 A5:1 G5:1 F#5:1 G5:1 A5:1 B5:2  E6:3 D6:1 C#6:2 B5:2 A5:1 G5:1 F#5:1 E5:1 F#5:1 G5:1 A5:2 '
-      'D6:3 C#6:1 B5:2 A5:2 G5:1 F#5:1 E5:1 C#5:1 D5:1 E5:1 F#5:2  D6:4 C#6:4 B5:4 D5:4',
-    A='D5:4 B4:4 G4:4 E5:4  C#5:4 A4:4 F#4:4 D5:4  B4:4 D5:4 C#5:4 A#4:4  B4:8 A4:4 B4:4',
-    T='B3:2 C#4:2 D4:4 E4:4 B3:4  A3:2 B3:2 C#4:4 D4:4 A3:4  G3:2 A3:2 B3:4 C#4:4 A#3:4  D4:8 F#4:8',
+      'D6:3 C#6:1 B5:2 A5:2 G5:1 F#5:1 E5:1 C#5:1 D5:1 E5:1 F#5:2  F#5:4 E5:4 B5:4 D5:4',
+    A='D5:4 B4:4 G4:4 E5:4  C#5:4 A4:4 F#4:4 D5:4  B4:4 E5:4 C#5:8  B4:8 A4:4 B4:4',
+    T='B3:2 C#4:2 D4:4 E4:4 B3:4  A3:2 B3:2 C#4:4 D4:4 A3:4  G3:2 A3:2 B3:4 C#4:4 E4:4  D4:8 F#4:8',
     Br='R:4 F#3:2 F#3:1 F#3:1 R:4 G3:2 G3:1 G3:1  R:4 E3:2 E3:1 E3:1 R:4 F#3:2 F#3:1 F#3:1 '
        'R:4 D3:2 D3:1 D3:1 R:4 C#3:2 C#3:1 C#3:1  F#3:8 A3:4 G#3:4',
-    Cb='B1:8 E2:8  A1:8 D2:8  G1:8 F#1:8  B1:8 D2:4 G#1:4')
+    Cb='B1:8 E2:8  A1:8 D2:8  G1:8 F#1:4 A#1:4  B1:12 G#1:4')
 tag(35, 'Episode 4: subject tail over the B-minor falling fifths')
 
 # === SECTIONS-END ===
