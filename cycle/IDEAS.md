@@ -119,8 +119,11 @@ device of its own:
     with a subject from one chorale line; all four lines sound together at the
     summit, the trick that ends Bach's Canonic Variations BWV 769.
 30. **[first version] Pair XVI à 17: Reincken's Hamburg chorale fantasia.**
-31. **[in progress] Pairs XVII à 18 and XVIII à 19**, concepts chosen by
-    their composers.
+31. **[in progress] Pair XVII à 18**, concept chosen by its composer.
+    **[first version] Pair XVIII à 19: Vigilate.** The four night watches of
+    Mark 13:35, the subject brightening one sharp per watch until the dawn
+    turns enharmonically to A-flat major; the knock at the door (BWV 61) as
+    second subject.
 32. **[in progress] Pair XIX à 20: a suite in one fugue.** Four five-part
     French dance bands (allemande, courante, sarabande, gigue) on one subject;
     at the summit all four dance at once, each in its own metre, the ballroom

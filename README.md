@@ -34,7 +34,7 @@ engraved PDFs are in each pair's `renders/` folder.
 | [XV](cycle/15-g-major/) | G major | à 16, on Luther's *Vom Himmel hoch*: four choirs, each with a subject from one chorale line; all four lines sound together at the summit (after BWV 769) | a shepherds' musette | new |
 | [XVI](cycle/16-g-minor/) | G minor | à 17, *Fantasia e fuga per Reincken*: Bach's 1720 Hamburg improvisation on *An Wasserflüssen Babylon* re-imagined; each chorale line its own subject, the line itself in canon between two pedal voices; BWV 542's subject enters as the bass before the summit | an organ fantasia (BWV 542 allusion) | first version |
 | XVII | A♭ major | à 18 (concept chosen by its composer) | | in progress |
-| XVIII | G♯ minor | à 19 (concept chosen by its composer) | | in progress |
+| [XVIII](cycle/18-g-sharp-minor/) | G♯ minor | à 19, *Vigilate*: the four night watches of Mark 13:35; each watch raises one note of the subject until the dawn turns enharmonically to A♭ major; second subject the knock at the door from BWV 61 | *Der Wächter*, the watchman | first version |
 | XIX | A major | à 20, a suite in one fugue: four five-part dance bands (allemande, courante, sarabande, gigue) on one subject, all four at once in their own metres at the summit | (with the fugue) | in progress |
 | XX | A minor | à 21, the solo violin multiplied: a fugue that begins as one line (after BWV 1003) and splits into twenty-one real voices, then folds back | a solo-violin preludio | in progress |
 | XXI | B♭ major | à 22, posthorn capriccio after BWV 992, ending on the posthorn's harmonic series (partials 1–22) in just intonation | from the Capriccio's programme | in progress |

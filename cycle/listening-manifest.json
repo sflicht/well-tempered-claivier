@@ -301,6 +301,25 @@
    ]
   },
   {
+   "name": "Pair XVIII \u00b7 G-sharp minor (new, nineteen voices)",
+   "pieces": [
+    {
+     "id": "prelude-18",
+     "title": "Prelude XVIII \u00b7 Der W\u00e4chter",
+     "score": "cycle/18-g-sharp-minor/prelude.json",
+     "tag": "new",
+     "notes": "The watchman. The right hand sings the fugue's subject over a knocking middle voice and a walking bass; at 'midnight' the middle voice plays the whole of the fugue's second subject, the knock at the door. It ends on an open fifth with three knocks that nobody answers."
+    },
+    {
+     "id": "fugue-18",
+     "title": "Fugue XVIII \u00b7 Vigilate (19 voices)",
+     "score": "cycle/18-g-sharp-minor/fugue.json",
+     "tag": "new",
+     "notes": "'Watch therefore, for ye know not when the master of the house cometh: at even, or at midnight, or at the cockcrowing, or in the morning' (Mark 13:35). The fugue passes through those four watches. In each watch one note of the subject is raised, in the order sharps are added to a key signature, so the subject brightens step by step from a dark Phrygian colour towards major. The last step would need an eighth sharp, impossible in G-sharp, so the dawn turns enharmonically to A-flat major, the key of the next pair.\n\nThe second subject is the knock at the door, from Bach's cantata 'Nun komm, der Heiden Heiland' BWV 61, where the bass sings 'Siehe, ich stehe vor der T\u00fcr und klopfe an' (Behold, I stand at the door and knock): three knocks, then a chromatic rise through exactly the notes that change between the watches. Like Bach's G-sharp-minor fugue in Book II, this is a double fugue with a chromatic second subject.\n\nAt the first summit eight entries of the subject climb in thirds, two beats apart, from G-sharp2 to G-sharp5. At the second, four statements of the door subject sound in stretto over a knocking pedal, with knocks relayed between voices (16-18 voices moving); eighteen voices knock together, a silence, then the dawn in A-flat major, the voices waking one by one."
+    }
+   ]
+  },
+  {
    "name": "Pair XXIV \u00b7 B minor (new, twenty-five voices)",
    "pieces": [
     {
