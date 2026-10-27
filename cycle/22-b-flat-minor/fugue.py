@@ -190,7 +190,11 @@ BPM = 88    # quarter = 88, i.e. half = 44
 TEMPO = {'tempo_map': [[0, 60], [16, BPM, 'ramp'],
                        [176, BPM], [192, 66, 'ramp'], [208, BPM, 'ramp'],
                        [368, BPM], [384, 60, 'ramp']]}
-MARKERS = []
+# Section labels; the second half carries the same sections in reverse order.
+MARKS = [(1, 'I. Intonatio'), (19, 'II. Consolatio'), (33, 'III. Speculum'), (41, 'IV. Crux'),
+         (49, 'Axis: IV. Crux cancrizans'), (57, 'III. Speculum cancrizans'),
+         (65, 'II. Consolatio cancrizans'), (79, 'I. Intonatio cancrizans')]
+MARKERS = [{'t': float((b - 1) * 4), 'label': txt} for b, txt in MARKS]
 
 
 def build(path=None, half=None):
@@ -314,8 +318,8 @@ put('S2', 44, 4, 'Eb5:4')
 # =================================================================================== IV. CRUX (summit)
 # Composed first.  Over b41-48 the subject sounds in augmentation in the top voice (Coro IV soprano,
 # B-flat5 ... ending B-A-C-H in half notes, its H on the axis) while the subject runs at its own
-# speed in a stretto two bars apart (Coro III alto b41, Coro IV baritone b43, Coro IV alto b45, the
-# last ending on the axis).  The contrabass enters last but one, C2 (ii-half-dim7) into a dominant
+# speed in Coro III's tenor (b41-44, with it: canon per augmentationem) and Coro IV's tenor (b45-48,
+# ending on the axis).  The contrabass enters last but one, C2 (ii-half-dim7) into a dominant
 # pedal F1 from b45 that is held through the axis.  Harmony, two chords a bar:
 #   b41 i VI | i6 iv | i i6 | V(4-3) ii-half-dim7 | i6/4 iv7/F | i6/4 V(b9) | V(4-3) V+ | V7 CT-dim7 (B D F Ab)
 # The axis chord is the common-tone diminished seventh of F (B-natural D F A-flat over the pedal): a

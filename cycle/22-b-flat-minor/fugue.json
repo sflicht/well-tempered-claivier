@@ -54,7 +54,40 @@
     "ramp"
    ]
   ],
-  "markers": []
+  "markers": [
+   {
+    "t": 0.0,
+    "label": "I. Intonatio"
+   },
+   {
+    "t": 72.0,
+    "label": "II. Consolatio"
+   },
+   {
+    "t": 128.0,
+    "label": "III. Speculum"
+   },
+   {
+    "t": 160.0,
+    "label": "IV. Crux"
+   },
+   {
+    "t": 192.0,
+    "label": "Axis: IV. Crux cancrizans"
+   },
+   {
+    "t": 224.0,
+    "label": "III. Speculum cancrizans"
+   },
+   {
+    "t": 256.0,
+    "label": "II. Consolatio cancrizans"
+   },
+   {
+    "t": 312.0,
+    "label": "I. Intonatio cancrizans"
+   }
+  ]
  },
  "voices": [
   {
