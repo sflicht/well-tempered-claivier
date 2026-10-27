@@ -271,6 +271,9 @@ theme('S2', 50, 1, INV, 'Coro II: inversion (E minor), soprano, under the choral
 theme('T1', 51, 3, octv(R, -1), 'Coro I: subject (E minor), tenor: the final cadence (final stretto 3)')
 put('B1', 51, 1, 'E2:6 B2:6 C3:6 B2:6 E2:6 G2:6 E3:6 C3:6 G2:6 B2:6 E2:30 E2:24 E2:12')
 
+put('S1', 49, 2, 'C5:6 B4:6 D5:6 G5:6 F#5:6 G5:12 E5:6 F#5:6 E5:6 F#5:6 G5:6 G5:4 F#5:2 E5:6 F#5:6 G5:6 F#5:6 E5:6')
+put('A2', 49, 2, 'F#4:6 G4:6 D4:6 E4:6 A4:6 D4:6 C4:6 B3:12 C4:6 B3:12 E4:6 D4:12 E4:6 F#4:6 E4:6')
+
 
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}

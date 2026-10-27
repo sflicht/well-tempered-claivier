@@ -193,7 +193,7 @@ put('Vc', 16, 1, 'D3:4 G2:4 A2:4')
 put('Va1', 12, 1, 'D4:4 G3:4 C4:8 A3:8 F4:4 D4:4 E4:4 C4:2 D4:2 F4:12 E4:4 D4:4 C4:4 G3:8 F3:4')
 put('V2a', 13, 1.5, 'A4:10 D5:2 C5:2 A4:4')
 put('V2a', 16, 1, 'D5:4 E5:4 F5:4')
-put('V2b', 16, 1.5, 'R:2 C4:4 A3:4')
+put('V2b', 16, 1.5, 'R:2 C4:8')
 
 
 # ================================================================ EPISODE 1: solo (b17-22), F -> C -> towards d
@@ -255,7 +255,7 @@ put('Vno', 28, 2, 'A5:1 G5:1 F5:1 E5:1 D5:1 E5:1 F5:1 D5:1 C5:2 A4:2')
 put('Vc', 28, 2, 'D3:4 Bb2:4 F#2:4')
 theme('Fl', 29, 1.5, oc(Sg, 0), 'concertino: subject in g (Flauto)', 2)
 put('Ob', 29, 2, oc(CSg, 1))
-put('Vc', 29, 1, 'G2:2 R:2 G2:8 Bb2:4 C3:4 Eb3:4 F#2:4 D2:4 G2:2 R:2 Bb2:8 Ab2:4 G2:4 C3:4 Eb3:4 F3:4')
+put('Vc', 29, 1, 'G2:2 R:2 G2:8 Bb2:4 C3:4 Eb3:4 F#2:4 D2:4 G2:2 R:2 Bb2:8 D3:4 Eb3:4 C3:4 A2:4 F2:4')
 theme('Vno', 31, 1.5, oc(SBb, -1), 'concertino: subject in B-flat (Violino)', 2)
 put('Fl', 31, 2, oc(CSBb, 2))
 # the countersubject in diminution is introduced here, falling (oboe) and then mirrored, rising (recorder),
@@ -285,6 +285,25 @@ put('Vne', 37, 1, 'Bb2:4 F2:8 C3:4 F2:8 Bb2:4 A2:4 G2:8 Eb2:8 C2:4 D2:4 G2:8')
 put('Vc', 37, 1.5, 'R:2 C4:8 Bb3:4 A3:8 Bb3:4 C4:4 D4:8 G3:8 C4:4 A3:4 Bb3:4 B3:4')
 
 put('V1b', 38, 3.5, 'R:6 Bb4:16 C5:8 Bb4:4 G4:4')
+
+
+# ================================================================ THE JOKE (b41-47): the trumpet and the key
+# Back after twenty bars of minor-key silence, the tromba re-enters on its high C, playing the subject's
+# head rhythm on that one note (the only note it trusts).  Under it the ripieno passes the fanfare head
+# upwards through C minor, F, D minor and A minor -- keys in which C is still a chord tone (root, fifth,
+# seventh, third), so the trumpet gets away with it.  At bar 45 the ensemble cadences onto E major
+# (V of A minor); the trumpet, not having noticed, launches its own subject in F major against the E
+# chord, every note a semitone off (F/E, A/G#, C/B).  General pause.  The basses correct it -- E E | A,
+# the subject's pickup in the right key -- and the trumpet meekly echoes E and A (both natural notes on
+# an F trumpet), then keeps quiet until the end.
+head = ' '.join(S.split()[:8])                          # pickup + tattoo arpeggio + the held C (to beat 4)
+put('Tr', 41, 1, 'C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 '
+                 'C6:2 C6:1 C6:1 C6:4 R:6 C5:1 C5:1 F5:2 F5:1 F5:1 A5:2 A5:1 C6:5 R:8')
+theme('Vne', 41, 1.5, W.transpose(oc(head, -3), 7, 4), 'joke: head in c (Violone)', 1)
+theme('Vc', 42, 1.5, oc(head, -2), 'joke: head in F (Violoncello)', 1)
+theme('Va1', 43, 1.5, W.transpose(oc(head, -2), -3, -2), 'joke: head in d (Viola 1)', 1)
+theme('V2a', 44, 1.5, W.transpose(oc(head, -1), -8, -5), 'joke: head in a (Violino II.1)', 1)
+
 
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
