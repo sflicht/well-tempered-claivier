@@ -148,18 +148,18 @@ def solo_opening():
     # Exposition for one violin.  Four entries in four registers (alto, tenor, soprano, bass),
     # each a different strand of the one line.  Vl2 notes are the lower or upper notes of
     # double stops (same player, same staff).
-    put('Vl1', 1, 1, HEAD)                                       # alto: subject (E5)
+    theme('Vl1', 1, 1, HEAD, 'Vl I: subject (alto strand, E5)')
     put('Vl1', 2, 1, TAIL)
-    put('Vl1', 3, 1, AHEAD)                                      # tenor: Bach's tonal answer (A4)
+    theme('Vl1', 3, 1, AHEAD, 'Vl I: answer (tenor strand, A4)')
     put('Vl2', 3, 2, 'C5:2 R:2 B4:4 A4:4')                       # the subject's voice above, as double stops
     put('Vl1', 4, 1, ATAIL)
     put('Vl2', 5, 1, 'E4:2')                                     # tenor resolves D#-E as the soprano enters
-    put('Vl1', 5, 1, oc(HEAD, 1))                                # soprano: subject (E6)
+    theme('Vl1', 5, 1, oc(HEAD, 1), 'Vl I: subject (soprano strand, E6)')
     put('Vl2', 5, 3, 'C5:4 D5:4')                                # alto under it (sixth, sixth/octave)
     put('Vl1', 6, 1, oc(TAIL, 1))
     put('Vl2', 7, 1, 'A5:2')                                     # soprano resolves G#-A as the bass enters
     # bass: the subject in C major from G4, down to the open G string
-    put('Vl1', 7, 1, 'R:2 G4:1 F#4:1 G4:2 G3:2 C4:2 E4:2 D4:2 F4:2')
+    theme('Vl1', 7, 1, 'R:2 G4:1 F#4:1 G4:2 G3:2 C4:2 E4:2 D4:2 F4:2', 'Vl I: subject (bass strand, C major)')
     put('Vl1', 8, 1, 'E4:1 C4:1 G4:1 B3:1 F4:1 Bb3:1 E4:1 A3:1 D4:1 Ab3:1 C4:1 G3:1 B3:4')
 
 

@@ -130,7 +130,7 @@ device of its own:
     French dance bands (allemande, courante, sarabande, gigue) on one subject;
     at the summit all four dance at once, each in its own metre, the ballroom
     trick of Don Giovanni done in strict counterpoint.
-33. **[in progress] Pair XX à 21: the solo violin multiplied.** A fugue that
+33. **[first version] Pair XX à 21: the solo violin multiplied.** A fugue that
     begins as one line (after BWV 1003), whose implied voices split off into
     real ones until twenty-one move, then fold back into one line.
 34. **[first version] Pair XXI à 22: the posthorn capriccio.** After BWV 992;

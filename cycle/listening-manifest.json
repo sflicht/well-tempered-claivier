@@ -351,6 +351,25 @@
    ]
   },
   {
+   "name": "Pair XX \u00b7 A minor (new, twenty-one voices)",
+   "pieces": [
+    {
+     "id": "prelude-20",
+     "title": "Prelude XX \u00b7 Preludio for solo violin",
+     "score": "cycle/20-a-minor/prelude.json",
+     "tag": "new",
+     "notes": "A single line in perpetual motion, as in Bach's solo-violin preludes; one hand can play it at the keyboard. The first bar hides the head of the fugue's subject inside the figuration, and the lament and the fugue's tail are foreshadowed. (The renders folder also has a violin-sound version.)"
+    },
+    {
+     "id": "fugue-20",
+     "title": "Fugue XX \u00b7 Fuga per un violino solo, moltiplicata (21 voices)",
+     "score": "cycle/20-a-minor/fugue.json",
+     "tag": "new",
+     "notes": "Bach's Sonata No. 2 for solo violin in A minor (BWV 1003) contains a fugue for one violin: a single line that, by leaping between registers, implies three or four voices. This fugue begins exactly like that, a solo violin fugue on the head of Bach's subject.\n\nThen the hidden voices come out. Wherever the violin's line is really two strands, a new string player catches one strand at the exact sixteenth and carries it on as a real voice, so each new voice is something you have just heard implied. The new voices in turn imply further strands, which split off again, violins, violas, cellos, basses, until twenty-one real voices move at the summit, over the subject in four-fold augmentation in the double bass (19-21 voices moving in every bar).\n\nThen the process reverses: over the summit's lament as a ground, voices fold back into the lines they came from, in reverse order, until the violin is alone again, implying the whole harmony by itself, as in the Chaconne. Its last A is the last sound. In the listening room it plays on one keyboard sound; the rendered MP3 gives each voice a string instrument."
+    }
+   ]
+  },
+  {
    "name": "Pair XXI \u00b7 B-flat major (new, twenty-two voices)",
    "pieces": [
     {

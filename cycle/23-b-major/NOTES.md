@@ -105,19 +105,19 @@ between G♯ and E♭), several passages break. The figures below are computed f
 | A♭–C, D♭–F, B–D♯, F♯–A♯ major thirds | **427.4 ¢** | 402–404 | 400 |
 | C–E, E♭–G, B♭–D major thirds | 386.3 ¢ (pure) | 392–400 | 400 |
 
-- **Bars 66–71 (pair 10, A♭ major / F minor) are the wolf passage.** The tenor cantus (Ten II) rises
-  from A♭3. The bass and the subject in Alto IV (S in A♭ at b66) sit on A♭ against E♭. At b66.1 the
-  bare fifth A♭/E♭ (G♯/D♯) sounds in four voices, and every A♭-major and D♭-major chord in b66–70 is
-  built on a 427-cent third. In meantone the passage is unusable. In Bach-Lehman the fifth is pure
-  (700 ¢) and the thirds are 402–404 ¢.
+- **Bars 66–71 (pair 10, A♭ major / F minor) are the wolf passage.** The pair opens at b66.1 on a
+  bare fifth with no third: A♭2 A♭3 A♭4 A♭4 against E♭4 E♭5 (Bass II, Ten II's cantus, Alto IV's S in
+  A♭, Sop V, Ten IV, Sop VI). In meantone that is the wolf, G♯–E♭ = 737.6 ¢, sounding in six voices.
+  Every A♭-major and D♭-major chord in bars 66–70 rests on a 427-cent third (for example A♭/C at
+  b68.3). In Bach-Lehman the fifth is pure (700 ¢) and the thirds are 402–404 ¢.
 - **Bars 41–44 (the seam):** the F♯7 halt is sour in meantone (F♯–A♯ = 427 ¢). The G7 → C that
   follows is the sweetest chord in the system. The ear goes from the worst to the best in two beats.
 - **Bars 78–79:** E♭7 is respelled as D♯7 and resolves to G♯ minor. In meantone this pivot crosses
   the wolf directly. Bull's piece, and the whole circle, depends on that pivot being possible.
 - The home key itself (B major) and its dominant are meantone's "bad" keys. The summit and coda
-  would sound uniformly rough in meantone. The equal-temperament render
-  (`renders/fugue-equal.mp3`) is provided for comparison. No meantone render is included, so as not
-  to clutter the folder; it can be made with the same command and `--temperament meantone`.
+  would sound uniformly rough in meantone.
+- **Renders for comparison:** `renders/fugue-meantone.mp3` (audio only, with
+  `--temperament meantone`), `renders/fugue.mp3` (Bach-Lehman) and `renders/fugue-equal.mp3`.
 
 ## Method
 
@@ -149,8 +149,127 @@ between G♯ and E♭), several passages break. The figures below are computed f
 
 ## Measurements (`python3 tools/critic.py cycle/23-b-major/fugue.json`)
 
-MEASUREMENTS_PLACEHOLDER
+Fugue (96 bars, about 4:18 in the Bach-Lehman render):
+
+| measure | value | target |
+|---|---|---|
+| parallels_error | **0** | 0 |
+| beat_parallels | **1** (b88.3 S5/T4, D♯5/G♯4 → C♯5/F♯4, a dominant cantus against a free line) | ≤ 8 |
+| parallels_weak | 1 (b90.2.75 S2/T3, sixteenth passing notes inside the arrival stretto) | – |
+| dissonance_unresolved | **0** | ≤ 15 |
+| bad_doublings | **8** | ≤ 8 |
+| low_register_seconds | **7** | ≤ 16 |
+| stepwise_pct | **60.2** | ≥ 60 |
+
+Notes on the counts:
+
+- **Bad doublings.** Four are two thematic lines meeting on the same seventh: b80.2, I against the F♯
+  cantus; b85.4, IHEAD in d♯ against Alto V's B-major cantus; b89.4, the arrival's S in B5 over the B1 pedal;
+  b93.4, the E and c♯ coda cantus meeting on A. The other four are b7.4, b82.2, b84.3 and b84.4, in the
+  exposition and the summit.
+- **Low-register clashes.** These are at b48.1 (the 7–6 suspension of the deep C/a pair, G2 against F3),
+  b82.3, b86, b88.2 and b94.1.
+- **Themes.** The critic's theme check compares everything against S. The 29 cantus statements were
+  checked separately: each is exactly *ut re mi fa sol la* rising (major) or falling (minor) in its key
+  (29/29). The S and I entries match at 16/16.
+
+**Moving voices (mean per bar).**
+
+| section | mean | maximum |
+|---|---|---|
+| Exposition, b1–12 | 3.5 | 6 |
+| First staircase, b13–40 | 5.5 | 7 |
+| Seam, b41–43 | 4.3 | 5 |
+| Second staircase, b44–78 | 5.8 | 7 |
+| Summit, b79–91 | 9.9 | 16 |
+| Coda, b92–96 | 8.0 | 9 |
+
+Summit per bar: b79 7, b80 7, b81 10, b82 8, b83 10, b84 8, b85 11, **b86 15, b87 16, b88 16**, b89 10,
+b90 6, b91 5.
+
 
 ## Weak spots
 
-WEAKSPOTS_PLACEHOLDER
+- **The summit is not dense enough.** The plan was 20 or more moving lines for several bars. The
+  peak is 16, in bars 86–88. I tried more lines over the ii–V (eight further candidates in tenor and
+  bass registers). Each one made parallels or unresolved suspensions against the 16 already there,
+  and I did not keep any of them. Reaching 20 would need the summit's existing free lines (Bass V,
+  Alto III, Ten VI) to be recomposed together with new ones. That is the first thing I would redo.
+- **The tour is thinner than planned:** 5–7 moving voices, against 7–9 and then 10–13 in the plan. The
+  climb into the summit is weak: bars 72–78 have only 3–6 moving voices, so the summit arrives more
+  as a change of texture than as the end of a crescendo of voices. The dynamics map (velocity) carries
+  the build-up more than the voice count does.
+- **The arrival thins out.** After the stretto at b89–90 the texture falls to 5–6 voices until the coda's
+  minim hexachords enter.
+- **Several tour bass lines move only in half notes (Bass II, Bass IV).** That is functional but plain.
+  I added passing notes by hand to the bass lines and to Ten III and Alto V, in b27, b37–38, b51,
+  b54, b56, b58, b63, b68, b73 and b77. Each was checked with the critic and kept only if no
+  measure got worse.
+- **The free lines often keep to safe chord tones.** The most common fault I had to remove was a
+  parallel octave or fifth with the rising cantus at the barline. As a result, many free lines move
+  against the cantus by contrary motion or by a held note, rather than having melodic shapes of their
+  own.
+- **Pair 11 (B♭/g) has no complete subject.** No slot fitted the suspension chain, so it uses three
+  HEADs instead (B♭ in the bass, E♭, F).
+- **The theme labels are not all checked by the critic.** The critic checks themes only against S, so
+  the cantus entries show as partial matches. They were verified separately (29/29).
+- **Leaps at the joins.** There is a minor-seventh leap in Sop I at b79.1: the g-minor cantus's *ut*
+  B♭4, then the summit's I on G♯5, across a quarter rest. There is also one augmented-second spelling
+  (A2 E5 → D♭5) at the D♭ entry, b13.1.
+- **I cannot hear the result.** The balance of 24 piano voices, the audibility of the cantus inside
+  the texture, and the meantone effect are unverified by ear. The spatial render (`--layout ring`)
+  was made to help the voices separate.
+
+
+# Prelude XXIII in B major: *A Ground upon Ut re mi fa sol la*
+
+## Concept
+
+The prelude is an English virginalist's set of divisions on a ground: the kind of piece Byrd and Bull
+wrote on the hexachord (Byrd's *Ut re mi fa sol la*, FVB no. CI; Bull's no. LI, the model of the
+fugue). It is for one player.
+
+- **The ground** is the fugue's cantus: the hexachord in minims, up and down, B C♯ D♯ E F♯ G♯ |
+  G♯ F♯ E D♯ C♯ B, six bars.
+- **Its harmony:** I – V4/3 | I6 – IV | V – vi | IV6 – V7 | ii6/5 – I6 | V4/3 – I.
+
+It is stated four times, each time with a new division, and then closes:
+
+| bars | division |
+|---|---|
+| 1–6 | The plainsong: treble in minims with a few crotchets, a mean voice, the ground in the bass. |
+| 7–12 | Quaver divisions in the treble (broken chords, as on the virginals). The mean is rewritten so that it moves against them. |
+| 13–18 | The ground moves to the treble. The bass divides in quavers, and the mean follows the ground in sixths. |
+| 19–24 | Semiquaver runs in the treble over the ground, as in Bull's fastest variations. |
+| 25–26 | Close: IV – V7 – I. The final B-major chord leaves room for the fugue's first breve, on the same B. |
+
+Tempo: q = 72 ("like a pavan; the divisions in time"). It broadens in the last two bars. The audio
+lasts about 1:27.
+
+## Critic numbers (`tools/critic.py cycle/23-b-major/prelude.json`)
+
+| measure | value |
+|---|---|
+| parallels_error | 0 |
+| beat_parallels | 0 |
+| unresolved dissonances | 0 |
+| bad_doublings | 0 |
+| low_register_seconds | 0 |
+| keyboard_unplayable_pct | 0 (at most 3 notes at once) |
+| stepwise_pct | 49 |
+
+The stepwise figure is low because the divisions in bars 7–12 are broken chords, as virginal
+divisions are.
+
+## Method and credits
+
+- Every note is a literal bar string in `prelude.py`, and the ground is written out each time.
+- A first draft had parallel octaves between the mean and the treble's quavers (b8–11) and between
+  the bass quavers and the treble ground (b6, b16, b18). They were rewritten by hand.
+- The genre (ground and divisions on the hexachord) comes from Byrd and Bull. No notes are quoted.
+
+## Weak spots
+
+- It is short: four divisions. A virginalist set would usually go further, with triplets and a
+  galliard-like proportion. Bars 19–24 drop the mean voice, so only two voices sound there.
+- The harmony of the ground is the same in all four statements. Only the close is new.

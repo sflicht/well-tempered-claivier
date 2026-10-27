@@ -124,6 +124,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words>Vl I: subject (alto strand, E5)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -305,6 +310,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words>Vl I: answer (tenor strand, A4)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -489,6 +499,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words>Vl I: subject (soprano strand, E6)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -670,6 +685,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words>Vl I: subject (bass strand, C major)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
