@@ -237,8 +237,16 @@ theme('T1', 38, 1, octv('B4:6 B4:4 A#4:2 B4:2 C#5:2 D5:2 F#5:4 E5:2 F#5:4 D5:2 G
       'Coro I: answer (B minor), tenor (tail in natural minor, against the chorale A)')
 theme('Bar2', 39, 3, octv(tr(INV, 7, 4), -2), 'Coro II: inverted answer (B minor), baritone as the bass')
 put('B2', 38, 1, 'B2:6 D3:4 C#3:2 B2:6 D3:6 B2:6 G2:6')
-put('S1', 38, 1, 'F#5:6 F#5:4 E5:2 D5:6 D5:4 C#5:2 D5:6 E5:6 F#5:6 E5:6 D5:6 D5:4 E5:2 D5:6 C#5:6 B4:6 B4:6')
+put('S1', 38, 1, 'F#5:6 F#5:4 E5:2 D5:6 D5:4 C#5:2 D5:6 E5:6 F#5:6 E5:6 D5:6 D5:4 E5:2 D5:6 C#5:6 B4:6 B4:6 A4:12 B4:6 B4:6')
 put('A2', 38, 1, 'D4:4 C#4:2 F#4:6 A4:4 G4:2 B4:18 F#4:12')
+put('T1', 40, 1, 'B3:6 B3:4 A#3:2 B3:6 C#4:6 D4:6 B3:6 A3:12 B3:6 G3:6')
+put('A1', 40, 1, 'F#4:6 F#4:4 G4:2 G4:6 F#4:6 G4:12 F#4:6 E4:6 D4:6 D4:6')
+put('Bar2', 41, 3, 'F#3:6 D3:6 B2:6 G2:6')
+# the gap (b42.3-43.1): Coro I calls with the subject's head, Coro II answers with the inversion's head
+put('A1', 42, 3, 'E4:6 E4:4 D#4:2 E4:6')
+put('T1', 42, 3, 'G3:6 F#3:6 G3:6')
+put('S2', 42, 4, 'B4:4 C5:2 B4:6')
+put('A2', 42, 4, 'F#4:4 A4:2 G4:6')
 
 
 def build(nbars):
