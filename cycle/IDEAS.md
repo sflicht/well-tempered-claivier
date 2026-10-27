@@ -109,9 +109,36 @@ device of its own:
     Canons at every interval, as in the Goldberg Variations, accumulating over
     the ground in F-sharp, ending in a quodlibet with the two folk songs of
     Variation 30.
-27. **[in progress] Pair XIV: Ricercar a 15 on the Royal Theme.** Frederick
+27. **[first version] Pair XIV: Ricercar a 15 on the Royal Theme.** Frederick
     the Great asked Bach for six voices; this answers with fifteen, including
     the Musical Offering's canonic devices and a canon per tonos.
-28. **[in progress] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
+28. **[built] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
     BWV 869), strata moving at different rates, the convergence composed
     first, the cycle's subjects gathered at the end.
+29. **[built] Pair XV: Vom Himmel hoch à 16.** Four choirs of four, each
+    with a subject from one chorale line; all four lines sound together at the
+    summit, the trick that ends Bach's Canonic Variations BWV 769.
+30. **[in progress] Pair XVI à 17: Reincken's Hamburg chorale fantasia.**
+31. **[in progress] Pairs XVII à 18 and XVIII à 19**, concepts chosen by
+    their composers.
+32. **[in progress] Pair XIX à 20: a suite in one fugue.** Four five-part
+    French dance bands (allemande, courante, sarabande, gigue) on one subject;
+    at the summit all four dance at once, each in its own metre, the ballroom
+    trick of Don Giovanni done in strict counterpoint.
+33. **[in progress] Pair XX à 21: the solo violin multiplied.** A fugue that
+    begins as one line (after BWV 1003), whose implied voices split off into
+    real ones until twenty-one move, then fold back into one line.
+34. **[in progress] Pair XXI à 22: the posthorn capriccio.** After BWV 992;
+    twenty-two voices for the first twenty-two partials of B-flat, ending on
+    the posthorn's own harmonic series in just intonation.
+35. **[in progress] Pair XXII à 23: Ma fin est mon commencement.** A tombeau
+    for Bach as a crab fugue: the second half is the first half backwards in
+    every voice, ending on the lone note it began with.
+36. **[in progress] Pair XXIII à 24: ut re mi fa sol la per tutti i tuoni.**
+    After John Bull's hexachord fantasia, each voice owns one of the 24 keys;
+    one passage is built to break in meantone, to show why the Well-Tempered
+    Clavier was needed.
+37. **[in progress] Prelude XXIV: per i 24 tuoni.** A walking-bass trio
+    through all 24 keys in the WTC order, two bars each (48 bars), quoting the
+    head of Bach's Book I fugue in each key, landing in B minor for the last
+    fugue.

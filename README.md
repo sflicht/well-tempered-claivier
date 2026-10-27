@@ -35,8 +35,12 @@ engraved PDFs are in each pair's `renders/` folder.
 | XVI | G minor | à 17, *Fantasia e fuga per Reincken*: Bach's 1720 Hamburg improvisation on *An Wasserflüssen Babylon* re-imagined, chorale canon in a double pedal, echo dialogues, a nod to BWV 542 | (optional) | in progress |
 | XVII | A♭ major | à 18 (concept chosen by its composer) | | in progress |
 | XVIII | G♯ minor | à 19 (concept chosen by its composer) | | in progress |
-| XIX–XXIII | | | | earlier drafts only (see below) |
-| [XXIV](cycle/24-b-minor/) | B minor | à 25, twelve-tone subject (after BWV 869) and its twelve-tone mirror; the subject at quarter speed in the 25th voice while the subjects of Fugues V, VIII, II and IV arrive over it; Fugue I's ladder in the release | (in progress) | new |
+| XIX | A major | à 20, a suite in one fugue: four five-part dance bands (allemande, courante, sarabande, gigue) on one subject, all four at once in their own metres at the summit | (with the fugue) | in progress |
+| XX | A minor | à 21, the solo violin multiplied: a fugue that begins as one line (after BWV 1003) and splits into twenty-one real voices, then folds back | a solo-violin preludio | in progress |
+| XXI | B♭ major | à 22, posthorn capriccio after BWV 992, ending on the posthorn's harmonic series (partials 1–22) in just intonation | from the Capriccio's programme | in progress |
+| XXII | B♭ minor | à 23, *Ma fin est mon commencement*: a tombeau for Bach as a crab fugue, the second half the first backwards | a tombeau | in progress |
+| XXIII | B major | à 24, *ut re mi fa sol la per tutti i tuoni* after John Bull: each voice owns one of the 24 keys | after the English virginalists | in progress |
+| [XXIV](cycle/24-b-minor/) | B minor | à 25, twelve-tone subject (after BWV 869) and its twelve-tone mirror; the subject at quarter speed in the 25th voice while the subjects of Fugues V, VIII, II and IV arrive over it; Fugue I's ladder in the release | *per i 24 tuoni*: a walking bass through all 24 keys quoting Bach's Book I subjects (in progress) | new fugue |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:
 
