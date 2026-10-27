@@ -46,3 +46,13 @@ put('T', at(12, 11), "E#3:2"); put('T', at(13), S_AM)
 put('S', at(13), T(CS_AM, 12, 7))                     #     CS (minor) soprano; D#5 (7th) -> C#5
 put('B', at(13), "F#2:6 C#3:6 A#2:6 C#3:6 A#2:6 B#2:4 C#3:2 E#3:6 A#2:4")
 put('A', at(13), "F#4:6 E#4:6 A#4:4 G##4:2 A#4:6 E#5:6 A#4:10 E#4:6")
+# ---- Episode 2 (15-16): A#m -> G#.  The subject's "hop" (high note, silence, octave
+# drop, flick) tossed soprano -> tenor -> alto; V7 -> vi deceptive, then V7 -> M2.
+put('S', at(15), "C#6:4 R:2 C#5:4 D#5:1 E#5:1 F##5:6 A#5:6 B#5:6 A#5:4 G#5:2 F##5:10")
+put('A', at(15), "A#4:12 D#5:4 R:2 D#4:4 E#4:1 F##4:1 G#4:6 C#5:6 A#4:4 B#4:2 C#5:6")
+put('T', at(15), "A#3:6 C#4:4 R:2 C#3:4 D#3:1 E#3:1 F##3:6 G#3:2 A#3:2 B#3:2 C#4:4 B#3:2 A#3:12")
+put('B', at(15), "A#2:2 B#2:2 C#3:2 C#3:2 B#2:2 A#2:2 D#2:12 E#2:6 A#2:6 D#3:6 D#2:6")
+# ---- M2 (17-18): rectus in G#, soprano; CS inverted at the 15th, bass
+S_G = T(SUBJ, 7, 4)
+put('S', at(16, 11), "D#5:2"); put('S', at(17), S_G)
+put('B', at(17), T(CS_G, -24, -14))
