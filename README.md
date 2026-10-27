@@ -26,7 +26,10 @@ engraved PDFs are in each pair's `renders/` folder.
 | VII | E♭ major | à 8, *a due cori*: two four-voice choirs, subject against inversion | chorale prelude on *Wachet auf* (BWV 645's key) | in progress |
 | [VIII](cycle/08-e-flat-minor/) | E♭ minor | à 9, nine real voices, stretto maestrale over the subject at quarter speed; BWV 853's subject as a guest | 12/8 "Night loom", melody = the subject in retrograde inversion | rebuilt |
 | IX | E major | à 10, *Ricercar in circulo*: the motif travels round a ring of ten voices (Spem in alium) | pastorale in adaptive just intonation that sinks a comma per cycle | in progress |
-| X–XXIV | | | | earlier drafts only (see below) |
+| X | E minor | à 11, two choirs in fugal dialogue under the chorale *O Lamm Gottes* (St Matthew Passion homage) | Aria e Presto after BWV 855 | in progress |
+| XI | F major | à 12, *Concerto fuga* after Brandenburg 2's finale: concertino of four against a ripieno of eight | two-part invention after BWV 856 | in progress |
+| XII–XXIII | | | | earlier drafts only (see below) |
+| XXIV | B minor | à 25, twelve-tone subject (after BWV 869), contrasting rates of motion, the cycle's subjects gathered in the convergence | (later) | in progress |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:
 

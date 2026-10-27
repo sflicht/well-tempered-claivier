@@ -131,6 +131,8 @@ def late_ir(rt60, seed=7):
 def layout_positions(n, kind):
     if kind == 'ring':
         return [(-180 + 360 * (k + .5) / n, 6.0) for k in range(n)]
+    if kind == 'antiphonal-centre':  # two choirs left/right, the last voice (e.g. a chorale) in front
+        return layout_positions(n - 1, 'antiphonal') + [(0.0, 4.0)]
     if kind == 'antiphonal':  # first half of the voices left, second half right (cori spezzati)
         h = (n + 1) // 2
         left = [(-80 + 55 * k / max(1, h - 1), 6.0 + (k % 2)) for k in range(h)]
@@ -158,7 +160,7 @@ def main():
     ap.add_argument('--soundfont', type=Path, default=Path('/usr/share/sounds/sf2/FluidR3_GM.sf2'))
     ap.add_argument('--temperament', default='bach-lehman', choices=sorted(rm.TEMPERAMENTS))
     ap.add_argument('--a4', type=float, default=440.0)
-    ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir', 'antiphonal'])
+    ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir', 'antiphonal', 'antiphonal-centre'])
     ap.add_argument('--rt60', type=float, default=3.2)
     ap.add_argument('--wet', type=float, default=0.32)
     a = ap.parse_args()

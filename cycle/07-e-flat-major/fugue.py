@@ -253,7 +253,7 @@ entry('T1', 23, 0, 'Coro I rectus (E-flat, to B-flat)')
 # when each choir concedes a semitone (A -> A-flat, D-flat -> D) they find
 # B-flat-seven together, and E-flat.
 put(25, S1='F5:8 Eb5:8',
-        A1='Bb4:2 F4:2 Bb4:2 A4:2 Bb4:2 C5:2 C5:2 A4:2',
+        A1='Bb4:2 F4:2 Bb4:2 A4:2 Bb4:2 C5:2 A4:2 C5:2',
         T1='Bb3:4 D4:2 F4:2 G4:4 F4:4',
         B1='Bb2:8 Eb3:4 F3:4')
 entry('T1', 25, 0, 'Coro I head (B-flat!)', 1)
@@ -269,20 +269,27 @@ put(27, S1='Bb4:4 D5:2 F5:2 R:8  D5:4 F5:2 Bb5:2 R:8',
         T1='D4:4 F4:4 R:8  Bb3:4 D4:4 R:8',
         B1='Bb2:8 R:8  D3:4 Bb2:4 R:8')
 put(27, S2='R:8 Eb5:4 C5:2 Ab4:2  R:8 Ab4:4 Db5:2 C5:2',
-        A2='R:8 Ab4:4 Eb4:2 F4:2  R:8 Eb4:4 F4:4',
+        A2='R:8 Ab4:4 Eb4:2 F4:2  R:8 Eb4:4 Ab4:4',
         T2='R:8 C4:2 Db4:2 C4:4  R:8 Eb4:4 C4:2 Ab3:2',
         B2='R:8 Ab2:8  R:8 C3:4 Ab2:4')
 tag(27, 'half a bar')
 # a beat each, then together
 put(29, S1='Bb4:2 D5:1 F5:1 R:4 D5:2 F5:1 Bb5:1 R:4',
         A1='F4:2 A4:2 R:4 F4:2 A4:2 R:4',
-        T1='D4:4 R:4 Bb3:4 R:4',
+        T1='D4:4 R:4 D4:4 R:4',
         B1='Bb2:4 R:4 Bb2:4 R:4')
 put(29, S2='R:4 Eb5:2 C5:1 Ab4:1 R:4 Ab5:2 Eb5:1 C5:1',
         A2='R:4 Ab4:2 Db5:2 R:4 C5:2 Db5:2',
         T2='R:4 C4:4 R:4 Eb4:4',
         B2='R:4 Ab2:4 R:4 Ab2:4')
 tag(29, 'a beat')
+
+
+# the two chords superimposed (A-flat over B-flat), then the concession:
+# 9-8 and 11-10 in Coro II, its bass walking down B-flat-seven, into E-flat.
+put(30, S1='F5:16', A1='F4:12 D4:4', T1='Bb3:12 F3:4', B1='Bb2:16',
+        S2='C5:4 Bb4:12', A2='Ab4:16', T2='Eb4:4 D4:4 C4:4 Bb3:4', B2='Ab3:4 F3:4 D3:4 Bb2:4')
+tag(30, 'Reconciliation: A-flat over B-flat = the home dominant')
 
 # === SECTIONS-END ===
 

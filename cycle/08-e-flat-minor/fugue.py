@@ -263,7 +263,7 @@ put('B1', 48, 2, 'Bb2:8 Eb3:4')
 put('A2', 45, 1, 'Cb4:4 Bb3:4')
 put('S2', 45, 1, 'Eb5:4')
 put('S1', 46, 2, 'Gb6:8 F6:4 Eb6:20 D6:4')                                              # descant over the three subjects
-put('Bar', 46, 1, 'Bb3:8 Eb3:4 Ab3:4 Eb3:8 Cb4:8 Gb3:4 Ab3:4 Bb3:8')                    # baritone line under Bach's subject
+put('Bar', 46, 1, 'Bb3:4 Cb4:4 Eb4:4 D4:4 Gb3:4 Cb4:12 Gb3:4 Ab3:4 Bb3:8')                    # baritone line under Bach's subject
 put('A1', 46, 2, aug(CS, 2).rsplit(' ', 1)[0])                                             # the countersubject, augmented, partners its subject again
 # ================================================================ CODA (b49-50): heads over a two-bar tonic pedal; lines end one by one
 put('B2', 49, 1, 'Eb2:32')

@@ -117,8 +117,8 @@ entry('B', 15, 'Answer')
 tag(17, 'Var. 3 (F major): ground in Tenor I')
 put(17, T1=G('F4'))
 entry('T1', 17, 'Ground (Tenor I), F major', n=8)
-put(17, S2='A5:4 F5:4 D5:4  C5:4 E5:2 D5:2 C5:4  Eb5:8 D5:4  F5:8 E5:4  R:8 Bb4:4~  Bb4:4 G4:8'
-           '  R:4 C5:8  C5:4 A4:4 C5:4')
+put(17, S2='A5:4 F5:4 D5:4  C5:4 E5:2 D5:2 C5:4  Eb5:8 G5:4  F5:8 E5:4  R:8 Bb4:4~  Bb4:4 G4:8'
+           '  R:4 C5:8  C5:4 A4:8')
 put(17, A1='C5:4 D5:4 A4:4~  A4:8 G4:4  G4:12  G4:4 F4:4 G4:4  E4:4 F4:8~  F4:6 E4:2 G4:4~'
            '  G4:4 E4:4 Ab4:4  A4:4 R:8')
 put(17, T2='C3:4 F3:8~  F3:4 C3:4 G3:4')
@@ -140,20 +140,20 @@ entry('S1', 21, 'Subject (F major)')
 tag(25, 'Var. 4 (A minor): ground in Alto II')
 put(25, A2=G('A4'))
 entry('A2', 25, 'Ground (Alto II), A minor', n=8)
-put(25, S1='C6:6 B5:2 A5:4  F5:4 E5:4 D5:4  C5:4 E5:4 F#5:4  D5:4 E5:4 G#5:4~  G#5:4 A5:4 F5:4'
-           '  D5:4 E5:8  A5:4 B5:4 C6:4~  C6:2 B5:2 A5:4 F5:4')
-put(25, S2='E5:8 F5:4  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 B4:4~  B4:4 C5:4 B4:4~  B4:8 C5:4'
-           '  E5:4 B4:4 A4:4  C5:4 E5:4 D5:4')
-put(25, T1='C4:4 E4:4 D4:4  D4:4 B3:4 G#3:4')
+put(25, S1='C6:6 B5:2 A5:4  F5:4 E5:4 D5:4  C5:4 E5:4 F#5:4  D5:4 E5:4 B5:4~  B5:4 A5:4 F5:4'
+           '  D5:8 C5:4  E5:4 G#5:4 A5:4~  A5:4 E5:8')
+put(25, S2='E5:8 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 B4:4~  B4:4 A4:4 D5:4  B4:8 A4:4'
+           '  C5:4 B4:4 C5:4  C5:4 A4:8')
+put(25, T1='C4:4 E4:4 F4:4  D4:4 E4:8')
 tag(27, 'Inversus (Tenor I), under the ground')
-put(27, T1=I('E4') + '  C4:4 D4:4 C4:4~  C4:8 F3:4')
+put(27, T1=I('E4') + '  C4:4 D4:4 C4:4~  C4:8 E3:4')
 entry('T1', 27, 'Inversus')
-put(25, T2='E3:4 A3:4 F3:4  F3:4 E3:4 B3:4  A3:4 C4:4 B3:4  A3:4 E3:4 R:4')
+put(25, T2='E3:4 A3:4 F3:4  A3:4 B3:8  C4:4 A3:4 R:4  A3:8 R:4')
 tag(29, 'Subject (Tenor II), under the ground')
 put(29, T2=S('E3'))
 entry('T2', 29, 'Subject (A minor)')
-put(25, B='A2:4 C3:4 F2:4  D3:4 E2:8  A2:4 E3:4 B2:4  D3:4 A2:4 E2:4~  E2:4 F2:4 B2:4~'
-          '  B2:4 E2:4 A2:4~  A2:4 E2:8~  E2:4 A2:4 D3:4')
+put(25, B='A2:4 C3:4 D3:4  D2:4 E2:8  A2:4 G2:4 B2:4  D3:4 A2:4 G#2:4  R:4 F2:4 D3:4'
+          '  B2:4 E2:4 A2:4~  A2:4 E2:8~  E2:4 A2:4 C3:4')
 
 # ---------------------------------------------------------------------------
 BPM = 66
