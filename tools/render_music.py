@@ -190,13 +190,18 @@ def voice_segments(voice, end, bar_len, split_at=()):
         while remaining:
             boundary = (cursor // bar_len + 1) * bar_len
             take = min(remaining, boundary - cursor)
-            parts = duration_parts(take)
+            triplet = take.denominator % 3 == 0
+            if triplet:
+                # triplet values: written 3/2 longer inside \tuplet 3/2
+                parts = [(q * Fraction(2, 3), name) for q, name in duration_parts(take * Fraction(3, 2))]
+            else:
+                parts = duration_parts(take)
             for q, durstr in parts:
                 tail = remaining > q
                 segments.append({**e, "t": cursor, "d": q, "durstr": durstr,
                                  "tie_stop": not first and e.get("p") is not None,
                                  "tie_start": tail and e.get("p") is not None,
-                                 "first": first})
+                                 "first": first, "triplet": triplet})
                 cursor += q
                 remaining -= q
                 first = False
@@ -286,11 +291,21 @@ def create_lilypond(data, output):
         if i == 0:
             text.append(f'      \\tempo "{escape_lily(meta.get("tempo_text", "Con moto, sempre chiaro"))}" 4 = {round(bpm_of(meta))}')
         bar_items, currentbar = [], 0
+        in_tuplet = False
         for s in voice_segments(voice, end, bar_len, split_at=markers.keys() if i == 0 else ()):
             bar = s["t"] // bar_len
             if bar != currentbar:
+                if in_tuplet:
+                    bar_items.append('}')
+                    in_tuplet = False
                 text.append('      ' + ' '.join(bar_items) + ' |')
                 bar_items, currentbar = [], bar
+            if s.get('triplet') and not in_tuplet:
+                bar_items.append('\\tuplet 3/2 4 {')
+                in_tuplet = True
+            elif not s.get('triplet') and in_tuplet:
+                bar_items.append('}')
+                in_tuplet = False
             if i == 0 and s["t"] in markers:
                 bar_items.append('\\mark \\markup \\box \\small "' + escape_lily(markers[s["t"]]) + '"')
             if s['t'] in key_changes:
@@ -305,6 +320,8 @@ def create_lilypond(data, output):
             if s.get("first") and s.get("dynamic"):
                 token += '\\' + s["dynamic"]
             bar_items.append(token)
+        if in_tuplet:
+            bar_items.append('}')
         text.append('      ' + ' '.join(bar_items) + ' \\bar "|."')
         text.append('    }')
     indent_mm = layout.get('indent_mm', 18)
@@ -406,6 +423,10 @@ def create_musicxml(data, output):
                 ds = s['durstr']
                 add(note, 'type', types.get(ds.rstrip('.'), 'quarter'))
                 if ds.endswith('.'): add(note, 'dot')
+                if s.get('triplet'):
+                    tm = add(note, 'time-modification')
+                    add(tm, 'actual-notes', 3)
+                    add(tm, 'normal-notes', 2)
                 if s.get('tie_start') or s.get('tie_stop'):
                     notation = add(note, 'notations')
                     if s.get('tie_stop'): add(notation, 'tied', type='stop')
