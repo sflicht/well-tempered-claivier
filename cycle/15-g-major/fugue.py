@@ -422,3 +422,9 @@ put('S3', 46, 1, dshift(BELLS, 3))  # subject 1 bells
 put('S3', 46, 3, dshift(BELLS, 3))  # subject 1 bells
 put('A3', 46, 1, dshift(RUN, 0))  # subject 3 run
 put('A3', 46, 3, dshift(CHANGE, 0))  # subject 4 change
+put('B1', 45, 4, 'D3:4')
+# b47-51: the summit dissolves.  Over a bass falling by step (C B | E D | C B | G A | D) the Coro IV
+# alto finishes line 4 per augmentationem, and the Coro I soprano sings the fugue subject itself in
+# augmentation -- the quick figure slowing towards the chorale it came from.
+put('B1', 47, 1, 'C2:8 B1:8 E2:8 D2:8 C2:8 B1:8 G1:8 A1:8 D2:8')
+theme('S1', 47, 3, oc(aug(S1, 2), 1), 'I: subject 1 per augmentationem', 4)

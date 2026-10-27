@@ -43,7 +43,7 @@ def wave3(sc):
     # ---- bars 24-25: C major after the bass subject; two low voices knock their way in with U
     P('S3', 24, 1, "C6:6 B5:2 C6:6 B5:2"); P('S3', 25, 1, "A5:8 E5:8")
     P('A1', 24, 1, "E5:8 C5:8"); P('A1', 25, 1, "D5:8 B4:8")
-    P('A3', 24, 1, "G4:8 A4:8"); P('A3', 25, 1, "B4:8")
+    P('A3', 24, 1, "G4:8 A4:8"); P('A3', 25, 1, "B4:4 C5:2 B4:2")
     P('T3', 24, 1, "D4:4 C4:4 E4:8~"); P('T3', 25, 1, "E4:4 D4:12")
     P('Br3', 24, 1, "R:6 E3:2 E3:2 E3:2 C4:4~"); P('Br3', 25, 1, "C4:2 B3:2 A3:4 G#3:8")
     P('Br2', 24, 4, "R:2 A3:2"); P('Br2', 25, 1, "A3:2 A3:2 F4:6 E4:2 E4:4")    # Baritone II returns (U)
