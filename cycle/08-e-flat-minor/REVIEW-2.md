@@ -119,7 +119,7 @@ I have not heard the renders. In the fugue, `b38.2` means bar 38, quarter 2. In 
 
 **Why it fails.**
 - G♮ against two C♭s is a diminished fourth, and against two A♭s a minor ninth.
-- It comes one beat before its chord, in the final ritardando (about ♩ 60 here). That beat lasts about a second, on the last chord of the piece.
+- It comes one beat before its chord, in the final ritardando (about ♩ 65 here). That beat lasts about a second, on the last chord of the piece.
 - It will sound like a wrong note in the tenor.
 
 **Fix (tested).** `put('T1', 49, 4, 'Ab4:4 F4:4 G4:10')` → `'Ab4:4 F4:8 G4:6'`. G4 now arrives at 50.3 with Alto I's G5. The Picardy third is doubled at the octave in inner voices, which is acceptable on a final chord.
