@@ -88,8 +88,19 @@ def pair1(sc):
     sc.put('S5', 13, 1, 'Ab4:8 R:8 R:4 Bb4:2 Db5:2 Gb5:2 F5:2 Ab5:2 Gb5:2 F5:2 Db5:2 Ab5:2 F5:2 Db5:2 F5:2 Ab5:2 Bb5:2 Gb5:2 F5:2 Gb5:2 Db5:2 Bb4:2 Db5:2 Eb5:2 Db5:2 Ab5:2 Gb5:2 Eb5:2 C5:2 F5:2 Ab5:2 Bb5:2 C6:2 Db6:2 Bb5:2 F5:2 Ab5:2 G5:2 Eb5:2 Bb4:2 Eb5:2')
 
 
+def pair2(sc):
+    # E-flat major / C minor (bars 18-24): S in the tenor on the cantus's mi, sixteenth divisions in the soprano
+    sc.theme('T6', 21, 3, in_key(S, 'B4', 'Eb4'), 'S in E-flat', 'S')
+    sc.put('T6', 19, 1, 'Bb3:16 C4:8 Eb4:8 Bb3:8')
+    sc.put('S5', 19, 1, 'G5:2 F5:2 Bb5:2 G5:2 F5:2 Db5:2 Bb4:2 Db5:2 F5:8')
+    sc.put('A2', 19, 1, 'G4:6 Ab4:2 F4:4 Bb4:4 Ab4:6 G4:2 G4:8 G4:6 Bb4:2 C5:8 Eb5:8 D5:4 F5:4 Bb4:8 Eb5:8 F5:4 C5:4 A4:8')
+    sc.put('S4', 22, 3, 'F5:1 G5:1 Ab5:1 F5:1 D5:1 Eb5:1 F5:1 D5:1 G5:1 F5:1 Eb5:1 D5:1 Eb5:1 F5:1 G5:1 Eb5:1 C6:1 Bb5:1 Ab5:1 G5:1 Ab5:1 G5:1 F5:1 G5:1 A5:4')
+    sc.put('B4', 19, 1, 'G2:8 Bb2:8 F2:8 C3:8 Eb3:8 Ab2:8 F2:8 Bb2:8~ Bb2:8 R:8 F2:8')
+
+
 def tour(sc):
     tour_cantus(sc)
+    pair2(sc)
     pair1(sc)
 
 

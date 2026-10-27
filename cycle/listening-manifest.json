@@ -282,6 +282,25 @@
    ]
   },
   {
+   "name": "Pair XVI \u00b7 G minor (new, seventeen voices)",
+   "pieces": [
+    {
+     "id": "prelude-16",
+     "title": "Prelude XVI \u00b7 Fantasia",
+     "score": "cycle/16-g-minor/prelude.json",
+     "tag": "new",
+     "notes": "A short organ fantasia in four sections: a flourish over a G pedal (its first two beats allude to the opening of Bach's G-minor Fantasia BWV 542), a recitative with a Neapolitan sixth, the first line of the chorale 'An Wasserfl\u00fcssen Babylon' over a falling chromatic bass, and a close over a D pedal that stops on the dominant, waiting for the fugue."
+    },
+    {
+     "id": "fugue-16",
+     "title": "Fugue XVI \u00b7 Fantasia e fuga a 17 per Reincken",
+     "score": "cycle/16-g-minor/fugue.json",
+     "tag": "new",
+     "notes": "In 1720 Bach improvised for nearly half an hour on the chorale 'An Wasserfl\u00fcssen Babylon' in Hamburg, before the old organist Johann Adam Reincken, who told him: 'I thought this art was dead, but I see that it lives on in you.' This fugue re-imagines that improvisation for seventeen voices on three manuals and two pedal divisions.\n\nEach of the chorale's ten lines gets its own fugal subject made from its own notes, introduced in the manuals; then the line itself sounds in half notes as a canon at the octave between the two pedal voices, the canon's distance shrinking from ten beats to three. Between lines: an echo passage across the manuals, a general pause, a lone arpeggio. Just before the summit, the subject of Bach's own G-minor organ fugue (BWV 542, the piece often linked with that Hamburg visit) enters as the pedal bass, landing on the summit's first downbeat. At the summit the last chorale line runs in the pedal canon under seventeen subject statements, and a tonic-pedal coda ends on G major with all seventeen voices.\n\nFirst version: outside the five-bar summit the texture is mostly three to five moving voices."
+    }
+   ]
+  },
+  {
    "name": "Pair XXIV \u00b7 B minor (new, twenty-five voices)",
    "pieces": [
     {

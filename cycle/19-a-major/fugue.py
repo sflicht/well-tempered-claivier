@@ -344,6 +344,22 @@ def ballo():
     theme('T1', z + 9 + Fr(3, 4), SA, 'Allemande subject')
     # the sarabande joins with the head of its subject, which stops on the dominant: the ball begins
     theme('D3', z + 11, oc(' '.join(SS.split()[:10]), 1) + ' G#5:4', 'Sarabande subject, head (Ballo a tre)')
+    put('B2', z + 0, 'A2:6 B2:2 E3:4 C#3:4 A2:4 F#2:4')
+    put('B2', z + 10, 'E2:4 A2:2 D2:2')
+    put('B3', z + 12, 'A2:8 G#2:4 F#2:4 D2:4 C#2:4 D2:4 B1:4 A1:4 D2:4 E2:8')
+    put('D2', z + 0, 'E5:6 D5:6 C#5:4 E5:4 F#5:4')
+    put('D2', z + 6, 'E5:6 F#5:2 E5:2 A5:2 G#5:4 E5:4 C#5:2 D5:2')
+    put('H1', z + 0, 'A4:2 C#5:1 B4:1 A4:2 B4:1 G#4:1 E4:2 F#4:1 G#4:1 A4:2 C#5:1 B4:1 A4:2 E4:1 F#4:1 A4:2 G#4:1 A4:1 G#4:2 B4:1 A4:1 B4:2 A4:2 E4:2 F#4:1 D#4:1 E4:2 B3:2')
+    put('Q2', z + 0, 'C#4:6 B3:2 B3:4 A3:4 A3:4 A3:4 B3:6 A3:2 B3:2 A3:2 G#3:4 B3:4 C#4:2 D4:2')
+    put('D1', z + 12, 'E5:2 C#5:1 D5:1 E5:1 F#5:1 G#5:1 E5:1 E5:2 D5:1 E5:1 F#5:2 C#5:2 F#5:2 E5:1 D5:1 C#5:2 E5:2 F#5:2 D5:1 E5:1 F#5:1 E5:1 D5:2')
+    put('D1', z + 22, 'E5:2 G#5:1 F#5:1 E5:2 D5:1')
+    put('T1', z + 14, 'R:8 A3:1 B3:1 C#4:1 D4:1 E4:2 C#4:2 F#3:2 B3:2 D4:2 F#4:2 E4:2 C#4:2 D4:2 B3:2 R:8')
+    put('H3', z + 12, 'E5:4 E5:4 D5:4 A4:4 A4:4 A4:4 B4:4 F#4:4 A4:4 A4:4 G#4:4 B4:4')
+    put('T3', z + 12, 'E4:4 E4:4 B3:4 C#4:4 D4:4 E4:4 F#4:4 D4:4 C#4:4 F#3:4 E3:4 E3:4')
+    put('Q3', z + 12, 'C#4:8 B3:4 F#3:4 F#3:4 C#4:4')
+    put('Q3', z + 21, 'B2:4 B2:4 B2:4')
+    put('D2', z + 12, 'E5:6 D5:2')
+    put('D2', z + 16, 'C#5:4 B4:2 A4:2 D5:4 F#5:4 D5:6 C#5:2')
     # @@ball
 
 

@@ -62,6 +62,11 @@ S = 'Bb4:16 F4:8 R:4 Gb5:4 F5:4 Eb5:4 Db5:4 C5:4 Bb4:4 A4:4 C5:4 B4:4'
 ANS = 'F4:16 Bb3:8 R:4 Db5:4 C5:4 Bb4:4 Ab4:4 G4:4 F4:4 E4:4 G4:4 F#4:4'
 
 
+# Section II material: the subject in D-flat major (its ninth becomes major; its tail D-flat C E-flat D
+# is B-A-C-H a minor third up) and its tonal answer in A-flat.
+SMAJ = 'Db4:16 Ab3:8 R:4 Bb4:4 Ab4:4 Gb4:4 F4:4 Eb4:4 Db4:4 C4:4 Eb4:4 D4:4'
+AMAJ = 'Ab4:16 Db4:8 R:4 F5:4 Eb5:4 Db5:4 C5:4 Bb4:4 Ab4:4 G4:4 Bb4:4 A4:4'
+
 def oc(s, n):
     """Octave transposition."""
     return W.transpose(s, 12 * n, 7 * n)
@@ -239,6 +244,14 @@ put('S1', 17, 1, 'G5:16 A5:8 F5:8')
 put('A1', 17, 1, 'D5:8 E5:8 F5:8 Db5:8')
 put('T1', 17, 3, 'G4:8 F4:16')
 
+# =================================================================================== II. CONSOLATIO
+# Coro II gathers in D-flat major, in pairs: answer, and half a bar later the subject (the stretto
+# learned at b13).  Coro I's outer voices accompany; its inner voices rest (antiphony).
+theme('Ms2', 19, 1, AMAJ, 'Answer in A-flat (Coro II)')
+theme('T2', 19, 3, SMAJ, 'Subject in D-flat major, stretto at the half bar')
+put('S1', 19, 1, 'F5:8 Gb5:4 Ab5:4 Bb5:8 Ab5:8 Gb5:4 F5:4 Eb5:4 Db5:4 Db5:12 C5:4')
+put('B1', 19, 1, 'Db3:16 Bb2:8 F2:8 Eb2:4 F2:4 Ab2:4 Bb2:4 Db3:4 Eb3:4 Gb3:4 F3:4')
+
 # =================================================================================== IV. CRUX (summit)
 # Composed first.  Over b41-48 the subject sounds in augmentation in the top voice (Coro IV soprano,
 # B-flat5 ... ending B-A-C-H in half notes, its H on the axis) while the subject runs at its own
@@ -265,7 +278,7 @@ put('S3', 45, 1, 'Bb5:4 Ab5:4 Gb5:8 F5:8 Eb5:8 Db5:4 C5:4 A4:8 F4:8 Ab4:8')
 # subject (suspensions, anticipations), never between the same two notes at the same moment; the
 # low voices breathe on b48.3 and strike the axis chord on b48.4.
 put('B3', 45, 1, 'Bb2:16~ Bb2:12 C3:4 F2:16~ F2:8 R:4 B2:4')
-put('B1', 45, 1, 'F2:8 Db3:8~ Db3:8 Bb2:4 A2:4 Bb2:12 A2:4 R:12 Ab2:4')
+put('B1', 45, 1, 'F2:8 Db3:8~ Db3:8 Bb2:4 A2:4 Bb2:10 A2:2 F2:4 R:12 Ab2:4')
 put('Bar4', 45, 1, 'Db4:16~ Db4:4 C4:4 A3:8 C4:8 F3:8 C4:8 R:4 F3:4')
 # Inner strands (b45-48): each enters its new note an eighth off the beat, so that no two voices
 # move between the same notes at the same moment; their held notes become suspensions on the beats.
@@ -276,8 +289,18 @@ put('A2', 45, 1, 'Db4:24 Eb4:14 F4:18 R:4 F4:4')
 put('Ms2', 45, 1, 'Bb4:18 Ab4:4 Bb4:10 C5:6 A4:6 R:16 B4:4')
 put('Ms4', 45, 1, 'R:8 Gb4:2 F4:2 Eb4:2 Db4:2 Eb4:8 Db4:8 C4:8 Eb4:4 F4:4 R:12 Ab4:4')
 put('T1', 45, 1, 'F3:26 A3:4 Bb3:12 A3:4 F3:8 R:4 B3:6')
-put('T3', 45, 1, 'Db4:10 Bb3:8 Db4:4 C4:10 C4:10 Db4:4 C4:8 R:4 F3:6')
+put('T3', 45, 1, 'C4:2 Db4:20 C4:20 Db4:4 C4:8 R:4 F3:6')
 put('T2', 45, 1, 'Bb3:10 Db4:16 Eb4:4 F4:12 Db4:8 C4:4 R:6 Ab3:4')
+# The knell: three voices toll the dominant F (F5, F3, F2) a staggered eighth apart, silent under
+# the E-flat-minor chord and on the beat where the H arrives (b48.3); they never change pitch, so
+# they colour the summit without doubling any moving line.  A3, Bar2, Bar3 rest through the core
+# and strike the axis chord with everyone on b48.4.
+put('A4', 45, 1, 'F5:8 R:8 R:8 F5:4 R:4 F5:8 F5:8 F5:8 R:4 F5:4')
+put('Bar1', 45, 1, 'R:2 F3:6 R:8 R:2 F3:6 R:2 F3:2 R:4 R:2 F3:14 R:2 F3:6 R:4 F3:4')
+put('B2', 45, 1, 'R:4 F2:4 R:8 R:4 F2:8 R:4 R:4 F2:12 R:4 F2:4 R:4 F2:4')
+put('A3', 48, 4, 'B3:4')
+put('Bar2', 48, 4, 'Ab3:4')
+put('Bar3', 48, 4, 'Ab2:4')
 
 if __name__ == '__main__':
     import os

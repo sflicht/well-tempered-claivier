@@ -19,7 +19,7 @@ Three Bach-grounded concepts were weighed before a note was written:
    - *Device not yet used in the cycle:* a subject transformed by one sharp per section (modal
      brightening as form), and an enharmonic modulation forced by notation.
    - *Why 19 voices:* the summit is a chain of eight entries, each a third higher, rising three octaves.
-     Over it a stretto of four door subjects and a relay of knocks travels round a ring of 15 players.
+     Over it come a stretto of four door subjects and a relay of knocks passed across a ring of players.
      That needs nineteen independent players, and the dawn needs every one of them to "wake".
 2. **Jacob's ladder (BWV 19, the angels ascending and descending).** Ladders of entries going up and
    down at once. Rejected: ladder and mirror devices are already used in I, II, VII and XIII.
@@ -145,7 +145,44 @@ Whole piece: mean 6.34 moving voices per bar.
 
 **Not listened to.** I cannot hear audio. Nothing here describes how the renders sound.
 
-## 7. Honest weak spots (what I would still improve)
+## 7. Prelude XVIII: *Der Wächter* (the watchman)
+
+One player, 20 bars of 4/4, q = 66, about 1:17 (`prelude.py`, `prelude.json`).
+
+**Layers.**
+- **The song:** the right hand sings the fugue's subject.
+- **The knocks:** a detached middle voice plays the watchman's knock (knock, knock, KNOCK) once in
+  every bar. The pitch moves with the harmony.
+- **The bass:** a walking line.
+
+**Form.**
+| bars | what happens |
+|---|---|
+| 1-5 | The subject (Phrygian) above, closing with A→G♯ in the bass. |
+| 6-10 | The answer on D♯ in the bass, ending with the Phrygian E→D♯ half close. |
+| 11-12 ("midnight") | The knocking voice plays the whole door subject of the fugue (D♯ D♯ D♯ E E♯ F♯ F𝄪 G♯). The song falls against it. |
+| 13-14 | A dominant pedal. A tenor adds the leading tone, and the 6/4-5/3 sighs repeat. |
+| 15-20 | The subject returns with the A♯ of the second watch. |
+
+The prelude ends on an **open fifth** G♯-D♯, with three knocks that nobody answers. The third, and the
+morning, are left to the fugue.
+
+**Critic numbers.**
+- parallels: 0
+- beat parallels: 0
+- unresolved: 0
+- bad doublings: 0
+- low-register seconds: 0
+- stepwise: 53.5%
+- leaps of a 4th or more: 16.7%
+- mean moving voices: 3.05
+
+**Renders** (`renders/`):
+- `prelude.pdf`, `.ly`, `.mid`, `.musicxml`
+- `prelude.mp3` (Bach-Lehman)
+- `prelude-equal.mp3` (equal temperament)
+
+## 8. Honest weak spots (what I would still improve)
 
 1. **stepwise_pct is 50%, not ≥ 60%.** The knocks are 20% repeated notes, by design. Even so, several
    middle-voice lines in II-III and in summit A are built from leaps between chord tones.
@@ -165,4 +202,6 @@ Whole piece: mean 6.34 moving voices per bar.
 6. **Theme detection.** The critic compares every entry to the Aeolian form, so the Phrygian, Dorian and
    Ionian forms show "5/9 intervals". It reads the door subject as an inversion. Both are correct as
    written.
-7. **No prelude** was written for this pair in this pass. See the summary.
+7. **The prelude is modest.** It has three layers, mostly in half notes and knocks, and
+   stepwise_pct is 54%. It does its job as a doorway, but it has none of the fugue's ambition. It could
+   become a real invention on the door subject.

@@ -118,7 +118,7 @@ device of its own:
 29. **[built] Pair XV: Vom Himmel hoch à 16.** Four choirs of four, each
     with a subject from one chorale line; all four lines sound together at the
     summit, the trick that ends Bach's Canonic Variations BWV 769.
-30. **[in progress] Pair XVI à 17: Reincken's Hamburg chorale fantasia.**
+30. **[first version] Pair XVI à 17: Reincken's Hamburg chorale fantasia.**
 31. **[in progress] Pairs XVII à 18 and XVIII à 19**, concepts chosen by
     their composers.
 32. **[in progress] Pair XIX à 20: a suite in one fugue.** Four five-part

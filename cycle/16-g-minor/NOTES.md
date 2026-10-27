@@ -1,4 +1,6 @@
-# Fugue XVI in G minor: *Fantasia e fuga a 17 per Reincken* (seventeen voices)
+# Pair XVI in G minor: Prelude (*Fantasia*) and Fugue (*Fantasia e fuga a 17 per Reincken*, seventeen voices)
+
+The fugue is described in §1-9. The prelude, a short organ fantasia, is in §10.
 
 ## 1. The story
 
@@ -68,7 +70,9 @@ Shape: 78 bars of 4/4 at a basic quarter = 72, with a tempo map. The render last
   - `fugue-spatial.mp3`: the choir layout, with the seventeen voices fanned from −70° to +70° in score
     order. The Oberwerk is on the left, the Hauptwerk in the centre, the Rückpositiv on the right and the
     two pedals at the far right.
-- No prelude (§9).
+- `prelude.py`, `prelude.json`: Prelude XVI, *Fantasia* (16 bars, four voices, §10).
+- `renders/prelude.pdf` (two A4 pages), `prelude.ly`, `prelude.mid`, `prelude.musicxml`,
+  `prelude.mp3` (Bach-Lehman, 74 s) and `prelude-equal.mp3`.
 
 ## 3. Chorale lines and their subjects
 
@@ -308,5 +312,47 @@ Moving voices per bar, b1-78:
   - whether seventeen voices on a General MIDI organ balance at all.
 
   These need a listener.
-- **No Prelude XVI.** The optional stylus-phantasticus Fantasia, alluding to the opening of BWV 542's
-  Fantasia, was not written; the time went into the fugue's summit.
+- **The prelude is small** (§10). It has 16 bars and four voices, while the fugue has seventeen. Its
+  Choral section is plain note-against-note, and the echo in b14 is only the treble an octave lower.
+
+## 10. Prelude XVI: *Fantasia* (16 bars, 4/4, organ: two hands and pedal)
+
+A short fantasia in the stylus phantasticus, as an organist might have played before the chorale. It
+alludes to the opening of Bach's **Fantasia in G minor BWV 542**: a held G in the treble with a mordent
+and a turn in thirty-seconds, over a G pedal, with the left hand striking chords on beats 1 and 3. Only
+the first two beats follow Bach's figure (from the Mutopia edition, read as data). Everything after them
+is new.
+
+There are four voices: Diskant (right hand), Alt and Tenor (left hand), and Pedal. The basic tempo is
+quarter = 56, with a tempo map, and the render lasts 1:14.
+
+| bars | section | what happens |
+|---|---|---|
+| 1-4 | Exordium, over the G pedal | i – vii°7, iv – V7, i – vii°7: each half bar is a held note with a turn, falling G – F♯ – E♭ – D – B♭. In b3 a run of thirty-seconds climbs through the diminished seventh to E6. b4 brings V7 on D, a sudden rest, a falling diminished cascade into the silence, and a lone G4. |
+| 5-8 | Recitativo | VI – iv, Neapolitan sixth – V7 (with a rest in the treble), i – VI – vii°7 of V, then a cadenza over the D pedal, where the E♭ is an appoggiatura to D. The tempo is held back at the cadenza. |
+| 9-12 | Choral | Line 1 of the chorale (BWV 267's soprano, in G minor) at half speed in the treble. Under it a lament bass descends G F♯ F E E♭ D, and the inner voices are tied over (B♭/F 6/4 – F7, Eø7, E♭maj7, D7, cadence to G minor). The fugue's first subject is heard once before it is worked. |
+| 13-16 | Conclusio, over the D pedal | A phrase, then its echo an octave lower without the left hand. Two struck chords, each followed by a rest (D7♭9, then vii°7 of D). Then the half cadence on D, held: the fugue begins on D alone. |
+
+**Critic numbers:**
+- parallels (error / weak / beat-to-beat): 0 / 0 / 0
+- unresolved dissonances: 0
+- bad doublings: 0
+- low-register seconds: 0
+- stepwise motion: 68.5 %
+- crossings: 0
+- melodic augmented seconds: 4, all within diminished-seventh arpeggios (b3, b4)
+
+**What I fixed by hand after the first check:**
+- an augmented second F♯–E♭ in b1;
+- octaves with the pedal into b7.3 and into b8;
+- an octave pair B♭–A in b13;
+- the doubled seventh at b3.3 and at b13.4 (by re-voicing the tenor);
+- a tenor tritone leap in b11;
+- the struck chords of b15, whose tritone did not resolve. They now move by step: F♯→G, C→C♯, E♭→E.
+
+**Weak spots:**
+- It is short and plain beside the fugue, and the Choral moves in block chords.
+- The recitative's leaps (G4 → E♭5 → G5 in b5) are flagged as leaps not recovered.
+- The keyboard check counts the pedal as a third hand, so its "unplayable" figure (44 %) does not apply
+  to an organ with pedal.
+- I have not heard it.

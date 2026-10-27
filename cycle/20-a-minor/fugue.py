@@ -466,11 +466,13 @@ def summit():
 
 # The summit's lines from b41, one voice per entry (added and checked one at a time).
 SUMMIT_LINES = [
-    ('Vl3', 42, 1, 'F5:8 A5:8 C6:12 B5:4 B5:8 C6:4 A5:4 B5:12 A5:4 B5:16 A5:16'),
-    ('Vl7', 'E6:8 F6:4 C6:4 D6:8 F6:8 E6:4 A5:8 B5:4 B5:4 D6:4 E6:8 D6:4 F6:10 E6:2 F6:4 E6:12 C6:16'),
+    # violin III, after its subject on A: F-E-D, then a line that climbs to C6/D6 and settles on the dominant
+    ('Vl3', 42, 1, 'F5:6 E5:2 D5:8 E5:8 A5:4 G#5:4 B5:4 G5:4 C6:8 D6:8 A5:8 B5:12 G#5:4 A5:4'),
+    # the top: E6-F6-E6 | D6 F6 | E6 C6 A5 B5 | E6 D6 C6 A5 | B5 D6 F6 (9-8 over the bass's E) | E6 D6 | C6
+    ('Vl7', 'E6:8 F6:6 E6:2 D6:8 F6:8 E6:4 C6:4 A5:4 B5:4 E6:4 D6:4 C6:4 A5:4 B5:4 D6:4 F6:8 E6:8 D6:8 C6:16'),
+    ('Vl8', 'E5:4 A5:8 E5:4 D5:12 F5:4 C5:4 E5:8 G#5:4 E5:4 G5:8 A5:4 D5:4 F5:8 C6:4 A5:6 G#5:6 B5:4 C6:4'),
     # the solo violin, after its subject: a slow line of suspensions, C-B-C-B-C-B-A-G#-A
     ('Vl1', 'C5:8 A4:8 C5:4 B4:12 C5:12 B4:4 B4:8 C5:4 A4:4 C5:4 B4:8 A4:4 A4:4 G#4:8 B4:4 A4:16'),
-    ('Vl8', 'A5:8 A5:4 G5:4 F5:8 E5:4 D5:4 E5:16 E5:4 D5:4 G5:4 A5:4 A5:16 A5:6 G#5:6 B5:4 C6:16'),
 ]
 
 SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4, approach, summit]
