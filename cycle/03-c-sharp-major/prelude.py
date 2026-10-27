@@ -143,6 +143,7 @@ def build(out=HERE / 'prelude.json', second_draft=False):
         'composer': 'Claude / composed for Sam', 'instrument': 'Piano (four layers; sostenuto pedal for the bass)',
         'key': 'C#', 'mode': 'major', 'meter': [12, 8], 'bpm': 96,
         'tempo_text': 'Moderato, luminoso', 'character': 'Glass bells',
+        'tempo_map': [[132, 96], [144, 72, 'ramp']],          # breathe into the last chord
         'score_tagline': 'Third edition - second-draft Prelude III, corrected (see NOTES.md)',
         'markers': [{'t': 0.0, 'label': 'Bells'}, {'t': 48.0, 'label': 'Contrasting span'},
                     {'t': 96.0, 'label': 'Return'}, {'t': 120.0, 'label': 'Cadence'}],

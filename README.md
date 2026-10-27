@@ -19,7 +19,7 @@ engraved PDFs are in each pair's `renders/` folder.
 | --- | --- | --- | --- | --- |
 | [I](cycle/01-c-major/) | C major | à 2, *Scala strettarum*: one subject in stretto at every distance from a bar to an eighth, climbed rung by rung; BWV 846's subject as countersubject | *Per omnes tonos*: BWV 846's texture through all 24 keys, a Shepard–Risset endless rise | new |
 | [II](cycle/02-c-minor/) | C minor | à 3, mirror trio (the whole texture upside down), BWV 847's subject as a guest voice | the subject spelled by shifting group accents; Presto/Adagio | rebuilt (was "Pair I", à 2) |
-| [III](cycle/03-c-sharp-major/) | C♯ major | à 4, a gigue-fugue that meets its own mirror image | "Glass bells", the prelude Sam liked, repaired | in progress |
+| [III](cycle/03-c-sharp-major/) | C♯ major | à 4, *Giga rectus et inversus*: Part 2 mirrors Part 1, and in the coda the two halves sound at once; BWV 848's subject grows out of the inversion | "Glass bells", the prelude Sam liked, with four repairs | new fugue, prelude repaired |
 | [IV](cycle/04-c-sharp-minor/) | C♯ minor | à 5, double fugue with BWV 849's "cross" subject | Allegro inquieto with the cross as suspensions | rebuilt |
 | [V](cycle/05-d-major/) | D major | à 6, cascade stretto through six keys; BWV 850's subject as a voice | irregular-form toccata with a flourish into the fugue | rebuilt |
 | [VI](cycle/06-d-minor/) | D minor | à 7, passacaglia and fugue on a lament ground that travels through all seven voices | toccata with recitative (BWV 565 allusion) | in progress |

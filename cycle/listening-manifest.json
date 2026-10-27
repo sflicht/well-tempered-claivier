@@ -42,6 +42,25 @@
    ]
   },
   {
+   "name": "Pair III \u00b7 C-sharp major (new fugue, prelude repaired)",
+   "pieces": [
+    {
+     "id": "prelude-3",
+     "title": "Prelude III \u00b7 Glass bells",
+     "score": "cycle/03-c-sharp-major/prelude.json",
+     "tag": "fixed",
+     "notes": "The second-draft prelude Sam liked, transcribed note for note, with four repairs: outer-voice fifths across the barline at bar 12, inner layers that doubled the melody at bar 20, outer-voice octaves into the cadential 6/4 at bar 21, and a major-seventh leap at bar 5. The bells, the silences and the harmony are otherwise untouched; a final ritardando is added. The deep bass is meant to be caught with the middle (sostenuto) pedal."
+    },
+    {
+     "id": "fugue-3",
+     "title": "Fugue III \u00b7 Giga a 4, rectus et inversus",
+     "score": "cycle/03-c-sharp-major/fugue.json",
+     "tag": "new",
+     "notes": "A four-voice gigue-fugue in 12/8. As in Bach's suite gigues, Part 1 presents the subject upright and cadences in G-sharp, and Part 2 presents it upside down, with the entries in mirrored order: bass, tenor, alto, soprano.\n\nIn the coda (bars 40-41) the gigue meets its own reflection: bars 9-10 of Part 1 sound simultaneously with bars 23-24 of Part 2, at pitch. The countersubject was designed backwards from this moment so that the four lines fit.\n\nBach's own C-sharp-major subject (BWV 848) appears too: the soprano's inverted subject ends G#-A#-G#, which is the head of Bach's subject, so it runs straight on into it (bars 28-29)."
+    }
+   ]
+  },
+  {
    "name": "Pair IV \u00b7 C-sharp minor (rebuilt)",
    "pieces": [
     {

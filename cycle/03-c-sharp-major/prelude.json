@@ -13,6 +13,17 @@
   "bpm": 96,
   "tempo_text": "Moderato, luminoso",
   "character": "Glass bells",
+  "tempo_map": [
+   [
+    132,
+    96
+   ],
+   [
+    144,
+    72,
+    "ramp"
+   ]
+  ],
   "score_tagline": "Third edition - second-draft Prelude III, corrected (see NOTES.md)",
   "markers": [
    {
