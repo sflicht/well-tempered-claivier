@@ -31,12 +31,12 @@ These notes cover the rebuilt C-minor pair, renumbered from "Pair I" to Pair II 
 | 15–18 | 13–16 | **Bass: subject in augmentation** from 15.1. **Alto: subject** on beat 4 of b15. **Soprano: inversion** at 17.1.5. Subject, augmentation and inversion sound together in 17.3–18.3. | g |
 | 19–20 | new | **Episode 3**, the third permutation. Turn motif in the alto; the bass takes the suspension line as V4/2 → I6 resolutions. g → f. | g→f |
 | 21–22 | new (replaces 19–24) | **Mirror trio in f.** The whole b7–8 block upside down: soprano answer-mirror, alto CS2 mirrored, bass CS. Cadence VI–V → c. | f→c |
-| 23–24 | new | **Stretto at the octave**, half a bar apart: soprano 23.1, alto 23.3. | c |
+| 23–24 | new | **Stretto: subject + mirror answer** (soprano 23.1, bass 23.3.5) with the countersubject in the alto. Changed after the second review (§9). | c |
 | 25–26 | 25–26 | **Build.** 4-3 suspension chain over the lament bass C–Bb–Ab–G. Diminished-7th ascent; the turn motif on V7. | c |
 | 27–28 | 27–28 | **Peak: stretto à 3** at half-bar distances: soprano C6 (27.1), bass C3 (27.3), alto C5 (28.1). | c |
-| 29–30 | 29–30 | V7 → **deceptive VI** (29.3.5) → iv → **Neapolitan** (30.1–2) → V with the dominant bariolage. | c |
+| 29–30 | 29–30 | V7 → **deceptive VI on beat 4** (29.4, a quarter) → **Neapolitan** (30.1–2) → V with the dominant bariolage. | c |
 | 31–35 | new | **Coda.** Bass: **J. S. Bach's BWV 847 fugue subject, augmented**, as a moving tonic pedal (from 31.2, after a literal quarter rest). Alto: the mirror answer (31.3.5). Soprano: a free descant, then the final cadence i6 – ii°6/5 – V7. | c |
-| 36 | 34 | **Full C-major chord** (C2 – C5 – E5): the Picardy third, as at the end of BWV 847. | C |
+| 36 | 34 | **C-major chord** (Picardy third, as at the end of BWV 847), completed by arrivals: the alto C5 → G4, the bass C2 → C3, the soprano E5. | C |
 
 Declared entries are checked by `critic.py` (subject declared in the score):
 - 13 of 15 entries match at least 13/16 intervals.
@@ -161,3 +161,45 @@ python3 tools/render_music.py cycle/02-c-minor/fugue.json --output-prefix cycle/
 python3 tools/render_music.py cycle/02-c-minor/fugue.json --no-pdf --output-prefix cycle/02-c-minor/renders/fugue-equal --temperament equal
 ```
 (The same two render commands apply to the prelude.)
+
+## 9. Second review (REVIEW-2.md): what changed
+
+Kept untouched, as the review asked:
+- fugue: the exposition (b1–8), the coda with BWV 847's subject (b31–35) and the G-minor section (b15–18);
+- prelude: the grouping plan, the chromatic bass of section C and the climb to the break.
+
+### Fugue
+
+| Item | Bars | Change |
+|---|---|---|
+| (a) Deceptive cadence | 29 | Bass `B2:2 C3:4 G2:2 G2:4 Ab2:4`, soprano `F5:2 Eb5:2 G5:4 F5:4 Eb5:2 C6:2`. V7 holds beat 3; **VI (A-flat) now lands on beat 4 for a full quarter**, with the soprano's 7th F5 falling to E-flat 5. The iv chord is gone, and VI → Neapolitan keeps A-flat as a common tone. |
+| (b) Episode 3 | 20 | Bass at 20.3: `Ab2:4` → `Ab2:2 Db3:2`. The repeated soprano cell is now reharmonised i6 – VI – V (A-flat → D-flat → C, a Phrygian approach). |
+| (c) Stretto | 23–25 | New combination: soprano subject at 23.1, **bass the mirror answer in c (G2) at 23.3.5**, and the alto playing the countersubject over it from 23.4 – the exposition's answer/countersubject pair under the subject. b25 is re-fitted: the mirror answer ends at 25.3 and the lament bass C–B-flat–A-flat–G follows into the build. |
+| (d) Final chord | 36 | It is filled by voice-leading arrivals within the three voices. The alto's leading tone resolves to C5 and then settles on G4; the bass sounds C2, then C3; the soprano holds E5. From beat 2 the chord is a complete C major. |
+
+On (c), the reviewer's exact proposal was the mirror answer **a quarter** after the subject (stretto_finder cost 8). In context it produces a three-note octave run between the voices (D–C–B in 16ths and 8ths, critic "doubling run"). The g-form instead gives a B4-against-B-flat-3 clash. The finder's pair cost does not count doubling runs. I used the clean distance of 2½ beats instead (critic 0 everything), and added the countersubject.
+
+### Prelude
+
+| Item | Bars | Change |
+|---|---|---|
+| (e) Return | 25–29 | The left hand now plays the neighbour figure in sixteenths, a sixth below the right hand: C3 E♭3 D3 E♭3 \| A♭2 C3 B♭2 C3 / F2 F3 E♭3 F3 \| G2 E♭3 D3 E♭3 / G2 D3 C3 D3 \| A♭2 E♭3 D♭3 E♭3 \| … This is BWV 847's two-hand texture, and no hand doubles the other in octaves. In b29 the right hand now uses the same cells as b26/27 (N6 D♭6–C6–D♭6, V7 B5–A5–B5). |
+| (f) Adagio | 24 | Left hand `G2:8 F2:4 G2:4`. The dominant is held through the Adagio: cadential six-four (C5 → B4), then V4/2, then V, then i at b25. VI is saved for bar 28, so the pair now has two V → VI moves (prelude b28, fugue b29.4) instead of three. |
+
+### Checks after the changes
+
+| | Fugue | Prelude |
+|---|---|---|
+| parallels_error | 0 | 0 |
+| parallels_weak | 0 | 0 |
+| doubling_runs | 0 | 0 |
+| beat_parallels | 0 | 0 |
+| dissonance_unresolved | 0 | 19 |
+| low_register_seconds | 3 (unchanged, mirror trio) | 0 |
+| keyboard unplayable | 0% | 0% |
+
+The prelude's 19th flag is new: 29.4, the V7's 7th F5. It resolves to E-flat 5 on 30.1, in the same register-transfer category as 27.4 (§6). The two watch items (fugue mirror-trio velocity, prelude waves in b16–17) are not changed. Nothing has been heard yet.
+
+**Renders.**
+- `renders/{fugue,prelude}.{mp3,pdf,mid,musicxml,ly}`: Bach–Lehman temperament, regenerated.
+- `renders/{fugue,prelude}-equal.mp3`: equal temperament, audio only. The older equal-temperament ancillary files were removed.

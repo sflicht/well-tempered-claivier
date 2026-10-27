@@ -197,8 +197,9 @@ put('Idx', 17, [
     'R:12',                                                    # b50
     'A#4:4 R:4 F#4:4',                                         # b51
     'G#4:8 R:4',                                               # b52
+    'C#5:6 D#5:2 C#5:4',                                       # b53
 ])
-CANON_SPAN['I'] = (9, 52)
+CANON_SPAN['I'] = (9, 53)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -250,8 +251,9 @@ put('IIdx', 17, subj(1) + [
     'R:4 G#4:2 A#4:2 B4:2 C#5:2',                              # b50 V6
     'D#5:2 C#5:2 D#5:2 E#5:2 F#5:4',                           # b51 vi
     'R:12',                                                    # b52 V
+    'R:12',                                                    # b53 I6
 ])
-CANON_SPAN['II'] = (17, 52)
+CANON_SPAN['II'] = (17, 53)
 entry('IIdx', 17, 'Canon II dux: subject')
 entry('IIco', 18, 'Canon II comes: subject at the 2nd above')
 
@@ -283,8 +285,9 @@ put('IIIdx', 25, subj(-1) + [
     'R:12',                                                    # b48 I
     'R:12', 'R:12', 'R:12',                                    # b49-51
     'R:8 E#4:4',                                               # b52 V
+    'C#4:2 B3:2 A#3:4 C#4:4',                                  # b53 I6
 ])
-CANON_SPAN['III'] = (25, 52)
+CANON_SPAN['III'] = (25, 53)
 entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
 entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
 
@@ -306,8 +309,10 @@ put('IVdx', 33, subj(1) + [
     'R:12',                                                    # b46 ii6
     'C#6:4 B5:4 A#5:4',                                        # b47 V7
     'F#5:6 G#5:2 F#5:2 E#5:2',                                 # b48 I
+    'R:12', 'R:12', 'R:12', 'R:12',                            # b49-52
+    'R:4 F#5:4 C#6:4',                                         # b53 I6
 ])
-CANON_SPAN['IV'] = (33, 48)
+CANON_SPAN['IV'] = (33, 53)
 put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'C#5:4 B4:2 A#4:2 G#4:2 F#4:2',                            # b41
     'B4:4 A#4:2 G#4:2 C#5:4',                                  # b42
@@ -320,6 +325,7 @@ put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'G#3:4 C#4:2 B3:2 G#3:4',                                  # b50 V6
     'A#3:2 B3:2 D#4:2 C#4:2 A#3:2 F#3:2',                      # b51 vi
     'A#3:4 G#3:4 C#4:4',                                       # b52 V
+    'F#3:8 A#3:4',                                             # b53 I6
 ])
 entry('Sog', 35, 'Subject (soggetto returns, tenor)')
 entry('IVdx', 33, 'Canon IV dux: subject')
