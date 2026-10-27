@@ -543,10 +543,18 @@ def check_themes(S, data):
     entries = data.get('subject_entries', [])
     if not subj or not entries:
         return None
-    sd = [d for d, _ in subj]
-    si = [subj[k + 1][1] - subj[k][1] for k in range(len(subj) - 1)]
+    sd0 = [d for d, _ in subj]
+    si0 = [subj[k + 1][1] - subj[k][1] for k in range(len(subj) - 1)]
     res = []
     for e in entries:
+        # An entry may declare form 'retrograde' (cancrizans): it is then checked against the
+        # subject read backwards (rectus = retrograde, inversus = retrograde inversion).
+        # Entries without a 'form' key are checked exactly as before.
+        sd, si = sd0, si0
+        if str(e.get('form', '')).startswith('retrograde'):
+            rs = list(reversed(subj))
+            sd = [d for d, _ in rs]
+            si = [rs[k + 1][1] - rs[k][1] for k in range(len(rs) - 1)]
         vi = int(e['voice'])
         t0 = ticks(e['t'])
         v = S.voices[vi]
@@ -570,6 +578,8 @@ def check_themes(S, data):
                     best = (score, kind, scale, m, rhythm_ok)
         if best:
             score, kind, scale, m, r = best
+            if str(e.get('form', '')).startswith('retrograde'):
+                kind = 'retrograde' if kind == 'rectus' else 'retrograde inversus'
             res.append({'loc': S.loc(t0), 'voice': S.names[vi], 'label': e.get('label'), 'form': kind,
                         'scale': scale, 'intervals_ok': f"{m}/{len(si)}", 'rhythm_ok': f"{r}/{len(sd) - 1}"})
     return res

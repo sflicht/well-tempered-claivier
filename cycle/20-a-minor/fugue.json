@@ -1,0 +1,1358 @@
+{
+ "metadata": {
+  "title": "The Well-Tempered clAIvier",
+  "subtitle": "Fugue XX in A minor, twenty-one voices: Fuga per un violino solo, moltiplicata",
+  "composer": "Claude / Sam (subject head: J. S. Bach, Fuga of the Sonata in A minor for solo violin, BWV 1003)",
+  "instrument": "Solo violin that becomes twenty-one strings (9 violins, 5 violas, 5 cellos, 2 double basses)",
+  "key": "A",
+  "mode": "minor",
+  "meter": [
+   4,
+   4
+  ],
+  "bpm": 66,
+  "tempo_text": "Allegro moderato",
+  "tempo_map": [],
+  "movement_number": 20,
+  "piece_type": "fugue",
+  "edition": "third",
+  "score_layout": {
+   "paper": "a2",
+   "hide_empty_staves": true,
+   "staff_size": 16,
+   "staff_distance": 9
+  },
+  "score_tagline": "The Well-Tempered clAIvier \u2014 third edition"
+ },
+ "voices": [
+  {
+   "name": "Violino I (solo)",
+   "abbr": "Vl1",
+   "clef": "treble",
+   "events": [
+    {
+     "t": 0.5,
+     "d": 0.25,
+     "p": 76,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 1
+    },
+    {
+     "t": 0.75,
+     "d": 0.25,
+     "p": 75,
+     "spell": "dis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 1
+    },
+    {
+     "t": 1.0,
+     "d": 0.5,
+     "p": 76,
+     "spell": "e",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 1
+    },
+    {
+     "t": 1.5,
+     "d": 0.5,
+     "p": 64,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 1
+    },
+    {
+     "t": 2.0,
+     "d": 0.5,
+     "p": 69,
+     "spell": "a",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 1
+    },
+    {
+     "t": 2.5,
+     "d": 0.5,
+     "p": 72,
+     "spell": "c",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 1
+    },
+    {
+     "t": 3.0,
+     "d": 0.5,
+     "p": 71,
+     "spell": "b",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 1
+    },
+    {
+     "t": 3.5,
+     "d": 0.5,
+     "p": 74,
+     "spell": "d",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 1
+    },
+    {
+     "t": 4.0,
+     "d": 0.25,
+     "p": 72,
+     "spell": "c",
+     "v": 73,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 4.25,
+     "d": 0.25,
+     "p": 69,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 4.5,
+     "d": 0.25,
+     "p": 76,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 4.75,
+     "d": 0.25,
+     "p": 68,
+     "spell": "gis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 5.0,
+     "d": 0.25,
+     "p": 74,
+     "spell": "d",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 5.25,
+     "d": 0.25,
+     "p": 67,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 5.5,
+     "d": 0.25,
+     "p": 72,
+     "spell": "c",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 5.75,
+     "d": 0.25,
+     "p": 66,
+     "spell": "fis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 6.0,
+     "d": 0.25,
+     "p": 71,
+     "spell": "b",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 6.25,
+     "d": 0.25,
+     "p": 65,
+     "spell": "f",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 6.5,
+     "d": 0.25,
+     "p": 69,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 6.75,
+     "d": 0.25,
+     "p": 64,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 2
+    },
+    {
+     "t": 7.0,
+     "d": 1.0,
+     "p": 68,
+     "spell": "gis",
+     "v": 71,
+     "gate": 0.975,
+     "bar": 2
+    },
+    {
+     "t": 8.5,
+     "d": 0.25,
+     "p": 69,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 3
+    },
+    {
+     "t": 8.75,
+     "d": 0.25,
+     "p": 68,
+     "spell": "gis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 3
+    },
+    {
+     "t": 9.0,
+     "d": 0.5,
+     "p": 69,
+     "spell": "a",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 3
+    },
+    {
+     "t": 9.5,
+     "d": 0.5,
+     "p": 57,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 3
+    },
+    {
+     "t": 10.0,
+     "d": 0.5,
+     "p": 64,
+     "spell": "e",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 3
+    },
+    {
+     "t": 10.5,
+     "d": 0.5,
+     "p": 67,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 3
+    },
+    {
+     "t": 11.0,
+     "d": 0.5,
+     "p": 66,
+     "spell": "fis",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 3
+    },
+    {
+     "t": 11.5,
+     "d": 0.5,
+     "p": 69,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 3
+    },
+    {
+     "t": 12.0,
+     "d": 0.25,
+     "p": 68,
+     "spell": "gis",
+     "v": 73,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 12.25,
+     "d": 0.25,
+     "p": 64,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 12.5,
+     "d": 0.25,
+     "p": 71,
+     "spell": "b",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 12.75,
+     "d": 0.25,
+     "p": 63,
+     "spell": "dis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 13.0,
+     "d": 0.25,
+     "p": 69,
+     "spell": "a",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 13.25,
+     "d": 0.25,
+     "p": 62,
+     "spell": "d",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 13.5,
+     "d": 0.25,
+     "p": 67,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 13.75,
+     "d": 0.25,
+     "p": 61,
+     "spell": "cis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 14.0,
+     "d": 0.25,
+     "p": 66,
+     "spell": "fis",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 14.25,
+     "d": 0.25,
+     "p": 60,
+     "spell": "c",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 14.5,
+     "d": 0.25,
+     "p": 64,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 14.75,
+     "d": 0.25,
+     "p": 59,
+     "spell": "b",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 4
+    },
+    {
+     "t": 15.0,
+     "d": 1.0,
+     "p": 63,
+     "spell": "dis",
+     "v": 71,
+     "gate": 0.975,
+     "bar": 4
+    },
+    {
+     "t": 16.5,
+     "d": 0.25,
+     "p": 88,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 5
+    },
+    {
+     "t": 16.75,
+     "d": 0.25,
+     "p": 87,
+     "spell": "dis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 5
+    },
+    {
+     "t": 17.0,
+     "d": 0.5,
+     "p": 88,
+     "spell": "e",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 5
+    },
+    {
+     "t": 17.5,
+     "d": 0.5,
+     "p": 76,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 5
+    },
+    {
+     "t": 18.0,
+     "d": 0.5,
+     "p": 81,
+     "spell": "a",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 5
+    },
+    {
+     "t": 18.5,
+     "d": 0.5,
+     "p": 84,
+     "spell": "c",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 5
+    },
+    {
+     "t": 19.0,
+     "d": 0.5,
+     "p": 83,
+     "spell": "b",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 5
+    },
+    {
+     "t": 19.5,
+     "d": 0.5,
+     "p": 86,
+     "spell": "d",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 5
+    },
+    {
+     "t": 20.0,
+     "d": 0.25,
+     "p": 84,
+     "spell": "c",
+     "v": 73,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 20.25,
+     "d": 0.25,
+     "p": 81,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 20.5,
+     "d": 0.25,
+     "p": 88,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 20.75,
+     "d": 0.25,
+     "p": 80,
+     "spell": "gis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 21.0,
+     "d": 0.25,
+     "p": 86,
+     "spell": "d",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 21.25,
+     "d": 0.25,
+     "p": 79,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 21.5,
+     "d": 0.25,
+     "p": 84,
+     "spell": "c",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 21.75,
+     "d": 0.25,
+     "p": 78,
+     "spell": "fis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 22.0,
+     "d": 0.25,
+     "p": 83,
+     "spell": "b",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 22.25,
+     "d": 0.25,
+     "p": 77,
+     "spell": "f",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 22.5,
+     "d": 0.25,
+     "p": 81,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 22.75,
+     "d": 0.25,
+     "p": 76,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 6
+    },
+    {
+     "t": 23.0,
+     "d": 1.0,
+     "p": 80,
+     "spell": "gis",
+     "v": 71,
+     "gate": 0.975,
+     "bar": 6
+    },
+    {
+     "t": 24.5,
+     "d": 0.25,
+     "p": 67,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 7
+    },
+    {
+     "t": 24.75,
+     "d": 0.25,
+     "p": 66,
+     "spell": "fis",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 7
+    },
+    {
+     "t": 25.0,
+     "d": 0.5,
+     "p": 67,
+     "spell": "g",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 7
+    },
+    {
+     "t": 25.5,
+     "d": 0.5,
+     "p": 55,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 7
+    },
+    {
+     "t": 26.0,
+     "d": 0.5,
+     "p": 60,
+     "spell": "c",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 7
+    },
+    {
+     "t": 26.5,
+     "d": 0.5,
+     "p": 64,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 7
+    },
+    {
+     "t": 27.0,
+     "d": 0.5,
+     "p": 62,
+     "spell": "d",
+     "v": 71,
+     "gate": 0.94,
+     "bar": 7
+    },
+    {
+     "t": 27.5,
+     "d": 0.5,
+     "p": 65,
+     "spell": "f",
+     "v": 70,
+     "gate": 0.94,
+     "bar": 7
+    },
+    {
+     "t": 28.0,
+     "d": 0.25,
+     "p": 64,
+     "spell": "e",
+     "v": 73,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 28.25,
+     "d": 0.25,
+     "p": 60,
+     "spell": "c",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 28.5,
+     "d": 0.25,
+     "p": 67,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 28.75,
+     "d": 0.25,
+     "p": 59,
+     "spell": "b",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 29.0,
+     "d": 0.25,
+     "p": 65,
+     "spell": "f",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 29.25,
+     "d": 0.25,
+     "p": 58,
+     "spell": "bes",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 29.5,
+     "d": 0.25,
+     "p": 64,
+     "spell": "e",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 29.75,
+     "d": 0.25,
+     "p": 57,
+     "spell": "a",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 30.0,
+     "d": 0.25,
+     "p": 62,
+     "spell": "d",
+     "v": 71,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 30.25,
+     "d": 0.25,
+     "p": 56,
+     "spell": "aes",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 30.5,
+     "d": 0.25,
+     "p": 60,
+     "spell": "c",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 30.75,
+     "d": 0.25,
+     "p": 55,
+     "spell": "g",
+     "v": 70,
+     "gate": 0.9,
+     "bar": 8
+    },
+    {
+     "t": 31.0,
+     "d": 1.0,
+     "p": 59,
+     "spell": "b",
+     "v": 71,
+     "gate": 0.975,
+     "bar": 8
+    }
+   ],
+   "gm_program": 40,
+   "spatial": [
+    0,
+    3.0
+   ],
+   "pan": 64
+  },
+  {
+   "name": "Violino II",
+   "abbr": "Vl2",
+   "clef": "treble",
+   "events": [
+    {
+     "t": 9.0,
+     "d": 0.5,
+     "p": 72,
+     "spell": "c",
+     "v": 65,
+     "gate": 0.94,
+     "bar": 3
+    },
+    {
+     "t": 10.0,
+     "d": 1.0,
+     "p": 71,
+     "spell": "b",
+     "v": 65,
+     "gate": 0.975,
+     "bar": 3
+    },
+    {
+     "t": 11.0,
+     "d": 1.0,
+     "p": 69,
+     "spell": "a",
+     "v": 65,
+     "gate": 0.975,
+     "bar": 3
+    },
+    {
+     "t": 16.0,
+     "d": 0.5,
+     "p": 64,
+     "spell": "e",
+     "v": 67,
+     "gate": 0.94,
+     "bar": 5
+    },
+    {
+     "t": 18.0,
+     "d": 1.0,
+     "p": 72,
+     "spell": "c",
+     "v": 65,
+     "gate": 0.975,
+     "bar": 5
+    },
+    {
+     "t": 19.0,
+     "d": 1.0,
+     "p": 74,
+     "spell": "d",
+     "v": 65,
+     "gate": 0.975,
+     "bar": 5
+    },
+    {
+     "t": 24.0,
+     "d": 0.5,
+     "p": 81,
+     "spell": "a",
+     "v": 67,
+     "gate": 0.94,
+     "bar": 7
+    }
+   ],
+   "gm_program": 40,
+   "spatial": [
+    -18,
+    4.2
+   ],
+   "pan": 47,
+   "share_staff": "Vl1"
+  },
+  {
+   "name": "Violino III",
+   "abbr": "Vl3",
+   "clef": "treble",
+   "events": [],
+   "gm_program": 40,
+   "spatial": [
+    22,
+    5.0
+   ],
+   "pan": 83
+  },
+  {
+   "name": "Violino IV",
+   "abbr": "Vl4",
+   "clef": "treble",
+   "events": [],
+   "gm_program": 40,
+   "spatial": [
+    40,
+    6.2
+   ],
+   "pan": 100
+  },
+  {
+   "name": "Violino V",
+   "abbr": "Vl5",
+   "clef": "treble",
+   "events": [],
+   "gm_program": 40,
+   "spatial": [
+    8,
+    6.0
+   ],
+   "pan": 71
+  },
+  {
+   "name": "Violino VI",
+   "abbr": "Vl6",
+   "clef": "treble",
+   "events": [],
+   "gm_program": 40,
+   "spatial": [
+    -30,
+    6.0
+   ],
+   "pan": 37
+  },
+  {
+   "name": "Violino VII",
+   "abbr": "Vl7",
+   "clef": "treble",
+   "events": [],
+   "gm_program": 40,
+   "spatial": [
+    58,
+    7.2
+   ],
+   "pan": 116
+  },
+  {
+   "name": "Violino VIII",
+   "abbr": "Vl8",
+   "clef": "treble",
+   "events": [],
+   "gm_program": 40,
+   "spatial": [
+    16,
+    7.4
+   ],
+   "pan": 78
+  },
+  {
+   "name": "Violino IX",
+   "abbr": "Vl9",
+   "clef": "treble",
+   "events": [],
+   "gm_program": 40,
+   "spatial": [
+    -44,
+    7.2
+   ],
+   "pan": 24
+  },
+  {
+   "name": "Viola I",
+   "abbr": "Va1",
+   "clef": "alto",
+   "events": [],
+   "gm_program": 41,
+   "spatial": [
+    -36,
+    4.6
+   ],
+   "pan": 31
+  },
+  {
+   "name": "Viola II",
+   "abbr": "Va2",
+   "clef": "alto",
+   "events": [],
+   "gm_program": 41,
+   "spatial": [
+    -8,
+    5.6
+   ],
+   "pan": 56
+  },
+  {
+   "name": "Viola III",
+   "abbr": "Va3",
+   "clef": "alto",
+   "events": [],
+   "gm_program": 41,
+   "spatial": [
+    -52,
+    6.0
+   ],
+   "pan": 17
+  },
+  {
+   "name": "Viola IV",
+   "abbr": "Va4",
+   "clef": "alto",
+   "events": [],
+   "gm_program": 41,
+   "spatial": [
+    -2,
+    7.0
+   ],
+   "pan": 62
+  },
+  {
+   "name": "Viola V",
+   "abbr": "Va5",
+   "clef": "alto",
+   "events": [],
+   "gm_program": 41,
+   "spatial": [
+    -66,
+    7.4
+   ],
+   "pan": 4
+  },
+  {
+   "name": "Violoncello I",
+   "abbr": "Vc1",
+   "clef": "bass",
+   "events": [],
+   "gm_program": 42,
+   "spatial": [
+    34,
+    4.8
+   ],
+   "pan": 94
+  },
+  {
+   "name": "Violoncello II",
+   "abbr": "Vc2",
+   "clef": "bass",
+   "events": [],
+   "gm_program": 42,
+   "spatial": [
+    -24,
+    5.4
+   ],
+   "pan": 42
+  },
+  {
+   "name": "Violoncello III",
+   "abbr": "Vc3",
+   "clef": "bass",
+   "events": [],
+   "gm_program": 42,
+   "spatial": [
+    48,
+    6.4
+   ],
+   "pan": 107
+  },
+  {
+   "name": "Violoncello IV",
+   "abbr": "Vc4",
+   "clef": "bass",
+   "events": [],
+   "gm_program": 42,
+   "spatial": [
+    -14,
+    6.8
+   ],
+   "pan": 51
+  },
+  {
+   "name": "Violoncello V",
+   "abbr": "Vc5",
+   "clef": "bass",
+   "events": [],
+   "gm_program": 42,
+   "spatial": [
+    28,
+    7.6
+   ],
+   "pan": 89
+  },
+  {
+   "name": "Contrabbasso I",
+   "abbr": "Cb1",
+   "clef": "bass",
+   "events": [],
+   "gm_program": 43,
+   "spatial": [
+    52,
+    5.6
+   ],
+   "pan": 110
+  },
+  {
+   "name": "Contrabbasso II",
+   "abbr": "Cb2",
+   "clef": "bass",
+   "events": [],
+   "gm_program": 43,
+   "spatial": [
+    70,
+    7.8
+   ],
+   "pan": 124
+  }
+ ],
+ "subject_entries": [],
+ "literal_bars": {
+  "unit": "sixteenth",
+  "bars": {
+   "Violino I (solo)": [
+    "R:2 E5:1 D#5:1 E5:2 E4:2 A4:2 C5:2 B4:2 D5:2",
+    "C5:1 A4:1 E5:1 G#4:1 D5:1 G4:1 C5:1 F#4:1 B4:1 F4:1 A4:1 E4:1 G#4:4",
+    "R:2 A4:1 G#4:1 A4:2 A3:2 E4:2 G4:2 F#4:2 A4:2",
+    "G#4:1 E4:1 B4:1 D#4:1 A4:1 D4:1 G4:1 C#4:1 F#4:1 C4:1 E4:1 B3:1 D#4:4",
+    "R:2 E6:1 D#6:1 E6:2 E5:2 A5:2 C6:2 B5:2 D6:2",
+    "C6:1 A5:1 E6:1 G#5:1 D6:1 G5:1 C6:1 F#5:1 B5:1 F5:1 A5:1 E5:1 G#5:4",
+    "R:2 G4:1 F#4:1 G4:2 G3:2 C4:2 E4:2 D4:2 F4:2",
+    "E4:1 C4:1 G4:1 B3:1 F4:1 Bb3:1 E4:1 A3:1 D4:1 Ab3:1 C4:1 G3:1 B3:4"
+   ],
+   "Violino II": [
+    "R:16",
+    "R:16",
+    "R:4 C5:2 R:2 B4:4 A4:4",
+    "R:16",
+    "E4:2 R:6 C5:4 D5:4",
+    "R:16",
+    "A5:2 R:14",
+    "R:16"
+   ],
+   "Violino III": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violino IV": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violino V": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violino VI": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violino VII": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violino VIII": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violino IX": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Viola I": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Viola II": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Viola III": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Viola IV": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Viola V": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violoncello I": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violoncello II": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violoncello III": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violoncello IV": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Violoncello V": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Contrabbasso I": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ],
+   "Contrabbasso II": [
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16",
+    "R:16"
+   ]
+  },
+  "notes": []
+ },
+ "subject": [
+  {
+   "p": 76,
+   "d": 0.25
+  },
+  {
+   "p": 75,
+   "d": 0.25
+  },
+  {
+   "p": 76,
+   "d": 0.5
+  },
+  {
+   "p": 64,
+   "d": 0.5
+  },
+  {
+   "p": 69,
+   "d": 0.5
+  },
+  {
+   "p": 72,
+   "d": 0.5
+  },
+  {
+   "p": 71,
+   "d": 0.5
+  },
+  {
+   "p": 74,
+   "d": 0.5
+  },
+  {
+   "p": 72,
+   "d": 0.5
+  }
+ ]
+}

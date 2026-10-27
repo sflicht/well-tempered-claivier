@@ -70,10 +70,10 @@
         <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
-            <per-minute>72</per-minute>
+            <per-minute>92</per-minute>
           </metronome>
         </direction-type>
-        <sound tempo="72.0" />
+        <sound tempo="92.0" />
       </direction>
       <direction placement="above">
         <direction-type>
@@ -970,12 +970,21 @@
           <alter>1</alter>
           <octave>5</octave>
         </pitch>
-        <duration>1920</duration>
+        <duration>960</duration>
         <tie type="stop" />
-        <type>whole</type>
+        <type>half</type>
         <notations>
           <tied type="stop" />
         </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter>1</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>960</duration>
+        <type>half</type>
       </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
@@ -1885,11 +1894,7 @@
           <octave>4</octave>
         </pitch>
         <duration>1920</duration>
-        <tie type="start" />
         <type>whole</type>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     <measure number="49">
@@ -1899,11 +1904,7 @@
           <octave>4</octave>
         </pitch>
         <duration>960</duration>
-        <tie type="stop" />
         <type>half</type>
-        <notations>
-          <tied type="stop" />
-        </notations>
       </note>
       <note>
         <rest />
@@ -2660,11 +2661,7 @@
           <octave>3</octave>
         </pitch>
         <duration>1920</duration>
-        <tie type="start" />
         <type>whole</type>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     <measure number="49">
@@ -2674,11 +2671,7 @@
           <octave>3</octave>
         </pitch>
         <duration>960</duration>
-        <tie type="stop" />
         <type>half</type>
-        <notations>
-          <tied type="stop" />
-        </notations>
       </note>
       <note>
         <rest />
@@ -4128,12 +4121,20 @@
           <step>B</step>
           <octave>2</octave>
         </pitch>
-        <duration>1920</duration>
+        <duration>960</duration>
         <tie type="stop" />
-        <type>whole</type>
+        <type>half</type>
         <notations>
           <tied type="stop" />
         </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>960</duration>
+        <type>half</type>
       </note>
     </measure>
     <measure number="50">
@@ -4434,49 +4435,16 @@
     </measure>
     <measure number="19">
       <note>
-        <pitch>
-          <step>E</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <rest />
+        <duration>1920</duration>
+        <type>whole</type>
       </note>
     </measure>
     <measure number="20">
       <note>
-        <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
+        <rest />
+        <duration>1920</duration>
+        <type>whole</type>
       </note>
     </measure>
     <measure number="21">
@@ -4548,8 +4516,16 @@
           <alter>1</alter>
           <octave>5</octave>
         </pitch>
-        <duration>960</duration>
-        <type>half</type>
+        <duration>480</duration>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>480</duration>
+        <type>quarter</type>
       </note>
     </measure>
     <measure number="24">
@@ -4558,9 +4534,26 @@
           <step>B</step>
           <octave>5</octave>
         </pitch>
-        <duration>1920</duration>
+        <duration>480</duration>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>6</octave>
+        </pitch>
+        <duration>480</duration>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>960</duration>
         <tie type="start" />
-        <type>whole</type>
+        <type>half</type>
         <notations>
           <tied type="start" />
         </notations>
@@ -4734,36 +4727,16 @@
     </measure>
     <measure number="39">
       <note>
-        <pitch>
-          <step>B</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
+        <rest />
+        <duration>1920</duration>
+        <type>whole</type>
       </note>
     </measure>
     <measure number="40">
       <note>
-        <pitch>
-          <step>A</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
-      </note>
-      <note>
         <rest />
-        <duration>960</duration>
-        <type>half</type>
+        <duration>1920</duration>
+        <type>whole</type>
       </note>
     </measure>
     <measure number="41">
@@ -4948,12 +4921,20 @@
           <step>E</step>
           <octave>5</octave>
         </pitch>
-        <duration>1920</duration>
+        <duration>960</duration>
         <tie type="stop" />
-        <type>whole</type>
+        <type>half</type>
         <notations>
           <tied type="stop" />
         </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>960</duration>
+        <type>half</type>
       </note>
     </measure>
     <measure number="50">
@@ -5613,11 +5594,9 @@
         </pitch>
         <duration>1920</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>whole</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -5628,11 +5607,7 @@
           <octave>4</octave>
         </pitch>
         <duration>960</duration>
-        <tie type="stop" />
         <type>half</type>
-        <notations>
-          <tied type="stop" />
-        </notations>
       </note>
       <note>
         <rest />
@@ -6298,11 +6273,9 @@
         </pitch>
         <duration>1920</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>whole</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -6314,11 +6287,7 @@
           <octave>4</octave>
         </pitch>
         <duration>960</duration>
-        <tie type="stop" />
         <type>half</type>
-        <notations>
-          <tied type="stop" />
-        </notations>
       </note>
       <note>
         <rest />
@@ -6966,12 +6935,20 @@
           <step>E</step>
           <octave>3</octave>
         </pitch>
-        <duration>1920</duration>
+        <duration>960</duration>
         <tie type="stop" />
-        <type>whole</type>
+        <type>half</type>
         <notations>
           <tied type="stop" />
         </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>960</duration>
+        <type>half</type>
       </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
@@ -7564,12 +7541,20 @@
           <step>E</step>
           <octave>2</octave>
         </pitch>
-        <duration>1920</duration>
+        <duration>960</duration>
         <tie type="stop" />
-        <type>whole</type>
+        <type>half</type>
         <notations>
           <tied type="stop" />
         </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>960</duration>
+        <type>half</type>
       </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>

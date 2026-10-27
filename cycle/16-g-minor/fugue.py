@@ -209,7 +209,7 @@ def section_A(b0):
     T('HS2', 24, W.invert_diatonic(S1, 'D5', GNAT), 'line 1: subject 1 inverted (HW S2)')
     T('HT', 14, 'F3:8 G3:8 A3:4 F3:4 G3:4 A3:4 A3:8 G3:8')
     T('HA', 15, 'D5:4 D5:2 C5:2 Bb4:2 C5:2 C5:4 Bb4:4 G4:2 A4:2 Bb4:2 A4:2 F4:4 R:8 Bb4:2 A4:2 G4:2 F4:2 Eb4:2 D4:2 Eb4:2 F4:2 G4:2 F4:2 Eb4:2 D4:2 C4:4 D4:4 Eb4:4 D4:2 C4:2 D4:8')
-    T('HS1', 26, 'G5:4 A5:4 G5:4 F5:4 F5:4 E5:4 D5:8 Eb5:4 D5:4 C5:4 D5:8 C5:4 D5:4')
+    T('HS1', 26, 'G5:4 A5:4 G5:4 F5:4 F5:4 E5:4 D5:8 Eb5:4 D5:4 C5:4 D5:8 C5:4 Bb4:4')
     T('HS2', 32, 'F5:6 Eb5:2 D5:4 C5:4 Bb4:6 C5:2 A4:4 Bb4:8 A4:4 Bb4:8')
     T('P2', 40, 'Bb2:4 G2:4 Eb2:4 D2:4 F2:8 Bb1:16')
     # A-END
@@ -227,7 +227,28 @@ def section_B(b0):
     T('RS', 12, tr(S2, 7, 4), 'line 2 Vorimitation: answer (RP S)')
     T('P1', 14, cantus(2, -1), 'cantus line 2 (Ped. I, canon dux)')
     T('P2', 21, cantus(2, -2), 'cantus line 2 (Ped. II, canon comes at the octave, 7 beats)')
+    T('RS', 6, oc(S2, 1), 'line 2 Vorimitation: subject 2 (RP S)')
+    T('RT', 9, W.invert_diatonic(S2, 'Bb4', GNAT), 'line 2 Vorimitation: subject 2 inverted (RP T)')
+    T('RA', 12, W.invert_diatonic(S2, 'A4', GNAT), 'line 2: subject 2 inverted (RP A)')
+    T('RBr', 14, oc(tr(S2, 7, 4), -1), 'line 2: answer (RP Bar)')
+    T('RT', 18, S2, 'line 2: subject 2 over the cantus (RP T)')
+    T('RT', 26, S2, 'line 2: subject 2 over the cantus (RP T)')
+    T('RS', 18, 'C5:4 D5:4 F#5:6 E5:2 D5:4 C5:4 C5:4 F5:4 F#5:4 G5:4 E5:4 D5:4 C#5:4 D5:8 C5:4 Bb4:4 A4:4 Bb4:8')
+    T('RA', 18, 'F4:8 A4:8 F4:4 E4:4 F4:4 E4:4 D4:8 G4:4 F4:4 E4:4 E4:4 D4:24')
+    T('RBr', 21, 'F3:4 E3:4 D3:4 C3:4 E3:4 F3:4 G3:4 A3:4 A3:4 F3:4 E3:4 D3:4 Bb2:4 C3:4')
     # B-END
+
+
+def section_C(b0):
+    """The second Stollen, lines 3-4, 'als wir gedachten an Zion, da weinten wir von Herzen': the same
+    melodies as lines 1-2, remembered.  The Oberwerk speaks for the first time; the three manuals answer
+    one another in echoes while Ped. I sings both lines without a break and Ped. II follows nine beats
+    behind."""
+    T = T_(b0)
+    l3 = cantus(3, -1, last=8)
+    T('P1', 10, l3 + ' ' + cantus(4, -1), 'cantus lines 3-4 (Ped. I, canon dux)')
+    T('P2', 19, cantus(3, -2, last=8) + ' ' + cantus(4, -2), 'cantus lines 3-4 (Ped. II, canon comes, 9 beats)')
+    # C-END
 
 
 def summit(s0):
@@ -290,6 +311,7 @@ def summit(s0):
 
 section_A(1)
 section_B(12)
+section_C(21)
 summit(SUM)
 
 

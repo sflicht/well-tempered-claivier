@@ -191,13 +191,24 @@ def default_gate(d):
     return .9 if d <= 1 else (.94 if d <= 3 else .975)
 
 
+def _entry_record(names, bq, e):
+    """subject_entries item; an optional 6th element of an entry tuple is its form
+    (e.g. 'retrograde'), which the critic then checks against the subject read backwards."""
+    vn, b0, off, lab, n = e[:5]
+    rec = {'voice': names.index(vn), 't': float((b0 - 1) * bq + off), 'label': lab}
+    if len(e) > 5 and e[5]:
+        rec['form'] = e[5]
+    return rec
+
+
 def build_score(path, meta, voices, bars, entries=(), subject=None, dynamics=None, accents=True,
                 entry_boost=5, tags=None, extra=None):
     """Write the JSON event score.
 
     voices:   [(name, abbr, clef, base_velocity)]
     bars:     {name: [bar strings]}
-    entries:  [(voice_name, bar_number(1-based), beat_offset_in_quarters, label, n_bars_to_emphasise)]
+    entries:  [(voice_name, bar_number(1-based), beat_offset_in_quarters, label, n_bars_to_emphasise[, form])]
+              form (optional): e.g. 'retrograde' for a cancrizans statement
     subject:  token string of the subject as first stated (for verification)
     dynamics: callable(bar_idx) -> velocity offset (phrase dynamics)
     """
@@ -208,7 +219,7 @@ def build_score(path, meta, voices, bars, entries=(), subject=None, dynamics=Non
     bq = bar_units(meter) / 4
     out_voices = []
     for name, abbr, clef, base in voices:
-        spans = [((b0 - 1) * bq + off, (b0 - 1 + n) * bq + off) for vn, b0, off, lab, n in entries if vn == name]
+        spans = [((b0 - 1) * bq + off, (b0 - 1 + n) * bq + off) for vn, b0, off, lab, n, *_ in entries if vn == name]
 
         def vel(b, u, d, p, base=base, spans=spans):
             v = base + (dynamics(b) if dynamics else 0)
@@ -229,8 +240,7 @@ def build_score(path, meta, voices, bars, entries=(), subject=None, dynamics=Non
                            'events': events_for(bars[name], meter, vel=vel, gate=default_gate)})
     names = [v[0] for v in voices]
     data = {'metadata': meta, 'voices': out_voices,
-            'subject_entries': [{'voice': names.index(vn), 't': float((b0 - 1) * bq + off), 'label': lab}
-                                for vn, b0, off, lab, n in entries],
+            'subject_entries': [_entry_record(names, bq, e) for e in entries],
             'literal_bars': {'unit': 'sixteenth', 'bars': bars, 'notes': tags or []}}
     if subject:
         data['subject'] = [{'p': p, 'd': float(d / 4)} for p, d, sp, tie in map(parse_tok, _tokens(subject)) if p is not None]

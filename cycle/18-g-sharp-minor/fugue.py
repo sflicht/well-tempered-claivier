@@ -119,6 +119,15 @@ CHAIN = [  # (voice, bar, beat, tokens) -- modal transpositions inside the Doria
 for v, b, bt, t in CHAIN:
     theme(v, b, bt, t, 'Summit chain: subject (Dorian) a third higher every two beats', 3)
 
+# The door subject inside the summit (Dorian form: knocks, then E# F# F## G#)
+K_DOR = 'D#4:2 R:2 D#4:2 R:2 D#4:4 E#4:4 F#4:4 F##4:4 G#4:8'
+theme('A3', SUM + 0, 1, 'D#4:2 R:2 D#4:2 R:2 D#4:4 E#4:8 F#4:2 F##4:2 G#4:8', 'Door subject (knocks), Dorian, the rise hurried', 2)
+theme('Br1', SUM + 2, 1, octv(K_DOR, -1), 'Door subject (knocks) in the baritone', 2)
+
+# Phase A free lines (b45-52), added one voice at a time.
+L = SUM
+put('B2', L + 3, 1, 'G#2:8 A#2:8 B2:8 C#3:8 D#3:8 A#2:16 B#2:8 R:16 F#2:8 G#2:8 C#3:8')
+
 
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}

@@ -86,8 +86,9 @@ def realize(degs, tonic, mode='major', octave=4, raise7=()):
     return ' '.join(out)
 
 
-def subj(tonic, mode='major', octave=4, aug=1, inv=False, upto=None):
-    degs = [(-d if inv else d, Fr(u) * aug) for d, u in SUBJ_DEG]
+def subj(tonic, mode='major', octave=4, aug=1, inv=False, upto=None, shift=0):
+    """The subject in a key; shift = diatonic (modal) transposition by scale steps within that key."""
+    degs = [((-d if inv else d) + shift, Fr(u) * aug) for d, u in SUBJ_DEG]
     if upto is not None:
         degs = degs[:upto]
     return realize(degs, tonic, mode, octave)

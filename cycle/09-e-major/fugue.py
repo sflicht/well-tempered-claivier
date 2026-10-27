@@ -134,7 +134,7 @@ put('T1', 21, 1, 'A4:16 R:16 G#4:16 R:16 E4:16')
 put('B1', 19, 1, 'B2:8 R:8')
 theme('B1', 20, 1, 'F#3:8 B3:16 A3:8', 'S head on F#', 2)
 put('B1', 22, 1, 'B3:8 R:8 R:8 B2:24 G#2:16')
-put('S2', 21, 1, 'C#6:24 B5:12 A5:4 G#5:8 B5:32')
+put('S2', 21, 1, 'C#6:24 B5:12 A5:4 G#5:4 A5:4 B5:4 C#6:4 B5:24')   # 9-8 over B7/A, then a quarter-note turn
 put('A2', 19, 1, 'B3:16 E4:16')
 theme('A2', 21, 3, 'C#4:8 F#4:16 E4:8', 'S head on C#', 2)
 put('A2', 23, 3, 'E4:8 R:16 B3:16')
@@ -198,8 +198,9 @@ put('Bar2', 38, 3, 'F#3:8')
 
 # ---- FINAL TUTTI (b39-49): the ancestor moves from the floor to the roof: BWV 878 x2 as the treble cantus
 # firmus, while the head travels on round the ring beneath it: A1, T1, Bar1, T2, S2, A2, T2, and finally S1,
-# where the fugue began.  Coda: a double plagal close (bVII - IV - I), D natural against the D-sharps: Tallis's
-# English false relation.
+# where the fugue began (S2 rests in b39-40 so the cantus's E5 is on top).  Coda: a double plagal close
+# (bVII - IV - I), a Mixolydian D natural six beats after the last D-sharp.  The ring empties in pairs, each
+# pair re-striking its note pp before it leaves.
 theme('S1', 39, 1, W.transpose(W.scale_rhythm(F, 2), 12, 7), 'BWV 878 subject x2 as treble cantus firmus', 7)
 put('S1', 46, 1, 'F#5:16')
 theme('S1', 47, 1, 'E5:8 A5:16 G#5:32', 'S head on E: the circle closes where it began', 2)
