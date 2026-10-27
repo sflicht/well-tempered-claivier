@@ -117,6 +117,9 @@ KEYS = [v[0] for v in VOICES]
 # their dux by the canon transform; COMES_FREE holds their bars after the canon has ended.
 LINES = {k: {} for k in KEYS}
 CANON_SPAN = {}      # canon -> (first dux bar, last dux bar that is copied)
+# The last dux bar of each canon: after it the dux is a free voice, and the comes is free d bars
+# later.  All six canons close inside the summit; canon VI's comes runs on into the quodlibet.
+CANON_END = {'I': 62, 'II': 63, 'III': 62, 'IV': 60, 'V': 60, 'VI': 60}
 COMES_FREE = {}      # canon -> {bar: string}
 ENTRIES = []         # (voice key, bar, beat offset in quarters, label, n bars)
 
@@ -204,8 +207,11 @@ put('Idx', 17, [
     'R:8 A#4:4',                                                 # b57
     'R:12',                                                      # b58
     'F#4:4 R:8',                                                 # b59
+    'G#4:4 R:8',                                                 # b60
+    'R:12',                                                      # b61
+    'R:12',                                                      # b62
 ])
-CANON_SPAN['I'] = (9, 59)
+CANON_SPAN['I'] = (9, 62)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -302,8 +308,11 @@ put('IIIdx', 25, subj(-1) + [
     'F#3:2 A#3:2 C#4:2 B3:1 A#3:1 G#3:2 A#3:2',                  # b57
     'G#3:1 A#3:1 G#3:1 E#3:1 G#3:2 B3:2 C#4:1 B3:1 A#3:1 G#3:1', # b58
     'F#3:1 E#3:1 D#3:1 E#3:1 F#3:2 A#3:2 F#3:2 D#3:2',           # b59
+    'R:2 E#3:1 F#3:1 G#3:2 B3:2 A#3:2 G#3:2',                    # b60
+    'R:12',                                                      # b61
+    'D#3:4 F#3:4 D#3:4',                                         # b62
 ])
-CANON_SPAN['III'] = (25, 59)
+CANON_SPAN['III'] = (25, 62)
 entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
 entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
 
@@ -332,9 +341,12 @@ put('IVdx', 33, subj(1) + [
     'R:12',                                                    # b56 I
     'F#6:3 E#6:1 D#6:3 C#6:1 C#6:4',                             # b57
     'R:12',                                                      # b58
-    'D#6:4 R:8',                                                 # b59
+    'R:12',                                                 # b59
+    'R:8 C#6:4',                                                 # b60
+    'R:8 F#6:4',                                                 # b61
+    'R:12',                                                      # b62
 ])
-CANON_SPAN['IV'] = (33, 59)
+CANON_SPAN['IV'] = (33, 62)
 put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'C#5:4 B4:2 A#4:2 G#4:2 F#4:2',                            # b41
     'B4:4 A#4:2 G#4:2 C#5:4',                                  # b42
@@ -354,6 +366,9 @@ put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'C#3:4 A#2:8',                                               # b57
     'C#3:8 G#2:4',                                               # b58
     'D#3:4 A#2:8',                                               # b59
+    'C#3:4 G#2:8',                                               # b60
+    'F#2:4 C#3:8',                                               # b61
+    'B2:4 F#2:8',                                                # b62
 ])
 entry('Sog', 35, 'Subject (soggetto returns, tenor)')
 entry('IVdx', 33, 'Canon IV dux: subject')
@@ -376,8 +391,11 @@ put('Vdx', 41, subj(1) + [
     'R:4 C#6:2 A#5:2 R:4',                                       # b57
     'R:12',                                                      # b58
     'R:12',                                                      # b59
+    'R:12',                                                      # b60
+    'R:8 A#4:4',                                                 # b61
+    'R:12',                                                      # b62
 ])
-CANON_SPAN['V'] = (41, 59)
+CANON_SPAN['V'] = (41, 62)
 entry('Vdx', 41, 'Canon V dux: subject')
 entry('Vco', 44, 'Canon V comes: subject inverted, a 5th below')
 
@@ -394,8 +412,11 @@ put('VIdx', 49, subj(1) + [
     'A#5:4 F#6:6 E#6:2',                                         # b57
     'C#6:4 B5:2 C#6:2 D#6:2 E#6:2',                              # b58
     'F#6:12',                                                    # b59
+    'C#6:8 G#5:4',                                               # b60
+    'C#6:6 D#6:2 C#6:4',                                         # b61
+    'F#6:8 E#6:2 D#6:2',                                         # b62
 ])
-CANON_SPAN['VI'] = (49, 59)
+CANON_SPAN['VI'] = (49, 62)
 entry('VIdx', 49, 'Canon VI dux: subject')
 entry('VIco', 57, 'Canon VI comes: subject at the 6th below')
 
@@ -404,8 +425,11 @@ entry('VIco', 57, 'Canon VI comes: subject at the 6th below')
 # while the subject enters in stretto, one bar apart: canon VI's comes on A-sharp (bar 57),
 # canon II's dux on G-sharp (58), canon II's comes on A-sharp (59), ...
 put('IIdx', 58, [shift(b, 1) for b in subj(1)] + [
+    'R:12',                                                      # b60
+    'F#5:4 E#5:2 F#5:2 A#5:4',                                   # b61
+    'F#5:4 B5:4 D#5:4',                                          # b62
 ])
-CANON_SPAN['II'] = (17, 59)
+CANON_SPAN['II'] = (17, 62)
 entry('IIdx', 58, 'Stretto: canon II dux, subject on G#')
 entry('IIco', 59, 'Stretto: canon II comes, subject on A#')
 
@@ -425,6 +449,7 @@ def comes_bars(c, nbars):
     out = {}
     if a is None:
         return out
+    z = min(z, CANON_END.get(c, z))
     for b in range(a, z + 1):
         s = LINES[dx].get(b, f'R:{BAR}')
         if b == z:

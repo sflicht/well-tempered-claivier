@@ -18,6 +18,7 @@ lists the final ones (from tools/reduce.py).
 
 Run:  python3 cycle/06-d-minor/fugue.py   -> cycle/06-d-minor/fugue.json
 """
+import json
 import sys
 from pathlib import Path
 
@@ -123,7 +124,7 @@ put(17, T1=G('F4'))
 entry('T1', 17, 'Ground (Tenor I), F major', n=8)
 put(17, S2='A5:4 G#5:4 A5:2 G5:2  F5:2 G5:2 A5:2 Bb5:2 C6:4  G5:8 F5:4~  F5:8 E5:4  R:8 Bb4:4~  Bb4:4 G4:8'
            '  R:4 Bb4:4 C5:4~  C5:4 A4:8')
-put(17, A1='C5:4 D5:4 A4:4~  A4:8 G4:4  G4:12  G4:4 F4:4 G4:2 F4:2  E4:4 F4:8~  F4:6 E4:2 G4:4~'
+put(17, A1='R:4 D5:4 A4:4~  A4:8 G4:4  G4:12  G4:4 F4:4 G4:2 F4:2  E4:4 F4:8~  F4:6 E4:2 G4:4~'
            '  G4:4 E4:4 Ab4:4  A4:4 R:8')
 put(17, T2='C3:4 F3:8  C3:8 G3:4')
 put(19, B='C3:8 G2:4~  G2:4 C3:8  Bb2:4 A2:4 G2:4~  G2:4 C3:4 R:4  C3:8 F2:4~  F2:4 A2:4 F2:4')
@@ -147,7 +148,7 @@ entry('A2', 25, 'Ground (Alto II), A minor', n=8)
 # Soprano I runs in eighths through Var. 4 (a diminution of its first, slower line).
 put(25, S1='C6:2 B5:2 C6:2 E5:2 A5:2 G5:2  F5:2 G5:2 F5:4 E5:2 D5:2  C5:2 D5:2 E5:2 A5:2 F#5:2 E5:2'
            '  D5:2 C5:2 E5:2 A5:2 B5:4  E5:2 G#5:2 A5:2 C6:2 D6:2 B5:2  D6:2 B5:2 D6:2 E6:2 C6:2 A5:2'
-           '  G5:2 E5:2 G#5:2 E5:2 A5:2 C6:2  B5:2 A5:2 C6:2 B5:2 A5:2 E5:2')
+           '  G5:2 F5:2 E5:2 D5:2 E5:2 D5:2  E5:2 D5:2 C5:2 D5:2 E5:2 D5:2')
 put(25, S2='R:4 E5:4 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 G#4:4~  G#4:4 C5:4 R:4  R:4 B4:4 C5:4~'
            '  C5:4 B4:4 C5:4  C5:2 B4:2 A4:8')
 put(25, T1='C4:2 D4:2 E4:4 F4:4  D4:4 E4:8')
@@ -158,23 +159,26 @@ put(25, T2='E3:4 A3:4 F3:4  A3:4 B3:8  C4:4 A3:4 R:4  A3:8 R:4')
 tag(29, 'Subject (Tenor II), under the ground')
 put(29, T2=S('E3'))
 entry('T2', 29, 'Subject (A minor)')
-put(25, B='A2:4 C3:4 D3:4  F2:4 E2:8  A2:4 G2:4 B2:4  D3:4 A2:4 R:4  R:4 F2:4 D3:2 C3:2'
+put(25, B='A2:4 C3:4 D3:4  F2:4 E2:8  A2:4 E2:4 B2:4  D3:4 A2:4 R:4  R:4 F2:4 D3:2 C3:2'
           '  B2:4 E2:4 A2:4~  A2:4 E2:8~  E2:4 A2:2 B2:2 C3:4')
 
 # ===========================================================================
 # VARIATIO 5 (bars 33-40), G minor (the subdominant, the darkest place).
 # Ground in Alto I.  Inversus (Tenor I) and subject (Tenor II) again under the
-# ground; the upper voices sing a slower descant.  The Bass falls silent for a
+# ground; Soprano II runs in eighths and sixteenths above it.  The Bass falls silent for a
 # beat before each VI root so that it does not shadow the ground in octaves.
 # Harmonisation: Gm/Bb, Eb, Cm, D, D7 | G7, A (V of V), Cm, G-Gm, D7/C |
 # D, Ebmaj7, A-half-dim7, Am/C, D, Dsus4-D | Gm/D, Gm, Dm/A (plagal hinge).
 tag(33, 'Var. 5 (G minor): ground in Alto I')
 put(33, A1=G('G4'))
 entry('A1', 33, 'Ground (Alto I), G minor', n=8)
-put(33, S1='G5:6 F5:2 Eb5:4  Eb5:4 D5:4 C5:4  B4:2 C5:2 D5:4 G5:4~  G5:8 F#5:4  F#5:4 G5:8'
+put(33, S1='R:12  R:12  R:12  R:4 G5:4 F#5:4  F#5:4 G5:4 R:4'
            '  E5:4 D5:4 A5:4~  A5:4 F#5:4 G5:2 A5:2  Bb5:2 A5:2 G5:4 D5:4')
-put(33, S2='Bb4:12  C5:2 Bb4:2 A4:8  G4:2 A4:2 B4:4 A4:4  G4:4 D5:8~  D5:4 Bb4:4 C5:4  C5:4 A4:4 D5:4~'
-           '  D5:8 Bb4:4~  Bb4:12')
+# Soprano II is the running voice of Var. 5 (eighths, with sixteenth turns);
+# Soprano I rests for three bars, so the new station (Alto I) is heard.
+put(33, S2='R:4 D5:2 C5:2 Bb4:2 D5:2  Eb5:2 F5:2 D5:1 Eb5:1 D5:2 A4:2 C5:2  B4:2 C5:2 D5:2 G5:2 E5:2 F5:2'
+           '  G5:2 C5:2 D5:2 C5:2 D5:4  D5:2 C5:2 Bb4:2 D5:2 C5:2 A4:2  C5:1 D5:1 C5:1 B4:1 A4:4 D5:4'
+           '  D5:2 E5:2 D5:4 Bb4:2 C5:2  Bb4:2 C5:2 D5:2 C5:2 Bb4:2 C5:2')
 put(36, A2='R:8 A4:4~  A4:4 G4:8  A4:4 R:4 A4:4~  A4:4 C5:4 G4:4~  G4:8 F4:4')
 put(33, T1='D3:4 G3:8~  G3:4 C4:4 A3:4')
 tag(35, 'Inversus (Tenor I)')
@@ -196,11 +200,13 @@ put(33, B='Bb2:4 G2:4 Eb3:4  C3:4 D3:8  G2:8 A2:4  C3:4 G2:4 C3:4  R:4 Eb2:8  G2
 tag(41, 'Var. 6 (D minor, the return): ground in Soprano II')
 put(41, S2=G('D5').rsplit(' ', 1)[0] + ' D4:4 R:4')  # last note cut short: Soprano II breathes before the summit
 entry('S2', 41, 'Ground (Soprano II)', n=8)
-put(41, S1='F5:4 A5:4 Bb5:4~  Bb5:4 A5:4 E5:4')
+put(41, S1='R:4 A5:4 Bb5:4~  Bb5:4 A5:4 E5:4')
 tag(43, 'Inversus (Soprano I) over the ground')
 put(43, S1=I('A5') + '  E5:2 F5:2 G5:4 F5:2 G5:2  A5:4 Bb5:4 G5:4')
 entry('S1', 43, 'Inversus')
-put(41, A2='F4:4 E4:4 F4:4  Bb4:2 A4:2 G4:8  A4:4 F4:4 R:4')
+# Alto II is the running voice of Var. 6.
+put(41, A2='F4:2 E4:2 D4:2 E4:2 F4:2 A4:2  Bb4:2 A4:2 G4:2 E4:2 A4:2 G4:2  A4:2 F4:2 E4:2 D4:2 E4:2 F4:2'
+           '  R:2 E4:2 F#4:2 E4:2 G4:2 D4:2  C#4:2 D4:2 F4:2 E4:2 C4:2 D4:2  E4:2 D4:2 E4:2 G4:2 F4:2 E4:2')
 put(47, A1='R:4 C#5:4 D5:4~  D5:4 F5:4 E5:4')
 put(41, T1='A3:8 D4:4~  D4:4 A3:4 Bb3:4  C4:4 A3:4 D4:4  D4:8 C#4:4')
 tag(45, 'Subject (Tenor I) under the ground')
@@ -217,7 +223,7 @@ put(41, B='D3:8 Bb2:4  G2:4 A2:8  F2:4 A2:4 E2:4  G2:4 D3:4 R:4  R:4 Bb2:4 C3:4 
 # SUMMIT (bars 49-64).  The ground sounds at three speeds at once (a prolation
 # of the lament): augmented in the Bass (16 bars), at normal speed and at the
 # dominant in Soprano I (bars 53-60), and at double speed as the inversus in
-# Alto I (bars 50-53).  Over the long dominant at its end the subject climbs in
+# Alto I at the E level (bars 51-54): all three sound together in bars 53-54.  Over the long dominant at its end the subject climbs in
 # a three-voice stretto (G, A and E levels), and the bass resolves to D while
 # the answer touches F#: a tierce de Picardie at the arrival (bar 63).
 tag(49, 'Summit: ground augmented in the Bass')
@@ -228,23 +234,27 @@ tag(53, 'Ground at the dominant in Soprano I, over its own augmentation')
 put(53, S1=G('A5'))
 entry('S1', 53, 'Ground in soprano (at the dominant)', n=8)
 put(61, S1='E5:8 C#6:4  D6:12  C#6:4 D6:8  B5:4 G5:4 A5:4  G#5:4 E5:8')
-put(49, S2='D5:2 C5:2 B4:4 D5:4  D5:4 C#5:4 B4:4  C#5:4 D5:4 E5:4~  E5:8 A4:4~'
-           '  A4:4 B4:4 C5:4~  C5:4 E5:8  D5:8 A4:4~  A4:8 G4:4~  G4:4 F4:8~  F4:4 E4:8'
-           '  E4:8 A4:4~  A4:4 F4:4 E4:4  R:12  R:4 F5:4 G5:4  E5:4 A5:8  G5:4 E5:8~  E5:4 D5:2 C#5:6'
+# Soprano II runs into the summit (eighths, then sixteenths), then falls silent
+# for two bars so that Soprano I's ground at the dominant (b. 53) enters exposed.
+put(49, S2='D5:2 E5:2 D5:2 G4:2 A4:2 D5:2  A4:2 B4:2 C#5:2 B4:2 G#4:2 B4:2'
+           '  C#5:1 B4:1 A4:1 B4:1 C#5:2 B4:2 A4:1 G#4:1 A4:1 B4:1  A4:2 F#4:2 E4:2 G4:2 E4:4'
+           '  R:12  R:12  D5:8 A4:4~  A4:8 G4:4~  G4:4 F4:8~  F4:4 E4:8'
+           '  E4:4 C#5:4 A4:4~  A4:4 F4:4 E4:4  R:12  R:4 F5:4 G5:4  E5:4 A5:8  G5:4 E5:8~  E5:4 D5:2 C#5:6'
            '  R:12  R:12  R:12  R:8 D5:4~  D5:12')
-put(49, A1='R:12  R:12  R:12')
+put(49, A1='R:12  R:12')
 tag(52, 'Inversus (Alto I) at the E level: the ground at double speed; three speeds at once, 53-55')
-put(52, A1=I('E5') + '  R:12'
+put(51, A1=I('E5') + '  R:12  R:12'
                     '  E4:4 D4:2 C4:2 Bb3:4~  Bb3:4 C4:8'
                     '  C#4:8 C4:4~  C4:12  C4:4 D4:4 E4:4~  E4:4 F4:4 E4:4  A4:4 F4:4 A4:4'
                     '  B4:4 E4:8  R:8 G4:4  F4:4 G4:8~  G4:4 A4:8  Bb4:8 A4:4  C5:8 B4:4  A4:12')
-entry('A1', 52, 'Inversus (Alto I), summit')
+entry('A1', 51, 'Inversus (Alto I), summit')
 tag(58, 'Stretto over the dominant: subject (Alto II)')
 put(58, A2=S('G4') + '  E5:4 A4:8  G4:4 A4:4 D5:4~  D5:4 C#5:8  R:4 A4:8  R:12'
                     '  R:8 F#4:4  G4:8 F#4:4  F#4:8 G4:4  F#4:12')
 entry('A2', 58, 'Subject (G level), stretto')
 put(49, T1='F4:4 D4:4 F4:4~  F4:4 E4:4 B3:4  A3:12  A3:8 E3:4  C4:2 Bb3:2 A3:4 E4:4  A3:4 B3:8'
-           '  G3:4 D4:4 C4:4~  C4:4 B3:4 A3:4~  A3:8 F3:4  G3:12  A3:8 E3:4  G#3:4 F3:4')
+           '  G3:2 A3:2 Bb3:2 C4:2 D4:2 C4:2  D4:2 C4:2 B3:2 C4:2 A3:2 G3:2  A3:2 B3:2 A3:2 G3:2 F3:2 A3:2'
+           '  G3:2 A3:2 E3:2 G3:2 E3:2 G3:2  A3:2 B3:2 G3:2 A3:2 E3:4')  # Tenor I runs, bars 55-59
 tag(60, 'Subject (Tenor I) at home pitch over the dominant pedal')
 put(60, T1='R:8 ' + S('A3') + '  D4:4  E4:4 E4:2 D4:2 C#4:4  D4:4 C#4:4 D4:4'
                      '  D4:2 C4:2 B3:4 A3:4  D4:4 C#4:4 A3:4  A3:8 D4:4~  D4:12')
@@ -263,14 +273,13 @@ put(66, S1='A4:8 Bb4:4 B4:4 C5:2 C#5:2 D5:6 C#5:2 E5:4 D5:12 A5:16')
 entry('S1', 66, 'Subject (coda)')
 
 # ---------------------------------------------------------------------------
-BPM = 66
+BPM = 76
 
-# Tempo (quarters; bar b starts at 3*(b-1)).  The passacaglia broadens into its
-# summit (bars 45-49), presses on a little when the ground enters in the soprano
-# (b53), broadens again into the Picardy arrival (b62-63), and breathes at the end.
-TEMPO_MAP = [[0, BPM], [132, BPM], [144, 58, 'ramp'], [156, 61, 'ramp'],
-             [183, 61], [189, 54, 'ramp'], [195, 58, 'ramp'],
-             [NBARS * 3 - 6, 58], [NBARS * 3, round(58 * 0.75), 'ramp']]
+# Tempo (quarters; bar b starts at 3*(b-1)).  One tempo through the summit
+# (second review: no broadening into it); only the coda slows, and the last
+# six quarters breathe.
+TEMPO_MAP = [[0, BPM], [192, BPM], [198, 68, 'ramp'], [NBARS * 3 - 6, 68],
+             [NBARS * 3, 51, 'ramp']]
 
 # Phrase dynamics (velocity offsets), piecewise linear between (bar, offset) points.
 _DYN = [(1, -7), (8, -3), (9, -3), (16, 0), (17, 1), (24, 1), (25, 1), (32, 3),
@@ -299,8 +308,22 @@ def build(path=HERE / 'fugue.json'):
               ('Alto I', 'A1', 'treble', 69), ('Alto II', 'A2', 'treble', 69),
               ('Tenor I', 'T1', 'treble_8', 69), ('Tenor II', 'T2', 'bass', 70),
               ('Bass', 'B', 'bass', 74)]
-    return build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ,
+    data = build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ,
                        dynamics=DYN, tags=TAGS)
+    # Voicing (velocity only, no notes): the ground voice of each station is
+    # brought out (+12 over its base, the entry boost included) and the others
+    # are set back by 3 while it sounds, so the migrating ground can be followed.
+    bq = 3
+    for vn, b0, off, lab, n in ENTRIES:
+        if not lab.startswith('Ground'):
+            continue
+        lo, hi = (b0 - 1) * bq + off, (b0 - 1 + n) * bq + off
+        for v in data['voices']:
+            for e in v['events']:
+                if lo <= e['t'] < hi:
+                    e['v'] = max(24, min(118, e['v'] + (7 if v['name'] == vn else -3)))
+    Path(path).write_text(json.dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

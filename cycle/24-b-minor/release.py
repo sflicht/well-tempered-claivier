@@ -35,7 +35,7 @@ def release(sc, b0=52):
     P('A2', r(0), 1, "F#4:12")
     P('A3', r(0), 1, "D#5:8")
     P('A4', r(0), 1, "B4:4")
-    P('A5', r(0), 1, "B3:8 C#4:4 D#4:4"); P('A5', r(1), 1, "D#4:12 C#4:4")
+    P('A5', r(0), 1, "B3:8 C#4:4 D#4:4"); P('A5', r(1), 1, "D#4:16")
     P('T1', r(0), 1, "B3:12")
     P('T2', r(0), 1, "F#3:4")
     P('T4', r(0), 1, "D#4:4")
@@ -69,14 +69,25 @@ def release(sc, b0=52):
     #      and the bass on 1, then two or three voices on every beat, each from a neighbour note
     P('T1', r(8), 1, "B4:32"); P('A3', r(8), 1, "B4:32"); P('Br2', r(8), 1, "D#3:32")
     P('S1', r(8), 1, "F#6:32"); P('B1', r(8), 1, "F#2:32"); P('A2', r(8), 1, "E5:4 D#5:28")
+    # two inner lines that sing through the whole release and arrive in the last chord by step:
+    # Tenor II and Alto IV hold the tonic as an inner pedal (resting in the F#7 bars of the canon), then move with the wedge
+    for k, toks in enumerate(["B3:16", "B3:16", "R:8 B3:4 C#4:4", "B3:16", "R:8 B3:4 A#3:4",
+                              "B3:16", "A3:8 C4:8~", "C4:4 B3:12~", "B3:16"], start=1):
+        P('T2', r(k), 1, toks)
+    for k, toks in enumerate(["B4:16", "B4:16", "R:8 B4:4", "B4:16", "R:8 B4:4",
+                              "B4:16", "C#5:16", "B4:16~", "B4:16"], start=1):
+        P('A4', r(k), 1, toks)
+    for k, toks in enumerate(["G3:8 E3:8", "C#3:8 F#3:8", "F#3:16~", "F#3:16"], start=6):
+        P('Br3', r(k), 1, toks)          # Baritone III joins for the wedge
+    P('T4', r(7), 3, "E4:8"); P('T4', r(8), 1, "F#4:16~"); P('T4', r(9), 1, "F#4:16")
     arrive = [  # (voice, bar offset, beat of the neighbour note, neighbour, final); it resolves one beat later.
         # at every beat one line falls into the chord and one or two rise into it (contrary motion)
         ('S3', 8, 1, 'C#6', 'B5'), ('Br4', 8, 1, 'A#2', 'B2'),
         ('T3', 8, 2, 'E4', 'D#4'), ('S4', 8, 2, 'E#5', 'F#5'), ('B2', 8, 2, 'C#3', 'B2'),
         ('S2', 8, 3, 'E6', 'D#6'), ('A5', 8, 3, 'E#4', 'F#4'), ('Br5', 8, 3, 'C#3', 'D#3'),
-        ('A1', 8, 4, 'C#5', 'B4'), ('T2', 8, 4, 'E3', 'F#3'), ('B3', 8, 4, 'C#2', 'D#2'),
-        ('S5', 9, 1, 'E5', 'D#5'), ('T4', 9, 1, 'A#3', 'B3'), ('B4', 9, 1, 'C#2', 'B1'),
-        ('A4', 9, 2, 'E4', 'D#4'), ('Br1', 9, 2, 'A#3', 'B3'), ('Br3', 9, 2, 'E#3', 'F#3'),
+        ('A1', 8, 4, 'C#5', 'B4'), ('B3', 8, 4, 'C#2', 'D#2'),
+        ('S5', 9, 1, 'E5', 'D#5'), ('B4', 9, 1, 'C#2', 'B1'),
+        ('Br1', 9, 2, 'A#3', 'B3'),
         ('T5', 9, 3, 'E#4', 'F#4')]
     for v, k, beat, a, f in arrive:
         left = 16 * (10 - (r(k) - b0)) - 4 * (beat - 1)      # sixteenths to the end of the piece

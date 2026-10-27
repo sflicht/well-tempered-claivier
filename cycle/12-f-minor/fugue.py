@@ -261,6 +261,11 @@ put('AII', P3 + 14, 3, 'C5:8')
 seq('AII', P3 + 15, 'C5:16', 'B4:16', 'C5:8 R:8')
 put('SI', P3 + 14, 3, 'C6:8~')
 seq('SI', P3 + 15, 'C6:16', 'Ab5:16', 'Ab5:4 G5:4 R:8')
+# More voices gather on the lament: Soprano II A-flat, its 6-5 over the dominant, A-flat, F; Tenor II holds C
+# through the dominant; Baritone II C, F into the diminished seventh.
+put('SII', P3 + 14, 3, 'Ab5:12 G5:4 Ab5:8 F5:8')
+put('TII', P3 + 14, 3, 'C4:12')
+put('BrII', P3 + 15, 3, 'C3:8 F3:8')
 
 # ================================================================ IV. THE QUADRUPLE COMBINATION (composed first)
 # Nottebohm's combination, found here by search over all placements of the main theme against Bach's own
@@ -291,6 +296,10 @@ seq('AII', Q + 4, 'F4:8 Ab4:4 G4:4', 'G4:4 C5:12', 'C5:8 R:8')
 # cadence bar (a 9 over the tonic) and resolved to F.
 seq('TIII', Q + 4, 'Bb3:12 Db4:4~', 'Db4:4 C4:8 G3:4~')
 put('TIII', Q + 6, 1, 'G3:4 Ab3:4')
+# Baritone II: the main theme's arrival is held from below (C, then A-flat as the bass falls to E-flat), and C
+# again over the A-flat of S1.
+put('BrII', Q, 1, 'C3:20 Ab2:12')
+put('BrII', Q + 3, 1, 'C3:16')
 # Soprano I after the main theme: G over the dominant, F at the cadence.
 put('SI', Q + 4, 3, 'Bb5:4 Ab5:4 G5:16 F5:8')
 
@@ -317,6 +326,13 @@ put('TI', M, 3, 'Eb4:8')
 seq('TI', M + 1, 'C4:12 Bb3:4~', 'Bb3:16~', 'Bb3:4 Ab3:4 Bb3:8', 'Ab3:8 G3:8~', 'G3:4 Ab3:8 Bb3:4', 'F3:8 R:8')
 seq('AIII', M + 1, 'F4:8 Ab4:8~', 'Ab4:8 C5:8', 'C5:8 Bb4:8', 'Eb5:4 F5:4 G5:8', 'Ab5:8 F5:8~', 'F5:8 R:8')
 
+# Tenor III: A-flat, then D-flat held as a suspension over the dominant (resolving to C after the main theme's
+# own D-flat-C has passed).
+put('TIII', M + 1, 1, 'Ab3:16 Db4:12 C4:12')
+# The mirror's cadence (b71.3-72): Soprano III holds C over the dominant and falls to B-flat; Alto II A-flat,
+# D-flat (iv7 - ii-half-dim) before they rest for the entries of the finale.
+put('SIII', M + 4, 3, 'C5:16 Bb4:8')
+put('AII', M + 5, 1, 'Ab4:8 Db5:8')
 
 # ================================================================ IV c. STRETTO FINALE over S1 in augmentation, and coda
 # S1 in augmentation (twice as slow) is the bass of the whole finale: its dominant C (b80.3-82.3) is the last

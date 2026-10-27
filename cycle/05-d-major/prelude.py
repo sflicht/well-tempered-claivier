@@ -4,13 +4,13 @@
 Right hand: continuous sixteenths that carry a written top line (stepwise
 turns around the melody notes, after the figure of BWV 850's prelude), mostly
 between A4 and D6. Left hand: a walking bass in eighths (bass note + upper
-note), except in the climb (bb. 21-32), where it doubles its speed.
+note), except in the climb (bb. 21-30), where it doubles its speed.
 
-Form (41 bars): A 1-6 (D) | B 7-14 (B minor region) | C 15-20 (development:
+Form (39 bars): A 1-6 (D) | B 7-14 (B minor region) | C 15-20 (development:
 the fugue's tattoo, passed between the hands, over the fugue's Episode-1
-progression) | D 21-32 (7th chain, dominant climb, deceptive cadence,
-G#o7, arrival - the v1 climax arc, re-registered) | E 33-38 (return over the
-fugue subject's head in the bass, C natural and B flat colours) | F 39-41
+progression) | D 21-30 (7th chain, dominant climb, deceptive cadence,
+G#o7, arrival - the v1 climax arc, re-registered) | E 31-36 (return over the
+fugue subject's head in the bass, C natural and B flat colours) | F 37-39
 (improvisatory flourish; the fugue subject in diminution; attacca).
 
 Run:  python3 cycle/05-d-major/prelude.py  -> cycle/05-d-major/prelude.json
@@ -68,7 +68,7 @@ bar('F#5 D5 A5 F#5  D6 C#6 B5 A5  B5 A5 G5 F#5  D#5 F#5 A5 B5', 'A2:4 D3:2 D3:1 
 bar('G5:4 B5:2 B5:1 B5:1  E5:4 G5:2 G5:1 G5:1', 'E2:1 G2:1 B2:1 E3:1 G3:1 E3:1 B2:1 G2:1 C#3:1 E3:1 G3:1 E3:1 C#3:1 G3:1 E3:1 C#3:1',
     'Em - C#o7 (tattoo back in the right hand)')
 bar('F#5 E5 F#5 G#5  A5 C#6 B5 A5  G#5 F#5 E#5 F#5  G#5 B5 A5 G#5', 'F#2:4 C#3:2 C#3:1 C#3:1 E#2:4 C#2:2 C#2:1 C#2:1', 'F#m - C#7')
-# ---- D (21-32) the climb: v1's arc (7th chain, A pedal, deceptive Bm, G#o7,
+# ---- D (21-30) the climb: v1's arc (7th chain, A pedal, deceptive Bm, G#o7,
 #      A7 falling, arrival on D), right hand an octave lower than v1.
 bar('F#5 A5 C#6 E6  E6 C#6 A5 F#5  A5 C#6 E6 C#6  A5 E5 C#5 A4',
     'F#2:1 C#3:1 E3:1 A3:1 C#3:1 A2:1 C#3:1 E3:1 F#2:1 C#3:1 A3:1 C#3:1 F#2:1 E3:1 A3:1 C#3:1', 'D: 7th chain F#m7')
@@ -78,12 +78,9 @@ bar('G5 E5 B4 G4  B4 G4 E4 G4  D5 B4 G4 B4  G5 B4 D5 B4',
     'E2:1 B2:1 D3:1 G2:1 E2:1 B2:1 E3:1 B2:1 B2:1 D3:1 G2:1 D3:1 E2:1 G2:1 B2:1 D3:1', 'Em7')
 bar('E5 C#5 A4 G4  C#5 A4 G4 E4  A4 G4 E4 C#5  G5 E5 C#5 A4',
     'A1:1 E2:1 G2:1 C#3:1 A1:1 E2:1 A2:1 E2:1 A1:1 C#2:1 E2:1 G2:1 E2:1 G2:1 C#3:1 E2:1', 'A7')
-bar('F#4 A4 D5 A4  F#4 A4 D5 F#5  C#5 A4 E5 C#5  A4 C#5 G5 E5',
+bar('F#4 A4 D5 A4  F#4 A4 D5 F#5  C#5 A4 E5 C#5  A4 C#5 G5 C#5',
     'A2:1 D3:1 F#3:1 D3:1 A2:1 D3:1 F#3:1 A2:1 A2:1 E3:1 G3:1 E3:1 A2:1 E3:1 C#3:1 G2:1', 'A pedal: D/A - A7')
-bar('E4 G4 C#5 E5  C#5 G5 E5 C#5  A4 E5 C#5 G5  E5 C#5 A4 C#5',
-    'A2:1 E3:1 A3:1 E3:1 A2:1 E3:1 A3:1 E3:1 A2:1 C#3:1 E3:1 A3:1 A2:1 E3:1 C#3:1 E3:1', 'A7')
-bar('A4 D5 F#5 A5  F#5 D5 A4 F#4  A4 D5 F#5 A5  F#5 A5 D6 A5',
-    'A2:1 F#3:1 A3:1 D3:1 A2:1 D3:1 F#3:1 A3:1 A2:1 F#3:1 D3:1 F#3:1 A2:1 D3:1 F#3:1 A3:1', 'D/A, climbing')
+# (second review: two further bars of A7 - D/A were cut here; the climb now rises straight into the A7 at the top)
 bar('E5 G5 C#6 G5  E5 G5 B5 G5  E5 G5 C#6 E6  C#6 G5 E5 C#5',
     'A2:1 E3:1 G3:1 E3:1 A2:1 C#3:1 G3:1 C#3:1 A2:1 E3:1 G3:1 A3:1 A2:1 E3:1 G3:1 E3:1', 'A7 at the top')
 bar('D5 F#5 B5 F#5  D5 F#5 B5 D6  B5 F#5 D5 B4  F#5 D5 B4 F#4',
@@ -94,14 +91,14 @@ bar('E6 C#6 A5 G5  E5 C#5 A4 G4  C#5 A4 E4 G4  C#5 E5 A5 C#6',
     'A2:1 E3:1 A3:1 C#3:1 A2:1 E3:1 G3:1 C#3:1 A2:1 C#3:1 G3:1 E3:1 A2:1 E3:1 G3:1 A3:1', 'apex E6, falling A7')
 bar('D6 A5 F#5 A5  D6 F#6 D6 A5  F#5 D5 A4 D5  F#5 A5 D6 A5',
     'D2:2 F#2:2 D3:2 F#3:2 A2:2 D3:2 D2:2 F#3:2', 'ARRIVAL on D')
-# ---- E (33-38) return over the fugue subject's head in the bass; C natural and B flat
+# ---- E (31-36) return over the fugue subject's head in the bass; C natural and B flat
 bar('F#5 E5 D5 E5  F#5 A5 G5 F#5  E5 D5 C#5 D5  A4 D5 F#5 A5', 'A2:4 D3:2 D3:1 D3:1 F#3:2 F#3:1 F#3:1 A3:4', 'E: return, the subject head in the bass')
 bar('B5 A5 G5 A5  B5 G5 D5 G5  A5 G5 F#5 G5  A5 F#5 D5 F#5', 'G2 D3 B2 G3 F#2 D3 D3 A3', 'IV - I6')
 bar('E5 F#5 G5 B5  E6 D6 C#6 B5  A5 G5 F#5 E5  C#5 E5 A5 G5', 'E2:4 G2:2 G2:1 G2:1 A2:4 C#3:4', 'ii - V7')
 bar('F#5 E5 D5 E5  F#5 A5 D6 A5  C6 B5 A5 G5  F#5 A5 C6 A5', 'D3:4 A2:2 A2:1 A2:1 F#2:4 D2:2 D2:1 D2:1', 'I - I7 (C natural)')
 bar('B5 A5 G5 A5  B5 D6 B5 G5  Bb5 A5 G5 A5  Bb5 D6 Bb5 G5', 'G2 D3 B2 D3 G2 D3 G2 Bb2', 'IV - iv (B flat)')
 bar('A5 G5 F#5 G5  A5 F#5 D5 F#5  E5 F#5 G5 E5  C#5 E5 G5 A5', 'A2 D3 F#3 A3 A2 G3 C#3 E3', 'I6/4 - V7')
-# ---- F (39-41) improvisatory flourish (rit.), then the fugue subject in diminution: attacca
+# ---- F (37-39) improvisatory flourish (rit.), then the fugue subject in diminution: attacca
 bar('E6:0.5 D6:0.5 C#6:0.5 B5:0.5 A5:0.5 G5:0.5 F#5:0.5 E5:0.5  D5:0.5 C#5:0.5 B4:0.5 A4:0.5 G4:0.5 A4:0.5 B4:0.5 C#5:0.5 '
     'D5:0.5 E5:0.5 F#5:0.5 G5:0.5 A5:0.5 B5:0.5 C#6:0.5 D6:0.5  E6:2 C#6:1 A5:1',
     'A2:8 A2:8', 'F: flourish over the dominant')
@@ -111,12 +108,13 @@ bar('D5:16', 'D2:16', 'attacca')
 
 BPM = 104
 NB = len(U)
+FL = 1 + next(i for i, t in enumerate(TAGS) if t.startswith('F:'))   # flourish bar
 
 
 def DYN(b):
     bar_ = b + 1
-    for lo, hi, v in [(1, 6, 0), (7, 12, -3), (13, 14, -1), (15, 20, 1), (21, 24, 3), (25, 28, 5),
-                      (29, 31, 9), (32, 32, 10), (33, 38, 0), (39, 40, 2), (41, 41, -2)]:
+    for lo, hi, v in [(1, 6, 0), (7, 12, -3), (13, 14, -1), (15, 20, 1), (21, 24, 3), (25, 26, 5),
+                      (27, 29, 9), (30, 30, 10), (31, 36, 0), (37, 38, 2), (39, 39, -2)]:
         if lo <= bar_ <= hi:
             return v
     return 0
@@ -128,8 +126,8 @@ if __name__ == '__main__':
             'composer': 'Composed with Claude / Sam', 'instrument': 'Piano', 'key': 'D', 'mode': 'major',
             'meter': [4, 4], 'bpm': BPM, 'tempo_text': 'Allegro; bright', 'movement_number': 5,
             'piece_type': 'prelude', 'edition': 'third',
-            # the flourish (b39) broadens, the diminished subject is played a tempo-ish, the end breathes
-            'tempo_map': [[(39 - 1) * 4, BPM], [(40 - 1) * 4, 76, 'ramp'], [(40 - 1) * 4 + 0.01, 92],
+            # the flourish (b37) broadens, the diminished subject is played a tempo-ish, the end breathes
+            'tempo_map': [[(FL - 1) * 4, BPM], [FL * 4, 76, 'ramp'], [FL * 4 + 0.01, 92],
                           [end - 6, 92], [end, 70, 'ramp']],
             'markers': [{'t': (i) * 4, 'label': t} for i, t in enumerate(TAGS) if t.split(':')[0] in 'ABCDEF' and ':' in t]}
     voices = [('Right hand', 'R.H.', 'treble', 76), ('Left hand', 'L.H.', 'bass', 70)]

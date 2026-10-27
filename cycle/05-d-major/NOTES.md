@@ -6,12 +6,12 @@
 
 **Not listened to.** Everything below comes from the score and the checkers. How it sounds is Sam's call.
 
-**Durations:** prelude 1:39, fugue 2:06. Both include a final ritardando (`tempo_map`: the last 6 quarters slow to about 75%). The prelude's flourish also broadens.
+**Durations:** prelude 1:34, fugue 2:06. Both include a final ritardando (`tempo_map`: the last 6 quarters slow to about 75%). The prelude's flourish also broadens.
 
 **What was kept:**
 - the subject (A–D–D–D–F#–F#–F#–A, tail);
 - Episode 1 of the fugue, with one tenor note changed: b. 16.3, C#4→E4, to avoid octaves into b. 17;
-- the prelude's climax arc (now bb. 21–32).
+- the prelude's climax arc (now bb. 21–30).
 
 The previous versions remain under `work/wtc-work/pairV/`. The review that drives this edition is `REVIEW.md`.
 
@@ -101,16 +101,16 @@ The previous versions remain under `work/wtc-work/pairV/`. The review that drive
 | 47–50 | Summit | S subject ×4 begins. T subject + Br **BWV 850 subject** (b. 47); T answer + Br answer ×2 (b. 49) |
 | 51–55 | Tonic pedal | A subject ×½ (b. 51); C natural (b. 52), B♭ (b. 53), drums (b. 54); final D |
 
-### Prelude: 41 bars, q=104
+### Prelude: 39 bars, q=104
 
 | Bars | Section |
 |---|---|
 | 1–6 | A: D |
 | 7–14 | B: B minor region, back to D |
 | 15–20 | C: tattoo development |
-| 21–32 | D: 7th chain, A pedal climb, deceptive Bm, G#°7, falling A7, arrival |
-| 33–38 | E: return over the subject head, C natural / B♭ |
-| 39–41 | F: flourish, subject in diminution, attacca |
+| 21–30 | D: 7th chain, A pedal climb, deceptive Bm, G#°7, falling A7, arrival |
+| 31–36 | E: return over the subject head, C natural / B♭ |
+| 37–39 | F: flourish, subject in diminution, attacca |
 
 ## Devices
 
@@ -188,7 +188,7 @@ The last five rows come from scratch scripts, not `critic.py`.
 
 **The two unresolved prelude dissonances:**
 - b. 19.4, G5 over C#°7: it resolves to F#5 at b. 20.1 as the left hand moves.
-- b. 30.3: the arpeggiated G#°7 of v1's climax, resolving into A7.
+- b. 28.3 (b. 30.3 before the second-review cut): the arpeggiated G#°7 of v1's climax, resolving into A7.
 
 ## Weak spots (honest)
 
@@ -199,7 +199,42 @@ The last five rows come from scratch scripts, not `critic.py`.
 - **Modified subject forms.** The minor-key and modal entries change the subject's intervals (the critic reports 10/18 interval matches for minor forms). The ×2 answer's last bar is bent to G natural over the tonic pedal.
 - **Tripled final chord.** D is tripled at bb. 54.3–55.
 - **Prelude hand gap.** The distance between the hands is still large: mean 22 semitones, against 16 in BWV 850's prelude. The RH now stays at or below D6, but the LH bass line sits low.
-- **Prelude tritones.** The climb (bb. 24–31) keeps v1's arpeggiated V7 figures, hence the tritone-leap count.
-- **Prelude return.** Bar 33 reuses bar 1's RH over the new bass.
+- **Prelude tritones.** The climb (bb. 24–29) keeps v1's arpeggiated V7 figures, hence the tritone-leap count.
+- **Prelude return.** Bar 31 reuses bar 1's RH over the new bass.
 
 **Doublings (follow-up).** `bad_doublings` 9 → 1. I re-voiced free notes at bb. 16.4, 24.4, 38.3, 39.3, 42.3, 44.1, 45.2 and 49.2 to a root, a fifth, a rest or a passing note. The one that remains, b. 53.1, is the tonic-pedal D2 against the soprano's ×4 D6 over G–B♭–E (the minor-iv colour); the critic reads that chord as Eø7 with its seventh doubled. Other checks are unchanged: parallels 0, beat_parallels 0, unresolved 0, tripled 9.0%, `low_register_seconds` 9.
+
+## Second review
+
+`REVIEW-2.md` asked for five changes. All five are made:
+
+1. **Stretto II inversion on the half-beat (fugue, bb. 32–34).** The baritone's inversion now enters at 32.2½ (`R:6`, was `R:7` at 32.2¾), so its tattoo sixteenths line up with the alto's instead of slipping a sixteenth behind. Re-fit: the baritone's B3 at 34.2 now steps to A3, and the soprano takes C6 at 34.2 to avoid a fifth with it.
+2. **Cascade, bb. 42–45.**
+   - Each head bar is 8 velocity steps louder (S b. 39, A 40, T 41, Br 42, B 43, Cb 44). This is done as a velocity pass in `fugue.py`'s `build()`.
+   - The baritone's A entry stops on A3 at 43.4 and rests through b. 44 (`A_SUBJ_MIX_CUT`). That removes the Br/B unison at 43.3½ and the crossing at 43.4. The critic's theme check now reads that entry as 12/18, because its tail is cut.
+   - A new doubled F# at 44.2 is fixed: the soprano now moves F#6–D6–E6–D6 in b. 44 instead of holding F#6. The critic had read the chord as A°7 with its seventh doubled.
+   - The ghost tweak in b. 47 is also done: the BWV 850 baritone is +10, the tenor is −6.
+3. **The bass voice gets its own line where it used to double.**
+   - Episode 1 (bb. 13–16): a walking eighth-note line (D–E–F#–D–B–C#–D–B …) replaces the old held roots. It is checked against the falling-thirds canon: parallels 0, beat-to-beat 0.
+   - Stretto I (b. 25): the last eighth before the bass's inversion is now A3, which steps into the entry.
+   - Summit (bb. 50–53): the old quarter-note roots under the pedal are replaced. The new line is E–F#–E–C# under the dominant, with C# rising to D at b. 51. Then comes an arpeggio (D–F#–A–G), and a chromatic fall B2–B♭2–A2–G2 into the minor iv in bb. 52–53. Over the D2 pedal the line avoids C, C# and E below G3, so it adds no low-register seconds or sevenths.
+   - Result: the bass's pitch-class doubling falls from 67% to 60% of its sounding time. For comparison, the other low voices are at 56% (Br) and 59% (Cb). Its sounding time is unchanged at 44%, because it still rests in bb. 28–38 and 47–49 as before.
+4. **Prelude, bb. 26–27 cut** (old A7 and D/A bars). The prelude is now 39 bars.
+   - Bar 25's last group ends A4–C#5–G5–C#5, so the right hand climbs from C#5 into the A7 bar (old b. 28, now b. 26) without a repeated note.
+   - The dynamics ranges, the tempo map (the flourish is now b. 37 and is found from its tag) and the docstring are renumbered.
+5. **Metadata.** `composer` is `'Composed with Claude / Sam'` in both sources.
+
+**Checker numbers after the second review**
+
+| Measure | Fugue | Prelude |
+|---|---|---|
+| `parallels_error` | 0 | 0 |
+| `parallels_weak` | 0 | 0 |
+| `beat_parallels` | 0 | 0 |
+| `pc_tripled_on_beats_pct` | 7.5 | 0.0 |
+| `bad_doublings` | 1 (b. 53.1, as before) | 0 |
+| `low_register_seconds` | 6 | 0 |
+| unresolved | 0 | 2 (b. 19.4, b. 28.3, justified above) |
+
+The prelude rows in the v1 → third-edition table above that came from scratch scripts (tertian fit, leaps, hand gap and so on) were measured before the cut. Both pieces are re-rendered: Bach–Lehman with PDF, and equal temperament as audio only. The new durations are prelude 1:34 and fugue 2:06.
+

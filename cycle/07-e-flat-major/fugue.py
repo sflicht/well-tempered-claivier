@@ -330,46 +330,55 @@ tag(36, 'a beat')
 
 # ===========================================================================
 # 6. THE SUMMIT: STRETTO A 8 (b37-42).  Every one of the eight voices enters,
-# half a bar apart, choir against choir: Coro I rectus (c, then A-flat three
-# times), Coro II inversus (on F, then E-flat three times), found by searching
-# levels and voice orders for which every overlapping pair is clean, then
-# written out with the free parts by hand.  It breaks in deceptively on
-# C minor and climbs to the soprano's B-flat.
+# choir against choir: Coro I rectus (c, then A-flat twice), Coro II inversus
+# (on F, then E-flat twice), half a bar apart; then the last pair turns the
+# harmony towards the cadence: Coro I's bass on the c level (vi) at 40.3 and
+# Coro II's soprano on F at 41.1 -- the inversion as a falling dominant-seventh
+# fanfare over the bass's A-flat (V4/2 -> I6), V6/5 at 42.1, the bass's subject
+# ending on B-flat, cadential 6/4, V, and the coda's E-flat.  Levels, times and
+# voice orders were found by searching for overlapping pairs that are clean on
+# the strict grid; the free parts are written by hand.  The soprano of Coro I
+# climbs to B-flat over the dominant fanfare.
 SUB_c = 'C3:4 Eb3:2 G3:2 Ab3:4 G3:4 Ab3:2 Bb3:1 Ab3:1 G3:2 Bb3:2 D4:4 C4:2 Bb3:2'   # rectus, c level
 INV_F = 'F4:4 D4:2 Bb3:2 Ab3:4 Bb3:4 Ab3:2 G3:1 Ab3:1 Bb3:2 G3:2 Eb3:4 F3:2 G3:2'   # inversus on F
 SUB_Ab = transpose(SUBJ, -7, -4)                                                   # rectus, A-flat level
-put(37, T2='R:8 ' + INV_F + ' R:8  R:8 D4:4 C4:4  R:16  R:16',
-        T1=SUB_c + ' C4:4 R:12  Bb3:4 R:4 Bb3:4 R:4  Bb3:4 R:12  R:8 C4:4 R:4',
-        S1='Eb5:8 C5:4 R:4  ' + T8(SUB_Ab, 1) + '  R:8 F5:4 C5:4  Bb4:8 R:8  R:8 Ab4:4 Bb4:4',
-        A1='G4:8 Eb4:4 Bb3:4  Eb4:8 R:8  ' + SUB_Ab + '  F4:4 G4:4 F4:4 G4:4~  G4:4 F4:4 Eb4:4 D4:4',
-        B1='R:8 F2:4 Bb2:4  C3:4 G2:4 Bb2:4 Eb2:4  Ab2:8 R:8  ' + T8(SUB_Ab, -1) + '  Eb3:8 F3:4 Bb2:4',
-        B2='R:8 Ab2:4 R:4  Ab2:4 Eb3:4 Bb2:4 C3:4  R:8 ' + T8(INV, -1) + ' R:8  Ab2:8 R:8',
-        A2='R:16  R:8 ' + INV + ' R:8  R:16  C4:8 R:8',
-        S2='R:16  R:16  R:8 D5:4 C5:4  R:8 ' + T8(INV, 1))
+put(37, T2='R:8 ' + INV_F + ' R:8  R:8 Eb4:4 C4:4  D4:8 C4:4 G3:4  Bb3:4 Eb4:4 Bb3:8',
+        T1=SUB_c + ' C4:4 R:12  Bb3:4 R:4 G3:4 R:4  Bb3:4 R:12  R:8 G3:4 F3:4',
+        S1='Eb5:8 C5:4 R:4  ' + T8(SUB_Ab, 1) + '  R:8 Eb5:4 G5:4  Bb5:8 C6:4 Bb5:4  F5:4 Eb5:8 D5:4',
+        A1='G4:8 Eb4:4 Bb3:4  Eb4:8 R:8  ' + SUB_Ab + '  F4:4 G4:4 Eb4:8  F4:4 G4:2 Bb4:10',
+        B1='R:8 F2:4 Bb2:4  C3:4 G2:4 Bb2:4 Eb2:4  Ab2:8 R:8  R:8 ' + T8(SUB_c, -1) + '  Bb2:8',
+        B2='R:8 Ab2:4 R:4  Ab2:4 Eb3:4 Bb2:4 C3:4  R:8 ' + T8(INV, -1) + ' R:8  R:16',
+        A2='R:16  R:8 ' + INV + ' R:8  R:16  R:16',
+        S2='R:16  R:16  R:8 D5:4 C5:4  R:16  ' + T8(INV_F, 1))
 for v, b, off, lab in (('T1', 37, 0, 'stretto a 8: Coro I rectus (c)'), ('T2', 37, 2, 'stretto a 8: Coro II inversus (on F)'),
                        ('S1', 38, 0, 'stretto a 8: Coro I rectus (A-flat)'), ('A2', 38, 2, 'stretto a 8: Coro II inversus (E-flat)'),
                        ('A1', 39, 0, 'stretto a 8: Coro I rectus (A-flat)'), ('B2', 39, 2, 'stretto a 8: Coro II inversus (E-flat)'),
-                       ('B1', 40, 0, 'stretto a 8: Coro I rectus (A-flat)'), ('S2', 40, 2, 'stretto a 8: Coro II inversus (E-flat)')):
+                       ('B1', 40, 2, 'stretto a 8: Coro I rectus (c, towards the cadence)'),
+                       ('S2', 41, 0, 'stretto a 8: Coro II inversus on F (the dominant)')):
     entry(v, b, off, lab)
 tag(37, 'Summit: stretto a 8, all voices enter half a bar apart')
 
 
 # ===========================================================================
 # 7. CODA (b43-49).  The first line of "Wachet auf" in long notes in Coro I's
-# tenor, where BWV 645 puts the chorale; the subject's heads and tails around
-# it in both choirs.  Under the chorale's C, Coro I's bass at last finishes the
+# tenor, where BWV 645 puts the chorale; Coro I alone becomes a chorale prelude
+# (the prelude remembered): its soprano runs in eighths (b44-46, the
+# countersubject's figure), its bass walks; Coro II, silent, rejoins for the
+# cadence.  Under the chorale's C, Coro I's bass at last finishes the
 # augmentation it was never allowed to finish (F - E-flat - D).  The final
 # cadence is the reconciliation chord again (A-flat over B-flat), and Coro II
 # has the last word: an echo of the head, upside down.
 CHORALE_1 = 'Eb3:8 G3:8  Bb3:12 Bb3:4  Bb3:8 Bb3:8  C4:16  Bb3:16'   # Nicolai 1599, line 1
 put(43, T1=CHORALE_1 + '  Bb3:16  Bb3:16',
-        B1='R:8 C3:8  G2:8 Bb2:8  C3:8 G2:8  ' + T8('F5:8 Eb5:4 D5:4', -3) + '  Bb1:16  Eb2:16  Eb2:16',
-        A1=HEAD + '  Bb4:8 F4:8  R:16  R:8 F4:8  F4:16  G4:8 R:8  Eb4:16',
-        S1='Bb4:8 Eb5:8  Eb5:8 F5:8  Eb5:16  Ab5:16~  Ab5:16  G5:16  G5:16',
-        S2='R:8 G5:8  G5:8 R:8  G5:16  G5:4 F5:4 R:8  Eb5:8 F5:8  Eb5:8 Bb4:4 G4:2 Eb4:2  Eb5:16',
-        A2='R:16  R:16  Eb5:8 Bb4:8  Ab4:12 Bb4:4  C5:8 Bb4:8  Bb4:8 R:8  Bb4:16',
-        T2='R:8 Eb4:8  Eb4:12 D4:4  C4:8 Eb4:8~  Eb4:16~  Eb4:16  R:16  G3:16',
-        B2='R:16  R:16  G3:8 R:8  C3:16~  C3:8 D3:8  R:16  Eb3:16')
+        B1='R:8 C3:4 G2:4  Eb3:4 D3:4 C3:4 Bb2:4  C3:8 G2:8  ' + T8('F5:8 Eb5:4 D5:4', -3) + '  Bb1:16  Eb2:16  Eb2:16',
+        A1=HEAD + '  Bb4:8 G4:4 Bb4:4  R:16  R:8 F4:8  F4:16  G4:8 R:8  Eb4:16',
+        S1='Bb4:8 Eb5:4 D5:4  Eb5:2 G5:2 F5:2 D5:2 Eb5:2 C5:2 D5:2 Eb5:2  '
+           'G5:2 F5:2 Eb5:2 C5:2 Bb4:2 Eb5:2 G5:2 Bb5:2  Ab5:2 G5:2 F5:2 Ab5:2 C5:2 Eb5:2 F5:2 G5:2  '
+           'Ab5:16  G5:16  G5:16',
+        S2='R:16  R:16  R:16  R:16  Eb5:8 F5:8  Eb5:8 Bb4:4 G4:2 Eb4:2  Eb5:16',
+        A2='R:16  R:16  R:16  Ab4:16  C5:8 Bb4:8  Bb4:8 R:8  Bb4:16',
+        T2='R:16  R:16  R:16  R:16  R:16  R:16  G3:16',
+        B2='R:16  R:16  R:16  C3:16~  C3:8 D3:8  R:16  Eb3:16')
 entry('T1', 43, 0, 'Chorale "Wachet auf", line 1 (tenor)', 5)
 entry('A1', 43, 0, 'Coro I head', 1)
 entry('B1', 46, 0, 'Coro I finishes its augmentation', 1)
@@ -401,12 +410,10 @@ PAN = {'I Soprano': 22, 'I Alto': 32, 'I Tenor': 42, 'I Bass': 52,
        'II Soprano': 106, 'II Alto': 96, 'II Tenor': 86, 'II Bass': 76}
 TEMPO_MAP = [[0, BPM],
              [112, BPM], [120, 70, 'ramp'],           # b29-30: broadening into the reconciliation
-             [120, 76],                               # b31 Coro I, pompous
-             [124, 86], [128, 76], [132, 86], [136, 76],   # chatter v. pomp
-             [140, 82],                               # b36: a beat
-             [144, 74],                               # b37: the summit, broad
-             [168, 76],                               # b43: coda
-             [184, 76], [196, 48, 'ramp']]            # final ritardando
+             [120, BPM],                              # b31-36: the joke a tempo, steady (the notes carry it)
+             [140, BPM], [144, 74, 'ramp'],           # into the summit, broad
+             [168, 74], [172, 78, 'ramp'],            # the coda moves again
+             [184, 78], [196, 48, 'ramp']]            # final ritardando
 
 
 def build(path=HERE / 'fugue.json'):
@@ -423,10 +430,16 @@ def build(path=HERE / 'fugue.json'):
         v['piano_pan'] = PAN[v['name']]
         for e in v['events']:
             t = float(e['t'])
-            if (v['name'] == 'II Soprano' and 124 <= t < 128) or (v['name'] == 'II Bass' and 132 <= t < 136):
-                e['gate'] = 0.62                      # the chatter, detached
+            if v['name'].startswith('II ') and (124 <= t < 128 or 132 <= t < 136):
+                e['gate'] = 0.55                      # the chatter, detached
             if v['name'] == 'II Soprano' and 190 <= t < 192:
                 e['v'] = max(30, int(e['v']) - 24)    # the echo, upside down and soft
+            if v['name'].startswith('I ') and (120 <= t < 124 or 128 <= t < 132 or 136 <= t < 140):
+                e['v'] = min(110, int(e['v']) + 6)    # the joke: Coro I's pomp, heavier
+            if v['name'].startswith('II ') and (124 <= t < 128 or 132 <= t < 136):
+                e['v'] = max(30, int(e['v']) - 4)     # Coro II's chatter, lighter
+            if v['name'] == 'I Tenor' and 168 <= t < 188:
+                e['v'] = min(115, int(e['v']) + 10)   # the chorale in the coda sings out
     Path(path).write_text(json.dumps(data, indent=1))
     return data
 

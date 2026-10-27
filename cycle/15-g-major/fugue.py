@@ -267,3 +267,101 @@ put('B1', 29, 1, 'C3:4 A2:4 B2:4 G2:4 D3:4 F#2:4 E2:4 G2:4 A2:4 C#3:4 D3:8')
 # later, tenor rectus (b30.1).
 theme('A3', 29, 1, dshift(inv(S3, 'B4'), -4), 'III: subject 3 inverted (stretto)', 2)
 theme('S3', 29, 4, dshift(inv(S3, 'B4'), 4), 'III: subject 3 inverted (stretto)', 2)
+put('A2', 29, 1, 'C5:4 C5:4 D5:4 B4:4 A4:4 A4:4 B4:4 B4:4 C#5:4 A4:4 A4:8')
+
+
+# ================================================================ SECTION IV: Coro IV, line 4 (b32-38)
+# S4, Coro IV: line 4 -- the falling octave G-G, 'rounds' on eight bells -- in eighths, then the first
+# change of plain hunt (each pair of bells swapped: F# G, D E, B C, G A), ending on the supertonic.
+S4 = ('G4:2 F#4:2 E4:2 D4:2 D4:2 C4:1 B3:1 A3:2 G3:2 '
+      'F#4:2 G4:2 D4:2 E4:2 B3:2 C4:2 G3:2 A3:2')
+# The exposition is a peal: four entries a beat apart from the top down, G and C alternating, over a
+# drone G in the Coro I bass.
+theme('S4', 32, 1, oc(S4, 1), 'IV: subject 4 (line 4 diminished, rounds)', 2)
+theme('A4', 32, 2, dshift(S4, 3), 'IV: subject 4 in C (peal)', 2)
+theme('T4', 32, 3, S4, 'IV: subject 4 (peal)', 2)
+theme('B4', 32, 4, dshift(S4, -4), 'IV: subject 4 in C (peal)', 2)
+put('B1', 32, 1, 'G2:16 G2:12 A2:4 R:8 B2:8')
+# Over the peal the other choirs greet it with the heads of their own subjects: a quodlibet.
+
+
+def head(s, n=8):
+    return ' '.join(s.split()[:n])
+
+
+theme('S2', 32, 1, head(S2), 'II: subject 2 head (quodlibet)', 1)
+theme('S3', 32, 2, head(S3), 'III: subject 3 head (quodlibet)', 1)
+theme('A2', 33, 2, oc(dshift(head(S2), 4), -1), 'II: subject 2 head in D (quodlibet)', 1)
+theme('A1', 34, 1, head(inv(S1, 'G4')), 'I: subject 1 head inverted (quodlibet)', 1)
+# b35-38: line 4 as cantus in the Coro I bass -- the falling octave G3-G2 under everything (its own
+# subject augmented four times) -- G D/F# Em D | D7 C G/B Am | G.
+theme('B1', 35, 1, oc(L4, -1), 'I: chorale line 4 (cantus, bass)', 4)
+# Over the cantus a second, fuller peal and the quodlibet of all four subjects' heads (placements
+# checked one by one against the texture; the slots and the order of preference are the composer's).
+theme('S1', 35, 1, head(S1), 'I: subject 1 head', 1)
+theme('S4', 35, 2, dshift(S4, 7), 'IV: subject 4 (peal over the cantus)', 2)
+theme('A4', 35, 3, dshift(S4, 3), 'IV: subject 4 in C (peal)', 2)
+theme('S2', 36, 1, dshift(head(S2), 4), 'II: subject 2 head in D', 1)
+theme('T1', 36, 2, dshift(head(inv(S1, 'G4')), -3), 'I: subject 1 head inverted', 1)
+theme('A1', 36, 3, dshift(head(inv(S1, 'G4')), -3), 'I: subject 1 head inverted', 1)
+theme('S3', 36, 3, head(S3), 'III: subject 3 head', 1)
+theme('S1', 37, 1, dshift(head(S1), 4), 'I: subject 1 head in D', 1)
+theme('T2', 37, 2, oc(dshift(head(S2), -3), -1), 'II: subject 2 head in D', 1)
+theme('T3', 37, 3, oc(dshift(head(S3), -3), -1), 'III: subject 3 head (answer)', 1)
+theme('S4', 37, 3, head(dshift(S4, 7), 9), 'IV: subject 4 head (peal)', 1)
+theme('A4', 37, 4, head(dshift(inv(S4, 'D4'), 4), 9), 'IV: subject 4 head inverted (peal)', 1)
+
+
+# ================================================================ SUMMIT: the four lines at once (b39-51)
+# The combination was found first (scratch search over placements of the four lines -- entry time,
+# pitch level, speed, rectus/inversus -- scored with the critic's rules), then the music was composed
+# towards it.  Each line sounds in its own choir, the entries in stretto:
+#   line 3 (Coro III soprano, b39.1), line 2 (Coro II alto, b39.3), line 1 -- in C, with the chorale's own
+#   upbeat -- high above (Coro I soprano, b40.2), line 4 in the bass (Coro IV, b40.3).  All four sound
+#   together from b40.3 to b43.1.  Each is then answered canonically by its own choir, the answers
+#   entering while the leaders are still singing: line 3 inverted at two bars (Coro III alto, b41.1),
+#   line 1 inverted (Coro I alto, b42.3), line 2 inverted (Coro II bass, b42.3) and line 4 per
+#   augmentationem, a fourth higher, in whole notes (Coro IV alto, b43.3) -- Bach's canon by
+#   augmentation from BWV 769 inside the combination.
+
+
+def chorale_upbeat(line):
+    """The chorale's own rhythm (Essen): the first note is an upbeat of half a unit."""
+    t = line.split()
+    p, d, sp, tie = W.parse_tok(t[0])
+    return ' '.join([t[0].rsplit(':', 1)[0] + ':' + str(d / 2)] + t[1:])
+
+
+L1C = dshift(L1, 3)                          # line 1 in C (exact: C B A B G A B C)
+theme('S3', 39, 1, L3, 'III: chorale line 3 (summit)', 4)
+theme('A2', 39, 3, L2, 'II: chorale line 2 (summit)', 4)
+theme('S1', 40, 2, chorale_upbeat(L1C), 'I: chorale line 1 in C, with its upbeat (summit)', 4)
+theme('B4', 40, 3, oc(L4, -1), 'IV: chorale line 4 (summit, bass)', 4)
+theme('A3', 41, 1, dshift(inv(L3, 'B4'), -1), 'III: line 3 inversus, canon at two bars', 4)
+theme('A1', 42, 3, dshift(inv(chorale_upbeat(L1), 'G5'), -1), 'I: line 1 inversus, canon', 4)
+theme('B2', 42, 3, inv(L2, 'B3'), 'II: line 2 inversus, canon', 4)
+theme('A4', 43, 3, aug(dshift(L4, 3), 2), 'IV: line 4 per augmentationem, canon at the fourth', 8)
+# The fugue subject threads through in stretto (rectus and inversus; whole statements where the
+# combination allows them, heads elsewhere).
+theme('S4', 40, 1, dshift(inv(S1, 'G4'), 4), 'IV: subject 1 inverted (summit stretto)', 2)
+theme('T1', 40, 3, oc(dshift(inv(S1, 'G4'), 4), -1), 'I: subject 1 inverted (summit stretto)', 2)
+theme('S4', 42, 2, dshift(S1, 4), 'IV: subject 1 (summit stretto)', 2)
+theme('S2', 43, 4, S1, 'II: subject 1 (summit stretto)', 2)
+theme('T4', 44, 1, oc(dshift(S1, 4), -1), 'IV: subject 1 (summit stretto)', 2)
+theme('S1', 44, 2, dshift(inv(S1, 'G4'), 3), 'I: subject 1 inverted (summit stretto)', 2)
+theme('B1', 39, 1, oc(head(S4, 9), -1), 'I: subject 4 head (bass)', 1)
+theme('T3', 39, 3, oc(head(S3), -1), 'III: subject 3 head', 1)
+theme('T2', 40, 1, oc(dshift(head(S1), 4), -1), 'II: subject 1 head', 1)
+theme('T4', 41, 1, oc(dshift(head(inv(S1, 'G4')), 3), -1), 'IV: subject 1 head inverted', 1)
+theme('B3', 41, 4, oc(dshift(head(S3), 3), -2), 'III: subject 3 head', 1)
+theme('T2', 42, 1, oc(dshift(head(S2), 4), -1), 'II: subject 2 head', 1)
+theme('T3', 42, 3, oc(head(S3), -1), 'III: subject 3 head', 1)
+theme('T2', 43, 3, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'II: subject 1 head inverted', 1)
+theme('B1', 44, 3, oc(head(S1), -1), 'I: subject 1 head', 1)
+theme('T2', 45, 2, oc(dshift(head(S2), 4), -1), 'II: subject 2 head', 1)
+theme('A2', 46, 1, head(S1), 'II: subject 1 head', 1)
+theme('T3', 46, 1, oc(head(S3), -1), 'III: subject 3 head', 1)
+theme('T4', 46, 2, head(S4, 9), 'IV: subject 4 head', 1)
+theme('S1', 46, 3, head(S1), 'I: subject 1 head', 1)
+theme('B2', 47, 1, oc(head(S4, 9), -1), 'II: subject 4 head', 1)
+theme('A1', 47, 1, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'I: subject 1 head inverted', 1)

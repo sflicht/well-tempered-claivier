@@ -147,20 +147,22 @@ put(26, C='R:8 Bb3:8  Bb3:12 Ab3:4  G3:8 F3:8  Eb3:8 R:8',
 ENTRIES.append(('Chorale', 26, 2, 'Chorale line 5', 4))
 tag(26, 'steht auf, die Lampen nehmt')
 
-# LINE 6 (b30.3-32): "Halleluja"
+# LINE 6 (b30.3-32): "Halleluja" -- the obbligato stops dancing and sings with the
+# chorale in long notes (b31-32), the only place it breathes.
 put(30, C='R:8 F3:8  G3:8 Ab3:8  G3:16',
         O='C5:2 Eb5:1 G5:1 C6:2 G5:2 F5:2 D5:1 Bb4:1 F5:2 D5:2  '
-          'Eb5:2 G5:1 Bb5:1 G5:2 Eb5:2 Ab4:2 C5:1 Eb5:1 Ab5:2 Eb5:2  '
-          'Bb4:2 Eb5:1 G5:1 Bb5:2 G5:2 Eb5:2 C5:1 Eb5:1 G5:2 Eb5:2',
-        B='C3:4 Eb3:4 D3:4 Bb2:4  Eb3:4 G2:4 F2:4 Ab2:4  Eb3:4 Bb2:4 C3:4 Bb2:4')
+          'Bb5:8 C6:8  '
+          'Bb5:8 G5:6 F5:2',
+        B='C3:4 Eb3:4 Bb2:4 D3:4  Eb3:4 G2:4 F2:4 Ab2:4  Eb3:4 Bb2:4 C3:4 Bb2:4')
 ENTRIES.append(('Chorale', 30, 2, 'Chorale line 6', 3))
 tag(30, 'Halleluja')
 
 # LINES 7-8 (b33.3-37): "macht euch bereit / zu der Hochzeit"; the obbligato
-# slips the tonal answer's second half (diminished) into b35.
+# returns after a quarter rest, turns dotted at the bride's call (b34) and slips
+# the tonal answer's second half (diminished) into b35.
 put(33, C='R:8 Bb3:8  C4:8 D4:8  Eb4:8 R:8  Eb4:4 F4:4 G4:8  F4:8 Eb4:8',
-        O='G5:2 Eb5:1 G5:1 Bb5:2 G5:2 Bb4:2 G5:1 Eb5:1 Bb5:2 G5:2  '
-          'Eb5:2 Ab5:1 C6:1 Ab5:2 Eb5:2 D5:2 F5:1 Bb5:1 F5:2 D5:2  '
+        O='R:4 G5:2 Eb5:2 Bb4:2 G5:1 Eb5:1 Bb5:2 G5:2  '
+          'Eb5:3 Ab5:1 C6:3 Ab5:1 F5:3 Bb5:1 D5:3 F5:1  '
           'G5:2 Bb5:1 G5:1 Eb5:2 G5:2 F5:1 G5:1/2 F5:1/2 Eb5:1 G5:1 Bb5:2 Ab5:1 G5:1  '
           'Bb5:2 Eb5:1 G5:1 F5:2 D5:1 Bb4:1 Eb5:2 G5:1 Bb5:1 G5:2 Eb5:2  '
           'Ab5:2 F5:1 D5:1 F5:2 Ab5:2 G5:2 Eb5:1 C5:1 Bb4:2 G4:1 Bb4:1',
@@ -174,10 +176,11 @@ tag(36, 'zu der Hochzeit')
 # LINE 9 (b38-41): "ihr muesset ihm entgegen gehn" -- from b39 the bass is Bach's
 # own in BWV 140/7, including the chord under the chorale's C (b39.4): A-flat over
 # B-flat, IV over V -- the chord on which the fugue's two choirs are reconciled.
+# The obbligato broadens into the cadence with a 3+3+2 hemiola (b40).
 put(38, C='Bb3:8 Eb4:8  Bb3:8 C4:8  G3:8 Ab3:4 G3:4  F3:8 Eb3:8~',
         O='Eb5:2 G5:1 Bb5:1 Bb5:2 F5:2 G5:2 Eb5:1 C5:1 Ab5:2 F5:2  '
           'G5:2 Eb5:1 G5:1 Bb5:2 G5:2 Ab5:2 Eb5:1 C5:1 Eb5:2 Ab5:2  '
-          'G5:2 Eb5:1 C5:1 Eb5:2 G5:2 C5:2 D5:1 C5:1 Bb4:2 D5:2  '
+          'G5:6 Eb5:6 C5:4  '
           'Bb4:2 D5:1 F5:1 D5:2 Bb4:2 Eb5:2 Bb4:1 G4:1 Eb4:4',
         B='Eb3:4 D3:4 C3:4 F3:4  G3:4 Eb3:4 Ab2:4 Bb2:4  C3:4 Bb2:4 F2:8  Bb2:8 Eb2:8')
 ENTRIES.append(('Chorale', 38, 0, 'Chorale line 9 (the last)', 4))

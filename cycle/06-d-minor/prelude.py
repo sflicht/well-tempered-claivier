@@ -75,7 +75,7 @@ bar('Allegro: running triplets (after BWV 851) over a tonic pedal',
     RH=T('D5 F5 A5  D6 A5 F5  G5 Bb5 D6  C#6 A5 E5'),
     LH2='A3:12 Bb3:6 A3:6', LH='D3:24')
 bar('the bass walks the lament ground: D, C#',
-    RH=T('F5 D5 A4  D5 F5 A5  G5 E5 A4  E5 G5 A5'),
+    RH=T('F5 E5 D5  E5 F5 A5  G5 F5 E5  F5 G5 A5'),
     LH2='A3:24', LH='D3:12 C#3:12')
 bar('C, B (D7/C - G/B)',
     RH=T('F#5 D5 A4  C5 D5 F#5  G5 D5 B4  D5 G5 B5'),
@@ -84,7 +84,7 @@ bar('Bb, A (Gm/Bb - A)',
     RH=T('D5 G5 Bb5  G5 Bb4 D5  C#5 E5 A5  E5 A5 C#6'),
     LH2='G3:24', LH='Bb2:12 A2:12')
 bar('Dm - C7/E',
-    RH=T('D6 A5 F5  D5 F5 A5  G5 E5 C5  Bb4 C5 E5'),
+    RH=T('D6 C#6 D6  A5 G5 A5  G5 F5 E5  D5 C5 Bb4'),
     LH2='F3:12 G3:12', LH='D3:12 E3:12')
 bar('F - Bb - C7',
     RH=T('C5 F5 A5  C6 A5 F5  D5 F5 Bb5  Bb5 G5 E5'),
@@ -117,13 +117,13 @@ bar('Gm7 - C7',
     RH=T('Bb5 G5 D5  Bb4 D5 F5  E5 C5 G4  Bb4 C5 E5'),
     LH2='D3:12 E3:12', LH='G2:12 C3:12')
 bar('F - Dm',
-    RH=T('C5 F5 A5  F5 C5 A4  F5 D5 A4  D5 F5 A5'),
+    RH=T('F5 G5 A5  C6 A5 G5  A5 G5 F5  E5 F5 E5'),
     LH2='A3:12 F3:12', LH='F2:12 D3:12')
 bar('Bb - E7/G# (towards A minor)',
     RH=T('D5 F5 Bb5  F5 D5 Bb4  B4 D5 E5  B5 E5 D5'),
     LH2='F3:12 E3:12', LH='Bb2:12 G#2:12')
 bar('Am - Dm/F',
-    RH=T('C5 E5 A5  C6 A5 E5  F5 A5 D6  A5 F5 D5'),
+    RH=T('E5 D5 C5  B4 C5 E5  F5 E5 D5  E5 F5 A5'),
     LH2='E3:12 D3:12', LH='A2:12 F2:12')
 bar('E - Am',
     RH=T('E5 G#5 B5  G#5 E5 B4  C5 E5 A5  C6 A5 E5'),
@@ -168,12 +168,12 @@ END = NB * 6         # 12/8: six quarters to the bar, bar b starts at 6*(b-1)
 # Tempo map (quarters).  The toccata and the recitatives are slow and free;
 # fermatas are slowed final beats (a dotted quarter each).
 TEMPO_MAP = [
-    [0, 60], [4.5, 30], [6, 60], [10.5, 30], [12, 58], [16.5, 30], [18, 54], [22.5, 28],   # 1-4 Adagio
-    [24, BPM], [70.5, 50],                                                                 # 5-12 Allegro
-    [72, 72], [84, 66, 'ramp'], [87, 54, 'ramp'],                                          # 13-15 Recitativo I
-    [90, BPM], [136.5, 50],                                                                # 16-23 Allegro
-    [138, 70], [150, 64, 'ramp'], [153, 50, 'ramp'],                                       # 24-26 Recitativo II
-    [156, 168], [162, 66], [168, 60], [END, 40, 'ramp'],                                   # 27-29 Presto, Adagio
+    [0, 60], [4.5, 40], [6, 60], [10.5, 40], [12, 60], [16.5, 40], [18, 56], [22.5, 36],   # 1-4 Adagio
+    [24, BPM], [70.5, 56],                                                                 # 5-12 Allegro
+    [72, 80], [84, 74, 'ramp'], [87, 62, 'ramp'],                                          # 13-15 Recitativo I
+    [90, BPM], [136.5, 56],                                                                # 16-23 Allegro
+    [138, 80], [150, 74, 'ramp'], [153, 60, 'ramp'],                                       # 24-26 Recitativo II
+    [156, 168], [162, 72], [168, 60], [END, 42, 'ramp'],                                   # 27-29 Presto, Adagio
 ]
 
 DYN_BY_BAR = {1: 8, 2: 6, 3: 6, 4: 8, 13: -4, 14: -4, 15: -5, 24: -3, 25: -3, 26: -4, 27: 8, 28: 7, 29: 5}
