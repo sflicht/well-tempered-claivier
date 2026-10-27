@@ -32,7 +32,7 @@ def place(sc, E):
     sc.put(V(2), e(8), 4, "A2:4 Bb2:8 R:8")             # E8.4 F7/A -> E9 Bb
     sc.put(V(1), e(1), 1,
            "Bb1:16 F1:8 Bb1:8 Bb1:8 D2:4 Eb2:4 F2:16 "  # E1-E4
-           "F2:4 D2:4 Bb1:8 Bb1:16 "                    # E5-E6
+           "F2:4 Bb1:12 Bb1:16 "                        # E5-E6
            "G1:8 F1:8 Bb1:4 C2:4 F1:8 Bb1:16")          # E7-E9
     # the friends' theme on top, two beats after Bach's subject (tail turned to A for F major)
     sc.theme(V(22), e(6), 1, "R:2 Bb5:1 C6:1 D6:2 C6:1 Bb5:1 A5:2 Bb5:1 C6:1 D6:1 Eb6:1 F6:1 G6:1 "
@@ -44,25 +44,28 @@ def place(sc, E):
         free_a(sc, e)
 
 
-LAYERS = 0
+LAYERS = 1
 
 
 def free_a(sc, e):
-    # (each with its own rhythmic layer; chords per beat as in the module docstring)
-    # high descant, halves (Forestiero 22), then T from E6
-    sc.put(V(22), e(1), 1, "D6:8 D6:4 Eb6:4 C6:8 Bb5:4 D6:4 D6:4 Eb6:4 D6:4 C6:4 C6:8 Bb5:8 A5:4 Bb5:4")
+    """E1-E5.2.  Layers: halves (Fo22), quarters (Am20, Fo19/Fo14 syncopated), eighths (Co3,
+    Co16, Co9 octave calls), Am5 with Bach's answer head."""
+    sc.put(V(22), e(1), 1, "D6:8 Bb5:4 C6:4 C6:8 Bb5:4 F6:4 D6:4 Eb6:4 F6:4 C6:4~ C6:8 D6:8 C6:4 Bb5:4")
     sc.put(V(22), e(8), 1, "Bb5:4 Bb5:4 Bb5:4 A5:4 Bb5:16")
-    # quarter-note descant in thirds under it (Amico 20)
-    sc.put(V(20), e(1), 1, "Bb5:8 Bb5:4 C6:4 A5:8 F5:4 Bb5:4 Bb5:4 G5:4 Bb5:4 G5:4 A5:8 G5:4 F5:4 F5:4 F5:4")
+    sc.put(V(20), e(1), 1, "F5:4 G5:4 F5:4 G5:4 A5:4 F5:4 F5:4 Bb5:4 Bb5:8 Bb5:4 G5:4 A5:8 G5:4 F5:4 A5:4 F5:4")
+    sc.put(V(3), e(1), 1, "D3:2 C3:2 Bb2:2 D3:2 F3:2 G3:2 G3:2 F3:2 A3:2 G3:2 F3:2 Eb3:2 D3:2 Eb3:2 F3:2 G3:2 "
+           "Bb2:2 D3:2 G3:2 F3:2 F3:4 Eb3:2 G3:2 C3:2 F3:2 A3:2 F3:2 G3:2 F3:2 D3:2 F3:2 C3:2 Eb3:2 D3:2 F3:2")
+    sc.put(V(5), e(1), 1, "D4:8 D4:4 C4:4")
+    sc.theme(V(5), e(2), 1, "F3:4 R:2 F3:1 F3:1 Bb3:2 Bb3:2 Bb3:2 Bb3:2", "A head (Bach's answer)", 1)
     # the posthorn's head in Corno 16 (E1.3), then octave calls
     sc.theme(V(16), e(1), 3, "Bb4:4 R:2 Bb4:1 Bb4:1 F5:2 F5:2 F5:2 F5:2 D5:2 Bb4:2 Bb4:2 Bb4:1 Bb4:1",
              'S head', 2)
     sc.put(V(16), e(3), 1, "G4:2 G5:1 G4:1 Bb4:2 Bb5:1 Bb4:1 F4:2 F5:1 F4:1 Eb5:2 C5:2 "
            "C5:2 F5:1 C5:1 A4:2 C5:2 D5:2 Bb4:2 F5:2 D5:2 "
            "C5:4 D5:4")
-    # suspension chain (Forestiero 19): tied quarters across the beat
-    sc.put(V(19), e(1), 1, "F5:4 G5:6 F5:2 Eb5:4~ Eb5:2 C5:2 C5:4 F5:6 Eb5:2 D5:4~ D5:2 F5:2 "
-           "G5:4 Bb5:6 A5:2 G5:4~ G5:2 F5:2 F5:8 D5:4 D5:4 C5:4 D5:4")
-    # 3rds below it (Forestiero 14)
-    sc.put(V(14), e(1), 1, "D5:4 Eb5:6 D5:2 C5:4~ C5:2 A4:2 A4:4 D5:6 C5:2 Bb4:4~ Bb4:2 D5:2 "
-           "Eb5:4 G5:6 F5:2 Eb5:4~ Eb5:2 C5:2 C5:8 Bb4:4 Bb4:4 A4:4 F4:4")
+    # Bach's countersubject figure (the octave leaps) in Corno 9
+    sc.put(V(9), e(1), 1, "D4:2 D5:1 D4:1 D4:4 R:2 F5:1 F4:1 G4:4 "
+           "C4:2 C5:1 C4:1 D4:4 R:2 F5:1 F4:1 F4:4 "
+           "D4:2 D5:1 D4:1 Eb4:4 R:2 D5:1 D4:1 Eb4:4 "
+           "C4:2 C5:1 C4:1 C4:4 R:2 D5:1 D4:1 D4:4 "
+           "Eb4:4 D4:4")
