@@ -1,0 +1,31 @@
+bars : 34
+voices : 3
+beats_3plus_voices : 7
+pcs_hist : {1: 1, 2: 5, 3: 1}
+beats_4plus_pcs_pct : 0.0
+beats_fit_tertian_chord_pct : 14.3
+non_tertian_beats : ['b31.2:D#5/C4/C2', 'b31.3:C5/D#4/C2', 'b31.4:C5/C4/C2', 'b32.1:G#5/C4/C2', 'b32.2:G#5/G#4/C2', 'b32.4:C5/D#4/C2']
+beat_dissonance_both_attacking(unprepared) : ['b13.4 UF5/LG3']
+chordal_tritones_attacked_together(dim/dom7 member) : []
+beat_dissonance_one_held(prep/passing) : 1
+beat_dissonance_one_held_list : ['b25.4 UF5/LG2']
+m2/M7_clashes_on_attacks(eighth grid) : 3
+m2/M7_clash_list : ['b22.1.50 UA4/LA#3', 'b22.3.50 UD4/LD#4', 'b31.4.50 UC5/LB3']
+parallel_5ths_8ves(eighth grid, attack to attack) : []
+parallel_5ths_8ves(16th grid) : 1
+par16_list : ['b7.3.00 UL']
+voice_crossings : 12
+crossing_list : ['b22.3.00 UL', 'b22.3.25 UL', 'b22.3.50 UL', 'b22.3.75 UL', 'b22.4.00 UL', 'b22.4.25 UL', 'b22.4.50 UL', 'b23.1.00 UL', 'b23.1.25 UL', 'b23.2.00 UL', 'b23.2.25 UL', 'b23.2.50 UL']
+cross_relations(different voices,<1 beat) : 6
+xrel_list : ['b3 U/L F5/F#3', 'b8 U/L G#5/A4', 'b26 U/L F5/F#2', 'b26 U/L F5/F#2', 'b28 U/L G6/F#4', 'b32 U/L G5/F#4']
+pair_independence : {'UL': {'onset_jaccard': 0.51, 'similar': 78, 'contrary': 63, 'oblique': 131, 'parallel_3rd6th_share_of_similar': 0.76}, 'UPed': {'onset_jaccard': 0.0, 'similar': 0, 'contrary': 0, 'oblique': 11, 'parallel_3rd6th_share_of_similar': 0.0}, 'LPed': {'onset_jaccard': 0.0, 'similar': 0, 'contrary': 0, 'oblique': 11, 'parallel_3rd6th_share_of_similar': 0.0}}
+voices_summary : {'U': {'notes': 249, 'range': 'C4-G#6', 'mean_vel': 76.4, 'max_vel': 103, 'silent_pct': np.float64(0.7), 'silent_bars': 0, 'distinct_durations': 6}, 'L': {'notes': 189, 'range': 'C2-C5', 'mean_vel': 74.7, 'max_vel': 101, 'silent_pct': np.float64(7.4), 'silent_bars': 2, 'distinct_durations': 5}, 'Ped': {'notes': 1, 'range': 'C2-C2', 'mean_vel': 78.0, 'max_vel': 78, 'silent_pct': np.float64(94.1), 'silent_bars': 32, 'distinct_durations': 1}}
+bar_pairs_>60%_identical_pitch_grid : [(1, 31, 1.0), (2, 32, 0.75)]
+longest_identical_rhythm_run_per_voice : ['U:2bars@5', 'L:1bars@0', 'Ped:1bars@0']
+attacks_per_bar : [6, 7, 12, 16, 15, 10, 12, 16, 12, 15, 12, 11, 9, 10, 12, 8, 14, 10, 14, 16, 17, 17, 16, 16, 12, 20, 12, 13, 13, 25, 12, 13, 11, 5]
+16th-groups checked 16 chord-fit 3
+nonfit 13 ['b4.3 RH F#4/G4/A4/C5', 'b8.3 RH D5/D#5/F5/G#5', 'b20.3 RH D6/D#6/A#5/C6', 'b21.3 RH G5/D#5/D5/C5', 'b23.3 RH G4/A4/A#4/C5', 'b26.1 RH C5/D5/D#5/F5', 'b26.2 RH G5/G#5/G5/F5', 'b26.3 RH D#5/F5/G5/A5', 'b26.4 RH B5/C6/D6/B5', 'b21.1 LH A#2/A2/D3/C3', 'b22.1 LH F#3/A3/A#3/C4', 'b24.1 LH F#4/D#4/D4/C4', 'b30.2 LH G2/F3/G2/G#3']
+par_bass 0 []
+par_top 0 []
+bass_leap 0 []
+cross 0 []

@@ -1,0 +1,25 @@
+bars : 16
+voices : 5
+beats_3plus_voices : 64
+pcs_hist : {2: 3, 3: 48, 4: 13}
+beats_4plus_pcs_pct : 20.3
+beats_fit_tertian_chord_pct : 93.8
+non_tertian_beats : ['b1.3:F5/A#4/F#4/F#3/D#2', 'b2.4:A#5/A#4/F4/F3/A#2', 'b4.4:--/F4/A#3/F3/A#2', 'b12.2:D#6/D#5/D#4/B3/B2']
+beat_dissonance_both_attacking(unprepared) : ['b4.1 HaF4/TaD#4', 'b5.3 TaB3/BC#3', 'b7.3 DC#6/HaB4', 'b7.3 DC#6/TaB3', 'b7.3 HaB4/BC#2', 'b7.3 TaB3/BC#2', 'b10.1 HaD#5/QuF3', 'b11.1 HaC#5/TaD#4', 'b12.3 DF6/HaD#5', 'b12.3 DF6/TaD#4', 'b12.3 HaD#5/BF2', 'b12.3 TaD#4/BF2', 'b13.1 DD#6/BA#2', 'b13.1 HaD#5/BA#2', 'b13.3 HaG#4/QuA#3', 'b13.3 HaG#4/BA#2', 'b15.3 HaG#4/BA#2']
+chordal_tritones_attacked_together(dim/dom7 member) : ['b4.1 HaF4/QuB3', 'b5.3 DF5/TaB3', 'b5.3 TaB3/QuF3', 'b7.3 HaB4/QuF3', 'b7.3 TaB3/QuF3', 'b10.1 DA5/HaD#5', 'b10.1 HaD#5/BA2', 'b11.1 DG5/HaC#5', 'b11.1 HaC#5/BG2', 'b12.3 DF6/QuB3', 'b12.3 QuB3/BF2', 'b13.3 DD6/HaG#4', 'b15.3 HaG#4/TaD4']
+beat_dissonance_one_held(prep/passing) : 9
+beat_dissonance_one_held_list : ['b1.3 DF5/TaF#4', 'b1.3 DF5/QuF#3', 'b1.3 DF5/BD#2', 'b4.2 DB5/HaF4', 'b5.4 DC#6/TaB3', 'b10.2 DD#6/QuF3', 'b10.2 DD#6/BA2', 'b11.2 DC#6/TaD#4', 'b11.2 DC#6/BG2']
+m2/M7_clashes_on_attacks(eighth grid) : 1
+m2/M7_clash_list : ['b1.3.00 DF5/TaF#4']
+parallel_5ths_8ves(eighth grid, attack to attack) : ['b10.3.00 DHa 8ve D#6/D#5->C#6/C#5', 'b3.3.00 DQu 8ve A#5/A#3->B5/B3', 'b5.3.00 DQu 8ve F#5/F#3->F5/F3', 'b5.1.00 HaQu 8ve F4/F3->F#4/F#3', 'b6.1.00 HaB 5th G#4/C#2->C#5/F#2', 'b2.3.00 TaB 5th D#4/G#1->F4/A#2', 'b3.1.00 QuB 5th F3/A#1->A#3/D#3']
+parallel_5ths_8ves(16th grid) : 7
+par16_list : ['b10.3.00 DHa', 'b3.3.00 DQu', 'b5.3.00 DQu', 'b5.1.00 HaQu', 'b6.1.00 HaB', 'b2.3.00 TaB', 'b3.1.00 QuB']
+voice_crossings : 0
+crossing_list : []
+cross_relations(different voices,<1 beat) : 10
+xrel_list : ['b9 D/Qu A5/G#3', 'b9 D/Qu A5/G#3', 'b9 D/B A5/G#2', 'b9 D/B A5/G#1', 'b9 D/Ta C6/B3', 'b15 D/Ta C#6/D4', 'b15 D/Ta C#6/D4', 'b15 D/Ta C#6/D4', 'b9 Qu/B G#3/A2', 'b9 Qu/B G#3/A2']
+pair_independence : {'DHa': {'onset_jaccard': 0.42, 'similar': 8, 'contrary': 8, 'oblique': 49, 'parallel_3rd6th_share_of_similar': 0.5}, 'DTa': {'onset_jaccard': 0.42, 'similar': 6, 'contrary': 11, 'oblique': 48, 'parallel_3rd6th_share_of_similar': 0.83}, 'DQu': {'onset_jaccard': 0.42, 'similar': 10, 'contrary': 8, 'oblique': 47, 'parallel_3rd6th_share_of_similar': 0.4}, 'DB': {'onset_jaccard': 0.43, 'similar': 18, 'contrary': 16, 'oblique': 45, 'parallel_3rd6th_share_of_similar': 0.39}, 'HaTa': {'onset_jaccard': 1.0, 'similar': 8, 'contrary': 5, 'oblique': 11, 'parallel_3rd6th_share_of_similar': 0.88}, 'HaQu': {'onset_jaccard': 1.0, 'similar': 7, 'contrary': 5, 'oblique': 14, 'parallel_3rd6th_share_of_similar': 0.29}, 'HaB': {'onset_jaccard': 0.96, 'similar': 7, 'contrary': 11, 'oblique': 35, 'parallel_3rd6th_share_of_similar': 0.57}, 'TaQu': {'onset_jaccard': 1.0, 'similar': 4, 'contrary': 9, 'oblique': 11, 'parallel_3rd6th_share_of_similar': 0.5}, 'TaB': {'onset_jaccard': 0.96, 'similar': 8, 'contrary': 9, 'oblique': 36, 'parallel_3rd6th_share_of_similar': 0.62}, 'QuB': {'onset_jaccard': 0.96, 'similar': 10, 'contrary': 9, 'oblique': 33, 'parallel_3rd6th_share_of_similar': 0.3}}
+voices_summary : {'D': {'notes': 94, 'range': 'F#4-F6', 'mean_vel': 79.0, 'max_vel': 92, 'silent_pct': np.float64(4.7), 'silent_bars': 0, 'distinct_durations': 8}, 'Ha': {'notes': 57, 'range': 'F4-D#5', 'mean_vel': 67.3, 'max_vel': 78, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 5}, 'Ta': {'notes': 57, 'range': 'A#3-F#4', 'mean_vel': 67.3, 'max_vel': 78, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 5}, 'Qu': {'notes': 57, 'range': 'D#3-B3', 'mean_vel': 67.3, 'max_vel': 78, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 5}, 'B': {'notes': 55, 'range': 'G#1-G3', 'mean_vel': 77.2, 'max_vel': 88, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 4}}
+bar_pairs_>60%_identical_pitch_grid : []
+longest_identical_rhythm_run_per_voice : ['D:3bars@10', 'Ha:6bars@2', 'Ta:6bars@2', 'Qu:6bars@2', 'B:6bars@2']
+attacks_per_bar : [9, 21, 21, 24, 21, 21, 22, 9, 21, 21, 21, 21, 26, 21, 24, 5]

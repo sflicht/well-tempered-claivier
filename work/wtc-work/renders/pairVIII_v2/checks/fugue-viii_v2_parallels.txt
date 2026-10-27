@@ -1,0 +1,17 @@
+b25.2.00 S1A1 8ve D#6/D#5->A#6/A#5 S S
+b25.3.00 S1A1 8ve A#6/A#5->B6/B5 S S
+b25.4.00 S1A1 8ve B6/B5->G#6/G#5 S S
+b25.4.50 S1A1 8ve G#6/G#5->F#6/F#5 S S
+b26.1.00 S1A1 8ve F#6/F#5->F6/F5 S S
+b26.1.50 S1A1 8ve F6/F5->D6/D5 S S
+b26.2.00 S1A1 8ve D6/D5->D#6/D#5 S S
+b25.1.00 S2A2 8ve A#5/A#4->F#5/F#4 mass mass
+b25.1.00 T1Bar 8ve D4/D3->A#3/A#2 mass mass
+b32.1.00 T2B1 8ve D4/D3->A#4/A#3 fin fin
+b25.1.00 B1B2 8ve A#2/A#1->D#2/D#1 mass mass
+b25.2.00 B1B2 8ve D#2/D#1->F#2/F#1 mass mass
+b25.3.00 B1B2 8ve F#2/F#1->E2/E1 mass mass
+b25.4.00 B1B2 8ve E2/E1->F2/F1 mass mass
+b26.1.00 B1B2 8ve F2/F1->A#2/A#1 mass mass
+b26.2.00 B1B2 8ve A#2/A#1->B2/B1 mass mass
+Counter({(False, False): 18, (True, True): 16, (True, False): 9, (False, True): 7})

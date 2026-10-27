@@ -1,0 +1,31 @@
+bars : 31
+voices : 2
+beats_3plus_voices : 0
+pcs_hist : {}
+beats_4plus_pcs_pct : 0.0
+beats_fit_tertian_chord_pct : 0.0
+non_tertian_beats : []
+beat_dissonance_both_attacking(unprepared) : ['b21.1 R.H.C4/L.H.G2', 'b22.1 R.H.C4/L.H.G2', 'b23.1 R.H.C5/L.H.G2', 'b23.2 R.H.F#4/L.H.G2', 'b23.4 R.H.F4/L.H.G2', 'b30.3 R.H.F5/L.H.C2']
+chordal_tritones_attacked_together(dim/dom7 member) : []
+beat_dissonance_one_held(prep/passing) : 7
+beat_dissonance_one_held_list : ['b13.2 R.H.G5/L.H.C#3', 'b13.4 R.H.G4/L.H.C#4', 'b15.4 R.H.A#5/L.H.E3', 'b19.4 R.H.C5/L.H.G2', 'b21.2 R.H.C5/L.H.G2', 'b21.4 R.H.A4/L.H.G2', 'b24.4 R.H.F4/L.H.G2']
+m2/M7_clashes_on_attacks(eighth grid) : 1
+m2/M7_clash_list : ['b19.4.50 R.H.D#4/L.H.D3']
+parallel_5ths_8ves(eighth grid, attack to attack) : ['b4.1.00 R.H.L.H. 8ve D#5/D#4->F4/F3', 'b13.1.00 R.H.L.H. 8ve D#5/D#4->C#4/C#3', 'b17.3.00 R.H.L.H. 5th C4/F2->G#4/C#3', 'b26.3.00 R.H.L.H. 8ve G#5/G#2->F4/F2', 'b29.2.00 R.H.L.H. 8ve G#5/G#2->F4/F2', 'b30.1.00 R.H.L.H. 8ve G5/G2->C4/C2']
+parallel_5ths_8ves(16th grid) : 3
+par16_list : ['b11.4.00 R.H.L.H.', 'b26.3.00 R.H.L.H.', 'b29.2.00 R.H.L.H.']
+voice_crossings : 0
+crossing_list : []
+cross_relations(different voices,<1 beat) : 1
+xrel_list : ['b17 R.H./L.H. D5/C#3']
+pair_independence : {'R.H.L.H.': {'onset_jaccard': 0.16, 'similar': 23, 'contrary': 31, 'oblique': 433, 'parallel_3rd6th_share_of_similar': 0.48}}
+voices_summary : {'R.H.': {'notes': 487, 'range': 'B3-C6', 'mean_vel': 74.3, 'max_vel': 100, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 2}, 'L.H.': {'notes': 80, 'range': 'C2-D#4', 'mean_vel': 74.5, 'max_vel': 98, 'silent_pct': np.float64(0.0), 'silent_bars': 0, 'distinct_durations': 8}}
+bar_pairs_>60%_identical_pitch_grid : [(1, 25, 0.88), (3, 12, 0.88), (19, 23, 0.62), (20, 23, 0.62), (20, 24, 0.66), (22, 27, 0.62), (23, 24, 0.62)]
+longest_identical_rhythm_run_per_voice : ['R.H.:30bars@1', 'L.H.:4bars@25']
+attacks_per_bar : [18, 18, 18, 19, 18, 19, 19, 19, 19, 19, 20, 18, 18, 18, 18, 18, 18, 18, 19, 18, 19, 19, 20, 18, 18, 18, 18, 18, 20, 20, 10]
+16th-groups checked 121 chord-fit 121
+nonfit 0 []
+par_bass 2 ['b3.1 D4/D3->D#4/D#3', 'b28.1 D4/G2->D#4/G#2']
+par_top 6 ['b10.1 A#4/A#2->D#5/D#3', 'b10.3 D#5/D#3->C5/C3', 'b10.4 C5/C3->D5/D3', 'b11.1 D5/D3->D#5/D#3', 'b11.2 D#5/D#3->C5/C3', 'b28.1 G5/G2->G#5/G#2']
+bass_leap 0 []
+cross 0 []
