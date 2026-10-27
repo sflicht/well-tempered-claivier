@@ -33,6 +33,13 @@ complete working edition. Later replacement auditions remain separate.
 | XXIII | B major | 24 | [Prelude](editions/complete-cycle/baseline/scores/23-prelude-b-major.json) · [Fugue](editions/complete-cycle/baseline/scores/23-fugue-b-major.json) | [Prelude](editions/complete-cycle/scores/23-prelude-b-major.json) · [Fugue](editions/complete-cycle/scores/23-fugue-b-major.json) |
 | XXIV | B minor | 25 | [Prelude](editions/complete-cycle/baseline/scores/24-prelude-b-minor.json) · [Fugue](editions/complete-cycle/baseline/scores/24-fugue-b-minor.json) | [Prelude](editions/complete-cycle/scores/24-prelude-b-minor.json) · [Fugue](editions/complete-cycle/scores/24-fugue-b-minor.json) |
 
+## Third edition (current)
+
+The current edition is in [`cycle/`](cycle/): Pairs I, II, IV, V and VIII
+composed or rebuilt, III, VI, VII and IX in progress, plus an appendix of
+canons. See the [README](README.md) for the table and the listening room.
+Note that the October C-minor pair, once labelled "Pair I", is now Pair II.
+
 ## Later replacement auditions
 
 - [Fugue I, recomposed](work/recomposition/fugue_i/01-fugue-recomposed.json).

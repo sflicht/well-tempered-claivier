@@ -1,81 +1,50 @@
 # Project status
 
-Updated 23 October 2026.
+Updated 27 October 2026.
 
-## Current deliverable
+## Current edition
 
-The latest completed audition is the 100-bar Fugue VIII with the three-beat
-retort passage revision. Its authoritative source is
-`work/fugue_viii_passage_revision/08-fugue-passage-revised.json`.
+The third edition lives in `cycle/`, one folder per prelude–fugue pair in
+Bach's key order. See the README for the table of pairs and the
+[listening room](https://claude.ai/artifact/BBJMS7b46MiEycNBM24yhB).
 
-Source SHA256:
-`8875eb04af5b75105fa2dddb1fae68b11a59fbc9fbd32a73fdccc6c16a85daa6`.
+- **Pairs I, II, IV, V and VIII** are composed, checked and rendered. Pair I
+  is new; II, IV, V and VIII were rebuilt from the October 23 auditions
+  after bar-by-bar reviews (`REVIEW.md` in each folder).
+- **Pairs III, VI, VII and IX** are being composed.
+- **Appendix:** Contrapunctus permutationum, a table canon and a tempo
+  canon are finished.
 
-The bounded revision altered beats 80–114 of the preceding edition. Full
-piano/chamber performances, a before/after video, a full animation, and
-editable score exports were delivered. The comparison's loudness was
-matched with constant gain. The source and export checks are retained here.
+The C-minor pair formerly called "Pair I" is now Pair II, as in Bach's
+order, and its fugue has three voices instead of two.
 
-## Latest listener feedback
+## What was fixed
 
-Sam judged VIII a substantial improvement: the counterpoint is more fully
-fleshed out and the music more interesting. Specific remaining concerns:
+`cycle/PROBLEMS.md` lists 36 problems in the earlier movements and tools
+with their fixes. The most important:
 
-1. Piano rendering works much better than the chamber orchestration.
-2. Voicing, dynamics and orchestration need greater mellifluousness.
-3. Some harmonic collisions sound like mistakes.
-4. Long passages are too similar harmonically.
-5. The complete piece is too long.
-6. The music departs too far from the WTC/Baroque inspiration.
+- The many-voice fugues now carry real independent lines; Fugue VIII no
+  longer puts four-voice counterpoint on nine staves.
+- The "collisions that sound like mistakes" in the 100-bar Fugue VIII were
+  measurable: 218 parallel fifths/octaves, 294 accented parallels and 286
+  low-register clashes. The new Fugue VIII has 0, 0 and 8.
+- The checker missed parallels between crossed voices and on successive
+  beats; `tools/critic.py` replaces it and is calibrated on Bach.
+- Every movement can now breathe (tempo maps) and is rendered in a historical
+  well-temperament (Bach–Lehman 1722 by default).
 
-These observations supersede any more optimistic language in earlier notes.
+## Listener feedback still governing the work
 
-## Current revision work
+From Sam's earlier listening: piano is the primary medium; avoid harmonic
+collisions that sound like mistakes, long harmonically static stretches,
+excessive length and distance from the WTC's language; the preludes were the
+more promising strand (III and VIII especially); many-voice fugues must be
+real counterpoint, not harmony.
 
-- Make piano the primary performance.
-- Shorten the form while preserving the improved imitative exchanges.
-- Give episodes clearer tonal destinations and cadential preparation.
-- Repair specific low-register collisions and uncontrolled cross-relations.
-- Remove or recompose extended modal/chromatic accumulation.
-- Use restrained phrase dynamics, clearer foreground/continuation balance,
-  and connected articulation appropriate to the piano.
+## Not yet done
 
-Independent score and form reviews, a performance-only helper, and composed
-opening, tonal-episode and return components are saved under
-`work/fugue_viii_concise_revision/`. The proposed shorter form is 60 bars:
-112 opening beats, a 32-beat episode, a 32-beat return and 64 final beats.
-The final 64 beats are still missing. The component scores have not been
-assembled or rendered as a complete new edition. The 100-bar audition
-remains the reproducible current version until the revision is completed
-and reviewed.
-
-## Restored complete-cycle drafts
-
-The earlier complete 48-movement drafts have been recovered and restored:
-
-- `editions/complete-cycle/baseline/scores/`: all 48 first-draft event scores.
-- `editions/complete-cycle/scores/`: all 48 second-working-draft event scores.
-- `editions/complete-cycle/tools/`: 38 historical tools.
-- `archive/well-tempered-clAIvier-complete-source.zip`: the unchanged
-  9,876,750-byte archive containing 466 files, including 48 MIDI, 48 MusicXML,
-  48 LilyPond and 49 PDF files.
-
-`editions/complete-cycle/README.md` and `CYCLE_INDEX.md` explain the provenance
-and provide the movement index. These complete draft editions precede the
-replacement auditions above. Sam rejected the earlier fugues' artistic
-quality, including their claimed large-scale counterpoint. Recovering all
-48 pieces preserves the project history; it does not restore those claims.
-
-## Wider cycle
-
-All 24 prelude–fugue pairs exist in the restored historical draft editions;
-their substantive recomposition remains unfinished. Fugue N is intended to
-contain N+1 contrapuntal parts. The later short Fugue I and Prelude IV are
-replacement auditions, and the replacement Fugue IV's planned five-voice
-6/8 form remains a brief. The earlier shared fugue-generation method is
-retired. A convincing replacement twenty-five-voice composition and the
-spatial film have not been completed.
-
-Future work should preserve the WTC as a substantive musical reference,
-while allowing individual pieces distinct subjects, meters and forms.
-Technical checks must remain separate from aesthetic judgments.
+- Sam has not heard any third-edition movement. The renders are untested by
+  ear; the next step is listening and feedback.
+- Pairs X–XXIV exist only in the rejected complete drafts.
+- The 25-voice finale and the spatial film remain goals; `tools/render_spatial.py`
+  is a first step toward the film's sound.

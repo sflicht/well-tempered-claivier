@@ -1,160 +1,108 @@
 # The Well-Tempered clAIvier
 
-An evolving cycle of 24 preludes and fugues: Fugue N is intended to contain
-N + 1 contrapuntal voices, from two through twenty-five. The Well-Tempered
-Clavier is the central inspiration. Rhythmic life, intelligible voice leading,
-and musical character are the goals; part counts and successful exports do
-not establish artistic success.
+A cycle of 24 preludes and fugues in the key order of Bach's Well-Tempered
+Clavier (I C major, II C minor, III C♯ major … XXIV B minor). Fugue N has
+N + 1 real voices, from two to twenty-five. The aim is not to depart from
+Bach's ethos but to push it further than one composer with pen and paper
+could: learned counterpoint, allusion and the key cycle, with computation
+used to search, verify, tune and render. Every note in the current edition is
+still written by hand in its source file.
 
-This repository contains the composition sources, editable event scores,
-rendering and pedagogical-animation tools, and the record of revisions.
-It preserves **two complete 48-movement draft editions** alongside later
-replacement auditions. The cycle remains an active composition project;
-the existence of all 48 scores does not establish their artistic success.
+**Listen:** the [listening room](https://claude.ai/artifact/BBJMS7b46MiEycNBM24yhB)
+plays every movement in the browser from its score, with historical
+temperaments, voice solo/mute and subject entries marked. Rendered MP3s and
+engraved PDFs are in each pair's `renders/` folder.
 
-## Complete-cycle drafts
+## The third edition (`cycle/`)
 
-The earlier complete cycle is restored as browsable sources:
+| Pair | Key | Fugue | Prelude | Status |
+| --- | --- | --- | --- | --- |
+| [I](cycle/01-c-major/) | C major | à 2, *Scala strettarum*: one subject in stretto at every distance from a bar to an eighth, climbed rung by rung; BWV 846's subject as countersubject | *Per omnes tonos*: BWV 846's texture through all 24 keys, a Shepard–Risset endless rise | new |
+| [II](cycle/02-c-minor/) | C minor | à 3, mirror trio (the whole texture upside down), BWV 847's subject as a guest voice | the subject spelled by shifting group accents; Presto/Adagio | rebuilt (was "Pair I", à 2) |
+| [III](cycle/03-c-sharp-major/) | C♯ major | à 4, a gigue-fugue that meets its own mirror image | "Glass bells", the prelude Sam liked, repaired | in progress |
+| [IV](cycle/04-c-sharp-minor/) | C♯ minor | à 5, double fugue with BWV 849's "cross" subject | Allegro inquieto with the cross as suspensions | rebuilt |
+| [V](cycle/05-d-major/) | D major | à 6, cascade stretto through six keys; BWV 850's subject as a voice | irregular-form toccata with a flourish into the fugue | rebuilt |
+| [VI](cycle/06-d-minor/) | D minor | à 7, passacaglia and fugue on a lament ground that travels through all seven voices | toccata with recitative (BWV 565 allusion) | in progress |
+| VII | E♭ major | à 8, *a due cori*: two four-voice choirs, subject against inversion | chorale prelude on *Wachet auf* (BWV 645's key) | in progress |
+| [VIII](cycle/08-e-flat-minor/) | E♭ minor | à 9, nine real voices, stretto maestrale over the subject at quarter speed; BWV 853's subject as a guest | 12/8 "Night loom", melody = the subject in retrograde inversion | rebuilt |
+| IX | E major | à 10, *Ricercar in circulo*: the motif travels round a ring of ten voices (Spem in alium) | pastorale in adaptive just intonation that sinks a comma per cycle | in progress |
+| X–XXIV | | | | earlier drafts only (see below) |
 
-- [First draft: 48 event scores](editions/complete-cycle/baseline/scores/).
-- [Second working draft: 48 event scores](editions/complete-cycle/scores/).
-- [Historical composition and rendering tools: 38 files](editions/complete-cycle/tools/).
-- [Complete-cycle provenance](editions/complete-cycle/README.md) and
-  [movement index](CYCLE_INDEX.md).
+Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:
 
-The unchanged [complete-source archive](archive/well-tempered-clAIvier-complete-source.zip)
-is 9,876,750 bytes and contains 466 files, including 48 MIDI, 48 MusicXML,
-48 LilyPond and 49 PDF files. These are historical draft materials. Sam
-rejected the earlier fugues' musical quality and the claim that their dense
-textures constituted convincing independent counterpoint; their restoration
-preserves the work and its provenance, rather than endorsing those claims.
+- **Contrapunctus permutationum**: four lines (one is B-A-C-H) in quadruple
+  invertible counterpoint; all 24 orderings, one in each of the 24 keys.
+- **Canon cancrizans per motum contrarium**: a table canon; the score turned
+  through 180° is the same piece. Ends on the Goldberg ground.
+- **Canon per tempora, "Four clocks, one hour"**: one melody at four speeds
+  (4:3:2:1), opening with the Westminster Quarters, all voices arriving together.
 
-## Current music
+What changed and why: [cycle/PROBLEMS.md](cycle/PROBLEMS.md) lists the 36
+problems found in the earlier movements and tools, each with its fix.
+[cycle/IDEAS.md](cycle/IDEAS.md) lists the ambitious ideas and their status.
+Each pair folder has a `REVIEW.md` (bar-by-bar critique, where the pair was
+rebuilt) and `NOTES.md` (form map, devices, allusions, check numbers, weak
+spots).
 
-The following are later replacement auditions and studies, distinct from
-the complete-cycle drafts above.
+## Writing, checking and rendering
 
-| Piece | Source | Status |
-| --- | --- | --- |
-| Fugue I, C major, two voices | [event score](work/recomposition/fugue_i/01-fugue-recomposed.json) · [composer](tools/recompose_fugue_i.py) | Short new audition |
-| Prelude IV, C-sharp minor | [event score](work/recomposition/prelude_iv/prelude-iv-new.json) · [composer](tools/recompose_prelude_iv.py) | New audition after the earlier prelude was rejected |
-| Nine-voice study | [event score](work/recomposition/nine_voice_experiment/nine-line-experiment.json) · [composer](tools/compose_nine_voice_experiment.py) | Initial 20-bar experiment |
-| Fugue VIII, E-flat minor, nine voices | [current event score](work/fugue_viii_passage_revision/08-fugue-passage-revised.json) · [full-form composer](tools/compose_fugue_viii_complete.py) · [passage revision](work/fugue_viii_passage_revision/recompose_passage.py) | 100-bar / approximately 3:45 audition; further revision in progress |
-
-The latest listener feedback on VIII is that its counterpoint and musical
-interest have improved substantially, while the piano works better than the
-chamber rendering. Remaining concerns are awkward harmonies, harmonically
-similar stretches, excessive length, and too much distance from the WTC's
-musical language. [Project status](PROJECT_STATUS.md) records the resulting
-revision priorities.
-
-The next replacement five-voice Fugue IV has a [subject and form brief](work/fugue_viii_passage_revision/next-fugue-iv-brief.txt),
-but is not yet composed. A convincing replacement twenty-five-voice finale
-and its spatial film remain goals.
-
-## Score format
-
-JSON event scores are the authoritative written music. Each voice has events
-with `t` (onset in quarter-note beats), `d` (written duration), `p` (MIDI pitch),
-and spelling and phrase metadata. Velocity `v` and articulation `gate` control
-performance without changing the written duration. Subjects, entries, motifs,
-phrases and pedagogical annotations are represented explicitly.
-
-The renderer exports MusicXML, LilyPond/PDF, MIDI and synthesized WAV/MP3.
-The animator reads the same event score and a rendered recording; its visible
-note events and cue files can be checked against the source.
-
-## Install
-
-Use Python 3.10 or newer in a virtual environment, then:
+The format and rules are in [cycle/CONVENTIONS.md](cycle/CONVENTIONS.md).
+Briefly:
 
 ```bash
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt   # numpy scipy mido pyfluidsynth
+sudo apt-get install ffmpeg lilypond fluidsynth fluid-soundfont-gm
+
+python3 cycle/02-c-minor/fugue.py                 # rebuild a score from its source
+python3 tools/critic.py cycle/02-c-minor/fugue.json   # check it
+python3 tools/reduce.py cycle/02-c-minor/fugue.json --per beat   # harmonic reduction
+python3 tools/render_music.py cycle/02-c-minor/fugue.json \
+    --output-prefix /tmp/fugue --temperament bach-lehman   # PDF, MIDI, MusicXML, MP3
+python3 tools/render_spatial.py cycle/08-e-flat-minor/fugue.json \
+    --output /tmp/viii-spatial.mp3                 # binaural, voices placed around you
+python3 tools/build_listening_page.py cycle/listening-manifest.json cycle/listening-room.html
 ```
 
-Full rendering also needs FFmpeg, LilyPond, libfluidsynth, a General MIDI
-soundfont and DejaVu fonts. On Debian/Ubuntu:
+Tools:
 
-```bash
-sudo apt-get install ffmpeg lilypond libfluidsynth3 fluid-soundfont-gm fonts-dejavu-core
-```
+- `tools/wtclib.py`: the literal bar-string format, score builder and explicit
+  transforms (transpose, diatonic inversion, augmentation, retrograde).
+- `tools/critic.py`: parallels between every pair of voices (consecutive and
+  beat-to-beat), dissonance treatment, melodic faults, real voices per bar,
+  doubling, low-register clashes, keyboard playability, subject-entry
+  verification. Calibrated on Bach's own fugues.
+- `tools/stretto_finder.py`: searches the strettos, inversions and
+  augmentations a subject permits, or where a foreign subject (such as Bach's)
+  can enter against it.
+- `tools/render_music.py`: LilyPond PDF, MusicXML, MIDI and MP3 in equal,
+  Bach–Lehman, Werckmeister III, Kirnberger III, Vallotti or meantone
+  temperament; tempo maps; per-note cents for just intonation.
+- `tools/render_spatial.py`: binaural render with each voice in its own place
+  in a virtual nave (arc, ring, choir or antiphonal layouts).
+- `cycle/reference/bach-subjects.md`: Bach's WTC subjects in the project's
+  token format, for allusion and combination.
 
-The current recordings used FluidR3_GM.sf2 at
-`/usr/share/sounds/sf2/FluidR3_GM.sf2`, libfluidsynth 2.3.4, LilyPond 2.24.3,
-44.1 kHz stereo audio and 1280 × 720 animation at 12 frames per second.
-Soundfonts and third-party binaries/libraries are not redistributed here.
+## History
 
-## Rebuild the current Fugue VIII
+Earlier material is kept as evidence; none of it is the current edition.
 
-Run from the repository root. The frozen source scores are included, so
-recomposition is optional when rendering the current edition.
+- `editions/complete-cycle/`: two complete 48-movement drafts (first and
+  second edition) and their generator tools. Sam rejected their fugues: the
+  many-voice textures were harmony rather than counterpoint, and the fugues
+  sounded alike. See [CYCLE_INDEX.md](CYCLE_INDEX.md).
+- `work/wtc-work/`: the October 23 auditions of Pairs C minor, IV, V and VIII
+  that this edition rebuilt (their versions and reports).
+- `work/recomposition/`, `work/fugue_viii_*`: earlier auditions, including
+  the 100-bar chamber Fugue VIII.
+- `diagnosis/`, `REASSESSMENT_AND_RESET.txt`, `COMPOSITION_BRIEF.txt`,
+  `ARTISTIC_DIRECTION.txt`: the critique and brief that this edition follows.
+- `archive/well-tempered-clAIvier-complete-source.zip`: the unchanged
+  466-file source archive of the earlier cycle.
 
-```bash
-# Compose the full-form source and apply the bounded passage revision.
-python3 tools/compose_fugue_viii_complete.py
-python3 work/fugue_viii_passage_revision/recompose_passage.py
+Borrowed material (Bach's subjects, the Royal Theme, the Goldberg ground,
+*Wachet auf*, the Westminster Quarters, Spem in alium's design) is credited in
+each movement's notes and score labels. No redistribution licence has been
+chosen yet.
 
-# Render piano and chamber audio, notation and MIDI.
-python3 tools/render_music.py \
-  work/fugue_viii_passage_revision/08-fugue-passage-revised.json \
-  --output-prefix output/fugue-viii-passage-revision/Fugue-VIII-revised \
-  --chamber
-
-# Animate the current score with piano audio.
-python3 tools/animate_cycle.py \
-  --score work/fugue_viii_passage_revision/08-fugue-passage-revised.json \
-  --audio output/fugue-viii-passage-revision/Fugue-VIII-revised.wav \
-  --output output/fugue-viii-passage-revision/Fugue-VIII-piano-animated.mp4 \
-  --mode performance --fps 12
-```
-
-`tools/build_viii_passage_study.py` recreates the previous chamber before/after
-comparison after the render above. `tools/shape_fugue_viii_piano.py` is a new,
-separate performance candidate that changes only velocity and gate; it has
-not yet been adopted as the delivered edition.
-
-To verify export fidelity:
-
-```bash
-python3 tools/verify_fugue_viii_deliverables.py \
-  --score work/fugue_viii_passage_revision/08-fugue-passage-revised.json \
-  --prefix output/fugue-viii-passage-revision/Fugue-VIII-revised \
-  --cues output/fugue-viii-passage-revision/Fugue-VIII-piano-animated.cues.json \
-  --output output/fugue-viii-passage-revision/export-check.json
-```
-
-That verifier currently checks the 100-bar, nine-part edition. It must be
-updated explicitly when the shorter revision is completed.
-
-## Repository layout
-
-- `tools/`: active composition, export, animation and review utilities.
-- `work/recomposition/`: the short audition scores and their review notes.
-- `work/fugue_viii_complete/`: the original 100-bar source and musical review.
-- `work/fugue_viii_passage_revision/`: the delivered local recomposition of VIII.
-- `work/fugue_viii_concise_revision/`: the next revision's review and performance work.
-- `editions/complete-cycle/`: both complete-cycle draft score sets, historical tools and provenance.
-- `archive/well-tempered-clAIvier-complete-source.zip`: the unchanged 466-file historical source archive.
-- `diagnosis/`: critical reassessment of the earlier approach.
-- `legacy-method/`: retired generators, retained as historical evidence.
-- `output/`: generated recordings, videos and export files; excluded from Git.
-
-The older `README.txt`, `RESET_STATUS.json` and artistic notes are preserved
-as historical snapshots. This README and `PROJECT_STATUS.md` give the current
-state. Both complete-cycle draft score sets are available under
-`editions/complete-cycle/`; their original notation and MIDI exports are
-also preserved in the unchanged archive. The shorter VIII revision has
-composed opening, episode and return components, but its final 64 beats
-are still missing. It has not been assembled or rendered as a new edition.
-
-## Musical and technical review
-
-Written score review, monophony checks, exact thematic annotations and export
-comparison are useful evidence. They do not prove stylistic correctness,
-audible independence or musical quality. The assistant has not directly
-listened to the delivered recordings. The attempted external audio reviews
-were found unreliable and were not used to direct revisions.
-
-The opening measured fragment draws on the traditional *Dies irae* chant.
-Other borrowing or allusion should be credited in the relevant score notes.
-No redistribution license has yet been selected for the project.
+Nobody involved in writing this edition could listen to the renders; checks
+can find mistakes but cannot certify music. The listener's ear decides.
