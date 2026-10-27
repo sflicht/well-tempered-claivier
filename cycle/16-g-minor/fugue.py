@@ -181,7 +181,8 @@ def summit(s0):
     bass on the strong beats; Ped. I follows three beats later, an octave higher, so that every move of
     the bass is met by a held note above it (suspensions)."""
     put('P2', s0, 3, cantus(10, -2, last=16 * 4))
-    put('P1', s0 + 1, 2, cantus(10, -1, last=16 * 3 + 4))
+    put('P1', s0 + 1, 2, cantus(10, -1, last=12))
+    put('P1', s0 + 7, 3, 'Eb3:8 D3:8 G3:24')                              # free after the canon: the dim-7th neighbour
 
     def T(v, t, toks, label=None):
         bar, beat = s0 + int(t // 4), Fr(t) - 4 * int(t // 4) + 1
@@ -205,7 +206,7 @@ def summit(s0):
     # ---- free lines (hand-written), t in beats from bar s0 beat 1
     T('OS', 4, 'G5:8 F#5:8 G5:4 D6:8 C6:4 Bb5:12 C6:2 D6:8')
     T('OS', 21.5, 'A5:2 D6:4 C6:4 Bb5:16')
-    T('HS1', 16, 'A5:8 G5:4 A5:4 E5:8 F#5:8 G5:16')
+    T('HS1', 16, 'A5:8 G5:4 A5:4 E5:24 D5:8')
     T('RT', 6, 'D4:12 F4:8 Eb4:4 D4:4')
     T('HB', 14.5, oc(dsh(S7, 5), -2), 'summit: subject 7 (line 7), low')
     T('RBr', 19.5, oc(S8, -1), 'summit: subject 8 (line 8), at home, tenor')
@@ -217,6 +218,19 @@ def summit(s0):
     T('HT', 12, 'Bb4:6 A4:6')
     T('HBr', 19.5, 'E3:14 D3:20')
     T('HB', 9, 'F3:10 Eb3:2')
+    T('RB', 16, 'D3:6 C3:2 D3:4')
+    T('OA', 20, 'E6:6 F6:2 F#6:8 G6:16')
+    T('RB', 20, 'C3:8 R:8 Bb2:16')
+    T('OA', 17, 'F#6:4 G6:4')
+    T('OS', 28, 'Eb6:16 D6:24')
+    T('OA', 28, 'G6:32 G6:16')
+    T('HS1', 28, 'C5:16 D5:8 C5:8 B4:16')
+    T('HBr', 28, 'Eb3:8 C3:8 Bb2:8 D3:24')
+    T('OB', 30, 'A3:8 Bb3:8 A3:8 B3:16')
+    # the whole organ on the Picardy chord
+    for v, p in (('HB', 'D3'), ('RB', 'G3'), ('RBr', 'D4'), ('HT', 'D4'), ('RT', 'G4'), ('HA', 'G4'),
+                 ('RS', 'D5'), ('OT', 'D5'), ('HS2', 'G5'), ('RA', 'G5')):
+        T(v, 36, p + ':16')
     # FREE-END
 
 
