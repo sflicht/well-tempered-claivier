@@ -236,6 +236,10 @@ def allemande():
     put('Q1', z + 18, 'C#4:1 B3:1 C#4:1 D4:1 E4:4 A4:1 G#4:1 E4:2 D4:2 C#4:1 B3:1')
     put('D1', z + 18, 'C#5:4 C#5:2 D5:2 E5:4 F#5:2 B4:2')
     put('H1', z + 18, 'E4:4 E4:2 F#4:2 E4:2 B4:2 A4:2 G#4:2')
+    put('T1', z + 18, 'E3:4 A3:2 E3:2 B3:4 A3:2 G#3:2')
+    theme('H1', z + Fr(103, 4), dshift(mir(SA), -7), 'Allemande mirror')
+    theme('B1', z + Fr(119, 4), oc(SA, -2), 'Allemande subject (bass)')
+    theme('D1', z + Fr(127, 4), oc(SA, 1), 'Allemande subject (stretto)')
     # @@alle
 
 
