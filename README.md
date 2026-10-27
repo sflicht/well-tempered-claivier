@@ -28,7 +28,8 @@ engraved PDFs are in each pair's `renders/` folder.
 | [IX](cycle/09-e-major/) | E major | à 10, *Ricercar in circulo*: stile antico, the motif travels round a ring of ten voices (Spem in alium); BWV 878's Fischer-derived subject as a real voice | pastorale in adaptive just intonation that sinks a syntonic comma per cycle, then snaps back to well-temperament | new |
 | X | E minor | à 11, two choirs in fugal dialogue under the chorale *O Lamm Gottes* (St Matthew Passion homage) | Aria e Presto after BWV 855 | in progress |
 | XI | F major | à 12, *Concerto fuga* after Brandenburg 2's finale: concertino of four against a ripieno of eight | two-part invention after BWV 856 | in progress |
-| XII–XXIII | | | | earlier drafts only (see below) |
+| XII | F minor | à 13, *Fuga a 4 soggetti, compiuta*: the Art of Fugue's unfinished final fugue completed as Bach planned (three subjects incl. B-A-C-H plus the main theme, after Nottebohm) | (later) | in progress |
+| XIII–XXIII | | | | earlier drafts only (see below) |
 | XXIV | B minor | à 25, twelve-tone subject (after BWV 869), contrasting rates of motion, the cycle's subjects gathered in the convergence | (later) | in progress |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:

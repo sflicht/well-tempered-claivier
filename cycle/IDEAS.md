@@ -101,6 +101,10 @@ device of its own:
 24. **[in progress] Pair XI: concerto fuga à 12.** Brandenburg 2's finale as
     a twelve-voice fugal concerto, concertino of four against a ripieno of
     eight.
+26. **[in progress] Pair XII: the unfinished fugue, finished à 13.** The
+    Art of Fugue breaks off just after B-A-C-H joins the first two subjects;
+    Nottebohm showed the three combine with the main theme. Fugue XII
+    completes that quadruple fugue in F minor, in thirteen real voices.
 25. **[in progress] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
     BWV 869), strata moving at different rates, the convergence composed
     first, the cycle's subjects gathered at the end.

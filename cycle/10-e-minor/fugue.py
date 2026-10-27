@@ -220,6 +220,27 @@ put('A1', 34, 3, 'G4:6 B4:6 C5:6 B4:4 A4:2 G4:6 A4:4 B4:2 G4:6 A4:6 G4:6 A4:6 G4
 put('B2', 36, 2, 'A2:6 B2:12 E2:6')
 
 
+# ================================================================ VII. CHORALE LINE 5 (b37-43): B minor, the choirs closer
+# A one-beat exchange (Coro II asks, Coro I answers) turns E minor to B minor; then the answer in Coro I's tenor
+# and the inverted answer in Coro II's baritone, six beats apart, under "All Suend hast du getragen".
+put('S2', 37, 2, 'C5:4 B4:2')
+put('T2', 37, 2, 'E4:4 D#4:2')
+put('B2', 37, 2, 'A2:6')
+put('S1', 37, 3, 'A5:4 G5:2')
+put('A1', 37, 3, 'C5:4 E5:2')
+put('Bar1', 37, 3, 'F#3:4 A3:2')
+put('A2', 37, 4, 'A#4:6')
+put('Bar2', 37, 4, 'C#4:6')
+put('B2', 37, 4, 'F#2:6')
+put('CH', 38, 1, CH5)
+theme('T1', 38, 1, octv('B4:6 B4:4 A#4:2 B4:2 C#5:2 D5:2 F#5:4 E5:2 F#5:4 D5:2 G5:6 F#5:2 E5:2 D5:2 C#5:2 B4:2 A4:2', -1),
+      'Coro I: answer (B minor), tenor (tail in natural minor, against the chorale A)')
+theme('Bar2', 39, 3, octv(tr(INV, 7, 4), -2), 'Coro II: inverted answer (B minor), baritone as the bass')
+put('B2', 38, 1, 'B2:6 D3:4 C#3:2 B2:6 D3:6 B2:6 G2:6')
+put('S1', 38, 1, 'F#5:6 F#5:4 E5:2 D5:6 D5:4 C#5:2 D5:6 E5:6 F#5:6 E5:6 D5:6 D5:4 E5:2 D5:6 C#5:6 B4:6 B4:6')
+put('A2', 38, 1, 'D4:4 C#4:2 F#4:6 A4:4 G4:2 B4:18 F#4:12')
+
+
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
     meta = {'title': 'The Well-Tempered clAIvier',

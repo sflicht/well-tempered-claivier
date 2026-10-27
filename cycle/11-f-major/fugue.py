@@ -193,7 +193,7 @@ put('Vc', 16, 1, 'D3:4 G2:4 A2:4')
 put('Va1', 12, 1, 'D4:4 G3:4 C4:8 A3:8 F4:4 D4:4 E4:4 C4:2 D4:2 F4:12 E4:4 D4:4 C4:4 G3:8 F3:4')
 put('V2a', 13, 1.5, 'A4:10 D5:2 C5:2 A4:4')
 put('V2a', 16, 1, 'D5:4 E5:4 F5:4')
-put('V2b', 16, 1.5, 'R:2 G4:4 F4:4')
+put('V2b', 16, 1.5, 'R:2 C4:4 A3:4')
 
 
 # ================================================================ EPISODE 1: solo (b17-22), F -> C -> towards d
@@ -240,6 +240,24 @@ put('V1a', 27, 1, 'Bb4:4 D5:4 C#5:4 E5:4 F5:4')
 put('Va1', 27, 1, 'D4:8 A3:8 A3:4')
 put('V2a', 27, 1, 'F4:8 G4:8 F4:4')
 put('Vc', 26, 1.5, 'R:14 R:16 F3:4')
+
+
+# ================================================================ EPISODE 2: solo (b28-34), d -> g -> B-flat
+# The violin's tail cascade leads to G minor; the recorder states the subject in G minor over the oboe's
+# CS and the continuo (a trio); then the solo violin takes the subject in B-flat, the recorder the CS two
+# octaves above.  The CS's chromatic note becomes F in G minor and A-flat in B-flat: each time it leans
+# to the subdominant.
+Sg = W.transpose(Sd, 5, 3)
+CSg = W.transpose(CSd, 5, 3)
+SBb = W.transpose(S, 5, 3)
+CSBb = W.transpose(CS, 5, 3)
+put('Vno', 28, 2, 'A5:1 G5:1 F5:1 E5:1 F5:1 E5:1 D5:1 C5:1 D5:1 C5:1 Bb4:1 A4:1')
+put('Vc', 28, 2, 'D3:2 C3:2 Bb2:2 A2:2 D3:4')
+theme('Fl', 29, 1.5, oc(Sg, 0), 'concertino: subject in g (Flauto)', 2)
+put('Ob', 29, 2, oc(CSg, 1))
+put('Vc', 29, 1, 'G2:2 R:2 G2:4 Bb2:8 C3:4 A2:4 C3:4 D3:4')
+theme('Vno', 31, 1.5, oc(SBb, -1), 'concertino: subject in B-flat (Violino)', 2)
+put('Fl', 31, 2, oc(CSBb, 2))
 
 
 def build(nbars, path=None):
