@@ -15,13 +15,13 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
    quarter-comma meantone available (`tools/render_music.py --temperament`).
    Keys now have colours; meantone renders show why the collection existed.
 
-2. **[in progress] Praeludium per omnes tonos (Prelude I, C major).** BWV 846's
+2. **[built] Praeludium per omnes tonos (Prelude I, C major).** BWV 846's
    broken-chord texture travels through all 24 keys in WTC order. Each minor
    key's Neapolitan becomes the next major tonic. A Shepard–Risset voicing
    makes it climb a semitone per key yet arrive home in the starting register:
    an endless ascent no harpsichord could produce.
 
-3. **[in progress] Scala strettarum (Fugue I, C major, two voices).** A subject
+3. **[built] Scala strettarum (Fugue I, C major, two voices).** A subject
    designed by search so that it combines with itself in stretto at every
    distance from a whole bar down to a single eighth note; the fugue climbs
    that ladder rung by rung.

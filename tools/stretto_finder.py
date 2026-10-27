@@ -142,7 +142,7 @@ def main():
     ap.add_argument('--scales-time', default='1', help='comma list of time factors for the moving copy, e.g. 1,2,0.5')
     ap.add_argument('--max-offset', type=int, default=16, help='max entry distance in sixteenths')
     ap.add_argument('--offset-step', type=int, default=2)
-    ap.add_argument('--steps', default='-14,-11,-10,-9,-7,-5,-4,-3,-2,0,2,3,4,5,7,9,10,11,14',
+    ap.add_argument('--steps', default=','.join(str(x) for x in range(-14, 15)),
                     help='diatonic transposition steps for the copy (7 = octave)')
     ap.add_argument('--axis', help='inversion axis pitch name, e.g. G4 (default: first note)')
     ap.add_argument('--top', type=int, default=20)

@@ -1,0 +1,204 @@
+"""Fugue IV in C-sharp minor, five voices -- third edition (literal source).
+
+Every note is written by hand as a bar string (wtclib tokens, sixteenth units,
+3/4 = 12 per bar).  Voices: S A T Br B.  See NOTES.md for the form map.
+
+Materials (written once here for reference; every statement below is spelled out
+literally in the bars, transposed by hand):
+  N   subject (kept from v7):  G#4:2 E4:1 D#4:1 B3:2 F#4:6 | A4:4 F#4:2 D#4:2 B#3:2 C#4:2
+  Ans real answer (G# minor):  D#5:2 B4:1 A#4:1 F#4:2 C#5:6 | E5:4 C#5:2 A#4:2 F##4:2 G#4:2
+  CS  fixed countersubject, sounding a sixth above the subject's first note:
+        (C#m) E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1 | C#5:6 B#4:2 D#5:2 E5:2
+      its held E is a 4-3 suspension over the subject's B; its 16ths run while the
+      subject holds F#; its second bar holds while the subject's eighths move.
+  X   "crux": J. S. Bach, WTC I, Fugue in C-sharp minor BWV 849, first subject
+      C#-B#-E-D# (here C#:12 B#:6 E:6 D#:12, and augmented C#:24 B#:12 E:12 D#:24).
+  Lament bass under upper-voice entries:  C#3:4 B2:4 A2:4 | F#2:4 D#2:4 G#2:2 C#3:2
+"""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'tools'))
+from wtclib import Bars, build_score  # noqa: E402
+
+V = ['S', 'A', 'T', 'Br', 'B']
+F = Bars(V, (3, 4))
+bar = F.bar
+
+# ---------------------------------------------------------------- EXPOSITION
+# Descending order S-A-T-Br-B: each voice that has just stated the theme
+# carries the fixed CS directly above the next entry, so the texture builds
+# 1-2-3-4-5 and nobody drops out.
+bar('1 N  S (C#m)',
+    S='G#5:2 E5:1 D#5:1 B4:2 F#5:6')
+bar('2',
+    S='A5:4 F#5:2 D#5:2 B#4:2 C#5:2')
+bar('3 Ans A (G#m) + CS in S',
+    S='B5:6 A#5:1 F#5:1 G#5:1 F#5:1 E5:1 F#5:1',
+    A='D#5:2 B4:1 A#4:1 F#4:2 C#5:6')
+bar('4',
+    S='G#5:6 F##5:2 A#5:2 B5:2~',
+    A='E5:4 C#5:2 A#4:2 F##4:2 G#4:2')
+bar('5 N  T (C#m) + CS in A; S free',
+    S='B5:4 A5:6 G#5:2',
+    A='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
+    T='G#4:2 E4:1 D#4:1 B3:2 F#4:6')
+bar('6',
+    S='F#5:4 A5:4 G#5:4',
+    A='C#5:6 B#4:2 D#5:2 E5:2',
+    T='A4:4 F#4:2 D#4:2 B#3:2 C#4:2')
+bar('7 Ans Br (G#m) + CS in T; S, A free',
+    S='D#5:4 F#5:4 E5:4',
+    A='B4:4 C#5:4 G#4:4',
+    T='B3:6 A#3:1 F#3:1 G#3:1 F#3:1 E3:1 F#3:1',
+    Br='D#3:2 B2:1 A#2:1 F#2:2 C#3:6')
+bar('8',
+    S='E5:8 D#5:4~',
+    A='C#5:10 B4:2~',
+    T='G#3:6 F##3:2 A#3:2 B3:2',
+    Br='E3:4 C#3:2 A#2:2 F##2:2 G#2:2')
+bar('9 link: G#m - F#m - F#m/A (bass steps down to the entry)',
+    S='D#5:2 C#5:2 A4:6 B4:2',
+    A='B4:4 F#4:8',
+    T='B3:4 C#4:8~',
+    Br='G#2:4 F#2:4 A2:4')
+bar('10 N  B (C#m) + CS in Br; S A T free (five voices)',
+    S='C#5:4 B4:2 D#5:2 C#5:4',
+    A='E4:4 F#4:8',
+    T='C#4:6 B3:2 A3:4',
+    Br='E3:6 D#3:1 B2:1 C#3:1 B2:1 A2:1 B2:1',
+    B='G#2:2 E2:1 D#2:1 B1:2 F#2:6')
+bar('11',
+    S='A4:8 G#4:4',
+    A='F#4:10 E4:2',
+    T='C#4:4 A3:4 D#4:2 C#4:2',
+    Br='C#3:6 B#2:2 D#3:2 E3:2',
+    B='A2:4 F#2:2 D#2:2 B#1:2 C#2:2')
+bar('12 codetta: i - VI - V7 of III',
+    S='G#4:2 B4:1 C#5:1 E5:2 C#5:2 D#5:2 F#5:2',
+    A='E4:2 G#4:2 A4:4 D#4:4',
+    T='C#4:6 B3:2 A3:4',
+    Br='E3:4 C#3:4 F#3:4',
+    B='C#3:4 A2:4 B2:4')
+# ---------------------------------------------------------------- E MAJOR
+# N in E major with the minor sixth (C natural) so the diminished seventh survives;
+# CS above it, same shape; lament bass in E.
+bar('13 N(E, modal) A + CS in S; bass E-D-C',
+    S='G#5:6 F#5:1 D5:1 E5:1 D5:1 C5:1 D5:1',
+    A='B4:2 G#4:1 F#4:1 D4:2 A4:6',
+    T='G#3:4 A3:4 E4:2 D4:2',
+    B='E3:4 D3:4 C3:4')
+bar('14',
+    S='E5:6 D#5:2 F#5:2 G#5:2',
+    A='C5:4 A4:2 F#4:2 D#4:2 E4:2',
+    T='C4:6 A3:4 G#3:2',
+    B='A2:4 F#2:4 B2:2 E3:2')
+bar('15 episode 1: head in half-bar sequence (E - A | D#o7 - G#7)',
+    S='G#5:2 E5:1 D#5:1 B4:2 E5:6',
+    A='G#4:6 C#5:2 A4:1 G#4:1 E4:2',
+    T='B3:1 G#3:1 A3:1 B3:1 C#4:1 D#4:1 E4:2 C#4:4',
+    B='E3:6 A2:6')
+bar('16',
+    S='F#5:2 D#5:1 C#5:1 A4:2 F#5:6',
+    A='A4:4 F#4:2 D#5:2 B#4:1 A#4:1 G#4:2',
+    T='A3:1 F#3:1 G#3:1 A3:1 B#3:1 C#4:1 D#4:6',
+    B='D#3:6 G#2:6')
+
+# ---------------------------------------------------------------- CRUX: SECOND EXPOSITION
+# Bach's BWV 849 subject in stile antico (bar-long notes), quiet, entering
+# T (C#m) - A (G#m, Bach's own answer G#-F##-B-A#) - S (C#m); the S carries the
+# CS's first bar as counterpoint against the first crux statement.
+bar('17 X  T (C#m); S: CS bar 1 as counterpoint; i6 - VI - iv',
+    S='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
+    A='E4:2 R:10',
+    T='C#4:12',
+    B='E3:4 A2:4 F#2:4')
+bar('18 X: B# (V) - E (i)',
+    S='F#5:6 E5:1 D#5:1 C#5:2 G#4:2',
+    T='B#3:6 E4:6',
+    B='G#2:6 C#3:6')
+bar('19 X: D# (iio6/5 - V)',
+    S='A4:4 C#5:2 B#4:2 G#4:2 B#4:2',
+    T='D#4:12',
+    B='F#2:6 G#2:6')
+bar('20 X answer A (G#m); T resolves C#',
+    S='C#5:6 E5:2 C#5:1 B4:1 A#4:2~',
+    A='G#4:12',
+    T='C#4:4 E4:8',
+    B='E3:4 B2:4 A#2:4')
+bar('21 X: F## (V6 of G#m) - B (i6)',
+    S='A#4:6 D#5:6',
+    A='F##4:6 B4:6',
+    T='C#4:6 B3:6',
+    B='D#3:6 G#2:6')
+bar('22 X: A# (V4/3 of G#m -> G#9 = V9 of C#m)',
+    S='D#5:6 F#5:4 D#5:2',
+    A='A#4:12',
+    T='C#4:6 B#3:6',
+    B='A#2:6 G#2:6')
+bar('23 X  S (C#m); i6 - i - iv',
+    S='C#5:12',
+    A='G#4:8 A4:4',
+    T='C#4:4 E4:4 F#4:4',
+    B='E2:4 C#3:4 F#2:4')
+bar('24 X: B# (V) - E (VI, deceptive)',
+    S='B#4:6 E5:6',
+    A='G#4:6 C#5:6~',
+    T='D#4:6 C#4:6',
+    B='G#2:6 A2:6')
+bar('25 X: D# as 9th of C#7 (V9 of F#m); Br enters on the leading tone',
+    S='D#5:12',
+    A='C#5:6 B4:6',
+    T='A3:6 G#3:6',
+    Br='R:6 E#3:6',
+    B='F#2:6 C#3:6')
+# ---------------------------------------------------------------- MIDDLE ENTRIES
+bar('26 N  T (F#m) + CS in A; lament bass F#-E-D',
+    S='C#5:4 B4:8',
+    A='A4:6 G#4:1 E4:1 F#4:1 E4:1 D4:1 E4:1',
+    T='C#4:2 A3:1 G#3:1 E3:2 B3:6',
+    Br='F#3:2 R:10',
+    B='F#2:4 E2:4 D2:4')
+bar('27',
+    S='D5:8 C#5:4',
+    A='F#4:6 E#4:2 G#4:2 A4:2',
+    T='D4:4 B3:2 G#3:2 E#3:2 F#3:2',
+    B='B1:4 G#1:4 C#2:2 F#2:2')
+bar('28 episode 2: head in S over a bass that sings the crux in diminution (F#-E#-A-G#)',
+    S='C#5:2 F#5:1 E#5:1 C#5:2 F#5:2 E5:2 B4:2',
+    A='A4:4 G#4:2 F#4:2 G#4:4',
+    T='F#3:4 C#4:4 B3:4',
+    B='F#2:4 E#2:2 A2:2 G#2:4')
+bar('29 the same a step higher (G#-F##-B-A#)',
+    S='D#5:2 G#5:1 F##5:1 D#5:2 G#5:2 F#5:2 C#5:2',
+    A='B4:4 A#4:2 G#4:2 A#4:4',
+    T='G#3:4 D#4:4 C#4:4',
+    B='G#2:4 F##2:2 B2:2 A#2:4')
+bar('30 Ans Br (G#m) in the bass; stretto: A enters two beats later a fifth higher (in key)',
+    S='B4:4 C#5:4 E5:4',
+    A='R:8 A#4:2 F#4:1 E4:1',
+    T='B3:4 A#3:4 G#3:4~',
+    Br='D#3:2 B2:1 A#2:1 F#2:2 C#3:6')
+bar('31',
+    S='E5:4 C#5:4 D#5:4',
+    A='C#4:2 G#4:6 B4:4',
+    T='G#3:6 C#4:2 A#3:2 B3:2',
+    Br='E3:4 C#3:2 A#2:2 F##2:2 G#2:2')
+
+ENTRIES = [
+    ('S', 1, 0, 'subject', 2), ('A', 3, 0, 'answer', 2), ('T', 5, 0, 'subject', 2),
+    ('Br', 7, 0, 'answer', 2), ('B', 10, 0, 'subject', 2),
+    ('A', 13, 0, 'subject (E major, modal)', 2),
+    ('T', 26, 0, 'subject (F# minor)', 2), ('Br', 30, 0, 'answer (G# minor)', 2), ('A', 30, 2, 'stretto: subject at the fifth, in key', 2),
+]
+
+if __name__ == '__main__':
+    out = Path(__file__).with_name('fugue.json')
+    meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue IV in C-sharp minor (third edition)',
+            'composer': 'Claude / Sam', 'instrument': 'Piano', 'key': 'C#', 'mode': 'minor', 'meter': [3, 4],
+            'bpm': 72, 'tempo_text': 'Moderato, sostenuto', 'movement_number': 4, 'piece_type': 'fugue',
+            'edition': 'third'}
+    build_score(out, meta, [('S', 'S', 'treble', 72), ('A', 'A', 'treble', 68), ('T', 'T', 'tenor', 67),
+                            ('Br', 'Br', 'bass', 66), ('B', 'B', 'bass', 64)],
+                F.bars, entries=ENTRIES, subject='G#4:2 E4:1 D#4:1 B3:2 F#4:6 A4:4 F#4:2 D#4:2 B#3:2 C#4:2',
+                tags=F.tags)
+    print('bars', len(F))

@@ -46,6 +46,7 @@ PERF = {0, 7}
 ROUGH = {1: 1.0, 2: .8, 5: .45, 6: .7, 10: .8, 11: 1.0}
 
 
+BEATPAR = 15
 RES = 1   # grid units per sixteenth (set to 2 for 32nd-note material)
 
 
@@ -184,6 +185,21 @@ def pair_cost(A, B, detail=False):
         cost += c
         if detail and c >= 4:
             why.append((t, f'diss ic{ic} c{c}'))
+    # accented (beat-to-beat) parallels, passing notes between (critic's check)
+    beat = 4 * RES
+    tb = [t for t in range(t0 - t0 % beat + beat if t0 % beat else t0, t1, beat)]
+    for x, y in zip(tb, tb[1:]):
+        ka, kb, ka2, kb2 = ia.get(x), ib.get(x), ia.get(y), ib.get(y)
+        if None in (ka, kb, ka2, kb2):
+            continue
+        pa, pb, qa, qb = A[ka][3], B[kb][3], A[ka2][3], B[kb2][3]
+        if pa == qa or pb == qb:
+            continue
+        c1, c2 = abs(pa - pb) % 12, abs(qa - qb) % 12
+        if c1 in PERF and c1 == c2 and (qa - pa) * (qb - pb) > 0:
+            cost += BEATPAR
+            if detail:
+                why.append((y, f'beat-parallel {"8" if c1 == 0 else "5"}'))
     return cost, why
 
 

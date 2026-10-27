@@ -130,17 +130,24 @@ def score_duration(data):
     return max((frac(e["t"]) + frac(e["d"]) for v in data["voices"] for e in v["events"]), default=Fraction(0))
 
 
-def voice_segments(voice, end, bar_len):
-    """A complete grid of notes/rests split at bars, with tie flags."""
+def voice_segments(voice, end, bar_len, split_at=()):
+    """A complete grid of notes/rests split at bars, with tie flags.
+    Rests are also split at split_at times (e.g. rehearsal markers)."""
     full = []
     t = Fraction(0)
+    cuts = sorted(set(split_at))
+
+    def rest(a, b):
+        points = [a] + [c for c in cuts if a < c < b] + [b]
+        for x, y in zip(points, points[1:]):
+            full.append({"t": x, "d": y - x, "p": None})
     for e in voice["events"]:
         if e["t"] > t:
-            full.append({"t": t, "d": e["t"] - t, "p": None})
+            rest(t, e["t"])
         full.append(e)
         t = e["t"] + e["d"]
     if t < end:
-        full.append({"t": t, "d": end - t, "p": None})
+        rest(t, end)
     segments = []
     for e in full:
         remaining, cursor = e["d"], e["t"]
@@ -225,7 +232,7 @@ def create_lilypond(data, output):
     staff_distance = layout.get("staff_distance", 9 if len(voices) >= 9 else 11)
     text = [r'\version "2.24.3"', r'\language "nederlands"', f'#(set-global-staff-size {staff_size})',
             '\\header {', f'  title = "{title}"', f'  subtitle = "{subtitle}"',
-            f'  composer = "{composer}"', f'  instrument = "{instrument}"',
+            f'  composer = "{composer}"', f'  subsubtitle = "{instrument}"',
             f'  tagline = "{tagline}"', '}',
             '\\paper {', f'  #(set-paper-size "{paper}")', '  top-margin = 13\\mm',
             '  bottom-margin = 14\\mm', '  left-margin = 15\\mm', '  right-margin = 12\\mm',
@@ -244,7 +251,7 @@ def create_lilypond(data, output):
         if i == 0:
             text.append(f'      \\tempo "{escape_lily(meta.get("tempo_text", "Con moto, sempre chiaro"))}" 4 = {round(bpm_of(meta))}')
         bar_items, currentbar = [], 0
-        for s in voice_segments(voice, end, bar_len):
+        for s in voice_segments(voice, end, bar_len, split_at=markers.keys() if i == 0 else ()):
             bar = s["t"] // bar_len
             if bar != currentbar:
                 text.append('      ' + ' '.join(bar_items) + ' |')
@@ -269,6 +276,8 @@ def create_lilypond(data, output):
     text += ['  >>', '  \\layout {', f'    indent = {indent_mm}\\mm', '    short-indent = 6\\mm',
              '    \\context { \\Score \\override BarNumber.break-visibility = ##(#f #f #t) }',
              f'    \\context {{ \\Staff \\override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #{staff_distance} }}',
+             *(['    \\context { \\Staff \\RemoveEmptyStaves \\override VerticalAxisGroup.remove-first = ##t }']
+               if layout.get('hide_empty_staves') else []),
              '  }', '}']
     Path(output).write_text('\n'.join(text) + '\n', encoding='utf-8')
 
@@ -535,6 +544,7 @@ def main():
     ap.add_argument('--no-pdf', action='store_true')
     ap.add_argument('--no-audio', action='store_true')
     ap.add_argument('--chamber', action='store_true')
+    ap.add_argument('--audio-only', action='store_true', help='write only the MP3 (no .ly/.musicxml/.mid/.pdf)')
     ap.add_argument('--temperament', default='equal', choices=sorted(TEMPERAMENTS),
                     help='historical keyboard temperament for the audio render')
     ap.add_argument('--a4', type=float, default=440.0, help='reference pitch, e.g. 415 for Baroque pitch')
@@ -544,11 +554,14 @@ def main():
     prefix = args.output_prefix.resolve()
     prefix.parent.mkdir(parents=True, exist_ok=True)
     ly, xml, midi = prefix.with_suffix('.ly'), prefix.with_suffix('.musicxml'), prefix.with_suffix('.mid')
-    create_lilypond(data, ly)
-    create_musicxml(data, xml)
-    create_midi(data, midi)
-    result = {'input':str(args.input),'voices':len(data['voices']), 'midi':str(midi),
-              'musicxml':str(xml),'lilypond':str(ly)}
+    result = {'input':str(args.input),'voices':len(data['voices'])}
+    if args.audio_only:
+        args.no_pdf = True
+    else:
+        create_lilypond(data, ly)
+        create_musicxml(data, xml)
+        create_midi(data, midi)
+        result.update({'midi':str(midi), 'musicxml':str(xml), 'lilypond':str(ly)})
     if not args.no_pdf:
         proc = subprocess.run(['lilypond','-dno-point-and-click','-o',str(prefix),str(ly)], capture_output=True, text=True)
         prefix.with_suffix('.engraving.log').write_text(proc.stdout+proc.stderr)
@@ -564,7 +577,10 @@ def main():
             create_midi(data, chamber.with_suffix('.mid'), chamber=True)
             result['chamber_audio'] = render_audio(data,chamber.with_suffix('.wav'),chamber.with_suffix('.mp3'),args.soundfont,chamber=True)
             result['chamber_mp3'] = str(chamber.with_suffix('.mp3'))
-    prefix.with_suffix('.render.json').write_text(json.dumps(result,indent=2)+'\n')
+    if not args.audio_only:
+        prefix.with_suffix('.render.json').write_text(json.dumps(result,indent=2)+'\n')
+    if prefix.with_suffix('.wav').exists():
+        prefix.with_suffix('.wav').unlink()
     print(json.dumps(result,indent=2))
 
 
