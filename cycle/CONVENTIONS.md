@@ -44,7 +44,11 @@ and roughly one unresolved dissonance per 10-80 bars. More voices naturally
 raise the tripling figure; keep it far below the old drafts (Fugue V v3: 38%,
 the 100-bar Fugue VIII: 66%). Bach's lines move by step 71-75% of the time and
 leap a fourth or more about 14% (`stepwise_pct`, `leap_4th_plus_pct`); lines
-assembled from chord tones leap much more, so watch those two numbers. Treat every `parallels_error` and every
+assembled from chord tones leap much more, so watch those two numbers.
+`bad_doublings` counts beats where a chord's seventh or a dominant's leading
+tone is doubled: Bach scores 0-1 per fugue. With nine or ten voices some pitch
+class must be tripled (there are only three or four in a chord), so judge
+many-voice textures by `bad_doublings`, not by the tripling percentage. Treat every `parallels_error` and every
 `UNRESOLVED`/`UNPREPARED+UNRESOLVED` dissonance as something to fix or to
 justify in NOTES.md. Clean numbers do not make music; they only remove
 mistakes.

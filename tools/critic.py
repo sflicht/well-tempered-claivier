@@ -227,6 +227,23 @@ def sonority_stats(S):
             c = collections.Counter(p % 12 for p in ps)
             if max(c.values()) >= 3:
                 tripled += 1
+    # Doublings that matter: the seventh of a seventh chord, or the third of a
+    # dominant seventh (the leading tone), sounding in two or more voices.
+    bad = []
+    for t in range(0, S.end, S.beat):
+        ps = [S.note(i, k)['p'] for i, (k, _) in S.sounding(t).items()]
+        if len(ps) < 3:
+            continue
+        cnt = collections.Counter(p % 12 for p in ps)
+        cands = chord_candidates(set(cnt), min(ps) % 12)
+        if not cands:
+            continue
+        root, q = cands[0]
+        seventh = {'7': 10, 'm7': 10, 'ø7': 10, 'o7': 9, 'maj7': 11, '7(no5)': 10, 'm(no5)7': 10}.get(q)
+        if seventh is not None and cnt[(root + seventh) % 12] >= 2:
+            bad.append(S.loc(t) + ' 7th')
+        if q in ('7', '7(no5)') and cnt[(root + 4) % 12] >= 2:
+            bad.append(S.loc(t) + ' leading tone')
     low = []
     for t in S.onsets:
         snd = S.sounding(t)
@@ -237,6 +254,7 @@ def sonority_stats(S):
                 if b < 55 and (b - a) in (1, 2, 10, 11, 13, 14) and (ps[x][2] or ps[y][2]):
                     low.append(S.loc(t))
     return {'pc_tripled_on_beats_pct': round(100 * tripled / max(1, beats), 1),
+            'bad_doublings': len(bad), 'bad_doubling_examples': bad[:12],
             'low_register_seconds': len(low), 'low_register_examples': sorted(set(low))[:12]}
 
 
@@ -607,6 +625,7 @@ def analyse(data, bars=None):
         'doubling_runs': sum(1 for x in par if x['sev'] == 'doubling'),
         'beat_parallels': sum(1 for x in R['beat_parallels'] if x['sev'] != 'doubling'),
         'pc_tripled_on_beats_pct': R['sonority']['pc_tripled_on_beats_pct'],
+        'bad_doublings': R['sonority']['bad_doublings'],
         'low_register_seconds': R['sonority']['low_register_seconds'],
         'dissonance_unresolved': sum(1 for x in dis if x['sev'] == 'error'),
         'dissonance_kinds': dict(c(x['kind'] for x in dis)),

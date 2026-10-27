@@ -22,11 +22,11 @@ from wtclib import (build_score, concat_bars, transpose, scale_rhythm,  # noqa: 
                     invert_diatonic, parse_tok)
 
 METER = (4, 4)
-BPM = 88
+BPM = 80
 NAMES = ['I Soprano', 'I Alto', 'I Tenor', 'I Bass', 'II Soprano', 'II Alto', 'II Tenor', 'II Bass']
 AB = {'S1': 'I Soprano', 'A1': 'I Alto', 'T1': 'I Tenor', 'B1': 'I Bass',
       'S2': 'II Soprano', 'A2': 'II Alto', 'T2': 'II Tenor', 'B2': 'II Bass'}
-NBARS = 50
+NBARS = 49
 REST = 'R:16'
 BARS = {n: [REST] * NBARS for n in NAMES}
 TAGS = [''] * NBARS
@@ -200,13 +200,13 @@ tag(9, 'Coro II: the mirror exposition (bass first)')
 # choir resolves across the hall; Coro II's bar ends plagally (its mirror dialect).
 put(17, A1='Eb4:4 G4:2 Bb4:2 C5:4 Bb4:4',
         S1='R:2 Bb4:2 Eb5:2 D5:2 Eb5:2 F5:2 E5:2 G5:2',
-        T1='Bb3:8 Ab3:4 G3:4',
-        B1='Eb3:4 Eb2:4 Ab2:4 C3:4')
+        T1='G3:4 Bb3:4 Ab3:4 G3:4',
+        B1='R:4 Eb2:4 Ab2:4 C3:4')
 entry('A1', 17, 0, 'Coro I head (E-flat)', 1)
 tag(17, 'Antiphony by the bar: heads round a circle of fifths')
 put(18, S2='C5:4 Ab4:2 F4:2 E4:4 F4:4',
-        A2='R:2 F4:2 C4:2 Db4:2 C4:2 Bb3:2 A3:4',
-        T2='Ab3:4 F3:4 G3:4 F3:4',
+        A2='R:2 F4:2 C4:2 Db4:2 C4:2 Bb3:2 C4:4',
+        T2='Ab3:4 F3:4 G3:4 A3:4',
         B2='F3:4 Ab2:4 C3:4 F2:4')
 entry('S2', 18, 0, 'Coro II inverted head (f minor)', 1)
 put(19, B1='Bb2:4 D3:2 F3:2 G3:4 F3:4',
@@ -235,11 +235,11 @@ entry('A1', 21, 0, 'Coro I rectus (c minor level)')
 tag(21, 'Antiphony by the bar, overlapping: entries a bar apart')
 put(22, S2='D5:4 Bb4:2 G4:2 F4:4 G4:4  F4:2 Eb4:1 F4:1 G4:2 Eb4:2 C4:4 D4:2 Eb4:2',
         A2='D4:4 Eb4:4 R:8  R:16',
-        T2='F3:4 G3:4 Bb3:4 Eb3:4  G3:4 Bb3:4 Ab3:4 F3:4',
+        T2='F3:4 G3:4 R:8  G3:4 Bb3:4 Ab3:4 F3:4',
         B2='Bb2:4 G2:4 Bb1:4 Eb2:4  Bb2:4 G2:4 Eb3:4 Bb2:4')
 entry('S2', 22, 0, 'Coro II inversus (on D)')
 put(23, T1='Eb3:4 G3:2 Bb3:2 C4:4 Bb3:4  C4:2 D4:1 C4:1 Bb3:2 D4:2 F4:4 Eb4:2 D4:2',
-        S1='G5:4 F5:2 G5:2 Eb5:4 D5:4  C5:4 D5:4 C5:4 F5:4~',
+        S1='Bb4:4 Eb5:2 D5:2 Eb5:4 D5:4  C5:4 D5:4 C5:4 F5:4~',
         A1='G4:4 Eb4:8 Ab4:4  Ab4:4 F4:4 A4:8',
         B1='Eb2:8 Ab2:4 Bb2:4  Ab2:4 Bb2:4 A2:4 F2:4')
 entry('T1', 23, 0, 'Coro I rectus (E-flat, to B-flat)')
@@ -253,7 +253,7 @@ entry('T1', 23, 0, 'Coro I rectus (E-flat, to B-flat)')
 # when each choir concedes a semitone (A -> A-flat, D-flat -> D) they find
 # B-flat-seven together, and E-flat.
 put(25, S1='F5:8 Eb5:8',
-        A1='Bb4:2 F4:2 Bb4:2 A4:2 Bb4:2 C5:2 A4:2 C5:2',
+        A1='D4:4 G4:2 A4:2 Bb4:2 C5:2 A4:2 C5:2',
         T1='Bb3:4 D4:2 F4:2 G4:4 F4:4',
         B1='Bb2:8 Eb3:4 F3:4')
 entry('T1', 25, 0, 'Coro I head (B-flat!)', 1)
@@ -310,14 +310,14 @@ tag(31, 'The joke: augmentation interrupted by diminution')
 put(32, S2=DIM, A2='Bb3:4 Eb4:4 C4:4 Bb3:4', T2='G3:4 Ab3:8 F3:4', B2='Eb3:4 Ab2:8 Bb2:4')
 entry('S2', 32, 0, 'Coro II diminution (interrupting)', 1)
 put(33, B1=T8('C5:8 Bb4:8', -2),
-        S1='Eb5:6 F5:2 D5:8', A1='G4:6 Ab4:2 Bb4:8', T1='Eb4:8 Bb3:8')
+        S1='Eb5:6 F5:2 D5:8', A1='G4:6 Ab4:2 Bb4:8', T1='Eb4:8 F4:8')
 put(34, B2=T8(invert_diatonic(DIM, 'G4', EB), -1),
         S2='G5:4 F5:2 G5:2 F5:2 Eb5:6', A2='Eb5:4 Bb4:8 C5:4', T2='Eb4:4 F4:6 G4:2 C4:4')
 entry('B2', 34, 0, 'Coro II diminution, inverted (interrupting again)', 1)
 put(35, B1=T8('C5:4 D5:2 C5:2 Bb4:4 D5:4', -2),
         S1='Ab5:6 G5:2 G5:4 F5:4', A1='Eb4:6 F4:2 Eb4:4 Bb4:4', T1='C4:6 Bb3:2 Bb3:4 Bb3:4')
 # a beat each: the diminished head, rectus on the left, inverted on the right
-put(36, S2='F5:2 D5:1 Bb4:1 Bb4:4 Ab4:4 R:4',
+put(36, S2='F5:2 D5:1 Bb4:1 R:12',
         A2='Bb4:4 R:4 D5:4 R:4',
         T2='D4:4 R:4 F4:2 D4:1 Bb3:1 R:4',
         B2='Bb2:4 R:4 Bb2:4 R:4',
@@ -338,12 +338,12 @@ tag(36, 'a beat')
 SUB_c = 'C3:4 Eb3:2 G3:2 Ab3:4 G3:4 Ab3:2 Bb3:1 Ab3:1 G3:2 Bb3:2 D4:4 C4:2 Bb3:2'   # rectus, c level
 INV_F = 'F4:4 D4:2 Bb3:2 Ab3:4 Bb3:4 Ab3:2 G3:1 Ab3:1 Bb3:2 G3:2 Eb3:4 F3:2 G3:2'   # inversus on F
 SUB_Ab = transpose(SUBJ, -7, -4)                                                   # rectus, A-flat level
-put(37, T2='R:8 ' + INV_F + ' R:8  R:8 D4:4 C4:4  R:16  Ab3:8 R:8',
-        T1=SUB_c + ' C4:4 G3:4 R:8  Bb3:4 R:4 Bb3:4 Eb4:4  Bb3:4 Bb3:4 R:8  R:8 C4:4 Ab3:4',
+put(37, T2='R:8 ' + INV_F + ' R:8  R:8 D4:4 C4:4  R:16  R:16',
+        T1=SUB_c + ' C4:4 R:12  Bb3:4 R:4 Bb3:4 R:4  Bb3:4 R:12  R:8 C4:4 R:4',
         S1='Eb5:8 C5:4 R:4  ' + T8(SUB_Ab, 1) + '  R:8 F5:4 C5:4  Bb4:8 R:8  R:8 Ab4:4 Bb4:4',
-        A1='G4:8 F4:4 Bb3:4  Eb4:8 Ab4:4 R:4  ' + SUB_Ab + '  F4:4 G4:4 F4:4 G4:4  Eb4:4 F4:4 Eb4:4 D4:4',
-        B1='R:8 F2:4 Bb2:4  C3:4 G2:4 Bb2:4 Eb2:4  Ab2:4 Eb3:4 Bb2:4 Eb2:4  ' + T8(SUB_Ab, -1) + '  Eb3:8 F3:4 Bb2:4',
-        B2='R:8 Ab2:4 R:4  Ab2:4 Eb3:4 D3:4 Eb3:4  R:8 ' + T8(INV, -1) + ' R:8  Ab2:8 R:8',
+        A1='G4:8 Eb4:4 Bb3:4  Eb4:8 Ab4:4 R:4  ' + SUB_Ab + '  F4:4 G4:4 F4:4 G4:4~  G4:4 F4:4 Eb4:4 D4:4',
+        B1='R:8 F2:4 Bb2:4  C3:4 G2:4 Bb2:4 Eb2:4  Ab2:4 Eb3:4 R:8  ' + T8(SUB_Ab, -1) + '  Eb3:8 F3:4 Bb2:4',
+        B2='R:8 Ab2:4 R:4  Ab2:4 Eb3:4 D3:4 Bb2:4  R:8 ' + T8(INV, -1) + ' R:8  Ab2:8 R:8',
         A2='R:16  R:8 ' + INV + ' F4:4 G4:4  R:16  C4:8 R:8',
         S2='R:16  R:16  R:8 D5:4 C5:4  R:8 ' + T8(INV, 1))
 for v, b, off, lab in (('T1', 37, 0, 'stretto a 8: Coro I rectus (c)'), ('T2', 37, 2, 'stretto a 8: Coro II inversus (on F)'),
@@ -355,53 +355,79 @@ tag(37, 'Summit: stretto a 8, all voices enter half a bar apart')
 
 
 # ===========================================================================
-# 7. CODA (b43-50).  The first line of "Wachet auf" in long notes in Coro I's
+# 7. CODA (b43-49).  The first line of "Wachet auf" in long notes in Coro I's
 # tenor, where BWV 645 puts the chorale; the subject's heads and tails around
 # it in both choirs.  Under the chorale's C, Coro I's bass at last finishes the
 # augmentation it was never allowed to finish (F - E-flat - D).  The final
 # cadence is the reconciliation chord again (A-flat over B-flat), and Coro II
 # has the last word: an echo of the head, upside down.
 CHORALE_1 = 'Eb3:8 G3:8  Bb3:12 Bb3:4  Bb3:8 Bb3:8  C4:16  Bb3:16'   # Nicolai 1599, line 1
-put(43, T1=CHORALE_1,
-        B1='Eb2:8 G2:8  G2:8 Ab2:4 F2:4  G2:8 Eb2:8  ' + T8('F5:8 Eb5:4 D5:4', -2) + '  Bb2:16',
-        S1='Eb5:4 G5:2 Bb5:2 C6:4 Bb5:4  Ab5:4 G5:4 F5:4 D5:4  Eb5:8 G5:4 F5:4  Ab5:8 Eb5:4 F5:4  D5:8 F5:8',
-        A1='G4:8 Eb4:4 G4:4  F4:4 Eb4:4 C4:4 Bb3:4  Bb3:4 C4:4 D4:4 Bb3:4  C4:8 C4:4 Bb3:4  Bb3:16',
-        S2='R:4 Bb5:4 G5:2 Eb5:2 D5:4  Eb5:4 Bb4:4 C5:4 Ab4:4  G4:4 Ab4:4 Bb4:8  C5:8 G4:4 Ab4:4  F4:16',
-        A2='R:4 Eb5:4 Bb4:2 G4:2 Ab4:4  G4:4 F4:4 Eb4:4 F4:4  Eb4:4 F4:4 G4:4 Eb4:4  Eb4:8 C4:4 D4:4  D4:16',
-        T2='R:8 G3:4 Ab3:4  Eb3:4 D3:4 Eb3:4 D3:4  Eb3:8 D3:4 G3:4  Ab3:8 G3:4 F3:4  F3:16',
-        B2='R:8 C3:4 Ab2:4  C3:4 Bb2:4 Ab2:4 Bb2:4  C3:4 Bb2:4 G2:8  Ab2:4 Ab2:4 Bb2:8  Ab3:16')
+put(43, T1=CHORALE_1 + '  Bb3:16  Bb3:16',
+        B1='R:8 C3:8  G2:8 Bb2:8  C3:8 G2:8  ' + T8('F5:8 Eb5:4 D5:4', -3) + '  Bb1:16  Eb2:16  Eb2:16',
+        A1=HEAD + '  Bb4:8 F4:8  R:16  R:8 F4:8  F4:16  G4:8 R:8  Eb4:16',
+        S1='Bb4:8 Eb5:8  Eb5:8 F5:8  Eb5:16  Ab5:16~  Ab5:16  G5:16  G5:16',
+        S2='R:8 G5:8  G5:8 R:8  G5:16  G5:4 F5:4 R:8  Eb5:8 F5:8  Eb5:8 Bb4:4 G4:2 Eb4:2  Eb5:16',
+        A2='R:16  R:16  Bb4:16  Ab4:12 Bb4:4  C5:8 Bb4:8  Bb4:8 R:8  Bb4:16',
+        T2='R:8 Eb4:8  Eb4:12 D4:4  C4:8 Eb4:8~  Eb4:16~  Eb4:16  R:16  G3:16',
+        B2='R:16  R:16  G3:8 R:8  C3:16~  C3:8 D3:8  R:16  Eb3:16')
 entry('T1', 43, 0, 'Chorale "Wachet auf", line 1 (tenor)', 5)
+entry('A1', 43, 0, 'Coro I head', 1)
 entry('B1', 46, 0, 'Coro I finishes its augmentation', 1)
+entry('S2', 48, 2, 'Coro II: the echo, upside down', 1)
 tag(43, 'Coda: "Wachet auf" in the tenor; the augmentation finished')
-# the reconciliation chord as the final cadence, then E-flat, and the echo
-put(48, S1='Bb4:8 D5:8  Eb5:8 R:8  Eb5:16',
-        A1='F4:8 F4:8  G4:8 R:8  G4:16',
-        T1='Bb3:8 Ab3:8  G3:8 R:8  Bb3:16',
-        B1='Bb2:16  Eb2:8 R:8  Eb2:16',
-        S2='C5:8 Bb4:8  Bb4:8 Bb4:4 G4:2 Eb4:2  Eb4:16',
-        A2='Eb4:8 D4:8  Eb4:8 R:8  Bb3:16',
-        T2='Ab3:8 F3:8  Eb3:8 R:8  G3:16',
-        B2='Ab3:4 F3:4 D3:4 Bb2:4  Eb3:8 R:8  Eb3:16')
-entry('S2', 49, 2, 'Coro II: the echo, upside down', 1)
-tag(48, 'Final cadence: A-flat over B-flat, then E-flat')
+tag(47, 'Final cadence: A-flat over B-flat, then E-flat')
 
 # === SECTIONS-END ===
 
 
 def DYN(b):
+    """Phrase dynamics by bar index (0-based): the expositions moderate, the
+    argument louder, the joke's chatter lighter, the summit and coda full."""
+    bar = b + 1
+    if bar <= 16:
+        return -4
+    if 25 <= bar <= 30:
+        return 3
+    if 37 <= bar <= 42:
+        return 6
+    if bar >= 43:
+        return 4
     return 0
+
+
+# Performance only (no notes): Coro I on the left, Coro II on the right; the
+# chatter of the diminutions detached; the final echo soft.
+PAN = {'I Soprano': 22, 'I Alto': 32, 'I Tenor': 42, 'I Bass': 52,
+       'II Soprano': 106, 'II Alto': 96, 'II Tenor': 86, 'II Bass': 76}
+TEMPO_MAP = [[0, BPM],
+             [112, BPM], [120, 70, 'ramp'],           # b29-30: broadening into the reconciliation
+             [120, 76],                               # b31 Coro I, pompous
+             [124, 86], [128, 76], [132, 86], [136, 76],   # chatter v. pomp
+             [140, 82],                               # b36: a beat
+             [144, 74],                               # b37: the summit, broad
+             [168, 76],                               # b43: coda
+             [184, 76], [196, 48, 'ramp']]            # final ritardando
 
 
 def build(path=HERE / 'fugue.json'):
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue VII in E-flat major (a 8): Fuga a due cori',
             'composer': 'Claude / Sam', 'instrument': 'Two four-voice choirs (Coro I left, Coro II right)',
-            'key': 'Eb', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
+            'key': 'Eb', 'mode': 'major', 'meter': list(METER), 'bpm': BPM, 'tempo_map': TEMPO_MAP,
             'tempo_text': 'Allegro festivo', 'movement_number': 7, 'piece_type': 'fugue',
             'edition': 'third', 'markers': [{'t': (b - 1) * 4, 'label': t} for b, t in enumerate(TAGS, 1) if t]}
     voices = [('I Soprano', 'S1', 'treble', 74), ('I Alto', 'A1', 'treble', 70), ('I Tenor', 'T1', 'treble_8', 70),
               ('I Bass', 'B1', 'bass', 72), ('II Soprano', 'S2', 'treble', 74), ('II Alto', 'A2', 'treble', 70),
               ('II Tenor', 'T2', 'treble_8', 70), ('II Bass', 'B2', 'bass', 72)]
     data = build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ, dynamics=DYN, tags=TAGS)
+    for v in data['voices']:
+        v['piano_pan'] = PAN[v['name']]
+        for e in v['events']:
+            t = float(e['t'])
+            if (v['name'] == 'II Soprano' and 124 <= t < 128) or (v['name'] == 'II Bass' and 132 <= t < 136):
+                e['gate'] = 0.62                      # the chatter, detached
+            if v['name'] == 'II Soprano' and 190 <= t < 192:
+                e['v'] = max(30, int(e['v']) - 24)    # the echo, upside down and soft
+    Path(path).write_text(json.dumps(data, indent=1))
     return data
 
 

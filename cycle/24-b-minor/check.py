@@ -19,21 +19,42 @@ def proto(key):
     return xxiv.GUESTS[key][0]
 
 
+def proto_notes(key):
+    """(pitch, quarters) of a theme prototype, rests dropped, tied notes merged."""
+    out, tie = [], False
+    for tok in proto(key).split():
+        p, dd, sp, t = W.parse_tok(tok)
+        if p is None:
+            tie = False
+            continue
+        if tie and out and out[-1][0] == p:
+            out[-1] = (p, out[-1][1] + dd)
+        else:
+            out.append((p, dd))
+        tie = t
+    return [(p, float(dd / 4)) for p, dd in out]
+
+
 def verify_themes(d):
     out = []
     for th in d.get('themes', []):
         v = xxiv.NAMES.index(th['voice'])
-        evs = [e for e in d['voices'][v]['events'] if e['t'] >= th['t'] - 1e-9]
-        want = [(p + th['semis'], float(dd / 4 * th['scale'])) for p, dd, sp, tie in map(W.parse_tok, proto(th['key']).split()) if p is not None]
+        evs = sorted(d['voices'][v]['events'], key=lambda e: e['t'])
+        k0 = next((k for k, e in enumerate(evs) if e['t'] <= th['t'] + 1e-9 < e['t'] + e['d']), None)
+        if k0 is None:
+            out.append({'voice': th['voice'], 'beat': th['t'], 'label': th['label'], 'exact': False, 'why': 'no note'})
+            continue
+        want = [(p + th['semis'], dd * th['scale']) for p, dd in proto_notes(th['key'])]
         if th.get('inverted'):
             ax = want[0][0]; want = [(2 * ax - p, dd) for p, dd in want]
-        got = [(e['p'], e['d']) for e in evs[:len(want)]]
-        start_ok = bool(evs) and abs(evs[0]['t'] - th['t']) < 1e-9
+        got = [(e['p'], e['d']) for e in evs[k0:k0 + len(want)]]
         pm = sum(1 for a, b in zip(got, want) if a[0] == b[0])
-        # the last note may be held longer (it continues the line)
-        dm = sum(1 for k, (a, b) in enumerate(zip(got, want)) if abs(a[1] - b[1]) < 1e-9 or (k == len(want) - 1 and a[1] > b[1]))
+        # the first note may begin earlier (tied in from the previous phrase); the last may be held longer
+        dm = sum(1 for k, (a, b) in enumerate(zip(got, want))
+                 if abs(a[1] - b[1]) < 1e-9 or (k == len(want) - 1 and a[1] > b[1])
+                 or (k == 0 and evs[k0]['t'] <= th['t'] + 1e-9 and evs[k0]['t'] + evs[k0]['d'] >= th['t'] + b[1] - 1e-9))
         out.append({'voice': th['voice'], 'beat': th['t'], 'label': th['label'], 'pitches': f'{pm}/{len(want)}',
-                    'durations': f'{dm}/{len(want)}', 'exact': start_ok and pm == len(want) and dm == len(want)})
+                    'durations': f'{dm}/{len(want)}', 'exact': pm == len(want) and dm == len(want)})
     return out
 
 
