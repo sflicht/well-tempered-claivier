@@ -24,7 +24,9 @@ def chord_candidates(pcs, bass_pc=None):
         for r in range(12):
             cs = {(r + x) % 12 for x in t}
             if pcs <= cs and len(pcs) >= min(3, len(cs)):
-                score = ORDER.index(q) + (0 if bass_pc == r else 3) + (len(cs) - len(pcs))
+                # missing chord members weigh heavily, so an incomplete seventh chord
+                # (e.g. B-D-F) is read as the triad it sounds like, not a rootless 7th
+                score = ORDER.index(q) + (0 if bass_pc == r else 3) + 4 * (len(cs) - len(pcs))
                 out.append((score, r, q))
     out.sort()
     return [(r, q) for _, r, q in out]

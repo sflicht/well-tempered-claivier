@@ -212,9 +212,9 @@ theme('S1', 34, 1, 'Bb5:4 F6:4 Gb6:3 F6:1', 'head on the dominant', 1); put('S1'
 # second edition's arrival (Eb ... Cb ... Ab ... F ... Eb) made thematic -- under eleven more statements:
 # rectus, inversus, inversion at the 5th, augmentation x2 (inverted, and major), at one- to three-beat distances.
 theme('B2', 37, 1, aug(octv(SQ, -2), 4), 'S quarter speed (x4): the arrival bass', 6)
-put('B1', 37, 1, 'Bb2:12 Ab2:4')
-put('Bar', 37, 1, 'Gb3:12 Ab3:4')
-put('T2', 37, 1, 'Bb3:12 Cb4:4')
+put('B1', 37, 1, 'Bb2:12')
+put('Bar', 37, 1, 'Gb3:16')
+put('T2', 37, 1, 'Bb3:12')
 put('T1', 37, 1, 'Eb4:16 F4:8')
 put('A2', 37, 1, 'Gb4:16')
 put('A1', 37, 1, 'Bb4:8')
@@ -227,11 +227,45 @@ theme('Bar', 38, 1, aug(octv(I5, -1), 2), 'I5 inversus, augmentation x2', 3)    
 theme('T2', 38, 4, octv(tr(S, 7, 4), -1), 'S rectus on B-flat (real answer form)')  # Bb3 F4 Gb4 F4 Eb4 Db4 C4 A3 Bb3
 theme('A2', 39, 1, S, 'S rectus')                                                 # Eb4
 theme('B1', 39, 2, aug(octv(SM, -1), 2), 'SM rectus, G-flat major, augmentation x2', 3)  # Gb3 Db4 Eb4 Db4 Cb4 Bb3 Ab3 F3 Gb3
-theme('T1', 40, 2, S, 'S rectus')                                                 # Eb4
-theme('T2', 40, 4, octv(I5, -1), 'I5 inversus')                                  # Bb3 Eb3 D3 Eb3 F3 Gb3 Ab3 Cb4 Bb3
+theme('T1', 40, 2, S.rsplit(' ', 1)[0], 'S rectus (its final E-flat swallowed by the dominant)')   # Eb4 ... F4 D4
+theme('T2', 40, 3, octv(I5, -1), 'I5 inversus')                                  # Bb3 Eb3 D3 Eb3 F3 Gb3 Ab3 Cb4 Bb3
 theme('S1', 41, 1, octv(tr(S, 7, 4), 1), 'S rectus on B-flat: the peak G-flat6 at b41.3')   # Bb5 F6 Gb6 ...
 theme('A1', 41, 3, tr(S, 7, 4), 'S rectus on B-flat')                               # Bb4 F5 Gb5 ...
 put('S1', 42, 2.5, 'Bb5:10')
+put('S2', 39, 1, 'Eb5:12 Db5:8 Cb5:4 Db5:4 Eb5:4 F5:4 Ab5:8 Gb5:4')          # long-breath line through the maestrale
+put('T1', 41, 3, 'F4:8 Eb4:12 Gb4:4')
+put('B1', 42, 1, 'Gb3:8 Eb3:8')
+put('Bar', 42, 1, 'Eb3:8 Gb3:8')                                                # voice exchange with Bass I under the common-tone diminished 7th
+
+# ================================================================ AFTERMATH (b43-44): iv6 - V7 - deceptive VI, then subito pp in C-flat major
+put('B2', 43, 1, 'Cb2:4 Bb1:4 Cb2:4')
+put('T1', 43, 1, 'Eb4:4 F4:4 Eb4:4')
+put('A1', 43, 1, 'Eb5:4 D5:4 Eb5:4')
+put('S1', 43, 1, 'Ab5:8 Gb5:4')
+theme('A2', 43, 3, octv(tr(SM, 5, 3), -1), 'SM rectus, C-flat major, pp (three voices)')   # Cb4 Gb4 Ab4 Gb4 Fb4 Eb4 Db4 Bb3 Cb4
+put('S2', 43, 3.5, 'Gb5:1 Fb5:1 Eb5:2 Db5:2 Cb5:4 Ab5:2 Gb5:2 Fb5:4 Eb5:2 Db5:2')       # countersubject in C-flat major
+put('B1', 43, 3, 'Cb3:4 Eb3:4 Fb3:4 Db3:4 Gb2:4 Cb3:4')
+
+# ================================================================ RETURN AND GUEST (b45-47)
+RI = W.invert_diatonic(W.retrograde(SQ), 'Eb4', SC)          # retrograde inversion = the Prelude's melody: Eb F D Cb Bb Ab Gb Ab Eb
+theme('B2', 45, 2, aug(octv(RI, -2), 2), 'RI retrograde-inversion x2 (the Prelude melody) in the bass', 3)
+theme('T1', 45, 3, BACH, "BWV 853's own subject (J. S. Bach, WTC I/8), the guest", 3)
+theme('S2', 46, 2, aug(octv(SQ, 1), 2), 'S augmentation x2 over Bach (3 beats later)', 3)
+
+put('B1', 45, 1, 'Ab2:4 Bb2:8 Ab2:8 Gb2:8 Cb3:4 Bb2:4 Ab2:12 Bb2:12 Eb3:4')         # tenor-bass line between the guest and the deep bass
+put('A2', 45, 1, 'Cb4:4 Bb3:4')
+put('S2', 45, 1, 'Eb5:4')
+put('S1', 46, 2, 'Gb6:8 F6:4 Eb6:12 Cb6:4 Bb5:8')                                          # descant over the three subjects
+# ================================================================ CODA (b49-50): heads over a two-bar tonic pedal; lines end one by one
+put('B2', 49, 1, 'Eb2:32')
+put('B1', 49, 1, 'Bb2:8 Ab2:16 Bb2:4')
+put('Bar', 49, 1, 'Gb3:8 Ab3:8 Cb3:8 Eb3:6')
+put('T2', 49, 1, 'Bb3:8 Eb4:8 D4:8 Eb4:6')
+theme('T1', 49, 1, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('T1', 49, 4, 'Ab4:4 F4:4 G4:10')
+theme('A2', 49, 2, 'Eb5:4 Ab4:4 Gb4:3 Ab4:1', 'head inversus', 1); put('A2', 50, 1, 'Cb5:8 Bb4:6')
+put('A1', 49, 1, 'R:8 Ab5:16 G5:8')
+theme('S1', 49, 3, 'Eb6:4 Bb5:4 Cb6:3 Bb5:13', 'head', 1)
+put('S2', 49, 2, 'R:12 F5:8 Eb5:8')
 
 
 def build(nbars):
@@ -240,11 +274,21 @@ def build(nbars):
             'composer': 'Claude / Sam (subject head after J. S. Bach, BWV 853)', 'instrument': 'Nine keyboards (open score)',
             'key': 'Eb', 'mode': 'minor', 'meter': list(METER), 'bpm': 80, 'tempo_text': 'Andante, sempre legato',
             'movement_number': 8, 'piece_type': 'fugue', 'edition': 'third'}
-    voices = [(LONG[i], NAMES[i], CLEF[i], 66) for i in range(len(NAMES))]
-    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=SQ)
+    voices = [(LONG[i], NAMES[i], CLEF[i], 64) for i in range(len(NAMES))]
+    dyn = {1: -6, 13: -10, 16: -4, 19: -6, 22: -8, 25: -2, 28: 2, 31: 4, 32: 8, 34: 10, 35: 2, 37: 14,
+           39: 10, 41: 16, 42: 10, 43: 0, 44: -16, 45: 0, 47: 6, 48: 8, 49: 10, 50: 6}
+
+    def dynamics(b):
+        v = 0
+        for k in sorted(dyn):
+            if b + 1 >= k:
+                v = dyn[k]
+        return v
+    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=SQ, dynamics=dynamics)
 
 
 if __name__ == '__main__':
-    nb = int(sys.argv[1]) if len(sys.argv) > 1 else max(int(max((s + dur16(t)) for v in VO.values() for s, t in v) // 16) + 1, 1)
+    end = max((s + dur16(t)) for v in VO.values() for s, t in v)
+    nb = int(sys.argv[1]) if len(sys.argv) > 1 else int(-(-end // 16))
     build(nb)
     print('bars', nb)

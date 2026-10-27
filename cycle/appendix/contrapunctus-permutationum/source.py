@@ -49,8 +49,8 @@ OCTAVES = {
     17: (12, 24, -12, -24),   # Ab ACDB
     18: (24, -12, -12, -36),  # f  CABD
     19: (24, 0, -12, -24),    # Eb CBAD
-    20: (12, 12, -24, -24),   # c  BCDA
-    21: (12, -12, 0, -24),    # Bb BDCA
+    20: (12, 12, -24, -36),   # c  BCDA  (cantus as a low pedal line)
+    21: (12, -12, 0, -36),    # Bb BDCA  (cantus as a low pedal line)
     22: (0, 0, -12, 0),       # g  DBAC
     23: (0, -12, -12, -12),   # F  DABC
     24: (12, -12, 0, -24),    # d  ADCB
@@ -69,9 +69,9 @@ R = 'R:16'
 # after a minor statement, i (= ii of the next major) -> V7 of that major.
 LINKS = {
     # 1  C -> a.   I, vi, iv6 of a, V7 of a; bass falls E-C-A-E-F-D-E
-    1: {'S': ["C6:4 B5:1 A5:1 G5:1 D5:1 F5:1 E5:1 D5:1 C5:1 B4:1 C5:1 D5:1 B4:1"],
+    1: {'S': ["C6:4 B5:1 A5:1 G5:1 D5:1 F5:1 E5:1 D5:1 C5:1 D5:1 C5:1 B4:1 G#4:1"],
         'A': ["E5:6 C5:2 A4:4 G#4:4"],
-        'T': ["R:2 E4:4 D4:4 G#3:6"],
+        'T': ["R:2 E4:4 D4:4 B3:6"],
         'B': ["E3:2 C3:2 A2:2 E2:2 F2:2 D2:2 E2:4"]},
     # 2  a -> G.   i | V7 of G; tenor resolves and falls silent before its cantus
     2: {'S': ["C5:1 B4:1 C5:1 E5:1 A5:1 G5:1 E5:1 G5:1 F#5:1 E5:1 D5:1 F#5:1 A5:1 C6:1 B5:1 A5:1"],
@@ -80,18 +80,18 @@ LINKS = {
         'B': ["A2:4 C3:4 D3:8"]},
     # 3  G -> e.   I | V7 of e
     3: {'S': ["B5:1 A5:1 G5:1 F#5:1 G5:1 B5:1 D6:1 B5:1 A5:4 F#5:4"],
-        'A': ["B4:2 G4:2 D5:2 B4:2 B4:1 A4:1 F#4:1 D#4:1 F#4:1 A4:1 F#4:1 D#4:1"],
+        'A': ["B4:2 G4:2 D5:2 B4:2 B4:1 A4:1 F#4:1 A4:1 B4:1 A4:1 F#4:1 D#4:1"],
         'T': ["G3:8 F#3:8"],
         'B': ["G2:6 A2:2 B2:8"]},
     # 4  e -> D.   i | V7 of D
-    4: {'S': ["G5:2 F#5:2 E5:2 G5:2 A5:2 G5:2 E5:2 C#5:2"],
+    4: {'S': ["G5:2 F#5:2 E5:2 G5:2 A5:2 E5:2 G5:2 E5:2"],
         'A': ["G4:1 F#4:1 E4:1 G4:1 B4:1 A4:1 G4:1 E4:1 C#5:8"],
-        'T': ["R:4 B3:4 A3:1 G3:1 E3:1 G3:1 C#3:1 E3:1 G3:1 E3:1"],
+        'T': ["R:4 B3:4 A3:1 G3:1 E3:1 D3:1 C#3:1 E3:1 A3:1 G3:1"],
         'B': ["E3:8 A2:8"]},
     # 5  D -> b.   I | V7 of b
     5: {'S': ["F#5:2 A5:2 F#5:2 D5:2 C#5:8"],
         'A': ["R:2 A4:4 F#4:2 E4:2 C#4:2 A#3:2 C#4:2"],
-        'T': ["B3:1 A3:1 G3:1 F#3:1 G3:1 A3:1 B3:1 G3:1 C#4:8"],
+        'T': ["B3:1 A3:1 G3:1 B3:1 F#3:1 G3:1 A3:1 B3:1 C#4:8"],
         'B': ["D3:8 F#2:1 G#2:1 A#2:1 F#2:1 C#3:1 A#2:1 F#2:1 A#2:1"]},
     # 6  b -> A.   i | V7 of A
     6: {'S': ["R:2 F#5:6 E5:4 D5:4"],
@@ -102,78 +102,102 @@ LINKS = {
     8: {'S': ["C#5:4 R:12"],
         'A': ["R:2 C#5:6 B4:4 A4:4"],
         'T': ["A3:1 G#3:1 F#3:1 A3:1 C#4:1 B3:1 A3:1 G#3:1 F#3:2 A3:2 F#3:2 D#3:2"],
-        'B': ["F#2:2 C#3:2 A2:2 F#2:2 B2:1 C#3:1 D#3:1 B2:1 F#2:1 A2:1 G#2:1 F#2:1"]},
+        'B': ["F#2:2 C#3:2 A2:2 F#2:2 B2:1 C#3:1 D#3:1 B2:1 D#2:1 F#2:1 A2:1 F#2:1"]},
     # 9  E -> c#.  I | V7 of c#
     9: {'S': ["E5:8 D#5:8"],
         'A': ["G#4:8 B#4:8"],
-        'T': ["G#3:2 B3:2 E4:2 B3:2 B#3:1 C#4:1 D#4:1 B#3:1 G#3:1 B#3:1 D#4:1 B#3:1"],
-        'B': ["E2:1 G#2:1 B2:1 G#2:1 E2:1 F#2:1 G#2:1 A2:1 G#2:2 D#3:2 B#2:2 D#3:2"]},
+        'T': ["G#3:2 E3:2 B3:2 C#4:2 D#4:1 B#3:1 G#3:1 B#3:1 D#4:1 F#4:1 E4:1 D#4:1"],
+        'B': ["E2:2 B2:2 G#2:2 E2:2 G#2:2 B#2:2 G#2:2 B#2:2"]},
     # 10 c# -> B.  i | V7 of B
     10: {'S': ["R:2 G#5:6 F#5:4 E5:4"],
          'A': ["G#4:8 A#4:1 F#4:1 E4:1 C#4:1 A#3:1 C#4:1 E4:1 C#4:1"],
          'T': ["E4:1 D#4:1 C#4:1 E4:1 G#4:1 F#4:1 E4:1 D#4:1 C#4:8"],
-         'B': ["C#3:2 G#2:2 E2:2 G#2:2 F#3:2 A#2:2 C#3:2 A#2:2"]},
+         'B': ["C#3:2 G#2:2 E2:2 C#3:2 F#2:2 A#2:2 C#3:2 A#2:2"]},
     # 12 g# -> F#: the approach to the climax, two bars.  ii, IV6 | V7 over a
     #    C# pedal; after a breath, the spinner's rising head in stretto,
     #    alto then soprano.
     12: {'S': ["B5:1 A#5:1 G#5:1 F#5:1 D#5:1 F#5:1 G#5:1 A#5:1 B5:1 F#5:1 D#5:1 F#5:1 B4:1 D#5:1 F#5:1 G#5:1",
                "E#5:2 R:2 R:4 C#5:1 D#5:1 E#5:1 F#5:1 G#5:1 A#5:1 B5:1 G#5:1"],
-         'A': ["R:2 D#5:10 B4:4",
+         'A': ["R:2 D#5:6 B4:4 F#4:4",
                "R:4 C#4:1 D#4:1 E#4:1 F#4:1 G#4:1 A#4:1 B4:1 G#4:1 C#5:2 E#4:2"],
-         'T': ["D#3:2 G#3:2 B3:2 G#3:2 F#3:2 B3:2 D#4:2 F#4:2",
-               "R:2 E#4:6 B3:4 G#3:4"],
+         'T': ["D#3:2 G#3:2 B3:2 G#3:2 F#3:2 B3:2 D#4:2 B3:2",
+               "R:2 G#3:6 B3:4 G#3:4"],
          'B': ["G#2:8 D#2:8",
                "C#2:16"]},
     # 14 eb -> Db (after the hush).  i | V7 of Db; alto silent
-    14: {'S': ["Eb5:2 Gb5:2 F5:2 Eb5:2 C5:2 Eb5:2 Gb5:2 Eb5:2"],
+    14: {'S': ["Bb4:2 Eb5:2 Gb5:2 Bb4:2 C5:2 Eb5:2 Gb5:2 F5:2"],
          'A': ["Bb4:4 R:12"],
          'T': ["Eb4:8 C4:1 Db4:1 Eb4:1 C4:1 Ab3:1 C4:1 Eb4:1 C4:1"],
          'B': ["R:2 Gb2:6 Ab2:8"]},
-    # 16 bb -> Ab.  i | V7 of Ab
+    # 16 bb -> Ab.  i | V7 of Ab; the cantus voice slides G -> Gb into its motto
     16: {'S': ["Bb5:8 G5:8"],
-         'A': ["Bb4:2 Db5:2 F5:2 Db5:2 Eb5:2 G4:2 Bb4:2 G4:2"],
-         'T': ["R:2 F4:6 G4:1 F4:1 Eb4:1 Db4:1 Bb3:1 Db4:1 C4:1 Bb3:1"],
+         'A': ["F4:2 Bb4:2 Db5:2 Bb4:2 Eb5:2 G4:2 Bb4:2 G4:2"],
+         'T': ["R:2 F4:6 G4:1 F4:1 Eb4:1 Db4:1 C4:1 Eb4:1 Db4:1 Bb3:1"],
          'B': ["Bb2:1 Db3:1 F3:1 Db3:1 Bb2:1 Ab2:1 Gb2:1 F2:1 Eb2:8"]},
     # 18 f -> Eb.  i | V7 of Eb
-    18: {'S': ["F5:2 Ab5:2 C6:2 Ab5:2 Bb5:2 F5:2 D5:2 F5:2"],
-         'A': ["F4:8 D4:8"],
-         'T': ["R:2 Ab3:6 D4:8"],
-         'B': ["F2:1 G2:1 Ab2:1 F2:1 C3:1 Ab2:1 F2:1 Ab2:1 Bb2:1 D3:1 F3:1 D3:1 Ab2:1 Bb2:1 C3:1 D3:1"]},
-    # 19 Eb -> c.  I | V7 of c
-    19: {'S': ["Eb5:2 G5:2 Bb5:2 G5:2 F5:4 D5:4"],
-         'A': ["R:2 G4:6 F4:2 D4:2 B3:2 D4:2"],
-         'T': ["Eb4:8 D4:1 C4:1 B3:1 G3:1 F3:1 D3:1 B2:1 D3:1"],
-         'B': ["Eb3:1 F3:1 G3:1 Eb3:1 Bb2:1 G2:1 Eb2:1 G2:1 G2:8"]},
+    18: {'S': ["C5:2 F5:2 C6:2 Ab5:2 Bb5:2 F5:2 D5:2 F5:2"],
+         'A': ["F4:16"],
+         'T': ["R:2 C4:6 D4:8"],
+         'B': ["F2:1 G2:1 Ab2:1 Bb2:1 Ab2:1 G2:1 F2:1 Eb2:1 Bb2:1 D3:1 F3:1 D3:1 F2:1 Ab2:1 C3:1 D3:1"]},
+    # 19 Eb -> c.  I | V7 of c; the bass drops out for the last beat
+    19: {'S': ["G5:2 Bb5:2 Eb5:2 G5:2 F5:4 D5:4"],
+         'A': ["R:2 Bb4:6 F4:2 D4:2 B3:2 D4:2"],
+         'T': ["Eb4:8 D4:1 C4:1 B3:1 G3:1 F3:1 D3:1 G3:1 B2:1"],
+         'B': ["Eb3:1 D3:1 C3:1 Bb2:1 G2:1 Ab2:1 Bb2:1 C3:1 G2:4 D2:4"]},
     # 20 c -> Bb.  i | V7 of Bb
-    20: {'S': ["R:2 G5:6 A5:4 Eb5:4"],
-         'A': ["C4:2 Eb4:2 G4:2 Eb4:2 F4:1 Eb4:1 D4:1 C4:1 A3:1 C4:1 Eb4:1 C4:1"],
-         'T': ["G3:1 F3:1 Eb3:1 D3:1 C3:1 Eb3:1 G3:1 Eb3:1 F3:2 A2:2 C3:2 A2:2"],
-         'B': ["C3:8 F2:8"]},
+    20: {'S': ["R:2 G5:6 F5:4 Eb5:4"],
+         'A': ["G3:2 C4:2 Eb4:2 G4:2 Eb4:1 D4:1 C4:1 A3:1 F4:1 Eb4:1 C4:1 D4:1"],
+         'T': ["Eb3:1 F3:1 G3:1 Bb3:1 C4:1 Bb3:1 G3:1 Eb3:1 F3:2 A2:2 C3:2 A2:2"],
+         'B': ["C2:8 F2:8"]},
     # 21 Bb -> g.  I | V7 of g
     21: {'S': ["R:2 D5:6 C5:1 Bb4:1 A4:1 F#4:1 D4:1 F#4:1 A4:1 F#4:1"],
          'A': ["D4:1 F4:1 Bb4:1 F4:1 D4:1 C4:1 Bb3:1 D4:1 A3:8"],
-         'T': ["Bb2:2 D3:2 F3:2 D3:2 F#3:8"],
-         'B': ["Bb2:8 D2:2 F#2:2 A2:2 F#2:2"]},
+         'T': ["D3:2 F3:2 Bb2:2 D3:2 F#3:8"],
+         'B': ["Bb1:8 D2:2 A2:2 F#2:2 D2:2"]},
     # 22 g -> F.   i | V7 of F
-    22: {'S': ["Bb4:1 A4:1 G4:1 Bb4:1 D5:1 C5:1 Bb4:1 A4:1 G4:1 Bb4:1 C5:1 D5:1 E5:1 C5:1 D5:1 E5:1"],
+    22: {'S': ["Bb4:1 A4:1 G4:1 A4:1 D5:1 C5:1 Bb4:1 A4:1 G4:1 Bb4:1 C5:1 D5:1 E5:1 C5:1 D5:1 E5:1"],
          'A': ["R:2 D4:6 E4:8"],
-         'T': ["G3:8 Bb3:8"],
-         'B': ["G2:2 Bb2:2 D3:2 Bb2:2 C3:2 E2:2 G2:2 E2:2"]},
+         'T': ["D4:8 Bb3:8"],
+         'B': ["G2:2 A2:2 Bb2:2 G2:2 C3:2 G2:2 Bb2:2 C3:2"]},
     # 23 F -> d.   I | V7 of d
     23: {'S': ["A5:1 G5:1 F5:1 A5:1 C6:1 A5:1 F5:1 A5:1 C#6:8"],
          'A': ["F4:8 E4:1 C#4:1 A3:1 C#4:1 E4:1 G4:1 F4:1 E4:1"],
-         'T': ["R:2 A3:6 G3:2 E3:2 C#3:2 E3:2"],
-         'B': ["F2:2 A2:2 C3:2 A2:2 A2:8"]},
-    # 24 d -> C (coda).  i | V7 of C
+         'T': ["R:2 A3:6 E3:2 G3:2 A3:2 C#3:2"],
+         'B': ["A2:2 C3:2 F2:2 A2:2 A2:8"]},
+    # 24 d -> C (coda).  i | V7 of C; B natural slides to B-flat: the motto returns
     24: {'S': ["D6:8 B5:8"],
-         'A': ["F4:1 E4:1 D4:1 F4:1 A4:1 G4:1 F4:1 E4:1 D4:1 F4:1 G4:1 B4:1 D5:1 B4:1 G4:1 F4:1"],
-         'T': ["D3:2 F3:2 A3:2 F3:2 G3:4 F3:4"],
-         'B': ["R:2 D3:6 G2:8"]},
+         'A': ["F4:1 E4:1 D4:1 F4:1 A4:1 G4:1 F4:1 E4:1 B3:1 D4:1 G4:1 D4:1 F4:1 E4:1 G4:1 B4:1"],
+         'T': ["A2:2 D3:2 F3:2 A3:2 G3:4 B3:4"],
+         'B': ["D2:8 G2:8"]},
 }
 
 # ---------------------------------------------------------------------------
 # CODA (C major, ordering ADBC come round): written bar by bar.
-CODA = {'S': [], 'A': [], 'T': [], 'B': []}
+CODA = {
+    # B-A-C-H augmented to whole notes in the soprano (the ordering ADBC has
+    # come round).  I7 | IV - V7/V | V with the cantus C held as a whole-bar
+    # 4-3 suspension over a walking dominant pedal | V7 | I: H resolves at last.
+    # Then the alto signs off with B-A-C-H in quarters over a tonic pedal.
+    'S': ["Bb5:16", "A5:16", "C6:16", "B5:16", "C6:16", "C6:16"],
+    'A': ["C5:1 D5:1 E5:1 F5:1 G5:1 E5:1 C5:1 E5:1 G5:1 E5:1 C5:1 Bb4:1 C5:1 Bb4:1 A4:1 G4:1",
+          "C5:1 A4:1 F4:1 A4:1 C5:1 D5:1 C5:1 A4:1 D5:1 C5:1 A4:1 F#4:1 D4:1 F#4:1 A4:1 C5:1",
+          "G4:1 C5:1 E5:1 D5:1 C5:1 D5:1 E5:1 G5:1 E5:1 D5:1 C5:1 E5:1 G5:1 F5:1 E5:1 D5:1",
+          "F5:1 E5:1 D5:1 F5:1 G5:1 F5:1 D5:1 B4:1 G4:1 B4:1 D5:1 F5:1 E5:1 D5:1 C5:1 D5:1",
+          "Bb4:4 A4:4 C5:4 B4:4",
+          "C5:16"],
+    'T': ["R:4 G4:8 E4:4",
+          "F4:4 A4:8 F#4:4",
+          "G4:2 R:2 E4:4 G4:4 E4:4",
+          "D4:4 F4:12",
+          "E4:4 F4:4 E4:4 D4:4",
+          "E4:16"],
+    'B': ["C3:2 D3:2 E3:2 G3:2 E3:2 D3:2 C3:2 G2:2",
+          "A2:2 C3:2 F2:2 A2:2 F#2:2 A2:2 D3:2 A2:2",
+          "G2:2 D3:2 G3:2 D3:2 G2:2 D3:2 F3:2 D3:2",
+          "G2:2 D3:2 B2:2 D3:2 G3:2 D3:2 G2:4",
+          "C3:16",
+          "C2:16"],
+}
 
 
 def statement_bars(k):
@@ -226,7 +250,13 @@ def dynamics_for(tags):
             nxt = level.get(k + 1, 12)
             offs.append((level[k] + nxt) / 2 + (3 if k == 12 else 0))
         else:
-            offs.append(12)
+            offs.append(None)
+    coda = [12, 13, 14, 14, 8, 6]
+    k = 0
+    for i, o in enumerate(offs):
+        if o is None:
+            offs[i] = coda[min(k, len(coda) - 1)]
+            k += 1
     return offs
 
 
@@ -250,9 +280,12 @@ def build(path=HERE / 'score.json'):
     meta = {
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'Appendix: Contrapunctus permutationum',
-        'composer': 'clAIvier project (Claude), after J. S. Bach',
+        'composer': 'Original composition for Sam (B-A-C-H motto after J. S. Bach)',
+        'piece_type': 'appendix', 'edition': 'Appendix study', 'draft': True,
+        'voice_order': 'high_to_low',
+        'score_layout': {'paper': 'a4', 'staff_size': 15, 'staff_distance': 10},
         'instrument': 'Keyboard - four independent voices',
-        'score_tagline': 'Quadruple invertible counterpoint: 24 orderings in 24 keys',
+        'score_tagline': 'Quadruple invertible counterpoint: 24 orderings (Plain Bob Minimus) in 24 keys',
         'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 80,
         'tempo_text': 'Allegro moderato',
         'markers': markers, 'key_changes': keychanges[1:],

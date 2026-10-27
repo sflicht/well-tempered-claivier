@@ -177,6 +177,66 @@ put(35,
     Cb='B1:8 E2:8  A1:8 D2:8  G1:8 F#1:4 A#1:4  B1:12 G#1:4')
 tag(35, 'Episode 4: subject tail over the B-minor falling fifths')
 
+# ===========================================================================
+# CASCADE STRETTO b39-45: six entries, one per voice from the top down, each a
+# fifth lower and one bar later than the last: F#m (S) - Bm (A) - Em (T) -
+# A (Br) - D (B) - G (Cb, inverted). The opening exposition (A T S B Br Cb,
+# I/V) is reversed in order and in key logic. Tails take the modal colour of
+# the next key: Em with C# (dorian), A with G natural, D with C natural (V7/IV),
+# so each overlap is in one key. The last voice enters upside down, so the
+# lowest pair does not cross.
+FSM_SUBJ = 'C#5:4 F#5:2 F#5:1 F#5:1 A5:2 A5:1 A5:1 C#6:4 C#6:3 B5:1 A5:2 G#5:2 F#5:1 E5:1 D5:1 C#5:1 D5:1 E5:1 F#5:2'
+EM_SUBJ_DOR = 'B3:4 E4:2 E4:1 E4:1 G4:2 G4:1 G4:1 B4:4 B4:3 A4:1 G4:2 F#4:2 E4:1 D4:1 C#4:1 B3:1 C#4:1 D4:1 E4:2'
+A_SUBJ_MIX = 'E3:4 A3:2 A3:1 A3:1 C#4:2 C#4:1 C#4:1 E4:4 E4:3 D4:1 C#4:2 B3:2 A3:1 G3:1 F#3:1 E3:1 F#3:1 G3:1 A3:2'
+D_SUBJ_MIX = 'A2:4 D3:2 D3:1 D3:1 F#3:2 F#3:1 F#3:1 A3:4 A3:3 G3:1 F#3:2 E3:2 D3:1 C3:1 B2:1 A2:1 B2:1 C3:1 D3:2'
+G_SUBJ = 'D3:4 G3:2 G3:1 G3:1 B3:2 B3:1 B3:1 D4:4 D4:3 C4:1 B3:2 A3:2 G3:1 F#3:1 E3:1 D3:1 E3:1 F#3:1 G3:2'
+G_INV_CB = invert_diatonic(G_SUBJ, 'D3', [7, 9, 11, 0, 2, 4, 6])   # mirror about D3 in G major
+put(39,
+    S=FSM_SUBJ + '  G5:4 B5:2 C#6:2 E6:6 D6:2  C#6:6 B5:2 C#6:4 A6:4  A6:6 G6:2 F#6:8 '
+      'A6:4 F#6:4 E6:4 C6:4~  C6:6 B5:2 C6:6 C#6:2  C#6:4 D6:4 E6:4 C#6:4',
+    A='A4:8 B4:4 E#4:4  ' + BM_SUBJ + '  C#5:4 E5:2 F#5:2 A5:6 G5:2  F#5:16 '
+      'F#5:4 A5:12  A5:6 G5:2 E5:8  E5:4 A5:4 G5:8',
+    T='C#4:4 A3:4 F#3:4 G#3:4  F#3:8 D4:8  ' + EM_SUBJ_DOR + '  F#4:4 A4:2 G4:2 D5:6 C5:2 '
+      'C5:12 A4:4  F#4:6 B4:2 A4:6 G4:2  G4:8 E4:4 C#4:4',
+    Br='R:16 R:16 R:16  ' + A_SUBJ_MIX + '  D4:4 E4:4 A3:4 D4:4  D4:8 E4:6 C#4:2  C#4:4 E4:4 A3:4 E3:4',
+    B='F#2:4 E2:4 D2:4 C#2:4  B1:16  E2:8 C#3:4 E3:4  A2:8 G2:4 E2:4  ' + D_SUBJ_MIX +
+      '  A3:6 G3:2 C4:4 G3:2 E3:2  E3:8 C#3:8',
+    Cb='R:16 R:16 R:16 R:16  D2:16  ' + G_INV_CB + '  A2:16')
+tag(39, 'CASCADE STRETTO: F#m (S) Bm (A) Em (T) A (Br) D (B) G inverted (Cb)')
+tag(46, 'Dominant')
+
+# ===========================================================================
+# SUMMIT b47-55. The soprano states the subject in quadruple augmentation
+# (8 bars) as a trumpet cantus over everything else:
+#   b47-48  the tenor states the subject and, at once, the baritone states the
+#           subject of Bach's D-major fugue (WTC I/5, BWV 850) as a real voice
+#           (stretto_finder: offset 0, cost 5, 0 parallels): its B. B on beat 2
+#           turns our static first bar into D - Bm7 - D - D/F#.
+#   b49-50  tenor: the answer; baritone: the answer in double augmentation;
+#   b50     bass: the answer in diminution (32nds) - the four speeds together;
+#   b51     alto: the subject in diminution, over the tonic pedal;
+#   b51-55  contrabass tonic pedal, coloured: C natural (V9/IV, b52), minor iv
+#           with B flat (b53), drums on the pedal (the subject's tattoo, b54).
+BWV850_SUBJ = 'D3:0.5 E3:0.5 F#3:0.5 G3:0.5 F#3:0.5 E3:0.5 F#3:0.5 D3:0.5 B3:3 B3:1 A3:3 G3:1 F#3:3 G3:1'   # WTC I/5, from cycle/reference/bach-subjects.md
+SUBJ_X4 = scale_rhythm(T8(SUBJ, 1), 4)
+ANS_X2 = 'D3:8 A3:4 A3:2 A3:2 C#4:4 C#4:2 C#4:2 E4:8 E4:6 D4:2 C#4:4 B3:4 A3:2 G3:2 F#3:2 E3:2 F#3:2 G3:2 A3:4'  # tonal answer x2, last bar bent to G natural over the pedal
+ANS_REAL_HALF = scale_rhythm('E2:4 A2:2 A2:1 A2:1 C#3:2 C#3:1 C#3:1 E3:4 E3:3 D3:1 C#3:2 B2:2 A2:1 G#2:1 F#2:1 E2:1 F#2:1 G#2:1 A2:2', '1/2')
+SUBJ_HALF = scale_rhythm(SUBJ, '1/2')
+put(47,
+    S=SUBJ_X4 + ' D6:16',
+    T=T8(SUBJ, -1) + ' ' + ANS + '  F#4:4 D5:4 G4:8  D4:4 A4:4 G4:4 C5:4  Bb4:4 A4:4 G4:4 F#4:4  D4:4 C#4:4 D4:8  A3:16',
+    Br=BWV850_SUBJ + '  D4:4 D4:4 F#3:4 G3:4  ' + ANS_X2 + '  E3:8 E3:4 F#3:4  G3:4 A3:4 A3:8  F#3:16',
+    A='F#5:8 D5:8  B4:4 A4:4 B4:4 E5:4  A5:6 G5:2 F#5:4 C#6:4  C#6:4 E6:4 C#6:8  ' + SUBJ_HALF +
+      '  A5:4 D5:4 C#5:4 F#5:4  E5:4 G4:4 D5:4 D5:4  B4:4 A4:4 A4:8  F#4:16',
+    B='R:16 R:16 R:16  E3:16  D3:4 A3:4 E3:4 B2:4  F#3:4 A2:4 A2:4 D3:4  G2:4 A2:4 B2:4 A2:4  G2:8 F#2:8  A2:16',
+    Cb='D2:4 B1:4 D2:4 F#2:4  G2:4 B1:8 G2:4  F#2:4 D2:4 A2:8  A2:8 C#3:4 A2:4 '
+       'D2:16~ D2:16~ D2:16  D2:4 D2:2 D2:1 D2:1 D2:2 D2:1 D2:1 D2:4  D2:16')
+tag(47, 'SUMMIT: subject x4 (S) + subject (T) + BWV 850 subject (Br)')
+tag(49, 'Answer (T), answer x2 (Br)')
+tag(50, 'Dominant: x4, x2 and x1 together')
+tag(51, 'Tonic pedal: subject x1/2 (A); C natural, minor iv')
+tag(54, 'Drums on the pedal')
+
 # === SECTIONS-END ===
 
 # ---------------------------------------------------------------------------

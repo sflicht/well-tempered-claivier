@@ -1,5 +1,7 @@
 # Pair II in C minor: composition review
 
+> **Erratum (added during the rebuild).** Wherever this review says the mirror is "around D4", read **around E-flat 4**: E-flat is the note that maps to itself (C↔G, B↔A-flat, D↔F, E-flat↔E-flat). The B1/B2 trio tests used the correct (E-flat) mirror. The `stretto_finder --axis D4` probes in §3.2 (B3) and the appendix used a mirror shifted by one diatonic step, and they predate the tool's octave-framing fix. The rebuild re-ran every inversion probe with the corrected tools; see NOTES.md.
+
 This reviews the material currently labelled "Pair I": Prelude v3 "losing the beat" and Fugue v5.
 
 **Material reviewed**

@@ -1,32 +1,106 @@
 {
  "title": "The Well-Tempered clAIvier",
  "groups": [
-  {"name": "Pair I · C major (new)", "pieces": [
-   {"id": "prelude-1", "title": "Prelude I · Praeludium per omnes tonos", "score": "cycle/01-c-major/prelude.json",
-    "group_voices": true, "stats_score": "cycle/01-c-major/prelude-notation.json", "tag": "new",
-    "notes": "BWV 846's broken chords climb through all 24 keys in the WTC's own order, C, c, C#, c#, D, d and on to b, then home. In every minor key the Neapolitan chord (bII) becomes the next major tonic, a semitone up.\n\nIt is voiced as a Shepard-Risset illusion: each note sounds in several octaves under a fixed loudness curve, so the music rises a semitone with every key and yet arrives back in C at the register where it began. C minor opens with the Royal Theme of the Musical Offering. E-flat minor is the darkest point; the climax is a pedal in G-sharp minor; A major is the loudest bar.\n\nAt the da capo the fugue subject floats above Bach's own bars at half speed, the way Gounod laid a melody over this prelude. Try the meantone tuning: the remote keys sour, which is why the well-tempered keyboard existed."},
-   {"id": "fugue-1", "title": "Fugue I · Scala strettarum (2 voices)", "score": "cycle/01-c-major/fugue.json", "tag": "new",
-    "notes": "The subject was found by search so that it combines with itself in stretto at every distance from a whole bar down to a single eighth note. The fugue climbs that ladder one rung at a time: bar, 7, 6, 5, 4, 3, 2 and finally 1 eighth apart, through A minor, E minor, G, D minor, F and back to C.\n\nBach's own C-major subject (BWV 846) opens the piece alone in the bass and becomes the countersubject. It returns over the subject's augmentation in the coda, and B-A-C-H is the top line of the last cadence."}
-  ]},
-  {"name": "Before: the October 23 auditions", "pieces": [
-   {"id": "before-prelude-cminor", "title": "Prelude in C minor v3 (was 'Pair I')", "score": "work/wtc-work/renders/pairI_v3/prelude-i_v3.json", "tag": "before",
-    "notes": "The previous version, kept for comparison. Mis-numbered: C minor is No. II in Bach's order, so its fugue needs three voices."},
-   {"id": "before-fugue-cminor", "title": "Fugue in C minor v5, 2 voices", "score": "work/wtc-work/pairI/f5.json", "tag": "before",
-    "notes": "The previous version. Review found 15 of 34 bars with code-chosen pitches, 12 bars without a subject entry and a peak that was the thinnest bar."},
-   {"id": "before-prelude-iv", "title": "Prelude IV v6", "score": "work/wtc-work/v6/prelude-iv_v6.json", "tag": "before",
-    "notes": "The previous version. No root-position cadence on a strong beat; same metre and tempo as its fugue."},
-   {"id": "before-fugue-iv", "title": "Fugue IV v7, 5 voices", "score": "work/wtc-work/v7/fugue-iv_v7.json", "tag": "before",
-    "notes": "The previous version. 22 accented parallels the old checker missed; all five voices first sound together only at bar 33; the countersubject changes its pitches at every entry."},
-   {"id": "before-prelude-v", "title": "Prelude V v1", "score": "work/wtc-work/pairV/prelude-v_v1.json", "tag": "before",
-    "notes": "The previous version. One 8-bar progression three times; pure arpeggio with no top line."},
-   {"id": "before-fugue-v", "title": "Fugue V v3, 6 voices", "score": "work/wtc-work/pairV/fugue-v_v3.json", "tag": "before",
-    "notes": "The previous version. Every stretto collapses onto a held triad over a pedal; half the beats are D or A chords; 38 accented parallels."},
-   {"id": "before-prelude-viii", "title": "Prelude VIII v1 (French overture)", "score": "work/wtc-work/renders/pairVIII_v3/prelude-viii_v1.json", "tag": "before",
-    "notes": "The previous version. It replaced the 12/8 'Night loom' prelude Sam liked."},
-   {"id": "before-fugue-viii", "title": "Fugue VIII v3, 9 staves", "score": "work/wtc-work/renders/pairVIII_v3/fugue-viii_v3.json", "tag": "before",
-    "notes": "The previous version: in practice a four-voice fugue on nine staves, with a climax of the subject in octaves over block chords."},
-   {"id": "before-fugue-viii-100", "title": "Fugue VIII, 100-bar procession", "score": "work/fugue_viii_passage_revision/08-fugue-passage-revised.json", "tag": "before",
-    "notes": "The older chamber audition. The critic finds 220 parallel fifths and octaves, 195 unresolved dissonances and 286 low-register clashes, which likely explains the harmonies Sam heard as mistakes."}
-  ]}
+  {
+   "name": "Pair I \u00b7 C major (new)",
+   "pieces": [
+    {
+     "id": "prelude-1",
+     "title": "Prelude I \u00b7 Praeludium per omnes tonos",
+     "score": "cycle/01-c-major/prelude.json",
+     "group_voices": true,
+     "stats_score": "cycle/01-c-major/prelude-notation.json",
+     "tag": "new",
+     "notes": "BWV 846's broken chords climb through all 24 keys in the WTC's own order, C, c, C#, c#, D, d and on to b, then home. In every minor key the Neapolitan chord (bII) becomes the next major tonic, a semitone up.\n\nIt is voiced as a Shepard-Risset illusion: each note sounds in several octaves under a fixed loudness curve, so the music rises a semitone with every key and yet arrives back in C at the register where it began. C minor opens with the Royal Theme of the Musical Offering. E-flat minor is the darkest point; the climax is a pedal in G-sharp minor; A major is the loudest bar.\n\nAt the da capo the fugue subject floats above Bach's own bars at half speed, the way Gounod laid a melody over this prelude. Try the meantone tuning: the remote keys sour, which is why the well-tempered keyboard existed."
+    },
+    {
+     "id": "fugue-1",
+     "title": "Fugue I \u00b7 Scala strettarum (2 voices)",
+     "score": "cycle/01-c-major/fugue.json",
+     "tag": "new",
+     "notes": "The subject was found by search so that it combines with itself in stretto at every distance from a whole bar down to a single eighth note. The fugue climbs that ladder one rung at a time: bar, 7, 6, 5, 4, 3, 2 and finally 1 eighth apart, through A minor, E minor, G, D minor, F and back to C.\n\nBach's own C-major subject (BWV 846) opens the piece alone in the bass and becomes the countersubject. It returns over the subject's augmentation in the coda, and B-A-C-H is the top line of the last cadence."
+    }
+   ]
+  },
+  {
+   "name": "Appendix \u00b7 canons and contrapuncti (new)",
+   "pieces": [
+    {
+     "id": "contrapunctus-permutationum",
+     "title": "Contrapunctus permutationum (4 voices, 24 keys)",
+     "score": "cycle/appendix/contrapunctus-permutationum/score.json",
+     "tag": "new",
+     "notes": "Four lines written in quadruple invertible counterpoint: a cantus on B-A-C-H in half notes, a sighing line of suspensions, a walking eighth-note line, and a spinning sixteenth-note figure. Any of the four can be the bass. A script proved all 24 vertical orderings clean, in major and in minor.\n\nThe movement uses every ordering once, one in each of the 24 keys, going round the circle of fifths with each major followed by its relative minor. The orderings follow the change-ringing method Plain Bob Minimus, so B-A-C-H walks down and up through the four staves like a bell working through a peal.\n\nThe climax is statement 13 in F-sharp major, with B-A-C-H in the bass, followed by a sudden hush in E-flat minor. In the coda B-A-C-H is augmented and its last note, H (B natural), finally resolves to C."
+    }
+   ]
+  },
+  {
+   "name": "Before: the October 23 auditions",
+   "pieces": [
+    {
+     "id": "before-prelude-cminor",
+     "title": "Prelude in C minor v3 (was 'Pair I')",
+     "score": "work/wtc-work/renders/pairI_v3/prelude-i_v3.json",
+     "tag": "before",
+     "notes": "The previous version, kept for comparison. Mis-numbered: C minor is No. II in Bach's order, so its fugue needs three voices."
+    },
+    {
+     "id": "before-fugue-cminor",
+     "title": "Fugue in C minor v5, 2 voices",
+     "score": "work/wtc-work/pairI/f5.json",
+     "tag": "before",
+     "notes": "The previous version. Review found 15 of 34 bars with code-chosen pitches, 12 bars without a subject entry and a peak that was the thinnest bar."
+    },
+    {
+     "id": "before-prelude-iv",
+     "title": "Prelude IV v6",
+     "score": "work/wtc-work/v6/prelude-iv_v6.json",
+     "tag": "before",
+     "notes": "The previous version. No root-position cadence on a strong beat; same metre and tempo as its fugue."
+    },
+    {
+     "id": "before-fugue-iv",
+     "title": "Fugue IV v7, 5 voices",
+     "score": "work/wtc-work/v7/fugue-iv_v7.json",
+     "tag": "before",
+     "notes": "The previous version. 22 accented parallels the old checker missed; all five voices first sound together only at bar 33; the countersubject changes its pitches at every entry."
+    },
+    {
+     "id": "before-prelude-v",
+     "title": "Prelude V v1",
+     "score": "work/wtc-work/pairV/prelude-v_v1.json",
+     "tag": "before",
+     "notes": "The previous version. One 8-bar progression three times; pure arpeggio with no top line."
+    },
+    {
+     "id": "before-fugue-v",
+     "title": "Fugue V v3, 6 voices",
+     "score": "work/wtc-work/pairV/fugue-v_v3.json",
+     "tag": "before",
+     "notes": "The previous version. Every stretto collapses onto a held triad over a pedal; half the beats are D or A chords; 38 accented parallels."
+    },
+    {
+     "id": "before-prelude-viii",
+     "title": "Prelude VIII v1 (French overture)",
+     "score": "work/wtc-work/renders/pairVIII_v3/prelude-viii_v1.json",
+     "tag": "before",
+     "notes": "The previous version. It replaced the 12/8 'Night loom' prelude Sam liked."
+    },
+    {
+     "id": "before-fugue-viii",
+     "title": "Fugue VIII v3, 9 staves",
+     "score": "work/wtc-work/renders/pairVIII_v3/fugue-viii_v3.json",
+     "tag": "before",
+     "notes": "The previous version: in practice a four-voice fugue on nine staves, with a climax of the subject in octaves over block chords."
+    },
+    {
+     "id": "before-fugue-viii-100",
+     "title": "Fugue VIII, 100-bar procession",
+     "score": "work/fugue_viii_passage_revision/08-fugue-passage-revised.json",
+     "tag": "before",
+     "notes": "The older chamber audition. The critic finds 220 parallel fifths and octaves, 195 unresolved dissonances and 286 low-register clashes, which likely explains the harmonies Sam heard as mistakes."
+    }
+   ]
+  }
  ]
 }

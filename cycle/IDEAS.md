@@ -39,7 +39,7 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
    with its inversion, augmentation and double augmentation at once: what
    BWV 853 does with three voices, at nine.
 
-7. **[in progress] Contrapunctus permutationum.** Four lines in quadruple invertible
+7. **[built] Contrapunctus permutationum.** Four lines in quadruple invertible
    counterpoint; all 24 vertical orderings are used, one in each of the 24
    keys. The whole key cycle compressed into one movement.
 

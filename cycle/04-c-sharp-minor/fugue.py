@@ -126,29 +126,29 @@ bar('20 X answer A (G#m); T resolves C#',
     T='C#4:4 E4:8',
     B='E3:4 B2:4 A#2:4')
 bar('21 X: F## (V6 of G#m) - B (i6)',
-    S='A#4:6 D#5:6',
+    S='A#4:2 C#5:2 F##5:2 G#5:2 D#5:2 G#5:2',
     A='F##4:6 B4:6',
     T='C#4:6 B3:6',
     B='D#3:6 G#2:6')
 bar('22 X: A# (V4/3 of G#m -> G#9 = V9 of C#m)',
-    S='D#5:6 F#5:4 D#5:2',
+    S='F##5:2 D#5:2 C#5:2 F#5:2 G#5:2 D#5:2',
     A='A#4:12',
     T='C#4:6 B#3:6',
     B='A#2:6 G#2:6')
 bar('23 X  S (C#m); i6 - i - iv',
     S='C#5:12',
     A='G#4:8 A4:4',
-    T='C#4:4 E4:4 F#4:4',
+    T='C#4:2 B3:2 E4:2 C#4:2 F#4:2 E4:2',
     B='E2:4 C#3:4 F#2:4')
 bar('24 X: B# (V) - E (VI, deceptive)',
     S='B#4:6 E5:6',
     A='G#4:6 C#5:6~',
-    T='D#4:6 C#4:6',
+    T='D#4:2 F#4:2 D#4:2 C#4:2 A3:2 C#4:2',
     B='G#2:6 A2:6')
 bar('25 X: D# as 9th of C#7 (V9 of F#m); Br enters on the leading tone',
     S='D#5:12',
     A='C#5:6 B4:6',
-    T='A3:6 G#3:6',
+    T='A3:2 C#4:2 A3:2 G#3:6',
     Br='R:6 E#3:6',
     B='F#2:6 C#3:6')
 # ---------------------------------------------------------------- MIDDLE ENTRIES
@@ -184,21 +184,179 @@ bar('31',
     T='G#3:6 C#4:2 A#3:2 B3:2',
     Br='E3:4 C#3:2 A#2:2 F##2:2 G#2:2')
 
+bar('32 the stretto voice ends on D# (half cadence in G#m)',
+    S='B4:2 D#5:2 E5:2 D#5:2 B4:4',
+    A='G#4:2 E4:2 C#4:2 D#4:6',
+    T='D#4:4 G#3:2 A#3:2 B3:4',
+    Br='G#2:4 C#3:2 F##2:2 G#2:4')
+bar('33 episode 3: head in S then T; the bass sings the crux in diminution (C#-B#-E-D#)',
+    S='E5:2 C#5:1 B#4:1 G#4:2 C#5:4 B#4:2',
+    A='E4:4 D#4:2 G#4:2 F#4:4',
+    T='G#3:6 E4:2 B#3:2 G#3:2',
+    B='C#3:4 B#2:2 E3:2 D#3:4')
+bar('34 i - iv6 - V; S leaps the crux interval B#-E into the climax',
+    S='C#5:8 B#4:4',
+    A='E4:4 F#4:4 D#4:4',
+    T='G#3:4 C#4:4 G#3:4',
+    B='C#3:4 A2:4 G#2:4')
+# ---------------------------------------------------------------- CLIMAX
+# The crux in augmentation in the bass (C# 2 bars, B# 1, E 1, D# 2, C# 1) under
+# two complete strettos of N at an eighth's distance; the fixed CS rides the
+# first pair (S) and the second (T).
+bar('35 X-aug B: C#.  N in T + N in A an eighth later (octave above); CS in S',
+    S='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
+    A='R:2 G#4:2 E4:1 D#4:1 B3:2 F#4:4~',
+    T='G#3:2 E3:1 D#3:1 B2:2 F#3:6',
+    B='C#2:12~')
+bar('36',
+    S='C#5:6 B#4:2 D#5:2 E5:2',
+    A='F#4:2 A4:4 F#4:2 D#4:2 B#3:2',
+    T='A3:4 F#3:2 D#3:2 B#2:2 C#3:2',
+    B='C#2:12')
+bar('37 X-aug: B#.  A ends its subject C#-D# (the crux holds B#); Br enters',
+    S='D#5:4 G#5:4 F#5:4',
+    A='C#4:1 D#4:1 F#4:6 G#4:4',
+    T='F#3:4 G#3:4 D#4:4',
+    Br='G#2:4 D#3:8',
+    B='B#1:12')
+bar('38 X-aug: E.  N in Br + N in S an eighth later; CS in T',
+    S='E5:2 G#5:2 E5:1 D#5:1 B4:2 F#5:4~',
+    A='C#5:4 F#4:4 A4:4',
+    T='E4:6 D#4:1 B3:1 C#4:1 B3:1 A3:1 B3:1',
+    Br='G#3:2 E3:1 D#3:1 B2:2 F#3:6',
+    B='E2:12')
+bar('39 X-aug: D#.  the S reaches A5 on the diminished seventh',
+    S='F#5:2 A5:4 F#5:2 D#5:2 B#4:2',
+    A='F#4:4 D#4:4 G#4:4',
+    T='C#4:6 B#3:2 D#4:2 E4:2',
+    Br='A3:4 F#3:2 D#3:2 B#2:2 C#3:2~',
+    B='D#2:12~')
+bar('40 X-aug: D# (iio7 - V)',
+    S='C#5:2 D#5:1 E5:1 F#5:2 A5:2 G#5:4',
+    A='A4:12',
+    T='F#4:8 D#4:4',
+    Br='C#3:6 B#2:6',
+    B='D#2:12')
+bar('41 X-aug: C# -- arrival; S peak C#6 on the crux\'s resolution; i - V7 of iv',
+    S='C#6:4 B5:8',
+    A='G#4:12',
+    T='E4:4 C#4:8',
+    Br='C#3:4 E3:4 E#3:4',
+    B='C#2:12')
+bar('42 iv - Neapolitan sixth: S falls in dotted rhythm, A rises',
+    S='A5:3 G#5:1 F#5:2 F#5:3 E5:1 F#5:2',
+    A='A4:3 B4:1 C#5:2 D5:3 C#5:1 D5:2',
+    T='C#4:6 A3:6',
+    Br='F#3:6 R:6',
+    B='F#2:12')
+bar('43 N6 - viio7 of V (bass F#-F##-G#)',
+    S='F#5:6 E5:6',
+    A='D5:6 C#5:6',
+    T='A3:6 A#3:6',
+    Br='D3:6 E3:6',
+    B='F#2:6 F##2:6')
+# ---------------------------------------------------------------- DOMINANT PEDAL
+# N in its dominant form (B# for B) in S, A, T at an eighth's distance, complete,
+# over G#1; tested 0 parallels / 0 unresolved before writing.
+bar('44 PEDAL STRETTO: S, A (+eighth), T (+quarter)',
+    S='G#5:2 E5:1 D#5:1 B#4:2 F#5:6',
+    A='R:2 G#4:2 E4:1 D#4:1 B#3:2 F#4:4~',
+    T='R:4 G#3:2 E3:1 D#3:1 B#2:2 F#3:2~',
+    B='G#1:12~')
+bar('45',
+    S='A5:4 F#5:2 D#5:2 B#4:2 C#5:2',
+    A='F#4:2 A4:4 F#4:2 D#4:2 B#3:2',
+    T='F#3:4 A3:4 F#3:2 D#3:2',
+    B='G#1:12~')
+bar('46 i6/4 - V7 over the pedal',
+    S='E5:6 D#5:6',
+    A='C#4:2 E4:2 G#4:2 F#4:6',
+    T='B#2:2 C#3:2 E3:2 B#2:6',
+    Br='R:6 G#2:6',
+    B='G#1:12')
+# ---------------------------------------------------------------- TONIC PEDAL CODA
+bar('47 crux in S over the tonic pedal: C# (i - iv6/4 - i)',
+    S='C#5:12',
+    A='E4:4 F#4:2 E4:1 D#4:1 E4:4',
+    T='C#3:2 E3:2 A3:4 G#3:4',
+    Br='G#2:4 F#2:4 G#2:4',
+    B='C#2:12~')
+bar('48 B# (viio7) - E (i)',
+    S='B#4:6 E5:6',
+    A='D#4:4 F#4:2 E4:6',
+    T='A3:6 G#3:6',
+    Br='F#2:6 G#2:6',
+    B='C#2:12~')
+bar('49 D# (iio4/2 - V7 over the pedal)',
+    S='D#5:12',
+    A='F#4:4 A4:2 F#4:6~',
+    T='A3:6 B#3:6',
+    Br='F#2:6 G#2:6',
+    B='C#2:12~')
+bar('50 C# major: the alto\'s held F# resolves late to E#, the Picardy third',
+    S='C#5:12',
+    A='F#4:4 E#4:8',
+    T='C#4:12',
+    Br='G#2:12',
+    B='C#2:12')
+
 ENTRIES = [
     ('S', 1, 0, 'subject', 2), ('A', 3, 0, 'answer', 2), ('T', 5, 0, 'subject', 2),
     ('Br', 7, 0, 'answer', 2), ('B', 10, 0, 'subject', 2),
     ('A', 13, 0, 'subject (E major, modal)', 2),
-    ('T', 26, 0, 'subject (F# minor)', 2), ('Br', 30, 0, 'answer (G# minor)', 2), ('A', 30, 2, 'stretto: subject at the fifth, in key', 2),
+    ('T', 26, 0, 'subject (F# minor)', 2), ('Br', 30, 0, 'answer (G# minor)', 2),
+    ('A', 30, 2, 'stretto: subject a fifth higher, in key', 2),
+    ('T', 35, 0, 'subject (climax pair 1)', 2), ('A', 35, 0.5, 'subject, stretto at an eighth', 2),
+    ('Br', 38, 0, 'subject (climax pair 2)', 2), ('S', 38, 0.5, 'subject, stretto at an eighth', 2),
+    ('S', 44, 0, 'subject, dominant form (B#)', 2), ('A', 44, 0.5, 'dominant form, stretto', 2),
+    ('T', 44, 1, 'dominant form, stretto', 2),
 ]
+
+CRUX = [  # Bach's subject (BWV 849) as a genuine voice: (voice, bar, form)
+    ('T', 17, 'C#-B#-E-D# (C# minor)'), ('A', 20, "G#-F##-B-A# (Bach's answer, G# minor)"),
+    ('S', 23, 'C#-B#-E-D# (C# minor)'), ('B', 35, 'augmented: C# 2 bars, B# 1, E 1, D# 2, C# 1'),
+    ('S', 47, 'C#-B#-E-D# over the tonic pedal'),
+    ('B', 28, 'diminution F#-E#-A-G# (episode bass)'), ('B', 29, 'diminution G#-F##-B-A#'),
+    ('B', 33, 'diminution C#-B#-E-D#'),
+]
+
+
+def dynamics(b):
+    """Phrase dynamics (velocity offset) per 0-based bar index."""
+    n = b + 1
+    if n <= 12:
+        return -4 + n // 3
+    if n <= 16:
+        return 0
+    if n <= 25:
+        return -6          # the crux exposition: quiet stile antico
+    if n <= 34:
+        return -2 + (n - 26) // 3
+    if n <= 41:
+        return 4 + (n - 35)  # climax builds to bar 41
+    if n <= 43:
+        return 3
+    if n <= 46:
+        return 6
+    return 2 - (n - 47) * 2
+
 
 if __name__ == '__main__':
     out = Path(__file__).with_name('fugue.json')
-    meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue IV in C-sharp minor (third edition)',
+    meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue IV in C-sharp minor, five voices (third edition)',
             'composer': 'Claude / Sam', 'instrument': 'Piano', 'key': 'C#', 'mode': 'minor', 'meter': [3, 4],
             'bpm': 72, 'tempo_text': 'Moderato, sostenuto', 'movement_number': 4, 'piece_type': 'fugue',
-            'edition': 'third'}
+            'edition': 'third',
+            'credits': 'Second subject ("crux"): J. S. Bach, Well-Tempered Clavier I, Fugue in C-sharp minor BWV 849',
+            'markers': [{'t': 0, 'label': 'Moderato, sostenuto'}, {'t': 12 * 3, 'label': 'E major'},
+                        {'t': 16 * 3, 'label': 'Crux (BWV 849)'}, {'t': 25 * 3, 'label': 'F# minor'},
+                        {'t': 34 * 3, 'label': 'Crux augmented + strettos'}, {'t': 43 * 3, 'label': 'Dominant pedal'},
+                        {'t': 46 * 3, 'label': 'Tonic pedal'}]}
     build_score(out, meta, [('S', 'S', 'treble', 72), ('A', 'A', 'treble', 68), ('T', 'T', 'tenor', 67),
                             ('Br', 'Br', 'bass', 66), ('B', 'B', 'bass', 64)],
                 F.bars, entries=ENTRIES, subject='G#4:2 E4:1 D#4:1 B3:2 F#4:6 A4:4 F#4:2 D#4:2 B#3:2 C#4:2',
-                tags=F.tags)
+                tags=F.tags, dynamics=dynamics,
+                extra={'second_subject': {'source': 'J. S. Bach, WTC I, Fugue in C-sharp minor BWV 849, subject 1',
+                                          'tokens': 'C#4:12 B#3:6 E4:6 D#4:12',
+                                          'entries': [{'voice': v, 'bar': b, 'form': f} for v, b, f in CRUX]}})
     print('bars', len(F))

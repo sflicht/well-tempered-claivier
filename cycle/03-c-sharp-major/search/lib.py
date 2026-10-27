@@ -190,3 +190,29 @@ def grid(lines, start=0, end=None, step=2, labels=None):
         mark = '|' if u == 0 else (':' if u % 6 == 0 else ' ')
         rows.append(f"{mark}{bar + 1:>3}.{u:<2} " + ' '.join(cells) + '  ' + ivs)
     print('\n'.join(rows))
+
+
+def beat_quality(lines, lo=None, hi=None, step=6):
+    """Two-or-more-voice beat audit: penalise beats whose interval to the lowest
+    sounding note is a 4th or a dissonance, and bare perfect sonorities."""
+    nss = [notes(tok, st) for tok, st in lines]
+    end = max(s + d for ns in nss for s, d, p, L in ns)
+    lo = lo if lo is not None else 0
+    hi = hi if hi is not None else end
+    pen = 0.0
+    nb = 0
+    for t in range(int(lo), int(hi), step):
+        ps = [at(ns, t) for ns in nss]
+        ps = [x[0] for x in ps if x]
+        if len(ps) < 2:
+            continue
+        nb += 1
+        b = min(ps)
+        ivs = {(p - b) % 12 for p in ps if p != b}
+        if ivs & {1, 2, 6, 10, 11}:
+            pen += 3
+        elif 5 in ivs and not ivs & {3, 4, 8, 9}:
+            pen += 2          # bare 4th over the bass (6/4 without support)
+        elif not ivs & {3, 4, 8, 9}:
+            pen += 0.7        # only perfect intervals
+    return round(pen, 1), nb

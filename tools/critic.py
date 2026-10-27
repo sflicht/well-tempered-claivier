@@ -145,6 +145,12 @@ def check_parallels(S, rng=None):
                 a, b = S.note(i, ki)['p'], S.note(j, kj)['p']
                 if prev is not None:
                     pki, pkj, pa, pb, pt = prev
+                    # successive notes only: a rest longer than a beat breaks the line
+                    gap_i = S.note(i, ki)['s'] - S.note(i, pki)['e'] if ki != pki else 0
+                    gap_j = S.note(j, kj)['s'] - S.note(j, pkj)['e'] if kj != pkj else 0
+                    if gap_i > S.beat or gap_j > S.beat:
+                        prev = (ki, kj, a, b, t)
+                        continue
                     moved_i = ki != pki and a != pa
                     moved_j = kj != pkj and b != pb
                     if moved_i and moved_j and is_perfect(pa, pb) and is_perfect(a, b) \
