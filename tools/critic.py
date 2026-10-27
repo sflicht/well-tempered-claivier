@@ -300,7 +300,7 @@ def check_dissonance(S):
             for y in range(x + 1, len(items)):
                 lo, ilo, klo, alo = items[x]
                 hi, ihi, khi, ahi = items[y]
-                if not is_dissonant(lo, hi, x == 0):
+                if not is_dissonant(lo, hi, lo == bass):
                     continue
                 if not (alo or ahi):
                     continue  # both held: was evaluated when attacked
@@ -397,10 +397,14 @@ def check_melody(S):
 
 
 def check_crossing(S):
+    """Crossings between voices adjacent in register (ordered by mean pitch,
+    so the check does not depend on the order voices are listed in)."""
     out = []
     nv = len(S.voices)
-    for i in range(nv - 1):
-        j = i + 1
+    order = sorted((i for i in range(nv) if S.voices[i]),
+                   key=lambda i: -sum(n['p'] for n in S.voices[i]) / len(S.voices[i]))
+    for a in range(len(order) - 1):
+        i, j = order[a], order[a + 1]
         start = None
         for t in S.onsets + [S.end]:
             snd = S.sounding(t) if t < S.end else {}
