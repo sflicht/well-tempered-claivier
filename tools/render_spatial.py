@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+"""Binaural "monumental interior" render: each voice is a separate keyboard
+placed around the listener in a large reverberant space.
+
+Each voice is synthesised alone (same soundfont and temperament as
+render_music.py), then placed with interaural time and level differences
+(Woodworth ITD, head-shadow low-pass on the far ear), distance attenuation,
+a few early reflections, and a long decorrelated late reverb. Listen on
+headphones.
+
+Usage: render_spatial.py score.json --output out.mp3 [--temperament bach-lehman]
+       [--layout arc|ring|choir] [--rt60 3.2]
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import subprocess
+import sys
+from pathlib import Path
+
+import numpy as np
+from scipy.io import wavfile
+from scipy.signal import fftconvolve, lfilter
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import render_music as rm  # noqa: E402
+
+RATE = 44100
+
+
+def stem(data, i, soundfont, temperament, a4):
+    """Mono render of voice i alone."""
+    import fluidsynth
+    one = dict(data)
+    v = dict(data['voices'][i])
+    v['piano_pan'] = 64
+    one['voices'] = [v]
+    synth = fluidsynth.Synth(samplerate=RATE, gain=0.5)
+    sfid = synth.sfload(str(soundfont))
+    synth.setting('synth.reverb.active', 0)
+    synth.setting('synth.chorus.active', 0)
+    events = rm.performance_events(one)
+    for t, _, ch, kind, p, vel in events:
+        if kind == 'program':
+            synth.program_select(ch, sfid, 0, p)
+    if temperament != 'equal' or a4 != 440.0:
+        rm.apply_temperament(synth, temperament, sorted({e[2] for e in events}), a4)
+    bpm = rm.bpm_of(rm.meta_of(data))
+    cursor, chunks = 0, []
+    for t, _, ch, kind, p, vel in events:
+        frame = round(float(t) * 60.0 / bpm * RATE)
+        if frame > cursor:
+            chunks.append(synth.get_samples(frame - cursor))
+            cursor = frame
+        if kind == 'on':
+            synth.noteon(ch, p, vel)
+        elif kind == 'off':
+            synth.noteoff(ch, p)
+        elif kind == 'pan':
+            synth.cc(ch, 10, 64)
+    chunks.append(synth.get_samples(2 * RATE))
+    synth.delete()
+    x = np.concatenate(chunks).reshape(-1, 2).astype(np.float64).mean(axis=1) / 32768.0
+    return x
+
+
+def one_pole_lowpass(x, fc):
+    a = math.exp(-2 * math.pi * fc / RATE)
+    return lfilter([1 - a], [1, -a], x)
+
+
+def place(x, az_deg, dist):
+    """Return (left, right) for a source at azimuth (deg, + = right) and distance (m)."""
+    th = math.radians(max(-90.0, min(90.0, az_deg)))
+    back = abs(az_deg) > 90
+    a, c = 0.0875, 343.0
+    itd = a / c * (abs(th) + math.sin(abs(th)))
+    d = int(round(itd * RATE))
+    shadow_fc = 20000 * (1 - abs(math.sin(th))) + 1800 * abs(math.sin(th))
+    near = x * (1 + 0.25 * abs(math.sin(th)))
+    far = one_pole_lowpass(x, shadow_fc) * (1 - 0.35 * abs(math.sin(th)))
+    far = np.concatenate([np.zeros(d), far])[:len(x)]
+    if back:  # rear sources: duller on both ears
+        near = one_pole_lowpass(near, 6000)
+        far = one_pole_lowpass(far, 5000)
+    g = 1.0 / max(1.0, dist / 2.0)
+    L, R = (far, near) if az_deg >= 0 else (near, far)
+    return L * g, R * g
+
+
+def early_reflections(x, az_deg, dist, room=(34.0, 22.0)):
+    """Four first-order wall reflections (rectangular nave), panned roughly."""
+    W, D = room
+    sx = dist * math.sin(math.radians(az_deg))
+    sy = dist * math.cos(math.radians(az_deg))
+    L = np.zeros(len(x))
+    R = np.zeros(len(x))
+    for ix, iy in ((W - sx, sy), (-W - sx, sy), (sx, D - sy), (sx, -D - sy)):
+        r = math.hypot(ix, iy)
+        delay = int(r / 343.0 * RATE)
+        g = 0.55 / max(1.0, r / 2.0)
+        az = math.degrees(math.atan2(ix, iy))
+        y = np.concatenate([np.zeros(delay), one_pole_lowpass(x, 5000)])[:len(x)] * g
+        pan = (math.sin(math.radians(az)) + 1) / 2
+        L += y * math.cos(pan * math.pi / 2)
+        R += y * math.sin(pan * math.pi / 2)
+    return L, R
+
+
+def late_ir(rt60, seed=7):
+    rng = np.random.default_rng(seed)
+    n = int(RATE * rt60 * 1.1)
+    t = np.arange(n) / RATE
+    env = np.exp(-6.91 * t / rt60)
+    irs = []
+    for ch in range(2):
+        noise = rng.standard_normal(n)
+        # darken over time: crossfade from bright to dark noise
+        dark = one_pole_lowpass(noise, 1500)
+        mix = noise * np.exp(-t / (rt60 * 0.25)) + dark * 2.2 * (1 - np.exp(-t / (rt60 * 0.25)))
+        ir = mix * env
+        ir[:int(0.025 * RATE)] *= np.linspace(0, 1, int(0.025 * RATE))  # pre-delay fade-in
+        irs.append(ir / np.sqrt(np.sum(ir ** 2)))
+    return irs
+
+
+def layout_positions(n, kind):
+    if kind == 'ring':
+        return [(-180 + 360 * (k + .5) / n, 6.0) for k in range(n)]
+    if kind == 'choir':  # two rows facing the listener
+        out = []
+        for k in range(n):
+            row = k % 2
+            az = -70 + 140 * (k / max(1, n - 1))
+            out.append((az, 5.0 + 4.0 * row))
+        return out
+    # arc: top voice far left, bass centre-right, interleaved so neighbours in pitch are apart
+    order = list(range(0, n, 2)) + list(range(1, n, 2))
+    pos = [None] * n
+    for slot, v in enumerate(order):
+        pos[v] = (-80 + 160 * slot / max(1, n - 1), 5.5 + 1.5 * (slot % 2))
+    return pos
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('score', type=Path)
+    ap.add_argument('--output', required=True, type=Path)
+    ap.add_argument('--soundfont', type=Path, default=Path('/usr/share/sounds/sf2/FluidR3_GM.sf2'))
+    ap.add_argument('--temperament', default='bach-lehman', choices=sorted(rm.TEMPERAMENTS))
+    ap.add_argument('--a4', type=float, default=440.0)
+    ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir'])
+    ap.add_argument('--rt60', type=float, default=3.2)
+    ap.add_argument('--wet', type=float, default=0.32)
+    a = ap.parse_args()
+    data = json.loads(a.score.read_text())
+    n = len(data['voices'])
+    pos = layout_positions(n, a.layout)
+    stems = [stem(data, i, a.soundfont, a.temperament, a.a4) for i in range(n)]
+    length = max(len(s) for s in stems) + int(RATE * a.rt60)
+    L = np.zeros(length)
+    R = np.zeros(length)
+    send = np.zeros(length)
+    for s, (az, dist) in zip(stems, pos):
+        s = np.pad(s, (0, length - len(s)))
+        l, r = place(s, az, dist)
+        el, er = early_reflections(s, az, dist)
+        L += l + el
+        R += r + er
+        send += s * (0.6 + 0.08 * dist)
+    irL, irR = late_ir(a.rt60)
+    L += a.wet * fftconvolve(send, irL)[:length]
+    R += a.wet * fftconvolve(send, irR)[:length]
+    sig = np.stack([L, R], axis=1)
+    sig *= 0.89 / max(1e-9, np.abs(sig).max())
+    fade = int(RATE * 1.5)
+    sig[-fade:] *= np.linspace(1, 0, fade)[:, None]
+    wav = a.output.with_suffix('.wav')
+    a.output.parent.mkdir(parents=True, exist_ok=True)
+    wavfile.write(str(wav), RATE, np.int16(sig * 32767))
+    subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(wav), '-codec:a', 'libmp3lame',
+                    '-b:a', '192k', str(a.output)], check=True)
+    wav.unlink()
+    print(json.dumps({'output': str(a.output), 'voices': n, 'layout': a.layout,
+                      'positions_deg_m': [(round(az), d) for az, d in pos], 'temperament': a.temperament,
+                      'seconds': round(length / RATE, 1)}))
+
+
+if __name__ == '__main__':
+    main()

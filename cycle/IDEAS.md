@@ -57,7 +57,7 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
 
 ## Further ideas (not yet built)
 
-11. **[next] A nine-voice spatial render.** Each voice placed in a virtual
+11. **[built] A nine-voice spatial render.** (`tools/render_spatial.py`) Each voice placed in a virtual
     cathedral (binaural), so attention can travel between parts the way the
     project's planned film intends.
 12. **[next] A cantus firmus across the cycle.** One phrase of "Vor deinen Thron
