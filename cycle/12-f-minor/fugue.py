@@ -329,7 +329,7 @@ theme('TI', F, 3, octv(S2I, -1), 'S2 inv. (running)')
 theme('SIII', F, 3, octv(S3, 1), 'S3 B-A-C-H')
 theme('SI', F + 3, 3, octv(MT, 1), 'main theme')
 theme('AI', F + 4, 3, MT, 'main theme (canon at the octave, 1 bar)')
-theme('TII', F + 7, 1, S3, 'S3 B-A-C-H')
+theme('TII', F + 7, 3, 'Db4:8 C4:8 Eb4:8 D4:6 E4:2 F4:8', 'S3 B-A-C-H (head, resolving to the tonic)')
 # S2's head, rectus, against its own mirror (Tenor I) -- both from A-flat; S1 inverted at normal speed against its
 # own augmentation in the bass (per augmentationem et contrarium motum, as in Contrapunctus VII).
 put('AII', F, 3, 'Ab4:2 Bb4:2 Ab4:2 G4:2 F4:2 E4:2 F4:2 C4:2 F4:2 G4:2 Ab4:2 G4:2 F4:2 Ab4:2 G4:2')
@@ -346,7 +346,7 @@ put('AII', F + 5, 1, 'Ab4:2 G4:2 Ab4:2 Bb4:2 C5:2 Db5:2 C5:2 F5:2 C5:2 Bb4:2 Ab4
 # inversion at normal speed (Baritone I).  Baritone II: B-A-C-H's answer head over the dominant pedal; its
 # A-natural (the H) sinks to A-flat as the tonic arrives.
 theme('SIII', F + 5, 2, W.scale_rhythm(tr(S1, 7 + 12, 4 + 7), Fr(1, 2)), 'S1 dim. (answer)', 2)
-put('BrII', F + 7, 3, 'Ab3:8 G3:8 Bb3:8 A3:8 Ab3:8')
+put('BrII', F + 7, 3, 'Ab3:8 G3:8 Ab3:8 Bb3:8 Ab3:8')
 # Coda over the tonic pedal.  Soprano I signs the name at its own pitch, B-flat A C B-natural: iv - V7/iv - i -
 # vii-dim-7/V - V - and its A becomes the Picardy third of the last chord.
 seq('SI', F + 10, 'Bb5:8 A5:8', 'C6:8 B5:8', 'C6:16', 'A5:16')
@@ -358,7 +358,7 @@ put('SIII', F + 9, 3, 'C5:8')
 seq('SIII', F + 10, 'C5:8 Eb5:8~', 'Eb5:8 D5:8', 'C5:16', 'C5:16')
 put('AI', F + 9, 3, 'C4:8')
 seq('AI', F + 10, 'C4:16', 'C4:8 F4:8', 'G4:16', 'C4:16')
-seq('TII', F + 11, 'Ab4:16', 'Bb4:16', 'A4:16')
+seq('TII', F + 10, 'E4:8 F4:8', 'Ab4:16', 'Bb4:16', 'A4:16')
 seq('BrII', F + 10, 'R:8 F3:8', 'F3:8 Ab3:8', 'G3:16', 'F3:16')
 put('BI', F + 9, 3, 'C3:8')
 seq('BI', F + 10, 'C3:16', 'C3:8 Ab2:8', 'C3:16', 'C3:16')

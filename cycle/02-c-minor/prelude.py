@@ -20,9 +20,11 @@ below, one call per bar (no voicing search, no generated figuration).
             climb from G5 to A-flat 6 while the harmony over the pedal speeds up.
   23-24     the beat breaks: a written-out Presto (32nds on the diminished
             seventh) and an Adagio in which the subject's head C-B-D-G is heard
-            alone in quarter notes (after BWV 847's Presto/Adagio).
-  E   25-29 the downbeat regained (groups of 4, both hands): i | iv6 N6 | i6/4 V7 |
-            VI (deceptive) | iv6 N6 i6/4 V7 in quarters.
+            in quarter notes over the still-held dominant (after BWV 847's
+            Presto/Adagio); VI is saved for the deceptive cadence of bar 28.
+  E   25-29 the downbeat regained (groups of 4): both hands play the neighbour
+            figure in sixteenths, the left hand a sixth below the right (BWV 847's
+            two-hand texture): i | iv6 N6 | i6/4 V7 | VI (deceptive) | iv6 N6 i6/4 V7.
   F   30-32 tonic pedal: i, iv6/4, vii7, i; the last note C5 is the fugue's first.
 Velocity accents are applied to the first note of every group (see GROUPS).
 """
@@ -108,24 +110,24 @@ B.bar('',  # 22
 B.bar('Presto (written out in 32nds)',  # 23
       upper='Ab6:0.5 F6:0.5 D6:0.5 B5:0.5 Ab5:0.5 F5:0.5 D5:0.5 B4:0.5 Ab4:0.5 F4:0.5 D4:0.5 B3:0.5 D4:0.5 F4:0.5 Ab4:0.5 B4:0.5 D5:0.5 F5:0.5 Ab5:0.5 B5:0.5 D6:0.5 F6:0.5 Ab6:0.5 F6:0.5 D6:0.5 B5:0.5 Ab5:0.5 F5:0.5 D5:0.5 B4:0.5 Ab4:0.5 G4:0.5',
       lower='G1:16')
-B.bar("Adagio: the subject's head, unaccompanied",  # 24
+B.bar("Adagio: the subject's head over the held dominant",  # 24
       upper='C5:4 B4:4 D5:4 G4:4',
-      lower='Ab2:4 G2:4 F2:4 G2:4')
-B.bar('E: the downbeat regained',  # 25
+      lower='G2:8 F2:4 G2:4')
+B.bar('E: the downbeat regained; both hands in the neighbour figure, in sixths (BWV 847 texture)',  # 25
       upper='Eb5:1 C6:1 B5:1 C6:1 G5:1 C6:1 B5:1 C6:1 Eb5:1 C6:1 B5:1 C6:1 G5:1 C6:1 B5:1 C6:1',
-      lower='C3:2 C4:2 C3:2 C4:2 C3:2 C4:2 C3:2 C4:2')
+      lower='C3:1 Eb3:1 D3:1 Eb3:1 C3:1 Eb3:1 D3:1 Eb3:1 C3:1 Eb3:1 D3:1 Eb3:1 C3:1 Eb3:1 D3:1 Eb3:1')
 B.bar('',  # 26
       upper='C5:1 Ab5:1 G5:1 Ab5:1 F5:1 Ab5:1 G5:1 Ab5:1 Ab5:1 Db6:1 C6:1 Db6:1 F5:1 Db6:1 C6:1 Db6:1',
-      lower='Ab2:2 Ab3:2 Ab2:2 Ab3:2 F2:2 F3:2 F2:2 F3:2')
+      lower='Ab2:1 C3:1 Bb2:1 C3:1 Ab2:1 C3:1 Bb2:1 C3:1 F2:1 F3:1 Eb3:1 F3:1 F2:1 F3:1 Eb3:1 F3:1')
 B.bar('',  # 27
       upper='Eb5:1 C6:1 B5:1 C6:1 G5:1 C6:1 B5:1 C6:1 D5:1 B5:1 A5:1 B5:1 F5:1 B5:1 A5:1 B5:1',
-      lower='G2:2 G3:2 G2:2 G3:2 G2:2 G3:2 G2:2 G3:2')
+      lower='G2:1 Eb3:1 D3:1 Eb3:1 G2:1 Eb3:1 D3:1 Eb3:1 G2:1 D3:1 C3:1 D3:1 G2:1 D3:1 C3:1 D3:1')
 B.bar('deceptive cadence',  # 28
       upper='Eb5:1 C6:1 Bb5:1 C6:1 Ab5:1 C6:1 Bb5:1 C6:1 Eb5:1 C6:1 Bb5:1 C6:1 Ab5:1 C6:1 Bb5:1 C6:1',
-      lower='Ab2:2 Ab3:2 Ab2:2 Ab3:2 Ab2:2 Ab3:2 Ab2:2 Ab3:2')
+      lower='Ab2:1 Eb3:1 Db3:1 Eb3:1 Ab2:1 Eb3:1 Db3:1 Eb3:1 Ab2:1 Eb3:1 Db3:1 Eb3:1 Ab2:1 Eb3:1 Db3:1 Eb3:1')
 B.bar('',  # 29
-      upper='C5:1 Ab5:1 G5:1 Ab5:1 Db5:1 Ab5:1 F5:1 Ab5:1 Eb5:1 C6:1 B5:1 C6:1 D5:1 B5:1 F5:1 B5:1',
-      lower='Ab2:2 Ab3:2 F2:2 F3:2 G2:2 G3:2 G2:2 G3:2')
+      upper='C5:1 Ab5:1 G5:1 Ab5:1 F5:1 Db6:1 C6:1 Db6:1 Eb5:1 C6:1 B5:1 C6:1 F5:1 B5:1 A5:1 B5:1',
+      lower='Ab2:1 C3:1 Bb2:1 C3:1 F2:1 F3:1 Eb3:1 F3:1 G2:1 Eb3:1 D3:1 Eb3:1 G2:1 D3:1 C3:1 D3:1')
 B.bar('F: tonic pedal',  # 30
       upper='Eb5:1 C5:1 G4:1 C5:1 Eb5:1 C5:1 G4:1 C5:1 F5:1 C5:1 Ab4:1 C5:1 F5:1 C5:1 Ab4:1 C5:1',
       lower='C2:2 C3:2 C2:2 C3:2 C2:2 C3:2 C2:2 C3:2')
