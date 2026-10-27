@@ -14,6 +14,7 @@ Bach subject can enter as a genuine voice against one of ours.
 | WTC I/4 C# minor BWV 849 (5 v.) | `C#3:16 B#2:8 E3:8 D#3:16 C#3:4` (stile antico "cross" motif) |
 | WTC I/5 D major BWV 850 (4 v.) | `D3:0.5 E3:0.5 F#3:0.5 G3:0.5 F#3:0.5 E3:0.5 F#3:0.5 D3:0.5 B3:3 B3:1 A3:3 G3:1 F#3:3 G3:1 A3:0.5` (starts on beat 2) |
 | WTC I/8 D# minor BWV 853 (3 v.), spelled in E-flat minor | `Eb4:4 Bb4:6 Cb5:2 Bb4:2 Ab4:2 Gb4:2 Ab4:2 Bb4:4 Eb4:4 Ab4:6 Gb4:2 F4:4 Eb4:4` |
+| WTC II/9 E major BWV 878 (4 v., stile antico) | `E3:16 F#3:8 A3:8 G#3:8 F#3:8 E3:4` (answer `B3:16 C#4:8 E4:8 D#4:8 C#4:8 B3:...`; Bach took the subject from J.C.F. Fischer's *Ariadne musica*) |
 | WTC II/2 C minor BWV 871 (4 v.) | `G4:2 Eb4:2 F4:2 G4:2 C4:2 F4:2 Eb4:1 D4:1 Eb4:4` (starts after an eighth rest) |
 
 Credit any use in the movement's NOTES and in the score's subject-entry label.
