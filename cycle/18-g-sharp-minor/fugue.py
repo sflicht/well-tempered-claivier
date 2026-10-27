@@ -126,7 +126,11 @@ theme('Br1', SUM + 2, 1, octv(K_DOR, -1), 'Door subject (knocks) in the baritone
 
 # Phase A free lines (b45-52), added one voice at a time.
 L = SUM
-put('B2', L + 3, 1, 'G#2:8 A#2:8 B2:8 C#3:8 D#3:8 A#2:16 B#2:8 R:16 F#2:8 G#2:8 C#3:8')
+put('B2', L + 3, 1, 'G#2:8 A#2:8 B2:8 C#3:8 D#3:8 A#2:16 C#3:4 G#2:4 R:16 F#2:8 G#2:8 C#3:8')
+# free lines, one voice at a time
+put('S1', L, 1, 'D#6:8 C#6:8 B5:8 G#5:8 A#5:8 G#5:8 D#6:16 C#6:8')
+put('S3', L, 1, 'G#5:8 E#5:8 F#5:8 E#5:8 F#5:8 R:8 D#5:12 E#5:4 F#5:8 D#5:8 A#5:8 B5:8 G#5:8 F#5:8 E#5:8 F#5:8 G#5:8 A#5:8 G#5:8 A#5:8 G#5:8 E#5:8')
+
 
 
 def build(nbars, path=None):

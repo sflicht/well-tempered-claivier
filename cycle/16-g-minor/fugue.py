@@ -248,6 +248,19 @@ def section_C(b0):
     l3 = cantus(3, -1, last=8)
     T('P1', 10, l3 + ' ' + cantus(4, -1), 'cantus lines 3-4 (Ped. I, canon dux)')
     T('P2', 19, cantus(3, -2, last=8) + ' ' + cantus(4, -2), 'cantus lines 3-4 (Ped. II, canon comes, 9 beats)')
+    # echo: the head of line 1 on the Hauptwerk, the same notes on the Rückpositiv, half of it on the Oberwerk
+    T('HS1', 2, 'D5:3 Eb5:1 D5:2 C5:2 Bb4:4 A4:4')
+    T('HA', 2, 'Bb4:4 G4:4 G4:4 F#4:4')
+    T('HT', 2, 'D4:4 C4:4 D4:4 D4:4')
+    T('RS', 6, 'D5:3 Eb5:1 D5:2 C5:2 Bb4:4 A4:4')
+    T('RA', 6, 'Bb4:4 G4:4 G4:4 F#4:4')
+    T('RT', 6, 'D4:4 C4:4 D4:4 D4:4')
+    T('OS', 10, 'Bb4:4 A4:4')
+    T('OA', 10, 'G4:4 F#4:4')
+    # the inverted subject, remembered, passed from manual to manual over the canon
+    T('OS', 12, W.invert_diatonic(S1, 'D5', GNAT), 'line 3: subject 1 inverted (OW S)')
+    T('RT', 18, oc(W.invert_diatonic(S1, 'D5', GNAT), -1), 'line 3: subject 1 inverted (RP T)')
+    T('HA', 24, W.invert_diatonic(S1, 'D5', GNAT), 'line 3: subject 1 inverted (HW A)')
     # C-END
 
 
