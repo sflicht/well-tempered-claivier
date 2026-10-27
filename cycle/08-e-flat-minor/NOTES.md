@@ -51,7 +51,7 @@ What was added, by section:
   - An inner Baritone line.
   - Short Alto I and Alto II links in b24.
 - **b28–31:** Alto II and Bass I around the e♭ inversion entries. Tenor I comes back four bars before its head (it used to rest for seven bars).
-- **Arrival b38–43:** free lines in every gap between statements, so that every staff moves in every bar. Tenor I's chromatic fall (b38.3) is one; Soprano I's C♭6–G♭5–A♭5 (b39) another; Alto I's C♭ sigh (b39–40), Alto II (b40.3–42), Soprano II, Tenor II and Baritone in b41–43 the rest.
+- **Arrival b38–43:** free lines in every gap between statements, so that every staff moves in every bar. Tenor I's C–C♭ descent and climb into its entry (b38.3) is one; Soprano I's C♭6–G♭5–A♭5 (b39) another; Alto I's C♭ sigh (b39–40), Alto II (b40.3–42), Soprano II, Tenor II and Baritone in b41–43 the rest.
 - **Return b45–48:**
   - Alto I sings the **countersubject in augmentation** against Soprano II's half-speed subject (the b19 pairing again).
   - A Baritone line runs under Bach's subject.
@@ -61,6 +61,25 @@ What was added, by section:
 **b40 statement.** Tenor I's subject at b40.2 is now complete. Its final E♭4 (b41.3) leans on the D2 of the bass as an appoggiatura and falls back to D4. The voice then leaps to G♭4 for the common-tone diminished seventh.
 
 **C♭ passage.** I did not lengthen it. A second C♭ bar would push the guest entry and the whole return back by a bar and re-time the tempo map. With the arrival now nine-voice for seven bars, the contrast with the three-voice pp bar (b44) is already as stark as it can be. It remains about 1¾ bars (b43.3–45.1).
+
+**Third pass: doubled sevenths and leading tones.** The critic's new `bad_doublings` check counts beats where a chord seventh, or the leading tone of a dominant seventh, sounds in two or more voices. The second pass scored 34 on it (first pass 9, the procession 27). Nearly all came from the thickening. They are now down to **2**, and both involve only thematic voices:
+- b29.4: a first-pass Soprano II line with the Baritone's inverted countersubject.
+- b40.1: the Baritone's augmented inversion at the 5th doubling the A♭2 of the quarter-speed subject in the bass.
+
+How the doublings were removed. A free voice that doubled a seventh or leading tone was moved to the root or fifth (e.g. Tenor II b17 A♭ instead of F, Bass II b21 B♭1, Alto I b21 F–G♭–F, Tenor II b23 F instead of A♭, Tenor I b24 D♭ instead of C♭), or it now rests for a beat. Rests went into these voices:
+- Baritone b8.3 and b26.1. At b48.2 the Baritone moves to B♭ instead.
+- Alto II b13.4, b14.3, b24.3–4, b27, b42.2–4.
+- Alto I b14.4, b24.3–4.
+- Tenor I b29.1–2 (after a C♭5 at b28.3) and b38.3.
+- Soprano I b40.1, b47.4.
+- Tenor II b33.2–4.
+
+Three first-pass spots were re-voiced as well:
+- **b32–33:** Alto II now goes A♭4–C5 instead of A♭4–G♭4, so the diminished seventh no longer triples its G♭. Tenor II rests.
+- **b34.3:** Tenor II's F3 is shortened.
+- **b41.2:** Soprano II's line now goes F5–B♭5–A♭5–G♭5.
+
+Every repair was re-checked for parallels and unresolved dissonances. Moving voices per bar are unchanged: rests were placed so that each voice still attacks in each bar it moved in. The cost: lines are a little more broken, with 6 % of free phrases now 1.5 beats or shorter (Bach 0–7 %), and stepwise motion is 60 % (see §4).
 
 I have not heard any of this. Everything below comes from the scores, `tools/critic.py`, `tools/reduce.py` and the probes described in REVIEW.md. Whether it sounds right is for Sam's ears.
 
@@ -190,7 +209,8 @@ Problems 13–15 do not apply here: 13 concerned P-v1's playability and is fixed
 
 | Score | Bars | Parallel errors | Beat-to-beat parallels | Beats with a tripled pitch class | Low 2nds/7ths/9ths | Unresolved | Mean moving voices | ≥5 pitch classes | ≥6 pitch classes | Free phrases ≤1.5 beats | Need >2 hands |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| **Fugue VIII new (second pass)** | 50 | **0** | **0** | **24.0 %** | **11** | **1** | **6.04** | 11.6 % | 1.7 % | 1 % | 38 % (accepted) |
+| **Fugue VIII new (third pass)** | 50 | **0** | **0** | **23.5 %** | **11** | **1** | **6.04** | 10.6 % | 1.8 % | 6 % | 37 % (accepted) |
+| Fugue VIII second pass | 50 | 0 | 0 | 24.0 % | 11 | 1 | 6.04 | 11.6 % | 1.7 % | 1 % | 38 % |
 | Fugue VIII first pass | 50 | 0 | 0 | 23.3 % | 8 | 1 | 4.62 | 3.6 % | 0.9 % | 0 % | 26 % |
 | Fugue v3 | 32 | 0 | 10 | 18.5 % | 14 | 2 | 4.5 | 1.8 % | 0.2 % | 45 % | 14 % |
 | Fugue v1 | 22 | 2 | 17 | 47.1 % | 16 | 24 | 5.77 | 8.8 % | 0 % | 0 % | 46 % |
@@ -203,15 +223,20 @@ Problems 13–15 do not apply here: 13 concerned P-v1's playability and is fixed
 | Prelude v1 (overture) | 16 | 0 | 9 | 23.4 % | 0 | 0 | 4.9 | | | | 47 % |
 | Prelude first draft | 24 | 3 | 13 | 17.7 % | 0 | 0 | 3.0 | | | | 19 % |
 
-Coordinator's second-pass targets, all met:
+Coordinator's targets after the third pass, all met:
 
 | Measure | Target | Result |
 |---|---|---|
+| Doubled 7ths / doubled leading tones (`bad_doublings`) | ≤ 6 | **2** (first pass 9, second pass 34; BWV 869 0, BWV 878 1, Fugue v3 4) |
 | Parallel errors | 0 | 0 (also 0 weak and 0 doubling runs) |
-| Beat-to-beat parallels | 0–3 | 0 |
-| Tripled pitch class | ≤ 25 % | 24.0 % (43 of 179 beats) |
+| Beat-to-beat parallels | ≤ 3 | 0 |
+| Mean moving voices | ≥ 5.8 | 6.04 |
+| Bars with all nine moving | ≥ 7 | 8 (b37–43, b49) |
+| Tripled pitch class | ≤ 25 % | 23.5 % (42 of 179 beats) |
 | Low 2nds/7ths/9ths | ≤ 12 | 11 |
 | Unresolved | ≤ 1, justified | 1, justified (below) |
+
+**Stepwise motion** (`stepwise_pct`, reported, not a target): 60.0 %. BWV 878 has 75.0 %, BWV 869 70.9 %, Fugue v3 58.2 %. The first pass had 65.6 % and the second 60.6 %: the inner lines added for density leap more than Bach's do (20 % of intervals are a 4th or more).
 
 Melody flags are much as in the first pass. There are 8 augmented 2nds, all inside harmonic-minor statements or first-pass lines; the second-pass ones I introduced were rewritten out. There are 2 seventh leaps, 2 large leaps not recovered and 1 compound same-way leap; the first pass had 1 tritone leap instead of the unrecovered leaps. Voice crossings rose from 10 to 29, mostly Alto I above Soprano II in the return and the coda.
 
@@ -235,8 +260,8 @@ Tripled pitch classes were the binding constraint. With nine voices on a triad a
   - Several low inner lines move like basses, in 4ths and 5ths: Baritone b16–18 and b41, Bass I b38 and b28–30.
   - A few voices are kept moving only by short sighs separated by rests: Alto I b39–40, Baritone b41, Tenor I b38–39 and b28–31. Any note in those gaps made a parallel or an unresolved clash.
   - See also the disclosure about the search script under "How the notes were written".
-- **The tripled-pitch-class rate (24.0 %) is just under the cap.** Most tripled beats are in the arrival (b37–43), the coda (b49–50) and the full chords of b32–34.
-- **Keyboard reduction.** 38 % of onsets need more than two hands (26 % before). This is a nine-voice score, and the reduction is not meant to be playable.
+- **The tripled-pitch-class rate (23.5 %) is just under the cap.** Most tripled beats are in the arrival (b37–43), the coda (b49–50) and the full chords of b32–34.
+- **Keyboard reduction.** 37 % of onsets need more than two hands (26 % before). This is a nine-voice score, and the reduction is not meant to be playable.
 - **Augmented 2nds.** The harmonic-minor inversion (C♭–D in the inversion, the inversion at the 5th and the inverted countersubject) and the retrograde inversion (D–C♭) put augmented 2nds into several lines: S1 b27 and b38, Baritone b28 and b30, the Prelude melody b2. They are kept as thematic. Bach's minor-key inversions have them too, but they may sound exotic in this density.
 - **Liberties taken with statements:**
   - At b46 Alto I's augmented countersubject omits its last note, so as not to collide with the coda.
@@ -249,4 +274,4 @@ Tripled pitch classes were the binding constraint. With nine voices on a triad a
 
 ## 6. Before → after summary
 
-Fugue v3 was a 4-voice fugue on 9 staves, with an octave-doubled homophonic climax, 45 % fragmentary filler and a static octave stretto. The new Fugue VIII states the subject in every voice four to eight times, at four speeds and in both directions. It closes with Bach's own subject as a guest over the Prelude's melody in the bass. After the second pass it averages 6.0 moving voices per bar (6.3 in b14–31), and all nine voices move through b37–43. It scores 0 parallels, 0 beat-to-beat parallels, 24.0 % tripled beats, 11 low-register clashes and 1 justified unresolved dissonance.
+Fugue v3 was a 4-voice fugue on 9 staves, with an octave-doubled homophonic climax, 45 % fragmentary filler and a static octave stretto. The new Fugue VIII states the subject in every voice four to eight times, at four speeds and in both directions. It closes with Bach's own subject as a guest over the Prelude's melody in the bass. After the second pass it averages 6.0 moving voices per bar (6.3 in b14–31), and all nine voices move through b37–43. It scores 0 parallels, 0 beat-to-beat parallels, 2 doubled sevenths, 23.5 % tripled beats, 11 low-register clashes and 1 justified unresolved dissonance.

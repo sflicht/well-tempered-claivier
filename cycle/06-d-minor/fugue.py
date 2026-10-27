@@ -32,11 +32,13 @@ REST = 'R:12'
 BARS = {n: [REST] * NBARS for n in NAMES}
 TAGS = [''] * NBARS
 ENTRIES = []
+PUTLOG = []          # (bar, voice, string): kept for the analysis scripts in search/
 
 
 def put(bar, **parts):
     """Write token strings (whole bars, ties allowed across barlines) from `bar` on."""
     for k, s in parts.items():
+        PUTLOG.append((bar, k, ' '.join(s.split())))
         for i, b in enumerate(concat_bars(' '.join(s.split()), METER)):
             BARS[AB[k]][bar - 1 + i] = b
 
@@ -83,10 +85,10 @@ tag(1, 'Var. 1: the ground alone (Bass)')
 put(1, B=G('D3'))
 entry('B', 1, 'Ground (Bass)', n=8)
 tag(5, 'Subject (Alto I)')
-put(5, A1=S('A4') + ' F5:4 E5:4 D5:4  F5:4 E5:4 G5:4  F#5:8 G5:4~  G5:4 F5:2 E5:2 C#5:4')
+put(5, A1=S('A4') + ' F5:4 E5:4 D5:2 E5:2  F5:4 E5:2 F5:2 G5:4  F#5:8 G5:4~  G5:4 F5:2 E5:2 C#5:4')
 entry('A1', 5, 'Subject')
 tag(7, 'Answer (Alto II)')
-put(7, A2=S('E4') + ' D5:4 A4:4 D5:4~  D5:4 A4:4 E4:4  C#4:4 D4:8  D4:6 C#4:2 E4:4  E4:4 C#4:4 D4:4'
+put(7, A2=S('E4') + ' D5:4 A4:4 D5:4~  D5:4 A4:4 E4:2 D4:2  C#4:4 D4:8  D4:6 C#4:2 E4:4  E4:2 D4:2 C#4:4 D4:4'
                     '  D4:4 G4:2 E4:2 E4:4')
 entry('A2', 7, 'Answer')
 
@@ -117,12 +119,12 @@ entry('B', 15, 'Answer')
 tag(17, 'Var. 3 (F major): ground in Tenor I')
 put(17, T1=G('F4'))
 entry('T1', 17, 'Ground (Tenor I), F major', n=8)
-put(17, S2='A5:4 G#5:4 A5:4  F5:4 A5:4 C6:4  G5:8 F5:4~  F5:8 E5:4  R:8 Bb4:4~  Bb4:4 G4:8'
+put(17, S2='A5:4 G#5:4 A5:2 G5:2  F5:2 G5:2 A5:2 Bb5:2 C6:4  G5:8 F5:4~  F5:8 E5:4  R:8 Bb4:4~  Bb4:4 G4:8'
            '  R:4 Bb4:4 C5:4~  C5:4 A4:8')
-put(17, A1='C5:4 D5:4 A4:4~  A4:8 G4:4  G4:12  G4:4 F4:4 G4:4  E4:4 F4:8~  F4:6 E4:2 G4:4~'
+put(17, A1='C5:4 D5:4 A4:4~  A4:8 G4:4  G4:12  G4:4 F4:4 G4:2 F4:2  E4:4 F4:8~  F4:6 E4:2 G4:4~'
            '  G4:4 E4:4 Ab4:4  A4:4 R:8')
 put(17, T2='C3:4 F3:8  C3:8 G3:4')
-put(19, B='C3:8 G2:4~  G2:4 C3:8  Bb2:8 G2:4~  G2:4 C3:4 R:4  C3:8 F2:4~  F2:4 A2:4 F2:4')
+put(19, B='C3:8 G2:4~  G2:4 C3:8  Bb2:4 A2:4 G2:4~  G2:4 C3:4 R:4  C3:8 F2:4~  F2:4 A2:4 F2:4')
 tag(19, 'Inversus (Tenor II): the sixth voice answers by inversion')
 put(19, T2=I('C4'))
 entry('T2', 19, 'Inversus (= ground at double speed)')
@@ -140,11 +142,11 @@ entry('S1', 21, 'Subject (F major)')
 tag(25, 'Var. 4 (A minor): ground in Alto II')
 put(25, A2=G('A4'))
 entry('A2', 25, 'Ground (Alto II), A minor', n=8)
-put(25, S1='C6:8 A5:4  F5:8 E5:4  C5:4 E5:4 F#5:4  D5:4 E5:4 B5:4~  B5:4 A5:4 D6:4~'
+put(25, S1='C6:8 A5:2 G5:2  F5:8 E5:2 D5:2  C5:2 D5:2 E5:4 F#5:2 E5:2  D5:4 E5:4 B5:4~  B5:4 A5:4 D6:4~'
            '  D6:8 C6:4  G5:4 G#5:4 A5:4~  A5:4 E5:8')
 put(25, S2='E5:8 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 G#4:4~  G#4:4 C5:4 R:4  R:4 B4:4 C5:4~'
-           '  C5:4 B4:4 C5:4  C5:4 A4:8')
-put(25, T1='C4:4 E4:4 F4:4  D4:4 E4:8')
+           '  C5:4 B4:4 C5:4  C5:2 B4:2 A4:8')
+put(25, T1='C4:2 D4:2 E4:4 F4:4  D4:4 E4:8')
 tag(27, 'Inversus (Tenor I), under the ground')
 put(27, T1=I('E4') + '  C4:4 D4:4 C4:4~  C4:8 E3:4')
 entry('T1', 27, 'Inversus')
@@ -152,8 +154,8 @@ put(25, T2='E3:4 A3:4 F3:4  A3:4 B3:8  C4:4 A3:4 R:4  A3:8 R:4')
 tag(29, 'Subject (Tenor II), under the ground')
 put(29, T2=S('E3'))
 entry('T2', 29, 'Subject (A minor)')
-put(25, B='A2:4 C3:4 D3:4  F2:4 E2:8  A2:4 G2:4 B2:4  D3:4 A2:4 R:4  R:4 F2:4 D3:4'
-          '  B2:4 E2:4 A2:4~  A2:4 E2:8~  E2:4 A2:4 C3:4')
+put(25, B='A2:4 C3:4 D3:4  F2:4 E2:8  A2:4 G2:4 B2:4  D3:4 A2:4 R:4  R:4 F2:4 D3:2 C3:2'
+          '  B2:4 E2:4 A2:4~  A2:4 E2:8~  E2:4 A2:2 B2:2 C3:4')
 
 # ===========================================================================
 # VARIATIO 5 (bars 33-40), G minor (the subdominant, the darkest place).
@@ -165,9 +167,9 @@ put(25, B='A2:4 C3:4 D3:4  F2:4 E2:8  A2:4 G2:4 B2:4  D3:4 A2:4 R:4  R:4 F2:4 D3
 tag(33, 'Var. 5 (G minor): ground in Alto I')
 put(33, A1=G('G4'))
 entry('A1', 33, 'Ground (Alto I), G minor', n=8)
-put(33, S1='G5:6 F5:2 Eb5:4  Eb5:4 D5:4 C5:4  B4:4 D5:4 G5:4~  G5:8 F#5:4  F#5:4 G5:8'
-           '  E5:4 D5:4 A5:4~  A5:4 F#5:4 G5:4  Bb5:4 G5:4 D5:4')
-put(33, S2='Bb4:12  C5:4 A4:8  G4:4 B4:4 A4:4  G4:4 D5:8~  D5:4 Bb4:4 C5:4  C5:4 A4:4 D5:4~'
+put(33, S1='G5:6 F5:2 Eb5:4  Eb5:4 D5:4 C5:4  B4:2 C5:2 D5:4 G5:4~  G5:8 F#5:4  F#5:4 G5:8'
+           '  E5:4 D5:4 A5:4~  A5:4 F#5:4 G5:2 A5:2  Bb5:2 A5:2 G5:4 D5:4')
+put(33, S2='Bb4:12  C5:2 Bb4:2 A4:8  G4:2 A4:2 B4:4 A4:4  G4:4 D5:8~  D5:4 Bb4:4 C5:4  C5:2 Bb4:2 A4:4 D5:4~'
            '  D5:8 Bb4:4~  Bb4:12')
 put(36, A2='R:8 F#4:4  A4:4 G4:8  A4:4 R:4 A4:4~  A4:4 C5:4 G4:4~  G4:8 F4:4')
 put(33, T1='D3:4 G3:8~  G3:4 C4:4 A3:4')
@@ -192,15 +194,15 @@ put(41, S2=G('D5').rsplit(' ', 1)[0] + ' D4:4 R:4')  # last note cut short: Sopr
 entry('S2', 41, 'Ground (Soprano II)', n=8)
 put(41, S1='F5:4 A5:4 Bb5:4~  Bb5:4 A5:4 E5:4')
 tag(43, 'Inversus (Soprano I) over the ground')
-put(43, S1=I('A5') + '  E5:4 G5:4 F5:4  A5:4 Bb5:4 G5:4')
+put(43, S1=I('A5') + '  E5:2 F5:2 G5:4 F5:2 G5:2  A5:4 Bb5:4 G5:4')
 entry('S1', 43, 'Inversus')
-put(41, A2='F4:4 E4:4 F4:4  Bb4:4 G4:8  A4:4 F4:4 R:4')
+put(41, A2='F4:4 E4:4 F4:4  Bb4:2 A4:2 G4:8  A4:4 F4:4 R:4')
 put(47, A1='R:4 C#5:4 D5:4~  D5:4 F5:4 E5:4')
-put(41, T1='A3:8 D4:4~  D4:4 A3:8  C4:4 D4:8  D4:8 C#4:4')
+put(41, T1='A3:8 D4:4~  D4:4 A3:4 Bb3:4  C4:4 D4:8  D4:8 C#4:4')
 tag(45, 'Subject (Tenor I) under the ground')
 put(45, T1=S('A3'))
 entry('T1', 45, 'Subject')
-put(41, T2='R:8 F3:4  G3:4 E3:4 G3:4  F3:4 C4:4 E3:4  R:8 E3:4~  E3:4 F3:4 E3:4  G3:4 E3:4 R:4')
+put(41, T2='R:8 F3:4  G3:4 E3:4 G3:4  F3:4 C4:4 E3:4  R:8 E3:4~  E3:4 F3:4 E3:2 F3:2  G3:4 E3:4 R:4')
 tag(47, 'Answer (Tenor II), into the summit')
 put(47, T2=S('E3'))
 entry('T2', 47, 'Answer')
@@ -221,26 +223,26 @@ put(49, S1='F5:4 E5:4 F5:4~  F5:8 E5:4  A5:12  G5:8 A5:4')
 tag(53, 'Ground at the dominant in Soprano I, over its own augmentation')
 put(53, S1=G('A5'))
 entry('S1', 53, 'Ground in soprano (at the dominant)', n=8)
-put(61, S1='E5:8 C#6:4  D6:12  C#6:4 D6:8  B5:4 G5:4 A5:4  G#5:4 E5:8')
-put(49, S2='D5:4 B4:4 D5:4  D5:4 C#5:4 B4:4  C#5:4 D5:4 E5:4~  E5:8 A4:4~'
+put(61, S1='E5:8 C#6:4  D6:12  C#6:4 D6:4 C6:4  B5:2 A5:2 G5:4 A5:4  G#5:4 E5:8')
+put(49, S2='D5:2 C5:2 B4:4 D5:4  D5:4 C#5:4 B4:4  C#5:4 D5:4 E5:4~  E5:8 A4:4~'
            '  A4:4 B4:4 C5:4~  C5:4 E5:8  D5:8 A4:4~  A4:8 G4:4~  G4:4 F4:8~  F4:4 E4:8'
            '  E4:8 A4:4~  A4:4 F4:4 E4:4  R:12  R:4 F5:4 G5:4  E5:4 A5:8  G5:4 E5:8  D5:4 C#5:8'
            '  R:12  R:12  R:12  R:8 D5:4~  D5:12')
 put(49, A1='R:12')
 tag(50, 'Inversus (Alto I): the ground at double speed')
-put(50, A1=I('A4') + '  F4:4 D4:8~  D4:4 F4:4 D4:4~  D4:4 E4:8~  E4:4 D4:4 Bb3:4~  Bb3:4 C4:8'
+put(50, A1=I('A4') + '  F4:2 E4:2 D4:8~  D4:4 F4:2 E4:2 D4:4~  D4:4 E4:8~  E4:4 D4:2 C4:2 Bb3:4~  Bb3:4 C4:8'
                     '  C#4:8 C4:4~  C4:12  C4:4 D4:4 E4:4~  E4:4 F4:4 E4:4  A4:4 F4:4 A4:4'
-                    '  B4:4 E4:8  R:8 G4:4  F4:4 G4:8~  G4:4 A4:8  Bb4:8 A4:4  C5:8 B4:4  A4:12')
+                    '  B4:4 E4:8  R:8 G4:4  F4:4 G4:8~  G4:4 A4:8  Bb4:8 A4:2 Bb4:2  C5:8 B4:4  A4:12')
 entry('A1', 50, 'Inversus (Alto I), summit')
 tag(58, 'Stretto over the dominant: subject (Alto II)')
 put(58, A2=S('G4') + '  E5:4 A4:8  G4:4 A4:4 D5:4~  D5:4 C#5:8  R:4 A4:8  R:12'
                     '  R:8 F#4:4  G4:8 F#4:4  F#4:8 G4:4  F#4:12')
 entry('A2', 58, 'Subject (G level), stretto')
-put(49, T1='F4:4 D4:4 F4:4~  F4:4 E4:4 B3:4  A3:12  A3:8 E3:4  C4:4 A3:4 E4:4  A3:4 B3:8'
+put(49, T1='F4:4 D4:4 F4:4~  F4:4 E4:4 B3:4  A3:12  A3:8 E3:4  C4:2 Bb3:2 A3:4 E4:4  A3:4 B3:8'
            '  G3:4 D4:4 C4:4~  C4:4 B3:4 A3:4~  A3:8 F3:4  G3:12  A3:4 G3:4 E3:4  G#3:4 F3:4')
 tag(60, 'Subject (Tenor I) at home pitch over the dominant pedal')
-put(60, T1='R:8 ' + S('A3') + '  D4:4  E4:4 E4:4 C#4:4  D4:4 C#4:4 D4:4'
-                     '  D4:4 B3:4 A3:4  D4:4 C#4:4 A3:4  A3:8 D4:4~  D4:12')
+put(60, T1='R:8 ' + S('A3') + '  D4:4  E4:4 E4:2 D4:2 C#4:4  D4:4 C#4:4 D4:4'
+                     '  D4:2 C4:2 B3:4 A3:4  D4:4 C#4:4 A3:4  A3:8 D4:4~  D4:12')
 entry('T1', 60, 'Subject, stretto', beat=3)
 put(51, T2='R:12  R:12  E3:12  F3:4 E3:8  R:12  D3:8 C#3:4~  C#3:4 D3:8~  D3:4 C3:8  R:12  R:12'
            '  E3:4 D3:4 R:4  R:8')

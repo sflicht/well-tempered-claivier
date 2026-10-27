@@ -123,7 +123,7 @@ theme('S2', 7, 3, octv(S, 1), 'S rectus')
 theme('T2', 7, 4, octv(I5, -1), 'I5 inversus (at the 5th)')
 put('A1', 7, 3.5, octv(CS1, -1))
 put('B1', 7, 3, 'Gb2:8 Ab2:4 F2:4 Bb2:4 Cb3:2 Ab2:2 Bb2:4')
-put('Bar', 8, 1, 'Cb3:8 Ab3:4 Eb3:4')                                 # second pass
+put('Bar', 8, 1, 'Cb3:8 R:4 Eb3:4')                                 # second pass
 put('Bar', 11, 2, 'Gb3:6 F3:6')
 
 # b9-10: half cadence, then E7 (b9.3) Soprano I: inversion (melodic-minor C) on E-flat
@@ -179,7 +179,7 @@ put('S2', 22, 4.25, CSD)                                                        
 theme('S1', 23, 2.5, octv(tr(SD, 5, 3), 1), 'S diminution (a-flat)', 1)          # Ab5 Eb6 Fb6 Eb6 Db6 Cb6 Bb5 G5 Ab5
 put('A1', 23, 2.75, octv(tr(CSD, 5, 3), -1))                                     # CS diminution below (Eb5 Db5 Cb5 Bb4 Ab4 Fb5 ...)
 put('B1', 22, 3.75, 'R:1 Eb3:4 Ab2:4 Bb2:2 Ab2:8 Eb2:2 Cb3:4 Db3:4 Eb3:8')    # bass of the sequence, to the dominant of a-flat
-put('T1', 22, 1, 'Db4:4 Eb4:4 C4:2 Bb3:6 Eb4:4 Bb3:2 Cb4:4 Db4:4 Eb4:6 Cb4:4 Bb3:8')   # long-breath line
+put('T1', 22, 1, 'Db4:4 Eb4:4 C4:2 Bb3:6 Eb4:4 Bb3:2 Cb4:4 Db4:4 Eb4:6 Db4:4 Bb3:8')   # long-breath line
 theme('S2', 24, 1, octv(tr(W.invert_diatonic(SD, 'Eb4', SC), 5, 3), 1), 'I diminution (a-flat), the dance turns over', 1)
 
 # ================================================================ MIDDLE ENTRIES II (b25-30): a-flat, then a false return in e-flat
@@ -200,9 +200,9 @@ put('S2', 29, 4, 'Ab5:4 F5:4 Ab5:4 Gb5:4 F5:4')                                 
 
 # ================================================================ APPROACH (b31-35): heads one beat apart, bottom to top, over a rising bass
 put('B2', 31, 1, 'Gb2:16 Ab2:20 A2:12 Bb2:20')                                               # i6 - iv - vii7/V - V
-theme('B1', 31, 1, 'Eb3:4 Bb3:4 Cb4:3 Bb3:1', 'head', 1); put('B1', 31, 4, 'Gb3:4 Cb3:8 Eb3:12 C3:12 D3:8')
-theme('T2', 31, 2, 'Bb3:4 Eb3:4 D3:3 Eb3:1', 'head inversus', 1); put('T2', 32, 1, 'Eb3:8 Ab3:8 Gb3:16 F3:12')
-theme('A2', 31, 3, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('A2', 32, 2, 'Ab4:16 Gb4:12 Bb4:4')
+theme('B1', 31, 1, 'Eb3:4 Bb3:4 Cb4:3 Bb3:1', 'head', 1); put('B1', 31, 4, 'Gb3:4 Cb3:12 Eb3:8 C3:12 D3:8')
+theme('T2', 31, 2, 'Bb3:4 Eb3:4 D3:3 Eb3:1', 'head inversus', 1); put('T2', 32, 1, 'Eb3:8 Ab3:8 Gb3:4 R:12 F3:8')
+theme('A2', 31, 3, 'Eb4:4 Bb4:4 Cb5:3 Bb4:1', 'head', 1); put('A2', 32, 2, 'Ab4:16 C5:12 Bb4:4')
 theme('S2', 31, 4, 'Bb5:4 Eb5:4 D5:3 Eb5:1', 'head inversus', 1); put('S2', 32, 3, 'Eb5:24')
 theme('Bar', 32, 1, 'Ab3:4 Eb4:4 Fb4:3 Eb4:1', 'head (a-flat)', 1); put('Bar', 32, 4, 'Db4:4 Cb4:4 C4:12')
 theme('T1', 32, 2, 'Eb4:4 Ab3:4 G3:3 Ab3:1', 'head inversus (a-flat)', 1); put('T1', 33, 1, 'Eb4:16 F4:16')
@@ -220,7 +220,7 @@ put('B1', 37, 1, 'Bb2:12')
 put('Bar', 37, 1, 'Gb3:16')
 put('T2', 37, 1, 'Bb3:12')
 put('T1', 37, 1, 'Eb4:16 F4:8')
-put('A2', 37, 1, 'Gb4:16')
+put('A2', 37, 1, 'Gb4:12')
 put('A1', 37, 1, 'Bb4:8')
 put('S2', 37, 1, 'Eb5:4')
 put('S1', 37, 1, 'Gb6:8 F6:4')
@@ -236,19 +236,19 @@ theme('T2', 40, 3, octv(I5, -1), 'I5 inversus')                                 
 theme('S1', 41, 1, octv(tr(S, 7, 4), 1), 'S rectus on B-flat: the peak G-flat6 at b41.3')   # Bb5 F6 Gb6 ...
 theme('A1', 41, 3, tr(S, 7, 4), 'S rectus on B-flat')                               # Bb4 F5 Gb5 ...
 put('S1', 42, 2.5, 'Bb5:10')
-put('S2', 39, 1, 'Eb5:12 Db5:8 Cb5:4 Db5:4 Eb5:4 F5:4 Ab5:8 Gb5:4')          # long-breath line through the maestrale
+put('S2', 39, 1, 'Eb5:12 Db5:8 Cb5:4 Db5:4 Eb5:4 F5:4 Bb5:4 Ab5:4 Gb5:4')          # long-breath line through the maestrale
 put('T1', 41, 3.5, 'D4:6 Gb4:16')
 put('B1', 42, 1, 'Gb3:8 Eb3:8')
 put('Bar', 42, 1, 'Eb3:8 Gb3:8')                                                # voice exchange with Bass I under the common-tone diminished 7th
 # second pass: every voice keeps moving through b38-41
 put('A2', 38, 1, 'F4:4 Ab4:4 R:4 Bb4:4')
 put('B1', 38, 1, 'D3:8 Bb3:4 Eb3:4 Ab3:4')
-put('T1', 38, 3, 'D4:6 C4:2 Cb4:4 Eb4:4 Gb4:4')      # chromatic fall, then a climb into its own entry
-put('S1', 39, 1.5, 'Cb6:6 Gb5:4 Ab5:12 Bb5:4 Eb6:4')
+put('T1', 38, 3, 'R:6 C4:2 Cb4:4 Eb4:4 Gb4:4')      # chromatic fall, then a climb into its own entry
+put('S1', 39, 1.5, 'Cb6:6 Gb5:4 Ab5:4 R:4 Ab5:4 Bb5:4 Eb6:4')
 put('A1', 39, 2, 'Cb5:8 R:4 Bb4:4')                               # two short sighs between its own entries
-put('A2', 40, 3, 'Gb4:8 Bb4:8 F5:4 D5:4 C5:8 Bb4:8')
+put('A2', 40, 3, 'Gb4:8 Bb4:8 F5:4 D5:4 A4:4')
 put('Bar', 41, 1, 'Bb2:4 D3:4')
-put('T2', 42, 1, 'Eb4:4 Bb3:4 C4:4 Eb4:8 Bb3:4')
+put('T2', 42, 1, 'Eb4:4 C4:8 Eb4:8 Bb3:4')
 put('S2', 42, 1, 'Eb5:4 Gb5:12')
 put('Bar', 43, 1, 'Ab3:4 F3:4')
 
@@ -271,8 +271,8 @@ put('B1', 45, 1, 'Ab2:4')                                                       
 put('B1', 48, 2, 'Bb2:8 Eb3:4')
 put('A2', 45, 1, 'Cb4:4 Bb3:4')
 put('S2', 45, 1, 'Eb5:4')
-put('S1', 46, 2, 'Gb6:8 F6:4 Eb6:20 D6:4')                                              # descant over the three subjects
-put('Bar', 45, 2, 'Gb3:8 Ab3:4 Bb3:4 Cb4:4 Eb4:4 D4:4 Gb3:4 Cb4:12 Gb3:4 Ab3:4 Bb3:8')                    # baritone line under Bach's subject
+put('S1', 46, 2, 'Gb6:8 F6:4 Eb6:12 R:4 D6:4')                                              # descant over the three subjects
+put('Bar', 45, 2, 'Gb3:8 Ab3:4 Bb3:4 Cb4:4 Eb4:4 D4:4 Gb3:4 Cb4:12 Gb3:4 Bb3:12')                    # baritone line under Bach's subject
 put('A1', 46, 2, aug(CS, 2).rsplit(' ', 1)[0])                                             # the countersubject, augmented, partners its subject again
 # ================================================================ CODA (b49-50): heads over a two-bar tonic pedal; lines end one by one
 put('B2', 49, 1, 'Eb2:32')
@@ -288,29 +288,29 @@ put('S2', 49, 2, 'Gb5:4 Eb5:8 F5:8 Eb5:8')
 
 # ================================================================ SECOND PASS: more real lines in the middle
 # Episode 1 (b13.3-15): two lines join the relay -- a falling alto line and a baritone tenor-bass line
-put('A2', 13, 3, 'Fb4:4 Db4:4 Eb4:8 Gb4:4 Ab4:4 Cb4:4 Db4:8 Cb4:4')
-put('A1', 14, 1.5, 'Bb4:6 Ab4:4 F4:4')                        # the first relay voice continues
+put('A2', 13, 3, 'Fb4:4 R:4 Eb4:8 R:4 Ab4:4 Cb4:4 Db4:8 Cb4:4')
+put('A1', 14, 1.5, 'Bb4:6 Ab4:4')                        # the first relay voice continues
 put('Bar', 14, 4, 'Cb4:2 Bb3:2 Gb3:4 R:4 Bb3:4 Eb4:2 Db4:2')
 
 # b16-18: tenor II and baritone join the G-flat / D-flat entries; Alto I continues after its subject
 put('A1', 18, 1.5, 'Db5:6 Ab4:8')
 put('Bar', 16, 1, 'Db4:8 Cb4:4 Bb3:4 Db4:4 Db3:4 F3:4 Db3:4 Bb2:8 C3:4 F3:4')
 # b19-21: a true bass under the half-speed subject
-put('B2', 19, 1, 'Bb1:4 F2:12 Bb1:4 Eb2:2 Db2:2 C2:4 Bb1:4 F2:8 Eb2:4 F2:4')
-put('A1', 19, 1, 'Db5:8 Bb4:4 A4:4 Bb4:4 Gb4:2 Ab4:2 Bb4:4 Db5:4 Eb5:8 Bb4:4 A4:4')
+put('B2', 19, 1, 'Bb1:4 F2:12 Bb1:4 Eb2:2 Db2:2 C2:4 Bb1:4 F2:8 Bb1:4 F2:4')
+put('A1', 19, 1, 'Db5:8 Bb4:4 A4:4 Bb4:4 Gb4:2 Ab4:2 Bb4:4 Db5:4 F5:4 Gb5:8 F5:4')
 # b22-24: a dotted tenor line under the sixteenth-note stretto, leading into its own augmentation at b25
-put('T2', 22, 1, 'Bb3:6 Ab3:2 Eb3:4 Gb3:4 Ab3:6 F3:2 Eb3:4 Ab3:4 Eb3:4 Gb3:4 G3:4 Bb3:4')
+put('T2', 22, 1, 'Bb3:6 Ab3:2 Eb3:4 Gb3:4 Ab3:4 F3:4 Ab3:8 Eb3:4 Ab3:4 Db4:4 Bb3:4')
 # b24-26: a soprano descant over the a-flat augmentation
 put('S1', 24, 2, 'Fb6:4 Eb6:4 Db6:4 Cb6:4 Eb6:4 Ab5:4 Cb6:4 Db6:4 Ab5:4 Bb5:4 Ab5:4')
-put('A1', 24, 2, 'Ab4:4 Db5:8')
-put('A2', 24, 2, 'Fb4:4 Db4:8')
-put('A2', 25, 1, 'Eb4:8 Cb5:8 Bb4:4 Ab4:6 Gb4:2 Eb4:4 Db4:8 Eb4:4 D4:4')     # a sixth up, then a long stepwise descent
-put('Bar', 25, 1, 'Cb4:8 Ab3:4 Eb3:4 Bb3:4 Eb4:4 Gb3:8 G3:4 Eb3:8 Ab3:4')       # inner line under the tenor augmentation
+put('A1', 24, 2, 'Fb5:4')
+put('A2', 24, 2, 'Fb4:4')
+put('A2', 25, 1, 'Eb4:8 Cb5:8 Bb4:4 Ab4:6 Gb4:2 Eb4:4 R:8 Eb4:4')     # a sixth up, then a long stepwise descent
+put('Bar', 25, 1, 'Cb4:8 Ab3:4 Eb3:4 R:4 Eb4:4 Gb3:8 G3:4 Eb3:8 Ab3:4')       # inner line under the tenor augmentation
 # b28-30: alto II above the e-flat inversion entries
 put('A2', 28, 1, 'Bb4:8 Ab4:4 Cb5:4 Bb4:4 Eb5:8 F5:4 D5:8 Eb5:4 Bb4:4')
-put('B1', 28, 1, 'Gb3:8 Eb3:4 F3:4 Gb3:12 D3:4 F3:8 Gb3:4 D3:4')
-put('T1', 28, 1, 'Gb4:12 F4:4 R:8 Bb3:4 F4:4 Bb4:4 Ab4:4 Cb5:4 Ab4:4 Gb4:8 Bb4:4')   # tenor I returns before its head in b32
-put('T2', 16, 1, 'Bb3:4 Gb3:4 Eb3:4 Gb3:4 F3:4 Bb3:4 Ab3:4 Db4:4 Db4:4 Eb4:4 C4:4 Ab3:4')
+put('B1', 28, 1, 'Gb3:8 Eb3:4 F3:4 Gb3:12 D3:4 F3:8 Gb3:4 Bb2:4')
+put('T1', 28, 1, 'Gb4:8 Cb5:8 R:8 Bb3:4 F4:4 Bb4:4 Ab4:4 Cb5:4 Ab4:4 Gb4:8 Bb4:4')   # tenor I returns before its head in b32
+put('T2', 16, 1, 'Bb3:4 Gb3:4 Eb3:8 Ab3:4 Bb3:4 Ab3:4 Db4:4 Db4:4 Eb4:8 F4:4')
 
 
 def build(nbars):

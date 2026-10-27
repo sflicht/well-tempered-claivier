@@ -159,7 +159,7 @@ put('Fl', 5, 2, oc(CS, 2))                                        # CS above the
 put('Tr', 5, 1.5, 'R:6 C6:4 A5:4 F5:4')                           # the trumpet holds the chord: C, A, F
 theme('Ob', 7, 1.5, A, 'concertino: answer (Oboe)', 2)
 put('Vno', 7, 2, CSA)                                             # CS below the oboe
-put('Fl', 7, 1.5, 'R:2 E6:8 C6:2 E6:2 F6:4 A6:2 G6:2 D6:4 F6:4 E6:2')   # high line; F6 (G7's 7th) -> E6
+put('Fl', 7, 1.5, 'R:2 E6:8 C6:2 E6:2 F6:4 A6:2 G6:6 F6:4 E6:2')   # high line; F6 (G7's 7th) -> E6
 put('Tr', 7, 4.5, 'C6:1 C6:1 C6:6 B5:2 B5:4 G5:4 C6:2')                 # tattoo into b8, leading tone -> C
 
 
@@ -188,9 +188,9 @@ put('Vno', 11, 1, 'R:4 C6:4 F5:2 A5:2 E5:2 G5:2 Bb5:4 G5:4 Bb5:8 A5:4')
 put('Fl', 14, 2, 'A5:4 F6:6 Eb6:2 D6:6 C6:2 Bb5:4 C6:4 B5:4 Bb5:4 A5:4')   # CS, its D resolving 9-8 here
 put('Tr', 16, 1, 'R:6 C6:1 C6:1 A5:4')
 # free ripieno lines
-put('Vc', 11, 1.5, 'C3:2 A2:4 D3:4 C3:4 Bb2:8 E3:4 C3:4 F3:4 A2:4 D3:8 C3:4 A2:4 C3:4')
-put('Vc', 16, 1, 'B2:4 G2:4 A2:4')
-put('Va1', 12, 1, 'D4:4 E4:4 C4:8 A3:8 F4:4 D4:4 E4:4 C4:2 D4:2 F4:12 E4:4 D4:4 C4:4 F4:4 E4:4 C4:4')
+put('Vc', 11, 1.5, 'C3:2 A2:4 D3:4 C3:4 Bb2:4 E3:4 C3:8 F3:4 A2:4 D3:8 C3:4 A2:4 C3:4')
+put('Vc', 16, 1, 'D3:4 G2:4 A2:4')
+put('Va1', 12, 1, 'D4:4 G3:4 C4:8 A3:8 F4:4 D4:4 E4:4 C4:2 D4:2 F4:12 E4:4 D4:4 C4:4 G3:8 F3:4')
 put('V2a', 13, 1.5, 'A4:10 D5:2 C5:2 A4:4')
 put('V2a', 16, 1, 'D5:4 E5:4 F5:4')
 put('V2b', 16, 1.5, 'R:2 G4:4 F4:4')
@@ -199,22 +199,22 @@ put('V2b', 16, 1.5, 'R:2 G4:4 F4:4')
 # ================================================================ EPISODE 1: solo (b17-22), F -> C -> towards d
 # A one-bar model sequenced down a step (descending fifths in pairs: F-Bb | E-Am | Dm-G | C).  Flute and
 # oboe trade prepared sevenths (each holds the common tone into the next chord and resolves down); the
-# violin runs the subject's tail as one long cascade from F6 to B4; the trumpet only joins on chords its
+# violin runs the subject's tail as a cascade that falls through each first half-bar and climbs back; the trumpet only joins on chords its
 # natural notes can sound (F, D minor, G, C) and sits out E-diminished and A minor.
 put('Fl', 17, 1, 'A5:14 G5:2 G5:14 F5:2 F5:14 E5:2')
 put('Ob', 17, 1, 'C5:8 D5:16 C5:16 B4:8')
-put('Vno', 17, 1, 'F6:1 E6:1 D6:1 C6:1 D6:1 C6:1 Bb5:1 A5:1 D5:1 F5:1 Bb5:1 D6:1 F5:1 Bb5:1 D6:1 E6:1 '
-                  'E6:1 D6:1 C6:1 Bb5:1 C6:1 Bb5:1 A5:1 G5:1 C5:1 E5:1 A5:1 C6:1 E5:1 A5:1 C6:1 D6:1 '
-                  'D6:1 C6:1 Bb5:1 A5:1 Bb5:1 A5:1 G5:1 F5:1 B4:1 D5:1 G5:1 B5:1 D5:1 G5:1 B5:1 C6:1')
-put('Tr', 17, 1, 'C6:2 C6:1 C6:1 C6:4')
+put('Vno', 17, 1, 'F6:1 E6:1 D6:1 C6:1 D6:1 C6:1 Bb5:1 A5:1 G5:1 A5:1 Bb5:1 C6:1 D6:1 C6:1 D6:1 E6:1 '
+                  'E6:1 D6:1 C6:1 Bb5:1 C6:1 Bb5:1 A5:1 G5:1 F5:1 G5:1 A5:1 Bb5:1 C6:1 Bb5:1 C6:1 D6:1 '
+                  'D6:1 C6:1 Bb5:1 A5:1 Bb5:1 A5:1 G5:1 F5:1 G5:1 A5:1 B5:1 A5:1 G5:1 A5:1 F5:1 D5:1')
+put('Tr', 17, 1, 'C6:2 C6:1 C6:1 A5:4')
 put('Tr', 19, 1, 'D6:2 D6:1 D6:1 D6:4 R:4 G5:4')
-put('Vc', 17, 1, 'F2:2 F3:2 A2:2 F2:2 Bb2:2 Bb3:2 D3:2 Bb2:2 E2:2 E3:2 G2:2 E2:2 A2:2 A3:2 C3:2 A2:2 '
-                 'D2:2 D3:2 F2:2 D2:2 G2:2 G3:2 B2:2 G2:2 C3:4')
+put('Vc', 17, 1, 'F2:2 G2:2 A2:2 F2:2 Bb2:2 A2:2 G2:2 F2:2 E2:2 F2:2 G2:2 E2:2 A2:2 G2:2 F2:2 E2:2 '
+                 'D2:2 E2:2 F2:2 D2:2 G2:2 B2:2 G2:2 D2:2 C2:4')
 # middle entry in C (the subject a fifth up, B natural) as a trio: the violin's CS below, the recorder's
 # high line above (the same two-part frame as bars 7-8), continuo silent
 SC = W.transpose(S, -5, -3)
 theme('Ob', 20, 1.5, SC, 'concertino: subject in C (Oboe)', 2)
-put('Vno', 20, 1, 'C5:4 ' + CSA)
+put('Vno', 20, 1, 'E5:4 ' + CSA)
 put('Fl', 20, 1, 'E5:2 R:2 E6:8 C6:2 E6:2 F6:4 A6:2 G6:2 D6:4 F6:4')
 # the turn to D minor: C - C#dim7 - A7 - (d); the trumpet's last tattoo on A, then it is silent
 put('Vc', 22, 1, 'C3:4 C#3:4 A2:8')
@@ -231,7 +231,15 @@ theme('V1a', 23, 1.5, Sd, 'stretto I (d): subject (Violino I.1)', 2)
 theme('Va1', 23, 3.5, oc(Sd, -1), 'stretto I (d): subject (Viola 1)', 2)
 theme('Vc', 24, 1.5, oc(Id, -2), 'stretto I (d): inversus (Violoncello)', 2)
 theme('V2a', 24, 3.5, oc(Id, -1), 'stretto I (d): inversus (Violino II.1)', 2)
-put('Ob', 23, 2, oc(CSd, 1))
+put('Ob', 23, 2, 'F4:4 D5:6 C5:2 Bb4:4 A4:2 G4:6 A4:4 F5:4 R:12 C5:4 D5:8 C#5:4 D5:4 Bb4:4 A4:12')   # the CS (B-flat shortened), then a line under the stretto
+put('Vc', 23, 1, 'D3:2 E3:2 C3:4 Bb2:4 F3:4 D3:2')       # lament bass D C Bb, then i - VI
+
+Sd_cad = ' '.join(Sd.split()[:-5]) + ' A4:4 D5:4'          # subject with a V-i close in the bass
+theme('Vne', 26, 1.5, oc(Sd_cad, -2), 'stretto I (d): subject (Violone), cadence', 2)
+put('V1a', 27, 1, 'Bb4:4 D5:4 C#5:4 E5:4 F5:4')
+put('Va1', 27, 1, 'D4:8 A3:8 A3:4')
+put('V2a', 27, 1, 'F4:8 G4:8 F4:4')
+put('Vc', 26, 1.5, 'R:14 R:16 F3:4')
 
 
 def build(nbars, path=None):

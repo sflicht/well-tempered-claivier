@@ -198,6 +198,26 @@ theme('Bar2', 26, 1, octv('E4:6 E4:4 D#4:2 E4:2 F#4:2 G4:2 B4:4 A4:2 B4:4 G4:2 C
 put('T2', 26, 1, 'B3:12 E4:6 D4:6 G4:12 D4:6 C4:6')
 theme('B2', 28, 2, octv(RA, -2), 'Coro II: answer (B minor), bass')
 theme('S1', 28, 4, tr(IG, 7, 4), 'Coro I: inversion in D major, soprano')
+put('A1', 28, 1, 'G4:2 A4:2 B4:2 B4:6 G4:6 F#4:6 F#4:4 G4:2 A4:6 G4:6 A4:6 F#4:6')
+put('T2', 28, 1, 'B3:6 D4:6 B3:6 D4:18 B3:6 A3:6 C#4:6 F#4:6')
+put('Bar2', 28, 1, 'G3:6 F#3:6 E3:6 F#3:6')
+
+# ================================================================ VI. CHORALE LINE 4 (b30-37) over the subject at half speed
+# Coro II sings the G-major subject; one beat later Coro I's bass sings it at half speed (a prolation stretto),
+# and that broad bass carries chorale line 4. A Coro I tenor entry (E minor) then cadences in E minor at b37.
+theme('A2', 30, 3, RG, 'Coro II: subject in G major')
+theme('B1', 30, 4, octv(aug(RG, 2), -2), 'Coro I: subject in G major at half speed, bass (under chorale line 4)', 4)
+put('CH', 32, 1, CH2)
+theme('T2', 32, 3, octv(IG, -1), 'Coro II: inversion in G major, tenor')
+theme('T1', 35, 1, octv(R, -1), 'Coro I: subject (E minor), tenor: cadence in E minor at b37')
+put('B2', 30, 2, 'B2:6 G2:6')
+put('A1', 30, 2, 'D4:6 E4:6 D4:18 F#4:6 E4:6')
+put('T2', 30, 3, 'B3:6 D4:6 D4:4 C4:2 B3:6 A3:6 G3:6')
+put('S1', 31, 3, 'G5:12 F#5:6 F#5:4 E5:2 D5:6 D5:6 D5:4 C5:2 C5:6 B4:6 D5:6 E5:12 B4:6 D5:4 E5:2 '
+                 'E5:6 B4:6 C5:6 D5:6 E5:18 F#5:6 G5:6')
+put('A2', 32, 3, 'G4:6 B4:4 A4:2 F#4:6 E4:12 F#4:6 E4:6 A4:6 D4:12')
+put('A1', 34, 3, 'G4:6 B4:6 C5:6 B4:4 A4:2 G4:6 A4:4 B4:2 G4:6 A4:6 G4:6 A4:6 G4:6')
+put('B2', 36, 2, 'A2:6 B2:12 E2:6')
 
 
 def build(nbars):
