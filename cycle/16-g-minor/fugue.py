@@ -213,6 +213,10 @@ def summit(s0):
     T('RS', 11, 'G4:4 Bb4:8 G4:6 A4:2 Bb4:2 A4:6')
     T('OB', 13.5, oc(dsh(S7, 2), -1), 'summit: subject 7 (line 7), on D')
     T('HS2', 6.5, dsh(S8, 3), 'summit: subject 8 (line 8), on A')
+    T('HS1', 12.5, 'F6:4 Eb6:4')
+    T('HT', 12, 'Bb4:6 A4:6')
+    T('HBr', 19.5, 'E3:14 D3:20')
+    T('HB', 9, 'F3:10 Eb3:2')
     # FREE-END
 
 

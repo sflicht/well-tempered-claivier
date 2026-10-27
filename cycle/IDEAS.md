@@ -105,7 +105,7 @@ device of its own:
     Art of Fugue breaks off just after B-A-C-H joins the first two subjects;
     Nottebohm showed the three combine with the main theme. Fugue XII
     completes that quadruple fugue in F minor, in thirteen real voices.
-26. **[in progress] Pair XIII: fuga canonica à 14 on the Goldberg ground.**
+26. **[first version] Pair XIII: fuga canonica à 14 on the Goldberg ground.**
     Canons at every interval, as in the Goldberg Variations, accumulating over
     the ground in F-sharp, ending in a quodlibet with the two folk songs of
     Variation 30.

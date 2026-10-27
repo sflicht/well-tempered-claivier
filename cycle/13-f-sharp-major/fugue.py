@@ -247,7 +247,7 @@ put('Idx', 17, [
     'R:4 C#4:8',                                                 # b63
     'R:9 C#3:3',                                                 # b64
 ])
-CANON_SPAN['I'] = (9, 64)
+CANON_SPAN['I'] = (9, 62)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -305,7 +305,7 @@ put('IIdx', 17, subj(1) + [
     'R:12',                                                    # b56 I    (canon II: 8 -> 1 rests)
     'R:12',                                                      # b57
 ])
-CANON_SPAN['II'] = (17, 57)
+CANON_SPAN['II'] = (17, 57)      # (continued in the summit below)
 entry('IIdx', 17, 'Canon II dux: subject')
 entry('IIco', 18, 'Canon II comes: subject at the 2nd above')
 
@@ -350,7 +350,7 @@ put('IIIdx', 25, subj(-1) + [
     'G#3:4 C#3:8',                                               # b63
     'R:4 C#4:8',                                                 # b64
 ])
-CANON_SPAN['III'] = (25, 64)
+CANON_SPAN['III'] = (25, 62)
 entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
 entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
 
@@ -398,7 +398,7 @@ put('IVdx', 33, subj(1) + [
     'D#5:8 F#5:4',                                               # b75
     'C#5:8 R:4',                                                 # b76
 ])
-CANON_SPAN['IV'] = (33, 76)
+CANON_SPAN['IV'] = (33, 60)
 put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'C#5:4 B4:2 A#4:2 G#4:2 F#4:2',                            # b41
     'B4:4 A#4:2 G#4:2 C#5:4',                                  # b42
@@ -467,7 +467,7 @@ put('Vdx', 41, subj(1) + [
     'R:4 G#4:2 F#4:2 G#4:4',                                     # b63
     'R:12',                                                      # b64
 ])
-CANON_SPAN['V'] = (41, 64)
+CANON_SPAN['V'] = (41, 60)
 entry('Vdx', 41, 'Canon V dux: subject')
 entry('Vco', 44, 'Canon V comes: subject inverted, a 5th below')
 
@@ -490,7 +490,7 @@ put('VIdx', 49, subj(1) + [
     'C#6:4 B5:2 A#5:2 G#5:4',                                    # b63
     'F#5:12',                                                    # b64
 ])
-CANON_SPAN['VI'] = (49, 64)
+CANON_SPAN['VI'] = (49, 60)
 entry('VIdx', 49, 'Canon VI dux: subject')
 entry('VIco', 57, 'Canon VI comes: subject at the 6th below')
 
@@ -505,7 +505,7 @@ put('IIdx', 58, [shift(b, 1) for b in subj(1)] + [
     'B5:4 G#5:4 C#6:4',                                          # b63
     'R:12',                                                      # b64
 ])
-CANON_SPAN['II'] = (17, 64)
+CANON_SPAN['II'] = (17, 63)
 entry('IIdx', 58, 'Stretto: canon II dux, subject on G#')
 entry('IIco', 59, 'Stretto: canon II comes, subject on A#')
 

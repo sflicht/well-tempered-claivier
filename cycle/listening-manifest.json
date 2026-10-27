@@ -232,6 +232,25 @@
    ]
   },
   {
+   "name": "Pair XIII \u00b7 F-sharp major (new, fourteen voices)",
+   "pieces": [
+    {
+     "id": "prelude-13",
+     "title": "Prelude XIII \u00b7 Aria",
+     "score": "cycle/13-f-sharp-major/prelude.json",
+     "tag": "new",
+     "notes": "A 16-bar ornamented sarabande over the Goldberg ground, the bass on which Bach built all thirty Goldberg Variations, here in F-sharp major. Like the Aria that opens the Variations it is decorated with turns, appoggiaturas and written-out trills, but its melody is new."
+    },
+    {
+     "id": "fugue-13",
+     "title": "Fugue XIII \u00b7 Fuga canonica a 14 sopra il fondamento di Goldberg",
+     "score": "cycle/13-f-sharp-major/fugue.json",
+     "tag": "new",
+     "notes": "Every third Goldberg Variation is a canon, at the unison, the second, the third and so on up to the ninth, and Bach later wrote fourteen more canons on the same ground (BWV 1087). Here the ground runs ten times in F-sharp, and with each round a new canon pair enters and stays: at the unison, the second, the third, the fourth and fifth by inversion, and the sixth. The subject is the ground itself in dotted diminution.\n\nAt the summit (bars 57-64) all six canons sound together over the ground with the subject in stretto. Then, as in the Goldberg's Variation 30, a quodlibet: the two folk songs 'Ich bin so lang nicht bei dir g'west' and 'Kraut und R\u00fcben' (checked against Bach's Variation 30), here in canon themselves and in augmentation, ending on a fourteen-voice chord.\n\nFirst version: at the summit 9-12 voices sound at once, and several voices rest until the final chord."
+    }
+   ]
+  },
+  {
    "name": "Fugue XIV \u00b7 F-sharp minor (new, fifteen voices)",
    "pieces": [
     {

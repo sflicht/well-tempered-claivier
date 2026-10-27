@@ -278,17 +278,21 @@ theme('BrI', Q + 1, 2, 'C3:8 G3:12 F3:4 Eb3:16 F3:16 G3:16 C4:8', 'S1 answer (st
 theme('BII', Q + 1, 3, 'F2:8 C3:12 Bb2:4 Ab2:16 Bb2:16 C3:16 F2:4', 'S1')
 theme('TI', Q + 2, 3, S3, 'S3 B-A-C-H')
 
-# ---- the other voices of the summit are subjects too (placements found by search, every one checked by hand):
-# B-A-C-H enters with the main theme (Tenor II) and is answered high in Soprano II; S1 is answered three times
-# before the bass S1 (tonal answer in Soprano III, real answers in Alto III and Baritone I: a stretto of four
-# S1 entries within five beats); the main theme is answered by its own inversion three beats later (Alto II);
-# and Tenor I's B-A-C-H is met by the inverted answer ("H-C-A-B" on A) in Tenor III.
-theme('TII', Q, 1, S3, 'S3 B-A-C-H (with the main theme)')
-theme('SIII', Q, 3, octv(S1A, 1), 'S1 answer (tonal)')
-theme('AIII', Q, 4, tr(S1, 7, 4), 'S1 answer (real)')
-theme('AII', Q, 4, MTI, 'main theme inv. (canon by inversion, 3 beats)')
-theme('SII', Q + 1, 4, octv(S3A, 1), 'S3 answer')
-theme('TIII', Q + 2, 3, tr(S3I, -7, -4), 'S3 inv. answer (with S3)')
+# ---- the other voices of the summit are subjects too (placements found by search, then checked by hand):
+# a stretto of S1 in all its forms around the bass S1 -- inverted (Soprano III), inverted answer (Alto II),
+# tonal and real answers (Tenor III, Soprano II), its head rectus and inverted (Alto III, Tenor II) -- and the
+# head of the inverted main theme in Baritone II.
+def hd(s, k):
+    return ' '.join(s.split()[:k])
+S1R = tr(S1, 7, 4)                  # S1's real answer:   C G F E-flat F G C
+S1IR = tr(S1I, -7, -4)              # inverted answer:    F B-flat C D-flat C B-flat F
+theme('AII', Q, 1, S1IR, 'S1 inv. answer')
+theme('SIII', Q, 2, octv(S1I, -1), 'S1 inv.')
+theme('AIII', Q, 4, octv(hd(S1, 4), 1), 'S1 (head)')
+theme('TIII', Q, 4, S1A, 'S1 answer (tonal)')
+theme('SII', Q + 1, 1, octv(S1R, 1), 'S1 answer (real)')
+theme('TII', Q + 1, 1, octv(hd(S1I, 4), -2), 'S1 inv. (head)')
+theme('BrII', Q + 1, 4, octv(hd(MTI, 5), -1), 'main theme inv. (head)')
 # Bass I carries the bass into the combination and hands its F to S1 (lower neighbour E-flat).
 seq('BI', Q, 'F2:8 Ab2:4 G2:4', 'F2:4 Eb2:4 R:8')
 # Soprano I after the main theme: G over the dominant, F at the cadence.
