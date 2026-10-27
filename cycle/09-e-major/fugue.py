@@ -86,6 +86,18 @@ theme('A2', 13, 1, dshift(S, -6), 'S on C#')
 theme('T2', 15, 1, dshift(S, -10), 'S on F#')
 theme('Bar2', 17, 1, dshift(S, -7), 'S on B')
 
+# ---- exposition: free continuations
+put('S1', 5, 1, 'C#5:8 B4:16 C#5:8 E5:8 F#5:16 E5:8 B4:8 A4:16 G#4:8 C#5:24 D#5:8 C#5:8 B4:16 R:8 '
+                 'B4:8 E5:16 C#5:8 E5:8 C#5:24')                                                   # b5-18
+put('A1', 7, 1, 'G#4:8 B4:8 B4:4 A4:4 G#4:8 F#4:8 D#4:16 E4:24 F#4:8 D#4:8 R:16 R:8 B4:8 R:8 G#4:8 '
+                 'R:8 A4:8 B4:16 A4:16')                                                             # b7-18
+put('T1', 10, 3, 'B3:8 A3:12 B3:4')                                                                  # b10.3-11
+put('T1', 16, 1, 'E4:16 R:8 A3:8')                                                                   # b16-17
+put('Bar1', 12, 1, 'A3:8 B3:8 F#3:24 G#3:8')                                                         # b12-14
+put('B1', 13, 1, 'A2:8 B2:16 G#2:8 B2:8 E2:8 G#2:8 F#2:8 G#2:8 C#3:16 B2:8')                         # b13-18 bass
+put('S2', 15, 1, 'F#5:8 G#5:16 E5:8 G#5:8 A5:16 F#5:8')                                              # b15-18
+put('A2', 18, 1, 'F#4:8 B3:8')
+
 # ---- FIRST TUTTI (b19-25): ten voices over the ancestor in augmentation
 theme('S1', 19, 1, 'B4:16 C#5:8 E5:8 D#5:8 C#5:8 B4:8', "BWV 878 answer at normal speed (Bach's answer form)", 4)
 put('S1', 22, 3, 'D#5:8 E5:16 F#5:8 B4:8 E5:16')
