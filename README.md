@@ -33,7 +33,9 @@ engraved PDFs are in each pair's `renders/` folder.
 | XIV | F♯ minor | à 15, *Ricercar a 15* on Frederick the Great's Royal Theme, with the Musical Offering's canons and a canon per tonos | a trio sonata on the theme | in progress |
 | XV | G major | à 16, on Luther's *Vom Himmel hoch*: all four chorale lines at once in canon, the trick that ends Bach's Canonic Variations BWV 769, multiplied | (later) | in progress |
 | XVI | G minor | à 17, *Fantasia e fuga per Reincken*: Bach's 1720 Hamburg improvisation on *An Wasserflüssen Babylon* re-imagined, chorale canon in a double pedal, echo dialogues, a nod to BWV 542 | (optional) | in progress |
-| XVII–XXIII | | | | earlier drafts only (see below) |
+| XVII | A♭ major | à 18 (concept chosen by its composer) | | in progress |
+| XVIII | G♯ minor | à 19 (concept chosen by its composer) | | in progress |
+| XIX–XXIII | | | | earlier drafts only (see below) |
 | XXIV | B minor | à 25, twelve-tone subject (after BWV 869), contrasting rates of motion, the cycle's subjects gathered in the convergence | (later) | in progress |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:

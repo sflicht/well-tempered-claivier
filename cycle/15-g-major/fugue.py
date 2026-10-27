@@ -365,3 +365,60 @@ theme('T4', 46, 2, head(S4, 9), 'IV: subject 4 head', 1)
 theme('S1', 46, 3, head(S1), 'I: subject 1 head', 1)
 theme('B2', 47, 1, oc(head(S4, 9), -1), 'II: subject 4 head', 1)
 theme('A1', 47, 1, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'I: subject 1 head inverted', 1)
+# Every free voice joins with the subjects' own figures -- the bells of subject 1 (the falling octave
+# in sixteenths), the fanfare tattoo of subject 2, the siciliano run of subject 3, the rounds and the
+# first change of subject 4 -- two beats at a time, each placed where it makes no forbidden progression
+# with the chorale lines (slots chosen by the composer; levels checked by the scratch harness).
+BELLS = ' '.join(S1.split()[8:16])        # D5 C5 B4 A4 G4 F#4 E4 D4
+TURN = ' '.join(S1.split()[16:22])        # E4 F#4 G4 A4 F#4 D4
+TATTOO = ' '.join(S2.split()[8:14])       # A4 A4 A4 D5 C5 B4
+RUN = ' '.join(S3.split()[8:14])          # C5 B4 A4 B4 G4 E4 (triplets)
+ROUNDS = ' '.join(S4.split()[:4])         # G4 F#4 E4 D4
+CHANGE = ' '.join(S4.split()[9:13])       # F#4 G4 D4 E4
+put('A1', 41, 1, dshift(BELLS, 0))  # subject 1 bells
+put('A1', 41, 3, dshift(BELLS, -3))  # subject 1 bells
+put('B2', 41, 1, oc(dshift(TATTOO, 0), -1))  # subject 2 tattoo
+put('B2', 41, 3, dshift(ROUNDS, -3))  # subject 4 rounds
+put('T3', 41, 1, dshift(RUN, -3))  # subject 3 run
+put('T3', 41, 3, dshift(RUN, -2))  # subject 3 run
+put('A4', 41, 1, oc(dshift(ROUNDS, -2), 1))  # subject 4 rounds
+put('A4', 41, 3, dshift(TATTOO, -3))  # subject 2 tattoo
+put('T2', 41, 1, oc(dshift(TATTOO, 3), -1))  # subject 2 tattoo
+put('T2', 41, 3, oc(dshift(CHANGE, 3), -1))  # subject 4 change
+put('B1', 41, 1, oc(dshift(CHANGE, 3), -1))  # subject 4 change
+put('B1', 41, 3, oc(dshift(RUN, 0), -1))  # subject 3 run
+put('A1', 42, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
+put('B1', 42, 1, oc(dshift(ROUNDS, 3), -1))  # subject 4 rounds
+put('B1', 42, 3, oc(dshift(ROUNDS, 2), -2))  # subject 4 rounds
+put('A4', 42, 1, oc(dshift(TATTOO, 0), -1))  # subject 2 tattoo
+put('A4', 42, 3, dshift(BELLS, -2))  # subject 1 bells
+put('B1', 43, 1, oc(dshift(ROUNDS, 3), -1))  # subject 4 rounds
+put('B1', 43, 3, oc(dshift(CHANGE, 0), -1))  # subject 4 change
+put('S3', 43, 1, oc(dshift(RUN, -2), 1))  # subject 3 run
+put('S3', 43, 3, oc(dshift(BELLS, -2), 1))  # subject 1 bells
+put('A4', 43, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
+put('B3', 43, 1, oc(dshift(CHANGE, 2), -1))  # subject 4 change
+put('B3', 43, 3, oc(dshift(CHANGE, 2), -1))  # subject 4 change
+put('S3', 44, 1, oc(dshift(BELLS, -2), 1))  # subject 1 bells
+put('S3', 44, 3, dshift(ROUNDS, 2))  # subject 4 rounds
+put('T3', 44, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
+put('T3', 44, 3, dshift(RUN, -3))  # subject 3 run
+put('B3', 44, 1, oc(dshift(RUN, 0), -1))  # subject 3 run
+put('B3', 44, 3, dshift(CHANGE, -3))  # subject 4 change
+put('S3', 45, 1, dshift(BELLS, 2))  # subject 1 bells
+put('S3', 45, 3, dshift(BELLS, 0))  # subject 1 bells
+put('T3', 45, 1, oc(dshift(RUN, 2), -1))  # subject 3 run
+put('T3', 45, 3, oc(dshift(TATTOO, 3), -2))  # subject 2 tattoo
+put('B3', 45, 1, oc(dshift(RUN, 0), -1))  # subject 3 run
+put('B3', 45, 3, oc(dshift(CHANGE, 3), -1))  # subject 4 change
+put('A3', 45, 3, dshift(TURN, 2))  # subject 1 tail
+put('S2', 46, 1, dshift(BELLS, 0))  # subject 1 bells
+put('S2', 46, 3, dshift(BELLS, 0))  # subject 1 bells
+put('B1', 46, 1, oc(dshift(BELLS, 2), -2))  # subject 1 bells
+put('B1', 46, 3, oc(dshift(RUN, 0), -1))  # subject 3 run
+put('B3', 46, 1, oc(dshift(RUN, -2), -1))  # subject 3 run
+put('B3', 46, 3, oc(dshift(CHANGE, 2), -1))  # subject 4 change
+put('S3', 46, 1, dshift(BELLS, 3))  # subject 1 bells
+put('S3', 46, 3, dshift(BELLS, 3))  # subject 1 bells
+put('A3', 46, 1, dshift(RUN, 0))  # subject 3 run
+put('A3', 46, 3, dshift(CHANGE, 0))  # subject 4 change

@@ -1,13 +1,15 @@
-"""The release (bars 52-61, B major), after the arrival at c11 (bar 51).
-Bars 52-53: the voices let go one after another; Fugue V's subject, transposed to B major,
-sounds once more as a fanfare (T3).  Bars 53-57: Fugue I's subject in B major climbs a
+"""The release (bars 54-63, B major), after the arrival at c11 (bar 53).
+Bars 54-55: the voices let go one after another; Fugue V's subject, transposed to B major,
+sounds once more as a fanfare (T3).  Bars 55-59: Fugue I's subject in B major climbs a
 two-rung ladder of canons at the octave three eighths apart (its own rung R3): Baritone II
 leads, Tenor V follows; then Alto II leads, Soprano I follows, an octave higher, each
-entry taking over the last note of the one before.  Bars 58-59: the mirror wedge -- the
+entry taking over the last note of the one before.  Bars 60-61: the mirror wedge -- the
 subject's chromatic tail rises (G G# A A#) in Tenor I while the inversion's tail falls
 (D# D C# C) in Alto III, both in four-fold augmentation like the cantus, over B and E
-pedals: Em(maj7) - E7 - A - French sixth, closing together on one B.  Bars 60-61: the
-final chord gathers all twenty-five voices."""
+pedals: Em(maj7) - E7 - A - French sixth, closing together on one B.  Bars 62-63: the
+final chord gathers all twenty-five voices, each arriving by step on its own beat.
+Throughout, Tenor II and Alto IV hold the tonic as inner lines (resting in the canon's F#7
+bars), Baritone III and Tenor IV join for the wedge, so that 8-9 lines sound in every bar."""
 from xxiv import *
 
 I_B = tr(GUESTS['FI'][0], -1, -1)        # Fugue I's subject in B major (upbeat F#4)

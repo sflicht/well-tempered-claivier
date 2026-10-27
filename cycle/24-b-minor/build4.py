@@ -1,6 +1,8 @@
-"""Wave 4 (bars 26-34): the subject in A minor (Alto II, new) answered half a bar later
-by the inversion on B (Tenor IV); then close strettos of the head, U knocking in the
-newly entering low voices, R runs; the harmony moves A minor -> E minor -> C#7."""
+"""Wave 4 (bars 26-36): the subject in A minor (Tenor IV) answered half a bar later by the
+inversion on B (Alto IV); the subject in E minor (Alto V) with CS1 (Alto II); then the
+dominant pedal on C# (bars 32-36, Bass II): the subject's head climbs T5 -> A3 -> S4, CS1
+sounds complete in S3, Fugue V's head (in C# major, A1) and Fugue VIII's head (in F# minor,
+Br2) join, and the pedal choir grows by about a voice a bar (9 -> 15 moving voices)."""
 from xxiv import *
 
 S_A = tr(S, -2, -1)        # A4 C5 B4 D#4 E4 C#5 D5 Bb4 A4 F4 F#4 G4 G#4
@@ -91,8 +93,10 @@ PLAN4 = [(0, 1.5, [A, C, E], 'Am'), (1.5, 3, [B, Ds, Fs, A], 'B7/A'), (3, 3.5, [
          (15.5, 16, [B, Ds, Fs], 'B'), (16, 17.5, [E, Gs, B, D], 'E7'), (17.5, 18, [A, C, E], 'Am'), (18, 19, [D, F, A, C], 'Dm7'),
          (19, 20, [E, Gs, B, D], 'E7'), (20, 20.5, [A, C, E], 'Am'), (20.5, 21, [As, Cs, E, G], 'A#o7'), (21, 21.5, [D, G, B, Fs], 'G/D'),
          (21.5, 22, [B, Ds, Fs, A], 'B7'), (22, 23, [E, Gs, B], 'E'), (23, 24, [Cs, Es, Gs, B], 'C#7')]
-for _k in range(3):
-    PLAN4 += [(24 + 4 * _k, 25.5 + 4 * _k, [Fs, A, Cs], 'F#m/C#'), (25.5 + 4 * _k, 26 + 4 * _k, [Fs, A, Cs, Gs], 'F#m(9)/C#'), (26 + 4 * _k, 27.5 + 4 * _k, [Gs, C, Ds, Fs, Cs], 'G#7/C# (pedal)'),
-              (27.5 + 4 * _k, 28 + 4 * _k, [Cs, Es, Gs, B], 'C#7')]
-PLAN4 += [(36, 40, [Fs, A, Cs], 'F#m')]
+Bs = C
+PLAN4 += [(24, 26, [Fs, A, Cs], 'F#m'), (26, 27.5, [Gs, Bs, Ds], 'G#'), (27.5, 28, [Cs, Es, Gs], 'C#'),                 # bar 32
+          (28, 30, [Fs, A, Cs], 'F#m/C#'), (30, 31, [Gs, Bs, Ds, Fs], 'G#7/C# (pedal)'), (31, 32, [Cs, Es, Gs], 'C#'),  # bar 33
+          (32, 34, [Fs, A, Cs], 'F#m/C#'), (34, 35, [Cs, Es, Gs], 'C#'), (35, 36, [Cs, Es, Gs, B], 'C#7'),              # bar 34
+          (36, 38, [Cs, Es, Gs, B], 'C#7'), (38, 40, [Fs, A, Cs], 'F#m/C#'),                                             # bar 35
+          (40, 42, [Cs, Es, Gs, B], 'C#7'), (42, 43, [Cs, Es, Gs], 'C#'), (43, 44, [Fs, A, Cs], 'F#m')]                  # bar 36
 PLAN4 = [[100 + a, 100 + b, pcs, lab] for a, b, pcs, lab in PLAN4]

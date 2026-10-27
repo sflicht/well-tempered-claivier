@@ -1,6 +1,8 @@
 """Wave 5 (bars 37-41): the subject in two-fold augmentation in F# minor (Bass II) under
-CS1 in augmentation (S3); the remaining voices enter; the harmony turns from F# minor
-towards the dominant of B (F#7 in bar 42 = c0 of the convergence)."""
+CS1 in augmentation (S3, complete but for its last note); long-breath lines in S1, S2, A4,
+T5; the inversion's head in T3 (b37) and A2 (b38); U figures (Br2, T2, A3) and R runs (A5,
+T4, T3); the remaining voices enter one or two a bar (15 -> 20 moving voices).  The
+harmony turns from F# minor towards the dominant of B (F#7 in bar 42 = c0)."""
 from xxiv import *
 
 S2_F = octv(aug(tr(S, -5, -3), 2), -2)     # F#2:8 A2:4 G#2:4 B#1:12 C#2:4 A#2:12 B2:4 G2:12 F#2:4 D2:4 D#2:4 E2:4 E#2:4

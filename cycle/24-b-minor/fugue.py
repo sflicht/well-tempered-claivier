@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 """Fugue XXIV in B minor, twenty-five voices (the finale of The Well-Tempered clAIvier).
 
-The convergence (bars 40-51) was composed first, as a standalone study (convergence.py);
+The convergence (bars 42-53) was composed first, as a standalone study (convergence.py);
 the build-up was then written backwards from what it needs the listener to know, and the
 release forwards from its arrival.  Every note is a literal token string in
 
     build1.py   bars  1-11  exposition: S, its answer, S in the bass, answer on top; CS1
     build2.py   bars 11-17  codetta, U and R introduced, S in D, episode to E minor
     build3.py   bars 18-25  I (E minor) in stretto with S in D; S in C in the bass; U knocks
-    build4.py   bars 26-34  S in A with I on B; S in E with CS1; dominant pedal on C#,
-                            the subject's head climbing T5 -> A3 -> S4
-    build5.py   bars 35-39  S in two-fold augmentation (F# minor, Bass II) under CS1 x2
-    conv_a/b/c  bars 40-51  the cantus (S x4, Contrabass) with guests from Fugues V, VIII, II, IV
-    release.py  bars 52-61  Fugue V in B major, Fugue I's canon ladder, the mirror wedge, the chord
+    build4.py   bars 26-36  S in A with I on B; S in E with CS1; dominant pedal on C#:
+                            the subject's head climbing T5 -> A3 -> S4, CS1 complete,
+                            the heads of Fugues V and VIII; 9 -> 15 moving voices
+    build5.py   bars 37-41  S in two-fold augmentation (F# minor, Bass II) under CS1 x2,
+                            the inversion's head twice, U and R figures; 15 -> 20 voices
+    conv_a/b/c  bars 42-53  the cantus (S x4, Contrabass) with guests from Fugues V, VIII, II, IV
+    release.py  bars 54-63  Fugue V in B major, Fugue I's canon ladder, the mirror wedge, the
+                            last chord reached line by line (8-9 lines throughout)
 
 Themes are explicit transpositions/augmentations of the material in xxiv.py; the guests are
 quoted exactly from the finished fugues of this edition (see NOTES.md for sources).
@@ -110,7 +113,8 @@ def main():
         'markers': [{'t': 0, 'label': 'exposition'}, {'t': 48, 'label': 'subject in D; U, R'},
                     {'t': 68, 'label': 'inversion (E minor) in stretto with the subject'},
                     {'t': 82, 'label': 'subject in C, bass'}, {'t': 100, 'label': 'subject in A with the inversion'},
-                    {'t': 112, 'label': 'subject in E with CS1'}, {'t': 124, 'label': 'dominant pedal, heads climb'},
+                    {'t': 112, 'label': 'subject in E with CS1'}, {'t': 124, 'label': 'dominant pedal, heads climb'}, {'t': 134, 'label': 'Fugue V head (C# major)'},
+                    {'t': 138, 'label': 'Fugue VIII head (F# minor)'},
                     {'t': 144, 'label': 'subject x2 (F# minor)'}, {'t': c0, 'label': 'convergence'},
                     {'t': c0 + 4, 'label': 'cantus: subject x4'}, {'t': c0 + 5.5, 'label': 'Fugue V'},
                     {'t': c0 + 20, 'label': 'Fugue VIII'}, {'t': c0 + 30, 'label': 'Fugue II'},

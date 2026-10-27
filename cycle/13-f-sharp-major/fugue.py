@@ -422,7 +422,7 @@ put('VIdx', 49, subj(1) + [
     'A#5:4 F#6:6 E#6:2',                                         # b57
     'C#6:4 B5:2 C#6:2 D#6:2 E#6:2',                              # b58
     'F#6:12',                                                    # b59
-    'C#6:8 G#5:4',                                               # b60
+    'C#6:8 E#6:4',                                               # b60
     'C#6:6 D#6:2 C#6:4',                                         # b61
     'F#6:8 E#6:2 D#6:2',                                         # b62
     'C#6:4 B5:2 A#5:2 G#5:4',                                    # b63
@@ -446,6 +446,29 @@ put('IIdx', 58, [shift(b, 1) for b in subj(1)] + [
 CANON_SPAN['II'] = (17, 64)
 entry('IIdx', 58, 'Stretto: canon II dux, subject on G#')
 entry('IIco', 59, 'Stretto: canon II comes, subject on A#')
+
+# =============================================================================================
+# Variations 9-10 (bars 65-80): Quodlibet, after Var. 30 of BWV 988.  Bach's two folk songs come
+# in over the ground in 3:2 augmentation (his 4/4 bar carries two ground notes; ours carries one, so
+# his quavers become dotted quavers and the tunes swing in 6/8 against the 3/4).  They supply the
+# two canons the tower has no room for:
+#   canon at the octave - "Ich bin so lang nicht bei dir gewest" (Bach's tenor tune), the follower
+#     two bars behind, as in Var. 30;
+#   canon at the seventh - "Kraut und Ruben haben mich vertrieben", the follower a seventh below,
+#     two bars behind.
+ICH = ['F#3:3 G#3:3 A#3:3 B3:3', 'C#4:3 B3:3/2 A#3:3/2 G#3:3 F#3:3/2 G#3:3/2',
+       'A#3:3 G#3:3 F#3:6~', 'F#3:6 E#3:3 D#3:3/2 E#3:3/2']           # + arrival on F#
+KRAUT2 = ['A#5:3 B5:3 C#6:3 A#5:3', 'B5:3 A#5:3 G#5:3 F#5:3', 'E#5:3 F#5:3 G#5:3 E#5:3']  # + F#
+KRAUT1 = ['C#6:6 C#6:6', 'D#6:6 D#6:6', 'C#6:3 D#6:3 C#6:3 B5:3', 'A#5:3 G#5:3 F#5:6']
+
+put('Idx', 65, ICH + ['F#3:6 R:6'])                       # (upbeat C#3 at the end of bar 64)
+put('Ico', 66, ['R:9 C#4:3'] + [shift(b, 7) for b in ICH] + ['F#4:6 E#4:6'])   # arrival over V7: 4-3
+entry('Idx', 64, 'Quodlibet: Ich bin so lang nicht bei dir gewest', beat=Fr(9, 4), n=5)
+entry('Ico', 66, 'Canon at the octave: Ich bin so lang', beat=Fr(9, 4), n=5)
+put('IIdx', 69, KRAUT2 + ['F#5:6 R:6'])
+put('IIco', 71, [shift(b, -6) for b in KRAUT2] + ['G#4:6 R:6'])
+entry('IIdx', 69, 'Quodlibet: Kraut und Ruben', n=4)
+entry('IIco', 71, 'Canon at the 7th below: Kraut und Ruben', n=4)
 
 # ---- fundamentum for the rest (plain ground; ornamented later where the texture asks for it)
 put('Fund', 33, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
