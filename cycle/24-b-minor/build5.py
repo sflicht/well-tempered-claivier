@@ -10,57 +10,42 @@ def wave5(sc, b0=37):
     P = sc.put
     b = lambda k: b0 + k
     sc.theme('B2', b(0), 1, S2_F, 'Subject x2 in F# minor (bass)', 'S', scale=2, semis=-29)
-    # ---- bar 35: F#m | G#o7
-    P('Br5', b(0), 1, "C#3:12 B2:4")       # (tied from bar 36)
-    P('B4', b(0), 1, "A3:12 B3:4")
-    P('T5', b(0), 1, "F#3:4")
-    P('A3', b(0), 1, "C#4:12 F#4:4")
-    P('S2', b(0), 1, "C#6:4")
-    P('S1', b(0), 1, "C#6:12 D6:4")       # (tied from bar 36)
-    P('S3', b(0), 1, "F#5:4 R:4 C#5:8~")                     # CS1 in augmentation begins (C# held)
-    P('S4', b(0), 1, "C#5:4 B4:2 A4:6 D5:4")
-    P('Br2', b(0), 3, "R:2 F#3:2 F#3:2 F#3:2")                 # U, landing on D# in bar 36
-
-    # ---- bar 36: G#7/B# | C#7
-    P('S3', b(1), 1, "C#5:8 B#4:4 G#5:4~"); P('S3', b(2), 1, "G#5:8 F#5:8~"); P('S3', b(3), 1, "F#5:8 E5:8")
+    # CS1 in two-fold augmentation (S3), complete but for its last note, which the convergence takes over
+    P('S3', b(0), 1, "A4:4 R:4 C#5:8~"); P('S3', b(1), 1, "C#5:8 B#4:4 G#5:4~"); P('S3', b(2), 1, "G#5:8 F#5:8~")
+    P('S3', b(3), 1, "F#5:8 E5:8"); P('S3', b(4), 1, "D5:8 C#5:8~")
+    # long-breath lines: S1 descant, S2 under it, A4 and T5 in the middle
+    P('S1', b(0), 1, "C#6:12 D6:4"); P('S1', b(1), 1, "D#6:16"); P('S1', b(2), 1, "C#6:12 B5:4")
+    P('S1', b(3), 1, "B5:12 A#5:4"); P('S1', b(4), 1, "B5:4 A5:4 B5:4 G#5:4")
+    P('S2', b(0), 1, "C#6:4 A5:8 F#5:4~"); P('S2', b(1), 1, "F#5:8 G#5:4 E#5:4"); P('S2', b(2), 1, "F#5:8 E5:4 D5:4")
+    P('S2', b(3), 1, "D5:8 G5:6 F#5:2"); P('S2', b(4), 1, "F#5:8 E5:4 B5:4")
+    P('A4', b(0), 1, "C#5:12 A4:4"); P('A4', b(1), 1, "G#4:16~"); P('A4', b(2), 1, "G#4:4 F#4:12")
+    P('A4', b(3), 1, "G4:8 E4:4 F#4:4~"); P('A4', b(4), 1, "F#4:8 G#4:8")
+    P('T5', b(0), 1, "F#3:12 G#3:4~"); P('T5', b(1), 1, "G#3:16"); P('T5', b(2), 1, "C#4:12 D4:4")
+    P('T5', b(3), 1, "D4:8 C#4:8"); P('T5', b(4), 1, "D4:12 C#4:4")
+    # figures: U (Br2), the end of B3's U, R (A5, T4)
+    P('S4', b(0), 1, "C#5:4 B4:2 A4:6")
+    P('Br2', b(0), 1, "R:6 C#3:2 C#3:2 C#3:2 A3:4~"); P('Br2', b(1), 1, "A3:2 G#3:6")
+    P('B4', b(0), 1, "A3:12 B3:4"); P('B4', b(1), 1, "R:4 G#3:12")
     P('B3', b(1), 1, "G#2:16")
-    P('Br5', b(1), 1, "D#3:12 C#3:4")
-    P('B4', b(1), 1, "G#3:16")
-    P('A3', b(1), 1, "F#4:12 E#4:4")
-    P('S1', b(1), 1, "D#6:16")
-    P('Br2', b(1), 1, "D#4:6 C#4:10")
-    P('A5', b(1), 1, "D#4:1 E#4:1 F#4:1 G#4:1 A#4:1 G#4:1 F#4:1 E#4:1 D#4:4 G#4:4")
-    P('T2', b(1), 3, "R:2 G#3:2 G#3:2 G#3:2")
-
-    # ---- bar 37: F#7/A# | Bm
-    P('S1', b(2), 1, "C#6:12 B5:4")
-    P('A3', b(2), 1, "F#4:16")
-    P('Br5', b(2), 1, "C#3:12")
-    P('B4', b(2), 1, "G#3:4 F#3:12")
-    P('T2', b(2), 1, "E4:6 D#4:2 C#4:8")
-    P('A5', b(2), 1, "C#5:12 D5:4")
-    P('Br2', b(2), 1, "C#4:8")
-
-    # ---- bar 38: G | C#o7/G | F#7
-    P('S1', b(3), 1, "B5:12 A#5:4")
-    P('S2', b(3), 1, "R:8 G5:6 F#5:2")                          # Soprano II returns
-    P('A3', b(3), 1, "G4:12 E4:4")
-    P('A5', b(3), 1, "D5:8 C#5:8")
-    P('T2', b(3), 1, "B3:12 C#4:4")
-    P('T4', b(3), 1, "G3:1 A3:1 B3:1 D4:1 G4:1 D4:1 B3:1 A3:1")
-    P('B1', b(3), 1, "D3:8 E3:4 C#3:4")                              # Bass I returns
-
-    # ---- bar 39: Bm/D | B#o7/D# | C#m/E | C#7/E#  -> c0 (F#7)
-    P('S1', b(4), 1, "B5:4 A5:4 G#5:8")
-    P('S2', b(4), 1, "F#5:8 E5:4 B5:4")
-    P('A3', b(4), 1, "F#4:8 G#4:8")
-    P('A5', b(4), 1, "D5:4 A4:4 E4:4 C#5:4")
-    P('T2', b(4), 1, "C#4:2 B3:2 B#3:4 C#4:4 G#3:4")
-    P('B1', b(4), 1, "B2:4 F#2:4 C#3:8")
+    P('Br5', b(0), 1, "C#3:12 B2:4"); P('Br5', b(1), 1, "D#3:12 C#3:4"); P('Br5', b(2), 1, "C#3:12")
     P('Br5', b(4), 3, "E3:4 G#2:4")
-    P('Br2', b(4), 2, "F#3:12")                                 # held F#: suspended over C#m/C#7, the c0 note
-    P('T3', b(4), 1, "F#3:4 D#4:4 G#3:4 C#4:4")                  # Tenor III rejoins, rising to c0's C#
-    P('S4', b(4), 1, "B4:4 D#5:4 C#5:4")
+    P('A5', b(1), 1, "D#4:1 E#4:1 F#4:1 G#4:1 A#4:1 G#4:1 F#4:1 E#4:1 D#4:4 G#4:4")
+    P('T4', b(3), 1, "G3:1 A3:1 B3:1 D4:1 G4:1 D4:1 B3:1 A3:1")
+    # Tenor II: U landing on the seventh of F#7, then a long line into c0
+    P('T2', b(1), 3.5, "G#3:2 G#3:2 G#3:2"); P('T2', b(2), 1, "E4:6 D#4:2 C#4:8"); P('T2', b(3), 1, "B3:12 C#4:4")
+    P('T2', b(4), 1, "C#4:2 B3:2 B#3:4 C#4:4 G#3:4")
+    # Baritone III: a slow line under the tenors
+    P('Br3', b(0), 1, "C#3:8 F#3:8"); P('Br3', b(1), 1, "G#3:16"); P('Br3', b(2), 1, "F#3:16")
+    P('Br3', b(3), 1, "D3:8 E3:4 C#3:4"); P('Br3', b(4), 1, "B2:4 F#2:4 C#3:8")
+    # Bass I returns; Baritone IV returns; Soprano IV
+    P('B1', b(3), 1, "B2:8 C#3:8"); P('B1', b(4), 1, "F#2:8 C#3:8")
+    P('Br4', b(3), 3, "C#4:8"); P('Br4', b(4), 3, "G#3:8")
+    P('S4', b(4), 1, "B4:4 D#5:4 C#5:8")
+    # U in Alto III (landing on the Neapolitan's D) and in Alto V (landing on Bm/D); R in Tenor III into c0
+    P('A3', b(2), 3.5, "F#4:2 F#4:2 F#4:2"); P('A3', b(3), 1, "D5:6 C#5:10"); P('A3', b(4), 1, "B4:4 B#4:4 C#5:8")
+    P('A5', b(3), 3.5, "F#4:2 F#4:2 F#4:2"); P('A5', b(4), 1, "D5:6 C#5:10")
+    P('T3', b(4), 1, "F#3:1 E#3:1 F#3:1 G#3:1 A3:1 G#3:1 A3:1 B3:1 C#4:8~")
+    P('Br2', b(4), 2, "F#3:4 G#3:8")
 
 
 B, C, Cs, D, Ds, E, F, Fs, G, Gs, A, As = 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10

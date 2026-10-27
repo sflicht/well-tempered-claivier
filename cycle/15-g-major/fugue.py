@@ -196,7 +196,7 @@ put('B1', 10, 1, 'D3:4 C3:4 B2:4 A2:2 F#2:2')
 # b11-14: line 1 as cantus, high above (Coro II soprano, its first notes), over a stretto of the
 # subject two beats apart on rising degrees: tenor in C (modal, b11.2), alto in D (modal, b11.4),
 # soprano in D an octave higher, off the beat (b12.1.5): the entries close in, 2 beats then 1.5.
-theme('S2', 11, 1, L1 + ' G5:8', 'II: chorale line 1 (cantus)', 4)
+theme('S2', 11, 1, ' '.join(L1.split()[:-1]) + ' G5:16', 'II: chorale line 1 (cantus)', 4)
 theme('T1', 11, 2, dshift(oc(S1, -1), 3), 'I: subject in C (stretto)', 2)
 theme('A1', 11, 4, dshift(oc(S1, -1), 4), 'I: subject in D (stretto)', 2)
 theme('S1', 12, 1.5, dshift(S1, 4), 'I: subject in D (stretto, off the beat)', 2)
@@ -218,3 +218,25 @@ theme('B2', 15, 1, dshift(S2, -7), 'II: subject 2 (line 2 diminished)', 2)
 theme('T2', 16, 1, dshift(S2, -3), 'II: subject 2, modal answer (D)', 2)
 theme('A2', 17, 1, S2, 'II: subject 2', 2)
 theme('S2', 18, 1, dshift(S2, 4), 'II: subject 2, modal answer (D)', 2)
+# Coro I goes on beneath and around the entries; its bass carries the harmony (the Coro II bass
+# begins high, at G3):  G | D - D7/C - D | C D Em G | D - D7/C - D | C D Am.
+put('B1', 15, 1, 'G2:4 B2:4 E2:4 G2:4 D3:4 C3:4 D3:8 C3:4 D3:4 E3:4 A2:4 D3:4 C3:4 D3:8 C3:4 D3:4 C3:4 E2:4')
+put('S1', 15, 1, 'B4:6 C5:2 B4:4 B4:4 D5:4 F#5:4 A5:4 D5:4 E5:4 F#5:4 G5:8 F#5:4')
+put('A1', 19, 1, 'E4:4 D4:4 E4:8')
+put('T2', 18, 1, 'F#4:6 G4:2 F#4:4 A3:4 C4:4 A3:4 A3:4 B3:2 C4:2')
+# b20-23: line 2 as cantus in the middle of the texture (Coro III alto, its first notes), turned
+# towards E minor: C Em | Bm D | Em G/B | B7 (the cantus' C as a flat ninth falling to B) -> e.
+# Around it the fanfare head answers itself in C (Coro II soprano) and B minor (Coro I soprano), and
+# the Coro II bass sings the whole subject in E minor with a raised leading tone (written out).
+theme('A3', 20, 1, L2, 'III: chorale line 2 (cantus)', 4)
+S2E = ('E4:2 E4:2 B4:3 B4:1 G4:2 B4:1 A4:1 G4:4 '
+       'F#4:1 F#4:1 F#4:2 B4:2 A4:1 G4:1 F#4:1 F#4:1 F#4:2 D#4:2 B3:2')
+theme('S2', 20, 1, ' '.join(dshift(S2, 3).split()[:8]), 'II: subject 2 head in C', 1)
+theme('S1', 21, 1, ' '.join(dshift(S2, 2).split()[:8]), 'I: subject 2 head in B minor', 1)
+theme('B2', 22, 1, oc(S2E, -1), 'II: subject 2 in E minor', 2)
+put('B1', 20, 1, 'C3:8 E3:8 B2:8 F#2:8 E2:8 R:8 B1:16')
+put('S1', 20, 1, 'E5:4 D5:2 C5:2 B4:8')
+put('A2', 20, 1, 'C4:4 D4:4 E4:8 F#4:4 E4:4 F#4:4 A4:4 G4:4 A4:4 B4:8 B4:4 A4:4 B4:8')
+put('T2', 20, 1, 'E3:4 F#3:4 G3:8 F#3:4 G3:4 A3:8 E4:4 F#4:4 G4:8 D#4:8 D#4:4 F#4:4')
+put('S2', 21, 1, 'D5:8 A5:4 F#5:4 G5:4 E5:4 D5:4 B4:4 F#5:8 A5:8')
+put('S1', 22, 1, 'E5:4 G5:4 G5:4 F#5:4 F#5:4 E5:4 F#5:8')

@@ -346,13 +346,21 @@ put('AII', F + 5, 1, 'Ab4:2 G4:2 Ab4:2 Bb4:2 C5:2 Db5:2 C5:2 F5:2 C5:2 Bb4:2 Ab4
 # inversion at normal speed (Baritone I).  Baritone II: B-A-C-H's answer head over the dominant pedal; its
 # A-natural (the H) sinks to A-flat as the tonic arrives.
 theme('SIII', F + 5, 2, W.scale_rhythm(tr(S1, 7 + 12, 4 + 7), Fr(1, 2)), 'S1 dim. (answer)', 2)
-put('BrII', F + 7, 3, 'Ab3:8 G3:8 Ab3:8 Bb3:8 Ab3:8')
+put('BrII', F + 7, 3, 'Ab3:8 G3:8 C4:8 Bb3:8 Ab3:8')
+# The dominant pedal (b80.3-82.2): cadential 6/4 - V7 - i7/C - V9 - i; B-A-C-H (Tenor II) spells the dominant's
+# flat ninth, root, minor and major ninth before rising E-F into the tonic with the bass.  Above it the upper
+# voices hold C and move by step: B-flat (7th) to A-flat, E to F and back, the 9-8 of Tenor I into the tonic.
+put('SI', F + 8, 1, 'C6:16~ C6:8 Ab5:8')
+put('SII', F + 8, 1, 'Bb5:8 Ab5:8 G5:8')
+put('SIII', F + 8, 1, 'E5:8 F5:8 E5:8')
+put('AII', F + 8, 1, 'C5:8 Ab4:8 C5:8')
+put('TI', F + 8, 3, 'F3:8 G3:12 F3:4')
 # Coda over the tonic pedal.  Soprano I signs the name at its own pitch, B-flat A C B-natural: iv - V7/iv - i -
 # vii-dim-7/V - V - and its A becomes the Picardy third of the last chord.
 seq('SI', F + 10, 'Bb5:8 A5:8', 'C6:8 B5:8', 'C6:16', 'A5:16')
 # The other voices of the coda (V7 over the pedal - V7/iv - i - vii-dim-7/V - V7 - I).  B-A-C-H's own seventh-
 # resolution: Tenor II's B-flat falls to A with the signature's last note.
-put('SII', F + 9, 3, 'Ab5:8')
+put('SII', F + 9, 3, 'F5:8')
 seq('SII', F + 10, 'G5:8 F5:8', 'F5:16', 'E5:16', 'F5:16')
 put('SIII', F + 9, 3, 'C5:8')
 seq('SIII', F + 10, 'C5:8 Eb5:8~', 'Eb5:8 D5:8', 'C5:16', 'C5:16')

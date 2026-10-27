@@ -24,7 +24,7 @@ def part_a(sc, b0):
     P('S2', c(3), 1, "E#5:16~")
     P('S2', c(4), 1, "E#5:8 E5:8")
     # S3 upbeat figure into c1; chain; upbeat figure into c4
-    P('S3', c(0), 3.5, "F#4:2 F#4:2 F#4:2")
+    P('S3', c(0), 1, "C#5:8 R:2 F#4:2 F#4:2 F#4:2")    # CS1 x2 ends on C#; then the upbeat figure
     P('S3', c(1), 1, "D5:6 C#5:2 B4:8")
     P('S3', c(2), 1, "R:8 E5:6 D5:2~")          # F# over C#o7 -> E, passing D
     P('S3', c(3), 1, "D5:8 R:2 E#4:2 E#4:2 E#4:2")
@@ -83,7 +83,7 @@ def part_a(sc, b0):
     P('T2', c(3), 1, "C#5:6 B4:2 B4:8~")              # C# leans to B over E#dim7
     P('T2', c(4), 1, "B4:8 E4:8")
     # T3 long breath: C# | D | D E | D | C#
-    P('T3', c(0), 1, "C#4:16")
+    P('T3', c(0), 1, "C#4:16")              # (tied from the R run in bar 41)
     P('T3', c(1), 1, "D4:16~")
     P('T3', c(2), 1, "D4:8 E4:8")
     P('T3', c(3), 1, "D4:16")

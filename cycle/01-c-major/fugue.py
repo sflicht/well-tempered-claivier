@@ -14,12 +14,16 @@ Subject (C major; the upbeat G is the last eighth of a bar):
 The ladder: the entry distance shrinks one eighth per rung.
     R8  a  8 eighths  follower = inversion (in a), below      upper leads
     R7  e  7 eighths  canon at the octave above               bass leads
-    R6  G  6 eighths  canon at the ninth above                bass leads
+    R6  G  6 eighths  canon at the ninth above (upbeat omitted) bass leads
     R5  d  5 eighths  canon at the twelfth below              upper leads
     R4  F  4 eighths  canon at the ninth above                bass leads
     R3  C  3 eighths  canon at the octave above               bass leads
     R2  G  2 eighths  follower = inversion (in e), below      upper leads
-    R1  C  1 eighth   mirror: inversion a step below          upper leads
+    R1  C  1 eighth   mirror: the tonic inversion (C<->G axis), leader an
+                      octave up (G5-G6), follower from C4      upper leads
+The rungs are grouped in three flights -- I: R8-R6, II: R5-R3, III: R2-R1 --
+terraced in dynamics and register; between flights I and II a 3-bar
+suspension episode with a half cadence on A; before R1 a rising run-up.
 Exposition: BWV 846's subject begins alone in the bass and is interrupted by
 ours; Bach's line becomes the countersubject (invertible at the octave; over
 the answer it is Bach's own answer G A B C D C B E A D).  Coda: Bach's
@@ -66,15 +70,15 @@ def mark(start, text):
 mark(0, 'BWV 846 starts in the bass... and is interrupted')
 seg(U, 0, "R:14")
 entry(U, 14, SUBJECT, 'Subject')
-seg(U, 46, "C5:2 R:2")
+seg(U, 46, "C5:2 R:4")
 # countersubject above the answer: = Bach's own answer (G A B C D C B E A D)
-seg(U, 50, "G4:2 A4:2 B4:2 C5:2 D5:2 C5:2 B4:2 E5:2 A4:2 D5:2 C5:2 B4:2 "
+seg(U, 52, "G4:2 A4:2 B4:2 C5:3 D5:0.5 C5:0.5 B4:2 E5:2 A4:2 D5:2 C5:2 B4:2 "
            "D5:2 E5:2 F#5:4 B4:2 C5:2 A4:2 G4:2 A4:2 F#4:2")
 
-seg(L, 0, "R:2")
-seg(L, 2, "C3:2 D3:2 E3:2 F3:2 G3:2 F3:2 E3:2 A3:2 D3:2 G3:2 F3:2 E3:2 "
+seg(L, 0, "R:4")
+seg(L, 4, "C3:2 D3:2 E3:2 F3:3 G3:0.5 F3:0.5 E3:2 A3:2 D3:2 G3:2 F3:2 E3:2 "
           "G3:2 A3:2 B3:4 E3:2 F3:2 D3:2 C3:2 D3:2 B2:2")
-seg(L, 46, "C3:2 E3:2 D3:2 C3:2 G2:2 A2:2 B2:2 C3:2")
+seg(L, 46, "C3:2 E3:2 G3:2 E3:2 F#3:2 G3:2 A3:4")
 entry(L, 62, "D3:2 G3:3 A3:1 B3:2 G3:2 D4:4 C4:1 B3:1 A3:1 G3:1 A3:2 D3:2 "
              "E3:1 F#3:1 G3:1 F#3:1 B3:2 C4:2 D4:2", 'Answer (real)')
 
@@ -84,7 +88,7 @@ seg(L, 94, "G3:2 E3:4 F3:2 F#3:2 E3:2 B2:2 E2:2 E3:2 C3:4 A3:2 F3:2 C3:2 E3:2 G#
 
 # =====================================================================
 # RUNG 8 -- A minor, one bar apart; the follower is the inversion
-mark(110, 'Rung 8: one bar')
+mark(110, 'Flight I - rung 8: one bar')
 entry(U, 110, "E4:2 A4:3 B4:1 C5:2 A4:2 E5:4 D5:1 C5:1 B4:1 A4:1 B4:2 E4:2 "
               "F4:1 G4:1 A4:1 G4:1 C5:2 D5:2 E5:2", 'R8 (a)')
 entry(L, 126, "A3:2 E3:3 D3:1 C3:2 E3:2 A2:4 B2:1 C3:1 D3:1 E3:1 D3:2 A3:2 "
@@ -116,92 +120,105 @@ seg(L, 220, "B2:2 G2:2 G3:2 C3:2 A2:2 F#2:2 F#3:2 B2:2 A2:2")
 mark(238, 'Rung 6: six eighths')
 entry(L, 238, "D3:2 G3:3 A3:1 B3:2 G3:2 D4:4 C4:1 B3:1 A3:1 G3:1 A3:2 D3:2 "
               "E3:1 F#3:1 G3:1 F#3:1 B3:2 C4:2 D4:2", 'R6 (G)')
-entry(U, 250, "E4:2 A4:3 B4:1 C5:2 A4:2 E5:4 D5:1 C5:1 B4:1 A4:1 B4:2 E4:2 "
-              "F#4:1 G4:1 A4:1 G4:1 C5:2 D5:2 E5:2", 'R6 +6 at the 9th')
+seg(U, 250, "R:2")
+entry(U, 252, "A4:3 B4:1 C5:2 A4:2 E5:4 D5:1 C5:1 B4:1 A4:1 B4:2 E4:2 "
+              "F#4:1 G4:1 A4:1 G4:1 C5:2 D5:2 E5:2", 'R6 +6 at the 9th (upbeat omitted)')
 seg(L, 270, "C4:2 A3:2 C3:2 E3:2 D3:2 C3:2")
 
-# Episode C (-> d): Episode B inverted at the octave -- the fall figure in
-# the bass, B's bass line (shape for shape) now in the treble.
-seg(U, 282, "E4:2 C4:2 C5:2 F4:2 D4:2 Bb3:2 F4:2 E4:2 C#4:2 E4:2")
-seg(L, 282, "G3:1 F3:1 E3:1 D3:1 E3:2 A2:2 F3:1 E3:1 D3:1 C#3:1 D3:2 G2:2 A2:4 "
-            "C#3:2 F3:2 D3:2 A2:2 R:2")
+# Episode C (G -> d), the middle of the ladder: a texture the piece has not
+# had.  Phase 1: the treble holds a chain of 7-6 suspensions (E5 D5 C5) over
+# the bass's version of the subject's sixteenth turn.  Phase 2 is the same
+# pair inverted at the octave and continued downward: the turn in the treble,
+# 2-3 suspensions in the bass (C3 Bb2 A2).  Half cadence on A, held a bar.
+mark(282, 'Episode: suspensions')
+seg(U, 282, "G5:2 F5:2 E5:6 D5:8 C5:4 "
+            "D5:1 E5:1 F5:1 E5:1 G5:2 D5:2 C5:1 D5:1 E5:1 D5:1 F5:2 C5:2 "
+            "E5:2 C#5:2 A4:2 C#5:2 E5:4 R:2")
+seg(L, 282, "E3:2 D3:2 C3:2 "
+            "F3:1 G3:1 A3:1 G3:1 Bb3:2 F3:2 E3:1 F3:1 G3:1 F3:1 A3:2 C3:6 Bb2:8 A2:8 "
+            "C#3:2 E3:2 A2:4 E2:2")
 
 # =====================================================================
 # RUNG 5 -- D minor, 5 eighths; canon at the twelfth below
-mark(302, 'Rung 5: five eighths')
-entry(U, 302, "A4:2 D5:3 E5:1 F5:2 D5:2 A5:4 G5:1 F5:1 E5:1 D5:1 E5:2 A4:2 "
+mark(334, 'Flight II - rung 5: five eighths')
+entry(U, 334, "A4:2 D5:3 E5:1 F5:2 D5:2 A5:4 G5:1 F5:1 E5:1 D5:1 E5:2 A4:2 "
               "Bb4:1 C5:1 D5:1 C5:1 F5:2 G5:2 A5:2", 'R5 (d)')
-entry(L, 312, "D3:2 G3:3 A3:1 Bb3:2 G3:2 D4:4 C4:1 Bb3:1 A3:1 G3:1 A3:2 D3:2 "
+seg(L, 334, "C#3:2 F3:2 D3:2 A2:2 R:2")
+entry(L, 344, "D3:2 G3:3 A3:1 Bb3:2 G3:2 D4:4 C4:1 Bb3:1 A3:1 G3:1 A3:2 D3:2 "
               "E3:1 F3:1 G3:1 F3:1 Bb3:2 C4:2 D4:2", 'R5 +5 at the 12th')
-seg(U, 334, "F5:2 E5:2 D5:2 E5:2 F5:4 D5:2 C5:2 E5:2 D5:2 Bb4:2 G4:2 E4:2 A4:2 F4:2 R:2")
+seg(U, 366, "A5:2 E5:2 D5:2 E5:2 F5:4 D5:2 C5:2 E5:2 D5:2 Bb4:2 G4:2 E4:2 A4:2 F4:2 R:2")
 
 # Episode D (d -> F): the bass leads off with the tail's turn.
-seg(L, 344, "D3:2 F3:1 G3:1 A3:1 Bb3:1 C4:2 Bb3:2 G3:2 E3:2")
+seg(L, 376, "D3:2 F3:1 G3:1 A3:1 Bb3:1 C4:2 Bb3:2 G3:2 E3:2")
 
 # =====================================================================
 # RUNG 4 -- F major, 4 eighths (head now on beat 3); bass leads, ninth above
-mark(358, 'Rung 4: four eighths')
-entry(L, 358, "C3:2 F3:3 G3:1 A3:2 F3:2 C4:4 Bb3:1 A3:1 G3:1 F3:1 G3:2 C3:2 "
+mark(390, 'Rung 4: four eighths')
+entry(L, 390, "C3:2 F3:3 G3:1 A3:2 F3:2 C4:4 Bb3:1 A3:1 G3:1 F3:1 G3:2 C3:2 "
               "D3:1 E3:1 F3:1 E3:1 A3:2 Bb3:2 C4:2", 'R4 (F)')
-entry(U, 366, "D4:2 G4:3 A4:1 Bb4:2 G4:2 D5:4 C5:1 Bb4:1 A4:1 G4:1 A4:2 D4:2 "
+entry(U, 398, "D4:2 G4:3 A4:1 Bb4:2 G4:2 D5:4 C5:1 Bb4:1 A4:1 G4:1 A4:2 D4:2 "
               "E4:1 F4:1 G4:1 F4:1 Bb4:2 C5:2 D5:2", 'R4 +4 at the 9th')
-seg(L, 390, "Bb3:2 G3:2 A3:2 B3:2")
+seg(L, 422, "Bb3:2 G3:2 A3:2 B3:2")
 
 # Episode E (-> C): a breath, then the head of BWV 846 in the treble
 # (C D E F G F E A) bends straight into our subject's upbeat.
-seg(U, 398, "R:4 C5:2 D5:2 E5:2 F5:2 G5:2 F5:2 E5:2 A4:2 R:2")
-seg(L, 398, "C4:4 E3:2 B2:2 C3:2 D3:2 E3:2 D3:2")
+seg(U, 430, "R:4 C5:2 D5:2 E5:2 F5:2 G5:2 F5:2 E5:2 A4:2 R:2")
+seg(L, 430, "C4:4 E3:2 B2:2 C3:2 D3:2 E3:2 D3:2")
 
 # =====================================================================
 # RUNG 3 -- C major, 3 eighths; bass leads, canon at the octave above
-mark(414, 'Rung 3: three eighths')
-entry(L, 414, "G3:2 C4:3 D4:1 E4:2 C4:2 G4:4 F4:1 E4:1 D4:1 C4:1 D4:2 G3:2 "
+mark(446, 'Rung 3: three eighths')
+entry(L, 446, "G3:2 C4:3 D4:1 E4:2 C4:2 G4:4 F4:1 E4:1 D4:1 C4:1 D4:2 G3:2 "
               "A3:1 B3:1 C4:1 B3:1 E4:2 F4:2 G4:2", 'R3 (C)')
-entry(U, 420, SUBJECT, 'R3 +3 at the 8ve')
-seg(L, 446, "C4:2 D4:2 B3:2")
+entry(U, 452, SUBJECT, 'R3 +3 at the 8ve')
+seg(L, 478, "C4:2 D4:2 B3:2")
 
 # Episode F (C -> G): Episode B again, both lines transposed into G.
-seg(U, 452, "A5:1 G5:1 F#5:1 E5:1 F#5:2 B4:2 G5:1 F#5:1 E5:1 D5:1 E5:2 A4:2 C5:2")
-seg(L, 452, "F#3:2 D3:2 D4:2 G3:2 E3:2 C3:2 A3:2 F#3:2 A3:2 B3:2 R:2")
+seg(U, 484, "A5:1 G5:1 F#5:1 E5:1 F#5:2 B4:2 G5:1 F#5:1 E5:1 D5:1 E5:2 A4:2 C5:2")
+seg(L, 484, "F#3:2 D3:2 D4:2 G3:2 E3:2 C3:2 A3:2 F#3:2 A3:2 B3:2 R:2")
 
 # =====================================================================
 # RUNG 2 -- G major, 2 eighths (head on beat 3); follower = inversion in e
-mark(470, 'Rung 2: two eighths')
-entry(U, 470, "D5:2 G5:3 A5:1 B5:2 G5:2 D6:4 C6:1 B5:1 A5:1 G5:1 A5:2 D5:2 "
+mark(502, 'Flight III - rung 2: two eighths')
+entry(U, 502, "D5:2 G5:3 A5:1 B5:2 G5:2 D6:4 C6:1 B5:1 A5:1 G5:1 A5:2 D5:2 "
               "E5:1 F#5:1 G5:1 F#5:1 B5:2 C6:2 D6:2", 'R2 (G)')
-entry(L, 474, "E4:2 B3:3 A3:1 G3:2 B3:2 E3:4 F#3:1 G3:1 A3:1 B3:1 A3:2 E4:2 "
+entry(L, 506, "E4:2 B3:3 A3:1 G3:2 B3:2 E3:4 F#3:1 G3:1 A3:1 B3:1 A3:2 E4:2 "
               "D4:1 C4:1 B3:1 C4:1 G3:2 F#3:2 E3:2", 'R2 +2 inversus')
-seg(U, 502, "B5:2 G5:2")
+seg(U, 534, "B5:2 G5:2")
 
-# Episode G: dominant pedal; the head's dotted figure steps down while
-# both voices converge on the middle of the keyboard.
-seg(U, 506, "E5:2 D5:3 E5:1 F5:1 E5:1 D5:2 C5:3 D5:1 E5:2 C5:2 B4:2")
-seg(L, 506, "C3:2 G2:2 G3:2 G2:2 G3:2 G2:2 G3:2 C4:2 A3:2 D4:2 E4:2")
+# Episode G: the run-up.  The head's dotted figure climbs a step at a time
+# with both voices in tenths -- the only place the two voices agree in
+# rhythm -- and cadences V6-I into the climax.
+seg(U, 538, "G4:2 B4:3 C5:1 D5:2 B4:2 C5:3 D5:1 E5:2 C5:2 D5:3 E5:1 F5:2 D5:2 "
+            "E5:3 F5:1 D5:2 E5:2 F5:2")
+seg(L, 538, "B2:2 G3:3 A3:1 B3:2 G3:2 A3:3 B3:1 C4:2 A3:2 B3:3 C4:1 D4:2 B3:2 "
+            "C4:3 D4:1 B3:2 C4:2 A3:2 B3:2")
 
 # =====================================================================
 # RUNG 1 -- C major, ONE eighth: mirror stretto, the follower a step below
-mark(526, 'Rung 1: one eighth (mirror)')
-entry(U, 526, SUBJECT, 'R1 (C)')
-entry(L, 528, "F4:2 C4:3 B3:1 A3:2 C4:2 F3:4 G3:1 A3:1 B3:1 C4:1 B3:2 F4:2 "
-              "E4:1 D4:1 C4:1 D4:1 A3:2 G3:2 F3:2", 'R1 +1 mirror')
-seg(U, 558, "C5:2 R:2")
+mark(574, 'Rung 1: one eighth (mirror) - climax')
+entry(U, 574, "G5:2 C6:3 D6:1 E6:2 C6:2 G6:4 F6:1 E6:1 D6:1 C6:1 D6:2 G5:2 "
+              "A5:1 B5:1 C6:1 B5:1 E6:2 F6:2 G6:2", 'R1 (C)')
+entry(L, 576, "C4:2 G3:3 F3:1 E3:2 G3:2 C3:4 D3:1 E3:1 F3:1 G3:1 F3:2 C4:2 "
+              "B3:1 A3:1 G3:1 A3:1 E3:2 D3:2 C3:2", 'R1 +1 mirror')
+seg(U, 606, "C6:2 R:2")
 
 # =====================================================================
 # CODA -- BWV 846's subject in Bach's own rhythm (as his answer, on G)
 # above our subject in augmentation; then our subject at home pitch.
-mark(562, 'Coda: Bach over the augmentation')
-seg(U, 562, "G4:2 A4:2 B4:2 C5:3 D5:0.5 C5:0.5 B4:2 E5:2 A4:2 D5:3 E5:1 D5:1 C5:1 B4:1 C5:1 B4:1")
-seg(U, 587, "C5:1 E5:4 D5:4 B4:2 G4:2 A4:2 G4:2 F4:2 E4:2 A4:2 F4:2")
-entry(U, 612, SUBJECT, 'Subject at home')
-seg(U, 644, "C6:4 Bb5:2 A5:2 C6:2 B5:2 C6:16")          # B-A-C-H, then C
+mark(610, 'Coda: Bach over the augmentation')
+seg(U, 610, "G5:2 A5:2 B5:2 C6:3 D6:0.5 C6:0.5 B5:2 E6:2 A5:2 D6:3 E6:1 D6:1 C6:1 B5:1 C6:1 B5:1")
+seg(U, 635, "G5:1 E5:4 D5:4 B4:2 G4:2 A4:2 G4:2 F4:2 E4:2 A4:2 F4:2")
+entry(U, 660, SUBJECT, 'Subject at home')
+seg(U, 692, "C6:4 Bb5:4 A5:4 C6:4 B5:4 C6:8")          # B-A-C-H, then C
 
-seg(L, 560, "C3:4 F3:4 E3:4")
-entry(L, 572, "G2:4 C3:6 D3:2 E3:4 C3:4 G3:8 F3:2 E3:2 D3:2 C3:2 D3:4 G2:4 "
+seg(L, 608, "E3:4 F3:4 E3:4")
+entry(L, 620, "G2:4 C3:6 D3:2 E3:4 C3:4 G3:8 F3:2 E3:2 D3:2 C3:2 D3:4 G2:4 "
               "A2:2 B2:2 C3:2 B2:2 E3:4 F3:4 G3:4", 'Augmentation')
-seg(L, 636, "C3:4 D3:2 B2:2")
-seg(L, 644, "E3:4 G3:2 F3:2 A2:2 G2:2 C2:16")
+seg(L, 684, "C3:4 D3:2 B2:2")
+seg(L, 692, "E3:4 C3:4 F2:4 F#2:4 G2:4 C2:8")
 
-END = 672
+END = 720
 
 
 # =====================================================================
@@ -223,16 +240,15 @@ def assemble(v, name):
 
 
 def dynamics(b):
-    """Bar index (0-based) -> velocity offset: a long rise up the ladder."""
+    """Bar index (0-based) -> velocity offset, terraced by flight:
+    flight I (rungs 8-6) +0, the suspension episode -3, flight II (rungs
+    5-3) +6, flight III: rung 2 +12, the run-up +14/+16, rung 1 +18."""
     bar = b + 1
-    if bar <= 7:
-        return 0
-    if bar <= 32:
-        return int((bar - 7) * 0.4)
-    if bar <= 35:
-        return 13
-    if bar <= 38:
-        return 6
+    table = [(7, 0), (18, 0), (21, -3), (32, 6), (34, 12), (35, 14), (36, 16), (38, 18),
+             (43, 7), (45, 9)]
+    for last, v in table:
+        if bar <= last:
+            return v
     return 9
 
 
@@ -243,7 +259,7 @@ def main():
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'I. Fugue in C major — Scala strettarum',
         'number': 1, 'movement_number': 1, 'piece_type': 'fugue',
-        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 104, 'tempo_map': [[162, 104], [168, 84, 'ramp']],
+        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 104, 'tempo_map': [[173, 104], [180, 80, 'ramp']],
         'tempo_text': 'Allegro con brio',
         'composer': 'Original composition (Claude) for Sam',
         'instrument': 'Keyboard — two voices',
