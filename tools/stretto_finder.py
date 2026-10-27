@@ -128,8 +128,11 @@ def score_pair(a, b, meter):
     weak_par = s['parallels_weak']
     crossings = s['crossings']
     rough, overlap = roughness(a, b, meter)
-    cost = 10 * s['parallels_error'] + 6 * harsh + 2 * weak_par + 1 * crossings + round(4 * rough)
-    return cost, s['parallels_error'], harsh, weak_par, crossings, round(rough, 2), overlap
+    # a run of three or more octaves/fifths between the two copies is not 'doubling' here:
+    # it is the two voices collapsing into one line, so it costs like parallels
+    cost = 10 * (s['parallels_error'] + s['doubling_runs']) + 3 * s.get('beat_parallels', 0) \
+        + 6 * harsh + 2 * weak_par + 1 * crossings + round(4 * rough)
+    return cost, s['parallels_error'] + s['doubling_runs'], harsh, weak_par, crossings, round(rough, 2), overlap
 
 
 def main():
