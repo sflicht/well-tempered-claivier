@@ -198,11 +198,13 @@ seq('SI', P2 + 7, 'Ab4:4 F5:12', 'Eb5:12 F5:4~', 'F5:16', 'D5:8 Bb5:8', 'Ab5:8 R
 theme('BI', P2 + 13, 2, octv(S2, -2), 'S2 (running bass)')
 theme('SII', P2 + 13, 2, octv(S1A, 1), 'S1 answer (with S2)')
 theme('TIII', P2 + 16, 3, S1, 'S1')
+# Alto II: S2's head imitated one beat after the running bass, two octaves higher.
+put('AII', P2 + 13, 3, 'Ab4:2 Bb4:2 Ab4:2 G4:2 F4:2 E4:2 F4:4')
 # Alto I: the slow inner line of the combination (6-5 and 7-6 motions), cadential 6/4 - V at b37.3-38.
 seq('AI', P2 + 13, 'R:12 C5:4', 'C5:12 Ab4:4', 'C5:8 Bb4:8', 'Ab4:16', 'G4:16', 'Ab4:8 Db5:8', 'Db5:16',
     'C5:16', 'C5:8 R:8')
-# Bass I after its S2: B-flat, C (V), A-flat.
-put('BI', P2 + 19, 2, 'Bb2:12')
+# Bass I after its S2: G, C (V), A-flat.
+put('BI', P2 + 19, 2, 'G2:12')
 seq('BI', P2 + 20, 'C3:16', 'Ab2:8 R:8')
 # Bass I walks under the duet (quarters), spelling out its modulations: f - c - E-flat - f - B-flat (S2's
 # A-natural) - E-flat7 - A-flat (S2's D-flat as a 4-3 suspension) - V - i.
