@@ -14,8 +14,9 @@ the hand-written subject S, answer A, inversion I and countersubject CS
 (octave/diatonic transposition, wtclib.scale_rhythm for augmentation and
 diminution); all other material is literal token strings placed at
 bar.beat.  The stretto finder and scratch searches only proposed placements
-of whole statements (which entries may follow which, at what distance); no
-code chooses pitches.
+of whole statements (which entries may follow which, at what distance), and a
+scratch harness listed the clashes of alternative hand-written versions of a
+line so that one could be chosen; no code chooses or alters pitches.
 
 The tromba keeps to the notes of F and C major (no E-flat, F-sharp, C-sharp,
 G-sharp): it rests while the music is in minor keys, as a natural trumpet
@@ -285,17 +286,19 @@ put('Vne', 37, 1, 'Bb2:4 F2:8 C3:4 F2:8 Bb2:4 A2:4 G2:8 Eb2:8 C2:4 D2:4 G2:8')
 put('Vc', 37, 1.5, 'R:2 C4:8 Bb3:4 A3:8 Bb3:4 C4:4 D4:8 G3:8 C4:4 A3:4 Bb3:4 B3:4')
 
 put('V1b', 38, 3.5, 'R:6 Bb4:16 C5:8 Bb4:4 G4:4')
+put('V1a', 39, 1.5, 'D5:1 D5:1 G5:2 G5:1 G5:1 Bb5:2 Bb5:1 G5:5')   # the head in g...
+put('V2a', 39, 3.5, 'Bb4:1 Bb4:1 Eb5:2 Eb5:1 Eb5:1 G5:4')           # ...and in E-flat, following the bass
 
 
 # ================================================================ THE JOKE (b41-47): the trumpet and the key
-# Back after twenty bars of minor-key silence, the tromba re-enters on its high C, playing the subject's
+# Back after eighteen bars of minor-key silence, the tromba re-enters on its high C, playing the subject's
 # head rhythm on that one note (the only note it trusts).  Under it the ripieno passes the fanfare head
 # upwards through C minor, F, D minor and A minor -- keys in which C is still a chord tone (root, fifth,
 # seventh, third), so the trumpet gets away with it.  At bar 45 the ensemble cadences onto E major
 # (V of A minor); the trumpet, not having noticed, launches its own subject in F major against the E
 # chord, every note a semitone off (F/E, A/G#, C/B).  General pause.  The basses correct it -- E E | A,
 # the subject's pickup in the right key -- and the trumpet meekly echoes E and A (both natural notes on
-# an F trumpet), then keeps quiet until the end.
+# an F trumpet), then keeps quiet until the twelve-voice stretto.
 put('Tr', 41, 1, 'C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 '
                  'C6:2 C6:1 C6:1 C6:4 R:2 C5:1 C5:1 F5:2 F5:1 F5:1 A5:2 A5:1 C6:5')
 theme('Vne', 41, 1.5, 'G2:1 G2:1 C3:2 C3:1 C3:1 Eb3:2 Eb3:1 G3:5', 'joke: head in c (Violone)', 1)
@@ -421,8 +424,8 @@ put('Vc', 61, 1, 'F3:4 Bb2:7 Eb3:3 F3:2 C3:4 F3:4 G3:8 A3:16')
 # recorder climbs C-D-E-F, the trumpet's tattoo is on C, and the ripieno joins for the last chord.
 put('Fl', 62, 1, 'C6:4 D6:4 E6:8 F6:16')
 put('Tr', 62, 2.5, 'C6:1 C6:1 C6:8 C6:16')
-put('V1a', 63, 1, 'F5:16')
-put('V1b', 63, 1, 'A5:16')
+put('V1a', 63, 1, 'A5:16')
+put('V1b', 63, 1, 'F5:16')
 put('V2a', 63, 1, 'C5:16')
 put('V2b', 63, 1, 'F4:16')
 put('Va1', 63, 1, 'F3:16')

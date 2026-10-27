@@ -124,7 +124,14 @@ def seq(v, bar, *bars):
             continue
         if dur16(b) != 16:
             raise ValueError(f'{v} bar {bar + k}: {dur16(b)} sixteenths: {b}')
-        put(v, bar + k, 1, b)
+        toks = b.split()
+        lead = Fr(0)
+        while toks and toks[0].startswith('R:'):
+            lead += W.parse_tok(toks.pop(0))[1]
+        while toks and toks[-1].startswith('R:'):
+            toks.pop()
+        if toks:
+            put(v, bar + k, 1 + lead / 4, ' '.join(toks))
 
 
 def assemble(v, nbars):
@@ -181,30 +188,42 @@ seq('BrII', P1 + 11, 'C3:8 E3:8', 'F3:8 C3:8', 'Bb2:8 Db3:8', 'C3:8 Ab2:8', 'F2:
 # later -- the only distance at which S2 and its answer overlap cleanly -- so the subject enters as a duet.
 S2A = tr(S2, 7, 4)                      # Eb5 F5 Eb5 D5 C5 B4 | C5 G4 C5 D5 Eb5 D5 C5 Eb5 | ...
 theme('AI', P2, 2, S2, 'S2 (running)')
-theme('SI', P2 + 1, 1, S2A, 'S2 answer (stretto, 3 beats)')
+theme('SI', P2 + 1, 1, S2A[:-len('Eb5:4')] + 'Eb5:2', 'S2 answer (stretto, 3 beats)')   # last note an eighth
 theme('TI', P2 + 6, 2, octv(S2, -1), 'S2 (running)')
 theme('AIII', P2 + 7, 1, octv(S2A, -1), 'S2 answer (stretto, 3 beats)')
 theme('BII', P2 + 7, 3, octv(S1, -1), 'S1')
+# Soprano I over the second duet (after its answer): a slow line in thirds and sixths with the answer below.
+seq('SI', P2 + 7, 'Ab4:4 F5:12', 'Eb5:12 F5:4~', 'F5:16', 'D5:8 Bb5:8', 'Ab5:8 R:8')
 # Combination: S2 as a running bass under S1's tonal answer, which starts with it; S1 itself three bars later.
 theme('BI', P2 + 13, 2, octv(S2, -2), 'S2 (running bass)')
 theme('SII', P2 + 13, 2, octv(S1A, 1), 'S1 answer (with S2)')
 theme('TIII', P2 + 16, 3, S1, 'S1')
+# Alto I: the slow inner line of the combination (6-5 and 7-6 motions), cadential 6/4 - V at b37.3-38.
+seq('AI', P2 + 13, 'R:12 C5:4', 'C5:8 Bb4:4 Ab4:4', 'C5:8 Bb4:8', 'Ab4:16', 'G4:16', 'Ab4:8 F4:8', 'F4:16',
+    'E4:16', 'F4:8 R:8')
+# Bass I after its S2: A-flat B-flat D-flat, C (V), A-flat.
+put('BI', P2 + 19, 2, 'Bb2:4 Db3:8')
+seq('BI', P2 + 20, 'C3:16', 'Ab2:8 R:8')
 # Bass I walks under the duet (quarters), spelling out its modulations: f - c - E-flat - f - B-flat (S2's
 # A-natural) - E-flat7 - A-flat (S2's D-flat as a 4-3 suspension) - V - i.
 put('BI', P2, 3, 'Ab2:4 C3:4')
 seq('BI', P2 + 1, 'F2:4 G2:4 C3:4 Ab2:4', 'C3:4 B2:4 C3:4 Bb2:4', 'Eb3:4 Ab2:4 F2:4 E2:4', 'F2:4 Bb2:4 Eb3:4 G2:4',
-    'Ab2:4 Bb2:4 C3:8', 'F2:8 R:8')
+    'Ab2:4 Bb2:4 C3:8', 'F2:4 Bb2:8 C3:4', 'F2:8 R:8')
 
 # ================================================================ III. B-A-C-H, b43-60
 # B-A-C-H transposed to F minor (D-flat C E-flat D-natural): the same intervals as Bach's own B-flat A C B,
 # so that it combines with S1, S2 and the main theme exactly as in Bach's D minor.  Its answer (real, at the
 # fifth: A-flat G B-flat A) enters only a half note later -- the subject's closest stretto -- in two pairs two
-# bars apart (Bach's own distance).
+# bars apart (Bach's own distance).  The second pair: high B-A-C-H, its answer in the bass three beats later.
 S3A = tr(S3, 7, 4)                      # Ab4 G4 Bb4 A4 B4 C5 B4 A4 B4 C5
 theme('TII', P3, 3, S3, 'S3 B-A-C-H')
 theme('AII', P3 + 1, 1, S3A, 'S3 answer (stretto, half note)')
-theme('BrI', P3 + 2, 3, octv(S3, -1), 'S3 B-A-C-H')
-theme('SIII', P3 + 3, 1, octv(S3A, 1), 'S3 answer (stretto, half note)')
+theme('SIII', P3 + 3, 3, octv(S3, 1), 'S3 B-A-C-H')
+theme('BII', P3 + 4, 2, octv(S3A, -2), 'S3 answer (stretto, 3 beats)')
+# Bach's own triple combination (XIX b233-239), transposed: S2, then S1 five beats later, then B-A-C-H.
+theme('TI', P3 + 8, 2, octv(S2, -1), 'S2 (running)')
+theme('BI', P3 + 9, 3, octv(S1, -1), 'S1')
+theme('AIII', P3 + 10, 3, S3, 'S3 B-A-C-H')
 
 # ================================================================ IV. THE QUADRUPLE COMBINATION (composed first)
 # Nottebohm's combination, found here by search over all placements of the main theme against Bach's own
@@ -261,6 +280,22 @@ put('TI', M, 3, 'Eb4:8')
 seq('TI', M + 1, 'C4:12 Bb3:4~', 'Bb3:16~', 'Bb3:4 Ab3:4 Bb3:8', 'Ab3:8 G3:8~', 'G3:4 Ab3:8 Bb3:4', 'F3:8 R:8')
 seq('AIII', M + 1, 'F4:8 Ab4:8~', 'Ab4:8 C5:8', 'C5:8 Bb4:8', 'Eb5:4 F5:4 G5:8', 'Ab5:8 F5:8~', 'F5:8 R:8')
 
+
+# ================================================================ IV c. STRETTO FINALE over S1 in augmentation, and coda
+# S1 in augmentation (twice as slow) is the bass of the whole finale: its dominant C (b80.3-82.3) is the last
+# pedal before the tonic.  Above it three subjects start together (S2 inverted, B-A-C-H), the main theme
+# enters in canon at the octave one bar apart, and a last B-A-C-H rises over the dominant into the tonic.
+F = M + 6                                   # b73
+# its last note, F, becomes the tonic pedal of the coda (held to the end)
+theme('BII', F, 3, 'F2:16 C3:24 Bb2:8 Ab2:32 Bb2:32 C3:32 F2:72', 'S1 aug.', 10)   # = scale_rhythm(S1, 2), last note held
+theme('TI', F, 3, octv(S2I, -1), 'S2 inv. (running)')
+theme('SIII', F, 3, octv(S3, 1), 'S3 B-A-C-H')
+theme('SI', F + 3, 3, octv(MT, 1), 'main theme')
+theme('AI', F + 4, 3, MT, 'main theme (canon at the octave, 1 bar)')
+theme('TII', F + 7, 1, S3, 'S3 B-A-C-H')
+# Coda over the tonic pedal.  Soprano I signs the name at its own pitch, B-flat A C B-natural: iv - V7/iv - i -
+# vii-dim-7/V - V - and its A becomes the Picardy third of the last chord.
+seq('SI', F + 10, 'Bb5:8 A5:8', 'C6:8 B5:8', 'C6:16', 'A5:16')
 
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}

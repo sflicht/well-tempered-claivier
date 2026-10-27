@@ -166,11 +166,15 @@ put('Idx', 17, [
     'A#4:4 B4:4 A#4:4',                                        # b19 vi    (V3: canon I sings broad notes
     'R:12',                                                    # b20 V      under canon II's quavers;
     'R:12',                                                    # b21 I6     dux and comes take turns)
-    'F#4:4 G#4:4 F#4:4~',                                      # b22 ii6
-    'F#4:4 E#4:4 D#4:4',                                       # b23 V7    (4-3 suspension)
-    'C#4:4 D#4:4 E#4:4',                                       # b24 I
+    'F#4:4 G#4:6 F#4:2',                                       # b22 ii6
+    'R:12',                                                    # b23 V7    (canon I breathes, so that
+    'R:12',                                                    # b24 I      canon III can enter alone)
+    'R:4 A#4:4 C#5:4~',                                        # b25 I
+    'C#5:4 G#4:6 E#4:2',                                       # b26 V6
+    'R:12',                                                    # b27 vi
+    'R:12',                                                    # b28 V
 ])
-CANON_SPAN['I'] = (9, 24)
+CANON_SPAN['I'] = (9, 28)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -178,26 +182,41 @@ put('Sog', 9, [
     'C#5:4 G#5:6 F#5:2',                                        # b10
     'F#5:4 A#5:4 G#5:2 F#5:2',                                  # b11
     'E#5:2 F#5:2 G#5:8',                                        # b12
-    'F#5:4 A#5:6 G#5:2',                                        # b13
-    'B5:4 A#5:2 G#5:2 D#5:4',                                   # b14
+    'F#5:4 A#5:6 G#5:2~',                                       # b13
+    'G#5:4 E#5:2 F#5:2 D#5:4',                                  # b14
     'E#5:6 F#5:2 G#5:2 E#5:2',                                  # b15
     'F#5:4 C#5:4 A#4:2 B4:2',                                   # b16
 ])
 
 # =============================================================================================
 # Var. 3 (b17-24): Canon II, at the 2nd above, one bar apart (scalar quavers: Var. 6).
-put('Fund', 17, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
+put('Fund', 17, ['F#2:12', 'E#2:12', 'D#2:10 A#1:2', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
 put('IIdx', 17, subj(1) + [
     'F#5:2 E#5:2 D#5:2 C#5:2 D#5:2 F#5:2',                     # b19 vi
     'E#5:2 D#5:2 C#5:2 B4:2 C#5:2 D#5:2',                      # b20 V
     'C#5:4 F#5:4 A#5:4',                                       # b21 I6
     'F#5:2 D#5:2 B4:2 C#5:2 D#5:2 F#5:2',                      # b22 ii6
     'E#5:2 D#5:2 C#5:2 B4:2 C#5:2 G#5:2~',                     # b23 V7
-    'G#5:2 F#5:2 E#5:2 F#5:2 D#5:2 C#5:2',                     # b24 I: the 9-8 that the comes needs
+    'G#5:2 F#5:2 E#5:2 D#5:2 C#5:2 D#5:2',                     # b24 I: the 9-8 that the comes needs
+    'F#5:2 G#5:2 A#5:2 G#5:2 F#5:2 G#5:2',                     # b25 I
+    'C#5:2 E#5:2 D#5:2 C#5:2 D#5:2 E#5:2',                     # b26 V6
+    'A#4:2 B4:2 C#5:2 B4:2 A#4:2 G#4:2',                       # b27 vi
+    'E#5:2 D#5:2 C#5:2 D#5:2 E#5:2 G#5:2',                     # b28 V
 ])
-CANON_SPAN['II'] = (17, 24)
+CANON_SPAN['II'] = (17, 28)
 entry('IIdx', 17, 'Canon II dux: subject')
 entry('IIco', 18, 'Canon II comes: subject at the 2nd above')
+
+# =============================================================================================
+# Var. 4 (b25-32): Canon III, at the 3rd above, two bars apart, entering in the tenor.
+put('Fund', 25, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
+put('IIIdx', 25, subj(-1) + [
+    'D#4:2 E#4:1 F#4:1 G#4:2 A#4:2 G#4:2 F#4:2',               # b27 vi   (Var. 9: gentle semiquaver turns)
+    'E#4:2 F#4:1 G#4:1 A#4:2 G#4:2 F#4:2 E#4:2',               # b28 V
+])
+CANON_SPAN['III'] = (25, 28)
+entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
+entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
 
 # =============================================================================================
 # Assembly

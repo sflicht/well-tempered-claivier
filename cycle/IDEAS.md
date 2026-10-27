@@ -98,7 +98,7 @@ device of its own:
 23. **[in progress] Pair X: St Matthew homage à 11.** Two choirs in fugal
     dialogue beneath the chorale *O Lamm Gottes*, the subject derived from
     the chorale.
-24. **[in progress] Pair XI: concerto fuga à 12.** Brandenburg 2's finale as
+24. **[built] Pair XI: concerto fuga à 12.** Brandenburg 2's finale as
     a twelve-voice fugal concerto, concertino of four against a ripieno of
     eight.
 25. **[in progress] Pair XII: the unfinished fugue, finished à 13.** The

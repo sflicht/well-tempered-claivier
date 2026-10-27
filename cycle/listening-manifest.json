@@ -182,6 +182,25 @@
    ]
   },
   {
+   "name": "Pair XI \u00b7 F major (new, twelve voices)",
+   "pieces": [
+    {
+     "id": "prelude-11",
+     "title": "Prelude XI \u00b7 Invention a 2",
+     "score": "cycle/11-f-major/prelude.json",
+     "tag": "new",
+     "notes": "A two-part invention in 12/8, after WTC I's F-major prelude (BWV 856). The theme is the fugue subject with a triplet head; the countersubject is invertible at the octave and heard both ways round in six keys. The surprise: a half cadence on a lone 'C C', answered by the theme in D-flat major. It ends by stating the fugue's opening 'C C | F' straight, in sixteenths."
+    },
+    {
+     "id": "fugue-11",
+     "title": "Fugue XI \u00b7 Concerto fuga a 12",
+     "score": "cycle/11-f-major/fugue.json",
+     "tag": "new",
+     "notes": "After the fugal finale of Brandenburg Concerto No. 2 in F major (BWV 1047): a concertino of four solo lines (named Tromba, Flauto, Oboe, Violino) against a ripieno of eight separate real lines. The subject is a fanfare head with repeated notes and a running tail. Its inversion keeps the F-major triad, so the upright and inverted subject can run in stretto a beat apart.\n\nThe joke (bars 41-47): the trumpet keeps hammering its tattoo on C while everyone else modulates away, through C minor, F, D minor and A, landing in E major. The trumpet then blurts its head in F, a semitone off everything. General pause. The bass corrects it (E E | A), and the trumpet echoes meekly. Its tattoo returns on C over the final dominant, where C is finally right.\n\nThe 'tutti in twelve' (bars 53-57) has a concertino stretto a beat apart, the inversion augmented in the violone, inversions in the inner ripieno, and the countersubject six times in diminution, with 11-12 lines moving in every bar."
+    }
+   ]
+  },
+  {
    "name": "Appendix \u00b7 canons and contrapuncti (new)",
    "pieces": [
     {
