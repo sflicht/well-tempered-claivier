@@ -189,7 +189,7 @@ The review asked for less harmonic stasis in the fugue, an articulated reflectio
 | F4 | 45 | **The final bass note is C#2** (the alternating stamps now end on the low octave). The final chord is C#2 E#3 G#5 C#6: complete, nothing tripled, within two hands. |
 | (e) | all | **Dotted ♩ = 96** (`bpm` 144; final ritardando 144 → 108 over bars 44–45). |
 
-I did not take up the optional variation of bar 31 (Episode\*). The candidates I tried either broke the run into the bar-32 countersubject or leapt a ninth.
+I did not make the optional change to bar 31 (Episode\*, F4): it still repeats Episode 1's stamping plan.
 
 **Stasis metric.** `search/stasis_count.py` counts beats whose sounding pitch classes all lie inside a C# triad, a G# triad or G#7. It is a stricter subset test than the reviewer's, so it runs higher.
 * Before the second review: 121 of 178 beats; 17-beat runs at bars 1–5 and 22–24.

@@ -205,3 +205,16 @@ put('B1', 11, 1, 'G2:8 D3:8 C3:4 E3:4 D3:4 C3:4 B2:4 G2:4 C3:8 D3:4 C3:4 B2:4 G2
 put('T1', 13, 2, 'B3:4 G4:4 E4:4 D4:4 A3:4 B3:8')
 put('A1', 14, 1, 'A3:4 D4:12')
 put('S1', 14, 1.5, 'B4:2 A4:4 G4:8')
+
+
+# ================================================================ SECTION II: Coro II, line 2 (b15-24)
+# S2, Coro II: line 2 (G G D D B D C B) as a fanfare -- two eighths, a dotted D, the turn D-C-B --
+# and a trumpet tail of repeated-note tattoos on the dominant (A A A, D C B, A A A, F# D).
+S2 = ('G4:2 G4:2 D5:3 D5:1 B4:2 D5:1 C5:1 B4:4 '
+      'A4:1 A4:1 A4:2 D5:2 C5:1 B4:1 A4:1 A4:1 A4:2 F#4:2 D4:2')
+# A stretto exposition from the bottom up, one bar apart, answered modally (a fifth up inside the
+# G-major scale, as in Pachelbel's chorale fugues): bass G, tenor D, alto G, soprano D.
+theme('B2', 15, 1, dshift(S2, -7), 'II: subject 2 (line 2 diminished)', 2)
+theme('T2', 16, 1, dshift(S2, -3), 'II: subject 2, modal answer (D)', 2)
+theme('A2', 17, 1, S2, 'II: subject 2', 2)
+theme('S2', 18, 1, dshift(S2, 4), 'II: subject 2, modal answer (D)', 2)
