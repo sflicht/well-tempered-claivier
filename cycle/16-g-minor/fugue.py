@@ -390,6 +390,12 @@ def approach(s0):
     note G is the summit's first downbeat."""
     T = T_(s0)
     T('P1', -7.5, oc(BWV542, -2), 'BWV 542 guest (J. S. Bach, Fugue in G minor), Ped. I')
+    T('OA', -16, oc(W.invert_diatonic(S10, 'G4', GNAT), 1), 'approach: subject 10 inverted (OW A)')
+    T('RT', -12, S10, 'line 10 Vorimitation: subject 10 (RP T)')
+    T('HA', -8, dsh(S10, 4), 'line 10 Vorimitation: subject 10 on A (HW A)')
+    T('RS', -3, oc(dsh(S10, 3), 1), 'line 10 Vorimitation: subject 10 on C (RP S)')
+    T('OT', -6, S10, 'line 10 Vorimitation: subject 10 against the guest (OW T)')
+    T('HBr', -4, 'C4:4 Bb3:4 A3:4 F#3:4 G3:8 F#3:8')
     # APP-END
 
 

@@ -240,10 +240,36 @@ def allemande():
     theme('H1', z + Fr(103, 4), dshift(mir(SA), -7), 'Allemande mirror')
     theme('B1', z + Fr(119, 4), oc(SA, -2), 'Allemande subject (bass)')
     theme('D1', z + Fr(127, 4), oc(SA, 1), 'Allemande subject (stretto)')
+    put('B1', z + 22, 'A2:2 G#2:2 F#2:2 E2:2 D2:2 C#2:2 B1:2 E2:2 E2:4 D2:4 C#2:2 A2:2 G#2:3')
+    put('T1', z + 22, 'A3:4 A3:2 B3:2 A3:4 B3:4')
+    put('Q1', z + 22, 'R:4 A3:2 G#3:1 B3:1 F#3:2 E3:1 G#3:1 B2:2 C#3:1 E3:1')
+    put('D1', z + 26, 'E5:2 D5:1 E5:1 F#5:2 E5:1 D5:1 C#5:2 E5:2 B4:2 E5:2 A4:4 C#5:2 E5:1')
+    put('T1', z + 30, 'C#4:4 E4:4 A3:4 E3:2 G#3:2 A3:4 A3:2 G#3:2')
+    put('H1', z + 30, 'E4:4 E4:4 D4:4 C#4:4 C#4:4 D4:2 B3:2')
+    put('Q1', z + 26, 'G#3:4 G#3:4 A3:4 B3:4')
+    put('D1', z + 22, 'E5:2 G#5:1 B5:1 A5:2 C#6:1 A5:1 D5:2 F#5:1 D5:1 D5:2 C#5:1 B4:1')
+    put('B1', z + 34, 'A2:4 D2:2 E2:2')
+    put('Q1', z + 30, 'E3:4 C#3:4 B2:4 C#3:4 E3:4 F#3:2 E3:2')
     # @@alle
 
 
-SECTIONS = [allemande, summit]
+# Tonal answer of the courante
+AC = 'A4:4 E5:6 D#5:2 F#5:6 E5:2 G#5:8 F#5:4 A5:6 G#5:2 F#5:6 D#5:2 E5:2 C#5:2 B4:8'
+
+
+def courante():
+    """II. Courante (q36-84): Coro II's exposition in 3/2, from the top down, one bar apart; Coro I
+    joins the courante in its own rhythm."""
+    z = S2
+    theme('D2', z - 1, oc(SC, 1), 'Courante subject')
+    theme('H2', z + 5, AC, 'Courante answer')
+    theme('T2', z + 11, SC, 'Courante subject')
+    theme('Q2', z + 17, oc(AC, -1), 'Courante answer')
+    theme('B2', z + 23, oc(SC, -2), 'Courante subject (bass)')
+    # @@cour
+
+
+SECTIONS = [allemande, courante, summit]
 
 
 BPM = 66

@@ -341,34 +341,43 @@ def gen3():
 def gen4():
     # Gen 4: a stretto of subject entries one bar apart over a dominant pedal (b33-34) and a tonic
     # pedal (b35-36), from the top of the texture down; each tail splits once more.
-    put('Cb1', 33, 1, 'E2:16~ E2:16~ E2:16~ E2:16')
+    put('Cb1', 33, 1, 'E2:16~ E2:16 E1:16~ E1:16')
     # b33: violin IV resolves its held A (4-3 onto the pedal) straight into the subject, two
     # octaves above its first statement (E6).
     put('Vl4', 33, 1, 'G#5:2')
     theme('Vl4', 33, 1.5, ' '.join(oc(HEAD, 1).split()[1:]), 'Vl IV: subject (A minor, E6)')
     put('Vl3', 33, 1, 'C5:4 B4:4 A4:4 G#4:4')
-    put('Vl2', 33, 1, 'E5:12 B4:4')
+    put('Vl2', 33, 1, 'E5:16')
     put('Vc1', 33, 1, 'A3:4 B3:4 C4:6 B3:2')
-    put('Vc3', 33, 1, 'E3:8 C3:4 B2:4')
+    put('Vc3', 33, 1, 'E3:12 B2:4')
     # b34: violin IV's tail splits: the new violin VII takes the UPPER strand (the top of the
     # texture from now on); violin I enters (E5).
     put('Vl4', 34, 1, 'C6:1 A5:1 E6:1 G#5:1 R:1 G5:2 F#5:2 F5:2 E5:5')
     put('Vl7', 34, 2, 'D6:2 C6:2 B5:2 A5:2 G#5:4')                     # SPLIT 16: Vl VII from Vl IV
     theme('Vl1', 34, 1, HEAD, 'Vl I: subject (A minor)')
     put('Vl3', 34, 1, 'A4:4 G#4:4 A4:6 G#4:2')
-    put('Vl2', 34, 1, 'C5:4 B4:4 C5:6 B4:2')
-    put('Vc1', 34, 1, 'A3:4 B3:4 C4:4 D4:4')
+    put('Vl2', 34, 1, 'C5:4 D5:4 C5:6 B4:2')
+    put('Vc1', 34, 1, 'C4:4 B3:4 C4:4 E4:4')
     put('Vc3', 34, 1, 'A2:8 E3:8')
     # b35: violin I's tail splits (violin VIII catches the lament); viola III enters (E4).
     put('Vl1', 35, 1, 'C5:1 A4:1 E5:1 G#4:1 D5:2 C5:2 B4:2 A4:2 G#4:4')
     put('Vl8', 35, 2.25, 'G4:2 F#4:2 F4:2 E4:5')                      # SPLIT 17: Vl VIII from Vl I
     theme('Va3', 35, 1, oc(HEAD, -1), 'Va III: subject (A minor)')
-    put('Vl7', 35, 1, 'A5:4 B5:4 C6:4 B5:4')
-    put('Vl4', 35, 1, 'E5:8 A5:4 B5:4')
+    put('Vl7', 35, 1, 'E6:4 B5:4 E6:8')
+    put('Vl4', 35, 1, 'E5:8 R:8')
     put('Vl3', 35, 1, 'A4:4 G#4:4 E4:8')
-    put('Vl2', 35, 1, 'C5:4 B4:4 E5:4 D5:4')
-    put('Vc1', 35, 1, 'C4:4 B3:4 E3:8')
-    put('Vc3', 35, 1, 'A2:4 B2:4 C3:4 B2:4')
+    put('Vl2', 35, 1, 'C5:4 E5:12')
+    put('Vc1', 35, 1, 'A3:4 B3:4 E3:8')
+    put('Vc3', 35, 1, 'C3:4 R:12')
+    # b36: viola III's tail splits (viola V catches the lament); violin VI enters (E5).
+    put('Va3', 36, 1, 'C4:1 A3:1 E4:1 G#3:1 D4:2 C4:2 B3:2 A3:2 G#3:4')
+    put('Va5', 36, 2.25, 'G3:2 F#3:2 F3:2 E3:5')                      # SPLIT 18: Va V from Va III
+    theme('Vl6', 36, 1, HEAD, 'Vl VI: subject (A minor)')
+    put('Vl7', 36, 1, 'E6:16')
+    put('Vl2', 36, 1, 'E5:4')
+    put('Vl8', 36, 1, 'E4:4 B3:4 C4:4 E4:4')
+    put('Vc1', 36, 1, 'A2:4 R:4 C3:4 B2:4')
+    put('Vl1', 36, 1, 'A4:4')
 
 
 SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4]

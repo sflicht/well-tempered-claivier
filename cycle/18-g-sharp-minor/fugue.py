@@ -324,9 +324,13 @@ put('B2', B + 1, 1, 'D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R
 DAWN = 58
 theme('S1', DAWN, 1, octv(S_ION, 1), 'IV. Mane: subject in A-flat major (Ionian), at the top', 3)
 theme('A3', DAWN + 2, 1, A_ION, 'IV: answer (E-flat Mixolydian)', 3)
-theme('A4', DAWN + 4, 1, S_ION, 'IV: subject', 3)
-theme('T3', DAWN + 6, 1, octv(A_ION, -1), 'IV: answer', 3)
-theme('B1', DAWN + 8, 1, octv(S_ION, -2), 'IV: subject in the bass: the light reaches the depth', 3)
+theme('A4', DAWN + 4, 2, S_ION, 'IV: subject', 3)
+theme('T3', DAWN + 6, 2, octv(A_ION, -1), 'IV: answer', 3)
+theme('B1', DAWN + 8, 3, octv(S_ION, -2), 'IV: subject in the bass: the light reaches the depth', 3)
+put('B2', DAWN, 1, 'Ab2:8 G2:8 C3:8 Db3:8 Bb2:16 Ab2:8 F2:8 Eb2:8 Ab2:8 F2:16 Eb2:8 Ab2:8 G2:8 '
+                   'Ab2:8 Db3:8 Bb2:16 Ab2:8 Db2:8 Eb2:8 Ab2:8 F2:16 R:8')
+put('A3', DAWN + 5, 1, 'C4:8')
+put('S1', DAWN + 3, 1, 'Eb6:8 Ab5:8 Db6:8 Bb5:8 C6:8 Bb5:8 Ab5:16 Bb5:16 C6:8 Db6:8 Bb5:8 C6:16 Db6:8')
 
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
