@@ -46,28 +46,28 @@ bar('F#5 E5 D5 E5  F#5 A5 G5 F#5  E5 D5 C#5 D5  A4 D5 F#5 A5', 'D3 A3 F#3 D4 D3 
 bar('B5 A5 G5 A5  B5 D6 C#6 B5  A5 G5 F#5 G5  A5 F#5 E5 D5', 'G2 D3 B2 G3 F#2 D3 D3 A3', 'IV - I6')
 bar('E5 F#5 G5 B5  D6 C#6 B5 G5  C#6 B5 A5 G5  E5 C#5 A4 C#5', 'E2 B2 G2 E3 A2 E3 C#3 G3', 'ii7 - V7')
 bar('D5 F#5 A5 F#5  D6 C#6 B5 A5  B5 A5 G5 F#5  F#5 E5 D5 B4', 'D3 A3 F#3 A3 B2 F#3 D3 B3', 'I - vi')
-bar('G4 B4 D5 G5  B5 A5 G5 F#5  E5 G5 C#6 E6  D6 C#6 B5 A5', 'G2 D3 B2 G3 A2 E3 A2 G3', 'IV - V7')
-bar('F#5 A5 D6 A5  F#5 D5 A4 D5  F#5 E5 D5 C#5  A#4 C#5 E5 F#5', 'D3 A3 F#3 A3 F#2 C#3 A#2 E3', 'I - V7/vi')
+bar('G4 B4 D5 G5  B5 A5 G5 F#5  E5 G5 C#6 E6  D6 C#6 B5 A5', 'G2 D3 G3 D3 A2 E3 A2 G3', 'IV - V7')
+bar('F#5 A5 D6 A5  F#5 D5 A4 D5  F#5 E5 D5 C#5  A#4 C#5 E5 F#5', 'D3 F#3 A3 F#3 F#2 E3 A#2 E3', 'I - V7/vi')
 # ---- B (7-14) B minor region
-bar('D5 C#5 B4 C#5  D5 F#5 E5 D5  C#5 B4 A#4 B4  C#5 E5 D5 C#5', 'B2 F#3 D3 B3 C#3 F#3 A#2 F#3', 'B: B minor')
-bar('B4 D5 F#5 D5  B5 A5 G5 F#5  G#5 F#5 E5 D5  D5 B4 G#4 B4', 'D3 B3 F#3 B3 E3 B3 G#2 E3', 'i - V7/iv')
-bar('C#5 E5 A5 E5  C#6 B5 A5 G5  F#5 E5 D5 C#5  D5 F#5 A5 D6', 'A2 E3 C#3 A3 D3 A3 F#3 A3', 'VII - III (A - D)')
-bar('B5 A5 G5 F#5  G5 B5 D6 B5  G5 E5 C#5 E5  G5 E5 C#5 B4', 'G2 D3 B2 G3 C#3 G3 E3 A#3', 'VI - ii-ish (C#o7)')
+bar('D5 C#5 B4 C#5  D5 F#5 E5 D5  C#5 B4 A#4 B4  C#5 E5 D5 C#5', 'B2 F#3 B3 F#3 C#3 F#3 A#2 F#3', 'B: B minor')
+bar('B4 D5 F#5 D5  B5 A5 G5 F#5  G#5 F#5 E5 D5  D5 C#5 B4 G#4', 'D3 B3 F#3 B3 E3 B3 G#2 E3', 'i - V7/iv')
+bar('C#5 E5 A5 E5  C#6 B5 A5 G5  F#5 E5 D5 C#5  D5 F#5 A5 D6', 'A2 E3 C#3 A3 D3 A3 F#3 D4', 'VII - III (A - D)')
+bar('B5 A5 G5 F#5  G5 B5 D6 B5  G5 F#5 E5 C#5  G5 E5 C#5 B4', 'G2 D3 B2 G3 C#3 G3 E3 A#3', 'VI - ii-ish (C#o7)')
 bar('A#4 C#5 E5 C#5  F#5 E5 D5 C#5  A#4 C#5 E5 G5  F#5 E5 D5 C#5', 'F#2 C#3 A#2 C#3 F#2 E3 A#2 E3', 'V7 of B minor')
-bar('D5 C#5 B4 C#5  D5 F#5 B5 F#5  D5 B4 A4 G4  F#4 A4 D5 F#5', 'B2 F#3 D3 B3 A2 F#3 D3 A3', 'i - (to D)')
+bar('D5 C#5 B4 C#5  D5 F#5 B5 F#5  D5 B4 A4 G4  F#4 A4 D5 F#5', 'B2 F#3 D3 B3 D3 A3 F#3 A3', 'i - (to D)')
 bar('G5 F#5 E5 F#5  G5 B5 E6 B5  G5 F#5 E5 D5  C#5 E5 A5 G5', 'E3 B3 G3 B3 A2 E3 C#3 G3', 'ii - V7')
-bar('F#5 E5 D5 E5  F#5 A5 D6 C#6  B5 A5 G5 F#5  E5 G5 B5 D6', 'D3 A3 F#3 A3 G2 D3 B2 G3', 'I - IV')
+bar('F#5 E5 D5 E5  F#5 A5 D6 C#6  B5 A5 G5 F#5  E5 G5 B5 D6', 'D3 A3 F#3 A3 G2 D3 E3 B3', 'I - IV')
 # ---- C (15-20) development: the fugue's head cell + tattoo, passed between the
 #      hands, over the fugue's Episode-1 progression (D-Bm | G-Em | A-F#m | ...)
 bar('A5:4 D6:2 D6:1 D6:1  F#5:4 B5:2 B5:1 B5:1',
     'D3:1 F#3:1 A3:1 F#3:1 D3:1 A3:1 F#3:1 D3:1 B2:1 D3:1 F#3:1 D3:1 B2:1 F#3:1 D3:1 B2:1', 'C: tattoo in the right hand')
 bar('D5:4 G5:2 G5:1 G5:1  B4:4 E5:2 E5:1 E5:1',
     'G2:1 B2:1 D3:1 B2:1 G2:1 D3:1 B2:1 G2:1 E2:1 G2:1 B2:1 G2:1 E2:1 B2:1 G2:1 E2:1', 'G - Em')
-bar('A4 C#5 E5 A5  C#6 B5 A5 G#5  F#5 A5 C#6 A5  F#5 E5 D5 C#5', 'E2:4 A2:2 A2:1 A2:1 C#3:4 F#2:2 F#2:1 F#2:1', 'tattoo in the left hand: A - F#m')
-bar('D5 F#5 A5 F#5  D6 C#6 B5 A5  B5 A5 G5 F#5  D#5 F#5 A5 B5', 'A2:4 D3:2 D3:1 D3:1 F#2:4 B2:2 B2:1 B2:1', 'D - B7')
-bar('G5:4 B5:2 B5:1 B5:1  G5:4 E5:2 E5:1 E5:1', 'E2:1 G2:1 B2:1 E3:1 G3:1 E3:1 B2:1 G2:1 C#3:1 E3:1 G3:1 E3:1 C#3:1 G3:1 E3:1 C#3:1',
+bar('C#5 E5 A5 E5  C#6 B5 A5 G#5  A5 F#5 C#6 A5  F#5 E5 D5 C#5', 'E2:4 A2:2 A2:1 A2:1 C#3:4 F#2:2 F#2:1 F#2:1', 'tattoo in the left hand: A - F#m')
+bar('F#5 D5 A5 F#5  D6 C#6 B5 A5  B5 A5 G5 F#5  D#5 F#5 A5 B5', 'A2:4 D3:2 D3:1 D3:1 F#2:4 B2:2 B2:1 B2:1', 'D - B7')
+bar('G5:4 B5:2 B5:1 B5:1  E5:4 G5:2 G5:1 G5:1', 'E2:1 G2:1 B2:1 E3:1 G3:1 E3:1 B2:1 G2:1 C#3:1 E3:1 G3:1 E3:1 C#3:1 G3:1 E3:1 C#3:1',
     'Em - C#o7 (tattoo back in the right hand)')
-bar('A5 G#5 F#5 G#5  A5 C#6 B5 A5  G#5 F#5 E#5 F#5  G#5 B5 A5 G#5', 'F#2:4 A2:2 A2:1 A2:1 C#3:4 C#2:2 C#2:1 C#2:1', 'F#m - C#7')
+bar('F#5 E5 F#5 G#5  A5 C#6 B5 A5  G#5 F#5 E#5 F#5  G#5 B5 A5 G#5', 'F#2:4 C#3:2 C#3:1 C#3:1 E#2:4 C#2:2 C#2:1 C#2:1', 'F#m - C#7')
 # ---- D (21-32) the climb: v1's arc (7th chain, A pedal, deceptive Bm, G#o7,
 #      A7 falling, arrival on D), right hand an octave lower than v1.
 bar('F#5 A5 C#6 E6  E6 C#6 A5 F#5  A5 C#6 E6 C#6  A5 E5 C#5 A4',
@@ -75,7 +75,7 @@ bar('F#5 A5 C#6 E6  E6 C#6 A5 F#5  A5 C#6 E6 C#6  A5 E5 C#5 A4',
 bar('B4 D5 F#5 A5  A5 F#5 D5 B4  D5 F#5 A5 D6  D6 A5 F#5 D5',
     'B2:1 F#3:1 A3:1 D3:1 D3:1 F#3:1 B2:1 F#2:1 B2:1 F#3:1 D3:1 F#3:1 B2:1 A2:1 D3:1 F#3:1', 'Bm7')
 bar('G5 E5 B4 G4  B4 G4 E4 G4  D5 B4 G4 B4  G5 B4 D5 B4',
-    'E2:1 B2:1 D3:1 G2:1 E2:1 B2:1 E3:1 B2:1 G2:1 D3:1 B2:1 D3:1 E2:1 G2:1 B2:1 D3:1', 'Em7')
+    'E2:1 B2:1 D3:1 G2:1 E2:1 B2:1 E3:1 B2:1 B2:1 D3:1 G2:1 D3:1 E2:1 G2:1 B2:1 D3:1', 'Em7')
 bar('E5 C#5 A4 G4  C#5 A4 G4 E4  A4 G4 E4 C#5  G5 E5 C#5 A4',
     'A1:1 E2:1 G2:1 C#3:1 A1:1 E2:1 A2:1 E2:1 A1:1 C#2:1 E2:1 G2:1 E2:1 G2:1 C#3:1 E2:1', 'A7')
 bar('F#4 A4 D5 A4  F#4 A4 D5 F#5  C#5 A4 E5 C#5  A4 C#5 G5 E5',
@@ -92,21 +92,21 @@ bar('G#4 B4 D5 F5  B4 D5 F5 G#5  D5 F5 G#5 B5  F5 G#5 B5 D6',
     'G#2:1 D3:1 F3:1 B2:1 G#2:1 D3:1 B2:1 D3:1 G#2:1 F3:1 D3:1 F3:1 G#2:1 B2:1 F3:1 D3:1', 'G#o7 climbing')
 bar('E6 C#6 A5 G5  E5 C#5 A4 G4  C#5 A4 E4 G4  C#5 E5 A5 C#6',
     'A2:1 E3:1 A3:1 C#3:1 A2:1 E3:1 G3:1 C#3:1 A2:1 C#3:1 G3:1 E3:1 A2:1 E3:1 G3:1 A3:1', 'apex E6, falling A7')
-bar('D6 A5 F#5 A5  D6 F#6 D6 A5  F#5 D5 A4 D5  F#5 A5 D6 C6',
-    'D2:2 D3:2 A2:2 D3:2 F#2:2 D3:2 A2:2 D3:2', 'ARRIVAL on D')
-# ---- E (33-38) return: the fugue subject's head in the bass (augmented), C natural and B flat
-bar('B5 A5 G5 A5  B5 G5 D5 G5  A5 G5 F#5 G5  A5 F#5 D5 F#5', 'G2:4 B2:2 B2:1 B2:1 D3:2 D3:1 D3:1 F#2:4', 'E: IV over the head (G - D/F#)')
+bar('D6 A5 F#5 A5  D6 F#6 D6 A5  F#5 D5 A4 D5  F#5 A5 D6 A5',
+    'D2:2 F#2:2 D3:2 F#3:2 A2:2 D3:2 D2:2 F#3:2', 'ARRIVAL on D')
+# ---- E (33-38) return over the fugue subject's head in the bass; C natural and B flat
+bar('F#5 E5 D5 E5  F#5 A5 G5 F#5  E5 D5 C#5 D5  A4 D5 F#5 A5', 'A2:4 D3:2 D3:1 D3:1 F#3:2 F#3:1 F#3:1 A3:4', 'E: return, the subject head in the bass')
+bar('B5 A5 G5 A5  B5 G5 D5 G5  A5 G5 F#5 G5  A5 F#5 D5 F#5', 'G2 D3 B2 G3 F#2 D3 D3 A3', 'IV - I6')
 bar('E5 F#5 G5 B5  E6 D6 C#6 B5  A5 G5 F#5 E5  C#5 E5 A5 G5', 'E2:4 G2:2 G2:1 G2:1 A2:4 C#3:4', 'ii - V7')
 bar('F#5 E5 D5 E5  F#5 A5 D6 A5  C6 B5 A5 G5  F#5 A5 C6 A5', 'D3:4 A2:2 A2:1 A2:1 F#2:4 D2:2 D2:1 D2:1', 'I - I7 (C natural)')
-bar('B5 A5 G5 A5  B5 D6 B5 G5  Bb5 A5 G5 A5  Bb5 D6 Bb5 G5', 'G2 D3 B2 D3 G2 D3 Bb2 D3', 'IV - iv (B flat)')
-bar('A5 G5 F#5 G5  A5 F#5 D5 F#5  E5 F#5 G5 E5  C#5 E5 G5 Bb5?'.replace('Bb5?', 'A5'), 'A2 D3 F#3 D3 A2 E3 G3 E3', 'I6/4 - V7')
-bar('F#5 E5 D5 C#5  D5 A4 F#4 A4  D5 E5 F#5 G5  A5 B5 C#6 D6', 'D3 A3 F#3 A3 D3 A3 D2 A2', 'I (rising toward the flourish)')
+bar('B5 A5 G5 A5  B5 D6 B5 G5  Bb5 A5 G5 A5  Bb5 D6 Bb5 G5', 'G2 D3 B2 D3 G2 D3 G2 Bb2', 'IV - iv (B flat)')
+bar('A5 G5 F#5 G5  A5 F#5 D5 F#5  E5 F#5 G5 E5  C#5 E5 G5 A5', 'A2 D3 F#3 A3 A2 G3 C#3 E3', 'I6/4 - V7')
 # ---- F (39-41) improvisatory flourish (rit.), then the fugue subject in diminution: attacca
 bar('E6:0.5 D6:0.5 C#6:0.5 B5:0.5 A5:0.5 G5:0.5 F#5:0.5 E5:0.5  D5:0.5 C#5:0.5 B4:0.5 A4:0.5 G4:0.5 A4:0.5 B4:0.5 C#5:0.5 '
     'D5:0.5 E5:0.5 F#5:0.5 G5:0.5 A5:0.5 B5:0.5 C#6:0.5 D6:0.5  E6:2 C#6:1 A5:1',
     'A2:8 A2:8', 'F: flourish over the dominant')
 bar(scale_rhythm('A4:4 D5:2 D5:1 D5:1 F#5:2 F#5:1 F#5:1 A5:4 A5:3 G5:1 F#5:2 E5:2 D5:1 C#5:1 B4:1 A4:1 B4:1 C#5:1 D5:2', '1/2'),
-    'D3:4 A2:4 A2:4 D2:4', 'the fugue subject in diminution')
+    'D3:4 F#2:4 G2:4 A2:4', 'the fugue subject in diminution')
 bar('D5:16', 'D2:16', 'attacca')
 
 BPM = 104

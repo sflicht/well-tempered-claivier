@@ -38,7 +38,7 @@
  },
  "voices": [
   {
-   "name": "Dux (near side of the table)",
+   "name": "Dux",
    "abbr": "Dux",
    "clef": "treble",
    "events": [
@@ -1233,7 +1233,7 @@
    ]
   },
   {
-   "name": "Comes (far side: the page rotated)",
+   "name": "Comes (rotated)",
    "abbr": "Com",
    "clef": "bass",
    "events": [
@@ -2438,7 +2438,7 @@
  "literal_bars": {
   "unit": "sixteenth",
   "bars": {
-   "Dux (near side of the table)": [
+   "Dux": [
     "E5:12",
     "A4:12",
     "D5:4 B4:8",
@@ -2472,7 +2472,7 @@
     "D5:4 C5:4 B4:4",
     "C5:12"
    ],
-   "Comes (far side: the page rotated)": [
+   "Comes (rotated)": [
     "E3:12",
     "F3:4 E3:4 D3:4",
     "B2:4 G#2:4 E2:4",

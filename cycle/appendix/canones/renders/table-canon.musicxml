@@ -9,11 +9,11 @@
   </identification>
   <part-list>
     <score-part id="P1">
-      <part-name>Dux (near side of the table)</part-name>
+      <part-name>Dux</part-name>
       <part-abbreviation>Dux</part-abbreviation>
     </score-part>
     <score-part id="P2">
-      <part-name>Comes (far side: the page rotated)</part-name>
+      <part-name>Comes (rotated)</part-name>
       <part-abbreviation>Com</part-abbreviation>
     </score-part>
   </part-list>

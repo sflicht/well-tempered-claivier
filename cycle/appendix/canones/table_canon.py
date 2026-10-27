@@ -91,8 +91,8 @@ def build(out=HERE / 'table-canon.json'):
                     {'t': 15 * bq, 'label': 'Cardo'}, {'t': 17 * bq, 'label': 'Double rovescio'},
                     {'t': 24 * bq, 'label': 'Fundamentum'}],
     }
-    voices = [('Dux (near side of the table)', 'Dux', 'treble', 72),
-              ('Comes (far side: the page rotated)', 'Com', 'bass', 70)]
+    voices = [('Dux', 'Dux', 'treble', 72),
+              ('Comes (rotated)', 'Com', 'bass', 70)]
     entries = [(voices[1][0], 25, 0, 'Goldberg ground, BWV 988 (in C)', 8)]
     W.build_score(out, meta, voices,
                   {voices[0][0]: DUX, voices[1][0]: COMES},

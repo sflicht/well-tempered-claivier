@@ -219,15 +219,16 @@ tag(46, 'Dominant')
 #           subject of Bach's D-major fugue (WTC I/5, BWV 850) as a real voice
 #           (stretto_finder: offset 0, cost 5, 0 parallels): its B. B on beat 2
 #           turns our static first bar into D - Bm7 - D - D/F#.
-#   b49-50  tenor: the answer; baritone: the answer in double augmentation;
-#   b50     bass: the answer in diminution (32nds) - the four speeds together;
-#   b51     alto: the subject in diminution, over the tonic pedal;
+#   b49-50  tenor: the answer; baritone: the answer in double augmentation
+#           (x4, x2 and x1 together);
+#   b51     alto: the subject in diminution, over the tonic pedal (x4, x2, x1/2).
+#           A x1/2 answer in b50 was tried and removed: against the x2 answer it
+#           moves in parallel octaves (both arpeggiate A on the same beats);
 #   b51-55  contrabass tonic pedal, coloured: C natural (V9/IV, b52), minor iv
 #           with B flat (b53), drums on the pedal (the subject's tattoo, b54).
 BWV850_SUBJ = 'D3:0.5 E3:0.5 F#3:0.5 G3:0.5 F#3:0.5 E3:0.5 F#3:0.5 D3:0.5 B3:3 B3:1 A3:3 G3:1 F#3:3 G3:1'   # WTC I/5, from cycle/reference/bach-subjects.md
 SUBJ_X4 = scale_rhythm(T8(SUBJ, 1), 4)
 ANS_X2 = 'D3:8 A3:4 A3:2 A3:2 C#4:4 C#4:2 C#4:2 E4:8 E4:6 D4:2 C#4:4 B3:4 A3:2 G3:2 F#3:2 E3:2 F#3:2 G3:2 A3:4'  # tonal answer x2, last bar bent to G natural over the pedal
-ANS_REAL_HALF = scale_rhythm('E2:4 A2:2 A2:1 A2:1 C#3:2 C#3:1 C#3:1 E3:4 E3:3 D3:1 C#3:2 B2:2 A2:1 G#2:1 F#2:1 E2:1 F#2:1 G#2:1 A2:2', '1/2')
 SUBJ_HALF = scale_rhythm(SUBJ, '1/2')
 put(47,
     S=SUBJ_X4 + ' D6:16',
