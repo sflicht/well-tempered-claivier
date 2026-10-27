@@ -47,10 +47,10 @@ def stem(data, i, soundfont, temperament, a4):
             synth.program_select(ch, sfid, 0, p)
     if temperament != 'equal' or a4 != 440.0:
         rm.apply_temperament(synth, temperament, sorted({e[2] for e in events}), a4)
-    bpm = rm.bpm_of(rm.meta_of(data))
+    pts = rm.tempo_points(rm.meta_of(data))
     cursor, chunks = 0, []
     for t, _, ch, kind, p, vel in events:
-        frame = round(float(t) * 60.0 / bpm * RATE)
+        frame = round(rm.seconds_at(t, pts) * RATE)
         if frame > cursor:
             chunks.append(synth.get_samples(frame - cursor))
             cursor = frame

@@ -23,6 +23,44 @@
    ]
   },
   {
+   "name": "Pair II \u00b7 C minor (rebuilt, formerly 'Pair I')",
+   "pieces": [
+    {
+     "id": "prelude-2",
+     "title": "Prelude II \u00b7 the beat lost and found",
+     "score": "cycle/02-c-minor/prelude.json",
+     "tag": "fixed",
+     "notes": "The left hand keeps a steady quarter-note beat while the right hand's sixteenths regroup in 4s, then 3s, then 5s. The accented first note of each group spells out the fugue subject, first in long values, then in E-flat starting a sixteenth late. The written-out Presto and Adagio in bars 23-24 come from BWV 847's prelude, before the downbeat returns. It ends on C5, the fugue's first note.\n\nFixed from v3: the chord chart filled by a voicing optimiser, the lack of any melody, and the sagging dominant pedal."
+    },
+    {
+     "id": "fugue-2",
+     "title": "Fugue II \u00b7 three voices (was two)",
+     "score": "cycle/02-c-minor/fugue.json",
+     "tag": "fixed",
+     "notes": "Renumbered to No. II, as in Bach's key order, so it now has three real voices like BWV 847. The exposition has the answer as the subject's mirror image at the dominant, then the bass entry with two countersubjects. In G minor the subject sounds together with its augmentation and its inversion. Then the whole three-voice block returns upside down in F minor, a mirror trio in the manner of Contrapunctus 12/13.\n\nThe peak is now the fullest bar, a three-voice stretto half a bar apart. A deceptive cadence and a Neapolitan follow. In the coda Bach's own BWV 847 subject enters slowly in the bass under ours.\n\nEvery note was written by hand; the old version had 15 bars of code-chosen pitches. 0 parallels, 0 unresolved dissonances, playable by two hands."
+    }
+   ]
+  },
+  {
+   "name": "Pair IV \u00b7 C-sharp minor (rebuilt)",
+   "pieces": [
+    {
+     "id": "prelude-4",
+     "title": "Prelude IV \u00b7 Allegro inquieto",
+     "score": "cycle/04-c-sharp-minor/prelude.json",
+     "tag": "fixed",
+     "notes": "The motif, its syncopation, augmentation, diminution and hemiola are kept. New in this version: root-position cadences at the return and the close, the hands imitating each other at the half bar, and a dominant pedal that moves every half bar. Bach's BWV 849 'cross' motif (C#-B#-E-D#) is planted as 4-3 and 6-5 suspensions over that pedal, so the prelude previews the fugue's second subject."
+    },
+    {
+     "id": "fugue-4",
+     "title": "Fugue IV \u00b7 double fugue with Bach's cross",
+     "score": "cycle/04-c-sharp-minor/fugue.json",
+     "tag": "fixed",
+     "notes": "Five voices that build up and stay; all five first sound together at bar 10 (bar 33 before). The countersubject now has one fixed shape.\n\nBach's own stile-antico subject from the five-voice C-sharp minor fugue BWV 849 (C#-B#-E-D#) becomes a genuine second subject. It has a quiet second exposition in bars 17-25 with Bach's own answer, appears in diminution in the episode basses, and at the climax (bars 35-41) sounds augmented in the bass under two complete strettos of our subject an eighth apart. The final stretto is in three voices over the dominant pedal.\n\nAccented parallels down from 22 to 1; tripled pitch classes down from 19% to 8%."
+    }
+   ]
+  },
+  {
    "name": "Appendix \u00b7 canons and contrapuncti (new)",
    "pieces": [
     {
@@ -31,6 +69,13 @@
      "score": "cycle/appendix/contrapunctus-permutationum/score.json",
      "tag": "new",
      "notes": "Four lines written in quadruple invertible counterpoint: a cantus on B-A-C-H in half notes, a sighing line of suspensions, a walking eighth-note line, and a spinning sixteenth-note figure. Any of the four can be the bass. A script proved all 24 vertical orderings clean, in major and in minor.\n\nThe movement uses every ordering once, one in each of the 24 keys, going round the circle of fifths with each major followed by its relative minor. The orderings follow the change-ringing method Plain Bob Minimus, so B-A-C-H walks down and up through the four staves like a bell working through a peal.\n\nThe climax is statement 13 in F-sharp major, with B-A-C-H in the bass, followed by a sudden hush in E-flat minor. In the coda B-A-C-H is augmented and its last note, H (B natural), finally resolves to C."
+    },
+    {
+     "id": "table-canon",
+     "title": "Canon cancrizans per motum contrarium (table canon)",
+     "score": "cycle/appendix/canones/table-canon.json",
+     "tag": "new",
+     "notes": "Two players read one page from opposite sides of a table. The second voice is the first played backwards and upside down, so the whole score turned through 180 degrees is the same piece. It begins in A minor and ends in C major, mirrored around D, the hinge note sounded in unison in bar 17.\n\nA sarabande, then a double in sixteenths, the hinge, the double rotated, and finally the ground of the Goldberg Variations, which the second player arrives at simply by reading the first player's line upside down and backwards."
     }
    ]
   },

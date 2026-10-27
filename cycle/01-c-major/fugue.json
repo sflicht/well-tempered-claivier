@@ -12,6 +12,17 @@
    4
   ],
   "bpm": 104,
+  "tempo_map": [
+   [
+    162,
+    104
+   ],
+   [
+    168,
+    84,
+    "ramp"
+   ]
+  ],
   "tempo_text": "Allegro con brio",
   "composer": "Original composition (Claude) for Sam",
   "instrument": "Keyboard \u2014 two voices",

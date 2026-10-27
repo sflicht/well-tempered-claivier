@@ -12,6 +12,17 @@
    4
   ],
   "bpm": 80,
+  "tempo_map": [
+   [
+    138,
+    80
+   ],
+   [
+    144,
+    62,
+    "ramp"
+   ]
+  ],
   "tempo_text": "Allegro moderato",
   "composer": "Original composition (Claude) for Sam; guest subject J. S. Bach, BWV 847",
   "instrument": "Keyboard - three voices",

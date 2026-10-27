@@ -35,6 +35,13 @@ def tag(bar, text):
     TAGS[bar - 1] = text
 
 
+ENTRIES = []          # (voice, bar, beat offset in quarters, label, bars to emphasise)
+
+
+def entry(v, bar, off, label, n=2):
+    ENTRIES.append((AB[v], bar, off, label, n))
+
+
 D_MAJOR = [2, 4, 6, 7, 9, 11, 1]
 
 # ---------------------------------------------------------------------------
@@ -60,7 +67,7 @@ put(3, T=ANS, A=CS_A)
 tag(3, 'Tonal answer (tenor) + countersubject')
 # codetta b5: the alto falls through the subject's tail; G4 is the 7th of A7
 put(5, A='A5:3 G5:1 F#5:2 E5:2 D5:1 C#5:1 B4:1 A4:1 G4:4',
-       T='F#4:4 D4:4 G4:4 A3:4')
+       T='F#4:4 D4:4 E4:4 A3:4')
 tag(5, 'Codetta from the tail, back to D')
 put(6, S=T8(SUBJ, 1), A=CS_D,
        T='D4:4 F#3:4 B3:4 A3:4  C#4:4 B3:4 D4:2 E4:2 A3:2 D4:2')
@@ -117,7 +124,7 @@ put(21,
     S='B5:3 A5:1 G5:2 F#5:2 E5:1 F#5:1 G5:1 A5:1 A5:4  A5:3 G5:1 F#5:2 E5:2 D5:1 E5:1 F#5:1 G5:1 G5:4 '
       'G5:3 F#5:1 E5:2 D5:2 C5:1 D5:1 E5:1 F#5:1 A5:4  A5:4 F#5:4 A5:4 C6:4',
     A='E5:4 B4:2 E5:2 C5:6 B4:2  D5:4 A4:2 D5:2 B4:6 A4:2  C5:4 G4:2 C5:2 A4:6 G4:2  F#4:4 A4:8 D5:4',
-    T='G4:2 G4:1 G4:1 E4:4 E4:2 E4:1 E4:1 C4:4  F#4:2 F#4:1 F#4:1 D4:4 D4:2 D4:1 D4:1 B3:4 '
+    T='G4:2 G4:1 G4:1 E4:4 E4:2 E4:1 E4:1 E4:4  F#4:2 F#4:1 F#4:1 D4:4 D4:2 D4:1 D4:1 B3:4 '
       'E4:2 E4:1 E4:1 C4:4 E4:2 E4:1 E4:1 C4:4  C4:2 C4:1 C4:1 A3:4 D4:2 D4:1 D4:1 F#4:4',
     B='G3:2 B3:2 A3:2 G3:2 A3:2 C4:2 B3:2 A3:2  F#3:2 A3:2 G3:2 F#3:2 G3:2 B3:2 A3:2 G3:2',
     Cb='E2:8 A2:8  D2:8 G2:8  C2:4 E2:4 F#2:8  F#2:16')
@@ -193,14 +200,14 @@ G_SUBJ = 'D3:4 G3:2 G3:1 G3:1 B3:2 B3:1 B3:1 D4:4 D4:3 C4:1 B3:2 A3:2 G3:1 F#3:1
 G_INV_CB = invert_diatonic(G_SUBJ, 'D3', [7, 9, 11, 0, 2, 4, 6])   # mirror about D3 in G major
 put(39,
     S=FSM_SUBJ + '  G5:4 B5:2 C#6:2 E6:6 D6:2  C#6:6 B5:2 C#6:4 A6:4  A6:6 G6:2 F#6:8 '
-      'F#6:12 E6:4  C6:6 B5:2 C6:6 C#6:2  C#6:4 D6:4 E6:4 C#6:4',
-    A='A4:8 B4:4 E#4:4  ' + BM_SUBJ + '  C#5:4 E5:2 F#5:2 A5:6 G5:2  F#5:16 '
-      'F#5:4 A5:12  F#5:6 G5:2 E5:8  A5:8 G5:8',
-    T='C#4:4 A3:4 F#3:4 G#3:4  B3:8 D4:8  ' + EM_SUBJ_DOR + '  F#4:4 A4:2 B4:2 D5:6 C5:2 '
-      'C5:12 A4:4  A4:6 B4:2 A4:6 G4:2  E4:4 G4:8 E4:4',
-    Br='R:16 R:16 R:16  ' + A_SUBJ_MIX + '  D4:4 E4:4 A3:4 D4:4  D4:8 C4:6 C#4:2  C#4:4 E4:4 A3:8',
+      'F#6:8 E6:4 D6:4  C6:6 B5:2 C6:6 C#6:2  C#6:4 D6:4 E6:4 B5:4',
+    A='A4:8 F#4:4 E#4:4  ' + BM_SUBJ + '  C#5:4 E5:2 F#5:2 A5:6 G5:2  F#5:16 '
+      'F#5:4 A5:12  A5:6 G5:2 E5:8  A5:4 G5:12',
+    T='C#4:4 A3:8 G#3:4  B3:8 A3:8  ' + EM_SUBJ_DOR + '  F#4:4 A4:2 B4:2 D5:6 C5:2 '
+      'C5:12 B4:4  A4:6 B4:2 A4:6 G4:2  E4:4 A4:8 C#4:4',
+    Br='R:16 R:16 R:16  ' + A_SUBJ_MIX + '  D4:4 E4:4 A3:4 D4:4  D4:8 G3:6 A3:2  C#4:4 E4:4 E3:4 C#3:4',
     B='F#2:4 E2:4 D2:4 C#2:4  B1:16  E2:8 C#3:4 E3:4  A2:8 G2:4 E2:4  ' + D_SUBJ_MIX +
-      '  A3:6 B3:2 E3:4 G3:2 E3:2  G3:8 E3:8',
+      '  F#3:6 B3:2 E3:8  R:16',
     Cb='R:16 R:16 R:16 R:16  D2:16  ' + G_INV_CB + '  A2:16')
 tag(39, 'CASCADE STRETTO: F#m (S) Bm (A) Em (T) A (Br) D (B) G inverted (Cb)')
 tag(46, 'Dominant')
@@ -224,12 +231,12 @@ ANS_REAL_HALF = scale_rhythm('E2:4 A2:2 A2:1 A2:1 C#3:2 C#3:1 C#3:1 E3:4 E3:3 D3
 SUBJ_HALF = scale_rhythm(SUBJ, '1/2')
 put(47,
     S=SUBJ_X4 + ' D6:16',
-    T=T8(SUBJ, -1) + ' ' + ANS + '  F#4:4 D5:4 G4:8  D4:4 A4:4 G4:4 C5:4  Bb4:4 A4:4 G4:4 F#4:4  D4:4 C#4:4 A3:8~  A3:16',
-    Br=BWV850_SUBJ + '  D4:4 D4:4 F#3:4 G3:4  ' + ANS_X2 + '  E3:8 E3:4 F#3:4  G3:4 A3:4 F#3:8~  F#3:16',
-    A='F#5:8 D5:8  B4:4 A4:4 B4:4 E5:4  A5:6 G5:2 F#5:4 C#6:4  C#6:4 E6:4 C#6:8  ' + SUBJ_HALF +
-      '  A5:4 D5:4 C#5:4 F#5:4  E5:4 G4:4 D5:4 D5:4  B4:4 A4:4 A4:8  F#4:16',
-    B='R:16 R:16 R:16  E3:16  D3:4 A3:4 E3:4 B2:4  F#3:4 A2:4 A2:4 D3:4  G2:4 A2:4 G2:4 A2:4  G2:8 F#2:8  A2:16',
-    Cb='D2:4 B1:4 D2:4 F#2:4  G2:4 B1:8 G2:4  F#2:4 B1:4 F#2:4 A2:4  A2:8 C#3:4 A2:4 '
+    T=T8(SUBJ, -1) + ' ' + ANS + '  F#4:4 D5:4 G4:8  D4:4 A4:4 E4:4 F#4:4  G4:12 F#4:4  D4:4 A3:4 D4:8~  D4:16',
+    Br=BWV850_SUBJ + '  D4:4 D4:4 F#3:4 G3:4  ' + ANS_X2 + '  E3:8 G3:4 A3:4  G3:8 F#3:8~  F#3:16',
+    A='F#5:8 D5:8  B4:4 A4:4 B4:4 E5:4  A5:6 G5:2 F#5:4 C#6:4~  C#6:4 E6:4 C#6:4 A5:4  ' + SUBJ_HALF +
+      '  A5:4 D5:4 C#5:4 C5:4  Bb4:4 A4:4 B4:4 D5:4  B4:4 A4:4 A4:8  F#4:16',
+    B='R:16 R:16 R:16  E3:16  D3:4 A3:4 G3:4 B2:4  F#3:4 A2:4 A2:4 D3:4  G2:4 A2:4 E3:4 F#2:4  G2:4 A2:12  A2:16',
+    Cb='D2:4 B1:4 D2:4 F#2:4  G2:4 B1:8 G2:4  F#2:4 B2:4 A2:8  A2:8 C#3:4 A2:4 '
        'D2:16~ D2:16~ D2:16  D2:4 D2:2 D2:1 D2:1 D2:2 D2:1 D2:1 D2:4  D2:16')
 tag(47, 'SUMMIT: subject x4 (S) + subject (T) + BWV 850 subject (Br)')
 tag(49, 'Answer (T), answer x2 (Br)')
@@ -237,15 +244,28 @@ tag(50, 'Dominant: x4, x2 and x1 together')
 tag(51, 'Tonic pedal: subject x1/2 (A); C natural, minor iv')
 tag(54, 'Drums on the pedal')
 
+# ---------------------------------------------------------------------------
+# Subject entries (voice, bar, beat offset, label, bars to emphasise)
+ENTRY_LIST = [
+    ('A', 1, 0, 'Subject', 2), ('T', 3, 0, 'Answer (tonal)', 2), ('S', 6, 0, 'Subject', 2),
+    ('B', 8, 0, 'Answer (tonal)', 2), ('Br', 10, 0, 'Subject', 2), ('Cb', 11, 0, 'Answer (tonal)', 2),
+    ('A', 17, 0, 'Subject in B minor', 2), ('T', 19, 0, 'Inversion in E minor', 2),
+    ('T', 25, 0, 'Stretto I: subject in G', 2), ('A', 25, 1, 'Stretto I: diminution in E minor', 1),
+    ('B', 25, 3, 'Stretto I: inversion (B minor colour)', 2),
+    ('A', 32, 0, 'Stretto II: subject in E minor', 2), ('Br', 32, 1.75, 'Stretto II: inversion, off the beat', 2),
+    ('S', 39, 0, 'Cascade 1: F# minor', 2), ('A', 40, 0, 'Cascade 2: B minor', 2), ('T', 41, 0, 'Cascade 3: E minor', 2),
+    ('Br', 42, 0, 'Cascade 4: A', 2), ('B', 43, 0, 'Cascade 5: D', 2), ('Cb', 44, 0, 'Cascade 6: G, inverted', 2),
+    ('S', 47, 0, 'Summit: subject x4', 8), ('T', 47, 0, 'Summit: subject', 2),
+    ('Br', 47, 0, 'Bach: subject of WTC I/5 BWV 850', 1),
+    ('T', 49, 0, 'Answer', 2), ('Br', 49, 0, 'Answer x2', 4), ('A', 51, 0, 'Subject x1/2', 1),
+]
+for _e in ENTRY_LIST:
+    entry(*_e)
+
 # === SECTIONS-END ===
 
 # ---------------------------------------------------------------------------
 # BUILD
-ENTRIES = []          # (voice, bar, beat offset in quarters, label, bars to emphasise)
-
-
-def entry(v, bar, off, label, n=2):
-    ENTRIES.append((AB[v], bar, off, label, n))
 
 
 def build(path=HERE / 'fugue.json'):
@@ -253,7 +273,8 @@ def build(path=HERE / 'fugue.json'):
             'composer': 'Recomposed by Claudia / Sam', 'instrument': 'Piano (six voices)',
             'key': 'D', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
             'tempo_text': 'Allegro; trumpets and drums', 'movement_number': 5, 'piece_type': 'fugue',
-            'edition': 'third', 'markers': [{'t': (b - 1) * 4, 'label': t} for b, t in enumerate(TAGS, 1) if t]}
+            'edition': 'third', 'tempo_map': [[NBARS * 4 - 6, BPM], [NBARS * 4, round(BPM * 0.75), 'ramp']],
+            'markers': [{'t': (b - 1) * 4, 'label': t} for b, t in enumerate(TAGS, 1) if t]}
     voices = [('Soprano', 'S', 'treble', 74), ('Alto', 'A', 'treble', 70), ('Tenor', 'T', 'treble_8', 70),
               ('Baritone', 'Br', 'bass', 70), ('Bass', 'B', 'bass', 72), ('Contrabass', 'Cb', 'bass', 74)]
     return build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ,
@@ -264,6 +285,14 @@ BPM = 108
 
 
 def DYN(b):
+    # phrase dynamics (velocity offsets) per 0-based bar index
+    bar = b + 1
+    if bar <= 12:
+        return -4 + bar // 2           # exposition grows as voices enter
+    for lo, hi, v in [(13, 16, -1), (17, 20, 1), (21, 24, -3), (25, 27, 3), (28, 31, -4), (32, 34, 3),
+                      (35, 38, -2), (39, 46, None), (47, 50, 9), (51, 53, 7), (54, 55, 5)]:
+        if lo <= bar <= hi:
+            return v if v is not None else 1 + (bar - 39)   # the cascade crescendos
     return 0
 
 

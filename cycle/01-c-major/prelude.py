@@ -396,7 +396,7 @@ def meta(performance=False):
         'instrument': ('Piano (performance: Shepard-Risset octave layers)'
                        if performance else 'Piano (written core)'),
         'score_tagline': 'Third edition - Prelude I',
-        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
+        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': BPM, 'tempo_map': [[220, BPM], [228, 52, 'ramp']],
         'tempo_text': 'Andante, sempre legato', 'movement_number': 1, 'piece_type': 'prelude',
         'key_changes': key_signatures(),
         'markers': [{'t': (h - 1) * 2, 'label': lab} for h, lab in MARKERS],

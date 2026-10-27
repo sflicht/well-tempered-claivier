@@ -21,6 +21,17 @@
    4
   ],
   "bpm": 80,
+  "tempo_map": [
+   [
+    288,
+    80
+   ],
+   [
+    296,
+    60,
+    "ramp"
+   ]
+  ],
   "tempo_text": "Allegro moderato",
   "markers": [
    {

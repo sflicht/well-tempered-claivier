@@ -50,6 +50,41 @@ def bpm_of(meta):
     return float(meta.get("bpm", meta.get("tempo", 80)))
 
 
+def tempo_points(meta):
+    """Tempo map: metadata 'tempo_map' = [[t_quarters, bpm] or [t, bpm, 'ramp'], ...].
+    A point marked 'ramp' is approached by a linear accelerando/ritardando from
+    the previous point; otherwise the tempo changes abruptly at t."""
+    pts = [(0.0, bpm_of(meta), False)]
+    for x in meta.get('tempo_map', []):
+        t, b = float(x[0]), float(x[1])
+        ramp = len(x) > 2 and str(x[2]).startswith('ramp')
+        if t <= 0:
+            pts[0] = (0.0, b, False)
+        else:
+            pts.append((t, b, ramp))
+    pts.sort(key=lambda p: p[0])
+    return pts
+
+
+def seconds_at(t, pts):
+    """Seconds elapsed at quarter-note time t under the tempo map."""
+    t = float(t)
+    sec = 0.0
+    for k, (t0, b0, _) in enumerate(pts):
+        t1, b1, ramp = pts[k + 1] if k + 1 < len(pts) else (float('inf'), b0, False)
+        if t <= t0:
+            break
+        seg_end = min(t, t1)
+        if ramp and b1 != b0 and t1 != float('inf'):
+            bt = b0 + (b1 - b0) * (seg_end - t0) / (t1 - t0)
+            sec += 60.0 * (t1 - t0) / (b1 - b0) * math.log(bt / b0)
+        else:
+            sec += (seg_end - t0) * 60.0 / b0
+        if t <= t1:
+            break
+    return sec
+
+
 def key_of(meta):
     key = meta.get("key", "C#").replace("♯", "#").replace("♭", "b")
     mode = meta.get("mode", "minor")
@@ -413,17 +448,43 @@ def create_midi(data, output, chamber=False):
     midi.tracks.append(conductor)
     conductor.append(mido.MetaMessage('track_name', name=meta.get('title', 'clAIvier'), time=0))
     conductor.append(mido.MetaMessage('set_tempo', tempo=mido.bpm2tempo(bpm_of(meta)), time=0))
+    pts = tempo_points(meta)
+    tempo_events = []
+    for k in range(1, len(pts)):
+        t0, b0, _ = pts[k - 1]
+        t1, b1, ramp = pts[k]
+        if ramp:
+            steps = max(1, int((t1 - t0) * 4))
+            for j in range(1, steps + 1):
+                tq = t0 + (t1 - t0) * j / steps
+                tempo_events.append((tq, b0 + (b1 - b0) * j / steps))
+        else:
+            tempo_events.append((t1, b1))
+    last_tempo_tick = 0
+    tempo_msgs = []
+    for tq, b in tempo_events:
+        tick = round(tq * QUARTER_TICKS)
+        tempo_msgs.append(mido.MetaMessage('set_tempo', tempo=mido.bpm2tempo(b), time=tick - last_tempo_tick))
+        last_tempo_tick = tick
     conductor.append(mido.MetaMessage('time_signature', numerator=beats, denominator=den, time=0))
     key, mode = key_of(meta)
     try: conductor.append(mido.MetaMessage('key_signature', key=key+('m' if mode=='minor' else ''), time=0))
     except ValueError: pass
-    last_key_tick = 0
-    for change in sorted(meta.get('key_changes', []), key=lambda x:float(x['t'])):
+    timed = []
+    for change in meta.get('key_changes', []):
         new_key, new_mode = key_of(change)
-        tick = round(float(change['t']) * QUARTER_TICKS)
-        conductor.append(mido.MetaMessage('key_signature', key=new_key+('m' if new_mode=='minor' else ''),
-                                          time=tick-last_key_tick))
-        last_key_tick = tick
+        timed.append((round(float(change['t']) * QUARTER_TICKS), 'key', new_key + ('m' if new_mode == 'minor' else '')))
+    acc = 0
+    for m in tempo_msgs:
+        acc += m.time
+        timed.append((acc, 'tempo', m.tempo))
+    last = 0
+    for tick, kind, val in sorted(timed, key=lambda x: x[0]):
+        if kind == 'key':
+            conductor.append(mido.MetaMessage('key_signature', key=val, time=tick - last))
+        else:
+            conductor.append(mido.MetaMessage('set_tempo', tempo=val, time=tick - last))
+        last = tick
     events = performance_events(data, chamber=chamber)
     for i, voice in enumerate(data['voices']):
         channel = CHANNELS[i % 15] + 16*(i//15)
@@ -510,11 +571,11 @@ def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament
             synth.program_select(channel, sfid, 0, pitch)
     if temperament and (temperament != 'equal' or a4 != 440.0):
         apply_temperament(synth, temperament, sorted({e[2] for e in events}), a4)
-    bpm = bpm_of(meta_of(data))
+    pts = tempo_points(meta_of(data))
     cursor = 0
     chunks = []
     for t, _, channel, kind, pitch, velocity in events:
-        frame = round(float(t) * 60.0 / bpm * rate)
+        frame = round(seconds_at(t, pts) * rate)
         if frame > cursor:
             chunks.append(synth.get_samples(frame-cursor))
             cursor = frame

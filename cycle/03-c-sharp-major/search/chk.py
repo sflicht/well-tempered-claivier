@@ -34,3 +34,17 @@ for b in range(lo, hi + 1):
 if showgrid:
     lines = [(' '.join(bars[k]), 0) for k in 'SATB']
     lgrid(lines, start=(lo - 1) * 24, end=hi * 24)
+import collections
+from critic import Score
+from chords import pname
+Sx = Score(data)
+trip = []
+for t in range(0, Sx.end, Sx.beat):
+    if not (lo <= t // Sx.bar + 1 <= hi):
+        continue
+    ps = [Sx.note(i, k)['p'] for i, (k, _) in Sx.sounding(t).items()]
+    if len(ps) >= 3:
+        c = collections.Counter(p % 12 for p in ps)
+        if max(c.values()) >= 3:
+            trip.append(Sx.loc(t) + ' ' + ' '.join(pname(p) for p in sorted(ps)))
+print('  tripled:', trip)

@@ -286,7 +286,7 @@ def build(path=HERE / 'score.json'):
         'score_layout': {'paper': 'a4', 'staff_size': 15, 'staff_distance': 10},
         'instrument': 'Keyboard - four independent voices',
         'score_tagline': 'Quadruple invertible counterpoint: 24 orderings (Plain Bob Minimus) in 24 keys',
-        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 80,
+        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 80, 'tempo_map': [[288, 80], [296, 60, 'ramp']],
         'tempo_text': 'Allegro moderato',
         'markers': markers, 'key_changes': keychanges[1:],
         'pitch_spellings': {},

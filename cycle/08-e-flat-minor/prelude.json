@@ -14,7 +14,18 @@
   "tempo_text": "Andante sostenuto, attacca",
   "movement_number": 8,
   "piece_type": "prelude",
-  "edition": "third"
+  "edition": "third",
+  "tempo_map": [
+   [
+    114,
+    90
+   ],
+   [
+    126,
+    64,
+    "ramp"
+   ]
+  ]
  },
  "voices": [
   {

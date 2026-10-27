@@ -11,6 +11,17 @@
    4
   ],
   "bpm": 72,
+  "tempo_map": [
+   [
+    144,
+    72
+   ],
+   [
+    150,
+    56,
+    "ramp"
+   ]
+  ],
   "tempo_text": "Moderato, sostenuto",
   "movement_number": 4,
   "piece_type": "fugue",

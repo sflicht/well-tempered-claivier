@@ -180,7 +180,7 @@ def main():
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'II. Prelude in C minor - losing the beat',
         'number': 2, 'movement_number': 2, 'piece_type': 'prelude',
-        'key': 'C', 'mode': 'minor', 'meter': list(METER), 'bpm': 63,
+        'key': 'C', 'mode': 'minor', 'meter': list(METER), 'bpm': 63, 'tempo_map': [[92, 40], [96, 63], [122, 63], [128, 46, 'ramp']],
         'tempo_text': 'Andante; the accents follow the groups',
         'composer': 'Original composition (Claude) for Sam',
         'instrument': 'Keyboard',

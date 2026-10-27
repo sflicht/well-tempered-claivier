@@ -11,6 +11,17 @@
    4
   ],
   "bpm": 100,
+  "tempo_map": [
+   [
+    108,
+    100
+   ],
+   [
+    114,
+    78,
+    "ramp"
+   ]
+  ],
   "tempo_text": "Allegro inquieto",
   "movement_number": 4,
   "piece_type": "prelude",
@@ -2777,8 +2788,8 @@
     {
      "t": 18.5,
      "d": 0.25,
-     "p": 60,
-     "spell": "bis",
+     "p": 54,
+     "spell": "fis",
      "v": 62,
      "gate": 0.9,
      "bar": 7
@@ -3866,8 +3877,8 @@
     {
      "t": 56.5,
      "d": 0.25,
-     "p": 60,
-     "spell": "bis",
+     "p": 54,
+     "spell": "fis",
      "v": 58,
      "gate": 0.9,
      "bar": 19
@@ -5753,7 +5764,7 @@
     "C#3:1 G#3:1 E4:1 G#3:1 C#3:1 G#3:1 B3:1 G#3:1 A2:1 E3:1 A3:1 C#4:1",
     "E3:2 C#3:1 D#3:1 E3:2 G#3:3 F#3:1 E3:1 D#3:1",
     "G#2:2 B#2:1 D#3:1 G#3:2 C#3:2 E3:1 D#3:1 C#3:1 B#2:1",
-    "G#2:1 D#3:1 B#3:1 D#3:1 G#2:1 D#3:1 B#3:1 F#3:1 D#3:1 F#3:1 B#3:1 F#3:1",
+    "G#2:1 D#3:1 F#3:1 D#3:1 G#2:1 D#3:1 B#3:1 F#3:1 D#3:1 F#3:1 B#3:1 F#3:1",
     "C#3:1 G#3:1 C#4:1 G#3:1 C#3:1 G#3:1 E4:1 B3:1 F#3:1 A3:1 B3:1 D#4:1",
     "E3:1 B3:1 G#4:1 B3:1 E3:1 B3:1 G#4:1 B3:1 A2:1 E3:1 C#4:1 E3:1",
     "G#3:2 E3:1 F#3:1 G#3:2 B3:3 A3:1 G#3:1 F#3:1",
@@ -5765,7 +5776,7 @@
     "A3:2 F#3:1 G#3:1 A3:2 C#4:3 B3:1 A3:1 G#3:1",
     "C#3:2 G#3:1 B3:1 G#3:2 D3:2 A3:2 F#3:2",
     "B2:1 F#3:1 B3:1 F#3:1 D#3:1 F#3:1 B3:1 D#4:1 G#2:1 D#3:1 F#3:1 B3:1",
-    "G#2:1 D#3:1 F#3:1 D#3:1 G#2:1 D#3:1 F#3:1 D#3:1 G#2:1 D#3:1 B#3:1 D#3:1",
+    "G#2:1 D#3:1 F#3:1 D#3:1 G#2:1 D#3:1 F#3:1 D#3:1 G#2:1 D#3:1 F#3:1 D#3:1",
     "G#2:1 C#3:1 E3:1 G#3:1 E3:1 C#3:1 G#2:1 D#3:1 F#3:1 B#3:1 F#3:1 D#3:1",
     "G#2:1 B#2:1 D#3:1 A3:1 F#3:1 A3:1 D#3:1 F#3:1 D#3:1 F#3:1 G#3:1 F#3:1",
     "G#2:1 C#3:1 E3:1 C#3:1 G#2:1 D#3:1 B#3:1 D#3:1 G#2:1 D#3:1 F#3:1 B#3:1",
@@ -5806,7 +5817,7 @@
    "16 IMITATION in F#m: L leads, R answers on C#7 (the falling-thirds chain is broken)",
    "17 answer completes; C#7 - D (VI of F#m, Neapolitan of C#m)",
    "18 B major: M; turns to G#m7 so the C# can be held",
-   "19 V pedal. CRUX (BWV 849) C#-B#: 4-3 over G#; L keeps B# out until the C# resolves",
+   "19 V pedal. CRUX (BWV 849) C#-B#: 4-3 over G#; the L.H. leaves the B# to the R.H.",
    "20 CRUX E-D#: i6/4 - V7 over the pedal (6-5)",
    "21 ARRIVAL: held seventh F#5 over V(b9) - V7",
    "22 DROP: M in diminution; i6/4 - V - V7 over the pedal",

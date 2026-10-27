@@ -47,6 +47,16 @@ the 100-bar Fugue VIII: 66%). Treat every `parallels_error` and every
 justify in NOTES.md. Clean numbers do not make music; they only remove
 mistakes.
 
+## Tempo
+
+`metadata.bpm` is the basic tempo. `metadata.tempo_map` adds changes:
+`[[t_quarters, bpm], [t, bpm, 'ramp'], ...]`. A plain point changes tempo
+abruptly at t (an Adagio bar, a Presto); a point marked `'ramp'` is approached
+by a smooth accelerando or ritardando from the previous point. Every movement
+should breathe at its final cadence, e.g. `[[end-6, bpm], [end, 0.75*bpm, 'ramp']]`.
+The renderer, the MIDI export, the spatial renderer and the listening page all
+follow the map.
+
 ## Rendering
 
 ```

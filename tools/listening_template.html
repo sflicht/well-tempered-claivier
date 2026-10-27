@@ -29,7 +29,8 @@
 body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 20px 40px }
-.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 18px }
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px }
+.wrap > * { min-width: 0 }
 header { display: grid; gap: 6px }
 .eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
 h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(28px, 6vw, 44px); line-height: 1.05; margin: 0; text-wrap: balance }
@@ -37,7 +38,7 @@ h1 em { font-style: italic; font-weight: 500; color: var(--accent) }
 .lede { color: var(--muted); max-width: 64ch; margin: 0 }
 .picker { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
 select, button { font: inherit; color: var(--ink) }
-select { background: var(--desk); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 10px; min-width: 0; max-width: 100%; flex: 1 1 260px }
+select { background: var(--desk); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 10px; min-width: 0; width: 100%; max-width: 100%; flex: 1 1 260px; text-overflow: ellipsis }
 .btn { background: var(--desk); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 14px; cursor: pointer }
 .btn:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
 .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; min-width: 92px }
@@ -220,8 +221,20 @@ function note(when, dur, p, v) {
   o.connect(f); f.connect(g); g.connect(master); o.start(when); o.stop(off + 0.6);
   live.add(o); o.onended = () => live.delete(o);
 }
-const secPerQ = () => 60 / (cur.bpm * tempo);
-function pos() { return playing ? startPos + (ctx.currentTime - startCtx) / secPerQ() : startPos; }
+// Score time (quarters) -> seconds under the movement's tempo map (abrupt changes and ramps).
+function secOf(q) {
+  const m = cur.tmap || [[0, cur.bpm, 0]]; let sec = 0;
+  for (let k = 0; k < m.length; k++) {
+    const [t0, b0] = m[k]; const nx = m[k + 1] || [Infinity, b0, 0]; const [t1, b1, ramp] = nx;
+    if (q <= t0) break; const e = Math.min(q, t1);
+    if (ramp && b1 !== b0 && isFinite(t1)) { const bt = b0 + (b1 - b0) * (e - t0) / (t1 - t0); sec += 60 * (t1 - t0) / (b1 - b0) * Math.log(bt / b0); }
+    else sec += (e - t0) * 60 / b0;
+    if (q <= t1) break;
+  }
+  return sec;
+}
+function qOf(sec) { let lo = 0, hi = cur.end + 8; for (let k = 0; k < 40; k++) { const mid = (lo + hi) / 2; if (secOf(mid) < sec) lo = mid; else hi = mid; } return (lo + hi) / 2; }
+function pos() { return playing ? qOf(secOf(startPos) + (ctx.currentTime - startCtx) * tempo) : startPos; }
 function play() {
   ensureAudio(); if (ctx.state === 'suspended') ctx.resume();
   if (startPos >= cur.end - 0.01) startPos = 0;
@@ -229,9 +242,9 @@ function play() {
   $('play').textContent = 'Pause'; timer = setInterval(sched, 30); sched(); requestAnimationFrame(tick);
 }
 function sched() {
-  const ahead = ctx.currentTime + 0.25, spq = secPerQ();
-  while (ptr < flat.length) { const [t, d, p, v, i] = flat[ptr]; const when = startCtx + (t - startPos) * spq;
-    if (when > ahead) break; if (audible(i) && when >= ctx.currentTime - 0.02) note(when, d * spq * 0.97, p, v); ptr++; }
+  const ahead = ctx.currentTime + 0.25, s0 = secOf(startPos);
+  while (ptr < flat.length) { const [t, d, p, v, i] = flat[ptr]; const st = secOf(t), when = startCtx + (st - s0) / tempo;
+    if (when > ahead) break; if (audible(i) && when >= ctx.currentTime - 0.02) note(when, (secOf(t + d) - st) / tempo * 0.97, p, v); ptr++; }
   if (pos() >= cur.end + 0.5) { stop(); startPos = 0; draw(); }
 }
 function stop() { if (!ctx) { playing = false; return; } if (playing) startPos = pos(); playing = false; clearInterval(timer);
@@ -258,7 +271,7 @@ function draw() {
   cur.entries.forEach(en => { if (en[1] < t0 || en[1] > t1) return; const ex = x(en[1]); g.globalAlpha = .9; g.beginPath(); g.moveTo(ex, 14); g.lineTo(ex, H); g.setLineDash([2, 3]); g.stroke(); g.setLineDash([]);
     g.fillText((cur.voices[en[0]] ? cur.voices[en[0]].a + ' ' : '') + en[2], ex + 3, 24); g.globalAlpha = 1; });
   g.strokeStyle = css('--ink'); g.lineWidth = 1.5; g.beginPath(); g.moveTo(x(now), 0); g.lineTo(x(now), H); g.stroke();
-  $('clock').textContent = `bar ${barOf(Math.min(now, cur.end - 1e-3))} · ${fmt(now * 60 / cur.bpm / tempo)} / ${fmt(cur.end * 60 / cur.bpm / tempo)}`;
+  $('clock').textContent = `bar ${barOf(Math.min(now, cur.end - 1e-3))} · ${fmt(secOf(now) / tempo)} / ${fmt(secOf(cur.end) / tempo)}`;
   drawMapHead(now);
 }
 let mapImg = null;

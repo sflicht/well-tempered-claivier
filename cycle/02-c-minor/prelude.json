@@ -12,6 +12,25 @@
    4
   ],
   "bpm": 63,
+  "tempo_map": [
+   [
+    92,
+    40
+   ],
+   [
+    96,
+    63
+   ],
+   [
+    122,
+    63
+   ],
+   [
+    128,
+    46,
+    "ramp"
+   ]
+  ],
   "tempo_text": "Andante; the accents follow the groups",
   "composer": "Original composition (Claude) for Sam",
   "instrument": "Keyboard",

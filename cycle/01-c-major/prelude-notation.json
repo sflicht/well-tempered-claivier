@@ -12,6 +12,17 @@
    4
   ],
   "bpm": 70,
+  "tempo_map": [
+   [
+    220,
+    70
+   ],
+   [
+    228,
+    52,
+    "ramp"
+   ]
+  ],
   "tempo_text": "Andante, sempre legato",
   "movement_number": 1,
   "piece_type": "prelude",

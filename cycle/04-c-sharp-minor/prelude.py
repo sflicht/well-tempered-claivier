@@ -38,7 +38,7 @@ bar('6 answer completes over V7; V - i in root position at 2.5',
     U='D#5:3 C#5:1 B#4:1 A4:1 G#4:2 C#5:2 E5:2',
     L='G#2:2 B#2:1 D#3:1 G#3:2 C#3:2 E3:1 D#3:1 C#3:1 B#2:1')
 bar('7 V: M on the dominant', U='D#5:2 B#4:1 C#5:1 D#5:2 F#5:3 E5:1 D#5:1 C#5:1',
-    L=S('G#2 D#3 B#3 D#3 G#2 D#3 B#3 F#3 D#3 F#3 B#3 F#3'))
+    L=S('G#2 D#3 F#3 D#3 G#2 D#3 B#3 F#3 D#3 F#3 B#3 F#3'))
 bar('8 i, then B7 (V of E)', U='C#5:2 D#5:1 E5:1 G#5:4 F#5:2 E5:1 D#5:1',
     L=S('C#3 G#3 C#4 G#3 C#3 G#3 E4 B3 F#3 A3 B3 D#4'))
 # ---------------------------------------------------------------- B: E major
@@ -65,9 +65,9 @@ bar('17 answer completes; C#7 - D (VI of F#m, Neapolitan of C#m)',
 bar('18 B major: M; turns to G#m7 so the C# can be held', U='D#5:2 B4:1 C#5:1 D#5:2 F#5:3 E5:1 D#5:1 C#5:1~',
     L=S('B2 F#3 B3 F#3 D#3 F#3 B3 D#4 G#2 D#3 F#3 B3'))
 # dominant pedal: the harmony now moves every half bar; the crux sounds in the R.H.
-bar('19 V pedal. CRUX (BWV 849) C#-B#: 4-3 over G#; L keeps B# out until the C# resolves',
+bar('19 V pedal. CRUX (BWV 849) C#-B#: 4-3 over G#; the L.H. leaves the B# to the R.H.',
     U='C#5:6 B#4:6',
-    L=S('G#2 D#3 F#3 D#3 G#2 D#3 F#3 D#3 G#2 D#3 B#3 D#3'))
+    L=S('G#2 D#3 F#3 D#3 G#2 D#3 F#3 D#3 G#2 D#3 F#3 D#3'))
 bar('20 CRUX E-D#: i6/4 - V7 over the pedal (6-5)', U='E5:6 D#5:6',
     L=S('G#2 C#3 E3 G#3 E3 C#3 G#2 D#3 F#3 B#3 F#3 D#3'))
 bar('21 ARRIVAL: held seventh F#5 over V(b9) - V7', U='D#5:2 F#5:4 B#4:1 D#5:1 F#5:1 D#5:1 B#4:1 D#5:1',
@@ -121,7 +121,7 @@ if __name__ == '__main__':
     out = Path(__file__).with_name('prelude.json')
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Prelude IV in C-sharp minor (third edition)',
             'composer': 'Claude / Sam', 'instrument': 'Piano', 'key': 'C#', 'mode': 'minor', 'meter': [3, 4],
-            'bpm': 100, 'tempo_text': 'Allegro inquieto', 'movement_number': 4, 'piece_type': 'prelude',
+            'bpm': 100, 'tempo_map': [[108, 100], [114, 78, 'ramp']], 'tempo_text': 'Allegro inquieto', 'movement_number': 4, 'piece_type': 'prelude',
             'edition': 'third',
             'credits': 'Bars 19-20 (R.H.): J. S. Bach, WTC I, Fugue in C-sharp minor BWV 849, subject 1 (C#-B#-E-D#)',
             'markers': [{'t': 0, 'label': 'Allegro inquieto'}, {'t': 8 * 3, 'label': 'E major'},

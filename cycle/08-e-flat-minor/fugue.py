@@ -160,7 +160,7 @@ put('S2', 17, 3.5, CS1DB)
 put('B2', 17, 3, 'Db2:8 Gb2:8 Ab2:4 Db2:4')
 # b19-21: Baritone states the subject in augmentation (b-flat, real form) as the bass
 theme('Bar', 19, 1, aug(octv(tr(S, 7, 4), -2), 2), 'S augmentation x2 (b-flat)', 3)
-theme('A2', 19, 1, 'R:4 F4:2 Eb4:2 Db4:4 C4:4 Bb3:8 Gb4:4 F4:4 Eb4:8 Db4:4 C4:4', 'CS augmentation x2 (b-flat)', 3)   # the countersubject at half speed
+theme('A2', 19, 2, 'F4:2 Eb4:2 Db4:4 C4:4 Bb3:8 Gb4:4 F4:4 Eb4:8 Db4:4 C4:4', 'CS augmentation x2 (b-flat)', 3)   # the countersubject at half speed
 put('S1', 19, 1, 'R:2 F5:2 Bb5:2 Db6:6 Eb6:4 Db6:4 Bb5:6')                 # descant over the slow pair
 theme('T1', 20, 2.5, octv(tr(I5, 7, 4), -1), 'I5 inversus (b-flat), off the beat')  # F4 Bb3 A3 Bb3 C4 Db4 Eb4 Gb4 F4
 put('S2', 20, 4.5, 'F5:2 C5:8 Db5:4')
@@ -188,7 +188,7 @@ put('S1', 27, 1, 'Eb6:8 Cb6:4 D6:4 Eb6:4')                                      
 # b28-30: false return in e-flat -- Bass II states the INVERSION in augmentation; three entries pile in above it
 theme('B2', 28, 1, aug(octv(I, -1), 2), 'I augmentation x2 (e-flat), bass', 3)              # Eb3 Ab2 Gb2 Ab2 Bb2 Cb3 D3 F3 Eb3
 ICS = W.invert_diatonic(CS1, 'Eb4', SC)                                                    # countersubject inverted: a RISING scale
-theme('Bar', 28, 1, 'R:4 ' + aug(octv(ICS, 1), 2), 'CS inversus in augmentation x2', 3)   # mirror of bars 19-21
+theme('Bar', 28, 2, aug(octv(ICS, 1), 2), 'CS inversus in augmentation x2', 3)   # mirror of bars 19-21
 theme('S1', 28, 2.5, octv(SM, 1), 'SM rectus, G-flat major, off the beat')                  # Gb5 Db6 Eb6 Db6 Cb6 Bb5 Ab5 F5 Gb5
 theme('A1', 29, 1.5, I5, 'I5 inversus (e-flat), off the beat')                            # Bb4 Eb4 D4 Eb4 F4 Gb4 Ab4 Cb5 Bb4
 
@@ -248,11 +248,12 @@ put('B1', 43, 3, 'Cb3:4 Eb3:4 Fb3:4 Db3:4 Gb2:4 Cb3:4')
 
 # ================================================================ RETURN AND GUEST (b45-47)
 RI = W.invert_diatonic(W.retrograde(SQ), 'Eb4', SC)          # retrograde inversion = the Prelude's melody: Eb F D Cb Bb Ab Gb Ab Eb
-theme('B2', 45, 2, aug(octv(RI, -2), 2), 'RI retrograde-inversion x2 (the Prelude melody) in the bass', 3)
+theme('B2', 45, 2, aug(octv(RI, -1), 2), 'RI retrograde-inversion x2 (the Prelude melody) in the bass', 3)
 theme('T1', 45, 3, BACH, "BWV 853's own subject (J. S. Bach, WTC I/8), the guest", 3)
 theme('S2', 46, 2, aug(octv(SQ, 1), 2), 'S augmentation x2 over Bach (3 beats later)', 3)
 
-put('B1', 45, 1, 'Ab2:4 Bb2:8 Ab2:8 Gb2:8 Cb3:4 Bb2:4 Ab2:12 Bb2:12 Eb3:4')         # tenor-bass line between the guest and the deep bass
+put('B1', 45, 1, 'Ab2:4')                                                              # hands the bass to the retrograde inversion
+put('B1', 48, 2, 'Bb2:8 Eb3:4')
 put('A2', 45, 1, 'Cb4:4 Bb3:4')
 put('S2', 45, 1, 'Eb5:4')
 put('S1', 46, 2, 'Gb6:8 F6:4 Eb6:12 Cb6:4 Bb5:8')                                          # descant over the three subjects
@@ -273,7 +274,11 @@ def build(nbars):
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue VIII in E-flat minor, nine voices',
             'composer': 'Claude / Sam (subject head after J. S. Bach, BWV 853)', 'instrument': 'Nine keyboards (open score)',
             'key': 'Eb', 'mode': 'minor', 'meter': list(METER), 'bpm': 80, 'tempo_text': 'Andante, sempre legato',
-            'movement_number': 8, 'piece_type': 'fugue', 'edition': 'third'}
+            'movement_number': 8, 'piece_type': 'fugue', 'edition': 'third',
+            # broadening through the approach into the silence; the arrival chord broad, then on; a held breath
+            # into the deceptive cadence, the C-flat pp slower, a tempo for the guest, final ritardando
+            'tempo_map': [[128, 80], [140, 70, 'ramp'], [144, 64], [148, 74, 'ramp'], [164, 74], [170, 66, 'ramp'],
+                          [170, 60], [176, 76], [194, 76], [200, 54, 'ramp']]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 64) for i in range(len(NAMES))]
     dyn = {1: -6, 13: -10, 16: -4, 19: -6, 22: -8, 25: -2, 28: 2, 31: 4, 32: 8, 34: 10, 35: 2, 37: 14,
            39: 10, 41: 16, 42: 10, 43: 0, 44: -16, 45: 0, 47: 6, 48: 8, 49: 10, 50: 6}

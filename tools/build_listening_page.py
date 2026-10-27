@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
-from render_music import TEMPERAMENTS, temperament_offsets  # noqa: E402
+from render_music import TEMPERAMENTS, temperament_offsets, tempo_points  # noqa: E402
 from critic import analyse  # noqa: E402
 
 
@@ -52,7 +52,8 @@ def compact(path, group_voices=False, stats_score=None):
     except Exception as exc:  # noqa: BLE001
         stats = {'error': str(exc)}
     markers = [[round(float(m['t']), 3), m.get('label', '')] for m in meta.get('markers', [])]
-    return {'bpm': float(meta.get('bpm', 80)), 'meter': meter, 'key': f"{meta.get('key', '')} {meta.get('mode', '')}",
+    tmap = [[p[0], p[1], 1 if p[2] else 0] for p in tempo_points(meta)]
+    return {'tmap': tmap, 'bpm': float(meta.get('bpm', 80)), 'meter': meter, 'key': f"{meta.get('key', '')} {meta.get('mode', '')}",
             'sub': meta.get('subtitle', ''), 'voices': voices, 'entries': entries, 'stats': stats, 'markers': markers}
 
 

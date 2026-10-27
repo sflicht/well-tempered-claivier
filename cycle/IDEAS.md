@@ -43,11 +43,11 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
    counterpoint; all 24 vertical orderings are used, one in each of the 24
    keys. The whole key cycle compressed into one movement.
 
-8. **[in progress] Canon cancrizans per motum contrarium.** A table canon: the
+8. **[built] Canon cancrizans per motum contrarium.** A table canon: the
    second voice is the first played backwards and upside down, so the page
    rotated 180° is the same piece.
 
-9. **[in progress] Canon per tempora.** One melody at four simultaneous speeds,
+9. **[stopped] Canon per tempora.** (Search scripts exist in `cycle/appendix/canones/`; the work was stopped before a score was written.) One melody at four simultaneous speeds,
    staggered so that every voice reaches the final cadence together. No single
    player could perform it.
 

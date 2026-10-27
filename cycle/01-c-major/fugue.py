@@ -243,7 +243,7 @@ def main():
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'I. Fugue in C major — Scala strettarum',
         'number': 1, 'movement_number': 1, 'piece_type': 'fugue',
-        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 104,
+        'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 104, 'tempo_map': [[162, 104], [168, 84, 'ramp']],
         'tempo_text': 'Allegro con brio',
         'composer': 'Original composition (Claude) for Sam',
         'instrument': 'Keyboard — two voices',

@@ -230,7 +230,7 @@ def main():
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'II. Fugue in C minor (a 3)',
         'number': 2, 'movement_number': 2, 'piece_type': 'fugue',
-        'key': 'C', 'mode': 'minor', 'meter': list(METER), 'bpm': 80,
+        'key': 'C', 'mode': 'minor', 'meter': list(METER), 'bpm': 80, 'tempo_map': [[138, 80], [144, 62, 'ramp']],
         'tempo_text': 'Allegro moderato',
         'composer': 'Original composition (Claude) for Sam; guest subject J. S. Bach, BWV 847',
         'instrument': 'Keyboard - three voices',

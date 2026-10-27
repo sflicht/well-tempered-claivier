@@ -345,7 +345,7 @@ if __name__ == '__main__':
     out = Path(__file__).with_name('fugue.json')
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue IV in C-sharp minor, five voices (third edition)',
             'composer': 'Claude / Sam', 'instrument': 'Piano', 'key': 'C#', 'mode': 'minor', 'meter': [3, 4],
-            'bpm': 72, 'tempo_text': 'Moderato, sostenuto', 'movement_number': 4, 'piece_type': 'fugue',
+            'bpm': 72, 'tempo_map': [[144, 72], [150, 56, 'ramp']], 'tempo_text': 'Moderato, sostenuto', 'movement_number': 4, 'piece_type': 'fugue',
             'edition': 'third',
             'credits': 'Second subject ("crux"): J. S. Bach, Well-Tempered Clavier I, Fugue in C-sharp minor BWV 849',
             'markers': [{'t': 0, 'label': 'Moderato, sostenuto'}, {'t': 12 * 3, 'label': 'E major'},

@@ -105,7 +105,8 @@ if __name__ == '__main__':
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Prelude VIII in E-flat minor',
             'composer': 'Claude / Sam (after the first-draft "Night loom" prelude)', 'instrument': 'Piano',
             'key': 'Eb', 'mode': 'minor', 'meter': list(METER), 'bpm': 90, 'tempo_text': 'Andante sostenuto, attacca',
-            'movement_number': 8, 'piece_type': 'prelude', 'edition': 'third'}
+            'movement_number': 8, 'piece_type': 'prelude', 'edition': 'third',
+            'tempo_map': [[114, 90], [126, 64, 'ramp']]}            # broadening into the half cadence (attacca)
     voices = [('Melody', 'M.', 'treble', 70), ('Figure', 'F.', 'treble', 54), ('Bass', 'B.', 'bass', 62)]
     W.build_score(HERE / 'prelude.json', meta, voices, B.bars, dynamics=dyn, tags=B.tags,
                   subject='Eb5:12 F5:6 D5:6 Cb5:12 Bb4:6 Ab4:6 Gb4:6 Ab4:6 Gb4:12 Ab4:12 Eb5:12')
