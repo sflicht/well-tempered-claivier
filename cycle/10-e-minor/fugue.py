@@ -195,7 +195,7 @@ put('CH', 26, 1, CH1)
 theme('A1', 26, 1, RG, 'Coro I: subject in G major = the chorale line in diminution')
 theme('Bar2', 26, 1, octv('E4:6 E4:4 D#4:2 E4:2 F#4:2 G4:2 B4:4 A4:2 B4:4 G4:2 C5:6 B4:2 A4:2 G4:2 F#4:2 E4:2 D4:2', -1),
       'Coro II: subject in E minor a tenth below (natural-minor tail)')
-put('T2', 26, 1, 'B3:12 C4:6 D4:6 G4:12 D4:6 A3:6')
+put('T2', 26, 1, 'B3:12 E4:6 D4:6 G4:12 D4:6 C4:6')
 theme('B2', 28, 2, octv(RA, -2), 'Coro II: answer (B minor), bass')
 theme('S1', 28, 4, tr(IG, 7, 4), 'Coro I: inversion in D major, soprano')
 
