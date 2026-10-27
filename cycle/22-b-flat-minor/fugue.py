@@ -321,7 +321,7 @@ put('S2', 44, 4, 'Eb5:4')
 # speed in Coro III's tenor (b41-44, with it: canon per augmentationem) and Coro IV's tenor (b45-48,
 # ending on the axis).  The contrabass enters last but one, C2 (ii-half-dim7) into a dominant
 # pedal F1 from b45 that is held through the axis.  Harmony, two chords a bar:
-#   b41 i VI | i6 iv | i i6 | V(4-3) ii-half-dim7 | i6/4 iv7/F | i6/4 V(b9) | V(4-3) V+ | V7 CT-dim7 (B D F Ab)
+#   b41 i VI | i6 iv | i6/4 i6 | V(4-3) ii-half-dim7 | i6/4 iv7/F | i6/4 V(b9) | V(4-3) V+ | V7 CT-dim7 (B D F Ab)
 # The axis chord is the common-tone diminished seventh of F (B-natural D F A-flat over the pedal): a
 # chord of equal intervals, the same forwards and backwards.
 S2X = W.scale_rhythm(oc(S, 1), 2)

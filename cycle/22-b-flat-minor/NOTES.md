@@ -134,8 +134,10 @@ S3 b37, A3 b40, T3 and S4 b41, Bar4 b43, B4 b44.3, A4 and T4 b45, Ms4 b45.3.
 * Harmony, two chords a bar: b41 i VI | i6 iv | i6/4 i6 | V(4-3) ii-half-dim7 | i6/4 iv7/F | i6/4
   V(b9) | V(4-3) V+ | V7 → the axis chord.
 
-Moving voices per bar at the summit: b45 20, b46 19, b47 19, b48 22 (23 sounding; the contrabass
-holds) — mirrored b49 22 (19 + 3 repeated), b50 19, b51 19, b52 20.
+Moving voices per bar at the summit (critic, onsets per bar): b45 20, b46 19, b47 19, b48 22 (all
+23 sounding; the contrabass holds); after the axis b49 19, b50 18, b51 19, b52 14 (the mirrored
+onsets fall differently across the barlines: notes that start in one bar forwards end there
+backwards). So seven consecutive bars, b45–51, have 18–22 moving lines.
 
 ## Critic numbers (`tools/critic.py`)
 
