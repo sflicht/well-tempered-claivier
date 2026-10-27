@@ -37,8 +37,12 @@ python3 tools/reduce.py cycle/NN-key/fugue.json --per beat  # harmonic reduction
 ```
 
 Calibration: Bach's own four-voice fugues (BWV 869, BWV 878) score 0
-same-direction parallel 5ths/8ves on beats and roughly one unresolved
-dissonance per 10-80 bars. Treat every `parallels_error` and every
+same-direction parallel 5ths/8ves on consecutive notes, 1-2 beat-to-beat
+(accented) parallels with passing notes between, a pitch class tripled on
+1-2% of beats, 3-9 low-register seconds/sevenths/ninths (both notes below G3),
+and roughly one unresolved dissonance per 10-80 bars. More voices naturally
+raise the tripling figure; keep it far below the old drafts (Fugue V v3: 38%,
+the 100-bar Fugue VIII: 66%). Treat every `parallels_error` and every
 `UNRESOLVED`/`UNPREPARED+UNRESOLVED` dissonance as something to fix or to
 justify in NOTES.md. Clean numbers do not make music; they only remove
 mistakes.

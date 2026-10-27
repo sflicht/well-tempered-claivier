@@ -184,6 +184,56 @@ def collapse_runs(items):
     return out
 
 
+def check_beat_parallels(S):
+    """Accented parallels: P5/P8 on successive beats between the same pair,
+    both voices having moved, even when passing notes intervene (BWV 869: 1 in
+    76 bars; BWV 878: 0)."""
+    out = []
+    nv = len(S.voices)
+    beats = list(range(0, S.end, S.beat))
+    snds = [S.sounding(t) for t in beats]
+    for i in range(nv):
+        for j in range(i + 1, nv):
+            for k in range(1, len(beats)):
+                a0, a1 = snds[k - 1], snds[k]
+                if not (i in a0 and j in a0 and i in a1 and j in a1):
+                    continue
+                pa, pb = S.note(i, a0[i][0])['p'], S.note(j, a0[j][0])['p']
+                qa, qb = S.note(i, a1[i][0])['p'], S.note(j, a1[j][0])['p']
+                if pa == qa or pb == qb:
+                    continue
+                if is_perfect(pa, pb) and is_perfect(qa, qb) and iclass(pa, pb) == iclass(qa, qb) \
+                        and (qa - pa) * (qb - pb) > 0:
+                    out.append({'t': beats[k], 'loc': S.loc(beats[k]), 'sev': 'warn',
+                                'voices': (S.names[i], S.names[j]),
+                                'kind': 'beat-to-beat ' + ('P8' if iclass(qa, qb) == 0 else 'P5'),
+                                'what': f"{pname(pa, S.flats)}/{pname(pb, S.flats)} -> {pname(qa, S.flats)}/{pname(qb, S.flats)}"})
+    return collapse_runs(out)
+
+
+def sonority_stats(S):
+    """Doubling and low-register clash measures on beats/attacks."""
+    tripled = beats = 0
+    for t in range(0, S.end, S.beat):
+        ps = [S.note(i, k)['p'] for i, (k, _) in S.sounding(t).items()]
+        if len(ps) >= 3:
+            beats += 1
+            c = collections.Counter(p % 12 for p in ps)
+            if max(c.values()) >= 3:
+                tripled += 1
+    low = []
+    for t in S.onsets:
+        snd = S.sounding(t)
+        ps = sorted((S.note(i, k)['p'], i, att) for i, (k, att) in snd.items())
+        for x in range(len(ps)):
+            for y in range(x + 1, len(ps)):
+                a, b = ps[x][0], ps[y][0]
+                if b < 55 and (b - a) in (1, 2, 10, 11, 13, 14) and (ps[x][2] or ps[y][2]):
+                    low.append(S.loc(t))
+    return {'pc_tripled_on_beats_pct': round(100 * tripled / max(1, beats), 1),
+            'low_register_seconds': len(low), 'low_register_examples': sorted(set(low))[:12]}
+
+
 def check_direct(S):
     out = []
     prev = None
@@ -507,6 +557,8 @@ def analyse(data, bars=None):
     mel = check_melody(S)
     R['parallels'] = par
     R['direct'] = check_direct(S)
+    R['beat_parallels'] = check_beat_parallels(S)
+    R['sonority'] = sonority_stats(S)
     R['dissonance'] = dis
     R['melody'] = mel
     R['crossing'] = check_crossing(S)
@@ -521,13 +573,16 @@ def analyse(data, bars=None):
     R['ranges'] = ranges
     if bars:
         lo, hi = bars
-        for k in ('parallels', 'direct', 'dissonance', 'melody', 'crossing'):
+        for k in ('parallels', 'beat_parallels', 'direct', 'dissonance', 'melody', 'crossing'):
             R[k] = [x for x in R[k] if lo <= x['t'] // S.bar + 1 <= hi]
     c = collections.Counter
     R['summary'] = {
         'parallels_error': sum(1 for x in par if x['sev'] == 'error'),
         'parallels_weak': sum(1 for x in par if x['sev'] == 'warn'),
         'doubling_runs': sum(1 for x in par if x['sev'] == 'doubling'),
+        'beat_parallels': sum(1 for x in R['beat_parallels'] if x['sev'] != 'doubling'),
+        'pc_tripled_on_beats_pct': R['sonority']['pc_tripled_on_beats_pct'],
+        'low_register_seconds': R['sonority']['low_register_seconds'],
         'dissonance_unresolved': sum(1 for x in dis if x['sev'] == 'error'),
         'dissonance_kinds': dict(c(x['kind'] for x in dis)),
         'melody': dict(c(x['kind'] for x in mel)),
@@ -551,6 +606,11 @@ def print_report(R, quiet=False):
     for x in R['parallels']:
         if x['sev'] in ('error', 'warn', 'doubling'):
             print(f"   [{x['sev']}] {x['loc']} {x['voices'][0]}/{x['voices'][1]} {x['kind']}: {x['what']}")
+    print('-- beat-to-beat (accented) parallels, passing notes between:')
+    for x in R['beat_parallels']:
+        print(f"   [{x['sev']}] {x['loc']} {x['voices'][0]}/{x['voices'][1]} {x['kind']}: {x['what']}")
+    if R['sonority']['low_register_examples']:
+        print('-- low-register seconds/sevenths/ninths at:', ', '.join(R['sonority']['low_register_examples']))
     print('-- unresolved / problem dissonances:')
     for x in R['dissonance']:
         if x['sev'] != 'ok':
