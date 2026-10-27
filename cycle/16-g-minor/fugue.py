@@ -207,6 +207,12 @@ def summit(s0):
     T('OS', 21.5, 'A5:2 D6:4 C6:4 Bb5:16')
     T('HS1', 16, 'A5:8 G5:4 A5:4 E5:8 F#5:8 G5:16')
     T('RT', 6, 'D4:12 F4:8 Eb4:4 D4:4')
+    T('HB', 14.5, oc(dsh(S7, 5), -2), 'summit: subject 7 (line 7), low')
+    T('RBr', 19.5, oc(S8, -1), 'summit: subject 8 (line 8), at home, tenor')
+    T('OB', 22, oc(S1, -1), 'summit: subject 1 (line 1) returns in the tenor')
+    T('RS', 11, 'G4:4 Bb4:8 G4:6 A4:2 Bb4:2 A4:6')
+    T('OB', 13.5, oc(dsh(S7, 2), -1), 'summit: subject 7 (line 7), on D')
+    T('HS2', 6.5, dsh(S8, 3), 'summit: subject 8 (line 8), on A')
     # FREE-END
 
 

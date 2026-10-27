@@ -2,7 +2,40 @@
 """Fugue XIII in F-sharp major, fourteen voices:
 "Fuga canonica a 14 sopra il fondamento di Goldberg".
 
-(Draft skeleton; the header is completed when the piece is.)
+The fundamentum is the ground of J. S. Bach's Goldberg Variations, BWV 988 (the eight bass notes
+G F# E D B C D G that Bach also worked into the Fourteen Canons, BWV 1087), transposed to F-sharp
+major (F# E# D# C# A# B C# F#), one note to a 3/4 bar.  It is heard ten times without a break
+(bars 1-80).  Over it a tower of strict canons grows one pair per variation, as the Goldberg
+canons climb through the intervals:
+
+    canon I    at the unison,             two bars apart   (enters bar 9)
+    canon II   at the 2nd above,          one bar apart    (bar 17)
+    canon III  at the 3rd above,          two bars apart   (bar 25)
+    canon IV   at the 4th below, by inversion (mirror F#<->C#), four bars apart (bar 33)
+    canon V    at the 5th below, by inversion (mirror F#<->B),  three bars apart (bar 41)
+    canon VI   at the 6th below,          eight bars apart (bar 49)
+
+Every dux is a free line written here; every comes is generated from its dux by the transform in
+CANONS and nothing else (check_canons.py verifies this from the built JSON).  Each dux opens with
+the fugue subject - the ground itself in dotted diminution plus a springing tail - and the
+soggetto voice states it first, alone with the ground (bars 1-8).  With the ground and the
+soggetto that is fourteen real voices; the summit (variation 8, bars 57-64) has every canon running
+over the ground at once while the subject enters in stretto one bar apart (canon VI's comes on
+A-sharp in bar 57, canon II's dux on G-sharp in 58, its comes on A-sharp in 59, canon IV's comes
+with the inverted head in 61).  The canons then close inside the summit (CANON_END).
+
+There is no room in fourteen voices for the canons at the 7th and the octave, so the coda
+supplies them the way Bach ended the Goldberg set: a Quodlibet (variations 9-10, bars 65-80) after
+Var. 30, with the two folk songs Bach combined there - "Ich bin so lang nicht bei dir gewest" in
+canon at the octave, "Kraut und Ruben haben mich vertrieben" in canon at the 7th below - in 3:2
+augmentation over the same ground, then the subject against "Ich bin", both Kraut phrases at once,
+and a fourteen-part final chord.  The tunes are traditional; the counterpoint around them, the
+subject, the canon duxes and every free line are original.  Nothing is quoted from BWV 988's
+canons or from the Aria's melody.
+
+Every note is written here as a literal token string (or the subject/tune transformed by an
+explicit diatonic shift or mirror).  A scratch harness listed the critic's findings for alternative
+hand-written versions of a bar so that one could be chosen; no code chose or altered a pitch.
 """
 from __future__ import annotations
 
@@ -15,6 +48,7 @@ sys.path.insert(0, str(HERE.parents[1] / 'tools'))
 import wtclib as W  # noqa: E402
 
 METER = (3, 4)
+BPM = 68
 BAR = 12                     # sixteenths per bar
 LET = 'CDEFGAB'
 SHARPS = set('FCGDAE')       # F-sharp major: six sharps (B is natural)
@@ -426,8 +460,8 @@ put('Vdx', 41, subj(1) + [
     'R:12',                                                    # b56 I
     'R:4 C#6:2 A#5:2 R:4',                                       # b57
     'R:12',                                                      # b58
-    'R:12',                                                      # b59
-    'R:12',                                                      # b60
+    'R:4 A#5:2 G#5:2 R:4',                                       # b59
+    'R:4 G#4:2 F#4:2 R:4',                                       # b60
     'R:8 A#4:4',                                                 # b61
     'R:12',                                                      # b62
     'R:4 G#4:2 F#4:2 G#4:4',                                     # b63
@@ -535,6 +569,7 @@ entry('IIIdx', 77, 'Kraut und Ruben (second phrase), with it', n=4)
 # The close: canon III's pair and the soggetto carry the last bars; the voices that have fallen
 # silent re-enter on the final chord, so that it sounds in fourteen real parts.
 put('IIIco', 78, ['R:4 B3:8', 'B3:4 C#4:8', 'C#4:12'])
+put('Vco', 64, ['R:4 D#4:2 C#4:2 R:4'])                  # canon V's comes, free: a last sigh
 for _v, _p in (('Ico', 'C#3'), ('Vco', 'A#3'), ('IVco', 'A#4'), ('IVdx', 'C#5'), ('VIco', 'C#6'),
                ('Vdx', 'F#6'), ('IIdx', 'A#6')):
     put(_v, 80, [f'{_p}:12'])
@@ -543,7 +578,7 @@ put('IIco', 80, ['R:4 A#5:8'])
 # ---- fundamentum for the rest (plain ground; ornamented later where the texture asks for it)
 put('Fund', 33, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
 put('Fund', 41, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:8 B1:4', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
-for _b in (49, 57, 65, 73, 81):
+for _b in (49, 57, 65, 73):
     put('Fund', _b, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
 
 # =============================================================================================
@@ -605,7 +640,10 @@ def build(path=None, nbars=None):
             'subtitle': 'Fugue XIII in F-sharp major, fourteen voices: Fuga canonica sopra il fondamento di Goldberg',
             'composer': 'Claude / Sam (ground: J. S. Bach, BWV 988 and BWV 1087)',
             'instrument': 'Fourteen keyboards (open score)',
-            'key': 'F#', 'mode': 'major', 'meter': list(METER), 'bpm': 76,
+            'key': 'F#', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
+            # broadens into the summit (bars 55-64), a tempo for the quodlibet, broadens at the end
+            'tempo_map': [[162, BPM], [168, 60, 'ramp'], [189, 60], [192, 72, 'ramp'],
+                          [228, 72], [237, 52, 'ramp']],
             'tempo_text': 'Allegretto, con brio', 'movement_number': 13, 'piece_type': 'fugue',
             'edition': 'third'}
     voices = [(name, abbr, clef, 62) for k, name, abbr, clef in VOICES]
