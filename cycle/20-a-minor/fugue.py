@@ -363,7 +363,7 @@ def gen4():
     put('Vl1', 35, 1, 'C5:1 A4:1 E5:1 G#4:1 D5:2 C5:2 B4:2 A4:2 G#4:4')
     put('Vl8', 35, 2.25, 'G4:2 F#4:2 F4:2 E4:5')                      # SPLIT 17: Vl VIII from Vl I
     theme('Va3', 35, 1, oc(HEAD, -1), 'Va III: subject (A minor)')
-    put('Vl7', 35, 1, 'E6:4 B5:4 E6:8')
+    put('Vl7', 35, 1, 'E6:4 G#5:4 E6:8')
     put('Vl4', 35, 1, 'E5:8 R:8')
     put('Vl3', 35, 1, 'A4:4 G#4:4 E4:8')
     put('Vl2', 35, 1, 'C5:4 E5:12')
@@ -376,8 +376,23 @@ def gen4():
     put('Vl7', 36, 1, 'E6:16')
     put('Vl2', 36, 1, 'E5:4')
     put('Vl8', 36, 1, 'E4:4 B3:4 C4:4 E4:4')
-    put('Vc1', 36, 1, 'A2:4 R:4 C3:4 B2:4')
+    put('Vc1', 36, 1, 'A2:4 R:4 C3:4 R:4')
     put('Vl1', 36, 1, 'A4:4')
+    # b37: violin VI's tail splits (violin IX catches the lament); the first double bass enters
+    # with the subject (E3), leaving the pedal.
+    put('Vl6', 37, 1, 'C5:1 A4:1 E5:1 G#4:1 D5:2 C5:2 B4:2 A4:2 G#4:4')
+    put('Vl9', 37, 2.25, 'G4:2 F#4:2 F4:2 E4:5')                      # SPLIT 19: Vl IX from Vl VI
+    theme('Cb1', 37, 1, oc(HEAD, -2), 'Cb I: subject (A minor)')
+    put('Vl7', 37, 1, 'E6:12 D6:4')
+    put('Vl4', 37, 1, 'A5:4 G#5:4 A5:6 B5:2')
+    put('Va1', 37, 1, 'E4:16')
+    put('Vc2', 37, 1, 'A3:4 B3:4 C4:4 E4:4')
+    put('Va3', 37, 1, 'A3:4')
+    put('Va5', 37, 1, 'E3:4')
+    # b38: the double bass's tail splits: cello V takes the upper strand, the double bass keeps
+    # the lament and sinks to E2 for the summit.
+    put('Cb1', 38, 1, 'C3:1 A2:1 E3:1 G#2:1 R:1 G2:2 F#2:2 F2:2 E2:5')
+    put('Vc5', 38, 2, 'D3:2 C3:2 B2:2 A2:2 G#2:4')                    # SPLIT 20: Vc V from Cb I
 
 
 SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4]

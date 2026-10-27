@@ -253,8 +253,9 @@ def allemande():
     # @@alle
 
 
-# Tonal answer of the courante
-AC = 'A4:4 E5:6 D#5:2 F#5:6 E5:2 G#5:8 F#5:4 A5:6 G#5:2 F#5:6 D#5:2 E5:2 C#5:2 B4:8'
+# Answer of the courante: tonal head (A->E), modal body (D natural), so that it can sound against the
+# subject's own D in the overlapping exposition
+AC = 'A4:4 E5:6 D5:2 F#5:6 E5:2 G#5:8 F#5:4 A5:6 G#5:2 F#5:6 D5:2 E5:2 C#5:2 B4:8'
 
 
 def courante():
