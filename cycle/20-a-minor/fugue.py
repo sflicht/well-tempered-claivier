@@ -294,7 +294,7 @@ def gen3():
     put('Va1', 28, 1, 'B3:1 G3:1 D4:1 F#3:1 C4:2 B3:2 A3:2 G3:2 B3:4')
     put('Va3', 28, 2.25, 'F3:2 E3:4 D3:5')                           # SPLIT 12: Va III from Va I
     theme('Va2', 28, 1, 'R:2 G4:1 F#4:1 G4:2 G3:2 C4:2 E4:2 D4:2 F4:2', 'Va II: subject (C major)')
-    put('Vl4', 28, 1, 'B5:8 A5:4 D6:4')
+    put('Vl4', 28, 1, 'B5:8 R:8')
     put('Vl3', 28, 1, 'D5:8 C5:6 D5:2')
     put('Vl6', 28, 1, 'G4:12 F4:4')
     put('Vl1', 28, 1, 'D5:8 R:8')
@@ -302,14 +302,13 @@ def gen3():
     put('Cb1', 28, 1, 'G1:8 A1:4 D2:4')
     # b29: C tail splits (viola IV catches the lament); cello II enters in F major.
     put('Va2', 29, 1, 'E4:1 C4:1 G4:1 B3:1 F4:2 E4:2 D4:2 C4:2 Bb3:4')
-    put('Va2', 30, 1, 'A3:4')
     put('Va4', 29, 2.25, 'Bb3:2 A3:4 G3:5')                          # SPLIT 13: Va IV from Va II
     theme('Vc2', 29, 1, tr('R:2 G4:1 F#4:1 G4:2 G3:2 C4:2 E4:2 D4:2 F4:2', -7, -4), 'Vc II: subject (F major)')
-    put('Vl4', 29, 1, 'C6:8 A5:4 G5:4')
+    put('Vl4', 29, 1, 'R:8 A5:4 C6:4')
     put('Vl3', 29, 1, 'E5:8 F5:4 E5:4')
     put('Vl6', 29, 1, 'G4:8 A4:4 C5:4')
     put('Va1', 29, 1, 'C4:16')
-    put('Va3', 29, 1, 'G3:10 C4:6')
+    put('Va3', 29, 1, 'G3:8 R:8')
     put('Cb1', 29, 1, 'G1:8 F1:4 C2:4')
     # b30: the F tail splits (cello IV catches the lament) and turns: the cascade breaks off on the
     # way to the Neapolitan region and is pulled back to E, the dominant of A minor.
@@ -330,12 +329,12 @@ def gen3():
     put('Vc1', 32, 1, 'C4:1 A3:1 E4:1 G#3:1 D4:2 C4:2 B3:2 A3:2 G#3:4')
     put('Vc3', 32, 2.25, 'G3:2 F#3:2 F3:2 E3:5')                     # SPLIT 15: Vc III from Vc I
     put('Vl4', 31, 1, 'A5:8 C6:4 B5:4 A5:16')
-    put('Vl3', 31, 1, 'C5:8 E5:4 D5:4 C5:4 B4:4 A4:8')
+    put('Vl3', 31, 1, 'C5:8 E5:4 B4:4 C5:4 B4:12')
     put('Vl6', 31, 1, 'A4:12 G#4:4 A4:4')
     put('Va1', 31, 1, 'E4:4')
     put('Vc4', 31, 1, 'A2:4')
-    put('Vl2', 31, 1, 'R:4 C5:8 B4:4 E5:8 D5:4 B4:4')
-    put('Va3', 32, 1, 'E4:8 D4:4 E4:4')
+    put('Vl2', 31, 1, 'R:4 A4:8 B4:4 E5:8 D5:4 B4:4')
+    put('Va3', 32, 1, 'E4:8')
 
 
 SECTIONS = [solo_opening, solo_strings, gen2, gen3]

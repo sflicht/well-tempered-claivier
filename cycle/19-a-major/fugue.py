@@ -131,7 +131,7 @@ def assemble(v, total16):
 
 # ================================================================= the music
 # Absolute quarter positions of the sections (every boundary a multiple of 12).
-S1, S2, S3, S4, S5, S6, S7, END = 0, 36, 84, 120, 168, 192, 248, 276
+S1, S2, S3, S4, S5, S6, S7, END = 0, 36, 84, 120, 156, 180, 236, 264
 
 
 def summit():
@@ -188,6 +188,7 @@ def summit():
     put('H3', z + 45, 'D#5:4 E5:4 F#5:4 E5:8 E5:4 D5:4 C#5:4 D5:4 D5:4 C#5:4')
     put('T3', z + 45, 'F#4:12 E4:4 D4:4 C#4:4 B3:4 A3:4 A3:4 B3:4 C#4:4')
     put('D2', z + 44, 'D#5:6 C#5:2 B4:4 F#5:4')
+    put('Q3', z + 48, 'B3:8 A3:4')
     # @@free
     put('D3', z + 0, 'E6:6 D6:4 C#6:2 B5:4 C#6:6 B5:2 A5:12 C#6:4 R:8')
     # ---- Sigma 2 (z+17 .. z+32), F# minor.  The ground passes to the courante's basse, in courante rhythm.
