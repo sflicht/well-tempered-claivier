@@ -318,10 +318,36 @@ def gigue():
     theme('B4', z + 29 + Fr(2, 3), dshift(M, -21), 'Gigue mirror (A, bass), stretto')
     put('B3', z + 0, 'A2:8/3 C#3:4/3 G#2:8/3 B2:4/3 D3:8/3 B2:4/3 A2:8/3 E2:4/3 F#2:8/3 D2:4/3 E2:8/3 E3:4/3 D3:8/3 B2:4/3 E3:8/3 D3:4/3 C#3:8/3 A2:4/3 E2:8/3 E3:4/3 D3:8/3 B2:4/3 C#3:8/3 E3:4/3 F#3:8/3 D3:4/3 E3:8/3 C#3:4/3 D3:8/3 B2:4/3 E2:8/3')
     put('D4', z + 6, 'F#5:4/3 G#5:4/3 A5:4/3 B5:8/3 G#5:4/3 C#6:4/3 B5:4/3 A5:4/3 G#5:8/3 A5:4/3 B5:8/3 A5:4/3 G#5:4/3 F#5:4/3 E5:4/3 A5:8/3 F#5:4/3 G#5:8/3 B5:4/3 F#5:4/3 G#5:4/3 A5:4/3 B5:4/3 A5:4/3 G#5:4/3 C#6:4/3 B5:4/3 A5:4/3 G#5:4/3 A5:4/3 B5:4/3 C#6:4/3 B5:4/3 A5:4/3 B5:4/3 C#6:4/3 D6:4/3 C#6:4/3 B5:4/3 A5:4/3 B5:8/3')
+    put('H4', z + 10, 'F#5:4/3 E5:4/3 D5:4/3 E5:8/3 G#5:4/3')
+    put('H4', z + 14, 'D5:8/3 C#5:4/3 B4:8/3 E5:4/3 A4:4/3 B4:4/3 C#5:4/3 E5:8/3 D5:4/3 D5:8/3 B4:4/3 C#5:4/3 B4:4/3 A4:4/3 E5:8/3 F#5:4/3 E5:8/3 D5:4/3 C#5:8/3 D5:8/3 F#5:4/3')
+    put('T4', z + 14, 'B4:8/3 A4:4/3 G#4:4/3 A4:4/3 B4:4/3')
+    put('T4', z + 18, 'G#4:4/3 A4:4/3 B4:4/3 A4:8/3 E4:4/3 A4:4/3 G#4:4/3 F#4:4/3 G#4:8/3 B4:4/3 A4:8/3 C#5:4/3 D5:4/3 C#5:4/3 B4:4/3')
+    put('Q4', z + 18, 'E4:8/3 D4:4/3 C#4:4/3 D4:4/3 E4:4/3')
+    put('Q4', z + 22, 'C#4:4/3 D4:4/3 E4:4/3 F#4:8/3 D4:4/3 B3:4/3 C#4:4/3 D4:4/3 C#4:8/3 F#3:4/3 C#4:8/3 B3:4/3 A3:8/3')
+    put('B1', z + 22, 'A2:8/3 E2:4/3 F#2:8/3 D2:4/3')
+    put('B1', z + 26, 'C#3:8/3 A2:4/3 D3:8/3 B2:4/3 G#2:8/3 E2:4/3 A2:8/3')
+    put('B1', z + 24, 'G#2:8/3 B2:4/3 F#2:4')
+    put('D4', z + 30, 'A5:8/3 G#5:4/3 F#5:8/3 A5:4/3 B5:4/3 A5:4/3 G#5:4/3 A5:8/3 C#6:4/3 G#5:8/3 B5:4/3 A5:4')
+    put('H4', z + 30, 'C#5:8/3 B4:4/3 A4:8/3 F#4:4/3 F#4:8/3 G#4:4/3 A4:8/3 E4:4/3 B4:8/3 E5:4/3 C#5:4')
+    put('T4', z + 32, 'D4:8/3 F#4:4/3 E4:8/3 C#4:4/3 G#4:4/3 F#4:4/3 E4:4/3 E4:4')
+    put('Q4', z + 34, 'E4:8/3 B3:4/3 C#4:4')
     # @@giga
 
 
-SECTIONS = [allemande, courante, sarabande, gigue, summit]
+def ballo():
+    """V. Ballo a due, a tre (q156-180): the allemande and the courante together, each in its own
+    metre (bar lines meet every twelve quarters); then the sarabande joins."""
+    z = S5
+    theme('T2', z - 1, SC, 'Courante subject (Ballo a due)')
+    theme('D1', z + 1 + Fr(3, 4), oc(SA, 1), 'Allemande subject (Ballo a due)')
+    theme('B1', z + 5 + Fr(3, 4), oc(AA, -2), 'Allemande answer (bass)')
+    theme('T1', z + 9 + Fr(3, 4), SA, 'Allemande subject')
+    # the sarabande joins with the head of its subject, which stops on the dominant: the ball begins
+    theme('D3', z + 11, oc(' '.join(SS.split()[:10]), 1) + ' G#5:4', 'Sarabande subject, head (Ballo a tre)')
+    # @@ball
+
+
+SECTIONS = [allemande, courante, sarabande, gigue, ballo, summit]
 
 
 BPM = 66

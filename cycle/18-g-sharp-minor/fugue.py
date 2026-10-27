@@ -379,10 +379,34 @@ def build(nbars, path=None):
             'subtitle': 'Fugue XVIII in G-sharp minor, nineteen voices: Vigilate',
             'composer': 'Claude / Sam (after J. S. Bach, BWV 887 and BWV 61)',
             'instrument': 'Nineteen voices (open score, nineteen keyboards)',
-            'key': 'G#', 'mode': 'minor', 'meter': list(METER), 'bpm': 112,
-            'movement_number': 18, 'piece_type': 'fugue', 'edition': 'third'}
+            'key': 'G#', 'mode': 'minor', 'meter': list(METER), 'bpm': 104,
+            'movement_number': 18, 'piece_type': 'fugue', 'edition': 'third',
+            'tempo_text': 'Vigilate: from the evening to the morning',
+            'score_layout': {'paper': 'a2', 'staff_size': 17, 'staff_distance': 9, 'hide_empty_staves': True},
+            # the watches quicken a little; the knocks broaden; the silence; dawn is slower; the last cadence breathes
+            'tempo_map': [[0, 104], [90, 112], [180, 116], [330, 116], [336, 104, 'ramp'],
+                          [342, 92], [nbars * 6 - 18, 92], [nbars * 6, 66, 'ramp']],
+            'key_changes': [{'t': (DAWN - 1) * 6, 'key': 'Ab', 'mode': 'major'}]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 62) for i, n in enumerate(NAMES)]
-    return W.build_score(path or (HERE / 'fugue.json'), meta, voices, bars, entries=ENTRIES, subject=S_AEO)
+    return W.build_score(path or (HERE / 'fugue.json'), meta, voices, bars, entries=ENTRIES, subject=S_AEO,
+                         dynamics=dyn)
+
+
+def dyn(b):
+    """phrase dynamics by bar (velocity offset): night quiet, each watch a little louder, the knocks
+    loudest, the dawn begins very soft and grows as the voices wake."""
+    bar = b + 1
+    if bar <= 15:
+        return -10 + (bar - 1) * 0.4
+    if bar <= 30:
+        return -5 + (bar - 16) * 0.25
+    if bar <= 44:
+        return -1 + (bar - 31) * 0.4
+    if bar <= 56:
+        return 6 + (bar - 45) * 0.4
+    if bar == 57:
+        return 12
+    return min(0, -14 + (bar - DAWN) * 1.2)
 
 
 if __name__ == '__main__':

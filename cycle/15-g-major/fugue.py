@@ -5,11 +5,13 @@ Four choirs of four voices (SATB each).  Luther's Christmas chorale "Vom Himmel 
 her" (1539) supplies everything: each of its four lines becomes, in turn, the cantus firmus of a
 section, sung in long notes over a fugal exposition by one choir whose subject is that line in
 quick diminution ('Vorimitation', as in Pachelbel's and Bach's chorale fugues).  The sections
-overlap, so the voices accumulate 5 -> 9 -> 13 -> 16.  At the summit the four lines sound together,
+overlap, and each section has more real lines than the last (on average about 3, 6, 6, 7 moving voices,
+then 9 at the summit and all 16 on the last chord).  The middle sections modulate with real leading
+tones (E minor with D#, B minor with A# and C#, D major with C#).  At the summit the four lines sound together,
 each in its own choir and each answered canonically (rectus or inversus, at the same speed, in
 augmentation or in diminution) -- the trick that ends Bach's Canonic Variations on this chorale,
-BWV 769, turned up -- while the fugue subject runs through in stretto.  In the coda the bass sings
-line 1 in augmentation and an inner voice signs B-A-C-H.
+BWV 769, turned up -- while the fugue subject and the bells of all four subjects thread around them.  In the coda the bass sings
+line 1 in augmentation and the top voice signs B-A-C-H.
 
 Chorale pitches: music21 corpus, Essen folksong collection, erk30 no. 601 "VOM HIMMEL HOCH DA
 KOMM ICH HER" (in C), transposed to G; cross-checked against Bach's setting BWV 248/23 (soprano,
@@ -168,7 +170,7 @@ def build(nbars, path=None):
             'composer': 'Claude / Sam (on Luther\'s chorale, 1539; after Bach\'s Canonic Variations BWV 769)',
             'instrument': 'Four choirs of four voices (open score, sixteen keyboards)',
             'key': 'G', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
-            'tempo_text': 'Allegro, con allegrezza',
+            'tempo_text': 'Moderato, con allegrezza',
             'movement_number': 15, 'piece_type': 'fugue', 'edition': 'third',
             'score_layout': {'paper': 'a2', 'staff_size': 17, 'staff_distance': 9}}
     meta.update(TEMPO)
@@ -421,6 +423,8 @@ put('B1', 47, 1, 'C2:8 B1:8 E2:8 D2:8 C2:8 B1:8 E2:8 A1:8 D2:8')
 theme('S1', 47, 3, oc(aug(S1, 2), 1), 'I: subject 1 per augmentationem', 4)
 # ... and the siciliano slows down with it (half speed, Coro II soprano).
 theme('S2', 48, 3, aug(head(S3), 2), 'II: subject 3 head per augmentationem', 2)
+# ... while the Coro II tenor walks beneath in half notes, against the falling canon.
+put('T2', 47, 1, 'E3:8 D3:8 G3:8 A3:8 E3:8 B2:8 G3:8 E3:8')
 theme('A1', 50, 3, dshift(head(S1), 4), 'I: subject 1 head', 1)
 
 
@@ -476,13 +480,13 @@ put('B3', 58, 3, 'B2:24')
 
 
 # ================================================================ tempo, dynamics, build
-# Quarter = 66.  Small breaths at the section cadences; the summit broadens as line 1 enters high
-# above (b39-40) to 58, the dissolution slows to 52 for the coda, and the last chord is long.
+# Moderato, quarter = 66 (sixteenth-note subjects: a moderate pulse, not an Allegro).  Small breaths
+# at the section cadences (b14, b31); the summit keeps the tempo; the dissolution settles to 60 for
+# the coda, and only the last two bars broaden (to 44).
 TEMPO = {'tempo_map': [[0, 66], [52, 66], [56, 60, 'ramp'], [56, 66],
                        [120, 66], [124, 60, 'ramp'], [124, 66],
-                       [148, 66], [156, 58, 'ramp'],
-                       [184, 58], [202, 52, 'ramp'],
-                       [222, 52], [230, 42, 'ramp'], [236, 32, 'ramp']]}
+                       [184, 66], [192, 60, 'ramp'],
+                       [222, 60], [230, 52, 'ramp'], [236, 44, 'ramp']]}
 # phrase dynamics (velocity offsets by bar): the siciliano softer, the peal and the summit loudest
 DYN = {1: -4, 11: 0, 15: 2, 20: 3, 24: -3, 28: -1, 32: 3, 35: 5, 39: 8, 41: 10, 47: 5, 51: 3, 56: 5, 58: 9}
 

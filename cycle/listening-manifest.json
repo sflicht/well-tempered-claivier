@@ -270,14 +270,14 @@
      "title": "Prelude XV \u00b7 Musette",
      "score": "cycle/15-g-major/prelude.json",
      "tag": "new",
-     "notes": "A short 12/8 shepherds' musette over a drone, alluding to the first line of Luther's Christmas chorale 'Vom Himmel hoch'."
+     "notes": "A short 12/8 shepherds' musette over a drone, alluding to the first line of Luther's Christmas chorale 'Vom Himmel hoch'. Bar 13 quotes the flutes' shepherd music from Part II of Bach's Christmas Oratorio (BWV 248)."
     },
     {
      "id": "fugue-15",
      "title": "Fugue XV \u00b7 on 'Vom Himmel hoch' (16 voices)",
      "score": "cycle/15-g-major/fugue.json",
      "tag": "new",
-     "notes": "Bach's Canonic Variations on 'Vom Himmel hoch' (BWV 769) end with all four lines of the chorale sounding at once. This fugue is built toward that moment with four choirs of four. Each chorale line becomes a quick subject for one choir: a dotted skip ending in a peal of bells, a fanfare, a siciliano, and falling-octave bell rounds with the first change of plain hunt. Each line is also sung as a long-note cantus, which moves down from soprano to bass through the choirs.\n\nThe summit (bars 39-51) brings the four lines in stretto, all sounding together in bars 40-43, each then answered in its own choir by inversion or augmentation, with 14-15 voices moving at the peak. The coda puts line 1 in whole notes in the bass, B-A-C-H in the tenor at the cadence, and all sixteen voices on the last chord.\n\nThe search showed that strict same-speed canons of all four lines at once are impossible with this tune; the notes explain the compromise."
+     "notes": "Bach's Canonic Variations on 'Vom Himmel hoch' (BWV 769) end with all four lines of the chorale sounding at once. This fugue is built toward that moment with four choirs of four. Each chorale line becomes a quick subject for one choir: a dotted skip ending in a peal of bells, a fanfare, a siciliano, and falling-octave bell rounds with the first change of plain hunt. Each line is also sung as a long-note cantus, which moves down from soprano to bass through the choirs.\n\nThe summit (bars 39-51) brings the four lines in stretto, all sounding together in bars 40-43, each then answered in its own choir by inversion or augmentation. The accompanying voices were thinned so that none doubles a chorale note: about nine to twelve lines move at the peak, and the four chorale lines sound a little louder than the rest. The coda puts line 1 in whole notes in the bass, B-A-C-H in the tenor at the cadence, and all sixteen voices on the last chord.\n\nThe search showed that strict same-speed canons of all four lines at once are impossible with this tune; the notes explain the compromise."
     }
    ]
   },

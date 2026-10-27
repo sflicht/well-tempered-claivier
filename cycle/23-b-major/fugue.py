@@ -46,8 +46,8 @@ def exposition(sc):
     sc.put('B6', 5, 1, 'D#3:8 G#2:8 A#2:8 D#2:4 F#2:4')
     sc.put('S5', 9, 1, 'R:4 A#4:4 C#5:4 B4:4 C#5:4 B4:2 A#4:2 A#4:8 B4:12 A#4:4 G#4:8 A#4:4 G#4:4')
     sc.put('A2', 7, 1, 'B4:8 A4:4 F#4:4 F#4:4 G#4:4 F#4:4 G#4:4')
-    sc.put('T6', 9, 1, 'R:8 D#3:8 E#3:8 F#3:4 E3:4 D#3:8 E3:8 E3:8 F#3:8')
-    sc.put('A2', 11, 1, 'R:4 D#5:8 C#5:4 B4:6 A#4:2 E5:8')
+    sc.put('T6', 9, 1, 'R:8 D#3:8 A#3:8 C#4:8 B3:4 D#4:4 E4:8 E4:4 C#4:4 A#3:8')
+    sc.put('A2', 11, 1, 'R:4 D#5:8 C#5:4 B4:4 C#5:4 E5:8')
 
 
 # ===================================================================== II-III. THE TOUR (bars 13-78)
@@ -80,8 +80,17 @@ def tour_cantus(sc):
         sc.theme(nv, fb, fbeat, hex_dn(la, last=last), f'cantus: {KEY_OF[nv]} minor, la..ut', 'cantus')
 
 
+def pair1(sc):
+    # D-flat major / B-flat minor (bars 13-18): S in the tenor, divisions in the soprano
+    sc.theme('T4', 13, 1, in_key(S, 'B4', 'Db4'), 'S in D-flat', 'S')
+    sc.put('T6', 13, 1, 'Ab3:8 Bb3:8 Eb4:4 Db4:4 Eb4:8 Db4:16 Bb3:16 Eb4:16 Db4:8 Eb4:8')
+    sc.put('A2', 13, 1, 'Db5:6 C5:2 Bb4:4 Db5:4 C5:4 Bb4:4 Eb5:4 C5:4 Db5:16 Eb5:4 Db5:12 C5:16 Bb4:8 G4:8')
+    sc.put('S5', 13, 1, 'Ab4:8 R:8 R:4 Bb4:2 Db5:2 Gb5:2 F5:2 Ab5:2 Gb5:2 F5:2 Db5:2 Ab5:2 F5:2 Db5:2 F5:2 Ab5:2 Bb5:2 Gb5:2 F5:2 Gb5:2 Db5:2 Bb4:2 Db5:2 Eb5:2 Db5:2 Ab5:2 Gb5:2 Eb5:2 C5:2 F5:2 Ab5:2 Bb5:2 C6:2 Db6:2 Bb5:2 F5:2 Ab5:2 G5:2 Eb5:2 Bb4:2 Eb5:2')
+
+
 def tour(sc):
     tour_cantus(sc)
+    pair1(sc)
 
 
 # ===================================================================== IV. SUMMIT AND CODA (bars 79-96)

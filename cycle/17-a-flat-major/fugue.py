@@ -268,3 +268,18 @@ def chain_free():
 
 
 chain_free()
+
+
+def turn_home():
+    """E12 (c-sharp minor, bars 29-30) and the turn home (bars 31-32): c-sharp = d-flat, the subdominant
+    minor of A-flat; the dominant arrives - and the cadence it prepares is dodged once more, in passing."""
+    # E12 free voices (sharps), then d-flat minor (flats) from bar 31.
+    put('LS2', 29, 0, lit('G#4:12 F#4:6 G#4:6 | A4:6 G#4:4 F#4:2 G#4:6 B#4:6 |'
+                          ' Db5:12 Fb5:6 Db5:6 | C5:6 Db5:6 F5:6 Eb5:6'))
+    put('LA1', 29, 0, lit('E4:12 B3:12 | C#4:6 B3:6 D#4:6 F#4:6 | Fb4:12 Ab4:6 G4:6 | Ab4:12 F4:6 Eb4:6'))
+    put('LBr2', 31, 0, lit('Db3:6 Fb3:6 Db3:6 Eb3:6 | F3:6 Db3:6 Bb2:6 Eb3:6'))
+    put('RT1', 31, 6, lit('Ab3:6 Bb3:12 | C4:6 Ab3:6 Db4:6 Bb3:6'))
+    put('LS1', 32, 6, lit('Ab5:12 G5:6'))
+
+
+turn_home()

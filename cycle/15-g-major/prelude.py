@@ -5,12 +5,13 @@ One pianist, 12/8.  A musette: the left hand rocks between G and D like a bagpip
 walks), the right hand plays a pipe tune over a continuous inner line of eighths.  The tune is
 Luther's "Vom Himmel hoch" made pastoral: line 1 (G F# E F# D E F# G) in siciliano rhythm (b3-4),
 answered in D (b5-6); lines 2 and 3 pass through D and E minor (b7-10); line 4, the falling octave,
-comes as bells over the drone (b11-13); the last bars stop on the dominant so that the fugue's first
+comes as bells over the drone (b11-12), and b13 quotes the shepherds' flutes of Bach's 12/8
+setting of the same chorale (BWV 248/23, flute interlude, bar 3, at pitch); the last bars stop on the dominant so that the fugue's first
 G answers them.  Chorale source as in fugue.py (music21 corpus, Essen erk30/601).
 
 Right hand: 'Zampogna' (tune) and 'Piffero' (eighths); left hand: 'Bordone'.  Every note is
 written here as a literal bar string; the tune bars are the chorale lines with written-out
-ornaments.
+ornaments (b7-8 with Bach's passing notes from BWV 248/23); b13 is Bach's bar, quoted.
 """
 from __future__ import annotations
 
@@ -46,11 +47,11 @@ B.bar('line 1 in D', Zampogna='D5:3 E5:1 D5:2 C#5:6 B4:3 C#5:1 B4:2 C#5:6',
 B.bar('line 1 in D', Zampogna='A4:3 B4:1 A4:2 B4:6 C#5:6 D5:6',
       Piffero='F#4:2 D4:2 F#4:2 G4:2 D4:2 G4:2 E4:2 A4:2 G4:2 F#4:2 A4:2 F#4:2',
       Bordone='D3:6 G2:6 A2:6 D2:6')
-# b7-8: line 2 (G G D D B D C B), the pipe a little louder, towards E minor
-B.bar('line 2', Zampogna='G5:6 G5:6 D5:6 D5:6',
+# b7-8: line 2 (G G D D B D C B) with Bach's passing notes (BWV 248/23, soprano), towards E minor
+B.bar('line 2', Zampogna='G5:6 G5:6 D5:6 D5:4 C5:2',
       Piffero='B4:2 D5:2 B4:2 E5:2 C5:2 E5:2 B4:2 G4:2 B4:2 A4:2 F#4:2 A4:2',
       Bordone='B2:6 C3:6 B2:6 F#2:6')
-B.bar('line 2', Zampogna='B4:6 D5:6 C5:6 B4:6',
+B.bar('line 2', Zampogna='B4:4 C5:2 D5:6 C5:6 B4:6',
       Piffero='G4:2 E4:2 G4:2 F#4:2 B4:2 F#4:2 A4:2 E4:2 A4:2 G4:2 D#4:2 F#4:2',
       Bordone='E2:6 B2:6 A2:6 B2:6')
 # b9-10: line 3 (B E E D F# G E D), E minor turning to D
@@ -68,9 +69,10 @@ B.bar('line 4, bells', Zampogna='G5:6 F#5:6 E5:6 D5:6',
 B.bar('line 4, bells', Zampogna='D5:6 C5:3 B4:3 A4:6 G4:6',
       Piffero='R:2 B3:2 F#4:2 R:2 E4:2 G4:2 R:2 D4:2 F#4:2 R:2 B3:2 D4:2',
       Bordone='B2:6 A2:6 D3:6 G2:6')
-B.bar('bells', Zampogna='B4:4 A4:2 G4:4 A4:2 B4:4 C5:2 D5:6',
-      Piffero='G4:2 D4:2 G4:2 E4:2 C4:2 E4:2 D4:2 G4:2 D4:2 G4:2 B4:2 G4:2',
-      Bordone='G2:6 C3:6 G2:6 B2:6')
+# b13: the shepherds' flutes of Bach's own 12/8 setting of this chorale (Christmas Oratorio, BWV 248/23,
+# flute interlude, bar 3, at pitch); the piffero falls silent and the drone opens to G-B.
+B.bar('bells', Zampogna='G5:3 E6:1 D6:2 D6:3 G5:1 F#5:2 G5:3 E6:1 D6:2 D6:3 G5:1 F#5:2',
+      Piffero='R:24', Bordone='G2:6 B2:6 G2:6 B2:6')
 # b14-16: the head of line 1 once more over a walking bass, then the dominant, held, for the fugue
 B.bar('cadence', Zampogna='E5:3 F#5:1 E5:2 A5:6 G5:6 F#5:6',
       Piffero='C5:2 G4:2 C5:2 C5:2 A4:2 F#4:2 B4:2 G4:2 D4:2 D4:2 A4:2 C5:2',
