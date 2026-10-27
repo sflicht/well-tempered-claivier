@@ -251,13 +251,40 @@ Sg = W.transpose(Sd, 5, 3)
 CSg = W.transpose(CSd, 5, 3)
 SBb = W.transpose(S, 5, 3)
 CSBb = W.transpose(CS, 5, 3)
-put('Vno', 28, 2, 'A5:1 G5:1 F5:1 E5:1 F5:1 E5:1 D5:1 C5:1 D5:1 C5:1 Bb4:1 A4:1')
-put('Vc', 28, 2, 'D3:2 C3:2 Bb2:2 A2:2 D3:4')
+put('Vno', 28, 2, 'A5:1 G5:1 F5:1 E5:1 D5:1 E5:1 F5:1 D5:1 C5:2 A4:2')
+put('Vc', 28, 2, 'D3:4 Bb2:4 F#2:4')
 theme('Fl', 29, 1.5, oc(Sg, 0), 'concertino: subject in g (Flauto)', 2)
 put('Ob', 29, 2, oc(CSg, 1))
-put('Vc', 29, 1, 'G2:2 R:2 G2:4 Bb2:8 C3:4 A2:4 C3:4 D3:4')
+put('Vc', 29, 1, 'G2:2 R:2 G2:8 Bb2:4 C3:4 Eb3:4 F#2:4 D2:4 G2:2 R:2 Bb2:8 Ab2:4 G2:4 C3:4 Eb3:4 F3:4')
 theme('Vno', 31, 1.5, oc(SBb, -1), 'concertino: subject in B-flat (Violino)', 2)
 put('Fl', 31, 2, oc(CSBb, 2))
+# the countersubject in diminution is introduced here, falling (oboe) and then mirrored, rising (recorder),
+# so that the ear knows it before the twelve-voice stretto
+CSdim = W.scale_rhythm(CS, Fr(1, 2))
+CSIdim = W.scale_rhythm(CSI, Fr(1, 2))
+put('Vc', 33, 1, 'Bb2:8 Ab2:4 G2:4 Bb2:8 Eb3:4 F3:4')
+put('Ob', 33, 2, W.transpose(oc(CSdim, 1), 5, 3))
+put('Fl', 34, 2, W.transpose(oc(CSIdim, 2), 5, 3))
+
+
+# ================================================================ TUTTI II: B-flat -> G minor (b35-40)
+# The ripieno returns with the subject in B-flat in the tenor register (cello, then viola at the unison
+# two beats later), the second violins answer with the mirror; the first violins take up the CS in
+# diminution that the oboe and recorder have just introduced.
+IBb = W.transpose(I, 5, 3)
+theme('Vc', 35, 1.5, oc(SBb, -2), 'tutti II (B-flat): subject (Violoncello)', 2)
+theme('Va2', 35, 3.5, oc(SBb, -2), 'tutti II (B-flat): subject (Viola 2), canon at two beats', 2)
+theme('V2b', 36, 1.5, oc(IBb, -2), 'tutti II (B-flat): inversus (Violino II.2)', 2)
+theme('V1b', 36, 3.5, oc(IBb, -1), 'tutti II (B-flat): inversus (Violino I.2)', 2)
+put('V1a', 35, 2, W.transpose(CSdim, 5 + 12, 3 + 7))
+CSIBb = W.transpose(CSIdim, 5, 3)
+put('V2a', 36, 2, oc(CSIBb, 1))                                   # the mirrored CS in diminution
+put('Ob', 35, 2, 'F5:8 Eb5:4 D5:8 C5:4 Bb4:4 A4:4 C5:4 Bb4:8')
+put('Fl', 36, 1, 'R:8 D6:8 C6:4 D6:6 C6:2 Bb5:4 A5:4')
+# the turn to G minor: a falling bass Bb A G Eb C D G; the subject's head (tattoo) passed through the
+# upper ripieno in G minor while the inner voices hold suspensions
+put('Vne', 37, 1, 'Bb2:8 Eb3:8 F2:8 Bb2:4 A2:4 G2:8 Eb2:8 C2:4 D2:4 G2:4')
+put('Vc', 37, 1.5, 'R:6 G3:4 F3:8 D3:4 C3:4 Bb2:4 C3:4 G2:4 A2:4 Bb2:4')
 
 
 def build(nbars, path=None):

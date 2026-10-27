@@ -10,9 +10,11 @@ speeds.  Their output is what fugue.json holds.
 Material (see NOTES.md):
   GROUND   the descending chromatic lament D C# C B Bb A | Bb G A D (the
            Crucifixus ground of BWV 232/BWV 12, transposed), 8 bars of 3/4.
-  SUBJECT  the ground inverted and in diminution (half speed... i.e. twice as
-           fast): A Bb B C C# D | C# E D A, 4 bars.  Its inversion is the ground
+  SUBJECT  the ground inverted and in diminution (note values halved):
+           A Bb B C C# D | C# E D A, 4 bars.  Its inversion is the ground
            at double speed; the ground is the subject inverted and augmented.
+The harmonisations named in the comments below are first drafts; NOTES.md
+lists the final ones (from tools/reduce.py).
 
 Run:  python3 cycle/06-d-minor/fugue.py   -> cycle/06-d-minor/fugue.json
 """
@@ -198,7 +200,7 @@ put(43, S1=I('A5') + '  E5:2 F5:2 G5:4 F5:2 G5:2  A5:4 Bb5:4 G5:4')
 entry('S1', 43, 'Inversus')
 put(41, A2='F4:4 E4:4 F4:4  Bb4:2 A4:2 G4:8  A4:4 F4:4 R:4')
 put(47, A1='R:4 C#5:4 D5:4~  D5:4 F5:4 E5:4')
-put(41, T1='A3:8 D4:4~  D4:4 A3:4 Bb3:4  C4:8 D4:4  D4:8 C#4:4')
+put(41, T1='A3:8 D4:4~  D4:4 A3:4 Bb3:4  C4:4 A3:4 D4:4  D4:8 C#4:4')
 tag(45, 'Subject (Tenor I) under the ground')
 put(45, T1=S('A3'))
 entry('T1', 45, 'Subject')

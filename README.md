@@ -22,7 +22,7 @@ engraved PDFs are in each pair's `renders/` folder.
 | [III](cycle/03-c-sharp-major/) | C♯ major | à 4, *Giga rectus et inversus*: Part 2 mirrors Part 1, and in the coda the two halves sound at once; BWV 848's subject grows out of the inversion | "Glass bells", the prelude Sam liked, with four repairs | new fugue, prelude repaired |
 | [IV](cycle/04-c-sharp-minor/) | C♯ minor | à 5, double fugue with BWV 849's "cross" subject | Allegro inquieto with the cross as suspensions | rebuilt |
 | [V](cycle/05-d-major/) | D major | à 6, cascade stretto through six keys; BWV 850's subject as a voice | irregular-form toccata with a flourish into the fugue | rebuilt |
-| [VI](cycle/06-d-minor/) | D minor | à 7, passacaglia and fugue on a lament ground that travels through all seven voices | toccata with recitative (BWV 565 allusion) | in progress |
+| [VI](cycle/06-d-minor/) | D minor | à 7, passacaglia and fugue on the Crucifixus ground, which travels through all seven voices and sounds at three speeds at the summit | toccata with recitative (BWV 565 allusion) | new |
 | VII | E♭ major | à 8, *a due cori*: two four-voice choirs, subject against inversion | chorale prelude on *Wachet auf* (BWV 645's key) | in progress |
 | [VIII](cycle/08-e-flat-minor/) | E♭ minor | à 9, nine real voices, stretto maestrale over the subject at quarter speed; BWV 853's subject as a guest | 12/8 "Night loom", melody = the subject in retrograde inversion | rebuilt |
 | [IX](cycle/09-e-major/) | E major | à 10, *Ricercar in circulo*: stile antico, the motif travels round a ring of ten voices (Spem in alium); BWV 878's Fischer-derived subject as a real voice | pastorale in adaptive just intonation that sinks a syntonic comma per cycle, then snaps back to well-temperament | new |

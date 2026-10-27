@@ -99,6 +99,25 @@
    ]
   },
   {
+   "name": "Pair VI \u00b7 D minor (new, seven voices)",
+   "pieces": [
+    {
+     "id": "prelude-6",
+     "title": "Prelude VI \u00b7 Toccata con recitativo",
+     "score": "cycle/06-d-minor/prelude.json",
+     "tag": "new",
+     "notes": "Opens with the famous gesture of the Toccata in D minor BWV 565 in octaves, then runs in the triplet figuration of WTC I's D-minor prelude (BWV 851) over the fugue's ground. Two recitatives interrupt it, declaiming the fugue subject's pitches in free rhythm: first in the right hand, then in the bass. It stops on a half cadence, with the 565 figure breaking off on C sharp, and the fugue begins on the missing D."
+    },
+    {
+     "id": "fugue-6",
+     "title": "Fugue VI \u00b7 Passacaglia e fuga a 7",
+     "score": "cycle/06-d-minor/fugue.json",
+     "tag": "new",
+     "notes": "The ground is the chromatic lament of Bach's Crucifixus (BWV 232 / BWV 12), moved to D minor: D C# C B Bb A, Bb G A D. The fugue subject is that ground upside down at double speed, so ground and subject are relatives.\n\nAs in the middle of the Passacaglia BWV 582, the ground migrates. It passes from the bass to the second tenor, the first tenor (in F major), the second alto (A minor), the first alto (G minor), the second soprano (back in D minor) and the first soprano (on the dominant), freshly harmonised each time.\n\nAt the summit (bars 49-64) the ground sounds at three speeds at once: augmented in the bass, at double speed in the alto, and at normal speed in the soprano. Meanwhile the subject enters in stretto in the inner voices, arriving on D major. The coda puts B-A-C-H in the alto over a D pedal.\n\nNote: 38 passing notes filling thirds in the free voices were proposed by a script and kept only where no check got worse; they should be judged by ear."
+    }
+   ]
+  },
+  {
    "name": "Pair VIII \u00b7 E-flat minor (rebuilt, nine voices)",
    "pieces": [
     {

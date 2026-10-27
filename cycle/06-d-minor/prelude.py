@@ -193,7 +193,7 @@ def DYN(b):
 def build(path=HERE / 'prelude.json'):
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Prelude VI in D minor',
             'composer': 'Claude / Sam (after J. S. Bach, Toccata BWV 565 and Prelude BWV 851)',
-            'instrument': 'Piano', 'key': 'D', 'mode': 'minor', 'meter': list(METER), 'bpm': BPM,
+            'instrument': 'Piano', 'key': 'D', 'mode': 'minor', 'meter': list(METER), 'bpm': TEMPO_MAP[0][1],   # opening Adagio; the map sets the rest
             'tempo_text': 'Toccata con recitativo. Adagio - Allegro - Recitativo - Presto',
             'movement_number': 6, 'piece_type': 'prelude', 'edition': 'third',
             'tempo_map': TEMPO_MAP,

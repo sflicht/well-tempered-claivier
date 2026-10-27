@@ -167,7 +167,7 @@ tag(5, 'Coro I: subject (tenor)')
 
 put(7, B1=T8(ANS, -1), T1=T8(CS_ANS, -2),
     A1='F4:8 Eb4:4 F4:4~  F4:4 Bb4:8 F4:2 G4:2',
-    S1='D5:8 Bb4:4 A4:4  C5:4 G5:4 F5:4 D5:2 Eb5:2')
+    S1='D5:8 Bb4:4 A4:2 Bb4:2  C5:4 G5:4 F5:2 Eb5:2 D5:2 Eb5:2')
 entry('B1', 7, 0, 'Coro I rectus (tonal answer, B-flat)')
 tag(7, 'Coro I: answer (bass)')
 
@@ -200,22 +200,22 @@ tag(9, 'Coro II: the mirror exposition (bass first)')
 # choir resolves across the hall; Coro II's bar ends plagally (its mirror dialect).
 put(17, A1='Eb4:4 G4:2 Bb4:2 C5:4 Bb4:4',
         S1='R:2 Bb4:2 Eb5:2 D5:2 Eb5:2 F5:2 E5:2 G5:2',
-        T1='G3:4 Bb3:4 Ab3:4 G3:4',
+        T1='G3:2 Ab3:2 Bb3:4 Ab3:4 G3:4',
         B1='R:4 Eb2:4 Ab2:4 C3:4')
 entry('A1', 17, 0, 'Coro I head (E-flat)', 1)
 tag(17, 'Antiphony by the bar: heads round a circle of fifths')
 put(18, S2='C5:4 Ab4:2 F4:2 E4:4 F4:4',
         A2='R:2 F4:2 C4:2 Db4:2 C4:2 Bb3:2 C4:4',
-        T2='Ab3:4 F3:4 G3:4 A3:4',
+        T2='Ab3:2 G3:2 F3:4 G3:4 A3:4',
         B2='F3:4 Ab2:4 C3:4 F2:4')
 entry('S2', 18, 0, 'Coro II inverted head (f minor)', 1)
 put(19, B1='Bb2:4 D3:2 F3:2 G3:4 F3:4',
         S1='R:2 F4:2 Bb4:2 A4:2 Bb4:2 C5:2 D5:4',
-        A1='D4:4 F4:4 Eb4:4 Ab4:4',
-        T1='F3:8 Bb3:4 Bb3:4')
+        A1='D4:2 Eb4:2 F4:4 Eb4:4 Ab4:4',
+        T1='F3:6 G3:1 Ab3:1 Bb3:4 C4:4')
 entry('B1', 19, 0, 'Coro I head (B-flat)', 1)
 put(20, T2='Bb3:4 G3:2 Eb3:2 D3:4 Eb3:4',
-        S2='Bb4:4 Eb5:4 F5:4 Ab5:4',
+        S2='Bb4:2 C5:1 D5:1 Eb5:4 F5:2 G5:2 Ab5:4',
         A2='G4:2 Ab4:2 Bb4:2 G4:2 F4:2 Bb3:2 C4:2 Eb4:2',
         B2='Eb3:4 G2:4 Bb2:4 Ab2:4')
 entry('T2', 20, 0, 'Coro II inverted head (E-flat)', 1)
@@ -228,20 +228,20 @@ entry('T2', 20, 0, 'Coro II inverted head (E-flat)', 1)
 # (Coro II soprano), the E-flat rectus (Coro I tenor), which carries Coro I to
 # a B-flat cadence while Coro II falls silent.
 put(21, A1='C4:4 Eb4:2 G4:2 Ab4:4 G4:4  Ab4:2 Bb4:1 Ab4:1 G4:2 Bb4:2 D5:4 C5:2 Bb4:2',
-        S1='Eb5:6 D5:2 F5:4 D5:4  Bb4:4 G5:4 R:8',
-        T1='G3:4 C4:4 C4:4 B3:4  Bb3:12 G3:4',
-        B1='C3:4 Bb2:4 F2:4 G2:4  Bb2:4 Eb3:4 D3:4 Eb3:4')
+        S1='Eb5:6 D5:2 F5:4 D5:2 C5:2  Bb4:4 G5:4 R:8',
+        T1='G3:2 Ab3:1 Bb3:1 C4:4 Bb3:4 B3:4  Bb3:12 G3:4',
+        B1='C3:4 Bb2:2 Ab2:1 G2:1 F2:4 G2:2 Ab2:2  Bb2:4 Eb3:4 D3:4 Eb3:4')
 entry('A1', 21, 0, 'Coro I rectus (c minor level)')
 tag(21, 'Antiphony by the bar, overlapping: entries a bar apart')
 put(22, S2='D5:4 Bb4:2 G4:2 F4:4 G4:4  F4:2 Eb4:1 F4:1 G4:2 Eb4:2 C4:4 D4:2 Eb4:2',
-        A2='D4:4 Eb4:4 R:8  R:16',
-        T2='F3:4 G3:4 R:8  G3:4 Bb3:4 Ab3:4 F3:4',
+        A2='F4:4 Eb4:4 R:8  R:16',
+        T2='F3:4 G3:4 R:8  G3:2 Ab3:2 Bb3:4 Ab3:2 G3:2 F3:4',
         B2='Bb2:4 G2:4 Bb1:4 Eb2:4  Bb2:4 G2:4 Eb3:4 Bb2:4')
 entry('S2', 22, 0, 'Coro II inversus (on D)')
 put(23, T1='Eb3:4 G3:2 Bb3:2 C4:4 Bb3:4  C4:2 D4:1 C4:1 Bb3:2 D4:2 F4:4 Eb4:2 D4:2',
-        S1='Bb4:4 Eb5:2 D5:2 Eb5:4 D5:4  C5:4 D5:4 C5:4 F5:4~',
-        A1='G4:4 Eb4:8 Ab4:4  Ab4:4 F4:4 A4:8',
-        B1='Eb2:8 Ab2:4 Bb2:4  Ab2:4 Bb2:4 A2:4 F2:4')
+        S1='Bb4:2 C5:1 D5:1 Eb5:2 D5:2 Eb5:4 D5:4  C5:4 D5:4 C5:2 D5:1 Eb5:1 F5:4~',
+        A1='G4:2 F4:2 Eb4:6 F4:1 G4:1 Ab4:4  Ab4:4 F4:2 G4:2 A4:8',
+        B1='Eb2:8 Ab2:4 Bb2:4  Ab2:4 Bb2:4 A2:2 G2:2 F2:2 G2:1 A2:1')
 entry('T1', 23, 0, 'Coro I rectus (E-flat, to B-flat)')
 
 
@@ -253,25 +253,25 @@ entry('T1', 23, 0, 'Coro I rectus (E-flat, to B-flat)')
 # when each choir concedes a semitone (A -> A-flat, D-flat -> D) they find
 # B-flat-seven together, and E-flat.
 put(25, S1='F5:8 Eb5:8',
-        A1='D4:4 G4:2 A4:2 Bb4:2 C5:2 A4:2 C5:2',
+        A1='D4:2 Eb4:1 F4:1 G4:2 A4:2 Bb4:2 C5:2 A4:2 C5:2',
         T1='Bb3:4 D4:2 F4:2 G4:4 F4:4',
         B1='Bb2:8 Eb3:4 F3:4')
 entry('T1', 25, 0, 'Coro I head (B-flat!)', 1)
 tag(25, 'Disagreement: Coro I in B-flat, Coro II in A-flat')
 put(26, S2='Eb5:4 C5:2 Ab4:2 G4:4 Ab4:4',
         A2='R:2 Ab4:2 Eb4:2 F4:2 Eb4:2 Db4:2 C4:2 Db4:2',
-        T2='Eb3:4 Ab3:4 Bb3:4 Ab3:4',
+        T2='Eb3:2 F3:1 G3:1 Ab3:4 Bb3:4 Ab3:4',
         B2='Ab2:4 C3:4 Eb3:4 Ab2:4')
 entry('S2', 26, 0, 'Coro II inverted head (A-flat!)', 1)
 # half a bar each
-put(27, S1='Bb4:4 D5:2 F5:2 R:8  D5:4 F5:2 Bb5:2 R:8',
+put(27, S1='Bb4:2 C5:2 D5:2 F5:2 R:8  D5:2 Eb5:2 F5:2 Bb5:2 R:8',
         A1='F4:2 A4:2 Bb4:4 R:8  F4:2 A4:2 Bb4:4 R:8',
-        T1='D4:4 F4:4 R:8  Bb3:4 D4:4 R:8',
-        B1='Bb2:8 R:8  D3:4 Bb2:4 R:8')
-put(27, S2='R:8 Eb5:4 C5:2 Ab4:2  R:8 Ab4:4 Db5:2 C5:2',
-        A2='R:8 Ab4:4 Eb4:2 F4:2  R:8 Eb4:4 Ab4:4',
-        T2='R:8 C4:2 Db4:2 C4:4  R:8 Eb4:4 C4:2 Ab3:2',
-        B2='R:8 Ab2:8  R:8 C3:4 Ab2:4')
+        T1='D4:2 Eb4:2 F4:4 R:8  Bb3:2 C4:2 D4:4 R:8',
+        B1='Bb2:8 R:8  D3:2 C3:2 Bb2:4 R:8')
+put(27, S2='R:8 Eb5:4 C5:2 Ab4:2  R:8 Ab4:2 Bb4:1 C5:1 Db5:2 C5:2',
+        A2='R:8 Ab4:4 Eb4:2 F4:2  R:8 Eb4:2 F4:1 G4:1 Ab4:4',
+        T2='R:8 C4:2 Db4:2 C4:4  R:8 Eb4:2 Db4:2 C4:2 Ab3:2',
+        B2='R:8 Ab2:8  R:8 C3:2 Bb2:2 Ab2:4')
 tag(27, 'half a bar')
 # a beat each, then together
 put(29, S1='Bb4:2 D5:1 F5:1 R:4 D5:2 F5:1 Bb5:1 R:4',
@@ -287,8 +287,8 @@ tag(29, 'a beat')
 
 # the two chords superimposed (A-flat over B-flat), then the concession:
 # 9-8 and 11-10 in Coro II, its bass walking down B-flat-seven, into E-flat.
-put(30, S1='F5:16', A1='Bb4:8 F4:4 D4:4', T1='Bb3:12 F3:4', B1='Bb2:16',
-        S2='C5:4 D5:8 Bb4:4', A2='Ab4:16', T2='Eb4:4 D4:4 C4:4 Bb3:4', B2='Bb2:8 F3:4 Bb2:4')
+put(30, S1='F5:16', A1='Bb4:6 Ab4:1 G4:1 F4:4 D4:4', T1='Bb3:10 Ab3:1 G3:1 F3:4', B1='Bb2:16',
+        S2='C5:4 Bb4:12~', A2='Ab4:16', T2='Eb4:4 D4:4 C4:4 Bb3:4', B2='Bb2:8 F3:4 Bb2:4')
 tag(30, 'Reconciliation: A-flat over B-flat = the home dominant')
 
 
@@ -303,11 +303,11 @@ tag(30, 'Reconciliation: A-flat over B-flat = the home dominant')
 AUG = scale_rhythm(SUBJ, 2)          # Eb4:8 G4:4 Bb4:4 C5:8 Bb4:8 C5:4 D5:2 C5:2 Bb4:4 D5:4 F5:8 Eb5:4 D5:4
 DIM = scale_rhythm(SUBJ, '1/2')      # the whole subject in one bar
 put(31, B1=T8('Eb4:8 G4:4 Bb4:4', -2),
-        S1='Eb5:6 D5:2 Eb5:4 F5:4', A1='Eb4:6 F4:2 Bb4:4 F4:4', T1='G3:6 Ab3:2 Bb3:4 Bb3:4',
+        S1='Eb5:6 D5:2 Eb5:4 F5:4', A1='Eb4:6 F4:2 Bb4:2 Ab4:1 G4:1 F4:4', T1='G3:6 Ab3:2 Bb3:4 C4:4',
         S2='Bb4:4 R:12', A2='G4:4 R:12', T2='Bb3:4 R:12', B2='Eb3:4 R:12')
 entry('B1', 31, 0, 'Coro I augmentation (pompous)', 4)
 tag(31, 'The joke: augmentation interrupted by diminution')
-put(32, S2=DIM, A2='Bb3:4 Eb4:4 C4:4 Bb3:4', T2='G3:4 Ab3:8 F3:4', B2='Eb3:4 Ab2:8 Bb2:4')
+put(32, S2=DIM, A2='Bb3:4 Eb4:2 D4:2 C4:4 Bb3:4', T2='G3:4 Ab3:4 G3:4 F3:4', B2='Eb3:4 Ab2:8 Bb2:4')
 entry('S2', 32, 0, 'Coro II diminution (interrupting)', 1)
 put(33, B1=T8('C5:8 Bb4:8', -2),
         S1='Eb5:6 F5:2 D5:8', A1='G4:6 Ab4:2 Bb4:8', T1='Eb4:8 F4:8')
@@ -315,7 +315,7 @@ put(34, B2=T8(invert_diatonic(DIM, 'G4', EB), -1),
         S2='G5:4 F5:2 G5:2 F5:2 Eb5:6', A2='Eb5:4 Bb4:8 C5:4', T2='Eb4:4 F4:6 G4:2 C4:4')
 entry('B2', 34, 0, 'Coro II diminution, inverted (interrupting again)', 1)
 put(35, B1=T8('C5:4 D5:2 C5:2 Bb4:4 D5:4', -2),
-        S1='Ab5:6 G5:2 G5:4 F5:4', A1='Eb4:6 F4:2 Eb4:4 Bb4:4', T1='C4:6 Bb3:2 Bb3:4 Bb3:4')
+        S1='Ab5:6 G5:2 G5:4 F5:4', A1='Eb4:6 F4:2 Eb4:4 Bb4:4', T1='C4:6 Bb3:2 Bb3:4 C4:4')
 # a beat each: the diminished head, rectus on the left, inverted on the right
 put(36, S2='F5:2 D5:1 Bb4:1 R:12',
         A2='Bb4:4 R:4 D5:4 R:4',
@@ -339,12 +339,12 @@ SUB_c = 'C3:4 Eb3:2 G3:2 Ab3:4 G3:4 Ab3:2 Bb3:1 Ab3:1 G3:2 Bb3:2 D4:4 C4:2 Bb3:2
 INV_F = 'F4:4 D4:2 Bb3:2 Ab3:4 Bb3:4 Ab3:2 G3:1 Ab3:1 Bb3:2 G3:2 Eb3:4 F3:2 G3:2'   # inversus on F
 SUB_Ab = transpose(SUBJ, -7, -4)                                                   # rectus, A-flat level
 put(37, T2='R:8 ' + INV_F + ' R:8  R:8 D4:4 C4:4  R:16  R:16',
-        T1=SUB_c + ' C4:4 R:12  Bb3:4 R:4 Bb3:4 R:4  Bb3:4 R:12  R:8 C4:4 R:4',
-        S1='Eb5:8 C5:4 R:4  ' + T8(SUB_Ab, 1) + '  R:8 F5:4 C5:4  Bb4:8 R:8  R:8 Ab4:4 Bb4:4',
-        A1='G4:8 Eb4:4 Bb3:4  Eb4:8 Ab4:4 R:4  ' + SUB_Ab + '  F4:4 G4:4 F4:4 G4:4~  G4:4 F4:4 Eb4:4 D4:4',
-        B1='R:8 F2:4 Bb2:4  C3:4 G2:4 Bb2:4 Eb2:4  Ab2:4 Eb3:4 R:8  ' + T8(SUB_Ab, -1) + '  Eb3:8 F3:4 Bb2:4',
-        B2='R:8 Ab2:4 R:4  Ab2:4 Eb3:4 D3:4 Bb2:4  R:8 ' + T8(INV, -1) + ' R:8  Ab2:8 R:8',
-        A2='R:16  R:8 ' + INV + ' F4:4 G4:4  R:16  C4:8 R:8',
+        T1=SUB_c + ' C4:4 G3:4 R:8  F3:4 R:4 Bb3:4 R:4  Bb3:4 R:12  R:8 C4:4 R:4',
+        S1='Eb5:4 D5:4 C5:4 R:4  ' + T8(SUB_Ab, 1) + '  R:8 F5:4 C5:4  Bb4:8 R:8  R:8 Ab4:4 Bb4:4',
+        A1='G4:4 F4:4 Eb4:2 D4:1 C4:1 Bb3:4  Eb4:6 D4:1 C4:1 R:8  ' + SUB_Ab + '  F4:4 G4:4 F4:4 G4:4~  G4:4 F4:4 Eb4:4 D4:4',
+        B1='R:8 F2:4 Bb2:4  C3:4 G2:4 Bb2:4 Eb2:2 F2:1 G2:1  Ab2:8 R:8  ' + T8(SUB_Ab, -1) + '  Eb3:8 F3:4 Bb2:4',
+        B2='R:8 Ab2:4 R:4  Ab2:4 Eb3:4 Bb2:4 C3:4  R:8 ' + T8(INV, -1) + ' R:8  Ab2:8 R:8',
+        A2='R:16  R:8 ' + INV + ' R:8  R:16  C4:8 R:8',
         S2='R:16  R:16  R:8 D5:4 C5:4  R:8 ' + T8(INV, 1))
 for v, b, off, lab in (('T1', 37, 0, 'stretto a 8: Coro I rectus (c)'), ('T2', 37, 2, 'stretto a 8: Coro II inversus (on F)'),
                        ('S1', 38, 0, 'stretto a 8: Coro I rectus (A-flat)'), ('A2', 38, 2, 'stretto a 8: Coro II inversus (E-flat)'),
@@ -363,12 +363,12 @@ tag(37, 'Summit: stretto a 8, all voices enter half a bar apart')
 # has the last word: an echo of the head, upside down.
 CHORALE_1 = 'Eb3:8 G3:8  Bb3:12 Bb3:4  Bb3:8 Bb3:8  C4:16  Bb3:16'   # Nicolai 1599, line 1
 put(43, T1=CHORALE_1 + '  Bb3:16  Bb3:16',
-        B1='R:8 C3:8  G2:8 Bb2:8  C3:8 G2:8  ' + T8('F5:8 Eb5:4 D5:4', -3) + '  Bb1:16  Eb2:16  Eb2:16',
-        A1=HEAD + '  Bb4:8 F4:8  R:16  R:8 F4:8  F4:16  G4:8 R:8  Eb4:16',
-        S1='Bb4:8 Eb5:8  Eb5:8 F5:8  Eb5:16  Ab5:16~  Ab5:16  G5:16  G5:16',
+        B1='R:8 C3:6 Bb2:1 Ab2:1  G2:8 Bb2:8  C3:6 Bb2:1 Ab2:1 G2:8  ' + T8('F5:8 Eb5:4 D5:4', -3) + '  Bb1:16  Eb2:16  Eb2:16',
+        A1=HEAD + '  Bb4:6 Ab4:1 G4:1 F4:8  R:16  R:8 F4:8  F4:16  G4:8 R:8  Eb4:16',
+        S1='Bb4:6 C5:1 D5:1 Eb5:8  Eb5:8 F5:8  Eb5:14 F5:1 G5:1  Ab5:16~  Ab5:16  G5:16  G5:16',
         S2='R:8 G5:8  G5:8 R:8  G5:16  G5:4 F5:4 R:8  Eb5:8 F5:8  Eb5:8 Bb4:4 G4:2 Eb4:2  Eb5:16',
-        A2='R:16  R:16  Bb4:16  Ab4:12 Bb4:4  C5:8 Bb4:8  Bb4:8 R:8  Bb4:16',
-        T2='R:8 Eb4:8  Eb4:12 D4:4  C4:8 Eb4:8~  Eb4:16~  Eb4:16  R:16  G3:16',
+        A2='R:16  R:16  Eb5:8 Bb4:8  Ab4:12 Bb4:4  C5:8 Bb4:8  Bb4:8 R:8  Bb4:16',
+        T2='R:8 Eb4:8  Eb4:12 D4:4  C4:4 D4:4 Eb4:8~  Eb4:16~  Eb4:16  R:16  G3:16',
         B2='R:16  R:16  G3:8 R:8  C3:16~  C3:8 D3:8  R:16  Eb3:16')
 entry('T1', 43, 0, 'Chorale "Wachet auf", line 1 (tenor)', 5)
 entry('A1', 43, 0, 'Coro I head', 1)

@@ -85,7 +85,7 @@ device of its own:
 
 19. **[built] Pair III: Giga rectus et inversus.** Part 2 mirrors Part 1, and
     in the coda bars of both halves sound simultaneously.
-20. **[in progress] Pair VI: passacaglia and fugue à 7.** A lament ground that
+20. **[built] Pair VI: passacaglia and fugue à 7.** A lament ground that
     migrates through all seven voices; toccata prelude after BWV 565.
 21. **[in progress] Pair VII: fuga a due cori à 8.** Two complete four-voice
     choirs, subject against inversion, merging in an eight-voice stretto;
