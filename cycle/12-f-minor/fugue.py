@@ -195,6 +195,17 @@ put('BI', P2, 3, 'Ab2:4 C3:4')
 seq('BI', P2 + 1, 'F2:4 G2:4 C3:4 Ab2:4', 'C3:4 B2:4 C3:4 Bb2:4', 'Eb3:4 Ab2:4 F2:4 E2:4', 'F2:4 Bb2:4 Eb3:4 G2:4',
     'Ab2:4 Bb2:4 C3:8', 'F2:8 R:8')
 
+# ================================================================ III. B-A-C-H, b43-60
+# B-A-C-H transposed to F minor (D-flat C E-flat D-natural): the same intervals as Bach's own B-flat A C B,
+# so that it combines with S1, S2 and the main theme exactly as in Bach's D minor.  Its answer (real, at the
+# fifth: A-flat G B-flat A) enters only a half note later -- the subject's closest stretto -- in two pairs two
+# bars apart (Bach's own distance).
+S3A = tr(S3, 7, 4)                      # Ab4 G4 Bb4 A4 B4 C5 B4 A4 B4 C5
+theme('TII', P3, 3, S3, 'S3 B-A-C-H')
+theme('AII', P3 + 1, 1, S3A, 'S3 answer (stretto, half note)')
+theme('BrI', P3 + 2, 3, octv(S3, -1), 'S3 B-A-C-H')
+theme('SIII', P3 + 3, 1, octv(S3A, 1), 'S3 answer (stretto, half note)')
+
 # ================================================================ IV. THE QUADRUPLE COMBINATION (composed first)
 # Nottebohm's combination, found here by search over all placements of the main theme against Bach's own
 # triple combination (XIX b233-239): the main theme leads, S2 follows a beat later, S1 five beats after S2,

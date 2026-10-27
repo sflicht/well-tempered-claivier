@@ -166,8 +166,11 @@ put('Idx', 17, [
     'A#4:4 B4:4 A#4:4',                                        # b19 vi    (V3: canon I sings broad notes
     'R:12',                                                    # b20 V      under canon II's quavers;
     'R:12',                                                    # b21 I6     dux and comes take turns)
+    'F#4:4 G#4:4 F#4:4~',                                      # b22 ii6
+    'F#4:4 E#4:4 D#4:4',                                       # b23 V7    (4-3 suspension)
+    'C#4:4 D#4:4 E#4:4',                                       # b24 I
 ])
-CANON_SPAN['I'] = (9, 21)
+CANON_SPAN['I'] = (9, 24)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -190,7 +193,7 @@ put('IIdx', 17, subj(1) + [
     'C#5:4 F#5:4 A#5:4',                                       # b21 I6
     'F#5:2 D#5:2 B4:2 C#5:2 D#5:2 F#5:2',                      # b22 ii6
     'E#5:2 D#5:2 C#5:2 B4:2 C#5:2 G#5:2~',                     # b23 V7
-    'G#5:2 F#5:2 E#5:2 D#5:2 C#5:2 D#5:2',                     # b24 I: the 9-8 that the comes needs
+    'G#5:2 F#5:2 E#5:2 F#5:2 D#5:2 C#5:2',                     # b24 I: the 9-8 that the comes needs
 ])
 CANON_SPAN['II'] = (17, 24)
 entry('IIdx', 17, 'Canon II dux: subject')
