@@ -31,11 +31,11 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
    foreign subject) with the critic, so the combinations a subject permits are
    known before the form is planned.
 
-5. **[in progress] Bach's subjects as real voices.** Where a recomposed fugue meets
+5. **[built] Bach's subjects as real voices.** (Fugue I: BWV 846 as countersubject; II: BWV 847 augmented in the coda; III: BWV 848 grows out of the inversion; IV: BWV 849's cross as a second subject; V: BWV 850 as a baritone voice; VIII: BWV 853 as a guest.) Where a recomposed fugue meets
    its key-twin in the WTC, Bach's own subject enters as a genuine contrapuntal
    line found by search and fitted by hand, not quoted on top of the texture.
 
-6. **[in progress] Prolation stretto.** The many-voice climaxes combine the subject
+6. **[built] Prolation stretto.** (Fugue VIII's arrival: subject at quarter speed in the bass under inverted, augmented and normal-speed statements; Fugue V: the subject at x4, x2, x1 and x1/2, three at once.) The many-voice climaxes combine the subject
    with its inversion, augmentation and double augmentation at once: what
    BWV 853 does with three voices, at nine.
 
