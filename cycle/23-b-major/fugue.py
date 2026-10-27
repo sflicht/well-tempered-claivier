@@ -98,8 +98,18 @@ def pair2(sc):
     sc.put('B4', 19, 1, 'G2:8 Bb2:8 F2:8 C3:8 Eb3:8 Ab2:8 F2:8 Bb2:8~ Bb2:8 R:8 F2:8')
 
 
+def pair3(sc):
+    # F major / D minor (bars 24-29): S high in the soprano over the fa of the cantus; dotted alto, walking bass
+    sc.theme('S3', 27, 1, in_key(S, 'B4', 'F5'), 'S in F', 'S')
+    sc.put('T6', 24, 1, 'A3:16 C4:8 D4:8 C4:16 D4:16 G3:8 A3:8 A3:8 B3:8')
+    sc.put('B4', 25, 1, 'C3:8 G2:8 D3:8 F2:8 Bb2:8 G2:8 C3:16 F2:8 G2:8')
+    sc.put('S4', 24, 2, 'G5:2 A5:2 C6:4 A5:4 G5:6 F5:2 G5:4 Bb5:4 A5:8')
+    sc.put('A2', 25, 1, 'Bb4:6 C5:2 Bb4:4 G4:4 F4:6 G4:2 A4:4 F4:4 F4:6 Eb4:2 F4:8 E4:6 D4:2 C4:4 E4:4 F4:8')
+
+
 def tour(sc):
     tour_cantus(sc)
+    pair3(sc)
     pair2(sc)
     pair1(sc)
 
