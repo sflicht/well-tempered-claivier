@@ -136,7 +136,7 @@ device of its own:
 34. **[first version] Pair XXI à 22: the posthorn capriccio.** After BWV 992;
     twenty-two voices for the first twenty-two partials of B-flat, ending on
     the posthorn's own harmonic series in just intonation.
-35. **[in progress] Pair XXII à 23: Ma fin est mon commencement.** A tombeau
+35. **[first version] Pair XXII à 23: Ma fin est mon commencement.** A tombeau
     for Bach as a crab fugue: the second half is the first half backwards in
     every voice, ending on the lone note it began with.
 36. **[first version] Pair XXIII à 24: ut re mi fa sol la per tutti i tuoni.**

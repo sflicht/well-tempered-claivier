@@ -389,6 +389,25 @@
    ]
   },
   {
+   "name": "Pair XXII \u00b7 B-flat minor (new, twenty-three voices)",
+   "pieces": [
+    {
+     "id": "prelude-22",
+     "title": "Prelude XXII \u00b7 Tombeau",
+     "score": "cycle/22-b-flat-minor/prelude.json",
+     "tag": "new",
+     "notes": "A tombeau, the French lament for the dead, after Froberger and Louis Couperin (their manner, not their notes), written out in measured notation with a free tempo. A gathering chord, the head of Bach's B-flat-minor fugue in Book I, a chromatic lament bass, a consolation in D-flat, the chord that will be the fugue's axis, Froberger's falling scale, and an ending on a lone B-flat, the fugue's first note."
+    },
+    {
+     "id": "fugue-22",
+     "title": "Fugue XXII \u00b7 Ma fin est mon commencement (23 voices)",
+     "score": "cycle/22-b-flat-minor/fugue.json",
+     "tag": "new",
+     "notes": "'My end is my beginning': Machaut's rondeau of that title is a palindrome. This is a tombeau for Bach as a crab fugue for twenty-three voices: the second half is the first half played exactly backwards, in every voice. It begins with one alto on B-flat; the voices enter one by one in four choirs; all twenty-three sound together at the axis, the exact middle (between bars 48 and 49), on a diminished chord over an F pedal; then the retrograde takes them away in reverse order, and the piece ends on the same lone B-flat.\n\nThe subject joins the head of Bach's five-voice B-flat-minor fugue in Book I (BWV 867) to B-A-C-H, designed so that, read backwards, it ends with a cadence. Writing counterpoint that is correct in both directions is the hard part: a suspension played backwards is a different figure, and V-I becomes I-V; the rules used are set out in the notes. At the axis the subject sounds in augmentation with its H on the turning point, with the subject at normal speed in two tenors and three voices tolling F. The tempo and dynamics are palindromes too.\n\nListen for the exposition coming back reversed in the last minutes."
+    }
+   ]
+  },
+  {
    "name": "Pair XXIII \u00b7 B major (new, twenty-four voices)",
    "pieces": [
     {
