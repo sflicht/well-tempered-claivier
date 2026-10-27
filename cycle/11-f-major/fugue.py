@@ -59,6 +59,14 @@ CS = 'A3:4 F4:6 Eb4:2 D4:6 Bb3:6 C4:4 A3:2'
 CSA = 'E4:4 C5:6 Bb4:2 A4:6 F4:6 G4:4 E4:2'       # the same, against the answer (in C)
 CSI = 'A3:4 C3:6 D3:2 E3:6 G3:6 F3:4 A3:2'        # mirrored by hand, against the inversion
 
+# D minor forms (the tromba sits these out): subject with melodic-minor B natural/C sharp in its turn,
+# its tonal answer in A minor, the mirror (about F, which maps the D-minor triad onto itself) and the CS.
+Sd = ('A4:1 A4:1 D5:2 D5:1 D5:1 F5:2 F5:1 A5:5 '
+      'Bb5:1 A5:1 G5:1 F5:1 G5:1 F5:1 E5:1 D5:1 E5:1 D5:1 C#5:1 B4:1 C#5:1 A4:1 B4:1 C#5:1 D5:2')
+Id = ('D6:1 D6:1 A5:2 A5:1 A5:1 F5:2 F5:1 D5:5 '
+      'C5:1 D5:1 E5:1 F5:1 E5:1 F5:1 G5:1 A5:1 G5:1 A5:1 Bb5:1 C6:1 Bb5:1 D6:1 C6:1 Bb5:1 A5:2')
+CSd = 'F3:4 D4:6 C4:2 Bb3:6 G3:6 A3:4 F3:2'
+
 
 def oc(s, n):
     """Octave transposition."""
@@ -214,6 +222,16 @@ put('Ob', 22, 1.5, 'R:2 Bb4:4 A4:4 E4:4')
 put('Vno', 22, 1.5, 'R:2 E5:4 C#5:4 G5:4')
 put('Fl', 22, 1, 'E6:2 R:2 G6:4 E6:8')
 put('Tr', 22, 3, 'A5:2 A5:1 A5:1 A5:4')
+
+
+# ================================================================ STRETTO I: tutti in D minor (b23-28)
+# The ripieno enters top-down at two-beat distance, two rectus entries then two mirrored ones; the oboe
+# gives the CS to the first; the violone brings the subject into the bass for the cadence.
+theme('V1a', 23, 1.5, Sd, 'stretto I (d): subject (Violino I.1)', 2)
+theme('Va1', 23, 3.5, oc(Sd, -1), 'stretto I (d): subject (Viola 1)', 2)
+theme('Vc', 24, 1.5, oc(Id, -2), 'stretto I (d): inversus (Violoncello)', 2)
+theme('V2a', 24, 3.5, oc(Id, -1), 'stretto I (d): inversus (Violino II.1)', 2)
+put('Ob', 23, 2, oc(CSd, 1))
 
 
 def build(nbars, path=None):

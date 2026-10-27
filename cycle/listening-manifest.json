@@ -118,6 +118,32 @@
    ]
   },
   {
+   "name": "Pair IX \u00b7 E major (new, ten voices)",
+   "pieces": [
+    {
+     "id": "prelude-9",
+     "title": "Prelude IX \u00b7 Pastorale in just intonation",
+     "score": "cycle/09-e-major/prelude.json",
+     "tag": "new",
+     "notes": "A 12/8 pastorale, after WTC I's E-major prelude, tuned note by note in pure 5-limit just intonation: every chord has pure thirds and fifths, and any note held or repeated across a chord change keeps its pitch. The tune's progression I-vi-ii7-V7-I then forces the pitch to sink by a syntonic comma (21.5 cents) every time round. This is the comma pump, the problem tempered keyboards exist to solve.\n\nFour cycles of the theme each sit a comma lower, 86 cents down by the end, nearly a semitone. Then the coda snaps back to the well-tempered keyboard. Compare 'Prelude IX (tempered)' below, which has the same notes with no drift."
+    },
+    {
+     "id": "prelude-9-tempered",
+     "title": "Prelude IX \u00b7 same notes, well-tempered",
+     "score": "cycle/09-e-major/prelude-tempered.json",
+     "tag": "new",
+     "notes": "The pastorale with no per-note tuning: it follows the temperament buttons, so it never drifts. Use it for comparison with the just-intonation version above."
+    },
+    {
+     "id": "fugue-9",
+     "title": "Fugue IX \u00b7 Ricercar a 10 in circulo",
+     "score": "cycle/09-e-major/fugue.json",
+     "tag": "new",
+     "notes": "Ten voices in stile antico, white notes and suspensions, imagined as a ring of singers in the manner of Tallis's 40-voice Spem in alium. The subject's held E is a built-in suspension. The exposition is one continuous build-up, each entry starting before the last has finished, moving round the circle of fifths. In the binaural render the entries literally travel round the listener.\n\nThe subject of Bach's WTC II E-major fugue (BWV 878), which Bach himself took from J.C.F. Fischer, enters as a real voice four times. It sounds augmented in the bass to make the first tutti, in Bach's answer form above it, in A major in the second choir, and augmented as the treble cantus firmus of the final tutti. As in Spem in alium, the first tutti is followed by a bar of silence, then antiphonal exchanges shrinking from four bars to half a bar. At the end the voices drop out in pairs around the ring."
+    }
+   ]
+  },
+  {
    "name": "Appendix \u00b7 canons and contrapuncti (new)",
    "pieces": [
     {

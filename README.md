@@ -25,7 +25,7 @@ engraved PDFs are in each pair's `renders/` folder.
 | [VI](cycle/06-d-minor/) | D minor | à 7, passacaglia and fugue on a lament ground that travels through all seven voices | toccata with recitative (BWV 565 allusion) | in progress |
 | VII | E♭ major | à 8, *a due cori*: two four-voice choirs, subject against inversion | chorale prelude on *Wachet auf* (BWV 645's key) | in progress |
 | [VIII](cycle/08-e-flat-minor/) | E♭ minor | à 9, nine real voices, stretto maestrale over the subject at quarter speed; BWV 853's subject as a guest | 12/8 "Night loom", melody = the subject in retrograde inversion | rebuilt |
-| IX | E major | à 10, *Ricercar in circulo*: the motif travels round a ring of ten voices (Spem in alium) | pastorale in adaptive just intonation that sinks a comma per cycle | in progress |
+| [IX](cycle/09-e-major/) | E major | à 10, *Ricercar in circulo*: stile antico, the motif travels round a ring of ten voices (Spem in alium); BWV 878's Fischer-derived subject as a real voice | pastorale in adaptive just intonation that sinks a syntonic comma per cycle, then snaps back to well-temperament | new |
 | X | E minor | à 11, two choirs in fugal dialogue under the chorale *O Lamm Gottes* (St Matthew Passion homage) | Aria e Presto after BWV 855 | in progress |
 | XI | F major | à 12, *Concerto fuga* after Brandenburg 2's finale: concertino of four against a ripieno of eight | two-part invention after BWV 856 | in progress |
 | XII–XXIII | | | | earlier drafts only (see below) |

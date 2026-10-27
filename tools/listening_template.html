@@ -170,7 +170,8 @@ function load(id) {
   cur.barQ = cur.meter[0] * 4 / cur.meter[1];
   cur.end = Math.max(...cur.voices.map(v => v.e.length ? v.e[v.e.length - 1][0] + v.e[v.e.length - 1][1] : 0));
   const all = cur.voices.flatMap(v => v.e.map(e => e[2])); cur.lo = Math.min(...all) - 2; cur.hi = Math.max(...all) + 2;
-  flat = []; cur.voices.forEach((v, i) => v.e.forEach(e => flat.push([e[0], e[1], e[2], e[3], i, e[4] || 0]))); flat.sort((a, b) => a[0] - b[0]);
+  cur.hasCents = cur.voices.some(v => v.e.some(e => e.length > 4));
+  flat = []; cur.voices.forEach((v, i) => v.e.forEach(e => flat.push([e[0], e[1], e[2], e[3], i, cur.hasCents ? (e[4] || 0) : null]))); flat.sort((a, b) => a[0] - b[0]);
   $('ptitle').innerHTML = esc(cur.title) + (cur.tag ? `<span class="tag ${cur.tag}">${esc(cur.tag)}</span>` : '');
   $('psub').textContent = `${cur.group} · ${cur.key.trim()} · ${cur.meter[0]}/${cur.meter[1]} · ♩ = ${Math.round(cur.bpm)}${cur.sub ? ' · ' + cur.sub : ''}`;
   const s = cur.stats || {};
@@ -209,7 +210,7 @@ function ensureAudio() {
   [0, 1, .42, .26, .18, .1, .07, .045, .03, .02, .012, .008].forEach((a, k) => im[k] = a);
   wave = ctx.createPeriodicWave(re, im);
 }
-const hz = (p, c) => 440 * Math.pow(2, (p - 69 + (c ? c : DATA.temps[temp][((p % 12) + 12) % 12]) / 100) / 12);
+const hz = (p, c) => 440 * Math.pow(2, (p - 69 + (c !== null && c !== undefined ? c : DATA.temps[temp][((p % 12) + 12) % 12]) / 100) / 12);
 function note(when, dur, p, v, cents) {
   const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
   o.setPeriodicWave(wave); o.frequency.value = hz(p, cents);
@@ -302,6 +303,7 @@ function tchart() {
   const minor = cur && /minor/.test(cur.key); const third = minor ? 3 : 4;
   const size = 100 * third + dev[(tonic + third) % 12] - dev[tonic], fifth = 700 + dev[(tonic + 7) % 12] - dev[tonic];
   const pure3 = minor ? 315.6 : 386.3;
+  if (cur && cur.hasCents) { $('tnote').innerHTML = 'This movement carries its own tuning, note by note (adaptive just intonation), so the temperament buttons do not apply to it.'; return; }
   $('tnote').innerHTML = `${esc(TBLURB[temp] || '')} In this movement’s key the tonic ${minor ? 'minor' : 'major'} third is <b>${size.toFixed(1)}¢</b> (pure ${pure3}¢) and the fifth <b>${fifth.toFixed(1)}¢</b> (pure 702.0¢).`;
 }
 window.addEventListener('resize', () => { if (cur) { drawMap(); draw(); tchart(); } });

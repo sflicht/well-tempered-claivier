@@ -511,9 +511,8 @@
       </note>
       <note>
         <pitch>
-          <step>D</step>
-          <alter>1</alter>
-          <octave>5</octave>
+          <step>B</step>
+          <octave>4</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
@@ -6133,27 +6132,19 @@
           <octave>3</octave>
         </pitch>
         <duration>240</duration>
-        <tie type="start" />
         <type>eighth</type>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     <measure number="40">
       <note>
         <pitch>
-          <step>C</step>
+          <step>D</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
         <duration>720</duration>
-        <tie type="stop" />
         <type>quarter</type>
         <dot />
-        <notations>
-          <tied type="stop" />
-        </notations>
       </note>
       <note>
         <pitch>
@@ -6224,8 +6215,9 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
-          <octave>3</octave>
+          <step>A</step>
+          <alter>1</alter>
+          <octave>2</octave>
         </pitch>
         <duration>720</duration>
         <type>quarter</type>
