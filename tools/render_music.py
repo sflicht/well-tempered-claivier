@@ -61,7 +61,9 @@ def key_of(meta):
 def spell_pitch(p, meta, explicit=None):
     key, mode = key_of(meta)
     names = ["c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "b"]
-    if "b" in key or key in ["F", "D", "G", "C"] and mode == "minor":
+    flat_keys = {"major": {"F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"},
+                 "minor": {"D", "G", "C", "F", "Bb", "Eb", "Ab"}}
+    if key in flat_keys.get(mode, set()) or (len(key) > 1 and key.endswith("b")):
         names = ["c", "des", "d", "ees", "e", "f", "ges", "g", "aes", "a", "bes", "b"]
     if key == "C#":
         names[0] = "bis"
@@ -433,7 +435,52 @@ def create_midi(data, output, chamber=False):
     midi.save(output)
 
 
-def render_audio(data, wav_path, mp3_path, soundfont, chamber=False):
+# Historical temperaments, defined by how each fifth of the circle
+# C-G-D-A-E-B-F#-C#-G#-D#-A#-F-C is narrowed, as a fraction of the
+# Pythagorean (PC) or syntonic (SC) comma.  A negative value widens a fifth.
+PC, SC = 23.4600, 21.5063
+TEMPERAMENTS = {
+    'equal': [PC / 12] * 12,
+    # Bradley Lehman's 2005 reading of the WTC title-page loops: 1/6 PC on
+    # F-C-G-D-A-E, pure E-B-F#-C#, 1/12 PC on C#-G#-D#-A#, and A#-F wide by 1/12.
+    'bach-lehman': [PC/6, PC/6, PC/6, PC/6, 0, 0, 0, PC/12, PC/12, PC/12, -PC/12, PC/6],
+    'werckmeister3': [PC/4, PC/4, PC/4, 0, 0, PC/4, 0, 0, 0, 0, 0, 0],
+    'kirnberger3': [SC/4, SC/4, SC/4, SC/4, 0, 0, PC - SC, 0, 0, 0, 0, 0],
+    'vallotti': [PC/6, PC/6, PC/6, PC/6, PC/6, 0, 0, 0, 0, 0, 0, PC/6],
+    # Quarter-comma meantone with the wolf between G# and Eb: the system the
+    # well-tempered keyboard was escaping.  Remote keys sound out of tune.
+    # Eleven quarter-comma fifths; G#-D# (really G#-Eb) absorbs the wolf.
+    'meantone': [SC/4] * 8 + [PC - 11 * SC/4] + [SC/4] * 3,
+}
+
+
+def temperament_offsets(name):
+    """Cents deviation from equal temperament for pitch classes C..B (A = 0)."""
+    narrowing = TEMPERAMENTS[name]
+    pcs = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]
+    cents = {0: 0.0}
+    acc = 0.0
+    for k in range(11):
+        acc += 701.955 - narrowing[k]
+        cents[pcs[k + 1]] = acc % 1200.0
+    dev = [cents[pc] - 100 * pc for pc in range(12)]
+    dev = [((d + 600) % 1200) - 600 for d in dev]
+    a = dev[9]
+    return [round(d - a, 3) for d in dev]
+
+
+def apply_temperament(synth, name, channels, a4=440.0):
+    import ctypes
+    import fluidsynth
+    dev = temperament_offsets(name)
+    shift = 1200 * math.log2(a4 / 440.0)
+    table = (ctypes.c_double * 128)(*[100.0 * p + dev[p % 12] + shift for p in range(128)])
+    fluidsynth.fluid_synth_activate_key_tuning(synth.synth, 0, 0, name.encode(), table, 1)
+    for ch in channels:
+        fluidsynth.fluid_synth_activate_tuning(synth.synth, ch, 0, 0, 1)
+
+
+def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament=None, a4=440.0):
     import fluidsynth
     import numpy as np
     from scipy.io import wavfile
@@ -448,15 +495,21 @@ def render_audio(data, wav_path, mp3_path, soundfont, chamber=False):
     synth.setting('synth.reverb.damp', 0.6)
     synth.setting('synth.reverb.level', 0.16)
     synth.setting('synth.chorus.active', 0)
+    events = performance_events(data, chamber)
+    for t, _, channel, kind, pitch, velocity in events:
+        if kind == 'program':
+            synth.program_select(channel, sfid, 0, pitch)
+    if temperament and (temperament != 'equal' or a4 != 440.0):
+        apply_temperament(synth, temperament, sorted({e[2] for e in events}), a4)
     bpm = bpm_of(meta_of(data))
     cursor = 0
     chunks = []
-    for t, _, channel, kind, pitch, velocity in performance_events(data, chamber):
+    for t, _, channel, kind, pitch, velocity in events:
         frame = round(float(t) * 60.0 / bpm * rate)
         if frame > cursor:
             chunks.append(synth.get_samples(frame-cursor))
             cursor = frame
-        if kind == 'program': synth.program_select(channel, sfid, 0, pitch)
+        if kind == 'program': pass
         elif kind == 'pan': synth.cc(channel, 10, pitch)
         elif kind == 'on': synth.noteon(channel, pitch, velocity)
         else: synth.noteoff(channel, pitch)
@@ -470,7 +523,8 @@ def render_audio(data, wav_path, mp3_path, soundfont, chamber=False):
     subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav_path),
                     '-codec:a','libmp3lame','-b:a','192k',str(mp3_path)], check=True)
     return {'duration_seconds': len(signal)/rate, 'raw_peak':peak,
-            'soundfont':str(soundfont), 'sample_rate':rate}
+            'soundfont':str(soundfont), 'sample_rate':rate,
+            'temperament': temperament or 'equal', 'a4': a4}
 
 
 def main():
@@ -481,6 +535,9 @@ def main():
     ap.add_argument('--no-pdf', action='store_true')
     ap.add_argument('--no-audio', action='store_true')
     ap.add_argument('--chamber', action='store_true')
+    ap.add_argument('--temperament', default='equal', choices=sorted(TEMPERAMENTS),
+                    help='historical keyboard temperament for the audio render')
+    ap.add_argument('--a4', type=float, default=440.0, help='reference pitch, e.g. 415 for Baroque pitch')
     args = ap.parse_args()
     data = json.loads(args.input.read_text())
     normalized_voices(data)
@@ -499,7 +556,8 @@ def main():
             raise RuntimeError(proc.stdout+proc.stderr)
         result['pdf'] = str(prefix.with_suffix('.pdf'))
     if not args.no_audio:
-        result['piano_audio'] = render_audio(data, prefix.with_suffix('.wav'), prefix.with_suffix('.mp3'), args.soundfont)
+        result['piano_audio'] = render_audio(data, prefix.with_suffix('.wav'), prefix.with_suffix('.mp3'), args.soundfont,
+                                             temperament=args.temperament, a4=args.a4)
         result['mp3'] = str(prefix.with_suffix('.mp3'))
         if args.chamber:
             chamber = prefix.parent / (prefix.name+'-chamber')
