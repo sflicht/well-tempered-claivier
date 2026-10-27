@@ -1,5 +1,5 @@
 """Wave 4 (bars 26-34): the subject in A minor (Alto II, new) answered half a bar later
-by the inversion on B (Tenor I, new); then close strettos of the head, U knocking in the
+by the inversion on B (Tenor IV); then close strettos of the head, U knocking in the
 newly entering low voices, R runs; the harmony moves A minor -> E minor -> C#7."""
 from xxiv import *
 
@@ -10,9 +10,9 @@ CS1_E = tr(CS1, -7, -4)    # (rest) B4 A#4 F#5 E5 D5 C5 B4 A4
 
 def wave4(sc):
     P = sc.put
-    # ---- bars 26-28: S in A (Tenor I, new) + I on B (Alto IV, new) half a bar later, a fifth
+    # ---- bars 26-28: S in A (Tenor IV) + I on B (Alto IV, new) half a bar later, a fifth
     # apart in register would give parallel fifths (D#/G# -> E/A); an eleventh apart they are fourths
-    sc.theme('T1', 26, 1, octv(S_A, -1), 'Subject in A minor', 'S', semis=-14)
+    sc.theme('T4', 26, 1, octv(S_A, -1), 'Subject in A minor', 'S', semis=-14)
     sc.theme('A4', 26, 3, I, 'Inversion on B, stretto with the subject', 'I')
     P('B2', 26, 1, "A2:12 G#2:2 C#3:2"); P('B2', 27, 1, "C#3:6 E3:8 D3:2"); P('B2', 28, 1, "D3:4 G2:2 E2:2 B1:4 A1:4")
     P('S3', 26, 1, "E5:6 F#5:8 E5:2"); P('S3', 27, 1, "G#5:6 G5:8 A5:2")
@@ -20,16 +20,16 @@ def wave4(sc):
     P('A1', 26, 1, "C5:6 A4:2")
     P('T3', 26, 1, "C4:6 R:6 E4:4"); P('T3', 27, 1, "B3:6 G3:8 C4:2"); P('T3', 28, 1, "D4:6 E4:2 F#4:4 C#4:2 A3:2")
     P('Br3', 26, 1, "A3:12")
-    P('Br4', 26, 1, "E4:6")
+    P('Br2', 26, 1, "E4:6")
     P('B1', 27, 4, "R:2 C3:2"); P('B1', 28, 1, "Bb2:6 G#2:2 F#2:4 A2:4")   # Bass I returns: a slow line above the leaping bass
     P('A3', 27, 1, "G#4:6 A#4:8 C5:2")
     P('S1', 27, 3, "D6:8~")                                    # Soprano I returns, above the E half-diminished
-    P('Br1', 28, 3, "R:2 A2:2 A2:2 A2:2")      # Baritone I enters: U, landing on a leaning F#
+    P('Br2', 28, 3, "R:2 A2:2 A2:2 A2:2")      # Baritone II: U, landing on a leaning F#
     # ---- bars 29-31: S in E minor (Alto V) with CS1 (Alto II, new); S1 descant; R in T4
     sc.theme('A5', 29, 1, S_E, 'Subject in E minor', 'S', semis=-7)
     P('A2', 29, 1, CS1_E + '~')
     sc.entries.append(('A2', sc.pos(29, 2), 'CS1 (E minor)', 'CS1', 1, -7, False))
-    P('Br1', 29, 1, "F#3:6 E3:2 C#3:6 F#3:2"); P('Br1', 30, 1, "E3:6 C3:6 D3:4"); P('Br1', 31, 1, "E3:4 G3:2 B2:2 E3:4")
+    P('Br2', 29, 1, "F#3:6 E3:2 C#3:6 F#3:2"); P('Br2', 30, 1, "E3:6 C3:6 D3:4"); P('Br2', 31, 1, "E3:4 G3:2 B2:2 E3:4")
     P('B2', 29, 1, "E2:8 F#2:6 B1:2"); P('B2', 30, 1, "E2:6 A2:2 D2:4 E2:4"); P('B2', 31, 1, "A2:2 A#2:2 D3:2 B2:2 E2:4 C#2:4"); P('B2', 32, 1, "F#2:8 G#2:6 C#2:2~")
     P('S1', 29, 1, "G5:8 F#5:6 B5:2"); P('S1', 30, 1, "B5:6 C6:6 B5:4"); P('S1', 31, 1, "A5:2 G5:4 F#5:2 G#5:8")
     P('A4', 29, 1, "B4:4 E5:10 D#5:2"); P('A4', 30, 1, "D5:6 C5:2")

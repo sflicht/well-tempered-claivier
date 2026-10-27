@@ -62,7 +62,7 @@ def main():
     res['FI rung 1'] = run('Fugue I in B: Br2 leads, T5 an octave above, 3 eighths later', IB, octv(IB, -1), 6)
     res['FI rung 2'] = run('Fugue I in B: A2 leads, S1 an octave above, 3 eighths later', octv(IB, 1), IB, 6)
     VB = tr(GUESTS['V'][0], -3, -2)
-    res['V release'] = run('Fugue V in B major, T3 at bar 52, over the cantus pedal B1', VB, 'B1:16 B1:16')
+    res['V release'] = run('Fugue V in B major, T3 at bar 54 (release), over the cantus pedal B1', VB, 'B1:16 B1:16')
     (HERE / 'renders').mkdir(exist_ok=True)
     (HERE / 'guest-verification.json').write_text(json.dumps(res, indent=1))
 
