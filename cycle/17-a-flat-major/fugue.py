@@ -260,7 +260,7 @@ def chain_free():
     put('LA1', 23, 0, lit('Eb4:12 Fb4:6 Eb4:6 | Db4:6 Fb4:6 Db4:12'))
     # E11, E major (= F-flat, bars 25-28): the farthest key, and the softest.  After the entry, the dream:
     # the tune's first bar in augmentation, floating over an imperfect (first-inversion) landing.
-    put('LA1', 25, 0, lit('B4:12 C#5:6 B4:6 | C#5:6 B4:12 A4:6 | G#4:12 B4:8 A4:4 | G#4:6 E4:12 F#4:6'))
+    put('LA1', 25, 0, lit('B3:6 B4:6 C#5:6 B4:6 | C#5:6 B4:12 A4:6 | G#4:12 B4:8 A4:4 | G#4:6 C#4:6 E4:6 F#4:6'))
     theme('LS2', 27, 0, realize([(d, 2 * u) for d, u in SUBJ_DEG[:8]], 'E', 'major', 4),
           'the dream: the first bar of the subject in augmentation (E major)', 2)
     put('RB1', 27, 0, lit('G#2:12 E2:6 B2:6 | C#3:6 A2:6 B2:12'))
