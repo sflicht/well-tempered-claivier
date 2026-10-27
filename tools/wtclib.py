@@ -131,11 +131,13 @@ def invert_diatonic(s, axis_name: str, scale):
     ordered from the tonic).  Chromatic notes are mirrored chromatically."""
     ap, _, _, _ = parse_tok(axis_name + ':1')
 
+    t = scale[0]
+
     def deg(p):
-        # diatonic step index (absolute) or None if chromatic
+        # absolute diatonic step index, octaves counted from the tonic; None if chromatic
         pc = p % 12
         if pc in scale:
-            return (p // 12) * 7 + scale.index(pc)
+            return ((p - t) // 12) * 7 + scale.index(pc)
         return None
 
     ad = deg(ap)
@@ -150,7 +152,7 @@ def invert_diatonic(s, axis_name: str, scale):
             q = 2 * ap - p
         else:
             nd = 2 * ad - dd
-            q = (nd // 7) * 12 + scale[nd % 7]
+            q = t + (nd // 7) * 12 + ((scale[nd % 7] - t) % 12)
         letter = 'CDEFGAB'[(2 * 'CDEFGAB'.index(axis_name[0]) - 'CDEFGAB'.index(sp[0].upper())) % 7]
         out.append(f"{name_of(q, letter)}:{tok.rsplit(':', 1)[1]}")
     return ' '.join(out)

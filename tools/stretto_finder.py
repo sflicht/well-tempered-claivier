@@ -50,12 +50,23 @@ def to_voice(notes, name):
     return {'name': name, 'abbr': name, 'events': [{'t': float(s / 4), 'd': float(d / 4), 'p': int(p)} for s, d, p in notes]}
 
 
+def _deg(p, scale):
+    """Absolute diatonic degree, octaves counted from the tonic (scale[0])."""
+    t = scale[0]
+    return ((p - t) // 12) * 7 + scale.index(p % 12)
+
+
+def _pitch(j, scale, ref):
+    """Inverse of _deg; ref is any pitch used to fix the octave frame."""
+    t = scale[0]
+    return t + (j // 7) * 12 + ((scale[j % 7] - t) % 12)
+
+
 def diatonic_shift(p, steps, scale):
     pc = p % 12
     if pc not in scale:
         return None
-    idx = (p // 12) * 7 + scale.index(pc) + steps
-    return (idx // 7) * 12 + scale[idx % 7]
+    return _pitch(_deg(p, scale) + steps, scale, p)
 
 
 def transform(notes, form, time_scale, offset16, shift, scale, axis, diatonic=True):
@@ -68,10 +79,8 @@ def transform(notes, form, time_scale, offset16, shift, scale, axis, diatonic=Tr
             if diatonic:
                 pc = p % 12
                 if pc in scale and axis % 12 in scale:
-                    ia = (axis // 12) * 7 + scale.index(axis % 12)
-                    ip = (p // 12) * 7 + scale.index(pc)
-                    j = 2 * ia - ip
-                    q = (j // 7) * 12 + scale[j % 7]
+                    j = 2 * _deg(axis, scale) - _deg(p, scale)
+                    q = _pitch(j, scale, p)
                 else:
                     q = 2 * axis - p
         if diatonic:
