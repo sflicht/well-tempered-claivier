@@ -32,6 +32,10 @@ def wave5(sc, b0=37):
     P('A5', b(1), 1, "D#4:1 E#4:1 F#4:1 G#4:1 A#4:1 G#4:1 F#4:1 E#4:1 D#4:4 G#4:4")
     P('T4', b(2), 4, "D4:4"); P('T4', b(3), 1, "G3:1 A3:1 B3:1 D4:1 G4:1 D4:1 B3:1 A3:1")
     P('A1', b(2), 4, "F#5:4")
+    # the inversion's head, twice: Tenor III (F# minor) and Alto II (on D#, over G#7)
+    P('T3', b(0), 1, "F#3:4 D#3:2 E3:2 B#3:6 B3:2")
+    P('A2', b(1), 1, "D#4:4 B#3:2 C#4:2 A4:6 G#4:2")
+    P('Br5', b(3), 4, "C#3:4")
     P('T1', b(3), 3, "C#4:8")                                               # Tenor I returns
     # Tenor II: U landing on the seventh of F#7, then a long line into c0
     P('T2', b(1), 3.5, "G#3:2 G#3:2 G#3:2"); P('T2', b(2), 1, "E4:6 D#4:2 C#4:8"); P('T2', b(3), 1, "B3:8 C#4:8")
