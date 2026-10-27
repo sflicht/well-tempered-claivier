@@ -207,6 +207,11 @@ def section_A(b0):
     T('P2', 22, cantus(1, -2), 'cantus line 1 (Ped. II, canon dux)')
     T('P1', 32, cantus(1, -1), 'cantus line 1 (Ped. I, canon comes at the octave, 10 beats)')
     T('HS2', 24, W.invert_diatonic(S1, 'D5', GNAT), 'line 1: subject 1 inverted (HW S2)')
+    T('HT', 14, 'F3:8 G3:8 A3:4 F3:4 G3:4 A3:4 A3:8 G3:8')
+    T('HA', 15, 'D5:4 D5:2 C5:2 Bb4:2 C5:2 C5:4 Bb4:4 G4:2 A4:2 Bb4:2 A4:2 F4:4 R:8 Bb4:2 A4:2 G4:2 F4:2 Eb4:2 D4:2 Eb4:2 F4:2 G4:2 F4:2 Eb4:2 D4:2 C4:4 D4:4 Eb4:4 D4:2 C4:2 D4:8')
+    T('HS1', 26, 'G5:4 A5:4 G5:4 F5:4 F5:4 E5:4 D5:8 Eb5:4 D5:4 C5:4 D5:8 C5:4 D5:4')
+    T('HS2', 32, 'F5:6 Eb5:2 D5:4 C5:4 Bb4:6 C5:2 A4:4 Bb4:8 A4:4 Bb4:8')
+    T('P2', 40, 'Bb2:4 G2:4 Eb2:4 D2:4 F2:8 Bb1:16')
     # A-END
 
 

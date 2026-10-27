@@ -134,7 +134,7 @@ put('T1', 21, 1, 'A4:16 R:16 G#4:16 R:16 E4:16')
 put('B1', 19, 1, 'B2:8 R:8')
 theme('B1', 20, 1, 'F#3:8 B3:16 A3:8', 'S head on F#', 2)
 put('B1', 22, 1, 'B3:8 R:8 R:8 B2:24 G#2:16')
-put('S2', 19, 1, 'E5:8 D#5:4 E5:4 F#5:8 G#5:8 C#6:24 B5:12 A5:4 G#5:8 B5:32')
+put('S2', 21, 1, 'C#6:24 B5:12 A5:4 G#5:8 B5:32')
 put('A2', 19, 1, 'B3:16 E4:16')
 theme('A2', 21, 3, 'C#4:8 F#4:16 E4:8', 'S head on C#', 2)
 put('A2', 23, 3, 'E4:8 R:16 B3:16')
@@ -202,28 +202,29 @@ put('Bar2', 38, 3, 'F#3:8')
 # English false relation.
 theme('S1', 39, 1, W.transpose(W.scale_rhythm(F, 2), 12, 7), 'BWV 878 subject x2 as treble cantus firmus', 7)
 put('S1', 46, 1, 'F#5:16')
-theme('S1', 47, 1, 'E5:8 A5:16 G#5:40', 'S head on E: the circle closes where it began', 2)
-put('B2', 39, 1, 'E2:8 C#3:4 B2:4 A2:8 G#2:8 B2:8 A2:16 B2:8 E2:8 C#3:8 A2:8 B2:8 E2:8 A2:4 G#2:4 F#2:12 G#2:4 A2:16 E2:48')
+theme('S1', 47, 1, 'E5:8 A5:16 G#5:32', 'S head on E: the circle closes where it began', 2)
+put('S1', 50, 3, 'G#5:8')
+put('B2', 39, 1, 'E2:8 C#3:4 B2:4 A2:8 G#2:8 B2:8 A2:16 B2:8 E2:8 C#3:8 A2:8 B2:8 E2:8 A2:4 G#2:4 F#2:12 G#2:4 A2:16 E2:40 E2:8')
 theme('A1', 39, 1, 'G#4:8 C#5:16 B4:8', 'S head on G#', 2)
-put('A1', 41, 1, 'B4:8 F#4:8 E4:8 R:8 E4:4 F#4:4 G#4:8 C#5:4 B4:4 A4:8 G#4:8 C#5:8 D5:24 C#5:8 B4:24')
+put('A1', 41, 1, 'B4:8 F#4:8 E4:8 R:8 E4:4 F#4:4 G#4:8 C#5:4 B4:4 A4:8 G#4:8 C#5:8 D5:24 C#5:8 B4:16 B4:8')
 theme('T1', 40, 1, 'E4:8 B3:16 C#4:8', 'I head on E', 2)
-put('T1', 42, 1, 'A3:4 G#3:4 F#3:8 G#3:8 C#4:16 B3:8 E4:16 A3:32 B3:24')
+put('T1', 42, 1, 'A3:4 G#3:4 F#3:8 G#3:8 C#4:16 B3:8 E4:16 A3:32 B3:16 B3:8')
 theme('Bar1', 41, 1, 'F#3:8 C#3:16 D#3:8', 'I head on F#', 2)
 put('Bar1', 43, 1, 'E3:8 R:8 R:16 R:8 E3:8 D3:16 E3:8 C#3:8 R:32')
 theme('T2', 42, 1, 'C#4:8 F#4:16 E4:8', 'S head on C#', 2)
 put('T2', 39, 1, 'B3:8 C#4:12 D#4:4 E4:8')
 put('T2', 44, 1, 'E4:8 R:8 R:8')
 theme('T2', 45, 3, 'A3:8 D4:16 C#4:8', 'S head on A (D natural)', 2)
-put('T2', 47, 3, 'C#4:8 G#4:40')
+put('T2', 47, 3, 'C#4:8 G#4:32 G#4:8')
 theme('S2', 43, 1, 'B4:8 E5:16 D#5:8', 'S head on B (home)', 2)
-put('S2', 39, 1, 'B5:8 G#5:8 A5:8 R:8 R:8 C#5:16 B4:8')
-put('S2', 45, 1, 'G#5:8 A5:16 D5:8 A4:8 E5:40')
+put('S2', 41, 3, 'C#5:16 B4:8')
+put('S2', 45, 1, 'G#5:8 A5:16 D5:8 A4:8 E5:32 E5:8')
 theme('A2', 44, 1, 'F#4:8 B4:16 A4:8', 'S head on F#', 2)
 put('A2', 39, 1, 'B4:8 E4:8 A4:8 R:8 F#4:4 G#4:4 A4:8')
-put('A2', 46, 1, 'A4:16 E4:56')
-put('Bar2', 39, 1, 'E3:24 E3:8 R:8 A3:8 E3:8 R:8 B3:16 A3:8 R:8 E3:8 C#3:8 R:16 R:8 E3:56')
+put('A2', 46, 1, 'A4:16 E4:48 E4:8')
+put('Bar2', 39, 1, 'E3:24 E3:8 R:8 A3:8 E3:8 R:8 B3:16 A3:8 R:8 E3:8 C#3:8 R:16 R:8 E3:48 E3:8')
 put('B1', 39, 1, 'B2:8 R:8 C#3:8 R:8')
-put('B1', 43, 1, 'B2:8 R:8 R:16 B2:8 R:8 R:16 R:16 B2:32')
+put('B1', 43, 1, 'B2:8 R:8 R:16 B2:8 R:8 R:16 R:16 B2:24 B2:8')
 
 
 LETTER = 'CDEFGAB'
@@ -268,16 +269,16 @@ def build(nbars):
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue IX in E major, ten voices: Ricercar a 10 in circulo',
             'composer': 'Claude / Sam (with the subject of J. S. Bach, BWV 878, after J. C. F. Fischer)',
             'instrument': 'Ten keyboards in a ring (open score, two choirs)',
-            'key': 'E', 'mode': 'major', 'meter': list(METER), 'bpm': 72, 'tempo_text': 'Alla breve, stile antico',
+            'key': 'E', 'mode': 'major', 'meter': list(METER), 'bpm': 92, 'tempo_text': 'Alla breve, stile antico',
             'movement_number': 9, 'piece_type': 'fugue', 'edition': 'third',
             'spatial_layout': 'ring: voice index = position, Choir I left half, Choir II right half',
             # broad at the first tutti, held back into the general pause, a tempo for the antiphony,
             # broad again for the final tutti, and a long ritardando as the ring empties
-            'tempo_map': [[72, 66], [94, 66], [100, 54, 'ramp'], [100, 54], [104, 70], [148, 70],
-                          [152, 64, 'ramp'], [184, 64], [188, 54, 'ramp'], [200, 40, 'ramp']]}
+            'tempo_map': [[72, 84], [94, 84], [100, 69, 'ramp'], [100, 69], [104, 90], [148, 90],
+                          [152, 82, 'ramp'], [184, 82], [188, 69, 'ramp'], [200, 51, 'ramp']]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 62) for i in range(len(NAMES))]
     dyn = {1: -8, 9: -4, 13: 0, 17: 4, 19: 12, 23: 14, 25: 10, 27: -14, 31: -10, 35: -4, 36: -8, 38: 0,
-           39: 8, 43: 12, 45: 14, 47: 8, 49: 2}
+           39: 8, 43: 12, 45: 14, 47: 8, 49: -10, 50: -14}
 
     def dynamics(b):
         v = 0

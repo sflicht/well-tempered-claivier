@@ -314,7 +314,7 @@ theme('V1a', 45, 1.5, 'B3:1 B3:1 E4:2 E4:1 E4:1 G#4:2 G#4:1 B4:5', 'joke: head i
 put('V1b', 41, 1, 'Eb5:8 D5:4 Eb5:4 C5:8 A4:8 A4:16 A4:12 G#4:4')
 put('Va2', 41, 1, 'Eb4:8 C4:8 F4:8 C4:8 F4:8 A3:8 C4:12 B3:4')
 put('Vne', 43, 1, 'D3:16 A2:12 B2:4')
-# bar 45: E7 -> E major, struck twice; the trumpet's F-major head against it
+# bar 45: E7 -> E major, held through the bar (so the trumpet's F-major head sounds against it) and struck again at 46.1
 put('Vne', 45, 1, 'E2:8 E2:8 E2:8')
 put('Vc', 45, 1, 'B2:8 B2:8 B2:8')
 put('Va2', 45, 1, 'B3:8 B3:8 B3:8')
@@ -369,7 +369,9 @@ theme('Va2', 55, 4.5, ' '.join(dshift(S, -9).split()[:-1]) + ' G4:2', 'stretto a
 put('V1b', 54, 3.5, W.transpose(oc(CSIdim, 1), 5, 3))
 put('Vc', 53, 1, 'F2:4')
 # further statements of the CS in diminution, falling (CS) or mirrored (CSI), in F or B-flat, placed where
-# the search found them compatible with everything above; each is the hand-written CS, halved
+# the search found them compatible with everything above; each is the hand-written CS, halved (two more,
+# viola 1 at 54.3.5 and the violino at 55.2.5, were removed after the second review: their E-flat and
+# A-flat struck against E and A)
 put('V2b', 54, 1.5, W.transpose(CSIdim, 24, 14))       # F, rising, high
 put('V1a', 55, 4.5, oc(CSdim, 2))                      # F, falling
 put('Ob', 56, 2.5, ' '.join(W.transpose(CSIdim, 17, 10).split()[:-1]) + ' C5:4')  # B-flat, rising; ends on C

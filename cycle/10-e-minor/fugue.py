@@ -306,7 +306,7 @@ put('A1', 44, 1, 'D5:6 B4:6 G4:12')                               # Coro I alto 
 # ================================================================ IX. CHORALE LINE 7 (b49-56): the final stretto, both choirs
 # Coro II's bass sings the G-major inversion (b49.1); Coro I's soprano the inversion under the chorale (b50.1);
 # Coro II's baritone the subject (b51.3), with Coro I's tenor singing the countersubject against it, as in the
-# exposition; all eleven lines move in b51-53.  Coda: Coro I's tenor turns its countersubject into the subject's
+# exposition; the free voices stay out of their way (second review).  Coda: Coro I's tenor turns its countersubject into the subject's
 # head as Coro II's alto sings the inversion's head (b53.3); then the eleven lines reach the closing chord one or two
 # at a time, each by step.
 CH7F = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:6 A5:6 G5:84'     # last line; its final G arrives first (b53.3)
