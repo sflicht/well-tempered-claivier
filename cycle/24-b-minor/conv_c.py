@@ -36,7 +36,7 @@ def part_c(sc, b0, close=True):
     P('A1', c(11), 1, "E4:8 D#4:8")
     # ---- A2: chain, from c9.3
     P('A2', c(9), 3, "G#4:8~")
-    P('A2', c(10), 1, "G#4:4 A4:4 G4:8~")             # 9-8 over A7; G prepared
+    P('A2', c(10), 1, "G#4:4 A4:4 E4:4 G4:4~")       # G#->A over A7; G enters as the only 7th of A#o7
     P('A2', c(11), 1, "G4:8 F#4:8")                  # G over B: 6-5 into F#
     # ---- A3: C D | (D) C# . | (C#) D#
     P('A3', c(9), 1, "C5:8 D5:8~")
@@ -44,7 +44,7 @@ def part_c(sc, b0, close=True):
     P('A3', c(11), 1, "C#5:8 D#5:8")
     # ---- A4: sixteenths to the arrival
     P('A4', c(9), 1, "G4:1 C5:1 E5:1 C5:1 G4:1 A4:1 B4:1 A4:1 E5:1 D5:1 B4:1 G#4:1 B4:1 D5:1 E5:1 B4:1")
-    P('A4', c(10), 1, "G4:1 A4:1 C#5:1 E5:1 C#5:1 A4:1 B4:1 C#5:1 E5:1 C#5:1 A#4:1 C#5:1 G5:1 F#5:1 E5:1 C#5:1")
+    P('A4', c(10), 1, "G4:1 A4:1 C#5:1 E5:1 C#5:1 A4:1 B4:1 C#5:1 E5:1 C#5:1 A#4:1 C#5:1 E5:1 F#5:1 G5:1 E5:1")
     P('A4', c(11), 1, "F#5:12 B4:4")
     # ---- A5: enters on A7
     P('A5', c(10), 1, "C#4:12 A#3:4~")
@@ -55,17 +55,17 @@ def part_c(sc, b0, close=True):
     P('T1', c(11), 1, "B3:16")
     # ---- T2
     P('T2', c(9), 1, "G3:8 R:8")
-    P('T2', c(10), 1, "G3:16~")
-    P('T2', c(11), 1, "G3:4 F#3:12")
+    P('T2', c(10), 1, "R:8 E3:8~")
+    P('T2', c(11), 1, "E3:4 F#3:12")
     # ---- T3: upbeat figure into c11
     P('T3', c(10), 3, "R:2 C#4:2 C#4:2 C#4:2")
     P('T3', c(11), 1, "A#4:12 B4:4")
     # ---- T4: sixteenths in c10
-    P('T4', c(9), 1, "R:4 E4:8 G#3:4")
-    P('T4', c(10), 1, "E4:1 C#4:1 A3:1 B3:1 C#4:1 E4:1 G4:1 E4:1 C#4:1 B3:1 A#3:1 B3:1 C#4:1 E4:1 G4:1 E4:1")
+    P('T4', c(9), 1, "R:4 E4:12~")
+    P('T4', c(10), 1, "E4:1 D4:1 C#4:1 A3:1 B3:1 C#4:1 E4:1 C#4:1 A#3:1 B3:1 C#4:1 E4:1 C#4:1 B3:1 A#3:1 C#4:1")
     P('T4', c(11), 1, "E4:12 D#4:4")
     # ---- T5: upbeat figure into c11
-    P('T5', c(9), 3, "R:4 E4:4")
+    P('T5', c(9), 3, "R:8")
     P('T5', c(10), 1, "E4:8 R:2 A#3:2 A#3:2 A#3:2")
     P('T5', c(11), 1, "F#4:16")
     # ---- baritones and basses: fewer low voices in c9-c10 (the cantus is the bass);
@@ -74,7 +74,7 @@ def part_c(sc, b0, close=True):
     P('Br1', c(10), 1, "R:4 E4:8 R:4")
     P('Br1', c(11), 2, "B3:12")
     P('Br2', c(9), 1, "E4:4 G3:4 D4:8")
-    P('Br2', c(10), 1, "A3:4 C#4:4 A#3:8")
+    P('Br2', c(10), 1, "A3:4 C#4:8 A#3:4")
     P('Br2', c(11), 1, "F#3:16")
     P('Br3', c(11), 1, "D#3:16")
     P('Br4', c(11), 3, "F#3:8")

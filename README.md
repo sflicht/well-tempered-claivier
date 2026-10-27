@@ -31,7 +31,8 @@ engraved PDFs are in each pair's `renders/` folder.
 | XII | F minor | à 13, *Fuga a 4 soggetti, compiuta*: the Art of Fugue's unfinished final fugue completed as Bach planned (three subjects incl. B-A-C-H plus the main theme, after Nottebohm) | (later) | in progress |
 | XIII | F♯ major | à 14, *fuga canonica* on the Goldberg ground: canons at every interval piling up, ending in the Var. 30 quodlibet | an Aria over the same ground | in progress |
 | XIV | F♯ minor | à 15, *Ricercar a 15* on Frederick the Great's Royal Theme, with the Musical Offering's canons and a canon per tonos | a trio sonata on the theme | in progress |
-| XV–XXIII | | | | earlier drafts only (see below) |
+| XV | G major | à 16, on Luther's *Vom Himmel hoch*: all four chorale lines at once in canon, the trick that ends Bach's Canonic Variations BWV 769, multiplied | (later) | in progress |
+| XVI–XXIII | | | | earlier drafts only (see below) |
 | XXIV | B minor | à 25, twelve-tone subject (after BWV 869), contrasting rates of motion, the cycle's subjects gathered in the convergence | (later) | in progress |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:
