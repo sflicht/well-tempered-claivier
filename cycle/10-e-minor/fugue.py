@@ -350,14 +350,14 @@ def build(nbars):
             'key': 'E', 'mode': 'minor', 'meter': list(METER), 'bpm': 84,
             'tempo_text': 'Andante, sempre legato (dotted quarter = 56)',
             # t in quarters (one 12/8 bar = 6): a breath before the Recognition (b26), then the final
-            # chorale line (b50-55) broadens to the last chord
+            # chorale line (b50-56) broadens to the last chord
             'tempo_map': [[144, 84], [150, 76, 'ramp'], [150, 84], [282, 84], [300, 80, 'ramp'], [318, 74, 'ramp'],
-                          [330, 54, 'ramp']],
+                          [330, 60, 'ramp'], [336, 50, 'ramp']],
             'movement_number': 10, 'piece_type': 'fugue', 'edition': 'third'}
     voices = [(LONG[i], NAMES[i], CLEF[i], 64 if n != 'CH' else 74) for i, n in enumerate(NAMES)]
     # phrase dynamics by section (bar -> velocity offset, all voices)
     dyn = {1: -8, 5: -4, 9: 0, 11: -4, 14: 4, 17: -6, 20: -2, 23: 0, 26: 6, 30: 2, 32: 4, 35: 6, 37: 0, 42: -4,
-           43: 2, 45: 4, 47: 8, 49: 10, 54: 6}
+           43: 2, 45: 4, 47: 8, 49: 10, 54: 6, 55: 4, 56: 2}
 
     def dynamics(b):
         v = 0
