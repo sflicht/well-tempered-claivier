@@ -8,18 +8,22 @@ The third edition lives in `cycle/`, one folder per prelude–fugue pair in
 Bach's key order. See the README for the table of pairs and the
 [listening room](https://claude.ai/artifact/BBJMS7b46MiEycNBM24yhB).
 
-- **Pairs I–XI** are composed, checked and rendered, and each has had two
-  independent bar-by-bar reviews (`REVIEW.md`, `REVIEW-2.md`) with fixes.
-  Pairs I, III, VI, VII, IX, X and XI are new; II, IV, V and VIII were
-  rebuilt from the October 23 auditions.
-- **Fugues XIV (à 15), XV (à 16, with its prelude) and XXIV (à 25)** are
-  finished first versions; their independent review is under way. XIV's
-  summit is still thinner than fifteen real lines.
-- **Being composed:** XII (second pass), XIII, XVI, XVII, XVIII, XIX, XX,
-  XXI, XXII, XXIII, and Prelude XXIV. Each pair's concept is in the README
-  table and in `cycle/IDEAS.md`.
+- **All 24 fugues and 21 preludes exist** (about two hours of music); every
+  movement is checked, rendered and in the listening room. Preludes XII, XIV
+  and XVII are not written yet.
+- **Pairs I–XI** have each had two independent bar-by-bar reviews
+  (`REVIEW.md`, `REVIEW-2.md`) with fixes applied.
+- **Fugues XIV, XV and XXIV** have had one independent review with fixes;
+  **XII** a second pass. **XIII and XVI–XXIII** are first versions, not yet
+  reviewed.
+- The weak spot most often left open is density: several of the largest
+  fugues reach only 10–16 truly independent lines at their summit, because
+  extra lines either doubled others or created parallels. Each NOTES.md
+  says so.
 - **Appendix:** Contrapunctus permutationum, a table canon and a tempo
   canon are finished.
+
+**Paused for listening.** Start with `cycle/LISTENING_GUIDE.md`.
 
 The C-minor pair formerly called "Pair I" is now Pair II, as in Bach's
 order, and its fugue has three voices instead of two.
@@ -51,7 +55,6 @@ real counterpoint, not harmony.
 
 - Sam has not heard any third-edition movement. The renders are untested by
   ear; the next step is listening and feedback.
-- Pairs XII–XXIII and Prelude XXIV are in progress (see above); the earlier
-  versions of those keys exist only in the rejected complete drafts.
+- Reviews of XII, XIII and XVI–XXIII; Preludes XII, XIV and XVII.
 - The spatial film remains a goal; `tools/render_spatial.py` renders every
   fugue binaurally as a first step toward its sound.

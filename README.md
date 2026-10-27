@@ -12,6 +12,8 @@ still written by hand in its source file.
 plays every movement in the browser from its score, with historical
 temperaments, voice solo/mute and subject entries marked. Rendered MP3s and
 engraved PDFs are in each pair's `renders/` folder.
+[cycle/LISTENING_GUIDE.md](cycle/LISTENING_GUIDE.md) suggests where to start
+and what to listen for in each pair.
 
 ## The third edition (`cycle/`)
 
