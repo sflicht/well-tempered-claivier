@@ -332,6 +332,11 @@ def section_F(b0):
     T('HA', 0, S7, 'line 7 Vorimitation: subject 7 (HW A)')
     T('OT', 2, oc(A7, -1), 'line 7 Vorimitation: answer (OW T)')
     T('HBr', 6, oc(A7, -1), 'line 7 Vorimitation: answer (HW Bar)')
+    T('HS1', 8, oc(dsh(S7, 3), 1), 'line 7: subject 7 on E-flat (HW S1)')
+    T('HB', 10, oc(W.invert_diatonic(S7, 'Bb4', GNAT), -1), 'line 7: subject 7 inverted (HW B)')
+    T('RS', 14, oc(dsh(S7, -2), 1), 'line 7: subject 7 on G (RP S)')
+    T('HB', 18, oc(dsh(S7, 3), -1), 'line 7: subject 7 on E-flat (HW B)')
+    T('RA', 20, W.invert_diatonic(S7, 'Bb4', GNAT), 'line 7: subject 7 inverted (RP A)')
     # F-END
 
 

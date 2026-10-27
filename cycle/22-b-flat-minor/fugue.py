@@ -250,13 +250,16 @@ put('T1', 17, 3, 'G4:8 F4:16')
 # chord of equal intervals, the same forwards and backwards.
 S2X = W.scale_rhythm(oc(S, 1), 2)
 theme('S4', 41, 1, S2X, 'Subject in augmentation (B-A-C-H on the axis)')
-theme('A3', 41, 1, S, 'Subject (stretto I)')
-theme('Bar4', 43, 1, oc(S, -1), 'Subject (stretto II)')
-theme('A4', 45, 1, S, 'Subject (stretto III, ending on the axis)')
+theme('A3', 41, 1, oc(S, -1), 'Subject (stretto I, with the augmentation)')
+theme('A4', 45, 1, S, 'Subject (ending on the axis)')
 put('B4', 44, 3, 'C2:8 F1:64')
 AXIS_TIE.add('B4')
 AXIS_TIE.add('S4')
-put('B3', 41, 1, 'Bb2:8 Gb2:8 Db3:8 Eb3:8 Bb2:8 Db3:8 F2:8 Eb3:8')
+put('B3', 41, 1, 'Bb2:8 Gb2:8 Db3:8 Eb3:8 Db3:16 F2:8 Gb2:8')
+# b45-48 over the pedal: S1 a syncopated chain a sixth under the augmentation (6-4-6-4, each
+# sixth a 4-3 or 6-5 suspension over the changing harmony), S3 a quarter-note line between them.
+put('S1', 45, 1, 'Bb5:4 Ab5:8 Gb5:4~ Gb5:4 F5:8 Eb5:4~ Eb5:4 Db5:8 C5:4~ C5:8 D5:8')
+put('S3', 45, 1, 'Db6:4 C6:4 Bb5:8 Bb5:4 Ab5:4 A5:8 G5:4 F5:4 F5:8 F5:8 Ab5:8')
 
 
 if __name__ == '__main__':

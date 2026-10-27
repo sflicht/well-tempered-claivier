@@ -104,8 +104,8 @@ def main():
         'subtitle': 'Fugue XXIV in B minor, twenty-five voices',
         'composer': 'Claude / Sam (guest subjects from Fugues I, II, IV, V, VIII of this edition)', 'instrument': 'Twenty-five voices (open score)', 'key': 'B', 'mode': 'minor',
         'meter': [4, 4], 'bpm': 63, 'tempo_text': 'Largo, poi con fuoco',
-        'tempo_map': [[100, 63], [144, 69, 'ramp'], [160, 69], [c0 + 4, 58, 'ramp'], [c0 + 36, 58],
-                      [c0 + 48, 50, 'ramp'], [c0 + 80, 46, 'ramp'], [c0 + 88, 38, 'ramp']],
+        'tempo_map': [[100, 63], [144, 69, 'ramp'], [c0 + 40, 69], [c0 + 48, 58, 'ramp'],
+                      [c0 + 72, 58], [c0 + 80, 46, 'ramp'], [c0 + 88, 38, 'ramp']],
         'movement_number': 24, 'piece_type': 'fugue', 'edition': 'third',
         'credits': 'Guest subjects quoted from this edition: Fugue I (C major), II (C minor), '
                    'IV (C-sharp minor), V (D major), VIII (E-flat minor; its head is J. S. Bach, WTC I/8, BWV 853). '

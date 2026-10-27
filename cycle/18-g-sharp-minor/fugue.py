@@ -101,6 +101,25 @@ def assemble(v, nbars):
     return W.concat_bars(' '.join(out), METER)
 
 
+
+# ================================================================ I. SERO (evening), Phrygian: b1-15
+# The subject rises out of the depth (bass), the answers climb one register at a time.
+# Harmony keeps the Phrygian A natural (Neapolitan colour); phrases close with A -> G# in the bass.
+theme('B1', 1, 1, octv(S_PHR, -2), 'I. Sero: subject (Phrygian) in the bass')
+theme('T2', 4, 1, A_PHR, 'I: answer (D# Phrygian)')
+put('B1', 4, 1, 'G#2:8 E2:4 F#2:4 B2:8 G#2:8 F#2:8 C#3:8 D#3:8 B2:8 A2:8 '          # countersubject (bass)
+                'G#2:8 F#2:8 E2:8 C#3:8 G#2:8 A2:8 E2:16 D#2:8')
+theme('Br2', 7, 1, octv(S_PHR, -1), 'I: subject')
+put('T2', 7, 1, 'D#4:6 E4:2 C#4:4 B3:4 E4:8 G#4:8 B3:8 E4:8 E4:4 D#4:4 C#4:8 B3:8')
+theme('A4', 10, 1, A_PHR, 'I: answer')
+put('Br2', 10, 1, 'G#3:8 E3:4 F#3:4 B3:8 G#3:8 F#3:8 C#4:8 D#4:8 B3:8 A3:8')             # countersubject, now in the baritone
+put('T2', 10, 1, 'B3:4 A#3:4 G#3:8 D#4:8 E4:8 D#4:4 C#4:4 E4:8 F#4:4 E4:4 F#4:8 E4:8')
+theme('S4', 13, 1, S_PHR, 'I: subject (soprano)')
+put('A4', 13, 1, 'D#4:4 E4:4 F#4:8 E4:8 A4:12 G#4:4 E4:8 E4:4 D#4:4 C#4:8 B3:8')
+put('T2', 13, 1, 'B3:8 C#4:8 G#3:8 C#4:8 B3:4 A3:4 F#3:8 G#3:8 A3:4 B3:4 A3:8')
+put('Br2', 13, 1, 'E3:8 E3:8 E3:8 A3:12 F#3:4 A3:8 E3:8 C#3:8 D#3:8')
+put('B1', 13, 1, 'G#2:8 C#3:8 E2:8 A2:8 B2:8 F#2:8 E2:8 C#2:8 B1:8')
+
 # ================================================================ SUMMIT (composed first)
 SUM = 45
 # "Nox nocti indicat scientiam": eight entries of the Dorian subject, each a
@@ -155,7 +174,7 @@ theme('A3', B + 1, 1, KD, 'Door subject 1 (stretto), on D#', 2)
 theme('T1', B + 1, 3, KA, 'Door subject 2, on A#', 2)
 theme('A2', B + 2, 2, KD, 'Door subject 3, on D#', 2)
 theme('S5', B + 3, 1, tr(KA, 12, 7), 'Door subject 4, on A#', 2)
-put('S1', B, 3, 'R:8 A#5:16 C#6:16 B#5:8 A#5:8 D#6:16 C#6:16 B#5:8 C#6:8 ' + KNOCK3('D#6'))
+put('S1', B, 3, 'R:8 A#5:16 C#6:16 B#5:8 A#5:8 D#6:16 C#6:16 B#5:8 A#5:8 ' + KNOCK3('D#6'))
 put('S2', B, 1, 'R:16 F##5:8 G#5:12 F##5:12 R:16 F##5:8 E#5:8 E5:8 D#5:8 F##5:8 G#5:8 F##5:8 ' + KNOCK3('A#5'))
 theme('A2', B + 3, 3.5, 'F##4:4', 'resolution', 0) if False else put('A2', B + 3, 3.5, 'F##4:4')
 
@@ -165,6 +184,17 @@ def knk(v, bar, q, pitch, form='k3'):
     f = {'k3': f'{pitch}:2 {pitch}:2 {pitch}:4', 'k2': f'{pitch}:2 R:2 {pitch}:4'}[form]
     VO[v].append((Fr(bar - 1) * BAR + Fr(q) * 4, f))
 
+
+# b52: the chain's cadence C# - D#m/F# - D#; the voices gather toward the door
+put('S3', B, 2, 'D#5:8 A#4:8')
+put('S4', B, 2, 'D#4:16')
+put('S5', B, 1, 'C#5:8 A#4:8')
+put('A1', B, 1, 'E#4:8 F#4:8')
+put('A2', B, 3, 'A#3:2 A#3:2 A#3:4')
+put('T3', B, 2, 'F#3:8 A#3:8')
+put('Br1', B, 2, 'D#3:16')
+put('Br2', B, 1, 'G#3:8 A#3:8')
+put('Br3', B, 3, 'D#3:8')
 
 # the relay of knocks travels voice to voice (round the ring of players), on D# and A#, b53-55
 for v, bar, q, pch, f in [
@@ -177,17 +207,17 @@ for v, bar, q, pch, f in [
         ('Br3', 55, 0, 'D#3', 'k3'), ('S4', 55, 0, 'D#5', 'k2'), ('T3', 55, 0, 'A#3', 'k3'), ('S3', 55, 1, 'A#5', 'k3'),
         ('B1', 55, 1, 'A#2', 'k2'), ('T2', 55, 1, 'D#4', 'k3'), ('Br2', 55, 2, 'A#3', 'k3'), ('A4', 55, 3, 'D#4', 'k3'),
         ('Br1', 55, 3, 'A#2', 'k2'), ('T4', 55, 4, 'D#3', 'k3'), ('A5', 55, 4, 'A#3', 'k2'),
-        ('Br3', 56, 0, 'D#3', 'k3'), ('S4', 56, 0, 'A#4', 'k2'), ('T2', 56, 0, 'D#4', 'k3'), ('S3', 56, 1, 'A#5', 'k3'),
+        ('Br3', 56, 0, 'D#3', 'k3'), ('S4', 56, 0, 'A#4', 'k2'), ('T2', 56, 0, 'D#4', 'k3'), ('S3', 56, 1, 'D#6', 'k3'),
         ('A3', 56, 1, 'D#4', 'k2'), ('B1', 56, 2, 'G#2', 'k3'), ('Br2', 56, 2, 'B#3', 'k2'), ('A1', 56, 2, 'G#4', 'k3'),
         ('A4', 56, 3, 'D#5', 'k3'), ('Br1', 56, 3, 'D#3', 'k2'), ('A2', 56, 3, 'A#4', 'k3'), ('T4', 56, 4, 'A#3', 'k3'),
         ('A5', 56, 4, 'D#4', 'k2'), ('T1', 56, 4, 'C#4', 'k3'),
         ]:
     knk(v, bar, q, pch, f)
-for v, pch in [('S3', 'F##5'), ('S4', 'A#4'), ('A1', 'D#5'), ('A3', 'D#4'), ('A4', 'A#3'), ('A5', 'D#4'), ('A2', 'A#4'),
+for v, pch in [('S3', 'F##5'), ('S4', 'A#4'), ('A1', 'D#5'), ('A3', 'D#4'), ('A4', 'D#4'), ('A5', 'D#4'), ('A2', 'A#4'),
                ('T1', 'A#3'), ('T2', 'D#3'), ('T3', 'A#2'), ('T4', 'D#3'), ('Br1', 'A#2'), ('Br2', 'D#3'), ('Br3', 'D#2'),
-               ('B1', 'A#1')]:
+               ('B1', 'D#2')]:
     put(v, B + 5, 1, KNOCK3(pch))
-put('B2', B + 1, 1, 'D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 ' + KNOCK3('D#1'))
+put('B2', B + 1, 1, 'D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 ' + KNOCK3('D#2'))
 
 
 def build(nbars, path=None):

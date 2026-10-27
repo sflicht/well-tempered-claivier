@@ -8,8 +8,8 @@ subject's chromatic tail rises (G G# A A#) in Tenor I while the inversion's tail
 (D# D C# C) in Alto III, both in four-fold augmentation like the cantus, over B and E
 pedals: Em(maj7) - E7 - A - French sixth, closing together on one B.  Bars 62-63: the
 final chord gathers all twenty-five voices, each arriving by step on its own beat.
-Throughout, Tenor II and Alto IV hold the tonic as inner lines (resting in the canon's F#7
-bars), Baritone III and Tenor IV join for the wedge, so that 8-9 lines sound in every bar."""
+Baritone III, Tenor IV, Tenor II and Alto IV join for the wedge; the Contrabass strikes its
+pedal B again at the wedge, and the five lowest voices reach the last chord directly."""
 from xxiv import *
 
 I_B = tr(GUESTS['FI'][0], -1, -1)        # Fugue I's subject in B major (upbeat F#4)
@@ -23,7 +23,7 @@ def release(sc, b0=52):
     r = lambda k: b0 + k
     # ---- the cantus's B becomes a pedal: one note, ten bars
     for k in range(9):
-        P('B5', r(k), 1, "B1:16~")
+        P('B5', r(k), 1, "B1:16" if k == 5 else "B1:16~")   # the pedal is struck again at the wedge (b60)
     P('B5', r(9), 1, "B1:16")
     # ---- bar 52: B major; the arrival's lines let go one after another, eight keep going
     sc.theme('T3', r(0), 1, V_B, 'Fugue V guest (in B major)', 'V', semis=-3)
@@ -71,13 +71,11 @@ def release(sc, b0=52):
     #      and the bass on 1, then two or three voices on every beat, each from a neighbour note
     P('T1', r(8), 1, "B4:32"); P('A3', r(8), 1, "B4:32"); P('Br2', r(8), 1, "D#3:32")
     P('S1', r(8), 1, "F#6:32"); P('B1', r(8), 1, "F#2:32"); P('A2', r(8), 1, "E5:4 D#5:28")
-    # two inner lines that sing through the whole release and arrive in the last chord by step:
-    # Tenor II and Alto IV hold the tonic as an inner pedal (resting in the F#7 bars of the canon), then move with the wedge
-    for k, toks in enumerate(["B3:16", "B3:16", "R:8 B3:4 C#4:4", "B3:16", "R:8 B3:4 A#3:4",
-                              "B3:16", "A3:8 C4:8~", "C4:4 B3:12~", "B3:16"], start=1):
+    # two inner counter-lines for the wedge's second bar, arriving in the last chord by step:
+    # Tenor II and Alto IV enter with the wedge's second bar as counter-lines (A C | B and C# | B)
+    for k, toks in enumerate(["A3:8 C4:8~", "C4:4 B3:12~", "B3:16"], start=7):
         P('T2', r(k), 1, toks)
-    for k, toks in enumerate(["B4:16", "B4:16", "R:8 B4:4", "B4:16", "R:8 B4:4",
-                              "B4:16", "C#5:16", "B4:16~", "B4:16"], start=1):
+    for k, toks in enumerate(["C#5:16", "B4:16~", "B4:16"], start=7):
         P('A4', r(k), 1, toks)
     for k, toks in enumerate(["G3:8 E3:8", "C#3:8 F#3:8", "F#3:16~", "F#3:16"], start=6):
         P('Br3', r(k), 1, toks)          # Baritone III joins for the wedge
@@ -87,13 +85,16 @@ def release(sc, b0=52):
         ('S3', 8, 1, 'C#6', 'B5'), ('Br4', 8, 1, 'A#2', 'B2'),
         ('T3', 8, 2, 'E4', 'D#4'), ('S4', 8, 2, 'E#5', 'F#5'), ('B2', 8, 2, 'C#3', 'B2'),
         ('S2', 8, 3, 'E6', 'D#6'), ('A5', 8, 3, 'E#4', 'F#4'), ('Br5', 8, 3, 'C#3', 'D#3'),
-        ('A1', 8, 4, 'C#5', 'B4'), ('B3', 8, 4, 'C#2', 'D#2'),
+        ('A1', 8, 4, 'C#5', 'B4'), ('B3', 8, 4, 'C#2', 'F#2'),
         ('S5', 9, 1, 'E5', 'D#5'), ('B4', 9, 1, 'C#2', 'B1'),
         ('Br1', 9, 2, 'A#3', 'B3'),
         ('T5', 9, 3, 'E#4', 'F#4')]
     for v, k, beat, a, f in arrive:
         left = 16 * (10 - (r(k) - b0)) - 4 * (beat - 1)      # sixteenths to the end of the piece
-        P(v, r(k), beat, f"{a}:4 {f}:{left - 4}")
+        if v in ('Br4', 'B2', 'Br5', 'B3', 'B4'):      # the low voices arrive directly (no neighbour note below G3)
+            P(v, r(k), beat, f"{f}:{left}")
+        else:
+            P(v, r(k), beat, f"{a}:4 {f}:{left - 4}")
 
 B, C, Cs, D, Ds, E, F, Fs, G, Gs, A, As = 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 

@@ -154,6 +154,8 @@ def summit():
     put('H3', z + 0, 'A4:8 G#4:2 A4:2 F#4:4 A4:6 G#4:2 E5:4 D5:8 E5:4 F#5:8 D5:8 C#5:4 C#5:4 A4:8')
     put('T3', z + 0, 'C#4:4 B3:6 F#3:2 F#4:4 E4:8 A3:4 A3:8 E4:4 D4:8 F#3:4 G#3:4 A3:4 A3:4 A3:8')
     put('Q3', z + 0, 'R:4 B2:6 A2:2 R:4 E3:8 E3:4 A3:8 A3:10 B3:10 E3:4 A2:4 D3:6 C#3:2')
+    put('D2', z + 0, 'E5:4 R:12 E5:8 R:4 A4:8 R:8')
+    put('H2', z + 0, 'E5:12 A4:4 C#5:4 B4:4 C#5:6 B4:2 B4:4 C#5:4 A4:8 F#4:6 G#4:2 A4:4 A4:4 F#4:4 F#4:4')
     # @@free
     put('D3', z + 0, 'E6:6 D6:4 C#6:2 B5:4 C#6:6 B5:2 A5:12 C#6:4 R:8')
     # ---- Sigma 2 (z+17 .. z+32), F# minor.  The ground passes to the courante's basse, in courante rhythm.

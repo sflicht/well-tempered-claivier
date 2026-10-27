@@ -236,15 +236,19 @@ def gen2():
 
 
 
-# Tails turned towards the next key of the cascade (gen 3): the last upper-strand note becomes the
-# seventh of the next dominant instead of the leading tone.
-TAIL_EM = 'G5:1 E5:1 B5:1 D#5:1 A5:1 D5:1 G5:1 C#5:1 F#5:1 C5:1 E5:1 B4:1 D5:4'        # -> E7 (A minor)
+# Tails turned towards the next key of the cascade (gen 3): the last upper-strand note leads into the
+# next key (G#5 -> A5, C#5 -> D5, F#4 -> G4, B3 -> C4); where the lament's flat sixth would clash
+# with the next entry's head, its fourth note is repeated instead (G: E3 E3, D minor: B3 B3).
+TAIL_EM = 'G5:1 E5:1 B5:1 D#5:1 A5:1 D5:1 G5:1 C#5:1 F#5:1 C5:1 E5:1 B4:1 G#5:4'
+TAIL_AM = 'C5:1 A4:1 E5:1 G#4:1 D5:1 G4:1 C5:1 F#4:1 B4:1 F4:1 A4:1 E4:1 C#5:4'
+TAIL_DM = 'F4:1 D4:1 A4:1 C#4:1 G4:1 C4:1 F4:1 B3:1 E4:1 B3:1 D4:1 A3:1 F#4:4'
+TAIL_G = 'B3:1 G3:1 D4:1 F#3:1 C4:1 F3:1 B3:1 E3:1 A3:1 E3:1 G3:1 D3:1 B3:4'
 
 
 def gen3():
-    # The cascade: eight entries one bar apart, each a fifth lower than the last, from the top of
-    # the texture to the bottom (E minor, A minor, D minor, G, C, F, D minor, A minor); every tail
-    # splits, so the voices double from eight to sixteen.  Each tail turns towards the next key.
+    # The cascade: entries one bar apart, each a fifth lower than the last, from the top of the
+    # texture downwards (E minor, A minor, D minor, G, C, F); every tail splits.  The bass walks
+    # i - V7 - iv - V7-of-the-next-key in every bar.
     # b24: violin III, subject in E minor (B5) over the tonic pedal.
     theme('Vl3', 24, 1, tr(HEAD, 7, 4), 'Vl III: subject (E minor)')
     put('Cb1', 24, 1, 'E2:16')
@@ -253,6 +257,39 @@ def gen3():
     put('Va1', 24, 1, 'E4:6 D#4:2 E4:4 D#4:4')
     put('Va2', 24, 1, 'R:4 B3:12')
     put('Vl2', 24, 1, 'G4:4 F#4:4 B4:6 A4:2')
+    # b25: Em tail splits (violin IV takes the upper strand and climbs); violin I enters in A minor.
+    put('Vl3', 25, 1, 'G5:1 E5:1 B5:1 D#5:1 R:1 D5:2 C#5:2 C5:2 B4:5')
+    put('Vl4', 25, 2, 'A5:2 G5:2 F#5:2 E5:2 G#5:4')                    # SPLIT 9: Vl IV from Vl III
+    theme('Vl1', 25, 1, HEAD, 'Vl I: subject (A minor)')
+    put('Cb1', 25, 1, 'E2:4 B1:4 A1:4 E1:4')
+    put('Vc1', 25, 1, 'E3:4 D#3:4 E3:4 D3:4')
+    put('Vc2', 25, 1, 'G3:4 F#3:4 A3:4 G#3:4')
+    put('Va1', 25, 1, 'E4:4 F#4:4 E4:8')
+    put('Va2', 25, 1, 'B3:10 C4:2 B3:4')
+    put('Vl2', 25, 1, 'G4:4 F#4:4 R:8')
+    # b26: Am tail splits (violin V catches the lament); violin II enters in D minor.
+    put('Vl1', 26, 1, 'C5:1 A4:1 E5:1 G#4:1 D5:2 C5:2 B4:2 A4:2 C#5:4')
+    put('Vl5', 26, 2.25, 'G4:2 F#4:2 F4:2 E4:5')                      # SPLIT 10: Vl V from Vl I
+    theme('Vl2', 26, 1, tr(HEAD, -7, -4), 'Vl II: subject (D minor)')
+    put('Vl3', 26, 1, 'E5:8 D5:4 E5:4')
+    put('Vl4', 26, 1, 'A5:4 B5:4 A5:8')
+    put('Va1', 26, 1, 'E4:8 D4:4 C#4:4')
+    put('Va2', 26, 1, 'C4:4 B3:4 A3:8')
+    put('Vc1', 26, 1, 'C3:4 B2:4 D3:4 E3:4')
+    put('Vc2', 26, 1, 'A3:4 G#3:4 A3:4 G3:4')
+    put('Cb1', 26, 1, 'A1:4 E1:4 D2:4 A1:4')
+    # b27: Dm tail splits (violin VI takes the upper strand); viola I enters in G major.
+    put('Vl2', 27, 1, 'F4:1 D4:1 A4:1 C#4:1 R:1 C4:2 B3:2 B3:2 A3:5')
+    put('Vl6', 27, 2, 'G4:2 F4:2 E4:2 D4:2 F#4:4')                     # SPLIT 11: Vl VI from Vl II
+    theme('Va1', 27, 1, tr('R:2 G4:1 F#4:1 G4:2 G3:2 C4:2 E4:2 D4:2 F4:2', -5, -3), 'Va I: subject (G major)')
+    put('Vl1', 27, 1, 'D5:4 C#5:4 B4:4 C5:4')
+    put('Vl5', 27, 1, 'A4:8 B4:4 A4:4')
+    put('Vl3', 27, 1, 'F5:4 E5:8 D5:4')
+    put('Vl4', 27, 1, 'A5:8 G5:4 A5:4')
+    put('Va2', 27, 1, 'A3:8 R:8')
+    put('Vc1', 27, 1, 'F3:4 E3:4 B2:4 A2:4')
+    put('Vc2', 27, 1, 'A3:4 E3:4 G3:4 F#3:4')
+    put('Cb1', 27, 1, 'D2:4 A1:4 G1:4 D2:4')
 
 
 SECTIONS = [solo_opening, solo_strings, gen2, gen3]
