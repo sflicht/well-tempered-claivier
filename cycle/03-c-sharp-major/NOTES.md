@@ -3,9 +3,9 @@
 | File | What it is |
 | --- | --- |
 | `prelude.py` → `prelude.json` | Prelude, 12/8, 24 bars, ♩ = 96 (dotted ♩ = 64), four layers. Literal bar strings; corrections marked `# FIX n`; the second-draft readings are kept in `SECOND_DRAFT` (`--second-draft` rebuilds the unaltered version). |
-| `fugue.py` → `fugue.json` | Fugue, four voices, 12/8, 45 bars, dotted ♩ = 88 (♩ = 132). Literal material and free counterpoint; entries made by named transforms (`transpose`, `invert_diatonic`). |
-| `renders/` | `prelude.*`, `fugue.*`: PDF, MusicXML, MIDI, LilyPond, MP3 in Bach–Lehman temperament; `*-equal.mp3` in equal temperament. Rendered lengths: prelude 94 s, fugue 126 s (both with their final ritardando). |
-| `search/` | The search and audit scripts quoted below (`lib.py` helpers; `probe_inv2.py`, `rectus_stretto_probe.py`, `coda_eval.py`, `coda_search.py`, `bwv_partner_search.py`, `offbeat_check.py`, `verify_reflection.py`). |
+| `fugue.py` → `fugue.json` | Fugue, four voices, 12/8, 45 bars, dotted ♩ = 96 (♩ = 144; 88 before the second review). Literal material and free counterpoint; entries made by named transforms (`transpose`, `invert_diatonic`). |
+| `renders/` | `prelude.*`, `fugue.*`: PDF, MusicXML, MIDI, LilyPond, MP3 in Bach–Lehman temperament; `*-equal.mp3` in equal temperament. Rendered lengths: prelude 94 s, fugue 115 s (both with their final ritardando). |
+| `search/` | The search and audit scripts quoted below (`lib.py` helpers; `probe_inv2.py`, `rectus_stretto_probe.py`, `coda_eval.py`, `coda_search.py`, `bwv_partner_search.py`, `offbeat_check.py`, `verify_reflection.py`, `stasis_count.py`). |
 
 I have not heard either piece. Everything below comes from reading the score and from the tools. Nothing here describes how the music sounds.
 
@@ -13,7 +13,7 @@ I have not heard either piece. Everything below comes from reading the score and
 
 ## Prelude III — what was kept, what was changed
 
-**What Sam liked is the texture, so it stays.** Every bar is one harmony struck as a cascade of bells: nine attacks in one fixed rhythm (sixteenths 0 2 4 6 10 14 16 18 20 of 24). The melody, upper inner and lower inner layers hand the attacks between three registers, and a deep bass bell rings through each bar. The silences between attacks are part of the phrase. The second draft's notes were transcribed exactly: a build with the `SECOND_DRAFT` readings restored matches the second-draft JSON note for note. Four corrections were then made: eight notes in four bars.
+**What Sam liked is the texture, so it stays.** Every bar is one harmony struck as a cascade of bells: nine attacks in one fixed rhythm (sixteenths 0 2 4 6 10 14 16 18 20 of 24). The melody, upper inner and lower inner layers hand the attacks between three registers, and a deep bass bell rings through each bar. The silences between attacks are part of the phrase. The second draft's notes were transcribed exactly: a build with the `SECOND_DRAFT` readings restored matches the second-draft JSON note for note. Four corrections were then made: eight notes in four bars. The second review added two more, FIX 5 and FIX 6 (see the end of this file).
 
 ### The review, bar by bar (critic, reduce, and a collision/voice-order scan)
 
@@ -43,7 +43,7 @@ New: a final ritardando, `tempo_map` from ♩ = 96 at bar 23 to 72 at the end.
 
 ### What the critic still reports, and why it stays
 
-* **`UNRESOLVED (held)` at b22.2.5 (G#1 / C#5).** This is the cadential six-four. At that sixteenth only G#1, G#3 and C#5 are sounding (the E# of the six-four sounds at 2–6 and from 16 on), so the critic sees a bare fourth. The six-four does resolve, but across the barline and in other layers: the 4th, C#4 at the end of bar 22, falls to B#3 in the upper inner layer; the 6th, E#5/E#3, falls to D#5/D#3. Making the instant "complete" would have meant changing the bell rhythm of one bar.
+* **`UNRESOLVED (held)` at b22.2.5 (G#1 / C#5)**, *since cured by FIX 6 (second review)*. This is the cadential six-four. At that sixteenth only G#1, G#3 and C#5 are sounding (the E# of the six-four sounds at 2–6 and from 16 on), so the critic sees a bare fourth. The six-four does resolve, but across the barline and in other layers: the 4th, C#4 at the end of bar 22, falls to B#3 in the upper inner layer; the 6th, E#5/E#3, falls to D#5/D#3. Making the instant "complete" would have meant changing the bell rhythm of one bar.
 * **Keyboard: 29.3% of onsets exceed two hands** (26.9% in the second draft; FIXes 1, 2 and 4 add a few onsets where a re-voiced note is far from the held bass). All of it comes from the held deep bass. With the bass removed, **0 of 208 onsets** exceed two hands. The bass is struck with the melody's first bell, and that bell ends before the next attack. So the realisation is the sostenuto (middle) pedal: catch each bass note, and keep the upper layers dry so the silences survive. A damper pedal would also be possible but would blur the silences. Moving the bass up an octave would fix the number but lose the deep bell, so I didn't.
 * **Melody "seventh leap" ×3 (bars 5→6, 6→7, 10→11)** and **"large leap not recovered" ×12.** The melody layer is a compound line: a low strand (the last bell) and a high strand (the next bar's first bell). The 7ths are strand changes at barlines. Most of the "unrecovered" leaps are followed by a repeated bell.
 * **The falling peal in bars 7→8** (F#6 A#5 D#5 G#4, two "compound same-way" flags) is kept as the descent into the half cadence. I tried G#5 for bar 8's first bell (A#5→G#5 by step). It removes the cascade and creates downbeat octaves with the bass at 8→9, so I didn't adopt it.
@@ -52,7 +52,8 @@ New: a final ritardando, `tempo_map` from ♩ = 96 at bar 23 to 72 at the end.
 | Prelude | parallels err/weak | beat par. | unresolved | tripled | keyboard | melody flags |
 | --- | --- | --- | --- | --- | --- | --- |
 | second draft | 0 / 2 | 0 | 1 | 2.0% | 26.9% | 23 |
-| now | 0 / **0** | 0 | 1 (justified) | 2.0% | 29.3% (0% with sostenuto bass) | 17 |
+| after first review | 0 / **0** | 0 | 1 (justified) | 2.0% | 29.3% (0% with sostenuto bass) | 17 |
+| after second review (FIX 5, 6) | 0 / 0 | 0 | **0** | 2.0% | 29.3% (0% with sostenuto bass) | 16 |
 
 ---
 
@@ -142,7 +143,7 @@ The beat harmony of the reflection is I6 · I · I6 · (open C#/G#) | I6 · **vi
 
 | parallels err/weak | beat parallels | unresolved | tripled on beats | low-register 2nds/7ths | keyboard beyond two hands | crossings |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0 / 0 | 0 | 0 | 0.7% | 3 (b33.6, b35.5.5, b44.5.5) | 1.7% (7 of 402 onsets: bars 7, 13, 19 ×3, 29, 35) | 0 |
+| 0 / 0 | 0 | 0 | 0.7% → **0.0%** | 3 → **4** (b29.3, b33.6, b35.5.5, b44.5.5) | 1.7% (7 of 402 onsets) | 0 |
 
 * **Themes.** All 20 declared subject entries verify at 15/15 intervals and rhythm. The A#-minor entry shows 9/15 intervals because of the modal change, and the `BWV 848 guest` label does not match our subject, as expected.
 * **Off-beat audit.** The critic checks beats only, so `search/offbeat_check.py` scans every off-beat attack. 9 dissonances are not passing or neighbour motion:
@@ -166,5 +167,48 @@ The beat harmony of the reflection is I6 · I · I6 · (open C#/G#) | I6 · **vi
 * **No suspensions on beats.** Beats are consonant, which suits a gigue but may sound safe. The dissonance is in off-beat passing tones and seventh chords.
 * **Recognising Bach.** I can't judge whether a listener will recognise the BWV 848 head at this speed and in 12/8.
 * **Keyboard reach.** Seven onsets need a stretch beyond a 10th (listed above). The texture is wide: soprano up to E#6, bass down to C#2.
-* **Tempo.** Dotted ♩ = 88 is a moderate gigue. Faster would make the piece shorter than two minutes.
+* **Tempo.** Now dotted ♩ = 96 (second review), so the piece lasts 1:55, a little under the two minutes first aimed at.
 * **Not heard.** I have not listened to either render. The listener's judgement is still needed.
+
+---
+
+## Second review (REVIEW-2.md), implemented
+
+The review asked for less harmonic stasis in the fugue, an articulated reflection, a low final root, a quicker tempo, and a seventh before the prelude's return. All the items are in. The coda reflection is unchanged in pitch and rhythm, and `search/verify_reflection.py` still reports ALL CHECKS PASS.
+
+### Fugue
+
+| Item | Bars | Change |
+| --- | --- | --- |
+| (a) | 21–22 | **The bass now opens Part 2 in the piece's own A#-minor mirror form** (`INV_D`, the real mirror around D#, which the strettos at 32/37/42 use). Part 1's G# cadence turns to vi, the same deceptive relationship as bars 12–13. The line ends on E#3, which is the first note of the bass's CS\* at bar 23 (a common-tone join). Entry label updated. |
+| F2 | 21–24 | Soprano **high bells** over the thin restart: C#6, A#5, G#5 over the lone bass (21–22); A#5 on beat 2 of bars 23 and 24. The bells turn bar 23's I into **vi** and complete bar 24's half-diminished chord as **viiø7**, without touching the tenor+bass pair that the coda quotes. They are also the only link to the prelude's bells. |
+| (b) | 42 | **Bar 9's bass, A#2 B#2 C#3 (vi – passing iii6/4 – I), under the last rectus entry**, before the bass's mirror entry. The reviewer suggested moving the alto's E#4 to C#4 to avoid contrary octaves with the bass. That recreated consecutive 5ths with the soprano's octave drop, so the alto keeps E#4; the contrary octave is a critic *note*, not a fault. |
+| (c) | 29 | The BWV 848 bar had a held C#3. It now moves: **A#2 E#2 B#2 G#2** (vi – I6 – viiø – V). |
+| (c) | 35 | Soprano 35.18 F#5 → B#5: removes a doubled seventh over the pedal (the critic's new `bad_doublings` check). |
+| (d) | 39–41 | The reflection now stands out. Velocities in bars 40–41 (with the pickups): alto and tenor +8, soprano and bass (the CS pair) −4, so the wedge of the subject and its mirror (stamps up in the alto, down in the tenor) leads. A breath into 40.1: `tempo_map` ramps ♩ 144 → 120 over the last beat of bar 39, then returns a tempo at the downbeat. |
+| F4 | 45 | **The final bass note is C#2** (the alternating stamps now end on the low octave). The final chord is C#2 E#3 G#5 C#6: complete, nothing tripled, within two hands. |
+| (e) | all | **Dotted ♩ = 96** (`bpm` 144; final ritardando 144 → 108 over bars 44–45). |
+
+I did not take up the optional variation of bar 31 (Episode\*). The candidates I tried either broke the run into the bar-32 countersubject or leapt a ninth.
+
+**Stasis metric.** `search/stasis_count.py` counts beats whose sounding pitch classes all lie inside a C# triad, a G# triad or G#7. It is a stricter subset test than the reviewer's, so it runs higher.
+* Before the second review: 121 of 178 beats; 17-beat runs at bars 1–5 and 22–24.
+* Now: 115 of 178; the 22–24 run is broken into 5 + 7.
+* What remains is mostly the exposition (bars 1–5: one or two voices stamping the tonic arpeggio) and the G# pedal (35–36, a dominant by design).
+
+**Critic now:**
+* fugue: parallels 0/0, beat parallels 0, unresolved 0, tripled 0.0%, bad doublings 0, low-register 2nds/7ths 4 (the new one, b29.3, is a passing tenor F#3 over bass E#2), keyboard 1.7% (7/402);
+* off-beat audit: 10 unexplained dissonances. They are the earlier sevenths and pedal sevenths, the passing six-four in bar 42 (as in bar 9), and the subject's own pickup C#6 at 26.22.
+
+### Prelude
+
+| # | Bar, layer | Change | Why |
+| --- | --- | --- | --- |
+| 5 | 16, upper inner, third bell | G#3 → **F#4** | The review found two bars (15–16) of bare G# triad before the return; G# has to become a dominant again. The review proposed the seventh as the lower inner layer's F#3, which I tried first. It struck a second against the upper layer's G#3 with nothing else sounding and resolved only after seven sixteenths: the critic counts that as UNRESOLVED. In the upper layer the same seventh forms G#7 with the bass, D#3 and the melody's B#5, and falls by step to E#4, the upper layer's first bell of bar 17. One note; the bell rhythm is unchanged. |
+| 6 | 22, lower inner | G#3 E#3 → **E#3 G#3** (the two bells swapped) | The critic's one unresolved flag, the cadential six-four, sounded as a bare fourth at its second beat. With E#3 struck first, the six-four is complete at that instant. The swap matches the I-chord voicing of bars 6 and 17. The 6th still resolves in the melody (E#5→D#5), and the lower line still steps F#3→E#3 into the bar. |
+
+**Prelude now:** parallels 0/0, beat parallels 0, **unresolved 0**, tripled 2.0%, no layer collisions. The keyboard figure (29.3%) is still entirely the held bass, and 0% with the sostenuto pedal. The second-draft rebuild (`--second-draft`, which now restores FIX 1–6) still matches the original note for note.
+
+I did not add the review's optional octave doubling of the deep bell (P2): it was conditional on the render rumbling, which I cannot hear.
+
+**Process note.** While measuring the stasis metric I ran one read-only `git show` by mistake; it changed nothing.

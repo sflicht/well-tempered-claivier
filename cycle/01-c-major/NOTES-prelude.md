@@ -6,7 +6,7 @@
 | file | what it is |
 |---|---|
 | `prelude-notation.json` | the written core: 4 staves (Cantus, Figure, Tenor, Bass) → `renders/prelude-score.pdf` |
-| `prelude.json` | the performance score: the same notes, pedalled and sounded in octave layers (47 monophonic voices) |
+| `prelude.json` | the performance score: the same notes, pedalled and sounded in octave layers (39 monophonic voices) |
 | `renders/prelude.mp3` | performance, Bach–Lehman temperament |
 | `renders/prelude-meantone.mp3` | performance, ¼-comma meantone (the demonstration of why the WTC needed a well-tempered keyboard) |
 | `renders/prelude-equal.mp3` | performance, equal temperament |
@@ -49,7 +49,7 @@ one, so there the small figure sinks while the keys climb.
 | | key | starts | H | how it is reached / what happens |
 |---|---|---|---|---|
 | I | C | 1.1 | 1 | BWV 846 bars 1–4 exactly: I – ii⁴₂ – V⁶₅ – I, one harmony per bar |
-| II | c | 5.1 | 9 | tonic turns minor at the phrase seam. Top voice: Royal Theme head C E♭ G A♭ B C. Bass falls C B♭ A♭ F G C. The N⁶ is first heard in its ordinary role (6.3 → V⁷♭⁹ → i) |
+| II | c | 5.1 | 9 | tonic turns minor at the phrase seam. Royal Theme head C E♭ G A♭ B C in the top voice and, held in half notes an octave up, in the cantus (second review). Bass falls C B♭ A♭ F G C. The N⁶ is first heard in its ordinary role (6.3 → V⁷♭⁹ → i) |
 | III | D♭ | 8.1 | 15 | **c: N⁶ = D♭: I⁶** — the second time, the Neapolitan does not go to V. Then I⁶ – ii⁶₅ – V⁷ |
 | IV | c♯ (d♭) | 9.3 | 18 | the D♭ cadence lands minor (written D♭ minor, respelled c♯ at bar 10). i – iv – V⁷ – i, falling figure |
 | V | D | 11.3 | 22 | **c♯: N⁶ = D: I⁶** for a whole bar, V⁷ with its seventh tied over, 4–3 tenor suspension into I (13.1) |
@@ -111,9 +111,12 @@ them. It chooses no pitch class and no rhythm.
 1. **Pedalling.** A figure note belonging to its half bar's harmony is held
    until the harmony changes or the same pitch is struck again. This is what
    fingers and pedal do in BWV 846. The pedal is also held across a half-bar
-   line when the bass is not re-struck and the new notes belong to the same
-   chord: the C⁷ and F/C bars and the final chord. Held notes are dealt to
-   monophonic slots.
+   line when the bass is not re-struck, the new notes belong to the same chord
+   *and* the held note itself belongs to the new half bar: the C⁷ and F/C bars
+   and the final chord. Held notes are dealt to monophonic slots.
+   A **register floor** (second review) keeps tenor and figure layers out of
+   the low register in the loud stretch: none below D♯3 in bars 31–40, none
+   below G3 over the D♯ pedal (bars 34.3–37.2).
 
 2. **Octave layers.** Each written note *p* sounds at every *q = p + 12k*
    from A0 to A7, with amplitude weight
@@ -123,9 +126,10 @@ them. It chooses no pitch class and no rhythm.
    The variables:
    - **c**, a *fixed* centre per role: bass B♭2 (46), tenor B♭3 (58), figure
      B♭4 (70). Separate centres keep the bass heard as a bass.
-   - **g**, the illusion's mix: 0 in bars 1–4, rising through c minor and D♭
-     (bars 5–10), 1 from bar 10 to bar 45, falling through b minor (bars
-     46–49), 0 from the da capo on. So the piece emerges from Bach's own
+   - **g**, the illusion's mix: 0 in bars 1–7 (Bach's bars and the c-minor
+     Royal Theme are plain), rising from the D♭ pivot (bar 8) to 1 at bar 10,
+     1 until bar 45, falling through b minor (bars 46–49), 0 from the da capo
+     on. So the piece emerges from Bach's own
      register and dissolves back into it.
    - **σ**, the bell width: 7 semitones at the start, 7.5 in the lament (more
      intimate), widening to 13.5 for the pedal and the arrival on A (the whole
@@ -137,20 +141,21 @@ them. It chooses no pitch class and no rhythm.
    Each (role or slot, octave) pair is one performance voice, panned slightly
    by register.
 
-**Checks.**
-- Polyphony peaks at 37 notes, well under FluidSynth's 256.
+**Checks** (after the second-review changes).
+- Polyphony peaks at 30 notes, well under FluidSynth's 256.
 - The energy-weighted register of the performance score (velocity⁴ × duration,
-  spread over the bars a note spans) is MIDI 59–61 in every bar from 9 to 47,
-  except bar 36 (63, the widest bell over the D♯ pedal). Over the same span the
-  music rises 11 semitones. Bars 1–4 and the da capo both measure 66.
+  spread over the bars a note spans) is MIDI 59–62 in every bar from 9 to 47,
+  except bar 36 (64: over the D♯ pedal only the pedal sounds below G3). Over the
+  same span the music rises 11 semitones. Bars 1–4 and the da capo both
+  measure 66.
 - Spectral centroid of the Bach–Lehman render: bars 1–4 ≈ MIDI 70. Bars 10–47
-  stay between 59 and 68, and the highest values (67–68) are at the pedal
-  climax, where loud samples are brighter. The mean of bars 29–47 is 1.7
-  semitones above that of bars 10–28, against the 11 semitones the keys climb.
-  This is a small residual drift, mostly the climax's loudness, not a register
-  climb.
+  stay between 59 and 66, except the two loudest pedal bars (35–36: 70–72).
+  Those are brighter because the floor leaves only the pedal below G3 and loud
+  samples are bright. The mean of bars 29–47 is 2.5 semitones above that of
+  bars 10–28, against the 11 semitones the keys climb. This is a residual
+  drift, concentrated in the climax, not a register climb.
 - RMS per bar: −33 dB at the opening, −31/−32 dB in the lament, −18 dB at the
-  pedal crest and arrival (bars 36–38), and back to −33 dB before the da capo.
+  pedal crest and arrival (bars 37–38), and back to −33 dB before the da capo.
   This is the planned arc.
 
 **The written score.** The written core pays back the octave quietly, through
@@ -200,7 +205,8 @@ descent to F♭2). The notation can stay on the staff and end at Bach's register
 | pedal dissonances | 12 |
 | tertian fit | 82.5 % |
 | `UNRESOLVED` flags | 4, for three events (below) |
-| `keyboard_unplayable_pct` | 3.5 % |
+| `keyboard_unplayable_pct` | 5.0 % (the cantus: bars 5–7 and 54–57) |
+| `bad_doublings` | 1: the cantus's passing F6 at 53.2 (review P4; it belongs to the exact augmentation) |
 
 The three `UNRESOLVED` events are all justified:
 - **6.2** (two flags): A♭–G in the A♭maj⁷ chord (VI⁷) that carries the Royal
@@ -212,9 +218,9 @@ The three `UNRESOLVED` events are all justified:
 - **51.2**: the cantus's G6 appoggiatura over D⁷/C (the subject's accent),
   resolving to F6 on beat 3.
 
-All of the 3.5 % unplayable onsets lie in bars 54–57. There the cantus needs a
-third hand, or a second player as in Gounod. The core alone fits two hands
-throughout.
+All of the unplayable onsets lie in the cantus bars (5–7 and 54–57). There the
+cantus needs a third hand, or a second player as in Gounod. The core alone fits
+two hands throughout.
 
 **Chorale reduction.** `tools/critic.py` cannot see parallels inside a
 broken-chord figure: Bach's figure rests on every beat 1, so the figure and
@@ -255,13 +261,10 @@ itself and are not meaningful.
   46–49) the audible register of the bass moves by up to an octave towards the
   written notes. It is placed to coincide with the music's own last rise, but
   it is untested by ear.
-- **Possible boom at the climax.** The pedal climax puts loud layers on D♯1–D♯3,
-  which may boom on this soundfont.
-- **Subtle Royal Theme.** The theme sits in the top note of a broken chord,
-  struck twice per half bar and given a velocity lift, so the allusion depends
-  on the player and the listener.
-- **Empty cantus staff.** The PDF carries a Cantus staff that is empty until
-  bar 49, because `render_music.py` cannot hide empty staves.
+- **Possible boom at the climax.** The pedal climax still puts loud layers on
+  D♯1–D♯3, now alone in that register (see the second review below).
+- **Empty cantus staff.** The PDF carries a Cantus staff that is empty in bars
+  1–4 and 8–48, because `render_music.py` cannot hide empty staves.
 
 ## Tool notes (not edited; for whoever maintains `tools/`)
 
@@ -281,3 +284,70 @@ itself and are not meaningful.
   deleted the duplicates for `-meantone` and `-equal`.
 - **`render_music.py` header.** A long `instrument` string overlaps the
   composer line.
+
+## Second review (REVIEW-2.md), what changed
+
+The written core, the frame (bars 1–4 = 50–53) and the C/E glimpse of home at
+bar 47 are untouched.
+
+**P1. Pedal climax, bars 34–37 (High).** Two changes, both orchestration only;
+no written pitch changed.
+- **(a) Hold rule fixed in `pedal_figure()`.** A held note now crosses a
+  half-bar line only if it belongs to the new half bar (or nothing at all is
+  struck there). Before, the subset rule let the diminished seventh's E♯
+  (36.2¾) ring at v89 through the i⁶₄ that resolves it. It now stops at 36.3.
+- **(b) Register floor.** Tenor and figure layers below G3 are dropped over
+  the pedal (H68–H73), so octaves 1–3 below G3 belong to the D♯ pedal alone,
+  the BWV 846 image the review asked for. The review proposed D♯3, but a scan
+  at that setting still found E♭3 against E3/E♯3 at velocity 58–63 (the
+  review's own 35.3–4 case), so the floor is G3. The same scan found the
+  phenomenon wherever a loud dominant seventh puts root and seventh a tone
+  apart in octave 3:
+  - D⁷ at 31 (v55);
+  - E♭⁷ at 33 (v65, plus C♯2/D♯2);
+  - E⁷ at 39 (v51).
+
+  A D♯3 floor for tenor and figure therefore also covers bars 31–40 (H61–H80).
+  The floors are fixed in pitch, so the spectral envelope stays fixed and the
+  illusion is unaffected.
+- **Verification**, with a scan like the review's (b): every sixteenth, two
+  notes below G3 a semitone or tone apart, both at velocity ≥ 35.
+  - Before: bars 22, 29, 31, 33, 35, 36 and 39–41, with bar 36 at 15/16 in
+    the review's count.
+  - After: only bars 22, 29 and 41, all at velocity ≤ 50 (the review's target),
+    and none in bars 33–37.
+- **Side effects.** The pedal bars sound brighter (audio centroid 70–72), and
+  the performance score drops from 47 to 39 voices.
+
+**P2. Royal Theme, bars 5–7 (Medium).**
+- **A held cantus.** The six notes C E♭ G A♭ B C now also sound as a held
+  cantus in half notes, the theme's own values in the Musical Offering. They
+  are an octave above the figure's top voice, in the register of the da-capo
+  cantus, not layered, and about +12 velocity over the figure. The
+  diminished-seventh drop A♭6→B5 is heard plainly.
+- **The fade now starts at the D♭ pivot.** `SHEPARD_MIX` is 0 to H15 and
+  reaches 1 at H19 (bar 10), so all of c minor is plain.
+- **The cantus returns.** It is now heard once early, so its entry at 49.4 is
+  a return.
+- **Cost.** Bars 5–7 now need a third hand (keyboard-unplayable 3.5 % → 5.0 %).
+  The critic adds two appoggiaturas (the cantus's E♭6 over the passing B♭ bass
+  at 5.3 and its G6 over A♭ at 6.1, the major seventh that rises to A♭) and
+  still reports 0 parallels.
+
+**After the changes.**
+- The da capo is still identical to bars 1–4 (64/64 notes, same velocities).
+- The register stays stable (see Checks above).
+- Notation critic: 0 `parallels_error`, the same three justified `UNRESOLVED`
+  events (6.2, 21.2, 51.2), and one `bad_doublings` (53.2, review P4).
+
+**Not changed.**
+- **P3 (pivot sameness in bars 8–17).** The review marks it "watch, do not fix
+  blind"; it waits for Sam's listening.
+- **P4 (cantus F6 at 53.2; cantus velocity +20 vs +12).** Left as they are; I
+  cannot judge the balance without hearing.
+
+**Re-rendered.**
+- `renders/prelude-score.pdf`;
+- the performance MIDI and MusicXML;
+- the three MP3s, with `--audio-only` (the `-meantone`/`-equal` `.render.json`
+  files are from the first render; the audio is new).
