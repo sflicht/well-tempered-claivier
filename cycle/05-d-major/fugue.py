@@ -206,7 +206,7 @@ put(39,
     T='C#4:4 A3:8 G#3:4  B3:8 A3:8  ' + EM_SUBJ_DOR + '  F#4:4 A4:2 B4:2 D5:6 C5:2 '
       'C5:12 B4:4  A4:6 B4:2 A4:6 G4:2  E4:4 A4:8 C#4:4',
     Br='R:16 R:16 R:16  ' + A_SUBJ_MIX + '  D4:4 E4:4 A3:4 D4:4  D4:8 G3:6 A3:2  C#4:4 E4:4 E3:4 C#3:4',
-    B='F#2:4 E2:4 D2:4 C#2:4  B1:16  E2:8 C#3:4 E3:4  A2:8 G2:4 E2:4  ' + D_SUBJ_MIX +
+    B='F#2:4 E2:4 B1:4 C#2:4  B1:16  E2:8 C#3:4 E3:4  A2:8 G2:4 E2:4  ' + D_SUBJ_MIX +
       '  F#3:6 B3:2 E3:8  R:16',
     Cb='R:16 R:16 R:16 R:16  D2:16  ' + G_INV_CB + '  A2:16')
 tag(39, 'CASCADE STRETTO: F#m (S) Bm (A) Em (T) A (Br) D (B) G inverted (Cb)')
@@ -233,9 +233,9 @@ put(47,
     S=SUBJ_X4 + ' D6:16',
     T=T8(SUBJ, -1) + ' ' + ANS + '  F#4:4 D5:4 G4:8  D4:4 A4:4 E4:4 F#4:4  G4:12 F#4:4  D4:4 A3:4 D4:8~  D4:16',
     Br=BWV850_SUBJ + '  D4:4 D4:4 F#3:4 G3:4  ' + ANS_X2 + '  E3:8 G3:4 A3:4  G3:8 F#3:8~  F#3:16',
-    A='F#5:8 D5:8  B4:4 A4:4 B4:4 E5:4  A5:6 G5:2 F#5:4 C#6:4~  C#6:4 E6:4 C#6:4 A5:4  ' + SUBJ_HALF +
+    A='F#5:8 D5:8  B4:4 A4:4 B4:4 E5:4  A5:6 G5:2 F#5:4 C#6:4~  C#6:4 E6:4 C#6:4 C#5:4  ' + SUBJ_HALF +
       '  A5:4 D5:4 C#5:4 C5:4  Bb4:4 A4:4 B4:4 D5:4  B4:4 A4:4 A4:8  F#4:16',
-    B='R:16 R:16 R:16  E3:16  D3:4 A3:4 G3:4 B2:4  F#3:4 A2:4 A2:4 D3:4  G2:4 A2:4 E3:4 F#2:4  G2:4 A2:12  A2:16',
+    B='R:16 R:16 R:16  E3:12 C#3:4  D3:4 A3:4 G3:4 B2:4  F#3:4 A2:4 A2:4 D3:4  G2:4 A2:4 E3:4 F#2:4  G2:4 A2:12  A2:16',
     Cb='D2:4 B1:4 D2:4 F#2:4  G2:4 B1:8 G2:4  F#2:4 B2:4 A2:8  A2:8 C#3:4 A2:4 '
        'D2:16~ D2:16~ D2:16  D2:4 D2:2 D2:1 D2:1 D2:2 D2:1 D2:1 D2:4  D2:16')
 tag(47, 'SUMMIT: subject x4 (S) + subject (T) + BWV 850 subject (Br)')

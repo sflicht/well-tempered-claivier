@@ -5,11 +5,21 @@
 - Built scores: `prelude.json` (21 bars, 12/8) and `fugue.json` (50 bars, 4/4, nine staves).
 - `renders/`:
   - `prelude.*` and `fugue.*`: PDF, MIDI, MusicXML and MP3 in Bach/Lehman temperament.
-  - `*-equal.*`: equal temperament, no PDF.
+  - `*-equal.mp3`: equal temperament, audio only.
   - `fugue-spatial.mp3`: binaural, nine keyboards placed in an arc around the listener.
 - The critique that led to this rebuild is in `REVIEW.md`.
 
-**Length.** About 87 s for the Prelude (dotted quarter = 60), and about 153 s for the Fugue (quarter = 80). The Prelude runs straight into the Fugue.
+**Length.** About 88 s for the Prelude (dotted quarter = 60), and about 159 s for the Fugue (quarter = 80). The Prelude runs straight into the Fugue.
+
+**Tempo maps** (`metadata.tempo_map`).
+- Prelude: a ritardando through the last bar into the half cadence (♩ 90 → 64).
+- Fugue:
+  - The approach broadens into the silence, b33–35 (80 → 70).
+  - The arrival chord is broad (64) and the music moves on through the maestrale (74).
+  - It holds back into the deceptive cadence (→ 66).
+  - The C♭ pp is slower (60).
+  - The guest is a tempo (76).
+  - Final ritardando over b49.3–50 (→ 54).
 
 **Build.** `python3 prelude.py`, then `python3 fugue.py`, then the render commands in `cycle/CONVENTIONS.md`.
 

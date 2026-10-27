@@ -41,6 +41,8 @@ for k, v in list(SHAPES.items()):
     SHAPES3[k + 't'] = [x - v[1] for x in v[1:]]
 SHAPES2 = {f'i{n}': [0, n] for n in (-7, -4, -3, -2, -1, 1, 2, 3, 4, 7)}
 SHAPES1 = {'n': [0]}
+SHAPES.update({'turn': [0, -1, 0, 1], 'turni': [0, 1, 0, -1], 'esc': [0, 1, 2, 1], 'esci': [0, -1, -2, -1]})
+PENALTY.update({'turn': 1, 'turni': 1, 'esc': 1, 'esci': 1})
 VOCAB = {4: SHAPES, 3: SHAPES3, 2: SHAPES2, 1: SHAPES1}
 
 RATIOS = [4, 3, 2, 1]                    # bass, tenor, alto, soprano
@@ -58,12 +60,13 @@ def dissonant(lo, hi, lo_is_bass):
 
 
 class Problem:
-    def __init__(self, rhythm, final=E4):
+    def __init__(self, rhythm, final=E4, suffix=()):
         self.rhythm = rhythm                      # list of cells, each a list of durations
         self.ncells = len(rhythm)
         self.n0 = len(CHIME)
+        self.suffix = list(suffix)                # fixed (pitch, dur) after the free cells
         self.cstart = list(itertools.accumulate([self.n0] + [len(c) for c in rhythm]))
-        self.durs = [d for _, d in CHIME] + [d for c in rhythm for d in c]
+        self.durs = [d for _, d in CHIME] + [d for c in rhythm for d in c] + [d for _, d in self.suffix]
         self.N = len(self.durs) + 1                     # + final note (no duration)
         self.final = final
         self.starts = list(itertools.accumulate([0] + self.durs))
@@ -83,7 +86,7 @@ class Problem:
                 self.events.append((t, cur))
         self.ready = {}
         for e in self.events:
-            last = max(self.cell(min(k + 1, self.N - 1)) for _, k, _ in e[1])
+            last = max(max(self.cell(k), self.cell(min(k + 1, self.N - 1))) for _, k, _ in e[1])
             self.ready.setdefault(last, []).append(e)
         self.pairs = {}
         for i in range(1, len(self.events)):
@@ -147,12 +150,12 @@ class Problem:
         return c
 
 
-def search(rhythm, plan, beam=300, show=6, lo=-4, hi=8, start_deg=0, seed=None):
+def search(rhythm, plan, beam=300, show=6, lo=-4, hi=8, start_deg=0, seed=None, suffix=()):
     """plan[ci] = set of pitch classes allowed for the cell's first note (chord
     tones of the composer's harmonic plan), optionally ('end', degrees)."""
-    P = Problem(rhythm)
+    P = Problem(rhythm, suffix=suffix)
     n_free = P.cstart[-1] - P.n0
-    notes0 = [p for p, _ in CHIME] + [None] * n_free + [P.final]
+    notes0 = [p for p, _ in CHIME] + [None] * n_free + [p for p, _ in P.suffix] + [P.final]
     base = P.cost_events(notes0, P.ready.get(-1, [])) + P.cost_par(notes0, P.pairs.get(-1, []))
     states = [(base, notes0, [], start_deg)]
     for ci in range(P.ncells):
@@ -207,25 +210,22 @@ def describe(notes, P):
     return ' '.join(toks)
 
 
-# Composer's rhythm for M after the chime (sixteenths; one list per cell)
-RHYTHM = [[2, 2, 2, 2], [2, 2, 2, 2], [4, 2, 2],          # M3  I -> vi
-          [2, 2, 2, 2], [2, 2, 4], [2, 2, 2, 2],          # M4  IV -> ii -> V
-          [4, 2, 2], [2, 2, 2, 2], [4, 4],                # M5  V
-          [2, 2, 2, 2], [2, 2, 2, 2], [2, 2, 4],          # M6  V7
-          [4, 2, 2], [2, 2, 2, 2], [4, 4],                # M7  I
-          [2, 2, 2, 2], [4, 2, 2], [2, 2, 2, 2]]          # M8  I (V) I -> final E
-I, VI, IV, II, V, V7 = {4, 8, 11}, {1, 4, 8}, {9, 1, 4}, {6, 9, 1}, {11, 3, 6}, {11, 3, 6, 9}
-PLAN = {0: {'pcs': I}, 1: {'pcs': I}, 2: {'pcs': VI}, 3: {'pcs': IV}, 4: {'pcs': II}, 5: {'pcs': V},
-        6: {'pcs': V}, 7: {'pcs': V}, 8: {'pcs': V}, 9: {'pcs': V7}, 10: {'pcs': V7}, 11: {'pcs': V7},
-        12: {'pcs': I}, 13: {'pcs': I}, 14: {'pcs': IV}, 15: {'pcs': I}, 16: {'pcs': V},
-        17: {'pcs': I, 'end': [-3, 4, -1, 6]}}
+# Composer's design for M after the chime (sixteenths): six development cells
+# in the chime's rhythm reversed (q. e e e), whose long notes are the bass
+# line of bars 9-20; then fixed bells: two B strikes, two E strikes, a long G#,
+# the flourish B A F#, and E (the final E is the convergence).
+RHYTHM = [[6, 2, 2, 2]] * 6
+SUFFIX = [(59, 12), (59, 12), (64, 12), (64, 12), (68, 12), (71, 2), (69, 2), (66, 2), (64, 6)]
+CHIMEOK = {4, 8, 11, 1}            # E G# B C#: notes consonant with the Westminster bells
+PLAN = {0: {'pcs': CHIMEOK}, 1: {'pcs': CHIMEOK}, 2: {'pcs': CHIMEOK},
+        4: {'pcs': CHIMEOK}, 5: {'pcs': CHIMEOK | {6}}}
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--beam', type=int, default=300)
     ap.add_argument('--show', type=int, default=6)
     a = ap.parse_args()
-    P, best = search(RHYTHM, PLAN, a.beam, a.show)
+    P, best = search(RHYTHM, PLAN, a.beam, a.show, suffix=SUFFIX)
     for cost, notes, ch in best:
         print(cost, ' '.join(f'{n}@{d}' for n, d in ch))
         print('   ', describe(notes, P))
