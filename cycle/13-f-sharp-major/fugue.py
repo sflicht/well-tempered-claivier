@@ -198,8 +198,9 @@ put('Idx', 17, [
     'A#4:4 R:4 F#4:4',                                         # b51
     'G#4:8 R:4',                                               # b52
     'C#5:6 D#5:2 C#5:4',                                       # b53
+    'R:12',                                                    # b54
 ])
-CANON_SPAN['I'] = (9, 53)
+CANON_SPAN['I'] = (9, 54)
 entry('Idx', 9, 'Canon I dux: subject')
 entry('Ico', 11, 'Canon I comes: subject at the unison')
 put('Sog', 9, [
@@ -252,8 +253,9 @@ put('IIdx', 17, subj(1) + [
     'D#5:2 C#5:2 D#5:2 E#5:2 F#5:4',                           # b51 vi
     'R:12',                                                    # b52 V
     'R:12',                                                    # b53 I6
+    'D#5:4 E#5:2 F#5:2 D#5:4',                                 # b54 ii6
 ])
-CANON_SPAN['II'] = (17, 53)
+CANON_SPAN['II'] = (17, 54)
 entry('IIdx', 17, 'Canon II dux: subject')
 entry('IIco', 18, 'Canon II comes: subject at the 2nd above')
 
@@ -286,8 +288,9 @@ put('IIIdx', 25, subj(-1) + [
     'R:12', 'R:12', 'R:12',                                    # b49-51
     'R:8 E#4:4',                                               # b52 V
     'C#4:2 B3:2 A#3:4 C#4:4',                                  # b53 I6
+    'D#4:8 C#4:2 B3:2',                                        # b54 ii6
 ])
-CANON_SPAN['III'] = (25, 53)
+CANON_SPAN['III'] = (25, 54)
 entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
 entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
 
@@ -326,6 +329,7 @@ put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'A#3:2 B3:2 D#4:2 C#4:2 A#3:2 F#3:2',                      # b51 vi
     'A#3:4 G#3:4 C#4:4',                                       # b52 V
     'F#3:8 A#3:4',                                             # b53 I6
+    'F#3:6 G#3:2 A#3:2 B3:2',                                  # b54 ii6
 ])
 entry('Sog', 35, 'Subject (soggetto returns, tenor)')
 entry('IVdx', 33, 'Canon IV dux: subject')
@@ -358,6 +362,21 @@ put('VIdx', 49, subj(1) + [
 CANON_SPAN['VI'] = (49, 54)
 entry('VIdx', 49, 'Canon VI dux: subject')
 entry('VIco', 57, 'Canon VI comes: subject at the 6th below')
+
+# =============================================================================================
+# Variation 8 (bars 57-64): the summit.  Fourteen real voices; every canon runs over the ground
+# while the subject enters in stretto: canon VI's comes and canon I's dux together (bar 57),
+# canon II's dux on G-sharp (58), canon II's comes on A-sharp and canon I's comes (59), ...
+put('Idx', 57, subj(0) + [
+])
+put('IIdx', 58, [shift(b, 1) for b in subj(1)] + [
+])
+CANON_SPAN['I'] = (9, 58)
+CANON_SPAN['II'] = (17, 59)
+entry('Idx', 57, 'Stretto: canon I dux, subject')
+entry('IIdx', 58, 'Stretto: canon II dux, subject on G#')
+entry('IIco', 59, 'Stretto: canon II comes, subject on A#')
+entry('Ico', 59, 'Stretto: canon I comes, subject')
 
 # ---- fundamentum for the rest (plain ground; ornamented later where the texture asks for it)
 put('Fund', 33, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
