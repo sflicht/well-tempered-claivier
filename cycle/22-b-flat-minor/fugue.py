@@ -250,17 +250,23 @@ put('T1', 17, 3, 'G4:8 F4:16')
 # chord of equal intervals, the same forwards and backwards.
 S2X = W.scale_rhythm(oc(S, 1), 2)
 theme('S4', 41, 1, S2X, 'Subject in augmentation (B-A-C-H on the axis)')
-theme('A3', 41, 1, oc(S, -1), 'Subject (stretto I, with the augmentation)')
-theme('A4', 45, 1, S, 'Subject (ending on the axis)')
+theme('T3', 41, 1, oc(S, -1), 'Subject, with its augmentation (canon per augmentationem)')
+theme('T4', 45, 1, oc(S, -1), 'Subject (ending on the axis)')
 put('B4', 44, 3, 'C2:8 F1:64')
 AXIS_TIE.add('B4')
 AXIS_TIE.add('S4')
-put('B3', 41, 1, 'Bb2:8 Gb2:8 Db3:8 Eb3:8 Db3:16 F2:8 Gb2:8')
-# b45-48 over the pedal: S1 a syncopated chain a sixth under the augmentation (6-4-6-4, each
-# sixth a 4-3 or 6-5 suspension over the changing harmony), S3 a quarter-note line between them.
-put('S1', 45, 1, 'Bb5:4 Ab5:8 Gb5:4~ Gb5:4 F5:8 Eb5:4~ Eb5:4 Db5:8 C5:4~ C5:8 D5:8')
-put('S3', 45, 1, 'Db6:4 C6:4 Bb5:8 Bb5:4 Ab5:4 A5:8 G5:4 F5:4 F5:8 F5:8 Ab5:8')
-
+put('B3', 41, 1, 'Bb2:8 Gb2:8 Db3:8 Eb3:8 Db3:16 F2:8 C3:8')
+# b45-48, over the pedal.  Upper strands: S1 a slow counter-line under the augmentation, S3 a
+# stepwise descent under it.  At b48.3 the augmentation's H arrives over a held dominant seventh;
+# on b48.4 every voice slips by a semitone into the axis chord (B-natural D F A-flat).
+put('S1', 45, 1, 'Db6:8 Bb5:8~ Bb5:8 A5:8 F5:16 Eb5:12 D5:4')
+put('S3', 45, 1, 'Bb5:4 Ab5:4 Gb5:8 F5:8 Eb5:8 Db5:4 C5:4 A4:8 F4:8 Ab4:8')
+# Low strands over the pedal: each moves a quarter before or after the augmentation and the
+# subject (suspensions, anticipations), never between the same two notes at the same moment; the
+# low voices breathe on b48.3 and strike the axis chord on b48.4.
+put('B3', 45, 1, 'Bb2:16~ Bb2:12 C3:4 F2:16~ F2:8 R:4 B2:4')
+put('B1', 45, 1, 'F2:8 Db3:8~ Db3:8 Bb2:4 A2:4 Bb2:16 A2:4 C3:4 R:4 Ab2:4')
+put('Bar4', 45, 1, 'Db4:16~ Db4:4 C4:4 A3:8 C4:8 F3:8 C4:8 R:4 F3:4')
 
 if __name__ == '__main__':
     import os

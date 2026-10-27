@@ -29,26 +29,19 @@ def part_c(sc, b0, close=True):
     # ---- S5: upbeat figures into c10 and c11 (the knocking quickens)
     P('S5', c(9), 3, "R:2 D5:2 D5:2 D5:2")
     P('S5', c(10), 1, "B5:6 A5:2 R:2 E5:2 E5:2 E5:2")
-    P('S5', c(11), 1, "C#6:6 B5:2 B5:8")
+    P('S5', c(11), 1, "C#6:6 B5:10")
     # ---- A1: G . | E D | C# . | (C#) D#
-    P('A1', c(9), 1, "G4:8 E4:4 D4:4")
-    P('A1', c(10), 1, "E4:8 R:8")
-    P('A1', c(11), 1, "D#4:16")
+    P('A1', c(9), 1, "G4:8")                          # then rests: its E and D doubled T1 and T4
     # ---- A2: chain, from c9.3
     P('A2', c(9), 3, "G#4:8~")
     P('A2', c(10), 1, "G#4:4 A4:4 E4:4 G4:4")       # G#->A over A7; G enters as the only 7th of A#o7
     P('A2', c(11), 1, "F#4:16")                       # G resolves on the downbeat
     # ---- A3: C D | (D) C# . | (C#) D#
-    P('A3', c(9), 1, "C5:8 D5:8~")
-    P('A3', c(10), 1, "D5:4 C#5:4 R:8")
-    P('A3', c(11), 1, "D#5:16")
+    # (A3 rests in c9-c11: its C, D, C# and D# all doubled S4, S5 or S3 at the unison)
     # ---- A4: sixteenths to the arrival
-    P('A4', c(9), 1, "G4:1 C5:1 E5:1 C5:1 G4:1 A4:1 B4:1 A4:1 E5:1 D5:1 B4:1 G#4:1 B4:1 D5:1 E5:1 B4:1")
-    P('A4', c(10), 1, "G4:1 A4:1 C#5:1 E5:1 C#5:1 A4:1 B4:1 C#5:1 E5:1 C#5:1 A#4:1 C#5:1 E5:1 F#5:1 G5:1 E5:1")
-    P('A4', c(11), 1, "F#5:12 B4:4")
+    P('A4', c(11), 1, "F#5:16")                       # (its c9-c10 sixteenths doubled the upper lines on every beat)
     # ---- A5: enters on A7
-    P('A5', c(10), 1, "C#4:8 R:8")
-    P('A5', c(11), 1, "B3:16")
+    # (A5 rests: its C# and B doubled T1)
     # ---- T1: the descending wedge against the rising cantus: E D C# . B
     P('T1', c(9), 1, "E4:8 D4:8")
     P('T1', c(10), 1, "C#4:8 R:8")
@@ -56,37 +49,28 @@ def part_c(sc, b0, close=True):
     # ---- T2
     P('T2', c(9), 1, "G3:8 R:8")
     P('T2', c(10), 1, "R:16")
-    P('T2', c(11), 1, "F#3:16")
+    # (T2 rests at the arrival: Br2 has the F#3)
     # ---- T3: upbeat figure into c11
-    P('T3', c(10), 3, "R:2 C#4:2 C#4:2 C#4:2")
-    P('T3', c(11), 1, "F#4:16")
+    # (T3 rests: T5's upbeat figure lands on the same F#4)
     # ---- T4: sixteenths in c10
-    P('T4', c(9), 1, "R:4 E4:12~")
-    P('T4', c(10), 1, "E4:1 D4:1 C#4:1 B3:1 C#4:1 E4:1 G4:1 E4:1 C#4:1 B3:1 A#3:1 B3:1 C#4:1 B3:1 C#4:1 E4:1")
-    P('T4', c(11), 1, "B3:16")
+    P('T4', c(9), 1, "R:8 E4:8~")
+    P('T4', c(10), 1, "E4:1 D4:1 C#4:1 B3:1 C#4:1 E4:1 G4:1 E4:1 C#4:1 B3:1 A#3:1 B3:1 E4:1 C#4:1 B3:1 E4:1")
+    P('T4', c(11), 1, "D#4:16")
     # ---- T5: upbeat figure into c11
     P('T5', c(9), 3, "R:8")
-    P('T5', c(10), 1, "E4:8 R:2 A#3:2 A#3:2 A#3:2")
+    P('T5', c(10), 1, "R:10 A#3:2 A#3:2 A#3:2")
     P('T5', c(11), 1, "F#4:16")
     # ---- baritones and basses: fewer low voices in c9-c10 (the cantus is the bass);
     #      the resting ones re-enter on the arrival (c11)
     P('Br1', c(9), 4, "B3:4")
-    P('Br1', c(10), 1, "R:4 E4:8 R:4")
-    P('Br1', c(11), 2, "B3:12")
-    P('Br2', c(9), 1, "E4:4 G3:4 D4:8")
-    P('Br2', c(10), 1, "A3:4 C#4:4 A#3:8")
     P('Br2', c(11), 1, "F#3:16")
-    P('Br3', c(11), 1, "D#3:16")
-    P('Br4', c(11), 3, "F#3:8")
-    P('Br5', c(9), 1, "G3:8 B3:8")
     P('Br5', c(10), 1, "B3:4 A3:4 R:8")
-    P('Br5', c(11), 1, "B3:16")
     P('B1', c(9), 1, "R:4 C3:8 D3:4~")
     P('B1', c(10), 1, "D3:8 C#3:8")
     P('B1', c(11), 1, "D#3:16")
     P('B2', c(10), 3, "E3:8")
     P('B2', c(11), 1, "R:16")
-    P('B3', c(11), 3, "B3:8")
+    P('B3', c(11), 1, "B1:16")                      # the low B under the arrival
     P('B5', c(11), 1, "B2:16")                       # the cantus's A# resolves with the arrival
 
     if not close:

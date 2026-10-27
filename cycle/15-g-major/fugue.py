@@ -124,6 +124,20 @@ def theme(v, bar, beat, toks, label, nbars=None):
     ENTRIES.append((LONG[NAMES.index(v)], bar, (Fr(beat) - 1), label, n))
 
 
+FIGS = []        # two-beat subject figures (played a little softer than the lines they surround)
+CHORALE = []     # chorale statements (played a little louder, so that each line can be followed)
+
+
+def fig(v, bar, beat, toks):
+    put(v, bar, beat, toks)
+    FIGS.append((v, pos(bar, beat), dur16(toks)))
+
+
+def cantus(v, bar, beat, toks, label, nbars=None):
+    theme(v, bar, beat, toks, label, nbars)
+    CHORALE.append((v, pos(bar, beat), dur16(toks)))
+
+
 def assemble(v, nbars):
     segs = sorted(VO[v], key=lambda x: x[0])
     out, cur = [], Fr(0)
@@ -166,8 +180,19 @@ def build(nbars, path=None):
             if b + 1 >= k:
                 v = DYN[k]
         return v
-    return W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES,
-                         subject=S1, dynamics=dynamics)
+    out = path or HERE / 'fugue.json'
+    data = W.build_score(out, meta, voices, bars, entries=ENTRIES, subject=S1, dynamics=dynamics)
+    # balance: chorale statements +8, the two-beat figures -4 (velocities only; no notes change)
+    for vi, v in enumerate(data['voices']):
+        name = NAMES[vi]
+        for e in v['events']:
+            t16 = Fr(e['t']).limit_denominator(48) * 4
+            if any(n == name and s <= t16 < s + d for n, s, d in CHORALE):
+                e['v'] = min(118, e['v'] + 8)
+            elif any(n == name and s <= t16 < s + d for n, s, d in FIGS):
+                e['v'] = max(24, e['v'] - 4)
+    Path(out).write_text(__import__('json').dumps(data, indent=1))
+    return data
 
 
 BPM = 66
@@ -198,7 +223,7 @@ put('B1', 10, 1, 'D3:4 C3:4 B2:4 A2:2 F#2:2')
 # b11-14: line 1 as cantus, high above (Coro II soprano, its first notes), over a stretto of the
 # subject two beats apart on rising degrees: tenor in C (modal, b11.2), alto in D (modal, b11.4),
 # soprano in D an octave higher, off the beat (b12.1.5): the entries close in, 2 beats then 1.5.
-theme('S2', 11, 1, ' '.join(L1.split()[:-1]) + ' G5:16', 'II: chorale line 1 (cantus)', 4)
+cantus('S2', 11, 1, ' '.join(L1.split()[:-1]) + ' G5:16', 'II: chorale line 1 (cantus)', 4)
 theme('T1', 11, 2, dshift(oc(S1, -1), 3), 'I: subject in C (stretto)', 2)
 theme('A1', 11, 4, dshift(oc(S1, -1), 4), 'I: subject in D (stretto)', 2)
 theme('S1', 12, 1.5, dshift(S1, 4), 'I: subject in D (stretto, off the beat)', 2)
@@ -220,17 +245,20 @@ theme('B2', 15, 1, dshift(S2, -7), 'II: subject 2 (line 2 diminished)', 2)
 theme('T2', 16, 1, dshift(S2, -3), 'II: subject 2, modal answer (D)', 2)
 theme('A2', 17, 1, S2, 'II: subject 2', 2)
 theme('S2', 18, 1, dshift(S2, 4), 'II: subject 2, modal answer (D)', 2)
+# Coro I does not fall silent: its tenor answers the fanfare with subject 1 inverted -- a double fugue.
+theme('T1', 16, 3, dshift(inv(S1, 'G4'), -3), 'I: subject 1 inverted against subject 2', 2)
+theme('T1', 19, 3, dshift(S1, -4), 'I: subject 1 in C against the fanfare and line 2', 2)
 # Coro I goes on beneath and around the entries; its bass carries the harmony (the Coro II bass
 # begins high, at G3):  G | D - D7/C - D | C D Em G | D - D7/C - D | C D Am.
 put('B1', 15, 1, 'G2:4 B2:4 E2:4 G2:4 D3:4 C3:4 D3:8 C3:4 D3:4 E3:4 A2:4 D3:4 C3:4 D3:8 C3:4 D3:4 C3:4 E2:4')
-put('S1', 15, 1, 'B4:6 C5:2 B4:4 B4:4 D5:4 F#5:4 A5:4 D5:4 E5:4 F#5:4 G5:8 F#5:4')
+put('S1', 15, 1, 'B4:6 C5:2 B4:4 B4:4 D5:4 F#5:4 A5:4 D5:4 E5:4 F#5:4 G5:8 A5:4')
 put('A1', 19, 1, 'E4:4 D4:4 E4:8')
 put('T2', 18, 1, 'F#4:6 G4:2 F#4:4 A3:4 C4:4 A3:4 A3:4 B3:2 C4:2')
 # b20-23: line 2 as cantus in the middle of the texture (Coro III alto, its first notes), turned
 # towards E minor: C Em | Bm D | Em G/B | B7 (the cantus' C as a flat ninth falling to B) -> e.
 # Around it the fanfare head answers itself in C (Coro II soprano) and B minor (Coro I soprano), and
 # the Coro II bass sings the whole subject in E minor with a raised leading tone (written out).
-theme('A3', 20, 1, L2, 'III: chorale line 2 (cantus)', 4)
+cantus('A3', 20, 1, L2, 'III: chorale line 2 (cantus)', 4)
 S2E = ('E4:2 E4:2 B4:3 B4:1 G4:2 B4:1 A4:1 G4:4 '
        'F#4:1 F#4:1 F#4:2 B4:2 A4:1 G4:1 F#4:1 F#4:1 F#4:2 D#4:2 B3:2')
 theme('S2', 20, 1, ' '.join(dshift(S2, 3).split()[:8]), 'II: subject 2 head in C', 1)
@@ -263,7 +291,7 @@ put('T2', 24, 1, 'B3:4 C4:4 A3:4 B3:4 A3:4 G3:4 A3:4 G3:4 G3:4 D3:4 A3:4 D3:4 A3
 put('S2', 27, 1, 'A5:4 E5:4 A5:4 D6:4 B5:8 A5:8')
 # b28-31: line 3 as cantus in the Coro IV tenor (its first notes), Em -> D:  Em Bm Am F#o7 | C Am G/B G |
 # D D/F# Em Em/G | A A7/C# D (cadence in D, b31.3).
-theme('T4', 28, 1, oc(L3, -1), 'IV: chorale line 3 (cantus)', 4)
+cantus('T4', 28, 1, oc(L3, -1), 'IV: chorale line 3 (cantus)', 4)
 put('B1', 29, 1, 'C3:4 A2:4 B2:4 G2:4 D3:4 F#2:4 E2:4 G2:4 A2:4 C#3:4 D3:8')
 # Over the cantus, Coro III answers itself in stretto: alto inverted (b29.1), soprano rectus two beats
 # later, tenor rectus (b30.1).
@@ -297,7 +325,7 @@ theme('A2', 33, 2, oc(dshift(head(S2), 4), -1), 'II: subject 2 head in D (quodli
 theme('A1', 34, 1, head(inv(S1, 'G4')), 'I: subject 1 head inverted (quodlibet)', 1)
 # b35-38: line 4 as cantus in the Coro I bass -- the falling octave G3-G2 under everything (its own
 # subject augmented four times) -- G D/F# Em D | D7 C G/B Am | G.
-theme('B1', 35, 1, oc(L4, -1), 'I: chorale line 4 (cantus, bass)', 4)
+cantus('B1', 35, 1, oc(L4, -1), 'I: chorale line 4 (cantus, bass)', 4)
 # Over the cantus a second, fuller peal and the quodlibet of all four subjects' heads (placements
 # checked one by one against the texture; the slots and the order of preference are the composer's).
 theme('S1', 35, 1, head(S1), 'I: subject 1 head', 1)
@@ -335,37 +363,21 @@ def chorale_upbeat(line):
 
 
 L1C = dshift(L1, 3)                          # line 1 in C (exact: C B A B G A B C)
-theme('S3', 39, 1, L3, 'III: chorale line 3 (summit)', 4)
-theme('A2', 39, 3, L2, 'II: chorale line 2 (summit)', 4)
-theme('S1', 40, 2, chorale_upbeat(L1C), 'I: chorale line 1 in C, with its upbeat (summit)', 4)
-theme('B4', 40, 3, oc(L4, -1), 'IV: chorale line 4 (summit, bass)', 4)
-theme('A3', 41, 1, dshift(inv(L3, 'B4'), -1), 'III: line 3 inversus, canon at two bars', 4)
-theme('A1', 42, 3, dshift(inv(chorale_upbeat(L1), 'G5'), -1), 'I: line 1 inversus, canon', 4)
-theme('B2', 42, 3, inv(L2, 'B3'), 'II: line 2 inversus, canon', 4)
-theme('A4', 43, 3, aug(dshift(L4, 3), 2), 'IV: line 4 per augmentationem, canon at the fourth', 8)
+cantus('S3', 39, 1, L3, 'III: chorale line 3 (summit)', 4)
+cantus('A2', 39, 3, L2, 'II: chorale line 2 (summit)', 4)
+cantus('S1', 40, 2, chorale_upbeat(L1C), 'I: chorale line 1 in C, with its upbeat (summit)', 4)
+cantus('B4', 40, 3, oc(L4, -1), 'IV: chorale line 4 (summit, bass)', 4)
+cantus('A3', 41, 1, dshift(inv(L3, 'B4'), -1), 'III: line 3 inversus, canon at two bars', 4)
+cantus('A1', 42, 3, dshift(inv(chorale_upbeat(L1), 'G5'), -1), 'I: line 1 inversus, canon', 4)
+cantus('B2', 42, 3, inv(L2, 'B3'), 'II: line 2 inversus, canon', 4)
+cantus('A4', 43, 3, aug(dshift(L4, 3), 2), 'IV: line 4 per augmentationem, canon at the fourth', 8)
 # The fugue subject threads through in stretto (rectus and inversus; whole statements where the
 # combination allows them, heads elsewhere).
-theme('S4', 40, 1, dshift(inv(S1, 'G4'), 4), 'IV: subject 1 inverted (summit stretto)', 2)
-theme('T1', 40, 3, oc(dshift(inv(S1, 'G4'), 4), -1), 'I: subject 1 inverted (summit stretto)', 2)
-theme('S4', 42, 2, dshift(S1, 4), 'IV: subject 1 (summit stretto)', 2)
-theme('S2', 43, 4, S1, 'II: subject 1 (summit stretto)', 2)
-theme('T4', 44, 1, ' '.join(oc(dshift(S1, 4), -1).split()[:-2]) + ' A3:4', 'IV: subject 1 (summit stretto; last turn simplified)', 2)
-theme('S1', 44, 2, dshift(inv(S1, 'G4'), 3), 'I: subject 1 inverted (summit stretto)', 2)
+theme('T4', 44, 1, ' '.join(oc(dshift(S1, 4), -1).split()[:-2]) + ' D4:4', 'IV: subject 1 (summit stretto; last turn simplified)', 2)
 theme('B1', 39, 1, oc(head(S4, 9), -1), 'I: subject 4 head (bass)', 1)
 theme('T3', 39, 3, oc(head(S3), -1), 'III: subject 3 head', 1)
-theme('T2', 40, 1, oc(dshift(head(S1), 4), -1), 'II: subject 1 head', 1)
-theme('T4', 41, 1, oc(dshift(head(inv(S1, 'G4')), 3), -1), 'IV: subject 1 head inverted', 1)
-theme('B3', 41, 4, oc(dshift(head(S3), 3), -2), 'III: subject 3 head', 1)
-theme('T2', 42, 1, oc(dshift(head(S2), 4), -1), 'II: subject 2 head', 1)
 theme('T3', 42, 3, oc(head(S3), -1), 'III: subject 3 head', 1)
-theme('T2', 43, 3, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'II: subject 1 head inverted', 1)
-theme('B1', 44, 3, oc(head(S1), -1), 'I: subject 1 head', 1)
-theme('T2', 45, 2, oc(dshift(head(S2), 4), -1), 'II: subject 2 head', 1)
-theme('A2', 46, 1, head(S1), 'II: subject 1 head', 1)
-theme('T3', 46, 1, oc(head(S3), -1), 'III: subject 3 head', 1)
 theme('T4', 46, 2, head(S4, 9), 'IV: subject 4 head', 1)
-theme('S1', 46, 3, head(S1), 'I: subject 1 head', 1)
-theme('A1', 47, 1, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'I: subject 1 head inverted', 1)
 # Every free voice joins with the subjects' own figures -- the bells of subject 1 (the falling octave
 # in sixteenths), the fanfare tattoo of subject 2, the siciliano run of subject 3, the rounds and the
 # first change of subject 4 -- two beats at a time, each placed where it makes no forbidden progression
@@ -376,73 +388,30 @@ TATTOO = ' '.join(S2.split()[8:14])       # A4 A4 A4 D5 C5 B4
 RUN = ' '.join(S3.split()[8:14])          # C5 B4 A4 B4 G4 E4 (triplets)
 ROUNDS = ' '.join(S4.split()[:4])         # G4 F#4 E4 D4
 CHANGE = ' '.join(S4.split()[9:13])       # F#4 G4 D4 E4
-put('A1', 41, 1, dshift(BELLS, 0))  # subject 1 bells
-put('A1', 41, 3, dshift(BELLS, -3))  # subject 1 bells
-put('B2', 41, 1, oc(dshift(TATTOO, 0), -1))  # subject 2 tattoo
-put('B2', 41, 3, dshift(ROUNDS, -3))  # subject 4 rounds
-put('T3', 41, 1, dshift(RUN, -3))  # subject 3 run
-put('T3', 41, 3, dshift(RUN, -2))  # subject 3 run
-put('A4', 41, 1, oc(dshift(ROUNDS, -2), 1))  # subject 4 rounds
-put('A4', 41, 3, dshift(TATTOO, -3))  # subject 2 tattoo
-put('T2', 41, 1, oc(dshift(TATTOO, 3), -1))  # subject 2 tattoo
-put('T2', 41, 3, oc(dshift(CHANGE, 3), -1))  # subject 4 change
-put('B1', 41, 1, oc(dshift(CHANGE, 3), -1))  # subject 4 change
-put('B1', 41, 3, oc(dshift(RUN, 0), -1))  # subject 3 run
-put('A1', 42, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
-put('B1', 42, 1, oc(dshift(ROUNDS, 3), -1))  # subject 4 rounds
-put('B1', 42, 3, oc(dshift(ROUNDS, 2), -2))  # subject 4 rounds
-put('A4', 42, 1, oc(dshift(TATTOO, 0), -1))  # subject 2 tattoo
-put('A4', 42, 3, dshift(BELLS, -2))  # subject 1 bells
-put('B1', 43, 1, oc(dshift(ROUNDS, 3), -1))  # subject 4 rounds
-put('B1', 43, 3, oc(dshift(CHANGE, 0), -1))  # subject 4 change
-put('S3', 43, 1, oc(dshift(RUN, -2), 1))  # subject 3 run
-put('S3', 43, 3, oc(dshift(BELLS, -2), 1))  # subject 1 bells
-put('A4', 43, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
-put('B3', 43, 1, oc(dshift(CHANGE, 2), -1))  # subject 4 change
-put('B3', 43, 3, oc(dshift(CHANGE, 2), -1))  # subject 4 change
-put('S3', 44, 1, oc(dshift(BELLS, -2), 1))  # subject 1 bells
-put('S3', 44, 3, dshift(ROUNDS, 2))  # subject 4 rounds
-put('T3', 44, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
-put('T3', 44, 3, dshift(RUN, -3))  # subject 3 run
-put('B3', 44, 1, oc(dshift(RUN, 0), -1))  # subject 3 run
-put('B3', 44, 3, dshift(CHANGE, -3))  # subject 4 change
-put('S3', 45, 1, dshift(BELLS, 2))  # subject 1 bells
-put('S3', 45, 3, dshift(BELLS, 0))  # subject 1 bells
-put('T3', 45, 1, oc(dshift(RUN, 2), -1))  # subject 3 run
-put('T3', 45, 3, oc(dshift(TATTOO, 3), -2))  # subject 2 tattoo
-put('B3', 45, 1, oc(dshift(RUN, 0), -1))  # subject 3 run
-put('B3', 45, 3, oc(dshift(CHANGE, 3), -1))  # subject 4 change
-put('A3', 45, 3, dshift(TURN, 2))  # subject 1 tail
-put('S2', 46, 1, dshift(BELLS, 0))  # subject 1 bells
-put('S2', 46, 3, dshift(BELLS, 0))  # subject 1 bells
-put('B1', 46, 1, oc(dshift(BELLS, 2), -2))  # subject 1 bells
-put('B1', 46, 3, oc(dshift(RUN, 0), -1))  # subject 3 run
-put('B3', 46, 1, oc(dshift(RUN, -2), -1))  # subject 3 run
-put('B3', 46, 3, oc(dshift(CHANGE, 2), -1))  # subject 4 change
-put('S3', 46, 1, dshift(BELLS, 3))  # subject 1 bells
-put('S3', 46, 3, dshift(BELLS, 3))  # subject 1 bells
-put('A3', 46, 1, dshift(RUN, 0))  # subject 3 run
-put('A3', 46, 3, dshift(CHANGE, 0))  # subject 4 change
+fig('S2', 46, 1, dshift(BELLS, 0))  # subject 1 bells
+fig('B1', 46, 1, oc(dshift(BELLS, 2), -2))  # subject 1 bells
+put('B1', 46, 3, 'G2:8')  # the summit lands on G
+fig('B3', 46, 1, oc(dshift(RUN, -2), -1))  # subject 3 run
+fig('S3', 46, 1, dshift(BELLS, 3))  # subject 1 bells
+fig('A3', 46, 1, dshift(RUN, 0))  # subject 3 run
 # b47-51: the summit dissolves.  Over a bass falling by step (C B | E D | C B | G A | D) the Coro IV
 # alto finishes line 4 per augmentationem, and the Coro I soprano sings the fugue subject itself in
 # augmentation -- the quick figure slowing towards the chorale it came from.
 put('B1', 47, 1, 'C2:8 B1:8 E2:8 D2:8 C2:8 B1:8 E2:8 A1:8 D2:8')
 theme('S1', 47, 3, oc(aug(S1, 2), 1), 'I: subject 1 per augmentationem', 4)
-# ... and the other subjects slow down with it: the fanfare, the rounds and the siciliano, each at half speed.
-theme('A2', 47, 3, aug(head(S2), 2), 'II: subject 2 head per augmentationem', 2)
-theme('T2', 48, 1, aug(head(S4, 9), 2), 'II: subject 4 head per augmentationem', 2)
+# ... and the siciliano slows down with it (half speed, Coro II soprano).
 theme('S2', 48, 3, aug(head(S3), 2), 'II: subject 3 head per augmentationem', 2)
 theme('A1', 50, 3, dshift(head(S1), 4), 'I: subject 1 head', 1)
 
 
 # ================================================================ CODA (b51.3-59): line 1 in augmentation
 # The Coro IV bass sings line 1 per augmentationem (whole notes, from b51.3): G | F# | E | F# | D | E |
-# F# | G.  Over its last three notes the Coro I tenor signs B-A-C-H: B-flat as the seventh of C7 over
-# the E (resolving to A), A over the F#, C as the seventh of D7, and B as the third of the last chord --
-# the signature is the cadence.  The Coro IV alto resolves the canon's last C to B as the coda begins.
-theme('B4', 51, 3, ' '.join(oc(aug(L1, 2), -3).split()[:-1]) + ' G2:24', 'IV: chorale line 1 per augmentationem (bass)', 8)
+# F# | G.  Over its last three notes the Coro I soprano, on top, signs B-A-C-H: B-flat as the seventh
+# of C7 over the E (resolving to A), A over the F#, C as the seventh of D7, and B as the third of the
+# last chord -- the signature is the cadence, and its B-flat is the only flat in the piece.  The Coro IV alto resolves the canon's last C to B as the coda begins.
+cantus('B4', 51, 3, ' '.join(oc(aug(L1, 2), -3).split()[:-1]) + ' G2:24', 'IV: chorale line 1 per augmentationem (bass)', 8)
 put('A4', 51, 3, 'B3:8 A3:8 G3:8')
-theme('T1', 56, 3, 'Bb3:16 A3:8 C4:8 B3:24', 'I: B-A-C-H', 3)
+put('T1', 56, 3, 'G3:16 D4:16 B3:24')
 # Above it the subject answers itself at every beat, rectus and inversus (a stretto at one beat over
 # the chorale at one-eighth of its speed), and the bells ring down.
 theme('S1', 51, 3, dshift(head(S1), 0), 'I: subject 1 head (coda stretto)', 1)
@@ -462,16 +431,16 @@ theme('S2', 55, 1, dshift(head(S2), 4), 'II: subject 2 head (coda stretto)', 1)
 theme('A4', 55, 1, dshift(head(S4, 9), 0), 'IV: subject 4 head (coda stretto)', 1)
 theme('T3', 55, 2, dshift(head(S1), 0), 'III: subject 1 head (coda stretto)', 1)
 theme('S3', 55, 3, dshift(head(S3), 0), 'III: subject 3 head (coda stretto)', 1)
-put('A1', 55, 3, dshift(BELLS, 0))  # bells
-put('A2', 55, 3, oc(dshift(BELLS, 4), -1))  # bells
-put('T1', 55, 1, oc(dshift(ROUNDS, 4), -1))  # rounds
-put('S4', 56, 1, dshift(BELLS, 0))  # bells
-put('A3', 56, 1, dshift(ROUNDS, 0))  # rounds
+fig('A1', 55, 3, dshift(BELLS, 0))  # bells
+fig('A2', 55, 3, oc(dshift(BELLS, 4), -1))  # bells
+fig('T1', 55, 1, oc(dshift(ROUNDS, 4), -1))  # rounds
+fig('S4', 56, 1, dshift(BELLS, 0))  # bells
+fig('A3', 56, 1, dshift(ROUNDS, 0))  # rounds
 # b56.3-59: the cadence C7/E (B-flat) - D7/F# (A, C) - G (B).  Eight voices carry it -- the soprano
-# rises G-D, the alto falls C-A-G, the Coro II soprano comes in on the D7 -- and the other eight
+# signs, the alto falls C-A-G, the tenor rises G-D -- and the other eight
 # return together on the last chord: all sixteen.
-put('S1', 56, 3, 'G5:16 D6:16 B5:24')
-put('S2', 56, 3, 'R:16 A5:16 D6:24')
+theme('S1', 56, 3, 'Bb5:16 A5:8 C6:8 B5:24', 'I: B-A-C-H', 3)
+put('S2', 56, 3, 'R:16 D5:16 D5:24')
 put('A1', 56, 3, 'C5:16 A4:16 G4:24')
 put('A2', 56, 3, 'G4:16 R:16 D5:24')
 put('T2', 56, 3, 'R:16 D4:16 D4:24')
@@ -496,6 +465,24 @@ TEMPO = {'tempo_map': [[0, 66], [52, 66], [56, 60, 'ramp'], [56, 66],
                        [222, 52], [230, 42, 'ramp'], [236, 32, 'ramp']]}
 # phrase dynamics (velocity offsets by bar): the siciliano softer, the peal and the summit loudest
 DYN = {1: -4, 11: 0, 15: 2, 20: 3, 24: -3, 28: -1, 32: 3, 35: 5, 39: 8, 41: 10, 47: 5, 51: 3, 56: 5, 58: 9}
+
+put('B1', 44, 3, 'B1:8 E2:4 G2:4 F#2:8')   # after line 4 ends, the bass walks to the landing
+put('S4', 43, 1, 'B4:6 C5:2 E5:4 D5:4 E5:8 D5:4 C5:2 D5:2 E5:4 C5:4 D5:8')   # a counterline in the gap between line 1 inverted and line 4 augmented
+# b43-45: the bells return around the canons -- only figures that never strike a chorale note
+fig('B1', 43, 1, oc(dshift(ROUNDS, 3), -1))  # subject 4 rounds
+fig('B1', 43, 3, oc(dshift(CHANGE, 0), -1))  # subject 4 change
+fig('A4', 43, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
+fig('B3', 43, 1, oc(dshift(CHANGE, 2), -1))  # subject 4 change
+fig('B3', 43, 3, oc(dshift(CHANGE, 2), -1))  # subject 4 change
+fig('B3', 44, 1, oc(dshift(RUN, 0), -1))  # subject 3 run
+fig('B3', 44, 3, dshift(CHANGE, -3))  # subject 4 change
+fig('B3', 45, 1, oc(dshift(RUN, 0), -1))  # subject 3 run
+fig('B3', 45, 3, oc(dshift(CHANGE, 3), -1))  # subject 4 change
+fig('T3', 44, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
+fig('T3', 45, 1, oc(dshift(RUN, 2), -1))  # subject 3 run
+fig('T3', 45, 3, oc(dshift(TATTOO, 3), -2))  # subject 2 tattoo
+theme('T2', 43, 3, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'II: subject 1 head inverted', 1)
+
 
 if __name__ == '__main__':
     end = max((s + dur16(t)) for v in VO.values() for s, t in v)

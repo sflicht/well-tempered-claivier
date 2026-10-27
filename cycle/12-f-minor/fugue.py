@@ -318,69 +318,67 @@ theme('SIII', M, 2, octv(S1, 1), 'S1')
 theme('AIII', M, 2, octv(S1I, -1), 'S1 inv. (with S1)')
 theme('TI', M, 3, octv(MTI, -1), 'main theme inv. (canon, 2 beats)')
 theme('SI', M, 4, S1I, 'S1 inv.')
-theme('TIII', M, 4, octv(hd(S2I, 15), -1), 'S2 inv. (head)')
+theme('TIII', M, 4, octv(hd(S2I, 14), -1), 'S2 inv. (head)')
 theme('AII', M + 2, 3, octv(hd(S1, 4), 1), 'S1 (head)')
 theme('TIII', M + 3, 3, hd(S1, 4), 'S1 (head)')
+theme('BrII', M + 1, 1, octv(hd(S1I, 4), -2), 'S1 inv. (head)')
 
 # ================================================================ IV c. STRETTO FINALE over S1 in augmentation, and coda
-# S1 in augmentation (twice as slow) is the bass of the whole finale: its dominant C (b80.3-82.3) is the last
-# pedal before the tonic.  Above it three subjects start together (S2 inverted, B-A-C-H), the main theme
-# enters in canon at the octave one bar apart, and a last B-A-C-H rises over the dominant into the tonic.
+# S1 in augmentation (twice as slow) is the bass of the whole finale; its dominant C, held for four bars
+# (b80.3-84.2), is the pedal under the last stretto.  Above it: B-A-C-H (placed so that its E falls on the
+# dominant and its F on the tonic), S2 inverted, S1 at normal speed against its augmentation (per augmentationem),
+# the main theme in Soprano I and its inversion in canon two beats later (Alto I).
 F = M + 6                                   # b73
-# its last note, F, becomes the tonic pedal of the coda (held to the end)
-theme('BII', F, 3, 'F2:16 C3:24 Bb2:8 Ab2:32 Bb2:32 C3:32 F2:72', 'S1 aug.', 10)   # = scale_rhythm(S1, 2), last note held
+theme('BII', F, 3, 'F2:16 C3:24 Bb2:8 Ab2:32 Bb2:32 C3:64 F2:72', 'S1 aug.', 12)   # = scale_rhythm(S1, 2); the dominant C held four bars (pedal), the last note held as the tonic pedal
 theme('TI', F, 3, octv(S2I, -1), 'S2 inv. (running)')
-theme('SIII', F, 3, octv(S3, 1), 'S3 B-A-C-H')
+theme('AIII', F, 1, S3, 'S3 B-A-C-H')
+theme('BrI', F - 1, 4, S1, 'S1 (against its augmentation)')
 theme('SI', F + 3, 3, octv(MT, 1), 'main theme')
-theme('AI', F + 4, 3, MT, 'main theme (canon at the octave, 1 bar)')
-theme('TII', F + 7, 3, 'Db4:8 C4:8 Eb4:8 D4:6 E4:2 F4:8', 'S3 B-A-C-H (head, resolving to the tonic)')
-# S2's head, rectus, against its own mirror (Tenor I) -- both from A-flat; S1 inverted at normal speed against its
-# own augmentation in the bass (per augmentationem et contrarium motum, as in Contrapunctus VII).
-put('AII', F, 3, 'Ab4:2 Bb4:2 Ab4:2 G4:2 F4:2 E4:2 F4:2 C4:2 F4:2 G4:2 Ab4:2 G4:2 F4:2 Ab4:2 G4:2')
-theme('BrI', F + 2, 3, W.transpose(S1I, -24, -14), 'S1 inv.')
-# Free voices of the finale.
-seq('SII', F, 'R:8 F5:8', 'F5:8 Ab5:8', 'Ab5:8 G5:8', 'Bb5:8 R:8')
-seq('BrII', F, 'R:8 F3:8', 'F3:8 G3:8', 'Ab3:4 R:12')
-# Tenor II: G over the dominant (b75.3); Bass I: F, E (the leading tone in the bass register) under it.
-put('TII', F + 2, 3, 'G4:8')
-put('BI', F + 2, 1, 'F3:8 E3:8')
-# Alto II: S2's mirror head again, taking over from Tenor I as its inverted S2 ends.
-put('AII', F + 5, 1, 'Ab4:2 G4:2 Ab4:2 Bb4:2 C5:2 Db5:2 C5:2 F5:2 C5:2 Bb4:2 Ab4:2 Bb4:2 C5:2 Ab4:2 Bb4:2')
-# S1 at a third speed: in diminution (answer form) in Soprano III, against its augmentation (bass) and its
-# inversion at normal speed (Baritone I).  Baritone II: B-A-C-H's answer head over the dominant pedal; its
-# A-natural (the H) sinks to A-flat as the tonic arrives.
-theme('SIII', F + 5, 2, W.scale_rhythm(tr(S1, 7 + 12, 4 + 7), Fr(1, 2)), 'S1 dim. (answer)', 2)
-put('BrII', F + 7, 3, 'Ab3:8 G3:8 C4:8 Bb3:8 Ab3:8')
-# Under the main theme's entry (b75.3-78.2, V - ii-half-dim 6/5 - i6): Alto I's C D-flat C (the B-A-C-H
-# semitone, its D-flat the dominant's flat ninth), Alto III and Tenor III in slow notes around the tonic chord.
-put('AI', F + 2, 3, 'C5:8 Db5:6 C5:6')
-put('AIII', F + 3, 3, 'F4:8 Ab4:12 G4:4 F4:8')
-put('TIII', F + 3, 3, 'C4:8 Db4:8 C4:16')
-# The dominant pedal (b80.3-82.2): cadential 6/4 - V7 - i7/C - V9 - i; B-A-C-H (Tenor II) spells the dominant's
-# flat ninth, root, minor and major ninth before rising E-F into the tonic with the bass.  Above it the upper
-# voices hold C and move by step: B-flat (7th) to A-flat, E to F and back, the 9-8 of Tenor I into the tonic.
-put('SI', F + 8, 1, 'C6:16~ C6:8 Ab5:8')
-put('SII', F + 8, 1, 'Bb5:8 Ab5:8 G5:8')
-put('SIII', F + 8, 1, 'E5:8 F5:8 E5:8')
-put('AII', F + 8, 1, 'C5:8 Ab4:8 C5:8')
-put('TI', F + 8, 3, 'F3:8 G3:8 C4:8')
+theme('AI', F + 4, 1, MTI, 'main theme inv. (canon by inversion, 2 beats)')
+# S1's inverted head under the main theme (Soprano III), the inverted main theme's head (Baritone II) and S2's head
+# (Alto II) where the main theme turns to the dominant, S1's head in Bass I over the first dominant.
+theme('BI', F + 1, 3, hd(S1, 4), 'S1 (head)')
+theme('SIII', F + 3, 3, octv(hd(S1I, 4), -1), 'S1 inv. (head)')
+theme('AII', F + 5, 3, hd(S2, 15), 'S2 (head)')
+theme('BrII', F + 5, 3, octv(hd(MTI, 4), -1), 'main theme inv. (head)')
+# S1's inverted head high in Soprano I before its main theme (b73.3), the inverted main theme's head in Tenor II
+# (b74.3) and S2's inverted head in Tenor II again under the main theme (b77.3).
+theme('SI', F, 3, hd(S1I, 3), 'S1 inv. (head)')
+theme('TII', F + 1, 3, octv(hd(MTI, 5), -1), 'main theme inv. (head)')
+theme('TII', F + 4, 3, octv(hd(S2I, 13), -1), 'S2 inv. (head)')
+# ---- over the dominant pedal (a long cadential 6/4, b80.3-82.4, then V7(9), b83-84): S1 at normal speed (Tenor I)
+# against the two augmentations, the inverted main theme (Alto III), and B-A-C-H's head (Tenor II), which spells
+# the dominant's flat ninth, root, minor and major ninth and falls E-F into the tonic.
+theme('TI', F + 7, 3, S1, 'S1 (with its inversion)')
+theme('AIII', F + 8, 3, MTI, 'main theme inv.')
+theme('TII', F + 8, 3, 'Db4:8 C4:8 Eb4:8 D4:6 E4:2 F4:8', 'S3 B-A-C-H (head)')
+put('TII', F + 11, 1, 'E4:8 F4:8')
+theme('SII', F + 7, 3, hd(S1I, 5), 'S1 inv. (over the pedal)')
+# the last dominant (b84.1): Soprano I G rising to C, Alto II G.
+put('SI', F + 11, 1, 'G5:8 C6:8')
+put('AII', F + 11, 1, 'G4:8')
+# the main theme's head in Baritone II on the tonic 6/4 (b81-82).
+theme('BrII', F + 8, 1, octv(hd(MT, 4), -1), 'main theme (head)')
+# over the dominant: S2's head (Tenor III) answered by its inversion (Alto I) half a bar later.
+theme('TIII', F + 8, 1, octv(hd(S2, 15), -1), 'S2 (head)')
+theme('AI', F + 8, 3, hd(S2I, 15), 'S2 inv. (head)')
 # Coda over the tonic pedal.  Soprano I signs the name at its own pitch, B-flat A C B-natural: iv - V7/iv - i -
 # vii-dim-7/V - V - and its A becomes the Picardy third of the last chord.
-seq('SI', F + 10, 'Bb5:8 A5:8', 'C6:8 B5:8', 'C6:16', 'A5:16')
+seq('SI', F + 12, 'Bb5:8 A5:8', 'C6:8 B5:8', 'C6:16', 'A5:16')
 # The first subject returns over the tonic pedal (Tenor III), under the signature: its notes are the roots, fifths
 # and sevenths of the coda's chords (F: i; C: V7; B-flat: passing; A-flat: i and the seventh of vii-dim-7/V;
 # B-flat: V7; C-F: I).  Its last note but one is shortened to end with the final chord.
-theme('TIII', F + 9, 3, 'F3:8 C4:12 Bb3:4 Ab3:16 Bb3:16 C4:8 F3:8', 'S1 (over the tonic pedal)')
+theme('TIII', F + 11, 3, 'F3:8 C4:12 Bb3:4 Ab3:16 Bb3:16 C4:8 F3:8', 'S1 (over the tonic pedal)')
 # The other voices of the coda (V7 over the pedal - V7/iv - i - vii-dim-7/V - V7 - I).
-put('SII', F + 9, 3, 'F5:8')
-seq('SII', F + 10, 'G5:8 F5:8', 'F5:16', 'E5:16', 'F5:16')
-put('SIII', F + 9, 3, 'C5:8')
-seq('SIII', F + 10, 'C5:8 Eb5:8~', 'Eb5:8 D5:8', 'C5:16', 'C5:16')
-seq('TII', F + 10, 'E4:8 F4:8', 'Ab4:8 F4:8', 'G4:16', 'F4:16')
-seq('BrII', F + 10, 'R:8 F3:8', 'F3:8 D3:8', 'G3:16')
-put('BI', F + 9, 3, 'C3:8')
-put('AI', F + 9, 3, 'Ab4:8 G4:8 C5:16 R:8')
-seq('BI', F + 10, 'C3:16', 'C3:8 Ab2:8', 'C3:16', 'C3:16')
+put('SII', F + 12, 3, 'F5:8')
+seq('SII', F + 13, 'F5:16', 'E5:16', 'F5:16')
+put('SIII', F + 11, 3, 'C5:8')
+seq('SIII', F + 12, 'C5:8 Eb5:8~', 'Eb5:8 D5:8', 'C5:16', 'C5:16')
+seq('TII', F + 12, 'E4:8 F4:8', 'Ab4:8 F4:8', 'G4:16', 'F4:16')
+seq('BrII', F + 12, 'R:8 F3:8', 'F3:8 D3:8', 'G3:16')
+put('BI', F + 11, 3, 'C3:8')
+put('AI', F + 11, 3, 'Ab4:8 C5:24')
+seq('BI', F + 12, 'C3:16', 'C3:8 Ab2:8', 'C3:16', 'C3:16')
 
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
@@ -395,15 +393,15 @@ def build(nbars):
             'markers': [{'t': q(P1), 'label': 'I. S1, stile antico'}, {'t': q(P2, 2), 'label': 'II. S2'},
                         {'t': q(P3, 3), 'label': 'III. B-A-C-H'}, {'t': q(Q), 'label': 'IV. Main theme: the four subjects'},
                         {'t': q(M), 'label': 'Contrapunctus inversus'}, {'t': q(F, 3), 'label': 'Stretto finale'},
-                        {'t': q(F + 9, 3), 'label': 'Coda'}],
+                        {'t': q(F + 11, 3), 'label': 'Coda'}],
             # S1 Grave; S2 a little faster; B-A-C-H; broadening through the lament into a half bar of silence;
             # the main theme broad; the mirror and finale moving; the dominant pedal and coda broaden to the end.
             'tempo_map': [[q(P1), 66], [q(P2), 76], [q(P3), 72], [q(P3 + 14), 72], [q(P3 + 17), 58, 'ramp'],
-                          [q(Q), 62], [q(Q + 2), 68, 'ramp'], [q(M), 68], [q(F), 70], [q(F + 7, 3), 70],
-                          [q(F + 9, 3), 58, 'ramp'], [q(F + 13), 46, 'ramp'], [q(F + 14), 46]]}
+                          [q(Q), 62], [q(Q + 2), 68, 'ramp'], [q(M), 68], [q(F), 70], [q(F + 9, 3), 70],
+                          [q(F + 11, 3), 58, 'ramp'], [q(F + 15), 46, 'ramp'], [q(F + 16), 46]]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 62) for i in range(len(NAMES))]
     dyn = {P1: -10, P1 + 6: -7, P1 + 12: -4, P2: -6, P2 + 6: -4, P2 + 13: 0, P3: -6, P3 + 4: -2, P3 + 8: 2,
-           P3 + 14: 6, Q - 1: 8, Q: 0, Q + 2: 4, Q + 3: 8, M: 6, F: 8, F + 3: 12, F + 7: 14, F + 9: 8, F + 12: 4}
+           P3 + 14: 6, Q - 1: 8, Q: 0, Q + 2: 4, Q + 3: 8, M: 6, F: 8, F + 3: 12, F + 7: 14, F + 11: 8, F + 14: 4}
 
     def dynamics(b):
         v = 0

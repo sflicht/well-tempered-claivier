@@ -35,13 +35,9 @@ def part_b(sc, b0):
     P('A3', c(5), 1, "C#5:8 B4:8")
     P('A3', c(6), 1, "B4:2 A#4:4 R:10")
     # ---- A4: sixteenths from c7.3 under Fugue II
-    P('A4', c(7), 3, "C5:1 B4:1 C5:1 D5:1 E5:1 D5:1 C5:1 G4:1")
-    P('A4', c(8), 1, "B4:1 G4:1 B4:1 D#5:1 B4:1 D#5:1 E5:1 D#5:1 G4:1 B4:1 D#5:1 E5:1 D#5:1 B4:1 A4:1 G4:1")
+    P('A4', c(7), 3, "B4:1 A4:1 B4:1 C5:1 D5:1 C5:1 B4:1 G4:1")     # passing notes on the beats, so as not to double C5/E5
     # ---- A5
-    P('A5', c(5), 3, "R:4 B3:4")
-    P('A5', c(6), 1, "R:8 B3:4 E4:4")
-    P('A5', c(7), 1, "E4:16")
-    P('A5', c(8), 1, "R:16")
+    # (A5 rests in c5-c11: every note it had doubled T1, T3 or T5)
     # ---- T1: chromatic inner line A# B C## . C B | C
     P('T1', c(5), 1, "A#3:12 B3:4")
     P('T1', c(6), 1, "C##4:4 R:2 C4:2 B3:8")
@@ -53,31 +49,21 @@ def part_b(sc, b0):
     P('T2', c(8), 1, "G3:16")
     # ---- T3: back on E minor
     P('T3', c(6), 4, "E4:4")
-    P('T3', c(7), 1, "E4:16")
+    # (T3 rests in c7: T5's upbeat figure lands on the same E4)
     P('T3', c(8), 1, "D#4:8 R:8")
     # ---- T4: F#3 . . | E# F# . E | E | D#
     P('T4', c(5), 1, "F#3:12 R:4")
-    P('T4', c(6), 1, "R:4 F#3:4 B3:8")
+    P('T4', c(6), 1, "R:4 F#3:12")
     P('T4', c(7), 1, "E3:16")
     P('T4', c(8), 1, "R:8 B3:8")
     # ---- T5: upbeat figure into c7
     P('T5', c(6), 3, "R:2 G3:2 G3:2 G3:2")
     P('T5', c(7), 1, "E4:6 F4:2 E4:8")
     # ---- baritones and basses: quiet in c5-c6, rebuilding from c6.3
-    P('Br1', c(6), 4, "E4:4")
-    P('Br1', c(7), 1, "E4:4 G4:4 C5? ".replace('C5? ', 'C4:8'))
+    # (Br1, Br3 and Br4 rest in c6-c7: each doubled a tenor or the cantus at the unison)
     P('Br2', c(5), 3, "B3:4 R:4")
-    P('Br2', c(7), 1, "R:4 C4:4 E4? ".replace('E4? ', 'G3:4') + " E3:4")
-    P('Br2', c(8), 1, "G3:4 D#3:4 G3:4 B3:4")
-    P('Br3', c(6), 4, "B2:4")
-    P('Br3', c(7), 1, "E3:8 G3:8")
-    P('Br3', c(8), 1, "R:16")
-    P('Br4', c(6), 3, "G3:8")
-    P('Br4', c(7), 1, "G3:8 E3:4 C3:4")
     P('B1', c(7), 1, "R:16")
     P('B1', c(8), 1, "R:8 D#3:8")
-    P('B3', c(7), 1, "R:4 E3:12")
-    P('B3', c(8), 1, "R:16")
 
 
 def plan_b(off):

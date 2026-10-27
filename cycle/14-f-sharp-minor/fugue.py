@@ -122,8 +122,9 @@ put('A2', B(32) + 8, TA + ' ' + "B4:8 G#4:8 G#4:16")
 put('C2', B(40) + 8, "A5:8 F#5:8 E5:8 C#5:16")
 
 # ================================================================ CANON PER TONOS (b43-66)
-# The block, in F-sharp minor (4 bars = 64 sixteenths).  Each statement transposes the whole block a whole
-# tone higher in key; statements 4-6 sit an octave lower so that the fourth puts the dux on middle C.
+# The block, written once in F-sharp minor (4 bars = 64 sixteenths): dux = the theme in diminution (its last note
+# is the next statement's first), comes = the tonal answer in diminution a quarter later and a fifth higher, a
+# lament bass and free lines L1-L5; N1 = the head of countersubject I in diminution ("Ascensus").
 BLOCK = {
     'dux': ('F#4:4 A4:4 C#5:4 D5:4 E#4:4 R:2 C#5:2 B#4:4 B4:4 A#4:4 A4:6 G#4:2 G4:2 F#4:2 E#4:2 C#4:2 F#4:2 B4:2 A4:4 G#4:4', 0),
     'comes': ('C#5:4 E5:4 F#5:4 A5:4 B#4:4 R:2 G#5:2 G5:4 F#5:4 E#5:4 E5:6 D#5:2 D5:2 C#5:2 B#4:2 G#4:2 C#5:2 F#5:2 E5:4 D#5:4', 4),
@@ -133,18 +134,37 @@ BLOCK = {
     'L3': ('A4:4 R:28 C#5:4 B4:8 C#5:4 G#4:4 A4:4 C#5:8', 0),
     'L4': ('R:4 G#4:4 A4:12 G#4:8 R:36', 0),
     'L5': ('R:36 D6:4 E6:8 C#6:4 A5:8 C#6:4', 0),
+    'N1': ('A5:4~ A5:2 A#5:2 B5:4~ B5:2 B#5:2 C#6:4~ C#6:2 D#6:2 C#6:4 R:32', 4),
 }
-SPECIAL = {(0, 'L4'): 'F#4:4 G#4:4 A4:12 G#4:8 R:36',                     # Altus I resolves E# -> F# first
-           (3, 'L3'): 'R:32 C#5:4 B4:8 C#5:4 G#4:4 A4:4 C#5:8',             # Altus I breathes at the octave drop
-           (5, 'L3'): 'A4:4 R:28 C#5:4 B4:8 C#5:4 G#4:4 A4:4 A4:4 F#4:4'}  # Altus I leads into the summit
+# Two frames.  The canon itself (dux, comes, L3, the high descant L5 and N1) climbs a whole tone per statement
+# without a break: F#3 G#3 A#3 C4 (Frederick's own pitch) D4 E4, and the summit's F#4.  The harmonic engine
+# (bass, L1, L2, L4) keeps its register for statements 1-3 and drops an octave at statement 4, where Coro III
+# takes it over.
+CANON = [-12, -10, -8, -6, -4, -2]
+ENGINE = [0, 2, 4, -6, -4, -2]
+
+
+def frame(line, k):
+    return ENGINE[k] if line in ('bass', 'L1', 'L2', 'L4') else CANON[k]
+
+
+def move(body, t):
+    return W.transpose(body, -6, -3) if t == -6 else trs(body, t)   # statement 4 spelled in C minor
+
+
+SPECIAL = {(0, 'L4'): 'F#4:4 G#4:4 A4:12 G#4:8 R:36',
+           (0, 'L3'): 'A5:4 R:28 C#5:4 B4:8 C#5:4 G#4:4 A4:4 C#5:8',
+           (5, 'L3'): 'A4:4 R:28 C#5:4 B4:8 C#5:4 G#4:4 A4:4 A4:4 F#4:4'}
+# (0, 'L4'): Altus I resolves its E# to F# first; (0, 'L3'): Tenor I resolves its B4 to A4 before the octave below;
+# (5, 'L3'): Tenor I's cadence into the summit.
 PT0 = 43
-STAT = [  # (transposition, {line: voice})   keys: F#m G#m A#m Cm Dm Em (then F#m: the summit)
-    (0,  {'dux': 'A2', 'comes': 'C2', 'bass': 'B2', 'L1': 'Q1', 'L2': 'Q2', 'L3': 'T1', 'L4': 'A1'}),
-    (2,  {'dux': 'A1', 'comes': 'C1', 'bass': 'B2', 'L1': 'Q1', 'L2': 'Q2', 'L3': 'A2', 'L4': 'C2'}),
-    (4,  {'dux': 'C2', 'comes': 'A2', 'bass': 'B1', 'L1': 'T1', 'L2': 'Q2', 'L3': 'A1', 'L4': 'C1'}),
-    (-6, {'dux': 'A3', 'comes': 'C3', 'bass': 'B3', 'L1': 'T3', 'L2': 'Q3', 'L3': 'A1', 'L4': 'T2', 'L5': 'C2'}),
-    (-4, {'dux': 'T2', 'comes': 'A3', 'bass': 'B3', 'L1': 'T3', 'L2': 'Q3', 'L3': 'A1', 'L4': 'C3', 'L5': 'C2'}),
-    (-2, {'dux': 'A2', 'comes': 'C1', 'bass': 'B3', 'L1': 'T3', 'L2': 'Q3', 'L3': 'A1', 'L4': 'T2', 'L5': 'C2'}),
+STAT = [  # {line: voice}; keys F#m G#m A#m Cm Dm Em, then F#m (the summit).  Lines accumulate: 7 8 9 10 11 11
+    {"dux": "T2", "comes": "A2", "bass": "B2", "L1": "Q1", "L2": "Q2", "L3": "T1", "L4": "A1"},
+    {"dux": "Q1", "comes": "A1", "bass": "B2", "L1": "T2", "L2": "Q2", "L3": "T1", "L4": "A2", "L5": "C2"},
+    {"dux": "T2", "comes": "A2", "bass": "B2", "L1": "Q1", "L2": "Q2", "L3": "T1", "L4": "A1", "L5": "C2", "N1": "C1"},
+    {"dux": "A3", "comes": "C3", "bass": "B3", "L1": "T3", "L2": "Q3", "L3": "T1", "L4": "A1", "L5": "C2", "N1": "C1"},
+    {"dux": "T2", "comes": "A3", "bass": "B3", "L1": "T3", "L2": "Q3", "L3": "T1", "L4": "C3", "L5": "C2", "N1": "C1"},
+    {"dux": "A2", "comes": "C1", "bass": "B3", "L1": "T3", "L2": "Q3", "L3": "T1", "L4": "T2", "L5": "C2", "N1": "A1"},
 ]
 KEYS = ['F# minor', 'G# minor', 'A# minor', "C minor, Frederick's key", 'D minor', 'E minor']
 
@@ -161,58 +181,69 @@ def strip_rests(toks):
 
 
 PT_ENTRIES = []
-for k, (tr_, asg) in enumerate(STAT):
+for k, asg in enumerate(STAT):
     b0 = PT0 + 4 * k
     for line, v in asg.items():
         toks = SPECIAL.get((k, line), BLOCK[line][0])
         lead, body = strip_rests(toks)
-        moved = W.transpose(body, -6, -3) if tr_ == -6 else trs(body, tr_)   # statement 4 spelled in C minor
-        put(v, B(b0) + BLOCK[line][1] + lead, moved)
+        put(v, B(b0) + BLOCK[line][1] + lead, move(body, frame(line, k)))
         if line in ('dux', 'comes'):
             PT_ENTRIES.append((v, b0, BLOCK[line][1] / 4, f"canon per tonos {k + 1} ({KEYS[k]}): {line}", 4))
-# heralds of the summit in the last statement: the head of the dux (Altus III) and of the comes (Bassus II)
-put('A3', B(64) + 8, trs(head(TD, 4), -2))
+        if line == 'N1':
+            PT_ENTRIES.append((v, b0, 1, 'contrasubiectum I per diminutionem (caput)', 2))
+# heralds: the comes' head as a third canonic voice in statements 4-6 (bass, two octaves down) and in the tenor
+put('B1', B(57) + 12, W.transpose(head(TAD, 4), -30, -17))
+put('B2', B(61) + 12, trs(head(TAD, 4), -28))
+put('Q2', B(60) + 12, trs(head(TAD, 4), -16))
+put('Q1', B(64) + 12, trs(head(TAD, 4), -14))
 put('B2', B(65) + 12, trs(head(TAD, 5), -26))
+HERALDS = [('B1', 57, 3, 'caput comitis (C minor)', 1), ('Q2', 60, 3, 'caput comitis (D minor)', 1),
+           ('B2', 61, 3, 'caput comitis (D minor)', 1), ('Q1', 64, 3, 'caput comitis (E minor)', 1),
+           ('B2', 65, 3, 'caput comitis (E minor)', 1)]
 
 # ================================================================ SUMMIT (b67-83), written bar by bar
 # Bassus III: theme x2 (F#2, 17 bars).  Altus II: CS I x2.  Cantus II: CS II x2 (from b71).  Cantus I: head of
-# the inversion (b68) and the whole inversion in diminution (b79).  Altus I / Altus III / Tenor I: the theme head
-# in diminution in stretto (b67, b67.3, b69).  Tenor III: CS I (b73).  Quintus III: inversion head (b68.3),
-# CS II (b71, one note varied at b75).  The rest is free counterpoint.
+# the inversion (b68), long notes, the whole inversion in diminution (b79).  Faster layers around the
+# augmentations: the theme head in diminution (Altus I b67, Altus III b67.3, Tenor I b69); the whole theme in
+# diminution - the per-tonos dux - in Altus I from b70.3, followed by the head of CS I in diminution, which is
+# relayed to Quintus II (b76.2), Cantus III (b77.3) and Tenor II (b80); CS I at normal speed in Tenor III (b73.2)
+# and CS II in Quintus III (b71, one note varied at b75.3).  The rest is free counterpoint.
 SUMMIT = {  # bars 67-83, per voice, one string per bar
-    'C1': ['R:16', 'C#6:8 A5:8', 'F#5:8 E#5:8', 'D6:16', 'D6:8 C#6:8', 'C#6:16', 'G#5:16', 'C#6:16', 'C#6:8 F#6:8', 'F#6:16', 'F#6:8 E6:8', 'E6:8 D6:8', 'C#6:4 A5:4 F#5:4 E#5:4', 'D6:4 R:2 F#5:2 G5:4 G#5:4', 'A5:4 A#5:6 B5:2 B#5:2 C#6:2', 'D6:2 F#6:2 C#6:2 G#5:2 A5:4 B5:4', 'C#6:16'],
-    'A1': ['F#4:4 A4:4 C#5:4 D5:4', 'E#4:4 F#4:4 C#5:8', 'C#5:16', 'B4:16', 'R:16', 'R:8 C#5:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'B4:16', 'A4:8 B4:8', 'C#5:16', 'G#4:16', 'C#5:16'],
+    'C1': ['R:16', 'C#6:8 A5:8', 'F#5:8 E#5:8', 'D6:16~', 'D6:8 C#6:8~', 'C#6:16', 'G#5:16', 'C#6:16~', 'C#6:8 F#6:8', 'F#6:16~', 'F#6:8 E6:8~', 'E6:8 D6:8', 'C#6:4 A5:4 F#5:4 E#5:4', 'D6:4 R:2 F#5:2 G5:4 G#5:4', 'A5:4 A#5:6 B5:2 B#5:2 C#6:2', 'D6:2 F#6:2 C#6:2 G#5:2 A5:4 B5:4', 'C#6:16'],
+    'A1': ['F#4:4 A4:4 C#5:4 D5:4', 'E#4:4 F#4:4 C#5:8', 'C#5:16', 'B4:8 F#4:4 A4:4', 'C#5:4 D5:4 E#4:4 R:2 C#5:2', 'B#4:4 B4:4 A#4:4 A4:4~', 'A4:2 G#4:2 G4:2 F#4:2 E#4:2 C#4:2 F#4:2 B4:2', 'A4:4 G#4:4 R:4 A4:4~', 'A4:2 A#4:2 B4:4~ B4:2 B#4:2 C#5:4~', 'C#5:4 B4:4 R:8', 'R:16', 'R:16', 'R:16', 'A4:8 R:8', 'R:16', 'G#4:16', 'C#5:16'],
     'T1': ['A3:16', 'A3:8 C#4:8', 'F#3:4 A3:4 C#4:4 D4:4', 'E#3:4 F#3:4 B3:8', 'C#4:16', 'C#4:8 G#3:8', 'G#3:16', 'G#3:8 C#4:8', 'C#4:16', 'F#3:16', 'F#3:8 B3:8', 'E3:8 R:8', 'C#4:16', 'D4:16', 'A3:16', 'D4:16', 'C#4:16'],
     'Q1': ['R:16', 'R:16', 'R:16', 'R:16', 'G#3:16', 'G#3:8 R:8', 'R:16', 'R:8 G#3:8', 'G#3:8 R:8', 'D#3:16', 'D#3:8 E3:8', 'C#3:8 D3:8', 'R:16', 'R:16', 'C#3:16', 'R:16', 'A2:16'],
     'B1': ['R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'C#2:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16'],
     'C2': ['R:16', 'R:16', 'R:16', 'R:16', 'A5:16', 'G#5:16', 'F#5:16~', 'F#5:8 E#5:8~', 'E#5:8 E5:8~', 'E5:8 D#5:8~', 'D#5:8 D5:8', 'C#5:8 B4:8', 'C#5:16', 'A4:8 D5:8', 'C#5:16', 'B4:16', 'A4:16'],
     'A2': ['R:16', 'A4:16~', 'A4:8 A#4:8', 'B4:16~', 'B4:8 B#4:8', 'C#5:16~', 'C#5:8 D#5:8', 'C#5:16~', 'C#5:16', 'B4:16', 'B4:16', 'A4:16', 'G#4:16', 'F#4:16~', 'F#4:16', 'E#4:16', 'F#4:16'],
-    'T2': ['R:8 F#3:4 E#3:4', 'F#3:4 G#3:4 A3:8', 'A3:8 R:8', 'D4:8 F#3:8', 'R:16', 'R:8 C#4:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:8 E#3:8', 'F#3:16', 'F#3:16', 'B3:16', 'F#3:16'],
-    'Q2': ['C#4:12 B3:4', 'C#4:4 B3:4 C#4:8', 'C#4:16', 'R:8 D4:8', 'R:16', 'R:8 G#4:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:8 D4:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16'],
-    'B2': ['C#3:16', 'C#3:16', 'R:16', 'R:16', 'C#3:16', 'C#3:8 R:8', 'D#3:16', 'R:16', 'C#3:16', 'R:16', 'R:8 B2:8', 'R:16', 'G#2:16', 'D3:16~', 'D3:8 C#3:8', 'R:16', 'C#3:16'],
-    'C3': ['A5:12 G#5:4', 'F#5:16', 'A5:8 R:8', 'F#5:16', 'R:16', 'R:16', 'R:16', 'G#5:8 R:8', 'R:8 F#5:8', 'F#5:16', 'F#5:8 R:8', 'A5:8 F#5:8', 'R:16', 'R:8 F#5:8', 'F#5:16', 'G#5:16', 'A5:16'],
-    'A3': ['R:8 F#4:4 A4:4', 'C#5:4 D5:4 E#4:4 F#4:4', 'C#5:16', 'F#4:8 D5:8', 'C#5:16', 'E#4:16', 'D#4:8 G#4:8', 'G#4:16', 'G#4:8 F#4:8', 'F#4:16', 'F#4:12 E4:4', 'E4:8 B3:8', 'G#3:16', 'A3:16', 'C#4:16', 'R:16', 'C#4:16'],
-    'T3': ['R:16', 'R:16', 'R:16', 'R:8 F#4:8', 'R:16', 'R:16', 'R:4 A3:8~ A3:4', 'A#3:4 B3:8~ B3:4', 'B#3:4 C#4:8~ C#4:4', 'D#4:4 C#4:8~ C#4:4~', 'C#4:4 B3:8 B3:4~', 'B3:4 A3:8 G#3:4~', 'G#3:4 F#3:8~ F#3:4~', 'F#3:4 E#3:8 F#3:4~', 'F#3:4 R:12', 'R:16', 'A3:16'],
+    'T2': ['R:8 F#3:4 E#3:4', 'F#3:4 G#3:4 A3:8', 'A3:8 R:8', 'D4:8 F#3:8', 'R:16', 'R:8 C#4:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:8 E#3:8', 'A3:4~ A3:2 A#3:2 B3:4~ B3:2 B#3:2', 'C#4:8 A3:8', 'B3:16', 'F#3:16'],
+    'Q2': ['C#4:12 B3:4', 'C#4:4 B3:4 C#4:8', 'C#4:16', 'R:8 D4:8', 'R:16', 'R:8 G#4:8', 'R:16', 'R:16', 'R:16', 'R:4 A3:4~ A3:2 A#3:2 B3:4~', 'B3:2 B#3:2 C#4:4~ C#4:4 B3:4', 'R:8 D4:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16'],
+    'B2': ['C#3:16', 'C#3:16', 'R:16', 'R:16', 'C#3:16', 'C#3:8 R:8', 'D#3:8 R:8', 'R:16', 'C#3:16', 'R:16', 'R:8 B2:8', 'R:16', 'G#2:16', 'D3:16~', 'D3:8 C#3:8', 'R:16', 'C#3:16'],
+    'C3': ['A5:12 G#5:4', 'F#5:16', 'A5:8 R:8', 'F#5:16', 'R:16', 'R:16', 'R:16', 'G#5:8 R:8', 'R:8 F#5:8', 'F#5:16', 'R:8 A5:4~ A5:2 A#5:2', 'B5:4~ B5:2 B#5:2 C#6:4~ C#6:4', 'B5:4 R:12', 'R:8 F#5:8', 'F#5:16', 'G#5:16', 'A5:16'],
+    'A3': ['R:8 F#4:4 A4:4', 'C#5:4 D5:4 E#4:4 F#4:4', 'C#5:16', 'F#4:8 D5:8', 'R:16', 'R:16', 'D#4:8 G#4:8', 'G#4:16', 'G#4:8 F#4:8', 'F#4:16', 'F#4:12 E4:4', 'E4:8 B3:8', 'G#3:16', 'A3:16', 'C#4:16', 'R:16', 'C#4:16'],
+    'T3': ['R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:4 A3:8~ A3:4', 'A#3:4 B3:8~ B3:4', 'B#3:4 C#4:8~ C#4:4', 'D#4:4 C#4:8~ C#4:4~', 'C#4:4 B3:8 B3:4~', 'B3:4 A3:8 G#3:4~', 'G#3:4 F#3:8~ F#3:4~', 'F#3:4 E#3:8 F#3:4~', 'F#3:4 R:12', 'R:16', 'A3:16'],
     'Q3': ['R:16', 'R:8 C#4:8', 'A3:8 F#3:8', 'D4:8 R:8', 'A4:8 G#4:8', 'F#4:12 E#4:4~', 'E#4:4 E4:8 D#4:4~', 'D#4:4 D4:4 C#4:4 B3:4', 'C#4:12 D4:4', 'C#4:8 B3:8', 'A3:8 R:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16'],
     'B3': ['F#2:16', 'A2:16', 'C#3:16', 'D3:16', 'E#2:16', 'R:8 C#3:8', 'B#2:16', 'B2:16', 'A#2:16', 'A2:16~', 'A2:8 G#2:8', 'G2:8 F#2:8', 'E#2:8 C#2:8', 'F#2:8 B2:8', 'A2:16', 'G#2:16', 'F#2:16'],
 }
 # ================================================================ CODA (b84-89)
-CODA = {
-    'C1': "C#6:16 C#6:16 C#6:8 B5:8 B5:8 A5:8 B5:16 A#5:16",
-    'C3': "A5:16 A5:16 B5:16 B5:8 F#5:8 F#5:16 F#5:16",
-    'A2': "F#4:8 A4:8 C#5:8 D5:8 C#5:16 B4:8 C#5:8 D5:16 C#5:16",
-    'C2': "R:8 C#5:8 A4:8 F#4:8 E#4:8 F#4:8 G#4:8 F#4:8 F#4:16 F#4:16",
-    'T1': "C#4:8 R:8 F#3:8 A3:8 C#4:8 D4:8 D4:8 C#4:8 B3:16 C#4:16",
-    'A1': "C#5:8 R:8 R:16 R:16 R:16 R:16 F#4:16",
-    'A3': "C#4:8 A3:8 F#3:8 E#3:8 F#3:8 R:8 R:16 R:16 C#4:16",
-    'T2': "F#3:8 R:8 R:16 R:16 R:16 R:16 A#3:16",
-    'T3': "A3:8 R:8 R:16 R:16 R:16 R:16 C#4:16",
-    'Q1': "R:16 R:16 R:16 R:16 R:16 F#3:16",
-    'Q2': "R:16 R:16 R:16 R:16 R:16 C#3:16",
-    'Q3': "R:16 R:16 R:16 R:16 R:16 F#3:16",
-    'B1': "R:16 R:16 R:16 R:16 R:16 F#1:16",
-    'B2': "C#3:16~ C#3:16~ C#3:16~ C#3:16~ C#3:16 C#3:16",
-    'B3': "F#2:16~ F#2:16~ F#2:16~ F#2:16~ F#2:16~ F#2:16",
+# Over a double pedal (F#2 Bassus III, C#3 Bassus II): heads of the theme (Altus II b84, Tenor I b85, Altus I b87)
+# and of the inversion (Altus III b84, Cantus II b84.3, Quintus III b85); tierce de Picardie.
+CODA = {  # bars 84-89
+    'C1': ['C#6:16', 'C#6:16', 'C#6:8 B5:8', 'B5:8 A5:8', 'B5:16', 'A#5:16'],
+    'A1': ['C#5:8 R:8', 'R:16', 'R:16', 'F#5:8 A5:8', 'C#6:16~', 'C#6:16'],
+    'T1': ['C#4:8 R:8', 'F#3:8 A3:8', 'C#4:8 D4:8', 'D4:8 C#4:8', 'B3:16', 'C#4:16'],
+    'Q1': ['R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'F#3:16'],
+    'B1': ['R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'F#1:16'],
+    'C2': ['R:8 C#5:8', 'A4:8 F#4:8', 'E#4:8 F#4:8', 'G#4:8 F#4:8', 'F#4:16', 'F#4:16'],
+    'A2': ['F#4:8 A4:8', 'C#5:8 D5:8', 'C#5:16', 'B4:8 C#5:8', 'D5:16', 'C#5:16'],
+    'T2': ['F#3:8 R:8', 'R:16', 'R:16', 'R:16', 'F#3:16', 'A#3:16'],
+    'Q2': ['R:16', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16'],
+    'B2': ['C#3:16~', 'C#3:16~', 'C#3:16~', 'C#3:16~', 'C#3:16', 'C#3:16'],
+    'C3': ['A5:16', 'A5:16', 'B5:16', 'B5:8 F#5:8', 'F#5:16', 'F#5:16'],
+    'A3': ['C#4:8 A3:8', 'F#3:8 E#3:8', 'F#3:8 R:8', 'R:16', 'R:16', 'C#4:16'],
+    'T3': ['A3:8 R:8', 'R:16', 'R:16', 'R:16', 'R:16', 'R:16'],
+    'Q3': ['R:16', 'C#4:8 A3:8', 'F#3:16', 'D4:8 A3:8', 'F#3:16', 'F#3:16'],
+    'B3': ['F#2:16~', 'F#2:16~', 'F#2:16~', 'F#2:16~', 'F#2:16~', 'F#2:16'],
 }
 
 
@@ -230,7 +261,7 @@ def assemble(v):
     bars = W.concat_bars(' '.join(out), METER)[:66]
     bars = [b.replace('~', '') if i == 65 else b for i, b in enumerate(bars)]
     bars += SUMMIT[v]
-    bars += W.concat_bars(CODA.get(v, 'R:96'), METER)
+    bars += CODA[v]
     assert len(bars) == NB, (v, len(bars))
     return bars
 
@@ -246,9 +277,7 @@ ENTRIES = [
     ('Q1', 25, 0, 'inversus (thema contra inversum)', 9),
     ('B2', 26, 0, 'augm. contr. motu: comes (inversus per augmentationem)', 17),
     ('A2', 32, 2, 'Thema Regium: risposta', 9),
-] + PT_ENTRIES + [
-    ('A3', 64, 2, 'caput (dux, E minor)', 1),
-    ('B2', 65, 3, 'caput (comes, E minor)', 1),
+] + PT_ENTRIES + HERALDS + [
     ('B3', 67, 0, 'Thema Regium per augmentationem (bassus)', 17),
     ('A1', 67, 0, 'thema diminutum, caput (stretto)', 2),
     ('A3', 67, 2, 'thema diminutum, caput (stretto)', 2),
@@ -256,6 +285,11 @@ ENTRIES = [
     ('A2', 68, 0, 'contrasubiectum I per augmentationem', 16),
     ('Q3', 68, 2, 'inversus, caput', 2),
     ('T1', 69, 0, 'thema diminutum, caput (stretto)', 2),
+    ('A1', 70, 2, 'thema diminutum (dux per tonos) contra augmentationem', 4),
+    ('A1', 74, 3, 'contrasubiectum I per diminutionem (caput)', 2),
+    ('Q2', 76, 1, 'contrasubiectum I per diminutionem (caput)', 2),
+    ('C3', 77, 2, 'contrasubiectum I per diminutionem (caput)', 2),
+    ('T2', 80, 0, 'contrasubiectum I per diminutionem (caput)', 2),
     ('C2', 71, 0, 'contrasubiectum II per augmentationem', 13),
     ('Q3', 71, 0, 'contrasubiectum II (stretto)', 6),
     ('T3', 73, 1, 'contrasubiectum I (stretto)', 8),
@@ -264,6 +298,8 @@ ENTRIES = [
     ('A3', 84, 0, 'caput inversum', 2),
     ('C2', 84, 2, 'caput inversum', 2),
     ('T1', 85, 0, 'caput', 2),
+    ('Q3', 85, 0, 'caput inversum', 2),
+    ('A1', 87, 0, 'caput', 2),
 ]
 
 
@@ -271,9 +307,10 @@ def q(bar, beat=1):
     return (bar - 1) * 4 + (beat - 1)
 
 
-# Exordium grave; the canons and the canon per tonos a little more flowing; broadening into the summit (augmented
-# theme), a slower summit, and a further broadening through the coda to the final chord.
-TEMPO = {'tempo_map': [[q(1), 70], [q(26), 76], [q(43), 78], [q(63), 78], [q(67), 66, 'ramp'], [q(84), 62],
+# Exordium alla breve; the canons and the canon per tonos a little faster; the tempo is held through the summit
+# (the augmentation reads as slow because the diminutions run around it) and broadens only from b81, where the
+# diminished inversion meets the augmented theme's last notes, through the coda to the final chord.
+TEMPO = {'tempo_map': [[q(1), 76], [q(22), 80], [q(43), 84], [q(81), 84], [q(84), 66, 'ramp'],
                        [q(86), 58, 'ramp'], [q(89), 46, 'ramp']]}
 DYN = {1: -8, 9: -6, 17: -4, 22: -2, 26: 0, 35: 2, 43: 0, 47: 2, 51: 4, 55: 2, 59: 4, 63: 6, 67: 8, 75: 7,
        79: 9, 84: 4, 89: 8}
@@ -285,7 +322,7 @@ def build(path=None):
             'subtitle': 'Fugue XIV in F-sharp minor, fifteen voices: Ricercar a 15 sopra il Thema Regio',
             'composer': "Claude / Sam (on Frederick the Great's Royal Theme, after J. S. Bach's Musical Offering, BWV 1079)",
             'instrument': 'Three choirs of five voices (open score, fifteen keyboards)',
-            'key': 'F#', 'mode': 'minor', 'meter': list(METER), 'bpm': 70,
+            'key': 'F#', 'mode': 'minor', 'meter': list(METER), 'bpm': 76,
             'tempo_text': 'Grave, alla breve', 'movement_number': 14, 'piece_type': 'fugue', 'edition': 'third',
             'motto': 'Quaerendo invenietis',
             'score_layout': {'paper': 'a2', 'staff_size': 17, 'staff_distance': 9},

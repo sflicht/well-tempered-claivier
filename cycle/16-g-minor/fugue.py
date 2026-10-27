@@ -173,7 +173,7 @@ def assemble(v, nbars):
 
 # ================================================================ SECTIONS
 # (bar numbers are absolute; each section starts where the previous one leaves off)
-SUM = 80          # bar s0 of the summit (the bar in which Ped. II's upbeat D sounds); provisional
+SUM = 69          # bar s0 of the summit (the bar in which Ped. II's upbeat D sounds)
 
 
 def at(b0, t):
@@ -337,7 +337,56 @@ def section_F(b0):
     T('RS', 14, oc(dsh(S7, -2), 1), 'line 7: subject 7 on G (RP S)')
     T('HB', 18, oc(dsh(S7, 3), -1), 'line 7: subject 7 on E-flat (HW B)')
     T('RA', 20, W.invert_diatonic(S7, 'Bb4', GNAT), 'line 7: subject 7 inverted (RP A)')
+    T('RS', 19, 'Bb5:4 A5:4 G5:8 F#5:8')
+    T('OT', 7, 'F4:4 G4:4 F4:8 Eb4:8 D4:8 C4:8 D4:8')
     # F-END
+
+
+A8 = tr(S8, -7, -4)          # answer a fifth lower (in A: 'in ihrem Land', a foreign key)
+
+
+def section_G(b0):
+    """Line 8, 'die drinnen sind in ihrem Land' (which are in their land): repeated notes knock at a
+    foreign door; the line keeps its Dorian E natural and the music turns towards D minor and A.
+    Canon three beats apart, Ped. II leading."""
+    T = T_(b0)
+    T('P2', 6, cantus(8, -2), 'cantus line 8 (Ped. II, canon dux)')
+    T('P1', 9, cantus(8, -1), 'cantus line 8 (Ped. I, canon comes, 3 beats)')
+    T('HB', 4, oc(S8, -2), 'line 8 Vorimitation: subject 8 (HW B)')
+    T('HS2', 6, S8, 'line 8 Vorimitation: subject 8 (HW S2)')
+    T('RT', 3, S8, 'line 8 Vorimitation: subject 8 (RP T)')
+    T('OS', 8, oc(S8, 1), 'line 8: subject 8 (OW S)')
+    T('HBr', 10, oc(S8, -1), 'line 8: subject 8 (HW Bar)')
+    T('RA', 12, A8, 'line 8: answer (RP A)')
+    T('OB', 14, oc(S8, -1), 'line 8: subject 8 (OW B)')
+    T('OT', 18, dsh(S8, 3), 'line 8: subject 8 on A (OW T)')
+    T('RS', 20, A8, 'line 8: answer (RP S)')
+    T('OA', 22, oc(S8, 1), 'line 8: subject 8 (OW A)')
+    T('OS', 12, 'C6:8 B5:4 A5:4 A5:8 G5:8 F5:8 E5:8')
+    T('RBr', 14, 'C4:8 D4:8 E4:8 D4:8 C#4:8')
+    # G-END
+
+
+A9 = tr(S9, -5, -3)          # answer a fourth lower (G, chromatic fall to A)
+
+
+def section_H(b0):
+    """Line 9, 'da mussten wir viel Schmach und Schand' (there we had to suffer much shame and
+    disgrace): the line descends to D through the lament tetrachord, and its subject fills the descent
+    chromatically (passus duriusculus).  Ped. I leads, Ped. II follows five beats later."""
+    T = T_(b0)
+    T('P1', 4, cantus(9, -1), 'cantus line 9 (Ped. I, canon dux)')
+    T('P2', 9, cantus(9, -2, last=8), 'cantus line 9 (Ped. II, canon comes, 5 beats)')
+    # H-END
+
+
+def approach(s0):
+    """The final section begins: the subject of Bach's G-minor fugue BWV 542 enters once, as a genuine
+    voice, in Ped. I (its own pedal entry), and its circle of fifths leads into the summit; its last
+    note G is the summit's first downbeat."""
+    T = T_(s0)
+    T('P1', -7.5, oc(BWV542, -2), 'BWV 542 guest (J. S. Bach, Fugue in G minor), Ped. I')
+    # APP-END
 
 
 def summit(s0):
@@ -404,6 +453,9 @@ section_C(21)
 section_D(33)
 section_E(40)
 section_F(49)
+section_G(55)
+section_H(61)
+approach(SUM)
 summit(SUM)
 
 

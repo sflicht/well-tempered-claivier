@@ -49,6 +49,7 @@ A_ION = 'Eb4:8 F4:8 G4:8 C5:12 Bb4:4 Ab4:8 G4:4 F4:4 Eb4:8 Db4:8'       # E-flat
 # three knocks, then a chromatic rise through the notes that change
 # (E/E#, F#/F##), arriving on the tonic.
 K = 'D#4:2 R:2 D#4:2 R:2 D#4:4 E4:4 E#4:4 F#4:4 F##4:4 G#4:8'           # 36 sixteenths
+KA = 'A#3:2 R:2 A#3:2 R:2 A#3:4 B3:4 B#3:4 C#4:4 C##4:4 D#4:8'           # the door subject on the dominant's fifth
 K_LOW = 'G#3:2 R:2 G#3:2 R:2 G#3:4 A3:4 A#3:4 B3:4 B#3:4 C#4:8'          # the lower door (A/A#, B/B#)
 
 
@@ -110,15 +111,83 @@ theme('T2', 4, 1, A_PHR, 'I: answer (D# Phrygian)')
 put('B1', 4, 1, 'G#2:8 E2:4 F#2:4 B2:8 G#2:8 F#2:8 C#3:8 D#3:8 B2:8 A2:8 '          # countersubject (bass)
                 'G#2:8 F#2:8 E2:8 C#3:8 G#2:8 A2:8 E2:16 D#2:8')
 theme('Br2', 7, 1, octv(S_PHR, -1), 'I: subject')
-put('T2', 7, 1, 'D#4:6 E4:2 C#4:4 B3:4 E4:8 G#4:8 B3:8 E4:8 E4:4 D#4:4 C#4:8 B3:8')
+put('T2', 7, 1, 'D#4:6 E4:2 F#4:8 G#4:8 G#4:8 B3:8 E4:8 E4:4 D#4:4 C#4:8 B3:8')
 theme('A4', 10, 1, A_PHR, 'I: answer')
-put('Br2', 10, 1, 'G#3:8 E3:4 F#3:4 B3:8 G#3:8 F#3:8 C#4:8 D#4:8 B3:8 A3:8')             # countersubject, now in the baritone
-put('T2', 10, 1, 'B3:4 A#3:4 G#3:8 D#4:8 E4:8 D#4:4 C#4:4 E4:8 F#4:4 E4:4 F#4:8 E4:8')
+put('Br2', 10, 1, 'B2:8 E2:4 F#2:4 B2:8 G#2:8 F#2:8 C#3:8 D#3:8 B2:8 A2:8')             # countersubject, now in the baritone
+put('T2', 10, 1, 'B3:8 G#3:8 D#4:8 D#4:8 A#3:8 C#4:8 F#3:8 G#3:8 A3:8')
 theme('S4', 13, 1, S_PHR, 'I: subject (soprano)')
-put('A4', 13, 1, 'D#4:4 E4:4 F#4:8 E4:8 A4:12 G#4:4 E4:8 E4:4 D#4:4 C#4:8 B3:8')
-put('T2', 13, 1, 'B3:8 C#4:8 G#3:8 C#4:8 B3:4 A3:4 F#3:8 G#3:8 A3:4 B3:4 A3:8')
-put('Br2', 13, 1, 'E3:8 E3:8 E3:8 A3:12 F#3:4 A3:8 E3:8 C#3:8 D#3:8')
-put('B1', 13, 1, 'G#2:8 C#3:8 E2:8 A2:8 B2:8 F#2:8 E2:8 C#2:8 B1:8')
+put('A4', 13, 1, 'D#4:8 F#4:8 G#4:8 G#4:8 B4:8 E4:8 G#4:8 B3:8 D#4:8')
+put('T2', 13, 1, 'G#3:8 C#4:8 E4:8 C#4:8 F#3:8 A3:8 G#3:8 E3:8 F#3:8')
+put('Br2', 13, 1, 'B2:8 C#3:8 G#2:8 E3:8 D#3:8 E3:8 G#2:8 B2:8 F#2:8')
+put('B1', 13, 1, 'G#2:8 F#2:8 E2:8 C#3:8 B2:8 A2:8 E2:16 D#2:8')
+
+
+# ================================================================ II. MEDIA NOCTE, Aeolian (A#): b16-30
+# The door subject (BWV 61: "Siehe, ich stehe vor der Tuer und klopfe an") is heard for the first time:
+# three knocks, then the chromatic rise.  The subject enters 1.5 beats after the knocks, a third
+# above the rise, so that it is displaced off the beat: its long notes become suspensions.
+theme('T1', 16, 1, K, 'II. Media nocte: door subject (first time)', 2)
+theme('A2', 16, 2.5, S_AEO, 'II: subject (Aeolian), entering off the beat against the door subject', 3)
+put('B1', 16, 1, 'G#2:16 E#2:8 D#2:8 G#2:8 C#3:8 B2:8 F#2:16 '
+                  'D#3:16 B#2:8 A#2:8 D#3:8 G#2:8 F#2:8 C#3:16')
+put('Br2', 16, 1, 'D#3:16 G#2:8 R:24 F#3:8 A#2:16 F#3:16 G#3:16 F#3:8 G#3:8 C#3:8 E#3:8 G#3:8')
+put('T2', 17, 2, 'D#4:8 E4:8 F#4:16 A#3:8 D#4:24 A#3:16 B3:8 C#4:16')
+put('S4', 18, 1, 'F#5:16 C#5:8 D#5:4 R:12 B#4:12 A#4:12 G#4:8 A#4:8 C#5:16')
+put('T1', 17, 2.5, 'R:4 R:8 B3:8 A#3:8 R:8 R:24 R:16 D#4:8 F#4:8 E#4:16')
+theme('T4', 19, 1, KA, 'II: door subject on A# (with the answer)', 2)
+theme('S5', 19, 2.5, octv(A_DOR, 1), 'II: answer, off the beat, over the door subject', 3)
+
+# b22-24 episode: falling fifths, D#m7 G#m7 C#m7 F#7 Bmaj7 Emaj7 A#o7 D#7 G#m; each seventh is
+# prepared and resolved (Soprano IV and Alto II hold and fall in turn); the knocks begin to travel.
+put('B1', 22, 1, 'D#3:8 G#2:8 C#3:8 F#2:8 B2:8 E2:8 A#2:8 D#2:8 G#2:8')
+put('S4', 22, 1, 'F#5:16 E5:16 D#5:16 C#5:16 B4:8')
+put('A2', 22, 1, 'A#4:8 B4:16 A#4:16 G#4:16 F##4:8 G#4:8')
+put('Br1', 23, 2, 'F#3:2 R:2 F#3:4 R:8')
+put('T1', 22, 1, 'A#3:8 D#4:8 E4:8 C#4:2 R:2 C#4:2 R:2 C#4:4 R:4 B3:8 E4:8 D#4:16')
+put('T2', 22, 1, 'F#3:8 R:8 G#3:8 F#3:8 D#3:8 R:8 R:8 A#3:8 G#3:8')
+put('S5', 22, 2.5, 'D#5:4 R:4 F#5:2 R:2 F#5:2 R:2 F#5:4 R:12 R:8 A#4:2 R:2 A#4:2 R:2 A#4:4 R:4')
+
+# b25-28: the door again, an octave lower in the baritone; the subject in the fifth alto
+theme('Br1', 25, 1, octv(K, -1), 'II: door subject in the baritone', 2)
+theme('A5', 25, 2.5, S_AEO, 'II: subject, off the beat, over the door subject', 3)
+put('B1', 25, 1, 'G#2:16 C#3:8 A#2:8 G#2:8 C#3:8 B2:8 F#2:16 D#2:16')
+put('Br1', 26, 3, 'G#3:8 D#3:8 A#2:16 F#3:16')
+put('S4', 25, 1, 'D#5:16 C#5:8 R:8 G#5:20 F#5:12 C#5:8 D#5:16')
+put('T1', 25, 1, 'B3:16 C#4:8 C#4:8 B3:8 C#4:8 D#4:8 F#3:8 C#4:8 C#4:16')
+put('T2', 25, 1, 'G#3:24 D#4:16 E4:8 B3:8 C#4:8 F#3:8 R:16')
+put('Br2', 25, 1, 'B2:16 R:8 R:16 E3:8 G#3:8 C#3:16 R:16')
+
+# b28.3-30: the bass climbs the door's rise, E E# F# F## G#, and the Dorian E# (the next sharp)
+# sounds at the top over the subdominant C# major; half cadence on D#.
+put('B1', 28, 3, 'E2:8 E#2:8 F#2:8 F##2:8 G#2:8 C#3:8 D#3:8')
+put('S4', 28, 3, 'G#5:16 F#5:8 A#5:8 G#5:8 E#5:8 F##5:8')
+put('A5', 28, 3, 'B4:8 G#4:8 A#4:16 B4:8 C#5:8 A#4:8')
+put('T1', 28, 3, 'B3:8 C#4:8 F#4:8 C#4:8 B3:8 G#3:8 C#4:8')
+put('A2', 28, 3, 'R:8 E#4:8 D#4:8 D#4:16 E#4:8 D#4:8')
+
+# ================================================================ III. GALLI CANTU (cockcrow), Dorian (E#): b31-44
+# The subject now has E# (its leap B-E# is the shrill augmented fourth of the cockcrow); the door
+# subject rises D# E# F# F## G#.  New voices enter with each statement; the texture thickens toward
+# the summit.
+K_DOR = 'D#4:2 R:2 D#4:2 R:2 D#4:4 E#4:4 F#4:4 F##4:4 G#4:8'
+theme('T3', 31, 1, K_DOR, 'III. Galli cantu: door subject (Dorian)', 2)
+theme('A3', 31, 2, S_DOR, 'III: subject (Dorian)', 3)
+put('B1', 31, 1, 'G#2:16 D#3:8 G#2:8 E#2:8 C#3:8 F#2:8 D#3:8 G#2:8')
+put('S4', 31, 1, 'G#5:20 F#5:4 D#5:8 G#5:16 F#5:8 D#5:16')
+put('T1', 31, 1, 'B3:16 A#3:8 D#4:8 C#4:16 A#3:8 B3:16')
+put('A2', 31, 1, 'B4:16 R:16 G#4:8 E#4:8 F#4:16 B4:8')
+put('Br2', 31, 1, 'D#3:16 R:8 D#3:8 E#3:16 A#2:8 F#3:8 D#3:8')
+
+# b34-36: the whole block answered a fifth higher (explicit transposition of the block's lines),
+# sung by the entering voices: the answer in Soprano III over the door subject on A#.
+KA_DOR = 'A#3:2 R:2 A#3:2 R:2 A#3:4 B#3:4 C#4:4 C##4:4 D#4:8'
+theme('T4', 34, 1, KA_DOR, 'III: door subject on A# (Dorian)', 2)
+theme('S3', 34, 2, octv(A_DOR, 1), 'III: answer (D# Aeolian)', 3)
+put('B1', 34, 1, 'D#3:16 A#2:8 D#2:8 B#2:8 G#2:8 C#3:8 F#2:8 D#3:8')
+put('S2', 34, 1, tr('G#5:20 F#5:4 D#5:8 G#5:16 F#5:8 D#5:16', 7, 4))
+put('A1', 34, 2, 'F#4:8 E#4:8 A#4:8 G#4:16 E#4:8 F#4:16')
+put('S5', 34, 1, tr('B4:16 R:16 G#4:8 E#4:8 F#4:16 B4:8', 7, 4))
+put('Br1', 35, 1, 'A#3:8 B#3:16 E#3:8 C#4:8 A#3:8')
 
 # ================================================================ SUMMIT (composed first)
 SUM = 45
@@ -166,7 +235,6 @@ put('S3', L, 1, 'G#5:8 E#5:8 D#5:8 R:24 D#5:16 R:8 D#5:8 A#5:8 R:8 G#5:8 D#6:8 R
 # 52.2 D#m/F#: the subject's last F# ... 52.3 D#: ... becomes F##, the leading tone (the last door note).
 # Over a knocking D# pedal the door subject enters four times, two beats apart (D#4, A#3, D#4, A#4);
 # a chromatic line falls against the rises; three tutti knocks; silence; then the door opens (b57).
-KA = 'A#3:2 R:2 A#3:2 R:2 A#3:4 B3:4 B#3:4 C#4:4 C##4:4 D#4:8'          # the door subject on the dominant's fifth
 KD = 'D#4:2 R:2 D#4:2 R:2 D#4:4 E4:4 E#4:4 F#4:4 F##4:4 G#4:8'         # = K
 KNOCK3 = lambda n: f'{n}:2 R:2 {n}:2 R:2 {n}:4 R:12'                   # the last three knocks, then silence
 B = SUM + 7   # bar 52
