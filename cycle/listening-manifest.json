@@ -332,6 +332,25 @@
    ]
   },
   {
+   "name": "Pair XIX \u00b7 A major (new, twenty voices)",
+   "pieces": [
+    {
+     "id": "prelude-19",
+     "title": "Prelude XIX \u00b7 Le Ma\u00eetre \u00e0 danser",
+     "score": "cycle/19-a-major/prelude.json",
+     "tag": "new",
+     "notes": "The dancing master shows the steps: allemande, courante, sarabande and gigue, twelve beats each, then pairs of them at once in different metres, then the first three bars of a Bach bourr\u00e9e at pitch, which turns out to matter in the fugue."
+    },
+    {
+     "id": "fugue-19",
+     "title": "Fugue XIX \u00b7 Ballo a quattro cori (20 voices)",
+     "score": "cycle/19-a-major/fugue.json",
+     "tag": "new",
+     "notes": "A Baroque suite is a chain of dances, often built on one melody. Here four five-part string bands, scored like the court band of Lully's France, each own one dance: allemande (4/4), courante (3/2), sarabande (3/4) and gigue (12/8). One subject is re-rhythmed for each dance, and each band gets its own fugal exposition.\n\nThen the dances meet: two at once, then three, and at the summit all four together, each in its own metre, sharing one beat, their bar lines coinciding only every twelve beats. That is the trick of the ballroom scene in Mozart's Don Giovanni, here in strict counterpoint. Only one band's bass plays at a time: the subject's mirror passes from band to band as the bass, faster each time.\n\nIn the coda the subject reveals where it came from: the opening of the Bourr\u00e9e I from Bach's English Suite No. 1 in A major (BWV 806), which the allemande band plays with Bach's own bass before all twenty voices close on A. Solo one band in the listening room to hear each dance on its own."
+    }
+   ]
+  },
+  {
    "name": "Pair XXI \u00b7 B-flat major (new, twenty-two voices)",
    "pieces": [
     {

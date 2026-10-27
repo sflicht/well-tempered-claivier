@@ -126,7 +126,7 @@ device of its own:
     Mark 13:35, the subject brightening one sharp per watch until the dawn
     turns enharmonically to A-flat major; the knock at the door (BWV 61) as
     second subject.
-32. **[in progress] Pair XIX à 20: a suite in one fugue.** Four five-part
+32. **[first version] Pair XIX à 20: a suite in one fugue.** Four five-part
     French dance bands (allemande, courante, sarabande, gigue) on one subject;
     at the summit all four dance at once, each in its own metre, the ballroom
     trick of Don Giovanni done in strict counterpoint.
