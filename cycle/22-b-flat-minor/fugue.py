@@ -289,11 +289,28 @@ theme('S3', 37, 1, INV, 'Inversion (soprano), ending on the summit')
 put('A2', 32, 1, 'C5:16')
 put('Bar2', 32, 3, 'F3:8')
 put('B2', 33, 1, 'Bb1:8')
-put('S1', 33, 1, 'F5:8 Gb5:16 F5:8 Eb5:16 Db5:8 Eb5:4 F5:4 Db5:8')
-put('T1', 33, 1, 'Db4:8 Eb4:16 F4:8 R:24 Gb3:4 F3:8 C4:12')
+put('S1', 33, 1, 'F5:8 Gb5:16 F5:8 Eb5:12 F5:4 Gb5:16 Db5:8')
+put('T1', 33, 1, 'Db4:8 Eb4:16 F4:8 R:24 Gb3:4 F3:8 R:4 C4:8')
 put('Bar1', 33, 1, 'F3:8 Bb3:48 Eb3:4 Bb2:8 C3:12')
-put('B3', 37, 3, 'F2:8')
+put('B3', 37, 3, 'F2:8 Db3:12 C3:4 Db3:8 Gb2:4 F2:8 Eb2:4 F2:8')
 put('Ms3', 37, 1, 'Bb4:8 A4:8')
+put('T1', 38, 1, 'F4:8 Bb3:4 C4:4 F4:8 Db4:8')
+# b40: the alto of Coro III enters on the dominant; the baritone's B-A-C-H resolves; the Neapolitan
+# sixth (C-flat over E-flat, the inversion's G-flat against the subject's B-natural) and the
+# dominant lead into the summit.
+put('A3', 40, 1, 'F4:24 Bb4:16 Eb4:8')
+put('Bar3', 40, 3, 'C4:8 Db4:24 Gb3:8')
+# b41-44: around the augmentation and the subject, the held chords of the voices still singing;
+# Coro IV gathers (baritone b43, soprano and mezzo of Coro I/IV b44, contrabass on the half-diminished
+# seventh), each on a held chord note.
+put('S3', 41, 1, 'F5:8 Gb5:8 F5:8 Eb5:8 Db5:16 C5:4 F5:4 Gb5:8')
+put('Ms3', 41, 1, 'Db5:24 Bb4:24 F4:8 Eb4:8')
+put('Bar4', 43, 1, 'F3:16 C4:8 Bb3:8')
+put('T1', 44, 1, 'F3:8')
+put('S1', 43, 3, 'Db6:12 C6:12')
+put('B2', 44, 3, 'Eb3:8')
+put('B1', 44, 4, 'Gb2:4')
+put('S2', 44, 4, 'Eb5:4')
 
 # =================================================================================== IV. CRUX (summit)
 # Composed first.  Over b41-48 the subject sounds in augmentation in the top voice (Coro IV soprano,
@@ -311,7 +328,7 @@ theme('T4', 45, 1, oc(S, -1), 'Subject (ending on the axis)')
 put('B4', 44, 3, 'C2:8 F1:64')
 AXIS_TIE.add('B4')
 AXIS_TIE.add('S4')
-put('B3', 41, 1, 'Bb2:8 Gb2:8 Db3:8 Eb3:8 Db3:16 F2:8 C3:8')
+put('B3', 41, 1, 'Bb2:8 Gb2:8 Db3:8 Eb3:8 F2:8 Db3:8 F2:8 C3:8')
 # b45-48, over the pedal.  Upper strands: S1 a slow counter-line under the augmentation, S3 a
 # stepwise descent under it.  At b48.3 the augmentation's H arrives over a held dominant seventh;
 # on b48.4 every voice slips by a semitone into the axis chord (B-natural D F A-flat).

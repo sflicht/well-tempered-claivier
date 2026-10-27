@@ -4,8 +4,8 @@ b50-54  Farewell.  Over the fundamental and its octave (Corni 1 and 2 hold B-fla
         summit's last chord to the end) the friends sing their theme twice in the two-voice
         texture of Bach's Arioso (in sixths): Amico 10 with Amico 15, then Amico 20 with Amico 5.
         Between the phrases the horns answer with the Aria's octave call, each further away.
-b55-62  The relay.  Each voice in turn takes over the note of the voice below it, tongues it in
-        the posthorn rhythm, and steps up to its own partial, where it stays: partial 3, 4, 5 ...
+b55-62  The relay.  Each voice in turn takes over the note of the voice below it, turns once
+        round its own partial (below, own, below) and settles on it, where it stays: partial 3, 4, 5 ...
         22, slowly at first (two beats apart), then a beat apart -- the subject's rocket, played by
         the whole company up the whole series.  Every note from b55 on is a partial of B-flat1
         and is tuned as one (just intonation, see NOTES.md); the cracked notes of section C are

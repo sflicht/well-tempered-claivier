@@ -370,11 +370,14 @@ def create_lilypond(data, output):
                 if in_scale:
                     bar_items.append('}')
                     in_scale = False
-                if plan_of is None:
-                    bar_items.append(f'\\time {num}/{den}')
-                if sc != 1:
+                if sc != 1:   # \\time inside \\scaleDurations, so that the bar length is scaled too
                     bar_items.append(f'\\scaleDurations {sc.numerator}/{sc.denominator} {{')
                     in_scale = True
+                if plan_of is None:
+                    bar_items.append(f'\\time {num}/{den}')
+                    if sc != 1:
+                        ml = Fraction(num, den) * sc
+                        bar_items.append(f'\\set Timing.measureLength = #(ly:make-moment {ml.numerator}/{ml.denominator})')
             if s.get('triplet') and not in_tuplet:
                 bar_items.append('\\tuplet 3/2 4 {')
                 in_tuplet = True
@@ -439,8 +442,8 @@ def create_lilypond(data, output):
              f'    \\context {{ \\Staff \\override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #{staff_distance} }}',
              *(['    \\context { \\Staff \\RemoveEmptyStaves \\override VerticalAxisGroup.remove-first = ##t }']
                if layout.get('hide_empty_staves') else []),
-             *(['    \\context { \\Score \\remove "Timing_translator" \\remove "Default_bar_line_engraver" }',
-                '    \\context { \\Staff \\consists "Timing_translator" \\consists "Default_bar_line_engraver" }']
+             *(['    \\context { \\Score \\remove "Timing_translator" }',
+                '    \\context { \\Staff \\consists "Timing_translator" }']
                if staff_meters else []),
              '  }', '}']
     Path(output).write_text('\n'.join(text) + '\n', encoding='utf-8')
@@ -550,12 +553,19 @@ def create_musicxml(data, output):
     Path(output).write_bytes(ET.tostring(root, encoding='utf-8', xml_declaration=True))
 
 
-def performance_events(data, chamber=False, instruments=False):
+def performance_events(data, chamber=False, instruments=False, temperament=None):
     """Return events at quarter-note times; offsets preserve written note lengths.
     instruments=True plays each voice with its own General MIDI 'gm_program' (piano, 0,
-    when a voice names none) and its 'pan' if given; the default is unchanged."""
+    when a voice names none) and its 'pan' if given; the default is unchanged.
+    temperament: the keyboard tuning the audio render will apply.  Only used when the score's
+    metadata says "cents_reference": "equal" (opt-in): then a note's 'cents' are measured from
+    equal temperament, so the temperament's own offset for that pitch class is taken off the
+    note's bend and the note sounds at exactly ET + cents under any temperament.  Without that
+    key (every older score), per-note cents are added on top of the temperament as before."""
     voices = normalized_voices(data)
     events = []
+    absolute = temperament and meta_of(data).get('cents_reference') == 'equal'
+    tdev = temperament_offsets(temperament) if absolute else None
     programs = [73, 68, 71, 42, 70, 41, 72] if chamber else [0]
     for i, voice in enumerate(voices):
         channel = CHANNELS[i % 15] + 16 * (i // 15)
@@ -576,6 +586,8 @@ def performance_events(data, chamber=False, instruments=False):
             # Optional per-note microtonal offset in cents (just intonation etc.).
             # Voices are monophonic, one channel each, so a pitch bend per note is exact.
             cents = float(e.get('cents', 0.0))
+            if tdev is not None and 'cents' in e:
+                cents -= tdev[int(e['p']) % 12]
             bend = max(-8192, min(8191, round(cents * 4096 / 100)))
             if bend != bent:
                 events.append((e['t'], 0.5, channel, 'bend', bend, 0))
@@ -713,7 +725,7 @@ def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament
     synth.setting('synth.reverb.damp', 0.6)
     synth.setting('synth.reverb.level', 0.16)
     synth.setting('synth.chorus.active', 0)
-    events = performance_events(data, chamber, instruments=instruments)
+    events = performance_events(data, chamber, instruments=instruments, temperament=temperament)
     for t, _, channel, kind, pitch, velocity in events:
         if kind == 'program':
             synth.program_select(channel, sfid, 0, pitch)

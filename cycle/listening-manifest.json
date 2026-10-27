@@ -320,6 +320,25 @@
    ]
   },
   {
+   "name": "Pair XXI \u00b7 B-flat major (new, twenty-two voices)",
+   "pieces": [
+    {
+     "id": "prelude-21",
+     "title": "Prelude XXI \u00b7 Arioso",
+     "score": "cycle/21-b-flat-major/prelude.json",
+     "tag": "new",
+     "notes": "After the young Bach's Capriccio on the Departure of a Beloved Brother (BWV 992), whose friends first try to coax the traveller into staying. The friends' theme in Bach's sixths, a lament bar over Bach's own chromatic lament bass, a posthorn call in the distance, and a farewell."
+    },
+    {
+     "id": "fugue-21",
+     "title": "Fugue XXI \u00b7 Capriccio sopra la lontananza (22 voices)",
+     "score": "cycle/21-b-flat-major/fugue.json",
+     "tag": "new",
+     "notes": "Bach's Capriccio ends with a 'fugue in imitation of the postilion's horn'. A natural posthorn can only play the harmonic series of its fundamental, so here the twenty-two voices are the first twenty-two partials of B-flat: voice n lives around partial n. The horns state a posthorn subject made only of partials (Bach's head, then a climb up the series); the friends answer with a theme built on Bach's Arioso, which reaches G, the one note the horn can never play.\n\nSeven 'strangers' play Bach's real subject in foreign keys. Where Bach writes G, each horn cracks to its out-of-tune 7th partial, a minor seventh 31 cents flat, the friends laugh, and the crack pulls the music one fifth round the circle. The climb passes a lament bar, the post station, Bach's Aria with the alphorn's 11th partial (49 cents flat) and rockets in stretto. At the summit Bach's whole subject sounds in the bass with the posthorn subject twice and the friends' theme in stretto (18-19 voices moving).\n\nThe departure: a farewell in the Arioso's sixths, then a relay in which each voice settles on its own partial, until the last sound is the posthorn's own harmonic series, partials 1 to 22, tuned exactly, nature's B-flat over the well-tempered one. The first horn plays the subject's head once more, very softly.\n\nThe cracks and the final chord carry their own tuning, so the temperament buttons do not apply to this piece."
+    }
+   ]
+  },
+  {
    "name": "Pair XXIV \u00b7 B minor (new, twenty-five voices)",
    "pieces": [
     {

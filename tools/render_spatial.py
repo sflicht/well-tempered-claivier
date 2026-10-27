@@ -42,7 +42,7 @@ def stem(data, i, soundfont, temperament, a4, instruments=False):
     sfid = synth.sfload(str(soundfont))
     synth.setting('synth.reverb.active', 0)
     synth.setting('synth.chorus.active', 0)
-    events = rm.performance_events(one, instruments=instruments)
+    events = rm.performance_events(one, instruments=instruments, temperament=temperament)
     for t, _, ch, kind, p, vel in events:
         if kind == 'program':
             synth.program_select(ch, sfid, 0, p)

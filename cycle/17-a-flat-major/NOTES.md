@@ -1,4 +1,4 @@
-# Pair XVII in A-flat major: notes (work in progress)
+# Pair XVII in A-flat major: notes
 
 ## Concept choice
 
@@ -31,11 +31,11 @@ Fugue XVII has eighteen real voices. Before writing a note I set three Bach-grou
 
 The device is *cadential evasion as the formal engine*, turned up to 11.
 - **The setup.** The subject is a cheerful 12/8 tune whose last two notes are the most expected cadence there is: re (held) → do.
-- **The rule.** Every time the music prepares a perfect cadence, the cadence is evaded, and a new voice enters with the subject.
-- **The running gag.** Seven deceptive cadences come in a row. Each one drops the tonic a third (A♭ → f → D♭ → b♭ → G♭ → e♭ → C♭ → a♭). That carries the fugue round the whole flat side of the key circle and back home, but in A-flat *minor*. One more deceptive step falls into F♭ = E major. This is the dream point of the piece: the farthest key, and the softest.
-- **The way back.** Through D♭ minor. Then a summit stretto in which the cadence is snatched away every bar by re-entries.
-- **The chord left hanging.** Seventeen voices stop on the dominant seventh and fall silent.
-- **The resolution.** The eighteenth voice, the lowest, is "the father getting out of bed". He enters with the subject in augmentation, and supplies the 5 → 1 bass the children's tune never had. The first perfect authentic cadence of the piece arrives with all eighteen voices sounding.
+- **The rule.** Every time the music prepares a cadence, the cadence is evaded, and a new voice enters. Seventeen evasions admit seventeen voices; the eighteenth is the father.
+- **The running gag (evasions 4-12).** Nine deceptive cadences in a row, each landing a third lower: A♭ → f → D♭ → b♭ → G♭ → e♭ → C♭ → a♭ → F♭ (= E major) → c♯ (= d♭). It runs round the flat side of the key circle, comes home in A-flat *minor* (pianissimo; enharmonically G-sharp minor, the key of the next pair), falls into E major (the farthest and softest point, with a "dream": the subject's first bar in augmentation), and turns back through D-flat minor.
+- **Dodging at home (evasions 13-16).** Back in A-flat, the dominant goes to a different wrong chord each time, and the bass steps up from the expected E-flat to F (vi7), F-flat (flat VI), G-flat (V4/2 of IV) and finally A-flat, but under a *minor* chord.
+- **The chord left hanging (evasion 17).** All seventeen children prepare the cadence together; they stop dead on the dominant seventh, with the seventh (D-flat) on top in Right Soprano. The chord is held, then there is silence.
+- **The resolution.** The eighteenth voice, the lowest, is "the father getting out of bed". He enters alone on low A-flat, the hanging D-flat falls to C at that moment, and he sings the subject in augmentation. He supplies the 5 → 1 bass the children's tune never had: the first perfect authentic cadence of the piece arrives at bar 49 with all eighteen voices sounding.
 
 ### Why eighteen voices are necessary
 
@@ -45,6 +45,5 @@ The device is *cadential evasion as the formal engine*, turned up to 11.
 
 ### Character
 
-Warm, lilting and comic: Allegretto in 12/8, dotted quarter = 63. The evasions get cheekier: polite deceptive cadences, then a running gag, then a dream in E major, then a frantic pile-up. The final cadence is tender and broad, not loud for its own sake.
+Warm, lilting and comic: Allegretto giocoso, alla giga, in 12/8, dotted quarter = 56 (tempo map below). The evasions get cheekier: polite re-hearings in the exposition, then a running gag, then a dream in E major, then the dodging at home and the pile-up of all the children. The final cadence is tender and broad, not loud for its own sake.
 
-*(Sections below are filled in as the piece is built.)*

@@ -483,7 +483,7 @@ SUMMIT_LINES = [
     ('Va5', 'C4:4 A3:20 B3:10 C4:4 B3:12 A3:16 B3:4 C4:12 D4:6 E4:12'),
     ('Va2', 'C4:20 D4:14 C4:4 G#3:12 A3:12 G#3:4 A3:18 B3:6 C4:4 D4:2 C4:4'),
     ('Va3', 'A3:16 F3:20 E3:12 G#3:4 B3:10 A3:4 G3:6 F3:16 E3:12'),
-    ('Va4', 'E3:6 F3:24 G3:10 A3:12 B3:14 A3:26 G#3:8'),
+    ('Va4', 'E3:6 F3:24 G3:10 A3:12 B3:14 A3:26 G#3:6 A3:2'),
     ('Vc2', 'A3:10 B3:16 C4:16 D4:4 C4:6 D4:14 C4:18 B3:8 G#3:8'),
     ('Vc4', 'C4:10 B3:16 A3:8 B3:26 C4:10 B3:20 A3:4 G#3:2 C4:4'),
     ('Vl2', 45, 1, 'D4:10 E4:20 D4:2 E4:4'),
@@ -509,13 +509,13 @@ FOLDS = [
     (3, 48, 1, 'Va5', 'Va3', 'C4', 'G3'),
     (4, 48, 3, 'Vl8', 'Vl1', 'D5', 'A4'),
     (5, 49, 1, 'Vl7', 'Vl4', 'A5', 'D5'),
-    (6, 49, 3, 'Vc3', 'Vc1', 'B3', 'E3'),
+    (6, 49, 3, 'Vc3', 'Vc1', 'G#3', 'E3'),
     (7, 50, 1, 'Vc4', 'Vc2', 'C4', 'A3'),
     (8, 50, 3, 'Vc5', 'Cb1', 'E2', 'G#1'),
     (9, 51, 1, 'Va4', 'Va2', 'G3', 'E4'),
     (10, 51, 3, 'Va3', 'Va1', 'D4', 'A4'),
     (11, 52, 1, 'Vl6', 'Vl2', 'A4', 'D5'),
-    (12, 52, 3, 'Vl5', 'Vl1', 'B4', 'E5'),
+    (12, 52, 3, 'Vl5', 'Vl1', 'G#4', 'E5'),
     (13, 53, 1, 'Vl4', 'Vl3', 'E5', 'A5'),
     (14, 53, 3, 'Vl3', 'Vl1', 'B5', 'E5'),
     (15, 54, 1, 'Va2', 'Vl2', 'G4', 'C5'),
@@ -555,15 +555,65 @@ def fold():
         put(v, bar, beat, toks)
 
 
+# =================================================================== VI. VIOLINO SOLO (b59-67)
+# The violin alone again, implying with its four strings the harmony that twenty-one voices
+# sang at the summit and in the folding: the lament ground  Am | E/G# || C/G | D7 || Dm | E,
+# first as chords swept upwards (as in b9-12, Chaconne-style), then swept up and down, then
+# compressed into the subject itself: Bach's head at its first pitch, and the tail whose lower
+# strand is the same lament.  The violin's A is the last sound.
+def coda():
+    put('Vl1', 59, 1, arp('A3', 'E4', 'C5', 'A5') + ' ' + arp('G#3', 'E4', 'B4', 'E5'))
+    put('Vl1', 60, 1, arp('G3', 'E4', 'C5', 'G5') + ' ' + arp('A3', 'F#4', 'C5', 'D5'))
+    put('Vl1', 61, 1, arp('A3', 'F4', 'D5', 'F5') + ' ' + arp('G#3', 'D4', 'B4', 'E5'))
+    put('Vl1', 62, 1, 'A3:1 C5:1 E5:1 A5:1 E5:1 C5:1 E5:1 C5:1 G#3:1 B4:1 E5:1 G#5:1 E5:1 B4:1 E5:1 B4:1')
+    put('Vl1', 63, 1, 'G3:1 C5:1 E5:1 G5:1 E5:1 C5:1 E5:1 C5:1 A3:1 C5:1 D5:1 F#5:1 D5:1 C5:1 D5:1 C5:1')
+    put('Vl1', 64, 1, 'A3:1 D5:1 F5:1 A5:1 F5:1 D5:1 F5:1 D5:1 G#3:1 B4:1 D5:1 E5:1 D5:1 B4:1 G#4:1 B4:1')
+    theme('Vl1', 65, 1, HEAD, 'Vl I: subject, alone (as in b1)')
+    put('Vl1', 66, 1, TAIL)
+    put('Vl1', 67, 1, 'A3:1 E4:1 C5:1 A5:1 E5:1 C5:1 E5:1 C5:1 A4:8')
+
+
+
 # The free stretches between the folds, one entry per voice segment (added one at a time).
 FOLD_LINES = [
+    ('Vl8', 47, 2, 'C5:4 E5:10 F5:4 D5:3'),
+    ('Va5', 47, 2, 'E4:8 C4:5'),
+    ('Vl9', 47, 2, 'E4:5'),
+    ('Vl7', 47, 2, 'C6:18 B5:6 A5:5'),
+    ('Vc3', 47, 2, 'D4:10 C4:4 A3:16 G3:4 G#3:3'),
+
+    ('Vc4', 47, 2, 'A3:6 G#3:4 C4:4 D4:24 C4:7'),
+    ('Vc5', 47, 2, 'E3:10 C3:4 B2:6 A2:16 B2:4 E2:13'),
+    ('Vl5', 47, 2, 'E5:14 D5:28 C5:6 E5:20 A4:10 G4:4 G#4:3'),
+    ('Va4', 47, 2, 'E3:14 A3:12 G#3:6 A3:4 E3:22 G3:3'),
+    ('Va3', 48, 2, 'D4:18 C4:12 B3:8 A3:6 G3:6 D4:3'),
+    ('Va3', 47, 2, 'E3:10 G3:2'),
+    ('Va2', 51, 2, 'E4:4 A4:6 F4:4 E4:24 F4:4 G4:3'),
+    ('Vl6', 47, 2, 'E4:4'),
+    ('Vl6', 47, 4, 'F#4:4 G4:8 D4:10 E4:24 F4:6 G4:12 A4:5'),
+    ('Va2', 47, 2, 'E4:20 A3:20 G#3:4 C4:8 E4:8'),
+    ('Vc2', 50, 2, 'B3:20 A3:14 F3:6 E3:18 G3:8 A3:3'),
+    ('Vc2', 47, 2, 'A3:12 G3:8 D4:10 B3:12 A3:2'),
+    ('Vl4', 49, 2, 'B5:16 A5:4 E5:16 F#5:4 A5:12 E5:9'),
+    ('Vl4', 47, 2, 'E5:16 C5:4 D5:8'),
+    ('Vl3', 47, 3, 'E5:16 A5:36 B5:4 C6:8 A5:16 G#5:6 A5:2'),
+    ('Vl3', 53, 2, 'A5:2 B5:3'),
+    ('Vl2', 54, 2, 'C5:4 D5:16 E5:8'),
+    ('Vl2', 52, 2, 'A4:4 B4:8 C5:8 B4:6 C5:2'),
+    ('Vl2', 47, 2, 'A4:4 B4:12 C5:12 D5:12 E5:18 C5:14 D5:4'),
+    ('Va1', 54, 4, 'A3:12 B3:8 C4:8 E4:8'),
+    ('Va1', 51, 4, 'C4:4 D4:16 E4:18 D4:6'),
+    ('Va1', 47, 2, 'E4:16 G4:4 A4:16 G#4:8 A4:8 B4:8 G4:6 A4:2'),
     ('Vc1', 47, 2, 'E3:20 D3:14 E3:2'),
+    ('Vc1', 49, 4, 'G#3:4 E3:28 D3:12 B2:8 A2:8 E3:8 C3:16 A2:4'),
 ]
 
 
-SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4, approach, summit, fold]
+SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4, approach, summit, fold, coda]
 
-TEMPO_MAP = []
+# quarter-note positions: b13 = 48, b37 = 144, b39 = 152, b55 = 216, b58 = 228, b59 = 232, b65 = 256
+TEMPO_MAP = [[0, 66], [48, 72], [144, 72], [152, 60, 'ramp'], [216, 60], [228, 54, 'ramp'],
+             [232, 63], [256, 63], [268, 44, 'ramp']]
 
 
 def build(nbars=None, path=None):

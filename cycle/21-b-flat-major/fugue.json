@@ -627,7 +627,8 @@
    "spatial": [
     82,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Forestiero 21 (Eb6)",
@@ -1033,7 +1034,8 @@
    "spatial": [
     76,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Amico 20 (D6)",
@@ -2011,7 +2013,8 @@
    "spatial": [
     -39,
     4.0
-   ]
+   ],
+   "gm_program": 68
   },
   {
    "name": "Forestiero 19 (Db6)",
@@ -2381,7 +2384,8 @@
    "spatial": [
     70,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Corno 18 (C6)",
@@ -2711,7 +2715,8 @@
    "spatial": [
     30.0,
     10.8
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Forestiero 17 (Cb6)",
@@ -3045,7 +3050,8 @@
    "spatial": [
     64,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Corno 16 (Bb5)",
@@ -4095,7 +4101,8 @@
    "spatial": [
     23.3,
     10.6
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Amico 15 (A5)",
@@ -5055,7 +5062,8 @@
    "spatial": [
     -51,
     4.0
-   ]
+   ],
+   "gm_program": 68
   },
   {
    "name": "Forestiero 14 (Ab5)",
@@ -5479,7 +5487,8 @@
    "spatial": [
     58,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Forestiero 13 (Gb5)",
@@ -6236,7 +6245,8 @@
    "spatial": [
     52,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Corno 12 (F5)",
@@ -6854,7 +6864,8 @@
    "spatial": [
     16.7,
     10.4
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Forestiero 11 (E5)",
@@ -7595,7 +7606,8 @@
    "spatial": [
     46,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Amico 10 (D5)",
@@ -8582,7 +8594,8 @@
    "spatial": [
     -63,
     4.0
-   ]
+   ],
+   "gm_program": 68
   },
   {
    "name": "Corno 9 (C5)",
@@ -9317,7 +9330,8 @@
    "spatial": [
     10.0,
     10.2
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Corno 8 (Bb4)",
@@ -9593,7 +9607,8 @@
    "spatial": [
     3.3,
     10.0
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Forestiero 7 (Ab4)",
@@ -10314,7 +10329,8 @@
    "spatial": [
     40,
     6.5
-   ]
+   ],
+   "gm_program": 56
   },
   {
    "name": "Corno 6 (F4)",
@@ -10815,7 +10831,8 @@
    "spatial": [
     -3.3,
     9.8
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Amico 5 (D4)",
@@ -11640,7 +11657,8 @@
    "spatial": [
     -75,
     4.0
-   ]
+   ],
+   "gm_program": 68
   },
   {
    "name": "Corno 4 (Bb3)",
@@ -12730,7 +12748,8 @@
    "spatial": [
     -10.0,
     9.6
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Corno 3 (F3)",
@@ -13960,7 +13979,8 @@
    "spatial": [
     -16.7,
     9.4
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Corno 2 (Bb2)",
@@ -15673,7 +15693,8 @@
    "spatial": [
     -23.3,
     9.2
-   ]
+   ],
+   "gm_program": 60
   },
   {
    "name": "Corno 1 (Bb1)",
@@ -16036,7 +16057,8 @@
    "spatial": [
     -30.0,
     9.0
-   ]
+   ],
+   "gm_program": 60
   }
  ],
  "subject_entries": [

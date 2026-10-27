@@ -303,7 +303,7 @@ function tchart() {
   const minor = cur && /minor/.test(cur.key); const third = minor ? 3 : 4;
   const size = 100 * third + dev[(tonic + third) % 12] - dev[tonic], fifth = 700 + dev[(tonic + 7) % 12] - dev[tonic];
   const pure3 = minor ? 315.6 : 386.3;
-  if (cur && cur.hasCents) { $('tnote').innerHTML = 'This movement carries its own tuning, note by note (adaptive just intonation), so the temperament buttons do not apply to it.'; return; }
+  if (cur && cur.hasCents) { $('tnote').innerHTML = 'This movement carries its own tuning for some or all of its notes (just intonation or natural harmonics, measured from equal temperament), so the temperament buttons do not apply to it.'; return; }
   $('tnote').innerHTML = `${esc(TBLURB[temp] || '')} In this movement’s key the tonic ${minor ? 'minor' : 'major'} third is <b>${size.toFixed(1)}¢</b> (pure ${pure3}¢) and the fifth <b>${fifth.toFixed(1)}¢</b> (pure 702.0¢).`;
 }
 window.addEventListener('resize', () => { if (cur) { drawMap(); draw(); tchart(); } });

@@ -45,11 +45,11 @@ def exposition(sc):
     sc.theme('B6', 11, 1, octv(I, -3), 'I in G# minor (deep bass)', 'I')
     sc.put('T4', 11, 1, octv(CSI, -1))                                           # CSI
     # free lines
-    sc.put('B6', 5, 1, 'D#3:8 G#2:8 A#2:8 D#2:4 F#2:4')
+    sc.put('B6', 5, 1, 'D#3:8 G#2:8 A#2:8 G#2:4 F#2:4')
     sc.put('S5', 9, 1, 'R:4 A#4:4 C#5:4 B4:4 C#5:4 B4:2 A#4:2 A#4:8 B4:12 A#4:4 G#4:8 A#4:4 G#4:4')
     sc.put('A2', 7, 1, 'B4:8 A4:4 F#4:4 F#4:4 G#4:4 F#4:4 G#4:4')
     sc.put('T6', 9, 1, 'R:8 D#3:8 A#3:8 C#4:8 B3:4 D#4:4 E4:8 E4:4 C#4:4 A#3:8')
-    sc.put('A2', 11, 1, 'R:4 D#5:8 C#5:4 B4:4 C#5:4 E5:8')
+    sc.put('A2', 11, 1, 'R:4 B4:8 C#5:4 B4:4 C#5:4 E5:8')
 
 
 # ===================================================================== II-III. THE TOUR (bars 13-78)
@@ -182,8 +182,19 @@ def pair11(sc):
     sc.put('B6', 78, 1, 'Eb2:16')
 
 
+def summit_chorus(sc):
+    # summit, bars 86-89: a chorus of six more voices over the ii-V (G#m7 | C#m7 | F#7 | B) as suspension chains, each group attacking on its own beat (1, 2, 3 or 4) so that no two of them move together
+    sc.put('T2', 86, 3, 'G#3:16 C#4:16 F#4:16')
+    sc.put('S6', 86, 4, 'G#5:16 C#6:16 F#5:16')
+    sc.put('S4', 86, 1, 'G#5:16 G#5:16 F#5:16 F#5:8')
+    sc.put('A2', 86, 2, 'D#4:16 C#4:16 C#4:16 B3:8')
+    sc.put('A4', 87, 2, 'E4:12 E4:12 F#4:4 F#4:8')
+    sc.put('A6', 86, 1, 'B4:16 G#4:16 G#4:12 F#4:4 F#4:8')
+
+
 def tour(sc):
     tour_cantus(sc)
+
     pair11(sc)
     pair10(sc)
     pair9(sc)
@@ -227,14 +238,14 @@ def summit(sc, o=78):
     sc.put('A3', 3 + o, 4, 'D#5:4~ D#5:4 C#5:12 G#4:12 E5:4~ E5:16 B4:16~ B4:4 D#4:8 B4:4~ B4:16 A#4:8 C#5:4 E5:4')
     sc.put('A1', 4 + o, 2, 'F#4:12 G#4:8 B3:8 G#3:8 R:8 D#4:8 B3:8 B3:8 D#4:8 G#4:4 F#4:4 E4:4 D#4:4 C#4:4 B3:4 A#3:8')
     sc.put('T6', 1 + o, 1, 'R:4 G#3:4 R:2 A#3:2 B3:4 B3:8 R:4 G#3:4 D#4:4 R:8 D#4:4 F#3:8 R:8 R:4 B3:4 R:4 E4:4 '
-                           'C#4:12 R:4 R:8 D#4:4 B3:4 B3:4 R:8 B3:4 C#4:16 F#3:8 C#4:8')
+                           'C#4:8 R:8 R:8 D#4:4 B3:4 B3:4 R:8 B3:4 C#4:16 F#3:8 C#4:8')
     sc.put('S5', 9 + o, 3, 'F#5:4 E5:4~ E5:4 D#5:2 C#5:10')
-    sc.put('B5', 1 + o, 1, 'G#3:4 B2:4 E3:4 D#3:4 B2:4 D#3:4 E3:4 G#3:4 D#3:8 C#3:4 D#3:4 C#3:8 E3:4 F#3:4 '
-                           'B2:4 G#2:4 E3:8 G#2:4 E3:4 C#3:8 B2:8 F#2:4 B2:4 G#2:4 A#2:4 B2:4 G#2:4 '
+    sc.put('B5', 1 + o, 1, 'G#3:4 B2:4 E3:4 D#3:4 B2:4 D#3:4 E3:4 G#3:4 D#3:8 C#3:4 D#3:4 A#2:8 E3:4 F#3:4 '
+                           'B2:4 G#2:4 E3:8 G#2:4 E3:4 A#2:8 B2:8 F#2:4 B2:4 G#2:4 A#2:4 B2:4 G#2:4 '
                            'E3:4 G#3:4 E3:4 C#3:4~ C#3:4 E3:4 F#3:4 C#3:4')
     sc.put('B5', 11 + o, 1, 'D#3:4 F#3:4 E3:8 F#3:4 D#3:4 F#3:4 D#3:4 E3:4 D#3:4 F#3:4 D#3:4 E3:8 R:8 G#3:8 F#3:8 '
                             'E3:12 F#3:4 C#3:16 B2:16')
-    sc.put('A5', 1 + o, 1, 'B3:8 D#4:8 G#4:8 E4:8')
+    sc.put('A5', 1 + o, 1, 'D#4:8 B3:8 G#4:8 E4:8')
     sc.put('A5', 9 + o, 1, 'E4:8 G#3:8 C#4:16')
     sc.put('A5', 11 + o, 1, 'R:4 F#4:8 E4:4~ E4:1 D#4:3 B3:4 C#4:4 D#4:4 C#4:12 B3:4 B3:8 A#3:8 B3:8 D#4:8 '
                             'E4:8 C#4:8 G#4:8 F#4:8 F#4:16')
@@ -243,11 +254,27 @@ def summit(sc, o=78):
     sc.put('S1', 3 + o, 1, 'B5:4 C#6:4 B5:4 G#5:4 F#5:12 E5:4~ E5:4 G#5:8 E5:4 E5:4 G#5:4 C#6:8 F#5:8 B5:8 B5:8 G#5:8 '
                            'C#6:16 A#5:8 F#5:8')
     sc.put('S1', 11 + o, 1, 'D#6:8')
-    sc.put('S1', 13 + o, 3, 'A#5:4 B5:4~ B5:4 G#5:4 F#5:4 A#5:4 G#5:4 B5:8 F#5:4 B5:8 A#5:4 F#5:4 G#5:4 E5:8 A#5:4 B5:16')
+    sc.put('S1', 13 + o, 3, 'A#5:4 B5:4~ B5:4 G#5:4 F#5:4 A#5:4 G#5:4 B5:8 F#5:4 B5:8 A#5:4 F#5:4 C#6:4 G#5:4 C#6:4 A#5:4 B5:16')
     sc.put('T1', 14 + o, 1, 'R:2 G#3:8 A#3:6 A#3:2 B3:8 B3:6 B3:2 B3:8 A#3:6 A#3:2 G#3:6 R:8 D#4:16')
-    sc.put('A4', 14 + o, 1, 'R:12 C#5:4~ C#5:4 B4:8 A4:4~ A4:4 G#4:8 A#4:4~ A#4:4 R:12 B4:16')
+    sc.put('A4', 18 + o, 1, 'B4:16')
     sc.put('T4', 8 + o, 1, 'D#5:8 B4:8 E5:8 C#5:4 G#4:4~ G#4:8 F#4:8')
     sc.put('T4', 14 + o, 1, 'R:4 G#3:8 F#3:4~ F#3:4 G#3:8 F#3:4~ F#3:4 G#3:8 F#3:4 R:16 F#3:16')
+
+
+# ===================================================================== tempo and dynamics
+# Allegro moderato, quarter = 92.  A breath at the seam (the F#7 halt, b42-43), the summit a little
+# broader (86) from the G#-minor arrival, and the last two bars broaden to 64.
+TEMPO_MAP = [[0, 92], [164, 92], [172, 74, 'ramp'], [172, 92],
+             [300, 92], [312, 86, 'ramp'], [312, 86], [376, 86], [384, 62, 'ramp']]
+# phrase dynamics (velocity offsets by bar): the exposition and first staircase moderate, the seam
+# drops, the second staircase climbs, the summit loudest, the coda settles
+DYN = {1: -6, 13: -3, 24: 0, 35: 2, 41: -2, 42: -6, 44: -8, 49: -5, 55: -2, 60: 0, 66: 3, 71: 5, 77: 7,
+       79: 9, 89: 12, 92: 8, 95: 5}
+
+
+def dyn(b):
+    b += 1
+    return DYN[max(k for k in DYN if k <= b)]
 
 
 def build(nb=NB):
@@ -255,6 +282,7 @@ def build(nb=NB):
     exposition(sc)
     tour(sc)
     summit(sc)
+    summit_chorus(sc)
     return sc
 
 
@@ -269,13 +297,14 @@ def main():
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'Fugue XXIII in B major, twenty-four voices: Fantasia ut re mi fa sol la per tutti i tuoni',
         'composer': 'Claude / Sam, after John Bull', 'instrument': 'Twenty-four voices (open score)',
-        'key': 'B', 'mode': 'major', 'meter': [4, 4], 'bpm': 96,
+        'key': 'B', 'mode': 'major', 'meter': [4, 4], 'bpm': 92,
+        'tempo_text': 'Allegro moderato, alla fantasia', 'tempo_map': TEMPO_MAP,
         'movement_number': 23, 'piece_type': 'fugue', 'edition': 'third',
         'score_layout': {'paper': 'a2', 'hide_empty_staves': True, 'staff_size': 15, 'staff_distance': 9},
         'score_tagline': 'The Well-Tempered clAIvier - third edition',
     }
     W.build_score(HERE / 'fugue.json', meta, voices, {names[n]: bars[n] for n in NAMES},
-                  entries=entries, subject=S, entry_boost=6,
+                  entries=entries, subject=S, entry_boost=6, dynamics=dyn,
                   extra={'themes': [{'voice': v, 't': float(t / 4), 'label': lab, 'kind': k} for v, t, lab, k in sc.entries]})
     print('bars', NB, 'entries', len(entries))
 

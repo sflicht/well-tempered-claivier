@@ -7,7 +7,7 @@ and records the entry so the critic can verify it.  Transforms (transpose, scale
 invert_diatonic) are wtclib's explicit operations, named where used.
 
 The twenty-two voices are the first twenty-two partials of B-flat1.  Voice n ends the fugue
-on partial n (tuned in just intonation, see tuning.py); during the fugue each voice keeps a
+on partial n (tuned in just intonation, see fugue.py); during the fugue each voice keeps a
 working register near (usually below) its partial.  The voices fall into three groups by
 the prime-limit of their partial:
   Corni      (3-limit: octaves and fifths)   1 2 3 4 6 8 9 12 16 18   B-flat, F, C
@@ -71,7 +71,7 @@ def V(n):
 # natural B-flats are the same notes.
 def ji_cents(n, written):
     """Cents from equal temperament of partial n of B-flat1 written as MIDI pitch `written`
-    (relative to the fundamental's equal-tempered B-flat1 = 34; Lehman anchor added by tuning.py)."""
+    (relative to the fundamental's equal-tempered B-flat1 = 34; Lehman anchor added in fugue.py)."""
     exact = 34 + 12 * math.log2(n)
     return round(100 * (exact - written), 2)
 

@@ -20,10 +20,15 @@ at an absolute quarter position.  Per-staff time signatures are written into the
 through metadata.score_layout.staff_meters.
 
 Every note is written here as a literal token string.  Thematic statements are explicit transforms
-(dshift = diatonic transposition inside A major, transpose, invert_diatonic with axis C#,
-scale_rhythm) of the four hand-written subject versions.  Scratch scripts (session scratchpad)
-proposed placements of thematic statements against harmonic plans I wrote, and the critic checked
-each voice as it was added; no code chose or altered a note.  See NOTES.md.
+(dshift = diatonic transposition inside A major, transpose, invert_diatonic with axis C#) of the
+four hand-written subject versions.  Scratch scripts (session scratchpad, not part of the build)
+proposed placements of thematic statements against harmonic plans I wrote, and, for many free
+lines, picked among two to seven alternatives that I had written the first one the critic found
+clean (or a rest when none was); every alternative, and every note, was written by hand.  See
+NOTES.md ("How it was made").
+
+Sections (quarter positions): I Allemande 0-36, II Courante 36-84, III Sarabande 84-120,
+IV Gigue 120-156, V Ballo 156-180, the ball (summit) 180-236, coda 236-264.
 """
 from __future__ import annotations
 
@@ -135,7 +140,9 @@ S1, S2, S3, S4, S5, S6, S7, END = 0, 36, 84, 120, 156, 180, 236, 264
 
 
 def summit():
-    """The ball: four dances at once, each in its own metre (q192-248)."""
+    """The ball (q180-236): four dances at once, each in its own metre, over a ground (the subject's
+    mirror) that passes from basse to basse and quickens: sarabande (A), courante (F# minor),
+    gigue (D, B minor), allemande (E, A)."""
     z = S6
     # ---- Sigma 1 (z+0 .. z+18), A major.  The ground: the sarabande's mirror in its own basse.
     theme('B3', z, oc(mir(SS), -3), 'Sarabande mirror (ground, A)')
@@ -452,16 +459,40 @@ SECTIONS = [allemande, courante, sarabande, gigue, ballo, summit, coda]
 
 
 BPM = 66
-TEMPO_MAP = []
+# one pulse for the whole ball; a breath before the reveal, and a final ritardando
+TEMPO_MAP = [[232, 66], [235, 58, 'ramp'], [236, 64], [256, 64], [264, 48, 'ramp']]
 
 
 def staff_meters():
-    """Per-staff time signatures for the LilyPond score: [t_quarters, num, den] changes per voice."""
-    return {}
+    """Per-staff time signatures for the LilyPond score ([t_quarters, num, den(, scale)] per voice).
+
+    Sections I-IV: every staff takes the dance being introduced (4/4, 3/2, 3/4, 12/8).  From the
+    Ballo (q156) each band keeps its own metre; 12/8 is engraved inside \\scaleDurations 2/3 so that
+    its dotted quarter is the common quarter.  All bar lines meet every twelve quarters.  The coda
+    is in 2/2 (the bourree): the allemande band from q236, the others from q240, their next common
+    bar line."""
+    own = {1: [4, 4], 2: [3, 2], 3: [3, 4], 4: [12, 8, '2/3']}
+    out = {}
+    for n in NAMES:
+        c = CHOIR_OF[n]
+        out[LONG[n]] = [[0, 4, 4], [36, 3, 2], [84, 3, 4], [120, 12, 8, '2/3'], [156] + own[c],
+                        [236 if c == 1 else 240, 2, 2]]
+    return out
 
 
 def velocity_shape(b):
-    return 0
+    """Phrase dynamics by 4/4 bar (velocity offset)."""
+    if b < 21:                 # allemande, courante
+        return 0
+    if b < 30:                 # sarabande: softer
+        return -4
+    if b < 45:                 # gigue, ballo
+        return 2
+    if b < 59:                 # the ball: a long crescendo to the tutti
+        return 3 + (b - 45) // 3
+    if b < 64:                 # the reveal: the allemande band alone
+        return -6
+    return 6                   # the bow
 
 
 def build(write=True):

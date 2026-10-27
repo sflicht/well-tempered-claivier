@@ -131,7 +131,7 @@ device of its own:
 33. **[in progress] Pair XX à 21: the solo violin multiplied.** A fugue that
     begins as one line (after BWV 1003), whose implied voices split off into
     real ones until twenty-one move, then fold back into one line.
-34. **[in progress] Pair XXI à 22: the posthorn capriccio.** After BWV 992;
+34. **[first version] Pair XXI à 22: the posthorn capriccio.** After BWV 992;
     twenty-two voices for the first twenty-two partials of B-flat, ending on
     the posthorn's own harmonic series in just intonation.
 35. **[in progress] Pair XXII à 23: Ma fin est mon commencement.** A tombeau

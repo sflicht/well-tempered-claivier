@@ -186,6 +186,9 @@ def main():
             k = [7, 11, 13, 14, 17, 19, 21, 22].index(n)
             az, dist = 40 + 6 * k, 6.5
         v['spatial'] = [round(az, 1), round(dist, 1)]
+        # optional instruments (render_spatial --instruments): horns, the friends' oboes, the
+        # strangers' trumpets; the standard renders stay on the piano
+        v['gm_program'] = {'Co': 60, 'Am': 68, 'Fo': 56}[g]
     import json
     (HERE / 'fugue.json').write_text(json.dumps(data, indent=1))
     print('bars', NB, 'voices', len(data['voices']), 'entries', len(entries), 'tuned notes', tuned,
