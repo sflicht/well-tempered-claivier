@@ -195,6 +195,8 @@ def summit(s0):
     T('RA', 4.5, dsh(S2, 1), 'summit: subject 2 (line 2)')
     T('OT', 9.5, dsh(S5, 3), 'summit: subject 5 (line 5)')
     T('HBr', 10, oc(dsh(S6, 2), -1), 'summit: subject 6 (line 6)')
+    T('HS2', 15, tr(S9, 7, 4), 'summit: subject 9 (line 9)')
+    T('OS', 17, dsh(S8, 6), 'summit: subject 8 (line 8)')
 
 
 summit(SUM)

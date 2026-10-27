@@ -162,18 +162,18 @@ bar('half cadence on A (attacca)',
     RH='C#5:24', RH2='C#4:6 E4:18', LH2='A2:24', LH='A1:24')
 
 NB = len(TAGS)
-BPM = 150            # quarters; the running eighths go at dotted quarter = 100
+BPM = 168            # quarters; the running eighths go at dotted quarter = 112
 END = NB * 6         # 12/8: six quarters to the bar, bar b starts at 6*(b-1)
 
 # Tempo map (quarters).  The toccata and the recitatives are slow and free;
 # fermatas are slowed final beats (a dotted quarter each).
 TEMPO_MAP = [
-    [0, 60], [4.5, 40], [6, 60], [10.5, 40], [12, 60], [16.5, 40], [18, 56], [22.5, 36],   # 1-4 Adagio
-    [24, BPM], [70.5, 56],                                                                 # 5-12 Allegro
-    [72, 80], [84, 74, 'ramp'], [87, 62, 'ramp'],                                          # 13-15 Recitativo I
-    [90, BPM], [136.5, 56],                                                                # 16-23 Allegro
-    [138, 80], [150, 74, 'ramp'], [153, 60, 'ramp'],                                       # 24-26 Recitativo II
-    [156, 168], [162, 72], [168, 60], [END, 42, 'ramp'],                                   # 27-29 Presto, Adagio
+    [0, 66], [4.5, 44], [6, 66], [10.5, 44], [12, 66], [16.5, 44], [18, 60], [22.5, 40],   # 1-4 Adagio
+    [24, BPM], [70.5, 60],                                                                 # 5-12 Allegro
+    [72, 84], [84, 78, 'ramp'], [87, 64, 'ramp'],                                          # 13-15 Recitativo I
+    [90, BPM], [136.5, 60],                                                                # 16-23 Allegro
+    [138, 84], [150, 78, 'ramp'], [153, 62, 'ramp'],                                       # 24-26 Recitativo II
+    [156, 176], [162, 76], [168, 64], [END, 44, 'ramp'],                                   # 27-29 Presto, Adagio
 ]
 
 DYN_BY_BAR = {1: 8, 2: 6, 3: 6, 4: 8, 13: -4, 14: -4, 15: -5, 24: -3, 25: -3, 26: -4, 27: 8, 28: 7, 29: 5}
