@@ -39,6 +39,7 @@ def compact(path, group_voices=False, stats_score=None):
     voices = []
     for v in (merged(data) if group_voices else data['voices']):
         ev = [[round(float(e['t']), 4), round(float(e['d']), 4), int(e['p']), int(e.get('v', 72))]
+              + ([round(float(e['cents']), 2)] if e.get('cents') else [])
               for e in v['events'] if e.get('p') is not None]
         voices.append({'n': v.get('name', ''), 'a': v.get('abbr', v.get('name', '')[:3]), 'e': ev})
     entries = [[int(x['voice']), round(float(x['t']), 4), x.get('label', '')] for x in data.get('subject_entries', [])]

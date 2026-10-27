@@ -170,7 +170,7 @@ function load(id) {
   cur.barQ = cur.meter[0] * 4 / cur.meter[1];
   cur.end = Math.max(...cur.voices.map(v => v.e.length ? v.e[v.e.length - 1][0] + v.e[v.e.length - 1][1] : 0));
   const all = cur.voices.flatMap(v => v.e.map(e => e[2])); cur.lo = Math.min(...all) - 2; cur.hi = Math.max(...all) + 2;
-  flat = []; cur.voices.forEach((v, i) => v.e.forEach(e => flat.push([e[0], e[1], e[2], e[3], i]))); flat.sort((a, b) => a[0] - b[0]);
+  flat = []; cur.voices.forEach((v, i) => v.e.forEach(e => flat.push([e[0], e[1], e[2], e[3], i, e[4] || 0]))); flat.sort((a, b) => a[0] - b[0]);
   $('ptitle').innerHTML = esc(cur.title) + (cur.tag ? `<span class="tag ${cur.tag}">${esc(cur.tag)}</span>` : '');
   $('psub').textContent = `${cur.group} · ${cur.key.trim()} · ${cur.meter[0]}/${cur.meter[1]} · ♩ = ${Math.round(cur.bpm)}${cur.sub ? ' · ' + cur.sub : ''}`;
   const s = cur.stats || {};
@@ -209,10 +209,10 @@ function ensureAudio() {
   [0, 1, .42, .26, .18, .1, .07, .045, .03, .02, .012, .008].forEach((a, k) => im[k] = a);
   wave = ctx.createPeriodicWave(re, im);
 }
-const hz = p => 440 * Math.pow(2, (p - 69 + DATA.temps[temp][((p % 12) + 12) % 12] / 100) / 12);
-function note(when, dur, p, v) {
+const hz = (p, c) => 440 * Math.pow(2, (p - 69 + (c ? c : DATA.temps[temp][((p % 12) + 12) % 12]) / 100) / 12);
+function note(when, dur, p, v, cents) {
   const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
-  o.setPeriodicWave(wave); o.frequency.value = hz(p);
+  o.setPeriodicWave(wave); o.frequency.value = hz(p, cents);
   f.type = 'lowpass'; f.frequency.value = Math.min(9000, 900 + v * 40 + (p - 40) * 30);
   const peak = Math.pow(v / 127, 1.6) * 0.16, tau = Math.max(0.25, Math.min(2.4, 1.9 - (p - 60) * 0.03));
   g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(peak, when + 0.005);
@@ -243,8 +243,8 @@ function play() {
 }
 function sched() {
   const ahead = ctx.currentTime + 0.25, s0 = secOf(startPos);
-  while (ptr < flat.length) { const [t, d, p, v, i] = flat[ptr]; const st = secOf(t), when = startCtx + (st - s0) / tempo;
-    if (when > ahead) break; if (audible(i) && when >= ctx.currentTime - 0.02) note(when, (secOf(t + d) - st) / tempo * 0.97, p, v); ptr++; }
+  while (ptr < flat.length) { const [t, d, p, v, i, c] = flat[ptr]; const st = secOf(t), when = startCtx + (st - s0) / tempo;
+    if (when > ahead) break; if (audible(i) && when >= ctx.currentTime - 0.02) note(when, (secOf(t + d) - st) / tempo * 0.97, p, v, c); ptr++; }
   if (pos() >= cur.end + 0.5) { stop(); startPos = 0; draw(); }
 }
 function stop() { if (!ctx) { playing = false; return; } if (playing) startPos = pos(); playing = false; clearInterval(timer);

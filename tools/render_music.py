@@ -428,11 +428,19 @@ def performance_events(data, chamber=False):
         events.append((Fraction(0), -2, channel, 'program', program, 0))
         pan = int(voice.get('pan', round(40 + 48 * i / max(1, len(voices)-1)))) if chamber else int(voice.get('piano_pan',64))
         events.append((Fraction(0), -1, channel, 'pan', pan, 0))
+        bent = 0
         for e in voice['events']:
             if e.get('p') is None: continue
             vel = int(e.get('v', voice.get('velocity', 72)))
             vel = max(1, min(127, vel))
             gate = float(e.get('gate', 0.97))
+            # Optional per-note microtonal offset in cents (just intonation etc.).
+            # Voices are monophonic, one channel each, so a pitch bend per note is exact.
+            cents = float(e.get('cents', 0.0))
+            bend = max(-8192, min(8191, round(cents * 4096 / 100)))
+            if bend != bent:
+                events.append((e['t'], 0.5, channel, 'bend', bend, 0))
+                bent = bend
             events.append((e['t'], 1, channel, 'on', int(e['p']), vel))
             end = e['t'] + max(Fraction(1, 32), e['d'] * frac(gate))
             events.append((end, 0, channel, 'off', int(e['p']), 0))
@@ -498,6 +506,7 @@ def create_midi(data, output, chamber=False):
             tick = round(float(t) * QUARTER_TICKS)
             args = {'channel':channel%16, 'time':tick-last}
             if kind == 'program': msg = mido.Message('program_change', program=p, **args)
+            elif kind == 'bend': msg = mido.Message('pitchwheel', pitch=p, **args)
             elif kind == 'pan': msg = mido.Message('control_change', control=10, value=p, **args)
             else: msg = mido.Message('note_on' if kind=='on' else 'note_off', note=p, velocity=v, **args)
             track.append(msg)
@@ -580,6 +589,7 @@ def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament
             chunks.append(synth.get_samples(frame-cursor))
             cursor = frame
         if kind == 'program': pass
+        elif kind == 'bend': synth.pitch_bend(channel, pitch)
         elif kind == 'pan': synth.cc(channel, 10, pitch)
         elif kind == 'on': synth.noteon(channel, pitch, velocity)
         else: synth.noteoff(channel, pitch)

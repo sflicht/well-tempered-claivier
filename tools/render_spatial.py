@@ -54,7 +54,9 @@ def stem(data, i, soundfont, temperament, a4):
         if frame > cursor:
             chunks.append(synth.get_samples(frame - cursor))
             cursor = frame
-        if kind == 'on':
+        if kind == 'bend':
+            synth.pitch_bend(ch, p)
+        elif kind == 'on':
             synth.noteon(ch, p, vel)
         elif kind == 'off':
             synth.noteoff(ch, p)
