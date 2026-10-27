@@ -367,6 +367,7 @@ put('T1', 60, 1, 'C4:8 Db4:8 Bb3:8 '      # 9-8 over the tonic at 61.1, 4-3 over
                  'F4:8 Eb4:8 C4:8 '
                  'Db4:8 C4:16 '
                  'C4:8 Db4:8 Eb4:56')
+put('A4', 65, 2, 'Ab4:16 Db5:8 Bb4:8 Ab4:8 F4:8 Eb4:8 Ab4:16 F4:8 G4:8')   # after its entry, Alto IV sings on
 
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}

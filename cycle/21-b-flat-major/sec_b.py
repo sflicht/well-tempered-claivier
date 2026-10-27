@@ -25,5 +25,5 @@ def place(sc, b0=14):
     sc.put(V(15), b(5), 1, "A4:4 Bb4:2 A4:2 E4:2 C#4:2 D4:4 F4:4 E4:2 C#4:2 D4:2 F4:2 E4:4")
     sc.put(V(5), b(7), 1, "C4:4 E4:4 B3:2 G#3:2 A3:4 A3:4 G#3:4 A3:2 C4:2 Eb4:4")
     # horns: Corno 16 a slow descant; Corno 9 the tonguing of the impatient postilion; Corno 6 inner
-    sc.put(V(16), b(1), 1, "A4:4 Bb4:4 A4:4 A4:4 Bb4:4 A4:4 A4:4 G#4:4 A5:4 A5:4 G#5:4 A5:4 A5:4 G#5:4 A5:4 G5:4 "
-           "F5:4 F5:4 E5:4 F5:4 G5:4 G5:4 F5:4 E5:4 E5:4 C5:4 B4:4 C5:4 D5:4 E5:4 C5:4 C5:4")
+    sc.put(V(16), b(1), 1, "A4:4 F4:4 A4:8 Bb4:4 G4:4 A4:4 G#4:4 C5:4 A4:4 B4:4 A4:4 A4:4 G#4:4 A4:4 E5:4 "
+           "F5:4 F5:4 G5:4 F5:4 G5:4 E5:4 F5:4 E5:4 E5:8 D5:4 C5:4 D5:4 B4:4 C5:8")
