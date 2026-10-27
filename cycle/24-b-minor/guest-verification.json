@@ -1,0 +1,79 @@
+{
+ "Fugue V, D major (own key), S1 at c1.2.5": {
+  "cost": 23,
+  "parallels": 0,
+  "unresolved": 1,
+  "roughness": 4.35,
+  "overlap_q": 8.0,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 0,
+  "steps": 0
+ },
+ "Fugue VIII, E-flat minor (own key), S4 at c5.1": {
+  "cost": 22,
+  "parallels": 0,
+  "unresolved": 1,
+  "roughness": 4.12,
+  "overlap_q": 6.0,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 0,
+  "steps": 0
+ },
+ "Fugue II, C minor (own key), S1 at c7.3": {
+  "cost": 15,
+  "parallels": 0,
+  "unresolved": 0,
+  "roughness": 3.85,
+  "overlap_q": 8.0,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 0,
+  "steps": 0
+ },
+ "Fugue IV, transposed to B minor, S1 at c9.4": {
+  "cost": 24,
+  "parallels": 0,
+  "unresolved": 1,
+  "roughness": 4.4,
+  "overlap_q": 5.0,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 0,
+  "steps": 0
+ },
+ "FI rung 1": {
+  "cost": 12,
+  "parallels": 0,
+  "unresolved": 0,
+  "roughness": 3.09,
+  "overlap_q": 6.5,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 6,
+  "steps": 0
+ },
+ "FI rung 2": {
+  "cost": 12,
+  "parallels": 0,
+  "unresolved": 0,
+  "roughness": 3.09,
+  "overlap_q": 6.5,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 6,
+  "steps": 0
+ },
+ "V release": {
+  "cost": 10,
+  "parallels": 0,
+  "unresolved": 0,
+  "roughness": 2.59,
+  "overlap_q": 8.0,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 0,
+  "steps": 0
+ }
+}

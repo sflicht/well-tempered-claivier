@@ -40,13 +40,13 @@ def main():
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue XXIV in B minor: the convergence (study, 25 voices)',
             'composer': 'Claude / Sam', 'instrument': '25 players or ranks', 'key': 'B', 'mode': 'minor',
             'meter': [4, 4], 'bpm': 58, 'tempo_text': 'Largo, con fuoco',
-            'tempo_map': [[48, 54, 'ramp'], [52, 46, 'ramp'], [56, 40, 'ramp']],
+            'tempo_map': [[36, 58], [44, 50, 'ramp'], [48, 50], [56, 40, 'ramp']],
             'movement_number': 24, 'piece_type': 'fugue-study', 'edition': 'third',
             'credits': 'Guest subjects quoted from this edition: Fugue II (C minor), IV (C-sharp minor), V (D major), '
                        'VIII (E-flat minor; its head is J. S. Bach, WTC I/8, BWV 853).',
-            'markers': [{'t': 4, 'label': 'cantus (subject x4)'}, {'t': 22, 'label': 'Fugue V'},
-                        {'t': 20 + 0, 'label': 'D# minor: Fugue VIII'}, {'t': 34, 'label': 'Fugue II'},
-                        {'t': 47, 'label': 'Fugue IV'}, {'t': 44, 'label': 'arrival'}],
+            'markers': [{'t': 4, 'label': 'cantus (subject x4)'}, {'t': 5.5, 'label': 'Fugue V'},
+                        {'t': 20, 'label': 'D# minor: Fugue VIII'}, {'t': 30, 'label': 'Fugue II'},
+                        {'t': 39, 'label': 'Fugue IV'}, {'t': 44, 'label': 'arrival'}],
             'score_layout': {'paper': 'a2', 'hide_empty_staves': True}}
     entries = [(v, 1 + int(t // 16), float((t % 16) / 4), lab, 2) for v, t, lab, k, s, se, inv in sc.entries]
     entries = [(names[v], b, off, lab, n) for v, b, off, lab, n in entries]

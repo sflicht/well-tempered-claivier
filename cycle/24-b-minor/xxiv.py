@@ -53,7 +53,7 @@ R = "B4:1 A#4:1 B4:1 C#5:1 D5:1 C#5:1 D5:1 E5:1"
 # ------------------------------------------------------------------ guests (exact quotations)
 # Copied note for note from the first statements in the finished fugue.json files.
 GUESTS = {
-    'I': ("G4:2 C5:3 D5:1 E5:2 C5:2 G5:4 F5:1 E5:1 D5:1 C5:1 D5:2 G4:2 A4:1 B4:1 C5:1 B4:1 E5:2 F5:2 G5:2",
+    'FI': ("G4:2 C5:3 D5:1 E5:2 C5:2 G5:4 F5:1 E5:1 D5:1 C5:1 D5:2 G4:2 A4:1 B4:1 C5:1 B4:1 E5:2 F5:2 G5:2",
           'Fugue I in C major (cycle/01-c-major), subject, upbeat eighth'),
     'II': ("C5:4 B4:2 D5:2 G4:2 Eb5:2 G4:2 F5:2 Eb5:1 D5:1 C5:1 D5:1 Eb5:2 D5:1 C5:1 B4:2 C5:4 G4:2",
            'Fugue II in C minor (cycle/02-c-minor), subject'),

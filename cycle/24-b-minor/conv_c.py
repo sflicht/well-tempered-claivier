@@ -7,7 +7,7 @@ Harmony: c9 C/G . E7/G# | c10 A7 . A#dim7 | c11 B | c12 E/B . F#7/B | c13 B"""
 from xxiv import *
 
 
-def part_c(sc, b0):
+def part_c(sc, b0, close=True):
     c = lambda k: b0 + k
     P = sc.put
     # ---- Fugue IV's subject, B minor (-2), Soprano I, re-barred to start on beat 4
@@ -87,7 +87,10 @@ def part_c(sc, b0):
     P('B2', c(10), 3, "E3:8")
     P('B2', c(11), 1, "R:16")
     P('B3', c(11), 3, "B3:8")
+    P('B5', c(11), 1, "B2:16")                       # the cantus's A# resolves with the arrival
 
+    if not close:
+        return
     # ---- the close (standalone excerpt only; in the fugue the release follows):
     #      most lines hold the arrival, three make a plagal inflection, the cantus drops to B1
     hold = {'S3': 'D#5', 'S4': 'B4', 'S5': 'B5', 'A1': 'D#4', 'A3': 'D#5', 'A4': 'B4', 'A5': 'B3',
@@ -102,8 +105,8 @@ def part_c(sc, b0):
     P('S2', c(13), 1, "D#6:12 R:4")
     P('A2', c(12), 1, "F#4:8 G#4:8")
     P('A2', c(13), 1, "F#4:12 R:4")
-    P('B5', c(12), 1, "B2:16")
-    P('B5', c(13), 1, "B1:16")
+    P('B5', c(12), 1, "B1:16")
+    P('B5', c(13), 1, "B1:8 R:8")
 
 
 def plan_c(off):

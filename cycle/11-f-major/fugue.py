@@ -296,13 +296,137 @@ put('V1b', 38, 3.5, 'R:6 Bb4:16 C5:8 Bb4:4 G4:4')
 # chord, every note a semitone off (F/E, A/G#, C/B).  General pause.  The basses correct it -- E E | A,
 # the subject's pickup in the right key -- and the trumpet meekly echoes E and A (both natural notes on
 # an F trumpet), then keeps quiet until the end.
-head = ' '.join(S.split()[:8])                          # pickup + tattoo arpeggio + the held C (to beat 4)
 put('Tr', 41, 1, 'C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 C6:2 C6:1 C6:1 C6:12 '
-                 'C6:2 C6:1 C6:1 C6:4 R:6 C5:1 C5:1 F5:2 F5:1 F5:1 A5:2 A5:1 C6:5 R:8')
-theme('Vne', 41, 1.5, W.transpose(oc(head, -3), 7, 4), 'joke: head in c (Violone)', 1)
-theme('Vc', 42, 1.5, oc(head, -2), 'joke: head in F (Violoncello)', 1)
-theme('Va1', 43, 1.5, W.transpose(oc(head, -2), -3, -2), 'joke: head in d (Viola 1)', 1)
-theme('V2a', 44, 1.5, W.transpose(oc(head, -1), -8, -5), 'joke: head in a (Violino II.1)', 1)
+                 'C6:2 C6:1 C6:1 C6:4 R:2 C5:1 C5:1 F5:2 F5:1 F5:1 A5:2 A5:1 C6:5')
+theme('Vne', 41, 1.5, 'G2:1 G2:1 C3:2 C3:1 C3:1 Eb3:2 Eb3:1 G3:5', 'joke: head in c (Violone)', 1)
+theme('Vc', 42, 1.5, 'C3:1 C3:1 F3:2 F3:1 F3:1 A3:2 A3:1 C4:5', 'joke: head in F (Violoncello)', 1)
+theme('Va1', 43, 1.5, 'A3:1 A3:1 D4:2 D4:1 D4:1 F4:2 F4:1 A4:5', 'joke: head in d (Viola 1)', 1)
+theme('V2a', 44, 1.5, 'E4:1 E4:1 A4:2 A4:1 A4:1 C5:2 C5:1 E5:5', 'joke: head in a (Violino II.1)', 1)
+theme('V1a', 45, 1.5, 'B4:1 B4:1 E5:2 E5:1 E5:1 G#5:2 G#5:1 B5:5', 'joke: head in E (Violino I.1)', 1)
+# the slow lines under the climbing heads, and a bass once the heads have left it
+put('V1b', 41, 1, 'Eb5:8 D5:4 Eb5:4 C5:8 A4:8 A4:16 A4:12 G#4:4')
+put('Va2', 41, 1, 'Eb4:8 C4:8 F4:8 C4:8 F4:8 A3:8 C4:12 B3:4')
+put('Vne', 43, 1, 'D3:16 A2:12 B2:4')
+# bar 45: E7 -> E major, struck twice; the trumpet's F-major head against it
+put('Vne', 45, 1, 'E2:8 E2:4 R:4 E2:8')
+put('Vc', 45, 1, 'B2:8 B2:4 R:4 B2:8')
+put('Va2', 45, 1, 'B3:8 B3:4 R:4 B3:8')
+put('V2b', 45, 1, 'E4:8 E4:4 R:4 E4:8')
+put('V1b', 45, 1, 'E5:4 D5:4 E5:4 R:4 E5:8')
+put('Va1', 45, 1, 'R:8 E3:4 R:4 E3:8')
+put('V1a', 46, 1, 'G#5:8')
+# bar 47: after the general pause, the basses' correction and the trumpet's meek echo
+put('Vne', 47, 1, 'R:2 E3:1 E3:1 A2:4')
+put('Tr', 47, 2.5, 'E6:1 E6:1 A5:4')
+
+
+
+# ================================================================ A MINOR, and the approach (b48-52)
+# The oboe now states the subject correctly in A minor (the violin's CS above), then the recorder in
+# D minor over the oboe's CS while the ripieno creeps back in; a chromatic bass Bb-B-C turns D minor
+# into the dominant of F for the twelve-voice stretto.
+Sa = W.transpose(Sd, 7, 4)
+CSa = W.transpose(CSd, 7, 4)
+theme('Ob', 48, 1.5, oc(Sa, -1), 'concertino: subject in a (Oboe), corrected', 2)
+put('Vno', 48, 2, oc(CSa, 1))
+put('Vc', 48, 2, 'A2:8 G2:4 D3:4 F3:4 E3:4 E2:4 A2:4 Bb2:4 D3:4 F2:4 Bb2:4 D3:4 A2:8 Bb2:4 B2:4 C3:4 C2:4')
+# bar 52: the ripieno gathers, sevenths prepared and resolved over Bb - B - C
+put('Vne', 52, 1, 'G2:8 C3:8')
+put('Va2', 52, 1, 'D4:4 Bb3:4 C4:4 Bb3:4')
+put('V2b', 52, 1, 'G4:16')
+put('V1b', 52, 1, 'Bb4:4 D5:4 C5:8')
+put('V1a', 52, 1, 'F5:8 E5:8')
+theme('Fl', 50, 1.5, Sd, 'concertino: subject in d (Flauto)', 2)
+put('Ob', 50, 2, ' '.join(oc(CSd, 1).split()[:-1]))
+
+
+
+# ================================================================ TUTTI IN TWELVE (b53-58)
+# The concertino states the subject in stretto at one beat, per motum contrarium: Tromba rectus (b53.1.5),
+# Violino inversus (53.2.5), Oboe rectus (53.3.5), Flauto inversus (53.4.5).  Because the inversion is
+# taken about A, the F-major fanfare heads all sound the F triad together, and the tails run against
+# each other in contrary motion.  Under them the violone plays the inversion in augmentation (its head a
+# slow falling F arpeggio, its tail a walking bass that climbs E-F-G-A ... to the dominant C at b57);
+# the cello sets the countersubject at its own speed against the trumpet; the first violins play the
+# countersubject in diminution, falling (I.1) and mirrored, rising (I.2); the inner ripieno brings in
+# the inversion in a second wave (II.1 on D, viola 1 on F, II.2 on G, with viola 2's rectus against it).
+theme('Tr', 53, 1.5, S, 'stretto a 12: subject (Tromba)', 2)
+theme('Vno', 53, 2.5, dshift(I, -7), 'stretto a 12: inversus at one beat (Violino)', 2)
+theme('Ob', 53, 3.5, dshift(S, -7), 'stretto a 12: subject at one beat (Oboe)', 2)
+theme('Fl', 53, 4.5, I, 'stretto a 12: inversus at one beat (Flauto)', 2)
+theme('Vne', 53, 2, aug(dshift(I, -21), 2), 'stretto a 12: inversus augmented (Violone)', 4)
+theme('V2a', 54, 3.5, dshift(I, -9), 'stretto a 12: inversus (Violino II.1)', 2)
+theme('Va1', 55, 3.5, dshift(I, -14), 'stretto a 12: inversus (Viola 1)', 2)
+theme('V2b', 55, 4.5, ' '.join(dshift(I, -6).split()[:-1]) + ' C5:2', 'stretto a 12: inversus (Violino II.2)', 2)
+theme('Va2', 55, 4.5, ' '.join(dshift(S, -9).split()[:-1]) + ' G4:2', 'stretto a 12: subject against it (Viola 2)', 2)
+put('V1b', 54, 3.5, W.transpose(oc(CSIdim, 1), 5, 3))
+put('Vc', 53, 1, 'F2:4')
+# further statements of the CS in diminution, falling (CS) or mirrored (CSI), in F or B-flat, placed where
+# the search found them compatible with everything above; each is the hand-written CS, halved
+put('V2b', 54, 1.5, W.transpose(CSIdim, 24, 14))       # F, rising, high
+put('Va1', 54, 3.5, CSdim)                             # F, falling, leads into its inversion entry
+put('Vno', 55, 2.5, W.transpose(CSdim, 5, 3))          # B-flat, falling, after its stretto entry
+put('V1a', 55, 4.5, oc(CSdim, 2))                      # F, falling
+put('Ob', 56, 2.5, ' '.join(W.transpose(CSIdim, 17, 10).split()[:-1]) + ' C5:4')  # B-flat, rising; ends on C
+
+# free lines of the tutti, b53-54 (hand-written): the recorder holds its high A before its stretto entry;
+# second violins and viola 1 sing slow syncopated lines under the fanfare; the cello walks in the tenor
+put('Fl', 53, 1, 'A6:14')
+
+# b54-55: the first violins descend slowly under the recorder (F6 E6 D6 C6 Bb5, the Bb resolving into the
+# CS statement's A); viola 2 and violins II.2 bridge to their entries
+put('V1a', 54, 1, 'A6:6 Bb6:2 G6:8 F6:6 G6:2 F6:4 C6:2')
+put('Va2', 54, 1, 'A3:8 Bb3:8 A3:4 G3:4 A3:4 G3:2')
+put('V2b', 55, 1.25, 'R:3 E5:4 F5:4 E5:2')
+put('Vc', 54, 1, 'F3:8 E3:8')
+put('Tr', 55, 1.5, 'R:2 G5:4 G5:8 F5:8 A5:4 C6:4')     # natural notes only: G, F, A, C
+put('Fl', 55, 4.5, 'R:2 D6:8 C6:2 Bb5:2 A5:4')
+put('Vc', 56, 1, 'F3:4 Bb3:4 C4:8')   # tenor: the C arrives early, over D, and becomes the root as the bass climbs
+
+# b57: the dominant.  The violone drops to its low C pedal; over it the concertino throws the fanfare head
+# about in C, rising (trumpet) and falling (recorder) a beat apart, while the inner ripieno finish their
+# entries and the first violins hold suspensions.
+HC = 'G5:1 G5:1 C6:2 C6:1 C6:1 E6:2 E6:1 G6:5'        # the head on the dominant
+HCi = 'C6:1 C6:1 G5:2 G5:1 G5:1 E5:2 E5:1 C5:5'       # and its mirror
+put('Vne', 57, 2, 'R:4 C2:8 C2:16 F2:8 D3:4 A2:4 Bb2:8 G2:4 C3:4 F2:20 D3:4 C3:8 F2:16')
+theme('Fl', 57, 1.5, HCi, 'head inversus on the dominant (Flauto)', 1)
+theme('Tr', 57, 2.5, HC, 'head on the dominant (Tromba)', 1)
+theme('Vno', 57, 3.5, oc(HCi, -1), 'head inversus on the dominant (Violino)', 1)
+put('V1a', 57, 1, 'Bb5:8 A5:4 G5:16 C6:4 A5:4')       # 7 - 6 - 5 over the pedal
+put('V1b', 57, 1, 'G4:8 A4:4 Bb4:20 A4:4')            # and against it 5 - 6 - 7, the seventh held to the end of the pedal
+put('V2a', 57, 1, 'E4:8 G4:8')
+
+# b58: the pedal continues; the concertino falls silent one by one while viola 1 runs down the subject's
+# tail figure into the tonic.
+put('Va1', 58, 2, 'E4:1 D4:1 C4:1 Bb3:1 C4:1 Bb3:1 A3:1 G3:1 A3:1 F3:1 G3:1 E3:1 F3:4')
+
+
+# ================================================================ FINAL ENTRY AND CODA (b59-63)
+# The trumpet has the last word: the subject in F as at the start, the recorder's CS above it as in bar 5,
+# viola 1 with the inversion a beat later (the pairing of the twelve-voice stretto).  Then a short tonic
+# pedal on which oboe and violin play the CS in diminution in thirds -- its E-flat gives the flat,
+# plagal colour, and the trumpet, which has no E-flat, rests -- and the cadence, where the trumpet
+# hammers its tattoo on C over the dominant, right at last, and lands on the third.
+theme('Tr', 59, 1.5, S, 'final entry: subject (Tromba)', 2)
+put('Ob', 59, 2, oc(CS, 1))                                       # CS below the trumpet
+theme('Va1', 59, 2.5, ' '.join(dshift(I, -14).split()[:-1]) + ' Bb3:2', 'final entry: inversus (Viola 1)', 2)
+# b61: tonic pedal.  Oboe and violin: the CS in diminution in thirds (the violin's line written by hand a
+# third below), F - B-flat - F7 - B-flat - E-flat - F; the first violins and cello move with it.
+put('Ob', 61, 1.5, ' '.join(oc(CSdim, 1).split()[:-1]) + ' A4:4 Bb4:12 A4:16')   # ... then A - Bb - Bb - A:
+put('Vno', 61, 1.5, 'F4:2 D5:3 C5:1 Bb4:3 G4:3 A4:2 F4:8 C4:8 C4:16')         # the cadence's prepared 7th
+put('V1a', 61, 1, 'C6:4 D6:7 Eb6:3 C6:2')
+put('V1b', 61, 1.5, 'A5:2 Bb5:10 A5:2')
+put('Vc', 61, 1, 'F3:4 Bb2:7 Eb3:3 F3:2 C3:4 F3:4 G3:8 A3:16')
+# b62: the concertino and continuo make the cadence (IV6 - V7 - I) while the ripieno is silent; the
+# recorder climbs C-D-E-F, the trumpet's tattoo is on C, and the ripieno joins for the last chord.
+put('Fl', 62, 1, 'C6:4 D6:4 E6:8 F6:16')
+put('Tr', 62, 2.5, 'C6:1 C6:1 C6:8 C6:16')
+put('V1a', 63, 1, 'F5:16')
+put('V1b', 63, 1, 'A5:16')
+put('V2a', 63, 1, 'C5:16')
+put('V2b', 63, 1, 'F4:16')
+put('Va1', 63, 1, 'F3:16')
+put('Va2', 63, 1, 'C4:16')
 
 
 def build(nbars, path=None):
@@ -328,8 +452,12 @@ def build(nbars, path=None):
                          subject=S, dynamics=dynamics)
 
 
-TEMPO = {}
-DYN = {1: 0}
+# tempo: a held breath on the wrong E-major chord and its general pause (b46), a tempo for the correction,
+# and a broadening over the last two bars (q=100 -> 76 -> 56 on the final chord)
+TEMPO = {'tempo_map': [[176, 100], [182, 84, 'ramp'], [182, 56], [184, 100],
+                       [240, 100], [248, 76, 'ramp'], [248, 70], [252, 52, 'ramp']]}
+# phrase dynamics (velocity offsets): solo episodes lighter, tutti heavier, the twelve-voice stretto loudest
+DYN = {1: 0, 9: 3, 17: -4, 23: 4, 28: -4, 35: 3, 41: 0, 47: -6, 48: -2, 53: 6, 58: 0, 59: 4, 62: 2, 63: 6}
 BASEVEL = [70, 66, 66, 66, 62, 60, 60, 58, 60, 58, 64, 64]
 
 if __name__ == '__main__':

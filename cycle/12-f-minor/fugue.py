@@ -1,0 +1,272 @@
+#!/usr/bin/env python3
+"""Fugue XII in F minor, thirteen voices: "Fuga a 4 soggetti, compiuta" (third edition).
+
+The completion Bach never wrote.  The final fugue of The Art of Fugue, BWV 1080
+(the unfinished "Contrapunctus XIX", or "Fuga a 3 soggetti"), breaks off just
+after its third subject, B-A-C-H, has been combined with the first two.
+Gustav Nottebohm (1880) showed that the three subjects also combine with the
+main theme of the whole cycle, so Bach evidently planned a quadruple fugue.
+This fugue transposes that plan from D minor to F minor (up a minor third)
+and completes it in thirteen real voices.
+
+Subjects (copied exactly from Bach, transposed up a minor third; see NOTES.md):
+  S1  the stile-antico subject of Contrapunctus XIX, bars 1-6:  F C Bb Ab Bb C F
+  S2  the running subject, Contrapunctus XIX bars 114-120
+  S3  B-A-C-H, Contrapunctus XIX bars 193-197:  Db C Eb D(natural) E F ...
+  MT  the main theme of The Art of Fugue (Contrapunctus I, bars 1-5)
+
+Every note is written here.  Thematic statements are the quoted subjects or
+explicit transforms of them (wtclib.transpose / invert_diatonic /
+scale_rhythm, plus the exact chromatic inversion `exact_inv` below); all
+other material is literal token strings placed at bar.beat.  No code chooses
+pitches.  Scratch scripts only proposed placements of whole statements (which
+subject may enter where, at what interval) and reported problems.
+"""
+from __future__ import annotations
+
+import sys
+from fractions import Fraction as Fr
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parents[1] / 'tools'))
+import wtclib as W  # noqa: E402
+
+METER = (4, 4)
+NAMES = ['SI', 'SII', 'SIII', 'AI', 'AII', 'AIII', 'TI', 'TII', 'TIII', 'BrI', 'BrII', 'BI', 'BII']
+LONG = ['Soprano I', 'Soprano II', 'Soprano III', 'Alto I', 'Alto II', 'Alto III', 'Tenor I', 'Tenor II',
+        'Tenor III', 'Baritone I', 'Baritone II', 'Bass I', 'Bass II']
+CLEF = ['treble', 'treble', 'treble', 'treble', 'treble', 'treble', 'treble_8', 'treble_8', 'treble_8',
+        'bass', 'bass', 'bass', 'bass']
+FMIN = [5, 7, 8, 10, 0, 1, 4]          # F harmonic minor, from the tonic
+
+# ---------------------------------------------------------------- the four subjects (Bach, BWV 1080)
+# As extracted from Contrapunctus XIX / I in D minor (16th-note units), then transposed up a minor third.
+S1_D = 'D3:8 A3:12 G3:4 F3:16 G3:16 A3:16 D3:8'                    # XIX b1.3-6.3 (bass)
+S1A_D = 'A3:8 D4:12 D4:4 C4:16 D4:16 E4:16 A3:8'                   # XIX b6.3-11.3 (tenor): Bach's tonal answer
+S2_D = ('F4:2 G4:2 F4:2 E4:2 D4:2 C#4:2 D4:2 A3:2 D4:2 E4:2 F4:2 E4:2 D4:2 F4:2 '
+        'E4:2 A3:2 E4:2 F4:2 G4:2 F4:1 E4:1 F4:2 G4:2 A4:2 G4:2 F4:2 G4:2 A4:10 G4:1 F#4:1 G4:2 A4:2 '
+        'Bb4:10 A4:2 G4:2 F4:2 E4:2 D4:2 E4:2 G4:2 F4:4')              # XIX b114.2-120.1 (alto)
+S3_D = 'Bb3:8 A3:8 C4:8 B3:6 C#4:2 D4:14 C#4:1 B3:1 C#4:8 D4:8'      # XIX b193.3-197.3 (tenor)
+MT_D = 'D4:8 A4:8 F4:8 D4:8 C#4:8 D4:4 E4:4 F4:10 G4:2 F4:2 E4:2 D4:8'  # Contrapunctus I b1-5 (alto)
+
+
+def tr(s, semis, letters):
+    return W.transpose(s, semis, letters)
+
+
+def octv(s, n):
+    return W.transpose(s, 12 * n, 7 * n)
+
+
+S1 = tr(S1_D, 3, 2)        # F3 C4 Bb3 Ab3 Bb3 C4 F3
+S1A = tr(S1A_D, 3, 2)      # C4 F4 F4 Eb4 F4 G4 C4  (tonal answer)
+S2 = tr(S2_D, 3, 2)        # Ab4 Bb4 Ab4 G4 F4 E4 | F4 C4 F4 G4 Ab4 G4 F4 Ab4 | ...
+S3 = tr(S3_D, 3, 2)        # Db4 C4 Eb4 D4 E4 F4 E4 D4 E4 F4   (B-A-C-H transposed)
+MT = tr(MT_D, 3, 2)        # F4 C5 Ab4 F4 E4 F4 G4 Ab4 Bb4 Ab4 G4 F4
+
+
+def mirror(s, axis='Ab4'):
+    """The Art of Fugue's mirror (Contrapunctus XII/XIII), in F minor: F<->C, G<->Bb, Ab fixed, Db<->E."""
+    return W.invert_diatonic(s, axis, FMIN)
+
+
+def exact_inv(s, start):
+    """Exact chromatic inversion: every interval negated, starting on `start`."""
+    toks = s.split()
+    p0, _, sp0, _ = W.parse_tok(toks[0])
+    q0 = W.parse_tok(start + ':1')[0]
+    out = []
+    for tok in toks:
+        p, d, sp, tie = W.parse_tok(tok)
+        if p is None:
+            out.append(tok)
+            continue
+        dl = W.LETTERS.index(sp[0].upper()) - W.LETTERS.index(sp0[0].upper())
+        letter = W.LETTERS[(W.LETTERS.index(start[0]) - dl) % 7]
+        out.append(f"{W.name_of(q0 - (p - p0), letter)}:{tok.rsplit(':', 1)[1]}")
+    return ' '.join(out)
+
+
+S1I = mirror(S1)                                   # C4 F3 G3 Ab3 G3 F3 C4 (as an octave-free shape)
+MTI = mirror(MT)                                   # C5 F4 Ab4 C5 Db5 C5 Bb4 Ab4 G4 Ab4 Bb4 C5
+S3I = exact_inv(S3, 'E4')                          # E4 F4 D4 Eb4 Db4 C4 Db4 Eb4 Db4 C4  ("H-C-A-B")
+# S2's chromatic lower neighbour (C Bb A Bb) mirrors to an upper neighbour (F G Ab G): A-natural -> A-flat
+S2I = mirror(S2).replace('Abb4:1', 'Ab4:1')
+
+# ---------------------------------------------------------------- placement
+VO = {n: [] for n in NAMES}
+ENTRIES = []
+
+
+def dur16(toks):
+    return sum(W.parse_tok(t)[1] for t in toks.split())
+
+
+def pos(bar, beat):
+    return Fr(bar - 1) * 16 + (Fr(beat) - 1) * 4
+
+
+def put(v, bar, beat, toks):
+    VO[v].append((pos(bar, beat), toks))
+
+
+def theme(v, bar, beat, toks, label, nbars=None):
+    put(v, bar, beat, toks)
+    n = nbars if nbars is not None else max(1, round(float(dur16(toks)) / 16))
+    ENTRIES.append((LONG[NAMES.index(v)], bar, (Fr(beat) - 1), label, n))
+
+
+def seq(v, bar, *bars):
+    """Place consecutive whole bars (each must fill the bar exactly; 'R' = a bar's rest)."""
+    for k, b in enumerate(bars):
+        if b.strip() == 'R':
+            continue
+        if dur16(b) != 16:
+            raise ValueError(f'{v} bar {bar + k}: {dur16(b)} sixteenths: {b}')
+        put(v, bar + k, 1, b)
+
+
+def assemble(v, nbars):
+    segs = sorted(VO[v], key=lambda x: x[0])
+    out, cur = [], Fr(0)
+    for s, toks in segs:
+        if s < cur:
+            raise ValueError(f'{v}: overlap at bar {float(s / 16 + 1)}: {toks[:40]}')
+        if s > cur:
+            out.append(f'R:{s - cur}')
+        out.append(toks)
+        cur = s + dur16(toks)
+    total = Fr(nbars * 16)
+    if cur > total:
+        raise ValueError(f'{v}: runs past the end')
+    if cur < total:
+        out.append(f'R:{total - cur}')
+    return W.concat_bars(' '.join(out), METER)
+
+
+# Section starts (bar numbers)
+P1, P2, P3, Q = 1, 21, 43, 61
+
+# ================================================================ I. FUGUE ON S1 (stile antico), b1-20
+# Entries 2-3-2-3-2 bars apart (Bach's own spacing is 5): the stretto at two bars is the closest the subject
+# allows against Bach's tonal answer.  Voices gather from one to seven.
+theme('TIII', P1, 3, S1, 'S1')
+theme('AIII', P1 + 2, 3, S1A, 'S1 answer')
+theme('BrII', P1 + 5, 3, octv(S1, -1), 'S1')
+theme('SIII', P1 + 7, 3, octv(S1A, 1), 'S1 answer')
+theme('AII', P1 + 10, 3, octv(S1, 1), 'S1')
+theme('SII', P1 + 12, 3, octv(S1A, 1), 'S1 answer')
+theme('BI', P1 + 15, 3, octv(S1, -1), 'S1')
+# Tenor III, after its subject: a quarter-note line under the answer (c minor -> A-flat -> b-flat minor -> c -> f).
+put('TIII', P1 + 5, 3, 'Ab3:8')
+seq('TIII', P1 + 6, 'C4:4 Bb3:4 Ab3:4 G3:4', 'Ab3:4 Bb3:4 C4:8', 'Bb3:8 Ab3:8', 'G3:4 Ab3:4 G3:4 Bb3:4',
+    'Ab3:8 Bb3:4 Ab3:4', 'G3:16', 'Ab3:16', 'Db4:8 Bb3:8', 'G3:8 C4:8', 'Ab3:16', 'G3:8 Eb3:8',
+    'C3:8 F3:8', 'F3:8 Ab3:8', 'G3:16')
+# Alto III, after its answer.
+put('AIII', P1 + 7, 3, 'Eb4:8')
+seq('AIII', P1 + 8, 'Db4:8 F4:4 Db4:4', 'Eb4:8 C4:8', 'C4:4 Db4:4 C4:8', 'E4:8 C4:8', 'C4:8 F4:8',
+    'F4:8 Db4:4 Eb4:4', 'Eb4:12 Db4:4', 'C4:8 F4:8', 'Eb4:8 G4:8', 'Ab4:8 F4:8', 'F4:8 Bb4:8', 'G4:16', 'F4:8 R:8')
+# Soprano II after its answer; Soprano III returns; Tenor II joins (b17-20: v - III - iv - V).
+put('SII', P1 + 17, 3, 'Db5:8')
+seq('SII', P1 + 18, 'Bb4:8 Db5:8', 'C5:16', 'C5:8 R:8')
+seq('SIII', P1 + 16, 'Eb5:8 Bb4:8', 'Eb5:8 F5:8', 'F5:16', 'E5:16', 'F5:8 R:8')
+seq('TII', P1 + 16, 'C4:8 Eb4:8', 'Eb4:8 Db4:8', 'Db4:8 F4:8', 'C4:8 Bb3:8', 'Ab3:8 R:8')
+# Baritone II, after its subject: the bass.
+put('BrII', P1 + 10, 3, 'Ab2:8')
+seq('BrII', P1 + 11, 'C3:8 E3:8', 'F3:8 C3:8', 'Bb2:8 Db3:8', 'C3:8 Ab2:8', 'F2:8 R:8')
+
+# ================================================================ II. S2, THE RUNNING SUBJECT, b21-42
+# Exposition in pairs: the answer (real, at the fifth, as in Bach) treads on the subject's heels three beats
+# later -- the only distance at which S2 and its answer overlap cleanly -- so the subject enters as a duet.
+S2A = tr(S2, 7, 4)                      # Eb5 F5 Eb5 D5 C5 B4 | C5 G4 C5 D5 Eb5 D5 C5 Eb5 | ...
+theme('AI', P2, 2, S2, 'S2 (running)')
+theme('SI', P2 + 1, 1, S2A, 'S2 answer (stretto, 3 beats)')
+theme('TI', P2 + 6, 2, octv(S2, -1), 'S2 (running)')
+theme('AIII', P2 + 7, 1, octv(S2A, -1), 'S2 answer (stretto, 3 beats)')
+theme('BII', P2 + 7, 3, octv(S1, -1), 'S1')
+# Combination: S2 as a running bass under S1's tonal answer, which starts with it; S1 itself three bars later.
+theme('BI', P2 + 13, 2, octv(S2, -2), 'S2 (running bass)')
+theme('SII', P2 + 13, 2, octv(S1A, 1), 'S1 answer (with S2)')
+theme('TIII', P2 + 16, 3, S1, 'S1')
+# Bass I walks under the duet (quarters), spelling out its modulations: f - c - E-flat - f - B-flat (S2's
+# A-natural) - E-flat7 - A-flat (S2's D-flat as a 4-3 suspension) - V - i.
+put('BI', P2, 3, 'Ab2:4 C3:4')
+seq('BI', P2 + 1, 'F2:4 G2:4 C3:4 Ab2:4', 'C3:4 B2:4 C3:4 Bb2:4', 'Eb3:4 Ab2:4 F2:4 E2:4', 'F2:4 Bb2:4 Eb3:4 G2:4',
+    'Ab2:4 Bb2:4 C3:8', 'F2:8 R:8')
+
+# ================================================================ IV. THE QUADRUPLE COMBINATION (composed first)
+# Nottebohm's combination, found here by search over all placements of the main theme against Bach's own
+# triple combination (XIX b233-239): the main theme leads, S2 follows a beat later, S1 five beats after S2,
+# S3 four beats after S1.  A fifth thematic line: S1's real answer (in C) one beat ahead of the bass S1.
+theme('SI', Q, 1, octv(MT, 1), 'main theme')
+theme('AI', Q, 2, S2, 'S2 (running)')
+# (its last note leaps up a fourth instead of down a fifth, to avoid a unison with the bass S1)
+theme('BrI', Q + 1, 2, 'C3:8 G3:12 F3:4 Eb3:16 F3:16 G3:16 C4:8', 'S1 answer (stretto, 1 beat)')
+theme('BII', Q + 1, 3, 'F2:8 C3:12 Bb2:4 Ab2:16 Bb2:16 C3:16 F2:4', 'S1')
+theme('TI', Q + 2, 3, S3, 'S3 B-A-C-H')
+
+# ---- free voices of the quadruple (hand-written)
+# Bass I carries the bass into the combination and hands its F to S1 (lower neighbour E-flat).
+seq('BI', Q, 'F2:8 Ab2:4 G2:4', 'F2:4 Eb2:4 R:8')
+# Soprano II: a high descant over the end of the main theme, C D D-flat C, falling chromatically while
+# B-A-C-H (Tenor I) rises D E F underneath it.
+seq('SII', Q + 3, 'R:8 C6:8', 'D6:8 Db6:8', 'C6:16')
+# Soprano III: under the main theme, falls C B-flat A-flat, then climbs C D-flat E-flat; Soprano II takes over.
+seq('SIII', Q, 'C5:12 Bb4:4', 'Ab4:8 C5:8~', 'C5:8 Db5:4 Eb5:4', 'Eb5:8 R:8')
+# Alto III: the inner line of the arrival, then B-flat held as a 9-8 suspension over A-flat.
+seq('AIII', Q, 'Ab3:8 C4:8~', 'C4:8 Ab3:8', 'R:8 Bb3:8~', 'Bb3:8 Ab3:8')
+# Tenor II enters with S1: a long C (rubbing against B-A-C-H's D-flat, as in Bach's own combination), E-flat, C.
+seq('TII', Q + 1, 'R:8 C4:8~', 'C4:12 Eb4:4', 'Eb4:8 C4:8')
+# Alto II enters as the main theme ends: F, A-flat (a seventh) falling to G, then up to C for the cadence.
+seq('AII', Q + 4, 'F4:8 Ab4:4 G4:4', 'G4:4 C5:12', 'C5:8 R:8')
+# Tenor III: B-flat under the B-A-C-H D-E-F, D-flat tied over the bar as a 9-8 suspension, then G held into the
+# cadence bar (a 9 over the tonic) and resolved to F.
+seq('TIII', Q + 4, 'Bb3:12 Db4:4~', 'Db4:4 C4:8 G3:4~')
+put('TIII', Q + 6, 1, 'G3:4 Ab3:4')
+# Soprano I after the main theme: G over the dominant, F at the cadence.
+put('SI', Q + 4, 3, 'Bb5:4 Ab5:4 G5:16 F5:8')
+
+
+
+# ================================================================ IV b. CONTRAPUNCTUS INVERSUS: the quadruple combination in the mirror
+# The four subjects inverted with the Art of Fugue's own mirror (Contrapunctus XII/XIII: F<->C, A-flat fixed)
+# at exactly the same time-distances.  Register order: inverted main theme on top, S1 inverted, B-A-C-H
+# inverted ("H-C-A-B"), and S2 inverted as a running bass.  It starts on the cadence of the rectus statement:
+# Soprano II's held C becomes the head of the inverted main theme.
+M = Q + 6
+theme('SII', M, 1, octv(MTI, 1), 'main theme inv.')
+theme('BI', M, 2, octv(S2I, -2), 'S2 inv. (running bass)')
+theme('AI', M + 1, 3, octv(S1I, -1), 'S1 inv.')
+theme('TII', M + 2, 3, S3I, 'S3 inv. (H-C-A-B)')
+# ---- free voices of the mirror statement (hand-written)
+# Alto III: F, A-flat held into the B-flat-minor chord (a seventh), C, B-flat, then climbs E-flat F G A-flat
+# (the mirror's rising lines) and settles on F.
+# Soprano III: C, A-flat, F, G held as a ninth over the tonic, F, then A-flat.
+seq('SIII', M, 'R:8 C5:8~', 'C5:8 Ab5:8', 'F5:8 G5:8~', 'G5:4 F5:12', 'Ab5:8 R:8')
+# Tenor I (after its B-A-C-H): E-flat, C, C held as a ninth over the B-flat seventh, G held as a ninth over F and
+# resolved upward (the mirror's retardations).
+put('TI', M, 3, 'Eb4:8')
+seq('TI', M + 1, 'C4:12 Bb3:4~', 'Bb3:16~', 'Bb3:4 Ab3:4 Bb3:8', 'Ab3:8 G3:8~', 'G3:4 Ab3:8 Bb3:4', 'F3:8 R:8')
+seq('AIII', M + 1, 'F4:8 Ab4:8~', 'Ab4:8 C5:8', 'C5:8 Bb4:8', 'Eb5:4 F5:4 G5:8', 'Ab5:8 F5:8~', 'F5:8 R:8')
+
+
+def build(nbars):
+    bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
+    meta = {'title': 'The Well-Tempered clAIvier',
+            'subtitle': 'Fugue XII in F minor, thirteen voices: Fuga a 4 soggetti, compiuta',
+            'composer': 'Claude / Sam, completing J. S. Bach (BWV 1080) after G. Nottebohm',
+            'instrument': 'Thirteen voices (open score)',
+            'key': 'F', 'mode': 'minor', 'meter': list(METER), 'bpm': 80,
+            'tempo_text': 'Grave e sostenuto', 'movement_number': 12, 'piece_type': 'fugue', 'edition': 'third',
+            'score_layout': {'paper': 'a2', 'staff_size': 13, 'staff_distance': 8},
+            'tempo_map': []}
+    voices = [(LONG[i], NAMES[i], CLEF[i], 62) for i in range(len(NAMES))]
+    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=S1)
+
+
+if __name__ == '__main__':
+    end = max((s + dur16(t)) for v in VO.values() for s, t in v)
+    nb = int(sys.argv[1]) if len(sys.argv) > 1 else int(-(-end // 16))
+    build(nb)
+    print('bars', nb)

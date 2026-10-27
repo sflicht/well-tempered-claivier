@@ -56,7 +56,7 @@ def classify(evs, k, t, plan):
 def guest_spans(d):
     spans = []
     for th in d.get('themes', []):
-        if th['key'] in ('I', 'II', 'IV', 'V', 'VIII'):
+        if th['key'] in ('FI', 'II', 'IV', 'V', 'VIII'):
             spans.append((th['voice'], th['t']))
     return spans
 
