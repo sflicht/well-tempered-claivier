@@ -199,15 +199,17 @@ def summit():
     theme('T1', z + 23 + Fr(3, 4), dshift(SA, -4), 'Allemande subject (D level)')
     theme('H1', z + 27 + Fr(3, 4), dshift(mir(SA), -2), 'Allemande mirror (F# minor)')
     # ---- Sigma 3 (z+32 .. z+44): the ground quickens into the gigue's basse: D major, then B minor.
-    theme('B4', z + 31 + Fr(2, 3), oc(tr(mir(SG), 5, 3), -3), 'Gigue mirror (ground, D)')
+    g3 = oc(tr(mir(SG), 5, 3), -3).split()
+    g3[-1] = 'D3:8/3'                        # cut by the B-minor statement's upbeat
+    theme('B4', z + 31 + Fr(2, 3), ' '.join(g3), 'Gigue mirror (ground, D)')
     theme('B4', z + 37 + Fr(2, 3), 'B2:4/3 F#2:8/3 G2:4/3 E2:4/3 F#2:4/3 D2:4/3 E2:8/3 C#2:4/3 D2:4/3 E2:4/3 G2:4/3 '
           'F#2:8/3 A#2:4/3 B2:4', 'Gigue mirror (ground, B minor)')
     theme('D1', z + 31 + Fr(3, 4), tr(SA, 5, 3), 'Allemande subject (D major)')
     theme('T1', z + 37 + Fr(3, 4), 'F#3:1 B3:2 A#3:1 C#4:1 B3:1 D4:1 C#4:1 E4:1 D4:2 C#4:1 A#3:1 B3:1 G3:1 F#3:2',
           'Allemande subject (B minor)')
     # ---- Sigma 4 (z+44 .. z+52): the allemande's basse: E major, then home.
-    theme('B1', z + 43 + Fr(3, 4), 'E3:1 B2:2 C#3:1 A2:1 B2:1 G#2:1 A2:1 F#2:1 G#2:2 A2:1 C#3:1 B2:1 D#3:1 E3:2',
-          'Allemande mirror (ground, E)')     # the mirror transposed to E major (D#)
+    theme('B1', z + 43 + Fr(3, 4), 'E3:1 B2:2 C#3:1 A2:1 B2:1 G#2:1 A2:1 F#2:1 G#2:2 A2:1 C#3:1 B2:1 D#3:1 E3:1',
+          'Allemande mirror (ground, E; last note cut by the next statement)')     # the mirror transposed to E major (D#)
     theme('B1', z + 47 + Fr(3, 4), oc(mir(SA), -3), 'Allemande mirror (ground, A)')
 
     theme('D4', z + 49 + Fr(2, 3), dshift(SG, 3), 'Gigue subject (D level)')
