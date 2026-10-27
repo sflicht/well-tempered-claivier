@@ -127,6 +127,7 @@ put('B1', 7, 3, 'Gb2:8 Ab2:4 F2:4 Bb2:4 Cb3:2 Ab2:2 Bb2:4')
 put('S2', 9, 1, 'D5:6 C5:2 Bb4:4 Cb5:4 Eb5:4 D5:4 F5:4 Gb5:4 Bb5:8 F5:4 Db5:4')
 put('T2', 9, 1.5, 'R:2 D3:4 Eb3:4 Cb3:4 Gb3:4 F3:6')
 put('B1', 9, 2, 'Ab2:4 Gb2:4 Ab2:4 Eb3:4 Bb2:8 Gb2:8 Eb3:4 F2:4 Bb2:4')
+put('T1', 9, 1, 'D4:4 F4:4 Gb4:4 Eb4:8 F4:4 D4:4 Bb3:12 C4:4 Db4:4')            # second pass: the first voice keeps singing
 theme('S1', 9, 3, octv(IC, 2), 'I inversus')
 # E8 (b10.3) Alto II: answer; Alto I countersubject under it
 theme('A2', 10, 3, A, 'A answer')
