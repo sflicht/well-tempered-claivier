@@ -120,11 +120,13 @@ def run(mode, detail=None, quiet=False):
         weak7 = [x for x in R['dissonance'] if x['sev'] == 'note']
         pe = [x for x in R['parallels'] if x['sev'] in ('error', 'warn')]
         pc = [x for x in R['parallels'] if x['sev'] == 'note']
+        bp = [x for x in R.get('beat_parallels', []) if x['sev'] != 'doubling']
         rows.append({'order': order, 'par_err': s['parallels_error'], 'par_weak': s['parallels_weak'],
+                     'beat_par': len(bp), 'tripled': s.get('pc_tripled_on_beats_pct', 0),
                      'contrary': len(pc), 'unresolved': s['dissonance_unresolved'], 'seventh_note': len(weak7),
                      'beat4': len(b4), 'beat5': len(b5), 'crossings': s['crossings'],
                      'kinds': s['dissonance_kinds'], 'unres_list': [f"{x['loc']} {x['kind']} {x['what']}" for x in unres],
-                     'par_list': [f"{x['loc']} {x['voices']} {x['kind']} {x['what']}" for x in pe + pc],
+                     'par_list': [f"{x['loc']} {x['voices']} {x['kind']} {x['what']}" for x in pe + pc + bp],
                      'b4_list': b4, 'b5_list': b5, 'ranges': R['ranges'],
                      'melody': s['melody']})
         if detail == order:
@@ -146,11 +148,11 @@ def main():
     for m in modes:
         rows = run(m, a.detail)
         out[m] = rows
-        tot = {k: sum(r[k] for r in rows) for k in ('par_err', 'par_weak', 'contrary', 'unresolved', 'beat4', 'beat5', 'seventh_note')}
+        tot = {k: sum(r[k] for r in rows) for k in ('par_err', 'par_weak', 'beat_par', 'contrary', 'unresolved', 'beat4', 'beat5', 'seventh_note')}
         print(f"== {m}: totals {tot}")
         for r in rows:
-            flag = '' if not (r['par_err'] or r['unresolved'] or r['beat4']) else '  <-- FIX'
-            print(f"  {r['order']}  par_err {r['par_err']} weak {r['par_weak']} contrary {r['contrary']} "
+            flag = '' if not (r['par_err'] or r['unresolved'] or r['beat4'] or r['beat_par']) else '  <-- FIX'
+            print(f"  {r['order']}  par_err {r['par_err']} weak {r['par_weak']} beatpar {r['beat_par']} contrary {r['contrary']} "
                   f"unres {r['unresolved']} beat4 {r['beat4']} 7th-note {r['seventh_note']} cross {r['crossings']}{flag}")
             if a.v or flag:
                 for x in r['unres_list'] + r['par_list'] + r['b4_list']:
