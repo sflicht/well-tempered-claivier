@@ -278,28 +278,19 @@ theme('BrI', Q + 1, 2, 'C3:8 G3:12 F3:4 Eb3:16 F3:16 G3:16 C4:8', 'S1 answer (st
 theme('BII', Q + 1, 3, 'F2:8 C3:12 Bb2:4 Ab2:16 Bb2:16 C3:16 F2:4', 'S1')
 theme('TI', Q + 2, 3, S3, 'S3 B-A-C-H')
 
-# ---- free voices of the quadruple (hand-written)
+# ---- the other voices of the summit are subjects too (placements found by search, every one checked by hand):
+# B-A-C-H enters with the main theme (Tenor II) and is answered high in Soprano II; S1 is answered three times
+# before the bass S1 (tonal answer in Soprano III, real answers in Alto III and Baritone I: a stretto of four
+# S1 entries within five beats); the main theme is answered by its own inversion three beats later (Alto II);
+# and Tenor I's B-A-C-H is met by the inverted answer ("H-C-A-B" on A) in Tenor III.
+theme('TII', Q, 1, S3, 'S3 B-A-C-H (with the main theme)')
+theme('SIII', Q, 3, octv(S1A, 1), 'S1 answer (tonal)')
+theme('AIII', Q, 4, tr(S1, 7, 4), 'S1 answer (real)')
+theme('AII', Q, 4, MTI, 'main theme inv. (canon by inversion, 3 beats)')
+theme('SII', Q + 1, 4, octv(S3A, 1), 'S3 answer')
+theme('TIII', Q + 2, 3, tr(S3I, -7, -4), 'S3 inv. answer (with S3)')
 # Bass I carries the bass into the combination and hands its F to S1 (lower neighbour E-flat).
 seq('BI', Q, 'F2:8 Ab2:4 G2:4', 'F2:4 Eb2:4 R:8')
-# Soprano II: a high descant over the end of the main theme, C D D-flat C, falling chromatically while
-# B-A-C-H (Tenor I) rises D E F underneath it.
-seq('SII', Q + 3, 'R:8 C6:8', 'D6:8 Db6:8', 'C6:16')
-# Soprano III: under the main theme, falls C B-flat A-flat, then climbs C D-flat E-flat; Soprano II takes over.
-seq('SIII', Q, 'C5:12 Bb4:4', 'Ab4:8 C5:8~', 'C5:8 Db5:4 Eb5:4', 'Eb5:8 R:8')
-# Alto III: the inner line of the arrival, then B-flat held as a 9-8 suspension over A-flat.
-seq('AIII', Q, 'Ab3:8 C4:8~', 'C4:8 Ab3:8', 'R:8 Bb3:8~', 'Bb3:8 Ab3:8')
-# Tenor II enters with S1: a long C (rubbing against B-A-C-H's D-flat, as in Bach's own combination), E-flat, C.
-seq('TII', Q + 1, 'R:8 C4:8~', 'C4:12 Eb4:4', 'Eb4:8 C4:8')
-# Alto II enters as the main theme ends: F, A-flat (a seventh) falling to G, then up to C for the cadence.
-seq('AII', Q + 4, 'F4:8 Ab4:4 G4:4', 'G4:4 C5:12', 'C5:8 R:8')
-# Tenor III: B-flat under the B-A-C-H D-E-F, D-flat tied over the bar as a 9-8 suspension, then G held into the
-# cadence bar (a 9 over the tonic) and resolved to F.
-seq('TIII', Q + 4, 'Bb3:12 Db4:4~', 'Db4:4 C4:8 G3:4~')
-put('TIII', Q + 6, 1, 'G3:4 Ab3:4')
-# Baritone II: the main theme's arrival is held from below (C, then A-flat as the bass falls to E-flat), and C
-# again over the A-flat of S1.
-put('BrII', Q, 1, 'C3:20 Ab2:12')
-put('BrII', Q + 3, 1, 'C3:16')
 # Soprano I after the main theme: G over the dominant, F at the cadence.
 put('SI', Q + 4, 3, 'Bb5:4 Ab5:4 G5:16 F5:8')
 

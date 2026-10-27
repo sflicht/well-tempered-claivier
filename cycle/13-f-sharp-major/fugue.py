@@ -351,8 +351,20 @@ put('IVdx', 33, subj(1) + [
     'R:12',                                                      # b62
     'C#5:6 B4:2 C#5:4',                                          # b63
     'A#4:4 F#4:4 R:4',                                           # b64
+    'F#4:4 A#4:4 C#5:4',                                         # b65
+    'C#5:4 G#4:8',                                               # b66
+    'D#5:4 F#5:4 D#5:4',                                         # b67
+    'R:8 C#5:4',                                                 # b68
+    'C#5:4 A#4:4 C#5:4',                                         # b69
+    'D#5:8 B4:4',                                                # b70
+    'R:4 G#4:8',                                                 # b71
+    'A#4:8 C#5:4',                                               # b72
+    'C#5:8 F#5:4',                                               # b73
+    'R:12',                                                      # b74
+    'D#5:8 F#5:4',                                               # b75
+    'C#5:8 R:4',                                                 # b76
 ])
-CANON_SPAN['IV'] = (33, 64)
+CANON_SPAN['IV'] = (33, 76)
 put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'C#5:4 B4:2 A#4:2 G#4:2 F#4:2',                            # b41
     'B4:4 A#4:2 G#4:2 C#5:4',                                  # b42
@@ -377,6 +389,22 @@ put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
     'B2:4 F#2:8',                                                # b62
     'C#3:4 G#2:8',                                               # b63
     'A#2:4 C#3:8',                                               # b64
+    'C#3:8 A#2:4',                                               # b65
+    'G#2:8 C#3:4',                                               # b66
+    'A#2:4 D#3:8',                                               # b67
+    'R:4 G#2:8',                                                 # b68
+    'R:4 C#3:8',                                                 # b69
+    'R:4 G#2:4 B2:4',                                                # b70
+    'G#2:4 C#3:8',                                               # b71
+    'C#3:4 A#2:8',                                               # b72
+    'A#2:4 C#3:8',                                               # b73
+    'C#3:4 G#2:8',                                               # b74
+    'D#3:8 B2:4',                                                # b75
+    'G#2:8 C#3:4',                                               # b76
+    'F#3:4 A#2:8',                                               # b77
+    'D#3:4 B2:8',                                                # b78
+    'G#2:12',                                                    # b79
+    'F#2:12',                                                    # b80
 ])
 entry('Sog', 35, 'Subject (soggetto returns, tenor)')
 entry('IVdx', 33, 'Canon IV dux: subject')
@@ -455,20 +483,54 @@ entry('IIco', 59, 'Stretto: canon II comes, subject on A#')
 #   canon at the octave - "Ich bin so lang nicht bei dir gewest" (Bach's tenor tune), the follower
 #     two bars behind, as in Var. 30;
 #   canon at the seventh - "Kraut und Ruben haben mich vertrieben", the follower a seventh below,
-#     two bars behind.
+#     one bar behind.
 ICH = ['F#3:3 G#3:3 A#3:3 B3:3', 'C#4:3 B3:3/2 A#3:3/2 G#3:3 F#3:3/2 G#3:3/2',
        'A#3:3 G#3:3 F#3:6~', 'F#3:6 E#3:3 D#3:3/2 E#3:3/2']           # + arrival on F#
 KRAUT2 = ['A#5:3 B5:3 C#6:3 A#5:3', 'B5:3 A#5:3 G#5:3 F#5:3', 'E#5:3 F#5:3 G#5:3 E#5:3']  # + F#
 KRAUT1 = ['C#6:6 C#6:6', 'D#6:6 D#6:6', 'C#6:3 D#6:3 C#6:3 B5:3', 'A#5:3 G#5:3 F#5:6']
 
-put('Idx', 65, ICH + ['F#3:6 R:6'])                       # (upbeat C#3 at the end of bar 64)
-put('Ico', 66, ['R:9 C#4:3'] + [shift(b, 7) for b in ICH] + ['F#4:6 E#4:6'])   # arrival over V7: 4-3
+put('Idx', 65, ICH + [                                    # (upbeat C#3 at the end of bar 64)
+    'F#3:6 R:6',                                               # b69
+    'R:12',                                                      # b70
+    'R:12',                                                      # b71
+    'R:12',                                                 # b72
+])
+put('Ico', 66, ['R:9 C#4:3'] + [shift(b, 7) for b in ICH] + [
+    'F#4:6 E#4:6',                                             # b71 (arrival over V7: 4-3)
+])
 entry('Idx', 64, 'Quodlibet: Ich bin so lang nicht bei dir gewest', beat=Fr(9, 4), n=5)
 entry('Ico', 66, 'Canon at the octave: Ich bin so lang', beat=Fr(9, 4), n=5)
-put('IIdx', 69, KRAUT2 + ['F#5:6 R:6'])
-put('IIco', 71, [shift(b, -6) for b in KRAUT2] + ['G#4:6 R:6'])
+put('IIdx', 69, KRAUT2 + [
+    'F#5:6 R:6',                                               # b72
+])
+put('IIco', 70, [shift(b, -6) for b in KRAUT2] + [
+    'A#4:6 R:6',                                               # b73 (free close)
+])
 entry('IIdx', 69, 'Quodlibet: Kraut und Ruben', n=4)
-entry('IIco', 71, 'Canon at the 7th below: Kraut und Ruben', n=4)
+entry('IIco', 70, 'Canon at the 7th below: Kraut und Ruben', n=3)
+
+# Variation 10 (bars 73-80): the subject (on A-sharp, as canon VI's comes first sang it) against
+# "Ich bin" in canon at the octave again; then all three tunes at once over the last four ground
+# notes - Kraut und Ruben's two phrases together with the tail of "Ich bin" - and the tutti close.
+put('IIdx', 73, [shift(b, 2) for b in subj(1)] + [
+])
+entry('IIdx', 73, 'Quodlibet: subject on A# against Ich bin')
+put('Ico', 72, ['R:9 C#4:3'] + [shift(b, 7) for b in ICH] + [
+    'F#4:6 R:6',                                               # b77
+])
+entry('Ico', 72, 'Ich bin so lang (again)', beat=Fr(9, 4), n=5)
+put('Idx', 74, ['R:9 C#3:3'] + ICH + [
+    'F#3:6 E#3:3 G#3:3',                                       # b79
+    'F#3:12',                                                  # b80
+])
+entry('Idx', 74, 'Canon at the octave below: Ich bin so lang', beat=Fr(9, 4), n=5)
+put('VIdx', 77, KRAUT1 + [
+])
+entry('VIdx', 77, 'Kraut und Ruben (first phrase)', n=4)
+put('IIIdx', 77, [shift(b, -7) for b in KRAUT2] + [
+    'F#4:12',                                                  # b80
+])
+entry('IIIdx', 77, 'Kraut und Ruben (second phrase), with it', n=4)
 
 # ---- fundamentum for the rest (plain ground; ornamented later where the texture asks for it)
 put('Fund', 33, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])

@@ -16,11 +16,13 @@ KOMM ICH HER" (in C), transposed to G; cross-checked against Bach's setting BWV 
 music21 corpus bach/bwv248.23-s), whose bare notes agree apart from Bach's passing notes.  The
 cantus is isometric (half notes; the C-B of line 4 in quarters), as in Bach's settings.
 
-Every note is written here.  Thematic statements are explicit transforms (W.transpose,
+Every note is written here.  Thematic statements are explicit transforms (W.transpose, dshift,
 W.invert_diatonic, W.scale_rhythm) of the hand-written subjects and of the chorale lines; every
 other note is a literal token string placed at bar.beat.  Scratch searches (session scratchpad)
-only proposed *placements* of whole chorale lines (which line, when, at what pitch level and speed,
-rectus or inversus); no code chooses or alters pitches.
+proposed *placements*: of the chorale lines for the summit (which line, when, at what level and
+speed, rectus or inversus), and -- from b32 on -- of subject statements, heads and two-beat subject
+figures in slots the composer designated, taking the first clean level/octave from the composer's
+list of preferred forms.  No code invents a pitch; NOTES.md describes exactly what the harness did.
 """
 from __future__ import annotations
 
@@ -154,7 +156,7 @@ def build(nbars, path=None):
             'key': 'G', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
             'tempo_text': 'Allegro, con allegrezza',
             'movement_number': 15, 'piece_type': 'fugue', 'edition': 'third',
-            'score_layout': {'paper': 'a2', 'staff_size': 13, 'staff_distance': 8}}
+            'score_layout': {'paper': 'a2', 'staff_size': 17, 'staff_distance': 9}}
     meta.update(TEMPO)
     voices = [(LONG[i], NAMES[i], CLEF[i], BASEVEL[i]) for i in range(len(NAMES))]
 
@@ -168,7 +170,7 @@ def build(nbars, path=None):
                          subject=S1, dynamics=dynamics)
 
 
-BPM = 80
+BPM = 66
 
 
 # ================================================================ SECTION I: Coro I, line 1 (b1-15)
@@ -347,7 +349,7 @@ theme('S4', 40, 1, dshift(inv(S1, 'G4'), 4), 'IV: subject 1 inverted (summit str
 theme('T1', 40, 3, oc(dshift(inv(S1, 'G4'), 4), -1), 'I: subject 1 inverted (summit stretto)', 2)
 theme('S4', 42, 2, dshift(S1, 4), 'IV: subject 1 (summit stretto)', 2)
 theme('S2', 43, 4, S1, 'II: subject 1 (summit stretto)', 2)
-theme('T4', 44, 1, oc(dshift(S1, 4), -1), 'IV: subject 1 (summit stretto)', 2)
+theme('T4', 44, 1, ' '.join(oc(dshift(S1, 4), -1).split()[:-2]) + ' A3:4', 'IV: subject 1 (summit stretto; last turn simplified)', 2)
 theme('S1', 44, 2, dshift(inv(S1, 'G4'), 3), 'I: subject 1 inverted (summit stretto)', 2)
 theme('B1', 39, 1, oc(head(S4, 9), -1), 'I: subject 4 head (bass)', 1)
 theme('T3', 39, 3, oc(head(S3), -1), 'III: subject 3 head', 1)
@@ -363,7 +365,6 @@ theme('A2', 46, 1, head(S1), 'II: subject 1 head', 1)
 theme('T3', 46, 1, oc(head(S3), -1), 'III: subject 3 head', 1)
 theme('T4', 46, 2, head(S4, 9), 'IV: subject 4 head', 1)
 theme('S1', 46, 3, head(S1), 'I: subject 1 head', 1)
-theme('B2', 47, 1, oc(head(S4, 9), -1), 'II: subject 4 head', 1)
 theme('A1', 47, 1, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'I: subject 1 head inverted', 1)
 # Every free voice joins with the subjects' own figures -- the bells of subject 1 (the falling octave
 # in sixteenths), the fanfare tattoo of subject 2, the siciliano run of subject 3, the rounds and the
@@ -422,9 +423,83 @@ put('S3', 46, 1, dshift(BELLS, 3))  # subject 1 bells
 put('S3', 46, 3, dshift(BELLS, 3))  # subject 1 bells
 put('A3', 46, 1, dshift(RUN, 0))  # subject 3 run
 put('A3', 46, 3, dshift(CHANGE, 0))  # subject 4 change
-put('B1', 45, 4, 'D3:4')
 # b47-51: the summit dissolves.  Over a bass falling by step (C B | E D | C B | G A | D) the Coro IV
 # alto finishes line 4 per augmentationem, and the Coro I soprano sings the fugue subject itself in
 # augmentation -- the quick figure slowing towards the chorale it came from.
-put('B1', 47, 1, 'C2:8 B1:8 E2:8 D2:8 C2:8 B1:8 G1:8 A1:8 D2:8')
+put('B1', 47, 1, 'C2:8 B1:8 E2:8 D2:8 C2:8 B1:8 E2:8 A1:8 D2:8')
 theme('S1', 47, 3, oc(aug(S1, 2), 1), 'I: subject 1 per augmentationem', 4)
+# ... and the other subjects slow down with it: the fanfare, the rounds and the siciliano, each at half speed.
+theme('A2', 47, 3, aug(head(S2), 2), 'II: subject 2 head per augmentationem', 2)
+theme('T2', 48, 1, aug(head(S4, 9), 2), 'II: subject 4 head per augmentationem', 2)
+theme('S2', 48, 3, aug(head(S3), 2), 'II: subject 3 head per augmentationem', 2)
+theme('A1', 50, 3, dshift(head(S1), 4), 'I: subject 1 head', 1)
+
+
+# ================================================================ CODA (b51.3-59): line 1 in augmentation
+# The Coro IV bass sings line 1 per augmentationem (whole notes, from b51.3): G | F# | E | F# | D | E |
+# F# | G.  Over its last three notes the Coro I tenor signs B-A-C-H: B-flat as the seventh of C7 over
+# the E (resolving to A), A over the F#, C as the seventh of D7, and B as the third of the last chord --
+# the signature is the cadence.  The Coro IV alto resolves the canon's last C to B as the coda begins.
+theme('B4', 51, 3, ' '.join(oc(aug(L1, 2), -3).split()[:-1]) + ' G2:24', 'IV: chorale line 1 per augmentationem (bass)', 8)
+put('A4', 51, 3, 'B3:8 A3:8 G3:8')
+theme('T1', 56, 3, 'Bb3:16 A3:8 C4:8 B3:24', 'I: B-A-C-H', 3)
+# Above it the subject answers itself at every beat, rectus and inversus (a stretto at one beat over
+# the chorale at one-eighth of its speed), and the bells ring down.
+theme('S1', 51, 3, dshift(head(S1), 0), 'I: subject 1 head (coda stretto)', 1)
+theme('T2', 51, 4, oc(dshift(head(inv(S1, 'G4')), 3), -1), 'II: subject 1 head inverted (coda stretto)', 1)
+theme('S3', 52, 1, dshift(head(S1), 4), 'III: subject 1 head (coda stretto)', 1)
+theme('A2', 52, 2, dshift(head(inv(S1, 'G4')), 0), 'II: subject 1 head inverted (coda stretto)', 1)
+theme('T3', 52, 3, dshift(head(S1), 0), 'III: subject 1 head (coda stretto)', 1)
+theme('S2', 52, 4, dshift(head(inv(S1, 'G4')), 0), 'II: subject 1 head inverted (coda stretto)', 1)
+theme('A1', 53, 1, dshift(head(S1), 0), 'I: subject 1 head (coda stretto)', 1)
+theme('B3', 53, 2, oc(dshift(head(S1), 4), -1), 'III: subject 1 head (coda stretto)', 1)
+theme('S4', 53, 3, dshift(head(inv(S1, 'G4')), 0), 'IV: subject 1 head inverted (coda stretto)', 1)
+theme('T4', 53, 4, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'IV: subject 1 head inverted (coda stretto)', 1)
+theme('A3', 54, 1, oc(dshift(head(S3), 4), -1), 'III: subject 3 head (coda stretto)', 1)
+theme('B2', 54, 2, oc(dshift(head(S1), 4), -1), 'II: subject 1 head (coda stretto)', 1)
+theme('S1', 54, 3, dshift(head(S1), 4), 'I: subject 1 head (coda stretto)', 1)
+theme('S2', 55, 1, dshift(head(S2), 4), 'II: subject 2 head (coda stretto)', 1)
+theme('A4', 55, 1, dshift(head(S4, 9), 0), 'IV: subject 4 head (coda stretto)', 1)
+theme('T3', 55, 2, dshift(head(S1), 0), 'III: subject 1 head (coda stretto)', 1)
+theme('S3', 55, 3, dshift(head(S3), 0), 'III: subject 3 head (coda stretto)', 1)
+put('A1', 55, 3, dshift(BELLS, 0))  # bells
+put('A2', 55, 3, oc(dshift(BELLS, 4), -1))  # bells
+put('T1', 55, 1, oc(dshift(ROUNDS, 4), -1))  # rounds
+put('S4', 56, 1, dshift(BELLS, 0))  # bells
+put('A3', 56, 1, dshift(ROUNDS, 0))  # rounds
+# b56.3-59: the cadence C7/E (B-flat) - D7/F# (A, C) - G (B).  Eight voices carry it -- the soprano
+# rises G-D, the alto falls C-A-G, the Coro II soprano comes in on the D7 -- and the other eight
+# return together on the last chord: all sixteen.
+put('S1', 56, 3, 'G5:16 D6:16 B5:24')
+put('S2', 56, 3, 'R:16 A5:16 D6:24')
+put('A1', 56, 3, 'C5:16 A4:16 G4:24')
+put('A2', 56, 3, 'G4:16 R:16 D5:24')
+put('T2', 56, 3, 'R:16 D4:16 D4:24')
+put('B1', 56, 3, 'C3:16 D3:16 G2:24')
+put('S3', 58, 3, 'G5:24')
+put('S4', 58, 3, 'B4:24')
+put('A3', 58, 3, 'B4:24')
+put('A4', 58, 3, 'G4:24')
+put('T3', 58, 3, 'G3:24')
+put('T4', 58, 3, 'D4:24')
+put('B2', 58, 3, 'D3:24')
+put('B3', 58, 3, 'B2:24')
+
+
+# ================================================================ tempo, dynamics, build
+# Quarter = 66.  Small breaths at the section cadences; the summit broadens as line 1 enters high
+# above (b39-40) to 58, the dissolution slows to 52 for the coda, and the last chord is long.
+TEMPO = {'tempo_map': [[0, 66], [52, 66], [56, 60, 'ramp'], [56, 66],
+                       [120, 66], [124, 60, 'ramp'], [124, 66],
+                       [148, 66], [156, 58, 'ramp'],
+                       [184, 58], [202, 52, 'ramp'],
+                       [222, 52], [230, 42, 'ramp'], [236, 32, 'ramp']]}
+# phrase dynamics (velocity offsets by bar): the siciliano softer, the peal and the summit loudest
+DYN = {1: -4, 11: 0, 15: 2, 20: 3, 24: -3, 28: -1, 32: 3, 35: 5, 39: 8, 41: 10, 47: 5, 51: 3, 56: 5, 58: 9}
+
+if __name__ == '__main__':
+    end = max((s + dur16(t)) for v in VO.values() for s, t in v)
+    nb = int(sys.argv[1]) if len(sys.argv) > 1 else int(-(-end // 16))
+    out = Path(sys.argv[2]) if len(sys.argv) > 2 else None
+    build(nb, out)
+    print('bars', nb)

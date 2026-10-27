@@ -201,6 +201,12 @@ def summit(s0):
     T('OS', 17.5, dsh(S8, 6), 'summit: subject 8 (line 8)')
     T('RT', 13, S6, 'summit: subject 6 (line 6), at home')
     T('RS', 19.5, S2, 'summit: subject 2 (line 2), closing on G')
+    T('RB', 9.5, oc(dsh(S8, 6), -2), 'summit: subject 8 (line 8), tenor')
+    # ---- free lines (hand-written), t in beats from bar s0 beat 1
+    T('OS', 4, 'G5:8 F#5:8 G5:4 D6:8 C6:4 Bb5:12 C6:2 D6:8')
+    T('OS', 21.5, 'A5:2 D6:4 C6:4 Bb5:16')
+    T('HS1', 16, 'A5:8 G5:4 A5:4 E5:8 F#5:8 G5:16')
+    # FREE-END
 
 
 summit(SUM)
