@@ -251,6 +251,18 @@
    ]
   },
   {
+   "name": "Fugue XXIV \u00b7 B minor (new, twenty-five voices)",
+   "pieces": [
+    {
+     "id": "fugue-24",
+     "title": "Fugue XXIV \u00b7 twenty-five voices",
+     "score": "cycle/24-b-minor/fugue.json",
+     "tag": "new",
+     "notes": "Bach ends Book I with a B-minor fugue whose subject uses all twelve notes. This subject does the same: three dotted 'leans' and a chromatic climb, ending on the leading note. Its exact mirror is also twelve-tone.\n\nThe voices gather one at a time over 41 bars: exposition, a mirror stretto (subject against its own inversion), a dominant pedal over which the heads of Fugues V and VIII appear, and the subject in two-fold augmentation in the bass. At bar 43 the 25th voice, the contrabass, enters with the subject at quarter speed, and over it the subjects of Fugues V, VIII, II and IV each arrive at the point where the cantus's note makes their own key a harmony. After the arrival on B major, Fugue V's subject returns in B major, Fugue I's stretto ladder climbs once more, the subject's and the mirror's tails close in on one B, and the last chord gathers all twenty-five voices by step.\n\nNo prelude yet."
+    }
+   ]
+  },
+  {
    "name": "Appendix \u00b7 canons and contrapuncti (new)",
    "pieces": [
     {

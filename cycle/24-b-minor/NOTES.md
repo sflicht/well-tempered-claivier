@@ -1,7 +1,8 @@
 # Fugue XXIV in B minor, twenty-five voices
 
-63 bars of 4/4. Quarter = 63 for the build-up, pushing to 69 (bars 26–37). It broadens to
-58 for the cantus (bars 43–50) and to 50 at the arrival (bar 53). The release slows to 38.
+63 bars of 4/4. Quarter = 63 for the build-up, pushing to 69 (reached at bar 37, held to
+bar 41). It broadens to 58 for the cantus (bars 43–51) and to 50 by the start of the release
+(bar 54). The release slows to 38.
 The rendered audio lasts 4:18. Sources: `fugue.py` assembles `build1.py` … `build5.py`
 (build-up), `conv_a.py`, `conv_b.py`, `conv_c.py` (convergence) and `release.py`. The shared
 material is in `xxiv.py`. Built score: `fugue.json`. Renders: `renders/fugue.{pdf,mid,musicxml,ly,mp3}`
@@ -51,12 +52,12 @@ never doubles a theme in octaves.
 | 29–31 | S in E with CS1 | A5 S, A2 CS1 (new voice), S1 descant, T4's R, Br2 a line under the tenors, T2 a long breath (B–C–G–B–C#), A1 knocking |
 | 32–36 | **dominant pedal on C#** | B2 holds C#2 from 32.4½ to the end of bar 36. Over it: the subject's head climbs T5 (b32), A3 (b33), S4 (b34); S3 sings CS1 complete (32.2–34.4); A1 sings **Fugue V's head** transposed to C# major (34.3–35.2); Br2 sings **Fugue VIII's head** transposed to F# minor (35.3–36.4), whose last note resolves into bar 37; B3 knocks U on the pedal (b33–34, again b36–37). S1, S2, A2, A4, A5, T2, Br3, Br5 and B1 sustain and suspend. Harmony: 32 i \| V/V–V; 33–34 i⁶₄ \| V(7), the heads' B# as appoggiaturas; 35 V7 \| i⁶₄; 36 V7 – V – i |
 | 37–41 | S ×2 in F# minor | B2 in augmentation; S3 sings CS1 in augmentation complete except its last note (the convergence takes that over). Long-breath lines in S1, S2, A4, T5; I's head in T3 (b37, F# minor) and A2 (b38, on D# over G#7); U in Br2 (b37), T2 (b38), A3 (b39); R in A5 (b38), T4 (b40), T3 (b41). Harmony F#m – G#ø7 – G#7/B# – C#7 – F#7/A# – Bm – G (Neapolitan) – C#ø7 – F#7 – Bm/D – B#°7 – C#m/E – C#7/E# |
-| 42 (c0) | lead-in, F#7 | A# only in S2, E only in S1; every other voice sits on F# or C# |
+| 42 (c0) | lead-in, F#7 | one A# (S2) and one E per beat (A5 on beats 1–2, S1 from beat 3); every other voice sits on F# or C# on the beats |
 | 43–53 (c1–c11) | **the convergence** | cantus S ×4 in B5; guests from Fugues V, VIII, II, IV (below) |
 | 54–55 | release | the arrival's lines let go one by one; Fugue V's subject in B major (T3) |
 | 55–59 | Fugue I's ladder | canon at the octave three eighths apart (Fugue I's own rung R3): Br2 → T5, then A2 → S1, an octave higher. Each entry takes over the last note of the one before. T2 and A4 hold the tonic as inner lines (resting in the canon's F#7 bars) |
 | 60–61 | mirror wedge | T1: S's tail G–G#–A–A# ×4; A3: I's tail D#–D–C#–C ×4; over a B pedal (cantus) and an E pedal (Br2). Br3 and T4 join. Em(maj7) – E7 – A – French sixth → both tails close on one B4 |
-| 62–63 | last chord | B major. Ten lines carry on into it (T1, A3, A2, S1, B1, Br2, T2, A4, Br3, T4); the other fifteen voices arrive one to three per beat, each from a neighbour note resolving by step, one falling and one or two rising on each beat |
+| 62–63 | last chord | B major. Eleven lines carry on into it (the cantus's B pedal, T1, A3, A2, S1, B1, Br2, T2, A4, Br3, T4); the other fourteen voices arrive one to three per beat over six beats, each from a neighbour note resolving by step, one falling and one or two rising on each beat |
 
 ## The build-up: when each voice enters and what it changes
 
@@ -100,7 +101,7 @@ c6 A#7/D# . D#m . D#°7 . Em | c7 C | c8 B+ (B D# G) | c9 C/G . E7/G# | c10 A7 .
 The working rules for every bar: long-breath lines move on beats 1 and 3, suspension chains on
 2 and 4, U-figures land on 1 or 3, and the sixteenth runs are relayed. At no onset do two voices
 move between the same two pitch classes (checked with `hot.py`). In c0–c4 each beat has one
-seventh and one leading tone at most: the F#7 of c0 has A# only in S2 and E only in S1; the
+seventh and one leading tone at most: the F#7 of c0 has its A# only in S2 and one E per beat (A5, then S1); the
 Bm7 of c1–c2 has its A only in Fugue V's subject; the C#ø7 has one B; the E#°7 has one D; the
 C#7/E# has its E# only in the cantus.
 
@@ -161,8 +162,8 @@ theme entries, because the Fugue V quotation is a fragment; the finder was not r
    single fixes in bars 16, 17, 20, 22, 25 and 26.
 4. **The ending.** The release keeps 8–9 lines in every bar between the arrival and the last
    chord (first version: 4–6). T2 and A4 hold the tonic as inner lines and move with the wedge;
-   Br3 and T4 join for the wedge. Ten lines carry on into the last chord, and the other
-   fifteen voices arrive one to three per beat over two bars, each by step.
+   Br3 and T4 join for the wedge. Eleven lines carry on into the last chord, and the other
+   fourteen voices arrive one to three per beat over six beats, each by step.
 
 ## Measurements
 
@@ -201,12 +202,12 @@ so that Fugues VIII and II can be heard.
 - **Doubled leading tone, b9.2 (S2 B#4 = C5, A3 B#4):** the answer's B# and CS1's B# meet
   at the unison for an eighth. Both notes are theme notes; I left them.
 - **Low-register seconds (58):** 19 are the last chord's low neighbour notes (C#2, A#2, C#3)
-  against the B1 pedal; 12 are the release's bass line moving against the same pedal; 17 are
-  in the new low lines of the pedal and S ×2 bars (for example Br5 F#2 against Br3 G#2,
-  b33.3). Any step into a low chord tone forms a second with the pedal or a neighbouring chord
+  against the B1 pedal; 12 are the release's bass line moving against the same pedal; 9 are
+  in the convergence; 18 are in bars 27–41, most in the new low lines of the pedal and S ×2
+  bars (for example Br5 F#2 against Br3 G#2, b33.3). Any step into a low chord tone forms a second with the pedal or a neighbouring chord
   tone, so I kept the step arrivals the brief asked for.
-- `hot.py` still lists three contrary-motion octaves (b29.3, b29.4½, b31.3). They are not
-  parallels in the critic's sense; two of them are the bass and a baritone meeting at a cadence.
+- `hot.py` still lists three octaves reached in contrary motion (b29.3, b29.4½, b31.3); the
+  critic does not count them as parallels.
 
 ## Method
 
