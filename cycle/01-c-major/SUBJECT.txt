@@ -1,0 +1,10 @@
+G4:2 C5:3 D5:1 E5:2 C5:2 G5:4 F5:1 E5:1 D5:1 C5:1 D5:2 G4:2 A4:1 B4:1 C5:1 B4:1 E5:2 F5:2 G5:2
+# Fugue I (C major, two voices) "Scala strettarum" - subject, fixed.
+# Units are sixteenths (wtclib tokens). The first note G4 is an EIGHTH-NOTE UPBEAT:
+# it falls on the last eighth of a 4/4 bar; C5 (dotted eighth) is the downbeat.
+# Length 32 sixteenths = upbeat + 1 bar + 7 eighths; it ends on G5 on beat 4 of its
+# second full bar (open, on the dominant), leaving the final eighth for the next upbeat.
+#   | G4 | C5. D5 E5 C5  G5(quarter)  F5 E5 D5 C5 | D5 G4  A4 B4 C5 B4  E5 F5 G5 |
+# Head motive: upbeat 4th G->C, dotted C-D, E-C, leap to G5 (quarter accent), sixteenth fall.
+# It combines with itself in stretto at every entry distance from 8 eighths to 1 eighth
+# (see NOTES-fugue.md for the ladder table).
