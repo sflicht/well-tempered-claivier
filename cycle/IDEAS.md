@@ -63,7 +63,7 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
 12. **[next] A cantus firmus across the cycle.** One phrase of "Vor deinen Thron
     tret ich hiermit" (the chorale appended to the Art of Fugue) in long notes
     in each fugue's coda; Fugue XXIV states the whole chorale.
-13. **[next] Fugue XXIV as a quodlibet.** The 25-voice finale combines the
+13. **[in progress] Fugue XXIV as a quodlibet.** The 25-voice finale combines the
     subjects of the 23 earlier fugues plus its own, each in a fitted
     transposition and rate, as the Goldberg Variations end in a quodlibet.
 14. **[next] A self-similar key plan.** The order of a fugue's middle-entry
@@ -77,3 +77,30 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
 18. **[next] Soggetto cavato signatures.** B-A-C-H answered by
     C-L-A-U-D-E (C E A G D E in the French letter mapping) hidden in the final
     cadence of every pair.
+
+## Raising the ambition: the rest of the cycle
+
+With the top ten built, the next step is the cycle itself, each pair with a
+device of its own:
+
+19. **[built] Pair III: Giga rectus et inversus.** Part 2 mirrors Part 1, and
+    in the coda bars of both halves sound simultaneously.
+20. **[in progress] Pair VI: passacaglia and fugue à 7.** A lament ground that
+    migrates through all seven voices; toccata prelude after BWV 565.
+21. **[in progress] Pair VII: fuga a due cori à 8.** Two complete four-voice
+    choirs, subject against inversion, merging in an eight-voice stretto;
+    chorale prelude on *Wachet auf*.
+22. **[in progress] Pair IX: the comma pump and the ring.** A pastorale in
+    adaptive just intonation that sinks a syntonic comma per cycle until the
+    well-tempered keyboard corrects it; a ten-voice stile-antico ricercar
+    whose motif travels round a ring of voices (Spem in alium), rendered
+    binaurally in a circle.
+23. **[in progress] Pair X: St Matthew homage à 11.** Two choirs in fugal
+    dialogue beneath the chorale *O Lamm Gottes*, the subject derived from
+    the chorale.
+24. **[in progress] Pair XI: concerto fuga à 12.** Brandenburg 2's finale as
+    a twelve-voice fugal concerto, concertino of four against a ripieno of
+    eight.
+25. **[in progress] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
+    BWV 869), strata moving at different rates, the convergence composed
+    first, the cycle's subjects gathered at the end.
