@@ -30,13 +30,13 @@ engraved PDFs are in each pair's `renders/` folder.
 | [XI](cycle/11-f-major/) | F major | à 12, *Concerto fuga* after Brandenburg 2's finale: concertino of four against a ripieno of eight, a trumpet that won't modulate, a tutti with all twelve lines moving | two-part invention after BWV 856 | new |
 | [XII](cycle/12-f-minor/) | F minor | à 13, *Fuga a 4 soggetti, compiuta*: the Art of Fugue's unfinished final fugue completed as Bach planned (three subjects incl. B-A-C-H plus the main theme, after Nottebohm) | (later) | first version; thickening to thirteen real lines in progress |
 | XIII | F♯ major | à 14, *fuga canonica* on the Goldberg ground: canons at every interval piling up, ending in the Var. 30 quodlibet | an Aria over the same ground | in progress |
-| XIV | F♯ minor | à 15, *Ricercar a 15* on Frederick the Great's Royal Theme, with the Musical Offering's canons and a canon per tonos | a trio sonata on the theme | in progress |
+| [XIV](cycle/14-f-sharp-minor/) | F♯ minor | à 15, *Ricercar a 15* on Frederick the Great's Royal Theme: the Musical Offering's canon by augmentation and contrary motion, then a canon per tonos rising through six keys to the summit | (later) | first version |
 | [XV](cycle/15-g-major/) | G major | à 16, on Luther's *Vom Himmel hoch*: four choirs, each with a subject from one chorale line; all four lines sound together at the summit (after BWV 769) | a shepherds' musette | new |
 | XVI | G minor | à 17, *Fantasia e fuga per Reincken*: Bach's 1720 Hamburg improvisation on *An Wasserflüssen Babylon* re-imagined, chorale canon in a double pedal, echo dialogues, a nod to BWV 542 | (optional) | in progress |
 | XVII | A♭ major | à 18 (concept chosen by its composer) | | in progress |
 | XVIII | G♯ minor | à 19 (concept chosen by its composer) | | in progress |
 | XIX–XXIII | | | | earlier drafts only (see below) |
-| XXIV | B minor | à 25, twelve-tone subject (after BWV 869), contrasting rates of motion, the cycle's subjects gathered in the convergence | (later) | in progress |
+| [XXIV](cycle/24-b-minor/) | B minor | à 25, twelve-tone subject (after BWV 869) and its twelve-tone mirror; the subject at quarter speed in the 25th voice while the subjects of Fugues V, VIII, II and IV arrive over it; Fugue I's ladder in the release | (in progress) | new |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:
 
