@@ -181,8 +181,7 @@ def summit(s0):
     bass on the strong beats; Ped. I follows three beats later, an octave higher, so that every move of
     the bass is met by a held note above it (suspensions)."""
     put('P2', s0, 3, cantus(10, -2, last=16 * 4))
-    put('P1', s0 + 1, 2, cantus(10, -1, last=12))
-    put('P1', s0 + 7, 3, 'Eb3:8 D3:8 G3:24')                              # free after the canon: the dim-7th neighbour
+    put('P1', s0 + 1, 2, cantus(10, -1, last=16 * 3 + 4))
 
     def T(v, t, toks, label=None):
         bar, beat = s0 + int(t // 4), Fr(t) - 4 * int(t // 4) + 1
@@ -230,7 +229,8 @@ def summit(s0):
     # the whole organ on the Picardy chord
     for v, p in (('HB', 'D3'), ('RB', 'G3'), ('RBr', 'D4'), ('HT', 'D4'), ('RT', 'G4'), ('HA', 'G4'),
                  ('RS', 'D5'), ('OT', 'D5'), ('HS2', 'G5'), ('RA', 'G5')):
-        T(v, 36, p + ':16')
+        T(v, 36, p + ':16') if v != 'HS2' else None
+    T('HS2', 30, 'F#5:8 G5:32')                                        # the leading tone of the dim-7th over the pedal
     # FREE-END
 
 
