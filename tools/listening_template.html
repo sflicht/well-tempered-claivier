@@ -1,0 +1,297 @@
+<title>The Well-Tempered clAIvier</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,700;1,500&family=Figtree:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a single score desk. Piano roll as the hero, transport under it,
+   temperament and voices as two side panels that stack on phones. */
+:root {
+  --paper: #f2f4f1; --desk: #e6e9e4; --ink: #1a2030; --muted: #5a6474; --rule: #c6ccd3;
+  --accent: #2c50cc; --accent-ink: #ffffff; --entry: #a86a12; --good: #1d7a55; --warn: #b4472a;
+  --v1: #2c50cc; --v2: #c0471c; --v3: #0f8a6c; --v4: #8a3fd9; --v5: #a86a12; --v6: #c42a74;
+  --v7: #0d7490; --v8: #5f9112; --v9: #6a7380;
+  --f-display: "Spectral", Georgia, "Times New Roman", serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #11141a; --desk: #191d25; --ink: #e5e8ee; --muted: #98a1b0; --rule: #2b313c;
+  --accent: #8ea6ff; --accent-ink: #0d1120; --entry: #e3b25a; --good: #5fd0a2; --warn: #ff9a7a;
+  --v1: #8ea6ff; --v2: #ff9466; --v3: #4fd1ad; --v4: #c69bff; --v5: #e3b25a; --v6: #ff7fb7;
+  --v7: #5fc8e6; --v8: #a5d65a; --v9: #aab2bf; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #11141a; --desk: #191d25; --ink: #e5e8ee; --muted: #98a1b0; --rule: #2b313c;
+  --accent: #8ea6ff; --accent-ink: #0d1120; --entry: #e3b25a; --good: #5fd0a2; --warn: #ff9a7a;
+  --v1: #8ea6ff; --v2: #ff9466; --v3: #4fd1ad; --v4: #c69bff; --v5: #e3b25a; --v6: #ff7fb7;
+  --v7: #5fc8e6; --v8: #a5d65a; --v9: #aab2bf; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px }
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 18px }
+header { display: grid; gap: 6px }
+.eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(28px, 6vw, 44px); line-height: 1.05; margin: 0; text-wrap: balance }
+h1 em { font-style: italic; font-weight: 500; color: var(--accent) }
+.lede { color: var(--muted); max-width: 64ch; margin: 0 }
+.picker { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+select, button { font: inherit; color: var(--ink) }
+select { background: var(--desk); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 10px; min-width: 0; max-width: 100%; flex: 1 1 260px }
+.btn { background: var(--desk); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 14px; cursor: pointer }
+.btn:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; min-width: 92px }
+.piece-head { display: grid; gap: 4px }
+.piece-head h2 { font-family: var(--f-display); font-weight: 500; font-size: clamp(22px, 4.4vw, 30px); margin: 0; text-wrap: balance }
+.sub { color: var(--muted); font-size: 14px }
+.tag { display: inline-block; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  border: 1px solid currentColor; border-radius: 999px; padding: 1px 8px; margin-left: 6px; vertical-align: middle }
+.tag.new { color: var(--accent) } .tag.fixed { color: var(--good) } .tag.before { color: var(--muted) }
+.stage { background: var(--desk); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden }
+canvas { display: block; width: 100%; touch-action: none }
+#roll { height: 260px }
+#map { height: 44px; border-top: 1px solid var(--rule); cursor: pointer }
+.transport { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.time { font-family: var(--f-mono); font-size: 13px; font-variant-numeric: tabular-nums; color: var(--muted); min-width: 150px }
+.slider { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted) }
+input[type=range] { accent-color: var(--accent); width: 120px }
+.panels { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px }
+@media (max-width: 760px) { .panels { grid-template-columns: 1fr } #roll { height: 220px } }
+.panel { display: grid; gap: 10px; align-content: start; min-width: 0 }
+.panel h3 { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0; font-weight: 600 }
+.seg { display: flex; flex-wrap: wrap; gap: 6px }
+.seg button { background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: 13.5px }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink) }
+#tchart { height: 120px }
+.tnote { font-size: 13.5px; color: var(--muted); margin: 0 }
+.tnote b { color: var(--ink); font-family: var(--f-mono); font-weight: 600; font-variant-numeric: tabular-nums }
+.voices { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px }
+.voice { display: flex; align-items: center; gap: 8px; border: 1px solid var(--rule); border-radius: 8px; padding: 6px 8px; cursor: pointer; background: transparent; text-align: left; min-width: 0 }
+.voice .sw { width: 12px; height: 12px; border-radius: 3px; flex: none }
+.voice .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13.5px; flex: 1; min-width: 0 }
+.voice .st { font-family: var(--f-mono); font-size: 10.5px; color: var(--muted) }
+.voice[data-state="muted"] { opacity: .45 }
+.voice[data-state="solo"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink) }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--f-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums }
+.stats b { color: var(--ink); font-weight: 600 }
+.notes { max-width: 70ch; white-space: pre-line; margin: 0 }
+.entries { font-size: 13px; color: var(--muted) }
+.entries span { display: inline-block; margin: 0 10px 4px 0 }
+.entries i { font-style: normal; color: var(--entry); font-family: var(--f-mono) }
+footer { color: var(--muted); font-size: 12.5px; max-width: 70ch }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">24 keys · N + 1 voices · synthesised from the written score</div>
+    <h1>The Well-Tempered <em>clAIvier</em></h1>
+    <p class="lede">Each movement plays from its event score, here in your browser. Switch the tuning to hear what “well-tempered” meant: in meantone the remote keys sour, in Bach–Lehman every key is usable but each has its own colour. Tap a voice to solo it, tap again to mute it.</p>
+  </header>
+
+  <div class="picker">
+    <select id="piece" aria-label="Movement"></select>
+    <button class="btn" id="prev" aria-label="Previous movement">‹ Prev</button>
+    <button class="btn" id="next" aria-label="Next movement">Next ›</button>
+  </div>
+
+  <section class="piece-head">
+    <h2 id="ptitle"></h2>
+    <div class="sub" id="psub"></div>
+    <div class="stats" id="pstats"></div>
+  </section>
+
+  <div class="stage">
+    <canvas id="roll" aria-label="Piano roll of the current movement"></canvas>
+    <canvas id="map" aria-label="Overview; tap to jump"></canvas>
+  </div>
+
+  <div class="transport">
+    <button class="btn primary" id="play">Play</button>
+    <button class="btn" id="rewind" aria-label="Back to the start">⏮</button>
+    <span class="time" id="clock">bar 1 · 0:00</span>
+    <label class="slider" for="tempo">Tempo <input type="range" id="tempo" min="50" max="140" value="100"><span id="tempoval">100%</span></label>
+  </div>
+
+  <div class="panels">
+    <section class="panel">
+      <h3>Tuning</h3>
+      <div class="seg" id="temps" role="group" aria-label="Temperament"></div>
+      <canvas id="tchart" aria-label="Deviation of each pitch class from equal temperament, in cents"></canvas>
+      <p class="tnote" id="tnote"></p>
+    </section>
+    <section class="panel">
+      <h3>Voices</h3>
+      <div class="voices" id="voices"></div>
+      <div class="entries" id="entries"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h3>About this movement</h3>
+    <p class="notes" id="pnotes"></p>
+  </section>
+
+  <footer id="foot">Sound is a simple synthesised keyboard, not a recording. Rendered MP3s and engraved PDFs live in the repository next to each score.</footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const TNAMES = {'equal':'Equal', 'bach-lehman':'Bach–Lehman 1722', 'werckmeister3':'Werckmeister III', 'vallotti':'Vallotti', 'meantone':'¼-comma meantone'};
+const TBLURB = {
+  'equal':'Every fifth narrowed by 2¢. All keys identical; no key has a colour of its own.',
+  'bach-lehman':'Lehman’s reading of the loops on Bach’s 1722 title page: C–E region sweet, sharp keys brighter, every key playable.',
+  'werckmeister3':'Four narrowed fifths (C–G–D–A, B–F♯). Near keys pure-ish, remote keys tense.',
+  'vallotti':'Six narrowed fifths F–B, six pure. A gentle circulating temperament.',
+  'meantone':'Pure major thirds in the near keys, a howling wolf between G♯ and E♭. The system the well-tempered keyboard escaped.'
+};
+const PCN = ['C','C♯','D','E♭','E','F','F♯','G','A♭','A','B♭','B'];
+const pieces = []; DATA.groups.forEach(g => g.pieces.forEach(p => { p.group = g.name; pieces.push(p); }));
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const vcol = i => css('--v' + (1 + i % 9));
+let cur = null, temp = 'bach-lehman', tempo = 1, state = {};
+let ctx = null, master = null, wave = null, playing = false, startCtx = 0, startPos = 0, ptr = 0, timer = null, live = new Set(), flat = [];
+try { const t = localStorage.getItem('clav-temp'); if (t && DATA.temps[t]) temp = t; } catch (e) {}
+
+// ---------- piece selection ----------
+const sel = $('piece');
+DATA.groups.forEach(g => { const og = document.createElement('optgroup'); og.label = g.name;
+  g.pieces.forEach(p => { const o = document.createElement('option'); o.value = p.id; o.textContent = p.title + (p.tag ? '  · ' + p.tag : ''); og.appendChild(o); });
+  sel.appendChild(og); });
+sel.onchange = () => load(sel.value);
+$('prev').onclick = () => step(-1); $('next').onclick = () => step(1);
+function step(d) { const i = pieces.findIndex(p => p.id === cur.id); load(pieces[(i + d + pieces.length) % pieces.length].id); }
+function load(id) {
+  stop(); cur = pieces.find(p => p.id === id) || pieces[0]; sel.value = cur.id;
+  if (location.hash.slice(1) !== cur.id) history.replaceState(null, '', '#' + cur.id);
+  state = {}; startPos = 0;
+  cur.barQ = cur.meter[0] * 4 / cur.meter[1];
+  cur.end = Math.max(...cur.voices.map(v => v.e.length ? v.e[v.e.length - 1][0] + v.e[v.e.length - 1][1] : 0));
+  const all = cur.voices.flatMap(v => v.e.map(e => e[2])); cur.lo = Math.min(...all) - 2; cur.hi = Math.max(...all) + 2;
+  flat = []; cur.voices.forEach((v, i) => v.e.forEach(e => flat.push([e[0], e[1], e[2], e[3], i]))); flat.sort((a, b) => a[0] - b[0]);
+  $('ptitle').innerHTML = esc(cur.title) + (cur.tag ? `<span class="tag ${cur.tag}">${esc(cur.tag)}</span>` : '');
+  $('psub').textContent = `${cur.group} · ${cur.key.trim()} · ${cur.meter[0]}/${cur.meter[1]} · ♩ = ${Math.round(cur.bpm)}${cur.sub ? ' · ' + cur.sub : ''}`;
+  const s = cur.stats || {};
+  $('pstats').innerHTML = s.error ? '' : `<span><b>${s.bars}</b> bars</span><span><b>${s.voices}</b> voices</span><span><b>${fmt(s.sec)}</b></span>`+
+    `<span>parallel 5ths/8ves on beats <b>${s.par}</b></span><span>unresolved dissonances <b>${s.unres}</b></span><span>mean moving voices <b>${s.moving}</b></span>`;
+  $('pnotes').textContent = cur.notes || '';
+  const ve = $('voices'); ve.innerHTML = '';
+  cur.voices.forEach((v, i) => { const b = document.createElement('button'); b.className = 'voice'; b.type = 'button'; b.dataset.state = 'on';
+    b.innerHTML = `<span class="sw" style="background:${vcol(i)}"></span><span class="nm">${esc(v.n)}</span><span class="st">${v.e.length}</span>`;
+    b.onclick = () => cycleVoice(i); ve.appendChild(b); });
+  $('entries').innerHTML = cur.entries.length ? cur.entries.slice(0, 60).map(e => `<span><i>b${barOf(e[1])}</i> ${esc(cur.voices[e[0]] ? cur.voices[e[0]].a : '')} ${esc(e[2])}</span>`).join('') : '';
+  drawMap(); draw(); tchart();
+}
+function cycleVoice(i) {
+  const st = state[i] || 'on'; const solos = Object.values(state).filter(x => x === 'solo').length;
+  state[i] = st === 'on' ? 'solo' : st === 'solo' ? 'muted' : 'on';
+  if (st === 'on' && solos) state[i] = 'solo';
+  [...$('voices').children].forEach((b, k) => b.dataset.state = state[k] || 'on');
+}
+function audible(i) { const solos = Object.keys(state).filter(k => state[k] === 'solo'); if (state[i] === 'muted') return false; return !solos.length || state[i] === 'solo'; }
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = s => { s = Math.max(0, s || 0); return Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0'); };
+const barOf = q => 1 + Math.floor(q / cur.barQ + 1e-6);
+
+// ---------- audio ----------
+function ensureAudio() {
+  if (ctx) return;
+  ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const comp = ctx.createDynamicsCompressor(); comp.threshold.value = -18; comp.ratio.value = 4;
+  master = ctx.createGain(); master.gain.value = 0.9;
+  const dry = ctx.createGain(); dry.gain.value = 0.8; const wet = ctx.createGain(); wet.gain.value = 0.22;
+  const rev = ctx.createConvolver(); const len = ctx.sampleRate * 2.2, ir = ctx.createBuffer(2, len, ctx.sampleRate);
+  for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let k = 0; k < len; k++) d[k] = (Math.random() * 2 - 1) * Math.pow(1 - k / len, 3.2); }
+  rev.buffer = ir; master.connect(dry); master.connect(rev); rev.connect(wet); dry.connect(comp); wet.connect(comp); comp.connect(ctx.destination);
+  const n = 12, re = new Float32Array(n), im = new Float32Array(n);
+  [0, 1, .42, .26, .18, .1, .07, .045, .03, .02, .012, .008].forEach((a, k) => im[k] = a);
+  wave = ctx.createPeriodicWave(re, im);
+}
+const hz = p => 440 * Math.pow(2, (p - 69 + DATA.temps[temp][((p % 12) + 12) % 12] / 100) / 12);
+function note(when, dur, p, v) {
+  const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
+  o.setPeriodicWave(wave); o.frequency.value = hz(p);
+  f.type = 'lowpass'; f.frequency.value = Math.min(9000, 900 + v * 40 + (p - 40) * 30);
+  const peak = Math.pow(v / 127, 1.6) * 0.16, tau = Math.max(0.25, Math.min(2.4, 1.9 - (p - 60) * 0.03));
+  g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(peak, when + 0.005);
+  g.gain.setTargetAtTime(peak * 0.25, when + 0.005, tau);
+  const off = when + Math.max(0.05, dur); g.gain.setTargetAtTime(0, off, 0.07);
+  o.connect(f); f.connect(g); g.connect(master); o.start(when); o.stop(off + 0.6);
+  live.add(o); o.onended = () => live.delete(o);
+}
+const secPerQ = () => 60 / (cur.bpm * tempo);
+function pos() { return playing ? startPos + (ctx.currentTime - startCtx) / secPerQ() : startPos; }
+function play() {
+  ensureAudio(); if (ctx.state === 'suspended') ctx.resume();
+  if (startPos >= cur.end - 0.01) startPos = 0;
+  playing = true; startCtx = ctx.currentTime + 0.08; ptr = flat.findIndex(n => n[0] >= startPos - 1e-6); if (ptr < 0) ptr = flat.length;
+  $('play').textContent = 'Pause'; timer = setInterval(sched, 30); sched(); requestAnimationFrame(tick);
+}
+function sched() {
+  const ahead = ctx.currentTime + 0.25, spq = secPerQ();
+  while (ptr < flat.length) { const [t, d, p, v, i] = flat[ptr]; const when = startCtx + (t - startPos) * spq;
+    if (when > ahead) break; if (audible(i) && when >= ctx.currentTime - 0.02) note(when, d * spq * 0.97, p, v); ptr++; }
+  if (pos() >= cur.end + 0.5) { stop(); startPos = 0; draw(); }
+}
+function stop() { if (!ctx) { playing = false; return; } if (playing) startPos = pos(); playing = false; clearInterval(timer);
+  live.forEach(o => { try { o.stop(); } catch (e) {} }); live.clear(); $('play').textContent = 'Play'; }
+$('play').onclick = () => playing ? stop() : play();
+$('rewind').onclick = () => { const w = playing; stop(); startPos = 0; draw(); if (w) play(); };
+$('tempo').oninput = e => { const w = playing; if (w) stop(); tempo = e.target.value / 100; $('tempoval').textContent = e.target.value + '%'; if (w) play(); };
+function tick() { draw(); if (playing) requestAnimationFrame(tick); }
+
+// ---------- drawing ----------
+function fit(c) { const r = c.getBoundingClientRect(), d = window.devicePixelRatio || 1; c.width = Math.round(r.width * d); c.height = Math.round(r.height * d); const g = c.getContext('2d'); g.setTransform(d, 0, 0, d, 0, 0); return [g, r.width, r.height]; }
+function draw() {
+  if (!cur) return; const [g, W, H] = fit($('roll')); const now = pos();
+  const span = Math.max(cur.barQ * 4, Math.min(cur.barQ * 8, 24)); const t0 = Math.max(0, now - span * 0.3), t1 = t0 + span;
+  const x = t => (t - t0) / span * W, y = p => H - 8 - (p - cur.lo) / (cur.hi - cur.lo) * (H - 16), nh = Math.max(2.5, (H - 16) / (cur.hi - cur.lo) * 0.9);
+  g.clearRect(0, 0, W, H); g.font = '10px ' + css('--f-mono'); g.fillStyle = css('--muted'); g.strokeStyle = css('--rule'); g.lineWidth = 1;
+  for (let b = Math.floor(t0 / cur.barQ); b * cur.barQ <= t1; b++) { const bx = x(b * cur.barQ); g.beginPath(); g.moveTo(bx, 0); g.lineTo(bx, H); g.stroke(); if (bx > 2) g.fillText(String(b + 1), bx + 3, 11); }
+  cur.voices.forEach((v, i) => { if (!audible(i)) g.globalAlpha = 0.18; g.fillStyle = vcol(i);
+    for (const e of v.e) { if (e[0] > t1) break; if (e[0] + e[1] < t0) continue; const xa = x(e[0]), xb = x(e[0] + e[1]);
+      const lit = playing && e[0] <= now && now < e[0] + e[1]; g.globalAlpha = (audible(i) ? (lit ? 1 : 0.72) : 0.15);
+      g.fillRect(xa, y(e[2]) - nh / 2, Math.max(1.5, xb - xa - 1), lit ? nh + 1.5 : nh); }
+    g.globalAlpha = 1; });
+  g.fillStyle = css('--entry'); g.strokeStyle = css('--entry');
+  cur.entries.forEach(en => { if (en[1] < t0 || en[1] > t1) return; const ex = x(en[1]); g.globalAlpha = .9; g.beginPath(); g.moveTo(ex, 14); g.lineTo(ex, H); g.setLineDash([2, 3]); g.stroke(); g.setLineDash([]);
+    g.fillText((cur.voices[en[0]] ? cur.voices[en[0]].a + ' ' : '') + en[2], ex + 3, 24); g.globalAlpha = 1; });
+  g.strokeStyle = css('--ink'); g.lineWidth = 1.5; g.beginPath(); g.moveTo(x(now), 0); g.lineTo(x(now), H); g.stroke();
+  $('clock').textContent = `bar ${barOf(Math.min(now, cur.end - 1e-3))} · ${fmt(now * 60 / cur.bpm / tempo)} / ${fmt(cur.end * 60 / cur.bpm / tempo)}`;
+  drawMapHead(now);
+}
+let mapImg = null;
+function drawMap() { const [g, W, H] = fit($('map')); g.clearRect(0, 0, W, H);
+  cur.voices.forEach((v, i) => { g.fillStyle = vcol(i); g.globalAlpha = .55; v.e.forEach(e => g.fillRect(e[0] / cur.end * W, H - 4 - (e[2] - cur.lo) / (cur.hi - cur.lo) * (H - 8), Math.max(1, e[1] / cur.end * W), 1.6)); });
+  g.globalAlpha = 1; g.fillStyle = css('--entry'); cur.entries.forEach(en => g.fillRect(en[1] / cur.end * W, 0, 1.5, 5));
+  mapImg = g.getImageData(0, 0, $('map').width, $('map').height); }
+function drawMapHead(now) { const c = $('map'), g = c.getContext('2d'), d = window.devicePixelRatio || 1; if (!mapImg) return;
+  g.setTransform(1, 0, 0, 1, 0, 0); g.putImageData(mapImg, 0, 0); g.setTransform(d, 0, 0, d, 0, 0);
+  const W = c.width / d, H = c.height / d; g.fillStyle = css('--ink'); g.fillRect(now / cur.end * W - 1, 0, 2, H); }
+$('map').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); const w = playing; stop(); startPos = (e.clientX - r.left) / r.width * cur.end; draw(); if (w) play(); };
+
+// ---------- tuning ----------
+const tb = $('temps');
+Object.keys(DATA.temps).forEach(k => { const b = document.createElement('button'); b.type = 'button'; b.textContent = TNAMES[k] || k; b.dataset.k = k;
+  b.onclick = () => { temp = k; try { localStorage.setItem('clav-temp', k); } catch (e) {} const w = playing; if (w) stop(); tchart(); if (w) play(); }; tb.appendChild(b); });
+const KEYPC = {'C':0,'C#':1,'Db':1,'D':2,'D#':3,'Eb':3,'E':4,'F':5,'F#':6,'Gb':6,'G':7,'G#':8,'Ab':8,'A':9,'A#':10,'Bb':10,'B':11};
+function tchart() {
+  [...tb.children].forEach(b => b.setAttribute('aria-pressed', b.dataset.k === temp ? 'true' : 'false'));
+  const dev = DATA.temps[temp]; const [g, W, H] = fit($('tchart')); g.clearRect(0, 0, W, H);
+  const mid = H / 2 - 6, sc = (H / 2 - 18) / 22, bw = W / 12;
+  g.strokeStyle = css('--rule'); g.beginPath(); g.moveTo(0, mid); g.lineTo(W, mid); g.stroke();
+  g.font = '10px ' + css('--f-mono'); g.textAlign = 'center';
+  const tonic = KEYPC[(cur && cur.key.split(' ')[0]) || 'C'];
+  dev.forEach((c, k) => { g.fillStyle = k === tonic ? css('--accent') : css('--muted'); g.globalAlpha = k === tonic ? 1 : .55;
+    const h = c * sc; g.fillRect(k * bw + bw * .2, h > 0 ? mid - h : mid, bw * .6, Math.max(1, Math.abs(h)));
+    g.globalAlpha = 1; g.fillStyle = css('--muted'); g.fillText(PCN[k], k * bw + bw / 2, H - 4); });
+  const minor = cur && /minor/.test(cur.key); const third = minor ? 3 : 4;
+  const size = 100 * third + dev[(tonic + third) % 12] - dev[tonic], fifth = 700 + dev[(tonic + 7) % 12] - dev[tonic];
+  const pure3 = minor ? 315.6 : 386.3;
+  $('tnote').innerHTML = `${esc(TBLURB[temp] || '')} In this movement’s key the tonic ${minor ? 'minor' : 'major'} third is <b>${size.toFixed(1)}¢</b> (pure ${pure3}¢) and the fifth <b>${fifth.toFixed(1)}¢</b> (pure 702.0¢).`;
+}
+window.addEventListener('resize', () => { if (cur) { drawMap(); draw(); tchart(); } });
+load((location.hash.slice(1) && pieces.some(p => p.id === location.hash.slice(1))) ? location.hash.slice(1) : pieces[0].id);
+window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (h && cur && h !== cur.id && pieces.some(p => p.id === h)) load(h); });
+</script>
