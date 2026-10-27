@@ -98,7 +98,7 @@ The base tempo is dotted quarter = 56 (quarter = 84). A-flat minor and E major a
 | beat_parallels | 0 | ≤ 8 |
 | dissonance_unresolved | 0 | ≤ 15 |
 | bad_doublings | 0 | ≤ 8 |
-| low_register_seconds | 5 (b8.5, b46.3, b46.6.5, b47.1, and one more in the summit) | ≤ 16 |
+| low_register_seconds | 5 (examples listed: b8.5, b46.3, b46.6.5, b47.1) | ≤ 16 |
 | stepwise_pct | 69.5 | ≥ 60 |
 | leap_4th_plus_pct | 13.0 | - |
 | mean_moving_voices | 5.75 (by section in the table above) | - |

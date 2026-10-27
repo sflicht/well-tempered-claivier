@@ -50,7 +50,7 @@ V = [
     ('Vl5', 'Violino V', 'treble', 40, 60, (8, 6.0), 'Vl1'),
     ('Vl6', 'Violino VI', 'treble', 40, 60, (-30, 6.0), 'Vl2'),
     ('Vl7', 'Violino VII', 'treble', 40, 58, (58, 7.2), 'Vl4'),
-    ('Vl8', 'Violino VIII', 'treble', 40, 58, (16, 7.4), 'Vl5'),
+    ('Vl8', 'Violino VIII', 'treble', 40, 58, (16, 7.4), 'Vl1'),
     ('Vl9', 'Violino IX', 'treble', 40, 58, (-44, 7.2), 'Vl6'),
     ('Va1', 'Viola I', 'alto', 41, 62, (-36, 4.6), 'Vl1'),
     ('Va2', 'Viola II', 'alto', 41, 60, (-8, 5.6), 'Vl2'),
@@ -558,16 +558,17 @@ def fold():
 # =================================================================== VI. VIOLINO SOLO (b59-67)
 # The violin alone again, implying with its four strings the harmony that twenty-one voices
 # sang at the summit and in the folding: the lament ground  Am | E/G# || C/G | D7 || Dm | E,
-# first as chords swept upwards (as in b9-12, Chaconne-style), then swept up and down, then
+# first as chords swept upwards (as in b9-12, Chaconne-style), then as a running scale, then
 # compressed into the subject itself: Bach's head at its first pitch, and the tail whose lower
 # strand is the same lament.  The violin's A is the last sound.
 def coda():
     put('Vl1', 59, 1, arp('A3', 'E4', 'C5', 'A5') + ' ' + arp('G#3', 'E4', 'B4', 'E5'))
     put('Vl1', 60, 1, arp('G3', 'E4', 'C5', 'G5') + ' ' + arp('A3', 'F#4', 'C5', 'D5'))
     put('Vl1', 61, 1, arp('A3', 'F4', 'D5', 'F5') + ' ' + arp('G#3', 'D4', 'B4', 'E5'))
-    put('Vl1', 62, 1, 'A3:1 C5:1 E5:1 A5:1 E5:1 C5:1 E5:1 C5:1 G#3:1 B4:1 E5:1 G#5:1 E5:1 B4:1 E5:1 B4:1')
-    put('Vl1', 63, 1, 'G3:1 C5:1 E5:1 G5:1 E5:1 C5:1 E5:1 C5:1 A3:1 C5:1 D5:1 F#5:1 D5:1 C5:1 D5:1 C5:1')
-    put('Vl1', 64, 1, 'A3:1 D5:1 F5:1 A5:1 F5:1 D5:1 F5:1 D5:1 G#3:1 B4:1 D5:1 E5:1 D5:1 B4:1 G#4:1 B4:1')
+    # b62-64: the same ground as a running scale (the strong sixteenths carry the chord tones)
+    put('Vl1', 62, 1, 'A4:1 B4:1 C5:1 D5:1 E5:1 D5:1 C5:1 B4:1 G#4:1 A4:1 B4:1 C5:1 D5:1 C5:1 B4:1 A4:1')
+    put('Vl1', 63, 1, 'G4:1 C5:1 B4:1 C5:1 E5:1 D5:1 C5:1 B4:1 F#4:1 G4:1 A4:1 B4:1 C5:1 D5:1 C5:1 A4:1')
+    put('Vl1', 64, 1, 'D5:1 C5:1 D5:1 E5:1 F5:1 E5:1 D5:1 A4:1 G#4:1 A4:1 B4:1 C5:1 D5:1 C5:1 B4:1 G#4:1')
     theme('Vl1', 65, 1, HEAD, 'Vl I: subject, alone (as in b1)')
     put('Vl1', 66, 1, TAIL)
     put('Vl1', 67, 1, 'A3:1 E4:1 C5:1 A5:1 E5:1 C5:1 E5:1 C5:1 A4:8')

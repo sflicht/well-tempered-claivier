@@ -119,7 +119,9 @@ device of its own:
     with a subject from one chorale line; all four lines sound together at the
     summit, the trick that ends Bach's Canonic Variations BWV 769.
 30. **[first version] Pair XVI à 17: Reincken's Hamburg chorale fantasia.**
-31. **[in progress] Pair XVII à 18**, concept chosen by its composer.
+31. **[first version] Pair XVII à 18: fuggendo la cadenza.** Every cadence
+    evaded, each evasion admitting a voice; the eighteenth voice, the father,
+    resolves the children's hanging dominant seventh.
     **[first version] Pair XVIII à 19: Vigilate.** The four night watches of
     Mark 13:35, the subject brightening one sharp per watch until the dawn
     turns enharmonically to A-flat major; the knock at the door (BWV 61) as
