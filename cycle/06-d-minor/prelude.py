@@ -81,17 +81,17 @@ bar('C, B (D7/C - G/B)',
     RH=T('F#5 D5 A4  C5 D5 F#5  G5 D5 B4  D5 G5 B5'),
     LH2='A3:8 G3:8', LH='C3:8 B2:8')
 bar('Bb, A (Gm/Bb - A)',
-    RH=T('D5 G5 Bb5  G5 Bb4 D5  C#5 E5 A5  E5 C#5 A4'),
-    LH2='G3:8 E3:8', LH='Bb2:8 A2:8')
+    RH=T('D5 G5 Bb5  G5 Bb4 D5  C#5 E5 A5  E5 A5 C#6'),
+    LH2='G3:16', LH='Bb2:8 A2:8')
 bar('Dm - C7/E',
-    RH=T('F5 D5 A4  D5 F5 A5  G5 E5 C5  Bb4 C5 E5'),
-    LH2='A3:8 G3:8', LH='D3:8 E3:8')
+    RH=T('D6 A5 F5  D5 F5 A5  G5 E5 C5  Bb4 C5 E5'),
+    LH2='F3:8 G3:8', LH='D3:8 E3:8')
 bar('F - Bb - C7',
     RH=T('C5 F5 A5  C6 A5 F5  D5 F5 Bb5  Bb5 G5 E5'),
     LH2='A3:8 F3:4 E3:4', LH='F3:8 Bb2:4 C3:4')
 bar('F - Dm7 - Gm7 - A7',
-    RH=T('F5 A5 C6  D6 A5 F5  D5 G5 Bb5  A5 E5 C#6'),
-    LH2='A3:4 F3:4 Bb3:4 G3:4', LH='F3:4 D3:4 G2:4 A2:4')
+    RH=T('F5 A5 C6  D6 A5 F5  Bb5 D5 G5  E5 A5 C#6'),
+    LH2='A3:4 F3:4 D3:4 G3:4', LH='F3:4 D3:4 G2:4 A2:4')
 bar('Dm - cut off by a diminished seventh (fermata)',
     RH=T('D6 A5 F5  A5 F5 D5  E5 G5 Bb5') + ' C#6:4',
     LH2='F3:8 C#3:8', LH='D3:8 G2:8')
