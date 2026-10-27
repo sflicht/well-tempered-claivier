@@ -32,13 +32,25 @@ KEYS = [('B-flat', 0, 0), ('E-flat', 5, 3), ('A-flat', -2, -1), ('D-flat', 3, 2)
 CAST = [
     {'HEAD': (7, 0), 'CS': (5, 0), 'BASS': (2, 0), 'SOP': (20, 0), 'INNER': (9, 0), 'HORN': (16, 0), 'LAUGH': (10, 0)},
     {'HEAD': (19, 1), 'CS': (7, 0), 'BASS': (2, 0), 'SOP': (20, 0), 'HORN': (8, -1), 'LAUGH': (15, -1)},
+    {'HEAD': (13, 1), 'CS': (19, 2), 'BASS': (2, 0), 'SOP': (10, 0), 'HORN': (12, 0), 'LAUGH': (20, 0),
+     'INNER': (5, -1)},
+    {'HEAD': (17, 1), 'CS': (13, 1), 'BASS': (2, 0), 'SOP': (20, 0), 'HORN': (16, -1), 'LAUGH': (15, -1),
+     'INNER': (6, -1)},
+    {'HEAD': (11, 1), 'CS': (17, 2), 'BASS': (2, 0), 'SOP': (20, 1), 'HORN': (9, 0), 'LAUGH': (15, 0),
+     'INNER': (3, -1)},
 ]
+# the bass's last two beats of each unit, re-octaved so that the line keeps its register
+# (an octave shift keeps every interval class, so the unit's counterpoint is unchanged);
+# in G-flat the bass stays on G-flat under the cracked F-flat: the augmented sixth.
+BASS_END = ['Bb2:8 D3:8', 'Eb3:8 G2:8', 'Ab2:8 C3:8', 'Db3:8 F2:8', 'Gb2:16']
 
 
 def unit(sc, bar, k):
     name, semis, letters = KEYS[k]
     for role, (n, o) in CAST[k].items():
         toks = W.transpose(ROLE[role], semis + 12 * o, letters + 7 * o)
+        if role == 'BASS':
+            toks = ' '.join(toks.split()[:4]) + ' ' + BASS_END[k]
         if role == 'HEAD':
             sc.theme(V(n), bar, 1, toks, f"Bach's head in {name}; the sixth cracks to the 7th partial", 2)
             for beat in (3, 3.5, 4, 4.5):
