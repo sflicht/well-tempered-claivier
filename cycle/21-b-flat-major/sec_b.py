@@ -23,7 +23,16 @@ def place(sc, b0=14):
     # the friends' countersubject: sighs (appoggiaturas resolving down) after each T
     sc.put(V(10), b(3), 1, "E5:4 F5:2 E5:2 D5:2 E5:2 C5:4 D5:4 B4:2 G#4:2 C5:2 A4:2 G4:4")
     sc.put(V(15), b(5), 1, "A4:4 Bb4:2 A4:2 E4:2 C#4:2 D4:4 F4:4 E4:2 C#4:2 D4:2 F4:2 E4:4")
-    sc.put(V(5), b(7), 1, "C4:4 E4:4 B3:2 G#3:2 A3:4 A3:4 G#3:4 A3:2 C4:2 Eb4:4")
-    # horns: Corno 16 a slow descant; Corno 9 the tonguing of the impatient postilion; Corno 6 inner
-    sc.put(V(16), b(1), 1, "A4:4 F4:4 A4:8 Bb4:4 G4:4 A4:4 G#4:4 C5:4 A4:4 B4:4 A4:4 A4:4 G#4:4 A4:4 E5:4 "
-           "F5:4 F5:4 G5:4 F5:4 G5:4 E5:4 F5:4 E5:4 E5:8 D5:4 C5:4 D5:4 B4:4 C5:8")
+    sc.put(V(5), b(7), 1, "C4:4 E4:4 D4:2 E4:2 C4:4 A3:4 G#3:4 A3:2 C4:2 Eb4:4")
+    # horns: Corno 16 an alto line; Corni 6 and 3 a quiet chorale; Corno 9 joins when the theme goes low
+    sc.put(V(16), b(1), 1, "F4:8 A4:8 Bb4:4 G4:4 A4:4 G#4:4 C5:4 A4:4 B4:4 A4:4 A4:4 G#4:4 A4:4 E5:4 "
+           "F5:4 F5:4 G5:4 F5:4 G5:4 A5:4 A5:4 G#5:4 A5:2")
+    sc.put(V(6), b(1), 1, "D4:8 E4:4 D4:4 D4:4 C#4:4 D4:4 E4:4 E4:4 C4:4 B3:4 C4:4 D4:8 C4:4 A3:4")
+    sc.put(V(3), b(1), 1, "F3:8 E3:4 F3:4 G3:4 E3:4 F3:4 E3:4 E3:4 A3:4 E3:8 A3:4 B3:4 E3:8 "
+           "F3:4 D3:4 E3:4 A3:4 G3:4 E3:4 F3:4 E3:4 E3:16 F3:4 E3:8 F3:4")
+    sc.put(V(9), b(5), 1, "D5:4 D5:4 E5:4 D5:4 D5:4 C#5:4 D5:4 B4:4 E5:8 E5:4 C5:4 D5:8 C5:8")
+    # Corno 4, the impatient postilion, taps his call between the friends' phrases
+    sc.put(V(4), b(2), 3, "A3:2 A3:1 A3:1")
+    sc.put(V(4), b(4), 3, "A3:2 A3:1 A3:1 A3:4")
+    sc.put(V(4), b(6), 3, "A3:2 A3:1 A3:1")
+    sc.put(V(4), b(8), 3, "C4:2 C4:1 C4:1 C4:4")

@@ -349,6 +349,11 @@ theme('T2', 37, 2, oc(dshift(head(S2), -3), -1), 'II: subject 2 head in D', 1)
 theme('T3', 37, 3, oc(dshift(head(S3), -3), -1), 'III: subject 3 head (answer)', 1)
 theme('S4', 37, 3, head(dshift(S4, 7), 9), 'IV: subject 4 head (peal)', 1)
 theme('A4', 37, 4, head(dshift(inv(S4, 'D4'), 4), 9), 'IV: subject 4 head inverted (peal)', 1)
+# Free lines: the Coro IV tenor rings on after its peal, the Coro II soprano holds a bell-note B over
+# the cantus, the Coro II tenor carries the cadence into the summit.
+put('T4', 34, 3, 'G3:8 B3:10 A3:6 B3:4 A3:12')
+put('S2', 35, 1, 'B5:16')
+put('T2', 38, 2, 'A3:4 B3:8')
 
 
 # ================================================================ SUMMIT: the four lines at once (b39-51)
@@ -380,6 +385,12 @@ cantus('A3', 41, 1, dshift(inv(L3, 'B4'), -1), 'III: line 3 inversus, canon at t
 cantus('A1', 42, 3, dshift(inv(chorale_upbeat(L1), 'G5'), -1), 'I: line 1 inversus, canon', 4)
 cantus('B2', 42, 3, inv(L2, 'B3'), 'II: line 2 inversus, canon', 4)
 cantus('A4', 43, 3, aug(dshift(L4, 3), 2), 'IV: line 4 per augmentationem, canon at the fourth', 8)
+# Between and around the lines, three free voices in other registers, never on a chorale pitch:
+# Coro IV soprano holds G-A-G over line 3's entry and gives way to line 1; Coro I tenor walks beneath
+# line 2; Coro IV alto moves in the gap between lines 3 and 3-inversus until its own canon.
+put('S4', 39, 1, 'G5:12 A5:4 G5:4')
+put('T1', 39, 1, 'D4:4 G3:8 C4:8 G3:4 B3:4 A3:12 G3:8 A3:8')
+put('A4', 40, 3, 'G4:4 A4:4 D5:8 G4:4 A4:4 B4:4 A4:4')
 # The fugue subject threads through in stretto (rectus and inversus; whole statements where the
 # combination allows them, heads elsewhere).
 theme('T4', 44, 1, ' '.join(oc(dshift(S1, 4), -1).split()[:-2]) + ' D4:4', 'IV: subject 1 (summit stretto; last turn simplified)', 2)
@@ -489,7 +500,7 @@ fig('B3', 45, 1, oc(dshift(RUN, 0), -1))  # subject 3 run
 fig('B3', 45, 3, oc(dshift(CHANGE, 3), -1))  # subject 4 change
 fig('T3', 44, 1, oc(dshift(BELLS, 3), -1))  # subject 1 bells
 fig('T3', 45, 1, oc(dshift(RUN, 2), -1))  # subject 3 run
-fig('T3', 45, 3, oc(dshift(TATTOO, 3), -2))  # subject 2 tattoo
+fig('T3', 45, 3, oc(dshift(TATTOO, 3), -1))  # subject 2 tattoo
 theme('T2', 43, 3, oc(dshift(head(inv(S1, 'G4')), 4), -1), 'II: subject 1 head inverted', 1)
 
 

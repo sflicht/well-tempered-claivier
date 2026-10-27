@@ -309,6 +309,14 @@ def gigue():
     theme('T4', z + 8 - Fr(1, 3), SG, 'Gigue subject')
     theme('Q4', z + 12 - Fr(1, 3), oc(dshift(SG, 4), -1), 'Gigue answer (modal)')
     theme('B4', z + 16 - Fr(1, 3), oc(SG, -2), 'Gigue subject (bass)')
+    # second half: the subject inverted (tonal mirror), a five-voice stretto at half-bar distance, top down
+    M = mir(SG)
+    theme('D4', z + 21 + Fr(2, 3), M, 'Gigue mirror (A)')
+    theme('H4', z + 23 + Fr(2, 3), dshift(M, -3), 'Gigue mirror (E level), stretto')
+    theme('T4', z + 25 + Fr(2, 3), dshift(M, -7), 'Gigue mirror (A), stretto')
+    theme('Q4', z + 27 + Fr(2, 3), dshift(M, -10), 'Gigue mirror (E level), stretto')
+    theme('B4', z + 29 + Fr(2, 3), dshift(M, -21), 'Gigue mirror (A, bass), stretto')
+    put('B3', z + 0, 'A2:8/3 C#3:4/3 G#2:8/3 B2:4/3 D3:8/3 B2:4/3 A2:8/3 E2:4/3 F#2:8/3 D2:4/3 E2:8/3 E3:4/3 D3:8/3 B2:4/3 E3:8/3 D3:4/3 C#3:8/3 A2:4/3 E2:8/3 E3:4/3 D3:8/3 B2:4/3 C#3:8/3 E3:4/3 F#3:8/3 D3:4/3 E3:8/3 C#3:4/3 D3:8/3 B2:4/3 E2:8/3')
     # @@giga
 
 

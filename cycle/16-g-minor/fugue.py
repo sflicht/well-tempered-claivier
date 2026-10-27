@@ -11,8 +11,8 @@ fantasia for an organ of three manuals and double pedal, in seventeen real voice
 
 Every chorale line is anticipated by a fugal exposition on a subject made from that line
 (Vorimitation), then sounds in long notes in the pedal, in canon at the octave between the two pedal
-voices (the canon closes in from ten beats at line 1 to three beats from line 5 on).  Between lines:
-echo dialogues between the manuals, sudden rests, a chromatic surge.  In the final section the
+voices (the canon closes in from ten beats at line 1 to three beats in lines 5-8 and 10; five in
+line 9).  Between lines: echo dialogues between the manuals, sudden rests, a chromatic surge.  In the final section the
 subject of the G-minor Fugue BWV 542 (the Dutch song "Ik ben gegroet van...", associated with the
 Hamburg visit) enters once as a genuine voice in the pedal and leads into the summit: the last
 chorale line in canon in the pedal while the subjects of all earlier lines return in stretto above.
@@ -403,8 +403,8 @@ def summit(s0):
     """Line 10 ('täglich von ihn' erleiden') in canon in the pedal: Ped. II leads with the chorale as the
     bass on the strong beats; Ped. I follows three beats later, an octave higher, so that every move of
     the bass is met by a held note above it (suspensions)."""
-    put('P2', s0, 3, cantus(10, -2, last=16 * 4))
-    put('P1', s0 + 1, 2, cantus(10, -1, last=16 * 3 + 4))
+    theme('P2', s0, 3, cantus(10, -2, last=16 * 4), 'cantus line 10 (Ped. II, canon dux)')
+    theme('P1', s0 + 1, 2, cantus(10, -1, last=16 * 3 + 4), 'cantus line 10 (Ped. I, canon comes, 3 beats)')
 
     def T(v, t, toks, label=None):
         bar, beat = s0 + int(t // 4), Fr(t) - 4 * int(t // 4) + 1
@@ -455,10 +455,10 @@ def summit(s0):
         T(v, 36, p + ':16') if v != 'HS2' else None
     T('HS2', 30, 'F#5:8 G5:32')                                        # the leading tone of the dim-7th over the pedal
     T('OA', 4, 'D5:8 D5:4 E5:4')
-    T('OB', 4, 'Bb3:8 A3:8')
     T('RA', 18, 'G4:4 E4:4 C5:8 A4:8 Bb4:8')
     T('HB', 20, 'A3:12 D3:4')
     T('HBr', 4, 'G3:8 D4:8')
+    T('OB', 4, 'Bb3:12 A3:4')
     # FREE-END
 
 

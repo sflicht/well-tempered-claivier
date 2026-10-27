@@ -368,6 +368,10 @@ put('T1', 60, 1, 'C4:8 Db4:8 Bb3:8 '      # 9-8 over the tonic at 61.1, 4-3 over
                  'Db4:8 C4:16 '
                  'C4:8 Db4:8 Eb4:56')
 put('A4', 65, 2, 'Ab4:16 Db5:8 Bb4:8 Ab4:8 F4:8 Eb4:8 Ab4:16 F4:8 G4:8')   # after its entry, Alto IV sings on
+put('T3', 67, 2, 'Ab3:36 G3:4')   # held Ab3: seventh over Bb1 (68.2), then 4-3 over Eb2 (68.3)
+put('S4', 65, 2, 'C5:8 F5:16 G5:8 Ab5:4 F5:4 Db5:8 Eb5:8 F5:24 C5:4 Db5:4')   # a new soprano wakes
+put('Br2', 65, 1, 'Eb3:8 C3:16 F3:8 R:8 C3:8')
+put('A1', 67, 2, 'Ab4:8 C5:16 R:8 Eb5:8 C5:8')
 
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}

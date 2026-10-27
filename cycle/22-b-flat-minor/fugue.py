@@ -276,6 +276,7 @@ put('A2', 45, 1, 'Db4:24 Eb4:14 F4:18 R:4 F4:4')
 put('Ms2', 45, 1, 'Bb4:18 Ab4:4 Bb4:10 C5:6 A4:6 R:16 B4:4')
 put('Ms4', 45, 1, 'R:8 Gb4:2 F4:2 Eb4:2 Db4:2 Eb4:8 Db4:8 C4:8 Eb4:4 F4:4 R:12 Ab4:4')
 put('T1', 45, 1, 'F3:26 A3:4 Bb3:12 A3:4 F3:8 R:4 B3:6')
+put('T3', 45, 1, 'Db4:10 Bb3:8 Db4:4 C4:10 C4:10 Db4:4 C4:8 R:4 F3:6')
 
 if __name__ == '__main__':
     import os
