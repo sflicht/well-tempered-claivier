@@ -67,6 +67,11 @@ ANS = 'F4:16 Bb3:8 R:4 Db5:4 C5:4 Bb4:4 Ab4:4 G4:4 F4:4 E4:4 G4:4 F#4:4'
 SMAJ = 'Db4:16 Ab3:8 R:4 Bb4:4 Ab4:4 Gb4:4 F4:4 Eb4:4 Db4:4 C4:4 Eb4:4 D4:4'
 AMAJ = 'Ab4:16 Db4:8 R:4 F5:4 Eb5:4 Db5:4 C5:4 Bb4:4 Ab4:4 G4:4 Bb4:4 A4:4'
 
+# The inversion (mirror) of the subject, diatonic in B-flat minor around D-flat, with B-A-C-H mirrored
+# chromatically (F G-flat E-flat E): it starts on the dominant, falls a ninth to the leading note and
+# climbs the scale.  Section III ("Speculum") is built on it.
+INV = 'F5:16 Bb5:8 R:4 A4:4 Bb4:4 C5:4 Db5:4 Eb5:4 F5:4 Gb5:4 Eb5:4 E5:4'
+
 def oc(s, n):
     """Octave transposition."""
     return W.transpose(s, 12 * n, 7 * n)
@@ -249,8 +254,46 @@ put('T1', 17, 3, 'G4:8 F4:16')
 # learned at b13).  Coro I's outer voices accompany; its inner voices rest (antiphony).
 theme('Ms2', 19, 1, AMAJ, 'Answer in A-flat (Coro II)')
 theme('T2', 19, 3, SMAJ, 'Subject in D-flat major, stretto at the half bar')
-put('S1', 19, 1, 'F5:8 Gb5:4 Ab5:4 Bb5:8 Ab5:8 Gb5:4 F5:4 Eb5:4 Db5:4 Db5:12 C5:4')
-put('B1', 19, 1, 'Db3:16 Bb2:8 F2:8 Eb2:4 F2:4 Ab2:4 Bb2:4 Db3:4 Eb3:4 Gb3:4 F3:4')
+put('S1', 19, 1, 'F5:8 Gb5:4 Ab5:4 Bb5:8 Ab5:8 Gb5:8 F5:4 Eb5:4 Db5:8 F5:8')
+put('B1', 19, 1, 'Db3:16 Bb2:8 F2:8 Gb2:4 F2:4 Ab2:4 Bb2:4 Db3:4 Eb3:4 Bb2:4 F2:4')
+
+# b23-27: the second pair, the answer now in the bass (Coro II basso) and the subject half a bar later
+# in the soprano: the thirds of b19-22 inverted into sixths.  After the bass has entered, the two
+# themes run down in sixths (a fauxbourdon) towards B-flat minor; the tenor and the baritone fill in.
+put('B1', 23, 1, 'Gb2:4 F2:4')
+theme('B2', 23, 3, oc(AMAJ, -2), 'Answer in A-flat (bass)')
+theme('S2', 24, 1, oc(SMAJ, 1), 'Subject in D-flat major (soprano), stretto at the half bar')
+put('T2', 23, 3, 'Eb4:8 F4:12 Eb4:4 Db4:8 Gb4:4 F4:4 Eb4:8 C4:8 Db4:4 F4:12')
+put('Ms2', 23, 1, 'Bb4:8 C5:8 Ab4:12 Gb4:4 F4:8 Bb4:8 C5:4 Db5:4 C5:4 Bb4:4 Bb4:4 R:4 Bb4:8')
+# b27.3-32: the third pair, in E-flat minor: the answer (B-flat minor) in Coro II's alto and the
+# subject half a bar later in its baritone; both B-A-C-H tails lead to C major, the dominant of F minor.
+put('B2', 27, 3, 'Bb2:8 Eb2:20 Gb2:12 Db2:4 Ab2:4 Bb2:4 C3:4 Db3:4 C3:8 G2:4 C3:8 F2:8')
+theme('A2', 28, 1, tr(ANS, 5, 3), 'Answer in B-flat minor (Coro II alto)')
+theme('Bar2', 28, 3, tr(S, -19, -11), 'Subject in E-flat minor (Coro II baritone), stretto at the half bar')
+put('Bar1', 24, 3, 'Ab3:16 Bb3:4 Db4:4 Eb4:8 Ab3:4 Eb3:4 F3:16')
+put('S2', 28, 1, 'Eb5:8')
+put('Ms2', 28, 1, 'Gb4:32 Ab4:4')
+put('T2', 28, 1, 'Eb4:8 Db4:8 Cb4:4 Bb3:4 Db4:4 Eb4:4 Db4:4 Eb4:4 Gb4:4 Eb4:4 Bb3:4 F4:12 E4:4 G4:4 A4:8')
+
+# =================================================================================== III. SPECULUM
+# Coro III gathers with the mirror: the inversion in E-flat minor (mezzo) and, half a bar later, the
+# subject a twelfth below it (bass); then, in B-flat minor,
+# the subject (baritone) and the inversion (soprano), which end on the dominant and on the downbeat
+# of the summit.
+theme('Ms3', 33, 1, tr(INV, -7, -4), 'Inversion in E-flat minor (Coro III)')
+theme('B3', 33, 3, tr(S, -31, -18), 'Subject in E-flat minor (bass), stretto at the half bar')
+theme('Bar3', 36, 3, oc(S, -1), 'Subject (baritone)')
+theme('S3', 37, 1, INV, 'Inversion (soprano), ending on the summit')
+# b32-37: the end of the third pair resolves to F; Coro I returns as a quiet accompaniment of the
+# mirror canon (its harmony moves by half bars; the canon's scales pass between the chords).
+put('A2', 32, 1, 'C5:16')
+put('Bar2', 32, 3, 'F3:8')
+put('B2', 33, 1, 'Bb1:8')
+put('S1', 33, 1, 'F5:8 Gb5:16 F5:8 Eb5:16 Db5:8 Eb5:4 F5:4 Db5:8')
+put('T1', 33, 1, 'Db4:8 Eb4:16 F4:8 R:24 Gb3:4 F3:8 C4:12')
+put('Bar1', 33, 1, 'F3:8 Bb3:48 Eb3:4 Bb2:8 C3:12')
+put('B3', 37, 3, 'F2:8')
+put('Ms3', 37, 1, 'Bb4:8 A4:8')
 
 # =================================================================================== IV. CRUX (summit)
 # Composed first.  Over b41-48 the subject sounds in augmentation in the top voice (Coro IV soprano,

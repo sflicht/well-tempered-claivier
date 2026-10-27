@@ -180,14 +180,59 @@ def summit():
     put('D2', z + 26, 'E6:6 D6:2 D6:4 C#6:4 C#6:8')
     put('D4', z + 24, 'D5:8/3 B4:4/3 G#4:8/3 E4:4/3 B4:4 F#4:4')
     put('D3', z + 32, 'C#6:4 B5:8 A5:4 G5:4 F#5:8 G5:8 F#5:4 A#5:4 B5:8')
-    put('D2', z + 32, 'A5:8 R:8 C#5:4 D5:4 C#5:4 G5:4 E5:4 F#5:4 E5:4 D5:4')
-    put('H3', z + 32, 'C#5:4 D5:12 E5:4 F#5:4 F#5:4 B4:8 B4:4 C#5:4 B4:8')
-    put('T3', z + 32, 'E4:4 R:12 A3:8 A#3:4 B3:12 F#3:12')
+    put('D2', z + 32, 'A5:8 R:8 C#5:4 D5:4 F#5:4 E5:4 C#5:4 D5:4 E5:4 D5:4')
+    put('H3', z + 32, 'A4:4 D5:12 E5:4 F#5:4 F#5:4 B4:8 B4:4 C#5:4 B4:8')
     put('D3', z + 45, 'B5:8 A5:4 G#5:8 A5:4 G#5:4 A5:8 G#5:4 A5:4')
-    put('H3', z + 45, 'D#5:4 E5:4 F#5:4 E5:8 E5:4 D5:4 C#5:4 D5:4 D5:4 C#5:4')
-    put('T3', z + 45, 'F#4:12 E4:4 D4:4 C#4:4 B3:4 A3:4 A3:4 B3:4 C#4:4')
+    put('H3', z + 45, 'D#5:4 E5:4 F#5:4 E5:8 E5:4 D5:4 C#5:4 D5:4 B4:4 C#5:4')
+    put('T3', z + 45, 'F#4:8 B3:4 E4:4 D4:4 C#4:4 B3:4 A3:4 F#3:4 B3:4 A3:4')
     put('D2', z + 44, 'D#5:6 C#5:2 B4:4 F#5:4')
     put('Q3', z + 48, 'B3:8 A3:4')
+    put('B1', z + 52, 'A2:4 D3:4 E3:4 A2:4')
+    put('Q3', z + 44, 'B3:4 B3:4 B3:8')
+    put('H2', z + 44, 'F#4:6 G#4:2 E4:4 D#4:4 E4:6 D4:2 E4:4 E4:4')
+    put('T2', z + 44, 'D#4:6 E4:2 G#3:4 F#3:4')
+    put('Q2', z + 44, 'F#3:8 B3:6 A3:2 B3:6 F#3:2 E3:8 C#4:4 A3:4')
+    put('Q3', z + 51, 'B3:4 C#4:8 B3:4')
+    put('H2', z + 52, 'E4:6 D4:2')
+    put('H4', z + 44, 'D#4:4/3 E4:4/3 F#4:4/3 B4:8/3 F#4:4/3 B4:4/3 A4:4/3 G#4:4/3 F#4:8/3 A4:4/3 G#4:8/3 B4:4/3 B4:8/3 G#4:4/3')
+    put('T4', z + 44, 'F#4:8/3 D#4:4/3 B3:8/3 D#4:4/3 B3:8/3 E4:4/3 D#4:8/3 B3:4/3 B3:8/3 E4:4/3 E4:8/3 D4:4/3 E4:4/3 D4:4/3 C#4:4/3 B3:8/3 D4:4/3')
+    put('Q4', z + 44, 'B3:8/3 D#4:4/3 F#4:8/3 D#4:4/3')
+    put('Q4', z + 48, 'B3:8/3 G#3:4/3 B3:8/3 D4:4/3')
+    put('Q4', z + 52, 'A3:8/3 C#3:4/3 D3:8/3 F#3:4/3')
+    put('D4', z + 44, 'F#5:4/3 E5:4/3 D#5:4/3 E5:8/3 F#5:4/3 B4:4/3 C#5:4/3 D#5:4/3 E5:4/3 F#5:4/3 D#5:4/3 B4:8/3 G#4:4/3 B4:8/3')
+    put('D1', z + 44, 'D#5:2 F#5:1 E5:1 F#5:2 E5:1 D#5:1 G#5:2 B5:1 G#5:1 D#5:2 B4:1 C#5:1 G#5:1 F#5:1 E5:1 D5:1 B4:2 G#4:1 B4:1 C#5:1 B4:1 A4:1 C#5:1')
+    put('D1', z + 52, 'C#5:2 E5:1 A5:1 F#5:2 E5:1 D5:1 B4:1 C#5:1 B4:1 G#4:1')
+    put('H1', z + 44, 'F#4:2 B4:1 A4:1 F#4:1 G#4:1 A4:1 B4:1')
+    put('H1', z + 47, 'F#4:2 A4:1 F#4:1')
+    put('H1', z + 49, 'B4:1 A4:1 G#4:1 E4:1 C#4:2 E4:1 A4:1 B4:2 E4:1 D4:1 C#4:2 E4:1 A4:1 A4:2 D4:1 F#4:1 B3:2 G#3:1 B3:1 A4:4')
+    put('T1', z + 44, 'F#3:2 B3:1 D#4:1 B3:2 F#3:2 B3:2 E4:2')
+    put('T1', z + 48, 'G#3:2 B3:1 E4:1 E4:2 G#3:2 A3:2 C#4:1 E4:1')
+    put('T1', z + 52, 'A3:2 C#4:1 E4:1 F#4:2 D4:1 A3:1')
+    put('T1', z + 55, 'A3:4')
+    put('Q1', z + 44, 'B3:2 F#3:2 B3:2 F#3:1 D#3:1 B3:2 G#3:2')
+    put('Q1', z + 55, 'A3:4')
+    put('D2', z + 48, 'E6:6 D6:2 E6:4 E6:4 A5:4 A5:4 E6:4 C#6:4')
+    put('T2', z + 48, 'B3:6 C#4:2 E4:6 E4:2 E4:4 D4:4')
+    put('Q1', z + 48, 'B3:1 A3:1 G#3:1 E3:1 E3:2 F#3:1 G#3:1 E3:2 A3:1 C#4:1 B3:1 A3:1 G#3:1 B3:1 E3:2 C#3:2')
+    put('H4', z + 52, 'A4:4 A4:4 E4:4 E4:4')
+    put('T4', z + 54, 'E4:4 E4:4')
+    put('H2', z + 32, 'E4:6 D4:2 E4:4 F#4:4 E4:6 D4:2 D4:4 E4:4 B4:4 F#4:4 F#4:4 F#4:4')
+    put('Q3', z + 32, 'E3:4')
+    put('H1', z + 32, 'C#5:1 B4:1 A4:1 G4:1 D4:1 E4:1 F#4:1 G4:1 E4:2 G4:1 B4:1 A4:1 G4:1 F#4:1 D4:1 E4:2 G4:1 C#5:1 D5:1 C#5:1 B4:1 A4:1 B4:1 A#4:1 B4:1 C#5:1 G4:2 E4:2 G4:1 F#4:1 E4:1 G4:1 D4:1 E4:1 F#4:1 D4:1 C#5:1 B4:1 A#4:1 F#4:1 D4:2 F#4:1 B4:1')
+    put('Q1', z + 32, 'A3:2 E3:2 B2:1 C#3:1 D3:1 B2:1 E3:2 G3:2')
+    put('Q1', z + 36, 'A3:2 G3:2 F#3:2 D3:2 B2:1 C#3:1 D3:1 B2:1 E3:2 G3:2 E3:1 F#3:1 G3:1 E3:1')
+    put('D4', z + 32, 'C#5:8/3 E5:4/3 D5:8/3 B4:4/3 B4:8/3 E5:4/3 D5:4/3 C#5:4/3 B4:4/3')
+    put('D4', z + 38, 'D5:8/3 B4:4/3 B4:8/3 G5:4/3')
+    put('H4', z + 32, 'E4:8/3 A4:4/3 B4:8/3 D5:4/3 B4:8/3 G4:4/3 D4:8/3 B4:4/3')
+    put('H4', z + 40, 'B4:8/3 A#4:4/3 B4:8/3 F#4:4/3')
+    put('T4', z + 34, 'E4:8/3 B3:4/3 A3:8/3 G3:4/3 E4:8/3 A3:4/3 A3:8/3 D4:4/3')
+    put('T4', z + 40, 'G3:8/3 B3:4/3 D4:8/3 B3:4/3')
+    put('Q4', z + 32, 'A3:8/3 E3:4/3 D3:8/3 G3:4/3')
+    put('T3', z + 32, 'E4:4 R:12 A3:8 A#3:4 B3:12 F#3:4 D4:8')
+    put('T2', z + 32, 'C#4:6 D4:2 G3:4 A3:4 E4:4 D4:4 B3:6 C#4:2 E4:4 F#4:4')
+    put('Q2', z + 32, 'A3:6 B3:2 G3:6 F#3:2')
+    put('Q2', z + 40, 'G3:4 A3:4 F#3:4 G3:4')
+    put('Q4', z + 40, 'B3:8/3 G3:4/3 A#3:8/3 B3:4/3')
     # @@free
     put('D3', z + 0, 'E6:6 D6:4 C#6:2 B5:4 C#6:6 B5:2 A5:12 C#6:4 R:8')
     # ---- Sigma 2 (z+17 .. z+32), F# minor.  The ground passes to the courante's basse, in courante rhythm.
@@ -235,7 +280,7 @@ def allemande():
     put('Q1', z + 18, 'C#4:1 B3:1 C#4:1 D4:1 E4:4 A4:1 G#4:1 E4:2 D4:2 C#4:1 B3:1')
     put('D1', z + 18, 'C#5:4 C#5:2 D5:2 E5:4 F#5:2 B4:2')
     put('H1', z + 18, 'E4:4 E4:2 F#4:2 E4:2 B4:2 A4:2 G#4:2')
-    put('T1', z + 18, 'E3:4 A3:2 E3:2 B3:4 A3:2 G#3:2')
+    put('T1', z + 18, 'E3:4 A3:2 G#3:2 B3:4 A3:2 G#3:2')
     theme('H1', z + Fr(103, 4), dshift(mir(SA), -7), 'Allemande mirror')
     theme('B1', z + Fr(119, 4), oc(SA, -2), 'Allemande subject (bass)')
     theme('D1', z + Fr(127, 4), oc(SA, 1), 'Allemande subject (stretto)')
@@ -243,12 +288,12 @@ def allemande():
     put('T1', z + 22, 'A3:4 A3:2 B3:2 A3:4 B3:4')
     put('Q1', z + 22, 'R:4 A3:2 G#3:1 B3:1 F#3:2 E3:1 G#3:1 B2:2 C#3:1 E3:1')
     put('D1', z + 26, 'E5:2 D5:1 E5:1 F#5:2 E5:1 D5:1 C#5:2 E5:2 B4:2 E5:2 A4:4 C#5:2 E5:1')
-    put('T1', z + 30, 'C#4:4 E4:4 A3:4 E3:2 G#3:2 A3:4 A3:2 G#3:2')
+    put('T1', z + 30, 'C#4:4 E4:4 A3:6 G#3:2 A3:4 A3:2 G#3:2')
     put('H1', z + 30, 'E4:4 E4:4 D4:4 C#4:4 C#4:4 D4:2 B3:2')
     put('Q1', z + 26, 'G#3:4 G#3:4 A3:4 B3:4')
     put('D1', z + 22, 'E5:2 G#5:1 B5:1 A5:2 C#6:1 A5:1 D5:2 F#5:1 D5:1 D5:2 C#5:1 B4:1')
     put('B1', z + 34, 'A2:4 D2:2 E2:2')
-    put('Q1', z + 30, 'E3:4 C#3:4 B2:4 C#3:4 E3:4 F#3:2 E3:2')
+    put('Q1', z + 30, 'E3:4 A3:12 E3:4 F#3:2 E3:2')
     # @@alle
 
 
@@ -288,14 +333,13 @@ def sarabande():
     theme('B3', z + 18, oc(dshift(mir(SS), -3), -2), 'Sarabande mirror (E level, bass): the future ground')
     put('B1', z + 2, 'E2:4 E2:4 F#2:4 D2:4 C#2:4 E2:8 A2:4 B1:8 G#2:4 F#2:8 A2:12')
     put('T3', z + 0, 'C#4:4 C#4:6 B3:2 G#3:4 A3:4 F#3:4 A3:4 G#3:4 G#3:4 A3:4 B3:8 B3:4 A3:8 C#4:12 G#3:4 G#3:4 G#3:4 A3:4 F#3:8 B3:4 C#4:4 C#4:4 B3:4 A3:8 E4:4 E4:4 D4:4 B3:12')
-    put('Q3', z + 0, 'E3:4 E3:6 E3:2 G#3:4 F#3:4 F#3:4 E3:4 E3:4 D3:4 E3:4 F#3:8 R:12 C#3:12')
-    put('H2', z + 0, 'C#5:4 C#5:6 B4:2 R:12 E4:4 B4:8 A4:4 F#4:8 E4:4 F#4:8 C#5:12 B4:12 C#5:4 B4:8 E4:4 E4:8 B4:4 C#5:8 A4:4 F#4:8 G#4:12')
+    put('Q3', z + 0, 'E3:4 E3:6 E3:2 G#3:4 F#3:4 F#3:4 E3:4 E3:4 G#3:4 E3:4 F#3:8 R:12 C#3:12')
     put('H2', z + 0, 'E4:4 F#4:4 E4:4 R:12 E4:4 B4:8 A4:4 F#4:8 E4:4 F#4:8 C#5:12 B4:12 C#5:4 B4:8 E4:4 E4:8 B4:4 C#5:8 A4:4 F#4:8 G#4:12')
     put('D3', z + 18, 'G#5:4 F#5:6 E5:2 R:12 C#5:4 C#5:6 B4:2 D5:4 C#5:8 E5:4 D5:4 D5:4 G#4:12')
     put('T2', z + 0, 'R:12 R:12 A3:4 B3:4 B3:4 R:12 R:12 C#4:4 B3:4 C#4:4 R:12 R:12 D4:4 C#4:8 R:12 R:12 B3:12')
     put('H1', z + 0, 'C#4:4 D4:4 E4:4 R:12 R:12 R:12 R:12 C#4:12 E4:4 E4:8 R:12 E4:4 E4:8 E4:4 E4:8 E4:4 F#4:8 E4:12')
     put('D2', z + 6, 'R:12 C#6:4 D6:8 R:12 R:12 B5:4 A5:6 G#5:2 R:12 R:12 E5:4 E5:8 R:12 B5:12')
-    put('Q2', z + 0, 'A3:4 A3:4 G#3:4 R:12 R:12 R:12 R:12 A3:4 G#3:4 A3:4 G#3:4 G#3:4 G#3:4 R:12 E3:4 E3:8 R:12 A3:4 G#3:4 F#3:4 R:12')
+    put('Q2', z + 0, 'A3:8 G#3:4 R:12 R:12 R:12 R:12 A3:4 G#3:4 A3:4 G#3:12 R:12 E3:4 A3:8 R:12 A3:4 G#3:4 F#3:4 R:12')
     put('Q3', z + 18, 'G#3:4 A3:4 G#3:4 E3:4 D3:8 B3:4 A3:8 E3:4 E3:8 R:12 G#3:12')
     # @@sara
 
@@ -363,7 +407,48 @@ def ballo():
     # @@ball
 
 
-SECTIONS = [allemande, courante, sarabande, gigue, ballo, summit]
+# The opening of Bach's Bourree I (English Suite No. 1 in A, BWV 806), bars 1-4, at the octave above
+BOURREE = ('E5:4 A5:2 G#5:2 B5:2 A5:2 C#6:2 B5:2 A5:2 G#5:2 A5:4 E5:4 C#5:2 E5:2 A5:2 B5:2 '
+           'C#6:2 B5:2 D6:2 C#6:2 E6:2 D6:2 C#6:2 B5:2 D6:2 C#6:2 B5:2 C#6:2 A5:2 B5:2 C#6:2 D6:2')
+# ... and its bass, which imitates it at bar 2 (Bach's left hand, two octaves below the tune here)
+BOURREE_BASS = 'E2:4 A2:2 G#2:2 B2:2 A2:2 C#3:2 B2:2 A2:2 G#2:2 A2:4 E2:4 C#2:2 E2:2 A2:2 B2:2'
+
+
+def coda():
+    """VI. Coda (q236-264): the source revealed.  The allemande band alone plays the first bars of
+    Bach's Bourree I, whose head the subject has been all along; then the whole ball bows."""
+    z = S7
+    theme('D1', z - 1, BOURREE, 'Bach, Bourree I (BWV 806), bars 1-4')
+    theme('B1', z + 7, BOURREE_BASS, 'Bach, Bourree I, the bass imitation')
+    put('H1', z + 4, 'C#5:4 B4:4 A4:4 C#5:4 E5:4 B4:4 A4:4 E5:4 F#5:4 E5:4 E5:4 E5:4')
+    put('T1', z + 4, 'E4:4 G#4:4 A4:4 E4:4 E4:4 E4:4 A4:4 G#4:4 A4:4 G#4:4 A4:4 A4:4')
+    put('Q1', z + 4, 'A3:4 B3:4 C#4:4 A3:4 A3:4 G#3:4 A3:4 C#4:4 A3:4 B3:4 C#4:4 E4:4')
+    # bars 4-6: the allemande band closes Bach's phrase (Bach's bass, then IV-V)
+    put('B1', z + 16, 'C#3:2 B2:2 D3:2 C#3:2 E3:2 D3:2 C#3:2 A2:2 D3:4 E3:4 E2:8 A2:16')
+    put('D1', z + 16, 'E6:4 D6:4 B5:4 A5:8 G#5:4 B5:8 A5:16')
+    put('H1', z + 16, 'C#5:4 A4:4 G#4:4 A4:8 E5:28')
+    put('T1', z + 16, 'E4:4 F#4:4 E4:8 F#4:4 E4:4 B3:8 C#4:16')
+    put('Q1', z + 16, 'A3:8 E3:4 A3:8 E3:4 G#3:8 A3:16')
+    # the whole ball enters on the dominant and bows on the tonic
+    put('D2', z + 22, 'E5:8 C#6:16')
+    put('H2', z + 22, 'E5:24')
+    put('T2', z + 22, 'E4:8 C#4:16')
+    put('Q2', z + 22, 'E4:8 A3:16')
+    put('B2', z + 24, 'A1:16')
+    put('D3', z + 22, 'E6:24')
+    put('H3', z + 22, 'E5:24')
+    put('T3', z + 22, 'E4:24')
+    put('Q3', z + 22, 'E3:24')
+    put('B3', z + 22, 'E3:24')
+    put('D4', z + 22, 'E5:24')
+    put('H4', z + 22, 'E4:24')
+    put('T4', z + 22, 'E4:24')
+    put('Q4', z + 22, 'E3:24')
+    put('B4', z + 24, 'A2:16')
+    # @@coda
+
+
+SECTIONS = [allemande, courante, sarabande, gigue, ballo, summit, coda]
 
 
 BPM = 66

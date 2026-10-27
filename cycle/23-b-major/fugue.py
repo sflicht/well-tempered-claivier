@@ -23,6 +23,8 @@ sys.path.insert(0, str(HERE))
 from x23 import *  # noqa
 
 NB = 96
+HEAD = "B4:6 C#5:1 D#5:1 E5:2 F#5:2 G#5:4"      # first bar of S
+IHEAD = "G#5:6 F#5:1 E5:1 D#5:2 C#5:2 B4:4"     # first bar of I
 
 
 # ===================================================================== I. EXPOSITION (bars 1-12)
@@ -64,7 +66,7 @@ TOUR = [  # (major voice, ut, minor voice, la, start bar, start beat)
     # Bull's dive: after five whole steps the next would be B, home - too soon.  The bass
     # drops to C instead and the second staircase begins.
     ('B5', 'C2', 'B4', 'A3', 44, 1),
-    ('B2', 'D3', 'A3', 'B4', 49, 3),
+    ('B2', 'D2', 'A3', 'B4', 49, 3),
     ('T6', 'E3', 'A2', 'C#5', 55, 1),
     ('T4', 'F#3', 'S5', 'D#5', 60, 3),
     ('T2', 'Ab3', 'S3', 'F5', 66, 1),
@@ -76,7 +78,7 @@ def tour_cantus(sc):
     for k, (mv, ut, nv, la, bar, beat) in enumerate(TOUR):
         sc.theme(mv, bar, beat, hex_up(ut), f'cantus: {KEY_OF[mv]} major, ut..la', 'cantus')
         fb, fbeat = (bar + 1, beat + 2) if beat == 1 else (bar + 2, 1)
-        last = 8 if k not in (4, 10) else None        # ut shortened where the next pair's la enters
+        last = 8 if k not in (4, 10) else (12 if k == 10 else None)   # ut shortened where the next pair's la enters
         sc.theme(nv, fb, fbeat, hex_dn(la, last=last), f'cantus: {KEY_OF[nv]} minor, la..ut', 'cantus')
 
 
@@ -107,8 +109,89 @@ def pair3(sc):
     sc.put('A2', 25, 1, 'Bb4:6 C5:2 Bb4:4 G4:4 F4:6 G4:2 A4:4 F4:4 F4:6 Eb4:2 F4:8 E4:6 D4:2 C4:4 E4:4 F4:8')
 
 
+def pair4(sc):
+    # G major / E minor (bars 29-35): S at the top on the cantus's fa, broken-chord divisions in the soprano
+    sc.theme('S2', 32, 3, in_key(S, 'B4', 'G5'), 'S in G', 'S')
+    sc.put('B4', 30, 1, 'C3:8 F2:8 A2:8 G2:8~ G2:8 C3:8 A2:8 D3:8~ D3:8 G2:8')
+    sc.put('T6', 30, 1, 'C4:8 D4:8 C4:8 G4:8 G4:8 E4:8 E4:8 F#4:8 F#4:8 G4:8')
+    sc.put('S5', 30, 1, 'E5:2 G5:2 C6:2 E5:2 D5:2 F5:2 A5:2 F5:2 C6:2 A5:2 E5:2 C6:2 B5:2 G5:2 E5:2 G5:2 B5:2 G5:2 D5:2 G5:2')
+
+
+def pair5(sc):
+    # A major / F-sharp minor (bars 35-40), S in the bass; then the seam (41-43): the bass falls F#-E-D-C#, halts on F#7 (the home dominant) and swerves through G7 into C
+    sc.theme('B2', 35, 1, octv(in_key(S, 'B4', 'A4'), -2), 'S in A (bass)', 'S')
+    sc.put('B2', 37, 1, 'A2:8 C#3:8 F#2:8 B2:8 E2:8 C#3:8 F#2:8 D3:8 F#2:8 E2:8 D2:8 C#2:8 F#2:8 G2:8')
+    sc.put('A2', 35, 1, 'C#5:2 C#5:2 C#5:2 E5:2 D5:4 F#4:4 B4:2 B4:2 B4:2 E5:2 D5:4 E5:4 C#5:2 C#5:2 C#5:2 A4:2 A4:8 A4:8')
+    sc.put('A2', 41, 1, 'C#5:16 D5:8 B4:8 A#4:8 B4:8')
+    sc.put('T6', 37, 1, 'E4:16 A4:16 G#4:8 A4:8 A4:8 D4:8 F#4:16 F#4:8 G#4:8 E4:8 D4:8')
+    sc.put('S5', 37, 1, 'R:8 A5:8 A5:6 G#5:2 F#5:8 B5:4 E5:4 A5:4 G#5:4 F#5:6 G#5:2 A5:4 F#5:4 A5:16 F#5:8 E#5:8 C#5:8 F5:8')
+
+
+def pair6(sc):
+    # C major / A minor (bars 44-49): Bull's leap - the bass dives to C; S in the alto
+    sc.theme('A3', 44, 1, in_key(S, 'B4', 'C5'), 'S in C', 'S')
+    sc.put('T6', 44, 1, 'E4:8 A4:8 F4:16 E4:8 G4:8 F4:8 A4:8 G4:8 B4:8 A4:8')
+    sc.put('A2', 44, 1, 'G4:8 A4:8 D5:8 A4:8 G4:8 C5:8 C5:8 F5:8 D5:8 E5:8 E5:8')
+    sc.put('S5', 44, 1, 'E5:8 C6:8 B5:8 C6:8 C6:8 G5:8 A5:8 C6:8 B5:4 G5:4 G5:8 C6:8')
+
+
+def pair7(sc):
+    # D major / B minor (bars 49-55): S in the soprano on the fa; the second staircase still in the depths
+    sc.theme('S6', 52, 3, in_key(S, 'B4', 'D5'), 'S in D', 'S')
+    sc.put('T6', 49, 3, 'A4:8 B4:8 G4:8 G4:8 F#4:8 F#4:8 D4:8~ D4:8 C#4:8 C#4:8')
+    sc.put('A2', 49, 3, 'F#5:8 B4:8 C5:8 E5:8 D5:8~ D5:8 B4:8 D5:8 A4:8~ A4:8 D5:8 B4:8')
+    sc.put('S5', 49, 3, 'A5:8 G5:8 C6:8 B5:16 F#5:8 B5:8 G5:4')
+    sc.put('T3', 49, 3, 'D4:8 G3:16 G3:8 B3:8 D4:16 B3:8 E4:8 A3:8 F#3:8 G#3:8')
+
+
+def pair8(sc):
+    # E major / C-sharp minor (bars 55-60): S in the soprano on the fa; parallel thirds with the cantus in the tenor
+    sc.theme('S4', 58, 1, in_key(S, 'B4', 'E5'), 'S in E', 'S')
+    sc.put('B2', 55, 3, 'G#2:8 F#2:16 C#3:16 A2:16 F#2:8 G#2:8 C#3:8 F#2:8')
+    sc.put('T3', 55, 3, 'B3:8 A3:16 C#4:16 C#4:16 D#4:16 G#3:8 A#3:8')
+    sc.put('S5', 55, 1, 'B5:4 A5:4 G#5:8 A5:6 G#5:2 F#5:4 A5:4 G#5:6 F#5:2 E5:4 G#5:4 C#6:8 A5:8 R:16 G#5:8 C#6:8')
+    sc.put('A5', 55, 3, 'B4:8 D5:8 A4:8 E4:16 E4:16 B4:16 G#4:8 E4:8')
+
+
+def pair9(sc):
+    # F-sharp major / D-sharp minor (bars 60-66): S in the soprano on the fa
+    sc.theme('S2', 63, 3, in_key(S, 'B4', 'F#5'), 'S in F-sharp', 'S')
+    sc.put('B2', 61, 1, 'F#2:8 C#3:8 G#2:8 D#2:8 A#2:8 D#3:8~ D#3:8 G#2:8 A#2:8 D#3:8 G#2:8')
+    sc.put('T3', 61, 1, 'A#3:8 B3:8~ B3:8 D#4:8 F#4:8 D#4:8 D#4:8 E#4:8 E#4:8 F#4:8')
+    sc.put('A5', 61, 1, 'D#4:8 G#4:8 G#4:8 F#4:8 A#4:8 F#4:8 F#4:8')
+    sc.put('S6', 61, 1, 'C#6:8 G#5:8 B5:8 A#5:8 A#5:8')
+
+
+def pair10(sc):
+    # A-flat major / F minor (bars 66-71): S in the alto at the pair's start; the meantone wolf passage
+    sc.theme('A4', 66, 1, in_key(S, 'B4', 'Ab4'), 'S in A-flat', 'S')
+    sc.put('B2', 66, 3, 'Ab2:8 Eb2:8 Bb2:8 Ab2:8 C3:8 F2:8 Db3:8 Bb2:8 C3:8 F2:8')
+    sc.put('A5', 66, 3, 'Db4:8 Eb4:8 Db4:8 Eb4:16 F4:16 Bb4:8 G4:8 C5:8 D5:8')
+    sc.put('S6', 66, 1, 'Eb5:8 F5:8 Gb5:8 Db5:8 C5:16 Ab4:16 Eb5:16 Ab4:8 F5:8')
+    sc.put('S2', 68, 1, 'Ab5:16~ Ab5:16 G5:16 Ab5:8 Bb5:8')
+
+
+def pair11(sc):
+    # B-flat major / G minor (bars 71-78): the heads of S gather (B-flat bass, E-flat, F); E-flat seventh turns into D-sharp seventh, dominant of G-sharp minor
+    sc.theme('B2', 71, 3, octv(in_key(HEAD, 'B4', 'Bb4'), -2), 'head of S in B-flat (bass)', 'Shead')
+    sc.theme('S4', 72, 1, in_key(HEAD, 'B4', 'Eb5'), 'head of S in E-flat', 'Shead')
+    sc.theme('S2', 75, 3, in_key(HEAD, 'B4', 'F5'), 'head of S in F', 'Shead')
+    sc.put('B2', 72, 3, 'C3:8~ C3:8 G2:8 Bb2:8 Eb2:8 G2:8 F2:8 D3:8 G2:8 C3:8 Eb3:8')
+    sc.put('T6', 75, 1, 'Bb3:8 C4:8 D4:16 Eb4:8 C4:8 Db4:8 Bb3:8')
+    sc.put('A2', 74, 3, 'G4:8 G4:8 A4:8 F4:8 Bb4:8 Eb5:16 Eb5:8')
+    sc.put('B6', 78, 1, 'Eb2:16')
+
+
 def tour(sc):
     tour_cantus(sc)
+    pair11(sc)
+    pair10(sc)
+    pair9(sc)
+    pair8(sc)
+    pair7(sc)
+    pair6(sc)
+    pair5(sc)
+    pair4(sc)
     pair3(sc)
     pair2(sc)
     pair1(sc)

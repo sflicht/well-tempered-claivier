@@ -283,3 +283,79 @@ def turn_home():
 
 
 turn_home()
+
+
+# =====================================================================================================
+# III. THE FRENZY AT HOME (bars 33-42).  Back in A-flat, and every cadence is still dodged, each in a
+# new way (vi7, flat VI, V7 of IV, the minor tonic); the remaining children crowd in.
+# =====================================================================================================
+def frenzy():
+    # E13 (bars 33-34): V -> vi7.  The newcomer is a guest: the subject of Bach's own A-flat fugue
+    # (BWV 862), at its own pitch and note values; its eighths fall naturally into 12/8, and it runs
+    # straight on into the second bar of our subject, so the guest finishes our sentence (and is denied
+    # our cadence like everyone else).
+    theme('RA2', 33, 0, BWV862 + ' Db4:2 C4:4 Db4:2', 'guest: the subject of BWV 862 (WTC I, A-flat), at pitch', 1)
+    put('RA2', 34, 0, ' '.join(subj('Ab', octave=3).split()[8:]))
+    put('LA1', 33, 0, lit('Ab4:14 Bb4:4 C5:6 | Db5:6 Bb4:6 G4:6 Eb4:6'))       # countersubject (do re mi | fa re ti sol)
+    put('RB1', 33, 0, lit('F2:12 Eb2:6 C3:6~ | C3:2 Bb2:10 Eb2:12'))
+    put('LS1', 33, 0, lit('Ab5:15 G5:3 Ab5:6~ | Ab5:8 G5:6 Bb5:4 Ab5:3 G5:3'))
+    put('LS2', 33, 0, lit('F5:14 Eb5:10 | F5:9 Eb5:11 Db5:4'))
+    put('RT1', 33, 0, lit('F3:12 G3:8 Ab3:4~ | Ab3:6 Bb3:12 G3:6'))
+    put('LBr2', 33, 0, lit('C3:6 Db3:6 Bb2:6 Eb3:6~ | Eb3:2 Db3:10 Bb2:12'))
+    # E14 (bars 35-36): V -> flat VI.  Left Soprano III enters; the countersubject returns to its first
+    # singer (Left Tenor I).
+    put('RA2', 35, 0, 'Ab3:6')
+    theme('LS3', 35, 0, subj('Ab', octave=4), 'deceptive cadence 14 (V - flat VI): subject', 2)
+    put('LT1', 35, 6, lit('Ab3:6 Bb3:6 C4:6 | Db4:6 Bb3:6 G3:6 Eb3:6'))
+    put('RB1', 35, 0, lit('Fb2:12 Db3:6 Ab2:6 | Bb2:12 Eb2:12'))
+    put('LS1', 35, 0, lit('Ab5:6 R:18 | R:6 Bb5:8 Ab5:4 G5:6'))
+    put('LS2', 35, 0, lit('Cb5:12 Bb4:6 Eb5:6'))
+    put('LA1', 35, 6, lit('Fb4:6 F4:6 Ab4:6~ | Ab4:6 G4:6 Eb4:6 Db4:6'))
+    put('LBr2', 35, 6, lit('Db3:6 F3:6 Eb3:6 | Db3:6 Eb3:6 Bb2:12'))
+    put('RA1', 36, 0, lit('F4:6 Eb4:6 Db4:6 Bb3:6'))
+    # E15 (bars 37-38): V -> V4/2 of IV: the bass slips up to G-flat instead of A-flat.  Right Tenor II
+    # enters; Left Alto II, the first of the deceived, sings the countersubject.
+    put('LS3', 37, 0, 'Ab4:6')
+    theme('RT2', 37, 0, subj('Ab', octave=3), 'deceptive cadence 15 (V - V4/2 of IV): subject', 2)
+    put('LA2', 37, 10, lit('Ab4:2 Bb4:6 C5:6 | Db5:6 Bb4:6 G4:6 Eb4:6'))
+    put('RB2', 37, 0, lit('Gb2:6 F2:6 Db3:6 Ab2:6 | Bb2:12 Eb2:12'))
+    put('LS1', 37, 0, lit('Ab5:14 Bb5:4 Ab5:6~ | Ab5:4 G5:2 Eb5:6 Db5:12'))
+    put('LA1', 37, 0, lit('C4:6 Db4:12 Eb4:6~ | Eb4:2 F4:4 G4:6 Bb4:12'))
+    put('LBr2', 37, 6, lit('Db3:6 F3:6 Eb3:6 | Db3:6 Eb3:6 Bb2:12'))
+    put('LT1', 37, 0, lit('Eb3:6 F3:6 Bb3:8 Ab3:4 | F3:6 Bb3:12 G3:6'))
+    put('RS', 38, 6, lit('Bb5:12 Ab5:3 G5:3'))
+    # E16 (bars 39-40): V -> i.  At last the bass reaches A-flat - but the chord is minor.  Left Baritone I
+    # enters with the subject in the bass, in A-flat minor; Right Alto I has the countersubject.
+    put('RT2', 39, 0, 'Ab3:6')
+    theme('LBr1', 39, 0, subj('Ab', 'minor', octave=2), 'deceptive cadence 16 (V - i): subject in A-flat minor (bass)', 2)
+    put('RA1', 39, 6, cs('Ab', 'minor', octave=4))
+    put('LS1', 39, 0, lit('Cb5:12 Db5:6 Eb5:6 | Fb5:6 Db5:18'))
+    put('RS', 39, 0, 'Ab5:6')
+    put('LA1', 39, 0, lit('Bb4:2 Ab4:4 Cb4:6 Fb4:6 Eb4:6 | Db4:6 Fb4:8 Eb4:4 Bb4:6~'))
+    put('LA2', 39, 0, lit('Eb4:12 Ab3:12~ | Ab3:14 G3:10'))
+    put('LT1', 39, 0, 'Eb3:6')
+
+def climax():
+    # Bars 41-43: all seventeen children at once.  Left Soprano II has the subject; Left Tenor I the
+    # countersubject; heads of the subject crowd in everywhere; the cadence is prepared with everything
+    # they have - and at its dominant seventh they stop dead.  The chord hangs; then silence.
+    theme('LS2', 41, 0, subj('Ab', octave=4), 'stretto of all the children: subject', 2)
+    put('LS2', 43, 0, 'Bb4:18')
+    put('LT1', 41, 6, lit(cs('Ab', octave=3) + ' Eb3:18'))
+    put('LBr1', 41, 0, lit('Ab2:6 Eb3:6 F3:12 | Db3:6'))
+    put('RB1', 41, 6, lit('Ab2:6 Db3:6 F2:6 | Bb2:6 Eb2:18 | Eb2:18'))
+    put('LS1', 41, 0, lit('C5:6 R:18 | F5:6 Bb5:6 Ab5:3 G5:3 Bb5:6 | Bb5:18'))
+    put('LA1', 41, 0, lit('Bb4:2 Ab4:12 F4:10 | F4:8 Eb4:16 | Eb4:18'))
+    put('LA2', 41, 0, lit('Ab3:6 C4:6 Db4:6 Ab3:6~ | Ab3:6 G3:6 Eb4:10 Bb3:2 | Bb3:18'))
+    theme('RT1', 41, 18, ' '.join(subj('Ab', octave=3, shift=-5).split()[:5]), 'stretto: head (on the mediant)', 1)
+    put('LS3', 42, 6, lit('Bb4:12 Eb5:6 | Eb5:18'))
+    put('LBr2', 41, 18, lit('C3:6 | F3:6'))
+    put('RB2', 42, 6, lit('Bb2:18 | Bb2:18'))
+    theme('RA1', 41, 4, ' '.join(subj('Ab', octave=4, shift=-3).split()[:7]), 'stretto: head (on the dominant)', 1)
+    put('RA1', 42, 2, lit('Ab4:4 Bb4:18 | Bb4:18'))
+    theme('RT2', 42, 6, ' '.join(subj('Ab', octave=3, shift=-3).split()[:7]) + ' G3:8', 'stretto: head (on the dominant)', 1)
+    theme('RS', 41, 6, ' '.join(subj('Ab', octave=5, shift=-5).split()[:7]), 'stretto: head (on the mediant)', 1)
+    put('RS', 42, 4, lit('Db5:2 Bb5:6 Db6:12 | Db6:18'))
+
+frenzy()
+climax()

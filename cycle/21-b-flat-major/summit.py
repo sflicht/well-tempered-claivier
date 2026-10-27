@@ -29,14 +29,14 @@ def place(sc, E):
            "A2:8 D3:4 Bb2:4 "                           # E4
            "A2:4 Bb2:4")                                # E5.1-2
     sc.theme(V(2), e(5), 3, octv(BACH, -1), "Bach's subject (BWV 992/6), bass", 3)
-    sc.put(V(2), e(8), 4, "C3:4 Bb2:8 R:8")             # E8.4 F7/C -> E9 Bb
+    sc.put(V(2), e(8), 4, "C3:4 Bb2:8")             # E8.4 F7/C -> E9 Bb
     sc.put(V(1), e(1), 1,
-           "Bb1:16 F1:8 D2:8 Bb1:8 D2:4 Eb2:4 F2:16 "  # E1-E4
+           "Bb1:12 R:4 F1:8 D2:8 Bb1:8 D2:4 Eb2:4 F2:8 Bb1:8 "  # E1-E4
            "F2:4 Bb1:12 Bb1:16 "                        # E5-E6
            "Bb1:8 F1:4 Eb2:4 D2:4 C2:4 F1:8 Bb1:16")   # E7-E9
     # the friends' theme on top, two beats after Bach's subject (tail turned to A for F major)
     sc.theme(V(22), e(6), 1, "R:2 Bb5:1 C6:1 D6:2 C6:1 Bb5:1 A5:2 Bb5:1 C6:1 D6:1 Eb6:1 F6:1 G6:1 "
-             "G6:4 F6:2 Eb6:2 D6:3 C6:1 A5:4", 'T (top; last note A)', 2)
+             "G6:4 F6:2 Eb6:2 D6:3 C6:1 C6:4", 'T (top; last note C)', 2)
     # our subject six beats after Bach's: it lands on the cadence
     sc.theme(V(12), e(7), 1, S, 'S (lands on the cadence)', 2)
     # our subject two beats after Bach's, an octave higher (Corno 16): Bach and us in stretto
@@ -56,20 +56,20 @@ LAYERS = 2
 def free_a(sc, e):
     """E1-E5.2.  Layers: halves (Fo22), quarters (Am20), eighths (Co3), octave calls (Co16, Co9),
     Am5 with Bach's answer head."""
-    sc.put(V(22), e(1), 1, "D6:8 Bb5:4 C6:4 C6:8 Bb5:4 F6:4 Bb5:8 F6:4 C6:4~ C6:8 D6:8 C6:4 D6:4")
+    sc.put(V(22), e(1), 1, "D6:8 Bb5:4 C6:4 C6:8 Bb5:4 G6:4 Bb5:8 F6:4 C6:4 F6:8 D6:8 C6:4 D6:4")
     sc.put(V(22), e(8), 1, "D6:4 G5:4 Bb5:4 C6:4 D6:16")
-    sc.put(V(20), e(1), 1, "F5:4 G5:4 F5:4 G5:4 A5:4 F5:4 F5:4 Bb5:4 D6:4 Eb6:4 Bb5:4 G5:4 A5:8 G5:4 F5:4 A5:4 F5:4")
+    sc.put(V(20), e(1), 1, "F5:4 G5:4 F5:4 G5:4 A5:4 F5:4 F5:4 Bb5:4 D6:4 Eb6:4 Bb5:4 G5:4 A5:8 G5:4 F5:12")
     sc.put(V(3), e(1), 1, "D3:2 C3:2 Bb2:2 D3:2 Bb3:4 G3:2 F3:2 "
            "C4:2 A3:2 D4:2 Bb3:2 F3:2 Eb3:2 G3:2 A3:2 "
            "Bb3:2 G3:2 G3:2 F3:2 R:2 F3:2 G3:2 Eb3:2 "
-           "C3:2 F3:2 A3:2 F3:2 Bb3:2 G3:2 D3:2 F3:2 "
+           "A2:2 F3:6 Bb3:2 G3:2 D3:2 F3:2 "
            "Eb3:4 D3:2 F3:2")
     sc.put(V(5), e(1), 1, "D4:8")
     sc.theme(V(5), e(2), 1, "F3:4 R:2 F3:1 F3:1 Bb3:2 Bb3:2 Bb3:2 Bb3:2", "A head (Bach's answer, his pitch)", 1)
     # Corno 16: the posthorn's octave call; at E2 exactly Bach's countersubject (BWV 992/6 b.5)
-    sc.theme(V(16), e(2), 1, BACH_CS, "Bach's countersubject (BWV 992/6, b.5), his pitch", 1)
+    sc.put(V(16), e(2), 1, BACH_CS)    # Bach's countersubject (BWV 992/6, b.5), at his pitch
     sc.put(V(16), e(3), 1, "G4:2 G5:1 G4:1 G4:4 R:2 D5:1 D4:1 G4:4 "
-           "F4:2 F5:1 F4:1 C5:4 R:2 G5:1 G4:1 Bb4:4 C5:4 Bb4:4")
+           "F4:2 F5:1 F4:1 A4:4 R:2 G5:1 G4:1 Bb4:4 C5:4 Bb4:4")
     # Amico 10: the Arioso's turn (BWV 992/1) as a figure, under the augmented T
     sc.put(V(10), e(1), 3, "F4:1 G4:1 F4:1 Eb4:1 C4:2 Eb4:2")
     sc.put(V(10), e(3), 1, "Bb4:1 C5:1 Bb4:1 A4:1 Bb4:4 Bb4:1 C5:1 Bb4:1 A4:1 C5:4 "
@@ -81,14 +81,14 @@ FREE_B = {
     21: ("R:8 C6:6 Bb5:2 D6:4 C6:4 Bb5:4 F5:12 D6:4 R:12 D6:4"),
     3: ("D3:2 F3:2 G3:2 F3:2 "
         "D3:2 C3:2 Bb2:2 D3:2 F3:2 D3:2 D3:2 F3:2 "
-        "Bb2:2 D3:2 D3:4 F3:2 A3:2 A3:2 Bb3:2 "
+        "Bb2:2 D3:2 D3:4 F3:2 A3:2 C3:2 Bb2:2 "
         "F3:2 G3:2 Bb2:2 C3:2 D3:2 C3:2 F2:4 D3:4"),
-    4: ("Bb4:8 F4:8 Bb3:8 Bb3:8 C4:8 F4:4 E4:4 D4:4 A3:4 F3:4"),
+    4: ("Bb4:8 F4:8 Bb3:8 Bb3:8 C4:8 F4:4 E4:4 D4:4 C4:4 F3:4"),
     5: ("R:8 R:2 D4:4 Bb3:2 R:8 R:2 Bb3:4 G3:2 R:8 R:2 G3:4 Bb3:2 R:8 D4:4"),
-    6: ("Bb3:8 R:8 D4:8 R:16 R:8 D4:4 C4:4 R:4"),
+    6: ("Bb3:8 R:8 D4:8 R:16 R:8 D4:4 F4:4 R:4"),
     9: ("R:8 F4:2 F5:1 F4:1 Bb3:2 Bb4:1 Bb3:1 R:8 G4:2 G5:1 G4:1 Bb3:2 Bb4:1 Bb3:1 R:8 "
         "Bb3:2 Bb4:1 Bb3:1 C4:2 C5:1 C4:1 R:8 D4:4"),
-    8: ("R:2 F4:4 Eb4:2 R:8 R:2 F4:4 D4:2 R:8 R:2 Eb4:4 D4:2 R:8 R:2 F4:4 C4:2 R:4"),
+    8: ("R:2 F4:4 Eb4:2 R:8 R:2 F4:4 D4:2 R:8 R:2 C4:6 R:8 R:2 F4:4 C4:2 R:4"),
     11: ("R:8 Bb4:1 C5:1 D5:1 Eb5:1 F5:1 Eb5:1 D5:1 C5:1 R:8 G4:1 A4:1 Bb4:1 C5:1 D5:1 C5:1 Bb4:1 A4:1 R:8 "
          "F5:1 Eb5:1 D5:1 C5:1 C5:1 D5:1 E5:1 C5:1 R:8 F5:4"),
     7: ("D4:1 C4:1 Bb3:1 A3:1 Bb3:1 C4:1 D4:1 Eb4:1 R:8 F4:1 G4:1 A4:1 Bb4:1 C5:1 Bb4:1 A4:1 G4:1 R:8 "

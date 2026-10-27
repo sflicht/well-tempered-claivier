@@ -148,7 +148,14 @@ class Score:
 
     def theme(self, v, bar, beat, toks, label, nbars=2):
         self.put(v, bar, beat, toks)
-        self.entries.append((v, bar, (Fr(beat) - 1), label, nbars))
+        # the entry is recorded at its first note (a theme may begin with a rest)
+        lead = Fr(0)
+        for t in toks.split():
+            if not t.startswith('R:'):
+                break
+            lead += Fr(W.parse_tok(t)[1]) / 4
+        q = (Fr(beat) - 1) + lead
+        self.entries.append((v, bar + int(q // 4), q % 4, label, nbars))
 
     def mark(self, bar, beat, text):
         self.marks.append((self.pos(bar, beat), text))

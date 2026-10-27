@@ -14,6 +14,7 @@ libfluidsynth and a GM soundfont. Workspace vendor directory is optional.
 from __future__ import annotations
 
 import argparse
+import bisect
 from fractions import Fraction
 import json
 import math
@@ -119,12 +120,15 @@ def lily_pitch(p, meta, explicit=None):
     return name + ("'" * (octave - 3) if octave >= 3 else "," * (3 - octave))
 
 
-def duration_parts(d):
-    """Conventional durations; fallback to exact scaled whole-note notation."""
+def duration_parts(d, long_dotted=False):
+    """Conventional durations; fallback to exact scaled whole-note notation.
+    long_dotted adds the dotted whole (used inside scaled compound bars only)."""
     choices = [(Fraction(4), "1"), (Fraction(3), "2."), (Fraction(2), "2"),
                (Fraction(3, 2), "4."), (Fraction(1), "4"), (Fraction(3, 4), "8."),
                (Fraction(1, 2), "8"), (Fraction(3, 8), "16."),
                (Fraction(1, 4), "16"), (Fraction(1, 8), "32")]
+    if long_dotted:
+        choices = [(Fraction(6), "1.")] + choices
     d = frac(d)
     out = []
     while d:
@@ -165,9 +169,12 @@ def score_duration(data):
     return max((frac(e["t"]) + frac(e["d"]) for v in data["voices"] for e in v["events"]), default=Fraction(0))
 
 
-def voice_segments(voice, end, bar_len, split_at=()):
+def voice_segments(voice, end, bar_len, split_at=(), bars=None, scale_at=None):
     """A complete grid of notes/rests split at bars, with tie flags.
-    Rests are also split at split_at times (e.g. rehearsal markers)."""
+    Rests are also split at split_at times (e.g. rehearsal markers).
+    Optional (per-staff metres): bars = sorted bar start times of this staff, used instead of the
+    regular bar_len grid; scale_at(t) = the duration scale of the bar at t (Fraction(1) = none),
+    for bars engraved inside \\scaleDurations (written value = sounding value / scale)."""
     full = []
     t = Fraction(0)
     cuts = sorted(set(split_at))
@@ -188,10 +195,17 @@ def voice_segments(voice, end, bar_len, split_at=()):
         remaining, cursor = e["d"], e["t"]
         first = True
         while remaining:
-            boundary = (cursor // bar_len + 1) * bar_len
+            if bars is None:
+                boundary = (cursor // bar_len + 1) * bar_len
+            else:
+                k = bisect.bisect_right(bars, cursor)
+                boundary = bars[k] if k < len(bars) else end
             take = min(remaining, boundary - cursor)
-            triplet = take.denominator % 3 == 0
-            if triplet:
+            scale = scale_at(cursor) if scale_at is not None else 1
+            triplet = scale == 1 and take.denominator % 3 == 0
+            if scale != 1:
+                parts = [(q * scale, name) for q, name in duration_parts(take / scale, long_dotted=True)]
+            elif triplet:
                 # triplet values: written 3/2 longer inside \tuplet 3/2
                 parts = [(q * Fraction(2, 3), name) for q, name in duration_parts(take * Fraction(3, 2))]
             else:
@@ -297,20 +311,70 @@ def create_lilypond(data, output):
         hosts.setdefault(h, []).append(i)
     guests = {g for gs in hosts.values() for g in gs}
 
-    def music_lines(i, voice, indent, spacer_rests=False):
+    # Optional per-staff time signatures (polymetre): score_layout.staff_meters maps a voice name,
+    # abbreviation or index to a list of changes [t_quarters, num, den] or [t, num, den, "2/3"].
+    # The optional fourth item engraves those bars inside \\scaleDurations (e.g. 12/8 whose dotted
+    # quarter equals the score's quarter).  Timing then lives in each Staff, so bar lines differ
+    # from staff to staff.  Without staff_meters the score is engraved exactly as before.
+    staff_meters = layout.get("staff_meters") or {}
+
+    def staff_plan(i):
+        """(bars, changes, scale_at) for staff i, or None to use the global metre."""
+        if not staff_meters:
+            return None
+        v = voices[i]
+        spec = next((staff_meters[k] for k in (v.get("name"), v.get("abbr"), str(i)) if k in staff_meters), None)
+        changes = sorted(((frac(c[0]), int(c[1]), int(c[2]), Fraction(str(c[3])) if len(c) > 3 else Fraction(1))
+                          for c in (spec or [])), key=lambda c: c[0])
+        if not changes or changes[0][0] > 0:
+            changes.insert(0, (Fraction(0), beats, denominator, Fraction(1)))
+        bars, t, k = [], Fraction(0), 0
+        while t < end:
+            while k + 1 < len(changes) and changes[k + 1][0] <= t:
+                k += 1
+            bars.append(t)
+            _, num, den, sc = changes[k]
+            t += Fraction(num * 4, den) * sc
+        starts = [c[0] for c in changes]
+
+        def scale_at(x):
+            return changes[bisect.bisect_right(starts, x) - 1][3]
+        return bars, {c[0]: c for c in changes}, scale_at
+
+    def music_lines(i, voice, indent, spacer_rests=False, plan_of=None):
         lines = []
         bar_items, currentbar = [], 0
         in_tuplet = False
-        segs = voice_segments(voice, end, bar_len, split_at=markers.keys() if i == 0 else ())
-        bars_with_notes = {s["t"] // bar_len for s in segs if s.get("p") is not None}
+        plan = staff_plan(i if plan_of is None else plan_of)
+        sbars, schanges, scale_at = plan if plan else (None, {}, None)
+        segs = voice_segments(voice, end, bar_len, split_at=markers.keys() if i == 0 else (),
+                              bars=sbars, scale_at=scale_at)
+
+        def bar_of(t):
+            return t // bar_len if sbars is None else bisect.bisect_right(sbars, t) - 1
+        bars_with_notes = {bar_of(s["t"]) for s in segs if s.get("p") is not None}
+        in_scale = False
         for s in segs:
-            bar = s["t"] // bar_len
+            bar = bar_of(s["t"])
             if bar != currentbar:
                 if in_tuplet:
                     bar_items.append('}')
                     in_tuplet = False
                 lines.append(indent + ' '.join(bar_items) + ' |')
                 bar_items, currentbar = [], bar
+            if s["t"] in schanges:
+                _, num, den, sc = schanges.pop(s["t"])
+                if in_tuplet:
+                    bar_items.append('}')
+                    in_tuplet = False
+                if in_scale:
+                    bar_items.append('}')
+                    in_scale = False
+                if plan_of is None:
+                    bar_items.append(f'\\time {num}/{den}')
+                if sc != 1:
+                    bar_items.append(f'\\scaleDurations {sc.numerator}/{sc.denominator} {{')
+                    in_scale = True
             if s.get('triplet') and not in_tuplet:
                 bar_items.append('\\tuplet 3/2 4 {')
                 in_tuplet = True
@@ -334,6 +398,8 @@ def create_lilypond(data, output):
             bar_items.append(token)
         if in_tuplet:
             bar_items.append('}')
+        if in_scale:
+            bar_items.append('}')
         lines.append(indent + ' '.join(bar_items) + ' \\bar "|."')
         return lines
 
@@ -343,7 +409,7 @@ def create_lilypond(data, output):
         name = escape_lily(voice.get("name", f"Voice {i+1}"))
         abbr = escape_lily(voice.get("abbr", str(i+1)))
         clef = voice.get("clef", "treble")
-        head = f'\\clef "{clef}" \\key {keynames.get(key, "cis")} \\{mode} \\time {beats}/{denominator}'
+        head = f'\\clef "{clef}" \\key {keynames.get(key, "cis")} \\{mode}' + ('' if staff_meters else f' \\time {beats}/{denominator}')
         tempo = f'\\tempo "{escape_lily(meta.get("tempo_text", "Con moto, sempre chiaro"))}" 4 = {round(bpm_of(meta))}'
         if i not in hosts:
             text += [f'    \\new Staff \\with {{ instrumentName = "{name}" shortInstrumentName = "{abbr}" }} {{',
@@ -364,7 +430,7 @@ def create_lilypond(data, output):
         text.append('      }')
         for g in gs:
             text.append(f'      \\new Voice {{ \\voiceTwo \\key {keynames.get(key, "cis")} \\{mode}')
-            text += music_lines(g, voices[g], '      ', spacer_rests=True)
+            text += music_lines(g, voices[g], '      ', spacer_rests=True, plan_of=i if staff_meters else None)
             text.append('      }')
         text.append('    >>')
     indent_mm = layout.get('indent_mm', 18)
@@ -373,6 +439,9 @@ def create_lilypond(data, output):
              f'    \\context {{ \\Staff \\override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #{staff_distance} }}',
              *(['    \\context { \\Staff \\RemoveEmptyStaves \\override VerticalAxisGroup.remove-first = ##t }']
                if layout.get('hide_empty_staves') else []),
+             *(['    \\context { \\Score \\remove "Timing_translator" \\remove "Default_bar_line_engraver" }',
+                '    \\context { \\Staff \\consists "Timing_translator" \\consists "Default_bar_line_engraver" }']
+               if staff_meters else []),
              '  }', '}']
     Path(output).write_text('\n'.join(text) + '\n', encoding='utf-8')
 

@@ -411,8 +411,9 @@ def summit():
     # the twenty-first voice, catches the lament (A1 G#1 G1 F#1 F1 E1) in half notes, a quarter
     # behind the first, which keeps the upper strand (C2 E2 D2 C2 B1 A1 G#1).
     theme('Cb1', 39, 1, aug(oc(HEAD, -3), 4), 'Cb I: subject x4', 4)
-    put('Cb1', 43, 1, 'C2:8 E2:8 D2:8 C2:8 B1:8 A1:8 G#1:16 A1:16')
-    put('Cb2', 43, 2, 'A1:8 G#1:8 G1:8 F#1:8 F1:8 E1:20 A1:16')          # SPLIT 21: Cb II from Cb I
+    put('Cb1', 43, 1, 'C2:8 E2:8 D2:8 C2:8 B1:8 A1:8 G#1:16')
+    put('Cb2', 43, 2, 'A1:8 G#1:8 G1:8 F#1:8 F1:8 E1:20 A1:4')           # SPLIT 21: Cb II from Cb I
+    # (b47.1: the two double basses meet on A; the second stops there -- FOLD 1)
     # cello V (from b38) is the bass for the two beats before the augmentation enters.
     # b39: the dominant.  Every voice holds a tone of E major and turns once around it with the
     # subject's opening gesture (E-D#-E, or the upper neighbour), each at its own sixteenth, so
@@ -469,13 +470,98 @@ SUMMIT_LINES = [
     # violin III, after its subject on A: F-E-D, then a line that climbs to C6/D6 and settles on the dominant
     ('Vl3', 42, 1, 'F5:6 E5:2 D5:8 E5:8 A5:6 G#5:2 B5:4 G5:4 C6:8 D6:8 A5:8 B5:20 A5:4'),
     # the top: E6-F6-E6 | D6 F6 | E6 C6 A5 B5 | E6 D6 E6 F#6 (the peak) | D6 F6 (9-8 over the bass's E) | E6 D6 | C6
-    ('Vl7', 'E6:8 F6:6 E6:2 D6:8 F6:8 E6:4 C6:4 A5:4 B5:4 E6:4 D6:4 E6:4 F#6:4 D6:4 F6:12 E6:8 D6:8 C6:16'),
+    ('Vl7', 'E6:10 F6:4 E6:2 D6:8 F6:8 E6:4 C6:4 A5:4 B5:4 E6:4 D6:4 E6:4 F#6:4 D6:4 F6:12 E6:16 C6:4'),
     ('Vl8', 'E5:4 A5:12 D5:12 F5:4 A5:4 C6:8 G#5:4 E5:4 G5:8 A5:4 F#5:4 B5:8 C6:4 G#5:4 B5:12 C6:4'),
+    ('Vl4', 'A5:12 C6:4 D6:8 F5:8 C6:16 B5:12 A5:4 B5:4 C6:12 B5:16 E5:4'),
+    ('Vl5', 'C5:4 E5:4 D5:4 C5:4 E5:4 F5:12 C5:4 E5:8 B4:4 B4:8 E5:4 C5:8 D5:8 C5:4 E5:20'),
+    ('Vl2', 'A4:16 D5:16 A4:8 E4:8 F4:4 G4:4 E4:4 A4:4'),
+    # violin VI: a slow chromatic inner line, an echo of the lament: A G# G | A G# F# E
+    # violin VI: a slow descending scale, A B A G# F# E D E, in syncopation
+    ('Vl6', 'A4:16 B4:6 A4:16 G#4:12 F#4:6 E4:8 D4:10 F4:10 E4:16'),
+    ('Vl9', 'A3:20 B3:12 A3:6 B3:12 C4:28 D4:6 E4:16'),
+    ('Va1', 'G4:4 A4:10 G4:6 F4:10 D4:6 E4:18 F#4:12 G4:6 A4:16 G#4:6 F#4:2 E4:4'),
+    ('Va5', 'C4:4 A3:20 B3:10 C4:4 B3:12 A3:16 B3:4 C4:12 D4:6 E4:12'),
+    ('Va2', 'C4:20 D4:14 C4:4 G#3:12 A3:12 G#3:4 A3:18 B3:6 C4:4 D4:2 C4:4'),
+    ('Va3', 'A3:16 F3:20 E3:12 G#3:4 B3:10 A3:4 G3:6 F3:16 E3:12'),
+    ('Va4', 'E3:6 F3:24 G3:10 A3:12 B3:14 A3:26 G#3:8'),
+    ('Vc2', 'A3:10 B3:16 C4:16 D4:4 C4:6 D4:14 C4:18 B3:8 G#3:8'),
+    ('Vc4', 'C4:10 B3:16 A3:8 B3:26 C4:10 B3:20 A3:4 G#3:2 C4:4'),
+    ('Vl2', 45, 1, 'D4:10 E4:20 D4:2 E4:4'),
+    ('Vc3', 'A3:6 B3:16 C4:6 B3:8 A3:22 G3:4 A3:12 G#3:20 A3:2 C4:4'),
+    ('Vc5', 'A3:10 G#3:6 B3:30 C4:12 B3:20 C4:12 D4:4 C4:6'),
+    ('Vc1', 'E4:14 D4:16 B3:10 C4:4 E4:10 D4:16 E4:20 D4:4 E4:6'),
     # the solo violin, after its subject: a slow line of suspensions, C-B-C-B-C-B-A-G#-A
-    ('Vl1', 'C5:8 A4:8 C5:4 B4:12 C5:12 B4:4 B4:8 C5:4 A4:4 C5:4 B4:8 A4:4 A4:4 G#4:8 B4:4 A4:16'),
+    ('Vl1', 'C5:8 A4:8 C5:4 B4:12 C5:12 B4:4 B4:8 C5:4 A4:4 C5:4 B4:8 A4:8 G#4:8 B4:4 A4:4'),
 ]
 
-SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4, approach, summit]
+# =================================================================== V. FOLDING BACK (b47-58)
+# Each voice returns into the voice it split from, in the reverse order of the splits.  The
+# fold is the split played backwards: the parent's line becomes compound for a beat (sixteenths
+# alternating its own note P and the child's note X), the child's last note ends at the
+# sixteenth where the parent plays X, and the parent goes on alone.  The ground under the
+# folding is the lament of the summit as a three-bar chaconne bass in the double bass
+# (A G# | G F# | F E), three times, so that the harmony the solo violin will imply at the end
+# (b59-) is the harmony heard here with all the voices.
+#   fold   time    child -> parent   X (child)  P (parent)
+FOLDS = [
+    (1, 47, 1, 'Cb2', 'Cb1', 'A1', 'A1'),       # the basses meet in unison
+    (2, 47, 3, 'Vl9', 'Vl6', 'E4', 'B4'),
+    (3, 48, 1, 'Va5', 'Va3', 'C4', 'G3'),
+    (4, 48, 3, 'Vl8', 'Vl1', 'D5', 'A4'),
+    (5, 49, 1, 'Vl7', 'Vl4', 'A5', 'D5'),
+    (6, 49, 3, 'Vc3', 'Vc1', 'B3', 'E3'),
+    (7, 50, 1, 'Vc4', 'Vc2', 'C4', 'A3'),
+    (8, 50, 3, 'Vc5', 'Cb1', 'E2', 'G#1'),
+    (9, 51, 1, 'Va4', 'Va2', 'G3', 'E4'),
+    (10, 51, 3, 'Va3', 'Va1', 'D4', 'A4'),
+    (11, 52, 1, 'Vl6', 'Vl2', 'A4', 'D5'),
+    (12, 52, 3, 'Vl5', 'Vl1', 'B4', 'E5'),
+    (13, 53, 1, 'Vl4', 'Vl3', 'E5', 'A5'),
+    (14, 53, 3, 'Vl3', 'Vl1', 'B5', 'E5'),
+    (15, 54, 1, 'Va2', 'Vl2', 'G4', 'C5'),
+    (16, 54, 3, 'Vc2', 'Va1', 'A3', 'D4'),
+    (17, 55, 2, 'Cb1', 'Vc1', 'F2', 'A2'),
+    # the last three return into the solo violin as its sweep widens across the strings again
+    # (the mirror of b13-15): A string (Vl II), D string (Va I), G string (Vc I)
+    (18, 56, 1, 'Vl2', 'Vl1', 'E5', 'A4'),
+    (19, 57, 1, 'Va1', 'Vl1', 'E4', 'C5'),
+    (20, 58, 1, 'Vc1', 'Vl1', 'A3', 'D5'),
+]
+
+
+def fold():
+    # the parents' compound beats (P X P X), except in the solo violin's last three sweeps
+    for n, bar, beat, child, parent, x, p in FOLDS:
+        if n == 1 or n >= 18:
+            continue
+        put(parent, bar, beat, f'{p}:1 {x}:1 {p}:1 {x}:1')
+    # the ground, in the first double bass (G# with the fold of cello V at b50.3, written above)
+    put('Cb1', 47, 1, 'A1:8 G#1:8 G1:8 F#1:8 F1:8 E1:8 A1:8')
+    put('Cb1', 50, 4, 'G#1:4 G1:8 F#1:8 F1:8 E1:4 E2:4 A2:8 G#2:8 G2:8 F#2:8 F2:5')
+    # cello I carries the ground after the double bass has folded into it, then climbs to the
+    # G-string strand (A3) that the violin takes back at b58.1
+    put('Vc1', 55, 3, 'E2:8 A2:8 G#2:4 E3:4 G3:8 A3:8')
+    # the solo violin: a slow line over the ground, compound where it takes a voice back
+    put('Vl1', 47, 2, 'C5:4 B4:8 C5:8')
+    put('Vl1', 48, 4, 'A4:4 D5:8 B4:8 C5:8 B4:8 E5:8 D5:8 D5:8')
+    put('Vl1', 52, 4, 'E5:4 C5:8')
+    put('Vl1', 53, 4, 'E5:12 D5:16 B4:4 G#4:4')
+    # b56-58: two strings, three strings, four strings
+    put('Vl1', 56, 1, 'E5:1 A4:1 E5:1 A4:1 E5:1 A4:1 E5:1 A4:1 E5:1 B4:1 E5:1 B4:1 E5:1 G#4:1 E5:1 G#4:1')
+    put('Vl1', 57, 1, 'E4:1 C5:1 G5:1 C5:1 E4:1 C5:1 G5:1 C5:1 F#4:1 C5:1 A5:1 C5:1 F#4:1 D5:1 A5:1 D5:1')
+    put('Vl1', 58, 1, 'A3:1 F4:1 D5:1 F5:1 A3:1 F4:1 D5:1 F5:1 G#3:1 E4:1 B4:1 E5:1 G#3:1 D4:1 B4:1 E5:1')
+    for line in FOLD_LINES:
+        v, bar, beat, toks = line
+        put(v, bar, beat, toks)
+
+
+# The free stretches between the folds, one entry per voice segment (added one at a time).
+FOLD_LINES = [
+    ('Vc1', 47, 2, 'E3:20 D3:14 E3:2'),
+]
+
+
+SECTIONS = [solo_opening, solo_strings, gen2, gen3, gen4, approach, summit, fold]
 
 TEMPO_MAP = []
 
