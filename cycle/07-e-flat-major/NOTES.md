@@ -6,7 +6,7 @@
 - Renders: `renders/` (listed at the end of this file).
 
 **Basis and limits**
-- Searches were used to *propose* material: the subject's pitches, the summit's entry levels and voice order, and passing notes for the fugue's free voices (§7). They ran as scratch scripts on the strict 16th-grid pair cost and `critic.analyse`. What they proposed was then written into the sources by hand. No search code is in the sources.
+- Searches were used to *propose* material: the subject's pitches and the summit's entry levels and voice order. They ran as scratch scripts on the strict 16th-grid pair cost and `critic.analyse`. What they proposed was then written into the sources by hand. No search code is in the sources.
 - **I cannot hear the renders.** Everything below comes from the score and the tools. None of it describes how the pair sounds.
 
 ---
@@ -160,8 +160,8 @@ In the finished summit, moving voices per bar for b37–42 are 6 7 8 8 6 7, a me
 |---|---|---|
 | parallels_error | **0** | **0** |
 | parallels_weak (off-beat) | 0 | 2 (b23.2, b39.1) |
-| **bad_doublings** (7th or leading tone doubled on a beat) | **3** (b23.4, b40.1, b46.3) | 0 |
-| **stepwise_pct** / leap_4th_plus_pct | **63.4** / 10.0 | 34.5 / 20.8 |
+| **bad_doublings** (7th or leading tone doubled on a beat) | **4** (b23.4, b39.2, b40.1, b46.3) | 0 |
+| stepwise_pct / leap_4th_plus_pct | 52.6 / 13.7 | 34.5 / 20.8 |
 | beat_parallels | **0** | **0** |
 | dissonance_unresolved | **0** | **0** |
 | pc_tripled_on_beats_pct | 13.7 | 10.4 |
@@ -169,29 +169,36 @@ In the finished summit, moving voices per bar for b37–42 are 6 7 8 8 6 7, a me
 | doubling_runs | 0 | 0 |
 | mean moving voices | 5.0 overall; **7.14** in the 22 tutti bars (≥ 6 voices active); summit b37–42: 7.0; disagreement b27–30: 7.75 | 2.89 of 3 |
 | keyboard (two hands) | 5.9% of onsets exceed two hands (choir texture; accepted by the brief) | 0% |
-| tertian fit / longest static | 60.7% / 8 beats (the final chord) | 66.8% / 4 beats (final chord) |
+| tertian fit / longest static | 66.3% / 8 beats (the final chord) | 66.8% / 4 beats (final chord) |
 | theme check | exposition 12/12 (answers 11/12, by tonal adjustment); all stretto statements on A♭/E♭/F 12/12; diminutions 12/12 | bass diminutions 12/12 |
 
-On tripling: a pitch class is tripled on 13.7% of beats (fugue) and 10.4% (prelude). The tripled pitch classes are chord roots and fifths (checked bar by bar with a scratch lister). With eight voices, the better measure is `bad_doublings`, which is 3 (see below and weak spot 12).
+On tripling: a pitch class is tripled on 13.7% of beats (fugue) and 10.4% (prelude). The tripled pitch classes are chord roots and fifths (checked bar by bar with a scratch lister). With eight voices, the better measure is `bad_doublings`, which is 4 (see below and weak spot 11).
 
 `tools/reduce.py` gives a harmony change on most beats in both pieces. The longest static harmony is the final chord.
 
 **Is each choir a complete harmonic unit?** On the 31 beats where both choirs have three or more voices sounding at the beat, Coro I's own notes contain a third on 26 beats and Coro II's on 29. The exceptions are listed under weak spots.
 
-**Melodic-profile revision (fugue).** The first finished version had **stepwise_pct 52.3 and 12 bad doublings**. Its free voices were assembled too much from chord tones.
-- A scratch script proposed passing notes for the free voices only: a third filled with a passing eighth, a fourth filled with two sixteenths, a repeated note turned into a neighbour. Thematic material and Coro II's mirror bars were excluded; the mirror was recomputed from Coro I's revised exposition.
-- Each proposal was accepted only if no critic count got worse (parallels, beat parallels, unresolved dissonances, bad doublings, low-register clashes, melodic faults, crossings).
-- I then struck by ear-on-paper the proposals that put a foreign note into a choir's key: a D♮ in Coro II's A-flat bars, an A♭ against Coro I's A♮. I fixed nine doublings by hand: for example, Coro II's 9–8 at b30 now really falls C–B♭ instead of rising onto a doubled D.
-- All 43 changed bar strings are written literally in `fugue.py`.
-- Result: **stepwise 63.4%, leaps of a fourth or more 10.0%, bad doublings 3**, with every other count at its previous level or better.
-
+**Melodic profile and doublings (fugue).** These are diagnostics, and I treated them that way.
+- **Doublings.** The first finished version had 12 bad doublings. I fixed the ones that were real voice-leading faults by hand, with seven small edits:
+  - b22: Coro II's alto no longer doubles the inversion's D.
+  - b30: Coro II's 9–8 now really falls C–B♭ instead of rising onto a doubled D.
+  - b38: Coro I's alto rests before its entry, and Coro II's bass takes B♭–C instead of D–B♭.
+  - b39: Coro I's bass holds A♭.
+  - b40: Coro II's alto rests after its statement.
+  - b45: Coro II's alto takes E♭–B♭ instead of a held B♭ (the seventh of the C-minor chord).
+  - Four remain (weak spot 11).
+- **Steps.** stepwise_pct is **52.6** (leaps of a fourth or more 13.7%), below the ~62 suggested for this fugue.
+  - The subject itself is 8/12 steps.
+  - Most non-step motion is in the free voices of the antiphonal exchanges (b17–20, b25–29, b36) and of the stretto (b37–40). The half-bar and one-beat exchanges assert their keys in arpeggios.
+  - In those passages the choirs speak homophonically. The free voices there move among chord tones, as in Gabrieli's and Schütz's antiphonal tuttis.
+  - I tried a scripted passing-note pass that raised the figure to 63%. I withdrew it, because notes inserted to move a number are not composed. The score holds only hand-written lines.
 ---
 
 ## 8. Honest weak spots
 
 1. **b30 (reconciliation).** Coro I holds a bare B♭–F (no third) for three beats under Coro II's A-flat chord. The polychord is complete only as an eight-voice sum. Adding D to Coro I would anticipate the note into which Coro II's 11–10 suspension resolves. Coro I also lacks a third at b22.1 and b40.3. Coro II lacks one at b38.3, where its D would double Coro I's leading tone.
-2. **"Chord (7th not resolved down)": 22 notes in the fugue.** Many are in Coro II's mirror, where inverted suspensions resolve upward by design. Others are inner-voice sevenths leaving by leap in the tutti. None is unresolved by the critic's definition.
-3. **Crossings: 20 reported.** All are between voices of *different* choirs (e.g. II-S above I-S). This comes from the critic comparing the score's voice order; within each choir no voices cross.
+2. **"Chord (7th not resolved down)": 31 notes in the fugue.** Many are in Coro II's mirror, where inverted suspensions resolve upward by design. Others are inner-voice sevenths leaving by leap in the tutti. None is unresolved by the critic's definition.
+3. **Crossings: 21 reported.** All are between voices of *different* choirs (e.g. II-S above I-S). This comes from the critic comparing the score's voice order; within each choir no voices cross.
 4. **Theme-check scores below 12/12 are by design.**
    - The c-level statements (b21 Coro I alto; b37 Coro I tenor) are diatonic transpositions, so their interval match is 3/12.
    - The one-bar head entries score 4–7/12.
@@ -204,10 +211,12 @@ On tripling: a pitch class is tripled on 13.7% of beats (fugue) and 10.4% (prelu
    - The second ritornello puts the diminished subject an octave up, so the obbligato reaches **F6** at b20. That is the top of a harpsichord's compass.
    - The chorale's Stollen is sung once, without the repeat that BWV 645 and the hymn have. This keeps the movement near 2½ minutes.
 10. **Prelude b41.4–42.2.** The texture thins to the chorale's final E♭ with the bass while the obbligato rests, a breath before the mirror. On paper it is a bare octave.
-12. **Three bad doublings remain in the fugue.**
+11. **Four bad doublings remain in the fugue.**
     - b40.1: every note of the doubled seventh (A♭) belongs to a stretto statement.
-    - b23.4: the doubled leading tone is the D of Coro II's inversion against Coro I's soprano. Every alternative tried for the soprano made parallels with the subject in the tenor or the bass.
+    - b39.2: the "seventh" is the E♭ of two stretto statements over an A-flat bass, read by the critic as F7 because of a passing F in the tenor's inversion.
+    - b23.4: the doubled leading tone is the D of Coro II's inversion against Coro I's soprano. The soprano alternatives I tried made parallels with the subject in the tenor or the bass.
     - b46.3: Coro II's held E♭4 against the E♭ of Coro I's augmentation. The alternatives left a dissonance unresolved.
+12. **Fugue melodic profile.** stepwise_pct is 52.6, against roughly 71–75 in Bach and the ~62 suggested here. The block-chord antiphony and the arpeggiated key assertions in b25–29 are the main cause. A hand revision of those free lines into scalar figures is the obvious next step; I have not done it.
 13. **Prelude melodic profile.** The obbligato is arpeggiated figuration, so the prelude's stepwise_pct is only 34.5% and its leaps of a fourth or more are 20.8%. The coordinator's melodic targets were set for the fugue; I did not revise the prelude for them.
 14. **No listening.** I cannot judge balance, the effect of the bach-lehman tuning, or whether the antiphony reads in the spatial render.
 

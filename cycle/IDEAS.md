@@ -87,10 +87,10 @@ device of its own:
     in the coda bars of both halves sound simultaneously.
 20. **[built] Pair VI: passacaglia and fugue à 7.** A lament ground that
     migrates through all seven voices; toccata prelude after BWV 565.
-21. **[in progress] Pair VII: fuga a due cori à 8.** Two complete four-voice
+21. **[built] Pair VII: fuga a due cori à 8.** Two complete four-voice
     choirs, subject against inversion, merging in an eight-voice stretto;
     chorale prelude on *Wachet auf*.
-22. **[in progress] Pair IX: the comma pump and the ring.** A pastorale in
+22. **[built] Pair IX: the comma pump and the ring.** A pastorale in
     adaptive just intonation that sinks a syntonic comma per cycle until the
     well-tempered keyboard corrects it; a ten-voice stile-antico ricercar
     whose motif travels round a ring of voices (Spem in alium), rendered
@@ -105,6 +105,13 @@ device of its own:
     Art of Fugue breaks off just after B-A-C-H joins the first two subjects;
     Nottebohm showed the three combine with the main theme. Fugue XII
     completes that quadruple fugue in F minor, in thirteen real voices.
+27. **[in progress] Pair XIII: fuga canonica à 14 on the Goldberg ground.**
+    Canons at every interval, as in the Goldberg Variations, accumulating over
+    the ground in F-sharp, ending in a quodlibet with the two folk songs of
+    Variation 30.
+28. **[in progress] Pair XIV: Ricercar a 15 on the Royal Theme.** Frederick
+    the Great asked Bach for six voices; this answers with fifteen, including
+    the Musical Offering's canonic devices and a canon per tonos.
 25. **[in progress] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
     BWV 869), strata moving at different rates, the convergence composed
     first, the cycle's subjects gathered at the end.

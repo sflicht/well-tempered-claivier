@@ -248,6 +248,30 @@ put('S2', 42, 4, 'B4:4 C5:2 B4:6')
 put('B1', 42, 3, 'E3:6 B2:6 E3:6')
 
 
+# ================================================================ VIII. CHORALE LINE 6 (b43-49): toward the dominant
+RN = 'E4:6 E4:4 D#4:2 E4:2 F#4:2 G4:2 B4:4 A4:2 B4:4 G4:2 C5:6 B4:2 A4:2 G4:2 F#4:2 E4:2 D4:2'   # natural-minor tail
+put('CH', 44, 1, CH6)
+theme('B2', 43, 2, octv(RN, -2), 'Coro II: subject in the bass (natural-minor tail, against the chorale D)')
+put('B2', 45, 2, 'G2:12 B2:6 E2:6 C3:6 A2:6 E2:6 C3:6 A2:6')
+theme('A1', 45, 2, octv(IG, -1), 'Coro I: inversion in G major, alto')
+# half cadence: the subject and its inversion together (a mirror pair) in B minor over a dominant pedal
+theme('S1', 47, 3, RA[:RA.index('C#5:2 B4:2 A#4:2')].strip(), 'Coro I: answer (B minor), with its mirror below', 2)
+theme('A2', 47, 3, octv(tr(INV, 7, 4), -1).rsplit(' ', 3)[0], 'Coro II: inverted answer (B minor), mirror of the soprano', 2)
+put('B1', 47, 3, 'B1:24')
+put('Bar1', 43, 2, 'B3:6 B3:4 A3:2 G3:6 D4:12 G3:12 A3:6 B3:6')
+put('T2', 43, 2, 'E4:6 E4:4 F#4:2 G4:6 F#4:6 G4:6 E4:12 A4:6 G4:6 B4:4 A4:2 G4:6 G4:4 F#4:2 E4:6 A4:6 G4:12 A4:6')
+put('S2', 44, 1, 'B4:6 D5:6 C5:6 E5:6 F#5:6 D5:6 D5:4 C5:2 B4:6 B4:6 E5:6 D5:6 B4:6 E5:6 C5:6')
+put('Bar2', 47, 3, 'F#3:6 E3:6 D3:6 E3:6 D3:6 E3:6 F#3:6')
+
+# ================================================================ IX. CHORALE LINE 7 (b49-55): the final stretto
+CH7F = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:6 A5:6 G5:60'     # last line; the final G held to the end
+put('CH', 50, 1, CH7F)
+theme('B2', 49, 1, octv(IG, -2), 'Coro II: inversion in G major, bass (final stretto 1)')
+theme('S2', 50, 1, INV, 'Coro II: inversion (E minor), soprano, under the chorale (final stretto 2)')
+theme('T1', 51, 3, octv(R, -1), 'Coro I: subject (E minor), tenor: the final cadence (final stretto 3)')
+put('B1', 51, 1, 'E2:6 B2:6 C3:6 B2:6 E2:6 G2:6 E3:6 C3:6 G2:6 B2:6 E2:30 E2:24 E2:12')
+
+
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
     meta = {'title': 'The Well-Tempered clAIvier',

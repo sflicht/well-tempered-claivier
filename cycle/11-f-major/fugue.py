@@ -273,19 +273,18 @@ put('Fl', 34, 2, W.transpose(oc(CSIdim, 2), 5, 3))
 # diminution that the oboe and recorder have just introduced.
 IBb = W.transpose(I, 5, 3)
 theme('Vc', 35, 1.5, oc(SBb, -2), 'tutti II (B-flat): subject (Violoncello)', 2)
-theme('Va2', 35, 3.5, oc(SBb, -2), 'tutti II (B-flat): subject (Viola 2), canon at two beats', 2)
+theme('Va2', 35, 3.5, oc(' '.join(SBb.split()[:-1]) + ' F5:2', -2), 'tutti II (B-flat): subject (Viola 2), canon at two beats', 2)
 theme('V2b', 36, 1.5, oc(IBb, -2), 'tutti II (B-flat): inversus (Violino II.2)', 2)
 theme('V1b', 36, 3.5, oc(IBb, -1), 'tutti II (B-flat): inversus (Violino I.2)', 2)
 put('V1a', 35, 2, W.transpose(CSdim, 5 + 12, 3 + 7))
-CSIBb = W.transpose(CSIdim, 5, 3)
-put('V2a', 36, 2, oc(CSIBb, 1))                                   # the mirrored CS in diminution
-put('Ob', 35, 2, 'F5:8 Eb5:4 D5:8 C5:4 Bb4:4 A4:4 C5:4 Bb4:8')
-put('Fl', 36, 1, 'R:8 D6:8 C6:4 D6:6 C6:2 Bb5:4 A5:4')
+put('Ob', 35, 2, 'F5:8 Eb5:4 D5:8 R:8 R:16 R:8 F5:8 G5:20 F#5:4 G5:4 F5:4')
+put('Fl', 38, 3, 'D6:16 Eb6:12 D6:12')
 # the turn to G minor: a falling bass Bb A G Eb C D G; the subject's head (tattoo) passed through the
 # upper ripieno in G minor while the inner voices hold suspensions
-put('Vne', 37, 1, 'Bb2:8 Eb3:8 F2:8 Bb2:4 A2:4 G2:8 Eb2:8 C2:4 D2:4 G2:4')
-put('Vc', 37, 1.5, 'R:6 G3:4 F3:8 D3:4 C3:4 Bb2:4 C3:4 G2:4 A2:4 Bb2:4')
+put('Vne', 37, 1, 'Bb2:4 F2:8 C3:4 F2:8 Bb2:4 A2:4 G2:8 Eb2:8 C2:4 D2:4 G2:8')
+put('Vc', 37, 1.5, 'R:2 C4:8 Bb3:4 A3:8 Bb3:4 C4:4 D4:8 G3:8 C4:4 A3:4 Bb3:4 B3:4')
 
+put('V1b', 38, 3.5, 'R:6 Bb4:16 C5:8 Bb4:4 G4:4')
 
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}

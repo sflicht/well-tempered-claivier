@@ -118,6 +118,25 @@
    ]
   },
   {
+   "name": "Pair VII \u00b7 E-flat major (new, eight voices)",
+   "pieces": [
+    {
+     "id": "prelude-7",
+     "title": "Prelude VII \u00b7 Chorale prelude on Wachet auf",
+     "score": "cycle/07-e-flat-major/prelude.json",
+     "tag": "new",
+     "notes": "Philipp Nicolai's chorale 'Wachet auf, ruft uns die Stimme' (1599), the tune of Bach's Sch\u00fcbler prelude BWV 645, which is also in E-flat major. As in BWV 645, the chorale sounds in long notes in the tenor. The dancing obbligato above it is the fugue subject in diminution, so the prelude secretly previews the fugue. The chorale's last line is answered by its own mirror image while the bass plays the diminished subject and then its inversion."
+    },
+    {
+     "id": "fugue-7",
+     "title": "Fugue VII \u00b7 Fuga a due cori",
+     "score": "cycle/07-e-flat-major/fugue.json",
+     "tag": "new",
+     "notes": "Two complete four-voice choirs, after Gabrieli's and Sch\u00fctz's cori spezzati and Bach's double-choir motet Singet dem Herrn (BWV 225). The subject opens with the first line of Wachet auf. Choir II sings a literal mirror image of Choir I's whole exposition, as in the Art of Fugue's mirror fugues. The choirs then trade at shrinking distances: a bar, half a bar, a beat.\n\nIn bars 25-29 the choirs disagree about the key, Choir I insisting on B-flat and Choir II on A-flat, until they reconcile on the home dominant. Then a joke: Choir I's pompous augmentation is cut off twice by Choir II's chattering diminution, and its last bar only arrives in the coda.\n\nThe summit is an eight-voice stretto, every voice entering half a bar apart, Choir I upright and Choir II inverted. In the binaural render Choir I is on the left and Choir II on the right."
+    }
+   ]
+  },
+  {
    "name": "Pair VIII \u00b7 E-flat minor (rebuilt, nine voices)",
    "pieces": [
     {
