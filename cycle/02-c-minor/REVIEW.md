@@ -408,10 +408,10 @@ Polish it by ear, then re-test it against the Eb forms used later.
 | 25–26 | 25–26 | **Build.** Lament bass kept. Head-motif stretto in alto and soprano a beat apart, climbing to G6. Bass takes the head at 26.3 (P13). | c: V | 3 |
 | 27–28 | 27–28 | **Peak: stretto à 3** (block B4). Soprano C6, bass C3, alto C5 at half-bar distances. Ends on V7 at 28.4. | c | 3 |
 | 29–30 | 29–30 | **Deceptive VI, N6, V.** Keep the harmony. The alto adds 7–6 suspensions over the bariolage bass. | c | 3 |
-| 31–34 | 31–34 (recomposed) | **Coda.** Bass: BWV 847 subject augmented from C3 (block B5), as the animated pedal. Alto: A (G4) from 31.3.5. Soprano: S (C6) from 32.4.5, then into the final stretto. | c | 3 |
-| 35 | 34 | **Final full chord.** Picardy C major, or a voiced minor triad (P12). | C | 3 |
+| 31–35 | 31–34 (recomposed) | **Coda.** Bass: BWV 847 subject augmented from C3 (block B5), as the animated pedal; it lands on Eb2 (i6) at 35.1. Alto: A (G4) from 31.3.5. Soprano: S (C6) from 32.4.5, then into the final stretto. b35.2–4: iv–V (or iv–vii°7–V). | c | 3 |
+| 36 | 34 | **Final full chord.** Picardy C major, or a voiced minor triad (P12). | C | 3 |
 
-**Totals.** 35 bars, against 34 now. At q≈80 that is about 105 s, against 118 s now. Entries:
+**Totals.** 36 bars, against 34 now. At q≈80 that is about 108 s, against 118 s now. Entries:
 - 3 exposition entries;
 - Eb entry;
 - G minor (S, augmentation, inversion);
@@ -428,7 +428,7 @@ The longest stretch without a subject statement is 2 bars (each episode).
 - **Middle (15–24).** The third voice makes the combinations possible: subject, inversion and augmentation together; the mirror trio; a stretto with a free accompanying voice.
 - **Build (25–26).** Two voices exchange the head, while the third keeps the lament bass that v5 already has.
 - **Peak (27–28).** All three voices state S, half a bar apart.
-- **Coda (31–35).** The bass carries the 847 subject in augmentation. The two upper voices state the inversion and the subject, then close the final stretto into a full chord.
+- **Coda (31–36).** The bass carries the 847 subject in augmentation. The two upper voices state the inversion and the subject, then close the final stretto into a full chord.
 
 ### 3.5 Process requirements (non-negotiable)
 
