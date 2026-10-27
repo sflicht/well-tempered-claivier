@@ -156,7 +156,7 @@ def pair8(sc):
 def pair9(sc):
     # F-sharp major / D-sharp minor (bars 60-66): S in the soprano on the fa
     sc.theme('S2', 63, 3, in_key(S, 'B4', 'F#5'), 'S in F-sharp', 'S')
-    sc.put('B2', 61, 1, 'F#2:8 C#3:8 G#2:8 D#2:8 A#2:4 B2:2 C#3:2 D#3:8~ D#3:8 G#2:8 A#2:4 B2:2 C#3:2 D#3:8 G#2:8')
+    sc.put('B2', 61, 1, 'F#2:8 C#3:8 G#2:8 D#2:8 A#2:4 B2:2 C#3:2 D#3:8~ D#3:8 G#2:8 A#2:8 D#3:8 G#2:8')
     sc.put('T3', 61, 1, 'A#3:8 B3:8~ B3:8 D#4:8 F#4:8 D#4:8 D#4:8 E#4:8 E#4:8 F#4:8')
     sc.put('A5', 61, 1, 'D#4:8 G#4:8 G#4:8 F#4:8 A#4:8 F#4:8 F#4:8')
     sc.put('S6', 61, 1, 'C#6:8 G#5:8 B5:8 A#5:8 A#5:8')
@@ -165,7 +165,7 @@ def pair9(sc):
 def pair10(sc):
     # A-flat major / F minor (bars 66-71): S in the alto at the pair's start; the meantone wolf passage
     sc.theme('A4', 66, 1, in_key(S, 'B4', 'Ab4'), 'S in A-flat', 'S')
-    sc.put('B2', 66, 3, 'Ab2:8 Eb2:8 Bb2:8 Ab2:8 C3:8 F2:8 Db3:8 Bb2:8 C3:8 F2:8')
+    sc.put('B2', 66, 3, 'Ab2:8 Eb2:8 Bb2:8 Ab2:4 Bb2:4 C3:8 F2:8 Db3:8 Bb2:8 C3:8 F2:8')
     sc.put('A5', 66, 3, 'Db4:8 Eb4:8 Db4:8 Eb4:16 F4:16 Bb4:8 G4:8 C5:8 D5:8')
     sc.put('S6', 66, 1, 'Eb5:8 F5:8 Gb5:8 Db5:8 C5:16 Ab4:16 Eb5:16 Ab4:8 F5:8')
     sc.put('S2', 68, 1, 'Ab5:16~ Ab5:16 G5:16 Ab5:8 Bb5:8')
@@ -176,7 +176,7 @@ def pair11(sc):
     sc.theme('B2', 71, 3, octv(in_key(HEAD, 'B4', 'Bb4'), -2), 'head of S in B-flat (bass)', 'Shead')
     sc.theme('S4', 72, 1, in_key(HEAD, 'B4', 'Eb5'), 'head of S in E-flat', 'Shead')
     sc.theme('S2', 75, 3, in_key(HEAD, 'B4', 'F5'), 'head of S in F', 'Shead')
-    sc.put('B2', 72, 3, 'C3:8~ C3:8 G2:8 Bb2:8 Eb2:8 G2:8 F2:8 D3:8 G2:8 C3:8 Eb3:8')
+    sc.put('B2', 72, 3, 'C3:8~ C3:4 Bb2:2 A2:2 G2:8 Bb2:8 Eb2:8 G2:8 F2:8 D3:8 G2:8 C3:4 D3:4 Eb3:8')
     sc.put('T6', 75, 1, 'Bb3:8 C4:8 D4:16 Eb4:8 C4:8 Db4:8 Bb3:8')
     sc.put('A2', 74, 3, 'G4:8 G4:8 A4:8 F4:8 Bb4:8 Eb5:16 Eb5:8')
     sc.put('B6', 78, 1, 'Eb2:16')
