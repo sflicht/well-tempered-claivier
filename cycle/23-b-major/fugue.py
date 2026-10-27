@@ -147,7 +147,7 @@ def pair7(sc):
 def pair8(sc):
     # E major / C-sharp minor (bars 55-60): S in the soprano on the fa; parallel thirds with the cantus in the tenor
     sc.theme('S4', 58, 1, in_key(S, 'B4', 'E5'), 'S in E', 'S')
-    sc.put('B2', 55, 3, 'G#2:8 F#2:16 C#3:16 A2:16 F#2:8 G#2:8 C#3:8 F#2:8')
+    sc.put('B2', 55, 3, 'G#2:8 F#2:16 C#3:16 A2:12 G#2:4 F#2:8 G#2:8 C#3:8 F#2:8')
     sc.put('T3', 55, 3, 'B3:8 A3:16 C#4:16 C#4:16 D#4:16 G#3:8 A#3:8')
     sc.put('S5', 55, 1, 'B5:4 A5:4 G#5:8 A5:6 G#5:2 F#5:4 A5:4 G#5:6 F#5:2 E5:4 G#5:4 C#6:8 A5:8 R:16 G#5:8 C#6:8')
     sc.put('A5', 55, 3, 'B4:8 D5:4 C#5:2 B4:2 A4:8 E4:16 E4:16 B4:16 G#4:8 E4:8')
