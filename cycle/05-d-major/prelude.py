@@ -125,7 +125,7 @@ def DYN(b):
 if __name__ == '__main__':
     end = NB * 4
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Prelude V in D major',
-            'composer': 'Recomposed by Claudia / Sam', 'instrument': 'Piano', 'key': 'D', 'mode': 'major',
+            'composer': 'Composed with Claude / Sam', 'instrument': 'Piano', 'key': 'D', 'mode': 'major',
             'meter': [4, 4], 'bpm': BPM, 'tempo_text': 'Allegro; bright', 'movement_number': 5,
             'piece_type': 'prelude', 'edition': 'third',
             # the flourish (b39) broadens, the diminished subject is played a tempo-ish, the end breathes

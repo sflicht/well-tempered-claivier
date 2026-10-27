@@ -255,7 +255,15 @@ theme('S3', 25, 1, dshift(S3, 4), 'III: subject 3, modal answer', 2)
 theme('T3', 26, 1, oc(S3, -1), 'III: subject 3', 2)
 theme('B3', 27, 1, dshift(oc(S3, -1), -3), 'III: subject 3, modal answer', 2)
 # Choirs I and II under the siciliano: Em C D Em | D7 Em D7 G | Em Bm D7 Bm | D7 Em D7 G | Em Bm Am F#o7
-put('B1', 24, 1, 'E2:4 C3:4 D3:4 G2:4 D2:4 E2:4 A1:4 G1:4 E2:4 B2:4 D3:4 B2:4 D2:4 B1:4 D2:4 G2:4')
-put('A2', 24, 1, 'G4:8 F#4:4 G4:4 A4:4 E5:4 A4:4 D5:4 B4:8 A4:4 D5:4 A4:4 G4:4 A4:4 G4:4 B4:4 B4:4 A4:8')
-put('T2', 24, 1, 'B3:4 C4:4 A3:4 B3:4 A3:4 G3:4 A3:4 B3:4 E3:4 F#3:4 D4:4 F#3:4 D4:4 E4:4 D4:8 E4:4 D4:4 C4:8')
-put('S2', 27, 1, 'D6:4 B5:4 A5:4 B5:4 E5:4 F#5:4 E5:8')
+put('B1', 24, 1, 'E2:4 C3:4 D3:4 G2:4 D2:4 B1:4 D2:4 G1:4 E2:4 B2:4 D3:4 B2:4 D2:4 G2:4 A1:4 G1:4')
+put('A2', 24, 1, 'G4:8 F#4:4 G4:4 A4:4 E5:4 A4:4 D5:4 B4:8 A4:4 D5:4 D5:4 B4:4 D5:8 E5:4 D5:4 C5:8')
+put('T2', 24, 1, 'B3:4 C4:4 A3:4 B3:4 A3:4 G3:4 A3:4 G3:4 G3:4 D3:4 A3:4 D3:4 A3:4 G3:4 A3:4')
+put('S2', 27, 1, 'A5:4 E5:4 A5:4 D6:4 B5:8 A5:8')
+# b28-31: line 3 as cantus in the Coro IV tenor (its first notes), Em -> D:  Em Bm Am F#o7 | C Am G/B G |
+# D D/F# Em Em/G | A A7/C# D (cadence in D, b31.3).
+theme('T4', 28, 1, oc(L3, -1), 'IV: chorale line 3 (cantus)', 4)
+put('B1', 29, 1, 'C3:4 A2:4 B2:4 G2:4 D3:4 F#2:4 E2:4 G2:4 A2:4 C#3:4 D3:8')
+# Over the cantus, Coro III answers itself in stretto: alto inverted (b29.1), soprano rectus two beats
+# later, tenor rectus (b30.1).
+theme('A3', 29, 1, dshift(inv(S3, 'B4'), -4), 'III: subject 3 inverted (stretto)', 2)
+theme('S3', 29, 4, dshift(inv(S3, 'B4'), 4), 'III: subject 3 inverted (stretto)', 2)

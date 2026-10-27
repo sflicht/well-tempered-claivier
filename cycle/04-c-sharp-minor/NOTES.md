@@ -221,3 +221,39 @@ five-voice texture readable.
 - **The prelude** still has root-fifth-third broken chords in about half of its bars, and the
   motif M still dominates. The contrast between the two movements comes from tempo, texture and
   character, not metre.
+
+## Second review (REVIEW-2.md)
+
+Three points were implemented. The augmented crux in the bass (bars 35-41) is unchanged.
+
+1. **Climax pair 1 (35-37) is re-spaced and lifted.**
+   - The pair now leads with the T at G#4. The S follows a dotted quarter later, an octave above, at 35.2.5. That is stretto_finder's offset 6 (+7), with 0 errors.
+   - The CS is in the A at E5, directly above the leader as designed.
+   - Nothing in the pair goes below B3, so it no longer sits on the C#2 crux.
+   - Low-register seconds fell from 9 to 4. Unplayable onsets fell from 15.8 % to 14.1 %.
+   - Pair 2 (38-39, Br then S an eighth later, two octaves apart) keeps the close echo.
+   - The S's final subject note at 37.2 is split C#-D#, as the alto's was before, so it passes over the crux's B#.
+   - Bar 34 was re-voiced to lead in: the A leaps B#-E, the crux interval.
+   - Bar 37 was re-voiced: the A's A4 is now a b9 over V, which removes a new beat parallel.
+2. **The crux is declared and brought forward.**
+   - All five crux statements are now in `ENTRIES` with "crux" labels: bars 17, 20, 23, 35 and 47.
+   - Their notes get +10 velocity in all: the +5 entry boost plus +5 in a velocity-only pass after `build_score`.
+   - The section's level changed from -6 to -4.
+   - The S's running counterpoint in 17-22 is 4 velocity units lighter, and at 17.1-17.2 it holds E5 (`E5:8`) so that the tenor's C#4 enters into a still texture.
+   - `critic.py` reports these entries as 0/9 matches against the main subject, which is expected.
+3. **Prelude.**
+   - Bar 36 is now the crux in dotted eighths over V7 (`C#5:3 B#4:3 E5:3 D#5:3`, a 4-3 then a 6-5, with no B# under the C#). Bar 37's tetrachord follows in the same rhythm.
+   - Bar 28 is M inverted on the dominant (`D#5 F#5 E5 D#5 B#4 C#5 D#5 E5`), so 7, 28 and 36 are no longer the same bar.
+   - The crux plant is brought forward: bars 19-20 at 0 with the R.H. +6, bars 21-22 at +10 (was -6 and a subito +14).
+   - Motif M now opens 12 of 38 bars (was 14). With the inversion in bar 28, M or its inversion opens 13.
+
+**After this pass.**
+
+| | parallels_error | beat_parallels | unresolved | bad_doublings | low-register seconds | unplayable onsets |
+|---|---|---|---|---|---|---|
+| Fugue | 0 | 1 (45.2) | 0 | 1 (44.3) | 4 | 14.1 % |
+| Prelude | 0 | 0 | 0 | 0 | 0 | 0 |
+
+**Not done.**
+- REVIEW-2 F3 (the pedal stretto in three octaves, bars 44-46) still produces the one beat parallel and the one bad doubling.
+- REVIEW-2 P3 (the bare-octave final bar) is unchanged.

@@ -108,7 +108,7 @@ bar('16',
 # T (C#m) - A (G#m, Bach's own answer G#-F##-B-A#) - S (C#m); the S carries the
 # CS's first bar as counterpoint against the first crux statement.
 bar('17 X  T (C#m); S: CS bar 1 as counterpoint; i6 - VI - iv',
-    S='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
+    S='E5:8 C#5:1 B4:1 A4:1 B4:1',
     A='E4:2 R:10',
     T='C#4:12',
     B='E3:4 C#3:4 A2:4')
@@ -194,29 +194,30 @@ bar('33 episode 3: head in S then T; the bass sings the crux in diminution (C#-B
     A='E4:4 D#4:2 G#4:2 F#4:4',
     T='G#3:6 E4:2 B#3:2 G#3:2',
     B='C#3:4 B#2:2 E3:2 D#3:4')
-bar('34 i - iv6 - V; S leaps the crux interval B#-E into the climax',
-    S='C#5:8 B#4:4',
-    A='E4:4 F#4:4 D#4:4',
+bar('34 i - iv6 - V; the alto leaps the crux interval B#-E into the climax',
+    S='C#5:8 D#5:4',
+    A='E4:4 A4:4 B#4:4',
     T='G#3:4 C#4:4 G#3:4',
     B='C#3:4 A2:4 G#2:4')
 # ---------------------------------------------------------------- CLIMAX
 # The crux in augmentation in the bass (C# 2 bars, B# 1, E 1, D# 2, C# 1) under
-# two complete strettos of N at an eighth's distance; the fixed CS rides the
-# first pair (S) and the second (T).
-bar('35 X-aug B: C#.  N in T + N in A an eighth later (octave above); CS in S',
-    S='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
-    A='R:2 G#4:2 E4:1 D#4:1 B3:2 F#4:4~',
-    T='G#3:2 E3:1 D#3:1 B2:2 F#3:6',
+# two complete strettos of N.  Pair 1 (T, then S a dotted quarter later, an octave
+# higher) stands clear of the bass with the CS in A; pair 2 (Br, then S an eighth
+# later, two octaves higher) keeps the close echo, with the CS in T.
+bar('35 X-aug B: C#.  N in T (G#4); N in S a dotted quarter later; CS in A',
+    S='R:6 G#5:2 E5:1 D#5:1 B4:2',
+    A='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
+    T='G#4:2 E4:1 D#4:1 B3:2 F#4:6',
     B='C#2:12~')
 bar('36',
-    S='C#5:6 B#4:2 D#5:2 E5:2',
-    A='F#4:2 A4:4 F#4:2 D#4:2 B#3:2',
-    T='A3:4 F#3:2 D#3:2 B#2:2 C#3:2',
+    S='F#5:6 A5:4 F#5:2',
+    A='C#5:6 B#4:2 D#5:2 E5:2',
+    T='A4:4 F#4:2 D#4:2 B#3:2 C#4:2',
     B='C#2:12')
-bar('37 X-aug: B#.  A ends its subject C#-D# (the crux holds B#); Br enters',
-    S='D#5:4 G#5:4 F#5:4',
-    A='C#4:1 D#4:1 F#4:6 G#4:4',
-    T='F#3:4 G#3:4 D#4:4',
+bar('37 X-aug: B#.  S ends its subject C#-D# (the crux holds B#); Br enters',
+    S='D#5:2 B#4:2 C#5:1 D#5:1 G#5:2 F#5:4',
+    A='G#4:4 A4:4 G#4:4',
+    T='D#4:12',
     Br='G#2:4 D#3:8',
     B='B#1:12')
 bar('38 X-aug: E.  N in Br + N in S an eighth later; CS in T',
@@ -306,10 +307,13 @@ ENTRIES = [
     ('A', 13, 0, 'subject (E major, modal)', 2),
     ('T', 26, 0, 'subject (F# minor)', 2), ('Br', 30, 0, 'answer (G# minor)', 2),
     ('A', 30, 2, 'stretto: subject a fifth higher, in key', 2),
-    ('T', 35, 0, 'subject (climax pair 1)', 2), ('A', 35, 0.5, 'subject, stretto at an eighth', 2),
+    ('T', 35, 0, 'subject (climax pair 1)', 2), ('S', 35, 1.5, 'subject, stretto at a dotted quarter', 2),
     ('Br', 38, 0, 'subject (climax pair 2)', 2), ('S', 38, 0.5, 'subject, stretto at an eighth', 2),
     ('S', 44, 0, 'subject, dominant form (B#)', 2), ('A', 44, 0.5, 'dominant form, stretto', 2),
     ('T', 44, 1, 'dominant form, stretto', 2),
+    ('T', 17, 0, 'crux (BWV 849)', 3), ('A', 20, 0, 'crux, Bach\'s answer (BWV 849)', 3),
+    ('S', 23, 0, 'crux (BWV 849)', 3), ('B', 35, 0, 'crux augmented (BWV 849)', 7),
+    ('S', 47, 0, 'crux over the tonic pedal (BWV 849)', 4),
 ]
 
 CRUX = [  # Bach's subject (BWV 849) as a genuine voice: (voice, bar, form)
@@ -329,7 +333,7 @@ def dynamics(b):
     if n <= 16:
         return 0
     if n <= 25:
-        return -6          # the crux exposition: quiet stile antico
+        return -4          # the crux exposition: quiet stile antico (crux itself brought forward below)
     if n <= 34:
         return -2 + (n - 26) // 3
     if n <= 41:
@@ -359,4 +363,18 @@ if __name__ == '__main__':
                 extra={'second_subject': {'source': 'J. S. Bach, WTC I, Fugue in C-sharp minor BWV 849, subject 1',
                                           'tokens': 'C#4:12 B#3:6 E4:6 D#4:12',
                                           'entries': [{'voice': v, 'bar': b, 'form': f} for v, b, f in CRUX]}})
+    # velocity shaping only (no pitch is touched): the crux statements get +5 on top of the
+    # entry boost (+10 in all); the soprano's running counterpoint around the first two crux
+    # entries (bars 17-22) is lightened by 4.
+    import json
+    d = json.loads(out.read_text())
+    names = [v['name'] for v in d['voices']]
+    crux_spans = [(v, (b0 - 1) * 3, (b0 - 1 + n) * 3) for v, b0, off, lab, n in ENTRIES if 'crux' in lab]
+    for vi, voice in enumerate(d['voices']):
+        for e in voice['events']:
+            if any(names[vi] == v and a0 <= e['t'] < a1 for v, a0, a1 in crux_spans):
+                e['v'] = min(118, e['v'] + 5)
+            elif names[vi] == 'S' and 16 * 3 <= e['t'] < 22 * 3:
+                e['v'] = max(24, e['v'] - 4)
+    out.write_text(json.dumps(d, indent=1))
     print('bars', len(F))

@@ -94,7 +94,8 @@ put(13,
     A='F#5:8 D5:4 F#5:4  B4:4 D5:4 G4:8  R:16  D5:8 A4:8',
     T='R:4 F#4:4 B4:2 B4:1 B4:1 D4:4  G4:2 G4:1 G4:1 B3:4 E4:2 E4:1 E4:1 E4:4  A4:2 A4:1 A4:1 A4:12  B3:8 E4:4 F#4:4',
     Br='A3:8 D4:4 B3:4  B3:2 A3:2 G3:8 B3:4  C#4:4 E4:4 D4:4 A3:4  G3:8 A3:8',
-    B='D3:8 B2:8  G2:8 E3:8  A2:8 D3:8  G2:8 F#2:8')
+    B='D3:2 E3:2 F#3:2 D3:2 B2:2 C#3:2 D3:2 B2:2  G2:2 A2:2 B2:2 G2:2 E2:2 F#2:2 G2:2 G#2:2 '
+      'A2:2 B2:2 C#3:2 A2:2 D3:2 C#3:2 B2:2 A2:2  E2:2 F#2:2 G2:2 E2:2 F#2:2 A2:2 C#3:2 A2:2')
 tag(13, 'Episode 1 (kept): head-cell canon')
 
 
@@ -157,14 +158,14 @@ put(28,
 tag(28, 'Episode 3: tattoo cells over a 4-3 chain, falling bass')
 
 # ===========================================================================
-# STRETTO II b32-34 in E minor, per arsin et thesin: rectus (alto) and, seven
-# sixteenths later (off the beat), the inversion a fifth lower (baritone);
+# STRETTO II b32-34 in E minor, per arsin et thesin: rectus (alto) and, an
+# eighth and a half beat later (off the beat, b32.2.5), the inversion a fifth lower (baritone);
 # the two tails run in contrary motion.
 EM_SUBJ = 'B4:4 E5:2 E5:1 E5:1 G5:2 G5:1 G5:1 B5:4 B5:3 A5:1 G5:2 F#5:2 E5:1 D5:1 C5:1 B4:1 C5:1 D5:1 E5:2'
 EM_INV5 = 'E4:4 B3:2 B3:1 B3:1 G3:2 G3:1 G3:1 E3:4 E3:3 F#3:1 G3:2 A3:2 B3:1 C4:1 D4:1 E4:1 D4:1 C4:1 B3:2'
 put(32, A=EM_SUBJ + ' E5:4 C5:4 C#5:8',
-        Br='R:7 ' + EM_INV5 + ' R:1 E3:4 C#4:4',
-        S='G5:6 A5:2 D6:6 E6:2  D6:4 C6:4 E6:4 D6:4  A5:4 E6:4 B5:4 A#5:4',
+        Br='R:6 ' + EM_INV5 + ' A3:2 E3:4 C#4:4',
+        S='G5:6 A5:2 D6:6 E6:2  D6:4 C6:4 E6:4 D6:4  A5:4 C6:4 B5:4 A#5:4',
         T='G4:12 E5:4  B4:4 C5:4 G4:8  E4:16',
         Cb='E2:4 C2:4 B1:4 E2:4  G1:4 A1:4 C2:4 B1:4  A1:8 C#2:4 F#2:4')
 tag(32, 'Stretto II (E minor): rectus + inversion, off the beat')
@@ -195,6 +196,9 @@ tag(35, 'Episode 4: subject tail over the B-minor falling fifths')
 FSM_SUBJ = 'C#5:4 F#5:2 F#5:1 F#5:1 A5:2 A5:1 A5:1 C#6:4 C#6:3 B5:1 A5:2 G#5:2 F#5:1 E5:1 D5:1 C#5:1 D5:1 E5:1 F#5:2'
 EM_SUBJ_DOR = 'B3:4 E4:2 E4:1 E4:1 G4:2 G4:1 G4:1 B4:4 B4:3 A4:1 G4:2 F#4:2 E4:1 D4:1 C#4:1 B3:1 C#4:1 D4:1 E4:2'
 A_SUBJ_MIX = 'E3:4 A3:2 A3:1 A3:1 C#4:2 C#4:1 C#4:1 E4:4 E4:3 D4:1 C#4:2 B3:2 A3:1 G3:1 F#3:1 E3:1 F#3:1 G3:1 A3:2'
+# the baritone's A entry ends a beat early (on A3) so it neither meets the
+# bass's D entry in unison nor crosses under it; the baritone then rests in b44
+A_SUBJ_MIX_CUT = 'E3:4 A3:2 A3:1 A3:1 C#4:2 C#4:1 C#4:1 E4:4 E4:3 D4:1 C#4:2 B3:2 A3:4 R:4'
 D_SUBJ_MIX = 'A2:4 D3:2 D3:1 D3:1 F#3:2 F#3:1 F#3:1 A3:4 A3:3 G3:1 F#3:2 E3:2 D3:1 C3:1 B2:1 A2:1 B2:1 C3:1 D3:2'
 G_SUBJ = 'D3:4 G3:2 G3:1 G3:1 B3:2 B3:1 B3:1 D4:4 D4:3 C4:1 B3:2 A3:2 G3:1 F#3:1 E3:1 D3:1 E3:1 F#3:1 G3:2'
 G_INV_CB = invert_diatonic(G_SUBJ, 'D3', [7, 9, 11, 0, 2, 4, 6])   # mirror about D3 in G major
@@ -205,7 +209,7 @@ put(39,
       'A5:16  A5:6 G5:2 E5:8  A5:4 G5:12',
     T='C#4:4 A3:4 B3:4 G#3:4  B3:8 A3:8  ' + EM_SUBJ_DOR + '  F#4:4 A4:2 B4:2 D5:6 C5:2 '
       'C5:12 B4:4  A4:6 B4:2 A4:6 G4:2  E4:4 A4:8 C#4:4',
-    Br='R:16 R:16 R:16  ' + A_SUBJ_MIX + '  D4:4 E4:4 A3:4 D4:4  D4:8 G3:6 A3:2  C#4:4 E4:4 E3:4 C#3:4',
+    Br='R:16 R:16 R:16  ' + A_SUBJ_MIX_CUT + '  R:16  D4:8 G3:6 A3:2  C#4:4 E4:4 E3:4 C#3:4',
     B='F#2:4 E2:4 B1:4 C#2:4  B1:16  E2:8 C#3:4 E3:4  A2:8 G2:4 E2:4  ' + D_SUBJ_MIX +
       '  R:6 B3:2 E3:8  R:16',
     Cb='R:16 R:16 R:16 R:16  D2:16  ' + G_INV_CB + '  A2:16')
@@ -253,7 +257,7 @@ ENTRY_LIST = [
     ('A', 17, 0, 'Subject in B minor', 2), ('T', 19, 0, 'Inversion in E minor', 2),
     ('T', 25, 0, 'Stretto I: subject in G', 2), ('A', 25, 1, 'Stretto I: diminution in E minor', 1),
     ('B', 25, 3, 'Stretto I: inversion (B minor colour)', 2),
-    ('A', 32, 0, 'Stretto II: subject in E minor', 2), ('Br', 32, 1.75, 'Stretto II: inversion, off the beat', 2),
+    ('A', 32, 0, 'Stretto II: subject in E minor', 2), ('Br', 32, 1.5, 'Stretto II: inversion, off the beat', 2),
     ('S', 39, 0, 'Cascade 1: F# minor', 2), ('A', 40, 0, 'Cascade 2: B minor', 2), ('T', 41, 0, 'Cascade 3: E minor', 2),
     ('Br', 42, 0, 'Cascade 4: A', 2), ('B', 43, 0, 'Cascade 5: D', 2), ('Cb', 44, 0, 'Cascade 6: G, inverted', 2),
     ('S', 47, 0, 'Summit: subject x4', 8), ('T', 47, 0, 'Summit: subject', 2),
@@ -271,15 +275,28 @@ for _e in ENTRY_LIST:
 
 def build(path=HERE / 'fugue.json'):
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue V in D major (a 6)',
-            'composer': 'Recomposed by Claudia / Sam', 'instrument': 'Piano (six voices)',
+            'composer': 'Composed with Claude / Sam', 'instrument': 'Piano (six voices)',
             'key': 'D', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
             'tempo_text': 'Allegro; trumpets and drums', 'movement_number': 5, 'piece_type': 'fugue',
             'edition': 'third', 'tempo_map': [[NBARS * 4 - 6, BPM], [NBARS * 4, round(BPM * 0.75), 'ramp']],
             'markers': [{'t': (b - 1) * 4, 'label': t} for b, t in enumerate(TAGS, 1) if t]}
     voices = [('Soprano', 'S', 'treble', 74), ('Alto', 'A', 'treble', 70), ('Tenor', 'T', 'treble_8', 70),
               ('Baritone', 'Br', 'bass', 70), ('Bass', 'B', 'bass', 72), ('Contrabass', 'Cb', 'bass', 74)]
-    return build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ,
+    data = build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ,
                        dynamics=DYN, tags=TAGS)
+    # performance emphasis (second review): each cascade entry's head bar +8, so the
+    # trumpet call is heard sinking through the lower voices; Bach's ghost +10 and
+    # the tenor -6 in b47 so BWV 850's run is not buried under the tenor tattoo.
+    adj = {('Soprano', 39): 8, ('Alto', 40): 8, ('Tenor', 41): 8, ('Baritone', 42): 8, ('Bass', 43): 8,
+           ('Contrabass', 44): 8, ('Baritone', 47): 10, ('Tenor', 47): -6}
+    for v in data['voices']:
+        for e in v['events']:
+            k = (v['name'], e['bar'])
+            if k in adj:
+                e['v'] = max(24, min(118, e['v'] + adj[k]))
+    import json
+    Path(path).write_text(json.dumps(data, indent=1))
+    return data
 
 
 BPM = 108

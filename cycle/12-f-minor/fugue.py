@@ -359,21 +359,23 @@ put('SI', F + 8, 1, 'C6:16~ C6:8 Ab5:8')
 put('SII', F + 8, 1, 'Bb5:8 Ab5:8 G5:8')
 put('SIII', F + 8, 1, 'E5:8 F5:8 E5:8')
 put('AII', F + 8, 1, 'C5:8 Ab4:8 C5:8')
-put('TI', F + 8, 3, 'F3:8 G3:12 F3:4')
+put('TI', F + 8, 3, 'F3:8 G3:8 C4:8')
 # Coda over the tonic pedal.  Soprano I signs the name at its own pitch, B-flat A C B-natural: iv - V7/iv - i -
 # vii-dim-7/V - V - and its A becomes the Picardy third of the last chord.
 seq('SI', F + 10, 'Bb5:8 A5:8', 'C6:8 B5:8', 'C6:16', 'A5:16')
-# The other voices of the coda (V7 over the pedal - V7/iv - i - vii-dim-7/V - V7 - I).  B-A-C-H's own seventh-
-# resolution: Tenor II's B-flat falls to A with the signature's last note.
+# The first subject returns over the tonic pedal (Tenor III), under the signature: its notes are the roots, fifths
+# and sevenths of the coda's chords (F: i; C: V7; B-flat: passing; A-flat: i and the seventh of vii-dim-7/V;
+# B-flat: V7; C-F: I).  Its last note but one is shortened to end with the final chord.
+theme('TIII', F + 9, 3, 'F3:8 C4:12 Bb3:4 Ab3:16 Bb3:16 C4:8 F3:8', 'S1 (over the tonic pedal)')
+# The other voices of the coda (V7 over the pedal - V7/iv - i - vii-dim-7/V - V7 - I).
 put('SII', F + 9, 3, 'F5:8')
 seq('SII', F + 10, 'G5:8 F5:8', 'F5:16', 'E5:16', 'F5:16')
 put('SIII', F + 9, 3, 'C5:8')
 seq('SIII', F + 10, 'C5:8 Eb5:8~', 'Eb5:8 D5:8', 'C5:16', 'C5:16')
-put('AI', F + 9, 3, 'C4:8')
-seq('AI', F + 10, 'C4:16', 'C4:8 F4:8', 'G4:16', 'C4:16')
-seq('TII', F + 10, 'E4:8 F4:8', 'Ab4:16', 'Bb4:16', 'A4:16')
-seq('BrII', F + 10, 'R:8 F3:8', 'F3:8 Ab3:8', 'G3:16', 'F3:16')
+seq('TII', F + 10, 'E4:8 F4:8', 'Ab4:8 F4:8', 'G4:16', 'F4:16')
+seq('BrII', F + 10, 'R:8 F3:8', 'F3:8 D3:8', 'G3:16')
 put('BI', F + 9, 3, 'C3:8')
+put('AI', F + 9, 3, 'Ab4:8 G4:8 C5:16 R:8')
 seq('BI', F + 10, 'C3:16', 'C3:8 Ab2:8', 'C3:16', 'C3:16')
 
 def build(nbars):

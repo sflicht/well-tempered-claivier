@@ -144,9 +144,11 @@ entry('S1', 21, 'Subject (F major)')
 tag(25, 'Var. 4 (A minor): ground in Alto II')
 put(25, A2=G('A4'))
 entry('A2', 25, 'Ground (Alto II), A minor', n=8)
-put(25, S1='C6:8 A5:2 G5:2  F5:8 E5:2 D5:2  C5:2 D5:2 E5:4 F#5:2 E5:2  D5:4 E5:4 B5:4~  B5:4 A5:4 D6:4~'
-           '  D6:8 C6:4  G5:4 G#5:4 A5:4~  A5:4 E5:8')
-put(25, S2='E5:8 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 G#4:4~  G#4:4 C5:4 R:4  R:4 B4:4 C5:4~'
+# Soprano I runs in eighths through Var. 4 (a diminution of its first, slower line).
+put(25, S1='C6:2 B5:2 C6:2 E5:2 A5:2 G5:2  F5:2 G5:2 F5:4 E5:2 D5:2  C5:2 D5:2 E5:2 A5:2 F#5:2 E5:2'
+           '  D5:2 F5:2 E5:2 A5:2 B5:4~  B5:2 G#5:2 A5:2 C6:2 D6:2 B5:2  D6:2 B5:2 D6:2 E6:2 C6:2 A5:2'
+           '  G5:2 E5:2 G#5:2 E5:2 A5:2 C6:2  B5:2 A5:2 C6:2 A5:2 E5:2 D5:2')
+put(25, S2='R:4 E5:4 D5:4~  D5:4 B4:8  A4:4 C5:4 B4:4  A4:8 G#4:4~  G#4:4 C5:4 R:4  R:4 B4:4 C5:4~'
            '  C5:4 B4:4 C5:4  C5:2 B4:2 A4:8')
 put(25, T1='C4:2 D4:2 E4:4 F4:4  D4:4 E4:8')
 tag(27, 'Inversus (Tenor I), under the ground')
@@ -171,7 +173,7 @@ put(33, A1=G('G4'))
 entry('A1', 33, 'Ground (Alto I), G minor', n=8)
 put(33, S1='G5:6 F5:2 Eb5:4  Eb5:4 D5:4 C5:4  B4:2 C5:2 D5:4 G5:4~  G5:8 F#5:4  F#5:4 G5:8'
            '  E5:4 D5:4 A5:4~  A5:4 F#5:4 G5:2 A5:2  Bb5:2 A5:2 G5:4 D5:4')
-put(33, S2='Bb4:12  C5:2 Bb4:2 A4:8  G4:2 A4:2 B4:4 A4:4  G4:4 D5:8~  D5:4 Bb4:4 C5:4  C5:2 Bb4:2 A4:4 D5:4~'
+put(33, S2='Bb4:12  C5:2 Bb4:2 A4:8  G4:2 A4:2 B4:4 A4:4  G4:4 D5:8~  D5:4 Bb4:4 C5:4  C5:4 A4:4 D5:4~'
            '  D5:8 Bb4:4~  Bb4:12')
 put(36, A2='R:8 A4:4~  A4:4 G4:8  A4:4 R:4 A4:4~  A4:4 C5:4 G4:4~  G4:8 F4:4')
 put(33, T1='D3:4 G3:8~  G3:4 C4:4 A3:4')
@@ -225,17 +227,18 @@ put(49, S1='F5:4 G5:4 F5:4~  F5:8 E5:4  A5:12  G5:8 A5:4')
 tag(53, 'Ground at the dominant in Soprano I, over its own augmentation')
 put(53, S1=G('A5'))
 entry('S1', 53, 'Ground in soprano (at the dominant)', n=8)
-put(61, S1='E5:8 C#6:4  D6:12  C#6:4 D6:4 C6:4  B5:2 A5:2 G5:4 A5:4  G#5:4 E5:8')
+put(61, S1='E5:8 C#6:4  D6:12  C#6:4 D6:8  B5:4 G5:4 A5:4  G#5:4 E5:8')
 put(49, S2='D5:2 C5:2 B4:4 D5:4  D5:4 C#5:4 B4:4  C#5:4 D5:4 E5:4~  E5:8 A4:4~'
            '  A4:4 B4:4 C5:4~  C5:4 E5:8  D5:8 A4:4~  A4:8 G4:4~  G4:4 F4:8~  F4:4 E4:8'
            '  E4:8 A4:4~  A4:4 F4:4 E4:4  R:12  R:4 F5:4 G5:4  E5:4 A5:8  G5:4 E5:8~  E5:4 D5:2 C#5:6'
            '  R:12  R:12  R:12  R:8 D5:4~  D5:12')
-put(49, A1='R:12')
-tag(50, 'Inversus (Alto I): the ground at double speed')
-put(50, A1=I('A4') + '  F4:2 E4:2 D4:8~  D4:4 F4:2 E4:2 D4:4~  D4:4 E4:8~  E4:4 D4:2 C4:2 Bb3:4~  Bb3:4 C4:8'
+put(49, A1='R:12  R:12  R:12')
+tag(52, 'Inversus (Alto I) at the E level: the ground at double speed; three speeds at once, 53-55')
+put(52, A1=I('E5') + '  R:12'
+                    '  E4:4 D4:2 C4:2 Bb3:4~  Bb3:4 C4:8'
                     '  C#4:8 C4:4~  C4:12  C4:4 D4:4 E4:4~  E4:4 F4:4 E4:4  A4:4 F4:4 A4:4'
-                    '  B4:4 E4:8  R:8 G4:4  F4:4 G4:8~  G4:4 A4:8  Bb4:8 A4:2 Bb4:2  C5:8 B4:4  A4:12')
-entry('A1', 50, 'Inversus (Alto I), summit')
+                    '  B4:4 E4:8  R:8 G4:4  F4:4 G4:8~  G4:4 A4:8  Bb4:8 A4:4  C5:8 B4:4  A4:12')
+entry('A1', 52, 'Inversus (Alto I), summit')
 tag(58, 'Stretto over the dominant: subject (Alto II)')
 put(58, A2=S('G4') + '  E5:4 A4:8  G4:4 A4:4 D5:4~  D5:4 C#5:8  R:4 A4:8  R:12'
                     '  R:8 F#4:4  G4:8 F#4:4  F#4:8 G4:4  F#4:12')
