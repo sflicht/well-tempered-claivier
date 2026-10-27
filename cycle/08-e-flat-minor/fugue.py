@@ -212,10 +212,10 @@ theme('S1', 34, 1, 'Bb5:4 F6:4 Gb6:3 F6:1', 'head on the dominant', 1); put('S1'
 # second edition's arrival (Eb ... Cb ... Ab ... F ... Eb) made thematic -- under eleven more statements:
 # rectus, inversus, inversion at the 5th, augmentation x2 (inverted, and major), at one- to three-beat distances.
 theme('B2', 37, 1, aug(octv(SQ, -2), 4), 'S quarter speed (x4): the arrival bass', 6)
-put('B1', 37, 1, 'Bb2:8 Cb3:4 Ab2:4')
+put('B1', 37, 1, 'Bb2:12 Ab2:4')
 put('Bar', 37, 1, 'Gb3:12 Ab3:4')
-put('T2', 37, 1, 'Bb3:16')
-put('T1', 37, 1, 'Eb4:12 Cb4:4 Bb3:8')
+put('T2', 37, 1, 'Bb3:12 Cb4:4')
+put('T1', 37, 1, 'Eb4:16 F4:8')
 put('A2', 37, 1, 'Gb4:16')
 put('A1', 37, 1, 'Bb4:8')
 put('S2', 37, 1, 'Eb5:4')

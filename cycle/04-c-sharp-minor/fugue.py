@@ -111,7 +111,7 @@ bar('17 X  T (C#m); S: CS bar 1 as counterpoint; i6 - VI - iv',
     S='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
     A='E4:2 R:10',
     T='C#4:12',
-    B='E3:4 A2:4 F#2:4')
+    B='E3:4 C#3:4 A2:4')
 bar('18 X: B# (V) - E (i)',
     S='F#5:6 E5:1 D#5:1 C#5:2 G#4:2',
     T='B#3:6 E4:6',
@@ -153,7 +153,7 @@ bar('25 X: D# as 9th of C#7 (V9 of F#m); Br enters on the leading tone',
     B='F#2:6 C#3:6')
 # ---------------------------------------------------------------- MIDDLE ENTRIES
 bar('26 N  T (F#m) + CS in A; lament bass F#-E-D',
-    S='C#5:4 B4:8',
+    S='C#5:4 G#5:4 F#5:4',
     A='A4:6 G#4:1 E4:1 F#4:1 E4:1 D4:1 E4:1',
     T='C#4:2 A3:1 G#3:1 E3:2 B3:6',
     Br='F#3:2 R:10',
@@ -176,10 +176,10 @@ bar('29 the same a step higher (G#-F##-B-A#)',
 bar('30 Ans Br (G#m) in the bass; stretto: A enters two beats later a fifth higher (in key)',
     S='B4:4 C#5:4 E5:4',
     A='R:8 A#4:2 F#4:1 E4:1',
-    T='B3:4 A#3:4 G#3:4~',
+    T='D#4:4 A#3:4 G#3:4~',
     Br='D#3:2 B2:1 A#2:1 F#2:2 C#3:6')
 bar('31',
-    S='E5:4 C#5:4 D#5:4',
+    S='E5:4 G#5:4 D#5:4',
     A='C#4:2 G#4:6 B4:4',
     T='G#3:6 C#4:2 A#3:2 B3:2',
     Br='E3:4 C#3:2 A#2:2 F##2:2 G#2:2')
