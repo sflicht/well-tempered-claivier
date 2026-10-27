@@ -317,6 +317,17 @@ for v, pch in [('S3', 'F##5'), ('S4', 'A#4'), ('A1', 'D#5'), ('A3', 'D#4'), ('A4
 put('B2', B + 1, 1, 'D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 D#2:4 R:4 D#2:4 R:4 D#2:8 ' + KNOCK3('D#2'))
 
 
+# ================================================================ IV. MANE (morning): b58-72, A-flat major
+# The eighth sharp cannot be written: the door opens and the score turns to A-flat major
+# (G-sharp major sounding).  The Ionian subject comes down from the top voice to the bass,
+# a fourth or fifth lower every two bars; the knocks become bells; the stars go out one by one.
+DAWN = 58
+theme('S1', DAWN, 1, octv(S_ION, 1), 'IV. Mane: subject in A-flat major (Ionian), at the top', 3)
+theme('A3', DAWN + 2, 1, A_ION, 'IV: answer (E-flat Mixolydian)', 3)
+theme('A4', DAWN + 4, 1, S_ION, 'IV: subject', 3)
+theme('T3', DAWN + 6, 1, octv(A_ION, -1), 'IV: answer', 3)
+theme('B1', DAWN + 8, 1, octv(S_ION, -2), 'IV: subject in the bass: the light reaches the depth', 3)
+
 def build(nbars, path=None):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
     meta = {'title': 'The Well-Tempered clAIvier',
