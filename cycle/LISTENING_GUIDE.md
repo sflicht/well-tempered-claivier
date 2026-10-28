@@ -6,8 +6,9 @@ the score. Your ears are the first real test.
 
 Play them in the [listening room](https://claude.ai/artifact/BBJMS7b46MiEycNBM24yhB)
 (any tuning, solo or mute any voice) or from the MP3s in each pair's
-`renders/` folder. `fugue-spatial.mp3` places the voices around you; use
-headphones.
+`renders/` folder. Fugues VI–XXIV also have `fugue-spatial.mp3`, a binaural
+render that places each voice around you; use headphones. (Fugues I–V and
+the preludes have no binaural version yet.)
 
 ## If you have half an hour
 
