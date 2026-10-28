@@ -141,7 +141,7 @@ def lap1_exposition():
     put('Vl1', 6, 1, 'C6:4 Bb5:4 Ab5:4 G5:4 B5:4 C6:4 Ab5:2 G5:6~')
     theme('Vc', 8, 1, oc(A, -2), 'A (Vc, G minor)')
     put('Va', 8, 1, oc(CS, -2))
-    put('Vl1', 8, 1, 'G5:6 F5:2 Eb5:4 D5:4 F#5:4 G5:4 A5:4 G5:4')
+    put('Vl1', 8, 1, 'G5:4 F5:4 Eb5:4 D5:4 F#5:4 G5:4 D6:2 C6:2 Bb5:4')
     put('Vl2', 8, 1, 'D5:4 Bb4:4 C5:4 A4:8 Bb4:4 F#4:2 D5:6')
 
 
@@ -156,7 +156,31 @@ def lap1_episode():
     put('Vc', 10, 1, 'C3:4 G2:4 F2:4 C3:4 Bb2:4 F2:4 Eb2:4 Bb2:4 Ab2:4 F2:4 Bb2:8')
 
 
-SECTIONS = [lap1_exposition, lap1_episode]
+# Subject in E-flat major (III): the subject moved up a third inside the same seven notes
+# (C minor's natural scale is E-flat major's), so B natural becomes D and the falling
+# diminished seventh a minor seventh.
+S_EB = 'Eb5:4 G5:2 Bb5:2 C6:4 D5:4 Bb5:1 Ab5:1 G5:1 F5:1 Eb5:1 F5:1 G5:1 Eb5:1 F5:2 D5:2 Eb5:4'
+CS_EB_BELOW = ('R:2 G4:1 Ab4:1 Bb4:1 Ab4:1 G4:1 F4:1 Eb4:1 F4:1 G4:1 Eb4:1 F4:4 '
+               'Bb4:4 G4:4 Ab4:2 F4:2 G4:4')     # the countersubject, two octaves down: below
+
+
+def lap1_return():
+    # b13-14: Violino I, the subject in E-flat major; the countersubject below it (Vl II)
+    theme('Vl1', 13, 1, S_EB, 'S (Vl I, E-flat major)')
+    put('Vl2', 13, 1, CS_EB_BELOW)
+    put('Va', 13, 1, 'Bb3:4 Eb4:4 G3:4 Ab3:8 G3:4 C4:2 Ab3:2 G3:4')
+    put('Vc', 13, 1, 'Eb3:4 G2:4 C3:2 F2:2 Bb2:4 D3:4 Eb3:4 Ab2:2 Bb2:2 Eb3:4')
+    # b15-16: back to C minor (the deceptive C minor chord of b14.4 is its tonic), the tail
+    # once more in the viola, a chromatic bass C Eb F F# G, and a half cadence: 6/4 - 5/3 on G.
+    put('Vl1', 15, 1, 'G5:8 Ab5:4 A5:4 G5:16')
+    put('Vl2', 15, 1, 'Eb5:8 C5:4 Eb5:4 Eb5:8 D5:8')
+    put('Va', 15, 1, 'G4:1 F4:1 Eb4:1 D4:1 C4:1 D4:1 Eb4:1 D4:1 C4:16 B3:8')
+    put('Vc', 15, 1, 'C3:4 Eb3:4 F3:4 F#3:4 G3:4 G2:12')
+    # b17: general pause (the first seam)
+    put('Vl1', 17, 1, 'R:16')
+
+
+SECTIONS = [lap1_exposition, lap1_episode, lap1_return]
 
 
 def build(path=None):
