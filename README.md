@@ -94,7 +94,10 @@ Tools:
   Bach–Lehman, Werckmeister III, Kirnberger III, Vallotti or meantone
   temperament; tempo maps; per-note cents for just intonation.
 - `tools/render_spatial.py`: binaural render with each voice in its own place
-  in a virtual nave (arc, ring, choir or antiphonal layouts).
+  around the listener (arc, ring, choir, antiphonal or per-voice seats), in a
+  moderately dry room so many lines stay distinct; `--program 52` or `53`
+  sings every voice with a choir sound, `--instruments` uses each voice's own
+  instrument.
 - `cycle/reference/bach-subjects.md`: Bach's WTC subjects in the project's
   token format, for allusion and combination.
 

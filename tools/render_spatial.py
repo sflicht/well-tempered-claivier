@@ -5,12 +5,20 @@ placed around the listener in a large reverberant space.
 Each voice is synthesised alone (same soundfont and temperament as
 render_music.py), then placed with interaural time and level differences
 (Woodworth ITD, head-shadow low-pass on the far ear), distance attenuation,
-a few early reflections, and a long decorrelated late reverb. Listen on
+a few early reflections, and a decorrelated late reverb. Listen on
 headphones.
 
+The default room (rt60 1.6 s, wet 0.12) is deliberately drier than a cathedral:
+with fifteen or more lines sounding, each line competes with the sum of all
+the others' reverb tails, so a long tail blurs the counterpoint. The earlier
+default (--rt60 3.2 --wet 0.32) is still available.
+
 Usage: render_spatial.py score.json --output out.mp3 [--temperament bach-lehman]
-       [--layout arc|ring|choir|antiphonal|antiphonal-centre|score] [--instruments] [--rt60 3.2]
-       (--layout score reads each voice's 'spatial': [azimuth_deg, distance_m])
+       [--layout arc|ring|choir|antiphonal|antiphonal-centre|score] [--instruments]
+       [--program N] [--rt60 1.6] [--wet 0.12]
+       (--layout score reads each voice's 'spatial': [azimuth_deg, distance_m];
+        --program plays every voice with General MIDI program N, e.g. 52 'Choir Aahs'
+        (slow attack: for long notes) or 53 'Voice Oohs' (quick attack: for moving lines))
 """
 from __future__ import annotations
 
@@ -31,12 +39,16 @@ import render_music as rm  # noqa: E402
 RATE = 44100
 
 
-def stem(data, i, soundfont, temperament, a4, instruments=False):
-    """Mono render of voice i alone (instruments=True: with the voice's own 'gm_program')."""
+def stem(data, i, soundfont, temperament, a4, instruments=False, program=None):
+    """Mono render of voice i alone (instruments=True: with the voice's own 'gm_program';
+    program=N: with General MIDI program N, whatever the score says)."""
     import fluidsynth
     one = dict(data)
     v = dict(data['voices'][i])
     v['piano_pan'] = 64
+    if program is not None:
+        v['gm_program'] = program
+        instruments = True
     one['voices'] = [v]
     synth = fluidsynth.Synth(samplerate=RATE, gain=0.5)
     sfid = synth.sfload(str(soundfont))
@@ -168,13 +180,15 @@ def main():
     ap.add_argument('--layout', default='arc', choices=['arc', 'ring', 'choir', 'antiphonal', 'antiphonal-centre', 'score'])
     ap.add_argument('--instruments', action='store_true',
                     help="play each voice with its own 'gm_program' (default: piano for every voice)")
-    ap.add_argument('--rt60', type=float, default=3.2)
-    ap.add_argument('--wet', type=float, default=0.32)
+    ap.add_argument('--program', type=int, default=None,
+                    help='play every voice with this General MIDI program (52 Choir Aahs, 53 Voice Oohs, ...)')
+    ap.add_argument('--rt60', type=float, default=1.6)
+    ap.add_argument('--wet', type=float, default=0.12)
     a = ap.parse_args()
     data = json.loads(a.score.read_text())
     n = len(data['voices'])
     pos = layout_positions(n, a.layout, data['voices'])
-    stems = [stem(data, i, a.soundfont, a.temperament, a.a4, a.instruments) for i in range(n)]
+    stems = [stem(data, i, a.soundfont, a.temperament, a.a4, a.instruments, a.program) for i in range(n)]
     length = max(len(s) for s in stems) + int(RATE * a.rt60)
     L = np.zeros(length)
     R = np.zeros(length)
@@ -199,7 +213,8 @@ def main():
     subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(wav), '-codec:a', 'libmp3lame',
                     '-b:a', '192k', str(a.output)], check=True)
     wav.unlink()
-    print(json.dumps({'output': str(a.output), 'voices': n, 'layout': a.layout,
+    print(json.dumps({'output': str(a.output), 'voices': n, 'layout': a.layout, 'rt60': a.rt60, 'wet': a.wet,
+                      'program': a.program,
                       'positions_deg_m': [(round(az), d) for az, d in pos], 'temperament': a.temperament,
                       'seconds': round(length / RATE, 1)}))
 
