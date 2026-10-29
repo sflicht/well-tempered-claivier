@@ -93,12 +93,14 @@ class Scene:
         self.q_of = lambda s, _q=qs, _s=np.array([self.sec(q) for q in qs]): float(np.interp(s, _s, _q))
         self.f = {s: ImageFont.truetype(FONT, s) for s in (18, 20, 22, 26, 30)}
         self.fb = {s: ImageFont.truetype(FONT_B, s) for s in (22, 28, 34, 40)}
-        self.title = self.meta.get('title') or self.meta.get('subtitle') or ''
-        self.subtitle = self.meta.get('subtitle') if self.meta.get('title') else ''
+        sub = self.meta.get('subtitle') or ''
+        self.title = self.meta.get('video_title') or (sub.split(' (')[0].split(':')[0] if sub else
+                                                      self.meta.get('title', ''))
+        self.subtitle = self.meta.get('video_subtitle') or self.meta.get('instrument') or ''
         # layout
-        self.score_box = (0, 74, W, 74 + 470)
+        self.score_box = (0, 74, W, 74 + 420)
         self.panel_top = self.score_box[3] + 16
-        self.room_box = (40, self.panel_top + 310, W - 40, H - 24)
+        self.room_box = (40, self.panel_top + 290, W - 40, H - 24)
         room = self.walk['room']
         bx0, by0, bx1, by1 = self.room_box
         sc = min((bx1 - bx0) / room[0], (by1 - by0) / room[1])
@@ -135,7 +137,7 @@ class Scene:
         front = img.crop((int(max(0, x0 - 40)), 0, int(x1), img.height))
         back = img.crop((int(x1), 0, int(x2), img.height))
         aspect = 14.0
-        hh = 240
+        hh = 480
         front = front.resize((int(hh * aspect), hh), Image.LANCZOS)
         back = back.resize((int(hh * aspect), hh), Image.LANCZOS)
         self.band = mobius.Strip(front, back, aspect=aspect)
@@ -153,8 +155,24 @@ class Scene:
             return ((x - x1) / (x2 - x1), True)
         return (0.0, False)
 
-    def band_frame(self, size, yaw, pitch, dist, marker, beta=1.0, gamma=1.0, target=None, ss=2):
-        return self.band.render(size, beta, gamma, yaw, pitch, dist, target=target, marker=marker, ss=ss)
+    def band_view(self, mk, t):
+        """Camera (yaw, pitch, target) that looks at the reading mark from the side it is printed on.
+
+        The direction to the camera is the printed face's normal at the mark, lifted a little, so the
+        camera orbits the band once per lap and dips under it where the strip is twisted."""
+        u, back = mk
+        X, n = self.band.surface(np.array([u]), np.array([0.0]), 1.0, 1.0)
+        X, n = X[0], n[0] * (-1.0 if back else 1.0)
+        n = n / np.linalg.norm(n)
+        phi = 2 * math.pi * (u - 0.5)
+        out = np.array([math.sin(phi), 0.0, math.cos(phi)])     # outward from the ring at the mark
+        k = float(n @ out)          # +1 printed face looks out of the ring, -1 into it, 0 flat
+        dirv = n + np.array([0.0, 0.55, 0.0]) + (0.6 * k + 0.5 * (1 - abs(k))) * out
+        dirv /= np.linalg.norm(dirv)
+        yaw = math.atan2(-dirv[0], dirv[2])
+        pitch = math.atan2(dirv[1], math.hypot(dirv[0], dirv[2]))
+        tgt = 0.4 * X + 0.6 * self.band.centre(1.0) + np.array([0.0, 0.22, 0.0])
+        return yaw, pitch, tgt
 
     # --- helpers -------------------------------------------------------------------------
     def xy(self, x, y):
@@ -262,8 +280,6 @@ class Scene:
             d.ellipse([ex - 9, ey - 9, ex + 9, ey + 9], fill=MIRROR if mirrored else (180, 186, 194))
             tx, ty = hx + sgn * rx * (R + 26), hy + sgn * ry * (R + 26)
             d.text((tx, ty), lab, font=self.fb[22], fill=MIRROR if mirrored else FG, anchor='mm')
-        if mirrored:
-            d.text((a[0] + 12, b[1] + 10), 'you are mirror-reversed', font=self.fb[22], fill=MIRROR)
         return levels
 
     def draw_dial(self, d, ci, levels, mirrored):
@@ -272,6 +288,8 @@ class Scene:
         d.text((cx, cy - rad - 52), 'heard from', font=self.f[20], fill=DIM, anchor='ma')
         d.text((cx, cy - rad - 26), 'front', font=self.f[18], fill=DIM, anchor='ma')
         d.line([(cx, cy - rad - 6), (cx, cy - rad + 8)], fill=DIM, width=3)
+        if mirrored:
+            d.text((cx, cy + rad + 12), 'mirror-reversed', font=self.fb[22], fill=MIRROR, anchor='ma')
         d.ellipse([cx - 6, cy - 6, cx + 6, cy + 6], fill=FG)
         for i, v in enumerate(self.voices):
             dist, fwd, right = rw.geometry(v['seat'], self.track[ci:ci + 1], self.mirror[ci:ci + 1])
@@ -287,8 +305,8 @@ class Scene:
         w, h = 560, 270
         x0, y0 = self.W - w - 10, self.panel_top
         mk = self.band_marker(q)
-        yaw = 0.35 + 0.05 * t
-        img = self.band_frame((w, h), yaw, 0.62, 3.9, mk, ss=2)
+        yaw, pitch, tgt = self.band_view(mk, t)
+        img = self.band.render((w, h), 1.0, 1.0, yaw, pitch, 5.0, target=tgt, marker=mk, ss=2)
         im.paste(img, (x0, y0))
         side = 'reading the back of the strip' if mk[1] else ('reading the front of the strip' if q < (self.seam2_q or 0) else 'home')
         d.text((x0 + w / 2, y0 + h + 2), side, font=self.f[20], fill=MIRROR if mk[1] else DIM, anchor='ma')
@@ -322,41 +340,53 @@ class Scene:
         W, H = self.W, self.H
         if self.band is None:
             return Image.new('RGB', (W, H), BG)
-        # phases: 0-.2 close-up pulling back (flat); .2-.45 curl; .45-.7 twist; .7-.85 close; .85-1 turn and dive
+        # phases: 0-.14 close-up on the first bars (flat); .14-.32 pull back; .32-.5 curl;
+        # .5-.68 half twist; .68-.8 close the ring; .8-1 turn to the reading mark
         e = mobius.ease
-        if x < 0.2:
-            y = e(x / 0.2)
+        L = self.band.L
+        if x < 0.32:
+            y = e((x - 0.14) / 0.18) if x > 0.14 else 0.0
             beta, gamma = 0.0, 0.0
-            dist = lerp(0.9, 7.6, y)
-            tgt = np.array([lerp(-self.band.L * 0.40, 0.0, y), 0.0, 0.0])
+            dist = lerp(0.75, 7.6, y)
+            tgt = np.array([lerp(-L * 0.43, 0.0, y), 0.0, 0.0])
             yaw, pitch = 0.0, 0.0
-        elif x < 0.45:
-            y = e((x - 0.2) / 0.25)
+        elif x < 0.5:
+            y = e((x - 0.32) / 0.18)
             beta, gamma = 0.8 * y, 0.0
             dist = lerp(7.6, 4.6, y)
             tgt = None
             yaw, pitch = lerp(0.0, 0.3, y), lerp(0.0, 0.5, y)
-        elif x < 0.7:
-            y = e((x - 0.45) / 0.25)
+        elif x < 0.68:
+            y = e((x - 0.5) / 0.18)
             beta, gamma = 0.8, y
             dist, tgt, yaw, pitch = 4.6, None, lerp(0.3, 0.45, y), 0.5
-        elif x < 0.85:
-            y = e((x - 0.7) / 0.15)
+        elif x < 0.8:
+            y = e((x - 0.68) / 0.12)
             beta, gamma = lerp(0.8, 1.0, y), 1.0
             dist, tgt, yaw, pitch = 4.6, None, 0.45, lerp(0.5, 0.6, y)
         else:
-            y = e((x - 0.85) / 0.15)
+            y = e((x - 0.8) / 0.2)
             beta, gamma = 1.0, 1.0
-            dist, tgt, yaw, pitch = lerp(4.6, 4.0, y), None, lerp(0.45, 0.75, y), 0.6
-        img = self.band.render((W, H - 180), beta, gamma, yaw, pitch, dist, target=tgt, marker=(0.0, False), ss=2)
+            yaw1, pitch1, tgt1 = self.band_view((0.0, False), 0.0)
+            dist = lerp(4.6, 5.0, y)
+            yaw, pitch = lerp(0.45, yaw1, y), lerp(0.6, pitch1, y)
+            tgt = self.band.centre(1.0) * (1 - y) + tgt1 * y
+        if x < 0.32:      # flat: sample only the part of the strip in view
+            half = dist * math.tan(0.45) * W / (H - 180) * 1.3 / self.band.L
+            uc = 0.5 + float(tgt[0]) / self.band.L
+            ur = (max(0.0, uc - half), min(1.0, uc + half))
+        else:
+            ur = (0.0, 1.0)
+        img = self.band.render((W, H - 180), beta, gamma, yaw, pitch, dist, target=tgt, marker=(0.0, False), ss=2,
+                               u_range=ur)
         im = Image.new('RGB', (W, H), BG)
         im.paste(img, (0, 90))
         d = ImageDraw.Draw(im)
         d.text((W / 2, 40), self.title, font=self.fb[34], fill=FG, anchor='ma')
         if self.subtitle:
             d.text((W / 2, 86), self.subtitle, font=self.f[22], fill=DIM, anchor='ma')
-        cap = ('lap 1 is printed on the front, lap 2 on the back' if x < 0.45 else
-               'a half twist…' if x < 0.7 else 'and the ends are joined: one side, twice as long')
+        cap = ('the score: lap 1 on the front of the paper, lap 2 on the back' if x < 0.5 else
+               'a half twist…' if x < 0.68 else 'the ends joined: one side, twice as long')
         d.text((W / 2, H - 70), cap, font=self.f[26], fill=FG, anchor='ma')
         return im
 
@@ -380,11 +410,12 @@ def main():
     ap.add_argument('--output', type=Path)
     ap.add_argument('--fps', type=int, default=30)
     ap.add_argument('--size', default='1080x1350')
-    ap.add_argument('--intro', type=float, default=6.0)
+    ap.add_argument('--intro', type=float, default=8.0)
     ap.add_argument('--outro', type=float, default=5.0)
     ap.add_argument('--start', type=float, default=0.0, help='video seconds to start at (intro included)')
     ap.add_argument('--duration', type=float, default=None)
     ap.add_argument('--still', action='append', default=[], help='write a single frame: out.png@video_seconds')
+    ap.add_argument('--mute', action='store_true', help='write video only (the audio still sets the length)')
     a = ap.parse_args()
     W, H = (int(x) for x in a.size.split('x'))
     scene = Scene(json.loads(a.score.read_text()), W, H, a.strip_dir)
@@ -413,7 +444,7 @@ def main():
     k1 = n_total if a.duration is None else min(n_total, k0 + int(a.duration * a.fps))
     cmd = ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24',
            '-s', f'{W}x{H}', '-r', str(a.fps), '-i', '-']
-    if a.audio:
+    if a.audio and not a.mute:
         delay_ms = int(intro * 1000)
         cmd += ['-i', str(a.audio), '-filter_complex',
                 f'[1:a]adelay={delay_ms}|{delay_ms},apad,atrim=start={a.start}:duration={(k1 - k0) / a.fps}[aout]',

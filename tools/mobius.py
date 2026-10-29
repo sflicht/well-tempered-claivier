@@ -67,7 +67,7 @@ class Strip:
         return col
 
     def render(self, size, beta, gamma, yaw, pitch, dist, target=None, fov=0.9, bg=(16, 20, 24),
-               marker=None, density=1.6, ss=2):
+               marker=None, density=1.6, ss=2, u_range=(0.0, 1.0)):
         """Draw the strip. marker = (u, back_side) puts a red reading line across the strip.
 
         yaw, pitch in radians (rotation of the model); dist = camera distance from the target
@@ -83,9 +83,10 @@ class Strip:
         M = Rx @ Ry
         f = 0.5 * W / math.tan(fov / 2)
         # sample density from the projected size of the strip
-        nu = int(min(9000, max(400, density * f * self.L / max(0.3, dist) * 0.5 + 400)))
-        nv = int(min(700, max(30, density * f * self.w / max(0.3, dist) * 1.0 + 20)))
-        u = np.repeat(np.linspace(0, 1, nu), nv)
+        span = max(1e-3, u_range[1] - u_range[0])   # u_range: sample only part of the strip (close-ups)
+        nu = int(min(9000, max(400, density * f * self.L * span / max(0.3, dist) * 0.7 + 400)))
+        nv = int(min(900, max(30, density * f * self.w / max(0.3, dist) * 1.0 + 20)))
+        u = np.repeat(np.linspace(u_range[0], u_range[1], nu), nv)
         v = np.tile(np.linspace(-self.w / 2, self.w / 2, nv), nu)
         X, n = self.surface(u, v, beta, gamma)
         Xc = (X - target) @ M.T
@@ -98,7 +99,7 @@ class Strip:
         back = (nc * view).sum(-1) < 0
         nrm = nc / np.linalg.norm(nc, axis=1, keepdims=True)
         light = np.array([0.35, 0.55, 0.76])
-        shade = 0.55 + 0.45 * np.abs(nrm @ light)
+        shade = 0.68 + 0.32 * np.abs(nrm @ light)
         col = self.texture(u, v, back) * shade[:, None]
         edge = np.abs(v) > self.w / 2 * 0.94
         col[edge] *= 0.55
