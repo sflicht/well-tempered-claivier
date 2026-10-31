@@ -1,3 +1,7 @@
+# Pair XII in F minor
+
+The prelude (a short chorale on the name) is described at the end. The fugue comes first here.
+
 # Fugue XII in F minor: *Fuga a 4 soggetti, compiuta* (five voices)
 
 ## Concept at the new size
@@ -49,11 +53,11 @@ tonic pedal of the close (b59-66). No subject heads or fragments are labelled as
 | bars | time | section | what happens |
 |---|---|---|---|
 | 1-13 | 0:00 | **I. S1, stile antico** | tenor b1.3 (alone two bars), alto (tonal answer) b3.3, bass b6.3, soprano (answer) b8.3: entries 2, 3, 2 bars apart, the closest S1 and its answer allow; half cadence on V (b13) |
-| 13-26 | 0:40 | **II. S2 alone, then with S1** | S2 alone in the tenor b13.2 (two bars, nothing else sounding); soprano answer in c b15.2 (a two-voice duet for four bars); alto S2 b19.2 with S1 in the bass b20.3, five beats later (Bach's own distance): i - v - VI - iv - V7 - i; cadence in b-flat (b26.1) |
+| 13-26 | 0:40 | **II. S2 alone, then with S1** | S2 alone in the tenor b13.2 (two bars; nothing else sounds once the soprano's answer ends, b13.3); soprano answer in c b15.2 (a two-voice duet for four bars); alto S2 b19.2 with S1 in the bass b20.3, five beats later (Bach's own distance): i - v - VI - iv - V7 - i; cadence in b-flat (b26.1) |
 | 26-38 | 1:22 | **III. B-A-C-H, then Bach's triple combination** | B-A-C-H alone in the tenor b26.3 (two bars, as at XIX b193), soprano answer b28.3; Bach's triple combination (XIX b233-239) in c minor, three voices: alto S2 b32.2, bass S1 b33.3, tenor S3 b34.3; cadence in c (b38.1) |
 | 38-41 | 2:02 | episode | three voices down the circle of fifths, c - f7 - b♭ - E♭7 - A♭ - D♭maj7 - C7: the alto turns S2's head on each chord, the tenor makes a chain of sevenths against the bass; a beat of silence |
-| 42-49 | 2:16 | **IV. The quadruple combination, four voices** | the main theme's first appearance, soprano b42.1, alone for a beat; S2 alto b42.2; S1 bass b43.3; S3 tenor b44.3: all four subjects at once b44.3-46.3, each in its own register (main theme E5-C6, S2 C4-D♭5, S3 C4-F4, S1 F2-C3); the soprano then falls silent; i (b48) - iv6 - V7, and the music stops on the dominant seventh (b49), where Bach's manuscript stops; two beats of silence |
-| 50-63 | 2:46 | **V. The fifth voice** | the alto sings the main theme alone (b50.1); a bar later the Quinta vox enters beneath it with the main theme in augmentation (b51.1, F2, nine bars): a canon per augmentationem; tenor and bass join quietly; the soprano returns with the main theme (b57.1), S2 tenor b57.2, S1 bass b58.3, B-A-C-H alto b59.3, while the augmentation closes (G A♭ B♭ A♭ G F) and its F becomes the tonic pedal: **five voices, b59.3-61.3, every one singing a subject** |
+| 42-49 | 2:16 | **IV. The quadruple combination, four voices** | the main theme's first appearance, soprano b42.1, alone for a beat; S2 alto b42.2; S1 bass b43.3; S3 tenor b44.3: all four subjects at once b44.3-46.3, each in its own register (main theme E5-C6, S2 C4-D♭5, S3 C4-F4, S1 F2-C3); the soprano then falls silent; i (b48) - iv6 - V7, and the music breaks off on a dominant seventh (b49), as Bach's manuscript breaks off; two beats of silence |
+| 50-63 | 2:46 | **V. The fifth voice** | the alto sings the main theme alone (b50.1); a bar later the Quinta vox enters beneath it with the main theme in augmentation (b51.1, F2, nine bars): a canon per augmentationem; tenor and bass join quietly; the soprano returns with the main theme (b57.1), S2 tenor b57.2, S1 bass b58.3, B-A-C-H alto b59.3, while the augmentation closes (A♭ B♭ A♭ G F) and its F becomes the tonic pedal: **five voices, b59.3-61.3, every one singing a subject** |
 | 63-66 | 3:34 | **Coda** | over the pedal the soprano signs the name at its own pitch, B♭ A C B (V7 - V7/iv - iiø4/3 - vii°7/V), the B rises to C, and the bass's A♮ is the Picardy third |
 
 Key plan: f - (c) - f - b♭ │ b♭/f - c - circle of fifths to V │ f │ f with tonic pedal - F.
@@ -140,7 +144,7 @@ and all free counterpoint was written and corrected by hand against the critic.
   triple combination; the main-theme-first quadruple alignment; the coda's literal B-A-C-H signature over
   the pedal with the Picardy A.
 - **Changed:** thirteen voices became five, 88 bars became 66 (5:11 to about 3:52). The mirror section,
-  the stretto finale and the 23 search-proposed subject *heads* are gone; every entry is now a complete
+  the stretto finale and the 23 labelled subject *heads* (most of them proposed by a search) are gone; every entry is now a complete
   subject (23 in all). The S1 augmentation finale is replaced by the main theme in augmentation, in a new
   fifth voice held back until b51. The triple combination moved to c minor so the quadruple arrives in
   the tonic; a sequential episode and a stop on the dominant seventh (b49) were added; all free voices
@@ -149,3 +153,39 @@ and all free counterpoint was written and corrected by hand against the critic.
   lines at once, many of them fragments). At five, each subject has its own register and is heard alone
   first, the quadruple combination is a four-voice texture a listener can follow, and the extra voice has
   a single, audible job.
+
+# Prelude XII in F minor: *The name, three times*
+
+A short chorale prelude for one pianist, in three voices: a new chorale-like melody in the soprano
+(crotchets), a slow inner voice, and a bass that walks in quavers and becomes a pulsing tonic pedal, after
+the manner of an Orgelbüchlein chorale (Bach's *Ich ruf zu dir*, BWV 639, is also in F minor; nothing of it
+is quoted). The first edition of *The Art of Fugue* (1751) followed the unfinished fugue with a chorale;
+here the chorale comes first. 16 bars in 4/4, *Adagio, come un corale*, crotchet = 54, about 1:17.
+
+**Material.** The melody is made of two crosses, each resolving to C:
+- **C D♭ C B**, the first four notes of the subject of Bach's WTC I fugue in F minor (BWV 857; checked
+  against `cycle/reference/bach-subjects.md`), the Book I fugue in this key (b1, again over the tonic pedal
+  in b13);
+- **B♭ A C B**, the name at its own pitch, sung three times: by the soprano (b2-3), by the bass in half
+  notes while the texture thins (b9-10, marked +10 velocity), and by the soprano again over the tonic pedal
+  (b14).
+
+The fugue then uses the name only in its transposed form until its own coda, where the soprano signs
+B♭ A C B once more over the fifth voice's pedal, so the pair begins and ends with the signature.
+
+**Plan.** b1-4: the cross and the name (i - iv - V - vii°7/V - V - V7 - V7/iv - VI7 - vii°6/5 - V), cadence
+in f (b5); b5-8: an ascent through A♭ major to a half cadence (b8); b9-12: the name in the bass
+(iv - V6/iv - V7(♭9) - vii°7/V - V), cadence (b12-13); b13-16: tonic pedal, the cross and the name again,
+last cadence on a plain F-minor chord (the Picardy third is kept for the end of the fugue).
+
+**Critic numbers** (`tools/critic.py prelude.json`): parallels 0 (errors and weak), beat-to-beat
+parallels 0, unresolved dissonances 0, bad doublings 0, low-register seconds 0, keyboard unplayable 0 %,
+tertian fit 75 %. Stepwise motion is only 42.7 % and repeated notes 10.6 %, because the bass is a walking
+quaver bass and then a repeated-note pedal; the melody moves mostly by step and third.
+
+**Weak spots.** Two melodic tritones (soprano D5-A♭4 inside the diminished seventh, b10; bass D3-A♭2,
+b3); the inner voice is plain, mostly held notes; the piece is short and does one thing. Nothing has
+been heard.
+
+**Renders.** `renders/prelude.pdf`, `.ly`, `.musicxml`, `.mid`; `prelude.mp3` (Bach-Lehman),
+`prelude-equal.mp3` (equal temperament). No binaural render for the prelude.

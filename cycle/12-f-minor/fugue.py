@@ -24,7 +24,7 @@ Plan (66 bars, 4/4):
               (alto S2, bass S1, tenor S3, at Bach's own distances); an episode down the circle of
               fifths to the dominant
   IV  42-49   the quadruple combination in four voices (main theme on top), f minor;
-              it stops on a dominant seventh, as Bach's manuscript stops
+              it breaks off on a dominant seventh, as Bach's manuscript breaks off
   V   50-63   the fifth voice: the main theme in the alto, answered a bar later by its
               augmentation in the new lowest voice; over the augmentation's close and its
               last note held as a tonic pedal, the quadruple combination returns:
@@ -204,7 +204,7 @@ theme('A', Q4, 2, S2, 'S2 (quadruple combination)')
 theme('B', Q4 + 1, 3, octv(S1, -1), 'S1 (quadruple combination)')
 theme('T', Q4 + 2, 3, S3, 'S3 (quadruple combination)')
 # (the soprano falls silent after the main theme and returns only with it, in section V)
-# The combination closes on i (b46); iv6 - V7, and the music stops on the dominant seventh
+# The combination closes on i (b48); iv6 - V7, and the music breaks off on the dominant seventh
 put('A', Q4 + 6, 3, 'Bb4:8')
 seq('A', Q4 + 7, 'Bb4:8 R:8')
 put('T', Q4 + 6, 3, 'F4:8')

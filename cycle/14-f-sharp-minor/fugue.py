@@ -21,6 +21,7 @@ Plan (2/2, alla breve):
           on top, rising to F#6, and countersubject I in diminution in the inner voices.
 Thematic statements are explicit transforms of the theme; every other note is written out by hand.
 """
+import json
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -250,7 +251,17 @@ def build(path=None):
             'instrument': 'Piano (five voices)',
             'key': 'F#', 'mode': 'minor', 'meter': list(METER), 'bpm': 84,
             'tempo_text': 'Alla breve, grave e poi animato', 'movement_number': 14, 'piece_type': 'fugue',
-            'edition': 'third', 'motto': 'Quaerendo invenietis'}
+            'edition': 'third', 'motto': 'Quaerendo invenietis',
+            'markers': [{'t': q(1), 'label': 'Exordium: the King\'s theme'},
+                        {'t': q(22), 'label': 'Canon per augmentationem et contrario motu'},
+                        {'t': q(32, 3), 'label': 'Quintus: the answer'},
+                        {'t': q(43), 'label': 'C#7 = G7: to C minor'},
+                        {'t': q(44), 'label': 'Canon per tonos: C minor'},
+                        {'t': q(50), 'label': 'D minor'},
+                        {'t': q(56), 'label': 'E minor'},
+                        {'t': q(62), 'label': 'Summit: F-sharp minor, theme in augmentation'},
+                        {'t': q(70, 4), 'label': 'Inversion to F#6'},
+                        {'t': q(76), 'label': 'Cadence'}]}
     meta.update(TEMPO)
     voices = [(LONG[i], NAMES[i], CLEF[i], BASEVEL[i]) for i in range(len(NAMES))]
     entries = [(LONG[NAMES.index(v)], b, off, lab, n) for v, b, off, lab, n in ENTRIES]
@@ -261,8 +272,13 @@ def build(path=None):
             if b + 1 >= k:
                 v = DYN[k]
         return v
-    return W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=entries, subject=T,
-                         dynamics=dynamics)
+    out = path or HERE / 'fugue.json'
+    data = W.build_score(out, meta, voices, bars, entries=entries, subject=T, dynamics=dynamics)
+    pans = {'Cantus': 76, 'Altus': 68, 'Tenor': 58, 'Quintus': 64, 'Bassus': 50}
+    for v in data['voices']:
+        v['piano_pan'] = pans[v['name']]
+    Path(out).write_text(json.dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

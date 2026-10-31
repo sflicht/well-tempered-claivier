@@ -16,6 +16,48 @@
   "piece_type": "fugue",
   "edition": "third",
   "motto": "Quaerendo invenietis",
+  "markers": [
+   {
+    "t": 0,
+    "label": "Exordium: the King's theme"
+   },
+   {
+    "t": 84,
+    "label": "Canon per augmentationem et contrario motu"
+   },
+   {
+    "t": 126,
+    "label": "Quintus: the answer"
+   },
+   {
+    "t": 168,
+    "label": "C#7 = G7: to C minor"
+   },
+   {
+    "t": 172,
+    "label": "Canon per tonos: C minor"
+   },
+   {
+    "t": 196,
+    "label": "D minor"
+   },
+   {
+    "t": 220,
+    "label": "E minor"
+   },
+   {
+    "t": 244,
+    "label": "Summit: F-sharp minor, theme in augmentation"
+   },
+   {
+    "t": 279,
+    "label": "Inversion to F#6"
+   },
+   {
+    "t": 300,
+    "label": "Cadence"
+   }
+  ],
   "tempo_map": [
    [
     0,
@@ -1347,7 +1389,8 @@
      "gate": 0.975,
      "bar": 78
     }
-   ]
+   ],
+   "piano_pan": 76
   },
   {
    "name": "Altus",
@@ -2938,7 +2981,8 @@
      "gate": 0.975,
      "bar": 78
     }
-   ]
+   ],
+   "piano_pan": 68
   },
   {
    "name": "Tenor",
@@ -4304,7 +4348,8 @@
      "gate": 0.975,
      "bar": 78
     }
-   ]
+   ],
+   "piano_pan": 58
   },
   {
    "name": "Quintus",
@@ -4806,7 +4851,8 @@
      "gate": 0.975,
      "bar": 78
     }
-   ]
+   ],
+   "piano_pan": 64
   },
   {
    "name": "Bassus",
@@ -5965,7 +6011,8 @@
      "gate": 0.975,
      "bar": 78
     }
-   ]
+   ],
+   "piano_pan": 50
   }
  ],
  "subject_entries": [

@@ -288,7 +288,7 @@ put('T', 35, ['R:12', 'R:12',
 # Statement 5 (bars 39-46), F-sharp major, the return: Canon V at the fifth below, by inversion,
 # two bars apart.  The dux (alto) brings the subject back in the tonic, on A#; the comes (tenor)
 # answers with the inversion on D# (mirror A#<->D#, F# fixed).
-put('B', 39, ['F#2:4 F#3:8', 'E#3:12', 'D#3:12', 'C#3:12', 'A#2:12', 'B2:12', 'C#3:12', 'F#2:12'])
+put('B', 39, ['F#2:4 F#3:8', 'E#3:12', 'D#3:12', 'C#3:12', 'A#2:12', 'B2:12', 'C#3:12', 'F#3:12'])
 put('A', 39, [shift(b, 2) for b in SUBJ_BARS] + [
     'F#4:2 A#4:2 F#5:4 D#5:4',                                   # b41 vi   (I6 in the comes)
     'E#5:2 D#5:2 C#5:2 B4:2 C#5:4',                              # b42 V    (ii6)
@@ -320,20 +320,20 @@ put('S', 39, [
 # sixth higher (on F#); after the subject the dux only holds long notes, so the comes sings alone
 # above it.  The tenor is a free low line.  The last bar turns to F-sharp major and the tenor's
 # upbeat starts the quodlibet.
-put('B', 47, ['F#2:12', 'E2:12', 'D2:12', 'C#2:12', 'A1:12', 'B1:12', 'C#2:12', 'F#2:12'])
+put('B', 47, ['F#3:12', 'E3:8 C#3:4', 'D3:12', 'C#3:12', 'A2:12', 'B2:12', 'C#3:12', 'F#2:12'])
 put('A', 47, [shift(modal(b, 'F#', 'F#m'), 2, 'F#m') for b in SUBJ_BARS] + [
     'A4:8 R:4',                                                  # b49 VI   (i6 in the comes)
-    'C#4:12',                                                    # b50 V    (iv7)
-    'C#4:6 D4:2 E4:4',                                           # b51 i6   free from here
-    'D4:8 F#4:4',                                                # b52 iv7
-    'C#4:4 E#4:8',                                               # b53 V7
-    'F#4:6 R:6',                                                 # b54 I
+    'R:2 C#5:10',                                                # b50 V    (iv7)
+    'C#5:6 B4:2 A4:4',                                           # b51 i6   free from here
+    'D5:6 C#5:2 B4:4',                                           # b52 iv7
+    'B4:12',                                                     # b53 V7
+    'A#4:6 R:6',                                                 # b54 I    (Picardy third)
 ])
 canon('VI', 'A', 'S', lambda s: shift(s, 5, 'F#m'), 2, 47, 50, 'Canon VI at the sixth above',
       ficta=[(50, 'E5', 'E#5')])
 entry('A', 47, 'Canon VI dux: subject on A (F-sharp minor)')
 entry('S', 49, 'Canon VI comes: subject a sixth above, on F#')
-put('S', 53, ['G#4:6 B4:2 A4:2 G#4:2', 'A#4:6 R:6'])
+put('S', 53, ['G#5:6 F#5:2 E#5:4', 'F#5:6 R:6'])
 put('T', 47, [
     'R:12',                                                      # b47 i
     'R:4 B3:8',                                                  # b48 v7
@@ -341,8 +341,8 @@ put('T', 47, [
     'E#3:8 G#3:4',                                               # b50 V
     'A3:6 G#3:2 F#3:4',                                          # b51 i6
     'D3:4 F#3:4 B3:4',                                           # b52 iv7
-    'G#3:4 B3:8',                                                # b53 V7
-    'A#3:6 R:3 C#3:3',                                           # b54 I    (upbeat of "Ich bin")
+    'G#3:4 E#3:4 G#3:4',                                         # b53 V7
+    'F#3:6 R:3 C#3:3',                                           # b54 I    (upbeat of "Ich bin")
 ])
 
 
@@ -358,27 +358,24 @@ put('T', 47, [
 # The fugue subject joins them at the start, in the soprano over "Ich bin".
 ICH = ['F#3:3 G#3:3 A#3:3 B3:3', 'C#4:3 B3:3/2 A#3:3/2 G#3:3 F#3:3/2 G#3:3/2',
        'A#3:3 G#3:3 F#3:6~', 'F#3:6 E#3:3 D#3:3/2 E#3:3/2']
-KRAUT1 = ['F#5:6 F#5:6', 'G#5:6 G#5:6', 'F#5:3 G#5:3 F#5:3 E5:3', 'D#5:3 C#5:3 B4:3 A#4:3']
+KRAUT1 = ['C#5:6 C#5:6', 'D#5:6 D#5:6', 'C#5:3 D#5:3 C#5:3 B4:3', 'A#4:3 G#4:3 F#4:6']
 KRAUT2 = ['A#2:3 B2:3 C#3:3 A#2:3', 'B2:3 A#2:3 G#2:3 F#2:3', 'E#2:3 F#2:3 G#2:3 E#2:3', 'F#2:12']
-put('B', 55, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12'] + KRAUT2)
+put('B', 55, ['F#2:12', 'E#2:4 C#3:8', 'D#3:12', 'C#3:12'] + KRAUT2)
 entry('B', 59, 'Quodlibet: Kraut und Ruben, second phrase (the ground becomes the tune)', n=4)
 put('T', 55, ICH + [
     'F#3:6 R:6',                                                 # b59 the tune's last note
     'R:12',                                                      # b60
-    'C#4:6 B3:6',                                                # b61 V7
+    'C#4:6 G#3:6',                                               # b61 V
     'A#3:12',                                                    # b62 I
 ])
 entry('T', 54, "Quodlibet: Ich bin so lang nicht bei dir g'west", beat=Fr(9, 4), n=5)
 put('A', 56, ['R:9 C#4:3'])                                    # the follower's upbeat (= T's b54)
 canon('8ve', 'T', 'A', lambda s: shift(s, 7), 2, 55, 58, "Ich bin so lang, in canon at the octave")
 entry('A', 56, "Ich bin so lang, canon at the octave above", beat=Fr(9, 4), n=5)
-put('A', 61, ['F#4:6 E#4:6', 'F#4:12'])                       # b61 the follower's last note as a 9-8
-put('S', 55, [shift(b, 7) for b in SUBJ_BARS] + KRAUT1 + [
-    'B4:3 C#5:3 D#5:3 E#5:3',                                    # b61 V
-    'F#5:12',                                                    # b62 I
-])
+put('A', 61, ['F#4:6 E#4:3 G#4:3', 'F#4:3 D#4:3 C#4:6'])     # b61 the follower's last note as a 9-8
+put('S', 55, [shift(b, 7) for b in SUBJ_BARS] + ['R:12', 'R:12'] + KRAUT1)
 entry('S', 55, 'Quodlibet: the subject over Ich bin')
-entry('S', 57, 'Quodlibet: Kraut und Ruben, first phrase', n=4)
+entry('S', 59, 'Quodlibet: Kraut und Ruben, first phrase', n=4)
 
 
 # =============================================================================================

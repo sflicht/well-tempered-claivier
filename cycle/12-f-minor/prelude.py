@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
 """Prelude XII in F minor, "The name, three times" -- literal source.
 
-A short chorale prelude for one pianist, three voices: a chorale-like melody in
-the soprano (crotchets), a slow inner voice, and a walking quaver bass (the
-texture of Bach's F-minor Orgelbuechlein chorale BWV 639, "Ich ruf zu dir",
-borrowed as a texture only; the melody is new).  The first edition of The Art
-of Fugue (1751) closed the unfinished last fugue with a chorale; here the
-chorale comes first.
+A short chorale prelude for one pianist, three voices: a new chorale-like melody
+in the soprano (crotchets), a slow inner voice, and a walking quaver bass that
+turns into a pulsing tonic pedal, after the manner of an Orgelbuechlein chorale
+(Bach's "Ich ruf zu dir", BWV 639, is also in F minor; nothing of it is quoted).
+The first edition of The Art of Fugue (1751) closed the unfinished last fugue
+with a chorale; here the chorale comes first.
 
 The melody is built from two crosses:
-  - C Db C B: the head of Bach's own WTC I F-minor fugue subject (BWV 857),
-    the Book I fugue in this key (bars 1, 13);
+  - C Db C B: the first four notes of Bach's WTC I F-minor fugue subject (BWV 857,
+    cycle/reference/bach-subjects.md), the Book I fugue in this key (bars 1, 13);
   - B-flat A C B-natural: the name, at its own pitch (soprano b2-3, bass b9-10
     in half notes under a quieter texture, soprano again b14 over the tonic
     pedal).
 Each cross resolves to C.  The bass walks in quavers, stops to sing the name in
 half notes (b9-10), and becomes a repeated-quaver tonic pedal for the last
-phrase (b13-14), as in BWV 639.
+phrase (b13-14).
 
-4/4, crotchet = 54, 16 bars, about 1:20.  Every note is written below.
+4/4, crotchet = 54, 16 bars, about 1:17.  Every note is written below.
 """
 import json
 import sys
