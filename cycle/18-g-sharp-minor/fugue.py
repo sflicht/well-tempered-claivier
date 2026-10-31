@@ -104,7 +104,8 @@ theme('A', 1, 0, S_PHR, 'I. Sero (evening): subject, Phrygian (A natural)')
 theme('S', 4, 0, A_PHR, 'I: answer on D#')
 put('A', 4, 0, CS1)                                                     # countersubject below the answer
 theme('T', 7, 0, octv(S_PHR, -1), 'I: subject')
-put('S', 7, 0, tr(CS1, 5, 3).replace('D5:4 C#5:2 B4:2', 'D#5:4 C#5:2 B4:2'))   # CS1 above, inverted at the 15th
+put('S', 7, 0, tr(CS1, 5, 3).replace('D5:4 C#5:2 B4:2', 'D#5:4 C#5:2 B4:2'))   # CS1 a fourth higher (inverted at the
+#                                                     15th), its last D raised to D# for the Phrygian G#
 CS2 = ('R:2 B3:2 E4:8 C#4:4 D#4:4 E4:4 '                                # second countersubject (alto)
        'G#4:8 B4:8 E4:8 '
        'F#4:2 E4:2 F#4:4 B4:4 G#4:4 A4:4 G#4:4')
@@ -112,7 +113,9 @@ put('A', 7, 0, CS2)
 # b10-12: the trio of b7-9 a fourth lower (answer in the bass, CS2 in the tenor, CS1 in the alto);
 # the soprano adds a descant.
 theme('B', 10, 0, octv(A_PHR, -2), 'I: answer on D#, in the bass')
-put('T', 10, 0, tr(CS2, -5, -3).split(' D#4:8 F#4:8')[0] + ' F#4:16 B3:8 C#4:8 F#4:4 D#4:4 E4:4 D#4:4')   # CS2, freely
+put('T', 10, 0, 'R:2 F#3:2 B3:8 G#3:4 A#3:4 B3:4 '                      # CS2 a fourth lower, then free
+                'F#4:16 B3:8 '
+                'C#4:8 F#4:4 D#4:4 E4:4 D#4:4')
 put('A', 10, 0, CS1)
 put('S', 10, 1, 'F#5:8 E5:8 D#5:4 '                                    # 9-8 suspensions
                 'D#5:4 E5:4 F#5:12 E5:4 '
@@ -132,7 +135,7 @@ put('S', 13, 0, 'D#5:8 E5:16 E5:8 D#5:8 C#5:4 D#5:4 E5:8')
 # rises in sixths above the subject in the bass (the combination inverted); door subject 4 (alto, on
 # F#, starting on a third beat so that it lands on a downbeat) brings the cadence in B major.
 theme('Q', 15, 2, octv(K, -1), 'II. Media nocte (midnight): door subject (BWV 61), the fifth voice enters', 2)
-theme('A', 16, 0, S_AEO, 'II: subject, Aeolian (A#), over the door subject in thirds')
+theme('A', 16, 0, S_AEO, 'II: subject, Aeolian (A#), over the door subject in tenths')
 put('B', 17, 0, 'E3:8 C#3:8 F#2:8 '                                     # the bass waits until b17
                 'B2:8 C#3:8 D#3:8 '
                 'G#2:8 E#2:8 D#2:8 '                                    # half close on D# ...
@@ -206,12 +209,12 @@ theme('A', 33, 4, tr(K, 10, 6)[:-len('F#5:8')] + 'F#5:12',
       'III: door subject on C#, landing on a downbeat: cadence in F-sharp major', 2)
 
 
-# ================================================================ IV. MANE (morning), Mixolydian: b35-42
+# ================================================================ IV. MANE (morning), Mixolydian: b35-43
 # The alto holds the F-sharp chord while the tenor knocks.  The subject now has B#: over the door
-# subject's arrival on G# it makes the first G-sharp MAJOR chord of the piece (b36.3).  Then the summit:
-# three entries a third apart, two beats apart, climbing from the bass (G#2, B#3, D#5); the soprano's
-# carries B# to the top of the piece (B#5 on the second beat of b40) and its last note is C#: cadence
-# in C-sharp major (= D-flat, IV of A-flat) at b42.1.
+# subject's arrival on G# it makes G-sharp MAJOR its own chord (b36.3).  Then the summit: three entries
+# a third apart, two beats apart, climbing from the bass (G#2, B#3, D#5); the soprano's carries B# to
+# the top of the piece (B#5 on the second beat of b41) and its last note is C#: cadence in C-sharp
+# major (= D-flat, IV of A-flat) at b43.1.
 theme('T', 35, 2, octv(K, -1), 'IV. Mane (morning): door subject in the tenor', 2)
 theme('S', 36, 0, S_MIX, 'IV: subject, Mixolydian (B#): G-sharp major at b36.3')
 put('Q', 36, 0, 'C#4:8 A#3:8 D#4:8 '
@@ -243,7 +246,8 @@ put('B', 42, 0, 'G#2:8 D#3:8 G#2:8 '
 put('S', 43, 2, 'C#5:16~ C#5:24 C#5:24')                                # re-struck with the last KNOCK
 put('B', 43, 2, 'D#3:16 D#3:24 D#3:24')
 put('T', 43, 2, 'F##3:16 G#3:8 F##3:8 A#3:8 A#3:8 G#3:8 A#3:8')
-theme('Q', 44, 4, K[:-len('G#4:8')].rstrip(), 'The last knock: door subject in the fifth voice, an octave above its first knock', 2)
+theme('Q', 44, 4, K[:-len('G#4:8')].rstrip(),                          # its last note is the dawn's A-flat (b46)
+      'The last knock: door subject in the fifth voice, an octave above its first knock', 2)
 
 # ================================================================ DAWN: A-flat major (Ionian), b46-52
 # The eighth sharp (F## = G) cannot be written in G-sharp: the score turns to A-flat major.  The

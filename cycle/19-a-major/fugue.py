@@ -136,7 +136,7 @@ def exposition():
     # IV. the gigue answers in E; the first four-voice cadence (E, q48)
     theme('T', 39 + Fr(2, 3), oc(AG, -1), 'Gigue: answer (E)')
     put('B', 39, 'C#3:4 E3:4 B2:4 A2:4 B2:4 C#3:4 G#2:4 A2:4 B2:4')
-    put('T', 46, 'A3:8/3 C#4:4/3 F#4:8/3 D#4:4/3')
+    put('T', 46, 'E4:8/3 C#4:4/3 D#4:8/3 C#4:4/3')
     put('S', 45, 'E5:4 F#5:8')
     put('A', Fr(175, 4), 'A4:1 G#4:2 F#4:1 A4:1 B4:2 C#5:1 B4:1 C#5:1 B4:1 A4:1 C#5:1 B4:2 A4:2')
 
@@ -168,7 +168,7 @@ def duo_slow():
     counter-melody; then the sarabande's subject in D over a courante bass, to a half close in D."""
     theme('B', 71, 'F#2:4 B2:6 A#2:2 C#3:6 B2:2 D3:8 C#3:4 E3:6 D3:2 C#3:6 A#2:2 B2:2 G2:2 F#2:8',
           'Courante: subject (B minor)')
-    put('S', 72, 'R:4 F#5:4 E5:4 E5:2 D5:2 F#5:8 E5:4 G5:8 E5:8 D5:2 E5:2 C#5:8')
+    put('S', 72, 'R:4 F#5:4 E5:4 E5:2 D5:2 F#5:8 E5:4 G5:8 E5:8 D5:2 E5:2 C#5:6')
     theme('S', 86, 'A4:4 D5:6 C#5:2 E5:4 D5:4 F#5:8 E5:6 G5:2 F#5:4 E5:4 C#5:8 D5:4 B4:8 A4:8',
           'Sarabande: subject (D)')
     put('B', 86, 'C#3:4 D3:6 A2:2 C#3:4 B2:4 D3:8 C#3:4 A2:4 D3:4 A2:4 G2:8 F#2:4 G2:8')
@@ -204,23 +204,23 @@ def ball():
     theme('S', 122, oc(SS, 1), 'Sarabande: subject (A), the ball')
     put('S', 141, 'C#6:4 A5:4 G#5:4 A5:8 R:16 E5:4 A5:12 G#5:8')
     # courante: a free bass in quarters, a rest, its subject (F# level), the hemiola cadence
-    put('B', 120, 'A2:8 C#3:4 D3:4 E3:4 B2:4 D3:4 C#3:4 E3:4 B2:4 R:4')
+    put('B', 120, 'A2:8 C#3:4 D3:4 E3:8 F#3:4 C#3:4 E3:4 B2:4 R:4')
     theme('B', 131, oc(SC_F, -2), 'Courante: subject (F# level, ends on vi)')
     put('B', 146, 'G#2:4 A2:4 D3:4 R:4 C#3:8 D3:4 E3:12')
     # gigue
-    put('T', 120, 'A3:8/3 E4:4/3 D4:4/3 C#4:4/3 B3:4/3 E4:8/3 C#4:4/3 F#4:8/3 D4:4/3 C#4:8/3 B3:4/3 '
-                  'G#3:8/3')
+    put('T', 120, 'A3:8/3 B3:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 G#3:4/3 F#3:8/3 G#3:4/3 A3:8/3 B3:4/3 '
+                  'G#3:4/3 R:4/3')
     theme('T', 125 + Fr(2, 3), oc(dshift(SG, 3), -1), 'Gigue: subject (D level)')
-    put('T', 134, 'C#4:8/3 E4:4/3 A3:8/3 C#4:4/3 D4:8/3 A3:4/3 B3:4/3 C#4:4/3 D4:4/3 E4:8/3 A3:4/3 '
-                  'B3:4/3 A3:4/3 B3:4/3 G#3:8/3 B3:4/3 A3:8/3 E4:4/3 A3:8/3 E4:4/3 B3:8/3')
+    put('T', 134, 'C#4:8/3 B3:4/3 A3:8/3 C#4:4/3 A3:8/3 G#3:4/3 F#3:4/3 G#3:4/3 A3:4/3 C#4:8/3 A3:4/3 '
+                  'B3:8/3 A3:4/3 B3:8/3 G#3:4/3 A3:8/3 E4:4/3 A3:8/3 E4:4/3 B3:4/3 R:4/3')
     theme('T', 143 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A), the race')
-    put('T', 150, 'E4:8/3 C#4:4/3 D4:4/3 C#4:4/3 B3:4/3 D4:8/3 F#3:4/3 B3:8/3 E4:4/3 '
+    put('T', 150, 'E4:8/3 D4:4/3 C#4:4/3 B3:4/3 A3:4/3 F#3:8/3 G#3:4/3 B3:8/3 C#4:4/3 '
                   'D4:8/3 B3:4/3 E4:8/3 D4:4/3')
     # allemande
-    put('A', Fr(495, 4), 'B4:1 C#5:2 B4:1 D5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
+    put('A', Fr(495, 4), 'B4:1 C#5:2 B4:1 C#5:1 D5:2 E5:1 C#5:1 F#5:2 E5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
                          'E5:2 D5:1 C#5:1 D5:2 E5:1 D5:1 B4:2 G#4:2 A4:2 B4:1 C#5:1 D5:2 E5:1 C#5:1 '
                          'B4:2 C#5:1 D5:1 E5:2 D5:1 E5:1 C#5:2 D5:1 B4:1 A4:2 B4:1 C#5:1 '
-                         'D5:2 C#5:2 A4:2 B4:1 C#5:1 B4:1 C#5:1 D5:1 C#5:1 B4:2 G#4:2 '
+                         'D5:2 C#5:2 A4:2 B4:1 C#5:1 B4:1 C#5:1 D5:1 C#5:1 D5:2 C#5:1 B4:1 '
                          'A4:2 C#5:1 D5:1 E5:2 D5:1 C#5:1 D5:2 C#5:1 B4:1 C#5:2 B4:1 G#4:1 F#4:2')
     theme('A', Fr(583, 4), oc(dshift(SA, -3), 1), 'Allemande: subject at the fifth, the race')
     put('A', 150, 'A4:2 B4:1 C#5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 F#5:1 E5:2 D5:1 C#5:1 B4:8')
@@ -249,19 +249,19 @@ def coda():
     theme('B', Fr(323, 2), BOURREE_LH, 'Bach, Bourree I: the bass imitation')
     # the whole ball in the bourree's metre: IV, ii6, I6/4, V7, I
     put('S', 168, 'D6:4 B5:4 A5:4 G#5:4 A5:16')
-    put('A', 168, 'F#5:2 E5:2 D5:2 B4:2 C#5:2 E5:2 D5:2 B4:2 C#5:16')
-    put('T', 168, 'A3:2 F#3:2 B3:2 D4:2 C#4:2 A3:2 E4:20')
+    put('A', 168, 'F#5:2 E5:2 B4:4 C#5:2 E5:2 D5:2 B4:2 C#5:16')
+    put('T', 168, 'A3:4 D4:4 C#4:4 E4:20')
     put('B', 168, 'D3:8 E3:4 E2:4 A2:16')
 
 
 SECTIONS = [exposition, duo_quick, duo_slow, trio, ball, coda]
 END = 176
-BPM = 72
+BPM = 69
 # One pulse for all four dances; the music breathes at its cadences, holds the last chord of the
 # ball, and broadens at the end.
-TEMPO_MAP = [[0, 72], [46.5, 72], [48, 64, 'ramp'], [48, 72], [69, 72], [71, 64, 'ramp'], [71, 72],
-             [102, 72], [104, 66, 'ramp'], [104, 72], [118.5, 72], [120, 64, 'ramp'], [120, 72],
-             [153, 72], [156, 54, 'ramp'], [157.5, 54], [157.5, 72], [170, 72], [176, 44, 'ramp']]
+TEMPO_MAP = [[0, 69], [46.5, 69], [48, 62, 'ramp'], [48, 69], [69, 69], [71, 62, 'ramp'], [71, 69],
+             [102, 69], [104, 63, 'ramp'], [104, 69], [118.5, 69], [120, 62, 'ramp'], [120, 69],
+             [153, 69], [156, 52, 'ramp'], [157.5, 52], [157.5, 69], [170, 69], [176, 42, 'ramp']]
 CODA = 156
 
 

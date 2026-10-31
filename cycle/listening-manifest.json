@@ -334,7 +334,7 @@
    ]
   },
   {
-   "name": "Pair XVIII \u00b7 G-sharp minor (new, nineteen voices)",
+   "name": "Pair XVIII \u00b7 G-sharp minor (new)",
    "pieces": [
     {
      "id": "prelude-18",
@@ -345,10 +345,10 @@
     },
     {
      "id": "fugue-18",
-     "title": "Fugue XVIII \u00b7 Vigilate (19 voices)",
-     "score": "cycle/18-g-sharp-minor/archive-n-plus-1/fugue.json",
+     "title": "Fugue XVIII \u00b7 Vigilate (5 voices)",
+     "score": "cycle/18-g-sharp-minor/fugue.json",
      "tag": "new",
-     "notes": "'Watch therefore, for ye know not when the master of the house cometh: at even, or at midnight, or at the cockcrowing, or in the morning' (Mark 13:35). The fugue passes through those four watches. In each watch one note of the subject is raised, in the order sharps are added to a key signature, so the subject brightens step by step from a dark Phrygian colour towards major. The last step would need an eighth sharp, impossible in G-sharp, so the dawn turns enharmonically to A-flat major, the key of the next pair.\n\nThe second subject is the knock at the door, from Bach's cantata 'Nun komm, der Heiden Heiland' BWV 61, where the bass sings 'Siehe, ich stehe vor der T\u00fcr und klopfe an' (Behold, I stand at the door and knock): three knocks, then a chromatic rise through exactly the notes that change between the watches. Like Bach's G-sharp-minor fugue in Book II, this is a double fugue with a chromatic second subject.\n\nAt the first summit eight entries of the subject climb in thirds, two beats apart, from G-sharp2 to G-sharp5. At the second, four statements of the door subject sound in stretto over a knocking pedal, with knocks relayed between voices (16-18 voices moving); eighteen voices knock together, a silence, then the dawn in A-flat major, the voices waking one by one.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "'Watch therefore, for ye know not when the master of the house cometh: at even, or at midnight, or at the cockcrowing, or in the morning' (Mark 13:35). The fugue passes through those four watches. In each watch one note of the subject is raised, in the order sharps are added to a key signature, so the subject brightens step by step, and each raised note is placed on a strong beat where you can catch it: A-sharp in a duet (bar 16), E-sharp after a leap at cockcrow (bar 28), B-sharp, which makes G-sharp major the subject's own chord, up to the highest note of the piece (bar 41). The last step would need an eighth sharp, impossible in G-sharp, so the dawn turns enharmonically to A-flat major, the key of the previous pair.\n\nFour voices keep the first watch alone. At midnight a fifth voice, the knocker, enters alone with the knock at the door from Bach's cantata BWV 61 ('Siehe, ich stehe vor der T\u00fcr und klopfe an'): three knocks, then a chromatic rise. Like Bach's G-sharp-minor fugue in Book II, a double fugue with a chromatic second subject; the two subjects run together in tenths and sixths and in stretto. Before dawn the knocker's last G-sharp, written as A-flat, runs straight on into the subject in A-flat major.\n\nRecomposed in five voices (it was nineteen); the earlier version is in the pair's archive folder."
     }
    ]
   },

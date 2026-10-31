@@ -1,149 +1,215 @@
-# Fugue XVIII in G-sharp minor, nineteen voices: *Vigilate* (the four night watches)
+# XVIII. G-sharp minor: Prelude *Der Wächter* and Fugue *Vigilate* (five voices)
 
-## 0. Concept choice
+| File | What it is |
+| --- | --- |
+| `fugue.py` → `fugue.json` | Fugue, five voices (Soprano, Alto, Quintus, Tenor, Bass), 3/2, 52 bars, about 3:05. |
+| `prelude.py` → `prelude.json` | Prelude *Der Wächter*, one player, 20 bars of 4/4 (unchanged; described at the end). |
+| `renders/` | `fugue.pdf/.ly/.mid/.musicxml/.mp3` (Bach-Lehman), `fugue-equal.mp3` (equal temperament), `fugue-spatial.mp3` (binaural, arc layout, church organ, GM 19), and the prelude's renders. |
+| `archive-n-plus-1/` | The earlier nineteen-voice fugue, its NOTES and renders. |
 
-Three Bach-grounded concepts were weighed before a note was written:
+I cannot hear the renders. Nothing below says how the music sounds; it comes from the score and the tools.
 
-1. **Vigilate: the four watches (chosen).** Mark 13:35: *"Vigilate ergo: nescitis enim quando dominus
-   domus veniat, sero, an media nocte, an galli cantu, an mane"* (watch therefore, for you know not when
-   the master of the house comes: at evening, at midnight, at cockcrow, or in the morning). The fugue is
-   one night in four sections. In each watch one note of the subject is raised, in the order of the
-   sharps (A→A♯, E→E♯, B→B♯, F♯→F𝄪), so the same subject brightens Phrygian → Aeolian → Dorian →
-   Mixolydian → Ionian. The eighth sharp cannot be written in G-sharp minor, so at dawn the score turns
-   to **A-flat major**. That is the enharmonic door at the far end of the circle of fifths, and the key
-   of Fugue XVII.
-   A second subject, the **door subject**, comes from the bass recitative of **BWV 61 no. 4**, "Siehe,
-   ich stehe vor der Tür und klopfe an" (Behold, I stand at the door and knock), where the strings knock
-   pizzicato. It is three knocks followed by a chromatic rise through exactly the notes that change from
-   watch to watch.
-   - *Device not yet used in the cycle:* a subject transformed by one sharp per section (modal
-     brightening as form), and an enharmonic modulation forced by notation.
-   - *Why 19 voices:* the summit is a chain of eight entries, each a third higher, rising three octaves.
-     Over it come a stretto of four door subjects and a relay of knocks passed across a ring of players.
-     That needs nineteen independent players, and the dawn needs every one of them to "wake".
-2. **Jacob's ladder (BWV 19, the angels ascending and descending).** Ladders of entries going up and
-   down at once. Rejected: ladder and mirror devices are already used in I, II, VII and XIII.
-3. ***Et expecto* (BWV 232, Confiteor).** A chant canon, then the enharmonic adagio labyrinth.
-   Rejected: a chant cantus firmus is too close to X, XV and XVI.
+---
 
-(Two early ideas, a posthorn fugue and a crab fugue, were dropped before the coordinator reserved them
-for XXI and XXII. **None of the reserved concepts is used here.**)
+## Fugue XVIII: *Vigilate* (five voices)
 
-G-sharp minor is the most remote key of the first half of the cycle. So the piece is about night and
-distance, and its climax is a door, not a triumph: knocks, a silence, and then a quiet A-flat morning.
+Positions are bar.beat in half-note beats (b16.2 = the second half note of bar 16); `tools/critic.py`
+prints quarter positions instead (its b41.3 is b41.2 here).
 
-## 1. Credits and allusions
+### Concept at the new size
 
-- **BWV 61 no. 4** (*Nun komm, der Heiden Heiland*): the text and the gesture of the knocking. The door
-  subject is newly composed; its pitches are not quoted.
-- **BWV 887** (WTC II, G-sharp minor fugue): a double fugue in this key whose second subject is
-  chromatic. Here the door subject plays the chromatic second subject, combined with the main subject
-  from its first entry.
-- **Psalm 19 / BWV 76** (*Die Himmel erzählen die Ehre Gottes*): "nox nocti indicat scientiam" (night
-  unto night sheweth knowledge). It names the summit, where each entry hands the subject to the next,
-  a third higher.
-- **Mark 13:35**: the four sections and their names.
-- **Gematria (Bach's natural-order alphabet):** *As*, the German name of A-flat, is A(1) + S(18) = 19.
-  The door opens onto the key whose name is the number of the voices.
-- The tuning matters. In Bach-Lehman, G-sharp minor's thirds are narrow and dark, and A-flat major's
-  third is wide. The dawn should sound brighter in that temperament than in equal temperament. I have
-  not listened to either render, so this is an expectation, not a report.
+"Watch therefore, for ye know not when the master of the house cometh: at even, or at midnight, or at the
+cockcrowing, or in the morning" (Mark 13:35). The fugue is one night in four watches. In each watch one
+note of the subject is raised, in the order sharps are added to a key signature, so the same subject
+brightens from Phrygian to major:
 
-## 2. Material
+| watch | form of the subject | raised note | where the ear can catch it |
+| --- | --- | --- | --- |
+| I. *Sero* (evening), b1-15 | Phrygian: G# **A** B E D# C# B A G# F# | - | four-voice exposition |
+| II. *Media nocte* (midnight), b15-26 | Aeolian | **A#** | b16.2, alto, the top voice of a duet, half note on the beat over the door subject's F# |
+| III. *Galli cantu* (cockcrow), b26-35 | Dorian | **E#** | b28.1, soprano, downbeat, after the leap B-E# (an augmented fourth: the cockcrow) over C# major; again b31.1 in the tenor |
+| IV. *Mane* (morning), b35-43 | Mixolydian | **B#** | b36.3, soprano, over the door subject's G#: G-sharp *major* as the subject's own chord (before, B# only passed by in a door subject's rise, b19); b41.2, B#5, the highest note of the piece |
+| dawn, b46-52 | Ionian | **F## = G** | needs an eighth sharp, so the score turns to **A-flat major**; the subject's last note G now rises to A-flat (b46.1 in the fifth voice, b52.1 in the soprano) |
 
-- **Subject** (3/2, two and a half bars): `G#4 A4 B4 | E5. D#5 C#5 B4 A4 | G#4 F#4`, with a rising fourth
-  B→E on the long note. The forms used:
-  - S_PHR (I): A natural.
-  - S_AEO (II): A♯.
-  - S_DOR (III): E♯, so the leap becomes the "cockcrow" augmented fourth B→E♯.
-  - S_MIX (first light): B♯.
-  - S_ION (IV): A♭ major.
-  - Answers at the fifth stay inside each watch's collection.
-- **Door subject K** (one and a half bars): `D#4 D#4 D#4` (knocks), then `E4 E#4 F#4 F##4 G#4`. Its
-  chromatic rise passes through the very notes that the watches change. In III it becomes diatonic
-  (K_DOR: D♯ E♯ F♯ F𝄪 G♯). It also appears on A♯ (KA) and from G♯ (the "lower door").
-- **Knock figures**: X-X-X (`k3`) and X-rest-X (`k2`), taken from the head of the door subject.
+Bach's G-sharp-minor fugue in WTC I (BWV 863) has four voices, so this one has five. **The four
+watchmen (Soprano, Alto, Tenor, Bass) keep the first watch alone, in Bach's number. The fifth voice, the
+Quintus, is the one at the door.** It enters at midnight with the second subject, the knock (BWV 61 no. 4,
+"Siehe, ich stehe vor der Tür und klopfe an"), first low, at D#3, in the register of the bass who sings
+that recitative. It brings the last knock before dawn (b44.3, an octave higher), and that knock's last
+note, G# written A-flat, runs straight on into the subject in A-flat major: at daybreak the two subjects
+become one line in the fifth voice.
 
-## 3. Section map (71 bars of 3/2, about 4:06 with the tempo map)
+Two further rules shape the night:
 
-| bars | section | what happens | mean moving voices |
-|---|---|---|---|
-| 1-15 | **I. Sero** (evening), Phrygian | Exposition rising from the depth: B1 (b1), T2 answer (4), Br2 (7), A4 answer (10), S4 (13). The countersubject is handed from bass to baritone. Phrases close Phrygian, A→G♯ in the bass. q = 104, pp. | 2.8 |
-| 16-30 | **II. Media nocte**, Aeolian | The door subject sounds for the first time (T1, b16). The subject enters 1½ beats later, off the beat, so its long notes become suspensions against the knocks (A2). The same pair returns on A♯ (T4 + S5, b19). Episode b22-24 on falling fifths; each seventh is prepared and resolved, and the knocks begin to travel. Then Br1 door + A5 subject (b25). From 28.3 the bass climbs E E♯ F♯ F𝄪 G♯, and E♯ (the next watch's note) appears at the top. Half cadence on D♯. q = 112. | 5.9 |
-| 31-44 | **III. Galli cantu** (cockcrow), Dorian | Block 1 (31-33): T3 door + A3 subject. Block 2 (34-36): the same combination a fifth higher (T4 door on A♯, S3 answer). Block 3 (37-39): the episode of II transposed, and Basso II enters. Block 4 (40-42): block 1 with the parts exchanged (door on top in S4, subject in the tenor, T2), as double counterpoint at the octave. 43-44: the bass climbs the lower door B B♯ C♯ C𝄪 D♯. q = 116. | 6.4 |
-| 45-52 | **Summit A: *nox nocti indicat scientiam*** | Eight entries of the Dorian subject, each a third higher and two beats after the last, climbing G♯2 → G♯5. The top two carry B♯ (Mixolydian, "first light", G♯ major at 50.2). Door subjects run inside it (A3 b45, Br1 b47). | 10.8 |
-| 52-57 | **Summit B: *Vor der Tür*** | Four door subjects in stretto, two beats apart (A3 53.1 on D♯, T1 53.3 on A♯, A2 54.2 on D♯, S5 55.1 on A♯), over a knocking D♯ pedal (B2). A relay of knock figures jumps from voice to voice across the ring. S1 and S2 sing chromatic counter-lines falling against the rising doors. Bar 57: three tutti knocks on a D♯ major chord in 18 voices, then silence. | 16.5 (b53-56: 16, 18, 16, 16) |
-| 58-71 | **IV. Mane** (morning), A♭ major | The key signature changes to 4 flats. The Ionian subject comes down from the top: S1 (58), A3 answer (60), A4 (62), T3 answer (64), B1 in the bass (66.3, "the light reaches the depth"). The other voices wake one at a time: T1 (60), S4 and Br2 (65), A1 (67), B2 (68). Bar 69 is a cadential 6/4 over E♭2, in which the bass subject's own last notes A♭→G are the 4-3. Bar 70: over a tonic pedal, the remaining voices arrive one by one on A-flat major through staggered appoggiaturas. q = 92, ritardando to 66 in the last three bars; begins pp and grows. | 5.4 |
+- **The cadences climb by fifths: E (b15), B (b26), F# (b35), C# (b43), A-flat (b52).** Each watch closes in
+  the major key whose scale it uses (G# Phrygian = the E-major scale, Aeolian = B, Dorian = F#,
+  Mixolydian = C#), and C# = D-flat is IV of A-flat, so the last watch hands over to the dawn's dominant.
+- **The night has no perfect cadence on G#.** The door subject always ends F## → G#, but that G# is
+  harmonized V6-i (b16.3, b27.3), as a deceptive VI (b20.1) or under the major chords of the late watches.
+  The first perfect authentic cadence on the tonic is the last one (b52.1): E-flat → A-flat in the bass,
+  the subject's G → A-flat in the soprano.
 
-Whole piece: mean 6.34 moving voices per bar.
+Like Bach's G-sharp-minor fugue in Book II (BWV 887), this is a double fugue whose second subject is
+chromatic and arrives only after the first has had its exposition. Unlike BWV 887, the second subject is
+combined with the first from its first entry.
 
-## 4. The summit: who sings what
+### Material
 
-**Summit A, b45-52 (the chain).**
-- **Subject entries, a third apart and two beats apart:** B1 G♯2 (45.1), T1 B3 (45.3), S2 D♯5 (46.2),
-  T3 F♯3 (47.1), A1 A♯4 (47.3), Br2 C♯3 (48.2), A3 E♯4 with B♯ (49.1), S1 G♯5 with B♯ (49.3). The octave
-  placements were chosen by a search for spacings without unisons. The pitches are the literal subject.
-- **Door subjects:** A3 (45.1, rise hurried) and Br1 (47.1).
-- **Free lines, written one voice at a time:**
-  - S4: a long descending line with suspensions.
-  - S3 and S1 (before its entry): counter-lines.
-  - S5: flickering sixteenth turns, "stars".
-  - A2: paired repeated-note knocks.
-  - T1 (after its entry): a suspension chain.
-  - T4, T2, A1, S2, B1: short motivic interjections.
-  - B2: a walking bass from b48.
-- A4, A5 and Br3 rest in Phase A and enter in Phase B.
+- **Subject** (three bars of half notes; unchanged from the earlier version, and sung in the prelude):
+  `G#4 A4 B4 | E5. D#5 C#5 | B4 A4 G#4 F#4`. It ends on the subtonic and so never cadences by itself.
+  Forms: `S_PHR`, `S_AEO`, `S_DOR`, `S_MIX`, `S_ION` (A-flat). Answer of the first watch: real, on D#.
+  The summit and dawn entries on other degrees (B, B#, D#; C, E-flat) are diatonic transpositions inside
+  the watch's scale, written out literally.
+- **Door subject `K`** (40 sixteenths): knock, knock, KNOCK (`D#:2 R:2 D#:2 R:2 D#:8`), then the chromatic
+  rise `E E# F# F## G#` in quarters to a half note. The rise passes through exactly the notes the watches
+  change. The third knock is now a half note (the prelude's is a quarter). It normally starts on a second
+  beat, so its rise falls on the next downbeat; at the cadences it starts on a third beat, so its last
+  note lands on a downbeat. Transpositions: on D# (to G#), A# (to D#), F# (to B), C# (to F#).
+- **The combination** (written by hand, used in every watch): the door subject starts two beats before
+  the subject, so its rise runs in tenths (or, inverted, sixths) under the subject's head: E/G#, E#/G#,
+  F#/A#, F##/A#, G#/B. The door's F## needs the A# of midnight: against the Phrygian A it would clash,
+  so the knocker cannot be combined with the subject before the second watch.
+- **CS1** (first watch): an eighth-note countersubject written below the answer and used inverted at the
+  15th above the subject; **CS2**, a syncopated second countersubject (b7-9, again b10-12 in the tenor).
 
-**Summit B, b52-57.**
-- **The four door subjects:** A3, T1, A2, S5 (see the table).
-- **S1:** A♯5-C♯6-B♯5-A♯5-D♯6..., then three knocks on D♯6.
-- **S2:** leading-tone sighs F𝄪5-G♯5-F𝄪5, then a chromatic fall F𝄪5-E♯5-E5-D♯5 and a return up to G♯5,
-  then knocks on A♯5.
-- **Knock relay:** Br3, S4, T3, S3, B1, Br2, A1, A5, A4, Br1, T4, T2. Each voice knocks on D♯ or A♯
-  (k3/k2 alternated, so that no two voices knock in identical rhythm in octaves). The relay jumps from
-  player to player across the ring: 2-4 new knocks per half bar.
-- **B2:** the D♯ knocking pedal.
-- **Bar 57:** tutti knocks on D♯ major in 18 voices (all but S5, whose door subject has just ended), then the rest of the bar is silent before the dawn.
+### Section map (times from the Bach-Lehman render's tempo map)
 
-## 5. Critic (tools/critic.py, final score)
+| bars | time | what happens | moving voices, mean (max) |
+| --- | --- | --- | --- |
+| 1-15 | 0:00-0:49 | **I. Sero.** Alto subject (G#4, Phrygian); soprano answer on D# with CS1 below; tenor subject with CS1 above (soprano) and CS2 (alto); bass answer on D# with the same trio a fourth lower and a soprano descant of 9-8 suspensions. iii-vi-ii7-I6/4-V7 → **E major** at b15.1. q = 104. | 2.9 (4; 5 in b15 as the fifth voice knocks) |
+| 15-26 | 0:49-1:26 | **II. Media nocte.** Silence; the fifth voice knocks alone on D#3 (b15.2). b16: duet, the alto's Aeolian subject over the door's rise in tenths (A# at b16.2). The bass enters b17. Door subject 2 (tenor, on A#, b18.2) → half close on D# (b19.3) → deceptive VI (b20.1). Door subject 3 (soprano, b20.2) above the subject in the bass (b21): the combination inverted, all five voices. The tenor and fifth voice rest (b22-23). Door subject 4 (alto, on F#, from b24.3): its rise G-G#, A-A# turns iv into IV and v into V: **B major** at b26.1. q = 108. | 3.6 (5) |
+| 26-35 | 1:26-1:55 | **III. Galli cantu.** The soprano holds its D# while the bass knocks (b26.2). Soprano subject, Dorian: **B-E#** at b28.1 over C# major. Fifth voice knocks again (b29.2), tenor subject below it (b30): the cock crows twice (Mark 14:72), b31.1. Stretto: the soprano answers two beats later a tenth higher, on B (b30.3). Door subject 5 (alto, on C#, from b33.3), iv→IV, v→V: **F-sharp major** at b35.1. q = 112. | 3.9 (4) |
+| 35-43 | 1:55-2:20 | **IV. Mane.** The alto holds the F# chord while the tenor knocks (b35.2). Soprano subject, Mixolydian: **B#** over the door's G# = G# major (b36.3). **Summit (b39-43):** three entries a third apart and two beats apart, climbing: bass G#2 (b39.1), tenor B#3 (b39.3), soprano D#5 (b40.2), whose B#5 (b41.2) is the top of the piece and whose last note C#5 is the cadence: **C-sharp major** at b43.1. q = 116. | 3.8 (4) |
+| 43-45 | 2:20-2:32 | **The last knock.** D# (= E-flat) pedal; the soprano holds C#, the dominant's seventh; the tenor sighs 4-3 over the pedal; the fifth voice knocks (b44.3) and rises E-E# (iv→IV), F#-F## (v→V). The tempo broadens to q = 82. | 3.0 (4) |
+| 46-52 | 2:32-3:05 | **Dawn, A-flat major.** b46.1: five-voice A-flat chord; the soprano's C# resolves to C; the fifth voice's door ends on A-flat and becomes the Ionian subject, under an eighth-note soprano descant. The light comes down: tenor entry on C a sixth lower, two beats later (b46.3; in A-flat major its scale from C has exactly the Phrygian intervals of bar 1), bass answer on E-flat (b47.2). Soprano subject last (b49); its G rises to A-flat over E-flat → A-flat (b52.1); five-voice final chord. q = 88, ritardando to 58. | 4.1 (5) |
+
+Moving voices per bar: `1 1 1 2 2 2 3 3 3 4 4 4 4 4 5 | 2 3 4 4 5 5 3 3 4 4 3 | 3 4 4 4 4 4 4 4 4 | 3 4 3 4 4 4 4 4 | 2 4 | 5 4 4 4 4 4 4`.
+All five voices sound together only where the plan needs them: b21 (the first full combination, the
+door subject over the subject in the bass), b46 (daybreak) and b52 (the last chord). Elsewhere the fifth
+voice knocks or rests and the texture is two to four voices; the summit (b39-43) is in four, because the
+fifth voice saves itself for the last knock.
+
+### The devices and where to hear them
+
+1. **One subject, five modes.** Compare b1 (alto, G#-**A**), b16 (alto again, same octave, G#-**A#**),
+   b28 (soprano, B-**E#**), b36 (soprano, G#-A#-**B#**), b46 (fifth voice, A-flat major) and b49-52
+   (soprano, G → A-flat).
+2. **Double fugue.** Door subject with the subject in tenths below (b15-16, b26-27, b35-36, b44-46) and in
+   sixths above, parts exchanged (b20-21 soprano over bass, b29-30 fifth voice over tenor). Nine door
+   subjects in all; every knock belongs to a complete door subject (no free knock figures).
+3. **Stretto:** two entries a tenth apart, two beats apart (b30-33); the summit chain of three (b39-43);
+   the dawn's descending stretto (b46-50).
+4. **The door opens.** The cadential door subjects turn iv into IV and v into V (b25, b34, b45); the last
+   one's G# is written A-flat (b46.1) and continues as the subject in major in the same voice.
+5. **Tuning.** On a keyboard, G# and A-flat are the same key: the dawn changes the notation, not the
+   instrument. In Bach-Lehman the remote keys keep their own colour; I have not heard either render.
+
+### Critic numbers (`tools/critic.py`, final build)
 
 | measure | value | target |
-|---|---|---|
-| parallels_error | **0** | 0 |
-| beat_parallels | **0** | ≤ 8 |
-| dissonance_unresolved | **0** | ≤ 15 |
-| bad_doublings | **5** | ≤ 8 |
-| low_register_seconds | **0** | ≤ 16 |
-| stepwise_pct | **50.0** | ≥ 60 (missed) |
-| leap_4th_plus_pct | 19.4 | |
-| repeated_note_pct | 20.6 | |
-| tritone leaps | 6 | |
-| crossings | 28 | |
-| mean moving voices | 6.34 (per section in the table above) | |
+| --- | --- | --- |
+| parallels_error / weak | **0** / 0 | 0 |
+| beat_parallels | **1** | ≤ 2 |
+| dissonance_unresolved | **0** | ≤ 3 |
+| bad_doublings | **1** | ≤ 2 |
+| low_register_seconds | **0** | ≤ 9 |
+| stepwise_pct / leap_4th_plus_pct | **69.1 %** / 14.0 % | ≥ 65 % |
+| repeated_note_pct | 5.6 % (the knocks) | |
+| pc tripled on beats | 5.6 % | |
+| crossings | 1 | few |
+| **keyboard_unplayable_pct** | **1.1 %** (3 of 268 onsets) | < 15 % |
+| **mean moving voices** | **3.52** (4 bars with all five moving) | |
+| subject entries | 17 subject + 9 door-subject entries; all subject entries 9/9 in rhythm | |
 
-- **Bad doublings (5):**
-  - b46.5, 47.3, 47.5, 49.5: inside the summit chain, where two thematic lines (a chain entry's long
-    note and a door subject or another chain entry) sound the same seventh. Both notes are subject
-    notes, so I left them.
-  - b70.3: one of the staggered appoggiaturas of the final bar, over the tonic pedal.
-- **"7th not resolved down" (20 notes, not counted as unresolved):** mostly in the summit, where a chain
-  entry's long note is held while the harmony moves and the subject then continues upward. At b54.5,
-  T1's C𝄪 is the door subject's chromatic rise, the leading tone of D♯, and it rises.
-- **Tritone leaps (6):** the Dorian subject's B→E♯ (b32, 40, 41) is the point of the third watch, the
-  "cockcrow". B1 (b24, 46) and B2 (b39) leap diminished fifths in falling-fifth bass lines.
+Flagged items, each kept on purpose:
 
-## 6. Renders
+- **Beat-to-beat fifths b41.1 → b41.2** (alto D#5/tenor G#4 → B#4/E#4), inside the summit, where the
+  tenor's entry is thematic and the alto is the only free voice.
+- **Doubled seventh b40.2** (tenor D#4 and soprano D#5 over E#3): in a chain of entries a third apart and
+  two beats apart, the upper entry's first note is always the lower entry's third note.
+- **Keyboard b41.2-41.3:** G#2 (bass) - E#4 (tenor) - B#5 (soprano): the summit's top note is out of reach
+  for three onsets. Everything else fits two hands.
+- **Tritone leaps (3):** B-E# in the Dorian subject (b28.1, b31.1) is the cockcrow; F#-B# (b41.2) is the
+  same leap in the summit's Mixolydian entry on D#.
+- **Crossing b46.1:** the alto takes the E-flat of the dawn chord under the fifth voice's A-flat for one
+  half note.
+- **"7th not resolved down" (15 notes):** chord sevenths that pass on inside the subject (b31.3, b40-41,
+  b48.1) or move to another chord tone in a secondary seventh (b11.1, b14.3, b32.3).
+- **Themes:** the critic compares every entry to the Phrygian subject, so the Aeolian to Ionian forms show
+  3-7/9 intervals, and it reads the door subject as a weak "inversus". All are as written.
 
-- `renders/fugue.pdf`, `.ly`, `.mid` and `.musicxml`: Bach-Lehman. LilyPond succeeded: A2 paper, empty
-  staves hidden.
-- `renders/fugue.mp3`: Bach-Lehman, about 244 s.
+### Method and disclosure
+
+Every note is written in `fugue.py`. Thematic statements are the hand-written subject, answer and door
+subject through `wtclib.transpose`; the modal transpositions (summit, dawn) are literal strings; CS1 and
+CS2 were written once by hand and reused by transposition (the tenor's CS2 in b10-11 freely). Free
+counterpoint is literal token strings, corrected bar by bar against the critic. **Tools proposed, I
+chose:** `stretto_finder.py` ranked the strettos I used (Dorian and Mixolydian subject two beats later a
+tenth/third higher, cost 7-8; Ionian two beats later a sixth lower, cost 12; answer four beats later, cost
+10). A scratch script that calls the finder's two-voice scorer tested door-subject placements against the
+subject; no simultaneous placement scored cleanly, which is why the combination (door two beats ahead,
+rise in tenths) was designed by hand. No script chose or placed a note.
+
+### Honest weak spots
+
+1. **The combination is the same alignment every time** (door two beats ahead of the subject). Each watch
+   changes who knocks, the register and what holds above the knocks, but by IV the pattern "cadence,
+   knock, subject" may sound like a refrain rather than a development.
+2. **The summit is short and in four voices.** Three entries (b39-43); the fifth voice rests through it so
+   that its last knock enters fresh. The free alto in b39-42 is partly harmonic filler.
+3. **The dawn is seven bars** (about 30 s). Its subject statements are in half notes like every entry; the
+   motion comes from the soprano's eighth-note descant (b46-48) and the quarter-note inner voices (b49-51).
+   Earlier the dawn was the weak spot; it is now a real cadence plan, but still not long.
+4. **Watch I is 49 seconds of exposition** in one to four voices before the fifth voice appears: normal for
+   a fugue, and the slowest part of this one.
+5. **The bass of watch III moves mostly in half notes** (b28-35).
+6. **The modal changes are single pitch classes.** Each is placed on a beat at the top of the texture, but I
+   cannot confirm by ear that a listener hears A → A# or B → B#.
+7. **Nothing has been heard.**
+
+### From the nineteen-voice version (`archive-n-plus-1/`)
+
+- **Kept:** the title and plan (four watches, one sharp per watch, the enharmonic dawn in A-flat); the
+  subject's pitches and rhythm and its five modal forms; the door subject's pitches (knocks and the
+  chromatic rise, after BWV 61 no. 4); a summit chain of entries a third apart, two beats apart; the
+  prelude.
+- **Changed:** 19 voices → 5; 71 bars → 52 (4:06 → about 3:05). The fifth voice has one job: the knocker,
+  silent in the first watch, and the voice whose last knock becomes the dawn's subject. The knock relays
+  and tutti knocks (twelve voices playing two- or three-note knock figures) are gone: every knock belongs
+  to a complete door subject, so the knocks are lines. The third knock is lengthened and the door subject
+  starts on a second or third beat, so its rise lands on strong beats. Each watch now cadences, a fifth
+  higher each time (E, B, F#, C#, A-flat), instead of passing through half closes. The summit chain has
+  three entries instead of eight. The dawn is new: a dominant pedal with the soprano's held seventh, the
+  door subject turning into the Ionian subject, a descending stretto under a descant, and the first
+  perfect cadence on the tonic with the subject's G → A-flat. Stepwise motion rose from 50 % to 69 %.
+- **Why:** the earlier version's own notes list its weak spots: a slow, thin build-up for a nineteen-voice
+  piece, a climax of knock figures instead of lines, a plain half-note dawn, and raised notes that might
+  not be heard. At five voices each raised note can sit alone at the top on a strong beat, each knock is
+  part of a line a listener can follow, and the dawn can be prepared as a cadence.
+
+### Renders
+
+- `renders/fugue.pdf`, `.ly`, `.mid`, `.musicxml`, `.mp3`: Bach-Lehman (LilyPond succeeded, 4 pages; the
+  key signature changes to four flats at b46).
 - `renders/fugue-equal.mp3`: equal temperament, audio only.
-- `renders/fugue-spatial.mp3`: ring layout, Bach-Lehman. Nineteen players stand in a circle 6 m round
-  the listener, Soprano I at -171°, then round the ring to Basso II at +171°. In this layout the chain
-  entries of b45-50 and the knock relay of b53-56 jump between players at different points of the
-  circle.
+- `renders/fugue-spatial.mp3`: binaural, arc layout (soprano -80°, alto +40°, fifth voice -40°, tenor
+  +80°, bass centre), General MIDI 19 (church organ, an Advent piece; the held notes of the last knock
+  sustain), rt60 2.0 s, wet 0.16. The main render stays piano.
 
-**Not listened to.** I cannot hear audio. Nothing here describes how the renders sound.
+### Credits and allusions
+
+- **BWV 61 no. 4** (*Nun komm, der Heiden Heiland*): the bass recitative "Siehe, ich stehe vor der Tür
+  und klopfe an" (Revelation 3:20), with pizzicato knocking in the strings. The door subject is newly
+  composed; its pitches are not quoted.
+- **BWV 887** (WTC II, G-sharp minor): a double fugue with a chromatic second subject (the model of form).
+- **BWV 863** (WTC I, G-sharp minor, four voices): the voice count plus one.
+- **Mark 13:35** (the four watches) and **Mark 14:72** (the cock crows twice: III).
+
+---
+
+# Prelude XVIII (unchanged)
+
+The prelude is kept exactly as it was composed for the earlier version; its description follows unchanged.
 
 ## 7. Prelude XVIII: *Der Wächter* (the watchman)
 
@@ -182,26 +248,8 @@ morning, are left to the fugue.
 - `prelude.mp3` (Bach-Lehman)
 - `prelude-equal.mp3` (equal temperament)
 
-## 8. Honest weak spots (what I would still improve)
+### Prelude: honest weak spot (unchanged)
 
-1. **stepwise_pct is 50%, not ≥ 60%.** The knocks are 20% repeated notes, by design. Even so, several
-   middle-voice lines in II-III and in summit A are built from leaps between chord tones.
-2. **Summit B reaches 16-18 moving voices with knock figures, not long lines.** Twelve of those voices
-   play two- or three-note knocks in a relay. That is motivic and rhythmically independent, but it is
-   not sixteen singing melodies. Summit A has real lines, but only about 11 per bar. A4, A5 and Br3 sit
-   out Phase A, and could carry suspension chains there.
-3. **The build-up is slow.** Sections I-III average 3-6 moving voices for 44 bars. That is deliberate
-   (the night thickens watch by watch), but for a nineteen-voice fugue it may be too long at low
-   density. Br3, A5 and S5 enter late.
-4. **The dawn is thin and simple.** It is 2-8 voices, mostly half notes, with one big arrival. It may
-   feel like a coda rather than a fourth section. A stretto of the Ionian subject over the bass entry
-   (b66-68) would make the morning as learned as the night.
-5. **The modal brightening may be hard to hear.** Each watch changes only one pitch class. The changed
-   note is placed on the subject's long note (E♯ in III) or at the top of the texture (B♯ at first
-   light), but I cannot confirm by ear that it reads.
-6. **Theme detection.** The critic compares every entry to the Aeolian form, so the Phrygian, Dorian and
-   Ionian forms show "5/9 intervals". It reads the door subject as an inversion. Both are correct as
-   written.
 7. **The prelude is modest.** It has three layers, mostly in half notes and knocks, and
    stepwise_pct is 54%. It does its job as a doorway, but it has none of the fugue's ambition. It could
    become a real invention on the door subject.

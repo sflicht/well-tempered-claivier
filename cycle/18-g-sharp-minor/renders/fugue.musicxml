@@ -2531,7 +2531,7 @@
     <measure number="16">
       <direction placement="above">
         <direction-type>
-          <words>II: subject, Aeolian (A#), over the door subject in thirds</words>
+          <words>II: subject, Aeolian (A#), over the door subject in tenths</words>
         </direction-type>
       </direction>
       <note>
@@ -3721,7 +3721,7 @@
         <pitch>
           <step>D</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
@@ -3735,7 +3735,7 @@
         <pitch>
           <step>D</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
@@ -3749,7 +3749,7 @@
         <pitch>
           <step>D</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>960</duration>
         <type>half</type>
@@ -3759,7 +3759,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -3768,7 +3768,7 @@
         <pitch>
           <step>E</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -3777,7 +3777,7 @@
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -3786,7 +3786,7 @@
         <pitch>
           <step>F</step>
           <alter>2</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -3795,7 +3795,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>960</duration>
         <type>half</type>
@@ -3806,24 +3806,15 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>960</duration>
+        <type>half</type>
       </note>
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -3832,15 +3823,16 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
       </note>
       <note>
         <pitch>
-          <step>E</step>
-          <octave>4</octave>
+          <step>A</step>
+          <alter>1</alter>
+          <octave>3</octave>
         </pitch>
         <duration>960</duration>
         <type>half</type>
@@ -4461,7 +4453,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <words>The last knock: door subject in the fifth voice (its first pitch, D#4)</words>
+          <words>The last knock: door subject in the fifth voice, an octave above its first knock</words>
         </direction-type>
       </direction>
       <note>
@@ -6422,29 +6414,12 @@
     </measure>
     <measure number="16">
       <note>
-        <pitch>
-          <step>C</step>
-          <alter>1</alter>
-          <octave>3</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
+        <rest />
+        <duration>1920</duration>
+        <type>whole</type>
       </note>
       <note>
-        <pitch>
-          <step>A</step>
-          <alter>1</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>1</alter>
-          <octave>2</octave>
-        </pitch>
+        <rest />
         <duration>960</duration>
         <type>half</type>
       </note>
