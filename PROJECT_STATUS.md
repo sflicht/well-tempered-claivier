@@ -1,6 +1,6 @@
 # Project status
 
-Updated 27 October 2026.
+Updated 31 October 2026.
 
 ## Current edition
 
@@ -8,22 +8,22 @@ The third edition lives in `cycle/`, one folder per prelude–fugue pair in
 Bach's key order. See the README for the table of pairs and the
 [listening room](https://claude.ai/artifact/BBJMS7b46MiEycNBM24yhB).
 
-- **All 24 fugues and 21 preludes exist** (about two hours of music); every
-  movement is checked, rendered and in the listening room. Preludes XII, XIV
-  and XVII are not written yet.
-- **Pairs I–XI** have each had two independent bar-by-bar reviews
-  (`REVIEW.md`, `REVIEW-2.md`) with fixes applied.
-- **Fugues XIV, XV and XXIV** have had one independent review with fixes;
-  **XII** a second pass. **XIII and XVI–XXIII** are first versions, not yet
-  reviewed.
-- The weak spot most often left open is density: several of the largest
-  fugues reach only 10–16 truly independent lines at their summit, because
-  extra lines either doubled others or created parallels. Each NOTES.md
-  says so.
-- **Appendix:** Contrapunctus permutationum, a table canon and a tempo
-  canon are finished.
+- **All 24 fugues and all 24 preludes exist**; every movement is checked,
+  rendered and in the listening room.
+- **New voice rule (October 2026).** After listening, Sam found the "Fugue N
+  has N+1 voices" textures too thick. Each fugue now has at most one voice more
+  than Bach's WTC I fugue in the same key (2–6 voices); XX, XXI and XXIV stay
+  large because their idea is the crowd. Seventeen fugues (V–XIX, XXII,
+  XXIII) were recomposed under the new rule; the earlier versions are kept
+  in each pair's `archive-n-plus-1/`.
+- **Reviews.** Every recomposed fugue gets an independent bar-by-bar review
+  (`REVIEW.md` or `REVIEW-3.md`) and a fix round; XII–XIX, V, VI, VIII, XXII
+  and XXIII are done, VII and IX–XI are under review.
+- **Appendix:** Contrapunctus permutationum, a table canon and a tempo canon.
+  **Extras:** `extras/mobius-fugue/`, a string-quartet fugue for a walking
+  listener, with a video of its score folding into a Möbius band.
 
-**Paused for listening.** Start with `cycle/LISTENING_GUIDE.md`.
+Start with `cycle/LISTENING_GUIDE.md`.
 
 The C-minor pair formerly called "Pair I" is now Pair II, as in Bach's
 order, and its fugue has three voices instead of two.
