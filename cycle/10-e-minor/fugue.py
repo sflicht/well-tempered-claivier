@@ -213,10 +213,10 @@ put('C2', 39, 1, 'E3:6 A2:6 B2:12')
 # sixteenths through the subject's head; then both choirs stop for a beat before the last line.
 put('C2', 40, 3, 'B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 '
                  'B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:6 R:6')
-put('C1', 40, 3, 'E5:3 E5:2 D#5:1 E5:1 F#5:1 G5:1 B5:2 A5:1 '
-                 'G5:1 F#5:1 E5:1 F#5:1 G5:1 E5:1 C5:1 B4:1 A4:1 B4:1 C5:1 A4:1 '
-                 'F#4:1 G4:1 A4:1 G4:1 F#4:1 E4:1 D#4:2 E4:1 F#4:1 G4:1 A4:1 '
-                 'B4:2 A4:1 G4:1 F#4:1 E4:1 D#4:6 R:6')
+put('C1', 40, 3, 'F#5:3 E5:2 D#5:1 D#5:1 E5:1 F#5:1 A5:2 G5:1 '
+                 'F#5:1 E5:1 D#5:1 E5:1 F#5:1 D#5:1 B4:1 C5:1 B4:1 A4:1 G4:1 F#4:1 '
+                 'A4:1 G4:1 F#4:1 G4:1 A4:1 F#4:1 D#4:2 E4:1 F#4:1 G4:1 A4:1 '
+                 'B4:2 A4:1 G4:1 F#4:1 E4:1 D#4:1 E4:1 F#4:1 A4:1 G4:1 F#4:1 D#4:6 R:6')
 
 # ================================================================ XII. CHORALE LINE 7 (b43-47.3): the final stretto
 # "Erbarm dich unser, o Jesu": Coro II's inversion (b45.1) and Coro I's subject (b45.3) in stretto beneath the last line,
@@ -224,18 +224,17 @@ put('C1', 40, 3, 'E5:3 E5:2 D#5:1 E5:1 F#5:1 G5:1 B5:2 A5:1 '
 # third of E minor.
 CH7 = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:12 A5:24 G5:60'
 put('CH', 43, 1, CH7)
-put('C1', 43, 1, 'E5:1 D5:1 C5:1 D5:1 E5:1 G5:1 C5:1 B4:1 A4:1 B4:1 C5:1 E5:1 '
-                 'D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 A4:1 B4:1 C5:1 E5:1 D5:1 C5:1 '
-                 'B4:2 G4:1 A4:1 B4:1 G4:1 E4:2 F#4:1 G4:1 A4:1 B4:1 C5:2 B4:1 A4:1 G4:1 F#4:1 A4:2 G4:1 F#4:1 E4:2 '
-                 'D#4:6 R:6')
-put('C2', 43, 1, 'C4:4 B3:2 A3:6 B3:6 A3:4 G3:2 G3:6 E3:6 F#3:6 R:6')
+put('C1', 43, 1, 'E5:1 D5:1 C5:1 D5:1 E5:1 G5:1 C5:1 B4:1 A4:1 B4:1 C5:1 A4:1 '
+                 'D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 C5:1 B4:1 A4:1 G4:1 F#4:1 E4:1 '
+                 'G4:2 A4:1 B4:1 C5:1 A4:1 B4:2 G4:1 A4:1 B4:1 G4:1 A4:2 C5:1 B4:1 A4:1 C5:1 B4:2 A4:1 F#4:1 A4:1 F#4:1 '
+                 'G4:2 R:4 R:6')
+put('C2', 43, 1, 'C4:4 B3:2 A3:6 B3:4 G3:2 A3:6 E3:6 G3:6 F#3:6 R:6')
 theme('C2', 45, 1, octv(INV, -1), 'Final stretto: Coro II, inversion (E minor), under the last chorale line')
 theme('C1', 45, 3, S, 'Final stretto: Coro I, subject (E minor), two beats later: the final cadence')
 
 # ================================================================ XIII. CODA (b47.3-49.4)
-put('C2', 47, 1, 'B3:6 E3:12 E3:24 E2:24')
-put('C1', 47, 3, 'E4:2 G4:2 B4:2 E5:3 D#5:1 E5:2 C5:4 B4:2 A4:4 G4:2 F#4:4 E4:2 D#4:4 E4:2 G4:24')
-
+put('C2', 47, 1, 'B3:12 E3:12 E3:24 E2:24')
+put('C1', 47, 3, 'E4:2 G4:2 B4:2 E5:3 D#5:1 E5:2 C5:4 B4:2 A4:4 G4:2 F#4:4 A4:2 C5:4 B4:2 B4:24')
 
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
