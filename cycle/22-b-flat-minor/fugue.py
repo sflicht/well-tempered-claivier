@@ -1,22 +1,34 @@
 #!/usr/bin/env python3
-"""Fugue XXII in B-flat minor, six voices (a 6):
+"""Fugue XXII in B-flat minor, six voices (a 6; Bach's BWV 867 has five):
 Tombeau "Ma fin est mon commencement" -- a crab fugue (third edition, Bach + 1).
 
 The second half is the exact retrograde of the first half in every voice: a note that
-starts at t and lasts d in the first half sounds again at T - t - d.  Only the first
-H1 bars are written here, note by note; the last H1 bars are produced by one explicit
-transform, ``crab()``, which merges tied notes, reverses each voice's note list
-(wtclib.retrograde) and re-bars it.  The axis is the barline H1|H1+1.
+starts at t and lasts d in the first half sounds again at T - t - d.  Only bars 1-34 are
+written here, note by note; bars 35-68 are produced by one explicit transform, ``crab()``,
+which merges tied notes, reverses each voice's note list (wtclib.retrograde) and re-bars it.
+The axis is the barline 34|35.  ``build()`` checks that every voice of the built score is an
+exact palindrome.
 
 The subject begins with the head of Bach's B-flat-minor fugue, WTC I/22 (BWV 867):
 B-flat F, a rest, the leap of a minor ninth to G-flat and the stepwise descent; it ends
-with Bach's name, B-flat A C B-natural (B-A-C-H).  Read backwards it begins H-C-A-B
-and ends with BWV 867's opening read backwards: F -> B-flat, a cadence.  So the piece
-begins with a lone B-flat and ends on the same lone B-flat.
+with Bach's name, B-flat A C B-natural (B-A-C-H).  Read backwards it begins H-C-A-B, climbs
+the scale and ends with BWV 867's opening read backwards: F -> B-flat, a cadence.  So the
+piece begins with a lone B-flat and ends on the same lone B-flat.
+
+Plan of the first half (the second half is the same, backwards):
+  1-14   I. Exposition: alto (subject), tenor (answer) with the countersubject, bass (subject);
+         codetta (two voices)
+  15-20  soprano (answer, an octave up); episode G7 - C | D-flat (deceptive) - A-flat7
+  21-26  II. Middle entry: mezzo-soprano, subject in D-flat major; episode to V
+  27-34  III. Crux: the sixth voice (cantus firmus) enters with the subject in augmentation, the
+         alto with the subject at its own speed from the same downbeat (canon per augmentationem);
+         from b33 all six voices: over the cantus's B-flat A C B, the alto sings D-flat C E-flat D,
+         the mezzo (F) E-flat G-flat F and the tenor (F) F-sharp A A-flat -- B-A-C-H's tail in its four
+         minor-third transpositions, which end on the four notes of the axis chord B D F A-flat.
 
 Every note of the first half is a literal token string placed at bar.quarter.  Thematic
-statements are explicit transforms (transpose, scale_rhythm) of the hand-written
-subject.  No code chooses a pitch.
+statements are explicit transforms (transpose, scale_rhythm) of the hand-written subject.
+No code chooses a pitch.
 """
 from __future__ import annotations
 
@@ -41,9 +53,10 @@ VOICES = [  # abbr, name, clef, base velocity
     ('A', 'Alto', 'treble', 72),
     ('T', 'Tenor', 'treble_8', 70),
     ('B', 'Bass', 'bass', 70),
-    ('P', 'Cantus (bass II)', 'bass', 72),
+    ('P', 'Cantus firmus', 'bass', 74),
 ]
 NAMES = [v[0] for v in VOICES]
+ABBR = {'P': 'Cf'}
 LONG = {v[0]: v[1] for v in VOICES}
 
 # ------------------------------------------------------------------ material
@@ -175,8 +188,27 @@ def dynamics(b):
 
 
 BPM = 88    # quarter = 88, i.e. half = 44
-TEMPO = {'tempo_map': []}
-MARKS = []
+# The tempo map is itself a palindrome around the axis (t = 136 quarters): a slow toll at both ends,
+# a breath at each mirrored pair of section joins (14|15 and 54|55, 20|21 and 48|49, 26|27 and
+# 42|43), and a broadening into the axis with its mirror image away from it.  So the performance,
+# like the score, reads the same backwards.
+TEMPO = {'tempo_map': [[0, 63], [8, BPM, 'ramp'],
+                       [52, BPM], [56, 80, 'ramp'], [60, BPM, 'ramp'],
+                       [76, BPM], [80, 80, 'ramp'], [84, BPM, 'ramp'],
+                       [96, BPM], [104, 76, 'ramp'], [112, BPM, 'ramp'],
+                       [120, BPM], [136, 66, 'ramp'], [152, BPM, 'ramp'],
+                       [160, BPM], [168, 76, 'ramp'], [176, BPM, 'ramp'],
+                       [188, BPM], [192, 80, 'ramp'], [196, BPM, 'ramp'],
+                       [212, BPM], [216, 80, 'ramp'], [220, BPM, 'ramp'],
+                       [264, BPM], [272, 63, 'ramp']]}
+# Section labels; the second half carries the same sections in reverse order.
+MARKS = [(1, 'I. Exposition (alto, tenor, bass, soprano)'), (13, 'codetta'), (15, 'soprano: answer'),
+         (19, 'episode'), (21, 'II. Middle entry, D-flat major (mezzo-soprano)'), (25, 'episode'),
+         (27, 'III. Crux: cantus firmus in augmentation, alto in canon'),
+         (33, 'B-A-C-H in four transpositions -> axis'),
+         (35, 'Axis: III. Crux cancrizans'), (43, 'episode cancrizans'),
+         (45, 'II. cancrizans'), (49, 'episode cancrizans'), (51, 'soprano: answer cancrizans'),
+         (55, 'codetta cancrizans'), (57, 'I. Exposition cancrizans'), (65, 'alto alone: the subject backwards')]
 
 
 def build(path=None, half=None):
@@ -201,7 +233,7 @@ def build(path=None, half=None):
             entries = [e for e in ents if e[5] is None]
         else:
             entries = [(e[0], e[1] - H1) + tuple(e[2:]) for e in ents if e[5] is not None]
-    voices = [(LONG[v], v, cl, base) for v, _, cl, base in VOICES]
+    voices = [(LONG[v], ABBR.get(v, v), cl, base) for v, _, cl, base in VOICES]
     data = W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=entries, subject=S,
                          dynamics=dynamics if half is None else None)
     if half is None:
@@ -211,11 +243,65 @@ def build(path=None, half=None):
 
 # =================================================================================== FIRST HALF
 theme('A', 1, 1, S, 'Subject (after BWV 867, ending B-A-C-H)')
-# b5-8: the soprano answers an octave up; the alto's countersubject resolves the H, breathes, and
-# walks down under the long notes of the answer, then holds while the answer runs.
-theme('S', 5, 1, oc(ANS, 1), 'Answer (soprano)')
-put('A', 5, 1, 'C5:4 R:4 Bb4:4 Ab4:4 G4:8 Ab4:4 Bb4:4 Ab4:8 F4:4 G4:4 C5:12 A4:4')
+# b5-8: the tenor answers below; the alto's countersubject resolves the H, breathes, sighs (D-flat C),
+# climbs while the answer holds, and moves in half notes while the answer runs down.
+theme('T', 5, 1, ANS, 'Answer (tonal, F minor)')
+put('A', 5, 1, 'C5:4 R:4 Db5:4 C5:4 Db5:4 Eb5:4 F5:8 G5:8 F5:8 Db5:8 Eb5:8')
+# b9-12: the bass enters, two octaves down; the tenor resolves F# to G and falls G (rest) G-flat F
+theme('B', 9, 1, oc(S, -2), 'Subject (bass)')
+put('T', 9, 1, 'G4:4 R:4 Gb4:4 F4:4 A4:8 Bb4:8 A4:8 F4:8~ F4:8 Eb4:4 D4:4')
+put('A', 9, 1, 'Db5:4')
+put('A', 11, 1, 'C5:8 Bb4:4 C5:4 Db5:4 C5:4 A4:4 Ab4:4')
+# b13-14: codetta: V - i6 | iv - V of F minor; the alto sighs (G, rest, A-flat G), the tenor too
+# (D-flat C), over a bass that breathes after its H -> C.
+put('B', 13, 1, 'C3:4 R:4 Ab2:8 Bb2:8 C3:8')
+put('T', 13, 1, 'E4:8 C4:8 Db4:8 C4:8')
+put('A', 13, 1, 'G4:4 R:4 Ab4:4 G4:4 F4:8 E4:8')
+# b15-18: the soprano answers an octave up, above everything; the tenor breathes for two bars.
+theme('S', 15, 1, oc(ANS, 1), 'Answer (soprano, F minor)')
+put('A', 15, 1, 'F4:4 G4:4 Ab4:8 F4:8 Bb4:8 G4:12 F4:4 G4:12 C5:4')
+put('B', 15, 1, 'F2:16 Bb2:16 Eb3:8 F3:8 C3:12 A2:4')
+put('T', 17, 1, 'G3:8 Ab3:8 G3:8 E3:4 D3:4')
+# b19-20: episode: G7 - C | D-flat/F (deceptive) - A-flat7, into D-flat major.
+put('S', 19, 1, 'G5:16 F5:8 Gb5:4 F5:4')
+put('B', 19, 1, 'G2:8 C3:8 Db3:8 Ab2:8')
+put('A', 19, 1, 'B4:8 C5:8 Ab4:16')
+put('T', 19, 1, 'D3:8 E3:8 F3:8 C4:8')
+# b21-24: middle entry: the mezzo-soprano, with the subject in D-flat major (its tail D-flat C E-flat D is
+# B-A-C-H a minor third up), leading to E-flat minor.  Soprano and alto rest at first; the tenor
+# falls chromatically (D-flat C C-flat B-flat) into E-flat minor.
+SMAJ = 'Db5:16 Ab4:8 R:4 Bb5:4 Ab5:4 Gb5:4 F5:4 Eb5:4 Db5:4 C5:4 Eb5:4 D5:4'
+theme('Mz', 21, 1, SMAJ, 'Subject in D-flat major (mezzo-soprano)')
+put('B', 21, 1, 'Db3:8 Bb2:8 F2:8 Gb2:8 Ab2:8 Db3:8 Bb2:4 Ab2:12')
+put('T', 21, 1, 'Db4:4 Eb4:4 F4:8 F4:4 Eb4:4 Bb3:8 C4:8 Db4:8~ Db4:4 Eb4:4 C4:4 Cb4:4')
+put('A', 23, 1, 'Ab4:24 Gb4:4 F4:4')
+# b25-26: episode, E-flat minor - ii-half-dim 6/5 | V - V7; the bass, then the alto, breathe before
+# the cantus and the alto enter together.
+put('Mz', 25, 1, 'Eb5:4 Db5:4 C5:8 C5:8 Eb5:8')
+put('A', 25, 1, 'Gb4:16 F4:8')
+put('T', 25, 1, 'Bb3:16 A3:8 C4:8')
+put('B', 25, 1, 'Gb2:8 Eb2:8 F2:16')
 
+# =================================================================================== SUMMIT (b27-34)
+# The sixth voice, the cantus, enters with the subject in augmentation (B-flat2 ... B-A-C-H in half
+# notes, its H on the axis); the alto sings the subject at its own speed from the same downbeat
+# (canon per augmentationem).
+theme('P', 27, 1, W.scale_rhythm(oc(S, -2), 2), 'Subject in augmentation (cantus; B-A-C-H on the axis)')
+theme('A', 27, 1, S, 'Subject with its augmentation (canon per augmentationem)')
+put('Mz', 27, 1, 'Db5:8 Gb5:8 F5:8 Bb5:8 C6:8 Bb5:4 A5:4 F5:4 Eb5:4 E5:8 F5:16')
+put('T', 27, 1, 'Db4:8 Eb4:8 Db4:8 Bb3:8 A3:8 F3:8~ F3:8 R:8 A3:12 G3:4 F3:16')
+# b31-34: everyone converges on the axis.  Over the cantus's B-flat A C B, three more voices sing the
+# tail of B-A-C-H transposed by minor thirds -- the alto D-flat C E-flat D, the mezzo (F) E-flat G-flat F,
+# the tenor (F) G-flat A A-flat -- so that the four transpositions end on the four notes of the
+# diminished-seventh axis chord, B D F A-flat; the soprano returns (b32) and climbs to D6.
+put('A', 31, 1, 'C5:16 Bb4:8 Eb5:8 Db5:8 C5:8 Eb5:8 D5:8')
+put('Mz', 33, 1, 'F5:8 Eb5:4 F5:4 Gb5:8 F5:8')
+put('T', 33, 1, 'F3:8 F#3:8 A3:8 Ab3:8')
+put('B', 33, 1, 'Db3:8 Eb3:8 Eb3:8 F3:8')
+put('S', 32, 1, 'Bb5:8 A5:8 Bb5:8 C6:8 C6:8 D6:8')
+# The five upper voices hold their notes of the axis chord across the axis (each note tied into its own
+# mirror image); the cantus alone strikes its H again on the axis, where the piece turns round.
+AXIS_TIE.update({'S', 'Mz', 'A', 'T', 'B'})
 
 if __name__ == '__main__':
     import os

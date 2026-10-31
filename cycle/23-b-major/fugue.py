@@ -1,312 +1,395 @@
 #!/usr/bin/env python3
-"""Fugue XXIII in B major, twenty-four voices:
+"""Fugue XXIII in B major, five voices (Bach + 1):
 "Fantasia ut re mi fa sol la per tutti i tuoni".
 
 After John Bull's keyboard fantasia "Ut, re, mi, fa, sol, la" (Fitzwilliam Virginal Book
-no. LI), in which the hexachord climbs a whole tone at a time until it has stood on all
-twelve pitch levels.  Here every voice owns one of the cycle's 24 keys and sings the
-hexachord once as a long-note cantus in it: rising (ut re mi fa sol la) in a major key,
-falling (la sol fa mi re ut) in a minor key.  Bull's order is kept, transposed to B:
-B | C#(Db) Eb F G A | (Bull's leap of a minor third) C D E F# Ab Bb | home to B.
+no. LI), in which the hexachord, held in long notes, is moved up a whole tone at a time until it
+has stood on all twelve pitch levels.  Bull's order, transposed so that home is B:
+
+    B | C# Eb F G A | (Bull's leap of a minor third) C D E F# Ab Bb | B
+
+Four voices (soprano, alto, tenor, bass) make a fugue in B major on a subject that begins with
+the hexachord in quick notes.  The fifth voice, the Cantus, enters after the exposition and carries
+the hexachord through Bull's thirteen statements in semibreves, alternately rising (ut..la) and
+falling (la..ut), so that every joint between two statements is a single step except Bull's leap
+(A -> C) and the last joint, the semitone B-flat -> B that brings the circle home.  The fugue
+follows the cantus into each key.
 
 Every note is written in this file.  Thematic statements are explicit transforms of the
-hand-written material in x23.py (in_key = transposition into a key; octv = octave shift;
-hex_up / hex_dn = the hexachord transposed and set in long notes).  All other lines are
-literal token strings placed at bar.beat positions.  No code chooses pitches.
+hand-written material below (`key` = transposition into a key, `oct` = octave shift); the cantus
+statements are `hex_up` / `hex_dn` (the hexachord transposed and set in semibreves).  All other
+lines are literal token strings placed at bar.beat positions.  No code chooses pitches.
 
 Build:  python3 cycle/23-b-major/fugue.py   -> fugue.json
 """
+from __future__ import annotations
+
+import re
 import sys
+from fractions import Fraction as Fr
 from pathlib import Path
+
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
-from x23 import *  # noqa
+sys.path.insert(0, str(HERE.parents[1] / 'tools'))
+import wtclib as W  # noqa: E402
 
-NB = 96
-HEAD = "B4:6 C#5:1 D#5:1 E5:2 F#5:2 G#5:4"      # first bar of S
-IHEAD = "G#5:6 F#5:1 E5:1 D#5:2 C#5:2 B4:4"     # first bar of I
+METER = (4, 4)
+NAMES = ['S', 'A', 'C', 'T', 'B']
+LONG = ['Soprano', 'Alto', 'Cantus (ut re mi fa sol la)', 'Tenor', 'Bass']
+ABBR = ['S.', 'A.', 'Cant.', 'T.', 'B.']
+CLEF = ['treble', 'treble', 'treble', 'treble_8', 'bass']
+BASEVEL = [66, 64, 72, 64, 66]
 
+# ------------------------------------------------------------------ material (written in B)
+# Subject: Bull's hexachord in miniature.  The head rises ut-re-mi-fa-sol-la (ut held, re mi in
+# sixteenths, fa sol in eighths, la); the tail falls back through it in a virginalist division
+# (sol fa mi fa | re mi ut re), turns on the leading note and drops to the dominant.
+# Harmony: I (beats 1-2), IV (beats 3-4) | V.
+SUBJ = "B4:6 C#5:1 D#5:1 E5:2 F#5:2 G#5:4 F#5:1 E5:1 D#5:1 E5:1 C#5:1 D#5:1 B4:1 C#5:1 A#4:2 B4:2 F#4:4"
+# Countersubject (above the subject): after a beat's rest, broken thirds in sixteenths, a held
+# G#, a run into a syncopated B tied over the barline (a 4-3 suspension against the dominant),
+# then a division falling to the leading note.  Invertible at the octave (5-6 instead of 4-3).
+CS = "R:4 D#5:1 F#5:1 E5:1 G#5:4 A#5:1 B5:4~ B5:4 A#5:4 F#5:1 E5:1 D#5:1 C#5:1 E5:1 D#5:1 C#5:1 A#4:1"
 
-# ===================================================================== I. EXPOSITION (bars 1-12)
-# The B voice (Alto V) sings ut-re-mi-fa-sol-la in breves: B C# D# E F# G#.  Over each of its
-# six notes the subject (or its mirror, in the minor keys) enters in the key of that note:
-# B, c#, d#, E, F#, g# - the six keys of B major's family, spelled out by the hexachord.
-def exposition(sc):
-    sc.theme('A5', 1, 1, hex_up('B3', 32), 'cantus: B major, ut..la (breves)', 'cantus')
-    sc.theme('B6', 1, 1, octv(S, -2), 'S in B (bass)', 'S')
-    sc.put('B6', 3, 1, octv(in_key(CSI, 'G#5', 'C#5'), -1))                      # CSI
-    sc.theme('A2', 3, 1, in_key(I, 'G#5', 'C#5'), 'I in C# minor', 'I')
-    sc.theme('S5', 5, 1, in_key(I, 'G#5', 'D#5'), 'I in D# minor', 'I')
-    sc.put('A2', 5, 1, in_key(CSI, 'G#5', 'D#5'))                                # CSI
-    sc.theme('T6', 7, 1, in_key(S, 'B4', 'E3'), 'S in E', 'S')
-    sc.put('S5', 7, 1, in_key(CS, 'B4', 'E4'))                                   # CS
-    sc.theme('T4', 9, 1, in_key(S, 'B4', 'F#3'), 'S in F#', 'S')
-    sc.put('A2', 9, 1, in_key(CS, 'B4', 'F#4'))                                  # CS
-    sc.theme('B6', 11, 1, octv(I, -3), 'I in G# minor (deep bass)', 'I')
-    sc.put('T4', 11, 1, octv(CSI, -1))                                           # CSI
-    # free lines
-    sc.put('B6', 5, 1, 'D#3:8 G#2:8 A#2:8 G#2:4 F#2:4')
-    sc.put('S5', 9, 1, 'R:4 A#4:4 C#5:4 B4:4 C#5:4 B4:2 A#4:2 A#4:8 B4:12 A#4:4 G#4:8 A#4:4 G#4:4')
-    sc.put('A2', 7, 1, 'B4:8 A4:4 F#4:4 F#4:4 G#4:4 F#4:4 G#4:4')
-    sc.put('T6', 9, 1, 'R:8 D#3:8 A#3:8 C#4:8 B3:4 D#4:4 E4:8 E4:4 C#4:4 A#3:8')
-    sc.put('A2', 11, 1, 'R:4 B4:8 C#5:4 B4:4 C#5:4 E5:8')
+# Inversion: the diatonic mirror of the subject around the axis between mi and fa (B<->G#,
+# C#<->F#, D#<->E).  Its head falls la-sol-fa-mi-re-ut; harmony vi | V.
+INV = "G#5:6 F#5:1 E5:1 D#5:2 C#5:2 B4:4 C#5:1 D#5:1 E5:1 D#5:1 F#5:1 E5:1 G#5:1 F#5:1 A#5:2 G#5:2 C#6:4"
 
+# CSI: the countersubject mirrored on the same axis; it lies below the inversion.  Its tied G#
+# resolves upward (a retardation), the mirror of the countersubject's 4-3.
+CSI = "R:4 E5:1 C#5:1 D#5:1 B4:4 A#4:1 G#4:4~ G#4:4 A#4:4 C#5:1 D#5:1 E5:1 F#5:1 D#5:1 E5:1 F#5:1 A#5:1"
 
-# ===================================================================== II-III. THE TOUR (bars 13-78)
-# Bull's order from B.  Each pair: the major voice climbs ut..la in semibreves; its relative
-# minor enters a bar and a half later an octave and a sixth above and falls la..ut, so the
-# two form a mirror canon whose falling notes become 9-8 and 7-6 suspensions over the rising
-# ones.  A new pair starts every five and a half bars, alternately on beat 1 and beat 3.
-TOUR = [  # (major voice, ut, minor voice, la, start bar, start beat)
-    ('B3', 'Db3', 'A4', 'Bb4', 13, 1),
-    ('B1', 'Eb3', 'A1', 'C5', 18, 3),
-    ('T5', 'F3', 'S6', 'D5', 24, 1),
-    ('T3', 'G3', 'S4', 'E5', 29, 3),
-    ('T1', 'A3', 'S2', 'F#5', 35, 1),
-    # Bull's dive: after five whole steps the next would be B, home - too soon.  The bass
-    # drops to C instead and the second staircase begins.
-    ('B5', 'C2', 'B4', 'A3', 44, 1),
-    ('B2', 'D2', 'A3', 'B4', 49, 3),
-    ('T6', 'E3', 'A2', 'C#5', 55, 1),
-    ('T4', 'F#3', 'S5', 'D#5', 60, 3),
-    ('T2', 'Ab3', 'S3', 'F5', 66, 1),
-    ('A6', 'Bb3', 'S1', 'G5', 71, 3),
-]
+HEX_UP = "B3:16 C#4:16 D#4:16 E4:16 F#4:16 G#4:16"
+HEX_DN = "G#4:16 F#4:16 E4:16 D#4:16 C#4:16 B3:16"
+
+LETTERS = 'CDEFGAB'
 
 
-def tour_cantus(sc):
-    for k, (mv, ut, nv, la, bar, beat) in enumerate(TOUR):
-        sc.theme(mv, bar, beat, hex_up(ut), f'cantus: {KEY_OF[mv]} major, ut..la', 'cantus')
-        fb, fbeat = (bar + 1, beat + 2) if beat == 1 else (bar + 2, 1)
-        last = 8 if k not in (4, 10) else (12 if k == 10 else None)   # ut shortened where the next pair's la enters
-        sc.theme(nv, fb, fbeat, hex_dn(la, last=last), f'cantus: {KEY_OF[nv]} minor, la..ut', 'cantus')
+def pitch(name):
+    return W.parse_tok(name + ':1')[0]
 
 
-def pair1(sc):
-    # D-flat major / B-flat minor (bars 13-18): S in the tenor, divisions in the soprano
-    sc.theme('T4', 13, 1, in_key(S, 'B4', 'Db4'), 'S in D-flat', 'S')
-    sc.put('T6', 13, 1, 'Ab3:8 Bb3:8 Eb4:4 Db4:4 Eb4:8 Db4:16 Bb3:16 Eb4:16 Db4:8 Eb4:8')
-    sc.put('A2', 13, 1, 'Db5:6 C5:2 Bb4:4 Db5:4 C5:4 Bb4:4 Eb5:4 C5:4 Db5:16 Eb5:4 Db5:12 C5:16 Bb4:8 G4:8')
-    sc.put('S5', 13, 1, 'Ab4:8 R:8 R:4 Bb4:2 Db5:2 Gb5:2 F5:2 Ab5:2 Gb5:2 F5:2 Db5:2 Ab5:2 F5:2 Db5:2 F5:2 Ab5:2 Bb5:2 Gb5:2 F5:2 Gb5:2 Db5:2 Bb4:2 Db5:2 Eb5:2 Db5:2 Ab5:2 Gb5:2 Eb5:2 C5:2 F5:2 Ab5:2 Bb5:2 C6:2 Db6:2 Bb5:2 F5:2 Ab5:2 G5:2 Eb5:2 Bb4:2 Eb5:2')
+def letter_index(name):
+    m = re.fullmatch(r'([A-G])(#{0,2}|b{0,2})(-?\d+)', name)
+    return 7 * int(m.group(3)) + LETTERS.index(m.group(1))
 
 
-def pair2(sc):
-    # E-flat major / C minor (bars 18-24): S in the tenor on the cantus's mi, sixteenth divisions in the soprano
-    sc.theme('T6', 21, 3, in_key(S, 'B4', 'Eb4'), 'S in E-flat', 'S')
-    sc.put('T6', 19, 1, 'Bb3:16 C4:8 Eb4:8 Bb3:8')
-    sc.put('S5', 19, 1, 'G5:2 F5:2 Bb5:2 G5:2 F5:2 Db5:2 Bb4:2 Db5:2 F5:8')
-    sc.put('A2', 19, 1, 'G4:6 Ab4:2 F4:4 Bb4:4 Ab4:6 G4:2 G4:8 G4:6 Bb4:2 C5:8 Eb5:8 D5:4 F5:4 Bb4:8 Eb5:8 F5:4 C5:4 A4:8')
-    sc.put('S4', 22, 3, 'F5:1 G5:1 Ab5:1 F5:1 D5:1 Eb5:1 F5:1 D5:1 G5:1 F5:1 Eb5:1 D5:1 Eb5:1 F5:1 G5:1 Eb5:1 C6:1 Bb5:1 Ab5:1 G5:1 Ab5:1 G5:1 F5:1 G5:1 A5:4')
-    sc.put('B4', 19, 1, 'G2:8 Bb2:8 F2:8 C3:8 Eb3:8 Ab2:8 F2:8 Bb2:8~ Bb2:8 R:8 F2:8')
+def key(s, src, dst):
+    """Transpose material whose reference note is `src` (e.g. 'B4') so that it falls on `dst`
+    (e.g. 'Eb4'): an explicit chromatic + letter transposition."""
+    return W.transpose(s, pitch(dst) - pitch(src), letter_index(dst) - letter_index(src))
 
 
-def pair3(sc):
-    # F major / D minor (bars 24-29): S high in the soprano over the fa of the cantus; dotted alto, walking bass
-    sc.theme('S3', 27, 1, in_key(S, 'B4', 'F5'), 'S in F', 'S')
-    sc.put('T6', 24, 1, 'A3:16 C4:8 D4:8 C4:16 D4:16 G3:8 A3:8 A3:8 B3:8')
-    sc.put('B4', 25, 1, 'C3:8 G2:8 D3:8 F2:8 Bb2:4 A2:4 G2:8 C3:16 F2:8 G2:8')
-    sc.put('S4', 24, 2, 'G5:2 A5:2 C6:4 A5:4 G5:6 F5:2 G5:4 Bb5:4 A5:8')
-    sc.put('A2', 25, 1, 'Bb4:6 C5:2 Bb4:4 G4:4 F4:6 G4:2 A4:4 F4:4 F4:6 Eb4:2 F4:8 E4:6 D4:2 C4:4 E4:4 F4:8')
+def octv(s, n):
+    return W.transpose(s, 12 * n, 7 * n)
 
 
-def pair4(sc):
-    # G major / E minor (bars 29-35): S at the top on the cantus's fa, broken-chord divisions in the soprano
-    sc.theme('S2', 32, 3, in_key(S, 'B4', 'G5'), 'S in G', 'S')
-    sc.put('B4', 30, 1, 'C3:8 F2:8 A2:8 G2:8~ G2:8 C3:8 A2:8 D3:8~ D3:8 G2:8')
-    sc.put('T6', 30, 1, 'C4:8 D4:8 C4:8 G4:8 G4:8 E4:8 E4:8 F#4:8 F#4:8 G4:8')
-    sc.put('S5', 30, 1, 'E5:2 G5:2 C6:2 E5:2 D5:2 F5:2 A5:2 F5:2 C6:2 A5:2 E5:2 C6:2 B5:2 G5:2 E5:2 G5:2 B5:2 G5:2 D5:2 G5:2')
+def _breath(s, last):
+    """Shorten the statement's last semibreve to `last` sixteenths (the cantus breathes)."""
+    toks = s.split()
+    if last < 16:
+        toks[-1] = toks[-1].rsplit(':', 1)[0] + f':{last} R:{16 - last}'
+    return ' '.join(toks)
 
 
-def pair5(sc):
-    # A major / F-sharp minor (bars 35-40), S in the bass; then the seam (41-43): the bass falls F#-E-D-C#, halts on F#7 (the home dominant) and swerves through G7 into C
-    sc.theme('B2', 35, 1, octv(in_key(S, 'B4', 'A4'), -2), 'S in A (bass)', 'S')
-    sc.put('B2', 37, 1, 'A2:4 B2:4 C#3:8 F#2:4 G#2:2 A2:2 B2:8 E2:8 C#3:8 F#2:8 D3:8 F#2:8 E2:8 D2:8 C#2:8 F#2:8 G2:8')
-    sc.put('A2', 35, 1, 'C#5:2 C#5:2 C#5:2 E5:2 D5:4 F#4:4 B4:2 B4:2 B4:2 E5:2 D5:4 E5:4 C#5:2 C#5:2 C#5:2 A4:2 A4:8 A4:8')
-    sc.put('A2', 41, 1, 'C#5:16 D5:8 B4:8 A#4:8 B4:8')
-    sc.put('T6', 37, 1, 'E4:16 A4:16 G#4:8 A4:8 A4:8 D4:8 F#4:16 F#4:8 G#4:8 E4:8 D4:8')
-    sc.put('S5', 37, 1, 'R:8 A5:8 A5:6 G#5:2 F#5:8 B5:4 E5:4 A5:4 G#5:4 F#5:6 G#5:2 A5:4 F#5:4 A5:16 F#5:8 E#5:8 C#5:8 F5:8')
+def hex_up(ut, last=16):
+    return _breath(key(HEX_UP, 'B3', ut), last)
 
 
-def pair6(sc):
-    # C major / A minor (bars 44-49): Bull's leap - the bass dives to C; S in the alto
-    sc.theme('A3', 44, 1, in_key(S, 'B4', 'C5'), 'S in C', 'S')
-    sc.put('T6', 44, 1, 'E4:8 A4:8 F4:16 E4:8 G4:8 F4:8 A4:8 G4:8 B4:8 A4:8')
-    sc.put('A2', 44, 1, 'G4:8 A4:8 D5:8 A4:8 G4:8 C5:8 C5:8 F5:8 D5:8 E5:8 E5:8')
-    sc.put('S5', 44, 1, 'E5:8 C6:8 B5:8 C6:8 C6:8 G5:8 A5:8 C6:8 B5:4 G5:4 G5:8 C6:8')
+def hex_dn(la, last=16):
+    return _breath(key(HEX_DN, 'G#4', la), last)
 
 
-def pair7(sc):
-    # D major / B minor (bars 49-55): S in the soprano on the fa; the second staircase still in the depths
-    sc.theme('S6', 52, 3, in_key(S, 'B4', 'D5'), 'S in D', 'S')
-    sc.put('T6', 49, 3, 'A4:8 B4:8 G4:8 G4:8 F#4:8 F#4:8 D4:8~ D4:8 C#4:8 C#4:8')
-    sc.put('A2', 49, 3, 'F#5:8 B4:8 C5:8 E5:8 D5:8~ D5:8 B4:8 D5:8 A4:8~ A4:8 D5:8 B4:8')
-    sc.put('S5', 49, 3, 'A5:8 G5:8 C6:8 B5:16 F#5:8 B5:8 G5:4')
-    sc.put('T3', 49, 3, 'D4:8 G3:16 G3:4 A3:4 B3:8 D4:16 B3:8 E4:8 A3:4 G3:4 F#3:8 G#3:8')
+def dur16(toks):
+    return sum(W.parse_tok(t)[1] for t in toks.split())
 
 
-def pair8(sc):
-    # E major / C-sharp minor (bars 55-60): S in the soprano on the fa; parallel thirds with the cantus in the tenor
-    sc.theme('S4', 58, 1, in_key(S, 'B4', 'E5'), 'S in E', 'S')
-    sc.put('B2', 55, 3, 'G#2:8 F#2:16 C#3:16 A2:12 G#2:4 F#2:8 G#2:8 C#3:8 F#2:8')
-    sc.put('T3', 55, 3, 'B3:8 A3:16 C#4:16 C#4:16 D#4:16 G#3:8 A#3:8')
-    sc.put('S5', 55, 1, 'B5:4 A5:4 G#5:8 A5:6 G#5:2 F#5:4 A5:4 G#5:6 F#5:2 E5:4 G#5:4 C#6:8 A5:8 R:16 G#5:8 C#6:8')
-    sc.put('A5', 55, 3, 'B4:8 D5:4 C#5:2 B4:2 A4:8 E4:16 E4:16 B4:16 G#4:8 E4:8')
+# ------------------------------------------------------------------ placement
+class Score:
+    """Literal segments placed at bar.beat (bar 1-based, beat 1-based quarters)."""
+
+    def __init__(self):
+        self.segs = {n: [] for n in NAMES}
+        self.entries = []     # (voice, bar, beat_offset_quarters, label, nbars)
+        self.marks = []
+
+    @staticmethod
+    def pos(bar, beat):
+        return Fr(bar - 1) * 16 + (Fr(beat) - 1) * 4
+
+    def put(self, v, bar, beat, toks):
+        self.segs[v].append((self.pos(bar, beat), ' '.join(toks.split())))
+
+    def theme(self, v, bar, beat, toks, label, nbars=2):
+        self.put(v, bar, beat, toks)
+        self.entries.append((v, bar, Fr(beat) - 1, label, nbars))
+
+    def mark(self, bar, text):
+        self.marks.append((bar, text))
+
+    def bars(self, nbars):
+        out = {}
+        for v in NAMES:
+            segs = sorted(self.segs[v], key=lambda x: x[0])
+            cur, toks = Fr(0), []
+            for s, t in segs:
+                if s < cur:
+                    raise ValueError(f'{v}: overlap at bar {1 + s / 16} ({t[:40]})')
+                if s > cur:
+                    toks.append(f'R:{s - cur}')
+                toks.append(t)
+                cur = s + dur16(t)
+            if cur > nbars * 16:
+                raise ValueError(f'{v}: runs past bar {nbars}')
+            if cur < nbars * 16:
+                toks.append(f'R:{nbars * 16 - cur}')
+            out[v] = W.concat_bars(' '.join(toks), METER)
+        return out
 
 
-def pair9(sc):
-    # F-sharp major / D-sharp minor (bars 60-66): S in the soprano on the fa
-    sc.theme('S2', 63, 3, in_key(S, 'B4', 'F#5'), 'S in F-sharp', 'S')
-    sc.put('B2', 61, 1, 'F#2:8 C#3:8 G#2:8 D#2:8 A#2:4 B2:2 C#3:2 D#3:8~ D#3:8 G#2:8 A#2:8 D#3:8 G#2:8')
-    sc.put('T3', 61, 1, 'A#3:8 B3:8~ B3:8 D#4:8 F#4:8 D#4:8 D#4:8 E#4:8 E#4:8 F#4:8')
-    sc.put('A5', 61, 1, 'D#4:8 G#4:8 G#4:8 F#4:8 A#4:4 G#4:4 F#4:8 F#4:8')
-    sc.put('S6', 61, 1, 'C#6:8 G#5:8 B5:8 A#5:8 A#5:8')
+sc = Score()
 
+# ===================================================================== EXPOSITION (bars 1-8)
+# Fugue a 4 in B, without the cantus.  Real answer: the subject on the dominant, whose head is the
+# hexachord on sol (Guido's "hard" hexachord).
+sc.mark(1, 'Exposition a 4')
+sc.theme('T', 1, 1, octv(SUBJ, -1), 'Subject (B), tenor')
+sc.theme('A', 3, 1, key(SUBJ, 'B4', 'F#4'), 'Answer (F#), alto')
+sc.put('T', 3, 1, 'R:4 A#3:1 C#4:1 B3:1 D#4:4 E#4:1 F#4:4~ '               # CS below, in F#
+                  'F#4:4 E#4:4 C#4:1 B3:1 A#3:1 G#3:1 A#3:1 G#3:1 F#3:1 E3:1')
+sc.theme('S', 5, 1, SUBJ, 'Subject (B), soprano')
+sc.put('A', 5, 1, octv(CS, -1) + '~')                                       # CS below (A#3 held into b7)
+sc.put('A', 7, 1, 'A#3:4 C#4:4 D#4:4 B3:4 '
+                  'C#4:8 B3:4 C#4:4')
+sc.put('T', 5, 1, 'D#3:2 C#3:2 B2:2 A#2:2 G#2:2 E3:2 C#3:2 E3:2 '
+                  'F#3:6 E3:2 C#3:2 F#2:2 A#2:2 C#3:2')
+sc.theme('B', 7, 1, key(SUBJ, 'B4', 'F#2'), 'Answer (F#), bass')
+sc.put('S', 7, 1, 'R:4 A#4:1 C#5:1 B4:1 D#5:4 E#5:1 F#5:4~ '               # CS above, in F#
+                  'F#5:4 E#5:4 C#5:1 B4:1 A#4:1 G#4:1 A#4:2 R:2')
+sc.put('T', 8, 3, 'G#3:4 E3:4')
 
-def pair10(sc):
-    # A-flat major / F minor (bars 66-71): S in the alto at the pair's start; the meantone wolf passage
-    sc.theme('A4', 66, 1, in_key(S, 'B4', 'Ab4'), 'S in A-flat', 'S')
-    sc.put('B2', 66, 3, 'Ab2:8 Eb2:8 Bb2:8 Ab2:4 Bb2:4 C3:8 F2:8 Db3:8 Bb2:8 C3:8 F2:8')
-    sc.put('A5', 66, 3, 'Db4:8 Eb4:8 Db4:8 Eb4:16 F4:16 Bb4:8 G4:8 C5:8 D5:8')
-    sc.put('S6', 66, 1, 'Eb5:8 F5:8 Gb5:8 Db5:8 C5:16 Ab4:16 Eb5:16 Ab4:8 F5:8')
-    sc.put('S2', 68, 1, 'Ab5:16~ Ab5:16 G5:16 Ab5:8 Bb5:8')
+# ===================================================================== I. B (bars 9-14), rising
+# The fifth voice enters: ut-re-mi-fa-sol-la on B in semibreves.  The subject starts with it, on
+# the same note: its head is the cantus in quick notes.  At the cantus's sol the subject enters on
+# F# (the "hard" hexachord), whose dominant, C#, is the next key.
+sc.mark(9, 'Cantus enters: B (rising)')
+sc.theme('C', 9, 1, hex_up('B3'), 'Cantus: B, ut-re-mi-fa-sol-la (rising)', 6)
+sc.theme('S', 9, 1, SUBJ, 'Subject (B) over the cantus, soprano')
+sc.put('A', 9, 1, 'R:4 D#4:1 F#4:1 E4:1 G#4:4 A#4:1 B4:4~ B4:4 A#4:4 F#4:4')      # CS (low), cut short
+sc.put('B', 9, 1, 'B1:2 B2:2 G#2:4 E3:2 D#3:2 B2:4 '
+                  'F#3:6 E3:1 D#3:1 C#3:4 E3:4 '
+                  'D#3:2 C#3:2 B2:4 B2:2 A#2:2 B2:2 G#2:2 '
+                  'E3:2 F#3:2 G#3:2 E3:2 C#3:2 D#3:2 E3:2 C#3:2')
+# soprano: a division over b11-12 (I6 - vi | IV - ii7), then rests before the inversion
+sc.put('S', 11, 1, 'B4:2 C#5:1 D#5:1 F#5:2 E5:2 D#5:2 B4:2 G#4:2 B4:2 '
+                   'E5:1 F#5:1 G#5:1 F#5:1 E5:2 B4:2 C#5:2 E5:2 G#4:2 B4:2')
+sc.theme('T', 13, 1, key(SUBJ, 'B4', 'F#3'), "Subject on the dominant (F#), tenor, at the cantus's sol")
+sc.put('A', 13, 1, 'R:4 A#4:1 C#5:1 B4:1 D#5:4 E#5:1 F#5:4~ '                     # CS above, in F#
+                   'F#5:4 E#5:4 C#5:1 B4:1 A#4:1 C#5:1 E#5:4')
 
+# ===================================================================== II. C# (bars 15-20), falling
+# The cantus falls la-sol-fa-mi-re-ut on C#; the subject falls with it (the inversion, la..ut).
+sc.mark(15, 'C# (falling)')
+sc.theme('C', 15, 1, hex_dn('A#4', last=12), 'Cantus: C#, la-sol-fa-mi-re-ut (falling)', 6)
+sc.theme('S', 15, 1, key(INV, 'G#5', 'A#5'), 'Inversion (C#) over the falling cantus, soprano')
+sc.put('B', 15, 1, 'A#1:2 B1:2 C#2:2 D#2:2 E#2:4 F#2:2 D#2:2 '
+                   'G#1:2 A#1:2 B#1:2 G#1:2 D#2:2 E#2:2 F#2:2 D#2:2 '
+                   'G#1:4 B#1:2 A#1:2 G#1:4 D#2:4 '
+                   'C#2:2 D#2:2 E#2:2 D#2:2 C#2:2 B#1:2 A#1:2 R:2')
+sc.theme('B', 19, 1, key(INV, 'G#5', 'D#3'), "Inversion (F#) in the bass, at the cantus's re")
+sc.put('S', 17, 1, 'B#5:2 A#5:2 G#5:2 B#5:2 D#6:2 C#6:2 B#5:2 G#5:2 '
+                   'C#6:2 B#5:1 A#5:1 G#5:2 C#6:2 A#5:2 G#5:1 F#5:1 E#5:2 C#5:2 '
+                   'F#5:2 G#5:2 A#5:2 B5:2 F#5:2 E#5:2 C#5:2 A#4:2 '
+                   'B#4:2 C#5:2 E#5:4 G#5:2 F#5:1 E#5:1 D#5:4')
 
-def pair11(sc):
-    # B-flat major / G minor (bars 71-78): the heads of S gather (B-flat bass, E-flat, F); E-flat seventh turns into D-sharp seventh, dominant of G-sharp minor
-    sc.theme('B2', 71, 3, octv(in_key(HEAD, 'B4', 'Bb4'), -2), 'head of S in B-flat (bass)', 'Shead')
-    sc.theme('S4', 72, 1, in_key(HEAD, 'B4', 'Eb5'), 'head of S in E-flat', 'Shead')
-    sc.theme('S2', 75, 3, in_key(HEAD, 'B4', 'F5'), 'head of S in F', 'Shead')
-    sc.put('B2', 72, 3, 'C3:8~ C3:4 Bb2:2 A2:2 G2:8 Bb2:8 Eb2:8 G2:8 F2:8 D3:8 G2:8 C3:4 D3:4 Eb3:8')
-    sc.put('T6', 75, 1, 'Bb3:8 C4:8 D4:16 Eb4:8 C4:8 Db4:8 Bb3:8')
-    sc.put('A2', 74, 3, 'G4:8 G4:8 A4:8 F4:8 Bb4:8 Eb5:16 Eb5:8')
-    sc.put('B6', 78, 1, 'Eb2:16')
+# ===================================================================== III. E-flat (bars 21-26), rising
+sc.mark(21, 'E-flat (rising)')
+sc.theme('C', 21, 1, hex_up('Eb4'), 'Cantus: E-flat, ut-la (rising)', 6)
+sc.theme('T', 21, 1, key(SUBJ, 'B4', 'Eb3'), 'Subject (E-flat), tenor, with the cantus')
+sc.put('A', 21, 1, 'R:4 G4:1 Bb4:1 Ab4:1 C5:4 D5:1 Eb5:4~ '                     # CS above the cantus
+                   'Eb5:4 D5:4 Bb4:1 Ab4:1 G4:1 Ab4:1 Bb4:1 C5:1 D5:1 Bb4:1 C5:4 R:12')
+# episode b23-24: the soprano's first sixteenth division (Eb - Cm | Ab - Fm7), walking bass
+sc.put('S', 23, 1, 'Eb5:1 F5:1 G5:1 Ab5:1 Bb5:1 Ab5:1 G5:1 F5:1 G5:1 Eb5:1 C5:1 Eb5:1 G5:1 Eb5:1 C5:1 Bb4:1 '
+                   'C5:1 D5:1 Eb5:1 F5:1 G5:1 Ab5:1 Bb5:1 C6:1 Ab5:1 G5:1 F5:1 G5:1 Ab5:1 F5:1 Eb5:1 D5:1')
+sc.put('B', 23, 1, 'Eb3:2 F3:2 G3:2 Eb3:2 C3:2 D3:2 Eb3:2 Bb2:2 '
+                   'Ab2:4 C3:2 Ab2:2 F2:4 R:4')
+sc.theme('B', 25, 1, key(SUBJ, 'B4', 'Bb2'), "Subject on the dominant (B-flat), bass, at the cantus's sol")
+sc.put('S', 25, 1, 'R:4 D5:1 F5:1 Eb5:1 G5:4 A5:1 Bb5:4~ '                       # CS above, in B-flat
+                   'Bb5:4 A5:4 F5:1 Eb5:1 D5:1 Eb5:1 F5:1 G5:1 A5:1 F5:1')
 
+# ===================================================================== IV. F (bars 27-32), falling
+sc.mark(27, 'F (falling)')
+sc.theme('C', 27, 1, hex_dn('D5', last=12), 'Cantus: F, la-ut (falling)', 6)
+sc.theme('T', 27, 1, key(INV, 'G#5', 'D4'), 'Inversion (F), tenor, with the falling cantus')
+sc.put('B', 27, 1, octv(key(CSI, 'G#5', 'D4'), -1).rsplit(' ', 1)[0] + ' F3:1')   # CSI below; last note to F
+sc.put('S', 27, 1, 'F5:6 G5:1 A5:1 Bb5:2 A5:2 G5:2 E5:2 '
+                   'G5:4 E5:4 C6:4 Bb5:4~ '
+                   'Bb5:4 C6:2 Bb5:2 G5:4 R:4')
+# episode b29-30 (Bb - C7 | F - Dm): tenor and bass in dialogue
+sc.put('T', 29, 1, 'D4:2 C4:1 Bb3:1 A3:2 Bb3:2 C4:2 Bb3:1 A3:1 G3:2 E3:2 '
+                   'F3:2 G3:1 A3:1 C4:2 A3:2 D4:2 C4:1 Bb3:1 A3:2 C4:2')
+sc.put('B', 29, 1, 'Bb2:2 D3:2 F3:2 D3:2 E3:2 C3:2 G2:2 C3:2 '
+                   'A2:2 F2:2 C3:2 F2:2 D2:2 F2:2 E2:2 F2:2')
+sc.theme('S', 31, 1, key(INV, 'G#5', 'G5'), "Inversion (B-flat), soprano, at the cantus's re")
+sc.put('T', 31, 1, 'R:4 Eb4:1 C4:1 D4:1 Bb3:4 A3:1 G3:4~ '                      # CSI below, in B-flat
+                   'G3:4 A3:4 C4:1 D4:1 Eb4:1 D4:1 C4:1 Bb3:1 A3:1 G3:1')
+sc.put('B', 31, 1, 'G2:4 Bb2:2 A2:2 G2:2 A2:2 Bb2:2 C3:2 '
+                   'F2:4 C3:2 Bb2:2 A2:4 R:4')
 
-def summit_chorus(sc):
-    # summit, bars 86-89: a chorus of six more voices over the ii-V (G#m7 | C#m7 | F#7 | B) as suspension chains, each group attacking on its own beat (1, 2, 3 or 4) so that no two of them move together
-    sc.put('T2', 86, 3, 'G#3:16 C#4:16 F#4:16')
-    sc.put('S6', 86, 4, 'G#5:16 C#6:16 F#5:16')
-    sc.put('S4', 86, 1, 'G#5:16 G#5:16 F#5:16 F#5:8')
-    sc.put('A2', 86, 2, 'D#4:16 C#4:16 C#4:16 B3:8')
-    sc.put('A4', 87, 2, 'E4:12 E4:12 F#4:4 F#4:8')
-    sc.put('A6', 86, 1, 'B4:16 G#4:16 G#4:12 F#4:4 F#4:8')
+# ===================================================================== V. G (bars 33-38), rising
+sc.mark(33, 'G (rising)')
+sc.theme('C', 33, 1, hex_up('G4'), 'Cantus: G, ut-la (rising)', 6)
+sc.theme('B', 33, 1, key(SUBJ, 'B4', 'G2'), 'Subject (G), bass, with the cantus')
+sc.put('A', 33, 1, 'R:4 B4:1 D5:1 C5:1 E5:4 F#5:1 G5:4~ '                       # CS above
+                   'G5:4 F#5:4 D5:1 C5:1 B4:1 C5:1 D5:1 E5:1 F#5:1 D5:1')
+sc.put('T', 33, 1, 'R:4 D4:4 C4:4 B3:4 '
+                   'C4:8 A3:4 C4:4')
+# episode b35-36 (G/B - Em | C - Am7): the soprano returns with a division; the alto hands over
+sc.put('S', 35, 1, 'G5:1 F#5:1 G5:1 A5:1 B5:2 G5:2 E5:1 F#5:1 G5:1 E5:1 G5:2 A5:2 '
+                   'C6:2 B5:1 A5:1 G5:2 E5:2 A5:2 G5:1 F#5:1 E5:2 D5:2')
+sc.put('A', 35, 1, 'G4:2 F#4:2 G4:2 A4:2 G4:4 E4:4 '
+                   'E4:2 F#4:2 E4:4 R:8')
+sc.put('T', 35, 1, 'D4:4 B3:4 G3:4 B3:4 '
+                   'E4:4 C4:4 C4:4 A3:4')
+sc.put('B', 35, 1, 'B2:2 A2:2 G2:2 B2:2 E2:2 F#2:2 E2:2 G2:2 '
+                   'C3:2 E3:2 A2:2 G2:2 A2:2 B2:2 C3:2 A2:2')
+sc.theme('A', 37, 1, key(SUBJ, 'B4', 'D4'), "Subject on the dominant (D), alto, at the cantus's sol")
+sc.put('S', 37, 1, 'R:4 F#5:1 A5:1 G5:1 B5:4 C#6:1 D6:4~ '                      # CS above, in D
+                   'D6:4 C#6:4 A5:1 G5:1 F#5:1 G5:1 A5:1 B5:1 C#6:1 A5:1')
+sc.put('B', 37, 1, 'R:8 E2:2 A2:2 D3:2 C#3:2 '
+                   'A2:4 C#3:2 A2:2 E2:4 A1:4')
 
+# ===================================================================== VI. A (bars 39-44), falling
+sc.mark(39, 'A (falling): the first staircase ends')
+sc.theme('C', 39, 1, hex_dn('F#5', last=12), 'Cantus: A, la-ut (falling)', 6)
+sc.theme('T', 39, 1, key(INV, 'G#5', 'F#3'), 'Inversion (A), tenor, with the falling cantus')
+sc.put('B', 39, 1, key(CSI, 'G#5', 'F#3'))                                     # CSI below
+sc.put('S', 39, 1, 'C#6:8 A5:8~ '
+                   'A5:4 G#5:12 '
+                   'F#5:4 A5:4 B5:6 A5:2 '
+                   'A5:4 C#6:2 B5:2 A5:4 R:4')
+# b41-42 (D - E7 | A/C# - F#m): the cantus's D is the seventh of E7 and falls to C#
+sc.put('A', 41, 1, 'A4:2 B4:2 A4:2 F#4:2 E4:2 F#4:2 G#4:2 B4:2 '
+                   'A4:2 G#4:2 A4:2 E4:2 F#4:2 G#4:2 A4:2 F#4:2 '
+                   'D4:4 C#4:2 D4:2 B3:4 F#4:4 '
+                   'C#4:4 E4:4 A3:4 R:4')
+sc.put('B', 41, 1, 'D3:4 F#2:2 E2:2 G#2:4 B2:4 '
+                   'C#3:2 D3:2 E3:2 C#3:2 A2:2 B2:2 F#2:2 A2:2 '
+                   'B2:2 A2:2 B2:2 C#3:2 D3:2 C#3:2 D3:4 '
+                   'A2:4 C#3:2 A2:2 E2:4 R:4')
+sc.theme('S', 43, 1, key(INV, 'G#5', 'B5'), "Inversion (D), soprano, at the cantus's re")
+sc.put('T', 43, 1, 'R:4 F#3:4 B3:4 F#3:4 '
+                   'A3:4 E3:4 C#3:4 R:4')
 
-def tour(sc):
-    tour_cantus(sc)
+# ===================================================================== Bull's leap; VII. C (bars 45-50), rising
+# Where the next step would bring B back too soon, Bull leaps a minor third (F -> A-flat in his G
+# tour; here A -> C).  The cantus drops a major sixth to C4 and the second staircase begins, quietly,
+# with the subject in the deep bass and a new division in triplets (Bull's sesquialtera).
+sc.mark(45, "Bull's leap: C (rising), the second staircase")
+sc.theme('C', 45, 1, hex_up('C4'), "Cantus: C, ut-la (rising), after Bull's leap", 6)
+sc.theme('B', 45, 1, key(SUBJ, 'B4', 'C2'), 'Subject (C), deep bass')
+sc.put('A', 45, 1, 'R:4 E4:4/3 G4:4/3 C5:4/3 B4:4/3 C5:4/3 A4:4/3 F4:4/3 A4:4/3 B4:4/3 '
+                   'D5:4/3 B4:4/3 G4:4/3 F4:4/3 G4:4/3 B4:4/3 D5:4/3 C5:4/3 B4:4/3 A4:4/3 G4:4/3 F4:4/3 '
+                   'G4:4/3 C5:4/3 E5:4/3 D5:4/3 C5:4/3 B4:4/3 A4:4/3 C5:4/3 E5:4/3 D5:4/3 C5:4/3 A4:4/3 '
+                   'A4:4/3 C5:4/3 F5:4/3 E5:4/3 D5:4/3 C5:4/3 B4:4/3 D5:4/3 F5:4/3 E5:4/3 D5:4/3 B4:4/3 '
+                   )
+sc.put('S', 47, 1, 'R:4 G5:4 C6:4 A5:4~ '
+                   'A5:4 G5:2 F5:2 A5:4 C6:4 '
+                   'B5:4 R:12')
+sc.put('B', 47, 1, 'E2:2 F2:2 G2:2 E2:2 A2:2 B2:2 C3:2 A2:2 '
+                   'F2:2 G2:2 A2:2 F2:2 D2:2 E2:2 D2:4')
+sc.theme('T', 49, 1, key(SUBJ, 'B4', 'G3'), "Subject on the dominant (G), tenor, at the cantus's sol")
+sc.put('A', 49, 1, 'R:4 B4:1 D5:1 C5:1 E5:4 F#5:1 G5:4~ '                       # CS above, in G
+                   'G5:4 F#5:4 D5:1 C5:1 B4:1 C5:1 D5:1 E5:1 F#5:1 D5:1')
 
-    pair11(sc)
-    pair10(sc)
-    pair9(sc)
-    pair8(sc)
-    pair7(sc)
-    pair6(sc)
-    pair5(sc)
-    pair4(sc)
-    pair3(sc)
-    pair2(sc)
-    pair1(sc)
+# ===================================================================== VIII. D (bars 51-56), falling
+sc.mark(51, 'D (falling)')
+sc.theme('C', 51, 1, hex_dn('B4', last=12), 'Cantus: D, la-ut (falling)', 6)
+sc.theme('B', 51, 1, key(INV, 'G#5', 'B2'), 'Inversion (D), bass, with the falling cantus')
 
+sc.put('S', 51, 1, 'R:4 F#5:4 D5:4 B5:4~ '
+                   'B5:4 A5:4 E5:4 C#6:4 '
+                   'B5:4 A5:2 G5:2 C#6:4 A5:4 '
+                   'F#5:4 A5:4 R:8')
+sc.put('T', 51, 1, 'D4:2 C#4:2 B3:2 D4:2 F#3:4 B3:4 '
+                   'C#4:4 A3:4 C#4:2 B3:2 A3:2 G#3:2 '
+                   'A3:4 R:12')
+# episode b53-54 (G - A7 | D/F# - Bm): the alto returns
+sc.put('A', 53, 1, 'B4:2 D5:2 C#5:2 B4:2 A4:2 G4:2 E4:2 G4:2 '
+                   'A4:2 B4:2 A4:2 G4:2 F#4:2 E4:2 D4:2 F#4:2 '
+                   'B4:4 A4:2 G4:2 E4:2 F#4:2 G4:2 B4:2 '
+                   'A4:4 F#4:4 E4:4 R:4')
+sc.put('B', 53, 1, 'G2:2 A2:2 B2:2 G2:2 C#3:2 A2:2 E2:2 A2:2 '
+                   'F#2:2 G2:2 A2:2 F#2:2 B1:2 C#2:2 D2:2 B1:2 '
+                   'E2:2 F#2:2 G2:2 E2:2 C2:2 B1:2 A1:2 C2:2 '
+                   'D2:2 E2:2 F#2:2 D2:2 A1:4 R:4')
+sc.theme('S', 55, 1, key(INV, 'G#5', 'E5'), "Inversion (G), soprano, at the cantus's re")
 
-# ===================================================================== IV. SUMMIT AND CODA (bars 79-96)
-def summit(sc, o=78):
-    HEAD = "B4:6 C#5:1 D#5:1 E5:2 F#5:2 G#5:4"
-    IHEAD = "G#5:6 F#5:1 E5:1 D#5:2 C#5:2 B4:4"
-    # the frame: G# minor falls la..ut in breves in the deep bass (the other half of the B voice's
-    # opening statement); F# rises and D# falls above it (the dominant pair, suspensions);
-    # B rises in the middle; after the arrival E rises and C# falls in minims over the pedal.
-    sc.theme('B6', 1 + o, 1, hex_dn('G#2', 32) + '~ B1:64 E2:8 F#2:8 B1:16', 'cantus: G# minor, la..ut (breves)', 'cantus')
-    sc.theme('T4', 2 + o, 1, hex_up('F#4'), 'cantus: F# major', 'cantus')
-    sc.theme('S5', 3 + o, 3, hex_dn('D#6') + '~', 'cantus: D# minor', 'cantus')
-    sc.theme('A5', 3 + o, 1, hex_up('B3'), 'cantus: B major', 'cantus')
-    sc.theme('S1', 1 + o, 1, I, 'I in G# minor', 'I')
-    sc.put('A3', 1 + o, 1, octv(CSI, -1).rsplit(' ', 4)[0] + ' D#4:1 C#4:1 D#4:1 B3:1')
-    sc.theme('A1', 1 + o, 3, octv(I, -1), 'I in G# minor (stretto, octave below)', 'I')
-    sc.theme('S4', 3 + o, 1, IHEAD, 'head of I (G# minor)', 'Ihead')
-    sc.theme('T1', 7 + o, 1, in_key(IHEAD, 'G#5', 'D#4'), 'head of I (D# minor)', 'Ihead')
-    sc.theme('B1', 8 + o, 1, octv(IHEAD, -2), 'head of I (G# minor)', 'Ihead')
-    sc.theme('S3', 9 + o, 1, I, 'I in G# minor', 'I')
-    # the arrival: S in four voices, B4; a fifth above an eighth later; B5 half a bar later; B3 a bar later
-    sc.theme('A3', 11 + o, 1, S, 'S in B (arrival)', 'S')
-    sc.theme('S2', 11 + o, 1.5, 'F#5:6 G#5:1 A#5:1 B5:2 C#6:2 D#6:4 C#6:1 B5:1 A#5:1 B5:1 G#5:1 A#5:1 F#5:1 G#5:1 E5:2 F#5:2 C#5:4',
-             'S a fifth above, in B major (stretto at the eighth)', 'S')
-    sc.theme('S1', 11 + o, 3, octv(S, 1), 'S in B (stretto at the octave)', 'S')
-    sc.theme('T3', 12 + o, 1, octv(S, -1), 'S in B (stretto)', 'S')
-    sc.theme('T6', 14 + o, 1, hex_up('E3', 8), 'cantus: E major in minims', 'cantus')
-    sc.theme('A2', 14 + o, 3, hex_dn('C#5', 8, last=16) + ' D#4:16', 'cantus: C# minor in minims', 'cantus')
-    # free lines
-    sc.put('A3', 3 + o, 4, 'D#5:4~ D#5:4 C#5:12 G#4:12 E5:4~ E5:16 B4:16~ B4:4 D#4:8 B4:4~ B4:16 A#4:8 C#5:4 E5:4')
-    sc.put('A1', 4 + o, 2, 'F#4:12 G#4:8 B3:8 G#3:8 R:8 D#4:8 B3:8 B3:8 D#4:8 G#4:4 F#4:4 E4:4 D#4:4 C#4:4 B3:4 A#3:8')
-    sc.put('T6', 1 + o, 1, 'R:4 G#3:4 R:2 A#3:2 B3:4 B3:8 R:4 G#3:4 D#4:4 R:8 D#4:4 F#3:8 R:8 R:4 B3:4 R:4 E4:4 '
-                           'C#4:8 R:8 R:8 D#4:4 B3:4 B3:4 R:8 B3:4 C#4:16 F#3:8 C#4:8')
-    sc.put('S5', 9 + o, 3, 'F#5:4 E5:4~ E5:4 D#5:2 C#5:10')
-    sc.put('B5', 1 + o, 1, 'G#3:4 B2:4 E3:4 D#3:4 B2:4 D#3:4 E3:4 G#3:4 D#3:8 C#3:4 D#3:4 A#2:8 E3:4 F#3:4 '
-                           'B2:4 G#2:4 E3:8 G#2:4 E3:4 A#2:8 B2:8 F#2:4 B2:4 G#2:4 A#2:4 B2:4 G#2:4 '
-                           'E3:4 G#3:4 E3:4 C#3:4~ C#3:4 E3:4 F#3:4 C#3:4')
-    sc.put('B5', 11 + o, 1, 'D#3:4 F#3:4 E3:8 F#3:4 D#3:4 F#3:4 D#3:4 E3:4 D#3:4 F#3:4 D#3:4 E3:8 R:8 G#3:8 F#3:8 '
-                            'E3:12 F#3:4 C#3:16 B2:16')
-    sc.put('A5', 1 + o, 1, 'D#4:8 B3:8 G#4:8 E4:8')
-    sc.put('A5', 9 + o, 1, 'E4:8 G#3:8 C#4:16')
-    sc.put('A5', 11 + o, 1, 'R:4 F#4:8 E4:4~ E4:1 D#4:3 B3:4 C#4:4 D#4:4 C#4:12 B3:4 B3:8 A#3:8 B3:8 D#4:8 '
-                            'E4:8 C#4:8 G#4:8 F#4:8 F#4:16')
-    sc.put('S2', 5 + o, 1, 'R:4 E6:8 G#5:4~ G#5:4 C#6:4 E6:8~ E6:4 D#6:12~ D#6:4 B5:8 D#6:4 E6:16 C#6:12 R:4')
-    sc.put('S2', 13 + o, 2, 'D#5:4 C#5:4 D#5:4~ D#5:4 E5:12~ E5:8 F#5:8 G#5:8 C#6:8 C#6:16 D#6:16')
-    sc.put('S1', 3 + o, 1, 'B5:4 C#6:4 B5:4 G#5:4 F#5:12 E5:4~ E5:4 G#5:8 E5:4 E5:4 G#5:4 C#6:8 F#5:8 B5:8 B5:8 G#5:8 '
-                           'C#6:16 A#5:8 F#5:8')
-    sc.put('S1', 11 + o, 1, 'D#6:8')
-    sc.put('S1', 13 + o, 3, 'A#5:4 B5:4~ B5:4 G#5:4 F#5:4 A#5:4 G#5:4 B5:8 F#5:4 B5:8 A#5:4 F#5:4 C#6:4 G#5:4 C#6:4 A#5:4 B5:16')
-    sc.put('T1', 14 + o, 1, 'R:2 G#3:8 A#3:6 A#3:2 B3:8 B3:6 B3:2 B3:8 A#3:6 A#3:2 G#3:6 R:8 D#4:16')
-    sc.put('A4', 18 + o, 1, 'B4:16')
-    sc.put('T4', 8 + o, 1, 'D#5:8 B4:8 E5:8 C#5:4 G#4:4~ G#4:8 F#4:8')
-    sc.put('T4', 14 + o, 1, 'R:4 G#3:8 F#3:4~ F#3:4 G#3:8 F#3:4~ F#3:4 G#3:8 F#3:4 R:16 F#3:16')
+# ===================================================================== IX. E (bars 57-62), rising
+sc.mark(57, 'E (rising)')
+sc.theme('C', 57, 1, hex_up('E4'), 'Cantus: E, ut-la (rising)', 6)
+sc.theme('T', 57, 1, key(SUBJ, 'B4', 'E3'), 'Subject (E), tenor, with the cantus')
+sc.put('A', 57, 1, 'R:4 G#4:1 B4:1 A4:1 C#5:4 D#5:1 E5:4~ '                     # CS above the cantus
+                   'E5:4 D#5:4 B4:1 A4:1 G#4:1 A4:1 B4:1 C#5:1 D#5:1 B4:1')
+sc.put('B', 57, 3, 'R:4 A2:4 '
+                   'B2:4 G#2:4 E2:4 B1:4')
+# episode b59-60 (E/G# - C#m | A - F#m7)
+sc.put('S', 59, 1, 'B5:2 A5:1 G#5:1 A5:2 E5:2 C#6:2 B5:1 A5:1 G#5:2 E5:2 '
+                   'A5:2 B5:1 C#6:1 E6:2 C#6:2 A5:2 G#5:1 F#5:1 E5:2 D#5:2 '
+                   'R:4')
+sc.put('A', 59, 1, 'E5:4 D#5:2 E5:2 E5:4 C#5:4 '
+                   'C#5:4 B4:4 C#5:4 A4:4 R:16')
+sc.put('T', 59, 1, 'B3:2 C#4:2 D#4:2 B3:2 C#4:2 B3:2 A3:2 G#3:2 '
+                   'A3:2 G#3:2 F#3:2 E3:2 F#3:2 G#3:2 A3:2 F#3:2 '
+                   'G#3:4 R:12')
+sc.put('B', 59, 1, 'G#2:2 F#2:2 E2:2 G#2:2 C#3:2 B2:2 A2:2 C#3:2 '
+                   'A2:2 G#2:2 F#2:2 A2:2 F#2:2 E2:2 D#2:2 R:2')
+sc.theme('B', 61, 1, key(SUBJ, 'B4', 'B2'), "Subject on the dominant (B, home), bass, at the cantus's sol")
+sc.put('S', 61, 1, 'R:4 D#5:1 F#5:1 E5:1 G#5:4 A#5:1 B5:4~ '                     # CS above, in B
+                   'B5:4 A#5:4 F#5:1 E5:1 D#5:1 E5:1 F#5:1 G#5:1 A#5:1 F#5:1')
 
+# ===================================================================== X. F# (bars 63-68), falling
+sc.mark(63, 'F# (falling)')
+sc.theme('C', 63, 1, hex_dn('D#5', last=12), 'Cantus: F#, la-ut (falling)', 6)
+sc.theme('A', 63, 1, key(INV, 'G#5', 'D#4'), 'Inversion (F#), alto, with the falling cantus')
+sc.put('T', 63, 1, key(CSI, 'G#5', 'D#4'))                                       # CSI below
+sc.put('B', 63, 1, 'D#2:4 C#2:4 B1:4 A#1:4 '
+                   'C#2:2 D#2:2 E#2:2 C#2:2 G#1:4 C#2:4')
+sc.put('S', 63, 1, 'F#5:8 E#5:4 F#5:4 '
+                   'G#5:4 E#5:4 C#6:6 B5:2')
+# episode b65-66 (B - C#7 | F#/A# - D#m)
+sc.put('S', 65, 1, 'A#5:4 B5:2 D#6:2 C#6:4 E#5:4 '
+                   'F#5:4 A#5:4 D#5:4 R:4')
+sc.put('A', 65, 1, 'F#4:2 G#4:2 F#4:2 D#4:2 E#4:2 G#4:2 C#5:2 G#4:2 '
+                   'A#4:2 C#5:2 F#4:2 A#4:2 F#4:2 E#4:2 D#4:2 F#4:2')
+sc.put('T', 65, 1, 'R:4 D#4:4 G#3:2 A#3:2 B3:2 G#3:2 '
+                   'A#3:4 C#4:2 A#3:2 G#3:4 F#3:4')
+sc.put('B', 65, 1, 'B1:2 C#2:2 D#2:2 B1:2 E#2:2 D#2:2 C#2:2 E#2:2 '
+                   'A#1:2 B1:2 C#2:2 A#1:2 D#2:2 C#2:2 B1:2 D#2:2')
+sc.theme('S', 67, 1, key(INV, 'G#5', 'G#5'), "Inversion (B, home), soprano, at the cantus's re")
 
-# ===================================================================== tempo and dynamics
-# Allegro moderato, quarter = 92.  A breath at the seam (the F#7 halt, b42-43), the summit a little
-# broader (86) from the G#-minor arrival, and the last two bars broaden to 64.
-TEMPO_MAP = [[0, 92], [164, 92], [172, 74, 'ramp'], [172, 92],
-             [300, 92], [312, 86, 'ramp'], [312, 86], [376, 86], [384, 62, 'ramp']]
-# phrase dynamics (velocity offsets by bar): the exposition and first staircase moderate, the seam
-# drops, the second staircase climbs, the summit loudest, the coda settles
-DYN = {1: -6, 13: -3, 24: 0, 35: 2, 41: -2, 42: -6, 44: -8, 49: -5, 55: -2, 60: 0, 66: 3, 71: 5, 77: 7,
-       79: 9, 89: 12, 92: 8, 95: 5}
-
-
-def dyn(b):
-    b += 1
-    return DYN[max(k for k in DYN if k <= b)]
-
-
-def build(nb=NB):
-    sc = Score(1)
-    exposition(sc)
-    tour(sc)
-    summit(sc)
-    summit_chorus(sc)
-    return sc
+NBARS = 68
 
 
 def main():
-    sc = build()
-    bars = sc.bars(NB)
-    names = {v[0]: v[1] for v in VOICES}
-    voices = [(names[n], n, clef, 64) for n, long, clef, key in VOICES]
-    entries = [(names[v], 1 + int(t // 16), float((t % 16) / 4), lab, 2 if kind in ('S', 'I') else (1 if 'head' in kind else 6))
-               for v, t, lab, kind in sc.entries]
+    bars = sc.bars(NBARS)
     meta = {
         'title': 'The Well-Tempered clAIvier',
-        'subtitle': 'Fugue XXIII in B major, twenty-four voices: Fantasia ut re mi fa sol la per tutti i tuoni',
-        'composer': 'Claude / Sam, after John Bull', 'instrument': 'Twenty-four voices (open score)',
-        'key': 'B', 'mode': 'major', 'meter': [4, 4], 'bpm': 92,
-        'tempo_text': 'Allegro moderato, alla fantasia', 'tempo_map': TEMPO_MAP,
+        'subtitle': 'Fugue XXIII in B major, five voices: Fantasia ut re mi fa sol la per tutti i tuoni',
+        'composer': 'Claude / Sam, after John Bull',
+        'instrument': 'Keyboard - five voices (four-voice fugue and cantus)',
+        'key': 'B', 'mode': 'major', 'meter': list(METER), 'bpm': 100,
+        'tempo_text': 'Allegro moderato, alla fantasia',
         'movement_number': 23, 'piece_type': 'fugue', 'edition': 'third',
-        'score_layout': {'paper': 'a2', 'hide_empty_staves': True, 'staff_size': 15, 'staff_distance': 9},
         'score_tagline': 'The Well-Tempered clAIvier - third edition',
+        'voice_order': 'high_to_low',
+        'markers': [{'t': float((b - 1) * 4), 'label': txt} for b, txt in sc.marks],
     }
-    W.build_score(HERE / 'fugue.json', meta, voices, {names[n]: bars[n] for n in NAMES},
-                  entries=entries, subject=S, entry_boost=6, dynamics=dyn,
-                  extra={'themes': [{'voice': v, 't': float(t / 4), 'label': lab, 'kind': k} for v, t, lab, k in sc.entries]})
-    print('bars', NB, 'entries', len(entries))
+    voices = [(LONG[i], ABBR[i], CLEF[i], BASEVEL[i]) for i in range(len(NAMES))]
+    named = {LONG[i]: bars[NAMES[i]] for i in range(len(NAMES))}
+    entries = [(LONG[NAMES.index(v)], b, off, lab, n) for v, b, off, lab, n in sc.entries]
+    W.build_score(HERE / 'fugue.json', meta, voices, named, entries=entries, subject=SUBJ)
+    print(f"wrote {HERE / 'fugue.json'}: {NBARS} bars")
 
 
 if __name__ == '__main__':
