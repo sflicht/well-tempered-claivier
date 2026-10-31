@@ -297,6 +297,17 @@ def accent(n, t):
     return 0
 
 
+def velocity_shape(b):
+    """Phrase dynamics by 4/4 bar of the file (velocity offset)."""
+    shape = {11: 2, 12: -2, 13: -2, 14: -2, 15: 0, 16: 0, 17: -1,          # cadence in E; the quick duet
+             26: -2, 27: -1, 28: 1, 29: 3,                                  # trio, the dominant
+             30: 3, 31: 3, 32: 4, 33: 4, 34: 5, 35: 5, 36: 6, 37: 6, 38: 5,  # the ball
+             39: -3, 40: -2, 41: -1, 42: 4, 43: 4}                          # the bourree; the bow
+    if 18 <= b <= 25:
+        return -5                                                           # the slow duet
+    return shape.get(b, 0)
+
+
 def build(write=True):
     for f in SECTIONS:
         f()
@@ -322,8 +333,8 @@ def build(write=True):
         b0 = int(q // 4) + 1
         entries.append((LONG[v], b0, q - 4 * (b0 - 1), label, max(1, round(float(dq) / 4))))
     data = W.build_score(HERE / 'fugue.json', meta, voices, named, entries=entries, subject=SA,
-                         accents=False, entry_boost=6)
-    pans = {'S': 76, 'A': 60, 'T': 70, 'B': 54}
+                         dynamics=velocity_shape, accents=False, entry_boost=6)
+    pans = {'S': 74, 'A': 66, 'T': 60, 'B': 54}
     for k, v in enumerate(data['voices']):
         n = NAMES[k]
         v['piano_pan'] = pans[n]
