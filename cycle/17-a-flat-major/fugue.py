@@ -212,7 +212,8 @@ def dream():
 def turn_home():
     """Bars 23-24: c-sharp minor is D-flat minor, iv of A-flat; a chromatic bass (D-flat, D, E-flat) takes
     the children home, and the first cadence at home is prepared in full, with the soprano's longest trill."""
-    put('S', 23, 0, 'Fb5:6 Ab5:6 Cb6:12 | C6:12 C6:1 Bb5:1 C6:1 Bb5:1 C6:1 Bb5:1 C6:1 Bb5:1 C6:1 Bb5:1 Ab5:1 Bb5:1')
+    put('S', 23, 0, 'Fb5:6 Ab5:6 Cb6:12 | C6:12 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 '
+                    'C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 Ab5:1 Bb5:1')
     put('A', 23, 0, 'Db5:12 F5:12 | Eb5:24')
     put('T', 23, 0, 'Ab3:24 | Ab3:12 G3:12')
     put('B', 23, 0, 'Db3:12 D3:12 | Eb3:12 Eb2:12')
@@ -258,17 +259,20 @@ def home():
 
 
 def stretto():
-    """Bars 33-36: all four children at once.  The bass starts the subject on the dominant (so the V7 of bar
-    32 does not resolve at all: evasion 13), and the others follow every half bar: the alto on E-flat two
+    """Bars 33-36: all four children at once.  Evasion 13: the forte V7 of bar 32 does not resolve; it comes
+    back on the next downbeat as an echo, pianissimo, and the bass starts the subject on the dominant under it; the others follow every half bar: the alto on E-flat two
     octaves up, the tenor on B-flat, the soprano on B-flat (diatonic forms within A-flat; tools/stretto_finder.py
     tested each of the six pairings clean, and I chose this order so that no entry crosses another voice).
     Then the cadence is prepared with everything they have, and they stop dead on the dominant seventh, its seventh on top (evasion 14: the chord left hanging)."""
-    theme('B', 33, 0, subj('Ab', octave=1, shift=4), 'stretto 1: bass, on the dominant (evasion 13: V7 - V)')
+    theme('B', 33, 0, subj('Ab', octave=1, shift=4), 'stretto 1: bass, on the dominant, under the echo (evasion 13: V7 - V7, pp)')
     theme('A', 33, 6, subj('Ab', octave=3, shift=4), 'stretto 2: alto')
     theme('T', 34, 0, subj('Ab', octave=2, shift=1), 'stretto 3: tenor')
     theme('S', 34, 6, subj('Ab', octave=4, shift=1, upto=16) + ' C5:6', 'stretto 4: soprano')
+    # The V7 of bar 32 (forte) comes back on the downbeat of bar 33 as an echo, pianissimo, all four
+    # children re-striking it; the bass's subject starts under the echo and the stretto grows from it.
     put('A', 33, 0, 'Db4:6')
     put('S', 33, 0, 'Bb4:12')
+    put('T', 33, 0, 'G3:6')
     # bars 35-36: iii7 - ii7 - vi - (6/4) | ii6/5 - I6/4 - V7, and stop.  The seventh (D-flat) is on top.
     put('B', 35, 3, 'Bb2:6 F2:6 Eb2:6 | Db3:6 Eb3:6 Eb2:6')
     put('A', 35, 6, 'Ab4:24 Eb4:6')
@@ -285,7 +289,8 @@ def father():
     theme('P', 37, 0, subj('Ab', octave=1, aug=2) + ' Eb2:24', 'the father: subject in augmentation, then the bass 5 - 1', 5, 'augmentation')
     put('P', 42, 0, 'Ab1:24 | Ab1:24 | Ab1:24')
     put('S', 37, 6, 'C5:6 Eb5:6 | F5:6 Db5:6 Eb5:6 Eb5:4 Db5:2 | F5:6 Eb5:6 F5:6 Db5:6 |'
-                    ' Eb5:12 F5:12 | C6:12 ' + trill('C6', 'Bb5', 12, ('Ab5', 'Bb5')) + ' | Ab5:6 G5:6 F5:6 Eb5:6 |'
+                    ' Eb5:12 F5:12 | C6:12 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5'
+                    ' C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 Ab5:1 Bb5:1 | Ab5:6 G5:6 F5:6 Eb5:6 |'
                     ' Db5:12 C5:6 Db5:6 | C5:24')
     theme('A', 37, 6, subj('Ab', octave=4, inv=True), 'over the father: the subject inverted (alto)', 2, 'inversus')
     put('A', 39, 6, 'F4:6 F4:6 | Ab4:6 G4:2 Ab4:4 F4:12 | Ab4:12 Db5:12')
@@ -333,12 +338,12 @@ TEMPO = [[0, 87],
          [q(25), 84], [q(27), 87],
          [q(29), 87], [q(30), 91, 'ramp'],
          [q(30, 4), 91], [q(31), 68], [q(31, 3), 68], [q(32), 86, 'ramp'],
-         [q(33), 88], [q(35, 3), 93, 'ramp'], [q(36), 86], [q(36, 3), 70, 'ramp'],
+         [q(32, 3), 86], [q(33), 76, 'ramp'], [q(33), 88], [q(35, 3), 93, 'ramp'], [q(36), 86], [q(36, 3), 70, 'ramp'],
          [q(36, 3), 26], [q(36, 4), 24],
          [q(37), 64], [q(40, 3), 64], [q(41, 3), 54, 'ramp'],
          [q(42), 60], [q(43, 3), 60], [q(45), 42, 'ramp']]
 DYN = {1: -2, 9: 2, 10: 0, 14: 2, 15: 3, 16: 5, 17: -12, 23: -6, 24: 2, 25: -2, 26: 0, 27: 1, 29: 3,
-       30: 4, 31: -12, 32: -4, 33: 2, 34: 4, 35: 6, 36: 8, 37: -2, 38: -2, 40: 2, 41: 5, 42: 6, 43: -3,
+       30: 4, 31: -12, 32: -2, 33: -11, 34: -3, 35: 3, 36: 8, 37: -2, 38: -2, 40: 2, 41: 5, 42: 6, 43: -3,
        44: -5}
 MARKERS = [(q(1), 'Exposition: four children'),
            (q(9, 3), 'The first cadence, evaded (V - vi)'),
@@ -349,8 +354,10 @@ MARKERS = [(q(1), 'Exposition: four children'),
            (q(25), 'Guest: Bach, BWV 862, at pitch (tenor)'),
            (q(27), 'At home: the trill that will not stop'),
            (q(31), 'Trap door: flat VI'),
-           (q(33), 'All four children: stretto'),
-           (q(36, 3), 'The hanging seventh: hold it (fermata), then silence'),
+           (q(32, 3), 'V7, forte ...'),
+           (q(33), '... and again as an echo, pianissimo: the stretto starts under it'),
+           (q(36, 3), 'Fermata: hold the chord (about 3.5 s)'),
+           (q(36, 4), 'Fermata on the rest: silence (about 4 s)'),
            (q(37), 'The father'),
            (q(42), 'The first perfect cadence'),
            (q(43), 'The tune gets its do')]
@@ -360,6 +367,8 @@ def accents(data):
     """12/8 metric accents on the written velocities (beats 1 and 3 strong, 2 and 4 medium)."""
     for v in data['voices']:
         for e in v['events']:
+            if v['abbr'] in ('T', 'B') and q(25) <= e['t'] < q(27):
+                continue                 # Bach's guest keeps his own (4/4) shape: no 12/8 accents
             ph = Fr(e['t']).limit_denominator(48) % 6
             add = 4 if ph == 0 else 2 if ph == 3 else 1 if ph in (Fr(3, 2), Fr(9, 2)) else 0
             if e['d'] < 0.5:
@@ -390,6 +399,10 @@ def build(path=None):
     data = W.build_score(path, meta, voices, bars, entries=ENTRIES, subject=subj('Ab', octave=3),
                          dynamics=dynamics, accents=False)
     accents(data)
+    for v in data['voices']:              # the V7 before the echo, forte
+        for e in v['events']:
+            if q(32, 3) <= e['t'] < q(33):
+                e['v'] = max(24, min(118, e['v'] + 6))
     pans = {'S': 76, 'A': 68, 'T': 58, 'B': 50, 'P': 64}
     for v in data['voices']:
         v['piano_pan'] = pans[v['abbr']]

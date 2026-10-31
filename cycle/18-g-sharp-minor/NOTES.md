@@ -81,7 +81,7 @@ combined with the first from its first entry.
 | 26-35 | 1:26-1:55 | **III. Galli cantu.** The soprano holds its D# while the bass knocks (b26.2). Soprano subject, Dorian: **B-E#** at b28.1 over C# major. Fifth voice knocks again (b29.2), tenor subject below it (b30): the cock crows twice (Mark 14:72), b31.1. Stretto: the soprano answers two beats later a tenth higher, on B (b30.3). Door subject 5 (alto, on C#, from b33.3), iv→IV, v→V: **F-sharp major** at b35.1. q = 112. | 3.9 (4) |
 | 35-43 | 1:55-2:20 | **IV. Mane.** The alto holds the F# chord while the tenor knocks (b35.2). Soprano subject, Mixolydian: **B#** over the door's G# = G# major (b36.3). **Summit (b39-43):** three entries a third apart and two beats apart, climbing: bass G#2 (b39.1), tenor B#3 (b39.3), soprano D#5 (b40.2), whose B#5 (b41.2) is the top of the piece and whose last note C#5 is the cadence: **C-sharp major** at b43.1. q = 116. | 3.8 (4) |
 | 43-45 | 2:20-2:32 | **The last knock.** D# (= E-flat) pedal; the soprano holds C#, the dominant's seventh; the tenor sighs 4-3 over the pedal; the fifth voice knocks (b44.3) and rises E-E# (iv→IV), F#-F## (v→V). The tempo broadens to q = 82. | 3.0 (4) |
-| 46-52 | 2:32-3:05 | **Dawn, A-flat major.** b46.1: five-voice A-flat chord; the soprano's C# resolves to C; the fifth voice's door ends on A-flat and becomes the Ionian subject, under an eighth-note soprano descant. The light comes down: tenor entry on C a sixth lower, two beats later (b46.3; in A-flat major its scale from C has exactly the Phrygian intervals of bar 1), bass answer on E-flat (b47.2). Soprano subject last (b49); its G rises to A-flat over E-flat → A-flat (b52.1); five-voice final chord. q = 88, ritardando to 58. | 4.1 (5) |
+| 46-52 | 2:32-3:05 | **Dawn, A-flat major.** b46.1: five-voice A-flat chord, held by bass and alto for the whole bar; the soprano's C# resolves to C and holds E-flat while the fifth voice's door, ending on A-flat, becomes the Ionian subject (voiced louder); the soprano's eighth-note descant starts only at the subject's leap to F (b47.1). The light comes down: tenor entry on C a sixth lower, two beats later (b46.3; in A-flat major its scale from C has exactly the Phrygian intervals of bar 1), bass answer on E-flat (b47.2). Soprano subject last (b49); its G rises to A-flat over E-flat → A-flat (b52.1); five-voice final chord. q = 88, ritardando to 58. | 4.1 (5) |
 
 Moving voices per bar: `1 1 1 2 2 2 3 3 3 4 4 4 4 4 5 | 2 3 4 4 5 5 3 3 4 4 3 | 3 4 4 4 4 4 4 4 4 | 3 4 3 4 4 4 4 4 | 2 4 | 5 4 4 4 4 4 4`.
 All five voices sound together only where the plan needs them: b21 (the first full combination, the
@@ -109,7 +109,7 @@ fifth voice saves itself for the last knock.
 | measure | value | target |
 | --- | --- | --- |
 | parallels_error / weak | **0** / 0 | 0 |
-| beat_parallels | **1** | ≤ 2 |
+| beat_parallels | **0** | ≤ 2 |
 | dissonance_unresolved | **0** | ≤ 3 |
 | bad_doublings | **1** | ≤ 2 |
 | low_register_seconds | **0** | ≤ 9 |
@@ -117,22 +117,20 @@ fifth voice saves itself for the last knock.
 | repeated_note_pct | 5.6 % (the knocks) | |
 | pc tripled on beats | 5.6 % | |
 | crossings | 1 | few |
-| **keyboard_unplayable_pct** | **1.1 %** (3 of 268 onsets) | < 15 % |
+| **keyboard_unplayable_pct** | **1.1 %** (3 of 265 onsets) | < 15 % |
 | **mean moving voices** | **3.52** (4 bars with all five moving) | |
 | subject entries | 17 subject + 9 door-subject entries; all subject entries 9/9 in rhythm | |
 
 Flagged items, each kept on purpose:
 
-- **Beat-to-beat fifths b41.1 → b41.2** (alto D#5/tenor G#4 → B#4/E#4), inside the summit, where the
-  tenor's entry is thematic and the alto is the only free voice.
 - **Doubled seventh b40.2** (tenor D#4 and soprano D#5 over E#3): in a chain of entries a third apart and
   two beats apart, the upper entry's first note is always the lower entry's third note.
 - **Keyboard b41.2-41.3:** G#2 (bass) - E#4 (tenor) - B#5 (soprano): the summit's top note is out of reach
   for three onsets. Everything else fits two hands.
 - **Tritone leaps (3):** B-E# in the Dorian subject (b28.1, b31.1) is the cockcrow; F#-B# (b41.2) is the
   same leap in the summit's Mixolydian entry on D#.
-- **Crossing b46.1:** the alto takes the E-flat of the dawn chord under the fifth voice's A-flat for one
-  half note.
+- **Crossing b46:** the alto holds the E-flat of the dawn chord under the fifth voice's A-flat-B-flat-C for
+  one bar: the fifth voice takes the alto's register at daybreak.
 - **"7th not resolved down" (15 notes):** chord sevenths that pass on inside the subject (b31.3, b40-41,
   b48.1) or move to another chord tone in a secondary seventh (b11.1, b14.3, b32.3).
 - **Themes:** the critic compares every entry to the Phrygian subject, so the Aeolian to Ionian forms show
@@ -158,14 +156,17 @@ rise in tenths) was designed by hand. No script chose or placed a note.
 2. **The summit is short and in four voices.** Three entries (b39-43); the fifth voice rests through it so
    that its last knock enters fresh. The free alto in b39-42 is partly harmonic filler.
 3. **The dawn is seven bars** (about 30 s). Its subject statements are in half notes like every entry; the
-   motion comes from the soprano's eighth-note descant (b46-48) and the quarter-note inner voices (b49-51).
+   motion comes from the soprano's eighth-note descant (b47-48) and the quarter-note inner voices (b49-51).
    Earlier the dawn was the weak spot; it is now a real cadence plan, but still not long.
-4. **Watch I is 49 seconds of exposition** in one to four voices before the fifth voice appears: normal for
+4. **The summit chain's entries begin in octave with the voice below** (tenor B#3 on the bass's B#2 at
+   b39.3, soprano D#5 on the tenor's D#4 at b40.2): built into a chain a third apart; the tenor is voiced
+   louder in b39-40.
+5. **Watch I is 49 seconds of exposition** in one to four voices before the fifth voice appears: normal for
    a fugue, and the slowest part of this one.
-5. **The bass of watch III moves mostly in half notes** (b28-35).
-6. **The modal changes are single pitch classes.** Each is placed on a beat at the top of the texture, but I
+6. **The bass of watch III moves mostly in half notes** (b28-35).
+7. **The modal changes are single pitch classes.** Each is placed on a beat at the top of the texture, but I
    cannot confirm by ear that a listener hears A → A# or B → B#.
-7. **Nothing has been heard.**
+8. **Nothing has been heard.**
 
 ### From the nineteen-voice version (`archive-n-plus-1/`)
 
@@ -186,6 +187,23 @@ rise in tenths) was designed by hand. No script chose or placed a note.
   piece, a climax of knock figures instead of lines, a plain half-note dawn, and raised notes that might
   not be heard. At five voices each raised note can sit alone at the top on a strong beat, each knock is
   part of a line a listener can follow, and the dawn can be prepared as a cadence.
+
+### Review (`REVIEW.md`) and what changed
+
+All tested fixes were applied by hand in `fugue.py`; the critic shows no new flags (beat-to-beat parallels
+1 → 0).
+
+| # | item | done |
+| --- | --- | --- |
+| 1 | the dawn chord evaporated at b46.2 (two voices, no bass for a bar) | bass `Ab2:24`, alto `Eb4:24` in b46: root and fifth held under the first bar of daybreak |
+| 2 | the fifth voice's A-flat subject was hidden under the soprano's descant | soprano `C5:8 Eb5:16` in b46 (the descant starts at b47.1, with the subject's leap to F); fifth voice +6 velocity in b46-48 |
+| 3 | at b41 the alto doubled the top B#5 and made accented fifths with the tenor | alto b41 `D#5:8 G#4:12 A#4:4` |
+| 4 | the summit chain's octave starts | notes kept (inherent in the chain); tenor +6 velocity in b39-40 |
+| 5 | the three watch openings share one frame | kept, as the review asks: it is what makes A-A#, E-E#, B-B# comparable. Varied around it: watch IV's knock is now softer (dynamic level -6, was -2), as if heard from further off at dawn |
+
+The "must not be touched" items (the common frame of b16, b27, b36; the pivot b45-46.1) are unchanged.
+The velocity changes are voicing only, applied to the built events after `build_score`; no note was
+added or moved by script.
 
 ### Renders
 

@@ -275,10 +275,10 @@ theme('Mz', 21, 1, SMAJ, 'Subject in D-flat major (mezzo-soprano)')
 put('B', 21, 1, 'Db3:8 Bb2:8 F2:8 Gb2:8 Ab2:8 Db3:8 Bb2:4 Ab2:12')
 put('T', 21, 1, 'Db4:4 Eb4:4 F4:8 F4:4 Eb4:4 Bb3:8 C4:8 Db4:8~ Db4:4 Eb4:4 C4:4 Cb4:4')
 put('A', 23, 1, 'Ab4:24 Gb4:4 F4:4')
-# b25-26: episode, E-flat minor - ii-half-dim 6/5 | V - V7; the bass, then the alto, breathe before
-# the cantus and the alto enter together.
+# b25-26: episode for three voices, E-flat minor - ii-half-dim 6/5 | V - V7; the alto rests for almost
+# two bars and the bass breathes before the cantus and the alto enter together.
 put('Mz', 25, 1, 'Eb5:4 Db5:4 C5:8 C5:8 Eb5:8')
-put('A', 25, 1, 'Gb4:16 F4:8')
+put('A', 25, 1, 'Gb4:4')
 put('T', 25, 1, 'Bb3:16 A3:8 C4:8')
 put('B', 25, 1, 'Gb2:8 Eb2:8 F2:16')
 

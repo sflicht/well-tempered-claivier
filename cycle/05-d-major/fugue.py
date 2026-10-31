@@ -106,7 +106,7 @@ tag(10, 'THE GUEST: subject of WTC I/5 (BWV 850, J. S. Bach) in D')
 put(12,
     S='A5:4 D6:2 D6:1 D6:1 F#5:4 B5:2 B5:1 B5:1  D5:4 G5:2 G5:1 G5:1 B4:4 E5:2 E5:1 E5:1 '
       'E5:1 D5:1 C#5:1 B4:1 A4:1 B4:1 C#5:1 D5:1 F#5:1 G5:1 A5:1 B5:1 C#6:1 D6:2 B5:1  G5:4 B5:2 A5:2 F#5:4 E5:2 C#5:2',
-    T='R:4 F#4:4 B4:2 B4:1 B4:1 D4:4  G4:2 G4:1 G4:1 B3:4 E4:2 E4:1 E4:1 E4:4  A4:2 A4:1 A4:1 A4:12  G4:8 E4:4 F#4:4',
+    T='R:4 F#4:4 B4:2 B4:1 B4:1 D4:4  G4:2 G4:1 G4:1 B3:4 E4:2 E4:1 E4:1 E4:4  A4:2 A4:1 A4:1 A4:8 B4:4  G4:8 E4:4 F#4:4',
     B='D3:2 E3:2 F#3:2 D3:2 B2:2 C#3:2 D3:2 B2:2  G2:2 A2:2 B2:2 G2:2 E2:2 F#2:2 G2:2 G#2:2 '
       'A2:2 B2:2 C#3:2 A2:2 D3:2 C#3:2 B2:2 A2:2  E2:2 F#2:2 G2:2 E2:2 F#2:2 A2:2 C#3:2 A2:2')
 tag(12, 'Episode 1: head-cell canon (a 3)')
@@ -131,7 +131,7 @@ tag(18, 'Middle entry: E minor, inverted (tenor)')
 # countersubject's syncopation (alto); falling fifths Em-Am | D-G | C-F#o | D7/F#.
 put(20,
     S='B5:3 A5:1 G5:2 F#5:2 E5:1 F#5:1 G5:1 A5:1 A5:4  A5:3 G5:1 F#5:2 E5:2 D5:1 E5:1 F#5:1 G5:1 G5:4 '
-      'G5:3 F#5:1 E5:2 D5:2 C5:1 D5:1 E5:1 F#5:1 A5:4  A5:4 F#5:4 A5:4 C6:4',
+      'G5:3 F#5:1 E5:2 D5:2 C5:1 D5:1 E5:1 F#5:1 A5:4  A5:4 F#5:4 A5:4 C6:2 B5:2',
     A='E5:4 B4:2 E5:2 C5:6 B4:2  D5:4 A4:2 D5:2 B4:6 A4:2  C5:4 G4:2 C5:2 A4:6 G4:2  F#4:4 A4:8 D5:4',
     B='E2:8 A2:8  D2:8 G2:8  C2:4 E2:4 F#2:8  F#2:16')
 tag(20, 'Episode 2: tail over syncopation, falling fifths (a 3)')
@@ -250,8 +250,8 @@ ENTRY_LIST = [
     ('T', 24, 0, 'Stretto I: subject in G', 2), ('A', 24, 1, 'Stretto I: diminution in E minor', 1),
     ('B', 24, 3, 'Stretto I: inversion', 2),
     ('A', 31, 0, 'Stretto II: subject in E minor', 2), ('T', 31, 1.5, 'Stretto II: inversion, off the beat', 2),
-    ('S', 38, 0, 'Cascade 1: F# minor', 2), ('A', 39, 0, 'Cascade 2: B minor', 2), ('T', 40, 0, 'Cascade 3: E minor', 2),
-    ('B', 41, 0, 'Cascade 4: A', 2),
+    ('S', 38, 0, 'Cascade 1: F# minor', 1), ('A', 39, 0, 'Cascade 2: B minor', 1), ('T', 40, 0, 'Cascade 3: E minor', 1),
+    ('B', 41, 0, 'Cascade 4: A', 1),
     ('B', 43, 0, 'Cascade 5 = summit: subject x2 in D', 4), ('S', 43, 2, 'Summit: subject', 2),
     ('G', 43, 3, 'The Guest: BWV 850 subject (J. S. Bach)', 1),
     ('T', 45, 2, 'Summit: subject on the fourth degree (diatonic)', 2),
@@ -298,6 +298,25 @@ def build(path=HERE / 'fugue.json'):
     voices = [('Soprano', 'S', 'treble', 74), ('Alto', 'A', 'treble', 70), ('Tenor', 'T', 'treble_8', 70),
               ('Bass', 'B', 'bass', 72), ('Guest', 'G', 'treble', 76)]
     data = build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ, dynamics=DYN, tags=TAGS)
+    # Performance emphasis (velocities only, no notes): supporting voices recede where an
+    # entry must be heard, and the Guest is a little louder at each of its three entries.
+    adj = {('Soprano', 10): -4, ('Soprano', 11): -4, ('Guest', 10): 4, ('Guest', 11): 4,
+           ('Alto', 38): -6, ('Tenor', 38): -6, ('Bass', 38): -4, ('Bass', 39): -6, ('Bass', 40): -6,
+           ('Alto', 41): -8, ('Alto', 42): -6, ('Tenor', 42): -6,
+           ('Alto', 43): -6, ('Tenor', 43): -6, ('Guest', 43): 6, ('Guest', 44): 6, ('Guest', 45): 4,
+           ('Tenor', 45): 4, ('Soprano', 46): 2, ('Alto', 50): 6, ('Alto', 51): 6, ('Guest', 52): 6}
+    for v in data['voices']:
+        for e in v['events']:
+            k = (v['name'], e['bar'])
+            if k in adj:
+                e['v'] = max(24, min(118, e['v'] + adj[k]))
+    # For the optional spatial render (--layout score --instruments): the home voices on an
+    # arc behind, as pianos; the Guest in front, centre, on a harpsichord. The main renders
+    # ignore both keys and play every voice on the piano.
+    place = {'Soprano': [-60, 6.5], 'Alto': [-20, 7.0], 'Tenor': [20, 7.0], 'Bass': [60, 6.5], 'Guest': [0, 3.5]}
+    for v in data['voices']:
+        v['spatial'] = place[v['name']]
+        v['gm_program'] = 6 if v['name'] == 'Guest' else 0
     Path(path).write_text(json.dumps(data, indent=1))
     return data
 

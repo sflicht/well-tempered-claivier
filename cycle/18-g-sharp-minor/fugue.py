@@ -227,7 +227,7 @@ put('A', 37, 0, 'G#4:8 F#4:16 '
                 'R:24 '
                 'D#4:8 C#4:8 D#4:8 '
                 'G#4:12 F#4:4 C#5:8 '
-                'D#5:4 A#4:4 B#4:8 G#4:4 A#4:4 '
+                'D#5:8 G#4:12 A#4:4 '                                # (review 3: no doubled B#, no accented fifths)
                 'D#5:8 A#4:8 F#4:8 '
                 'E#4:8')
 CHAIN = [('B', 39, 0, 'G#2:8 A#2:8 B#2:8 E#3:12 D#3:4 C#3:8 B#2:4 A#2:4 G#2:8 F#2:8', 'on G#'),
@@ -257,14 +257,14 @@ theme('Q', 44, 4, K[:-len('G#4:8')].rstrip(),                          # its las
 # A-flat: the first perfect cadence on the tonic in the whole piece.
 DAWN = 46
 theme('Q', 46, 0, S_ION, 'Dawn: subject, Ionian, in A-flat major, straight out of the door subject')
-put('S', 46, 0, 'C5:8 Eb5:8 Ab5:2 G5:2 F5:2 Eb5:2 '                     # a descant over the fifth voice's subject
-                'Ab5:4 Bb5:2 Ab5:2 G5:8 Ab5:4 F5:4 '
+put('S', 46, 0, 'C5:8 Eb5:16 '                                         # holds while the fifth voice's subject rises
+                'Ab5:4 Bb5:2 Ab5:2 G5:8 Ab5:4 F5:4 '                     # (review 2); the descant starts at its leap
                 'Eb5:8')                                                # then a rest before its entry at b49
 put('T', 46, 0, 'Ab3:8')
-put('A', 46, 0, 'Eb4:8')
+put('A', 46, 0, 'Eb4:24')                                               # and its fifth
 theme('T', 46, 4, 'C4:8 Db4:8 Eb4:8 Ab4:12 G4:4 F4:8 Eb4:4 Db4:4 C4:8 Bb3:8',
       'Dawn: stretto, the subject a sixth lower, two beats later')
-put('B', 46, 0, 'Ab2:8')
+put('B', 46, 0, 'Ab2:24')                                               # the dawn chord's root held (review 1)
 theme('B', 47, 2, 'Eb2:8 F2:8 G2:8 C3:12 Bb2:4 Ab2:8 G2:4 F2:4 Eb2:8 Db2:8', 'Dawn: answer in the bass')
 theme('S', 49, 0, S_ION, 'Dawn: the subject in the soprano; its G rises to A-flat (b52.1)')
 put('S', 52, 0, 'Ab4:24')
@@ -289,7 +289,7 @@ MARKS = [(1, 'I. Sero (evening): Phrygian, A'), (15, 'II. Media nocte (midnight)
 # phrase dynamics by bar (velocity offset): the night quiet and growing watch by watch, the summit
 # loudest, the last knock hushed and then growing, the dawn full.
 LEVEL = {1: -9, 4: -7, 7: -6, 10: -4, 13: -5, 15: -7, 16: -5, 20: -3, 22: -4, 24: -3, 26: -4,
-         27: -2, 30: 0, 33: -1, 35: -2, 36: 0, 39: 3, 40: 5, 41: 7, 42: 5, 43: 0, 44: -2, 45: 1,
+         27: -2, 30: 0, 33: -1, 35: -6, 36: 0, 39: 3, 40: 5, 41: 7, 42: 5, 43: 0, 44: -2, 45: 1,
          46: 7, 47: 5, 49: 6, 51: 5, 52: 4}
 
 
@@ -323,8 +323,18 @@ def build(nbars, path=None):
             'markers': [{'t': float((b - 1) * 6), 'label': txt} for b, txt in MARKS]}
     voices = [('Soprano', 'S', 'treble', 68), ('Alto', 'A', 'treble', 64), ('Quintus', 'Q', 'treble_8', 66),
               ('Tenor', 'T', 'treble_8', 62), ('Bass', 'B', 'bass', 64)]
-    return W.build_score(path or (HERE / 'fugue.json'), meta, voices, bars, entries=ENTRIES,
+    data = W.build_score(path or (HERE / 'fugue.json'), meta, voices, bars, entries=ENTRIES,
                          subject=S_PHR, dynamics=dyn)
+    # voicing (velocities only, no notes): bring out the tenor's summit entry and the fifth voice's
+    # subject at daybreak (review 4 and 2)
+    for name, b0, b1, dv in [('Tenor', 39, 40, 6), ('Quintus', 46, 48, 6)]:
+        for v in data['voices']:
+            if v['name'] == name:
+                for e in v['events']:
+                    if b0 <= e['bar'] <= b1:
+                        e['v'] = min(118, e['v'] + dv)
+    Path(path or (HERE / 'fugue.json')).write_text(__import__('json').dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

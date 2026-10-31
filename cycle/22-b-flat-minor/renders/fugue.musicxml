@@ -29,8 +29,8 @@
       <part-abbreviation>B</part-abbreviation>
     </score-part>
     <score-part id="P6">
-      <part-name>Contrabass (cantus firmus)</part-name>
-      <part-abbreviation>P</part-abbreviation>
+      <part-name>Cantus firmus</part-name>
+      <part-abbreviation>Cf</part-abbreviation>
     </score-part>
   </part-list>
   <part id="P1">
@@ -159,7 +159,7 @@
     <measure number="15">
       <direction placement="above">
         <direction-type>
-          <words>Answer (soprano)</words>
+          <words>Answer (soprano, F minor)</words>
         </direction-type>
       </direction>
       <note>
@@ -618,7 +618,7 @@
     <measure number="51">
       <direction placement="above">
         <direction-type>
-          <words>Answer (soprano) (cancrizans)</words>
+          <words>Answer (soprano, F minor) (cancrizans)</words>
         </direction-type>
       </direction>
       <note>
@@ -2313,23 +2313,21 @@
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>1920</duration>
-        <type>whole</type>
+        <duration>480</duration>
+        <type>quarter</type>
+      </note>
+      <note>
+        <rest />
+        <duration>1440</duration>
+        <type>half</type>
+        <dot />
       </note>
     </measure>
     <measure number="26">
       <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
-      </note>
-      <note>
         <rest />
-        <duration>960</duration>
-        <type>half</type>
+        <duration>1920</duration>
+        <type>whole</type>
       </note>
     </measure>
     <measure number="27">
@@ -2701,27 +2699,25 @@
     <measure number="43">
       <note>
         <rest />
-        <duration>960</duration>
-        <type>half</type>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>960</duration>
-        <type>half</type>
+        <duration>1920</duration>
+        <type>whole</type>
       </note>
     </measure>
     <measure number="44">
+      <note>
+        <rest />
+        <duration>1440</duration>
+        <type>half</type>
+        <dot />
+      </note>
       <note>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>1920</duration>
-        <type>whole</type>
+        <duration>480</duration>
+        <type>quarter</type>
       </note>
     </measure>
     <measure number="45">
@@ -3295,7 +3291,7 @@
     <measure number="5">
       <direction placement="above">
         <direction-type>
-          <words>Answer</words>
+          <words>Answer (tonal, F minor)</words>
         </direction-type>
       </direction>
       <note>
@@ -4480,7 +4476,7 @@
     <measure number="61">
       <direction placement="above">
         <direction-type>
-          <words>Answer (cancrizans)</words>
+          <words>Answer (tonal, F minor) (cancrizans)</words>
         </direction-type>
       </direction>
       <note>

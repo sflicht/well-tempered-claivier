@@ -103,7 +103,7 @@ put('S', 7, 0, tune('Ab'))
 ENTRIES.append((LONG['S'], 7, 0, 'verse 2 (over I6), with a second voice', 4))
 put('A', 7, 0, 'Eb4:12 C5:8 Bb4:4 | Ab4:4 G4:4 F4:4 Ab4:8 Bb4:4 | Db4:8 Eb4:4 F4:4 G4:4 Ab4:4 | Eb4:12')
 put('B', 7, 0, 'C3:12 Ab2:12 | Db3:12 Ab2:12 | Bb2:24 | Eb3:12 Eb2:12')
-put('C', 7, 0, 'Ab3:4 C4:2 Eb3:4 Ab3:2 Ab3:4 C4:2 Eb3:4 Ab3:2 | F3:4 Ab3:2 F3:4 Ab3:2 C4:4 Eb3:2 Ab3:4 C4:2 |'
+put('C', 7, 0, 'Ab3:4 C4:2 Eb3:4 Ab3:2 Ab3:4 C4:2 Eb3:4 Ab3:2 | F3:4 Ab3:2 F3:4 Ab3:2 C4:4 Eb3:2 Eb3:2 Ab3:2 C4:2 |'
                ' Db4:4 F3:2 Bb3:4 Db4:2 F3:4 Bb3:2 Db4:4 F3:2 | Ab3:4 C4:2 C4:4 Ab3:2 G3:4 Bb3:2 Eb3:4 G3:2')
 
 # Verse 3 (bars 11-14): F minor; the alto sings the tune's first half (the soprano listens), then the
@@ -113,16 +113,17 @@ put('A', 11, 0, tune('F', 'minor', upto=8))
 ENTRIES.append((LONG['A'], 11, 0, 'verse 3: the first half in F minor (alto)', 2))
 put('A', 13, 0, 'Ab4:36 G4:12')
 put('B', 11, 0, 'F2:12 Ab2:12 | Bb2:12 Db3:12 | Db3:12 Bb2:12 | Db3:12 Eb3:12')
-put('C', 11, 0, 'Ab3:4 C4:2 F3:4 Ab3:2 C4:4 F3:2 Ab3:4 C4:2 | Db4:4 F3:2 Bb3:4 Db4:2 F3:4 Ab3:2 Db4:4 Ab3:2 |'
+put('C', 11, 0, 'Ab3:4 C4:2 F3:2 Ab3:2 C4:2 C4:4 F3:2 Ab3:4 C4:2 | Db4:4 F3:2 Bb3:4 Db4:2 F3:4 Ab3:2 F3:2 Ab3:2 Db4:2 |'
                 ' Ab3:4 Db4:2 F3:4 Ab3:2 Bb3:4 Db4:2 F3:4 Ab3:2 | F3:4 Ab3:2 Bb3:4 F3:2 G3:4 Bb3:2 Db4:4 Bb3:2')
 
 # Verse 4 (bars 15-18): ... and the bass stays on E-flat (V7 -> I6/4 over the same note).  The last verse is
-# sung over that dominant pedal; the cradle climbs a little and the second voice is asleep.
+# sung over that dominant pedal; the cradle climbs a little, then slows (held beats), and the second voice
+# is asleep.
 put('S', 15, 0, tune('Ab'))
 ENTRIES.append((LONG['S'], 15, 0, 'verse 4, over the dominant pedal', 4))
 put('B', 15, 0, 'Eb3:96')
-put('C', 15, 0, 'Ab3:4 C4:2 Eb4:4 C4:2 Ab3:4 C4:2 Eb4:4 C4:2 | Ab3:4 Db4:2 F4:4 Db4:2 Ab3:4 C4:2 Eb4:4 C4:2 |'
-                ' G3:4 Bb3:2 Db4:4 Bb3:2 G3:4 Bb3:2 Bb3:4 Db4:2 | Ab3:4 C4:2 Ab3:4 C4:2 G3:4 Bb3:2 Db4:4 Bb3:2')
+put('C', 15, 0, 'Ab3:4 C4:2 Eb4:4 C4:2 Ab3:4 C4:2 Eb4:4 C4:2 | Ab3:4 Db4:2 F4:4 Db4:2 Ab3:4 C4:2 Eb4:6 |'
+                ' G3:4 Bb3:2 Db4:6 G3:4 Bb3:2 Db4:6 | Ab3:4 C4:2 Ab3:6 G3:4 Bb3:2 Bb3:6')
 
 # Bar 19: the hands resolve to the tonic.  The bass does not come.
 put('S', 19, 0, 'Ab4:24')

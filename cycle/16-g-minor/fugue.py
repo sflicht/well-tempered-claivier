@@ -182,7 +182,7 @@ X('P2', 6, 1, cantus(1, -2, last=36), 'cantus line 1 (Pedal II, canon dux)')
 X('P1', 7, 3.5, cantus(1, -1, last=10), 'cantus line 1 (Pedal I, canon at the octave, 6 1/2 beats)')
 X('S', 6, 1, 'A4:8 C5:8 A4:8 Bb4:4 A4:4 A4:4 C5:6 A4:2 D5:4 Eb5:4 D5:2 C5:2 Eb5:4 D5:4 '
              'D5:4 Eb5:4 D5:4 C5:4 Bb4:8')
-X('A', 6, 1, 'F#4:8 G4:8 F#4:8 G4:4 F#4:4 F#4:8 G4:2 F#4:2 G4:4 G4:12 F4:4 F4:4 A4:4 Bb4:4 A4:4 F4:8')
+X('A', 6, 1, 'F#4:8 G4:8 F#4:2 E4:2 D4:2 E4:2 G4:4 F#4:4 F#4:8 G4:2 F#4:2 G4:4 G4:12 F4:4 F4:4 A4:4 Bb4:4 A4:4 F4:8')
 
 
 # ================================================================ B: line 2 (bars 11-18)
@@ -193,8 +193,8 @@ X('T', 11, 3, oc(S2, -1), 'line 2 Vorimitation: subject 2 (Tenor)')
 X('A', 12, 2, S2, 'line 2 Vorimitation: subject 2 in canon at the octave, 3 beats (Alt)')
 X('S', 13, 1, oc(S2, 1), 'line 2 Vorimitation: subject 2 in canon at the octave, 3 beats (Diskant)')
 X('T', 13, 1, 'F3:4 A3:4 Bb3:4 D4:4 C4:8 Bb3:4')
-X('A', 13, 4, 'F#4:4 F4:4 Eb4:4 D4:4 G4:4 G4:4 G4:4 F#4:4 F4:4 G4:4 G4:4 F#4:4 G4:4 '
-              'F#4:4 F#4:4 G4:4 F#4:4 G4:4 F#4:8 G4:4')
+X('A', 13, 4, 'F#4:4 F4:4 Eb4:4 D4:4 G4:4 G4:3 F#4:1 G4:3 A4:1 F#4:4 F4:4 G4:3 F4:1 Eb4:3 F4:1 F#4:4 G4:4 '
+              'F#4:3 E4:1 F#4:4 G4:4 F#4:4 G4:4 F#4:8 G4:4')
 X('S', 14, 3, 'G5:4 F5:4 Eb5:8 D5:8 Eb5:8 D5:4 Bb4:4 C5:4 A4:4 Bb4:4 D5:4 D5:4 C5:8 Bb4:4')
 X('P2', 14, 1, cantus(2, -2, last=28), 'cantus line 2 (Pedal II, canon dux)')
 X('P1', 15, 2, cantus(2, -1, last=4), 'cantus line 2 (Pedal I, canon at the octave, 5 beats)')
@@ -221,6 +221,7 @@ ECHO = [('A', 21, 22, -16), ('T', 21, 22, -16), ('A', 24, 25, -16), ('T', 24, 25
 # pedal (the line in augmentation) enter five beats apart; the Diskant enters free above, and
 # Pedal I follows the pedal line 4 1/2 beats behind.  The line closes on G over the held G.
 X('T', 25, 1, oc(S5, -1), 'line 5 Vorimitation: subject 5 (Tenor)')
+X('A', 25, 1, 'D4:4 F4:4 D4:4 F4:4')
 X('A', 26, 2, S5, 'line 5 Vorimitation: subject 5, 5 beats later (Alt)')
 X('P2', 27, 3, cantus(5, -2, last=20), 'cantus line 5 (Pedal II, canon dux)')
 X('T', 27, 1, 'G3:2 F#3:4 G3:2 D4:4 C4:12')
@@ -279,7 +280,7 @@ X('T', 52, 1, 'D3:4 G3:4 F3:4 E3:4 Eb3:4 D3:4')
 X('P2', 53, 3, cantus(9, -2, last=24), 'cantus line 9 (Pedal II, canon dux)')
 X('P1', 54, 1.5, cantus(9, -1, last=14), 'cantus line 9 (Pedal I, canon at the octave, 2 1/2 beats)')
 X('S', 54, 1, 'Bb4:4 Eb5:8 D5:4 D5:4 C5:8 Bb4:4 D5:4 C5:8 A4:4 Bb4:2')
-X('A', 54, 1, 'G4:16 G4:4 A4:4 F#4:4 G4:4 Bb4:4 F4:4 G4:4 C4:4 D4:4 F#4:4 G4:4 D4:4 A4:8 R:8 F4:4 G4:4 '
+X('A', 54, 1, 'G4:6 F#4:2 F4:4 D4:4 G4:4 A4:4 F#4:4 G4:4 Bb4:4 F4:4 G4:4 C4:4 D4:4 F#4:4 G4:4 D4:4 A4:8 R:8 F4:4 G4:4 '
               'Eb4:4 R:4 G4:4 D4:4')
 
 # ================================================================ I: the guest (bars 57-60)
@@ -297,7 +298,7 @@ X('P1', 60, 4.5, cantus(10, -1, last=42), 'cantus line 10 (Pedal I, canon at the
 X('S', 60, 3.5, oc(S10, 1), 'summit: subject 10 (Diskant), with its own augmentation in the pedal')
 X('A', 61, 2.5, S10, 'summit: subject 10 an octave lower, 3 beats later (Alt)')
 X('S', 62, 2, 'F5:4 G5:4 Eb5:4 D5:4 F#5:4 A5:4 Bb5:4 C6:4 D6:8 Eb6:4 D6:8 C6:4 A5:2 C6:2 Bb5:8')
-X('A', 63, 1, 'G4:4 A4:4 F#4:4 G4:4 Eb5:4 D5:8 C5:8 A4:4 F#4:8 G4:8')
+X('A', 63, 1, 'G4:4 A4:2 D5:2 Bb4:1 C5:1 A4:1 Bb4:1 G4:4 Eb5:4 D5:8 C5:8 A4:4 F#4:8 G4:8')
 X('T', 64, 1, 'G4:8 F4:8 D4:28')
 
 # ================================================================ K: coda (bars 66-68)
@@ -333,18 +334,26 @@ MARKS = [(1, 'Line 1: subject 1 (Tenor, Alt, Diskant)'), (6, 'Line 1 in the peda
          (60, 'Summit: line 10, canon at 1 1/2 beats, stretto of subject 10'), (66, 'Coda: line 1 returns; G major')]
 
 
+# Voicing (performance data, not notes), as (voice, from quarter, to quarter, velocity change):
+# line 2's canon entries begin on the note of the voice before, so the entering voice is lifted for
+# its first bar (review item 4); at the summit Pedal I, the canon's follower, is lifted and Pedal II
+# lowered, so the late upper line is heard as a line of its own rather than as a doubled bass.
+VOICING = [('A', 44, 48, 6), ('S', 48, 52, 6), ('P1', 238, 266, 6), ('P2', 238, 266, -4)]
+
+
 def soften_echoes(path):
-    """Performance data, not notes: the echo bars are played on a softer manual."""
+    """Performance data, not notes: the echo bars are played on a softer manual; VOICING applied."""
     import json
     data = json.loads(Path(path).read_text())
-    for v, b0, b1, dv in ECHO:
+    table = [(v, (b0 - 1) * 4, (b1 - 1) * 4, dv) for v, b0, b1, dv in ECHO] + VOICING
+    for v, t0, t1, dv in table:
         name = LONG[NAMES.index(v)]
         for voice in data['voices']:
             if voice['name'] != name:
                 continue
             for e in voice['events']:
-                if (b0 - 1) * 4 <= e['t'] < (b1 - 1) * 4:
-                    e['v'] = max(24, e['v'] + dv)
+                if t0 <= e['t'] < t1:
+                    e['v'] = max(24, min(118, e['v'] + dv))
     Path(path).write_text(json.dumps(data, indent=1))
 
 
