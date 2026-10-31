@@ -238,7 +238,7 @@ put('B', 42, 0, 'G#2:8 D#3:8 G#2:8 '
 
 # ================================================================ the last knock: b43-45, over a D# (= E-flat) pedal
 # The soprano holds its C# (the seventh of the dominant) across the whole pedal; the fifth voice,
-# which brought the first knock at midnight on the same D#4, knocks once more, and its rise turns
+# which brought the first knock at midnight (D#3), knocks once more, an octave higher, and its rise turns
 # iv to IV and v to V (as at the cadences in B and F#).  Its last note, G#, is written A-flat: dawn.
 put('S', 43, 2, 'C#5:16~ C#5:24 C#5:24')                                # re-struck with the last KNOCK
 put('B', 43, 2, 'D#3:16 D#3:24 D#3:24')
