@@ -1,319 +1,218 @@
-# Pair XVI in G minor: Prelude (*Fantasia*) and Fugue (*Fantasia e fuga a 17 per Reincken*, seventeen voices)
+# Pair XVI in G minor: Prelude (*Fantasia*) and Fugue (*Fantasia e fuga a 5 per Reincken*, five voices)
 
-The fugue is described in §1-9. The prelude, a short organ fantasia, is in §10.
+The fugue is described in §1-9. The prelude, a short organ fantasia, is in §10 (unchanged).
+
+I have not heard any render. Everything below comes from the score and the tools.
 
 ## 1. The story
 
 In November 1720 Bach went to Hamburg and played the organ of St. Katharinen before Johann Adam Reincken,
-its organist since 1663. The Obituary calls Reincken "nearly a hundred", following the traditional
-birth year of 1623. Modern research puts his birth in 1643, which would make him about 77.
-
-The Obituary by C. P. E. Bach and J. F. Agricola (1754) dates the visit "about the year 1722" and tells
-the story:
+its organist since 1663. The Obituary by C. P. E. Bach and J. F. Agricola (1754) dates the visit "about
+the year 1722" and tells the story:
 
 > Bach, at the request of those present, performed extempore the chorale *An Wasserflüssen Babylon* at
 > great length (for almost half an hour) in different ways, just as the better organists of Hamburg in
 > the past had been used to do at the Saturday vespers. Particularly on this, Reinken made Bach the
 > following compliment: "I thought that this art was dead, but I see that in you it still lives."
 
-Reincken had himself written a huge chorale fantasia on the same melody. A tablature copy of it in the
-15-year-old Bach's hand, dated 1700, was found in Weimar in 2005.
+Reincken had himself written a huge chorale fantasia on the same melody (a copy in the young Bach's hand,
+dated 1700, was found in Weimar in 2005). This movement imagines a few minutes of that half hour.
 
-This movement imagines that half hour, compressed to four and a half minutes. It is a chorale fantasia in
-the North German manner, for an imaginary organ of three manuals and double pedal, in seventeen real
-voices:
+## 2. Concept at the new size: five voices
 
-| division | voices (staff names) |
+Bach's G-minor fugue in WTC I (BWV 861) has four voices, so this fugue may have five. Five is also the
+number of Bach's own setting of the chorale with double pedal, **BWV 653b** (Weimar version of BWV 653):
+the Mutopia edition (after Fauré's Durand edition) marks it "a 5 voci", for two manuals and two pedals,
+with the chorale in the top voice. (The task brief called it six voices; the score says five.)
+
+| voice | role |
 |---|---|
-| Oberwerk | OW S, OW A, OW T, OW B |
-| Hauptwerk | HW S1, HW S2, HW A, HW T, HW Bar, HW B |
-| Rückpositiv | RP S, RP A, RP T, RP Bar, RP B |
-| Pedal | Ped. I, Ped. II |
+| Diskant, Alt, Tenor | the manuals: fugal fore-imitation (Vorimitation) of each chorale line, on a subject made from that line's notes |
+| Pedal II (16') | the chorale line in long notes (BWV 267's rhythm doubled), always leading, in the bass |
+| Pedal I (8') | the same line an octave higher, in canon, a little later each time |
 
-Shape: 78 bars of 4/4 at a basic quarter = 72, with a tempo map. The render lasts 4:31.
+**The device.** Each line is first worked by the manuals, then sounds in the pedal as a canon at the
+octave. The follower comes in sooner with every line: **6½, 5, 4½, 4, 3½, 3, 2½ and 1½ beats** (lines
+1, 2, 5, 6, 7, 8, 9, 10). At first Pedal I is a late echo of the whole line; at the summit it is a
+shadow one and a half beats behind. The distances were chosen from a scratch listing of every distance
+for every line (§8): even distances of one half note put the two pedals a second apart on every
+attack, so the ladder uses the distances that give suspension chains and consonant attacks.
 
-### Credits
+**The plan.** Lines 3-4 repeat lines 1-2 (bar form), so they become an echo passage for the manuals
+alone, the chorale in the Diskant as in BWV 653b. After line 6 ("die Orgeln") the organ stops: a general
+pause. Before the last line the subject of Bach's G-minor organ fugue **BWV 542** (linked since Spitta,
+without proof, to the Hamburg visit) enters once, on top. The last line then joins the closest canon to
+a stretto of its own subject; the Tenor, which began the piece, ends it with the head of line 1 turned
+to G major.
 
-- **The chorale.** *An Wasserflüssen Babylon*, Wolfgang Dachstein, Strasbourg 1525 (a paraphrase of
-  Psalm 137). The melody is copied from the soprano of Bach's four-part setting **BWV 267** (music21
-  corpus `bach/bwv267`), note for note and in its own rhythm. To move it from G major into G minor:
-  - B becomes B♭, and E becomes E♭, except in line 8, which keeps its E♮ (Dorian).
-  - The C♯ of line 6 is kept. "Orgeln" therefore falls on an augmented second, B♭–C♯.
-- **J. A. Reincken.** The idea of the whole: a chorale fantasia that takes the melody line by line.
-- **J. S. Bach, BWV 653b.** *An Wasserflüssen Babylon* a 5 with double pedal, the Weimar version of the
-  Leipzig chorale BWV 653. It suggested the two pedal voices; here they carry the chorale in canon at the
-  octave.
-- **J. S. Bach, Fugue in G minor BWV 542.** Its subject enters once, as a genuine voice (§5):
-  - Copied from the Mutopia Project edition after Peters; the file was read as data only.
-  - It resembles the Dutch song "Ik ben gegroet van...". Since Spitta it has been linked, without proof,
-    to the 1720 Hamburg visit.
-  - Its placement was searched with `tools/stretto_finder.py --against` (subject 10 against the BWV 542
-    subject, both forms, several transpositions).
-- **New in this piece:** the subjects made from the chorale lines, all counterpoint, the plan, the summit
-  and the coda. They are by Claude, for Sam.
+## 3. Files
 
-## 2. Files
+- `fugue.py` → `fugue.json` (68 bars, 4/4, ♩ = 72 with a tempo map; 41 labelled entries, `subject=` is
+  subject 1). Every note is a hand-written token string or an explicit transform (`oc`, `tr`, `dsh`
+  diatonic shift in G minor, `W.invert_diatonic`, `cantus()` = the line with note values doubled).
+- `renders/fugue.pdf` (4 pages), `.ly`, `.mid`, `.musicxml`; `fugue.mp3` (Bach-Lehman, 3:55);
+  `fugue-equal.mp3` (equal temperament); `fugue-spatial.mp3` (binaural, `--layout arc --program 19`,
+  General MIDI church organ, `--rt60 2.2 --wet 0.18`: a little more room than the default, for a church;
+  Diskant −80°, Tenor −40°, Pedal II centre, Alt +40°, Pedal I +80°, so the two canon voices are apart).
+- The echo bars (21, 24) are softened by 16 velocity steps after `build_score` (`soften_echoes`):
+  performance data only, no notes.
 
-- `fugue.py`: the source. Every note is written as wtclib bar strings by hand.
-  - Thematic statements are explicit transforms of hand-written subjects: `oc` (octave), `tr` (real
-    transposition), `dsh` (diatonic shift in G minor), `W.invert_diatonic`, and `cantus()`, which doubles
-    the note values and lengthens the fermata note.
-  - Scratch tools in the session only ranked placements of whole statements and listed clashes of
-    hand-written lines. No code chose a pitch. No note was inserted or altered by script to move a critic
-    number.
-- `fugue.json`: built by `python3 fugue.py`. It carries 98 labelled entries; `subject=` is subject 1.
-- `renders/`:
-  - `fugue.pdf`: two A2 pages, staff size 14, empty staves hidden. LilyPond compiled cleanly.
-  - `fugue.ly`, `fugue.mid`, `fugue.musicxml`.
-  - `fugue.mp3`: Bach-Lehman temperament, 271 s.
-  - `fugue-equal.mp3`: equal temperament, audio only.
-  - `fugue-spatial.mp3`: the choir layout, with the seventeen voices fanned from −70° to +70° in score
-    order. The Oberwerk is on the left, the Hauptwerk in the centre, the Rückpositiv on the right and the
-    two pedals at the far right.
-- `prelude.py`, `prelude.json`: Prelude XVI, *Fantasia* (16 bars, four voices, §10).
-- `renders/prelude.pdf` (two A4 pages), `prelude.ly`, `prelude.mid`, `prelude.musicxml`,
-  `prelude.mp3` (Bach-Lehman, 74 s) and `prelude-equal.mp3`.
+## 4. Material
 
-## 3. Chorale lines and their subjects
+**The chorale.** *An Wasserflüssen Babylon* (Wolfgang Dachstein, Strasbourg 1525), copied from the
+soprano of Bach's four-part setting **BWV 267** (music21 corpus `bach/bwv267`). Verified for this
+version by script: all 78 notes of lines 1-2 and 5-10 match BWV 267 in pitch and rhythm once the
+mode change below is undone; the corpus file has the repeat sign after line 2 (lines 3-4 = 1-2). No
+other setting of the melody is in the corpus to compare. I did not compare with Dachstein's 1525 print.
+Moved from G major to G minor by me (as in the earlier version): B → B♭ and E → E♭, except line 8,
+which keeps its E♮; line 6 keeps its C♯ ("Orgeln" becomes B♭–C♯); line 9's F stays F.
 
-Each line has its own subject, made from the line's own notes. Only the rhythm, the speed or the
-chromatic filling changes. Lines 3-4 repeat lines 1-2 (bar form), so their section uses subjects 1 and 2
-again, inverted ("remembered").
+**The subjects**, one per line, each made only of that line's notes (§4 of the earlier NOTES had the
+same set):
 
-| line | text | chorale (G minor) | subject | gesture |
-|---|---|---|---|---|
-| 1 | An Wasserflüssen Babylon | D E♭ D C B♭ C D C B♭ C B♭ | **S1** = the line itself, in the chorale's rhythm | grave; real answer a 4th lower |
-| 2 | da saßen wir mit Schmerzen | A B♭ C D C B♭ A G A G | **S2**: same notes, dotted ("limping"), 6 beats | sighs |
-| 3-4 | als wir gedachten an Zion, da weinten wir von Herzen | = 1-2 | S1 and S2 inverted | remembered, in echoes |
-| 5 | wir hingen auf mit schwerem Mut | G A B♭ C B♭ A B♭ A G | **S5**: same notes and values, shifted an eighth, so every note hangs across the beat | syncopes |
-| 6 | die Harfen und die Orgeln gut | G A B♭ C D E♭ B♭ C♯ D | **S6**: at double speed, opening as a 16th-note tirata | the harps |
-| 7 | an ihre Bäum der Weiden | B♭ C D E♭ D C B♭ C B♭ | **S7**: in triplet eighths around quarters | the willows swaying |
-| 8 | die drinnen sind in ihrem Land | E E E A D C B♭ A | **S8**: repeated eighths, dotted fall | knocking at a foreign door (E♮) |
-| 9 | da mussten wir viel Schmach und Schand | C B♭ A G A G F E♭ D | **S9**: the steps filled chromatically, C B B♭ A G A G F E E♭ D (passus duriusculus) | shame |
-| 10 | täglich von ihn' erleiden | D G A B♭ C D C B♭ A B♭ C A G | **S10**: the line at double speed | daily |
+| line | text | subject | gesture |
+|---|---|---|---|
+| 1 | An Wasserflüssen Babylon | S1: the line in its own rhythm (D E♭ D C B♭ C D C B♭ C B♭) | grave; answer a fourth lower |
+| 2 | da saßen wir mit Schmerzen | S2: the line dotted (A B♭ C D C B♭ A G A G) | limping sighs |
+| 3-4 | (repeat of 1-2) | the chorale itself in the Diskant | echo |
+| 5 | wir hingen auf mit schwerem Mut | S5: shifted an eighth, every note hangs across the beat | syncopes |
+| 6 | die Harfen und die Orgeln gut | S6: double speed, opening as a 16th tirata | the harps |
+| 7 | an ihre Bäum der Weiden | S7: triplet eighths around quarters | the willows |
+| 8 | die drinnen sind in ihrem Land | S8: repeated eighths on E♮, dotted fall | knocking at a foreign door |
+| 9 | da mussten wir viel Schmach und Schand | S9: the descent filled chromatically, C B B♭ A G A G F E E♭ D | passus duriusculus |
+| 10 | täglich von ihn' erleiden | S10: the line in eighths | "daily"; four times the pedal's speed |
 
-- **Answers:** A1 a 4th lower (D minor); A5, A6 and A7 a 5th higher (A6 with G♯); A8 a 5th lower (in A); A9
-  a 4th lower.
-- **The pedal cantus:** each line in half notes, with the fermata note lengthened.
+**The guest.** BWV 542, Fugue, the subject as first stated (soprano, b1 beat 2½ to b4 beat 2½),
+D B♭ C A B♭ G G' F♯ G E F♯ D … A B♭ G. I re-read it for this version from the Mutopia LilyPond file
+(German note names; read as data): it matches the earlier transcription note for note.
 
-## 4. Section map
+## 5. Section map (times from the Bach-Lehman render)
 
-| bars | line | Vorimitation (subject entries) | pedal canon at the octave | episode / character |
-|---|---|---|---|---|
-| 1-11 | 1 | Hauptwerk: HW A S1 b1; HW T A1 b2.3; HW B S1 b4; HW S1 A1 b5.3; HW S2 S1 inverted b7 | Ped. II leads b6.3, Ped. I 10 beats later (b9); Ped. II's free cadence to B♭ (b11-13) | HW A's "waters" countersubject |
-| 12-20 | 2 | Rückpositiv: RP T S2 b12; RP A in canon at the octave, 3 beats; RP S, RP B, RP T inverted, RP S answer, RP A inverted, RP Bar answer (b12-15.3); RP T S2 over the cantus b16.3, b18.3 | Ped. I leads b15.3, Ped. II 7 beats later | cadence on G, b21 |
-| 21-32 | 3-4 | Oberwerk debut. Line 3: S1 inverted OW S b24, RP T b25.3, HW A b27. Line 4: S2 inverted OW S b28.3, S2 RP T b30, S2 inverted HW S1 b31.3 | Ped. I sings lines 3 and 4 without a break from b23.3; Ped. II 9 beats later | **echo**: the head of line 1 on the HW (b21.3), the same notes on the RP (b22.3), half of it on the OW (b23.3); slower tempo |
-| 33-39 | 5 | HW T S5 b33; RP A A5 b34; OW S b35; RP T on C b36; HW S2 inverted b37; OW A on C b38; HW Bar b38.3 | Ped. II b35.3, Ped. I 3 beats later | syncopes over a suspended bass |
-| 40-48 | 6 | the harps: OW S b40; RP A b40.3; HW T b41; RP S b42; HW A b42.3; OW A b44; RP T b44.3 | Ped. I b41.3, Ped. II 3 beats later. An **augmented sixth** forms at "Orgeln" (b44.3) | half cadence on D (b45-46); **b47 general pause** (the organ "hung up"); **b48** a lone RP S harp arpeggio, D7♭9 |
-| 49-54 | 7 | HW A S7 b49; OW T A7 b49.3; HW Bar b50.3; HW S1 on E♭ b51; HW B inverted b51.3; RP S on G b52.3; HW B on E♭ b53.3; RP A inverted b54 | Ped. II b50.3, Ped. I 3 beats later | triplets throughout |
-| 55-60 | 8 | RP T S8 b55.4; HW B b56; HW S2 b56.3; OW S b57; HW Bar b57.3; RP A A8 b58; OW B b58.3; OW T on A b59.3; RP S A8 b60; OW A b60.3: ten entries in 5 bars, all three manuals | Ped. II b56.3, Ped. I 3 beats later | E♮ and the turn to D minor and A |
-| 61-64 | 9 | HW S2 S9 b61; HW B A9 b61.3; RP A on G b62; RP Bar A9 b63.3 | Ped. I b62.1, Ped. II 5 beats later | chromatic fall to D |
-| 65-69 | 10 (Vorimitation) | S10 inverted OW A b65; RP T b66; HW A on A b67; OW T b67.3 (against the guest); RP S on C b68.2 | **BWV 542 guest in Ped. I, b67.1.5-b70.1** | the push to the summit (tempo 76) |
-| 69.3-75 | 10 | summit (§6) | Ped. II leads b69.3 (upbeat D), Ped. I b70.2, 3 beats later | 11-14 moving voices |
-| 75-78 | | coda (§7) | tonic pedal: Ped. II G2, Ped. I G3 | Picardy G major, all 17 voices |
+| bars | time | line | manuals (Vorimitation) | pedal canon (Pedal II leads) | character |
+|---|---|---|---|---|---|
+| 1-11 | 0:00 | 1 | S1 Tenor b1, answer Alt b2.3, S1 Diskant b4; Tenor's eighth-note countersubject ("the waters") | b6.1, follower b7.3½ (6½ beats); cadence in B♭ over held B♭ | 3-4 voices |
+| 11-18 | 0:34 | 2 | S2 in canon at the octave, 3 beats apart: Tenor b11.3, Alt b12.2, Diskant b13.1 | b14.1, follower b15.2 (5 beats); close on G over held G | Stollen ends in G minor |
+| 19-24 | 1:01 | 3-4 | chorale in the Diskant (b19, b22), close of each line echoed softly by Alt + Tenor (b21, b24) | none | manuals alone, slower (♩ = 66), 2-3 voices |
+| 25-32 | 1:23 | 5 | S5 Tenor b25 (alone), Alt b26.2; the pedal is the third entry, 5 beats later | b27.3, follower b28.3½ (4½); close on G | syncopes |
+| 32-39 | 1:45 | 6 | S6 falling through the manuals: Diskant b32.3, Alt (answer on D) b32.4½, Tenor b33.4 | b34.3, follower b35.3 (4); **augmented sixth** C♯/E♭ at b37.3; half cadence on D, b38.3 | then the **general pause** b39.3-40 |
+| 40-45 | 2:12 | 7 | S7 in the Alt with its **mirror** in the Tenor at once (b40.1); Diskant at the octave b40.3 | b41.1, follower b41.4½ (3½); cadence in B♭ | triplets, B♭ major |
+| 46-51 | 2:31 | 8 | S8 Tenor alone b46.1 (E after B♭), Diskant at the octave b46.3 | b47.3, follower b48.2 (3): **E E E knocked in canon**; Phrygian B♭–A over A, b51 | foreign key |
+| 52-57 | 2:50 | 9 | S9 in the Alt from the C♯ of line 8 (b52.1), over a chromatic Tenor bass | b53.3, follower b54.1½ (2½); lament bass G F E♭ D; half cadence on D | |
+| 57-60 | 3:08 | — | **BWV 542 guest**, Diskant, b57.2½-b60.2½ | Pedal II holds D, then walks the circle of fifths C E♭ F B♭ E♭ A D G | 3-4 voices |
+| 60-66 | 3:17 | 10 | S10 Diskant b60.3½ (with the pedal's line starting under it), Alt an octave lower b61.2½; Tenor joins b64 | b60.3, follower b60.4½ (**1½**): the summit; V4/3 – i at b66 | 4 voices, 5 in b64-66 |
+| 66-68 | 3:39 | coda | Tenor: head of line 1, its last B♭ turned to B♮ | both pedals hold G | G major; ends 3:52 (+ ring) |
 
-**Tempo map** (quarter = 72 unless stated):
-- b21-23, the echoes: 63.
-- b45-48, the half cadence, the general pause and the harp: broadens to 58.
-- b67-69, under the guest: 76.
-- b70-74, the summit: back to 72, broadening to 64 by the arrival.
-- b76-78: 62, then a ritardando to 56 (b77) and to 44 at the end.
+**Tempo map:** ♩ = 72; 66 for the echoes; 74 for lines 5-6; broadening to 56 into the general pause;
+76 for lines 7-8; ritardando to 64 into line 9's half cadence; 76 for the guest; 72 at the summit,
+broadening to 64 at its cadence; 60 → 40 over the tonic pedal.
 
-**Dynamics:** soft at the start, softest in the general pause, loudest on the summit and the last chord.
+## 6. The device, and where to hear it
 
-## 5. The BWV 542 guest
+- **The canon.** Each line's pedal entry is the first long-note bass after the manuals' entries; the
+  follower starts on the same pitch an octave higher (Pedal I lies in D3-E4, above Pedal II in D2-E3,
+  with the manuals above it whenever both pedals sound). Easiest to hear: line 1 (b6-11, the follower
+  repeats the line 6½ beats behind and finishes alone over the held B♭), line 6 (b34-39, the B♭–C♯–D
+  at the end and the augmented sixth at b37.3) and line 8 (b47-50, the three repeated E's knocked by
+  both pedals in turn). In the spatial render Pedal II is centre and Pedal I far right.
+- **The shrinking distance** is heard best by comparing line 1 (the follower enters as the leader is
+  two notes from its middle) with line 10 (b60-66, the follower moves a dotted quarter after every
+  leader note, a limping shadow under the stretto).
+- **The guest** (b57.2½-b60.2½) is the top voice at its own pitch (D4-G5), entered after a beat's
+  rest; only the Alt (below it, resting when the subject dips to C5, F4 and D4) and the pedal sound
+  with it, no voice in its register.
+- **The summit** (b60.3-b66): line 10 at three speeds: S10 in eighths in Diskant and Alt (the Alt an
+  octave lower, 3 beats later), the line in half notes in Pedal II and, 1½ beats later, in Pedal I.
+  The Diskant climbs to E♭6 at b64.4, the only bars where all five voices move (b64-66).
 
-- **What:** Bach's fugue subject, exactly as first stated (the BWV542 constant in `fugue.py`).
-- **Where:** two octaves down in Ped. I, from the offbeat of b67.1.5 to b70.1. It is the only pedal voice
-  in b67-69, so it is the bass. Its circle of fifths leads into the summit, and its last note, G, is the
-  summit's first downbeat (b70.1), where Ped. II's cantus of line 10 also arrives on G.
-- **Against it:** OW T sings S10 (b67.3), and HW A and RP S sing S10 on A and on C. The placement came from
-  `stretto_finder --against`, which tested S10 against the BWV 542 subject. It was then fitted by hand.
-
-## 6. The summit (b69.3-b75.1): who sings what
-
-**Line 10 in the pedal.** It is a canon at the octave, 3 beats apart:
-- Ped. II leads, in the bass: D2 (upbeat), G2, A2, B♭2, C3, D3, C3, B♭2, A2, B♭2, C3, A2, G2.
-- Ped. I follows an octave higher, so every move of the bass is met by a held note above it.
-
-**Harmony over it:** i – V4/3 – i6 – III7 – iv7 – i6/4 – iv – i6 – V4/3 – i6 – Am7/C (Dorian ii) – Am7 –
-V4/3 – i.
-
-**Thematic statements, in order of entry:**
-
-| voice | statement | from |
-|---|---|---|
-| HW T | S10, line 10 at four times the speed of the pedal | b69.3.5 |
-| HW S1 | S1 an octave up (D6), on top | b69.3.5 |
-| RP A | S2, shifted to B♭ | b70.1.5 |
-| HW S2 | S8 on A | b70.3.5 |
-| OW A | S7 on F | b71.2 |
-| OW T | S5 on C | b71.2.5 |
-| RP B | S8 on D, tenor register | b71.2.5 |
-| HW Bar | S6 on B♭ | b71.3 |
-| RP T | S6 at home (with its B♭–C♯) | b72.2 |
-| OW B | S7 on D | b72.2.5 |
-| HW B | S7 on G, low | b72.3.5 |
-| HW S2 | S9 on G (real), the chromatic fall | b72.4 |
-| HW A | S7 on G, inner | b72.4.5 |
-| OW S | S8 on D | b73.2.5 |
-| RP S | S2 at home, closing on G | b73.4.5 |
-| RP Bar | S8 at home, with the E♮ | b73.4.5 |
-| OW B | S1 returns in the tenor (the first line closes the piece) | b74.3 |
-
-**Free lines, all hand-written:**
-- OW S descant: G5 F♯5 G5 D6 C6 B♭5 … A5 D6 C6 B♭5.
-- OW A: D5 E5 (b70), F♯6 G6 (b73). It then rises chromatically, E6 F6 F♯6 G6, into the arrival.
-- OW B: a B♭3–A3 suspension (b70).
-- HW S1: F6 E♭6, then A5 G5 A5 E5 D5, with the 6-5 over the arrival.
-- HW T: B♭4 A4.
-- HW Bar: resolves its F♯3 to G3 (b70), then E3 D3.
-- HW B: F3 E♭3; A3 D3.
-- RP S: G4 B♭4 G4 A4 B♭4 A4.
-- RP A: G4 E4 C5 A4 B♭4.
-- RP T: D4 F4 E♭4 D4.
-- RP B: D3 C3 D3 C3, B♭2.
-
-**Density** (moving voices per bar, critic definition):
-
-| bar | 70 | 71 | 72 | 73 | 74 | 75 |
-|---|---|---|---|---|---|---|
-| moving voices | 11 | 14 | 14 | 14 | 13 | 9 |
-
-- **Mean:** 13.2 over b70-74, 13.8 over b71-74.
-- **Sounding at once:** up to 13, mean 10.3; distinct pitches mean 9.3.
-- **Voices that sing:** all seventeen sing in the summit, and every one has its own line.
-
-## 7. Coda (b75-78)
-
-- **Arrival, b75.** G minor on the downbeat, with HW S1's E5 → D5 (6-5) and OW B's S1 going on in the
-  tenor.
-- **Tonic pedal.** Ped. II on G2 and Ped. I on G3 hold through the coda.
-- **Chords over the pedal:** Cm/G – F♯°7/G – Gm – D7/G.
-  - OW S falls E♭6 → D6.
-  - OW A holds G6 above the pedal (an inverted pedal).
-  - HW S1 sings C5 D5 C5 B4.
-  - HW Bar and OW B move in the bass and tenor.
-  - HW S2's F♯5 rises to G5.
-- **Last chord (b78).** Nine more voices enter on a G-major chord with a tierce de Picardie, so all
-  seventeen voices sound. B is in OW B (B3) and HW S1 (B4); the top is OW S D6 and OW A G6.
-
-## 8. Critic numbers (`tools/critic.py`, final build)
-
-**Whole piece:**
+## 7. Critic numbers (`tools/critic.py`, final build)
 
 | measure | value | target |
 |---|---|---|
-| parallels error | 0 | 0 |
-| parallels weak | 8 | |
-| beat-to-beat parallels | 0 | ≤ 8 |
-| unresolved dissonances | 0 | ≤ 15 |
-| bad doublings | 8 | ≤ 8 |
-| low-register seconds | 7 | ≤ 16 |
-| stepwise motion | 82.1 % | ≥ 60 % |
+| parallels_error | 0 | 0 |
+| parallels_weak | 2 | |
+| beat_parallels | 1 | ≤ 2 |
+| dissonance_unresolved | 0 | ≤ 3 |
+| bad_doublings | 1 | ≤ 2 |
+| low_register_seconds | 2 | ≤ 9 |
+| stepwise_pct | 72.4 % | ≥ 65 % |
+| leap_4th_plus_pct | 9.7 % | |
+| pc_tripled_on_beats_pct | 6.9 % | |
+| crossings | 1 (see below) | few |
+| **keyboard_unplayable_pct** | **6.5 %** (26 of 402 onsets) | < ~15 % for 5-6 voices |
+| **mean_moving_voices** | **3.4** | |
 
-Other measures:
-- leaps of a fourth or more: 6.5 %
-- pitch class tripled on 20.0 % of beats
-- crossings: 28
-- melodic augmented seconds: 10, all thematic (§8, last item)
-- mean moving voices over the whole piece: 5.0
+Moving voices per bar (b1-68):
+`1 2 2 3 3 3 4 4 4 3 4 2 3 4 4 4 4 3 3 3 2 3 3 2 1 2 3 4 4 4 4 3 3 4 4 4 4 4 1 3 4 4 4 4 2 3 4 4 4 4 4 3 4 4 4 4 4 3 3 3 4 4 4 5 5 5 3 3`
 
-**Per section.** "Moving" follows the critic: a voice attacks in the bar and sounds at least a quarter of
-it. "Sounding" and "distinct" are sampled on every beat.
+**Keyboard, honestly:** 21 of the 26 onsets beyond two hands are in b64-67 (the summit's last bars and
+the coda: two pedal voices an octave apart plus three manual voices spread over more than a tenth);
+the others are b34 (2), b61 (2) and b57 (1). Elsewhere one pianist can play it: the left hand takes the
+two pedal voices (at most a tenth apart, except for a few beats in b16-17, b43 and b49, where Pedal I
+goes to the right hand), the right hand the manuals, which are kept to two voices, or three close
+ones, while both pedals sound.
 
-| section | bars | moving mean | max | sounding mean | max | distinct pitches | time |
-|---|---|---|---|---|---|---|---|
-| A, line 1 | 1-11 | 3.4 | 5 | 3.1 | 5 | 3.1 | 37 s |
-| B, line 2 | 12-20 | 4.4 | 6 | 3.9 | 5 | 3.9 | 30 s |
-| C, lines 3-4 | 21-32 | 4.7 | 6 | 3.7 | 6 | 3.5 | 41 s |
-| D, line 5 | 33-39 | 4.9 | 7 | 4.5 | 7 | 4.2 | 23 s |
-| E, line 6 (+ pause, harp) | 40-48 | 3.1 | 6 | 2.8 | 6 | 2.7 | 32 s |
-| F, line 7 | 49-54 | 4.7 | 6 | 3.7 | 6 | 3.5 | 20 s |
-| G, line 8 | 55-60 | 5.2 | 7 | 4.1 | 6 | 3.9 | 20 s |
-| H, line 9 | 61-64 | 3.8 | 5 | 3.4 | 4 | 3.3 | 13 s |
-| Approach + BWV 542 | 65-69 | 4.4 | 6 | 3.8 | 6 | 3.6 | 16 s |
-| **Summit** | **70-74** | **13.2** | 14 | 10.3 | 13 | 9.3 | 18 s |
-| Arrival + coda | 75-78 | 8.0 | 12 | 10.4 | 17 | 8.9 | 17 s |
+**Flagged items, justified:**
+- Beat-to-beat octave b55.3→4 (Pedal I/Pedal II): the canon itself, where line 9's quarter notes A–G
+  let the follower catch up the leader for one beat.
+- Weak octaves b41.2 (S7's last triplet against the pedal's entry, B♭–C) and b62.2½ (the Alt's S10
+  against Pedal I: the line against its own augmentation).
+- Bad doubling b62.2: A in Pedal I and in the Alt's subject 10, the same line at two speeds.
+- Low-register seconds b56.3½ and b57.1½: the pedal canon's 9ths (F3 over E♭2, E♭3 over D2) into the
+  half cadence; the second is a 9-8 suspension.
+- Crossing "Ten. above Ped. I" (b64-66): an artefact; the critic orders voices by mean pitch and the
+  Tenor's mean is low because it is the bass in bars 1-5, 19-24 and 52-53. No voice crosses.
+- Melodic augmented seconds (5) are all thematic: B♭–C♯ of line 6 (Diskant, Tenor, both pedals) and
+  F–G♯ in the Alt's answer. Tritone leaps: the Alt's echo entrance after a rest (b24.1) and the
+  circle-of-fifths bass E♭3–A2 under the guest (b59.3).
+- "chord (7th not resolved down)" notes (38) mostly come from the pedal canon: the follower holds a
+  note while the leader moves, and the canon then moves it up, not down.
 
-Moving voices per bar, b1-78:
-`1 2 2 3 4 4 5 4 5 4 3 4 3 4 6 5 5 5 5 3 4 6 6 3 6 4 6 6 4 4 5 2 2 2 4 6 7 7 6 4 3 4 5 6 5 0 0 1 2 4 6 6 5 5 2 4 5 7 6 7 3 4 5 3 4 3 4 5 6 11 14 14 14 13 9 6 5 12`
+## 8. Method and disclosure
 
-**The flagged items, justified:**
+Every note is written in `fugue.py`. Scratch scripts (not kept) only listed and tested:
+- the interval sequence between the two pedal voices for every line at every canon distance from 1 to
+  10 beats in half-beat steps, with parallels and simultaneous dissonant attacks counted; I chose the
+  ladder 6½ → 1½ and the direction (Pedal II always leads) from that listing;
+- `tools/stretto_finder.py` for S1, S2, S5-S10 against themselves and against their pedal
+  augmentations (e.g. S2 in canon at the octave at 3 beats, S7 with its mirror at once, S10 an octave
+  apart);
+- seven start times for the Alt's S10 entry at the summit, counting critic flags (b61.2½ chosen).
+No script placed or altered a note to move a number; each fix after a critic run was a hand edit.
 
-- **Weak parallels (8).** In each case one of the two notes is an offbeat sixteenth or eighth inside a
-  thematic figure:
-  - b8.1, HW S2/HW A, octaves;
-  - b10.3, HW S2/Ped. I, octaves;
-  - b15.2, RP A/RP T, fifths;
-  - b53.2, OW T/RP S, fifths;
-  - b68.1.25, OW T/HW A, fifths;
-  - b71.2.5, HW S1/HW S2, fifths;
-  - b73.4.5, HW S2/HW A, fifths;
-  - b75.1.5, OW B/RP S, fifths.
+## 9. Honest weak spots
 
-  A ninth case, OW B against HW T's S10 at b70.3, was removed by rewriting OW B as a B♭–A suspension.
-- **Bad doublings (8), each on a thematic or canonic note:**
-  - b13.2: the line-1 cadence B♭ in both pedals, under passing C and G.
-  - b16.4: line 2's C in Ped. I against RP T's S2.
-  - b17.4: Ped. II catches up with Ped. I's B♭ in the 7-beat canon. The doubling is the octave canon
-    itself.
-  - b52.1: the line-7 canon on D in both pedals, under the E♭ of S7 on E♭.
-  - b65.2: RP Bar's S9 answer ends on A2 as the line-9 cantus reaches A2. The critic reads F7 because of
-    Ped. I's E♭.
-  - b71.3: the cantus A3 against RP A's S2, as B♭maj7.
-  - b72.2: F in HW Bar (S6), OW A (S7) and HW S1, as Gm7/D.
-  - b73.4: G in HW B (S7) and OW S (S8), as Am7/C.
-- **Low-register seconds (7):**
-  - b4.2: S1 against A1.
-  - b51.4: Ped. II against HW B's S7.
-  - b56.3: S8 against the cantus E.
-  - b64.3 and b64.4: RP Bar's chromatic S9 against Ped. I.
-  - b66.2: the line-9 pedal canon, E♭2 against D3.
-  - b69.4.25: the BWV 542 guest's C3 against Ped. II's upbeat D2.
-- **Unresolved dissonances: none.** The critic still lists notes of the kind "chord (7th not resolved
-  down)", mostly sevenths that pass to another chord tone in a thick texture.
-- **Augmented seconds (10).** All are the B♭–C♯ of line 6 ("Orgeln") or its answer F–G♯, in S6 and in
-  the line-6 cantus.
+- **Not heard.** I cannot tell whether Pedal I is audible as a canon voice under the manuals on a piano,
+  how long the general pause feels, or whether the echoes (only 16 velocity steps softer) read as echoes.
+- **The summit is thinner than its billing.** Only two manual entries of S10 (Diskant, Alt); the Tenor
+  joins only for the last two bars, so five voices move only in b64-66. A third entry did not fit: in
+  the Tenor's register it collides with Pedal I, which sings the same line.
+- **Uneven Vorimitation.** Lines 1, 2, 6 and 7 have three manual entries; line 5 has two (the pedal is
+  the third), line 8 two, line 9 one. The later lines are shorter because the canon starts sooner.
+- **The pedal canon's dissonances.** With the follower a semitone or tone off the leader, there are
+  brief minor ninths between the pedals (e.g. b29.3½, b54.3½, b64.1½) that the manuals have to absorb
+  as passing harmony; on a piano in the low register they may sound rough.
+- **Static inner voices.** The Alt in lines 1-2 (b6-18) and line 9 (b54) leans on F♯–G.
+- **The critic checks only subject 1.** The other subjects and the chorale lines are verified by
+  construction (they are transforms of the hand-written subjects), not by the critic's theme check,
+  which reports mismatches for them.
+- **Length 3:55**, at the top of the 2.5-4 minute range.
+- **Keyboard:** see §7; the last five bars need organ pedals or a second player.
 
-## 9. Weak spots, and what I would still improve
+## From the N+1 version
 
-- **The summit falls just short of its density target.** Bars 71-73 have 14 moving voices; b74 has 13 and
-  b70 has 11. The summit mean is 13.2 (13.8 over b71-74), against a target of ≥ 14.
-  - At most 13 voices sound at one moment.
-  - Further lines were tried in b70 and b74. At b70.3 every line that moved B♭→A made octaves with OW B and
-    HW T, and every G→A made octaves with the pedal. In b74, any C or F♯ doubled the seventh or the
-    leading tone of the D7. I left those bars as they are rather than pad them.
-- **The summit is short.** It is five bars (about 18 s), because line 10 in augmentation lasts five bars.
-  A second, slower statement of line 10, or a longer approach, would give it more weight.
-- **The rest of the texture is thin.** Outside the summit, 3-5 voices move per bar (the whole-piece mean
-  is 5.0).
-  - Each line is worked mainly by one division plus the pedals, as in Reincken's fantasia, so seventeen
-    voices are heard only at the end.
-  - Lines 1, 6 and 9 are the thinnest.
-- **Length.** The piece is 78 bars and 4:31, a little under the brief's 80-110 bars and about five
-  minutes.
-- **There is little stylus phantasticus between the lines.** It amounts to one echo passage (b21-23), one
-  general pause (b47) and one harp solo (b48). There is no free toccata episode and no chromatic surge
-  between lines apart from subject 9 and OW A's rise into the arrival. One or two short free episodes
-  would make the fantasia side more audible:
-  - a passaggio over a pedal point after line 2;
-  - a chromatic surge before line 9.
-- **The coda thins out, then jumps to the full chord.** After the arrival (9 moving voices) the coda drops
-  to 5-6 moving voices over the tonic pedal, and all seventeen then enter on the final chord. It is meant
-  as the full organ's last chord, but it is a large jump. A two-bar build-up would be smoother.
-- **Bad doublings are at the limit (8),** all thematic or canonic. Crossings are frequent (28), mostly OW A
-  above RP S and HW S1 above OW S in the summit.
-- **The score is hard to read.** Two A2 pages hold 78 bars, many to a system.
-- **I have not heard it.** I cannot say:
-  - whether the pedal canon is audible under the manuals;
-  - whether the BWV 542 guest is recognisable two octaves down;
-  - how long the general pause feels;
-  - whether seventeen voices on a General MIDI organ balance at all.
-
-  These need a listener.
-- **The prelude is small** (§10). It has 16 bars and four voices, while the fugue has seventeen. Its
-  Choral section is plain note-against-note, and the echo in b14 is only the treble an octave lower.
+- **Kept:** the concept (chorale fantasia per line, Vorimitation, pedal canon at the octave), the
+  chorale and its minor-mode adaptation, the ten subjects, the echo for lines 3-4, the augmented sixth
+  at "Orgeln" and the general pause after it, the BWV 542 guest just before the summit.
+- **Changed:** 17 voices → 5 (three manual divisions and up to ten entries per line → three manual
+  voices with one to three entries). The canon distances now shrink strictly (6½ → 1½ beats; before:
+  10, 7, 9, 3, 3, 3, 3, 5, 3). Lines 3-4 are now manuals alone with the chorale on top. The guest moved
+  from Pedal I two octaves down (very likely inaudible) to the Diskant at its own pitch with a thin
+  accompaniment. The summit was 17 voices with every earlier subject returning (13-14 moving); it is
+  now line 10 at three speeds. The 17-voice final chord became the Tenor's line 1 ending in G major.
+  4:31 → 3:55; the keyboard check went from meaningless to 6.5 %.
+- **Why:** with seventeen voices no line could be followed and nothing at the summit could be heard as
+  a device; at five, each entry has room, and the canon, the guest and the stretto can each be pointed
+  to in the score and, I hope, heard.
 
 ## 10. Prelude XVI: *Fantasia* (16 bars, 4/4, organ: two hands and pedal)
 

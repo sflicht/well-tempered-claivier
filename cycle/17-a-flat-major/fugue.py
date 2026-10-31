@@ -170,33 +170,33 @@ def running_gag():
     the bass, who should fall a fifth, steps UP instead; he sings the subject's head on the way.  One bar
     per key, then half a bar, until A-flat minor: home, but in the minor."""
     # Evasion 3: A-flat7 -> b-flat (bar 14).  The bass sings the head in B-flat minor, then F (V).
-    theme('B', 14, 0, subj('Bb', 'minor', octave=1, upto=6) + ' F2:6', 'evasion 3 (V - vi): the head in the bass, B-flat minor', 1)
+    theme('B', 14, 0, subj('Bb', 'minor', octave=1, upto=6) + ' F2:6', 'evasion 3 (V - vi in D-flat): the head in the bass, B-flat minor', 1)
     put('T', 14, 0, 'Bb2:6 F3:6 Bb2:6 A2:6')
     put('A', 14, 0, 'Db4:12 Eb4:12')
     put('S', 14, 0, 'Db5:6 F5:6 Gb5:4 Eb5:2 Db5:1 C5:1 Db5:1 C5:1 Bb4:1 C5:1')
     # Evasion 4: F7 -> G-flat (bar 15).  The bass again: the head in G-flat, then D-flat (V).
-    theme('B', 15, 0, subj('Gb', octave=2, upto=6) + ' Db3:6', 'evasion 4 (V - VI): the head in the bass, G-flat', 1)
+    theme('B', 15, 0, subj('Gb', octave=2, upto=6) + ' Db3:6', 'evasion 4 (V - VI in B-flat minor): the head in the bass, G-flat', 1)
     put('T', 15, 0, 'Bb2:6 Bb3:6 Eb4:6 F4:6')
     put('A', 15, 0, 'Db4:6 Gb4:12 Cb5:6')
     put('S', 15, 0, 'Bb4:6 Db5:6 Gb5:6 Bb5:1 Ab5:1 Bb5:1 Ab5:1 Gb5:1 Ab5:1')
-    # Evasions 5-6, half a bar each: D-flat7 -> e-flat, B-flat7 -> C-flat, G-flat7 -> a-flat.
+    # Evasions 5-7, the last two half a bar each: D-flat7 -> e-flat, B-flat7 -> C-flat, G-flat7 -> a-flat.
     put('B', 16, 0, 'Eb3:6 Bb2:6 Cb3:6 Gb2:6')
     put('T', 16, 0, 'Eb4:6 D4:6 Eb4:6 Bb3:6')
     put('A', 16, 0, 'Bb4:6 Ab4:6 Gb4:6 Fb4:6')
     put('S', 16, 0, 'Gb5:6 Gb5:1 F5:1 Gb5:1 F5:1 Eb5:1 F5:1 Eb5:6 Eb5:1 Db5:1 Eb5:1 Db5:1 Cb5:1 Db5:1')
     # Bar 17: A-flat minor.  Everybody stops, except the bass, who sings the head alone, pianissimo; then
-    # E-flat7 -> F-flat (evasion 7), and the F-flat chord turns out to be E major: the dream.
+    # E-flat7 -> F-flat (evasion 8), and the F-flat chord turns out to be E major: the dream.
     put('S', 17, 0, 'Cb5:6 R:12 Db5:6')
     put('A', 17, 0, 'Eb4:6 R:12 G4:6')
     put('T', 17, 0, 'Cb4:6 R:12 Bb3:6')
-    theme('B', 17, 0, subj('Ab', 'minor', octave=2, upto=6) + ' Eb3:6', 'evasion 7 ahead: the head in the bass, A-flat minor (home, but minor)', 1)
+    theme('B', 17, 0, subj('Ab', 'minor', octave=2, upto=6) + ' Eb3:6', 'evasion 7 (V - vi in C-flat): A-flat minor, home but minor; the head in the bass', 1)
 
 
 def dream():
     """Bars 18-22: E major (= F-flat, the farthest point), slower and pianissimo.  The children fall asleep
     and dream of the subject at their father's pace: the soprano sings it in augmentation while the tenor
     sings it at its own speed beneath (bars 19-20); then a dominant pedal, and the dream's own cadence is
-    evaded too (B7 -> c-sharp minor, evasion 8), which is D-flat minor: the way home."""
+    evaded too (B7 -> c-sharp minor, evasion 9), which is D-flat minor: the way home."""
     # bar 18: the F-flat chord, written as E major from here; a rocking bar
     put('S', 18, 0, 'B4:6')
     put('A', 18, 0, 'G#4:6 A4:6 G#4:6 F#4:6')
@@ -219,11 +219,11 @@ def turn_home():
 
 
 def guest():
-    """Bars 25-26, evasion 9 (Zarlino's own kind): at the cadence the other three simply stop, and the tenor's
+    """Bars 25-26, evasion 10 (Zarlino's own kind): at the cadence the other three simply stop, and the tenor's
     leading tone rises alone to A-flat, which is the first note of Bach's A-flat fugue (BWV 862): its subject
     at Bach's pitch, in Bach's voice (the tenor), with the bass answering as Bach's bass does.  At bar 26,
     beat 3, Bach's own V7 -> I is turned aside to vi (the tenor's G becomes a 9-8 over F)."""
-    theme('T', 25, 0, BWV862, 'evasion 9 (the bass rests): guest, J. S. Bach BWV 862 subject at pitch (tenor)', 1)
+    theme('T', 25, 0, BWV862, 'evasion 10 (the others stop): guest, J. S. Bach, BWV 862 subject at pitch (tenor)', 1)
     put('B', 25, 8, BWV862_ANSWER + ' F3:6 Db3:6')
     put('S', 26, 0, 'Ab5:6')
 
@@ -239,10 +239,10 @@ def trill(upper, main, n, end=None):
 
 def home():
     """Bars 26-32.  The children take their tune back (the soprano's subject in A-flat, bars 27-28); its re
-    gets the soprano's trill, which this time will not stop (evasion 10); the others call for their father;
+    gets the soprano's trill, which this time will not stop (evasion 11); the others call for their father;
     when the trill at last lets go, the tonic arrives with its seventh in the bass, already the dominant of
     D-flat.  The next try (bar 30) falls through a trap door: V7 -> flat VI, the bass dropping a seventh to
-    F-flat, pianissimo (evasion 11); an augmented sixth climbs out of it to the dominant."""
+    F-flat, pianissimo (evasion 12); an augmented sixth climbs out of it to the dominant."""
     put('T', 26, 10, 'Eb4:2 Db4:2')
     theme('S', 27, 0, subj('Ab', octave=4, upto=16) + ' ' + trill('C5', 'Bb4', 30, ('Ab4', 'Bb4')),
           'subject (soprano), at home; its re becomes the trill that will not stop')
@@ -259,17 +259,17 @@ def home():
 
 def stretto():
     """Bars 33-36: all four children at once.  The bass starts the subject on the dominant (so the V7 of bar
-    32 does not resolve at all), and the others follow every half bar, each a step higher in the cascade:
-    tenor an octave up, alto and soprano on B-flat (a stretto whose six pairings were each tested clean by
-    tools/stretto_finder.py).  Then the cadence is prepared with everything they have, and they stop dead on
-    the dominant seventh, its seventh on top (evasion 12: the chord left hanging)."""
-    theme('B', 33, 0, subj('Ab', octave=1, shift=4), 'stretto 1: bass, on the dominant')
+    32 does not resolve at all: evasion 13), and the others follow every half bar: the alto on E-flat two
+    octaves up, the tenor on B-flat, the soprano on B-flat (diatonic forms within A-flat; tools/stretto_finder.py
+    tested each of the six pairings clean, and I chose this order so that no entry crosses another voice).
+    Then the cadence is prepared with everything they have, and they stop dead on the dominant seventh, its seventh on top (evasion 14: the chord left hanging)."""
+    theme('B', 33, 0, subj('Ab', octave=1, shift=4), 'stretto 1: bass, on the dominant (evasion 13: V7 - V)')
     theme('A', 33, 6, subj('Ab', octave=3, shift=4), 'stretto 2: alto')
     theme('T', 34, 0, subj('Ab', octave=2, shift=1), 'stretto 3: tenor')
     theme('S', 34, 6, subj('Ab', octave=4, shift=1, upto=16) + ' C5:6', 'stretto 4: soprano')
     put('A', 33, 0, 'Db4:6')
     put('S', 33, 0, 'Bb4:12')
-    # bars 35-36: iii7 - ii7 - vi - I | ii6/5 - I6/4 - V7, and stop.  The seventh (D-flat) is on top.
+    # bars 35-36: iii7 - ii7 - vi - (6/4) | ii6/5 - I6/4 - V7, and stop.  The seventh (D-flat) is on top.
     put('B', 35, 3, 'Bb2:6 F2:6 Eb2:6 | Db3:6 Eb3:6 Eb2:6')
     put('A', 35, 6, 'Ab4:24 Eb4:6')
     put('T', 36, 0, 'F3:6 Ab3:6 G3:6')
@@ -350,7 +350,7 @@ MARKERS = [(q(1), 'Exposition: four children'),
            (q(27), 'At home: the trill that will not stop'),
            (q(31), 'Trap door: flat VI'),
            (q(33), 'All four children: stretto'),
-           (q(36, 3), 'The hanging seventh; silence'),
+           (q(36, 3), 'The hanging seventh: hold it (fermata), then silence'),
            (q(37), 'The father'),
            (q(42), 'The first perfect cadence'),
            (q(43), 'The tune gets its do')]

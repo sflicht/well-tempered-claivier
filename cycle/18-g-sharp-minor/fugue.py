@@ -229,11 +229,51 @@ put('A', 37, 0, 'G#4:8 F#4:16 '
                 'E#4:8')
 CHAIN = [('B', 39, 0, 'G#2:8 A#2:8 B#2:8 E#3:12 D#3:4 C#3:8 B#2:4 A#2:4 G#2:8 F#2:8', 'on G#'),
          ('T', 39, 4, 'B#3:8 C#4:8 D#4:8 G#4:12 F#4:4 E#4:8 D#4:4 C#4:4 B#3:8 A#3:8', 'on B#'),
-         ('S', 40, 2, 'D#5:8 E#5:8 F#5:8 B#5:12 A#5:4 G#5:8 F#5:4 E#5:4 D#5:8 C#5:8', 'on D#: B#5 at the top')]
+         ('S', 40, 2, 'D#5:8 E#5:8 F#5:8 B#5:12 A#5:4 G#5:8 F#5:4 E#5:4 D#5:8 C#5:8~', 'on D#: B#5 at the top')]
 for v, b, q, t, where in CHAIN:
     theme(v, b, q, t, f'IV: summit, the subject a third higher every two beats ({where})')
 put('B', 42, 0, 'G#2:8 D#3:8 G#2:8 '
                 'C#3:8')
+
+
+# ================================================================ the last knock: b43-45, over a D# (= E-flat) pedal
+# The soprano holds its C# (the seventh of the dominant) across the whole pedal; the fifth voice,
+# which brought the first knock at midnight on the same D#4, knocks once more, and its rise turns
+# iv to IV and v to V (as at the cadences in B and F#).  Its last note, G#, is written A-flat: dawn.
+put('S', 43, 2, 'C#5:16~ C#5:24~ C#5:24')
+put('B', 43, 2, 'D#3:16 D#3:24 D#3:24')
+put('T', 43, 2, 'F##3:16 G#3:8 F##3:8 A#3:8 A#3:8 G#3:8 A#3:8')
+theme('Q', 44, 4, K[:-len('G#4:8')].rstrip(), 'The last knock: door subject in the fifth voice (its first pitch, D#4)', 2)
+
+# ================================================================ DAWN: A-flat major (Ionian), b46-52
+# The eighth sharp (F## = G) cannot be written in G-sharp: the score turns to A-flat major.  The
+# fifth voice's G# becomes A-flat and runs straight on into the subject in major: the two subjects are
+# one line.  The light then comes down: the subject a sixth lower in the tenor (two beats later), the
+# answer in the bass; the soprano sings the subject last, and its G resolves to A-flat over E-flat -
+# A-flat: the first perfect cadence on the tonic in the whole piece.
+DAWN = 46
+theme('Q', 46, 0, S_ION, 'Dawn: subject, Ionian, in A-flat major, straight out of the door subject')
+put('S', 46, 0, 'C5:8 Eb5:8')                                            # then rests until its entry at b49
+put('T', 46, 0, 'Ab3:8')
+put('A', 46, 0, 'Eb4:8')
+theme('T', 46, 4, 'C4:8 Db4:8 Eb4:8 Ab4:12 G4:4 F4:8 Eb4:4 Db4:4 C4:8 Bb3:8',
+      'Dawn: stretto, the subject a sixth lower, two beats later')
+put('B', 46, 0, 'Ab2:8')
+theme('B', 47, 2, 'Eb2:8 F2:8 G2:8 C3:12 Bb2:4 Ab2:8 G2:4 F2:4 Eb2:8 Db2:8', 'Dawn: answer in the bass')
+theme('S', 49, 0, S_ION, 'Dawn: the subject in the soprano; its G rises to A-flat (b52.1)')
+put('S', 52, 0, 'Ab4:24')
+put('B', 50, 2, 'Bb1:8 Eb2:8 '
+                'Ab2:8 Db3:8 Eb3:8 '
+                'Ab2:24')
+put('A', 49, 0, 'Eb4:8 Eb4:8 Ab4:8 '
+                'Ab4:8 Db5:8 Bb4:8 '
+                'Ab4:8 F4:8 Eb4:8 '
+                'Eb4:24')
+put('T', 49, 4, 'Ab3:8 '
+                'Db4:8 F3:8 G3:8 '
+                'C4:8 F3:8 Bb3:8 '
+                'Ab3:24')
+put('Q', 52, 0, 'C4:24')                                                # the fifth voice joins the last chord
 
 
 def build(nbars, path=None):
@@ -247,7 +287,8 @@ def build(nbars, path=None):
             'movement_number': 18, 'piece_type': 'fugue', 'edition': 'third',
             'tempo_text': 'Vigilate: from the evening to the morning',
             'voice_order': 'high_to_low',
-            'tempo_map': [[0, 108], [end, 100, 'ramp']]}
+            'tempo_map': [[0, 108], [end, 100, 'ramp']],
+            'key_changes': [{'t': (DAWN - 1) * 6, 'key': 'Ab', 'mode': 'major'}]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 66) for i in range(len(NAMES))]
     return W.build_score(path or (HERE / 'fugue.json'), meta, voices, bars, entries=ENTRIES,
                          subject=S_PHR, dynamics=lambda b: 0)

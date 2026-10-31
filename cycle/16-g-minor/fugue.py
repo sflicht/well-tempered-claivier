@@ -279,14 +279,14 @@ X('T', 52, 1, 'D3:4 G3:4 F3:4 E3:4 Eb3:4 D3:4')
 X('P2', 53, 3, cantus(9, -2, last=24), 'cantus line 9 (Pedal II, canon dux)')
 X('P1', 54, 1.5, cantus(9, -1, last=14), 'cantus line 9 (Pedal I, canon at the octave, 2 1/2 beats)')
 X('S', 54, 1, 'Bb4:4 Eb5:8 D5:4 D5:4 C5:8 Bb4:4 D5:4 C5:8 A4:4 Bb4:2')
-X('A', 54, 1, 'G4:16 G4:4 A4:4 F#4:4 G4:4 Bb4:4 F4:4 G4:4 C4:4 D4:4 F#4:4 G4:4 D4:4 A4:8 G4:4 R:4 F4:4 G4:4 '
+X('A', 54, 1, 'G4:16 G4:4 A4:4 F#4:4 G4:4 Bb4:4 F4:4 G4:4 C4:4 D4:4 F#4:4 G4:4 D4:4 A4:8 R:8 F4:4 G4:4 '
               'Eb4:4 R:4 G4:4 D4:4')
 
 # ================================================================ I: the guest (bars 57-60)
 # J. S. Bach's G-minor fugue subject (BWV 542) enters once, on top, at its own pitch, over the held
 # D of the pedal and then a pedal bass walking its circle of fifths; Alt alone accompanies, below.
 X('S', 57, 2.5, BWV542, 'guest: J. S. Bach, Fugue in G minor BWV 542, subject (Diskant)')
-X('P2', 58, 3, 'C3:2 Eb3:2 F2:4 Bb2:4 Eb3:4 A2:4 D3:4 D2:4 G2:4')
+X('P2', 58, 3, 'C2:2 Eb2:2 F2:4 Bb2:4 Eb3:4 A2:4 D3:4 D2:4 G2:4')
 
 # ================================================================ J: line 10, the summit (bars 60-66)
 # "täglich von ihn' erleiden".  The pedal canon at its closest, 1 1/2 beats; above it the line's

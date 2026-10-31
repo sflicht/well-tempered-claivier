@@ -7116,17 +7116,17 @@
   {
    "voice": 3,
    "t": 78.0,
-   "label": "evasion 3 (V - vi): the head in the bass, B-flat minor"
+   "label": "evasion 3 (V - vi in D-flat): the head in the bass, B-flat minor"
   },
   {
    "voice": 3,
    "t": 84.0,
-   "label": "evasion 4 (V - VI): the head in the bass, G-flat"
+   "label": "evasion 4 (V - VI in B-flat minor): the head in the bass, G-flat"
   },
   {
    "voice": 3,
    "t": 96.0,
-   "label": "evasion 7 ahead: the head in the bass, A-flat minor (home, but minor)"
+   "label": "evasion 7 (V - vi in C-flat): A-flat minor, home but minor; the head in the bass"
   },
   {
    "voice": 0,
@@ -7142,7 +7142,7 @@
   {
    "voice": 2,
    "t": 144.0,
-   "label": "evasion 9 (the bass rests): guest, J. S. Bach BWV 862 subject at pitch (tenor)"
+   "label": "evasion 10 (the others stop): guest, J. S. Bach, BWV 862 subject at pitch (tenor)"
   },
   {
    "voice": 0,
@@ -7152,7 +7152,7 @@
   {
    "voice": 3,
    "t": 192.0,
-   "label": "stretto 1: bass, on the dominant"
+   "label": "stretto 1: bass, on the dominant (evasion 13: V7 - V)"
   },
   {
    "voice": 1,

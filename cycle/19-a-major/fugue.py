@@ -186,11 +186,49 @@ def trio():
     # over the dominant the gigue and then the allemande try the head of the subject
     put('T', 113 + Fr(2, 3), 'E3:4/3 A3:8/3 G#3:4/3 B3:4/3 A3:4/3 C#4:4/3 B3:8/3 G#3:4/3 A3:4/3 B3:4/3 '
                              'G#3:4/3 E3:8/3 B3:4/3 C#4:4/3 B3:4/3 G#3:4/3')
-    put('A', Fr(471, 4), 'E4:1 A4:2 G#4:1 B4:1 A4:1 C#5:1 B4:1 D5:1')
+    theme('A', Fr(471, 4), SA, 'Allemande: subject (A), the ball begins')
 
 
-SECTIONS = [exposition, duo_quick, duo_slow, trio]
-END = 120
+# The courante's subject one step higher (F# | B A C# B D C# E D C# A B G# | F#): under the
+# sarabande's subject, nine quarters behind it, it ends on F# (vi), a deceptive close.
+SC_F = dshift(SC, 1)
+
+
+def ball():
+    """V. The ball (q120-156): all four dance at once, each in its own metre.  The sarabande's subject
+    on top (q122), the gigue's at the D level (q125 2/3), the courante's in the bass (q131); after the
+    deceptive close on vi (q144) the gigue (in A) and the allemande (at the fifth) race each other:
+    the allemande enters two beats later and, being quicker, catches up, so that both end together
+    (q150).  Then the courante's hemiola cadence under the sarabande's last suspension."""
+    # sarabande: the subject, then the last suspension (A5 over E: 4-3 on the weighted second beat)
+    theme('S', 122, oc(SS, 1), 'Sarabande: subject (A), the ball')
+    put('S', 141, 'C#6:4 B5:4 G#5:4 A5:8 G#5:4 R:12 E5:4 A5:12 G#5:8')
+    # courante: a free bass in quarters, a rest, its subject (F# level), the hemiola cadence
+    put('B', 120, 'A2:8 C#3:4 D3:4 E3:4 B2:4 D3:4 C#3:4 A2:4 E3:4 R:4')
+    theme('B', 131, oc(SC_F, -2), 'Courante: subject (F# level, ends on vi)')
+    put('B', 146, 'E2:4 A2:4 D3:4 B2:4 C#3:8 D3:4 E3:12')
+    # gigue
+    put('T', 120, 'A3:8/3 E4:4/3 D4:8/3 B3:4/3 A3:8/3 C#4:4/3 D4:8/3 F#4:4/3 C#4:8/3 B3:4/3 '
+                  'G#3:8/3 B3:4/3 A3:8/3 F#3:4/3 A3:8/3')
+    theme('T', 127 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A)')
+    put('T', 134, 'C#4:8/3 E4:4/3 A3:8/3 C#4:4/3 D4:8/3 A3:4/3 B3:4/3 C#4:4/3 D4:4/3 E4:8/3 C#4:4/3 '
+                  'B3:4/3 A3:4/3 B3:4/3 G#3:8/3 B3:4/3 A3:8/3 C#4:4/3 E4:8/3 C#4:4/3 B3:8/3')
+    theme('T', 143 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A), the race')
+    put('T', 150, 'C#4:8/3 E4:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 F#3:4/3 G#3:8/3 B3:4/3 '
+                  'G#3:8/3 B3:4/3 B3:8/3 D4:4/3')
+    # allemande
+    put('A', Fr(495, 4), 'B4:1 C#5:2 B4:1 C#5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
+                         'E5:2 D5:1 C#5:1 D5:2 E5:1 D5:1 B4:2 G#4:2 A4:2 B4:1 C#5:1 D5:2 E5:1 C#5:1 '
+                         'B4:2 C#5:1 D5:1 E5:2 D5:1 E5:1 C#5:2 D5:1 B4:1 A4:2 B4:1 C#5:1 '
+                         'D5:2 C#5:1 B4:1 C#5:2 B4:1 A4:1 B4:1 C#5:1 D5:1 C#5:1 B4:2 G#4:2 '
+                         'A4:2 C#5:1 D5:1 E5:2 D5:1 C#5:1 D5:2 C#5:1 B4:1 C#5:2 B4:1 G#4:1 F#4:2')
+    theme('A', Fr(583, 4), oc(dshift(SA, -3), 1), 'Allemande: subject at the fifth, the race')
+    put('A', 150, 'A4:2 G#4:1 B4:1 C#5:2 D5:1 E5:1 F#5:2 D5:2 B4:2 C#5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
+                  'B4:2 G#4:2')
+
+
+SECTIONS = [exposition, duo_quick, duo_slow, trio, ball]
+END = 156
 BPM = 72
 TEMPO_MAP = []
 

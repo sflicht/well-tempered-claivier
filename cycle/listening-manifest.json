@@ -296,7 +296,7 @@
    ]
   },
   {
-   "name": "Pair XVI \u00b7 G minor (new, seventeen voices)",
+   "name": "Pair XVI \u00b7 G minor (new)",
    "pieces": [
     {
      "id": "prelude-16",
@@ -307,10 +307,10 @@
     },
     {
      "id": "fugue-16",
-     "title": "Fugue XVI \u00b7 Fantasia e fuga a 17 per Reincken",
-     "score": "cycle/16-g-minor/archive-n-plus-1/fugue.json",
+     "title": "Fugue XVI \u00b7 Fantasia e fuga a 5 per Reincken",
+     "score": "cycle/16-g-minor/fugue.json",
      "tag": "new",
-     "notes": "In 1720 Bach improvised for nearly half an hour on the chorale 'An Wasserfl\u00fcssen Babylon' in Hamburg, before the old organist Johann Adam Reincken, who told him: 'I thought this art was dead, but I see that it lives on in you.' This fugue re-imagines that improvisation for seventeen voices on three manuals and two pedal divisions.\n\nEach of the chorale's ten lines gets its own fugal subject made from its own notes, introduced in the manuals; then the line itself sounds in half notes as a canon at the octave between the two pedal voices, the canon's distance shrinking from ten beats to three. Between lines: an echo passage across the manuals, a general pause, a lone arpeggio. Just before the summit, the subject of Bach's own G-minor organ fugue (BWV 542, the piece often linked with that Hamburg visit) enters as the pedal bass, landing on the summit's first downbeat. At the summit the last chorale line runs in the pedal canon under seventeen subject statements, and a tonic-pedal coda ends on G major with all seventeen voices.\n\nFirst version: outside the five-bar summit the texture is mostly three to five moving voices.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "In 1720 Bach improvised for nearly half an hour on the chorale 'An Wasserfl\u00fcssen Babylon' in Hamburg, before the old organist Johann Adam Reincken, who told him: 'I thought this art was dead, but I see that it lives on in you.' Bach's written setting of the chorale with double pedal is in five voices, and so is this.\n\nThree manual voices treat each chorale line in turn by fugal imitation, on a short subject made from the line's own notes; then the line itself sounds in long notes as a canon at the octave between two pedal voices, the follower closing in from six and a half beats behind to one and a half. Lines 3-4 are an echo passage for the manuals; after line 6 the music stops on an augmented sixth, then silence.\n\nJust before the summit, the subject of Bach's own G-minor organ fugue (BWV 542, the piece often linked with that Hamburg visit) enters on top at its own pitch. At the summit the last line sounds at three speeds, and the coda turns to G major.\n\nRecomposed in five voices (it was seventeen); the earlier version is in the pair's archive folder. The binaural render uses an organ sound."
     }
    ]
   },

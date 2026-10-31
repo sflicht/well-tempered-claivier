@@ -4527,17 +4527,9 @@
         <type>half</type>
       </note>
       <note>
-        <pitch>
-          <step>G</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
-      </note>
-      <note>
         <rest />
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>960</duration>
+        <type>half</type>
       </note>
     </measure>
     <measure number="59">
@@ -9054,7 +9046,7 @@
       <note>
         <pitch>
           <step>C</step>
-          <octave>3</octave>
+          <octave>2</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
@@ -9063,7 +9055,7 @@
         <pitch>
           <step>E</step>
           <alter>-1</alter>
-          <octave>3</octave>
+          <octave>2</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>

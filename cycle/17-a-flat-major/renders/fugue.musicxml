@@ -5359,7 +5359,7 @@
     <measure number="25">
       <direction placement="above">
         <direction-type>
-          <words>evasion 9 (the bass rests): guest, J. S. Bach BWV 862 subject at pitch (tenor)</words>
+          <words>evasion 10 (the others stop): guest, J. S. Bach, BWV 862 subject at pitch (tenor)</words>
         </direction-type>
       </direction>
       <note>
@@ -6741,7 +6741,7 @@
     <measure number="14">
       <direction placement="above">
         <direction-type>
-          <words>evasion 3 (V - vi): the head in the bass, B-flat minor</words>
+          <words>evasion 3 (V - vi in D-flat): the head in the bass, B-flat minor</words>
         </direction-type>
       </direction>
       <note>
@@ -6811,7 +6811,7 @@
     <measure number="15">
       <direction placement="above">
         <direction-type>
-          <words>evasion 4 (V - VI): the head in the bass, G-flat</words>
+          <words>evasion 4 (V - VI in B-flat minor): the head in the bass, G-flat</words>
         </direction-type>
       </direction>
       <note>
@@ -6924,7 +6924,7 @@
     <measure number="17">
       <direction placement="above">
         <direction-type>
-          <words>evasion 7 ahead: the head in the bass, A-flat minor (home, but minor)</words>
+          <words>evasion 7 (V - vi in C-flat): A-flat minor, home but minor; the head in the bass</words>
         </direction-type>
       </direction>
       <note>
@@ -7540,7 +7540,7 @@
     <measure number="33">
       <direction placement="above">
         <direction-type>
-          <words>stretto 1: bass, on the dominant</words>
+          <words>stretto 1: bass, on the dominant (evasion 13: V7 - V)</words>
         </direction-type>
       </direction>
       <note>
