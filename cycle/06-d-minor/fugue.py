@@ -158,7 +158,7 @@ put(EP2, S='D5:1 C5:1 Bb4:1 A4:1 Bb4:1 G4:1 A4:1 Bb4:1 C5:1 Bb4:1 C5:1 E5:1'
            '  C5:1 Bb4:1 A4:1 G4:1 A4:1 F4:1 G4:1 A4:1 Bb4:1 A4:1 Bb4:1 D5:1'
            '  Bb4:1 A4:1 G4:1 F4:1 G4:1 E4:1 F4:1 G4:1 A4:1 G4:1 A4:1 C#5:1'
            '  A4:1 G4:1 F4:1 E4:1 F4:1 D4:1 E4:1 F4:1 G4:1 F4:1 G4:1 A4:1'
-           '  D5:1 C5:1 Bb4:1 A4:1 G4:1 A4:1 Bb4:1 D5:1 C#5:1 E5:1 G5:1 E5:1  F5:4 D5:4 E5:4')
+           '  D5:1 C5:1 Bb4:1 A4:1 G4:1 A4:1 Bb4:1 A4:1 C#5:1 E5:1 G5:1 E5:1  F5:4 D5:4 E5:4')
 put(EP2, T='F4:8 E4:4  Eb4:8 D4:4  D4:8 C#4:4  C4:8 Bb3:4  D4:8 C#4:4  A3:4 D4:4 R:4')
 put(EP2, A='R:12  R:12  R:12  R:12  R:12  A4:4 F4:4 R:4')
 
@@ -169,7 +169,7 @@ put(EP2, A='R:12  R:12  R:12  R:12  R:12  A4:4 F4:4 R:4')
 tag(ST, 'Stretto: subject (Tenor) and answer (Alto), one bar apart')
 put(ST, T=last_octave(S('A3'), -1) + '  C4:4 A3:4 B3:4  A3:12')
 entry('T', ST, 'Subject (Tenor), stretto')
-put(ST + 1, A=last_octave(S('E4'), -1) + '  E4:4 C#4:4 E4:4')
+put(ST + 1, A=last_octave(S('E4'), -1) + '  E4:4 C#4:4 A4:4')
 entry('A', ST + 1, 'Answer (Alto), stretto at one bar')
 put(ST, A='R:12')
 put(ST, B='D3:4 F3:4 G3:4  E3:4 A2:4 D3:4  B2:4 A2:4 D3:4  B2:4 G#2:4 A2:4  F2:8 E2:4  R:12')
