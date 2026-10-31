@@ -1,41 +1,8 @@
 #!/usr/bin/env python3
-"""Fugue XIII in F-sharp major, fourteen voices:
-"Fuga canonica a 14 sopra il fondamento di Goldberg".
+"""Fugue XIII in F-sharp major, four voices:
+"Fuga canonica a 4 sopra il fondamento di Goldberg".
 
-The fundamentum is the ground of J. S. Bach's Goldberg Variations, BWV 988 (the eight bass notes
-G F# E D B C D G that Bach also worked into the Fourteen Canons, BWV 1087), transposed to F-sharp
-major (F# E# D# C# A# B C# F#), one note to a 3/4 bar.  It is heard ten times without a break
-(bars 1-80).  Over it a tower of strict canons grows one pair per variation, as the Goldberg
-canons climb through the intervals:
-
-    canon I    at the unison,             two bars apart   (enters bar 9)
-    canon II   at the 2nd above,          one bar apart    (bar 17)
-    canon III  at the 3rd above,          two bars apart   (bar 25)
-    canon IV   at the 4th below, by inversion (mirror F#<->C#), four bars apart (bar 33)
-    canon V    at the 5th below, by inversion (mirror F#<->B),  three bars apart (bar 41)
-    canon VI   at the 6th below,          eight bars apart (bar 49)
-
-Every dux is a free line written here; every comes is generated from its dux by the transform in
-CANONS and nothing else (check_canons.py verifies this from the built JSON).  Each dux opens with
-the fugue subject - the ground itself in dotted diminution plus a springing tail - and the
-soggetto voice states it first, alone with the ground (bars 1-8).  With the ground and the
-soggetto that is fourteen real voices; the summit (variation 8, bars 57-64) has every canon running
-over the ground at once while the subject enters in stretto one bar apart (canon VI's comes on
-A-sharp in bar 57, canon II's dux on G-sharp in 58, its comes on A-sharp in 59, canon IV's comes
-with the inverted head in 61).  The canons then close inside the summit (CANON_END).
-
-There is no room in fourteen voices for the canons at the 7th and the octave, so the coda
-supplies them the way Bach ended the Goldberg set: a Quodlibet (variations 9-10, bars 65-80) after
-Var. 30, with the two folk songs Bach combined there - "Ich bin so lang nicht bei dir gewest" in
-canon at the octave, "Kraut und Ruben haben mich vertrieben" in canon at the 7th below - in 3:2
-augmentation over the same ground, then the subject against "Ich bin", both Kraut phrases at once,
-and a fourteen-part final chord.  The tunes are traditional; the counterpoint around them, the
-subject, the canon duxes and every free line are original.  Nothing is quoted from BWV 988's
-canons or from the Aria's melody.
-
-Every note is written here as a literal token string (or the subject/tune transformed by an
-explicit diatonic shift or mirror).  A scratch harness listed the critic's findings for alternative
-hand-written versions of a bar so that one could be chosen; no code chose or altered a pitch.
+(Draft in progress; the full description is written when the piece is complete.)
 """
 from __future__ import annotations
 
@@ -48,16 +15,26 @@ sys.path.insert(0, str(HERE.parents[1] / 'tools'))
 import wtclib as W  # noqa: E402
 
 METER = (3, 4)
-BPM = 68
-BAR = 12                     # sixteenths per bar
+BPM = 72
+BAR = 12                     # sixteenths per 3/4 bar
 LET = 'CDEFGAB'
-SHARPS = set('FCGDAE')       # F-sharp major: six sharps (B is natural)
+
+# Key signatures (accidental of each letter) of the keys the ground visits.
+_SIX = dict(F=1, C=1, G=1, D=1, A=1, E=1, B=0)
+_FIVE = dict(F=1, C=1, G=1, D=1, A=1, E=0, B=0)
+KEYSIG = {
+    'F#': _SIX, 'D#m': _SIX,
+    'B': _FIVE, 'G#m': _FIVE,
+    'C#': dict(F=1, C=1, G=1, D=1, A=1, E=1, B=1),
+    'F#m': dict(F=1, C=1, G=1, D=0, A=0, E=0, B=0),
+}
+
 
 # ---------------------------------------------------------------------------------------------
-# Explicit canon transforms (diatonic, letter-preserving, in the F-sharp-major key signature).
-# A note's accidental relative to the key signature is carried over (shift) or negated (mirror).
+# Explicit transforms of hand-written material.  Diatonic: they move letter names and keep (shift)
+# or negate (mirror) each note's accidental relative to the key signature.
 
-def _parse(tok):
+def _parse(tok, key):
     name, d = tok.rsplit(':', 1)
     if name == 'R':
         return None
@@ -66,34 +43,50 @@ def _parse(tok):
     for o in range(-1, 10):
         alt = p - (12 * (o + 1) + W.NAT[L])
         if -2 <= alt <= 2:
-            return o * 7 + LET.index(L), alt - (1 if L in SHARPS else 0), d
+            return o * 7 + LET.index(L), alt - KEYSIG[key][L], d
     raise ValueError(tok)
 
 
-def _name(idx, rel):
+def _name(idx, rel, key):
     L = LET[idx % 7]
     o = idx // 7
-    p = 12 * (o + 1) + W.NAT[L] + (1 if L in SHARPS else 0) + rel
+    p = 12 * (o + 1) + W.NAT[L] + KEYSIG[key][L] + rel
     return W.name_of(p, L)
 
 
-def shift(s, steps):
-    """Diatonic transposition by `steps` letter names (canon at the 2nd = 1, 3rd = 2, 6th below = -5...)."""
+def shift(s, steps, key='F#'):
+    """Diatonic transposition by `steps` letter names in `key` (2nd above = 1, 3rd below = -2 ...)."""
     out = []
     for t in s.split():
-        r = _parse(t)
-        out.append(t if r is None else f"{_name(r[0] + steps, r[1])}:{r[2]}")
+        r = _parse(t, key)
+        out.append(t if r is None else f"{_name(r[0] + steps, r[1], key)}:{r[2]}")
     return ' '.join(out)
 
 
-def mirror(s, a, b):
-    """Diatonic mirror that maps note a onto note b (e.g. 'F#5' -> 'C#5'); accidentals are negated."""
-    ia, ib = _parse(a + ':1')[0], _parse(b + ':1')[0]
+def mirror(s, a, b, key='F#'):
+    """Diatonic mirror in `key` that maps note a onto note b (e.g. 'F#5' -> 'C#5'); the accidental
+    relative to the key signature is negated."""
+    ia, ib = _parse(a + ':1', key)[0], _parse(b + ':1', key)[0]
     out = []
     for t in s.split():
-        r = _parse(t)
-        out.append(t if r is None else f"{_name(ia + ib - r[0], -r[1])}:{r[2]}")
+        r = _parse(t, key)
+        out.append(t if r is None else f"{_name(ia + ib - r[0], -r[1], key)}:{r[2]}")
     return ' '.join(out)
+
+
+def modal(s, src, dst):
+    """Re-reads each note's scale degree and alteration from key signature src in key signature dst
+    (F-sharp major -> F-sharp minor: the subject's degrees with the minor mode's sixth and seventh)."""
+    out = []
+    for t in s.split():
+        r = _parse(t, src)
+        out.append(t if r is None else f"{_name(r[0], r[1], dst)}:{r[2]}")
+    return ' '.join(out)
+
+
+def tr(s, semis, letters):
+    """Chromatic transposition (moves material written in F-sharp to another key)."""
+    return W.transpose(s, semis, letters)
 
 
 def dur16(s):
@@ -103,519 +96,308 @@ def dur16(s):
 # ---------------------------------------------------------------------------------------------
 # Material written by hand.
 
-# The fundamentum: BWV 988's ground (G F# E D B C D G), in F-sharp major.
-GROUND = ['F#', 'E#', 'D#', 'C#', 'A#', 'B', 'C#', 'F#']
+# The fundamentum: BWV 988's ground (G F# E D B C D G) in F-sharp major.  It is written out
+# literally in every statement below, transposed with the key plan.
+GROUND = 'F# E# D# C# A# B C# F#'
 
-# The fugue subject: the whole ground in dotted diminution (bar 1), then a springing tail that
-# climbs back an octave and stops on the supertonic (bar 2).
-SUBJECT = 'F#4:3 E#4:1 D#4:3 C#4:1 A#3:3 B3:1 C#4:2 F#4:2 E#4:1 G#4:1 C#5:2 B4:1 A#4:1 G#4:2'
+# The fugue subject: the ground itself in dotted diminution (bar 1: F# E# D# C# A# B, and the first
+# two notes of bar 2: C# F#), then a springing tail that climbs back and stops on the supertonic.
 SUBJ_BARS = ['F#4:3 E#4:1 D#4:3 C#4:1 A#3:3 B3:1', 'C#4:2 F#4:2 E#4:1 G#4:1 C#5:2 B4:1 A#4:1 G#4:2']
+SUBJECT = ' '.join(SUBJ_BARS)
+# Its tonal mutation for entries on the mediant: one note of the tail (the fourth of bar 2) is a step
+# higher, so that the leap G#-C# does not become the tritone B-E# when the subject starts on A#.
+SUBJ_MUT_BARS = [SUBJ_BARS[0], 'C#4:2 F#4:2 E#4:1 A#4:1 C#5:2 B4:1 A#4:1 G#4:2']
 
 
-def subj(octave_shift=0):
-    return [shift(b, 7 * octave_shift) for b in SUBJ_BARS]
+def subj(steps=0, key='F#', semis=0, letters=0):
+    """The subject's two bars: diatonic shift in F#, then (optionally) chromatic move to a key."""
+    bars = [shift(b, steps) for b in SUBJ_BARS]
+    if semis or letters:
+        bars = [tr(b, semis, letters) for b in bars]
+    return bars
 
 
-# The six canons: (number, interval label, transform, delay in bars).  Mirror canons map the dux's
-# first note F# onto the comes's first note.
-CANONS = [
-    ('I', 'unison', lambda s: s, 2),
-    ('II', '2nd above', lambda s: shift(s, 1), 1),
-    ('III', '3rd above', lambda s: shift(s, 2), 2),
-    ('IV', '4th below, by inversion', lambda s: mirror(s, 'F#5', 'C#5'), 4),
-    ('V', '5th below, by inversion', lambda s: mirror(s, 'F#5', 'B4'), 3),
-    ('VI', '6th below', lambda s: shift(s, -5), 8),
-]
-CANON = {c[0]: c for c in CANONS}
-
-# Score order (top to bottom) = ring order for the spatial render.
-VOICES = [  # key, long name, abbr, clef
-    ('VIdx', 'Canon VI dux', 'VId', 'treble'),
-    ('VIco', 'Canon VI comes (6th below)', 'VIc', 'treble'),
-    ('Vdx', 'Canon V dux', 'Vd', 'treble'),
-    ('Vco', 'Canon V comes (5th below, inverted)', 'Vc', 'treble'),
-    ('IVdx', 'Canon IV dux', 'IVd', 'treble'),
-    ('IVco', 'Canon IV comes (4th below, inverted)', 'IVc', 'treble'),
-    ('IIIco', 'Canon III comes (3rd above)', 'IIIc', 'treble'),
-    ('IIIdx', 'Canon III dux', 'IIId', 'treble'),
-    ('IIco', 'Canon II comes (2nd above)', 'IIc', 'treble'),
-    ('IIdx', 'Canon II dux', 'IId', 'treble'),
-    ('Sog', 'Soggetto', 'Sog', 'treble'),
-    ('Idx', 'Canon I dux', 'Id', 'treble_8'),
-    ('Ico', 'Canon I comes (unison)', 'Ic', 'treble_8'),
-    ('Fund', 'Fundamentum', 'Fun', 'bass'),
+VOICES = [  # key, name, abbr, clef, base velocity
+    ('S', 'Soprano', 'S.', 'treble', 68),
+    ('A', 'Alto', 'A.', 'treble', 66),
+    ('T', 'Tenor', 'T.', 'treble_8', 66),
+    ('B', 'Bass', 'B.', 'bass', 70),
 ]
 KEYS = [v[0] for v in VOICES]
+NAME = {v[0]: v[1] for v in VOICES}
 
-# Literal bars: LINES[voice][bar] = bar string (12 sixteenths).  Comes voices are filled from
-# their dux by the canon transform; COMES_FREE holds their bars after the canon has ended.
-LINES = {k: {} for k in KEYS}
-CANON_SPAN = {}      # canon -> (first dux bar, last dux bar that is copied)
-# The last dux bar of each canon: after it the dux is a free voice, and the comes is free d bars
-# later.  All six canons close inside the summit; canon VI's comes runs on into the quodlibet.
-CANON_END = {'I': 62, 'II': 63, 'III': 62, 'IV': 60, 'V': 60, 'VI': 60}
-COMES_FREE = {}      # canon -> {bar: string}
-ENTRIES = []         # (voice key, bar, beat offset in quarters, label, n bars)
+LINES = {k: {} for k in KEYS}      # LINES[voice][bar] = literal bar string (12 sixteenths)
+CANONS = []                        # see canon()
+ENTRIES = []                       # (voice, bar, beat offset in quarters, label, n bars[, form])
 
 
 def put(v, bar, bars):
     for k, s in enumerate(bars):
         if bar + k in LINES[v]:
             raise ValueError(f'{v}: bar {bar + k} written twice')
+        if dur16(s) != BAR:
+            raise ValueError(f'{v} bar {bar + k}: {dur16(s)} sixteenths: {s}')
         LINES[v][bar + k] = s
 
 
-def entry(v, bar, label, beat=0, n=2):
-    ENTRIES.append((v, bar, beat, label, n))
+def entry(v, bar, label, beat=0, n=2, form=None):
+    ENTRIES.append((v, bar, beat, label, n) + ((form,) if form else ()))
+
+
+def canon(name, dux, comes, f, delay, first, last, label, ficta=()):
+    """A strict canon: dux bars first..last are copied into the comes `delay` bars later through the
+    transform f (and nothing else).  ficta: explicit [(comes bar, old note, new note)] accidentals
+    of the minor mode (letters and rhythm stay strict); listed in NOTES.md and checked by
+    check_canons.py."""
+    CANONS.append(dict(name=name, dux=dux, comes=comes, f=f, delay=delay, first=first, last=last,
+                       label=label, ficta=list(ficta)))
+
+
+def comes_bars(c):
+    out = {}
+    for b in range(c['first'], c['last'] + 1):
+        s = LINES[c['dux']][b]
+        if b == c['last']:
+            s = s.replace('~', '')
+        out[b + c['delay']] = c['f'](s)
+    for b, old, new in c['ficta']:
+        toks = out[b].split()
+        hit = [i for i, t in enumerate(toks) if t.rsplit(':', 1)[0] == old]
+        if not hit:
+            raise ValueError(f"ficta {old}->{new} not found in comes bar {b}: {out[b]}")
+        for i in hit:
+            toks[i] = new + ':' + toks[i].rsplit(':', 1)[1]
+        out[b] = ' '.join(toks)
+    return out
 
 
 # =============================================================================================
-# Var. 1 (b1-8), "Aria": the fundamentum and the soggetto alone.
-put('Fund', 1, ['F#3:12', 'E#3:12', 'D#3:12', 'C#3:10 B2:2', 'A#2:12', 'B2:12', 'C#3:12', 'F#2:12'])
-put('Sog', 1, subj(0) + [
-    'A#4:2 F#4:2 D#5:4 C#5:1 B4:1 A#4:1 G#4:1',                 # b3  vi: falls back through the tail
-    'F#4:2 E#4:1 F#4:1 G#4:2 E#4:1 G#4:1 A#4:2 B4:2',           # b4  V: climbs into the inversion
-    'C#5:3 D#5:1 E#5:3 F#5:1 A#5:3 G#5:1',                      # b5  I6: the subject inverted (mirror F#-C#)
-    'F#5:2 C#5:2 D#5:1 B4:1 F#4:2 G#4:1 A#4:1 B4:2',            # b6  ii6
-    'G#4:2 C#5:2 E#5:2 G#5:1 F#5:1 E#5:1 D#5:1 C#5:1 B4:1',     # b7  V7
-    'A#4:4 C#5:2 A#4:1 F#4:1 G#4:2 A#4:2',                      # b8  I
-])
-entry('Sog', 1, 'Subject')
-entry('Sog', 5, 'Subject inverted (mirror F#-C#)')
+# Intonazione (bars 1-2): the bass alone states the subject.
+put('B', 1, [shift(b, -7) for b in SUBJ_BARS])
+entry('B', 1, 'Subject (bass alone)')
 
 # =============================================================================================
-# Var. 2 (b9-16): Canon I, at the unison, two bars apart (triplets: Var. 3's lilt).
-put('Fund', 9, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
-T = '4/3'
-def tri(notes):
-    return ' '.join(f'{n}:{T}' for n in notes.split())
-put('Idx', 9, subj(0) + [
-    tri('A#4 B4 C#5 B4 A#4 G#4 A#4 B4 C#5'),                  # b11 vi    (high, over the comes's subject)
-    tri('F#5 E#5 D#5 C#5 B4 A#4') + ' G#4:4',                  # b12 V
-    'C#4:4 D#4:4 C#4:4',                                       # b13 I6    (low, under its own triplets)
-    'D#4:6 E#4:2 F#4:4',                                       # b14 ii6
-    tri('C#5 D#5 E#5 F#5 E#5 D#5 E#5 F#5 D#5'),                 # b15 V7    (high)
-    tri('C#5 B4 A#4 B4 C#5 D#5 C#5 B4 A#4'),                   # b16 I
+# Statement 1 (bars 3-10), F-sharp major: Canon I at the unison, two bars apart.
+# Dux soprano (subject on F#4), comes alto at the same pitch; the dux's continuation is in
+# triplets (Var. 3's lilt) and begins with a rest, so that the comes enters alone.
+put('B', 3, ['F#3:12', 'E#3:12', 'D#3:12', 'C#3:12', 'A#2:12', 'B2:12', 'C#3:12', 'F#2:12'])
+put('S', 3, SUBJ_BARS + [
+    'R:4 C#5:8/3 B4:4/3 A#4:8/3 C#5:4/3',                        # b5  vi   (I6 in the comes)
+    'E#5:8/3 D#5:4/3 E#5:8/3 F#5:4/3 G#5:8/3 F#5:4/3',           # b6  V    (V4/2 in the comes)
+    'F#5:4 A#5:6 G#5:2',                                         # b7  I6   free from here
+    'G#5:8 A#5:4',                                               # b8  V4/2
+    'G#5:6 F#5:2 E#5:4',                                         # b9  V7
+    'F#5:2 R:10',                                                # b10 I
 ])
-put('Idx', 17, [
-    'F#4:6 E#4:2 F#4:4',                                       # b17 I     (low)
-    'G#4:12',                                                  # b18 V6
-    'A#4:4 B4:4 A#4:4',                                        # b19 vi    (V3: canon I sings broad notes
-    'R:12',                                                    # b20 V      under canon II's quavers;
-    'R:12',                                                    # b21 I6     dux and comes take turns)
-    'F#4:4 G#4:6 F#4:2',                                       # b22 ii6
-    'R:12',                                                    # b23 V7    (canon I breathes, so that
-    'R:12',                                                    # b24 I      canon III can enter alone)
-    'R:4 A#4:4 C#5:4~',                                        # b25 I
-    'C#5:4 G#4:6 E#4:2',                                       # b26 V6
-    'R:12',                                                    # b27 vi
-    'R:12',                                                    # b28 V
-    'R:12',                                                    # b29 I6
-    'R:12',                                                    # b30 ii6
-    'R:4 C#5:8',                                               # b31 V7
-    'C#5:6 B4:2 C#5:4',                                        # b32 I
-    'R:12',                                                    # b33 I
-    'R:12',                                                    # b34 V6
-    'R:12',                                                    # b35
-    'R:12',                                                    # b36
-    'R:12',                                                    # b37
-    'R:12',                                                    # b38
-    'R:12',                                                    # b39
-    'R:12',                                                    # b40
-    'F#3:4 A#3:4 F#3:4',                                       # b41 I   (canon I returns, low and broad)
-    'G#3:12',                                                  # b42 V6
-    'R:12',                                                    # b43 vi
-    'R:12',                                                    # b44
-    'R:12',                                                    # b45
-    'R:12',                                                    # b46
-    'R:12',                                                    # b47
-    'R:12',                                                    # b48
-    'R:12',                                                    # b49
-    'R:12',                                                    # b50
-    'A#4:4 R:4 F#4:4',                                         # b51
-    'G#4:8 R:4',                                               # b52
-    'C#5:6 D#5:2 C#5:4',                                       # b53
-    'R:12',                                                    # b54
-    'R:12',                                                    # b55
-    'R:4 C#4:8',                                               # b56
-    'R:8 A#4:4',                                                 # b57
-    'R:12',                                                      # b58
-    'F#4:4 R:8',                                                 # b59
-    'G#4:4 R:8',                                                 # b60
-    'R:12',                                                      # b61
-    'R:12',                                                      # b62
-    'R:4 C#4:8',                                                 # b63
-    'R:9 C#3:3',                                                 # b64
-])
-CANON_SPAN['I'] = (9, 62)
-entry('Idx', 9, 'Canon I dux: subject')
-entry('Ico', 11, 'Canon I comes: subject at the unison')
-put('Sog', 9, [
-    'C#5:4 F#5:4 E#5:2 D#5:2',                                  # b9   a descant over the canon
-    'C#5:4 G#5:6 F#5:2',                                        # b10
-    'F#5:4 A#5:4 G#5:2 F#5:2',                                  # b11
-    'E#5:2 F#5:2 G#5:8',                                        # b12
-    'F#5:4 A#5:6 G#5:2~',                                       # b13
-    'G#5:4 E#5:2 F#5:2 D#5:4',                                  # b14
-    'E#5:6 F#5:2 G#5:2 E#5:2',                                  # b15
-    'F#5:4 C#5:4 A#4:2 B4:2',                                   # b16
-])
+canon('I', 'S', 'A', lambda s: s, 2, 3, 6, 'Canon I at the unison')
+entry('S', 3, 'Canon I dux: subject')
+entry('A', 5, 'Canon I comes: subject at the unison')
+put('A', 9, ['E#5:4 R:8'])
+# The tenor's first entry: the subject inverted (mirror F#<->C#), on C#4 over V7 - I; it ends on
+# B3, the tonic of the next statement.
+INV_BARS = [mirror(b, 'F#4', 'C#4') for b in SUBJ_BARS]      # C#4 D#4 E#4 F#4 A#4 G#4 | ...
+put('T', 9, INV_BARS)
+entry('T', 9, 'Tenor: subject inverted (on C#)', form='inversus')
 
 # =============================================================================================
-# Var. 3 (b17-24): Canon II, at the 2nd above, one bar apart (scalar quavers: Var. 6).
-put('Fund', 17, ['F#2:12', 'E#2:12', 'D#2:10 A#1:2', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
-put('IIdx', 17, subj(1) + [
-    'F#5:2 E#5:2 D#5:2 C#5:2 D#5:2 F#5:2',                     # b19 vi
-    'E#5:2 D#5:2 C#5:2 B4:2 C#5:2 D#5:2',                      # b20 V
-    'C#5:4 F#5:4 A#5:4',                                       # b21 I6
-    'F#5:2 D#5:2 B4:2 C#5:2 D#5:2 F#5:2',                      # b22 ii6
-    'E#5:2 D#5:2 C#5:2 B4:2 C#5:2 G#5:2~',                     # b23 V7
-    'G#5:2 F#5:2 E#5:2 D#5:2 C#5:2 D#5:2',                     # b24 I: the 9-8 that the comes needs
-    'F#5:2 G#5:2 A#5:2 G#5:2 F#5:2 G#5:2',                     # b25 I
-    'C#5:2 E#5:2 D#5:2 C#5:2 D#5:2 E#5:2',                     # b26 V6
-    'A#4:2 B4:2 C#5:2 B4:2 A#4:2 G#4:2',                       # b27 vi
-    'E#5:2 D#5:2 C#5:2 D#5:2 E#5:2 G#5:2',                     # b28 V
-    'C#6:4 B5:2 C#6:2 A#5:2 G#5:2',                            # b29 I6
-    'G#5:2 A#5:2 B5:2 A#5:2 G#5:2 F#5:2',                      # b30 ii6
-    'E#5:4 G#5:2 F#5:2 E#5:2 G#5:2~',                          # b31 V7
-    'G#5:2 F#5:2 E#5:2 D#5:2 C#5:2 D#5:2',                     # b32 I: 9-8
-    'R:12',                                                    # b33 I   (canon II breathes for canon IV)
-    'R:12',                                                    # b34 V6
-    'R:12',                                                    # b35 vi
-    'R:4 E#4:2 F#4:2 G#4:2 E#4:2',                             # b36 V   (returns, low)
-    'A#3:2 F#4:2 E#4:2 C#4:2 F#4:2 D#4:2',                     # b37 I6  (broken chords in the tenor)
-    'R:12',                                                    # b38 ii6
-    'C#4:4 B3:2 A#3:2 G#3:4',                                  # b39 V7
-    'R:12',                                                    # b40 I
-    'R:12',                                                    # b41
-    'R:12',                                                    # b42
-    'D#4:2 E#4:2 F#4:2 E#4:2 D#4:2 C#4:2',                     # b43 vi
-    'R:12',                                                    # b44 V
-    'C#6:2 B5:2 A#5:2 G#5:2 F#5:2 G#5:2',                      # b45 I6
-    'F#5:2 E#5:2 D#5:2 F#5:2 E#5:2 D#5:2',                     # b46 ii6
-    'C#5:2 B4:2 G#4:2 B4:2 C#5:2 D#5:2',                       # b47 V7
-    'R:12',                                                    # b48 I
-    'R:12',                                                    # b49 I
-    'R:4 G#4:2 A#4:2 B4:2 C#5:2',                              # b50 V6
-    'D#5:2 C#5:2 D#5:2 E#5:2 F#5:4',                           # b51 vi
-    'R:12',                                                    # b52 V
-    'R:12',                                                    # b53 I6
-    'D#5:4 E#5:2 F#5:2 D#5:4',                                 # b54 ii6
-    'B4:2 C#5:2 B4:2 A#4:2 G#4:4',                             # b55 V7
-    'R:12',                                                    # b56 I    (canon II: 8 -> 1 rests)
-    'R:12',                                                      # b57
+# Statement 2 (bars 11-18), B major: Canon II at the second below, one bar apart.
+# Dux soprano (subject on C#5, over V6), comes alto (on B4, over vi); Var. 6's flowing quavers.
+put('B', 11, ['B2:12', 'A#2:12', 'G#2:8 D#3:4', 'F#2:12', 'D#2:12', 'E2:12', 'F#2:12', 'B1:12'])
+put('T', 11, [
+    'B3:2 D#4:2 F#4:6 E4:2~',                                    # b11 I    (alone with the bass)
+    'E4:4 C#4:4 A#3:2 C#4:2',                                    # b12 V6/5 (under the dux)
+    'B3:4 R:8',                                                  # b13 vi   (makes room for the comes)
+    'R:12', 'R:12', 'R:12',                                      # b14-16
+    'A#3:4 F#3:4 A#3:4',                                         # b17 V7
+    'B3:4 R:8',                                                  # b18 I
 ])
-CANON_SPAN['II'] = (17, 57)      # (continued in the summit below)
-entry('IIdx', 17, 'Canon II dux: subject')
-entry('IIco', 18, 'Canon II comes: subject at the 2nd above')
+put('S', 12, [shift(tr(b, 5, 3), 1, 'B') for b in SUBJ_BARS] + [
+    'C#5:4 E5:2 D#5:2 C#5:2 E5:2',                               # b14 V    (I6 in the comes)
+    'D#5:4 F#5:2 E5:2 D#5:2 F#5:2',                              # b15 I6   (ii6)
+    'G#5:6 F#5:2 G#5:2 A#5:2',                                   # b16 IV   free from here
+    'B5:4 A#5:2 G#5:2 F#5:2 E5:2',                               # b17 V7   (appoggiatura)
+    'D#5:4 R:8',                                                 # b18 I
+])
+canon('II', 'S', 'A', lambda s: shift(s, -1, 'B'), 1, 12, 15, 'Canon II at the second below')
+entry('S', 12, 'Canon II dux: subject on C#')
+entry('A', 13, 'Canon II comes: subject a second below, on B')
+put('A', 17, ['C#5:4 E5:4 C#5:4', 'B4:4 R:8'])
+
 
 # =============================================================================================
-# Var. 4 (b25-32): Canon III, at the 3rd above, two bars apart, entering in the tenor.
-put('Fund', 25, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
-put('IIIdx', 25, subj(-1) + [
-    'D#4:2 E#4:1 F#4:1 G#4:2 A#4:2 G#4:2 F#4:2',               # b27 vi   (Var. 9: gentle semiquaver turns)
-    'E#4:2 F#4:1 G#4:1 A#4:2 G#4:2 F#4:2 E#4:2',               # b28 V
-    'C#4:2 D#4:1 E#4:1 F#4:2 E#4:2 C#4:4',                     # b29 I6
-    'B3:2 C#4:1 D#4:1 E#4:2 F#4:2 D#4:2 B3:2',                 # b30 ii6
-    'B3:2 C#4:1 D#4:1 E#4:2 D#4:2 C#4:2 B3:2',                 # b31 V7
-    'A#3:2 B3:1 C#4:1 D#4:2 C#4:2 A#3:4',                      # b32 I
-    'R:12',                                                    # b33 I
-    'R:12',                                                    # b34 V6
-    'F#4:2 G#4:1 A#4:1 B4:2 A#4:2 G#4:2 F#4:2',               # b35 vi  (above the soggetto's subject)
-    'E#4:2 D#4:1 C#4:1 D#4:2 E#4:2 G#4:4',                     # b36 V
-    'R:12',                                                    # b37 I6
-    'D#5:4 F#5:2 E#5:1 D#5:1 C#5:2 D#5:2',                     # b38 ii6
-    'R:12',                                                    # b39 V7
-    'R:12',                                                    # b40 I
-    'R:12',                                                    # b41
-    'R:12',                                                    # b42
-    'R:12',                                                    # b43
-    'R:12',                                                    # b44
-    'R:12',                                                    # b45
-    'B3:4 A#3:2 G#3:2 F#3:4',                                  # b46 ii6  (returns in the tenor)
-    'R:12',                                                    # b47 V7
-    'R:12',                                                    # b48 I
-    'R:12', 'R:12', 'R:12',                                    # b49-51
-    'R:8 E#4:4',                                               # b52 V
-    'A#3:4 C#4:2 B3:2 R:4',                                    # b53 I6
-    'D#4:8 C#4:2 B3:2',                                        # b54 ii6
-    'R:12',                                                    # b55 V7
-    'R:12',                                                    # b56 I
-    'F#3:2 A#3:2 C#4:2 B3:1 A#3:1 G#3:2 A#3:2',                  # b57
-    'G#3:1 A#3:1 G#3:1 E#3:1 G#3:2 B3:2 C#4:1 B3:1 A#3:1 G#3:1', # b58
-    'F#3:1 E#3:1 D#3:1 E#3:1 F#3:2 A#3:2 F#3:2 D#3:2',           # b59
-    'R:2 E#3:1 F#3:1 G#3:2 B3:2 A#3:2 G#3:2',                    # b60
-    'R:12',                                                      # b61
-    'D#3:4 F#3:4 D#3:4',                                         # b62
-    'G#3:4 C#3:8',                                               # b63
-    'R:4 C#4:8',                                                 # b64
+# Statement 3 (bars 19-26), G-sharp minor: Canon III at the third below, two bars apart.
+# The ground in the minor descends through the natural seventh (G# F# E D#: the lament tetrachord,
+# i - v6 - VI - V).  A trio: dux soprano (subject on B4, the mediant), comes alto (on G#4, over VI);
+# the tenor rests.  The dux breathes as the comes enters; then a sigh.
+put('B', 19, ['G#2:12', 'F#2:12', 'E2:12', 'D#2:12', 'B1:12', 'C#2:12', 'D#2:12', 'G#2:12'])
+put('S', 19, [tr(b, 5, 3) for b in SUBJ_BARS] + [
+    'R:4 B4:2 A#4:2 G#4:2 A#4:2',                                # b21 VI   (i6 in the comes)
+    'D#5:4 R:8',                                                 # b22 V    (iv7)
+    'B5:6 A#5:2 G#5:2 F#5:2',                                    # b23 i6   free from here
+    'E5:4 G#5:4 B5:4',                                           # b24 iv7
+    'A#5:4 F##5:4 D#5:2 C#5:2',                                  # b25 V7
+    'B#4:12',                                                    # b26 I    (Picardy third)
 ])
-CANON_SPAN['III'] = (25, 62)
-entry('IIIdx', 25, 'Canon III dux: subject (tenor)')
-entry('IIIco', 27, 'Canon III comes: subject at the 3rd above')
+canon('III', 'S', 'A', lambda s: shift(s, -2, 'G#m'), 2, 19, 22, 'Canon III at the third below',
+      ficta=[(22, 'F#4', 'F##4')])
+entry('S', 19, 'Canon III dux: subject on B (mediant)')
+entry('A', 21, 'Canon III comes: subject a third below, on G#')
+put('A', 25, ['A#4:6 B4:2 A#4:2 F##4:2', 'G#4:12'])
 
 # =============================================================================================
-# Var. 5 (b33-40): Canon IV, at the 4th below by inversion, four bars apart (the tonal mirror
-# F#<->C#, as in Var. 12), entering on top while canon II breathes.
-put('IVdx', 33, subj(1) + [
-    'F#5:8 G#5:4~',                                            # b35 vi   (the tie becomes the comes's 4-3)
-    'G#5:4 F#5:2 E#5:2 C#5:2 E#5:2',                           # b36 V
-    'A#5:6 C#6:2 F#6:2 C#6:2',                                 # b37 I6   (a descant over its own mirror)
-    'B5:4 D#6:4 B5:4',                                         # b38 ii6
-    'G#5:6 F#5:2 E#5:4',                                       # b39 V7
-    'R:12',                                                    # b40 I
-    'R:12',                                                    # b41 I
-    'G#5:4 C#6:8',                                             # b42 V6
-    'F#6:12',                                                  # b43 vi
-    'R:12',                                                    # b44 V
-    'F#6:4 C#6:2 A#5:2 C#6:4',                                 # b45 I6
-    'R:12',                                                    # b46 ii6
-    'C#6:4 B5:4 A#5:4',                                        # b47 V7
-    'F#5:6 G#5:2 F#5:2 E#5:2',                                 # b48 I
-    'R:12', 'R:12', 'R:12', 'R:12',                            # b49-52
-    'R:4 F#5:4 C#6:4',                                         # b53 I6
-    'B5:4 R:8',                                                # b54 ii6
-    'R:8 C#6:4',                                               # b55 V7
-    'R:12',                                                    # b56 I
-    'F#6:3 E#6:1 D#6:3 C#6:1 C#6:4',                             # b57
-    'R:8 C#6:4',                                                 # b58
-    'R:12',                                                 # b59
-    'R:8 C#6:4',                                                 # b60
-    'R:8 F#6:4',                                                 # b61
-    'R:12',                                                      # b62
-    'C#5:6 B4:2 C#5:4',                                          # b63
-    'A#4:4 F#4:4 R:4',                                           # b64
-    'F#4:4 A#4:4 C#5:4',                                         # b65
-    'C#5:4 G#4:8',                                               # b66
-    'D#5:4 F#5:4 D#5:4',                                         # b67
-    'R:8 C#5:4',                                                 # b68
-    'C#5:4 A#4:4 C#5:4',                                         # b69
-    'D#5:8 B4:4',                                                # b70
-    'R:4 G#4:8',                                                 # b71
-    'A#4:8 C#5:4',                                               # b72
-    'C#5:8 F#5:4',                                               # b73
-    'R:12',                                                      # b74
-    'D#5:8 F#5:4',                                               # b75
-    'C#5:8 R:4',                                                 # b76
+# Statement 4 (bars 27-34), C-sharp major: Canon IV at the fourth below, by inversion, one bar
+# apart (the tonal mirror C#<->G#, as in Var. 12).  The alto announces the subject (on E#), then the
+# dux enters on top, the comes a bar later in the tenor, rising where the dux falls.
+put('B', 27, ['C#3:12', 'B#2:12', 'A#2:12', 'G#2:4 R:8', 'E#2:4 C#2:8', 'F#2:12', 'G#2:12', 'C#2:12'])
+put('A', 27, [shift(tr(b, -5, -3), 2, 'C#') for b in SUBJ_MUT_BARS] + [
+    'E#4:4 C#4:4 R:4',                                           # b29 vi   (makes room)
 ])
-CANON_SPAN['IV'] = (33, 60)
-put('Sog', 35, subj(-1) + ['R:12', 'R:12', 'R:12', 'R:4 A#4:4 C#5:4',
-    'C#5:4 B4:2 A#4:2 G#4:2 F#4:2',                            # b41
-    'B4:4 A#4:2 G#4:2 C#5:4',                                  # b42
-    'G#4:2 F#4:2 D#4:4 F#4:4',                                 # b43
-    'C#4:8 D#4:4',                                             # b44
-    'A#3:6 B3:2 C#4:4',                                        # b45
-    'R:12', 'R:12',                                            # b46-47
-    'R:4 A#3:4 C#4:4',                                         # b48
-    'A#3:2 F#3:2 A#3:2 C#4:2 D#4:2 C#4:2',                     # b49 I    (V7: under canon VI's entry)
-    'G#3:4 C#4:2 B3:2 G#3:4',                                  # b50 V6
-    'A#3:2 B3:2 D#4:2 C#4:2 A#3:2 F#3:2',                      # b51 vi
-    'A#3:4 G#3:4 C#4:4',                                       # b52 V
-    'F#3:8 A#3:4',                                             # b53 I6
-    'F#3:6 G#3:2 A#3:2 B3:2',                                  # b54 ii6
-    'G#3:6 A#3:2 B3:4',                                        # b55 V7
-    'A#3:4 F#3:8',                                             # b56 I
-    'C#3:4 A#2:8',                                               # b57
-    'C#3:8 G#2:4',                                               # b58
-    'D#3:4 A#2:8',                                               # b59
-    'C#3:4 G#2:8',                                               # b60
-    'F#2:4 C#3:8',                                               # b61
-    'B2:4 F#2:8',                                                # b62
-    'C#3:4 G#2:8',                                               # b63
-    'A#2:4 C#3:8',                                               # b64
-    'C#3:8 A#2:4',                                               # b65
-    'G#2:8 C#3:4',                                               # b66
-    'A#2:4 D#3:8',                                               # b67
-    'R:4 G#2:8',                                                 # b68
-    'R:4 C#3:8',                                                 # b69
-    'R:4 G#2:4 B2:4',                                                # b70
-    'G#2:4 C#3:8',                                               # b71
-    'C#3:4 A#2:8',                                               # b72
-    'A#2:4 C#3:8',                                               # b73
-    'C#3:4 G#2:8',                                               # b74
-    'D#3:8 B2:4',                                                # b75
-    'G#2:8 C#3:4',                                               # b76
-    'F#3:4 A#2:8',                                               # b77
-    'D#3:4 B2:8',                                                # b78
-    'G#2:12',                                                    # b79
-    'A#2:12',                                                    # b80
+entry('A', 27, 'Alto: subject on E# (C# major)')
+put('S', 29, [tr(b, 7, 4) for b in SUBJ_BARS] + [
+    'G#4:10 F#4:1 G#4:1',                                        # b31 I6-I (IV in the comes)
+    'A#4:2 B#4:2 C#5:4 A#4:4',                                   # b32 IV   (V7)
+    'B#4:4 A#4:2 G#4:2 A#4:2 G#4:2',                             # b33 V7   (I)
 ])
-entry('Sog', 35, 'Subject (soggetto returns, tenor)')
-entry('IVdx', 33, 'Canon IV dux: subject')
-entry('IVco', 37, 'Canon IV comes: subject inverted, a 4th below')
+canon('IV', 'S', 'T', lambda s: mirror(s, 'C#5', 'G#3', 'C#'), 1, 29, 33,
+      'Canon IV at the fourth below, by inversion')
+entry('S', 29, 'Canon IV dux: subject on C#')
+entry('T', 30, 'Canon IV comes: subject inverted, on G# (a fourth below)', form='inversus')
+
 
 # =============================================================================================
-# Var. 6 (b41-48): Canon V, at the 5th below by inversion (mirror F#<->B), three bars apart
-# (Var. 15's sighs).
-put('Vdx', 41, subj(1) + [
-    'A#5:2 G#5:2 F#5:4 F#5:2 E#5:2',                           # b43 vi   (sighs)
-    'C#6:6 B5:2 A#5:2 G#5:2',                                  # b44 V
-    'R:12',                                                    # b45 I6   (canon V breathes in bars 5 and 8)
-    'R:12',                                                    # b46 ii6
-    'R:12',                                                    # b47 V7 (clears the register for canon VI)
-    'R:12',                                                    # b48 I
-    'R:12', 'R:12', 'R:12', 'R:12', 'R:12',                    # b49-53
-    'R:8 B4:4',                                                # b54 ii6
-    'R:12',                                                    # b55 V7
-    'R:12',                                                    # b56 I
-    'R:4 C#6:2 A#5:2 R:4',                                       # b57
-    'R:12',                                                      # b58
-    'R:4 A#5:2 G#5:2 R:4',                                       # b59
-    'R:4 G#4:2 F#4:2 R:4',                                       # b60
-    'R:8 A#4:4',                                                 # b61
-    'R:12',                                                      # b62
-    'R:4 G#4:2 F#4:2 G#4:4',                                     # b63
-    'R:12',                                                      # b64
-])
-CANON_SPAN['V'] = (41, 60)
-entry('Vdx', 41, 'Canon V dux: subject')
-entry('Vco', 44, 'Canon V comes: subject inverted, a 5th below')
+# Link (bars 35-38): the bass's own entry, the subject on C# (the dominant of F#), then a dominant
+# pedal with the head in stretto above it - the retransition.
+put('B', 35, ['C#3:3 B2:1 A#2:3 G#2:1 E#2:3 F#2:1', 'G#2:2 C#3:2 B2:1 D#3:1 G#3:2 F#3:1 E#3:1 D#3:2',
+              'C#3:12', 'C#3:8 C#2:4'])
+entry('B', 35, 'Bass: subject on C# (retransition)')
+put('S', 34, ['R:12',
+              'E#5:4 F#5:4 G#5:4',                               # b35 V - I6 - V6/5
+              'B5:4 G#5:4 A#5:2 B5:2',                           # b36 ii - ii6 - I
+              'G#5:3 F#5:1 E#5:3 D#5:1 B4:3 C#5:1',              # b37 head on G#, over the pedal
+              'B4:4 C#5:4 E#5:4'])                               # b38 V7
+put('A', 34, ['R:12',
+              'C#5:4 C#5:4 B4:4',                                # b35
+              'G#4:4 D#5:4 A#4:4',                               # b36
+              'R:4 B4:3 A#4:1 G#4:3 F#4:1',                      # b37 head on B, a beat later
+              'D#4:3 E#4:1 R:8'])                                # b38
+put('T', 35, ['R:12', 'R:12',
+              'R:8 E#4:3 D#4:1',                                 # b37 head on E#, a beat later still
+              'C#4:3 B3:1 G#3:3 A#3:1 R:4'])                     # b38
 
 # =============================================================================================
-# Variation 7 (bars 49-56): thirteen voices.  Canon VI (at the sixth below, eight bars apart, so
-# the comes plays every dux bar over the same bass note) enters at the top.
-put('VIdx', 49, subj(1) + [
-    'F#5:8 D#6:4',                                            # b51 vi   (the dux turns lyrical: its
-    'G#5:8 E#5:4',                                       # b52 V     suspensions return a 6th lower
-    'F#5:4 A#5:8~',                                            # b53 I6    in the middle of the summit)
-    'A#5:2 G#5:2 B5:4 D#6:4',                                  # b54 ii6
-    'C#6:6 B5:2 G#5:4',                                        # b55 V7
-    'A#5:8 F#5:4',                                             # b56 I
-    'A#5:4 F#6:6 E#6:2',                                         # b57
-    'C#6:4 B5:2 C#6:2 D#6:2 E#6:2',                              # b58
-    'F#6:12',                                                    # b59
-    'C#6:8 E#6:4',                                               # b60
-    'C#6:6 D#6:2 C#6:4',                                         # b61
-    'F#6:8 E#6:2 D#6:2',                                         # b62
-    'C#6:4 B5:2 A#5:2 G#5:4',                                    # b63
-    'F#5:12',                                                    # b64
+# Statement 5 (bars 39-46), F-sharp major, the return: Canon V at the fifth below, by inversion,
+# two bars apart.  The dux (alto) brings the subject back in the tonic, on A#; the comes (tenor)
+# answers with the inversion on D# (mirror A#<->D#, F# fixed).
+put('B', 39, ['F#2:4 F#3:8', 'E#3:12', 'D#3:12', 'C#3:12', 'A#2:12', 'B2:12', 'C#3:12', 'F#2:12'])
+put('A', 39, [shift(b, 2) for b in SUBJ_BARS] + [
+    'F#4:2 A#4:2 F#5:4 D#5:4',                                   # b41 vi   (I6 in the comes)
+    'E#5:2 D#5:2 C#5:2 B4:2 C#5:4',                              # b42 V    (ii6)
+    'C#5:10 D#5:1 C#5:1',                                        # b43 I6   (V7)
+    'B4:4 F#4:4 D#4:2 R:2',                                      # b44 IV   (I)
+    'E#4:4 G#4:4 E#4:4',                                         # b45 V7   free
+    'F#4:4 R:8',                                                 # b46 I
 ])
-CANON_SPAN['VI'] = (49, 60)
-entry('VIdx', 49, 'Canon VI dux: subject')
-entry('VIco', 57, 'Canon VI comes: subject at the 6th below')
+canon('V', 'A', 'T', lambda s: mirror(s, 'A#4', 'D#4'), 2, 39, 44,
+      'Canon V at the fifth below, by inversion')
+entry('A', 39, 'Canon V dux: subject on A# (the return)')
+entry('T', 41, 'Canon V comes: subject inverted, on D# (a fifth below)', form='inversus')
+put('S', 39, [
+    'F#5:12',                                                    # b39 I
+    'G#5:6 F#5:2 E#5:4',                                         # b40 V6
+    'F#5:4 A#5:8',                                               # b41 vi
+    'B5:6 G#5:2 E#5:4',                                          # b42 V
+    'F#5:4 A#5:8',                                               # b43 I6
+    'F#5:4 G#5:4 A#5:2 G#5:2',                                   # b44 IV
+    'E#5:6 F#5:2 G#5:4',                                         # b45 V7
+    'F#5:12',                                                    # b46 I
+])
+
 
 # =============================================================================================
-# Variation 8 (bars 57-64): the summit.  Fourteen real voices; every canon runs over the ground
-# while the subject enters in stretto, one bar apart: canon VI's comes on A-sharp (bar 57),
-# canon II's dux on G-sharp (58), canon II's comes on A-sharp (59), ...
-put('IIdx', 58, [shift(b, 1) for b in subj(1)] + [
-    'R:12',                                                      # b60
-    'F#5:4 E#5:2 F#5:2 A#5:4',                                   # b61
-    'F#5:4 B5:4 D#5:4',                                          # b62
-    'B5:4 G#5:4 C#6:4',                                          # b63
-    'R:12',                                                      # b64
+# Statement 6 (bars 47-54), F-sharp minor, Adagio: Canon VI at the sixth above, two bars apart
+# (the Goldberg set's minor variations, 15, 21 and 25, are in the tonic minor).  The ground descends
+# through the lament tetrachord F# E D C#.  Dux alto (subject on A, the mediant), comes soprano a
+# sixth higher (on F#); after the subject the dux only holds long notes, so the comes sings alone
+# above it.  The tenor is a free low line.  The last bar turns to F-sharp major and the tenor's
+# upbeat starts the quodlibet.
+put('B', 47, ['F#2:12', 'E2:12', 'D2:12', 'C#2:12', 'A1:12', 'B1:12', 'C#2:12', 'F#2:12'])
+put('A', 47, [shift(modal(b, 'F#', 'F#m'), 2, 'F#m') for b in SUBJ_BARS] + [
+    'A4:8 R:4',                                                  # b49 VI   (i6 in the comes)
+    'C#4:12',                                                    # b50 V    (iv7)
+    'C#4:6 D4:2 E4:4',                                           # b51 i6   free from here
+    'D4:8 F#4:4',                                                # b52 iv7
+    'C#4:4 E#4:8',                                               # b53 V7
+    'F#4:6 R:6',                                                 # b54 I
 ])
-CANON_SPAN['II'] = (17, 63)
-entry('IIdx', 58, 'Stretto: canon II dux, subject on G#')
-entry('IIco', 59, 'Stretto: canon II comes, subject on A#')
+canon('VI', 'A', 'S', lambda s: shift(s, 5, 'F#m'), 2, 47, 50, 'Canon VI at the sixth above',
+      ficta=[(50, 'E5', 'E#5')])
+entry('A', 47, 'Canon VI dux: subject on A (F-sharp minor)')
+entry('S', 49, 'Canon VI comes: subject a sixth above, on F#')
+put('S', 53, ['G#4:6 B4:2 A4:2 G#4:2', 'A#4:6 R:6'])
+put('T', 47, [
+    'R:12',                                                      # b47 i
+    'R:4 B3:8',                                                  # b48 v7
+    'F#3:12',                                                    # b49 VI
+    'E#3:8 G#3:4',                                               # b50 V
+    'A3:6 G#3:2 F#3:4',                                          # b51 i6
+    'D3:4 F#3:4 B3:4',                                           # b52 iv7
+    'G#3:4 B3:8',                                                # b53 V7
+    'A#3:6 R:3 C#3:3',                                           # b54 I    (upbeat of "Ich bin")
+])
+
 
 # =============================================================================================
-# Variations 9-10 (bars 65-80): Quodlibet, after Var. 30 of BWV 988.  Bach's two folk songs come
-# in over the ground in 3:2 augmentation (his 4/4 bar carries two ground notes; ours carries one, so
-# his quavers become dotted quavers and the tunes swing in 6/8 against the 3/4).  They supply the
-# two canons the tower has no room for:
-#   canon at the octave - "Ich bin so lang nicht bei dir gewest" (Bach's tenor tune), the follower
-#     two bars behind, as in Var. 30;
-#   canon at the seventh - "Kraut und Ruben haben mich vertrieben", the follower a seventh below,
-#     one bar behind.
+# Statement 7 (bars 55-62), F-sharp major: Quodlibet, after Var. 30 of BWV 988.
+# Bach's two folk songs, in his rhythm stretched 3:2 (his 4/4 bar carries two ground notes, ours
+# one: his quaver becomes a dotted quaver, so the tunes swing in 6/8 against the 3/4 ground):
+#   "Ich bin so lang nicht bei dir g'west" - tenor, from the upbeat, and in canon at the octave above
+#      in the alto two bars (one of Bach's bars) later, as Bach's tenor and soprano have it;
+#   "Kraut und Ruben haben mich vertrieben" - its first phrase in the soprano on the tonic (Bach's
+#      second soprano, bar 2, with his flat seventh), its second phrase (Bach's tenor, bars 7-8) in
+#      the bass, which here leaves the ground: three of its four downbeats are the ground's notes.
+# The fugue subject joins them at the start, in the soprano over "Ich bin".
 ICH = ['F#3:3 G#3:3 A#3:3 B3:3', 'C#4:3 B3:3/2 A#3:3/2 G#3:3 F#3:3/2 G#3:3/2',
-       'A#3:3 G#3:3 F#3:6~', 'F#3:6 E#3:3 D#3:3/2 E#3:3/2']           # + arrival on F#
-KRAUT2 = ['A#5:3 B5:3 C#6:3 A#5:3', 'B5:3 A#5:3 G#5:3 F#5:3', 'E#5:3 F#5:3 G#5:3 E#5:3']  # + F#
-KRAUT1 = ['C#6:6 C#6:6', 'D#6:6 D#6:6', 'C#6:3 D#6:3 C#6:3 B5:3', 'A#5:3 G#5:3 F#5:6']
+       'A#3:3 G#3:3 F#3:6~', 'F#3:6 E#3:3 D#3:3/2 E#3:3/2']
+KRAUT1 = ['F#5:6 F#5:6', 'G#5:6 G#5:6', 'F#5:3 G#5:3 F#5:3 E5:3', 'D#5:3 C#5:3 B4:3 A#4:3']
+KRAUT2 = ['A#2:3 B2:3 C#3:3 A#2:3', 'B2:3 A#2:3 G#2:3 F#2:3', 'E#2:3 F#2:3 G#2:3 E#2:3', 'F#2:12']
+put('B', 55, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12'] + KRAUT2)
+entry('B', 59, 'Quodlibet: Kraut und Ruben, second phrase (the ground becomes the tune)', n=4)
+put('T', 55, ICH + [
+    'F#3:6 R:6',                                                 # b59 the tune's last note
+    'R:12',                                                      # b60
+    'C#4:6 B3:6',                                                # b61 V7
+    'A#3:12',                                                    # b62 I
+])
+entry('T', 54, "Quodlibet: Ich bin so lang nicht bei dir g'west", beat=Fr(9, 4), n=5)
+put('A', 56, ['R:9 C#4:3'])                                    # the follower's upbeat (= T's b54)
+canon('8ve', 'T', 'A', lambda s: shift(s, 7), 2, 55, 58, "Ich bin so lang, in canon at the octave")
+entry('A', 56, "Ich bin so lang, canon at the octave above", beat=Fr(9, 4), n=5)
+put('A', 61, ['F#4:6 E#4:6', 'F#4:12'])                       # b61 the follower's last note as a 9-8
+put('S', 55, [shift(b, 7) for b in SUBJ_BARS] + KRAUT1 + [
+    'B4:3 C#5:3 D#5:3 E#5:3',                                    # b61 V
+    'F#5:12',                                                    # b62 I
+])
+entry('S', 55, 'Quodlibet: the subject over Ich bin')
+entry('S', 57, 'Quodlibet: Kraut und Ruben, first phrase', n=4)
 
-put('Idx', 65, ICH + [                                    # (upbeat C#3 at the end of bar 64)
-    'F#3:6 R:6',                                               # b69
-    'R:12',                                                      # b70
-    'R:12',                                                      # b71
-    'R:12',                                                 # b72
-])
-put('Ico', 66, ['R:9 C#4:3'] + [shift(b, 7) for b in ICH] + [
-    'F#4:6 E#4:6',                                             # b71 (arrival over V7: 4-3)
-])
-entry('Idx', 64, 'Quodlibet: Ich bin so lang nicht bei dir gewest', beat=Fr(9, 4), n=5)
-entry('Ico', 66, 'Canon at the octave: Ich bin so lang', beat=Fr(9, 4), n=5)
-put('IIdx', 69, KRAUT2 + [
-    'F#5:6 R:6',                                               # b72
-])
-put('IIco', 70, [shift(b, -6) for b in KRAUT2] + [
-    'A#4:6 R:6',                                               # b73 (free close)
-])
-entry('IIdx', 69, 'Quodlibet: Kraut und Ruben', n=4)
-entry('IIco', 70, 'Canon at the 7th below: Kraut und Ruben', n=3)
-
-# Variation 10 (bars 73-80): the subject (on A-sharp, as canon VI's comes first sang it) against
-# "Ich bin" in canon at the octave again; then all three tunes at once over the last four ground
-# notes - Kraut und Ruben's two phrases together with the tail of "Ich bin" - and the tutti close.
-put('IIdx', 73, [shift(b, 2) for b in subj(1)] + [
-])
-entry('IIdx', 73, 'Quodlibet: subject on A# against Ich bin')
-put('Ico', 72, ['R:9 C#4:3'] + [shift(b, 7) for b in ICH] + [
-    'F#4:6 R:6',                                               # b77
-])
-entry('Ico', 72, 'Ich bin so lang (again)', beat=Fr(9, 4), n=5)
-put('Idx', 74, ['R:9 C#3:3'] + ICH + [
-    'F#3:6 E#3:3 G#3:3',                                       # b79
-    'F#3:12',                                                  # b80
-])
-entry('Idx', 74, 'Canon at the octave below: Ich bin so lang', beat=Fr(9, 4), n=5)
-put('VIdx', 77, KRAUT1 + [
-])
-entry('VIdx', 77, 'Kraut und Ruben (first phrase)', n=4)
-put('IIIdx', 77, [shift(b, -7) for b in KRAUT2] + [
-    'F#4:12',                                                  # b80
-])
-entry('IIIdx', 77, 'Kraut und Ruben (second phrase), with it', n=4)
-
-# The close: canon III's pair and the soggetto carry the last bars; the voices that have fallen
-# silent re-enter on the final chord, so that it sounds in fourteen real parts.
-put('IIIco', 78, ['R:4 B3:8', 'B3:4 C#4:8', 'C#4:12'])
-put('Vco', 64, ['R:4 D#4:2 C#4:2 R:4'])                  # canon V's comes, free: a last sigh
-for _v, _p in (('Ico', 'C#3'), ('Vco', 'A#3'), ('IVco', 'A#4'), ('IVdx', 'C#5'), ('VIco', 'C#6'),
-               ('Vdx', 'F#6'), ('IIdx', 'A#6')):
-    put(_v, 80, [f'{_p}:12'])
-put('IIco', 80, ['R:4 A#5:8'])
-
-# ---- fundamentum for the rest (plain ground; ornamented later where the texture asks for it)
-put('Fund', 33, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
-put('Fund', 41, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:8 B1:4', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
-for _b in (49, 57, 65, 73):
-    put('Fund', _b, ['F#2:12', 'E#2:12', 'D#2:12', 'C#2:12', 'A#1:12', 'B1:12', 'C#2:12', 'F#2:12'])
 
 # =============================================================================================
 # Assembly
 
-def comes_bars(c, nbars):
-    num, _, f, d = CANON[c]
-    dx, co = c + 'dx', c + 'co'
-    a, z = CANON_SPAN.get(c, (None, None))
-    out = {}
-    if a is None:
-        return out
-    z = min(z, CANON_END.get(c, z))
-    for b in range(a, z + 1):
-        s = LINES[dx].get(b, f'R:{BAR}')
-        if b == z:
-            s = s.replace('~', '')
-        out[b + d] = f(s)
-    for b, s in COMES_FREE.get(c, {}).items():
-        if b in out:
-            raise ValueError(f'{co}: free bar {b} inside the canon')
-        out[b] = s
-    return out
-
-
-def all_lines(nbars):
+def all_lines():
     lines = {k: dict(LINES[k]) for k in KEYS}
-    for c, *_ in CANONS:
-        for b, s in comes_bars(c, nbars).items():
-            if b in lines[c + 'co']:
-                raise ValueError(f'{c}co: bar {b} both written and copied')
-            lines[c + 'co'][b] = s
+    for c in CANONS:
+        for b, s in comes_bars(c).items():
+            if b in lines[c['comes']]:
+                raise ValueError(f"{c['comes']}: bar {b} both written and copied")
+            lines[c['comes']][b] = s
     return lines
 
 
-def bars_of(lines, nbars):
-    out = {}
+def build(path=None):
+    lines = all_lines()
+    nbars = max(max(v) for v in lines.values() if v)
+    bars = {}
     for k in KEYS:
         seq = []
         for b in range(1, nbars + 1):
@@ -623,35 +405,19 @@ def bars_of(lines, nbars):
             if dur16(s) != BAR:
                 raise ValueError(f'{k} bar {b}: {dur16(s)} sixteenths: {s}')
             seq.append(s)
-        out[k] = seq
-    return out
-
-
-def nbars_written():
-    lines = all_lines(999)
-    return max(max(v) for v in lines.values() if v)
-
-
-def build(path=None, nbars=None):
-    nbars = nbars or nbars_written()
-    lines = all_lines(nbars)
-    bars = bars_of(lines, nbars)
+        bars[NAME[k]] = seq
     meta = {'title': 'The Well-Tempered clAIvier',
-            'subtitle': 'Fugue XIII in F-sharp major, fourteen voices: Fuga canonica sopra il fondamento di Goldberg',
-            'composer': 'Claude / Sam (ground: J. S. Bach, BWV 988 and BWV 1087)',
-            'instrument': 'Fourteen keyboards (open score)',
+            'subtitle': 'Fugue XIII in F-sharp major (a 4): Fuga canonica sopra il fondamento di Goldberg',
+            'composer': 'Claude / Sam (ground and folk songs after J. S. Bach, BWV 988)',
+            'instrument': 'Keyboard (four voices)',
             'key': 'F#', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
-            # broadens into the summit (bars 55-64), a tempo for the quodlibet, broadens at the end
-            'tempo_map': [[162, BPM], [168, 60, 'ramp'], [189, 60], [192, 72, 'ramp'],
-                          [228, 72], [237, 52, 'ramp']],
-            'tempo_text': 'Allegretto, con brio', 'movement_number': 13, 'piece_type': 'fugue',
+            'tempo_text': 'Allegretto', 'movement_number': 13, 'piece_type': 'fugue',
             'edition': 'third'}
-    voices = [(name, abbr, clef, 62) for k, name, abbr, clef in VOICES]
-    named = {VOICES[KEYS.index(k)][1]: bars[k] for k in KEYS}
-    ents = [(VOICES[KEYS.index(v)][1], b, o, l, n) for v, b, o, l, n in ENTRIES]
-    return W.build_score(path or HERE / 'fugue.json', meta, voices, named, entries=ents, subject=SUBJECT)
+    voices = [(n, a, c, v) for k, n, a, c, v in VOICES]
+    ents = [(NAME[e[0]],) + tuple(e[1:]) for e in ENTRIES]
+    return W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=ents, subject=SUBJECT)
 
 
 if __name__ == '__main__':
-    d = build()
-    print('built', HERE / 'fugue.json', nbars_written(), 'bars')
+    build()
+    print('built', HERE / 'fugue.json')

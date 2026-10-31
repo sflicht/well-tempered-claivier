@@ -263,7 +263,7 @@
    ]
   },
   {
-   "name": "Pair XV \u00b7 G major (new, sixteen voices)",
+   "name": "Pair XV \u00b7 G major (new, four voices)",
    "pieces": [
     {
      "id": "prelude-15",
@@ -274,10 +274,10 @@
     },
     {
      "id": "fugue-15",
-     "title": "Fugue XV \u00b7 on 'Vom Himmel hoch' (16 voices)",
+     "title": "Fugue XV \u00b7 on 'Vom Himmel hoch' (4 voices)",
      "score": "cycle/15-g-major/fugue.json",
      "tag": "new",
-     "notes": "Bach's Canonic Variations on 'Vom Himmel hoch' (BWV 769) end with all four lines of the chorale sounding at once. This fugue is built toward that moment with four choirs of four. Each chorale line becomes a quick subject for one choir: a dotted skip ending in a peal of bells, a fanfare, a siciliano, and falling-octave bell rounds with the first change of plain hunt. Each line is also sung as a long-note cantus, which moves down from soprano to bass through the choirs.\n\nThe summit (bars 39-51) brings the four lines in stretto, all sounding together in bars 40-43, each then answered in its own choir by inversion or augmentation. The accompanying voices were thinned so that none doubles a chorale note: about nine to twelve lines move at the peak, and the four chorale lines sound a little louder than the rest. The coda puts line 1 in whole notes in the bass, B-A-C-H in the tenor at the cadence, and all sixteen voices on the last chord.\n\nThe search showed that strict same-speed canons of all four lines at once are impossible with this tune; the notes explain the compromise."
+     "notes": "Bach's Canonic Variations on Luther's Christmas chorale 'Vom Himmel hoch' (BWV 769) end with all four lines of the chorale sounding at once. Here each of the four voices owns one line, and that line becomes its fugue subject: a dotted skip ending in bells (soprano, line 1), a fanfare (tenor, line 2), a siciliano (alto, line 3) and falling bell-rounds (bass, line 4). Each voice also sings its own line once in long notes.\n\nThe subjects enter in the chorale's order, each paired with the one before, and each section ends in a new key: D, E minor and B minor, C, home to G. At the summit (bars 43-48) only the four chorale lines sound, each entering alone in its own register, all four together for about ten beats. In the coda the four subjects' heads ring together, and the soprano closes on B-A-C-H.\n\nRecomposed in four voices (it was sixteen); the earlier version is in the pair's archive folder."
     }
    ]
   },

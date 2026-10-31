@@ -1,14 +1,16 @@
-# Pair XV in G major: Pastorale, and "Fuga a 16 sopra 'Vom Himmel hoch'" (sixteen voices)
+# Pair XV in G major: Pastorale, and "Fuga a 4 sopra 'Vom Himmel hoch'" (four voices)
 
 **Files.**
-- Sources: `prelude.py`, `fugue.py`. Built scores: `prelude.json` (16 bars, 12/8, one pianist), `fugue.json` (59 bars, 4/4, sixteen staves: four choirs of SATB).
+- Sources: `prelude.py`, `fugue.py`. Built scores: `prelude.json` (16 bars, 12/8, one pianist), `fugue.json` (52 bars, 4/4, four voices, one keyboard).
 - `renders/`:
-  - `prelude.*` and `fugue.*`: PDF, LilyPond, MusicXML, MIDI and MP3 in Bach/Lehman temperament. The fugue PDF is A2, three pages, staff size 17; LilyPond compiled without errors.
-  - `*-equal.mp3`: equal temperament, audio only.
-  - `fugue-spatial.mp3`: binaural, `--layout choir` (Coro I on the left through Coro IV on the right).
+  - `prelude.*` and `fugue.*`: PDF, LilyPond, MusicXML, MIDI and MP3 in Bach/Lehman temperament (piano). The fugue PDF has three pages; LilyPond compiled with one harmless tuplet-bracket warning.
+  - `*-equal.mp3`: equal temperament, audio only (piano).
+  - `fugue-spatial.mp3`: binaural, `--layout arc --program 19` (church organ). Why the organ: BWV 769, the model, is an organ work, and on organ pipes the long notes of the cantus lines and of the summit hold at full strength for their whole length instead of decaying as piano notes do, so the four simultaneous lines stay present to their ends. The main render stays piano. The sixteen-voice version's `fugue-spatial-choir.mp3` was deleted here because this render replaces it (a copy stays in `archive-n-plus-1/renders/`).
+- `archive-n-plus-1/`: the earlier sixteen-voice version (source, score, notes, reviews, renders), untouched.
+- `REVIEW-2.md` at the pair root is the second review of the sixteen-voice version (the same file is in `archive-n-plus-1/`); it does not describe this fugue.
 - Build: `python3 prelude.py`, `python3 fugue.py`, then the render commands in `cycle/CONVENTIONS.md`.
 
-**Length.** Prelude about 1:19 rendered (79 s; dotted quarter = 52, broadening into the half cadence). Fugue about 3:44 rendered (224 s): *Moderato, con allegrezza*, quarter = 66, with small breaths at the cadences of b14 and b31. The summit keeps the tempo. The dissolution settles to 60 for the coda, and only the last two bars broaden (60 → 52 → 44). Before the second review the marking was "Allegro" at the same quarter = 66, slowing to 32; see "Second review".
+**Length.** Prelude about 1:19 rendered (79 s; dotted quarter = 52, broadening into the half cadence). Fugue about 2:51 rendered (171 s): *Moderato, con allegrezza*, quarter = 76, with breaths at the cadences of b14 (G), b24 (D) and b34 (B minor), the siciliano section a little calmer (72), a longer breath on the D7 before the summit (to 60), the summit in tempo, a breath at its cadence (b48), and a broadening only over the last two bars (to 50).
 
 I have not heard any of this. Everything below comes from the scores, `tools/critic.py` and my scratch checks.
 
@@ -22,111 +24,82 @@ I have not heard any of this. Everything below comes from the scores, `tools/cri
   - L2: G G D D B D C B
   - L3: B E E D F♯ G E D
   - L4: G F♯ E D D C B A G (C–B is a pair of eighths)
-- **Rhythm of the cantus:** isometric half notes, with C–B in quarters, as in Bach's settings. At the summit L1 also takes the chorale's own upbeat (a quarter before the first half note). This is the Essen rhythm scaled up.
+- **Rhythm of the cantus:** isometric half notes, with C–B in quarters, as in Bach's settings. At the summit L1 also takes the chorale's own upbeat (a quarter before the first half note), and L4's C is an eighth again, as in the source.
 
-**The model.** Bach's Canonic Variations on this chorale, BWV 769 (c. 1747), for Mizler's Society. In the variation printed last, the closing bars combine all four lines of the chorale at once, in stretto and in diminution, and B-A-C-H is signed in an inner voice. Fugue XV makes that trick its architecture and turns it up:
-- the lines are combined in long notes;
-- each line is in its own choir;
-- each line is answered canonically, including one canon per augmentationem (BWV 769's own variation IV device);
-- the fugue subject, its heads and the subjects' bell figures thread around the lines;
-- in the coda line 1 sounds in augmentation in the bass, and B-A-C-H is the cadence.
+**The concept at four voices.** Bach's G-major fugue in WTC I (BWV 860) has three voices, so this one has four, and four is exactly the number of lines in Luther's chorale. Each voice owns one line:
 
-**Four choirs, four subjects, one tune.** Each choir has its own subject, and each subject is one chorale line in quick diminution with a character of its own:
-- **S1, Coro I.** L1 as a dotted skip G–F♯, E F♯, a dip to D, a rush E–F♯ into a held G on the weak fourth beat. Then a peal of bells: the falling octave D–D in sixteenths (L4's shape, hidden), a turn up E F♯ G A, and F♯–D, which leaves the subject on the dominant.
-- **S2, Coro II, the herald ("Ich bring euch gute neue Mär").** L2 as a fanfare: two eighths G G, a dotted D–D, the turn D–C–B. Its tail is trumpet tattoos on the dominant (A A A, D C B, A A A, F♯ D).
-- **S3, Coro III, the shepherds.** L3 as a siciliano in triplets, each pair of chorale notes long-short. Its tail is running triplets that come to rest on B.
-- **S4, Coro IV, the bells.** L4 is a descending scale, which is "rounds" on eight bells, in eighths. It is followed by the first change of plain hunt (each pair of bells swapped: F♯ G, D E, B C, G A), ending on A. The leap of a seventh from the low G of the rounds to the high F♯ of the change is the bells starting again from the top.
+| Voice | Line | Its subject (the line quickened, with a character) | Its cantus (the line in half notes) | At the summit |
+|---|---|---|---|---|
+| Soprano | L1 "Vom Himmel hoch, da komm ich her" | S1: a dotted skip and a peal of bells | b11–14, at pitch (G5) | b44.2, in C, with the chorale's upbeat, on top |
+| Tenor | L2 "Ich bring euch gute neue Mär" | S2: a fanfare with trumpet tattoos | b21–24, in D | b43.3, at pitch (G4) |
+| Alto | L3 "Der guten Mär bring ich so viel" | S3: a siciliano in triplets | b31–34, at pitch (B4), on top | b43.1, at pitch (B4) |
+| Bass | L4 "Davon ich singn und sagen will" | S4: the falling octave as bell-rounds | b39–42, in C | b44.3, at pitch (G3) |
 
-**Where the cantus migrates.** The cantus of each section is sung by a voice of the *next* choir, so that choir is heard first as a long-note voice. It moves down the registers ("vom Himmel hoch … da komm ich her"):
-- L1: Coro II soprano, high (G5).
-- L2: Coro III alto.
-- L3: Coro IV tenor.
-- L4: Coro I bass. Here it is its own subject augmented fourfold.
+The subjects arrive one at a time in the order of the chorale (soprano, tenor, alto, bass), each with a fugal exposition, and each new subject is combined with the one before it: S1+S2, S2+S3, S3+S4. Each section ends with its owner singing its line in long notes and a cadence in a new key. At the summit the four lines sound together, one per voice, and nothing else sounds. The coda then rings the four subjects' heads at once and signs B-A-C-H.
 
-## Section map (fugue)
+**The model.** Bach's Canonic Variations on this chorale, BWV 769 (c. 1747). In the variation printed last, the closing bars combine all four lines of the chorale at once, in diminution and in stretto, and B-A-C-H is signed in an inner voice. Here the four lines are combined twice: slowly and alone at the summit (b43–48), and in diminution, as the four subjects' heads, in the coda (b49–50). B-A-C-H is the final cadence, on top.
+
+## The four subjects
+
+All four are hand-written diminutions of the chorale lines; S1–S3 are the sixteen-voice version's subjects, S4 has a new tail.
+
+- **S1 (soprano)**, 2 bars: `G4:3 F#4:1 E4:2 F#4:2 D4:2 E4:1 F#4:1 G4:4 | D5 C5 B4 A4 G4 F#4 E4 D4 E4 F#4 G4 A4 (sixteenths) F#4:2 D4:2`. L1 as a dotted skip into a held G, then a peal of bells (the falling octave D–D), a turn and F♯–D. Real answer in D (C♯), with the syncopated countersubject CS1.
+- **S2 (tenor)**, 2 bars: `G G D. D B D-C B | A A A D C B A A A F# D`. L2 as a fanfare, then trumpet tattoos on the dominant.
+- **S3 (alto)**, 2 bars, in triplets: `B–E E–D F#–G E–D | C B A B G E F# G A B`. L3 as a siciliano, each pair of chorale notes long–short (the prelude's rhythm), then running triplets to B.
+- **S4 (bass)**, 2 bars, in eighths: `G F# E D D C-B A G | A G C B E D G F#`. L4 as rounds on eight bells, then the bells ring back up in swapped pairs, as change-ringers swap neighbouring bells, ending on the leading tone. (The old tail, the first change of plain hunt, began with a leap of a seventh; this one moves by steps and fourths.)
+
+## Section map
 
 | Bars | Section | What happens | Keys |
 |---|---|---|---|
-| 1–10 | **I. Coro I** | S1 exposition from the top down, two bars apart. Soprano subject (b1), alto real answer in D (b3) with the countersubject CS1 above (a syncopated suspension line: D held as a 4–3, then F♯ and D each held across the beat), codetta (b5), tenor subject (b6), bass answer (b8). Codetta: the soprano rings a descending A-major octave (b10). | G, D |
-| 11–14 | **L1 as cantus** | L1 in half notes, high above, in the Coro II soprano. Under it, a stretto of S1 two beats then 1½ beats apart, on rising degrees: tenor in C (modal, b11.2), alto in D (b11.4), soprano in D an octave higher, off the beat (b12.1.5). Bass: G D \| C E D C \| B G C \| D C B G. Cadence in G at b14.3. | G |
-| 15–19 | **II. Coro II** | Stretto exposition of S2 from the bottom up, *one bar apart*, answered modally a fifth up inside the G-major scale, as in Pachelbel's chorale fugues: bass G (b15), tenor D (b16), alto G (b17), soprano D (b18). Coro I does not fall silent: its tenor answers the fanfare with S1 inverted (b16.3) and with S1 in C (b19.3). This makes a double fugue. Coro I soprano and bass carry on beneath and around. | G, D |
-| 20–23 | **L2 as cantus** | L2 in the Coro III alto, mid-texture, turned towards E minor: C Em \| Bm D \| Em G/B \| B7. The cantus's C is the flat ninth of B7 and falls to B. Around it: S2's head in C (Coro II soprano), in B minor (Coro I soprano), and the whole subject in E minor with a written-out D♯ (Coro II bass). | → e |
-| 24–27 | **III. Coro III** | S3 exposition a bar apart. The alto, which has just sung the cantus, leads in E minor. The soprano answers **really, in B minor** (C♯; b25). The tenor brings E minor back (b26), and the bass answers modally (b27). Choirs I–II accompany in held notes against the triplets: Em C D G \| D7 G A7 Bm7/D \| G Bm/D **F♯7/C♯** (a B–A♯ suspension in the Coro II alto) \| Bm G G **B7** (D♯ in the Coro II soprano) → Em. The Coro I tenor (b25–26) and the Coro III alto (b26–28) add free lines. | e → b → e |
-| 28–31 | **L3 as cantus** | L3 in the Coro IV tenor. Coro III answers itself over it in stretto by inversion: alto inverted (b29.1), soprano inverted, off the beat (b29.4). Joining them: the Coro I soprano (b29–30, a 4–3 suspension over D7), the Coro III bass (b30–31) and the Coro III tenor (b31.3). Em Bm Am F♯ø7 \| C Am G/B G \| D D/F♯ Em Em/G \| A A7/C♯ D. Cadence in D at b31.3. | e → D |
-| 32–34 | **IV. Coro IV, the peal** | S4 exposition as a peal: four entries *one beat apart* from the top down, alternating G and C, over a drone G in the Coro I bass. The other choirs greet it with the heads of their own subjects: S2 (b32.1), S3 (b32.2), S2 in D (b33.2), S1 inverted (b34.1). This is a quodlibet. | G/C |
-| 35–38 | **L4 as cantus (bass)** | L4 in the Coro I bass, G3 down to G2. Over it come a second peal (S4 at b35.2 and b35.3, its head at b37.3, its inversion's head at b37.4) and heads of all four subjects in every choir. The Coro IV tenor rings on after its peal (b34.3–36), the Coro II soprano holds a bell-note B5 over the cantus (b35), and the Coro II tenor carries the cadence into the summit (b38). | G |
-| 39–46 | **Summit** | The four lines together, each in its own choir and each answered canonically (see the next section). The entries make a crescendo. Free lines in other registers surround them and never strike a chorale pitch. In b43–46 the bells of the subjects return. Moving voices b39–46: 6, 8, 7, 10, 12, 11, 8, 8. The summit lands on G in the Coro I bass (b46.3). | e → C → G |
-| 47–51 | **Dissolution** | Line 4 per augmentationem completes its canon in the Coro IV alto. The Coro I soprano sings **S1 itself in augmentation**: the quick figure slows towards the chorale it came from. The siciliano head follows at half speed (Coro II soprano), and the Coro II tenor walks beneath in half notes. Bass C B \| E D \| C B \| E A \| D. | → C → D7 |
-| 51.3–59 | **Coda** | The Coro IV bass sings **L1 per augmentationem** in whole notes: G \| F♯ \| E \| F♯ \| D \| E \| F♯ \| G. Above it the subject's head answers itself at nearly every beat, rectus and inversus (17 entries, b51.3–56.1), and the bells ring down. The Coro I soprano, on top, signs **B-A-C-H** (see below). All sixteen voices strike the last chord (b58.3). | G |
+| 1–10 | **I. Soprano: S1** | Exposition from the top down, kept from the sixteen-voice version (its Coro I): soprano S1 (b1); alto real answer in D (b3) under CS1; codetta (b5); tenor S1 (b6); bass answer in D (b8); codetta A → D7 → G (b10). The soprano breathes on beat 4 of b10. | G, D |
+| 11–14 | **L1, soprano** | The soprano sings its own line in half notes from G5, over S1 in stretto on rising degrees: tenor in C (b11.2), alto in D (b11.4); bass in quarters. Cadence in G (b14.3). | G |
+| 15–16 | **II. Tenor: S2, with S1** | The tenor alone with its fanfare; the soprano answers with S1 on B, a tenth above, two beats later (two voices: the first pair). | G |
+| 17–18 | | Alto: S2's answer in D (line 2 in D, real, C♯); its tattoos bend back to G with C natural. The bass enters walking down the scale D C♯ B A G F♯; the tenor's countersubject climbs in sixteenths. V4/2 → I6 in D, then Am → D7. | D → G |
+| 19–20 | | Bass: S2 in G. Alto: the pair again, S1 on B, its peal turned to D (C♯). | G → D |
+| 21–24 | **L2, tenor** | The tenor sings its line in D (D4 D4 A3 A3 F♯3 A3 G3 F♯3) in a register of its own, with the alto silent and the soprano in a descant above: D Bm \| F♯m F♯m/A \| Bm A/C♯ \| A7 D. The line's own G–F♯ is the seventh of A7 resolving. Cadence in D (b24.3). | D |
+| 25–26 | **III. Alto: S3, with S2** | The alto alone with its siciliano in E minor over a held E in the bass (a drone, as in the prelude's musette). | e |
+| 27–28 | | Soprano: S3's **real answer in B minor** (C♯, A♯), up to D6. Tenor: S2 in B minor against it (the second pair: line 2 in B minor, A♯). Alto countersubject; the bass falls to F♯. | b |
+| 29–30 | | F♯ becomes B major, the dominant of E minor (D♯ in the alto). Bass: S3 in E minor under the soprano and tenor; B7 → B. | e |
+| 31–34 | **L3, alto** | The alto sings its line **on top**, with the soprano silent: Em C \| Am Bm \| D Em/G \| F♯7 Bm. The line's E is the seventh of F♯7 (A♯ in the tenor), its last D the third of B minor. Cadence in B minor (b34.3). | e → b |
+| 34.4–36 | **IV. Bass: S4, with S3** | Link B minor → G → C (the alto's last D is the fifth of G). The bass alone with its bells in C (F natural, leading tone B); the soprano answers with S3 in C two beats later (two voices: the third pair). | C |
+| 37–38 | | The pair with the voices exchanged: tenor S4 on G inside C, alto S3 from B two beats later (L3 at its own pitch, with F natural); the bass walks. | C |
+| 39–42 | **L4, bass** | The bass sings its line in C, C3 down to C2, under a soprano moving with it in tenths and a tenor in quarters; the alto is silent. C G/B \| Am G \| G7 F C/E \| G7/D C, then D7/C over the last C, and a breath. | C → V of G |
+| 43–48 | **Summit** | The four lines together (next section). Cadence on G at b48.1, the soprano's last C held as a 4–3. | G |
+| 49–52 | **Coda** | The four subjects' heads, each one chorale line in one bar, ring together in stretto: bass S4 (b49.1), soprano S1 an eighth later, tenor S2 (b49.2), alto S3 (b49.3). They end on G, B, D, G, the tonic triad, as the lines themselves do. Then the soprano signs **B-A-C-H** as the cadence: B♭5 the seventh of C7/E, A5 over D/F♯, C6 the seventh of D7, B5 the third of G. | G |
 
-## The simultaneous combination: how it was found, and what it is
+**Tonal plan.** G → D (C♯) → G → D → E minor (D♯) → B minor (A♯, C♯) → E minor → B minor → C (F natural) → D7 → G. 53 of the 752 notes (7.0 %) lie outside the G-major scale (the sixteen-voice version: 1.9 %; Fugues V and I of this edition: 6.6–7.9 %): 35 C♯, 10 F♮, 3 A♯, 3 D♯, 1 G♯, 1 B♭.
 
-**Method.** I found the combination first, with scratch scripts in the session scratchpad that use the critic's rules and `tools/critic.py`'s `analyse()`. The music was then composed towards it.
-- The search object was the *placement* of the hand-written chorale lines:
-  - entry time, on a quarter-note grid;
-  - exact transposition (L1 in G or C, L2 in G or D, L3 in G or C, L4 only in G, since these are the only exact versions inside the G-major scale);
-  - octave;
-  - speed (quarter, half or whole notes);
-  - rectus or inversus, with any axis and any interval for the canonic answers;
-  - the chorale's own upbeat or not.
-- At every attack the scorer required a triad, a properly treated seventh chord, a suspension, or a passing note on a weak beat. It rejected parallel fifths and octaves.
+## The device, and where to hear it
 
-**What the search showed (negative results, stated plainly).**
-- **The four lines cannot be sung 1:1 against each other in any alignment.** Lined up note for note (as a round would put them), slots 2, 3 and 6 are clusters (F♯ G E F♯; E D E E; E D G C). Across all exact transpositions and offsets, the best four-line combinations at one speed with at least two bars of full overlap score 9 (two seventh chords and some suspensions). There are 1,815 four-line candidates in all.
-- **Adding a same-speed, overlapping canon to every line was impossible.** Beam searches over thousands of placements found no set of eight long-note voices without at least one bare clash. The best set used three canons that start only when their leaders end, which is not a canon.
-- The solution therefore mixes speeds, as BWV 769 does (Bach's combination is in diminution):
-  - three canons by inversion at the leader's speed;
-  - one canon per augmentationem;
-  - all four entering while their leaders are still sounding.
+**1. The summit, b43–48: the four lines at once, one per voice, nothing else.**
 
-**The combination used (summit, b39–51).**
-
-| Choir / voice | Statement | Enters | Length |
+| Voice | Line | Level and band | Enters |
 |---|---|---|---|
-| Coro III soprano | **L3** B4 E5 E5 D5 F♯5 G5 E5 D5 (half notes) | b39.1 | to b43.1 |
-| Coro II alto | **L2** G4 G4 D4 D4 B3 D4 C4 B3 | b39.3 | to b43.3 |
-| Coro I soprano | **L1 in C**, with the chorale's upbeat: C6 \| B5 A5 B5 G5 A5 B5 C6 | b40.2 | to b44.1 |
-| Coro IV bass | **L4** G3 F♯3 E3 D3 D3 C3-B2 A2 G2 | b40.3 | to b44.3 |
-| Coro III alto | L3 **inversus**, canon at two bars: A4 E4 E4 F♯4 D4 C4 E4 F♯4 | b41.1 | overlap 2 bars |
-| Coro I alto | L1 **inversus**, with upbeat: F♯5 \| G5 A5 G5 B5 A5 G5 F♯5 | b42.3 | overlap 1½ bars |
-| Coro II bass | L2 **inversus**: D3 D3 G3 G3 B3 G3 A3 B3 | b42.3 | overlap 1 bar |
-| Coro IV alto | L4 **per augmentationem**, canon at the fourth: C5 B4 A4 G4 G4 F♯4-E4 D4 C4 (whole notes) | b43.3 | overlap 1 bar; runs to b51.3 |
+| Alto | L3: B4 E5 E5 D5 F♯5 G5 E5 D5 | at pitch; B4–G5 | b43.1, alone |
+| Tenor | L2: G4 G4 D4 D4 B3 D4 C4 B3 | at pitch; B3–G4 | b43.3 |
+| Soprano | L1 in C with the chorale's upbeat: (C6) B5 A5 B5 G5 A5 B5 C6 | a fourth higher; G5–C6 | b44.2 (upbeat), b44.3 |
+| Bass | L4: G3 F♯3 E3 D3 D3 C3 B2 A2 G2 | at pitch; G2–G3 | b44.3 |
 
-**All four lines sound at once from b40.3 to b43.1** (2½ bars). All four leaders and the first two answers sound together at b42.3.
+- **All four lines sound together from b44.3 to b47.1** (ten beats), and no other note sounds. Harmony of the lines alone: (C/G upbeat) G \| D/F♯ Em \| Em7/D D7 \| G/D (C passing) G/B, D7/A \| G.
+- **What makes each line audible.**
+  - Each enters alone into a silence: the bars before end on D7/C and stop, the alto starts by itself, and each later entry comes into a texture of one, two and three long-note voices.
+  - Each line has an octave band of its own, with gaps between the bands; there are no crossings and no unisons.
+  - Each voice has sung its own line before as a cantus (L1 at b11, L2 at b21, L3 at b31 at the same pitch, L4 at b39), so each line returns in the voice that owns it.
+  - Every note of the summit is a chorale note, so all four play 8 velocity steps above their base; the dynamics make a crescendo from the lone first entry.
+- **Line 1 is in C, a fourth higher.** That is the only exact level at which it combines with the other three above them. With all four lines at their own pitch, four separate bands need four octaves (G1–G5) and my searches found only clusters there (see "How the notes were written").
+- **Rhythmic liberties at the end, all in the lines' last notes.** The bass's D C B becomes a dotted figure (D. C \| B; the C an eighth, as in the Essen source) so that its C passes off the beat; the soprano holds its last C over the bass's G as a 4–3 suspension and resolves it to B. The alto's line ends at b47.1 and the tenor's at b47.3; after them the alto (G5 F♯5 G5) and the tenor (a breath, then B3) complete the cadence D7/A → G.
 
-Harmony of the chorale voices alone (my scratch scorer):
+**2. The pairs** (each new subject with the one before, two voices first):
+- S1 + S2: b15.3 (soprano over tenor) and b19.3 (alto over bass), S1 a tenth above, two beats after S2.
+- S2 + S3: b27 (soprano S3 and tenor S2, both in B minor, on the same beat).
+- S3 + S4: b35.3 (soprano S3 over bass S4) and b37.3 (alto S3 over tenor S4), S3 two beats after S4.
 
-| Where | Chord | Where | Chord |
-|---|---|---|---|
-| b40.2 | C | b43.2 | G/B |
-| b40.3 | G | b43.3 | Am7 |
-| b41.1 | D/F♯ | b44.1 | C/G (a passing 6/4) |
-| b41.3 | Em | b44.3 | Bm |
-| b42.1 | Em7/D | b45.2 | G |
-| b42.3 | D7 | b45.4 | D/A … |
-| b43.1 | G/B (L4's C3 as an accented passing note) | | |
-
-Line 1 sounds on top in C at the summit. That is the only exact level at which it combines with the others above them. It returns in G, in the bass, in the coda.
-
-**Around the lines (after the second review).** The first edition piled five whole S1 statements, fifteen heads and 47 two-beat figures onto the summit, so the lines could not be followed. Now:
-- **b39–42, the entries.** Only three free voices sound, each in a register of its own:
-  - the Coro IV soprano holds G5–A5–G5 over line 3's entry and gives way to line 1;
-  - the Coro I tenor walks beneath line 2;
-  - the Coro IV alto moves in the gap between line 3 and its inversion.
-  
-  These voices sit beside the heads of S4 (Coro I bass, b39.1) and S3 (Coro III tenor, b39.3 and b42.3).
-- **b43–46, the canons.** S1 enters whole once (Coro IV tenor, b44.1) and its inverted head once (Coro II tenor, b43.3). The Coro IV soprano adds a counterline, and the Coro I bass walks to the landing. 17 two-beat figures from the subjects (bells, run, tattoo, rounds, change) ring in the lower choirs. Each was checked against every chorale note sounding with it, so none strikes a chorale pitch at the unison.
-- **Balance in the render.** Chorale statements play 8 velocity steps louder and the two-beat figures 4 softer. Only velocities change, never notes.
+**3. The cantus of each voice:** b11–14 (soprano, top), b21–24 (tenor, with the alto silent and the soprano an octave and more above), b31–34 (alto, on top, the soprano silent), b39–42 (bass). While a cantus sounds, its notes play 8 velocity steps louder and the voices around it 3 softer (velocities only).
 
 ## B-A-C-H
 
-The signature is the cadence, sung on top by the Coro I soprano (moved there from the tenor in the second review):
-- B♭5 is the seventh of C7 over the bass's E (b56.3, the sixth note of L1 in augmentation).
-- It falls to A5 over the F♯ (D7/F♯, b57.3).
-- C6 is the seventh of that D7 (b58.1).
-- It falls to B5, the third of the last G-major chord (b58.3).
-
-The Coro I tenor now sings G3–D4–B3 beneath it.
+The signature is the final cadence, on top (b50.3–52), as in the sixteen-voice version: B♭5 is the seventh of C7/E and falls to A5 over D/F♯; C6 is the seventh of D7 and falls to B5, the third of the last chord. It is preceded by a B natural (b50.1.5): the soprano's "H" comes first and turns into the "B".
 
 ## Critic numbers
 
@@ -135,39 +108,22 @@ The Coro I tenor now sings G3–D4–B3 beneath it.
 | Measure | Value | Target / comment |
 |---|---|---|
 | parallels_error | **0** | 0 |
-| beat_parallels | **0** | ≤ 8 |
-| parallels_weak | 2 | Both are inside the S4 peal, between thematic voices: b32.4.5 (Coro IV alto and bass, 5ths) and b33.1.5 (alto and tenor, octaves, on eighths). |
-| dissonance_unresolved | **0** | ≤ 15 (the first edition had 2; both were in summit statements that were removed) |
-| bad_doublings | **1** | ≤ 8. At b12.3 the seventh C of D7 sounds in two subject statements at once (tenor's C-mode tail on a sixteenth, soprano's D-mode statement). |
-| low_register_seconds | **3** | ≤ 15. b33.2.5 and b34.3 are the peal's bass and the drone. b43.1 is L4's C3 passing against L2's inversion. These are the same three as in the first edition. |
-| stepwise_pct | **63.9 %** | ≥ 60 |
-| leap_4th_plus_pct | 12.4 % | Bach 14 % |
-| pc_tripled_on_beats_pct | 29.4 % | Sixteen voices on triads; judged by bad_doublings, as CONVENTIONS asks |
-| mean moving voices | 6.03 (whole piece) | |
-| crossings | 40 | |
-| tertian fit | 39.8 % | |
-| keyboard_unplayable | 23 % | Accepted: open score for sixteen players |
+| parallels_weak | 0 | |
+| beat_parallels | **1** | ≤ 2. b28.3, soprano/tenor F♯→C♯ in octaves on successive beats, with notes between: the S3 answer and the S2 pair, combined on the same beat. |
+| dissonance_unresolved | **0** | ≤ 3 |
+| bad_doublings | **3** | ≤ 2; see weak spots. b12.4 is the kept stretto of section I (the critic reads C–A–F♯ as C°7, so the doubled A counts as its seventh). b46.1 and b46.2 are the summit: the tenor's and the bass's lines both sing D under E5/G5, which the critic reads as Em7/D (the D a seventh); as G6/D it is a doubled fifth. |
+| low_register_seconds | **0** | ≤ 9 |
+| stepwise_pct | **60.0 %** | ≥ 65; missed, see weak spots. Leaps of a fourth or more 12.4 % (Bach about 14 %), repeated notes 8.1 %. |
+| crossings | 3 | b12.2, b13.3, b14.1: the tenor above the alto for one beat each, in the stretto of section I (kept from the sixteen-voice version). |
+| keyboard_unplayable_pct | **4.7 %** | 20 of 422 onsets; under 5 %. Where: b11, b14 (the soprano's cantus high over the bass), b27 (the B-minor answer up to D6), b41–42 (the bass's cantus at C2 under the descant), b47–48 (summit cadence), b49–50 (coda stretto with the bass at G1), b52 (final chord on G1). |
+| mean moving voices | 3.17 | per section: I 3.0, II 3.1, III 3.1, IV 3.0, summit 3.67, coda 3.75 |
+| pc_tripled_on_beats | 0.6 % | |
+| tertian fit | 52.4 % | |
+| melody flags | 1 | b8.1 soprano A4 → F♯5 → G5 (kept exposition) |
 
-**Moving voices per section** (critic `texture`; the per-section table before and after the second review is in "Second review"):
+Moving voices per bar: `1 1 2 2 2 3 3 4 4 4 4 4 4 4 | 2 2 4 4 3 3 4 3 3 3 | 2 2 4 4 4 3 3 3 3 3 | 2 2 4 3 4 3 3 3 | 2 4 4 4 4 4 | 4 4 4 3`. Every section after the first starts with two voices, and the full four are saved for the stretti, the summit and the coda.
 
-| Section | Mean | Bars |
-|---|---|---|
-| I (b1–14) | 3.2 | 1 → 5 as the voices enter |
-| II (b15–23) | 5.8 | |
-| III (b24–31) | 6.0 | |
-| IV (b32–38) | 6.9 | |
-| Approach (b39–40) | 7.0 | 6, 8 |
-| **Summit (b41–46)** | **9.3** | **7, 10, 12, 11, 8, 8** |
-| Dissolution (b47–51) | 5.4 | |
-| Coda (b52–59) | 8.6 | 16 on the last chord |
-
-A third collision was removed by simplifying the last turn of one statement: the Coro IV tenor at b45.4 sings A3 instead of the subject's C–A.
-
-**Melody flags.**
-- 7 seventh leaps: several are S4's own jump from the end of the rounds to the start of the change (G3 → F♯4).
-- 1 leap of more than an octave.
-- 4 tritone leaps.
-- 12 unrecovered large leaps.
+The critic's theme check verifies every declared entry against S1; the entries of S2, S3, S4 and of the chorale lines are labelled as such and do not match S1 by design.
 
 **Prelude:** parallels_error 0, beat_parallels 0, parallels_weak 0, unresolved 0, bad_doublings 0, low_register 0, crossings 0, keyboard_unplayable 0 %. Stepwise is 39 %: the piffero line is a musette arpeggiation. There are 2 unrecovered large leaps and 1 compound leap, both in Bach's flute bar at b13 (G5 → E6).
 
@@ -190,107 +146,54 @@ It is a musette for one pianist:
 
 ## How the notes were written (disclosure)
 
-- **Hand-written:**
-  - every subject, answer and countersubject;
-  - the chorale lines, copied from the corpus;
-  - all free lines in §I–§III, and every line added in the second review;
-  - the basses throughout;
-  - the codettas, the cadences, B-A-C-H and the last chord.
-- **Thematic statements** are explicit transforms in `fugue.py`: `transpose`, a diatonic `dshift`, `invert_diatonic`, `scale_rhythm`. In one place (Coro IV tenor, b44–45) a statement's last turn is simplified by hand, and it is labelled.
-- **Placement of whole chorale lines and of whole subject statements** was proposed by scratch searches, as described above. The searches only chose *where*, *at what level* and *rectus or inversus*.
-- **From b32 onwards I used a scratch "slot" harness:**
-  - I designated a voice and a beat (for example "Coro II soprano, b36.1") and listed the forms I wanted there, in order of preference (for example "S2 head; else S1 head; else …").
-  - The harness took the first form and octave with no parallel, unresolved dissonance, new bad doubling or new low-register clash against the texture so far.
-  - This placed the quodlibet heads (b32–38), the summit's heads and its whole S1 statement, the two-beat subject figures (17 remain, in b43–46, after the second review), and the coda's stretto of heads.
-  - The second review used no placement harness. Every line it added was written by hand. A scratch checker built the piece with my candidate passages and reported the critic's findings, plus any unison with a chorale note, so that I could choose among versions I had written.
-  - The figures are literal fragments of the subjects. No code invented a pitch, but the harness did choose levels and octaves.
-- Free lines were checked with a scratch alternatives checker: I wrote two to four versions of a passage by hand and the critic listed the clashes of each.
+- **Hand-written:** the four subjects and CS1 (S1–S3 and CS1 from the sixteen-voice version; S4's tail new), every free line, every bass, the codettas, the cadences and B-A-C-H. The chorale lines are copied from the corpus (see above).
+- **Thematic statements** are explicit transforms in `fugue.py`: `W.transpose`, the diatonic `dshift`, the octave `oc`, and `chorale_upbeat` (which halves a line's first note). Altered statements are labelled: the end of S1 on B in b17 (C♯5 E5 instead of A4 F♯4); the tattoos of the alto's answer (C natural, b18); the peal of S1 on B in b20 (C♯); S3 from B with F natural (b37); and the summit's last notes (bass D. C \| B, soprano C held as a suspension).
+- **Bars 1–10** are the sixteen-voice version's Coro I exposition, note for note; b11–14 keep its tenor, alto and bass, and the soprano sings the cantus.
+- **Scratch searches (session scratchpad) proposed placements; I chose and typed every note.**
+  - *Summit.* Two searches over the four hand-copied lines. (a) Isometric placements with the soprano on L1, the alto on L2, the tenor on L3 and the bass on L4: each line in half notes at an exact G-major level and an octave, entry times on a quarter grid, scored with the critic's rules. Even the best candidates had several unprepared dissonances. (b) A lattice search that let the lines change notes at different times (free rhythm), all four ending together on G–B–D–G. It found no clean solution, neither with the lines at pitch (their four bands span G1–G5) nor with line 1 in C. The layout used (L3 alto at B4, L2 tenor at G4, L1 in C on top with its upbeat, L4 bass at G3; entries 0, 2, 5 and 6 beats apart) is the core the sixteen-voice version had found (its b39–43); I re-checked it alone in four voices, then wrote the cadence by hand.
+  - *Pairs.* `tools/stretto_finder.py` proposed S1 on B a tenth above S2, two beats later (b15, b19), and S3 two beats after S4 (b35, b37); a scratch two-voice critic test chose S2 and S3 in B minor on the same beat (b27).
+  - *Coda.* A scratch search ran the critic over the four subjects' heads at several levels and distances. I chose, from the many candidates with no flags, the one in which the bass begins and each voice keeps its own subject.
+- No code wrote notes into the score.
 
 ## Honest weak spots
 
 1. **Unheard.** I cannot listen. The places to check first:
-   - the summit entries, b39–43: can each of the four lines be followed, and is L1 clear high above at b40.2?
-   - whether the summit, now 7–12 moving voices, still feels like the destination after section IV's 7–9;
-   - the B-minor real answer and its A♯ suspension (b25–27);
-   - B-A-C-H on top, b56.3–58.3.
-2. **The canons are real but short.** Each answer enters while its leader is still singing, but the overlaps are only 1–2 bars. Overlapping, same-speed canons for all four lines were not possible with this tune, and the summit uses a canon per augmentationem for line 4. The canons run on past the leaders, so the summit is a stretto of the lines followed by their answers. It is not eight long notes sustained together.
-3. **Line 1 is in C at the summit,** not in the home key.
-4. **Audibility against density.** Separating the lines cost density.
-   - The summit core averages 9.3 moving voices (peak 12 at b43), down from 13.5.
-   - All sixteen voices sound together only on the last chord.
-   - Eight chorale lines in four octaves cannot all be a fifth apart: L2 inverted and L4 meet on D3 at b42.3, both chorale notes. The lines do not cross, and no accompanying voice doubles a chorale note on a beat.
-5. **The build-up is real but gradual.** Mean moving voices by section are 3.2, 5.8, 6.0, 6.9, then 9.3 at the summit. Section by section that is one more line, not "a few". Sections III–IV are dense in pitch space (the siciliano triplets, the peal), and most further lines I tried there made parallels with the subjects.
-6. **Still mostly diatonic.** Chromatic notes went from 1.3 % to 1.9 % (29 of 1,495), against 6.6–7.9 % in Fugues V and I. The new modulations (B minor with A♯ and C♯, E minor with D♯) are real but brief. The chorale's world is diatonic, and I left bars 1–14 untouched.
-7. **Ranges.**
-   - The Coro I alto sings the inverted line 1 up to B5 (b43–46): an angel's alto.
-   - The Coro I bass goes down to G1 (b27).
-   - Choirs cross freely: 40 crossings.
-8. **The coda's stretto of heads is placed nearly every beat.** It may blur the augmented bass line rather than frame it.
-9. **The Prelude** is short (16 bars) and largely arpeggiated: 39 % stepwise.
+   - the summit, b43–48: can all four lines be followed, especially the tenor's L2 in the middle of the texture?
+   - whether line 1 in C at the summit is recognised as line 1;
+   - the coda's stretto of heads, b49: four subjects within a beat and a half may sound as a peal rather than as four subjects (the soprano's S1 on top and the bass's S4 should be the clearest);
+   - the siciliano section (b25–34): its triplets against the duple sixteenths elsewhere change the metre's character, on purpose, but it may sound like a different piece.
+2. **The summit is short.** All four lines sound together for ten beats (b44.3–47.1); from the first entry to the cadence it is five bars. At one speed the lines combine only in this staggered alignment, and I did not pad it with free voices or canons.
+3. **Line 1 is a fourth higher at the summit** (in C), not at its own pitch. It returns at pitch nowhere after b14, except as S1's head in the coda.
+4. **The summit's last notes are adjusted:** the bass's C–B rhythm and the soprano's held C. The alto and tenor finish the cadence with free notes after their lines end.
+5. **stepwise_pct is 60 %, under the target of 65 %.** The material accounts for much of it: S2 moves by step on 6 of its 18 intervals (another 6 are repeated notes in its fanfare and tattoos), L2 on 2 of 7, L3 on 3 of 7. Section I scores 67 %, sections II and III 53–54 %. The free basses at cadences leap by fourths and fifths.
+6. **Three bad doublings** (above), two of them in the summit's own line notes, which I did not alter.
+7. **Three one-beat crossings** of tenor and alto in the stretto of b12–14, kept from the sixteen-voice version.
+8. **Some free lines are plain:** the tenor in quarters in b39–42 and the soprano moving in tenths with the bass's cantus. In b39–42 the bass's line matters more than the counterpoint around it, but the passage may feel static before the summit.
+9. **Keyboard:** 4.7 % of onsets need more than two hands, mostly where a cantus sits far from the bass and at the very end (G1).
+10. **The Prelude** is short (16 bars) and largely arpeggiated: 39 % stepwise.
 
-## Second review (REVIEW-2.md): what changed
+## From the sixteen-voice (N+1) version
 
-Bars 1–14 are untouched, including L1 high over the stretto. L1's upbeat entry on top at b40.2 is also untouched. Every new note was written by hand, and the critic was run after every change.
+**Kept:**
+- the chorale, its source and the cantus rhythm;
+- the concept: four subjects, each a chorale line in diminution with a character, and the four lines combined at the summit;
+- S1, S2, S3 and CS1;
+- bars 1–10 note for note, and b11–14 (line 1 high over S1's stretto, which the second review called the piece's most audible moment), now sung by the soprano itself;
+- the summit's core alignment (L3, L2, L1 in C with its upbeat, L4);
+- B-A-C-H on top as the final cadence.
 
-**1. Summit audibility (b39–46).**
-- Removed from the summit:
-  - all 17 figures in b41–42 and the four figures at b46.3;
-  - five whole S1 statements (Coro IV soprano b40.1 and b42.2, Coro I tenor b40.3, Coro II soprano b43.4, Coro I soprano b44.2);
-  - ten heads, and several figures in b43–45 that struck chorale notes at the unison;
-  - the augmented heads of the dissolution (in D, they made parallels).
-- Added three free lines in registers of their own (see "Around the lines"), a counterline (Coro IV soprano, b43–45), and a bass walk to the landing.
-- No accompanying voice now sounds a chorale pitch on a beat.
-- The lines enter as a crescendo, with entries in b39–43 at 6 → 12 moving voices.
-- Velocities: chorale lines +8, figures −4.
-- **The summit lands on G** (Coro I bass, b46.3) instead of stopping on figures.
+**Changed:**
+- **Sixteen voices → four** (Bach's BWV 860 has three: Bach + 1). Each voice owns a line (its subject and its cantus) instead of four choirs relaying each other.
+- **The summit is the four lines alone.** The sixteen-voice summit added canons, free voices and 17 two-beat figures. The second review found the lines buried, and none of these additions remain. Each line now enters alone into a silence, in its own band, and the summit ends with a cadence (D7/A → G, 4–3) instead of stopping on figures.
+- **Pairs instead of a quodlibet.** Sections II–IV combine each new subject with the previous one, two voices at a time.
+- **Real modulations with leading tones.** D (C♯), E minor (D♯), B minor (A♯, C♯), C (F natural). Chromatic notes went from 1.9 % to 7.0 %. The second review's "three minutes inside the seven notes of G major" was the main harmonic complaint.
+- **The cantus lines are no longer buried:** the alto's on top (soprano silent), the tenor's in a band of its own (alto silent), velocities +8.
+- **S4's tail** now moves by steps and fourths instead of beginning with a seventh.
+- **The coda** combines the four subjects' heads (the lines in diminution, BWV 769's own trick) instead of a stretto of S1's head over L1 augmented.
+- **Tempo** quarter = 76 (was 66), with breaths only at cadences; 2:51 (was 3:44).
 
-**2. Build-up.**
-- Section II: the Coro I tenor answers the fanfare (S1 inverted at b16.3, the reviewer's tested entry; S1 in C at b19.3).
-- Section III: the Coro III voices keep singing after their entries, and Coro I joins (tenor b25–26, soprano b29–30).
-- Section IV: the Coro IV tenor rings on after the peal, and the Coro II soprano holds a bell-note.
-- Dissolution: a Coro II tenor line.
+**Why:** the owner found the many-voice textures washed out. The second review found the chorale lines buried and the harmony static. With four voices every line can be a line, and the summit can be the clearest moment rather than the densest.
 
-**3. Harmony and tempo.**
-- Soprano III's S3 answer is now **real, in B minor** (`W.transpose(S3, 7, 4)`, C♯). The Coro I/II accompaniment of b25–28 was rewritten around it: A7 → Bm7/D; F♯7/C♯ with a B–A♯ suspension → Bm; then B7, with D♯ in the Coro II soprano, → Em at the cantus.
-- The tempo word now fits the tempo: *Moderato, con allegrezza*, quarter = 66. There is no slowing at the summit, and the end broadens only to 44 (it slowed to 32 before).
+## Prelude: second review (unchanged here)
 
-**4. Tested items.**
-- The summit lands on G.
-- B-A-C-H moved to Soprano I.
-- The prelude quotes BWV 248/23 at b13 and uses Bach's passing notes at b7–8.
-
-**Not done, and why.**
-- A major (C♯) before the b14 cadence: it falls in bars 1–14, which must not be touched.
-- A real S2 answer at b18: its C♯ would cross-relate with the C natural of the new tenor entry at b19.3.
-- A real tenor answer at b16: tested; its C♯4 makes a semitone against the Coro I tenor's D4 at b17.4.
-- Chromatic inflections in the b43–46 figures: the chorale and canon notes there (D in L1 inverted, C in L4 augmented) contradict the needed leading tones.
-
-**Before / after** (`tools/critic.py` and the scratch statistics script; "before" is the first edition as reviewed):
-
-| Fugue | Before | After |
-|---|---|---|
-| parallels_error / beat_parallels | 0 / 0 | 0 / 0 |
-| parallels_weak | 2 (in the peal) | 2 (the same) |
-| dissonance_unresolved | 2 | **0** |
-| bad_doublings | 1 (b12.3) | 1 (the same) |
-| low_register_seconds | 3 | 3 (the same three) |
-| stepwise / leaps ≥ 4th | 64.7 % / 12.6 % | 63.9 % / 12.4 % |
-| appoggiaturas (critic's classification) | 527 | 285 |
-| melody flags: 7th leaps / > 8ve / tritone / unrecovered | 13 / 6 / 6 / 18 | 7 / 1 / 4 / 12 |
-| crossings | 54 | 40 |
-| tertian fit | 36.4 % | 39.8 % |
-| chromatic notes | 24 of 1,781 (1.3 %), 5 after b9 | 29 of 1,495 (1.9 %), 10 after b9 |
-| duration (rendered) | 237 s | 224 s |
-
-| Mean moving voices / sounding voices | Before | After |
-|---|---|---|
-| I (b1–14) | 3.2 / 3.1 | 3.2 / 3.1 |
-| II (b15–23) | 5.1 / 5.0 | 5.8 / 5.5 |
-| III (b24–31) | 4.75 / 4.6 | 6.0 / 5.6 |
-| IV (b32–38) | 6.4 / 4.6 | 6.9 / 5.3 |
-| approach (b39–40) | 6.0 / 4.6 | 7.0 / 5.3 |
-| summit (b41–46) | 13.5 / 11.8 | 9.3 / 7.9 |
-| dissolution (b47–51) | 5.8 / 4.7 | 5.4 / 4.4 |
-| coda (b52–56) | 8.6 / 5.5 | 8.6 / 5.5 |
-
-**Prelude:** unchanged faults (0 in every category). Stepwise is 38 % before and 39 % after. The melody flags rise from 1 to 3, all in Bach's leaping flute bar.
+The prelude quotes BWV 248/23 at b13 and uses Bach's passing notes at b7–8 (see the table above). **Prelude:** unchanged faults (0 in every category). Stepwise is 38 % before and 39 % after. The melody flags rise from 1 to 3, all in Bach's leaping flute bar.
