@@ -4556,9 +4556,13 @@
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>1440</duration>
+        <duration>960</duration>
         <type>half</type>
-        <dot />
+      </note>
+      <note>
+        <rest />
+        <duration>480</duration>
+        <type>quarter</type>
       </note>
     </measure>
     <measure number="41">

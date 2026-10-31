@@ -294,8 +294,8 @@ sc.put('A', 45, 1, 'R:4 E4:4/3 G4:4/3 C5:4/3 B4:4/3 C5:4/3 A4:4/3 F4:4/3 A4:4/3 
 sc.put('S', 47, 1, 'R:4 G5:4 C6:4 A5:4~ '
                    'A5:4 G5:2 F5:2 A5:4 C6:4 '
                    'B5:4 R:12')
-sc.put('B', 47, 1, 'E2:2 F2:2 G2:2 E2:2 A2:2 B2:2 C3:2 A2:2 '
-                   'F2:2 G2:2 A2:2 F2:2 D2:2 E2:2 D2:4')
+sc.put('B', 47, 1, 'E3:2 F3:2 G3:2 E3:2 A3:2 B3:2 C4:2 A3:2 '
+                   'F3:2 G3:2 A3:2 F3:2 D3:2 E3:2 D3:4')
 sc.theme('T', 49, 1, key(SUBJ, 'B4', 'G3'), "Subject on the dominant (G), tenor, at the cantus's sol")
 sc.put('A', 49, 1, 'R:4 B4:1 D5:1 C5:1 E5:4 F#5:1 G5:4~ '                       # CS above, in G
                    'G5:4 F#5:4 D5:1 C5:1 B4:1 C5:1 D5:1 E5:1 F#5:1 D5:1')
@@ -382,18 +382,18 @@ sc.put('B', 69, 1, 'Ab2:12 C2:4')
 sc.theme('T', 70, 1, key(SUBJ, 'B4', 'Bb3'), "Subject (B-flat), tenor, at the cantus's re")
 sc.put('S', 70, 1, 'R:4 D5:1 F5:1 Eb5:1 G5:4 A5:1 Bb5:4~ '                      # CS above
                    'Bb5:4 A5:4 F5:1 Eb5:1 D5:1 Eb5:1 F5:1 G5:1 A5:1 F5:1')
-sc.put('B', 70, 1, 'Bb2:8 G2:4 C3:4 '
-                   'F3:4 Eb3:4 D3:4 A2:4')
+sc.put('B', 70, 1, 'Bb2:8 G2:8 '
+                   'F3:4 A2:4 D3:4 A2:4')
 # b72: B-flat minor (the cantus's D-flat), ii7 of A-flat, leading to E-flat
 sc.put('S', 72, 1, 'F5:4 Bb5:2 Ab5:2 F5:4 Ab5:4')
 sc.put('T', 72, 1, 'Bb3:4 Ab3:2 Gb3:2 F3:4 Bb3:4')
-sc.put('B', 72, 1, 'Bb1:4 Db2:4 F2:4 Db2:4')
+sc.put('B', 72, 1, 'Bb2:4 Db3:4 Bb2:4 Db3:4')
 sc.theme('A', 73, 1, key(SUBJ, 'B4', 'Eb4'), "Subject on the dominant (E-flat), alto, at the cantus's sol")
 sc.put('S', 73, 1, 'R:4 G5:1 Bb5:1 Ab5:1 C6:4 D6:1 Eb6:4~ '                      # CS above, in E-flat
                    'Eb6:4 D6:4 Bb5:1 Ab5:1 G5:1 Ab5:1 Bb5:1 C6:1 D6:1 Bb5:1')
 sc.put('T', 73, 1, 'G3:4 Bb3:4 C4:4 Ab3:4 '
                    'F3:4 Ab3:4 F3:4 R:4')
-sc.put('B', 73, 1, 'R:8 Ab2:2 G2:2 F2:4 '
+sc.put('B', 73, 1, 'R:8 Ab2:4 Eb3:4 '
                    'Bb2:4 D3:8 R:4')
 
 
@@ -409,12 +409,10 @@ sc.put('A', 75, 1, 'Bb4:8 G4:4 Bb4:4 '
                    'F4:4 D4:4 G4:4 F4:4 '
                    'G4:4 A4:2 G4:2 G4:4 E4:4 '
                    'E4:4 F#4:4 E4:4 C#4:4')
-sc.put('T', 75, 1, 'Bb3:2 C4:2 D4:4 Bb3:2 C4:2 G3:2 A3:2 '
-                   'C4:2 Bb3:2 A3:2 C4:2 F3:2 A3:2 G3:4 '
-                   'G3:4 C4:2 D4:2 Eb4:4 C4:4 '
+sc.put('T', 77, 1, 'Eb4:4 C4:2 D4:2 C4:8 '
                    'B3:4 D4:2 C4:2 B3:4 D4:4 '
                    'E4:4 C4:2 D4:2 E4:4 C4:4 '
-                   'C#4:4 A#3:4 F#3:4 R:4')
+                   'C#4:8 F#3:4 R:4')
 sc.put('B', 77, 1, 'C3:2 D3:2 Eb3:2 C3:2 Ab2:2 G2:2 F2:4 '
                    'G2:4 B1:4 D2:4 F2:4 '
                    'E2:4 G2:4 C2:4 E2:4 '
@@ -431,7 +429,50 @@ sc.put('A', 81, 1, 'F#4:8 E4:8 '
 sc.put('T', 81, 1, 'D#4:4 B3:4 B3:4 B3:4 '
                    'A#3:4 C#4:4 C#4:4 A#3:4')
 
-NBARS = 86
+# b83 (B/D# - G#m): the soprano's last division
+sc.put('S', 83, 1, 'B5:1 A#5:1 B5:1 C#6:1 D#6:1 C#6:1 B5:1 A#5:1 G#5:2 B5:2 D#6:2 B5:2')
+sc.put('T', 83, 1, 'D#4:4 B3:4 G#3:4 R:4')
+sc.put('B', 83, 1, 'D#3:4 F#3:4 G#2:4 B2:4')
+sc.theme('T', 84, 1, key(SUBJ, 'B4', 'E3'), "Subject on the subdominant (E), tenor, at the cantus's fa")
+sc.put('S', 84, 1, 'R:4 G#5:1 B5:1 A5:1 C#6:4 D#6:1 E6:4~ '                      # CS above, in E
+                   'E6:4 D#6:4 B5:1 A5:1 G#5:1 A5:1 B5:1 C#6:1 D#6:1 B5:1')
+sc.put('A', 84, 1, 'G#4:4 B4:4 A4:4 C#5:4 '
+                   'F#4:4 B4:4 D#5:4 B4:4')
+sc.put('B', 84, 3, 'C#3:8 '
+                   'D#3:4 B2:8 R:4')
+
+# ===================================================================== the summit: la, and the turn
+# The cantus reaches G#5, the top of the piece; the bass sings the inversion (la..ut) under it, and
+# from here the cantus falls home: sol fa mi re ut.
+sc.theme('B', 86, 1, key(INV, 'G#5', 'G#2'), "Inversion (B), bass, under the cantus's la: the turn")
+sc.put('S', 86, 1, 'D#6:16 '
+                   'A#5:6 C#6:2 E6:4 C#6:4')
+sc.put('A', 86, 1, 'B4:4 D#5:4 B4:4 G#4:4 '
+                   'C#5:16')
+sc.put('T', 86, 1, 'B3:4 G#3:4 F#3:4 B2:4')
+
+# ===================================================================== CODA (bars 87-91): the cantus falls home
+sc.mark(87, 'Coda: the cantus falls home')
+sc.theme('C', 87, 1, 'F#5:16 E5:16 D#5:16 C#5:16 B4:16', 'Cantus: B, sol-fa-mi-re-ut (falling home)', 5)
+
+sc.put('S', 88, 1, 'E6:4 D#6:2 C#6:2 C#6:4 G#5:4 '
+                   'B5:4 F#5:4 B5:4 G#5:4 '
+                   'B5:4 A#5:4 C#6:4 A#5:4 '
+                   'B5:16')
+sc.put('A', 88, 1, 'G#4:4 E4:4 G#4:4 E4:4 '
+                   'F#4:4 F#4:4 G#4:4 B4:4 '
+                   'F#4:8 E4:8 '
+                   'D#4:16')
+sc.put('T', 88, 1, 'E3:4 B3:4 G#3:4 B2:4 '
+                   'B3:4 D#4:4 B3:4 B3:4 '
+                   'C#4:4 C#4:4 A#3:4 C#4:4 '
+                   'F#3:16')
+sc.put('B', 88, 1, 'E2:4 G#2:4 C#2:4 B1:4 '
+                   'D#2:4 B1:4 G#1:4 F#2:4 '
+                   'F#2:8 F#1:8 '
+                   'B1:16')
+
+NBARS = 91
 
 
 def main():

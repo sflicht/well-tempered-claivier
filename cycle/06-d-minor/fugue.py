@@ -5,7 +5,10 @@ Every note is written below as literal token strings (sixteenth units, see
 tools/wtclib.py).  The only operations applied to written material are the
 named transformations `transpose` (via `move`) and `scale_rhythm`
 (augmentation), used to place the hand-written ground, subject and inversus at
-other pitch levels and speeds.  Their output is what fugue.json holds.
+other pitch levels and speeds, plus `last_octave` (a theme's closing leap
+taken the other way, to avoid a unison or crossing) and `last_tie` (a theme's
+last note tied into the next note of the same pitch).  Their output is what
+fugue.json holds.  No code chooses pitches.
 
 Material (see NOTES.md):
   GROUND   the descending chromatic lament D C# C B Bb A | Bb G A D (the
@@ -88,7 +91,6 @@ def last_octave(s, k):
     """The same line with its last note moved k octaves (the closing leap of a
     fifth taken as a fourth the other way): an explicit, named variant."""
     toks = s.split()
-    name, d = toks[-1].rsplit(':', 1)
     toks[-1] = transpose(toks[-1], 12 * k, 7 * k)
     return ' '.join(toks)
 
@@ -174,7 +176,7 @@ put(EP2, A='R:12  R:12  R:12  R:12  R:12  A4:2 G4:2 F4:4 R:4')
 # subject (D minor); one bar later the Alto answers at the fifth above
 # (A minor).  The Bass walks, then falls silent for the summit.
 tag(ST, 'Stretto: subject (Tenor) and answer (Alto), one bar apart')
-put(ST, T=last_octave(S('A3'), -1) + '  C4:4 A3:4 B3:4  A3:12')
+put(ST, T=last_octave(S('A3'), -1) + '  C4:4 A3:4 B3:4  A3:8 R:4')
 entry('T', ST, 'Subject (Tenor), stretto')
 put(ST + 1, A=last_tie(last_octave(S('E4'), -1)) + '  E4:2 F#4:2 G4:2 A4:2 B4:2 C#5:2')
 entry('A', ST + 1, 'Answer (Alto), stretto at one bar')

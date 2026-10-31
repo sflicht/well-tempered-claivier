@@ -1,19 +1,20 @@
-"""Inspect a built score: per-beat (or per-eighth) grid of all voices with chord labels,
-plus the critic's problems in the range.  Usage: look.py score.json 9-16 [8]"""
-import sys, json, collections
+"""Grid view of fugue.json: per beat (or eighth) with chord labels and critic flags.
+Usage: look.py LO-HI [8]"""
+import sys, json, subprocess
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[3] / 'tools'))
+ROOT = Path('/home/user/well-tempered-claivier')
+sys.path.insert(0, str(ROOT / 'tools'))
 from critic import Score, analyse, TPQ
 from chords import name_chord, pname
-data = json.load(open(sys.argv[1]))
-lo, hi = (int(x) for x in sys.argv[2].split('-'))
-step = TPQ * 4 // int(sys.argv[3]) if len(sys.argv) > 3 else TPQ
+F = Path(__file__).resolve().parents[1] / 'fugue.json'
+data = json.load(open(F))
+lo, hi = (int(x) for x in sys.argv[1].split('-'))
+step = TPQ * 4 // int(sys.argv[2]) if len(sys.argv) > 2 else TPQ
 S = Score(data)
-print('     ' + ' '.join(f'{n:>5}' for n in S.names))
+print('        ' + ' '.join(f'{n[:5]:>5}' for n in S.names))
 for t in range((lo - 1) * S.bar, hi * S.bar, step):
     snd = S.sounding(t)
-    cells = []
-    pcs = set(); low = None
+    cells, pcs, low = [], set(), None
     for i in range(len(S.voices)):
         if i in snd:
             k, att = snd[i]
@@ -37,7 +38,9 @@ for x in R['melody']:
         print('  MEL', x['loc'], x['kind'], x['what'])
 for x in R['direct']:
     print('  DIR', x['loc'], x['what'])
-low = [l for l in R['sonority']['low_register_examples'] if lo <= int(l[1:].split('.')[0]) <= hi]
-if low:
-    print('  LOW', low)
-print('  texture', ' '.join(str(r['moving']) for r in R['texture'][lo - 1:hi]))
+so = R['sonority']
+print('  bad doublings', [b for b in so['bad_doubling_examples'] if lo <= int(b[1:].split('.')[0]) <= hi])
+print('  low', [l for l in so['low_register_examples'] if lo <= int(l[1:].split('.')[0]) <= hi])
+print('  crossings', [c for c in R['crossing']] if isinstance(R['crossing'], list) else R['crossing'])
+kb = R['keyboard']
+print('  keyboard', kb['unplayable_onsets'], '/', kb['onsets'], kb['examples'][:6])

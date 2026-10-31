@@ -99,7 +99,7 @@
    ]
   },
   {
-   "name": "Pair VI \u00b7 D minor (new, seven voices)",
+   "name": "Pair VI \u00b7 D minor (new)",
    "pieces": [
     {
      "id": "prelude-6",
@@ -110,10 +110,10 @@
     },
     {
      "id": "fugue-6",
-     "title": "Fugue VI \u00b7 Passacaglia e fuga a 7",
-     "score": "cycle/06-d-minor/archive-n-plus-1/fugue.json",
+     "title": "Fugue VI \u00b7 Passacaglia and fugue on the Crucifixus ground (4 voices)",
+     "score": "cycle/06-d-minor/fugue.json",
      "tag": "new",
-     "notes": "The ground is the chromatic lament of Bach's Crucifixus (BWV 232 / BWV 12), moved to D minor: D C# C B Bb A, Bb G A D. The fugue subject is that ground upside down at double speed, so ground and subject are relatives.\n\nAs in the middle of the Passacaglia BWV 582, the ground migrates. It passes from the bass to the second tenor, the first tenor (in F major), the second alto (A minor), the first alto (G minor), the second soprano (back in D minor) and the first soprano (on the dominant), freshly harmonised each time.\n\nAt the summit (bars 49-64) the ground sounds at three speeds at once: augmented in the bass, at double speed in the alto, and at normal speed in the soprano. Meanwhile the subject enters in stretto in the inner voices, arriving on D major. The coda puts B-A-C-H in the alto over a D pedal.\n\nAfter a second review the tempo is a steady quarter = 76, a running voice drives each later variation, the ground is brought forward at every new station, and the script-proposed passing notes that clashed were removed.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "The ground is the falling chromatic lament of the Crucifixus in Bach's B-minor Mass, here in D minor. It does not stay in the bass: it climbs one voice per station, bass (D minor), tenor (A minor), alto (F major), soprano at the summit, each time entering after a rest, on the outside of the texture, a little louder than the rest. The fugue subject is the ground upside down at double speed; its inversion is the ground itself at double speed, and in each station it runs in tenths or sixths with the ground while the subject climbs against both.\n\nBetween the stations, episodes in two and three voices, then a stretto. At the summit the ground sounds at three speeds at once: at half speed in the bass, at normal speed in the soprano, and at double speed in the tenor; for a moment all four voices carry it. The arrival is in D major, and in the coda the subject at half speed rises over a held D: the lament turned upwards, pointing to the Et resurrexit that follows the Crucifixus in the Mass.\n\nRecomposed in four voices (it was seven); the earlier version is in the pair's archive folder. The binaural render uses an organ sound."
     }
    ]
   },
@@ -175,9 +175,9 @@
     {
      "id": "fugue-9",
      "title": "Fugue IX \u00b7 Ricercar a 10 in circulo",
-     "score": "cycle/09-e-major/fugue.json",
+     "score": "cycle/09-e-major/archive-n-plus-1/fugue.json",
      "tag": "new",
-     "notes": "Ten voices in stile antico, white notes and suspensions, imagined as a ring of singers in the manner of Tallis's 40-voice Spem in alium. The subject's held E is a built-in suspension. The exposition is one continuous build-up, each entry starting before the last has finished, moving round the circle of fifths. In the binaural render the entries literally travel round the listener.\n\nThe subject of Bach's WTC II E-major fugue (BWV 878), which Bach himself took from J.C.F. Fischer, enters as a real voice four times. It sounds augmented in the bass to make the first tutti, in Bach's answer form above it, in A major in the second choir, and augmented as the treble cantus firmus of the final tutti. As in Spem in alium, the first tutti is followed by a bar of silence, then antiphonal exchanges shrinking from four bars to half a bar. At the end the voices drop out in pairs around the ring, each touching its last note again softly as it leaves. The ring and its travelling entries are fully heard only in the binaural render."
+     "notes": "Ten voices in stile antico, white notes and suspensions, imagined as a ring of singers in the manner of Tallis's 40-voice Spem in alium. The subject's held E is a built-in suspension. The exposition is one continuous build-up, each entry starting before the last has finished, moving round the circle of fifths. In the binaural render the entries literally travel round the listener.\n\nThe subject of Bach's WTC II E-major fugue (BWV 878), which Bach himself took from J.C.F. Fischer, enters as a real voice four times. It sounds augmented in the bass to make the first tutti, in Bach's answer form above it, in A major in the second choir, and augmented as the treble cantus firmus of the final tutti. As in Spem in alium, the first tutti is followed by a bar of silence, then antiphonal exchanges shrinking from four bars to half a bar. At the end the voices drop out in pairs around the ring, each touching its last note again softly as it leaves. The ring and its travelling entries are fully heard only in the binaural render.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
     }
    ]
   },

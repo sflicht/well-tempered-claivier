@@ -2,107 +2,24 @@
 
 **Sources (literal):** `prelude.py`, `fugue.py`
 **Built scores:** `prelude.json`, `fugue.json`
-**Renders:** `renders/` holds PDF, MIDI, MusicXML and MP3 in Bach–Lehman temperament, plus `*-equal.mp3` in equal temperament and `fugue-spatial.mp3` (seven voices placed on an arc).
-**Reviews:** `REVIEW-2.md` (second review). What changed in answer to it is in the last section.
-**Analysis scripts:** `search/` holds searches and inspection tools only (see "How the numbers were reached").
+**Renders:** `renders/` holds PDF, MIDI, MusicXML and MP3 in Bach–Lehman temperament, plus `*-equal.mp3` in equal temperament and `fugue-spatial.mp3` (the four fugue voices on an arc, binaural, played on General MIDI church organ).
+**Reviews:** `REVIEW-2.md` is the second review of the prelude and of the earlier seven-voice fugue. That fugue, with its own NOTES and renders, is kept in `archive-n-plus-1/`; the fugue below is new.
+**Analysis scripts:** `search/` holds the inspection and search scripts used for the four-voice fugue (see "How the notes were written"). The scripts of the seven-voice version are in `archive-n-plus-1/search/`.
 
 **Not listened to.** Everything below comes from the score and the checkers. How it sounds is Sam's call.
 
-**Durations (from the renders):** prelude about 1:46, fugue about 2:51.
+**Durations (from the renders):** prelude about 1:46, fugue about 2:47.
 - **Prelude.** The Adagio opening, the recitatives and the fermatas are slow and free (`tempo_map`); the Allegros run at dotted quarter = 112.
-- **Fugue.** It holds ♩ = 76 from the first bar through the summit. Only the coda slows (to 68), and the last six quarters breathe (to 51).
+- **Fugue.** ♩ = 76, with breaths at the joints of the form (see "Tempo and dynamics").
 
-## Concept
+---
 
-**Fugue VI à 7, *Passacaglia e fuga sopra un basso lamentoso*.**
-- An 8-bar chromatic lament ground repeats throughout.
-- The fugue subject is the ground turned upside down at double speed, so every fugal entry is the ground seen from another side.
-- The ground passes through all seven voices. Each time it returns, its harmony and key change.
-- **Summit.**
-  - The ground sounds at three speeds and on three pitch levels a fifth apart:
-    - augmented in the bass, on D;
-    - at normal speed in Soprano I, on A;
-    - at double speed (the inversus) in Alto I, on E.
-  - All three sound together in bars 53–54.
-  - Then the subject runs in stretto in the inner voices.
-- **Surface.** From Var. 4 one free voice per variation runs in eighths, with sixteenth turns from Var. 5. The surface quickens towards the summit, as a passacaglia's should.
+## Prelude VI, *Toccata con recitativo* (unchanged)
 
 **Prelude VI, *Toccata con recitativo*.**
 - A keyboard toccata that opens with the gesture of BWV 565 and runs in the triplet motion of BWV 851.
 - It is twice interrupted by recitatives. These declaim the fugue subject's pitches in free rhythm, first in the right hand, then in the bass.
 - It ends on a half cadence that withholds its final D. The fugue's ground begins on that D.
-
-## The two themes
-
-```
-GROUND  D3:16 C#3:8 C3:8 B2:4 Bb2:4 A2:12 Bb2:4 G2:8 A2:24 D2:8      (8 bars of 3/4)
-        D  C#  C  B  Bb  A | Bb  G  A | D
-SUBJECT A4:8 Bb4:4 B4:4 C5:2 C#5:2 D5:6 C#5:2 E5:4 D5:12 A5:4         (4 bars)
-        A  Bb  B  C  C#  D | C#  E  D | A
-```
-
-**The ground.** It is the ground of the Crucifixus of the B-minor Mass, BWV 232 (taken from *Weinen, Klagen*, BWV 12), transposed to D: a chromatic fall from tonic to dominant, then Bb–G–A–D.
-
-**How the two themes relate.**
-- **Subject.** It is the exact chromatic inversion of the ground in diminution: the intervals are mirrored and the rhythm is halved (16 8 8 4 4 12 4 8 24 8 → 8 4 4 2 2 6 2 4 12 4).
-- **Inversus.** The subject's inversion, used as a fugal device, is therefore the ground at double speed (`INV`; `fugue.py` asserts this).
-- **Critic's reading.** The critic recognises the ground as *subject inversus ×2*, the augmented ground as *inversus ×4*, and the inversus as *inversus ×1*. All 26 labelled entries match 9/9 in intervals and rhythm.
-
-**How the rhythm was chosen.** It came from a search (`search/s3`–`s9`). The ground had to stay consonant over its own augmentation, with a second ground at the dominant entering at the augmentation's fifth bar. That is the summit's combination (bars 49–60).
-
-## The ground's journey
-
-| Var. | Bars | Key | Ground in | Other entries | Harmonisation (`reduce.py`, abridged, per bar) |
-|---|---|---|---|---|---|
-| 1 | 1–8 | D minor | **Bass** (D3) | subject A1 b5 (A4); answer A2 b7 (E4) | bb. 1–4 ground alone; then 2–3 voices: … Dm/A, D/A |
-| 2 | 9–16 | D minor | **Tenor II** (D4) | subject S2 b13; answer Bass b15 (E2) | Dm E7/D · Dm A/C# C#o · D7/C Co7 G/B · Gm/Bb Fmaj7/A A · Bbmaj7 Gm · G A · A7/E Dm/F · D7/F# Gm |
-| 3 | 17–24 | F major | **Tenor I** (F4) | inversus T2 b19 (C4): the sixth voice enters by inversion; subject S1 b21 (C5), the seventh voice | F Bo7 · F/A Am C/E · Cm G7 · Gø7 F/C C · C7/Bb Dbmaj7 Gø7 · Gm7 C · C7 Fm · F |
-| 4 | 25–32 | A minor | **Alto II** (A4) | inversus T1 b27 (E4); subject T2 b29 (E3) | Am Am/C Dm · Dm/F E7 · Aø7 Am7/E B · Dm7 A E/B · E Fmaj7 G7/C · Bm E7 Am · Am E7 Am/E · Am/E Am/C |
-| 5 | 33–40 | G minor | **Alto I** (G4) | inversus T1 b35 (D4); subject T2 b37 (D3) | Gm/Bb Ebmaj7 · Cm D7 · G7 A · Cm G D7/C · D Ebmaj7 Aø7/Eb · Am/G Dm · D7 Gm/D · Gm |
-| 6 | 41–48 | D minor | **Soprano II** (D5) | inversus S1 b43 (A5); subject T1 b45 (A3); answer T2 b47 (E3), running into the summit | Dm Bbmaj7 · Gm A7 · F Am E7 · Gm D A/E · Fmaj7/E Bb C7 · Em7 A7 Dm/A · Fmaj7/A A7 Dm · D Bb/D A7/C# |
-| Summit | 49–64 | D minor | **Bass, augmented** (D3, 16 bars) + **Soprano I at the dominant** (A5, bb. 53–60) | inversus A1 b51 on E (E5); subject A2 b58 (G4); subject T1 b60.3 (A3); answer T2 b62.3 (E3) | G/D Dm · Bø7/D Fmaj7/D E7/D · A over D and C#, under the inversus's E–D#–D–C# · A7/C# · Am/C · E/B · Gm/Bb D7/A · Dm7/A A7 · A7 Dm/A Bbmaj7 · Gm/Bb C/G · A/G G°7 Am · Am Dm7/A · A7 · Dm/A · A7 Dm/A **D** (b63.3) · G/D A7/D |
-| Coda | 65–70 | D (major) | tonic pedal D2 | last subject S1 b66 (A4); B-A-C-H in A1 bb. 68–70 | E7/D A/D · Dm A7/D Gm/D · G/D D · Gm/D C7/D D · D7 G/D · D |
-
-**The ground's route.** It passes through all seven voices in turn: B → T2 → T1 → A2 → A1 → S2 → S1. The bass then takes it back in augmentation.
-
-**Keys.** The ground visits F major and A minor (and G minor, the darkest station) before the return in b. 41.
-
-**Harmony.** It is never repeated. The same chromatic step is read, for example, as:
-- D7/C → G/B (Var. 2);
-- Cm → G7 (Var. 3, in F);
-- Aø7 → Am7/E → B (Var. 4, in A minor).
-
-**Making each station audible.**
-- **Velocity.** The ground voice of every station is played 12 above its base velocity, and the other voices 3 below, while it sounds (a velocity pass after `build_score`; no notes change).
-- **Space at the entry.** The voice just above the ground rests on its first beat:
-  - Alto I at b. 17;
-  - Soprano II at bb. 25 and 33;
-  - Soprano I at b. 41.
-- **Soprano I's entry (b. 53).** Soprano II stops running and rests for bars 53–54.
-
-## Form map
-
-| Bars | Section | What happens |
-|---|---|---|
-| 1–8 | Var. 1, exposition I | Ground alone in the bass for 4 bars. Then subject (A1) and tonal answer at the fifth (A2). |
-| 9–16 | Var. 2, exposition II | Ground an octave up in T2; subject S2, answer in the Bass. 5 voices. |
-| 17–24 | Var. 3, F major | Ground in T1. T2 enters with the **inversus** (an answer by inversion, cf. *Art of Fugue*, Cp. 5); S1 completes the seven. |
-| 25–32 | Var. 4, A minor | Ground in A2; inversus and subject under it. **Soprano I runs in eighths.** |
-| 33–40 | Var. 5, G minor | Ground in A1; the same pair of devices, regrouped. **Soprano II runs in eighths with sixteenth turns**; Soprano I rests for three bars. |
-| 41–48 | Var. 6, D minor (return) | Ground in S2. Entries in stretto: inversus, subject, answer, two bars apart. **Alto II runs in eighths.** |
-| 49–64 | Summit | Soprano II runs in eighths, then sixteenths, into the three speeds of the ground (bb. 53–54). Tenor I runs in eighths (bb. 55–59) under the subject's three-level stretto (G, A, E). Arrival on D major at b. 63.3, with T2's F#3 against D2. |
-| 65–70 | Coda | Tonic pedal; the last subject in S1; B-A-C-H (Bb4 A4 C5 B4 → A4) in A1 resolving into the final D-major chord. The only place where the tempo yields. |
-
-## Devices, and allusions credited
-
-**Fugue.**
-- **Ground.** The Crucifixus ground (BWV 232 / BWV 12), transposed.
-- **Fugue over a migrating ostinato.** The passacaglia-and-fugue pairing points to BWV 582. There the ground also leaves the bass, though not through every voice.
-- **Subject = ground inverted in diminution; answer by inversion (Var. 3).** Both after the inversion fugues of *Die Kunst der Fuge* (Cp. 5–7).
-- **Ground at three speeds at once (bars 53–54).** A prolation device in the manner of *Art of Fugue* Cp. 6–7, here applied to the ostinato, on three levels a fifth apart.
-- **Surface acceleration over the ground.** After BWV 582.
-- **Tierce de Picardie at the summit's arrival (b. 63.3).** It comes from the stretto answer's own F#.
-- **B-A-C-H in the coda (Alto I, bars 68–70).**
 
 **Prelude.**
 - **The opening of the Toccata in D minor BWV 565 (attributed to J. S. Bach).** The mordent A–G–A, then the fall G F E D C# D in octaves, three times, each an octave lower, then a diminished seventh built up over a low D. This is written from memory of the gesture, not copied from a score. The rhythm is fitted to 12/8.
@@ -111,7 +28,7 @@ SUBJECT A4:8 Bb4:4 B4:4 C5:2 C#5:2 D5:6 C#5:2 E5:4 D5:12 A5:4         (4 bars)
   - Bars 6, 9, 18 and 20 use a turning, stepwise figure; the other Allegro bars are broken chords.
 - **The fugue's ground in the bass.** The bass of bars 6–8 walks it (D C# C B Bb A).
 
-## Prelude: form
+### Prelude: form
 
 29 bars of 12/8. The running figure is written as plain eighths, three to the beat, because the renderer engraves tuplets badly.
 
@@ -124,25 +41,7 @@ SUBJECT A4:8 Bb4:4 B4:4 C5:2 C#5:2 D5:6 C#5:2 E5:4 D5:12 A5:4         (4 bars)
 | 24–26 | Recitativo II | Left hand (the bass): the subject at the E level, E F F# G G# A G# B A E, under right-hand chords (Am, F, D/F#, G, E, Am, E, A). It ends on A/E. |
 | 27–29 | Presto → Adagio | Diminished-seventh cascade falling onto A1. The BWV 565 figure again, but stopping on C#: a half cadence on A (fermata), attacca. |
 
-## Critic numbers (after the second review)
-
-**Fugue** (`python3 tools/critic.py cycle/06-d-minor/fugue.json`):
-
-| Measure | Value |
-|---|---|
-| `parallels_error` | **0** |
-| `beat_parallels` | 1: b37.2, A2/T1, A4/A3 → G4/G3, octaves on successive beats with a passing note between |
-| `dissonance_unresolved` | **0** |
-| `bad_doublings` | **2**: b45.3 (E in C7, free T2 against the soprano's inversus); b52.2 (C# in A7, both voices thematic: the augmented ground and the inversus) |
-| `stepwise_pct` / `leap_4th_plus_pct` | 62.8% / 17.4% |
-| Sixteenths | 14 (before: 0) |
-| Eighth slots with an attack | Vars. 1–3: 44 / 67 / 67%. Vars. 4–6: 96 / 92 / 94%. Summit: 88 / 75%. Coda: 53%. |
-| Onset slots with 3+ voices attacking together | 42% (before: 50%) |
-| `pc_tripled_on_beats_pct` | 26.6%. Seven voices on triads must triple; doubling is judged by `bad_doublings`. |
-| `low_register_seconds` | 2 (b29.2, b37.2: retardations under G3 in the subject's chromatic climb) |
-| Mean moving voices | 4.76 over the whole piece; about 5.4 from b. 21 |
-| `keyboard_unplayable_pct` | 23.8%: an open score for seven voices |
-| Themes | 26/26 labelled entries match 9/9 |
+### Prelude: critic numbers
 
 **Prelude:**
 
@@ -157,38 +56,7 @@ SUBJECT A4:8 Bb4:4 B4:4 C5:2 C#5:2 D5:6 C#5:2 E5:4 D5:12 A5:4         (4 bars)
 | `stepwise_pct` | 46.7% (was 38% before the turn figures) |
 | `low_register_seconds` | 3: b4 (C#3 against the D2 pedal, the BWV 565 chord) and b21 (E2–D3) |
 
-## How the numbers were reached
-
-**Hand correction.** Notes were written by hand as token strings and corrected bar by bar against `search/look.py`, a beat or eighth grid with chord labels and critic flags. `search/chk.py` rebuilds the fugue and prints the key numbers.
-
-**Helper scripts.** These only list options; the choices were made by hand:
-- `alts.py`, `fixtrip.py`: single-note alternatives that add no fault;
-- `fixdbl.py`: the same for doubled sevenths and leading tones;
-- `triples.py`: beats where a pitch class is tripled.
-
-**Passing notes (first round).**
-- `search/passing.py` split 38 notes in free voices into a note plus a diatonic passing note, keeping a split whenever no critic number got worse. `patch_source.py` copied them into `fugue.py`.
-- The second review found two of them musically wrong (b63.3 and b64.1½) and one harsh (b38.1½); all three are reverted.
-- A fourth, at b68.3, had broken the B-A-C-H motif; it is reverted too.
-- Most of the rest in Vars. 4–6 and the summit have been replaced by the hand-written running lines.
-- No notes were inserted by script in this revision.
-
-## Weak spots (honest)
-
-**Fugue: texture and register.**
-- **The opening is sparse.** The ground is alone for four bars, and Var. 1 never has more than three voices. That is the price of letting the ground be heard plainly first.
-- **Running lines in a crowded space.**
-  - The running voices sit between other moving voices. To avoid parallels, some take an odd turn: Alto II at b44 begins with an eighth rest; Soprano I's E6 at b30 is the highest note of the piece.
-  - Each line was checked by eye and by the critic, not by ear.
-- **The Bass is the leapiest voice** (about 42% steps). In Vars. 2–6 it is a free harmonic bass under a ground in an upper voice.
-- **Unisons on beats.** Several voices meet in brief unisons, mostly where a theme ends on the ground's own note: b22.3, b32.2, b39.2–3, b40.2, b46.3, b48.2.
-- **Crossings.** Alto II stays above Alto I for 15 beats from b. 58, so that the stretto subject can enter at the G level.
-
-**Fugue: harmony.**
-- **The three speeds are dissonant where they meet.** In bars 51–54, the inversus's chromatic fall (E D# D C# C B) meets the augmented bass's C# and C. That gives chords the critic cannot name (D5 over C#3 at b52.1, for instance). All of them resolve, by the critic's rules.
-- **Three speeds for only two bars.** The overlap is bars 53–54, not three bars. A start at b52 gave three bars, but put B4 against the bass's Bb2 at b55.
-- **Unexplained sevenths.** Many "7th not resolved down" notes remain. The chromatic ground moves sevenths by semitone or sideways.
-- **Tertian fit is about 42%.** The running lines put more non-chord tones inside the beats.
+### Prelude: weak spots
 
 **Prelude.**
 - **The allusions are from memory.** The BWV 565 opening is paraphrased, not checked against a score.
@@ -197,27 +65,201 @@ SUBJECT A4:8 Bb4:4 B4:4 C5:2 C#5:2 D5:6 C#5:2 E5:4 D5:12 A5:4         (4 bars)
 
 **Both movements.** Tempo, dynamics and fermata lengths were set by reasoning about the score, not by listening.
 
-## Second review (REVIEW-2.md): what changed
-
-**Kept, as the review asked:**
-- the ground/subject design;
-- the 4-bar unaccompanied ground at the start;
-- the outer-voice two-speed summit (augmented bass under the soprano's ground at the dominant, bars 53–60);
-- the BWV 565 opening and the withheld-D ending.
+### Prelude: changes made after the second review
 
 | # | Issue | Change |
 |---|---|---|
-| 1 | Script passing notes spoil the Picardy arrival (63.3 C6 made a D7) and clash at 64.1½ | Soprano I restored to `C#6:4 D6:8 \| B5:4 G5:4 A5:4`; 63.3 is a D-major chord again. Also reverted: 38.1½ (Soprano II `C5:4`) and 68.3 (the passing B♭ inside B-A-C-H). |
-| 2 | It plods | ♩ 66 → **76**, with no slowing into the summit; only the coda yields. One free voice per variation now runs by hand: S1 in Var. 4, S2 in Var. 5 (with sixteenth turns), A2 in Var. 6, S2 into the summit (eighths, then sixteenths), T1 in bars 55–59. Eighth-slot activity is now 92–96% in Vars. 4–6 (was 67–75%). Onset slots with 3+ simultaneous attacks: 50% → 42%. Duration 3:22 → 2:51. |
-| 3 | The migrating ground is inaudible | Ground voice +12 velocity, other voices −3 while it sounds. The voice above it rests on each station's first beat (A1 b17, S2 b25 and b33, S1 b41). Soprano II rests in bars 53–54 for the soprano's ground entry. |
-| 4 | The three speeds meet for one bar | The inversus (A1) now enters at b51 on **E** (it was A4 at b50), so the double-speed ground sounds over the bass's D and under the soprano's A: together in bars 53–54. This is two bars, not one; see weak spots for why not three. |
 | 5 | Prelude mostly slow | Fermata beats ♩ 28–30 → 40–44; recitatives 72 → 84; Adagio 60 → 66; Allegros dotted quarter 100 → 112. 124 s → 106 s. |
 | 6 | Prelude triplets are arpeggios | Bars 6, 9, 18 and 20 rewritten as stepwise turning figures (e.g. b6 `F5 E5 D5 E5 F5 A5 G5 F5 E5 F5 G5 A5` over the lament bass). |
-| 7 | Other passing notes | Reviewed by eye. 42.3 (T1 B♭3, accented ♭9) is kept. The rest either remain as natural diminution or were absorbed into the new running lines. |
 
-**Bad doublings 3 → 2 along the way.** One fix each:
-- b27.2: the bass now goes to E2 instead of G2;
-- b37.3: Soprano I rests on the beat;
-- b59.2: Tenor I and Soprano II are revoiced.
+---
 
-**The cost.** The new b52.2 doubling is between two themes and is kept.
+## Fugue VI a 4, *Passacaglia e fuga sopra il Crucifixus*
+
+### Concept at four voices
+
+Bach's D-minor fugue BWV 851 has three voices, so this one has four.
+
+- **A passacaglia whose ground climbs.** The eight-bar Crucifixus ground passes up through the four voices, one station each: **Bass** (D minor, b1), **Tenor** (A minor, b9), **Alto** (F major, b21), **Soprano** (b45, at the dominant, at the summit). When it reaches the top, the Bass takes it back in augmentation.
+- **The fugue subject is derived from the ground.** It is the ground turned upside down and in diminution. Its inversion (the *inversus*) is therefore the ground at double speed. Every fugal entry is the ground seen from another side.
+- **One plan per station.** At the ground's third bar the inversus enters in another voice and runs with it in parallel tenths or sixths: the lament at two speeds. At the ground's fifth bar the subject enters in a third voice and climbs against both.
+- **Episodes without the ground.** Between stations the ground stops (b17–20, b29–40), so that each new station starts after silence. These are the places where voices rest and the texture thins to two or three parts.
+- **Summit (b41–56).** The ground in the Bass at half speed (16 bars); the Tenor's inversus over it at double speed (b41); the Soprano's ground at normal speed (b45), in sixths with the Bass. Then the Alto's subject (b47) and the Tenor's second inversus (b49.3) enter between them. In b49.3–52.3 the ground sounds at three speeds at once; in b49.3–50.3 all four voices carry a form of it.
+- **Coda (b57–64).** The subject in augmentation in the Soprano, over a D pedal, in D major. At this speed it is the ground's exact mirror at the ground's own speed: the falling lament now rises. In the B-minor Mass the Crucifixus is followed by the Et resurrexit, in D major and 3/4; this ending points to that. It is an allusion of idea, not a quotation.
+
+### The themes
+
+```
+GROUND    D3:16 C#3:8 C3:8 B2:4 Bb2:4 A2:12 Bb2:4 G2:8 A2:24 D2:8         (8 bars of 3/4)
+          D  C#  C  B  Bb  A | Bb  G  A | D
+SUBJECT   A4:8 Bb4:4 B4:4 C5:2 C#5:2 D5:6 C#5:2 E5:4 D5:12 A5:4           (4 bars)
+          A  Bb  B  C  C#  D | C#  E  D | A
+INVERSUS  D5:8 C#5:4 C5:4 B4:2 Bb4:2 A4:6 Bb4:2 G4:4 A4:12 D4:4           (= the ground at double speed)
+```
+
+- **Ground.** The Crucifixus ground of the B-minor Mass, BWV 232 (taken from the cantata *Weinen, Klagen*, BWV 12), transposed to D: a chromatic fall from tonic to dominant, then Bb–G–A–D. The rhythm is the earlier version's (chosen by search so that the ground fits its own augmentation; see `archive-n-plus-1/NOTES.md`).
+- **Subject.** The ground's exact chromatic inversion with the note values halved. `fugue.py` asserts that the inversus equals the ground at double speed.
+- **Answer.** Real, at the fifth (the subject at the E level).
+- **Critic's reading.** The ground is *subject inversus ×2*, the augmented ground *inversus ×4*, the coda's subject *rectus ×2*. All 17 labelled entries match the rhythm 9/9. Nine match the intervals 9/9 and eight 8/9: those eight take their closing leap the other way (see "Variant endings").
+
+### Section map
+
+| Bars | Section | Key | Voices | What happens | Harmony (reduce.py, abridged) |
+|---|---|---|---|---|---|
+| 1–8 | **Station I**: ground in the **Bass** | D minor | 1 → 2 → 3 | Ground alone for two bars. b3: inversus in the **Alto** (A4), in tenths above the Bass. b5: **subject** in the Soprano (A4). | i · i–V6 · Am/C–E/B · Gm/Bb–D/A–A · Bbmaj7–E°/G · Em/G–Am–A · A–Dm/A · Asus4–Dm |
+| 9–16 | **Station II**: ground in the **Tenor** | A minor | 3 (Bass rests) | The Tenor is now the lowest voice. b11: inversus in the **Soprano** (E5). b13: **answer** in the Alto (E4). | Am · Am–E/G# · C/G–D#°7 · Dm/F–A/E–E · E–Fmaj7–Bø/D · Bm/D–Em–E · Am/E–E7–Am/E · Esus4–Am |
+| 17–20 | **Episode 1** | → F major | 3 (Tenor rests) | Falling fifths with sevenths: A7–Dm, G7–C, F7–Bb, Gm–C. The Alto's sevenths fall a step a bar (G F, F E, Eb D); the Bass returns. | A7 · Dm · G7 · C · F7 · Bb · Gm · C |
+| 21–28 | **Station III**: ground in the **Alto** | F major | 2 → 3 → 4 | The Soprano rests four bars, so the Alto's ground is the top voice over the Tenor alone. b23: the **Bass** returns with the inversus, in tenths *below* the ground. b25: **subject** in the Soprano (C5). First four-voice bars. | F · C/E · Cm–G/B · Bbm–F/A–Fm/Ab–C/G · Dbmaj7/F–E°7/G · Gm–C/G–F/C · C7 · F |
+| 29–34 | **Episode 2**: the surface quickens | → G minor → D minor | 3 → 4 | The Soprano runs in sixteenths: a one-bar figure sequenced down a step, over a Bass falling by fifths (Gm7–C7, F–Bb, Eø7–A7, Dm–Gm). The Tenor's sevenths fall a step a bar (F E Eb D C# C Bb). The Alto rests, back at b34. | Gm7 · C7 · F · Bb · Eø7 · A7 · Dm · Gm · Gm/Bb · A7 · Dm · A |
+| 35–40 | **Stretto** | D minor → A | 3 → 4 → 3 | **Subject** in the **Tenor** (A3, its first fugal entry), **answer** in the Alto one bar later (E4). The Bass walks, then rests b40; the Tenor rests on b40.3. Half cadence on A; the Alto runs up a scale into the summit. | Dm · Bb · Em/G–A · Bm–A7–Dm · Bø–E/G#–A · Dm7/F–F–E7 · A |
+| 41–44 | **Summit I** | D minor | 4 → 3 | **Ground in the Bass at half speed** (D, 2⅔ bars; C#). **Inversus in the Tenor** (A4) over it: ×2 and ×½ together. Alto and Soprano in quarters over the pedal. The Soprano rests b44. | Dm · E7/D · A7/D · D–Dm · A7/D · Dm · Gm/D · A/C# |
+| 45–52 | **Summit II**: two and three speeds, four forms | (D minor, at A) | 2 → 4 | b45: the **Soprano** enters with the **ground at normal speed** (A5) over the Bass alone: the outer voices fall chromatically at two speeds, in sixths. b47: **subject** in the **Alto** (D4 level). b49.3: **inversus** in the **Tenor** (D4): three speeds of the ground at once (b49.3–52.3); all four voices carry a form of it in b49.3–50.3. | Am/C · E7/B · Gm/Bb–F#°7/A · Fmaj7/A–A7 · Gm/Bb · C#°7/G · A7/G · A |
+| 53–56 | **Arrival** over the long A | → D major | 4 | Cadential 6/4 (b53), A7 with a flat ninth: the Soprano's B-flat (b54), the highest note of the fugue. b55.3: the Bass reaches D, the Soprano F#: D major. | Dm/A · A7 · A7(b9) · A7 · **D** |
+| 57–64 | **Coda** | D major | 3 → 4 | **Subject in augmentation** in the Soprano (A4 → D5 → A5) over a D pedal. Plagal close: G in the Bass (b63), then D. The Tenor returns for the last three bars (from b62.2). | D · Gm/D · G/D · D7 · A7/D · D · A7/D · D · G · D |
+
+### The device, and where to hear it
+
+1. **Two speeds inside each station.** The inversus runs with the ground in parallel tenths (b3–6, Alto over Bass) or sixths (b11–14, Soprano over Tenor). In b23–26 the pair is turned upside down: Bass under Alto, in tenths. For their first three notes the two move in rhythmic unison (D C# C against A G# G, in half and quarter notes); then the faster one pulls away.
+2. **The ground's climb.** Bass (b1), Tenor (b9), Alto (b21), Soprano (b45). Each station starts after silence in that voice, and in an outer position (see the next section).
+3. **Stretto at one bar** (b35–36). Subject in the Tenor, answer a fifth higher in the Alto. The Soprano rests on the Tenor's first beat.
+4. **The summit's speeds.**
+   - b41–44: the Bass at half speed, the Tenor's inversus at double speed.
+   - b45–52: the Bass at half speed and the Soprano at normal speed, in the outer voices, in sixths. This combination was kept from the earlier version (see "From the seven-voice version").
+   - b49.3–52.3: three speeds (Bass ×2, Soprano ×1, Tenor ×½).
+   - b49.3–50.3: all four voices; the Alto adds the subject, the ground's mirror.
+5. **The coda.** The rising line in the Soprano is the subject at twice its normal length, the only augmentation of the subject in the piece.
+
+### Making each station audible
+
+- **Station I.** The Bass plays alone for two bars.
+- **Station II.** The Bass rests for the whole station (b9–16), so the Tenor's ground is the lowest voice. It is also the Tenor's first note in the fugue.
+- **Station III.**
+  - The Alto rests on b20.3.
+  - The Soprano rests b21–24, and the Bass rests b21–22, so for two bars the Alto's ground is the top voice over the Tenor alone.
+  - The voices then join one by one: Bass b23, Soprano b25.
+- **Summit.**
+  - The Bass rests in b40, before its augmented D3, and the Tenor on b40.3, before its inversus: the summit's downbeat follows a beat of upper voices alone.
+  - The Soprano rests in b44. Its A5 at b45 is struck over the Bass alone: the Alto rests b45–46 and the Tenor b45.1.
+- **Velocity.** While a station sounds, its voice is played 12 above its base velocity (the usual entry boost of 5, plus 7), and the other voices 3 below. This is a pass after `build_score`; it changes no notes.
+- **Fugal entries.** Each one starts after a rest in its own voice: S b5, S b11, A b13, B b23, S b25, T b35, A b36, T b41, A b47, T b49.3, S b57.
+
+### Variant endings
+
+Eight entries take their closing leap the other way (a fourth instead of a fifth, or the reverse). This avoids unisons and crossings where two themes end on the same note, and keeps the hands within reach. In `fugue.py` the change is the named function `last_octave`.
+
+| Entry | Written | Instead of |
+|---|---|---|
+| b11 Soprano inversus | … B4 → **E5** | E4 |
+| b13 Alto answer | … A4 → **E4** | E5 |
+| b21 Alto ground | … C4 → **F4** | F3 |
+| b23 Bass inversus | … G2 → **C3** | C2 |
+| b25 Soprano subject | … F5 → **C5** | C6 |
+| b35 Tenor subject | … D4 → **A3** | A4 |
+| b36 Alto answer | … A4 → **E4** | E5 |
+| b45 Soprano ground | … E5 → **A5** | A4 |
+
+### Critic numbers
+
+`python3 tools/critic.py cycle/06-d-minor/fugue.json`:
+
+| Measure | Value |
+|---|---|
+| `parallels_error` / `parallels_weak` | **0 / 0** |
+| `beat_parallels` | **0** |
+| `dissonance_unresolved` | **0** |
+| `bad_doublings` | **0** |
+| `low_register_seconds` | **0** |
+| `stepwise_pct` / `leap_4th_plus_pct` | **67.0%** / 9.6%. By voice: Soprano 70%, Alto 77%, Tenor 69%, Bass 40%. The Bass has the ground's falling fifth and the root-position bass of three fifths sequences. |
+| `pc_tripled_on_beats_pct` | 5.4% |
+| `crossings` | **0** |
+| `keyboard_unplayable_pct` | **0.0%** (0 of 277 onsets need more than two hands); at most 4 notes at once |
+| `mean_moving_voices` | **2.95** (4 voices) |
+| Onset slots with 3+ voices attacking together | 22% (the seven-voice version: 42%) |
+| Sixteenths | 60, all in b29–33 |
+| `tertian_fit_pct` | 50% |
+| `chord (7th not resolved down)` | 23 notes. The chromatic ground and the inversus move sevenths by semitone or sideways (D–C# under a C, for instance), and in the sequences of Episodes 1–2 the seventh sometimes passes to another voice. None is a free dissonance; the critic classifies each as a chord member. |
+| Themes | 17 labelled entries, rhythm 9/9 for all; intervals 9/9 for nine, 8/9 for the eight variant endings above |
+
+**Texture by section.** "Eighth slots" is the share of eighth-note positions on which some voice attacks.
+
+| Section | Bars | Eighth slots with an attack | Mean sounding voices |
+|---|---|---|---|
+| Station I | 1–8 | 50% | 2.2 |
+| Station II | 9–16 | 69% | 3.0 |
+| Episode 1 | 17–20 | 88% | 2.8 |
+| Station III | 21–28 | 65% | 3.2 |
+| Episode 2 | 29–34 | 94% | 3.0 |
+| Stretto | 35–40 | 75% | 3.6 |
+| Summit | 41–56 | 65% | 3.7 |
+| Coda | 57–64 | 31% | 3.3 |
+
+**Off-beat dissonances.** The critic checks beats. `search/offbeat.py` scans every off-beat attack that is not approached and left by step. It finds 27, and all are one of three kinds:
+- chord sevenths: the A7, G7, F7 chain of Episode 1, and the sixteenth-note figure of Episode 2 sounding against the Tenor's held seventh;
+- anticipations;
+- a passing eighth that the scan cannot see because the step out is to a held note.
+
+### Tempo and dynamics
+
+- **Tempo.** ♩ = 76.
+- **Breaths.** Ritardandi into b17 (to 68), b21 (to 64) and b29 (to 62).
+- **Station III** is a little calmer, at 72.
+- **Into the summit.** The half cadence in b40 slows to 60, and the summit goes at 70.
+- **Arrival.** b53–55 broaden to 56 for the arrival on D major.
+- **Coda.** It goes at 60 and slows to 42 over the last two bars.
+- **Dynamics.** Phrase dynamics rise from quiet (Station I) through Episode 2 and the stretto to the summit (loudest at the Soprano's B-flat, b54), then fall away in the coda.
+
+### How the notes were written
+
+- **By hand.** Every note is a literal token string in `fugue.py`.
+- **Named operations.** The only operations applied to written material are these:
+  - `move`: transposition of the ground, subject and inversus to their levels;
+  - `scale_rhythm`: augmentation (the summit's Bass, the coda's Soprano);
+  - `last_octave`: the variant endings above;
+  - `last_tie`: tying a theme's last note into the next note of the same pitch.
+- **Searches.** The scripts in `search/` placed the hand-written themes against one another and scored the result: consonance on beats, then `tools/critic.py`. They only proposed; every choice was made and written by hand. They decided:
+  - the inversus at the ground's third bar, in parallel tenths (`station_placements.py`: cost 0, the cleanest placement of any theme over the ground);
+  - the Soprano's ground at A5 from the augmentation's fifth bar (`summit_outer.py`: cost 0, as in the earlier version);
+  - the Alto's subject at D4 from b47 and the Tenor's inversus at D4 from b49.3 (`summit_inner_critic.py`, `summit_inner_eval.py`: of ten candidate pairs tested with the critic, one of the few with no parallels, no unresolved dissonance and no crossing that also overlaps the Soprano's ground);
+  - the stretto at one bar (`stretto_pairs.py`, `stretto_mirror.py`).
+- **Rejected.** A mirror stretto of subject against inversus (`stretto_mirror.py`, `stretto_diverging.py`): either the lines collide in one register, or the clean pairs need remote keys.
+- **Correction.** Lines were then corrected bar by bar against `search/look.py` (a beat or eighth grid with chord names and critic flags) and `search/offbeat.py`.
+- **No notes were placed or inserted by script.**
+
+### Honest weak spots
+
+- **The inversus at the summit's start may be masked.** In b41–44 the Tenor's inversus runs at A4–A3, a third to a sixth under the Alto's quarter-note descant. A beat of rest before it and its entry boost set it apart; it may still be heard as an inner voice of the chords rather than as the ground at double speed.
+- **The four-voice moment is short.** All four forms of the ground sound together for only 1⅓ bars (b49.3–50.3), and three speeds for three bars. The search found no longer overlap without parallels or crossings. The Alto's subject there is at the G-minor level (D4), not at a tonic level.
+- **The two speeds may blend.** Inside a station the inversus moves in parallel tenths or sixths with the ground, and in the same rhythm for its first three notes. That is why it is consonant, but it may be heard as a harmonisation of the ground rather than as the ground again at double speed.
+- **The stations repeat one plan.** Each has ground, inversus at bar 3, subject at bar 5. Only the voices and keys change. Each station also ends with the ground's cadence. Ties and overlaps at the joins soften the sections: the Soprano's A5 runs from b8 into b9, the Bass picks up the Tenor's last A at b17.
+- **Episode 2 is mechanical.** Its sixteenth-note figure is sequenced strictly, a step lower each bar for four bars.
+- **The coda is spare.** For five and a half bars it has three voices (Soprano, Alto, a D2 re-struck every two bars), and the Alto mostly turns between F# and G. The piece ends on the subject's last note, A5, the fifth of the chord, on top.
+- **Thin by design.** Bars 1–4 and 21–22 have two voices or fewer.
+- **Bass line.** It moves by step only 40% of the time.
+- **Not heard.** Tempo, dynamics and voicing were set by reasoning about the score.
+
+### From the seven-voice version (`archive-n-plus-1/`)
+
+**Kept.**
+- The three themes, unchanged in pitch and rhythm: ground, subject, inversus.
+- The migrating ground.
+- The combination the second review singled out as the one a listener will plainly hear: the augmented ground in the Bass under the ground at the dominant in the Soprano, both outer voices falling chromatically at two speeds.
+- Station II in the Tenor with the Bass silent.
+- The arrival on D major.
+- The prelude, untouched.
+
+**Changed, and why.**
+
+| Earlier version (7 voices) | Now (4 voices) | Why |
+|---|---|---|
+| The ground through seven voices, three of its stations inner voices in long notes (REVIEW-2 F3: inaudible) | Four stations, each in an outer position at its entry (Tenor as lowest voice, Alto as top voice), each after silence in that voice | Audibility comes from the texture itself, not only from velocity |
+| The ground in every bar, 70 bars | Episodes without the ground (b17–20, b29–40); each voice rests after its station | The texture breathes; each new station is an entry after silence |
+| Four bars of the ground alone | Two bars alone; the inversus joins at bar 3 in tenths | The double speed is heard from the start, and it is the cleanest combination the search found |
+| No sixteenths until turns were added; 42% of onset slots had 3+ attacks | A sixteenth-note episode (b29–33); 22% | Less chorale, more lines (REVIEW-2 F2) |
+| No subdominant region before the summit | Episode 2 goes through G minor; the summit's subject is at the G-minor level | A real tonal plan: i, v, III, iv, i |
+| Three speeds together for two bars (b53–54), with dissonances the critic could not name | Three speeds for three bars (b49.3–52.3), clean, plus the subject for 1⅓ bars: all four voices are the ground | REVIEW-2 F4 |
+| Subject stretto at three levels over the dominant pedal | A stretto at one bar (Tenor, Alto) before the summit; two inner entries between the two grounds in the summit | Fewer voices: one stretto, placed where it can be heard |
+| Coda: the subject in Soprano I, B-A-C-H in Alto I | The subject in augmentation in the Soprano over D (the lament inverted at its own speed); no B-A-C-H | The ending now belongs to the concept (Crucifixus → resurrexit); B-A-C-H was a garnish |
+| `keyboard_unplayable_pct` 23.8%; tripling 26.6% | 0.0%; 5.4% | Four voices, kept within two hands |
+| 2:51 | 2:47 | |
+
+**The notes are new.** No notes were carried over from the seven-voice score except the themes. No script-chosen passing notes were used: the earlier version's passing-note pass is not repeated.
