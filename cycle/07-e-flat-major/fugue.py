@@ -153,7 +153,8 @@ tag(24, 'Reconciliation: A-flat over B-flat')
 # 6. THE JOKE (b25-30).  Reconciled, Coro I turns pompous: French-overture
 # dotted rhythms in the tenor over the bass, which begins the subject in
 # AUGMENTATION.  Coro II cuts it short with the whole subject in DIMINUTION,
-# chattered in one bar (b26: soprano, inverted; b28: alto, rectus, mocking).
+# chattered in one bar (b26: soprano, inverted; b28: alto, rectus, mocking,
+# snatching the E-flat that Coro I's dotted upbeat D at 27.4 was leading to).
 # Coro I resumes each time, flustered, on C minor.  Then it gives up, and the
 # heads are tossed across a beat apart.  The augmentation's last bar (F E-flat D)
 # is never sung -- until the coda.
@@ -165,9 +166,9 @@ tag(25, 'The joke: augmentation, interrupted by diminution')
 put(26, S='Bb5:2 G5:1 Eb5:1 D5:2 Eb5:2 D5:1 C5:0.5 D5:0.5 Eb5:1 C5:1 Ab4:2 Bb4:1 C5:1',
         A='G4:2 Bb4:2 Bb4:2 G4:2 F4:2 Ab4:2 F4:2 Eb4:2')
 entry('S', 26, 0, 'Coro II: inversion in diminution (interrupting)', 1, 'inversus')
-put(27, B='C3:8 Bb2:8', T='Eb4:3 D4:1 Eb4:2 R:1 F4:1 D4:3 C4:1 Bb3:4')
+put(27, B='C3:8 Bb2:8', T='Eb4:3 D4:1 Eb4:2 R:1 F4:1 D4:3 C4:1 Bb3:3 D4:1')
 put(28, A='Eb4:2 G4:1 Bb4:1 C5:2 Bb4:2 C5:1 D5:0.5 C5:0.5 Bb4:1 D5:1 F5:2 Eb5:1 D5:1',
-        S='G5:2 Eb5:2 Eb5:2 G5:2 Ab5:2 F5:2 Ab5:2 G5:2')
+        S='R:8 Ab5:2 F5:2 Ab5:2 G5:2')
 entry('A', 28, 0, 'Coro II: the subject in diminution (mocking Coro I)', 1)
 put(29, B='C3:4 D3:2 C3:2 Bb2:4 D3:4', T='G4:3 Ab4:1 F4:3 Eb4:1 D4:3 C4:1 Bb3:4')
 put(30, T='Bb3:2 D4:1 F4:1 R:4 C4:2 Eb4:1 G4:1 R:4',
@@ -307,6 +308,8 @@ def build(path=HERE / 'fugue.json'):
             if v['name'] in coro_ii and any(q(b) <= t < q(b + 1) for b in (26, 28)):
                 e['v'] = max(30, int(e['v']) - 4)        # Coro II's chatter, lighter
                 e['gate'] = 0.55                         # and detached
+            if v['name'] == 'Alto' and q(34) <= t < q(35):
+                e['v'] = max(30, int(e['v']) - 4)        # b34: the outer statements carry the stretto
             if v['name'] == 'Tenor' and q(40) <= t < q(45):
                 e['v'] = min(112, int(e['v']) + 10)      # the chorale sings out
             if v['name'] == 'Soprano' and t >= q(45, 3):

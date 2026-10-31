@@ -55,7 +55,7 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 | 16–18.1 | all | Alto: the inversion on D in G minor; its tail turns to B-flat. Cadence in B-flat (18.1), held, then a breath. |
 | 19–23 | alternating | **The quarrel.** Coro I insists on B-flat: the head on B♭ with A♮ in the bass (b19). Coro II answers in A-flat: the inverted head over E♭7/D♭ (b20). Half a bar each (b21–22), then a beat each (b23). |
 | 24 | both | **Reconciliation.** Coro II's A♭ and C are held; Coro I's bass takes B♭ and its tenor joins the A-flat chord on E♭. That makes A-flat over B-flat, the home dominant. Then both give a step: soprano C→B♭, tenor E♭→D, into B♭7 and E-flat. |
-| 25–30 | alternating | **The joke.** Coro I turns pompous: French-overture dotted rhythms in the tenor, the subject in **augmentation** in the bass (b25). Coro II cuts it off with the whole inversion in **diminution**, chattered in one bar and played detached (b26). Coro I resumes, flustered, on C minor (b27). Coro II cuts in again, this time with Coro I's own rectus in diminution, mocking it (b28). Coro I resumes (b29), then gives up: the heads are tossed across a beat apart (b30). The augmentation's last bar is never sung here. |
+| 25–30 | alternating | **The joke.** Coro I turns pompous: French-overture dotted rhythms in the tenor, the subject in **augmentation** in the bass (b25). Coro II cuts it off with the whole inversion in **diminution**, chattered in one bar and played detached (b26). Coro I resumes, flustered, on C minor (b27), and ends on a pompous dotted upbeat D4 that leads to an E♭ it never sings. The alto snatches that E♭ at the same pitch and runs off with Coro I's own subject in diminution, alone for two beats, before the soprano joins (b28). Coro I resumes (b29), then gives up: the heads are tossed across a beat apart (b30). The augmentation's last bar is never sung here. |
 | 31–32 | S, T, B | **Episode: the choirs swap forms.** Coro II's soprano sings the head rectus, Coro I's tenor the head inverted, in G minor. |
 | 33–36 | all | **Stretto à 4** (§4): alto inversion on D (33.1), tenor subject on C (33.3), soprano inversion on E♭ (34.1), bass subject in E-flat (35.3). The levels fall by fifths, G minor → C minor → A-flat → E-flat. |
 | 37–38 | all | **Dominant pedal.** The bass's subject ends on the leading tone and becomes a B♭ pedal. The tenor's head over it (37.3); then the soprano, Coro II, sings the **rectus** head up to C6 over A-flat over B-flat (38.3, the climax) and B♭7. |
@@ -73,7 +73,7 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 - **The mirror exposition (b1–9).** The same eight bars, upside down, an octave and more higher: low choir, then high choir.
 - **The quarrel at shrinking distances (b19–23).** A bar, half a bar, a beat. Coro I's A♮ (bass b19.4.5 and b21.2.5, tenor b22.2.5) against Coro II's D♭ (alto b20.3 and b21.4.5, soprano b22.3 and b23.4.5).
 - **A-flat over B-flat** three times: the reconciliation (b24), the climax (b38.3) and the final cadence (b44). It is also the chord under the chorale's last C in BWV 140/7, and the prelude has it at b39.4.
-- **Augmentation interrupted by diminution (b25–29),** finished only in the coda (b43).
+- **Augmentation interrupted by diminution (b25–29).** What the ear gets is pomp against chatter, and the stolen subject at b28. The augmentation's missing last bar (F E♭ D) returns in the coda's bass (b43), fourteen bars and a stretto later: a hidden detail for the score-reader, not something a listener will connect with b29.
 - **The stretto (b33–36).** Each entry comes in at an edge of the texture after a rest: the alto alone over a held G2; the tenor as the lowest voice (the bass is resting); the soprano at the top (E♭6); the bass at the bottom, on beat 3 of b35.
   - Proof: the four bare statements alone give parallels 0 (also weak and beat-to-beat), unresolved 0, bad doublings 0, crossings 0.
   - Entering at 34.3, half a bar after the soprano, the bass would have moved in octaves with the tenor (G–B♭). Entering at 35.1, its E♭2 would have sounded under the tenor's D4, out of reach of one hand. At 35.3 both problems are gone.
@@ -87,12 +87,12 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 | dissonance_unresolved | **0** | 0 |
 | bad_doublings | **1** (b44.1, see weak spots) | 4 |
 | low_register_seconds | **0** | 4 |
-| stepwise_pct / leap_4th_plus_pct | 54.2 / 10.0 | 52.2 / 13.6 |
+| stepwise_pct / leap_4th_plus_pct | 54.4 / 10.1 | 52.2 / 13.6 |
 | pc_tripled_on_beats_pct | 5.5 | 15.5 |
 | crossings | 0 | 17 |
-| **keyboard_unplayable_pct** (more than two hands) | **0.0** (0 of 317 onsets) | 9.7 |
+| **keyboard_unplayable_pct** (more than two hands) | **0.0** (0 of 318 onsets) | 9.7 |
 | **mean moving voices** | **3.04** of 4 (20 of 46 bars with all four moving) | 4.82 of 8 |
-| tertian fit / longest static harmony | 49.5% / 3 beats | 66.8% / 8 beats |
+| tertian fit / longest static harmony | 48.9% / 3 beats | 66.8% / 8 beats |
 
 - **Texture, moving voices per bar:** 1 1 2 2 3 1 2 2 | 4 3 3 2 2 3 3 3 4 4 | 2 2 4 4 4 3 | 4 2 2 2 2 4 | 3 3 | 3 3 4 4 4 4 | 4 4 4 4 4 4 4 4. The full texture is kept for the meeting, the reconciliation, the stretto and the coda. The exposition, the quarrel and the joke alternate two-voice choirs.
 - **Theme check.** The exposition, the meeting and the stretto entries in real keys are 12/12 (the answers 11/12, by tonal adjustment). The C-minor entries (b14, b33.3) score 3/12 because they are modal (diatonic) transpositions. The diminutions are 12/12. The heads and the augmentation are partial by design.
@@ -100,7 +100,7 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 
 ## 6. Honest weak spots
 
-1. **Steps: 54%,** against Bach's 71–75% and the brief's 65. Most of the leaps are by design:
+1. **Steps: 54.4%,** against Bach's 71–75% and the brief's 65. Most of the leaps are by design:
    - the quarrel's arpeggiated key assertions (b19–23, 0–50% steps per bar);
    - the joke's French-overture leaps (b25, b27, b29);
    - the tossed heads (b30);
@@ -111,7 +111,7 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 3. **Compass.** The exact mirror puts the soprano on E♭6 (b7.1), and the stretto's soprano entry repeats it (b34.1). That is above Bach's keyboard compass (c''' or d'''), though not a piano's.
 4. **Registers in the quarrel.** Coro II's alto sits at C4–F4 in b20, where Coro I's tenor was a bar earlier. In the quarrel the choirs are told apart by alternation and key (A♮ against D♭) rather than by register.
 5. **One bad doubling, b44.1.** The final A-flat-over-B-flat chord has the chorale's B♭3 in the tenor over the bass's B♭2, and the alto takes C before A♭. The critic reads C minor 7 over its seventh, doubled. To avoid it I would have to drop either the chorale's last note or the C (the chord's colour).
-6. **Stretto harmony, b34.** The soprano's inversion in A-flat runs over the alto's in G minor and the tenor's C-level subject, so A♭ rubs against G (the critic: chord sevenths, b34.1–3) with no bass under them. It is the most dissonant bar of the piece, and I cannot judge on paper whether it sounds intended or sour.
+6. **Stretto harmony, b34.** The soprano's inversion in A-flat runs over the alto's in G minor and the tenor's C-level subject, so A♭ rubs against G (the critic: chord sevenths, b34.1–3) with no bass under them. It is the most dissonant bar of the piece, and I cannot judge on paper whether it sounds intended or sour. Since the third review the alto is played 4 softer in this bar, so that the two outer statements carry it.
 7. **The stretto never has four statements at once.** At most three overlap (b34). This was chosen for clarity and two-hand playability (§4), at the cost of density.
 8. **The coda's alto** is a plain inner voice (quarters and halves, mostly thirds). The soprano and the chorale carry the coda.
 9. **No listening.** I cannot judge balance, whether the chorale stands out at +10 velocity, or how the organ sound of the spatial render treats the chatter in b26 and b28.
@@ -137,6 +137,17 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
     - the prelude's ritornello as the chorale's upbeat (b39).
   - **The tempo is ♩ = 76** (was 80), so that 46 bars last about 2½ minutes.
 - **Why:** the eight-voice texture washed out the counterpoint. With two voices per choir, the mirror, the quarrel, the joke and the stretto can each be followed line by line.
+
+## 8. Third review (REVIEW-3.md): what changed
+
+- **Issue 1, the b28 punchline (applied as tested).**
+  - The soprano now rests for the first half of b28 (`R:8 Ab5:2 F5:2 Ab5:2 G5:2`).
+  - The tenor ends b27 on a dotted upbeat (`… Bb3:3 D4:1`).
+  - The alto's mocking statement of Coro I's subject in diminution is now alone in the right hand for two beats, and it starts by snatching the E♭ that Coro I's upbeat was heading for. This rhymes with b25, where Coro I's dotted upbeat is also cut off.
+- **Issue 2, bar 34 (performance only).** All three lines there are thematic, and I found no note change that keeps the entries. A bass under them would push the soprano's E♭6 and the alto out of one hand's reach, or spoil the bass's entry at the bottom. So the alto is played 4 softer in b34, as the review suggests, and the bar stays a listen-first item (weak spot 6).
+- **Issue 3, the quarrel's registers (not applied).** The quarrel is on the review's own must-not-touch list. The choirs are already told apart there by the bass (Coro I only), by turn-taking, and by A♮ against D♭. Moving Coro II's b20 up an octave would add a third E♭6 before the climax's C6, and an E♭6 → E♭5 leap. I keep it unless the render shows the quarrel sounding like one choir.
+- **Issue 4, the augmentation's ending.** This is now described as a hidden detail (§4). The joke is presented as pomp against chatter and the stolen subject. The review's tested attempt to make b43 audible added a fifth and a clash, so the notes stay.
+- **After the changes:** parallels 0 (also weak and beat-to-beat), unresolved 0, bad_doublings 1 (b44.1, as before), low-register seconds 0, crossings 0, keyboard 0 of 318, stepwise 54.4%. All three fugue renders were made again (153 s, binaural 154 s).
 
 ---
 

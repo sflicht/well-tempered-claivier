@@ -156,12 +156,13 @@ put('Fl', 15, 3, 'C6:3 E6:5 C6:6 F6:6 D6:4')
 # ================================================================ TUTTI II in C (b17-18): the device
 # Rectus and inversus a beat apart in the outer voices: the violin's subject climbs from the bass while
 # the trumpet's inversion (C major, all natural notes) falls from its high C; then the tails run in
-# contrary motion.  The recorder holds a descant above, the oboe the tenor.
+# contrary motion.  The recorder strikes the first chord and then rests, so that the trumpet's head is
+# the top voice; it returns as a descant over the tails (b18.2).  The oboe takes the tenor.
 I_C = W.invert_diatonic(S_C, 'E5', [0, 2, 4, 5, 7, 9, 11])    # the C-major mirror: C6 C6 G5 ... B4 ... G5
 theme('Vn', 17, 1.5, ' '.join(oc(S_C, -2).split()[:-5]) + ' G2:1 B2:1 D3:1 G2:1 C3:2', 'tutti: subject in C (Violino)')
 theme('Tr', 17, 2.5, I_C, 'tutti: inversus in C, a beat later (Tromba)')
 put('Ob', 17, 1.5, 'R:2 C5:8 E4:8 G4:4 F4:4 D4:4')
-put('Fl', 17, 1, 'E6:4 R:4 G6:4 D6:4 C6:4 D6:4 F6:4 G6:4 E6:4')
+put('Fl', 17, 1, 'E6:4 R:16 D6:4 F6:4 G6:4 E6:4')
 
 
 # ================================================================ EPISODE 2, solo (b19-20): C -> d
@@ -302,7 +303,7 @@ theme('Ob', FS + 1, 3.5, oc(S, -1), 'final stretto: subject (Oboe)')
 put('Vn', FS, 1, 'F2:12')
 put('Ob', FS, 1, 'A4:4')
 put('Vn', FS + 2, 4.5, 'D3:2 C3:8 F2:4')
-put('Fl', FS + 2, 1.5, 'R:2 G5:4 Bb5:4 G5:4 E5:4 G5:4 A5:4 G5:4')
+put('Fl', FS + 2, 1.5, 'R:10 G5:4 E5:4 G5:4 A5:4 G5:4')
 put('Tr', FS + 3, 2, TATTOO)
 
 
@@ -394,8 +395,10 @@ ACCENTS = [('Tr', 38, 4, 43, 1, 4), ('Tr', 43, 1.5, 44, 1, 12), ('Vn', 44, 2.5, 
            ('Tr', 44, 4, 45, 1, -22), ('Tr', 52, 3.5, 54, 3.5, 6), ('Tr', 55, 2, 58, 1, 6)]
 BASEVEL = [70, 64, 64, 66]
 # (keyboard pan, [azimuth deg, distance m] for the binaural render, General MIDI program for the
-# --instruments render): the concertino standing in a shallow arc, trumpet, recorder, oboe, violin
-SEATS = [(50, [-42.0, 4.5], 56), (60, [-14.0, 4.0], 73), (70, [14.0, 4.0], 68), (80, [42.0, 4.5], 40)]
+# --instruments render): the concertino standing in a shallow arc, trumpet, recorder, oboe, violin.
+# The violin's line is mostly the bass, below the violin's range, so the instruments render gives it to
+# the continuo cello (GM 42), as Bach's keyboard transcriptions merge the two.
+SEATS = [(50, [-42.0, 4.5], 56), (60, [-14.0, 4.0], 73), (70, [14.0, 4.0], 68), (80, [42.0, 4.5], 42)]
 
 if __name__ == '__main__':
     end = max((s + dur16(t)) for v in VO.values() for s, t in v)

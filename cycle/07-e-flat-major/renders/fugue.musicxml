@@ -939,38 +939,9 @@
     </measure>
     <measure number="28">
       <note>
-        <pitch>
-          <step>G</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>240</duration>
-        <type>eighth</type>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>240</duration>
-        <type>eighth</type>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>240</duration>
-        <type>eighth</type>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>240</duration>
-        <type>eighth</type>
+        <rest />
+        <duration>960</duration>
+        <type>half</type>
       </note>
       <note>
         <pitch>
@@ -4133,8 +4104,17 @@
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>360</duration>
+        <type>eighth</type>
+        <dot />
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>120</duration>
+        <type>16th</type>
       </note>
     </measure>
     <measure number="28">

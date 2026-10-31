@@ -32,7 +32,7 @@ Form (58 bars; t = bar.quarter):
                (S, A), the guest on the right (B, T), each shrinking with its exchange; the harmony
                of the short exchanges is one long cadence: V vi IV ii V V7
   V    48-53    final tutti: the guest as a long-note cantus on top (BWV 878 x2, S) while our
-               subject goes round the ring beneath it in stretto: A (48.1), T (48.3), B (50.1)
+               subject goes round the ring beneath it in stretto: A (48.1), T (48.2), B (50.1)
   VI   54-58    coda: the cantus's last note, E5, is the first note of our subject in the soprano;
                authentic cadence (57.1), plagal Amen (57.3-58)
 
@@ -44,6 +44,7 @@ and wrote every other note by hand, correcting against tools/critic.py.
 """
 from __future__ import annotations
 
+import json
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -113,7 +114,7 @@ theme('T', 4, 3, 'E3:8 B3:12 A#3:4 G#3:4 F#3:4 E3:4 D#3:2 C#3:2 D#3:4 E3:4 F#3:8
 theme('B', 8, 1, 'B2:8 E3:12 D#3:4 C#3:4 B2:4 A2:4 G#2:2 F#2:2 G#2:4 A2:4 B2:8',
       'Subject (E), bass, back right')
 put('T', 8, 1, 'B3:4 A3:4 G#3:4 A3:4 B3:8 E4:8 C#4:4 B3:8 E4:8 D#4:4')             # countersubject
-put('A', 8, 1, 'B4:16 R:8 C#5:12 G#4:8 C#5:8 B4:4')                              # free: rests b9.1-2
+put('A', 8, 1, 'B4:16 R:8 C#5:12 G#4:8 C#5:8 B4:2 A4:2')   # alto passes on down: the guest's B4 is new                              # free: rests b9.1-2
 
 # ======================================================================
 # II. FIRST TUTTI: the fourth singer (back left) closes the ring with the guest
@@ -192,12 +193,12 @@ CANTUS = 'E5:32 F#5:16 A5:16 G#5:16 F#5:16'
 theme('S', 48, 1, CANTUS, "Guest as cantus: BWV 878 subject in augmentation (x2), soprano (its last E5 is b54.1)", 6)
 theme('A', 48, 1, 'E4:8 A4:12 G#4:4 F#4:4 E4:4 D#4:4 C#4:2 B3:2 C#4:4 D#4:4 E4:12',
       'Final stretto 1: subject (on E), alto, front left')
-theme('T', 48, 3, 'B3:8 E4:12 D#4:4 C#4:4 B3:4 A3:4 G#3:2 F#3:2 G#3:4 A3:4 B3:8',
-      'Final stretto 2: subject (E), tenor, front right, half a bar later')
+theme('T', 48, 2, 'B3:8 E4:12 D#4:4 C#4:4 B3:4 A3:4 G#3:2 F#3:2 G#3:4 A3:4 B3:8',
+      'Final stretto 2: subject (E), tenor, front right, a beat later')
 theme('B', 50, 1, 'B2:8 E3:12 D#3:4 C#3:4 B2:4 A2:4 G#2:2 F#2:2 G#2:4 A2:4 B2:16',
       'Final stretto 3: subject (E), bass, back right, at its exposition pitch')
 put('B', 48, 1, 'E3:24')
-put('T', 48, 1, 'G#3:4')
+put('T', 48, 1, 'G#3:2')
 
 
 put('A', 51, 4, 'D#4:4 E4:16 D#4:16')
@@ -308,9 +309,16 @@ def build(nbars):
             'markers': [{'t': float(t), 'label': txt} for t, txt in MARKS]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 66) for i in range(len(NAMES))]
     ents = [(LONG[NAMES.index(v)], b, o, l, n) for v, b, o, l, n in ENTRIES]
-    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ents, subject=SUBJ,
+    data = W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ents, subject=SUBJ,
                          dynamics=dynamics, tags=None,
                          extra={'entry_verification': [list(r) for r in verify_entries()]})
+    # performance only (REVIEW-3, item 4): the cantus stands 6 steps above the stretto beneath it,
+    # so its long notes are not covered as they decay on a piano
+    for e in data['voices'][0]['events']:
+        if tq(48) <= e['t'] < tq(54):
+            e['v'] = min(118, e['v'] + 6)
+    (HERE / 'fugue.json').write_text(json.dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

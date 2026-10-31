@@ -130,7 +130,7 @@ put('C2', 10, 1, 'G3:4 F#3:2 E3:6 C#3:4 E3:2 F#3:6 B2:6 G2:4 B2:2 D3:6 B2:2 R:4'
 # ================================================================ IV. CHORALE LINE 2 (b12-16.2): Coro II's inversion
 put('CH', 12, 1, CH2)
 theme('C2', 12, 2, octv(INV, -1), 'Coro II: inversion (E minor) under chorale line 2')
-put('C1', 12, 1, 'G4:1 A4:1 B4:1 C5:1 D5:1 B4:1 D5:2 C5:1 B4:1 A4:1 B4:1 D5:1 C5:1 B4:1 C5:1 E5:1 D5:1 D5:2 C5:2 B4:1 A4:1 '
+put('C1', 12, 1, 'G4:1 A4:1 B4:1 C5:1 D5:1 B4:1 D5:6 D5:1 C5:1 B4:1 C5:1 E5:1 D5:1 D5:2 C5:2 B4:1 A4:1 '
                  'C5:2 B4:1 A4:1 D5:2 C5:2 D5:1 C5:1 B4:2 A4:2 B4:1 A4:1 F#4:2 G4:2 A4:2 B4:2 '
                  'E5:2 D5:2 E5:2 C5:1 B4:1 A4:1 B4:1 C5:1 D5:1 E5:2 D5:1 C5:1 B4:1 A4:1 G4:2 B4:1 A4:1 B4:1 C5:1 '
                  'D5:1 C5:1 B4:1 A4:1 C5:2 B4:12')
@@ -173,7 +173,7 @@ put('CH', 23, 1, CH2)
 put('C1', 23, 2, 'D5:2 C5:1 B4:1 A4:1 F#4:1 '
                  'B4:1 A4:1 G4:1 A4:1 B4:1 G4:1 E5:1 D5:1 C5:1 D5:1 E5:1 D5:1 '
                  'F#5:1 E5:1 D5:1 E5:1 F#5:1 D5:1 C5:1 B4:1 A4:1 B4:1 C5:1 A4:1 '
-                 'D5:1 C5:1 B4:1 A4:1 G4:1 F#4:1 G4:1 B4:1 E5:1 D#5:1 E5:1 B4:1 '
+                 'D5:1 C5:1 B4:1 A4:1 G4:1 F#4:1 G4:6 '
                  'E5:1 D5:1 C5:1 E5:1 G5:1 E5:1 A5:1 E5:1 C5:1 E5:1 C5:1 A4:1 '
                  'B4:2 A4:1 F#4:1 A4:1 B4:1 G4:1 B4:1 E5:1 B4:1 A4:1 B4:1 '
                  'C5:2 B4:1 A4:1 B4:1 D5:1 D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 G4:2 C5:1 B4:1 C5:1 E5:1 D5:2 B4:1 G4:1 B4:1 D5:1 '
@@ -244,12 +244,15 @@ put('C1', 43, 1, 'E5:1 D5:1 C5:1 D5:1 E5:1 G5:1 C5:1 B4:1 A4:1 B4:1 C5:1 A4:1 '
                  'G4:2 A4:1 B4:1 C5:1 A4:1 B4:2 G4:1 A4:1 B4:1 G4:1 C5:2 A4:1 B4:1 C5:1 A4:1 B4:2 A4:1 F#4:1 A4:1 F#4:1 '
                  'G4:2 R:4 R:6')
 put('C2', 43, 1, 'C4:4 B3:2 A3:6 B3:4 G3:2 A3:6 E3:6 G3:6 F#3:6 R:6')
-INV_END = octv(INV, -1).rsplit(' ', 2)[0] + ' G3:2 F#3:2'     # the tail turns down into the cadence
-theme('C2', 45, 1, INV_END, 'Final stretto: Coro II, inversion (E minor) under the last chorale line (tail turned down to the dominant)')
+# Third review: written out by hand so that the second half fills the thirds the two forms leave open (they mirror E
+# onto B): a passing G3 at 45.4, G-E for E-G at 46.1, F#-G-E for E-F#-G at 46.3; the tail turns down to the dominant.
+INV_END = ('B3:6 B3:4 C4:2 B3:2 A3:2 G3:2 E3:2 G3:2 F#3:2 G3:4 E3:2 D#3:6 '
+           'F#3:2 G3:2 E3:2 A3:2 G3:2 F#3:2')
+theme('C2', 45, 1, INV_END, 'Final stretto: Coro II, inversion (E minor) under the last chorale line (second half re-voiced to fill the thirds; tail turned down to the dominant)')
 theme('C1', 45, 3, S, 'Final stretto: Coro I, subject (E minor), two beats later: the final cadence')
 
 # ================================================================ XIII. CODA (b47.3-49.4)
-put('C2', 47, 1, 'B3:12 E3:12 E3:24 E2:24')
+put('C2', 47, 1, 'B3:6 B2:6 E3:12 E3:24 E2:24')
 put('C1', 47, 3, 'E4:2 G4:2 B4:2 E5:3 D#5:1 E5:2 C5:4 B4:2 A4:4 G4:2 F#4:4 E4:2 C5:4 B4:2 B4:24')
 
 MARKS = [(1, 'Exposition: Coro I subject, Coro II inversion'), (5, 'Dialogue: Sehet! - Wen? - Wie?'),
