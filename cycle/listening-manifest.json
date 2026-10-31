@@ -239,7 +239,7 @@
    ]
   },
   {
-   "name": "Pair XIII \u00b7 F-sharp major (new, fourteen voices)",
+   "name": "Pair XIII \u00b7 F-sharp major (new)",
    "pieces": [
     {
      "id": "prelude-13",
@@ -250,10 +250,10 @@
     },
     {
      "id": "fugue-13",
-     "title": "Fugue XIII \u00b7 Fuga canonica a 14 sopra il fondamento di Goldberg",
+     "title": "Fugue XIII \u00b7 Fuga canonica sopra il fondamento di Goldberg (4 voices)",
      "score": "cycle/13-f-sharp-major/fugue.json",
      "tag": "new",
-     "notes": "Every third Goldberg Variation is a canon, at the unison, the second, the third and so on up to the ninth, and Bach later wrote fourteen more canons on the same ground (BWV 1087). Here the ground runs ten times in F-sharp, and with each round a new canon pair enters and stays: at the unison, the second, the third, the fourth and fifth by inversion, and the sixth. The subject is the ground itself in dotted diminution.\n\nAt the summit (bars 57-64) all six canons sound together over the ground with the subject in stretto. Then, as in the Goldberg's Variation 30, a quodlibet: the two folk songs 'Ich bin so lang nicht bei dir g'west' and 'Kraut und R\u00fcben' (checked against Bach's Variation 30), here in canon themselves and in augmentation, ending on a fourteen-voice chord.\n\nFirst version: at the summit 9-12 voices sound at once, and several voices rest until the final chord."
+     "notes": "Every third Goldberg Variation is a canon, two voices in canon over a free bass, and the interval between them rises from the unison to the ninth. Here the Goldberg ground (in dotted diminution, the fugue's subject) carries seven canons whose interval climbs: unison, second, third, fourth and fifth by inversion, sixth, and in the quodlibet the octave. Each canon's leading voice begins with the subject, so the follower answers it at the canon's interval or upside down; the fourth voice adds its own entries. The ground also travels through keys, F-sharp, B, G-sharp minor, C-sharp and home, spelling a cadence across the piece, with an Adagio in F-sharp minor before the end.\n\nThe close is Bach's Variation 30 idea: the quodlibet on two folk songs, 'Ich bin so lang nicht bei dir g'west' (in canon at the octave) and 'Kraut und R\u00fcben', with the fugue subject over them.\n\nRecomposed in four voices (it was fourteen); the earlier version is in the pair's archive folder. The binaural render uses harpsichords."
     }
    ]
   },
