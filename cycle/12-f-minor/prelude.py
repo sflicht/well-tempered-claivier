@@ -16,7 +16,7 @@ The melody is built from two crosses:
     pedal).
 Each cross resolves to C.  The bass walks in quavers, stops to sing the name in
 half notes (b9-10), and becomes a repeated-quaver tonic pedal for the last
-phrase (b13-15), as in BWV 639.
+phrase (b13-14), as in BWV 639.
 
 4/4, crotchet = 54, 16 bars, about 1:20.  Every note is written below.
 """
@@ -33,7 +33,7 @@ B = Bars(['soprano', 'alto', 'bass'], (4, 4))
 B.bar('i iv V viio7/V: the cross of BWV 857',  # 1
       soprano='C5:4 Db5:4 C5:4 B4:4',
       alto='Ab4:4 Bb4:4 G4:4 Ab4:4',
-      bass='F2:2 Ab2:2 Bb2:2 Db3:2 C3:2 E3:2 D3:2 F3:2')
+      bass='F2:2 C3:2 Bb2:2 F2:2 C3:2 E3:2 D3:2 F3:2')
 B.bar('V6 V7 | the name: V7 V7/iv',  # 2
       soprano='C5:8 Bb4:4 A4:4',
       alto='G4:8 E4:4 F4:4',
@@ -48,12 +48,12 @@ B.bar('i6 iio6/5 i6/4 V',  # 4
       bass='Ab2:2 C3:2 Bb2:2 Db3:2 C3:2 F3:2 C3:2 C2:2')
 B.bar('i | VI iv',  # 5
       soprano='F4:8 Ab4:4 Bb4:4',
-      alto='Ab3:4 C4:4 F4:8',
+      alto='Ab3:4 C4:4 F4:4 Db4:4',
       bass='F2:2 C3:2 Ab2:2 C3:2 Db3:2 F3:2 Bb2:2 Db3:2')
 B.bar('III VI6 VII V6/5 of III',  # 6
       soprano='C5:4 Db5:4 Eb5:4 Db5:4',
       alto='Eb4:4 F4:4 G4:4 Bb4:4',
-      bass='Ab2:2 Eb3:2 F2:2 Ab2:2 Eb3:2 G3:2 G2:2 Bb2:2')
+      bass='Ab2:2 C3:2 F2:2 Ab2:2 Eb3:2 G3:2 G2:2 Eb2:2')
 B.bar('III iv6/5 i V6',  # 7
       soprano='C5:4 Bb4:4 Ab4:4 G4:4',
       alto='Ab4:4 F4:4 F4:4 C4:4',
@@ -63,8 +63,8 @@ B.bar('iv7 | V (half cadence)',  # 8
       alto='F4:8 E4:8',
       bass='Bb2:2 Db3:2 F2:2 Ab2:2 C3:2 E3:2 G3:2 C3:2')
 B.bar('the name in the bass: iv | V6/iv V6/5 of iv',  # 9
-      soprano='Db5:4 F5:4 C5:4 Eb5:4',
-      alto='F4:4 Bb4:4 F4:4 F4:4',
+      soprano='Bb4:4 Db5:4 C5:4 Eb5:4',
+      alto='F4:16',
       bass='Bb2:8 A2:8')
 B.bar('V7(b9) | viio7/V',  # 10
       soprano='Db5:4 C5:4 D5:4 Ab4:4',
@@ -77,7 +77,7 @@ B.bar('V | V6/5',  # 11
 B.bar('i iio6/5 i6/4 V7',  # 12
       soprano='Ab4:4 G4:4 F4:4 E4:4',
       alto='C4:4 Db4:4 C4:4 Bb3:4',
-      bass='F2:2 Ab2:2 Bb2:2 Db3:2 C3:2 Ab2:2 C3:2 C2:2')
+      bass='F2:2 Ab2:2 Bb2:2 G2:2 C3:2 Ab2:2 C3:2 C2:2')
 B.bar('tonic pedal: the cross again (i iv6/4 i viio7/V)',  # 13
       soprano='C5:4 Db5:4 C5:4 B4:4',
       alto='Ab3:4 Bb3:4 Ab3:8',
@@ -86,10 +86,10 @@ B.bar('the name once more (iv6/4 I iio4/3 viio7/V)',  # 14
       soprano='Bb4:4 A4:4 C5:4 B4:4',
       alto='Db4:4 C4:4 D4:8',
       bass='F2:2 F2:2 F2:2 F2:2 F2:2 F2:2 F2:2 F2:2')
-B.bar('V i6/4 V V7 over the pedal',  # 15
+B.bar('i i6 V V: the last cadence',  # 15
       soprano='C5:4 Ab4:4 G4:4 E4:4',
-      alto='E4:4 F4:4 E4:4 C4:4',
-      bass='F2:2 F2:2 F2:2 F2:2 F2:2 F2:2 F2:2 F2:2')
+      alto='C4:16',
+      bass='F2:2 F3:2 Ab2:2 F2:2 C3:2 G2:2 C3:2 C2:2')
 B.bar('i',  # 16
       soprano='F4:16',
       alto='Ab3:16',
