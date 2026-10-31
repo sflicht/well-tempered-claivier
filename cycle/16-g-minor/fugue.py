@@ -218,8 +218,8 @@ ECHO = [('A', 21, 22, -16), ('T', 21, 22, -16), ('A', 24, 25, -16), ('T', 24, 25
 
 # ================================================================ D: line 5 (bars 25-32)
 # "wir hingen auf mit schwerem Mut".  The subject hangs across the beats; Tenor, Alt and then the
-# pedal (the line in augmentation) enter five beats apart, the Diskant answers with the subject
-# inverted, and Pedal I follows the pedal line 4 1/2 beats behind.
+# pedal (the line in augmentation) enter five beats apart; the Diskant enters free above, and
+# Pedal I follows the pedal line 4 1/2 beats behind.  The line closes on G over the held G.
 X('T', 25, 1, oc(S5, -1), 'line 5 Vorimitation: subject 5 (Tenor)')
 X('A', 26, 2, S5, 'line 5 Vorimitation: subject 5, 5 beats later (Alt)')
 X('P2', 27, 3, cantus(5, -2, last=20), 'cantus line 5 (Pedal II, canon dux)')
@@ -230,7 +230,7 @@ X('P1', 28, 3.5, cantus(5, -1, last=6), 'cantus line 5 (Pedal I, canon at the oc
 
 # ================================================================ E: line 6 (bars 32-39)
 # "die Harfen und die Orgeln gut".  The harps are rushing scales (tirate) falling through the
-# manuals, Diskant, Alt (the answer, a fourth lower), Tenor; the organs are the pedal canon, 4 beats
+# manuals, Diskant, Alt (the answer, on D), Tenor; the organs are the pedal canon, 4 beats
 # apart, where the line's B-flat - C-sharp ("Orgeln") makes an augmented sixth over C-sharp in the
 # bass.  Half cadence on D; then the organ is "hung up": a general pause.
 X('S', 32, 3, oc(S6, 1), 'line 6 Vorimitation: subject 6, the harps (Diskant)')
@@ -290,7 +290,8 @@ X('P2', 58, 3, 'C3:2 Eb3:2 F2:4 Bb2:4 Eb3:4 A2:4 D3:4 D2:4 G2:4')
 
 # ================================================================ J: line 10, the summit (bars 60-66)
 # "täglich von ihn' erleiden".  The pedal canon at its closest, 1 1/2 beats; above it the line's
-# subject (the line at four times the speed of the pedal) in stretto, Diskant, Alt, Tenor.
+# subject (the line at four times the speed of the pedal) in stretto, Diskant and then Alt an
+# octave lower; the Tenor joins for the cadence, the only stretch with five voices moving.
 X('P2', 60, 3, cantus(10, -2, last=48), 'cantus line 10 (Pedal II, canon dux)')
 X('P1', 60, 4.5, cantus(10, -1, last=42), 'cantus line 10 (Pedal I, canon at the octave, 1 1/2 beats)')
 X('S', 60, 3.5, oc(S10, 1), 'summit: subject 10 (Diskant), with its own augmentation in the pedal')
