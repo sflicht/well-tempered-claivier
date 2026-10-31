@@ -24,13 +24,13 @@
 - parallels_error 0 / weak 0, beat_parallels 0, bad_doublings 0, low_register_seconds 0, crossings 0.
 - dissonance_unresolved 2: the fourth of the cadential six-four (A♭3) inside the rocking figure in bars 6 and 10. It reaches G3 at the change to V, but only after a rocking C4, so the critic does not count it as resolved.
 - keyboard_unplayable_pct 0.0, mean_moving_voices 3.0.
-- stepwise_pct 32.4: the rocking figure is a broken chord. The tune itself moves by step except for its octave leap.
+- stepwise_pct 33.1: the rocking figure is a broken chord. The tune itself moves by step except for its octave leap.
 - The three statements of the whole tune verify 16/16.
 
 **Weak spots.**
-- The cradle figure keeps one rhythm in every bar. That is the point of a lullaby, but over 19 bars it may be monotonous.
+- The cradle figure is mostly one rhythm (a quarter and an eighth per beat). Since the review it ripples in even eighths at a few points (bars 8, 11, 12) and slows to held beats in bars 16-18, but it is still a lullaby's single pattern.
 - Verses 1, 2 and 4 use the same tune at the same pitch; only the harmony under it, the second voice and the dominant pedal change.
-- The final chord has no bass by design. On paper it is a bar of three notes in the treble under a long hold in the tempo map, with no fermata sign.
+- The final chord has no bass by design. On paper it is a bar of three notes under a long hold in the tempo map; the marker text says so, but there is no fermata sign.
 
 ## Fugue XVII: "Fuga, fuggendo la cadenza" (four children and their father)
 
@@ -88,8 +88,8 @@ Times come from the tempo map. "Moving" is the critic's count of voices that mov
 | 25-26 | 1:47 | **Evasion 10, the guest.** At the cadence soprano, alto and bass stop. The tenor's leading tone rises alone to A♭3, which is the first note of Bach's BWV 862, at pitch; the bass answers with Bach's answer. Bach's own V7 → I (bar 26, beat 3) is turned to vi. The soprano lands her trill, a bar late, on A♭5. | 1-3 |
 | 27-30 | 1:56 | **At home: evasion 11, the trill that will not stop.** Soprano subject in A-flat. Its *re* becomes a trill that lasts five beats while the others call (falling thirds) and the bass knocks. When it lets go, the tonic arrives with G♭ in the bass (V → V4/2 of IV). | 4 |
 | 30-32 | 2:08 | **Evasion 12, the trap door.** ii6/5 - V7 → ♭VI: the bass falls a seventh (E♭3 → F♭2), subito pianissimo. A German sixth climbs back to 6/4 - V7. | 4 |
-| 33-36 | 2:21 | **Evasion 13 and the stretto.** The bass starts the subject on E-flat, so the V7 does not resolve at all. Alto (E♭4), tenor (B♭2) and soprano (B♭4) follow every half bar. ii6/5 - I6/4 - V7, then **evasion 14**: all four stop on E♭7 with D♭5 on top (held, about 3.5 s), then silence (about 3.75 s). | 2-4 |
-| 37-41 | 2:42 | **The father.** He enters alone on A♭1 with the subject in augmentation. The soprano's D♭ falls to C at last. The alto sings the subject inverted against him (she climbs while he walks down); the tenor joins in bar 40. His tune ends on *re* over ii7, then E♭2 under the cadential 6/4 and V7, with the soprano's trill on B♭5. | 1-3-4 |
+| 32-36 | 2:16 | **Evasion 13, the echo, and the stretto.** The V7 of bar 32 is forte. After a small breath it comes back on the next downbeat as an echo, pianissimo, all four children re-striking it. Under the echo the bass starts the subject on E-flat, and the stretto grows out of the whisper. Alto (E♭4), tenor (B♭2) and soprano (B♭4) follow every half bar. ii6/5 - I6/4 - V7, then **evasion 14**: all four stop on E♭7 with D♭5 on top (held, about 3.5 s), then silence (about 3.75 s). | 2-4 |
+| 37-41 | 2:43 | **The father.** He enters alone on A♭1 with the subject in augmentation. The soprano's D♭ falls to C at last. The alto sings the subject inverted against him (she climbs while he walks down); the tenor joins in bar 40. His tune ends on *re* over ii7, then E♭2 under the cadential 6/4 and V7, with the soprano's trill on B♭5. | 1-3-4 |
 | 42 | 3:12 | **The first perfect authentic cadence**: bass E♭2 → A♭1, soprano B♭5 → A♭5, all five voices. | 5 |
 | 42-44 | 3:12 | **Coda** over the father's A♭: the tenor sings *re mi fa sol la, sol fa mi, re* ... and *do*. | 5 |
 
@@ -104,7 +104,7 @@ Times come from the tempo map. "Moving" is the critic's count of voices that mov
 2. **Evasion 10, Zarlino's own kind.** The bass is silent at the cadence, and a new subject, Bach's, begins in its place. Bars 24-25.
 3. **Evasion 11, the stuck trill.** It ends on the tonic with its seventh in the bass. Bars 28-30.
 4. **Evasion 12, the trap door to ♭VI.** Bars 30-31.
-5. **Evasion 13, V7 → V.** The stretto simply starts on the dominant. Bars 32-33.
+5. **Evasion 13, the echo.** The forte V7 returns as a pianissimo echo instead of resolving, and the stretto starts under it. Bars 32-33.
 6. **Evasion 14, the chord left hanging, then silence.** Bar 36.
 7. **The perfect cadence.** A scan of every eighth-note position (my scratch script `pac.py`, which only reads the score) finds exactly one place where a sonority with E♭ in the bass and the leading tone sounding is followed by an A-flat major chord over A♭ in the bass: bar 42.1.
 
@@ -128,11 +128,11 @@ Devices:
 | dissonance_unresolved | 1 | ≤ 3, justified |
 | bad_doublings | 0 | ≤ 2 |
 | low_register_seconds | 3 (b13.4.75, b34.6.5, b35.4.75) | ≤ 9 |
-| stepwise_pct | 67.9 | ≥ 65 |
+| stepwise_pct | 68.7 | ≥ 65 |
 | leap_4th_plus_pct | 12.0 | - |
 | crossings | 0 | few |
-| keyboard_unplayable_pct | 4.0 (16 of 400 onsets) | < 5 (4 voices), < 15 (5-6) |
-| mean_moving_voices | 3.64 | - |
+| keyboard_unplayable_pct | 3.8 (16 of 420 onsets) | < 5 (4 voices), < 15 (5-6) |
+| mean_moving_voices | 3.66 | - |
 | pc_tripled_on_beats_pct | 4.9 | - |
 | tertian_fit_pct | 58.9 | - |
 | longest static harmony | 4 beats (the final chord) | - |
@@ -162,14 +162,14 @@ Devices:
   - The alto's inversion over the father (bars 37-39) and the tenor's "*do* at last" in the coda (bar 43) are inner voices, under a soprano line.
   - Their audibility rests on the entry velocity boost and on the soprano moving in longer notes there.
   - I have not verified this by ear.
-- **The fermata and the silence exist only in the tempo map.** On paper bar 36 shows a dotted-quarter chord and a dotted-quarter rest, with no fermata sign; a player reading the PDF needs the map or an added fermata.
+- **The fermatas are text, not signs.** The renderer cannot engrave a fermata, so bar 36 carries two boxed marks over the chord and over the rest ("Fermata: hold the chord", "Fermata on the rest: silence"); the timings are in the tempo map.
 - **Static alto.** In bars 7-8 the alto sits on E♭4 for most of two bars while the bass has the answer.
 - **Ranges.**
   - The dream's augmentation reaches E6.
   - The tenor is notated in the bass clef up to C5 (many ledger lines).
   - The father's line lies in octave 1-2 (A♭1-A♭2). It may be muddy on some pianos.
 - **Spelling at the enharmonic turns.** The dream is spelled in E major (sharps) between flat-key bars 17 and 23, so the score switches spelling abruptly at bar 18 and again at bar 23.
-- **The guest is re-barred.** Bach's eighths in 4/4 become groups of three in 12/8. The pitches, durations and vertical intervals are Bach's; the metric accents are not.
+- **The guest is re-barred on paper.** Bach's eighths in 4/4 are notated in 12/8 groups of three. The pitches, durations and vertical intervals are Bach's. Since the review the render no longer gives tenor and bass 12/8 accents in bars 25-26, so his even eighths are not regrouped by the performance data.
 
 ### From the 18-voice version (`archive-n-plus-1/`)
 
@@ -189,6 +189,26 @@ Devices:
 - **The father's passage.** The alto now sings the inversion against him (a two-voice device you can follow) instead of a cascade of heads in 15 voices.
 - **The coda.** It finally gives the tune its *do*.
 - **Removed.** The fixed countersubject and module bass; the antiphonal two-choir layout.
+
+### Review (REVIEW.md) and what changed
+
+The review ranks this pair the best of its batch. I agreed with all five of its items and applied them by hand, without touching its "must not be touched" passages (the hanging chord, the silence and the father's lone A♭1, bars 36.3-37.3; the gag's signature, bars 9-17; the prelude's bassless last chord).
+
+| # | Item | Change |
+|---|---|---|
+| 1 | The cadential trills at b24 and b41 were sixteenths: 3.6 notes/s at the father's cadence, a wobble | Both are now written-out thirty-seconds, same length and same close (A♭5 B♭5). About 7 notes/s at b41 and 10-11 notes/s at b24. The gag's sixteenth trills (bars 9-16) and the plodding stuck trill (bars 28-29) are kept, as the review advised. |
+| 2 | The 12/8 velocity accents re-barred Bach's guest | `accents()` now skips tenor and bass in bars 25-26 (performance data only). |
+| 3 | The fermata and the silence were only in the tempo map | Boxed text marks in the score at 36.3 ("Fermata: hold the chord, about 3.5 s") and 36.4 ("Fermata on the rest: silence, about 4 s"). The renderer cannot print a fermata sign. |
+| 4 | Evasion 13 sounded like the stretto starting | It is now an echo. The V7 of bar 32 beats 3-4 is forte; the tempo breathes into bar 33; the same V7 is struck again pianissimo on the downbeat of bar 33, now complete with the tenor's G3. The stretto starts under it from pianissimo (bar dynamics 33: −11, 34: −3, 35: +3, 36: +8). No pitches changed except the tenor's added G3, which is a repeated note before its rest and entry. |
+| 5 | The prelude's rocking rhythm was identical in every bar | Even-eighth ripples on single beats in bars 8, 11 and 12. In verse 4 the cradle slows to held dotted quarters on alternate beats (bars 16-18), so the lullaby audibly falls asleep before the bassless chord. In bar 18 the six-four's A♭3 now falls to G3 by step. |
+
+The review's two "leave it" items stay: bar 16's chordal blur, and the alto's long E♭4 in bars 7-8.
+
+**After the changes.**
+- Fugue: parallels 0/0, beat parallels 0, bad doublings 0, low-register seconds 3, unresolved 1 (Bach's passing ninth), stepwise 68.7 %, keyboard 3.8 %.
+- Prelude: unchanged faults (the two six-four fourths), keyboard 0 %.
+- No new flags in either piece. The cadence scan still finds the only V → I at fugue bar 42.1 and none in the prelude.
+- All renders were redone: fugue Bach-Lehman full, equal, binaural and choir binaural; prelude Bach-Lehman and equal.
 
 ### Renders
 

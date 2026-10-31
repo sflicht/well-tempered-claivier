@@ -208,8 +208,8 @@ tag(CO, 'Coda: the subject augmented (Soprano) over the tonic')
 put(CO, S=scale_rhythm(S('A4'), 2))
 entry('S', CO, 'Subject augmented (Soprano), D major', n=8)
 put(CO, B='D2:24  D2:24  D2:24  G2:12  D2:12')
-put(CO, A='F#4:12  F#4:4 G4:8  G4:8 A4:4  G4:4 F#4:8  F#4:4 E4:4 G4:4  G4:4 F#4:8  E4:4 G4:8  F#4:12')
-put(CO, T='R:12  R:4 D3:8  D3:8 A2:4  A2:4 D3:8  D3:4 A2:8  A2:4 D3:8  B2:8 D3:4  D3:12')
+put(CO, A='F#4:12  F#4:4 G4:8  G4:8 F#4:4  G4:4 F#4:8  F#4:4 E4:4 G4:4~  G4:4 F#4:8  G4:4 B4:8  A4:4 F#4:8')
+put(CO, T='R:12  R:12  R:12  R:12  R:12  R:4 D3:8  B2:8 D3:4  D3:12')
 
 # ---------------------------------------------------------------------------
 BPM = 76

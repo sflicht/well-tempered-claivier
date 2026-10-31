@@ -196,7 +196,8 @@ def duo_slow():
           'Sarabande: subject (D)')
     put('B', 86, 'C#3:4 D3:6 A2:2 C#3:4 B2:4 D3:8 C#3:4 A2:4 D3:4 A2:4 G2:8 F#2:4 G2:8')
     # the gigue slips in under the end of the sarabande's subject, announcing the trio
-    put('T', 99, 'A3:8/3 B3:4/3 D4:8/3 B3:4/3 G3:8/3 B3:4/3 C#4:8/3')
+    put('T', 93, 'E4:8/3 D4:4/3 C#4:8/3 B3:4/3 D4:8/3 A3:4/3 C#4:8/3 B3:4/3 A3:4 E3:4 '
+                 'A3:8/3 B3:4/3 D4:8/3 B3:4/3 G3:8/3 B3:4/3 C#4:8/3')
 
 
 def trio():
@@ -229,15 +230,18 @@ def ball():
     theme('S', 122, oc(SS, 1), 'Sarabande: subject (A), the ball')
     put('S', 141, 'C#6:4 A5:4 G#5:4 A5:8 R:16 E5:4 A5:12 G#5:8')
     # courante: a free bass in quarters, a rest, its subject (F# level), the hemiola cadence
-    put('B', 120, 'A2:8 C#3:4 D3:4 E3:8 F#3:4 C#3:4 E3:4 B2:4 R:4')
+    put('B', 120, 'A2:6 B2:2 C#3:6 D3:2 E3:8 F#3:4 C#3:4 E3:4 B2:4 R:4')
     theme('B', 131, oc(SC_F, -2), 'Courante: subject (F# level, ends on vi)')
     put('B', 146, 'G#2:4 A2:4 D3:4 R:4 C#3:8 D3:4 E3:12')
     # gigue
-    put('T', 120, 'A3:8/3 B3:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 G#3:4/3 F#3:8/3 G#3:4/3 A3:8/3 B3:4/3 '
-                  'G#3:4/3 R:4/3')
+    put('T', 120, 'A3:8/3 B3:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 G#3:4/3 F#3:8/3 G#3:4/3 R:4 R:8/3')
     theme('T', 125 + Fr(2, 3), oc(dshift(SG, 3), -1), 'Gigue: subject (D level)')
-    put('T', 132, 'F#3:8/3 A3:4/3 E4:8/3 D4:4/3 C#4:8/3 B3:4/3 A3:8/3 C#4:4/3 A3:8/3 G#3:4/3 F#3:4/3 G#3:4/3 A3:4/3 C#4:8/3 A3:4/3 '
-                  'B3:8/3 A3:4/3 B3:8/3 G#3:4/3 A3:8/3 E4:4/3 A3:8/3 E4:4/3 B3:4/3 R:4/3')
+    # three cells of three beats (long-short | three eighths | dotted quarter) that cut across the
+    # gigue's own 12/8 bars and the allemande's 4/4 bars; then a rest before the race
+    put('T', 132, 'D4:8/3 C#4:4/3 B3:4/3 E4:4/3 D4:4/3 C#4:4 '
+                  'A3:8/3 C#4:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:4 '
+                  'E4:8/3 C#4:4/3 B3:4/3 A3:4/3 B3:4/3 G#3:4 '
+                  'A3:8/3 C#4:4/3 R:4 R:8/3')
     theme('T', 143 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A), the race')
     put('T', 150, 'E4:8/3 D4:4/3 C#4:4/3 B3:4/3 A3:4/3 F#3:8/3 G#3:4/3 B3:8/3 C#4:4/3 '
                   'D4:8/3 B3:4/3 E4:8/3 D4:4/3')

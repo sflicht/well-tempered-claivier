@@ -310,18 +310,18 @@ sc.theme('B', 51, 1, key(INV, 'G#5', 'B2'), 'Inversion (D), bass, with the falli
 sc.put('S', 51, 1, 'R:4 F#5:4 D5:4 B5:4~ '
                    'B5:4 A5:4 E5:4 C#6:4 '
                    'B5:8 A5:4 E5:4 '
-                   'A5:4 F#5:4 R:8')
+                   'F#5:4 A5:4 R:8')
 sc.put('T', 51, 1, 'D4:2 C#4:2 B3:4 D4:4 F#3:2 A3:2 '
-                   'C#4:4 E4:4 A3:2 G#3:2 A3:4')
+                   'E4:4 C#4:4 A3:2 G#3:2 A3:4')
 # episode b53-54 (G - A7 | D - Bm - B7): the cantus's G is the seventh of A7 and falls to F#
-sc.put('A', 53, 1, 'D5:2 C#5:2 B4:2 D5:2 C#5:2 B4:2 A4:2 C#5:2 '
+sc.put('A', 53, 1, 'D5:2 C#5:2 B4:2 D5:2 C#5:2 B4:2 A4:2 E5:2 '
                    'D5:2 C#5:2 A4:2 B4:2 B4:2 C#5:2 A4:2 B4:2')
 sc.put('B', 53, 1, 'G2:2 A2:2 B2:2 G2:2 E2:2 F#2:2 C#3:4 '
-                   'D3:4 F#3:2 E3:2 B2:4 D#3:4 '
-                   'E2:2 F#2:2 G2:2 A2:2 B2:2 A2:2 E2:4 '
+                   'D3:4 F#3:2 E3:2 B2:2 F#2:2 D#2:4 '
+                   'E2:2 F#2:2 G2:2 A2:2 G2:2 F#2:2 B1:4 '
                    'D2:4 F#2:2 E2:2 D2:4 A1:4')
 sc.theme('S', 55, 1, key(INV, 'G#5', 'E5'), "Inversion (G), soprano, at the cantus's re")
-sc.put('T', 55, 1, 'B3:2 C4:2 B3:2 A3:2 G3:2 A3:2 B3:2 G3:2 '
+sc.put('T', 55, 1, 'B3:2 C4:2 B3:2 G3:2 B3:2 C4:2 B3:2 G3:2 '
                    'F#3:4 A3:4 F#3:4 R:4')
 sc.put('A', 56, 4, 'C#5:4')
 
@@ -334,13 +334,13 @@ sc.put('A', 57, 1, 'R:4 G#4:1 B4:1 A4:1 C#5:4 D#5:1 E5:4~ '                     
 sc.put('B', 57, 4, 'F#2:4 '
                    'B1:4 D#2:4 F#2:4 D#2:4')
 # episode b59-60 (E/G# - C#m | A - F#m7), five voices
-sc.put('S', 59, 1, 'B5:2 A5:1 G#5:1 E5:2 G#5:2 C#6:2 B5:1 A5:1 G#5:2 E5:2 '
+sc.put('S', 59, 1, 'B5:2 A5:1 G#5:1 E5:2 G#5:2 C#6:2 B5:1 A5:1 B5:2 E5:2 '
                    'A5:2 B5:1 C#6:1 E6:2 C#6:2 A5:2 G#5:1 F#5:1 E5:2 D#5:2')
 sc.put('A', 59, 1, 'E5:4 B4:4 E5:4 C#5:4 '
                    'E5:4 C#5:12')
 sc.put('T', 59, 1, 'B3:4 G#3:4 E4:4 G#3:4 '
                    'C#4:4 A3:4 A3:4 R:4')
-sc.put('B', 59, 1, 'G#2:4 B2:2 A2:2 C#3:2 B2:2 C#3:4 '
+sc.put('B', 59, 1, 'G#2:4 B2:2 A2:2 C#3:2 G#2:2 C#3:4 '
                    'A2:4 C#3:2 B2:2 F#2:4 R:4')
 sc.theme('B', 61, 1, key(SUBJ, 'B4', 'B2'), "Subject on the dominant (B, home), bass, at the cantus's sol")
 sc.put('S', 61, 1, 'R:4 D#5:1 F#5:1 E5:1 G#5:4 A#5:1 B5:4~ '                     # CS above, in B
@@ -350,19 +350,19 @@ sc.put('S', 61, 1, 'R:4 D#5:1 F#5:1 E5:1 G#5:4 A#5:1 B5:4~ '                    
 sc.mark(63, 'F# (falling)')
 sc.theme('C', 63, 1, hex_dn('D#5', last=12), 'Cantus: F#, la-ut (falling)', 6)
 sc.theme('A', 63, 1, key(INV, 'G#5', 'D#4'), 'Inversion (F#), alto, with the falling cantus')
-sc.put('B', 63, 1, 'D#2:2 E#2:2 F#2:2 G#2:2 A#2:2 G#2:2 D#2:2 F#2:2 '
+sc.put('B', 63, 1, 'D#2:2 E#2:2 F#2:2 G#2:2 A#2:2 B2:2 A#2:4 '
                    'C#2:2 D#2:2 E#2:2 F#2:2 G#2:2 F#2:2 E#2:2 C#2:2')
-sc.put('S', 63, 1, 'F#5:8 C#6:4 A#5:4 '
-                   'G#5:4 E#5:4 C#6:6 B5:2')
+sc.put('S', 63, 1, 'F#5:8 C#6:8 '
+                   'G#5:4 E#5:4 C#6:4 G#5:4')
 # episode b65-66 (G#m7 - C#7 | F# - D#m): the cantus's B is the seventh of C#7 and falls to A#
 sc.put('S', 65, 1, 'B5:6 A#5:2 G#5:4 C#6:4 '
                    'F#5:4 A#5:4 D#5:4 R:4')
-sc.put('A', 65, 1, 'F#4:2 G#4:2 F#4:2 D#4:2 E#4:2 G#4:2 C#5:2 G#4:2 '
+sc.put('A', 65, 1, 'F#4:2 G#4:2 F#4:2 D#4:2 E#4:2 G#4:2 E#4:2 C#4:2 '
                    'C#5:4 F#4:4 F#4:4 D#4:4')
-sc.put('T', 65, 1, 'R:4 D#4:4 C#4:4 G#3:4 '
-                   'C#4:2 B3:2 A#3:2 C#4:2 D#4:2 C#4:2 A#3:2 F#3:2')
-sc.put('B', 65, 1, 'G#1:4 B1:2 G#1:2 C#2:4 E#2:4 '
-                   'F#2:2 G#2:2 A#2:2 F#2:2 D#2:2 E#2:2 F#2:2 D#2:2')
+sc.put('T', 65, 1, 'R:4 D#4:4 G#3:8 '
+                   'A#3:2 B3:2 C#4:2 A#3:2 F#3:4 A#3:2 F#3:2')
+sc.put('B', 65, 1, 'G#1:4 B1:4 C#2:4 E#2:4 '
+                   'F#2:2 E#2:2 D#2:2 E#2:2 D#2:2 C#2:2 D#2:4')
 sc.theme('S', 67, 1, key(INV, 'G#5', 'G#5'), "Inversion (B, home), soprano, at the cantus's re")
 
 NBARS = 68

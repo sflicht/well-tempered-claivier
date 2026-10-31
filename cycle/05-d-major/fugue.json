@@ -121,7 +121,7 @@
    },
    {
     "t": 120,
-    "label": "Stretto II (E minor): rectus + inversion off the beat (a 3)"
+    "label": "Stretto II (E minor): rectus + inversion off the beat, soprano descant (a 4)"
    },
    {
     "t": 132,
@@ -1537,6 +1537,114 @@
      "v": 71,
      "gate": 0.9,
      "bar": 30
+    },
+    {
+     "t": 120.0,
+     "d": 1.5,
+     "p": 79,
+     "spell": "g",
+     "v": 79,
+     "gate": 0.975,
+     "bar": 31
+    },
+    {
+     "t": 121.5,
+     "d": 0.5,
+     "p": 81,
+     "spell": "a",
+     "v": 76,
+     "gate": 0.94,
+     "bar": 31
+    },
+    {
+     "t": 122.0,
+     "d": 1.5,
+     "p": 86,
+     "spell": "d",
+     "v": 77,
+     "gate": 0.975,
+     "bar": 31
+    },
+    {
+     "t": 123.5,
+     "d": 0.5,
+     "p": 88,
+     "spell": "e",
+     "v": 76,
+     "gate": 0.94,
+     "bar": 31
+    },
+    {
+     "t": 124.0,
+     "d": 1.0,
+     "p": 86,
+     "spell": "d",
+     "v": 79,
+     "gate": 0.975,
+     "bar": 32
+    },
+    {
+     "t": 125.0,
+     "d": 1.0,
+     "p": 84,
+     "spell": "c",
+     "v": 77,
+     "gate": 0.975,
+     "bar": 32
+    },
+    {
+     "t": 126.0,
+     "d": 1.0,
+     "p": 88,
+     "spell": "e",
+     "v": 77,
+     "gate": 0.975,
+     "bar": 32
+    },
+    {
+     "t": 127.0,
+     "d": 1.0,
+     "p": 86,
+     "spell": "d",
+     "v": 77,
+     "gate": 0.975,
+     "bar": 32
+    },
+    {
+     "t": 128.0,
+     "d": 1.0,
+     "p": 81,
+     "spell": "a",
+     "v": 79,
+     "gate": 0.975,
+     "bar": 33
+    },
+    {
+     "t": 129.0,
+     "d": 1.0,
+     "p": 84,
+     "spell": "c",
+     "v": 77,
+     "gate": 0.975,
+     "bar": 33
+    },
+    {
+     "t": 130.0,
+     "d": 1.0,
+     "p": 83,
+     "spell": "b",
+     "v": 77,
+     "gate": 0.975,
+     "bar": 33
+    },
+    {
+     "t": 131.0,
+     "d": 1.0,
+     "p": 82,
+     "spell": "ais",
+     "v": 77,
+     "gate": 0.975,
+     "bar": 33
     },
     {
      "t": 148.0,
@@ -8693,9 +8801,9 @@
     "B5:4 G5:2 G5:1 G5:1 A5:4 F#5:2 F#5:1 F#5:1",
     "G5:4 E5:2 E5:1 E5:1 F#5:4 B4:2 B4:1 B4:1",
     "E5:4 C5:2 C5:1 C5:1 A5:4 F#5:2 F#5:1 F#5:1",
-    "R:16",
-    "R:16",
-    "R:16",
+    "G5:6 A5:2 D6:6 E6:2",
+    "D6:4 C6:4 E6:4 D6:4",
+    "A5:4 C6:4 B5:4 A#5:4",
     "R:16",
     "R:16",
     "R:16",
@@ -8969,7 +9077,7 @@
    "",
    "",
    "",
-   "Stretto II (E minor): rectus + inversion off the beat (a 3)",
+   "Stretto II (E minor): rectus + inversion off the beat, soprano descant (a 4)",
    "",
    "",
    "Episode 4: the home voices try the Guest's idiom",

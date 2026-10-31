@@ -158,14 +158,16 @@ put(27,
 tag(27, 'Episode 3: tattoo cells over a 4-3 chain (a 3)')
 
 # ===========================================================================
-# STRETTO II b31-33 in E minor (a 3): rectus (alto) and, an eighth after
-# beat 2, the inversion a fifth lower (tenor), per arsin et thesin.
+# STRETTO II b31-33 in E minor (a 4): rectus (alto) and, an eighth after
+# beat 2, the inversion a fifth lower (tenor), per arsin et thesin; the
+# soprano's descant (kept from the third edition) lies above both.
 EM_SUBJ = 'B4:4 E5:2 E5:1 E5:1 G5:2 G5:1 G5:1 B5:4 B5:3 A5:1 G5:2 F#5:2 E5:1 D5:1 C5:1 B4:1 C5:1 D5:1 E5:2'
 EM_INV5 = 'E4:4 B3:2 B3:1 B3:1 G3:2 G3:1 G3:1 E3:4 E3:3 F#3:1 G3:2 A3:2 B3:1 C4:1 D4:1 E4:1 D4:1 C4:1 B3:2'
 put(31, A=EM_SUBJ + ' E5:4 C5:4 C#5:8',
         T='R:6 ' + EM_INV5 + ' A3:2 E3:4 C#4:4',
-        B='E2:4 C3:4 B2:4 E2:4  G2:4 A2:4 C3:4 B2:4  A2:8 C#3:4 F#2:4')
-tag(31, 'Stretto II (E minor): rectus + inversion off the beat (a 3)')
+        B='E2:4 C3:4 B2:4 E2:4  G2:4 A2:4 C3:4 B2:4  A2:8 C#3:4 F#2:4',
+        S='G5:6 A5:2 D6:6 E6:2  D6:4 C6:4 E6:4 D6:4  A5:4 C6:4 B5:4 A#5:4')
+tag(31, 'Stretto II (E minor): rectus + inversion off the beat, soprano descant (a 4)')
 
 # ===========================================================================
 # EPISODE 4 b34-37 (a 3, quiet): the home voices try the Guest's idiom. The
