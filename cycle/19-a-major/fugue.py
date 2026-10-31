@@ -204,20 +204,20 @@ def ball():
     theme('S', 122, oc(SS, 1), 'Sarabande: subject (A), the ball')
     put('S', 141, 'C#6:4 B5:4 G#5:4 A5:8 G#5:4 R:12 E5:4 A5:12 G#5:8')
     # courante: a free bass in quarters, a rest, its subject (F# level), the hemiola cadence
-    put('B', 120, 'A2:8 C#3:4 D3:4 E3:4 B2:4 D3:4 C#3:4 A2:4 E3:4 R:4')
+    put('B', 120, 'A2:8 C#3:4 D3:4 E3:4 B2:4 D3:4 C#3:8 B2:4 R:4')
     theme('B', 131, oc(SC_F, -2), 'Courante: subject (F# level, ends on vi)')
-    put('B', 146, 'E2:4 A2:4 D3:4 B2:4 C#3:8 D3:4 E3:12')
+    put('B', 146, 'G#2:4 A2:4 D3:4 B2:4 C#3:8 D3:4 E3:12')
     # gigue
-    put('T', 120, 'A3:8/3 E4:4/3 D4:8/3 B3:4/3 A3:8/3 C#4:4/3 D4:8/3 F#4:4/3 C#4:8/3 B3:4/3 '
-                  'G#3:8/3 B3:4/3 A3:8/3 F#3:4/3 A3:8/3')
-    theme('T', 127 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A)')
+    put('T', 120, 'A3:8/3 E4:4/3 D4:4/3 C#4:4/3 B3:4/3 E4:8/3 C#4:4/3 F#4:8/3 D4:4/3 C#4:8/3 B3:4/3 '
+                  'G#3:8/3')
+    theme('T', 125 + Fr(2, 3), oc(dshift(SG, 3), -1), 'Gigue: subject (D level)')
     put('T', 134, 'C#4:8/3 E4:4/3 A3:8/3 C#4:4/3 D4:8/3 A3:4/3 B3:4/3 C#4:4/3 D4:4/3 E4:8/3 C#4:4/3 '
                   'B3:4/3 A3:4/3 B3:4/3 G#3:8/3 B3:4/3 A3:8/3 C#4:4/3 E4:8/3 C#4:4/3 B3:8/3')
     theme('T', 143 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A), the race')
     put('T', 150, 'C#4:8/3 E4:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 F#3:4/3 G#3:8/3 B3:4/3 '
                   'G#3:8/3 B3:4/3 B3:8/3 D4:4/3')
     # allemande
-    put('A', Fr(495, 4), 'B4:1 C#5:2 B4:1 C#5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
+    put('A', Fr(495, 4), 'B4:1 C#5:2 B4:1 D5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
                          'E5:2 D5:1 C#5:1 D5:2 E5:1 D5:1 B4:2 G#4:2 A4:2 B4:1 C#5:1 D5:2 E5:1 C#5:1 '
                          'B4:2 C#5:1 D5:1 E5:2 D5:1 E5:1 C#5:2 D5:1 B4:1 A4:2 B4:1 C#5:1 '
                          'D5:2 C#5:1 B4:1 C#5:2 B4:1 A4:1 B4:1 C#5:1 D5:1 C#5:1 B4:2 G#4:2 '
