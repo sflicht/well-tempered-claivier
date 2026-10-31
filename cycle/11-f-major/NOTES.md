@@ -11,8 +11,9 @@ Renders in `renders/`:
 - `fugue-spatial.mp3`: binaural, piano, `--layout score`. The four soloists sit in a shallow arc, as a
   concertino stands in front of an orchestra: Tromba at −42°, Flauto at −14°, Oboe at +14° and Violino at
   +42°, 4 to 4.5 m away.
-- `fugue-spatial-concertino.mp3`: the same seats, with `--instruments` (General MIDI 56 trumpet, 73
-  flute, 68 oboe, 40 violin). See weak spot 2 about the violin.
+- `fugue-spatial-concertino.mp3`: the same seats, with `--instruments`: General MIDI 56 trumpet, 73 flute
+  and 68 oboe, and 42 cello for the Violino's line. On one keyboard the bass is the violinist's part. In
+  this render it goes to a cello, as a continuo player would take it (see Review).
 - `prelude.*`, `prelude-equal.mp3`: unchanged.
 
 The renders of the twelve-voice fugue were replaced under the same names. The old ones are in
@@ -92,7 +93,7 @@ Times are in the Bach-Lehman render.
 | 9-10 | 0:19 | **Tutti I** | All four together for the first time. The trumpet's S in F over the violin's CS, whose last note turns to F for the cadence. The recorder runs while the trumpet holds its high C. | F |
 | 11-14 | 0:24 | **Episode 1 (solo)** | Falling fifths by half bars (F, B♭, C7/G, a, d, G, C, G7). The recorder alternates the subject's tail (falling) and the inversion's tail (rising) over the violin's string crossings. The oboe joins in b13 with a 9-8 suspension, and the violin becomes a plain bass. | F → C |
 | 15-16 | 0:34 | **Middle entry (trio)** | Oboe S in C over the violin's CS. The recorder answers from above; the trumpet rests. | C |
-| 17-18 | 0:38 | **Tutti II: the device** | The violin's S in C from the bass (17.1.5); the trumpet's inversion in C a beat later from its high C (17.2.5). The heads rise and fall together, then the tails run in contrary motion. The oboe takes the tenor, the recorder a descant. | C |
+| 17-18 | 0:38 | **Tutti II: the device** | The violin's S in C from the bass (17.1.5); the trumpet's inversion in C a beat later from its high C (17.2.5). The heads rise and fall together, then the tails run in contrary motion. The recorder strikes the first chord and rests until 18.2, so that the trumpet's head is the top voice; it returns as a descant over the tails. The oboe takes the tenor. | C |
 | 19-20 | 0:43 | **Transition** | The recorder falls away. The trumpet's last tattoo is on A (19.4), all it can offer in D minor; then it is silent for eighteen bars. Oboe and violin turn to D minor. | C → d |
 | 21-24 | 0:48 | **D minor** | Flauto Sd over the violin's CSd, a duo. Then the device again, inversus first: Oboe Id from D5 (23.1.5), Violino Sd in the bass a beat later (23.2.5). | d |
 | 25-30 | 0:58 | **Soli** | The recorder alone over the violin's bass (runs: d, g, C7). The oboe sings the CS alone, in F, with its own bass (27.2). Then the violin alone, crossing strings (F, B♭, E♭, F7). | d → B♭ |
@@ -141,6 +142,8 @@ Times are in the Bach-Lehman render.
    - The oboe enters with nothing else between F2 and D5.
    - All four statements sound together for two beats, 53.3.5-54.1.5.
    - Each of bars 52-55 has four moving voices; there are no parallels and no unresolved dissonances.
+   - The recorder rests from 54.1.5 to 54.4, so the trumpet's cadence, E C D E → F5 at 54.3, is the top
+     voice.
    - The heads all arpeggiate the F triad (the property that makes the device possible). What separates
      them now is distance (2, 1 and 5 beats), register and rest, not number.
 3. **Canon at the octave, one beat apart** (S with S, in G minor, b35-37): the subject's other close
@@ -199,9 +202,9 @@ each time with its C C C. C is right at last, and the trumpet's last C is the fi
 | pc_tripled_on_beats | 3.6 % | |
 | low_register_seconds | **0** | ≤ 9 |
 | dissonance_unresolved | **7** | All seven are the joke, and intended: the trumpet's C6 against the recorder's B5 (b42.4), and its F-major head against the struck E-major chords (b43.2-43.4, six). |
-| stepwise / leap ≥ 4th / repeated | 50.1 % / 13.5 % / 14.8 % | Target ≥ 65 %, not met; see weak spot 1. By voice: Tromba 50 % (29.5 % repeated notes), Flauto 60.6 %, Oboe 51.4 %, Violino 38.5 %. |
-| crossings | 3 | The recorder's descant above the trumpet in tutti II (b17.3, 7.5 beats), and twice briefly at the end (b54.2, b56.4). |
-| **keyboard_unplayable_pct** | **3.4 %** (24 of 697 onsets) | < 5 % |
+| stepwise / leap ≥ 4th / repeated | 50.2 % / 13.4 % / 14.9 % | Target ≥ 65 %, not met; see weak spot 1. By voice: Tromba 50 % (29.5 % repeated notes), Flauto 61.3 %, Oboe 51.4 %, Violino 38.8 %. |
+| crossings | 2 | The recorder's descant above the trumpet's tail in tutti II (from 18.2, 4.5 beats), and briefly at b56.4, where the recorder's head on C sounds over the trumpet's C C C. |
+| **keyboard_unplayable_pct** | **3.0 %** (21 of 697 onsets) | < 5 % |
 | **mean moving voices** | **2.95** | |
 | longest static harmony | 4 beats | the final chord |
 
@@ -264,19 +267,17 @@ Every note is written by hand in `fugue.py`.
 
    I did not alter lines to move the number. I did replace the violin's string crossings with plain bass
    lines in b13-14 and b20, because the counterpoint read better that way.
-2. **The violin is a bass below the violin's range.** 66 % of its notes (73 % of its sounding time) lie
-   below G3, down to C2.
-   - On the piano this is simply the left hand of a keyboard reduction.
-   - In `fugue-spatial-concertino.mp3` there is a problem: the soundfont (FluidR3) has no violin sample
-     below G♯3. Those notes are its lowest violin sample transposed down by as much as 20 semitones.
-   - I used General MIDI 40, as the brief suggests. If the stretched sound distracts, setting the violin's
-     program to 42 (cello) in `SEATS` gives the bass a continuo sound, at the cost of the concertino image.
-3. **Recorder and trumpet share the top register.** In tutti II the recorder's descant lies above the
-   trumpet's falling inversion. I kept the recorder silent for the beat of the trumpet's entry (17.2) but
-   not for the whole head.
+2. **The violin is a bass below the violin's range.** About two thirds of its notes (70 % of its sounding
+   time) lie below G3, down to C2. On the piano this is simply the left hand of a keyboard reduction.
+   The instruments render now gives the line to a cello (see Review). It loses the fourth soloist's
+   timbre in the few bars where the line is high.
+3. **Recorder and trumpet share the top register.** After the review, the recorder rests through the
+   trumpet's head in tutti II and through its cadence in the final stretto. It still lies above the
+   trumpet's tail in b18 (by design: a descant) and at b56.4.
 4. **The four stretto heads arpeggiate one triad**, as in the twelve-voice version. Distance, register and
    rests now separate them, and only four voices sound. I cannot tell whether the oboe's tenor entry
-   (53.3.5), under the trumpet's running tail, is heard as an entry.
+   (53.3.5), under three lines of sixteenths, is heard as an entry. It is the softest voice there (see
+   Review, item 4).
 5. **The middle has no tutti.** Without the trumpet (b20-37) at most three voices sound (the canon in G
    minor), and three of the middle's sections are two-voice textures (the D-minor duo, the soli, the
    duet). That is the design, since the natural trumpet sits out the flat keys. Still, it makes the middle
@@ -287,7 +288,8 @@ Every note is written by hand in `fugue.py`.
 7. **Sequences.** Episode 1's falling fifths and the soli are sequential and may sound mechanical. The
    violin's solo is two bars of one rocking figure.
 8. **The ending is compact.** There are two bars of dominant, and the final chord, F2 F5 A5 C6, has a
-   two-octave gap in the middle.
+   three-octave gap in the middle (the review's tested alternative, the oboe ending on C5, makes fifths
+   with the bass).
 9. **Unheard.** I cannot listen to the renders. Balance, the solo/tutti contrast on one piano timbre, and
    the effect of the joke are untested by ear.
 
@@ -321,6 +323,30 @@ Every note is written by hand in `fugue.py`.
 wash: five to seven pitch classes in most sixteenths, with three strands audible out of twelve. At four,
 each line is a soloist with its own register and figure, every entry starts after a rest, and a tutti is
 four real voices.
+
+## Review (REVIEW-3.md)
+
+The review found the four-voice fugue clearly better than the twelve-voice one and the joke the best-built
+of the batch. It listed the joke (b42-44) and the call and response over the dominant (b55-57) as must
+not be touched; neither is touched. I applied items 1-3 as tested, writing the notes by hand.
+
+| # | Item | What I did |
+|---|---|---|
+| 1 | Tutti II (17.3-19.1): the recorder's descant above the trumpet's inversion, so the device was not in the outer voices | Agreed; the review's first form: `E6:4 R:16 D6:4 F6:4 G6:4 E6:4`. The recorder strikes the first chord, rests through the trumpet's whole head, and returns as a descant over the tails at 18.2. I kept the recorder for the tails rather than the stronger form (silent to 19.1), because the second tutti should stay four voices. |
+| 2 | 54.2-54.3: the recorder's descant covers the trumpet's cadence, "in F at last" | Agreed: `R:10 G5:4 E5:4 G5:4 A5:4 G5:4`. The recorder rests from 54.1.5 to 54.4, so E5 C5 D5 E5 → F5 is on top. |
+| 3 | The Violino in the instruments render: about two thirds of its notes below G3, on one violin sample rooted at G♯3 | Agreed: `gm_program` 42 (cello) for that voice in `SEATS`. On one keyboard the bass is the violinist's part. The instruments render gives it to a cello, as a continuo player would, and as Bach's keyboard transcriptions merge solo violin and continuo. The voice keeps its name in the score. The piano renders are unaffected. |
+| 4 | The oboe's tenor entry in the stretto (53.3.5) is the softest voice | Not changed. The review says to listen first, and I cannot listen. If it is lost, the review's performance-only fix is +6 for the oboe from 53.3.5 to 54.2 in `ACCENTS`. |
+| 5 | The final chord's three-octave hole | Left, as the review advises; the figure in weak spot 8 is corrected (three octaves, not two). |
+
+**Critic, before → after.** Every count is unchanged except:
+- crossings 3 → 2;
+- keyboard_unplayable 24 → 21 onsets (3.4 % → 3.0 %);
+- stepwise 50.1 % → 50.2 %.
+
+The 7 unresolved dissonances are still the joke's, the one bad doubling is still the passing sonority at
+54.1, and the cross-relation scan still finds none. All fugue renders were redone: Bach-Lehman (pdf, ly,
+musicxml, mid, mp3), equal temperament (audio only), binaural piano (`fugue-spatial.mp3`) and binaural
+instruments with the cello (`fugue-spatial-concertino.mp3`).
 
 # Prelude XI: Invention à 2 (unchanged)
 

@@ -1386,8 +1386,16 @@
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>240</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
@@ -3275,17 +3283,17 @@
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
       <note>
         <rest />
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
       <direction placement="above">
         <direction-type>
-          <words>Final stretto 2: subject (E), tenor, front right, half a bar later</words>
+          <words>Final stretto 2: subject (E), tenor, front right, a beat later</words>
         </direction-type>
       </direction>
       <note>
@@ -3296,6 +3304,18 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>480</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
     </measure>
     <measure number="49">
       <note>
@@ -3303,9 +3323,12 @@
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>1440</duration>
+        <duration>960</duration>
+        <tie type="stop" />
         <type>half</type>
-        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <note>
         <pitch>
@@ -3316,8 +3339,6 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
-    </measure>
-    <measure number="50">
       <note>
         <pitch>
           <step>C</step>
@@ -3327,6 +3348,8 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+    </measure>
+    <measure number="50">
       <note>
         <pitch>
           <step>B</step>
@@ -3361,8 +3384,6 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
-    </measure>
-    <measure number="51">
       <note>
         <pitch>
           <step>G</step>
@@ -3372,6 +3393,8 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+    </measure>
+    <measure number="51">
       <note>
         <pitch>
           <step>A</step>
@@ -3387,6 +3410,11 @@
         </pitch>
         <duration>960</duration>
         <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>480</duration>
+        <type>quarter</type>
       </note>
     </measure>
     <measure number="52">
