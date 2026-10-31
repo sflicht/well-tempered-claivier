@@ -1,8 +1,10 @@
-# Pair IX in E major: Pastorale in just intonation · Ricercar a 10 in circulo
+# Pair IX in E major: Pastorale in just intonation · Ricercar in circulo
 
 I could not listen to any of this. Everything below comes from the scores, `tools/critic.py`, my own
 scans and checks, and one technical measurement of the rendered audio (a pitch check, not a
 listening judgement). Whether any of it works is for Sam's ears.
+
+**The fugue was recomposed** at the new "Bach + 1" size (four voices; BWV 854 has three). The earlier ten-voice "Ricercar a 10 in circulo" is kept in `archive-n-plus-1/` (source, score, NOTES, reviews, renders). `REVIEW-2.md` in this folder reviewed the prelude and that ten-voice fugue. The prelude part of this file is unchanged.
 
 ## Files and build
 
@@ -12,12 +14,13 @@ listening judgement). Whether any of it works is for Sam's ears.
 | `tune_prelude.py` | the performance tuning (just intonation, then Bach–Lehman). It adds a `cents` field to every note, writes `prelude-tempered.json` and prints the drift table. |
 | `prelude.json` | the Prelude with cents. Render it with `--temperament equal`, so that only the cents apply. |
 | `prelude-tempered.json` | the same notes without cents, for comparison renders in a keyboard temperament. |
-| `fugue.py`, `fugue.json` | the Fugue's literal source and built score. Running `fugue.py` also prints a scale-step check of every thematic entry, which is stored in `fugue.json` as `entry_verification`. |
+| `fugue.py`, `fugue.json` | the Fugue's literal source and built score (four voices). Running `fugue.py` also prints a scale-step check of every declared statement, which is stored in `fugue.json` as `entry_verification`. |
 | `renders/prelude.*` | PDF, MIDI, MusicXML, and the MP3 in just intonation (about 2:42). |
 | `renders/prelude-tempered.mp3` | the same notes in Bach–Lehman. |
-| `renders/fugue.*` | PDF, MIDI, MusicXML, and the MP3 in Bach–Lehman (about 2:25). |
+| `renders/fugue.*` | PDF, MIDI, MusicXML, and the MP3 in Bach–Lehman (about 2:34). |
 | `renders/fugue-equal.mp3` | the Fugue in equal temperament. |
-| `renders/fugue-spatial.mp3` | binaural, `--layout ring` (listen on headphones). |
+| `renders/fugue-spatial.mp3` | binaural, `--layout ring --program 52` (Choir Aahs; listen on headphones). |
+| `archive-n-plus-1/` | the earlier ten-voice fugue (source, score, NOTES, reviews, renders). |
 
 ```
 python3 cycle/09-e-major/prelude.py        # builds prelude.json, tunes it, writes prelude-tempered.json
@@ -26,7 +29,7 @@ python3 tools/render_music.py cycle/09-e-major/prelude.json --output-prefix cycl
 python3 tools/render_music.py cycle/09-e-major/prelude-tempered.json --output-prefix cycle/09-e-major/renders/prelude-tempered --audio-only --temperament bach-lehman
 python3 tools/render_music.py cycle/09-e-major/fugue.json --output-prefix cycle/09-e-major/renders/fugue --temperament bach-lehman
 python3 tools/render_music.py cycle/09-e-major/fugue.json --output-prefix cycle/09-e-major/renders/fugue-equal --audio-only --temperament equal
-python3 tools/render_spatial.py cycle/09-e-major/fugue.json --output cycle/09-e-major/renders/fugue-spatial.mp3 --layout ring
+python3 tools/render_spatial.py cycle/09-e-major/fugue.json --output cycle/09-e-major/renders/fugue-spatial.mp3 --layout ring --program 52
 ```
 
 ---
@@ -156,162 +159,318 @@ slightly sour leading step, once per cycle, is the audible trace of the pump. I 
 
 ---
 
-## Fugue IX à 10: Ricercar a 10 in circulo
+## Fugue IX à 4: Ricercar in circulo (fourth edition, "Bach + 1")
 
-**Concept.** Stile antico (alla breve, white notes and quarters, like BWV 878) meets Tallis's
-forty-part *Spem in alium*. Ten real voices stand in a ring around the listener, and the motif
-travels from singer to singer. The ring exists only in the binaural render; on the piano renders,
-the main deliverable, it is a score order.
+### Concept at the new size
 
-**The ring and the score order.** Voice index = position on the ring
-(`render_spatial.py --layout ring`, azimuths −162° … +162°):
+Bach's E-major fugue in Book I (BWV 854) has three voices, so this one has four. The concept is the
+ten-voice version's, made audible at this size:
+- **stile antico**: alla breve, white notes, suspensions;
+- after Thomas Tallis's forty-voice ***Spem in alium***, whose music travels round a ring of singers;
+- with a **guest**: the subject of Bach's other E-major fugue (WTC II/9, BWV 878, which Bach took from
+  J. C. F. Fischer's *Ariadne musica*), entering as a real voice and finally as a long-note cantus.
 
-| Index | Voice | Azimuth | | Index | Voice | Azimuth |
-|---|---|---|---|---|---|---|
-| 0 | S1 (Soprano I) | −162° behind left | | 5 | S2 | +18° front right |
-| 1 | A1 | −126° | | 6 | A2 | +54° |
-| 2 | T1 | −90° left | | 7 | T2 | +90° right |
-| 3 | Bar1 | −54° | | 8 | Bar2 | +126° |
-| 4 | B1 | −18° front left | | 9 | B2 (Bass II) | +162° behind right |
+**The ring.** Four singers stand round the listener. The voice index is the position on
+`render_spatial.py --layout ring`:
 
-Choir I (S1 A1 T1 Bar1 B1) fills the left half, Choir II the right half, as in a double-choir
-score. The exposition enters in index order, so the motif literally goes round the listener, from
-behind-left through the front to behind-right.
-
-**Subject (ours).**
-
-> B4 | E5~ | E5 D#5 | C#5 B4 A4 G#4 | A4 B4   (2/2)
-
-- It rises a fourth.
-- It holds the E across the barline, so it carries its own suspension against any bass that moves
-  under it.
-- It falls a sixth in quarters.
-- It climbs back to the note it began on: a circle.
-- Its diatonic inversion (B F#~ G# | A B C# D# | C# B) is the answer of the first choir.
-
-**The ancestor.** BWV 878's subject is E F# A G# F# E (tokens in `cycle/reference/bach-subjects.md`).
-Bach took it from J. C. F. Fischer's *Ariadne musica*. Here it is a genuine voice four times:
-- in augmentation ×2 as the bass of the first tutti (B2, b19–25);
-- at normal speed in Bach's own answer form (B C# E D# C# B) above that, in S1 (b19–22), as the
-  top voice (S2 rests in b19–20), so the ancestor sounds at two speeds at once;
-- in A major for Choir II (Bar2, b31–34);
-- in augmentation ×2 as the treble cantus firmus of the final tutti (S1, b39–45), whose opening E5
-  is the top note of the tutti (S2 rests in b39–40).
-
-The genealogy is Fischer → Bach → us. Our subject's head is what combines with the ancestor in
-both tuttis: six heads in stretto over the augmented bass, and seven beneath the treble cantus
-firmus. To be honest about what is heard, these heads are inner-voice cells in half notes,
-entering with four to eight other voices. They are the material of the texture, not audible
-entries. Only S2's head on its home B (b43) is likely to be heard as one. Complete statements of S and F overlap at b19–20, where Bar2's subject tail sounds over
-B2's entry. Every placement was checked against the ancestor's line with throwaway scans
-(pairwise consonance and suspension resolution of a proposed head placement over the bass) before
-any free voice was written.
-
-**Entry and accumulation map.** The exposition is one continuous accumulation. Each entry comes two
-bars after the last, while the previous voice is still in its subject (two-bar overlap).
-
-| Bar | Voice (ring) | Form | Notes |
+| Voice | Ring position | Register | Main roles |
 |---|---|---|---|
-| 1 | S1 (0) | S on B4 | alone (as *Spem* begins) |
-| 3 | A1 (1) | I on F#4 | the mirror answers; the only two-voice-safe answer at this distance |
-| 5 | T1 (2) | I on C#4 | |
-| 7 | Bar1 (3) | I on E3 | |
-| 9 | B1 (4) | I on B2 | Choir I complete; its entries climb the circle of fifths B→F#→C# |
-| 11 | S2 (5) | S on E5 | Choir II begins on the tonic, high |
-| 13 | A2 (6) | S on C#4 | |
-| 15 | T2 (7) | S on F#3 | Choir II descends the circle of fifths C#→F#→B→E |
-| 17 | Bar2 (8) | S on B3 | the subject's home pitch again |
-| **19** | **B2 (9)** | **BWV 878 ×2 on E2** | the tenth voice, the lowest, is the ancestor: **first tutti** |
+| S | back left (−135°) | top | brings the guest (b11.3), sings the cantus (b48), ends with our subject (b54) |
+| A | front left (−45°) | middle-high | begins alone (b1) |
+| T | front right (+45°) | middle-low | answer (b4.3) |
+| B | back right (+135°) | low | |
 
-The texture grows 1 → 2 → … → 7 moving voices (b16–18). Nine sound at b19.1, and all ten from b19.3, when Bar1 rejoins. Choir I enters
-in mirror form, Choir II in rectus.
+- The exposition enters A, T, B, S: front left, front right, back right, back left, clockwise round the
+  ring.
+- On one piano the same order is a register order (middle-high, middle-low, low, then the top), so the
+  travelling is heard as the line stepping down through the registers and reappearing on top. The
+  ten-voice version's ring existed only in the binaural render (REVIEW-2, F3); this one is also a
+  pattern of registers.
+- The halves of the ring are register pairs: left (S, A) is the high pair, right (T, B) the low pair.
+  The antiphony between halves is therefore heard as a high duet answered by a low duet.
 
-**Spem-style events, with bars.**
-- **Accumulation** (b1–19): voice by voice round the ring, as above.
-- **First tutti as an event** (b19–25): the tempo broadens (♩ 92 → 84).
-  - The ancestor sounds in the bass in augmentation and in S1 at normal speed, S1 on top.
-  - S2 enters at b21 on C#6, the peak, held as a 9–8 suspension over B7/A and continuing in a
-    quarter-note turn (A5 G#5 A5 B5 C#6, b23.2–24.2).
-  - Heads pass through the inner voices (texture, not audible entries): T1 b19.1, B1 b20.1,
-    A2 b21.3, T2 b22.3, Bar2 b23.1, A1 b23.3.
-  - Harmony: I (tonic pedal) – V7 – ii4/2 – I – viiø6/5 – ii7 – V4/2 – I6 – V4/3 – I, with the peak
-    C#6 (S2) at b21.
-- **Sudden general silence** (b26): a full bar of rest at ♩ 69, after the tutti's cadence. This is
-  *Spem*'s general pause.
-- **Antiphonal halves** (b27–38): the exchanges shorten from 4 bars to 4, 1½, ½, ½ and ½, then the
-  halves converge at b38.
-  - Choir I alone (left, pp), b27–30: the subject in C♯ minor (Aeolian), ending on V of c♯.
-  - Choir II (right) answers on A, b31–34: a deceptive resolution passed across the ring. It sings
-    BWV 878's subject in A major and cadences in A.
-  - Choir I, b34.3–36.1: the head over IV–ii7–V7–I, its held A becoming the 7th.
-  - Then half-bar exchanges: Choir II b36.3 (vi), Choir I b37.1 (IV), Choir II b37.3 (V).
-- **Final tutti** (b39–49): the ancestor moves from the floor to the roof, as the treble cantus
-  firmus (E5 F#5 A5 G#5 F#5 E5).
-  - S2 rests for its first two bars, so the cantus's E5 is the top note.
-  - Heads continue through the voices beneath it (again texture, except S2's): A1 b39, T1 b40,
-    Bar1 b41, T2 b42, S2 b43 (on B, its home pitch), A2 b44, T2 b45.3. A walking bass runs under
-    them.
-  - Authentic arrival at b45.1.
-  - Coda: a double plagal close, ♭VII – IV – I, a Mixolydian colour. The head on A carries the D♮,
-    six beats after the last D♯ (S2, b44.3). That is a modal inflection, not a Tallis false
-    relation (see the second review).
-  - Last of all, S1, the voice that began the fugue alone, takes the head on E. Its held A becomes
-    the final 4–3 suspension (A5→G#5, b47–48).
-- **The ring empties** (b49–50): each pair re-strikes its note pp half a bar before it leaves, so
-  the farewell is heard travelling round the circle: A1/T1 (re-strike 49.1, leave 49.3), B1/S2
-  (49.3, 50.1), A2/T2 (50.1, 50.3). S1, Bar2 and B2 re-strike at 50.3 and sound to the end:
-  E2 E3 G#5.
+**Spem's gestures, kept.**
+1. The voice-by-voice accumulation round the ring (b1–11).
+2. The first tutti as an event, when the fourth singer arrives (b11.3–19).
+3. A general pause after it (b20).
+4. The music travelling back round the ring (b21–32; in *Spem* the imitation goes round the choirs and
+   back).
+5. Antiphonal exchanges between halves of the ring, shrinking in length (b33–47).
+6. A final tutti (b48–53), then a short coda.
 
-**Tempo.** Base ♩ = 92 (half note = 46).
-- First tutti: ♩ 84.
-- Into the silence: 84 → 69.
-- Antiphony: ♩ 90.
-- Final tutti: ♩ 82.
-- At the end: → 69 → 51.
+**Against "plodding".** The ten-voice version's second review found nothing shorter than a quarter and
+everything attacking together. Here:
+- the subject has a dotted half and an eighth-note turn;
+- the counterpoint is built of syncopations and suspension chains that fall on different beats;
+- entries alternate between downbeat and half bar, so the subject's own suspension falls on different
+  beats;
+- ♩ = 100, with breaths (see Tempo).
 
-Rendered length is about 2:25.
+### Material
 
-**Critic numbers** (`tools/critic.py cycle/09-e-major/fugue.json`):
-
-| Measure | Result | Target |
+| | Notes (2/2) | Notes on use |
 |---|---|---|
-| parallels_error | **0** (and 0 weak) | 0 |
-| beat_parallels | **0** | ≤ 6 |
-| low_register_seconds | **4** (b17.2, b17.4, b20.1, b24.1) | ≤ 12 |
-| unresolved | **2**, justified below | 0 or justified |
-| pc_tripled_on_beats_pct | **42.2 %** | ≤ 25 (**missed**, see weak spots) |
-| mean moving voices, whole piece | 5.9 | |
-| mean moving voices, first tutti b19–25 | **8.00** (9, 7, 8, 8, 9, 6, 9) | ≥ 8 |
-| mean moving voices, final tutti b39–47 | **8.11** (7, 7, 8, 8, 9, 8, 10, 8, 8) | ≥ 8 |
-| mean moving voices, antiphony b27–38 | 6.5 | |
-| mean moving voices, exposition b1–18 | 4.1 (growing 1 → 7) | |
+| **Subject** (3½ bars) | `B4:8 E5:12 D#5:4 C#5:4 B4:4 A4:4 G#4:2 F#4:2 G#4:4 A4:4 B4:8` | Rises a fourth and holds (a ready-made suspension), falls to F♯, turns at the bottom in eighths (G♯ F♯ G♯) and climbs back to the note it began on: a circle. |
+| **Answer** (tonal) | `E3 B3~ A#3 G#3 F#3 E3 D#3 C#3 D#3 E3 F#3` | 5→1 answered 1→5. |
+| **Countersubject** | alto b4.3: `G#4 E4 D#4 E4 F#4 B4 G#4 F#4~ F#4 B4 A#4` | Moves in quarters while the answer holds. Holds and syncopates while the answer moves, with a 4–3 at the cadence. Reused, transposed and with its head adapted, in the tenor at b8. |
+| **Inversion** | `B4 F#4~ G#4 A4 B4 C#5 D#5 E5 D#5 C#5 B4` | Diatonic mirror round B. Written in c♯ (Aeolian), f♯ (melodic minor: D♯ E♯ rising, E D falling), A (D natural) and E. |
+| **The guest** | BWV 878: `E F# A G# F# E` (whole, half, half, half, half, quarter); Bach's answer form `B C# E D# C# B` | From `cycle/reference/bach-subjects.md`. Bach's answer is a real transposition, so the two have the same steps. |
 
-- Doubling runs: 0. Melodic warnings (augmented 2nds, tritone leaps): 0.
-- Composite rhythm in the tuttis: 11–12 attacks per bar across ten voices; 72–75 % of
-  quarter-note slots carry an attack, after a pass that added hand-written passing quarters and a
-  walking bass.
-- The two "unresolved" are chord members the critic cannot name:
-  - b19.3: the 7th (A2) of V7 sounding over the tonic pedal E2.
-  - b24.1: the 7th (A3) of V4/3, which arrives by step under a suspended E3 and resolves to G#3.
-- Thematic entries: `fugue.py` checks every declared statement by scale steps and rhythm. All 29
-  match their form completely (S, I, BWV 878, BWV 878 ×2, or the head where labelled "head"). The
-  critic's own check compares exact semitones against S on B, so diatonic transpositions, BWV 878
-  and heads score lower there by design.
+**Kinship.** Our head B E D♯ C♯ B is Bach's answer form B C♯ E D♯ C♯ B with the C♯ taken out. At
+b11.3 the fourth singer enters on B4, the pitch on which the alto began the piece, and goes to C♯5
+instead of E5. What sounds like a fourth entry of our subject turns out to be the ancestor.
+
+**Changed from the ten-voice subject** (`B4:8 E5:16 D#5:8 C#5:4 B4:4 A4:4 G#4:4 A4:8 B4:8`). The
+circle is the same.
+- The held E is a dotted half instead of a whole.
+- The descent goes one step further, to F♯, and turns in eighths.
+- The subject lasts 3½ bars instead of 4, so successive entries alternate between downbeat and half
+  bar.
+
+### Section map (bar, time in the Bach–Lehman render)
+
+| Bars | Time | Voices | What happens | Key |
+|---|---|---|---|---|
+| 1–4.2 | 0:00 | A | Subject alone (front left), as *Spem* begins with one voice | E |
+| 4.3–8.1 | 0:08 | A T | Tenor (front right): the answer. Alto: countersubject | E→B |
+| 8.1–11.2 | 0:17 | A T B | Bass (back right): subject. Tenor: countersubject. The alto rests at 9.1–9.2, then a syncopated line into a double suspension (9–8, 4–3) at 11.1 | E |
+| 11.3–14.3 | 0:25 | S A T B | **The ring complete: the guest.** Soprano (back left, silent until now) enters on top on B4 with Bach's answer form in whole and half notes (B4 C♯5 E5 D♯5 C♯5 B4). Under it the alto runs a suspension chain (4–3 at 12.3, 9–8 at 13.3, 7–6 at 14.1) and the bass descends E3 D♯3 C♯3 (held across the bar) to G♯2 | E |
+| 13.3–17.1 | 0:30 | S A T B | Tenor: our subject under the guest, two bars after it (the placement `stretto_finder` ranked cleanest). The soprano rests at 14.4–15.2, then climbs by syncopation | E |
+| 16.3–19 | 0:39 | S A T B | V–V7 → vi (deceptive, 17.1). Peak A5 over IV (17.3). The tenor's E3, held from 17.1, becomes the 4 of the cadential 6/4 and resolves to D♯3 (18.2). V7 – I (19.1) | E |
+| 20 | 0:48 | — | **General pause**: one bar at ♩ 78, about 3 s | |
+| 21–32 | 0:51 | 1→2→3 | **The ring turned back**: the inversion goes round counterclockwise (S, B, T, A). Soprano alone in c♯ (21). Bass in f♯ (23.3), with the soprano's descant. Tenor in A (26.3), its tail cadencing in E. Alto in E on B4, where the piece began (29.3). Cadence in E (32.3) | c♯–f♯–A–E |
+| 33–36 | 1:23 | S A | **Antiphony L1** (left half alone): our subject in A, soprano. It ends on a bare B-major sixth, which the right half resolves | A |
+| 37–40 | 1:32 | T B | **R1** (right half alone): the guest at Bach's own pitch, E3, in the bass. The tenor sings our head over it, with a 7–6 at 38.1. It ends on F♯/A♯ | E |
+| 41–42 | 1:42 | S A | **L2**: our head in B, alto | B (V) |
+| 43–44 | 1:46 | T B | **R2**: the guest's head (1–2–4) in c♯, bass | c♯ (vi) |
+| 45 | 1:51 | S A | **L3**: our head in half the time (E5 A5), soprano | A (IV) |
+| 46 | 1:53 | T B | **R3**: the guest's head in half the time (F♯3 G♯3 B3), bass | f♯ (ii) |
+| 47 | 1:56 | S A / T B | **L4, R4**: half a bar each. The rising fourth (alto F♯4 B4); the guest's 1–2–4 in eighths and a quarter (tenor F♯3 G♯3 B3) | V |
+| 48–53 | 1:58 | S A T B (T rests in b52) | **Final tutti.** Soprano: the guest as a long-note cantus, ×2 (E5 for two bars, then F♯5 A5 G♯5 F♯5, a bar each). Our subject goes round the ring beneath it, clockwise: alto on E4 (48.1), tenor on B3 (48.3), bass on B2 (50.1, after half a bar's rest, at its exposition pitch). The bass's subject ends on V (53) under the cantus's F♯5 | E |
+| 54–57.1 | 2:14 | S A T B | **Coda.** The cantus's last note, E5 (54.1), is the first note of our subject, in the voice that brought the guest. The subject is on E (its plagal form), over I – IV6 – I6/4 – ii6 – V7 – ii – V7 – I | E |
+| 57.3–58 | 2:25 | S A T B | Plagal Amen (IV – I) under the held E5 | E |
+
+**Length**: 58 bars, about 2:32 (the renders are 2:34 with the release).
+
+**Texture**: bars by number of sounding voices:
+
+| Sounding voices | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| Bars | 1 | 5 | 21 | 12 | 19 |
+
+All four voices sound together only in the two tuttis (b11–19, b48–58); b47 counts as four because
+both halves sing in it, one after the other.
+
+**Tempo** (`tempo_map`). Base ♩ = 100, "Alla breve, con moto".
+- The guest's entrance broadens to ♩ 94.
+- A ritardando into the cadence (♩ 78), held through the general pause.
+- The ring turned back at ♩ 90–92, with a breath at its cadence (♩ 80).
+- The antiphony a tempo, pressing on to ♩ 104 as the exchanges shrink.
+- The final tutti at ♩ 90 under the cantus.
+- The coda slows from ♩ 82 to 54.
+
+### The devices, and where to hear them
+
+1. **The ring, on one piano and in the room.**
+   - **Clockwise** in the exposition: alto (b1, B4), tenor (b4.3, E3), bass (b8, B2), soprano (b11.3,
+     B4 on top).
+   - **Counterclockwise** in the inversion: soprano (b21), bass (b23.3), tenor (b26.3), alto (b29.3).
+   - **Clockwise again, faster**, in the final stretto: alto, tenor half a bar later, bass 1½ bars
+     after that.
+   - Each entry is either the new top voice or the new bottom voice, or enters after a rest in a
+     register no other voice is using. The exceptions are listed under weak spots.
+   - In `renders/fugue-spatial.mp3` each voice sits at its ring position, sung with General MIDI 52
+     (Choir Aahs), which suits the long notes.
+2. **The guest, five times.**
+
+   | Bar | Voice | What the guest is |
+   |---|---|---|
+   | 11.3 | soprano, on top | Bach's answer form, entering where our subject began (B4) |
+   | 37 | bass, alone in the low pair | Bach's subject at his own pitch, E3 |
+   | 43, 46, 47.3 | bass, then tenor | its head, shrinking with the exchanges |
+   | 48 | soprano, on top | augmented ×2 as the cantus, nothing above it |
+   | 54.1 | soprano | its last note E5 becomes the first note of our subject: the ancestor's line turns into the descendant's |
+
+3. **The antiphony shrinks.** The exchanges last 4, 4, 2, 2, 1, 1, ½ and ½ bars, and the material
+   shrinks with them:
+   - the whole subject (left) against the whole guest (right);
+   - then their heads;
+   - then the heads in half the time;
+   - then the rising fourth against the guest's 1–2–4 in eighths.
+
+   The halves never overlap: each exchange is a duet alone. The next half enters as the last one
+   stops, and completes its cadence (L1's B-major sixth resolves at R1's E). The short exchanges
+   spell one long cadence, V – vi – IV – ii – V – V7, which lands on the final tutti's I.
+4. **Stretto under the cantus.** Our subject on E (alto), on B (tenor, half a bar later) and on B
+   (bass, two bars after the alto) under the augmented guest. The three subject lines are complete
+   and exact; only the alto's last note is lengthened.
+5. **Rhythm.** Measured on the built scores (scratch script, below):
+
+   | | Ten-voice version | Now |
+   |---|---|---|
+   | Onset moments with three or more voices attacking | 59 % | 19 % |
+   | Onset moments with one voice attacking | 34 % | 51 % |
+   | Notes shorter than a quarter | 0 % | 8 % |
+   | Quarter notes | 15 % | 42 % |
+   | Half notes or longer | 85 % | 50 % |
+
+### Critic numbers (`python3 tools/critic.py cycle/09-e-major/fugue.json`)
+
+| Measure | Ten-voice version | **Now (a 4)** | Target |
+|---|---|---|---|
+| parallels_error / weak | 0 / 0 | **0 / 0** | 0 |
+| beat_parallels | 0 | **0** | ≤ 2 |
+| dissonance_unresolved | 2 | **0** | ≤ 3, justified |
+| bad_doublings | 5 | **0** | ≤ 2 |
+| low_register_seconds | 4 | **1** (b50.4.5) | ≤ 9 |
+| pc_tripled_on_beats_pct | 42.2 | **10.9** | |
+| stepwise_pct | 58.7 | **73.4** | ≥ 65 (Bach 71–75) |
+| leap_4th_plus_pct | 21.3 | 16.3 | (Bach ≈ 14) |
+| crossings | 19 | **0** | few |
+| mean moving voices | 5.9 | **2.67** (16 of 58 bars with all four moving) | |
+| **keyboard_unplayable_pct** | 24.4 | **0.0** (0 of 198 onsets) | < 5 |
+| tertian_fit_pct / longest static harmony | 65.3 / 3 beats | 33.3 / 2 beats | |
+| Length | 50 bars, about 2:25 at ♩ 92 | 58 bars, about 2:32 at ♩ 100 with breaths | 2.5–4 min |
+
+**The flagged items:**
+- **Low-register second, b50.4.5.** The bass's held E3 (its subject) against the tenor's passing F♯3,
+  an eighth note.
+- **Four "chord (7th not resolved down)" notes.**
+  - b11.1 is the double suspension tenor E4 / alto C♯5 over B2. It resolves at 11.2 (D♯4, B4).
+  - b51.1 is the cantus's A5 over E3 in the stretto (a IV6/4 sonority). It resolves to G♯5 at 52.1.
+- **One "accented passing" note** (b48.3, the alto's A4 against E3, the subject's own suspension
+  figure) and **one "pedal"** (b49.3, the cantus's held E5 against the alto's F♯4). Both are ordinary.
+- **Entries.** `fugue.py` prints a scale-step and exact-rhythm check of all 22 declared statements;
+  it is stored in `fugue.json` as `entry_verification`.
+
+  | Statements | Result |
+  |---|---|
+  | 14 complete statements (subject, inversion, guest) | match their form 10/10 or 5/5 |
+  | the tonal answer | 9/10 (its head) |
+  | 7 heads (L2–R4, and the cantus without the final E5 it shares with the coda) | match over their length |
+  | the diminished heads at b46–47 | match by step, not by rhythm, as intended |
+
+  The critic's own theme check compares semitones against the subject on B, so it scores the guest,
+  the inversions and the heads lower by design.
+
+### Method and disclosure
+
+- Every note is written in `fugue.py` by me. No code chooses pitches.
+- `tools/stretto_finder.py` tested three things:
+  - the subject against itself;
+  - the subject against the guest's answer form: our subject an octave lower, two bars after the
+    guest, ranked cleanest, and I used it at b13.3;
+  - the inversion against itself.
+- **The final stretto under the cantus.** A scratch search (my script, calling
+  `tools/critic.py`'s `analyse` on the three subject lines plus the cantus, nothing else) listed clean
+  levels and spacings. I chose alto on E4 at 48.1 and tenor on B3 at 48.3. A second scratch probe,
+  which also checked two-hand spans, settled the bass on B2 at 50.1: the first choice, F♯2, made b50
+  unplayable.
+- All free counterpoint was written by hand and corrected against the critic.
+- Other scratch scripts in the session scratchpad wrote no notes: a grid view, the rhythm statistics
+  above, and an entry-salience scan (rank from the top, rest before the entry, other voices
+  attacking).
+
+### Honest weak spots
+
+- **Unheard.** I cannot hear audio. Places to check first:
+  - whether the guest's entrance (b11.3) is heard as "the subject again, but no": its B4 lasts a
+    whole note before the C♯5 gives it away;
+  - whether the general pause (about 3 s) reads as an event on a piano;
+  - whether the antiphony's duets hold attention.
+- **A long thin middle.** From b21 to b47 (about 65 s) no more than three voices sound, and b33–46 is
+  all duets. That is the design: contrast with the tuttis, and two halves that must be heard as two
+  halves. Still, it is the longest stretch of two- and three-part writing in the piece.
+- **Three inner entries.** These enter as the second or third voice from the top, with other voices
+  attacking at the same moment or just before; they are less salient than the rest:
+  - the tenor's subject under the guest (b13.3);
+  - the alto's and the tenor's subjects under the cantus (b48.1, b48.3).
+
+  The tenor's inversion at b26.3 is also an inner voice, but it enters after six and a half bars'
+  rest, alone in its register.
+- **Collisions inside the stretto**, both written by the thematic lines themselves:
+  - b49.4: the alto's passing E4 against the tenor's D♯4, a semitone with no bass under it. The
+    tenor's D♯4 resolves its own suspended E4.
+  - b52.1: the bass's passing A2 under the cantus's new G♯5, a major-seventh sonority for a quarter.
+- **The right half sits high at R3** (b46: bass F♯3–B3). There the low pair is only about a sixth
+  below the high pair.
+- **Long notes on a piano.** The cantus's two-bar E5 lasts about 5 s at ♩ 90 and decays. It is the top
+  voice and re-attacked at every change of note. The binaural render's choir voice sustains it.
+- **The ring's directions are spatial only in the binaural render.** On the piano they are a register
+  pattern plus the high/low antiphony, not positions.
+- **Length** is at the low end of the target (about 2:32).
+- **Free counterpoint shaped by the critic and the hands, not only by the line:**
+  - the tenor rests in b52, because a tenor above B3 there would put bass and tenor beyond a tenth
+    for the left hand;
+  - the tenor holds A3 through b55–56 to avoid fifths with the alto;
+  - the coda's bass goes to F♯2 at 56.3 to avoid octaves with the alto;
+  - the first tutti's alto was revoiced three times to remove fifths and octaves.
+
+### From the N+1 version (third edition, ten voices)
+
+**Kept:**
+- the concept: stile antico, *Spem*'s ring, the accumulation, the first tutti as an event, the
+  general pause, the antiphony of halves in shrinking exchanges, the final tutti;
+- BWV 878 as a real voice, including Bach's answer form at the first tutti and the ×2 treble cantus
+  on top in the final tutti;
+- the subject's circle (B up to E, held, down, back to B) and its inversion;
+- a plagal close.
+
+**Changed, and why:**
+- **Ten voices → four.** The owner found the ten-voice texture washed out the counterpoint.
+  - Mean moving voices 5.9 → 2.67.
+  - Tripled pitch classes on 42 % → 11 % of beats.
+  - Crossings 19 → 0.
+  - The ring is four singers whose halves are register pairs, so it is audible on one piano.
+- **"Plodding" (REVIEW-2, F1).**
+  - The subject has a dotted half and an eighth-note turn and lasts 3½ bars.
+  - The counterpoint is syncopated, with suspensions on different beats.
+  - The tempo is ♩ 100 with breaths (it was ♩ 92).
+  - Onsets with three or more voices attacking: 59 % → 19 %.
+- **The guest and the cantus were masked (F2).** Now:
+  - the guest enters on top after ten silent bars;
+  - the cantus has nothing above it;
+  - the guest's subject sounds alone in the low pair at b37.
+- **Heads as texture, the ring as spatial only (F3).**
+  - 14 complete statements replace the inner-voice heads.
+  - Heads appear only in the antiphony, where each is alone in its half.
+- **A long exposition (49 s to ten voices).** Now 25 s to four.
+- **New: the ring turned back** (b21–32). The inversion goes round counterclockwise through c♯, f♯ and
+  A back to E.
+- **Dropped:**
+  - "the ring empties" (F4): a decaying chord on a piano;
+  - the Mixolydian ♭VII (F5).
+
+  In their place, the cantus turns into our subject and a short plagal Amen ends the piece.
+- **Playable.** `keyboard_unplayable_pct` 24.4 → 0.0.
+- **Not kept:** the ten-voice version's stretto of heads round two choirs.
+
+### Renders
+
+- `renders/fugue.{pdf,mid,musicxml,ly,mp3}`: Bach–Lehman temperament, piano, with the score.
+- `renders/fugue-equal.mp3`: equal temperament, piano.
+- `renders/fugue-spatial.mp3`: binaural, `--layout ring --program 52`. S is back left, A front left,
+  T front right, B back right, all on Choir Aahs; listen on headphones.
+- The earlier version's `fugue-spatial-choir.mp3` is replaced by this render. The ten-voice renders
+  stay in `archive-n-plus-1/renders/`.
+
+---
 
 ## Allusions and credits
 
-- **J. S. Bach, WTC II/9, Fugue in E major, BWV 878.** Its subject is used complete, as a real
-  voice, in four places:
-  - b19–25, augmented, in the bass;
-  - b19–22, in Bach's own answer form, in S1;
-  - b31–34, in A major;
-  - b39–45, augmented, as the treble cantus firmus.
+- **J. S. Bach, WTC II/9, Fugue in E major, BWV 878.** Its subject, a real voice in the Fugue:
+  - b11.3, in Bach's own answer form (B C♯ E D♯ C♯ B), soprano, on top;
+  - b37, at Bach's pitch (E3), in the bass;
+  - b43, b46 and b47.3, its head (1–2–4), shrinking;
+  - b48–54, in augmentation ×2 as the treble cantus, whose last note begins our subject.
+  Credited in the score's composer line and in every entry label.
 - **J. C. F. Fischer, *Ariadne musica***: Bach's source for that subject.
 - **Thomas Tallis, *Spem in alium*** (forty voices in eight choirs). From it come the accumulation
-  of entries round the singers, the first full tutti as an event, the general pause, and the
-  antiphony between halves. No notes of Tallis are quoted. (The coda's ♭VII is a modal colour,
-  not a Tallis false relation.)
-- **J. S. Bach, *Musical Offering***: its "Ricercar a 6" gives the title form "Ricercar a 10".
+  of entries round the singers, the first tutti as an event, the general pause, the music travelling
+  back round the ring, the antiphony between halves in shrinking exchanges, and the final tutti. No
+  notes of Tallis are quoted.
+- **Ricercar**: the old name for the imitative, white-note keyboard fugue, as in the two ricercars
+  of J. S. Bach's *Musical Offering*.
 - **J. S. Bach, WTC I/9, Prelude in E major, BWV 854**: the 12/8 pastorale genre model for the
   Prelude. No notes are quoted.
 - **The comma pump.** The fact that common-tone just intonation drifts on such progressions is
@@ -320,37 +479,12 @@ Rendered length is about 2:25.
 - **Bradley Lehman**'s 2005 reading of the temperament on Bach's WTC title page, as implemented in
   `tools/render_music.py`.
 
-## Honest weak spots
+## Honest weak spots (Prelude; the Fugue's are in its section above)
 
-- **Unheard.** I cannot hear audio. Three places to check first:
+- **Unheard.** I cannot hear audio. Places to check first:
   - in the Prelude, whether the drift reads as a gentle settling or merely as out of tune, and
     whether the drone makes the sinking audible as a pull (and cycle 4 tolerable), and whether the
     return at b32–33 reads as a release rather than a key change;
-  - in the Fugue, the tutti at b19, the silence at b26 and the ring emptying at b49–50.
-- **Tripling.** In the Fugue, 43 % of beats have a pitch class sounding three or more times, against
-  the ≤ 25 % target.
-  - With 8–10 voices sounding on a triad, at most six can avoid tripling. The tuttis therefore
-    triple, mostly roots and fifths, on about 80 % of their beats.
-  - To reach 25 % I would have had to rest voices on most beats (losing the ≥ 8 moving lines) or pile
-    up dissonances. I chose real lines.
-  - Leading tones are not doubled where they resolve. The Prelude is at 16.8 %.
-- **Slow pulse in the tuttis.** In the tuttis, ten voices are present and at least seven attack in
-  every bar but one (6 at b24). But most voices move once or twice a bar in halves, wholes and
-  syncopations: only 2–3 voices per bar have two or more attacks. The surface rhythm is the slow
-  stile-antico tactus with passing quarters, not a busy one. That is right for the style, but it is
-  the dimension most at risk of sounding chordal. The second review's faster tempo (♩ 92) is the
-  main remedy; 59 % of onset moments are still three or more voices attacking together.
-- **The exposition is long and thin.** It takes 18 bars, about 47 s, to reach ten voices. That
-  is deliberate (*Spem*), but it is a long build-up of half-note counterpoint.
-- **Unisons.** Several brief ones, as voices hand over a note:
-  - A2/T2 on B3 at b15.3–16.2;
-  - B1/Bar2 on B3 at b20.3;
-  - Bar1/Bar2 on A3 for one quarter at b19.3;
-  - S1/S2 on C#5 and A2/T1 on E4 at the choir handover, b34.3.
-- **The free counterpoint was corrected against the critic.** Some lines (the alto in b13–18, Bar1
-  in the first tutti) rest more than an ideal line would. They were rested to avoid parallels, not
-  for a musical reason.
-- **Length.** The Fugue is 50 bars, the low end of the requested 50–70: about 2:25 at ♩ 92.
 - **Prelude.**
   - Cycle 4 is a da capo of cycle 2 (the pipes). That keeps "the same thing, lower" audible and
     ends with motion, but it is still a repeat: four statements of one progression.
@@ -363,11 +497,11 @@ Rendered length is about 2:25.
   - The coda's tempered E-major chord has the wide Lehman third (405.9 c, against 386.3 c pure),
     exactly as intended.
 
-## Second review (REVIEW-2.md)
+## Second review (REVIEW-2.md): the prelude items
 
-Every ranked item was applied, with the two exceptions argued below. All notes were written by hand;
-nothing in the "do not touch" lists was changed (the tune and its ties, cycle 2's pipes, the b26
-pause, S1's last head E5 A5 G#5 at b47–48, the BWV 878 bass b19–25).
+The fugue items of that review (F1–F5) concern the ten-voice fugue. Its responses, and the fugue
+rows of its before/after table, are in `archive-n-plus-1/NOTES.md`. How the recomposition answers
+them is under "From the N+1 version" above. The prelude items, as they were:
 
 **Applied.**
 - **P1, the drone.** As described above, with one design change: besides b1, 9, 17 and 25, the
@@ -383,25 +517,8 @@ pause, S1's last head E5 A5 G#5 at b47–48, the BWV 878 bass b19–25).
 - **P3.** Alto b7: `'G#4:12 B4:6 D#4:6'`. The cadential V7 has its leading tone; bad doublings
   6 → 1.
 - **P4.** The 133 c A→G# step is described above ("Where the comma is heard").
-- **F1.** ♩ 72 → 92 with the reviewer's map scaled by 1.28; S2 also gets a quarter-note turn at
-  b23.2–24.2 (its strong-beat notes are unchanged, so no new beat parallels).
-- **F2.** S2 rests in b19–20 and b39–40.
-- **F3.** The heads and the ring are now described as texture and as a spatial-only device.
-- **F4.** The staggered pp re-strikes, exactly as in the review's table (S1's re-strike is a
-  separate `G#5:8` at b50.3, so its head stays as it was).
 
-**Not applied, and why.**
-- **F2, optional cantus re-strike** (`E5:16 E5:16 …`). Declined. The cantus is BWV 878 in exact
-  augmentation, like the bass at b19 that the review asks me to keep; splitting its first breve
-  would make it neither, and `fugue.py`'s entry check would no longer match it. With S2 silent, the
-  E5 is the top note at the tutti's downbeat, which is the main gain.
-- **F5, juxtaposing D♯ and D♮.** I tried the review's idea in thought and on the grid, and
-  relabelled instead. Tenor I's E4 → D#4 at 45.4 would have to leap a tritone to its A3 at 46.1, or
-  move D#4 → D4 chromatically within one voice (no longer a false relation). The other voices that
-  could carry a D# would need an unprepared accented dissonance against the A chord. The coda is
-  therefore called what it is: a Mixolydian ♭VII – IV – I.
-
-**Before → after.**
+**Before → after (prelude).**
 
 | | Before | After |
 |---|---|---|
@@ -413,13 +530,3 @@ pause, S1's last head E5 A5 G#5 at b47–48, the BWV 878 bass b19–25).
 | Prelude: bad doublings | 6 | 1 |
 | Prelude: beyond two hands | 0 % | 1.8 % (drone, sostenuto) |
 | Prelude: drift per cycle / purity | −21.51 c / 0.001 c | unchanged |
-| Fugue tempo | ♩ 72 → 40 | ♩ 92 → 51 |
-| Fugue length (render) | 3:04 | 2:25 (144.6 s) |
-| Fugue: parallels / weak / beat parallels | 0 / 0 / 0 | 0 / 0 / 0 |
-| Fugue: low-register seconds / unresolved | 4 / 2 | 4 / 2 (the same, justified) |
-| Fugue: tripled on beats | 43.3 % | 42.2 % |
-| Fugue: moving voices, piece / first tutti / final tutti | 5.80 / 8.29 / 8.33 | 5.9 / 8.00 / 8.11 |
-| Fugue: entries verified | 29 / 29 | 29 / 29 |
-
-The cost of F2 is visible in the last row but one: with S2 resting, b20 and b39–40 have seven
-moving voices instead of eight or nine. I think the audible ancestor and cantus are worth it.

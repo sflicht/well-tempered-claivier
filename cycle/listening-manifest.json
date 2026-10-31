@@ -156,7 +156,7 @@
    ]
   },
   {
-   "name": "Pair IX \u00b7 E major (new, ten voices)",
+   "name": "Pair IX \u00b7 E major (new)",
    "pieces": [
     {
      "id": "prelude-9",
@@ -174,10 +174,10 @@
     },
     {
      "id": "fugue-9",
-     "title": "Fugue IX \u00b7 Ricercar a 10 in circulo",
-     "score": "cycle/09-e-major/archive-n-plus-1/fugue.json",
+     "title": "Fugue IX \u00b7 Ricercar in circulo (4 voices)",
+     "score": "cycle/09-e-major/fugue.json",
      "tag": "new",
-     "notes": "Ten voices in stile antico, white notes and suspensions, imagined as a ring of singers in the manner of Tallis's 40-voice Spem in alium. The subject's held E is a built-in suspension. The exposition is one continuous build-up, each entry starting before the last has finished, moving round the circle of fifths. In the binaural render the entries literally travel round the listener.\n\nThe subject of Bach's WTC II E-major fugue (BWV 878), which Bach himself took from J.C.F. Fischer, enters as a real voice four times. It sounds augmented in the bass to make the first tutti, in Bach's answer form above it, in A major in the second choir, and augmented as the treble cantus firmus of the final tutti. As in Spem in alium, the first tutti is followed by a bar of silence, then antiphonal exchanges shrinking from four bars to half a bar. At the end the voices drop out in pairs around the ring, each touching its last note again softly as it leaves. The ring and its travelling entries are fully heard only in the binaural render.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "Stile antico, after Tallis's 40-voice motet Spem in alium, whose music travels round a ring of singers. Here four singers stand round the listener (heard as a ring in the binaural render): the exposition enters clockwise round the ring, and the fourth singer, on top, turns out to be singing the subject of Bach's E-major fugue in Book II (BWV 878, which Bach took from J.C.F. Fischer), in Bach's answer form. That starts the first tutti, which ends, as in Spem, with a bar of silence.\n\nThe inversion then travels the other way round the ring. In the antiphony the two halves of the ring answer each other in exchanges that shrink from four bars to half a bar, our subject on one side and Bach's on the other. In the final tutti Bach's subject sounds in long notes on top as a cantus while our subject runs in stretto beneath it; the cantus's last note becomes the first note of our subject, and a plagal Amen closes the piece.\n\nRecomposed in four voices (it was ten), and no longer plodding: syncopations and suspension chains, far fewer notes struck together. The earlier version is in the pair's archive folder."
     }
    ]
   },

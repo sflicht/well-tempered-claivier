@@ -1,7 +1,22 @@
 #!/usr/bin/env python3
-"""Fugue X in E minor, three voices: "Fuga a due cori con corale".
+"""Fugue X in E minor, three voices: "Fuga a due cori con corale" (third edition, Bach + 1).
 
-WORK IN PROGRESS (recomposition at Bach + 1 = three voices).
+An homage to the opening chorus of the St Matthew Passion, BWV 244 no. 1 (E minor, 12/8): two choirs in dialogue
+("Sehet! - Wen? - den Braeutigam. Seht ihn! - Wie? - als wie ein Lamm") beneath the chorale "O Lamm Gottes,
+unschuldig", sung above phrase by phrase.  Bach's E-minor fugue in WTC I (BWV 855) has two voices; this one has three:
+  Coro I    (left in the binaural render)  sings the subject (rectus): the "Sehet!" choir;
+  Coro II   (right)                         answers in inversion: the questioning choir;
+  Choral    (front)                         the chorale's seven lines in dotted halves, an octave above the
+                                            ripieno soprano of BWV 244/1 (G major).
+The subject's seven beat-notes, E E E B B C B, are the chorale's first line (G G G D D E D) moved into the relative
+minor, so the chorale is the subject's relative in augmentation; the Recognition (b19) makes that audible.
+
+Every note is written here.  Thematic statements are explicit transforms (wtclib.transpose / invert_diatonic /
+scale_rhythm) of the hand-written subject, or are written out by hand (RG, IG, SBG); all other material is literal
+token strings placed at bar / dotted-quarter-beat positions.  No code chooses pitches.
+
+The chorale melody (Nikolaus Decius, 1522/1531) is copied from the soprano of Bach's four-part setting BWV 401
+(music21 corpus, checked), transposed from F to G major, the key in which the ripieno sings it in BWV 244 no. 1.
 """
 from __future__ import annotations
 
@@ -110,7 +125,7 @@ put('C1', 10, 1, 'D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 G5:1 F#5:1 E5:1 F#5:1 G5:1 E5:1 
                  'G5:1 F#5:1 E5:1 D5:1 C#5:1 D5:1 C#5:1 D5:1 E5:1 C#5:1 A#4:1 C#5:1 '
                  'D5:2 C#5:1 B4:1 C#5:1 D5:1 E5:1 D5:1 E5:1 F#5:1 G5:2 F#5:2 E5:1 D5:1 C#5:1 B4:1 '
                  'B4:2 C5:1 B4:1 A4:1 F#4:1')
-put('C2', 10, 1, 'G3:4 F#3:2 E3:6 C#3:4 E3:2 F#3:6 B2:6 G2:4 E2:2 D3:6 B2:2 R:4')
+put('C2', 10, 1, 'G3:4 F#3:2 E3:6 C#3:4 E3:2 F#3:6 B2:6 G2:4 B2:2 D3:6 B2:2 R:4')
 
 # ================================================================ IV. CHORALE LINE 2 (b12-16.2): Coro II's inversion
 put('CH', 12, 1, CH2)
@@ -189,8 +204,8 @@ theme('C1', 30, 4, IG, 'Coro I: inversion (G major), a beat before chorale line 
 theme('C2', 31, 2, octv(S, -1), 'Coro II: subject (E minor), two beats later (stretto 2)')
 
 # line 5, second half: B minor, the chorale descending to its lowest note; E over F#7 into b (b34.3)
-put('C1', 32, 4, 'D5:2 C5:2 B4:2 A4:2 G4:2 F#4:2 B4:2 A4:1 G4:1 F#4:1 G4:1 C5:2 B4:1 A4:1 G4:1 A4:1 '
-                 'B4:2 A4:1 G4:1 F#4:1 E4:1 G4:2 F#4:1 G4:1 F#4:1 E4:1 A#4:2 B4:1 C#5:1 A#4:1 C#5:1 '
+put('C1', 32, 4, 'D5:2 C5:2 B4:2 A4:2 G4:2 F#4:2 B4:2 A4:1 G4:1 F#4:1 G4:1 C5:2 B4:1 A4:1 B4:1 C5:1 '
+                 'D5:2 C#5:1 B4:1 A4:1 F#4:1 G4:2 A4:1 B4:1 C#5:1 B4:1 A#4:2 B4:1 C#5:1 A#4:1 C#5:1 '
                  'B4:2 F#4:1 G4:1 F#4:1 E4:1 D4:2 E4:1 F#4:1 G4:1 E4:1 F#4:4 R:2 R:6 '
                  'B4:1 C#5:1 D5:1 E5:1 F#5:1 D5:1 E5:1 C#5:1 A#4:1 B4:1 C#5:1 A#4:1 '
                  'F#5:2 E5:1 D5:1 E5:1 F#5:1 G5:2 F#5:1 E5:1 D5:2')
@@ -205,7 +220,7 @@ theme('C1', 37, 1, SBG, 'Coro I: subject on B (diatonic in G major) under choral
 theme('C2', 37, 1, octv(RG, -1), 'Coro II: subject (G major) a tenth below')
 
 # half cadence: VI6 - iv - V (b39-40), the chorale's B over the dominant
-put('C1', 39, 1, 'G4:2 A4:1 B4:1 C5:1 A4:1 E5:2 D5:1 C5:1 B4:1 A4:1 D#5:12')
+put('C1', 39, 1, 'G4:2 A4:1 B4:1 C5:1 A4:1 E5:2 D5:1 C5:1 B4:1 E5:1 D#5:12')
 put('C2', 39, 1, 'E3:6 A2:6 B2:12')
 
 # ================================================================ XI. THE BREATH (b40.3-42.4): a pulsing dominant pedal
@@ -225,28 +240,73 @@ put('C1', 40, 3, 'F#5:3 E5:2 D#5:1 D#5:1 E5:1 F#5:1 A5:2 G5:1 '
 CH7 = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:12 A5:24 G5:60'
 put('CH', 43, 1, CH7)
 put('C1', 43, 1, 'E5:1 D5:1 C5:1 D5:1 E5:1 G5:1 C5:1 B4:1 A4:1 B4:1 C5:1 A4:1 '
-                 'D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 C5:1 B4:1 A4:1 G4:1 F#4:1 E4:1 '
-                 'G4:2 A4:1 B4:1 C5:1 A4:1 B4:2 G4:1 A4:1 B4:1 G4:1 A4:2 C5:1 B4:1 A4:1 C5:1 B4:2 A4:1 F#4:1 A4:1 F#4:1 '
+                 'D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 E5:1 D5:1 C5:1 B4:1 A4:1 F#4:1 '
+                 'G4:2 A4:1 B4:1 C5:1 A4:1 B4:2 G4:1 A4:1 B4:1 G4:1 C5:2 A4:1 B4:1 C5:1 A4:1 B4:2 A4:1 F#4:1 A4:1 F#4:1 '
                  'G4:2 R:4 R:6')
 put('C2', 43, 1, 'C4:4 B3:2 A3:6 B3:4 G3:2 A3:6 E3:6 G3:6 F#3:6 R:6')
-theme('C2', 45, 1, octv(INV, -1), 'Final stretto: Coro II, inversion (E minor), under the last chorale line')
+INV_END = octv(INV, -1).rsplit(' ', 2)[0] + ' G3:2 F#3:2'     # the tail turns down into the cadence
+theme('C2', 45, 1, INV_END, 'Final stretto: Coro II, inversion (E minor) under the last chorale line (tail turned down to the dominant)')
 theme('C1', 45, 3, S, 'Final stretto: Coro I, subject (E minor), two beats later: the final cadence')
 
 # ================================================================ XIII. CODA (b47.3-49.4)
 put('C2', 47, 1, 'B3:12 E3:12 E3:24 E2:24')
-put('C1', 47, 3, 'E4:2 G4:2 B4:2 E5:3 D#5:1 E5:2 C5:4 B4:2 A4:4 G4:2 F#4:4 A4:2 C5:4 B4:2 B4:24')
+put('C1', 47, 3, 'E4:2 G4:2 B4:2 E5:3 D#5:1 E5:2 C5:4 B4:2 A4:4 G4:2 F#4:4 E4:2 C5:4 B4:2 B4:24')
+
+MARKS = [(1, 'Exposition: Coro I subject, Coro II inversion'), (5, 'Dialogue: Sehet! - Wen? - Wie?'),
+         (8, 'Chorale line 1 over the subject'), (12, 'Line 2 over the inversion'),
+         (16, 'Episode: the questions in diminution'), (19, 'Recognition (line 3)'),
+         (23, 'Line 4: subject in augmentation'), (29, 'Dialogue in diminution: Was? - Wohin?'),
+         (31, 'Line 5: stretto, forms exchanged'), (37, 'Line 6: tenths'), (40, 'Dominant pedal; breath'),
+         (43, 'Line 7: final stretto'), (48, 'Coda')]
+DYN = {1: -4, 5: -2, 8: 2, 10: 3, 12: 2, 16: -3, 19: 6, 21: 4, 23: 2, 25: 4, 29: 0, 31: 4, 33: 3,
+       36: 5, 39: 6, 40: 2, 42: 4, 43: 8, 47: 6, 48: 2, 49: 0}
+QUESTIONS = [(30, 31.5), (36, 37.5), (87, 90), (93, 96), (169.5, 171), (174, 175.5)]   # Coro II: Wen? Wie? (dim) Was? Wohin?
+SEATS = {'Choral (soprano in ripieno)': [0.0, 4.0], 'Coro I': [-55.0, 6.0], 'Coro II': [55.0, 6.0]}
+
+
+def dynamics(b):
+    v = 0
+    for k in sorted(DYN):
+        if b + 1 >= k:
+            v = DYN[k]
+    return v
+
 
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
+    end = nbars * 6
     meta = {'title': 'The Well-Tempered clAIvier',
             'subtitle': 'Fugue X in E minor, three voices: Fuga a due cori con corale',
             'composer': 'Claude / Sam (chorale: Nikolaus Decius, "O Lamm Gottes, unschuldig"; after J. S. Bach, BWV 244 no. 1)',
-            'instrument': 'Keyboard (three voices)',
+            'instrument': 'Keyboard, three voices (two choirs and a chorale)',
             'key': 'E', 'mode': 'minor', 'meter': list(METER), 'bpm': 90,
             'tempo_text': 'Andante con moto (dotted quarter = 60)',
-            'movement_number': 10, 'piece_type': 'fugue', 'edition': 'third', 'voice_order': 'high_to_low'}
+            # t in quarters (one 12/8 bar = 6).  Small breaths at the cadences of lines 1, 2 and 5 and before line 5's
+            # stretto; a ritardando into the general pause before the Recognition (b18.4); the half cadence (b39-40)
+            # broadens and the dominant pedal is a tempo; a breath into the last line (b42.4), which is a little
+            # broader; the final ritardando from the cadence (b47.3).
+            'tempo_map': [[57, 90], [60, 84, 'ramp'], [61.5, 90, 'ramp'],
+                          [82.5, 90], [85.5, 84, 'ramp'], [87, 90, 'ramp'],
+                          [103.5, 90], [108, 72, 'ramp'], [108, 90],
+                          [175.5, 90], [178.5, 84, 'ramp'], [180, 90, 'ramp'],
+                          [199.5, 90], [202.5, 84, 'ramp'], [205.5, 90, 'ramp'],
+                          [228, 90], [234, 80, 'ramp'], [237, 90],
+                          [246, 90], [250.5, 76, 'ramp'], [252, 86],
+                          [270, 86], [279, 74, 'ramp'], [288, 60, 'ramp'], [end, 48, 'ramp']],
+            'movement_number': 10, 'piece_type': 'fugue', 'edition': 'third', 'voice_order': 'high_to_low',
+            'markers': [{'t': float((b - 1) * 6), 'label': t} for b, t in MARKS]}
     voices = [(LONG[i], ['Ch', 'I', 'II'][i], CLEF[i], [74, 68, 66][i]) for i in range(3)]
-    data = W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=S)
+    data = W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=S, dynamics=dynamics)
+    # Performance data only (no pitches or rhythms change): Coro II's questions are accented and detached; each
+    # voice gets a seat for the binaural render (--layout score): Coro I left, Coro II right, the chorale in front.
+    for v in data['voices']:
+        v['spatial'] = SEATS[v['name']]
+        if v['name'] == 'Coro II':
+            for e in v['events']:
+                if any(a <= e['t'] < z for a, z in QUESTIONS):
+                    e['v'] = max(24, min(118, e['v'] + 6))
+                    e['gate'] = 0.72
+    (HERE / 'fugue.json').write_text(json.dumps(data, indent=1))
     return data
 
 

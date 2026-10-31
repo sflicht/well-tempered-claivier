@@ -128,7 +128,8 @@ put('B', 11, 3, 'E3:8 D#3:8 C#3:16 G#2:8 A2:8 G#2:8 A2:8 F#2:8 C#3:8 B2:8 C#3:8 
 # alto: a suspension chain under the guest's long notes (4-3 at 12.3, 9-8 at 13.3, 7-6 at 14.1)
 put('A', 11, 3, 'G#4:4 F#4:16 E4:8 A4:8 G#4:8 F#4:4')
 put('A', 15, 3, 'A4:8 B4:12 A4:4 G#4:8 C#5:8 B4:8 A4:8 G#4:16')
-# soprano after the guest: rests, then climbs by syncopation to A5 (b17.3): V7 - vi (deceptive) - ii6 - V - I
+# soprano after the guest: rests, then climbs by syncopation to A5 (b17.3): V7 - vi (deceptive) - IV - I6/4 - V7 - I;
+# the tenor's E3, held from the deceptive cadence, becomes the 4 of the cadential 6/4 (18.1) and resolves to D#3
 put('S', 15, 3, 'C#5:4 E5:12 D#5:8 E5:4 F#5:4 A5:8 G#5:4 F#5:12 E5:16')
 
 # b20: GENERAL PAUSE (Spem in alium's silence)
@@ -204,8 +205,9 @@ put('T', 53, 1, 'B3:8 A3:8')
 
 # ======================================================================
 # VI. CODA: the cantus's last note (E5) is the first note of our subject: the guest's line turns into
-#     ours, in the voice that brought the guest.  Over a tonic pedal the head goes once more round the
-#     ring (alto, tenor) and the circle closes.
+#     ours, in the voice that brought the guest (plagal form of the subject, on E).  Authentic cadence
+#     at 57.1, then a plagal Amen (IV - I).  The tenor rests in b52 and holds A3 in b55-56 to keep bass
+#     and tenor within a tenth for the left hand.
 # ======================================================================
 theme('S', 54, 1, 'E5:8 A5:12 G#5:4 F#5:4 E5:4 D#5:4 C#5:2 B4:2 C#5:4 D#5:4 E5:32',
       "Coda: subject (on E), soprano: the cantus's last note becomes the subject's first")
