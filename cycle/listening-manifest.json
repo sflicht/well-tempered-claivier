@@ -118,7 +118,7 @@
    ]
   },
   {
-   "name": "Pair VII \u00b7 E-flat major (new, eight voices)",
+   "name": "Pair VII \u00b7 E-flat major (new)",
    "pieces": [
     {
      "id": "prelude-7",
@@ -129,10 +129,10 @@
     },
     {
      "id": "fugue-7",
-     "title": "Fugue VII \u00b7 Fuga a due cori",
-     "score": "cycle/07-e-flat-major/archive-n-plus-1/fugue.json",
+     "title": "Fugue VII \u00b7 Fuga a due cori (4 voices)",
+     "score": "cycle/07-e-flat-major/fugue.json",
      "tag": "new",
-     "notes": "Two complete four-voice choirs, after Gabrieli's and Sch\u00fctz's cori spezzati and Bach's double-choir motet Singet dem Herrn (BWV 225). The subject opens with the first line of Wachet auf. Choir II sings a literal mirror image of Choir I's whole exposition, as in the Art of Fugue's mirror fugues. The choirs then trade at shrinking distances: a bar, half a bar, a beat.\n\nIn bars 25-29 the choirs disagree about the key, Choir I insisting on B-flat and Choir II on A-flat, until they reconcile on the home dominant. Then a joke: Choir I's pompous augmentation is cut off twice by Choir II's chattering diminution, and its last bar only arrives in the coda.\n\nThe summit is an eight-voice stretto, every voice entering half a bar apart, Choir I upright and Choir II inverted. In the binaural render Choir I is on the left and Choir II on the right.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "A fugue for two choirs of two, after the Venetian double choirs and Bach's double-choir motets: Coro I (tenor and bass) sings the subject upright and believes in B-flat; Coro II (soprano and alto) sings it upside down and believes in A-flat. On the piano each choir is one hand; in the binaural render they stand left and right. Coro II's exposition is Coro I's exactly mirrored.\n\nThe choirs meet, then quarrel about the key, a bar, half a bar and a beat apart (A natural against D-flat), and make up on A-flat over B-flat, the chord that also ties this fugue to its prelude. The joke: Coro I starts a slow, pompous statement of the subject in dotted French-overture rhythm and is cut off twice by Coro II's chatter. A stretto of four entries steps down by fifths to the home key, and the climax lands again on A-flat over B-flat.\n\nCoda: the first line of the chorale Wachet auf in the tenor while the others keep moving; the pompous statement cut off in the joke is finally finished underneath it, and Coro II has a soft, upside-down last word.\n\nRecomposed in four voices (it was eight); the earlier version is in the pair's archive folder. The binaural render uses an organ sound, as for the two organ lofts of St Mark's in Venice."
     }
    ]
   },

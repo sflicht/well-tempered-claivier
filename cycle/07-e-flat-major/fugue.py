@@ -101,7 +101,7 @@ tag(5, 'Coro II (soprano, alto): the mirror exposition')
 put(9,
     T='Eb3:4 G3:2 Bb3:2 C4:4 Bb3:4  C4:2 D4:1 C4:1 Bb3:2 D4:2 F4:4 Eb4:2 D4:2  '
       'Eb4:4 D4:4 C4:4 B3:4  '
-      'C4:4 Bb3:2 G3:2 Bb3:4 F3:4  Ab3:4 G3:2 Eb3:2 G3:4 D3:4  '
+      'C4:8 Bb3:8  Ab3:8 G3:8  '
       'Eb3:4 G3:4 C4:4 F4:4  Eb4:4 Bb3:4 C4:4 A3:2 Bb3:2~  '
       'Bb3:8 A3:4 G3:4  Bb3:4 Bb3:4 G3:4 Bb3:2 A3:2  Bb3:8 R:8',
     B='Eb2:8 Ab2:4 G2:4  Ab2:4 Bb2:8 Eb3:4  F3:4 Bb2:4 C3:4 G2:2 R:2  '
@@ -109,7 +109,7 @@ put(9,
       'C2:4 Eb2:2 G2:2 Ab2:4 G2:4  Ab2:2 Bb2:1 Ab2:1 G2:2 Bb2:2 D3:4 C3:2 Bb2:2  '
       'G2:8 D3:4 Eb3:2 C3:2  D3:4 Eb3:8 F3:4  Bb2:8 R:8',
     S='Bb5:4 R:12  F5:4 D5:2 Bb4:2 Ab4:4 Bb4:4  Ab4:2 G4:1 Ab4:1 Bb4:2 G4:2 Eb4:4 F4:2 G4:2  '
-      'R:2 G5:4 F5:1 Eb5:1 Eb5:4 D5:4  Eb5:6 D5:1 C5:1 C5:4 B4:4  '
+      'R:2 G5:4 F5:1 Eb5:1~ Eb5:4 D5:4  Eb5:6 D5:1 C5:1~ C5:4 B4:4  '
       'C5:6 D5:2 C5:4 B4:4  C5:4 D5:4 A4:4 R:4  R:16  '
       'F5:4 Eb5:8 D5:2 C5:2  Bb4:8 R:8',
     A='G5:4 R:12  R:16  R:16  R:16  R:16  R:16  R:16  '
@@ -224,8 +224,7 @@ tag(38, 'Climax: A-flat over B-flat')
 
 # ===========================================================================
 # 8. CODA (b39-46): the prelude remembered.  A ritornello bar (the alto: the
-# inversion in diminution, as in the prelude's opening bars, over the
-# prelude's own first bass), then the first line of "Wachet auf" in long notes
+# inversion in diminution, as in the prelude's opening bars), then the first line of "Wachet auf" in long notes
 # in the tenor (the register of BWV 645), louder, with the soprano running above
 # it, the alto in quarters and the bass walking.  Under the chorale's C (b43)
 # the bass at last finishes the augmentation it was never allowed to finish

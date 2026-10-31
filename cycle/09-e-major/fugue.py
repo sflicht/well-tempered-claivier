@@ -1,5 +1,47 @@
 #!/usr/bin/env python3
-"""Fugue IX in E major, four voices: "Ricercar in circulo".  (DRAFT IN PROGRESS)"""
+"""Fugue IX in E major, four voices: "Ricercar in circulo".  Fourth edition (Bach + 1: BWV 854 has three).
+
+Stile antico (alla breve, white notes, suspensions) after Tallis's forty-voice Spem in alium, whose
+music travels round a ring of singers.  Four singers stand round the listener; the voice index is the
+position on render_spatial.py's --layout ring:
+
+    S  soprano  back left   (-135 deg)        A  alto   front left  (-45 deg)
+    T  tenor    front right (+45 deg)         B  bass   back right  (+135 deg)
+
+so the exposition order A, T, B, S travels clockwise round the ring.  On one piano the same ring is a
+register order: middle-high, middle-low, low, top.  The left half of the ring (S, A) is the high pair,
+the right half (T, B) the low pair, so the antiphony between halves is heard as high against low.
+
+Material, all written here:
+  SUBJ   B4 E5~ E5 D#5 C#5 B4 A4 G#4 F#4 G#4 A4 B4: rises a fourth, holds (its own suspension), falls,
+         turns at the bottom and climbs back to where it began: a circle.  Tonal answer E B A# ... F#.
+  INV    its diatonic mirror round B (falls a fourth, climbs a scale, turns back).
+  Guest  J. S. Bach's subject of WTC II/9, BWV 878, which Bach took from J. C. F. Fischer's Ariadne
+         musica: E F# A G# F# E (cycle/reference/bach-subjects.md), and Bach's answer form
+         B C# E D# C# B.  Our head B E D# C# B is that answer with its C# taken out.
+
+Form (58 bars; t = bar.quarter):
+  I    1-11.2   accumulation round the ring, clockwise: A subject (1), T answer (4.3), B subject (8)
+  II   11.3-19  first tutti: the fourth singer (S) closes the ring with the guest, in Bach's answer
+               form, from the same B4 our subject began on (B4 C#5 ... instead of B4 E5); T sings our
+               subject under it (13.3); deceptive V7-vi (17.1), peak A5 (17.3), cadence (19.1)
+  --   20       general pause
+  III  21-32    the ring turned back: the inversion goes round the other way, S (c#, alone), B (f#),
+               T (A, cadencing in E), A (E, on B4 where the piece began); 1, 2, 3 voices
+  IV   33-47    antiphony of the halves, 4, 4, 2, 2, 1, 1, 1/2, 1/2 bars: our subject on the left
+               (S, A), the guest on the right (B, T), each shrinking with its exchange; the harmony
+               of the short exchanges is one long cadence: V vi IV ii V V7
+  V    48-53    final tutti: the guest as a long-note cantus on top (BWV 878 x2, S) while our
+               subject goes round the ring beneath it in stretto: A (48.1), T (48.3), B (50.1)
+  VI   54-58    coda: the cantus's last note, E5, is the first note of our subject in the soprano;
+               authentic cadence (57.1), plagal Amen (57.3-58)
+
+Every note is written literally below.  Thematic statements are written out as tokens (transpositions
+and the diatonic mirror were worked out by hand and checked by verify_entries()).  Placement aids, all
+reported in NOTES.md: tools/stretto_finder.py and a scratch search with tools/critic.py proposed the
+level and spacing of the final stretto under the cantus (the three subject lines alone); I chose one
+and wrote every other note by hand, correcting against tools/critic.py.
+"""
 from __future__ import annotations
 
 import sys
@@ -167,21 +209,106 @@ put('T', 53, 1, 'B3:8 A3:8')
 # ======================================================================
 theme('S', 54, 1, 'E5:8 A5:12 G#5:4 F#5:4 E5:4 D#5:4 C#5:2 B4:2 C#5:4 D#5:4 E5:32',
       "Coda: subject (on E), soprano: the cantus's last note becomes the subject's first")
-put('B', 54, 1, 'E2:8 C#3:12 B2:4 A2:8 B2:8 F#2:4 B2:4 E2:32')
-put('A', 54, 1, 'G#4:8 A4:12 B4:4 C#5:8 B4:4 A4:8 B4:36')
-put('T', 54, 1, 'G#3:8 E3:16 A3:24 G#3:32')
+put('B', 54, 1, 'E2:8 C#3:12 B2:4 A2:8 B2:8 F#2:4 B2:4 E2:8 A2:8 E2:16')
+put('A', 54, 1, 'G#4:8 A4:12 B4:4 C#5:8 B4:8 A4:4 B4:12 C#5:8 B4:16')
+put('T', 54, 1, 'G#3:8 E3:16 A3:24 G#3:8 A3:8 G#3:16')
+
+
+LETTER = 'CDEFGAB'
+REFS = {  # reference forms for the scale-step check (letters, so tonal mutations show)
+    'subject': SUBJ, 'inversion': INV, 'BWV 878 subject': GUEST, "BWV 878 answer form": GUEST_ANS,
+    'BWV 878 x2': W.scale_rhythm(GUEST, 2),
+}
+
+
+def _steps_and_durs(toks):
+    out = []
+    for t in toks.split():
+        p, d, sp, tie = W.parse_tok(t)
+        if p is None:
+            continue
+        octave = (p - (sp.count('is') - sp.count('es'))) // 12 - 1
+        out.append((LETTER.index(sp[0].upper()) + 7 * octave, d))
+    return out
+
+
+def verify_entries():
+    """Compare every declared statement with the subject, its inversion and the guest, by scale
+    steps and exact rhythm (the last note's length is free).  Heads are compared over their length;
+    diminished heads (the half-bar exchanges at b47) score on steps only."""
+    rows = []
+    for v, bar, off, label, n in ENTRIES:
+        toks = [t for st, t in VO[v] if st == pos(bar, 1 + off)][0]
+        got = _steps_and_durs(toks)
+        best = None
+        for name, ref in REFS.items():
+            r = _steps_and_durs(ref)
+            k = min(len(r), len(got))
+            if k < 2:
+                continue
+            si = sum(1 for j in range(k - 1) if got[j + 1][0] - got[j][0] == r[j + 1][0] - r[j][0])
+            rh = sum(1 for j in range(k - 1) if got[j][1] == r[j][1])
+            sc = (si + rh) / (2 * (k - 1))
+            if best is None or sc > best[0]:
+                best = (sc, name, f'{si}/{k - 1}', f'{rh}/{k - 1}', 'complete' if k == len(r) else f'head ({k} notes)')
+        rows.append((f'b{bar}.{1 + float(off):g}', v, label[:58], best[1], best[2], best[3], best[4]))
+    return rows
+
+
+# quarter-note time of bar b, beat q (quarters)
+def tq(b, q=1):
+    return (b - 1) * 4 + (q - 1)
+
+
+TEMPO_MAP = [
+    [tq(11), 100], [tq(11, 3), 94, 'ramp'],      # the guest enters: a little broader
+    [tq(15), 96, 'ramp'], [tq(17, 3), 94, 'ramp'],
+    [tq(19), 78, 'ramp'],                        # into the first tutti's cadence ...
+    [tq(21), 90],                                # ... the general pause (b20) at 78, then the ring turned back
+    [tq(30), 92, 'ramp'], [tq(31, 3), 92], [tq(32, 3), 80, 'ramp'],   # breath at the cadence in E
+    [tq(33), 100],                               # antiphony a tempo ...
+    [tq(45), 104, 'ramp'], [tq(47), 104],        # ... pressing on as the exchanges shrink
+    [tq(48), 90, 'ramp'],                        # final tutti: broad under the cantus
+    [tq(53), 90], [tq(54), 82, 'ramp'],
+    [tq(56), 78, 'ramp'], [tq(57, 3), 62, 'ramp'], [tq(59), 54, 'ramp'],
+]
+
+LEVEL = {1: -6, 4: -4, 8: -2, 11: 4, 13: 6, 15: 8, 16: 11, 17: 12, 18: 9, 19: 7, 21: -12, 23: -10, 26: -8,
+         29: -6, 33: -4, 37: -3, 41: -1, 43: 0, 45: 2, 46: 3, 47: 5, 48: 10, 50: 12, 51: 13, 52: 12,
+         53: 11, 54: 8, 56: 5, 57: 3}
+
+MARKS = [(tq(1), 'Spem: the ring fills, clockwise'), (tq(11, 3), 'Guest (BWV 878): the ring complete, first tutti'),
+         (tq(17), 'V7-vi'), (tq(20), 'general pause'), (tq(21), 'The ring turned back (inversion)'),
+         (tq(33), 'Antiphony: left half (S A)'), (tq(37), 'right half (T B)'), (tq(41), 'L'), (tq(43), 'R'),
+         (tq(45), 'L'), (tq(46), 'R'), (tq(47), 'L R'), (tq(48), 'Final tutti: the guest as cantus'),
+         (tq(54), 'Coda: the cantus turns into the subject')]
+
+
+def dynamics(b):
+    bar, v = b + 1, 0
+    for k in sorted(LEVEL):
+        if k <= bar:
+            v = LEVEL[k]
+    return v
 
 
 def build(nbars):
     bars = {LONG[i]: assemble(n, nbars) for i, n in enumerate(NAMES)}
     meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'IX. Fugue in E major (a 4): Ricercar in circulo',
-            'composer': 'Claude / Sam (guest subject: J. S. Bach, BWV 878, after J. C. F. Fischer)',
-            'instrument': 'Keyboard - four voices',
-            'key': 'E', 'mode': 'major', 'meter': list(METER), 'bpm': 100, 'tempo_text': 'Alla breve, con moto',
-            'movement_number': 9, 'number': 9, 'piece_type': 'fugue', 'voice_order': 'high_to_low'}
+            'composer': 'Original composition (Claude) for Sam; guest subject J. S. Bach, BWV 878 (after J. C. F. Fischer)',
+            'instrument': 'Keyboard - four voices (four singers in a ring)',
+            'key': 'E', 'mode': 'major', 'meter': list(METER), 'bpm': 100, 'tempo_map': TEMPO_MAP,
+            'tempo_text': 'Alla breve, con moto', 'movement_number': 9, 'number': 9, 'piece_type': 'fugue',
+            'edition': 'fourth (Bach + 1)', 'voice_order': 'high_to_low',
+            'score_tagline': 'The Well-Tempered clAIvier - third edition',
+            'spatial_layout': 'ring (render_spatial.py --layout ring): S back left, A front left, '
+                              'T front right, B back right',
+            'markers': [{'t': float(t), 'label': txt} for t, txt in MARKS]}
     voices = [(LONG[i], NAMES[i], CLEF[i], 66) for i in range(len(NAMES))]
     ents = [(LONG[NAMES.index(v)], b, o, l, n) for v, b, o, l, n in ENTRIES]
-    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ents, subject=SUBJ)
+    return W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ents, subject=SUBJ,
+                         dynamics=dynamics, tags=None,
+                         extra={'entry_verification': [list(r) for r in verify_entries()]})
 
 
 if __name__ == '__main__':
@@ -189,3 +316,5 @@ if __name__ == '__main__':
     nb = int(sys.argv[1]) if len(sys.argv) > 1 else int(-(-end // 16))
     build(nb)
     print('bars', nb)
+    for row in verify_entries():
+        print('  %-7s %-2s %-58s %-20s steps %-6s rhythm %-6s %s' % row)

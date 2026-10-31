@@ -97,7 +97,7 @@ put('C2', 7, 2, 'A3:6 G3:2 F#3:2 E3:2 B2:6')
 # ================================================================ III. CHORALE LINE 1 (b8-11)
 CH1 = 'G5:12 G5:12 G5:12 D6:12 D6:12 E6:12 D6:18 R:6'
 CH2 = 'D6:12 G5:12 A5:12 B5:12 C6:12 B5:12 A5:6 G5:6 G5:12 R:12'
-CH5 = 'B5:12 B5:12 B5:12 A5:12 B5:12 G5:6 F#5:6 E5:12 D5:24'
+CH5 = 'B5:12 B5:12 B5:12 A5:12 B5:12 G5:6 F#5:6 E5:12 D5:18 R:6'
 CH6 = 'D6:12 E6:12 D6:12 D6:12 B5:6 C6:6 D6:12 C6:12 B5:24'
 SN = S.rsplit(' ', 1)[0] + ' D4:2'                       # natural-minor tail
 put('CH', 8, 1, CH1)
@@ -166,6 +166,75 @@ put('C1', 23, 2, 'D5:2 C5:1 B4:1 A4:1 F#4:1 '
                  'G4:2 A4:1 B4:1 C5:1 B4:1 F#4:2 G4:1 A4:1 B4:1 G4:1 A4:2 C5:2 G4:2 G4:2 F#4:2 A4:2')
 put('C2', 23, 2, 'F#4:2 R:4')
 theme('C2', 24, 4, octv(W.scale_rhythm(S, 2), -1), 'Coro II: subject in augmentation (E minor) under chorale line 4', 4)
+
+
+# ================================================================ VIII. DIALOGUE 2 (b28.4-30.3), in diminution
+# Sehet! - Was? - seht die Geduld. Seht! - Wohin? - auf unsre Schuld.  Coro I sings the subject at double speed, one
+# beat at a time; Coro II's questions (the inversion's head, also at double speed) cut in between.
+put('C1', 28, 4, 'G4:2 R:4')
+put('C2', 28, 4, 'E3:2 R:4')
+put('C1', 29, 1, 'E5:3 E5:2 D#5:1')                      # Sehet!
+put('C2', 29, 2, 'B3:3 B3:2 C4:1')                       # Was?
+put('C1', 29, 3, 'E5:1 F#5:1 G5:1 B5:2 A5:1 B5:2 G5:1 C6:3')   # seht die Geduld. Seht!
+put('C2', 29, 3, 'E3:2 R:4 E3:2 R:4')
+put('C2', 30, 1, 'F#3:3 F#3:2 G3:1')                     # Wohin?
+put('C1', 30, 2, 'B5:1 A5:1 G5:1 F#5:1 E5:1 D#5:1 E5:2 R:4')   # auf unsre Schuld
+put('C2', 30, 2, 'B2:6 E3:2 R:4')
+
+# ================================================================ IX. CHORALE LINE 5 (b31-35): the choirs exchange forms
+# Coro I now sings the inversion (from b30.4, a beat before the chorale), Coro II the subject (b31.2): a stretto at two
+# beats, each choir in the other's form.  The line closes in B minor (the chorale's E is the seventh of F#7, as in line 1).
+put('CH', 31, 1, CH5)
+theme('C1', 30, 4, IG, 'Coro I: inversion (G major), a beat before chorale line 5 (stretto 1)')
+theme('C2', 31, 2, octv(S, -1), 'Coro II: subject (E minor), two beats later (stretto 2)')
+
+# line 5, second half: B minor, the chorale descending to its lowest note; E over F#7 into b (b34.3)
+put('C1', 32, 4, 'D5:2 C5:2 B4:2 A4:2 G4:2 F#4:2 B4:2 A4:1 G4:1 F#4:1 G4:1 C5:2 B4:1 A4:1 G4:1 A4:1 '
+                 'B4:2 A4:1 G4:1 F#4:1 E4:1 G4:2 F#4:1 G4:1 F#4:1 E4:1 A#4:2 B4:1 C#5:1 A#4:1 C#5:1 '
+                 'B4:2 F#4:1 G4:1 F#4:1 E4:1 D4:2 E4:1 F#4:1 G4:1 E4:1 F#4:4 R:2 R:6 '
+                 'B4:1 C#5:1 D5:1 E5:1 F#5:1 D5:1 E5:1 C#5:1 A#4:1 B4:1 C#5:1 A#4:1 '
+                 'F#5:2 E5:1 D5:1 E5:1 F#5:1 G5:2 F#5:1 E5:1 D5:2')
+put('C2', 33, 2, 'E3:6 A2:6 D3:6 C#3:4 A#2:2 F#2:6 B2:6 B2:4 C#3:2 D3:4 E3:2 F#3:4 E3:2 D3:4 C#3:2')
+
+# ================================================================ X. CHORALE LINE 6 (b36-40.2): both choirs in G major, stretto
+# Coro I the G-major inversion (b36.3), Coro II the G-major subject (b37.1); then a Phrygian half cadence on B.
+put('CH', 36, 1, CH6)
+put('C2', 36, 1, 'B2:4 A2:2 G2:6 E3:6 R:6')
+SBG = 'B4:6 B4:4 A4:2 B4:2 C5:2 D5:2 F#5:4 E5:2 F#5:4 D5:2 G5:6 F#5:2 E5:2 D5:2 C5:2 B4:2 A4:2'   # on B, diatonic in G
+theme('C1', 37, 1, SBG, 'Coro I: subject on B (diatonic in G major) under chorale line 6, a tenth above Coro II')
+theme('C2', 37, 1, octv(RG, -1), 'Coro II: subject (G major) a tenth below')
+
+# half cadence: VI6 - iv - V (b39-40), the chorale's B over the dominant
+put('C1', 39, 1, 'G4:2 A4:1 B4:1 C5:1 A4:1 E5:2 D5:1 C5:1 B4:1 A4:1 D#5:12')
+put('C2', 39, 1, 'E3:6 A2:6 B2:12')
+
+# ================================================================ XI. THE BREATH (b40.3-42.4): a pulsing dominant pedal
+# As at the opening of BWV 244/1 (whose tonic pedal pulses in eighths), Coro II pulses on B while Coro I falls in
+# sixteenths through the subject's head; then both choirs stop for a beat before the last line.
+put('C2', 40, 3, 'B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 '
+                 'B2:2 B2:2 B2:2 B2:2 B2:2 B2:2 B2:6 R:6')
+put('C1', 40, 3, 'E5:3 E5:2 D#5:1 E5:1 F#5:1 G5:1 B5:2 A5:1 '
+                 'G5:1 F#5:1 E5:1 F#5:1 G5:1 E5:1 C5:1 B4:1 A4:1 B4:1 C5:1 A4:1 '
+                 'F#4:1 G4:1 A4:1 G4:1 F#4:1 E4:1 D#4:2 E4:1 F#4:1 G4:1 A4:1 '
+                 'B4:2 A4:1 G4:1 F#4:1 E4:1 D#4:6 R:6')
+
+# ================================================================ XII. CHORALE LINE 7 (b43-47.3): the final stretto
+# "Erbarm dich unser, o Jesu": Coro II's inversion (b45.1) and Coro I's subject (b45.3) in stretto beneath the last line,
+# with nothing else sounding: the subject's leading tone resolves with the chorale's final G (b47.3), which is the
+# third of E minor.
+CH7 = 'E6:12 D6:6 C6:6 B5:12 A5:12 B5:12 D6:12 B5:12 A5:24 G5:60'
+put('CH', 43, 1, CH7)
+put('C1', 43, 1, 'E5:1 D5:1 C5:1 D5:1 E5:1 G5:1 C5:1 B4:1 A4:1 B4:1 C5:1 E5:1 '
+                 'D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 A4:1 B4:1 C5:1 E5:1 D5:1 C5:1 '
+                 'B4:2 G4:1 A4:1 B4:1 G4:1 E4:2 F#4:1 G4:1 A4:1 B4:1 C5:2 B4:1 A4:1 G4:1 F#4:1 A4:2 G4:1 F#4:1 E4:2 '
+                 'D#4:6 R:6')
+put('C2', 43, 1, 'C4:4 B3:2 A3:6 B3:6 A3:4 G3:2 G3:6 E3:6 F#3:6 R:6')
+theme('C2', 45, 1, octv(INV, -1), 'Final stretto: Coro II, inversion (E minor), under the last chorale line')
+theme('C1', 45, 3, S, 'Final stretto: Coro I, subject (E minor), two beats later: the final cadence')
+
+# ================================================================ XIII. CODA (b47.3-49.4)
+put('C2', 47, 1, 'B3:6 E3:12 E3:24 E2:24')
+put('C1', 47, 3, 'E4:2 G4:2 B4:2 E5:3 D#5:1 E5:2 C5:4 B4:2 A4:4 G4:2 F#4:4 E4:2 D#4:4 E4:2 G4:24')
 
 
 def build(nbars):
