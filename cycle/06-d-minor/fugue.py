@@ -27,7 +27,7 @@ from wtclib import build_score, concat_bars, transpose, scale_rhythm, parse_tok,
 METER = (3, 4)
 NAMES = ['Soprano', 'Alto', 'Tenor', 'Bass']
 AB = {'S': 'Soprano', 'A': 'Alto', 'T': 'Tenor', 'B': 'Bass'}
-NBARS = 58
+NBARS = 64
 REST = 'R:12'
 BARS = {n: [REST] * NBARS for n in NAMES}
 TAGS = [''] * NBARS
@@ -146,53 +146,69 @@ put(25, S=last_octave(S('C5'), -1))
 entry('S', 25, 'Subject (Soprano), F major')
 
 # ===========================================================================
-# EPISODE 2 (bars 29-34): stretto.  The Tenor, which has had only the ground,
-# takes the subject (D minor); one bar later the Alto answers at the fifth
-# above (A minor).  The Bass walks, then falls silent for the summit.
-tag(29, 'Episode 2: subject (Tenor) and answer (Alto) in stretto, one bar apart')
-put(29, T=last_octave(S('A3'), -1) + '  C4:4 A3:4 B3:4  A3:12')
-entry('T', 29, 'Subject (Tenor), stretto')
-put(30, A=last_octave(S('E4'), -1) + '  E4:4 C#4:4 E4:4')
-entry('A', 30, 'Answer (Alto), stretto at one bar')
-put(29, A='R:12')
-put(29, B='D3:4 F3:4 G3:4  E3:4 A2:4 D3:4  B2:4 A2:4 D3:4  B2:4 G#2:4 A2:4  F2:8 E2:4  R:12')
-put(29, S='R:4 F5:2 E5:2 D5:4  E5:8 D5:4~  D5:4 C#5:4 D5:2 F5:2  F5:4 E5:4 C#5:4  D5:4 C5:4 D5:4  C#5:12')
+# EPISODE 2 (bars 29-34), F major -> G minor -> D minor.  The surface
+# quickens: the Tenor runs in sixteenths over a bass falling by fifths
+# (Gm7-C7, F-Bb, E half-dim-A7, Dm-Gm); the Soprano's sevenths fall a step
+# in each bar.  The Alto rests after its ground and returns at bar 32.
+EP2, ST, SU, CO = 29, 35, 41, 57
+tag(EP2, 'Episode 2: the surface quickens (sixteenths), through G minor')
+put(EP2, B='G2:8 C3:4  F2:8 Bb2:4  E2:8 A2:4  D2:8 G2:4  Bb2:8 A2:4  D3:8 A2:4')
+put(EP2, T='Bb3:1 A3:1 G3:1 A3:1 Bb3:1 C4:1 D4:1 Bb3:1 C4:1 Bb3:1 A3:1 G3:1'
+           '  A3:1 G3:1 F3:1 G3:1 A3:1 Bb3:1 C4:1 A3:1 Bb3:1 A3:1 G3:1 F3:1'
+           '  G3:1 F3:1 E3:1 F3:1 G3:1 A3:1 Bb3:1 G3:1 A3:1 G3:1 F3:1 E3:1'
+           '  F3:1 E3:1 D3:1 E3:1 F3:1 G3:1 A3:1 F3:1 G3:1 F3:1 E3:1 D3:1'
+           '  F3:8 E3:4  A3:4 F3:4 R:4')
+put(EP2, S='D5:4 F5:4 E5:4  C5:4 Eb5:4 D5:4  Bb4:4 D5:4 C#5:4  A4:4 C5:4 Bb4:4  D5:8 C#5:4  D5:4 F5:4 E5:4')
+put(EP2, A='R:12  R:12  R:12  R:4 F4:2 E4:2 D4:4  D4:4 G4:4 E4:4  F4:4 A4:4 R:4')
 
 # ===========================================================================
-# SUMMIT (bars 35-50).  The ground returns to the Bass in augmentation
+# STRETTO (bars 35-40).  The Tenor, which has had only the ground, takes the
+# subject (D minor); one bar later the Alto answers at the fifth above
+# (A minor).  The Bass walks, then falls silent for the summit.
+tag(ST, 'Stretto: subject (Tenor) and answer (Alto), one bar apart')
+put(ST, T=last_octave(S('A3'), -1) + '  C4:4 A3:4 B3:4  A3:12')
+entry('T', ST, 'Subject (Tenor), stretto')
+put(ST + 1, A=last_octave(S('E4'), -1) + '  E4:4 C#4:4 E4:4')
+entry('A', ST + 1, 'Answer (Alto), stretto at one bar')
+put(ST, A='R:12')
+put(ST, B='D3:4 F3:4 G3:4  E3:4 A2:4 D3:4  B2:4 A2:4 D3:4  B2:4 G#2:4 A2:4  F2:8 E2:4  R:12')
+put(ST, S='R:4 F5:2 E5:2 D5:4  E5:8 D5:4~  D5:4 C#5:4 D5:2 F5:2  F5:4 E5:4 C#5:4  D5:4 C5:4 D5:4  C#5:12')
+
+# ===========================================================================
+# SUMMIT (bars 41-56).  The ground returns to the Bass in augmentation
 # (16 bars).  Over its D the Tenor sings the inversus (the ground at double
-# speed); the Soprano falls silent, then enters (bar 39) with the ground at
+# speed); the Soprano falls silent, then enters (bar 45) with the ground at
 # normal speed at the dominant: the two outer voices descend chromatically at
-# two speeds in sixths.  From bar 43 every voice carries a form of the ground:
-# Bass x2, Soprano x1, Tenor inversus x1/2, Alto subject (its mirror) x1/2.
-# Over the long A the voices close on D major (bar 49).
-tag(35, 'Summit: the ground augmented in the Bass; inversus (Tenor)')
-put(35, B=scale_rhythm(G('D3'), 2))
-entry('B', 35, 'Ground augmented (Bass)', n=16)
-put(35, T=I('A4') + '  R:4 E4:2 D4:2 C4:2 B3:2  A3:2 B3:2 D4:2 E4:2 D4:2 B3:2  G3:2 A3:2 Bb3:2 G3:2 C4:2 A3:2'
+# two speeds in sixths.  The Alto brings the subject between them (bar 47);
+# from bar 49.3 the Tenor's inversus adds the third speed (Bass x2, Soprano
+# x1, Tenor x1/2).  Over the long A the voices close on D major (bar 55).
+tag(SU, 'Summit: the ground augmented in the Bass; inversus (Tenor)')
+put(SU, B=scale_rhythm(G('D3'), 2))
+entry('B', SU, 'Ground augmented (Bass)', n=16)
+put(SU, T=I('A4') + '  R:4 E4:2 D4:2 C4:2 B3:2  A3:2 B3:2 D4:2 E4:2 D4:2 B3:2  G3:2 A3:2 Bb3:2 G3:2 C4:2 A3:2'
           '  C4:4 C#4:4 R:4')
-entry('T', 35, 'Inversus (Tenor) over the augmented ground')
-put(35, A='D5:8 B4:4  C#5:4 D5:4 C#5:4  D5:4 Bb4:4 A4:4  G4:4 A4:2 G4:2 E4:4  R:12  R:12')
-put(35, S='F5:8 E5:4  E5:4 A5:4 G5:4  F5:4 G5:4 E5:4  R:12')
-tag(39, 'Ground in the Soprano (at the dominant): two speeds in the outer voices')
-put(39, S=last_octave(G('A5'), 1) + '  F5:8 G5:4  Bb5:8 A5:4  G5:4 E5:4 F#5:4  F#5:12')
-entry('S', 39, 'Ground (Soprano), at the dominant, over its augmentation', n=8)
-tag(41, 'Subject (Alto) between the two grounds')
-put(41, A=S('D4') + '  C#5:12  C#5:4 E5:4 E5:4  D5:8 C#5:4  E5:8 E5:4  E5:4 C#5:4 A4:4  A4:12')
-entry('A', 41, 'Subject (Alto) between the two grounds')
-tag(43, 'Inversus (Tenor): the ground at three speeds at once')
-put(43, T='R:8 ' + I('D4') + '  E3:4  G3:8 E3:4  C#3:4 E3:4 D3:4  D3:12')
-entry('T', 43, 'Inversus (Tenor): the third speed', beat=3)
+entry('T', SU, 'Inversus (Tenor) over the augmented ground')
+put(SU, A='D5:8 B4:4  C#5:4 D5:4 C#5:4  D5:4 Bb4:4 A4:4  G4:4 A4:2 G4:2 E4:4  R:12  R:12')
+put(SU, S='F5:8 E5:4  E5:4 A5:4 G5:4  F5:4 G5:4 E5:4  R:12')
+tag(SU + 4, 'Ground in the Soprano (at the dominant): two speeds in the outer voices')
+put(SU + 4, S=last_octave(G('A5'), 1) + '  F5:8 G5:4  Bb5:8 A5:4  G5:4 E5:4 F#5:4  F#5:12')
+entry('S', SU + 4, 'Ground (Soprano), at the dominant, over its augmentation', n=8)
+tag(SU + 6, 'Subject (Alto) between the two grounds')
+put(SU + 6, A=S('D4') + '  C#5:12  C#5:4 E5:4 E5:4  D5:8 C#5:4  E5:8 E5:4  E5:4 C#5:4 A4:4  A4:12')
+entry('A', SU + 6, 'Subject (Alto) between the two grounds')
+tag(SU + 8, 'Inversus (Tenor): the ground at three speeds at once')
+put(SU + 8, T='R:8 ' + I('D4') + '  E3:4  G3:8 E3:4  C#3:4 E3:4 D3:4  D3:12')
+entry('T', SU + 8, 'Inversus (Tenor): the third speed', beat=3)
 
 # ===========================================================================
-# CODA (bars 51-58), D major, over the tonic: the subject (the ground turned
+# CODA (bars 57-64), D major, over the tonic: the subject (the ground turned
 # upside down) in augmentation in the Soprano, rising from A to A.
-tag(51, 'Coda: the subject augmented (Soprano) over the tonic')
-put(51, S=scale_rhythm(S('A4'), 2))
-entry('S', 51, 'Subject augmented (Soprano), D major', n=8)
-put(51, B='D2:24  D2:24  D2:24  G2:12  D2:12')
-put(51, A='F#4:12  F#4:4 G4:8  G4:8 A4:4  G4:4 F#4:8  F#4:4 E4:4 G4:4  G4:4 F#4:8  E4:4 G4:8  F#4:12')
-put(51, T='R:12  R:4 D3:8  D3:8 A2:4  A2:4 D3:8  D3:4 A2:8  A2:4 D3:8  B2:8 D3:4  D3:12')
+tag(CO, 'Coda: the subject augmented (Soprano) over the tonic')
+put(CO, S=scale_rhythm(S('A4'), 2))
+entry('S', CO, 'Subject augmented (Soprano), D major', n=8)
+put(CO, B='D2:24  D2:24  D2:24  G2:12  D2:12')
+put(CO, A='F#4:12  F#4:4 G4:8  G4:8 A4:4  G4:4 F#4:8  F#4:4 E4:4 G4:4  G4:4 F#4:8  E4:4 G4:8  F#4:12')
+put(CO, T='R:12  R:4 D3:8  D3:8 A2:4  A2:4 D3:8  D3:4 A2:8  A2:4 D3:8  B2:8 D3:4  D3:12')
 
 # ---------------------------------------------------------------------------
 BPM = 76

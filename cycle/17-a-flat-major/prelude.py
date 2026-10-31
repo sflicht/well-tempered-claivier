@@ -123,7 +123,7 @@ put('S', 15, 0, tune('Ab'))
 ENTRIES.append((LONG['S'], 15, 0, 'verse 4, over the dominant pedal', 4))
 put('B', 15, 0, 'Eb3:96')
 put('C', 15, 0, 'Ab3:4 C4:2 Eb4:4 C4:2 Ab3:4 C4:2 Eb4:4 C4:2 | Ab3:4 Db4:2 F4:4 Db4:2 Ab3:4 C4:2 Eb4:6 |'
-                ' G3:4 Bb3:2 Db4:6 G3:4 Bb3:2 Db4:6 | Ab3:4 C4:2 Ab3:6 G3:4 Bb3:2 Bb3:6')
+                ' G3:4 Bb3:2 Bb3:6 G3:4 Bb3:2 Db4:6 | Ab3:4 C4:2 Ab3:6 G3:4 Bb3:2 Bb3:6')
 
 # Bar 19: the hands resolve to the tonic.  The bass does not come.
 put('S', 19, 0, 'Ab4:24')
