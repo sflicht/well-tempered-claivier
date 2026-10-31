@@ -202,47 +202,85 @@ def ball():
     (q150).  Then the courante's hemiola cadence under the sarabande's last suspension."""
     # sarabande: the subject, then the last suspension (A5 over E: 4-3 on the weighted second beat)
     theme('S', 122, oc(SS, 1), 'Sarabande: subject (A), the ball')
-    put('S', 141, 'C#6:4 B5:4 G#5:4 A5:8 G#5:4 R:12 E5:4 A5:12 G#5:8')
+    put('S', 141, 'C#6:4 A5:4 G#5:4 A5:8 R:16 E5:4 A5:12 G#5:8')
     # courante: a free bass in quarters, a rest, its subject (F# level), the hemiola cadence
-    put('B', 120, 'A2:8 C#3:4 D3:4 E3:4 B2:4 D3:4 C#3:8 B2:4 R:4')
+    put('B', 120, 'A2:8 C#3:4 D3:4 E3:4 B2:4 D3:4 C#3:4 E3:4 B2:4 R:4')
     theme('B', 131, oc(SC_F, -2), 'Courante: subject (F# level, ends on vi)')
-    put('B', 146, 'G#2:4 A2:4 D3:4 B2:4 C#3:8 D3:4 E3:12')
+    put('B', 146, 'G#2:4 A2:4 D3:4 R:4 C#3:8 D3:4 E3:12')
     # gigue
     put('T', 120, 'A3:8/3 E4:4/3 D4:4/3 C#4:4/3 B3:4/3 E4:8/3 C#4:4/3 F#4:8/3 D4:4/3 C#4:8/3 B3:4/3 '
                   'G#3:8/3')
     theme('T', 125 + Fr(2, 3), oc(dshift(SG, 3), -1), 'Gigue: subject (D level)')
-    put('T', 134, 'C#4:8/3 E4:4/3 A3:8/3 C#4:4/3 D4:8/3 A3:4/3 B3:4/3 C#4:4/3 D4:4/3 E4:8/3 C#4:4/3 '
-                  'B3:4/3 A3:4/3 B3:4/3 G#3:8/3 B3:4/3 A3:8/3 C#4:4/3 E4:8/3 C#4:4/3 B3:8/3')
+    put('T', 134, 'C#4:8/3 E4:4/3 A3:8/3 C#4:4/3 D4:8/3 A3:4/3 B3:4/3 C#4:4/3 D4:4/3 E4:8/3 A3:4/3 '
+                  'B3:4/3 A3:4/3 B3:4/3 G#3:8/3 B3:4/3 A3:8/3 E4:4/3 A3:8/3 E4:4/3 B3:8/3')
     theme('T', 143 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A), the race')
-    put('T', 150, 'C#4:8/3 E4:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 F#3:4/3 G#3:8/3 B3:4/3 '
-                  'G#3:8/3 B3:4/3 B3:8/3 D4:4/3')
+    put('T', 150, 'E4:8/3 C#4:4/3 D4:4/3 C#4:4/3 B3:4/3 D4:8/3 F#3:4/3 B3:8/3 E4:4/3 '
+                  'D4:8/3 B3:4/3 E4:8/3 D4:4/3')
     # allemande
     put('A', Fr(495, 4), 'B4:1 C#5:2 B4:1 D5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
                          'E5:2 D5:1 C#5:1 D5:2 E5:1 D5:1 B4:2 G#4:2 A4:2 B4:1 C#5:1 D5:2 E5:1 C#5:1 '
                          'B4:2 C#5:1 D5:1 E5:2 D5:1 E5:1 C#5:2 D5:1 B4:1 A4:2 B4:1 C#5:1 '
-                         'D5:2 C#5:1 B4:1 C#5:2 B4:1 A4:1 B4:1 C#5:1 D5:1 C#5:1 B4:2 G#4:2 '
+                         'D5:2 C#5:2 A4:2 B4:1 C#5:1 B4:1 C#5:1 D5:1 C#5:1 B4:2 G#4:2 '
                          'A4:2 C#5:1 D5:1 E5:2 D5:1 C#5:1 D5:2 C#5:1 B4:1 C#5:2 B4:1 G#4:1 F#4:2')
     theme('A', Fr(583, 4), oc(dshift(SA, -3), 1), 'Allemande: subject at the fifth, the race')
-    put('A', 150, 'A4:2 G#4:1 B4:1 C#5:2 D5:1 E5:1 F#5:2 D5:2 B4:2 C#5:1 D5:1 E5:1 D5:1 C#5:1 D5:1 '
-                  'B4:2 G#4:2')
+    put('A', 150, 'A4:2 B4:1 C#5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 F#5:1 E5:2 D5:1 C#5:1 B4:8')
 
 
-SECTIONS = [exposition, duo_quick, duo_slow, trio, ball]
-END = 156
+# J. S. Bach, English Suite No. 1 in A, BWV 806, Bourree I, bars 1-5 (Mutopia edition after the
+# Bach-Gesellschaft, see NOTES.md), at pitch.  The bourree's minim is the common beat, so its quarter
+# is our eighth and its eighth our sixteenth: the allemande's running sixteenths were its pace all along.
+BOURREE_RH = ('E4:2 A4:1 G#4:1 B4:1 A4:1 C#5:1 B4:1 A4:1 G#4:1 A4:2 E4:2 C#4:1 E4:1 A4:1 B4:1 '
+              'C#5:1 B4:1 D5:1 C#5:1 E5:1 D5:1 C#5:1 B4:1 D5:1 C#5:1 B4:1 C#5:1 A4:1 B4:1 C#5:1 D5:1 '
+              'E5:2 F#5:2 G5:3 A5:1')
+# ... and its left hand, which imitates the tune at the octave below from the last beat of bar 2
+BOURREE_LH = ('E3:2 A3:1 G#3:1 B3:1 A3:1 C#4:1 B3:1 A3:1 G#3:1 A3:2 E3:2 C#3:1 E3:1 A3:1 B3:1 '
+              'C#4:1 B3:1 D4:1 C#4:1 E4:1 D4:1 C#4:1 A3:1')
+
+
+def coda():
+    """VI. Coda (q156-176): the ball ends on A; then the allemande, alone, plays the tune it has been
+    dancing all along, at its true pace (Bach's Bourree I), the courante answers with Bach's own bass,
+    and on the fifth bar the whole ball joins the bourree in one metre (2/2) for the last cadence."""
+    put('S', 156, 'A5:6')
+    put('A', 156, 'A4:6')
+    put('T', 156, 'C#4:6')
+    put('B', 156, 'A2:6')
+    theme('A', Fr(315, 2), BOURREE_RH, "Bach, Bourree I (BWV 806), bars 1-5: the subject's source")
+    theme('B', Fr(323, 2), BOURREE_LH, 'Bach, Bourree I: the bass imitation')
+    # the whole ball in the bourree's metre: IV, ii6, I6/4, V7, I
+    put('S', 168, 'D6:4 B5:4 A5:4 G#5:4 A5:16')
+    put('A', 168, 'F#5:2 E5:2 D5:2 B4:2 C#5:2 E5:2 D5:2 B4:2 C#5:16')
+    put('T', 168, 'A3:2 F#3:2 B3:2 D4:2 C#4:2 A3:2 E4:20')
+    put('B', 168, 'D3:8 E3:4 E2:4 A2:16')
+
+
+SECTIONS = [exposition, duo_quick, duo_slow, trio, ball, coda]
+END = 176
 BPM = 72
-TEMPO_MAP = []
+# One pulse for all four dances; the music breathes at its cadences, holds the last chord of the
+# ball, and broadens at the end.
+TEMPO_MAP = [[0, 72], [46.5, 72], [48, 64, 'ramp'], [48, 72], [69, 72], [71, 64, 'ramp'], [71, 72],
+             [102, 72], [104, 66, 'ramp'], [104, 72], [118.5, 72], [120, 64, 'ramp'], [120, 72],
+             [153, 72], [156, 54, 'ramp'], [157.5, 54], [157.5, 72], [170, 72], [176, 44, 'ramp']]
+CODA = 156
 
 
 def staff_meters():
+    """Each staff in its own dance's metre (12/8 engraved inside \\scaleDurations 2/3, so that its
+    dotted quarter is the common quarter); from the coda every staff is in the bourree's 2/2, its
+    minim equal to the common quarter (\\scaleDurations 1/2)."""
     out = {}
     for n in NAMES:
         num, den = OWN_METER[n]
-        out[LONG[n]] = [[0, num, den, '2/3']] if n == 'T' else [[0, num, den]]
+        out[LONG[n]] = ([[0, num, den, '2/3']] if n == 'T' else [[0, num, den]]) + [[CODA, 2, 2, '1/2']]
     return out
 
 
 def accent(n, t):
     """Each voice accents its own metre (velocity offset): the bar lines differ from voice to voice."""
+    if t >= CODA:                          # the bourree: a bar is two common beats
+        r = (Fr(t) - CODA) % 2
+        return 4 if r == 0 else (1 if r == 1 else (0 if r.denominator == 1 else -1))
     num, den = OWN_METER[n]
     bar = Fr(num * 4, den) * (Fr(2, 3) if n == 'T' else 1)
     r = Fr(t) % bar

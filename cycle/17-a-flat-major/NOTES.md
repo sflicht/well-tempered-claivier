@@ -1,5 +1,37 @@
 # Pair XVII in A-flat major: notes
 
+## Prelude XVII: "Wiegenlied" (the lullaby that never quite ends)
+
+**Files.** `prelude.py` → `prelude.json` (19 bars of 12/8, one pianist; about 1:45 in the render). Renders: `renders/prelude.{pdf,ly,musicxml,mid,mp3}` (Bach-Lehman) and `renders/prelude-equal.mp3`. I have not heard them.
+
+**Concept.**
+- The children sing their father to sleep. Their lullaby is the fugue's subject in augmentation, over a rocking left hand. It is the same tune, at the same speed, that the father comes down singing at the end of the fugue (fugue bars 37-41), so the pair closes the circle: they sing it to him, and he sings it back.
+- Like the fugue, the lullaby never cadences. Each of its four verses is deflected at its last note, each in a different way.
+- The prelude has no perfect cadence: the same scan as for the fugue finds no V → I with the bass E♭ → A♭.
+
+**Section map** (the cradle figure is a quarter and an eighth per beat, "rock-a").
+
+| Bars | Time | What happens |
+|---|---|---|
+| 1-2 | 0:00 | The cradle alone, over A♭ (I; IV6/4 - I). |
+| 3-6 | 0:10 | **Verse 1.** The tune in the soprano (A♭4-A♭5): I, IV - vi, ii, I6/4 - V. It rests on the dominant, the tune on *re*. |
+| 7-10 | 0:29 | **Verse 2** starts over I6 before verse 1 can close (V → I6). A second voice sings in sixths below. It ends with a deceptive cadence: V → vi. |
+| 11-14 | 0:48 | **Verse 3** in F minor. The alto sings the tune's first half and the soprano is silent. Then the harmony turns home: IV - ii7, ii6/5 - V7. |
+| 15-18 | 1:08 | **Verse 4.** The V7 does not resolve: the bass stays on E♭ under I6/4, and the last verse is sung over that dominant pedal, softer. The cradle climbs a little and the second voice drops out. |
+| 19 | 1:30 | The hands resolve to A-flat (C4 E♭4 A♭4). The bass never comes; only the father, at the end of the fugue, supplies it. |
+
+**Critic (prelude.json).**
+- parallels_error 0 / weak 0, beat_parallels 0, bad_doublings 0, low_register_seconds 0, crossings 0.
+- dissonance_unresolved 2: the fourth of the cadential six-four (A♭3) inside the rocking figure in bars 6 and 10. It reaches G3 at the change to V, but only after a rocking C4, so the critic does not count it as resolved.
+- keyboard_unplayable_pct 0.0, mean_moving_voices 3.0.
+- stepwise_pct 32.4: the rocking figure is a broken chord. The tune itself moves by step except for its octave leap.
+- The three statements of the whole tune verify 16/16.
+
+**Weak spots.**
+- The cradle figure keeps one rhythm in every bar. That is the point of a lullaby, but over 19 bars it may be monotonous.
+- Verses 1, 2 and 4 use the same tune at the same pitch; only the harmony under it, the second voice and the dominant pedal change.
+- The final chord has no bass by design. On paper it is a bar of three notes in the treble under a long hold in the tempo map, with no fermata sign.
+
 ## Fugue XVII: "Fuga, fuggendo la cadenza" (four children and their father)
 
 **Files.** `fugue.py` → `fugue.json` (44 bars of 12/8; five staves, the fifth used only from bar 37). Renders in `renders/` (listed at the end). The earlier eighteen-voice version is in `archive-n-plus-1/`.

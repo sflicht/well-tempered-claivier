@@ -125,19 +125,19 @@ put('S', 13, 0, 'D#5:8 E5:16 E5:8 D#5:8 C#5:4 D#5:4 E5:8')
 
 
 # ================================================================ II. MEDIA NOCTE (midnight), Aeolian: b15-26
-# The fifth voice knocks in the silence after the evening's cadence.  Its rise E E# F# F## G# runs in
-# thirds under the subject, which has its A# (the second watch's sharp) on the second beat of b16.
+# The fifth voice knocks in the silence after the evening's cadence, low (D#3, the register of the
+# bass who sings BWV 61 no. 4).  Its rise E E# F# F## G# runs in tenths under the subject, which has
+# its A# (the second watch's sharp) on the second beat of b16: a duet; the bass waits until b17.
 # Door subject 2 (tenor, on A#) leads to a half close on D# and a deceptive VI; door subject 3 (soprano)
 # rises in sixths above the subject in the bass (the combination inverted); door subject 4 (alto, on
 # F#, starting on a third beat so that it lands on a downbeat) brings the cadence in B major.
-theme('Q', 15, 2, K, 'II. Media nocte (midnight): door subject (BWV 61), the fifth voice enters', 2)
+theme('Q', 15, 2, octv(K, -1), 'II. Media nocte (midnight): door subject (BWV 61), the fifth voice enters', 2)
 theme('A', 16, 0, S_AEO, 'II: subject, Aeolian (A#), over the door subject in thirds')
-put('B', 16, 0, 'C#3:8 A#2:8 G#2:8 '                                    # C#m-C# | F#-D# | G#m: the rise turns minor to major
-                'E3:8 C#3:8 F#2:8 '
+put('B', 17, 0, 'E3:8 C#3:8 F#2:8 '                                     # the bass waits until b17
                 'B2:8 C#3:8 D#3:8 '
                 'G#2:8 E#2:8 D#2:8 '                                    # half close on D# ...
                 'E2:8')                                                 # ... and the deceptive VI
-put('Q', 17, 0, 'G#4:4 F#4:4 E4:4 G#4:4 E4:8 '
+put('Q', 17, 0, 'G#3:8 E3:4 G#3:4 A#3:8 '
                 'D#4:4 F#4:4 E4:8 D#4:8 '
                 'D#4:8 E#4:8 F##4:8 '
                 'G#4:16 F#4:8 '
@@ -240,10 +240,10 @@ put('B', 42, 0, 'G#2:8 D#3:8 G#2:8 '
 # The soprano holds its C# (the seventh of the dominant) across the whole pedal; the fifth voice,
 # which brought the first knock at midnight on the same D#4, knocks once more, and its rise turns
 # iv to IV and v to V (as at the cadences in B and F#).  Its last note, G#, is written A-flat: dawn.
-put('S', 43, 2, 'C#5:16~ C#5:24~ C#5:24')
+put('S', 43, 2, 'C#5:16~ C#5:24 C#5:24')                                # re-struck with the last KNOCK
 put('B', 43, 2, 'D#3:16 D#3:24 D#3:24')
 put('T', 43, 2, 'F##3:16 G#3:8 F##3:8 A#3:8 A#3:8 G#3:8 A#3:8')
-theme('Q', 44, 4, K[:-len('G#4:8')].rstrip(), 'The last knock: door subject in the fifth voice (its first pitch, D#4)', 2)
+theme('Q', 44, 4, K[:-len('G#4:8')].rstrip(), 'The last knock: door subject in the fifth voice, an octave above its first knock', 2)
 
 # ================================================================ DAWN: A-flat major (Ionian), b46-52
 # The eighth sharp (F## = G) cannot be written in G-sharp: the score turns to A-flat major.  The
@@ -253,7 +253,9 @@ theme('Q', 44, 4, K[:-len('G#4:8')].rstrip(), 'The last knock: door subject in t
 # A-flat: the first perfect cadence on the tonic in the whole piece.
 DAWN = 46
 theme('Q', 46, 0, S_ION, 'Dawn: subject, Ionian, in A-flat major, straight out of the door subject')
-put('S', 46, 0, 'C5:8 Eb5:8')                                            # then rests until its entry at b49
+put('S', 46, 0, 'C5:8 Eb5:8 Ab5:2 G5:2 F5:2 Eb5:2 '                     # a descant over the fifth voice's subject
+                'Ab5:4 Bb5:2 Ab5:2 G5:8 Ab5:4 F5:4 '
+                'Eb5:8')                                                # then a rest before its entry at b49
 put('T', 46, 0, 'Ab3:8')
 put('A', 46, 0, 'Eb4:8')
 theme('T', 46, 4, 'C4:8 Db4:8 Eb4:8 Ab4:12 G4:4 F4:8 Eb4:4 Db4:4 C4:8 Bb3:8',
@@ -265,15 +267,34 @@ put('S', 52, 0, 'Ab4:24')
 put('B', 50, 2, 'Bb1:8 Eb2:8 '
                 'Ab2:8 Db3:8 Eb3:8 '
                 'Ab2:24')
-put('A', 49, 0, 'Eb4:8 Eb4:8 Ab4:8 '
-                'Ab4:8 Db5:8 Bb4:8 '
-                'Ab4:8 F4:8 Eb4:8 '
+put('A', 49, 0, 'Eb4:4 F4:4 G4:4 Eb4:4 Ab4:4 G4:4 '
+                'F4:4 Ab4:4 Bb4:4 G4:8 Bb4:4 '
+                'Ab4:4 G4:4 F4:8 Eb4:8~ '
                 'Eb4:24')
-put('T', 49, 4, 'Ab3:8 '
-                'Db4:8 F3:8 G3:8 '
-                'C4:8 F3:8 Bb3:8 '
+put('T', 49, 4, 'Ab3:4 C4:4 '
+                'Db4:4 Eb4:4 F4:4 Db4:4 Eb4:8 '
+                'C4:8 Db4:8 Bb3:8 '
                 'Ab3:24')
 put('Q', 52, 0, 'C4:24')                                                # the fifth voice joins the last chord
+
+
+MARKS = [(1, 'I. Sero (evening): Phrygian, A'), (15, 'II. Media nocte (midnight): the knock; Aeolian, A#'),
+         (26, 'III. Galli cantu (cockcrow): Dorian, E#'), (35, 'IV. Mane (morning): Mixolydian, B#'),
+         (39, 'Summit: three entries a third apart'), (43, 'The last knock (D# = E-flat)'),
+         (46, 'Dawn: A-flat major (F## = G)')]
+# phrase dynamics by bar (velocity offset): the night quiet and growing watch by watch, the summit
+# loudest, the last knock hushed and then growing, the dawn full.
+LEVEL = {1: -9, 4: -7, 7: -6, 10: -4, 13: -5, 15: -7, 16: -5, 20: -3, 22: -4, 24: -3, 26: -4,
+         27: -2, 30: 0, 33: -1, 35: -2, 36: 0, 39: 3, 40: 5, 41: 7, 42: 5, 43: 0, 44: -2, 45: 1,
+         46: 7, 47: 5, 49: 6, 51: 5, 52: 4}
+
+
+def dyn(b):
+    bar, v = b + 1, 0
+    for k in sorted(LEVEL):
+        if k <= bar:
+            v = LEVEL[k]
+    return v
 
 
 def build(nbars, path=None):
@@ -281,17 +302,25 @@ def build(nbars, path=None):
     end = nbars * 6
     meta = {'title': 'The Well-Tempered clAIvier',
             'subtitle': 'Fugue XVIII in G-sharp minor, five voices: Vigilate',
-            'composer': 'Claude / Sam (after J. S. Bach, BWV 61 no. 4 and BWV 887)',
+            'composer': 'Claude / Sam (door subject after J. S. Bach, BWV 61 no. 4)',
             'instrument': 'Keyboard - five voices',
-            'key': 'G#', 'mode': 'minor', 'meter': list(METER), 'bpm': 108,
+            'key': 'G#', 'mode': 'minor', 'meter': list(METER), 'bpm': 104,
             'movement_number': 18, 'piece_type': 'fugue', 'edition': 'third',
             'tempo_text': 'Vigilate: from the evening to the morning',
             'voice_order': 'high_to_low',
-            'tempo_map': [[0, 108], [end, 100, 'ramp']],
-            'key_changes': [{'t': (DAWN - 1) * 6, 'key': 'Ab', 'mode': 'major'}]}
-    voices = [(LONG[i], NAMES[i], CLEF[i], 66) for i in range(len(NAMES))]
+            # the watches quicken a little; each cadence breathes; the last knock broadens into the
+            # dawn, which is slower; the final cadence broadens again.
+            'tempo_map': [[0, 104], [80, 104], [86, 90, 'ramp'], [86, 108],
+                          [144, 108], [150, 94, 'ramp'], [152, 112],
+                          [198, 112], [204, 98, 'ramp'], [206, 116],
+                          [246, 116], [252, 102, 'ramp'], [253, 100], [270, 82, 'ramp'], [270, 88],
+                          [end - 12, 88], [end, 58, 'ramp']],
+            'key_changes': [{'t': (DAWN - 1) * 6, 'key': 'Ab', 'mode': 'major'}],
+            'markers': [{'t': float((b - 1) * 6), 'label': txt} for b, txt in MARKS]}
+    voices = [('Soprano', 'S', 'treble', 68), ('Alto', 'A', 'treble', 64), ('Quintus', 'Q', 'treble_8', 66),
+              ('Tenor', 'T', 'treble_8', 62), ('Bass', 'B', 'bass', 64)]
     return W.build_score(path or (HERE / 'fugue.json'), meta, voices, bars, entries=ENTRIES,
-                         subject=S_PHR, dynamics=lambda b: 0)
+                         subject=S_PHR, dynamics=dyn)
 
 
 if __name__ == '__main__':

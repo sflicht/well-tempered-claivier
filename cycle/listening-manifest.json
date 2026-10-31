@@ -315,14 +315,21 @@
    ]
   },
   {
-   "name": "Fugue XVII \u00b7 A-flat major (new, eighteen voices)",
+   "name": "Pair XVII \u00b7 A-flat major (new)",
    "pieces": [
     {
-     "id": "fugue-17",
-     "title": "Fugue XVII \u00b7 Fuga, fuggendo la cadenza (18 voices)",
-     "score": "cycle/17-a-flat-major/archive-n-plus-1/fugue.json",
+     "id": "prelude-17",
+     "title": "Prelude XVII \u00b7 Wiegenlied",
+     "score": "cycle/17-a-flat-major/prelude.json",
      "tag": "new",
-     "notes": "Zarlino called an evaded cadence 'fuggire la cadenza', to flee the cadence, the same root as fugue. A story told about Bach (probably a legend) has his children getting him out of bed by playing an unresolved chord on the harpsichord: he could not sleep until he had gone down and resolved it.\n\nIn this fugue every cadence is evaded, and each evasion lets in a new voice. A chain of deceptive cadences, each landing a third lower, drifts far from home, to A-flat minor and a dreamlike E major with the subject in augmentation, then turns back. At home the evasions get more desperate: after the dominant the bass slides to F, F-flat, G-flat, A-flat under a minor chord. Finally all seventeen 'children' stop on a dominant seventh with D-flat on top, and wait.\n\nThe eighteenth voice, the father, enters alone. The hanging D-flat falls to C as he sings the subject in augmentation, and his bass gives the piece its first perfect cadence. The subject of Bach's own A-flat fugue in Book I (BWV 862) appears as a guest at its own pitch.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "A lullaby over a rocking left hand whose tune is the fugue's subject in augmentation, the tune the father will sing at the end of the fugue. Each verse is turned away at its last note; at the end the hands resolve, but the bass never arrives."
+    },
+    {
+     "id": "fugue-17",
+     "title": "Fugue XVII \u00b7 Fuga, fuggendo la cadenza (4 voices and the father)",
+     "score": "cycle/17-a-flat-major/fugue.json",
+     "tag": "new",
+     "notes": "Zarlino called an evaded cadence 'fuggire la cadenza', to flee the cadence. A story told about Bach (probably a legend) has his children getting him out of bed by playing an unresolved chord: he could not sleep until he had gone down and resolved it.\n\nThe four voices are the children, and every cadence is dodged, fourteen times. The running gag: the soprano trills on the second degree while the bass steps up instead of falling home, faster and faster, until the music stops in A-flat minor. Then a dream in E major with the subject in augmentation over itself; back home, the tenor alone begins the subject of Bach's own A-flat fugue (BWV 862) at Bach's pitch, with Bach's own bass; more dodges, a trill that won't stop, a trap door where the bass drops to F-flat; a stretto of all four that starts on the dominant and never resolves it; then the hanging seventh, and silence.\n\nThe fifth voice, the father, enters alone on low A-flat with the subject in augmentation, and the piece makes its first perfect cadence. In the coda the tenor finally gives the tune its missing last note.\n\nRecomposed in five voices (it was eighteen); the earlier version is in the pair's archive folder."
     }
    ]
   },
