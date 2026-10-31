@@ -83,13 +83,13 @@ ends on the next key's subdominant (so the next rising region begins with a plag
 | 27–32 | 1:02 | F, falling | Inversion tenor (F) with CSI in the bass; tenor/bass dialogue; inversion on B♭ (soprano) at *re*. |
 | 33–38 | 1:17 | G, rising | Subject bass (G) with CS; episode in five voices; subject on D (alto) at *sol*. |
 | 39–44 | 1:31 | A, falling | Inversion tenor (A) with CSI; the cantus's D is the seventh of E7; inversion on D (soprano) at *re*, ending on a lone E6. |
-| 45–50 | 1:46 | **Bull's leap**: C, rising | Quiet. Subject in the deep bass (C2); a triplet division (Bull's sesquialtera) in the alto; subject on G (tenor) at *sol*. |
-| 51–56 | 2:00 | D, falling | Inversion bass (D); the cantus's G is the seventh of A7; inversion on G (soprano) at *re*. |
+| 45–50 | 1:46 | **Bull's leap**: C, rising | Quiet. Subject in the deep bass (C2), whose free continuation stays low (b47–48) to leave the cantus room; a triplet division (Bull's sesquialtera) in the alto; subject on G (tenor) at *sol*. |
+| 51–56 | 2:00 | D, falling | Inversion bass (D); the cantus's G is the seventh of A7; **no second entry**: the soprano's division turns dotted (b55–56) and runs on into the E region. |
 | 57–62 | 2:15 | E, rising | Subject tenor (E) with CS; episode a 5; subject on **B** (bass) at *sol*: the home key's subject returns under the cantus. |
 | 63–68 | 2:29 | F♯, falling | Inversion alto (F♯) with CSI; the cantus's B is the seventh of C♯7; inversion on B (soprano) at *re*. |
 | 69–74 | 2:44 | A♭, rising | **b69: the drone**, a bare A♭/E♭ fifth in all voices (the meantone wolf). Subject on B♭ (tenor) at *re*; a turn to B♭ minor (b72, ii7 of A♭); subject on E♭ (alto) at *sol*. |
 | 75–80 | 2:58 | B♭, falling (on top) | The soprano rests; the cantus is the top voice. Inversion bass (B♭); a cadence into C (b79) which is the **Neapolitan of B**; the cantus's B♭ becomes **A♯** in F♯7 (b80). |
-| 81–86 | 3:13 | **B, rising: home** (an octave above its first entry) | Subject bass (B) with CS; subject on E (tenor) at *fa*; at the cantus's *la* (G♯5, the top of the piece) the bass sings the inversion: the turn. |
+| 81–86 | 3:13 | **B, rising: home** (an octave above its first entry) | Subject bass (B) with CS; subject on E (tenor) at *fa*; at the cantus's *la* (G♯5, its highest note; the soprano reaches E6 elsewhere) the soprano rests for a bar, so the cantus is on top while the bass sings the inversion under it: the turn. |
 | 87–91 | 3:28 | B, falling: *sol fa mi re ut* | Coda: IV – ii7 | I6 – vi – I | V7 (4–3 in the soprano) | I under the falling cantus; the last *ut* (B4) sits in the middle of the final chord. |
 
 Tempo: ♩ = 100; a breath into Bull's leap (b44 ramps to 80), the wolf bar a little broader (90),
@@ -100,7 +100,8 @@ home at 92, and the last three bars slow to 60.
 - **The cantus walking through the twelve keys.** It is the only voice in semibreves, struck a
   little louder (base velocity 72 against 64–66 for the fugue voices). Every new note is a new key
   centre at the start of a region, and the statements join by step. It is the top voice in b75–80
-  and lies just under the soprano in b81–91.
+  and at its *la* in b86; in the rest of b81–91 it lies just under the soprano, and its last *ut*
+  (B4) is inside the final chord.
 - **The subject as the cantus in quick notes.** b9 (soprano and cantus start together on B), b21
   (tenor on E♭ under the cantus's E♭), b33 (bass on G), b45 (deep bass on C), b57 (tenor on E), b81
   (bass on B). Each time the head runs through in one bar the six notes that the cantus will take six
@@ -139,6 +140,8 @@ frequencies (A4 = 440):
 - **b80–81 (3:10–3:13)**: F♯7 → B. In meantone the "A♯" is the B♭ key, so F♯–A♯ is 427 cents, and the
   home chord B–D♯ is 427 cents too. Home itself is one of meantone's worst keys.
 - **b15–20 (0:34)**: C♯ major, with C♯–E♯ at 427 cents in meantone.
+- **The excerpt pair** `renders/meantone-demo-bach-lehman.mp3` and `renders/meantone-demo-meantone.mp3`
+  plays b66–72 alone (about 20 seconds; the drone is the fourth bar), for a direct comparison.
 
 ## Critic numbers (`python3 tools/critic.py cycle/23-b-major/fugue.json`)
 
@@ -152,24 +155,25 @@ frequencies (A4 = 440):
 | low_register_seconds | **5** (b39.3.5, b40.2.5, b40.3.75, b58.2.5, b58.3.5: passing sixteenths of the inversion/CSI pair in tenor and bass, and of the tenor's subject over the bass) | ≤ 9 |
 | stepwise_pct | **62.5** (leap ≥ 4th: 11.3) | ≥ 65 (missed) |
 | crossings | 9 (all "alto above cantus"; see weak spots) | few |
-| keyboard_unplayable_pct | **11.3** (109 of 965 onsets) | < 15 for 5 voices |
-| mean moving voices | **3.81** | – |
-| pc tripled on beats | 13.9 % | – |
-| themes | 30 subject/inversion entries, all 16/16 intervals and rhythm | – |
+| keyboard_unplayable_pct | **11.8** (114 of 965 onsets) | < 15 for 5 voices |
+| mean moving voices | **3.80** | – |
+| pc tripled on beats | 13.6 % | – |
+| themes | 29 subject/inversion entries, all 16/16 intervals and rhythm | – |
 
 The 14 cantus statements were checked separately (the critic compares everything with the
 subject): each is exactly *ut re mi fa sol la* rising or *la…ut* falling in its key, 14/14, and the
 coda's five notes are *sol fa mi re ut* of B.
 
 Moving voices per section: exposition 2.4; B 3.3; C♯ 3.0; E♭ 3.2; F 3.8; G 4.0; A 4.3; C (after the
-leap) 3.5; D 4.2; E 4.0; F♯ 4.3; A♭ 4.5; B♭ 3.7; home 4.8; coda 4.8. All five voices move in 21 bars
-(b35–36, 43–44, 56, 59–60, 65–66, 69, 73–74, 81–82, 84–86, 88–91).
+leap) 3.5; D 4.2; E 4.0; F♯ 4.3; A♭ 4.5; B♭ 3.7; home 4.7; coda 4.8. All five voices move in 20 bars
+(b35–36, 43–44, 56, 59–60, 65–66, 69, 73–74, 81–82, 84–85, 88–91).
 
 Remaining critic notes: 44 "seventh not resolved down" notes (mostly the cantus, whose sevenths rise
-with the hexachord, or sevenths held into the next chord); melody: three seventh leaps (b69 soprano
-D♭6 → E♭5 into the drone; b70 and b71 bass), one tritone (b41 bass, after the CSI), one leap over
-an octave (b19, the bass's inversion entry after a rest), two compound same-way leaps and two large
-leaps not recovered at once.
+with the hexachord, or sevenths held into the next chord); melody: two seventh leaps (b69 soprano
+D♭6 → E♭5 into the drone; b71 bass G2 → F3, kept because G3 or E♭3 there make octaves with the
+tenor or fifths with the rising cantus), one tritone (b41 bass, after the CSI), two leaps over an
+octave after a rest (b19, the bass's inversion entry; b27, the bass's CSI), two compound same-way
+leaps and two large leaps not recovered at once.
 
 ## Method and disclosure
 
@@ -196,22 +200,57 @@ leaps not recovered at once.
   (alto and tenor in b41–44, b53–54, b65–66, b75–80, b86–87), and stepwise motion is 62.5 %, under
   the 65 % target. The subject's own tail and the countersubject move partly in thirds, and the
   divisions are partly broken chords, as virginal divisions are.
-- **The scheme is regular.** Thirteen regions, each with a rectus or inversion entry tied to the
-  cantus and one modulating entry: 26 entries in 82 bars. Voices, registers and figures change from
-  region to region, but the six-bar rhythm of the tour does not.
+- **The scheme is regular.** Thirteen six-bar regions; most have a rectus or inversion entry tied to
+  the cantus and one modulating entry (25 entries in b9–86). The plan breaks in D (no second entry,
+  a dotted division instead), A♭ (the drone, an entry on *re*, the turn to B♭ minor), B♭ (one entry
+  and the Neapolitan cadence) and at home (entry on *fa*, the turn). The six-bar clock itself, one
+  cantus note per bar, does not change: it is Bull's machine, and I kept it.
 - **No stretto.** The cantus fixes the harmony a bar at a time; two subject entries closer than a bar
   conflict with it. The combination the piece offers is subject with cantus, not subject with
   subject.
 - **The cantus is often an inner voice.** Until b74 it lies under the soprano and often under the
   alto too; on one piano an inner semibreve decays. The alto crosses above it in nine passages (the
   critic's 9 crossings), always while the cantus lies in the lower part of its range (B3–A♯4). It is
-  the top voice in b75–80 and lies directly under the soprano in b81–91.
-- **Keyboard.** 11.3 % of onsets exceed two hands, mostly where the soprano is high over a low bass
-  and an inner voice falls between the hands: b17–18 (the high inversion), b28 and b64–65 (the
-  inversion/CSI pairs), b52, b58, b74, and the coda b88–89.
-- **Leaps in the bass** at b70–71 (two sevenths) were kept to avoid parallels with the rising cantus.
+  the top voice in b75–80 and at b86, and lies directly under the soprano in the rest of b81–91.
+- **Keyboard.** 11.8 % of onsets exceed two hands, mostly where the soprano is high over a low bass
+  and an inner voice falls between the hands: b17–18 (the high inversion), b64–65 (the
+  inversion/CSI pair), b47–48 (the bass lowered to clear the cantus), b52, b58, b74, and the coda
+  b88–89.
+- **A leap in the bass** at b71 (G2 → F3) was kept to avoid parallels with the rising cantus.
 - **Not heard.** The balance of the cantus, the triplet passage and the meantone effect are
   unverified by ear.
+
+## Review (response to `REVIEW-3.md`)
+
+Applied, each built and checked with `tools/critic.py` (still 0 parallels, 0 beat parallels,
+0 unresolved, 0 bad doublings):
+
+1. **The cantus's goals.** The soprano rests in b86 (it ends its countersubject at 85.4¾ and returns
+   on A♯5 at b87), so at its *la*, G♯5, the cantus is the top voice and the bass's inversion the
+   lowest: the two hexachords, slow and fast, are the outer voices at the turn. NOTES no longer calls
+   G♯5 the top of the piece (the soprano reaches E6 in b84–85 and b87–88). The final *ut* stays
+   inside the last chord, as the review suggests; NOTES says so.
+2. **Bull's leap.** The bass's free line in b47–48 is an octave lower (A2…D2), clearing the space
+   under the cantus's C4–F4 after the leap. It costs keyboard reach in those two bars.
+3. **After the wolf.** C3 instead of C2 at 69.4: the first third (A♭–C) still arrives on beat 4, and
+   C3 → B♭2 is a step. The G2 → F3 leap at b71 stays; the review's tests (and mine) show the
+   alternatives make octaves with the tenor or fifths with the cantus.
+4. **Regularity.** The D region (b51–56) now has no second entry: the soprano's inversion on G is
+   replaced by a dotted division (a figure the piece had not used) that runs on into the E region.
+   With the A♭, B♭ and home regions, four of the thirteen regions now break the plan. I kept the
+   six-bar clock: one cantus note per bar is Bull's machine, the piece's premise. A stretto is not
+   possible against the cantus (see weak spots); the inverted countersubject (CSI) is already used in
+   the F, A and F♯ regions. **Keyboard:** the bass's CSI in b27–28 now sits in its original octave
+   (D3–E4) under the tenor's inversion, which brings it within reach (b28 had 7 three-hand onsets);
+   with item 2 the total is 11.8 %. Raising the coda's bass (b89) was tried and dropped: it made a
+   beat-parallel fifth with the alto.
+5. **Meantone demonstration.** `renders/meantone-demo-meantone.mp3` and
+   `renders/meantone-demo-bach-lehman.mp3` play b66–72 only (a scratch copy of `fugue.json` cut to
+   those bars, same notes and tempo), so the wolf bar (b69, the fourth bar of the excerpt) is heard
+   without a minute of meantone's wide thirds before it.
+
+Not changed: the homecoming (b79–81), the wolf bar (b69) and the subject's head over the cantus
+(b9, b21, b33, b45, b57, b81), as the review asks.
 
 ## From the N+1 version
 

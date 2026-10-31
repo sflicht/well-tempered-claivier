@@ -260,7 +260,7 @@ put('T', 13, 1, 'E4:8 C4:8 Db4:8 C4:8')
 put('A', 13, 1, 'G4:4 R:4 Ab4:4 G4:4 F4:8 E4:8')
 # b15-18: the soprano answers an octave up, above everything; the tenor breathes for two bars.
 theme('S', 15, 1, oc(ANS, 1), 'Answer (soprano, F minor)')
-put('A', 15, 1, 'F4:4 G4:4 Ab4:8 F4:8 Bb4:8 G4:12 F4:4 G4:12 C5:4')
+put('A', 15, 1, 'F4:4 G4:4 Ab4:8 F4:8 Bb4:8 G4:12 F4:4 G4:8 C5:4 C5:4')
 put('B', 15, 1, 'F2:16 Bb2:16 Eb3:8 F3:8 C3:12 A2:4')
 put('T', 17, 1, 'G3:8 Ab3:8 G3:8 E3:4 D3:4')
 # b19-20: episode: G - C | D-flat (deceptive) - A-flat7, into D-flat major.
@@ -274,14 +274,15 @@ put('T', 19, 1, 'D3:8 E3:8 F3:8 C4:8')
 SMAJ = 'Db5:16 Ab4:8 R:4 Bb5:4 Ab5:4 Gb5:4 F5:4 Eb5:4 Db5:4 C5:4 Eb5:4 D5:4'
 theme('Mz', 21, 1, SMAJ, 'Subject in D-flat major (mezzo-soprano)')
 put('B', 21, 1, 'Db3:8 Bb2:8 F2:8 Gb2:8 Ab2:8 Db3:8 Bb2:4 Ab2:12')
-put('T', 21, 1, 'Db4:4 Eb4:4 F4:8 F4:4 Eb4:4 Bb3:8 C4:8 Db4:8~ Db4:4 Eb4:4 C4:4 Cb4:4')
+put('T', 21, 1, 'Db4:4 Eb4:4 F4:8 F4:4 Db4:4 Bb3:8 C4:8 Db4:8~ Db4:4 Eb4:4 C4:4 Cb4:4')
 put('A', 23, 1, 'Ab4:24 Gb4:4 F4:4')
-# b25-26: episode for three voices, E-flat minor - ii-half-dim 6/5 | V - V7; the alto rests for almost
-# two bars and the bass breathes before the cantus and the alto enter together.
-put('Mz', 25, 1, 'Eb5:4 Db5:4 C5:8 C5:8 Eb5:8')
+# b25-26: episode for three voices, E-flat minor - ii-half-dim 6/5 | V, then a half-bar general pause
+# before the crux (its mirror, b43.1-2, is the silence after the cadence of b42).  The alto rests
+# almost two bars before it returns with the subject.
+put('Mz', 25, 1, 'Eb5:4 Db5:4 C5:8 C5:8')
 put('A', 25, 1, 'Gb4:4')
-put('T', 25, 1, 'Bb3:16 A3:8 C4:8')
-put('B', 25, 1, 'Gb2:8 Eb2:8 F2:16')
+put('T', 25, 1, 'Bb3:8 Bb3:8 A3:8')
+put('B', 25, 1, 'Gb2:8 Eb2:8 F2:8')
 
 # =================================================================================== SUMMIT (b27-34)
 # The sixth voice, the cantus, enters with the subject in augmentation (B-flat2 ... B-A-C-H in half
@@ -289,13 +290,13 @@ put('B', 25, 1, 'Gb2:8 Eb2:8 F2:16')
 # (canon per augmentationem).
 theme('P', 27, 1, W.scale_rhythm(oc(S, -2), 2), 'Subject in augmentation (cantus; B-A-C-H on the axis)')
 theme('A', 27, 1, S, 'Subject with its augmentation (canon per augmentationem)')
-put('Mz', 27, 1, 'Db5:8 Gb5:8 F5:8 Bb5:8 C6:8 Bb5:4 A5:4 F5:4 Eb5:4 E5:8 F5:16')
-put('T', 27, 1, 'Db4:8 Eb4:8 Db4:8 Bb3:8 A3:8 F3:8~ F3:8 R:8 A3:12 G3:4 F3:16')
+put('Mz', 27, 1, 'Db5:8 Gb5:8 F5:8 Bb5:8 C6:8 Bb5:4 A5:4 F5:8 E5:8 F5:16')
+put('T', 27, 1, 'Bb3:8 Eb4:8 Db4:8 Bb3:8 A3:8 F3:8~ F3:8 R:8 A3:12 G3:4 F3:16')
 # b31-34: everyone converges on the axis.  Over the cantus's B-flat A C B, three more voices sing the
 # tail of B-A-C-H transposed by minor thirds -- the alto D-flat C E-flat D, the mezzo (F) E-flat G-flat F,
 # the tenor (F) F-sharp A A-flat -- so that the four transpositions end on the four notes of the
 # diminished-seventh axis chord, B D F A-flat; the soprano returns (b32) and climbs to D6.
-put('A', 31, 1, 'C5:16 Bb4:8 Eb5:8 Db5:8 C5:8 Eb5:8 D5:8')
+put('A', 31, 1, 'C5:16 Db5:8 Eb5:8 Db5:8 C5:8 Eb5:8 D5:8')
 put('Mz', 33, 1, 'F5:8 Eb5:4 F5:4 Gb5:8 F5:8')
 put('T', 33, 1, 'F3:8 F#3:8 A3:8 Ab3:8')
 put('B', 33, 1, 'Db3:8 Eb3:8 Eb3:8 F3:8')
