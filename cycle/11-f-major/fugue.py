@@ -260,8 +260,8 @@ put('Fl', 36, 1, 'A5:8')
 put('Ob', 37, 1, 'G#4:16')
 # bar 38: the wrong entry over hammered E-major chords
 theme('Tr', 38, 1.5, 'C5:1 C5:1 F5:2 F5:1 F5:1 A5:2 A5:1 C6:5', 'joke: the wrong entry, head in F over E major (Tromba)', 1)
-put('Fl', 38, 1, 'E5:4 E5:4 G#5:4 B5:4')
-put('Ob', 38, 1, 'B4:4 G#4:4 B4:4 G#4:4')
+put('Fl', 38, 1, 'B4:4 E5:4 G#5:4 B5:4')
+put('Ob', 38, 1, 'G#4:4 G#4:4 B4:4 G#4:4')
 put('Vn', 38, 1, 'E3:4 E3:4 E3:4 E3:4')
 # bar 39: general pause; the correction and the meek echo
 put('Vn', 39, 2.5, 'E3:1 E3:1 A2:4')

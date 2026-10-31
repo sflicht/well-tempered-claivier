@@ -239,7 +239,7 @@ sc.put('S', 25, 1, 'R:4 D5:1 F5:1 Eb5:1 G5:4 A5:1 Bb5:4~ '                      
 sc.mark(27, 'F (falling)')
 sc.theme('C', 27, 1, hex_dn('D5', last=12), 'Cantus: F, la-ut (falling)', 6)
 sc.theme('T', 27, 1, key(INV, 'G#5', 'D4'), 'Inversion (F), tenor, with the falling cantus')
-sc.put('B', 27, 1, key(CSI, 'G#5', 'D4').rsplit(' ', 1)[0] + ' F4:1')            # CSI below; last note to F
+sc.put('B', 27, 1, key(CSI, 'G#5', 'D4').rsplit(' ', 1)[0] + ' F3:1')            # CSI below; last note to F
 sc.put('S', 27, 1, 'F5:6 G5:1 A5:1 Bb5:2 A5:2 G5:2 E5:2 '
                    'G5:4 E5:4 C6:4 Bb5:4~ '
                    'Bb5:4 C6:2 Bb5:2 G5:4 R:4')
