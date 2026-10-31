@@ -196,7 +196,7 @@ TEMPO = {'tempo_map': [[0, 63], [8, BPM, 'ramp'],
                        [52, BPM], [56, 80, 'ramp'], [60, BPM, 'ramp'],
                        [76, BPM], [80, 80, 'ramp'], [84, BPM, 'ramp'],
                        [96, BPM], [104, 76, 'ramp'], [112, BPM, 'ramp'],
-                       [120, BPM], [136, 66, 'ramp'], [152, BPM, 'ramp'],
+                       [120, BPM], [136, 72, 'ramp'], [152, BPM, 'ramp'],
                        [160, BPM], [168, 76, 'ramp'], [176, BPM, 'ramp'],
                        [188, BPM], [192, 80, 'ramp'], [196, BPM, 'ramp'],
                        [212, BPM], [216, 80, 'ramp'], [220, BPM, 'ramp'],
@@ -263,10 +263,12 @@ theme('S', 15, 1, oc(ANS, 1), 'Answer (soprano, F minor)')
 put('A', 15, 1, 'F4:4 G4:4 Ab4:8 F4:8 Bb4:8 G4:12 F4:4 G4:8 C5:4 C5:4')
 put('B', 15, 1, 'F2:16 Bb2:16 Eb3:8 F3:8 C3:12 A2:4')
 put('T', 17, 1, 'G3:8 Ab3:8 G3:8 E3:4 D3:4')
-# b19-20: episode: G - C | D-flat (deceptive) - A-flat7, into D-flat major.
-put('S', 19, 1, 'G5:16 F5:8 Gb5:4 F5:4')
+# b19-20: episode: G - C | D-flat (deceptive) - A-flat7, into D-flat major.  The piece's first eighth
+# notes: the alto's wave B C D B | C D E C, answered by the soprano F G-flat A-flat F; every eighth that
+# ends on a half-note beat is a chord tone, so the mirror (b49-50) lands on chord tones too.
+put('S', 19, 1, 'G5:16 F5:2 Gb5:2 Ab5:2 F5:2 Gb5:4 F5:4')
 put('B', 19, 1, 'G2:8 C3:8 Db3:8 Ab2:8')
-put('A', 19, 1, 'B4:8 C5:8 Ab4:16')
+put('A', 19, 1, 'B4:2 C5:2 D5:2 B4:2 C5:2 D5:2 E5:2 C5:2 Ab4:16')
 put('T', 19, 1, 'D3:8 E3:8 F3:8 C4:8')
 # b21-24: middle entry: the mezzo-soprano, with the subject in D-flat major (its tail D-flat C E-flat D is
 # B-A-C-H a minor third up), leading to E-flat minor.  Soprano and alto rest at first; the tenor

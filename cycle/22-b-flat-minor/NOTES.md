@@ -1,8 +1,8 @@
 # Pair XXII in B-flat minor — Tombeau: "Ma fin est mon commencement"
 
 Prelude XXII: *Tombeau* (one keyboard player, 20 bars, free tempo map, about 2 min 4 s).
-Fugue XXII: six voices (Bach's BWV 867 has five), 68 bars alla breve, about 3 min 16 s
-(bach-lehman render: 196 s). A crab fugue: the second half is the first half played backwards, in
+Fugue XXII: six voices (Bach's BWV 867 has five), 68 bars alla breve, about 3 min 15 s
+(bach-lehman render: 195 s). A crab fugue: the second half is the first half played backwards, in
 every voice.
 
 I have not heard any render. Everything below about the fugue comes from the score and the tools;
@@ -27,7 +27,7 @@ be followed:
   backwards ends B-flat → F, a half cadence. So in the last minute every voice leaves on a cadence,
   alternately full and half, and the texture thins 4 → 3 → 2 → 1.
 * **The exposition is the clearest thing in the piece**, one voice at a time, each entry after a rest
-  and in its own register, so that its mirror (b45–68, about the last 70 seconds, from 2:06) can be
+  and in its own register, so that its mirror (b45–68, about the last 70 seconds, from 2:05) can be
   recognised: the countersubject comes back reversed above the reversed answer (b61–64), and the
   last four bars are the opening four bars backwards, alone.
 * **The axis is a single held sound**: the diminished seventh B D F A-flat (the chord the prelude
@@ -53,6 +53,8 @@ critic can judge each half alone.
 | SMAJ (subject in D-flat major) | D-flat5 A-flat4, rest, B-flat5 A-flat5 G-flat5 F5 E-flat5 D-flat5 C5 E-flat5 D5 | middle entry (mezzo, b21); its tail D-flat C E-flat D is B-A-C-H a minor third up and leads to E-flat minor |
 | S×2 (augmentation) | B-flat2 (two bars) F2 (bar), rest, G-flat3 … C3 B-natural2 in half notes | the cantus firmus, b27–34, its H on the axis; backwards b35–42 it climbs H C A B-flat C D-flat E-flat F G-flat and cadences F2 → B-flat2 |
 | B-A-C-H tails by minor thirds | cantus B-flat A C B; alto D-flat C E-flat D; mezzo (F) E-flat G-flat F; tenor (F) F-sharp A A-flat | b33–34, in half notes: the four transpositions of B-A-C-H a minor third apart end on the four notes of the axis chord B D F A-flat |
+| B-A-C-H in quarters | soprano B-flat5 A5 C6 B-natural5 (b33) | over the cantus's B-A-C-H in half notes, from the same downbeat: the canon per augmentationem of b27 in the outer voices; backwards (b36) H-C-A-B on top, ending with the cantus's H-C-A-B |
+| eighth-note wave | alto B C D B · C D E C (b19), soprano F G-flat A-flat F (b20) | the piece's first (and, backwards, last) eighth notes; every eighth that ends on a half-note beat is a chord tone, so its mirror (b49–50) lands on chord tones too |
 
 ## Section map (first half; the second half is the same backwards)
 
@@ -65,18 +67,19 @@ Times from the bach-lehman render (the tempo map included).
 | 9–12 | 0:23 | | bass: subject two octaves down; the tenor resolves F# → G and sighs G (rest) G-flat F; the alto rests two bars, then returns |
 | 13–14 | 0:34 | codetta | three voices, V – i6 – iv – V of F minor; the bass breathes after its H → C |
 | 15–18 | 0:39 | | soprano: answer, an octave up, above everything (the tenor rests two bars) |
-| 19–20 | 0:50 | episode | G – C – D-flat (deceptive) – A-flat7 |
+| 19–20 | 0:50 | episode | G – C – D-flat (deceptive) – A-flat7; the first eighth notes (alto wave, answered by the soprano) |
 | 21–24 | 0:56 | II. Middle entry | mezzo-soprano: subject in D-flat major (soprano and alto rest at first); the tenor falls chromatically D-flat C C-flat B-flat into E-flat minor |
-| 25–26 | 1:07 | episode | three voices, iv – ii°6/5 – V – V7; the alto rests almost two bars |
+| 25–26 | 1:07 | episode | three voices, iv – ii°6/5 – V, then a **half-bar general pause** (26.3–4); the alto rests almost two bars |
 | 27–30 | 1:13 | III. Crux | the cantus firmus (sixth voice) enters with the augmentation; the alto sings the subject at its own speed from the same downbeat (canon per augmentationem); bar 30: an augmented sixth (G-flat C E) on the augmentation's G-flat under the alto's B-A-C-H |
 | 31–32 | 1:24 | | V – V4/2 – i6 – V4/3 over the augmentation's descent; the soprano returns (b32) |
-| 33–34 | 1:30 | | all six: i – vii°7 – vii°7 – B°7; the four B-A-C-H tails converge on the axis chord |
-| 34│35 | 1:37 | axis | B D F A-flat, held; the cantus strikes its H again |
+| 33–34 | 1:30 | | all six: i – vii°7 – vii°7 – B°7; the soprano sings B-A-C-H in quarters over the cantus's in half notes; the four B-A-C-H tails converge on the axis chord |
+| 34│35 | 1:36 | axis | B D F A-flat, held; the cantus strikes its H again |
 
-The second half: b35–36 the four H-C-A-B's leave the axis; b39–42 the canon per augmentationem
-backwards, ending with a cadence in B-flat minor (cantus F2 → B-flat2, alto F4 → B-flat4) at
-1:55–2:00; b45–48 the mezzo's entry backwards, cadencing in D-flat; b51–54 the soprano's answer
-backwards; b57–60 the bass's subject backwards; b61–64 the tenor's answer and the alto's
+The second half: b35–36 the four H-C-A-B's leave the axis, the soprano's H-C-A-B in quarters on top
+(b36, 1:39); b39–42 the canon per augmentationem backwards, ending with a cadence in B-flat minor
+(cantus F2 → B-flat2, alto F4 → B-flat4) at 1:54–1:59, followed by the mirrored general pause
+(43.1–2); b45–48 the mezzo's entry backwards, cadencing in D-flat; b49–50 the eighth-note waves
+backwards (soprano, then alto); b51–54 the soprano's answer backwards; b57–60 the bass's subject backwards; b61–64 the tenor's answer and the alto's
 countersubject backwards; b65–68 the alto alone.
 
 ## The devices, and where to hear them
@@ -84,8 +87,14 @@ countersubject backwards; b65–68 the alto alone.
 1. **The crab** — the whole second half, most clearly the last 70 seconds (b45–68): the entries come
    back as cancrizans statements and the voices drop out one by one.
 2. **Canon per augmentationem** — b27–30 (1:13): alto (subject) and cantus (subject in half and whole
-   notes) start together on B-flat; backwards (b39–42, 1:49) they arrive together on B-flat.
-3. **B-A-C-H in four transpositions** — b33–34 (1:30), half notes: the cantus (B-flat A C B), the
+   notes) start together on B-flat; backwards (b39–42, 1:48) they arrive together on B-flat. At b33
+   (1:30) the soprano and the cantus repeat the idea with B-A-C-H alone (quarters against halves),
+   and backwards at b35–36 they sing H-C-A-B together, ending on B-flat.
+3. **Two mirrored landmarks in the middle**, so that the middle of the second half can be placed: the
+   half-bar general pause before the crux (26.3–4, 1:11) returns as the silence after the cadence
+   of b42 (43.1–2, 1:59); the first eighth notes of the piece (b19–20, 0:50) return as its last
+   (b49–50, 2:16), the waves now falling.
+4. **B-A-C-H in four transpositions** — b33–34 (1:30), half notes: the cantus (B-flat A C B), the
    alto (D-flat C E-flat D), the mezzo (E-flat G-flat F) and the tenor (F-sharp A A-flat) close on
    B, D, F, A-flat. The harmony underneath is i – vii°7 – vii°7 – B°7: from the second chord on,
    every voice slides by a semitone or moves within the diminished seventh. Backwards (b35–36) the
@@ -122,8 +131,18 @@ are the rules that let one hand-written half work both ways.
 6. **Parallels are symmetric, rests are not.** Two voices that change a quarter apart around a rest
    in one half can change together in the other (in a draft, the bass and the soprano around the soprano's rest in b16; the bass was changed). I checked both halves.
 7. **Sevenths.** A seventh resolving down by step forwards is approached by step from below
-   backwards and leaves by whatever approached it forwards. The critic lists these in half 2 as
-   "7th not resolved down" (36 notes); none is a leap into or out of a dissonance against the bass.
+   backwards and leaves by whatever approached it forwards. So a seventh is idiomatic in both
+   directions only if it is approached from the same note (re-struck) or from a step below, and
+   left downwards by step: a neighbour seventh (F G-flat F, b20) or a prepared one re-struck (the
+   alto's C5 in b18, the tenor's B-flat3 in b25). Passing sevenths in a falling line, and sevenths
+   approached by leap, turn into sevenths that rise or leap away backwards. After the review I
+   rewrote six of them; the critic's "7th not resolved down" notes in half 2 fell from 33 to 17
+   (half 1: 6). The rest belong to the subject's own scale (G-flat, E-flat as passing sevenths), a
+   lower neighbour (b24) and the diminished-seventh slides at the axis, whose mirror (A-flat rising to
+   A, B°7 → V7) is the correct resolution.
+9. **Eighth notes.** In this metre an eighth that ends on a half-note beat comes back on it. So in
+   the two eighth-note figures (b19–20) the last eighth before each half-note beat is a chord tone;
+   the passing eighths fall inside the beat in both directions.
 8. **Keyboard.** The left hand takes the cantus and the two voices above it within a tenth, the right
    hand the upper three; this fixed the summit's voicing.
 
@@ -131,8 +150,9 @@ are the rules that let one hand-written half work both ways.
 
 The tempo map is a palindrome around the axis (quarter-note time 136): a slow toll at both ends
 (63 → 88 in bars 1–2, 88 → 63 in bars 67–68), a small breath at each mirrored pair of joins (14|15
-and 54|55, 20|21 and 48|49, 26|27 and 42|43) and a broadening into the axis (88 → 66 over bars 31–34)
-with its mirror image away from it. A dip that is symmetric around a barline works both ways: it
+and 54|55, 20|21 and 48|49, 26|27 and 42|43) and a broadening into the axis (88 → 72 over bars 31–34;
+it was 66 before the review, which made the diminished-seventh plateau slowest where it is most
+static) with its mirror image away from it. A dip that is symmetric around a barline works both ways: it
 slows into the cadence forwards and slows out of the mirrored cadence backwards. So the performance,
 like the score, reads the same backwards (apart from the piano's decay). The dynamic arch is
 symmetric as well: quietest at both ends, loudest at the axis. Basic tempo quarter = 88 (half = 44).
@@ -147,12 +167,13 @@ symmetric as well: quietest at both ends, loudest at the axis. Basic tempo quart
 | dissonance_unresolved | 0 | 0 | 0 | ≤ 3 |
 | bad_doublings | 0 | 0 | 0 | ≤ 2 |
 | low_register_seconds | 0 | 0 | 0 | ≤ 9 |
-| stepwise_pct | 69.7 | 69.9 | 69.9 | ≥ 65 |
-| leap_4th_plus_pct | 13.7 | 13.7 | 13.7 | |
+| stepwise_pct | 69.3 | 69.4 | 69.4 | ≥ 65 |
+| leap_4th_plus_pct | 12.6 | 12.7 | 12.7 | |
 | crossings | 1 | 1 | 1 | few |
 | keyboard_unplayable_pct | 0.0 | 0.0 | 0.0 | ≤ 15 |
 | mean moving voices | 3.12 | 3.12 | 3.12 | |
-| pc tripled on beats | 5.3 % | 8.5 % | 2.1 % | |
+| pc tripled on beats | 7.6 % | 10.9 % | 4.3 % | |
+| "7th not resolved down" (notes) | 25 | 6 | 17 | |
 
 * Because the critic checks dissonance only on half-note beats in 2/2, I also ran it on both halves
   with the metre read as 4/4 (every quarter a beat): 0 parallels, 0 beat parallels, 0 unresolved,
@@ -180,26 +201,54 @@ F's; I rejected them and wrote the four-transposition idea by hand. No note was 
 
 ## Weak spots (honest)
 
-* **The summit moves in half notes.** b31–36 is a six-voice texture in stile-antico half notes (one
-  passing quarter in the mezzo, one in the tenor); with the broadening tempo it may sound static
-  rather than climactic. The four B-A-C-H tails are clear on paper; in a dense chord in the middle
-  register they may not be heard as four signatures.
-* **Accented passing notes in the second half.** Every passing quarter of the first half comes back
-  accented. The strong-beat ones are at b38.1, b39.1, b46.1, b52.1, b62.1 and b63.3 (mirrors of b32.1, b31.1,
-  b24.1, b18.1, b8.1 and b6.3); they are stepwise, but they make the second half slightly harsher than the first. The most
-  exposed is the alto's B-natural on the downbeat of b39 over the cantus's G-flat (the mirror of the
-  subject's H in b30).
+* **The summit is still mostly half notes.** b31–36 is a six-voice stile-antico texture; since the
+  review the soprano moves in quarters at b33 and b36 (B-A-C-H / H-C-A-B) and the broadening is
+  gentler (72), but the inner B-A-C-H tails may still fuse into one chromatic chord stream.
+* **The second half's harmony runs backwards.** Every passing quarter of the first half comes back
+  accented (strong-beat ones at b38.1, b39.1, b46.1, b52.1, b62.1, b63.3; all stepwise), dominants
+  move to pre-dominants at the reversed joins (e.g. b43–44, V → ii°6/5 → iv6), and 17 sevenths in half
+  2 do not fall. The most exposed note is the alto's B-natural on the downbeat of b39 over the
+  cantus's G-flat (the mirror of the subject's H in b30).
 * **The alto's return at b27 is half masked**: it starts on B-flat4 under the mezzo's D-flat5 and
   only becomes recognisable at b28 (the rest and the leap of a ninth).
 * **The soprano sings little**: an answer (b15–20), the summit (b32–37) and the answer backwards
   (b49–54); it rests eleven bars on each side of the axis.
 * **One middle entry only** (D-flat major). There is no stretto of the subject at normal speed; the
   piece's devices are the crab, the canon per augmentationem and the B-A-C-H convergence.
-* **Episodes are chordal** (b19–20 and b25–26 move in half notes).
+* **One surface speed.** Apart from the eighth-note waves of b19–20 (and b49–50) nothing is shorter
+  than a quarter; b25–26 is still chordal.
 * **The cadence in B-flat minor at b41–42** (the canon backwards) is a strong close in the middle of
   the second half; it may make the reversed exposition that follows sound like an epilogue.
 * Whether the retrograde is *heard* as a retrograde is untested (I cannot listen); the symmetric
-  tempo map and the held axis chord are guesses for the owner to judge.
+  tempo map, the general pause and the held axis chord are guesses for the owner to judge.
+
+## Review (REVIEW-3.md) — what I changed and why
+
+* **1. The summit plateau — applied (tested fix).** The soprano sings B-A-C-H in quarters at b33
+  (`Bb5 A5 C6 B5`) over the cantus's B-A-C-H in half notes; the crab makes it H-C-A-B at b36. I also
+  softened the axis broadening from 66 to 72 (still symmetric), since the plateau was slowest where
+  it was most static.
+* **2. The middle is not heard as backwards — partly addressed.** Two landmarks now return at
+  mirrored places: a half-bar general pause before the crux (26.3–4), which comes back as the silence
+  right after the cadence of b42 (43.1–2), and the first eighth notes of the piece (alto wave b19,
+  soprano answer b20), which come back falling at b49–50 as the last ones. A listener will still not
+  follow b37–64 as "backwards"; these give them two points to recognise.
+* **3. Sevenths that become unidiomatic when reversed — reduced.** Rule 7 above. Rewritten in the
+  first half without changing its harmony: alto b18 (C5 re-struck as the seventh of D7), tenor b22
+  (D-flat instead of a passing E-flat), tenor b25 (B-flat3 re-struck as the seventh of C-half-dim),
+  b26 (V without seventh before the pause), mezzo b30 (F5 E5 instead of F5 E-flat5 E5), alto b32
+  (D-flat5 E-flat5 D-flat5, the seventh as an upper neighbour). Critic notes in half 2: 33 → 17.
+* **4. Design risks — noted.** The early cadence at b41–42 stays: it is the mirror of the canon's
+  start and cannot move without breaking the palindrome; the mirrored general pause after it now
+  marks it as the end of a section rather than of the piece. Eighth notes: added at b19–20 only;
+  more would change the stile-antico surface the subject's halves and quarters set up, and every
+  eighth figure has to be written so that its chord tones fall on the half-note beats both ways.
+* **Not done:** a mezzo rest at 27.2 to expose the alto (the reviewer also advised against it).
+  Untouched, as asked: the alto alone at both ends with the slow toll of the tempo map, the axis (five
+  voices tied, the cantus re-striking B2), the subject's design.
+* After the changes: whole piece and both halves 0 parallels, 0 beat parallels, 0 unresolved, 0 bad
+  doublings, 0 low-register seconds, 0 % unplayable (also clean in the 4/4 reading); all six voices
+  are exact palindromes; all 14 entries verify. Renders redone (195 s).
 
 ## From the N+1 version
 
@@ -208,14 +257,14 @@ F's; I rejected them and wrote the four-transposition idea by hand. No note was 
   diminished seventh B D F A-flat as the axis chord, the augmentation of the subject ending on the
   axis, a gathering one voice at a time and the dispersal in reverse order, the symmetric tempo map
   and dynamics, the explicit `crab()` transform and the check that every voice is a palindrome.
-* **Changed:** 23 voices in four choirs → 6 voices; 96 bars → 68 (4:32 → 3:16). The exposition now
+* **Changed:** 23 voices in four choirs → 6 voices; 96 bars → 68 (4:32 → 3:15). The exposition now
   has one entry at a time with a countersubject, instead of five "answer + subject half a bar later"
   pairs; one middle entry (D-flat major) instead of three choir sections; the augmentation moved from
   the top voice to a new lowest voice (the cantus firmus), so that its B-A-C-H becomes the bass
   progression V6/5 – V4/3 – B°7 and, backwards, a cadence; the alto sings the subject in canon with
   it; the summit is four B-A-C-H's a minor third apart instead of a knell and fifteen inner strands;
   the axis chord is held, with only the cantus restriking it. Critic: half 2 had 3 unresolved and 2
-  doubled sevenths, now 0 and 0; stepwise 62.5 % → 69.7 %; keyboard from meaningless to 0 %
+  doubled sevenths, now 0 and 0; stepwise 62.5 % → 69.3 %; keyboard from meaningless to 0 %
   unplayable. No placement was proposed by a timing search this time.
 * **Why:** at 23 voices the gathering was uneven (the summit jumped from 7 to 20 moving voices) and
   the answer-pair template repeated; nothing in the reversed second half could be followed. At six,
