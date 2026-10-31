@@ -156,14 +156,14 @@ theme('C2', 21, 2, INVB_NAT, 'Recognition: Coro II, inversion in B minor a sixth
 # (broken chords against a repeated pedal note).
 put('CH', 23, 1, CH2)
 put('C1', 23, 2, 'D5:2 C5:1 B4:1 A4:1 F#4:1 '
-                 'B4:1 A4:1 G4:1 A4:1 B4:1 G4:1 E5:1 D5:1 C5:1 D5:1 E5:1 C5:1 '
+                 'B4:1 A4:1 G4:1 A4:1 B4:1 G4:1 E5:1 D5:1 C5:1 D5:1 E5:1 D5:1 '
                  'F#5:1 E5:1 D5:1 E5:1 F#5:1 D5:1 C5:1 B4:1 A4:1 B4:1 C5:1 A4:1 '
                  'D5:1 C5:1 B4:1 A4:1 G4:1 F#4:1 G4:1 B4:1 E5:1 D#5:1 E5:1 B4:1 '
-                 'C5:1 B4:1 C5:1 E5:1 G5:1 E5:1 A5:1 E5:1 C5:1 E5:1 C5:1 A4:1 '
+                 'E5:1 D5:1 C5:1 E5:1 G5:1 E5:1 A5:1 E5:1 C5:1 E5:1 C5:1 A4:1 '
                  'B4:2 A4:1 F#4:1 A4:1 B4:1 G4:1 B4:1 E5:1 B4:1 A4:1 B4:1 '
                  'C5:2 B4:1 A4:1 B4:1 D5:1 D5:1 C5:1 B4:1 C5:1 D5:1 B4:1 G4:2 C5:1 B4:1 C5:1 E5:1 D5:2 B4:1 G4:1 B4:1 D5:1 '
-                 'G5:2 F#5:1 E5:1 D5:1 E5:1 E5:2 D5:1 C5:1 B4:1 A4:1 F#4:2 G4:1 A4:1 G4:1 F#4:1 '
-                 'E5:2 D#5:1 E5:1 F#5:1 E5:1 F#4:2 G4:1 A4:1 B4:1 G4:1 A4:2 C5:2 G4:2 G4:2 F#4:2 A4:2')
+                 'G5:2 E5:2 D5:1 E5:1 E5:2 C5:1 D5:1 E5:1 C5:1 A4:2 G4:1 F#4:1 G4:1 A4:1 '
+                 'G4:2 A4:1 B4:1 C5:1 B4:1 F#4:2 G4:1 A4:1 B4:1 G4:1 A4:2 C5:2 G4:2 G4:2 F#4:2 A4:2')
 put('C2', 23, 2, 'F#4:2 R:4')
 theme('C2', 24, 4, octv(W.scale_rhythm(S, 2), -1), 'Coro II: subject in augmentation (E minor) under chorale line 4', 4)
 
