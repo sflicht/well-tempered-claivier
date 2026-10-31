@@ -10,13 +10,14 @@ passages (one or two soloists) against tutti moments of all four.
 
 Every note is written here.  Thematic statements are explicit transforms of
 the hand-written subject S, answer A, inversion I and countersubject CS
-(octave/diatonic transposition); all other material is literal token
+(octave and real transposition, diatonic mirror); all other material,
+the heads and tattoos of the joke included, is literal token
 strings placed at bar.beat.  A scratch search (see NOTES.md) only ranked
 placements of whole statements for the final stretto; it wrote no notes.
 
 The Tromba keeps to the notes of F and C major (no E-flat, F-sharp,
 C-sharp, G-sharp): it rests while the music is in minor keys or in B-flat,
-as a natural trumpet would, and that limitation is the joke of bars 33-39.
+as a natural trumpet would, and that limitation is the joke of bars 38-44.
 """
 from __future__ import annotations
 
@@ -59,30 +60,6 @@ CSA = W.transpose(CS, 7, 4)            # against the answer (in C): E4 C5 Bb4 A4
 def oc(s, n):
     """Octave transposition."""
     return W.transpose(s, 12 * n, 7 * n)
-
-
-def dshift(toks, steps, scale=FMAJ):
-    """Diatonic transposition within a scale (chromatic notes keep their offset)."""
-    out = []
-    t0 = scale[0]
-    for t in toks.split():
-        p, d, sp, tie = W.parse_tok(t)
-        if p is None:
-            out.append(t)
-            continue
-        pc = p % 12
-        nl = 'CDEFGAB'[('CDEFGAB'.index(sp[0].upper()) + steps) % 7]
-        base, alt = p, 0
-        if pc not in scale:
-            for a in (-1, 1):
-                if (pc - a) % 12 in scale:
-                    base, alt = p - a, a
-                    break
-        deg = ((base - t0) // 12) * 7 + scale.index(base % 12)
-        nd = deg + steps
-        q = t0 + (nd // 7) * 12 + ((scale[nd % 7] - t0) % 12) + alt
-        out.append(f"{W.name_of(q, nl)}:{t.rsplit(':', 1)[1]}")
-    return ' '.join(out)
 
 
 # ---------------------------------------------------------------- placement
@@ -152,18 +129,17 @@ put('Ob', 9, 1.5, 'R:2 C4:8 F4:10 D4:2 D4:4 G4:4 F4:2')
 
 
 # ================================================================ EPISODE 1, solo (b11-14): F -> C
-# Descending fifths in half bars (Bb, E dim, a, d, G, C, G7).  The recorder runs the subject's tail
+# Descending fifths in half bars (F, Bb, C7/G, a, d, G, C, G7).  The recorder runs the subject's tail
 # (falling) and the inversion's tail (rising) by turns; the violin, off the bass for once, plays
-# string crossings in its own register (a broken chord around a repeated upper note that itself falls
-# F-E-D-C bar by bar); the oboe joins for the last two bars with a 9-8 suspension and a cadence.
+# string crossings in its own register (a broken chord rocking across three strings); when the oboe
+# joins for the last two bars (a 9-8 suspension and a cadence) the violin drops back to a plain bass.
 put('Fl', 11, 3, 'F6:1 E6:1 D6:1 C6:1 D6:1 C6:1 Bb5:1 A5:1 '
                  'G5:1 A5:1 Bb5:1 C6:1 Bb5:1 C6:1 D6:1 E6:1 E6:1 D6:1 C6:1 B5:1 C6:1 B5:1 A5:1 G5:1 '
                  'F5:1 G5:1 A5:1 Bb5:1 A5:1 Bb5:1 C6:1 D6:1 D6:1 C6:1 B5:1 A5:1 B5:1 A5:1 G5:1 F5:1 '
                  'E5:1 F5:1 G5:1 A5:1 G5:1 A5:1 B5:1 C6:1 B5:1 A5:1 G5:1 F5:1 G5:1 F5:1 E5:1 D5:1 C5:2')
 put('Vn', 11, 2, 'F3:1 A3:1 C4:1 A3:1 Bb3:1 D4:1 F4:1 D4:1 Bb3:1 D4:1 F4:1 D4:1 '
                  'G3:1 C4:1 E4:1 C4:1 G3:1 C4:1 E4:1 C4:1 A3:1 C4:1 E4:1 C4:1 A3:1 C4:1 E4:1 C4:1 '
-                 'F3:1 A3:1 D4:1 A3:1 F3:1 A3:1 D4:1 A3:1 G3:1 B3:1 D4:1 B3:1 G3:1 B3:1 D4:1 B3:1 '
-                 'E3:1 G3:1 C4:1 G3:1 E3:1 G3:1 C4:1 G3:1 F3:1 G3:1 D4:1 G3:1 F3:1 G3:1 D4:1 G3:1')
+                 'F3:8 G3:8 E3:8 F3:8')
 put('Ob', 13, 1, 'A4:10 G4:2 B4:4 C5:6 B4:2 D5:4 B4:2')
 
 
@@ -181,26 +157,28 @@ put('Fl', 15, 3, 'C6:3 E6:5 C6:6 F6:6 D6:4')
 # Rectus and inversus a beat apart in the outer voices: the violin's subject climbs from the bass while
 # the trumpet's inversion (C major, all natural notes) falls from its high C; then the tails run in
 # contrary motion.  The recorder holds a descant above, the oboe the tenor.
-I_C = dshift(I, -3)                                            # C6 C6 G5 ... G5
+I_C = W.invert_diatonic(S_C, 'E5', [0, 2, 4, 5, 7, 9, 11])    # the C-major mirror: C6 C6 G5 ... B4 ... G5
 theme('Vn', 17, 1.5, ' '.join(oc(S_C, -2).split()[:-5]) + ' G2:1 B2:1 D3:1 G2:1 C3:2', 'tutti: subject in C (Violino)')
 theme('Tr', 17, 2.5, I_C, 'tutti: inversus in C, a beat later (Tromba)')
-put('Ob', 17, 1.5, 'R:2 C5:8 E4:8 D4:4 A4:4 B4:4 C5:4')
-put('Fl', 17, 1, 'E6:8 G6:4 D6:4 C6:4 D6:4 F6:4 G6:4 E6:4')
+put('Ob', 17, 1.5, 'R:2 C5:8 E4:8 G4:4 F4:4 D4:4')
+put('Fl', 17, 1, 'E6:4 R:4 G6:4 D6:4 C6:4 D6:4 F6:4 G6:4 E6:4')
 
 
 # ================================================================ EPISODE 2, solo (b19-20): C -> d
 # The recorder falls away in a scale; the trumpet tries a last tattoo on A (all it can offer in D
-# minor) and then falls silent for fourteen bars; oboe and violin carry the turn to D minor.
+# minor) and then falls silent for eighteen bars; oboe and violin carry the turn to D minor.
 put('Vn', 19, 2, 'E3:1 G3:1 E3:1 D3:1 C#3:1 E3:1 A3:1 E3:1 C#3:1 E3:1 G3:1 E3:1 '
-                 'D3:1 F3:1 A3:1 F3:1 D3:1 F3:1 A3:1 F3:1 Bb2:1 D3:1 G3:1 D3:1 A2:1 E3:1 G3:1 E3:1')
+                 'D3:2 C3:2 Bb2:2 A2:2 G2:2 Bb2:2 A2:4')
 put('Tr', 19, 4, 'A5:1 A5:1 A5:2')
-put('Fl', 19, 2, 'C6:1 B5:1 A5:1 G5:1 A5:1 G5:1 F5:1 G5:1 E5:4 F5:4')
-put('Ob', 19, 2, 'E4:4 G4:8 F4:4 E4:2 D4:2 D4:4 C#4:4')
+put('Fl', 19, 2, 'B5:1 A5:1 G5:1 F5:1 E5:1 F5:1 G5:1 F5:1 E5:4 F5:4')
+put('Ob', 19, 1, 'E4:8 G4:8 F4:4 E4:2 D4:2 D4:4 C#4:4')
 
 
 # ================================================================ D MINOR (b21-25); the trumpet is silent
 # The recorder's subject in D minor over the violin's countersubject (a duo); then the device again,
 # now inversus first: the oboe's mirror from D5 and the violin's subject a beat later in the bass.
+# (The oboe leaves its mirror on the last beat and a half: its C and the violin's C-sharp, its
+# A-G-E-G turn and the violin's E-D-C#-B would otherwise collide.)
 Sd = ('A4:1 A4:1 D5:2 D5:1 D5:1 F5:2 F5:1 A5:5 '
       'Bb5:1 A5:1 G5:1 F5:1 G5:1 F5:1 E5:1 D5:1 E5:1 D5:1 C#5:1 B4:1 C#5:1 A4:1 B4:1 C#5:1 D5:2')
 Id = ('D6:1 D6:1 A5:2 A5:1 A5:1 F5:2 F5:1 D5:5 '
@@ -209,112 +187,136 @@ CSd = 'F3:4 D4:3 C4:5 Bb3:6 G3:6 A3:4 F3:2'
 theme('Fl', 21, 1.5, Sd, 'subject in d (Flauto)')
 put('Vn', 21, 1, 'D3:4 ' + CSd)
 put('Ob', 21, 1, 'D4:4')
-theme('Ob', 23, 1.5, ' '.join(oc(Id, -1).split()[:-5]) + ' A4:1 G4:1 E4:1 G4:1 A4:2', 'inversus in d (Oboe)')
+theme('Ob', 23, 1.5, ' '.join(oc(Id, -1).split()[:-6]) + ' G4:1 A4:1 G4:1 E4:1 G4:1 A4:2', 'inversus in d (Oboe)')
 theme('Vn', 23, 2.5, oc(Sd, -2), 'subject in d, a beat later (Violino)')
-put('Fl', 23, 2, 'F5:8 E5:4 D5:4 C#5:4 D5:4 C#5:4 E5:4 D5:4')
+put('Fl', 23, 2, 'F5:8 E5:4 D5:4 G5:4 F5:4 E5:8 D5:4')
 put('Ob', 25, 1.5, 'R:2 F4:4')
 
 
-# ================================================================ SOLI (b25-28): d -> B-flat
-# Concerto solos: each soloist alone over the violin's bass, then the violin alone.
-put('Fl', 25, 3, 'D5:1 E5:1 F5:1 G5:1 A5:1 Bb5:1 C6:1 D6:1 Bb5:1 A5:1 G5:1 F5:1 G5:1 F5:1 E5:1 D5:1')
-put('Vn', 25, 3, 'D3:4 F3:4 G3:4 Bb2:4 C3:8 F3:8 '
-                 'F3:1 C4:1 Eb4:1 C4:1 A3:1 C4:1 Eb4:1 C4:1 '
-                 'Bb3:1 D4:1 F4:1 D4:1 G3:1 Bb3:1 Eb4:1 Bb3:1 A3:1 C4:1 Eb4:1 C4:1 Eb4:1 C4:1 A3:1 F3:1')
-put('Ob', 26, 3, 'E4:4 C5:3 Bb4:5 A4:6 G4:2 F4:4')
+# ================================================================ SOLI (b25-30): d -> B-flat
+# Concerto solos, each soloist alone over the violin's bass: the recorder's runs (D minor, G minor,
+# C7), the oboe's countersubject sung alone, in F, with its own bass, and then the violin by itself,
+# crossing strings (F, B-flat, E-flat, F7) into B-flat.
+put('Fl', 25, 3, 'D5:1 E5:1 F5:1 G5:1 A5:1 Bb5:1 C6:1 D6:1 Bb5:1 A5:1 G5:1 F5:1 G5:1 F5:1 E5:1 D5:1 '
+                 'E5:1 G5:1 Bb5:1 G5:1 C6:1 Bb5:1 A5:1 G5:1 F5:4')
+put('Vn', 25, 3, 'D3:4 F3:4 G3:4 Bb2:4 C3:8 F3:8 A3:8 Bb3:6 G3:6 C3:4 '
+                 'F3:1 A3:1 C4:1 A3:1 F3:1 A3:1 C4:1 A3:1 Bb3:1 D4:1 F4:1 Bb3:1 Ab3:1 Bb3:1 D4:1 Bb3:1 '
+                 'G3:1 Bb3:1 Eb4:1 Bb3:1 G3:1 Bb3:1 Eb4:1 Bb3:1 A3:1 C4:1 Eb4:1 C4:1 Eb4:1 C4:1 A3:1 F3:1')
+put('Ob', 27, 2, oc(CS, 1))
 
 
-# ================================================================ B-FLAT (b29-30), then to C minor (b31-32)
+# ================================================================ B-FLAT (b31-32), a duet (b33-34)
 S_Bb = W.transpose(S, 5, 3)                                    # F5 ... Bb5
 CS_Bb = W.transpose(CS, 5, 3)                                  # D4 Bb4 Ab4 G4 Eb4 F4 D4
-theme('Fl', 29, 1.5, S_Bb, 'subject in B-flat (Flauto)')
-put('Vn', 29, 1, 'Bb2:4 ' + oc(CS_Bb, -1))
-put('Ob', 29, 2, 'Bb4:4 F4:3 D5:5 Bb4:6 G4:2 G4:4 C5:4 Bb4:8 G4:8 A4:4 C5:4 B4:4 G4:4')
-put('Vn', 31, 1.5, 'R:6 Eb3:8 F#2:8 G2:8')
-put('Fl', 31, 1.5, 'R:2 D6:1 C6:1 Bb5:1 A5:1 Bb5:1 A5:1 G5:1 F5:1 G5:1 A5:1 Bb5:1 G5:1 '
-                   'D6:4 A5:4 G5:4 D5:2 B4:2')
+theme('Fl', 31, 1.5, S_Bb, 'subject in B-flat (Flauto)')
+put('Vn', 31, 1, 'Bb2:4 ' + ' '.join(oc(CS_Bb, -1).split()[:-1]) + ' Bb2:2')
+put('Ob', 31, 2, 'Bb4:4 F4:3 D5:5 Bb4:6 G4:2 G4:4 C5:4')
+
+# The duet (b33-34): recorder and oboe alone, without a bass (a concerto's bassetto).  The oboe sings
+# the countersubject in G minor (leap of a sixth, F against the recorder's B natural: G7), the
+# recorder runs above it; G minor - G7 - C minor - D - G minor.
+put('Ob', 33, 1, 'Bb4:8 G5:3 F5:5 Eb5:6 C5:6 D5:4 Bb4:2')
+put('Fl', 33, 1.5, 'R:2 D6:1 C6:1 Bb5:1 A5:1 Bb5:1 C6:1 D6:1 Bb5:1 B5:1 C6:1 D6:1 B5:1 '
+                   'C6:1 D6:1 Eb6:1 C6:1 G5:1 A5:1 Bb5:1 G5:1 A5:1 Bb5:1 C6:1 A5:1 F#5:1 G5:1 A5:1 F#5:1 G5:2')
 
 
-# ================================================================ THE JOKE (b33-39): the trumpet and the key
-# Back after fourteen bars of silence, the trumpet answers each head of the band with the same three
+# ================================================================ G MINOR (b35-37): a canon of three soloists
+# The violin's subject in G minor, and the oboe's an octave higher a beat later (a canon at the octave,
+# the subject's other stretto); the recorder sings above.  The violin's last note is D, the
+# dominant, so that the oboe's leading tone resolves over it.  The trumpet is still silent: this is the
+# fullest the music gets without it.  Cadence in G minor, and G7 turns to C minor for the joke.
+Sg = W.transpose(Sd, 5, 3)                                     # D5 ... G5
+theme('Vn', 35, 1.5, ' '.join(oc(Sg, -2).split()[:-1]) + ' D3:2', 'subject in g (Violino)')
+theme('Ob', 35, 2.5, oc(Sg, -1), 'subject in g, a beat later at the octave (Oboe)')
+put('Ob', 37, 2.5, 'R:2 F4:4 F4:4')
+put('Vn', 37, 1.5, 'R:2 G2:8 B2:4')
+put('Fl', 35, 1.5, 'R:2 D6:8 C6:2 Bb5:2 G5:8 F#5:4 A5:2 C6:2 Bb5:4 G5:4 D5:8')
+
+
+# ================================================================ THE JOKE (b38-44): the trumpet and the key
+# Back after eighteen bars of silence, the trumpet answers each head of the band with the same three
 # notes, C C C, the subject's opening on the only note it trusts.  The band passes the head through
 # C minor (violin), F (oboe), D minor (recorder) and A minor (oboe): C is a chord tone of each, so the
-# trumpet gets away with it.  In bar 37 the recorder's head lands in E major (V of A minor), and the
-# trumpet's C rubs against the held B.  In bar 38 the trumpet, not having noticed, launches its own
+# trumpet gets away with it.  In bar 42 the recorder's head lands in E major (V of A minor), and the
+# trumpet's C rubs against the held B.  In bar 43 the trumpet, not having noticed, launches its own
 # subject in F, at its opening pitch, over the band's hammered E-major chords: the recorder plays the
 # E-major notes a semitone under each trumpet note (E/F, G#/A, B/C).  General pause.  The violin
 # corrects it from the bass, E E | A, the subject's opening in the right key; the trumpet echoes it
 # meekly, E E A, and is silent until the final stretto.
 TATTOO = 'C6:1 C6:1 C6:2'
-theme('Vn', 33, 1.5, 'G2:1 G2:1 C3:2 C3:1 C3:1 Eb3:2 Eb3:1 G3:5', 'joke: head in c (Violino)', 1)
-put('Vn', 33, 1, 'C3:2')
-theme('Ob', 34, 1.5, 'C4:1 C4:1 F4:2 F4:1 F4:1 A4:2 A4:1 C5:5', 'joke: head in F (Oboe)', 1)
-theme('Fl', 35, 1.5, 'A4:1 A4:1 D5:2 D5:1 D5:1 F5:2 F5:1 A5:5', 'joke: head in d (Flauto)', 1)
-theme('Ob', 36, 1.5, 'E4:1 E4:1 A4:2 A4:1 A4:1 C5:2 C5:1 E5:5', 'joke: head in a (Oboe)', 1)
-theme('Fl', 37, 1.5, 'B4:1 B4:1 E5:2 E5:1 E5:1 G#5:2 G#5:1 B5:5', 'joke: head in E (Flauto)', 1)
-put('Tr', 33, 4, TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:2 R:10 ' + TATTOO)
-put('Ob', 33, 1, 'Eb4:16')
-put('Fl', 33, 1, 'C5:16 F5:16')
-put('Vn', 34, 1, 'F3:16 D3:16 A2:16 E2:16')
-put('Ob', 35, 1, 'F4:16')
-put('Fl', 36, 1, 'A5:8')
-put('Ob', 37, 1, 'G#4:16')
-# bar 38: the wrong entry over hammered E-major chords
-theme('Tr', 38, 1.5, 'C5:1 C5:1 F5:2 F5:1 F5:1 A5:2 A5:1 C6:5', 'joke: the wrong entry, head in F over E major (Tromba)', 1)
-put('Fl', 38, 1, 'B4:4 E5:4 G#5:4 B5:4')
-put('Ob', 38, 1, 'G#4:4 G#4:4 B4:4 G#4:4')
-put('Vn', 38, 1, 'E3:4 E3:4 E3:4 E3:4')
-# bar 39: general pause; the correction and the meek echo
-put('Vn', 39, 2.5, 'E3:1 E3:1 A2:4')
-put('Tr', 39, 4, 'E6:1 E6:1 A5:2')
+theme('Vn', 38, 1.5, 'G2:1 G2:1 C3:2 C3:1 C3:1 Eb3:2 Eb3:1 G3:5', 'joke: head in c (Violino)', 1)
+put('Vn', 38, 1, 'C3:2')
+theme('Ob', 39, 1.5, 'C4:1 C4:1 F4:2 F4:1 F4:1 A4:2 A4:1 C5:5', 'joke: head in F (Oboe)', 1)
+theme('Fl', 40, 1.5, 'A4:1 A4:1 D5:2 D5:1 D5:1 F5:2 F5:1 A5:5', 'joke: head in d (Flauto)', 1)
+theme('Ob', 41, 1.5, 'E4:1 E4:1 A4:2 A4:1 A4:1 C5:2 C5:1 E5:5', 'joke: head in a (Oboe)', 1)
+theme('Fl', 42, 1.5, 'B4:1 B4:1 E5:2 E5:1 E5:1 G#5:2 G#5:1 B5:5', 'joke: head in E (Flauto)', 1)
+put('Tr', 38, 4, TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:2 R:10 ' + TATTOO)
+put('Ob', 38, 1, 'Eb4:16')
+put('Fl', 38, 1, 'C5:16 F5:16')
+put('Vn', 39, 1, 'F3:16 D3:16 A2:16 E2:16')
+put('Ob', 40, 1, 'F4:16')
+put('Fl', 41, 1, 'A5:8')
+put('Ob', 42, 1, 'G#4:16')
+# bar 43: the wrong entry over hammered E-major chords
+theme('Tr', 43, 1.5, 'C5:1 C5:1 F5:2 F5:1 F5:1 A5:2 A5:1 C6:5', 'joke: the wrong entry, head in F over E major (Tromba)', 1)
+put('Fl', 43, 1, 'B4:4 E5:4 G#5:4 B5:4')
+put('Ob', 43, 1, 'G#4:4 G#4:4 B4:4 G#4:4')
+put('Vn', 43, 1, 'E3:4 E3:4 E3:4 E3:4')
+# bar 44: general pause; the correction and the meek echo
+put('Vn', 44, 2.5, 'E3:1 E3:1 A2:4')
+put('Tr', 44, 4, 'E6:1 E6:1 A5:2')
 
 
-# ================================================================ A MINOR, corrected (b40-41); D MINOR (b42-43)
+# ================================================================ A MINOR, corrected (b45-46); D MINOR (b47-48)
 # The oboe states the subject properly in A minor over the violin's countersubject; then the violin,
 # which made the correction, states the subject itself in D minor from the bass, the oboe's
 # countersubject above it.
 Sa = W.transpose(Sd, -5, -3)                                   # E4 ... A4
 CSa = W.transpose(CSd, -5, -3)                                 # C3 A3 G3 F3 D3 E3 C3
-theme('Ob', 40, 1.5, Sa, 'subject in a, corrected (Oboe)')
-put('Vn', 40, 2, CSa)
-put('Fl', 40, 2, 'E5:4 A5:8 A5:6 F5:6 E5:4 E5:2 F5:2 A5:8 D6:4 D6:6 Bb5:6 A5:4')
-theme('Vn', 42, 1.5, oc(Sd, -2), 'subject in d (Violino)')
-put('Ob', 42, 2, oc(CSd, 1))
-# the approach: d - F/A? - B-flat - G7/B - C - C7 (bass D F Bb B C), into the final stretto
-put('Vn', 44, 1.5, 'R:2 F2:4 Bb2:8 B2:8 C3:8 C3:4 G2:4 E2:4 C2:4')
-put('Ob', 44, 1.5, 'R:2 A4:4 D5:8 D5:8 C5:8 Bb4:16')
-put('Fl', 44, 1, 'D6:4 C6:4 Bb5:8 F5:8 E5:8 E5:8 G5:4 C6:4')
+theme('Ob', 45, 1.5, Sa, 'subject in a, corrected (Oboe)')
+put('Vn', 45, 2, CSa)
+put('Fl', 45, 2, 'E5:4 A5:8 A5:6 D6:6 B5:4 C6:4 A5:8 D6:4 D6:6 G5:6 E5:4')
+theme('Vn', 47, 1.5, oc(Sd, -2), 'subject in d (Violino)')
+put('Ob', 47, 2, oc(CSd, 1))
+# the approach: d - F - B-flat - G7/B - C - C7 (bass D F Bb B C), into the final stretto
+put('Vn', 49, 1.5, 'R:2 F2:4 Bb2:8 B2:8 C3:8 C3:4 G2:4 E2:4 C2:4')
+put('Ob', 49, 1.5, 'R:2 A4:4 D5:8 D5:8 C5:8 Bb4:16')
+put('Fl', 49, 1, 'F5:16 F5:8 E5:8 E5:8 G5:4 C6:4')
 
 
-# ================================================================ FINAL STRETTO in four (b47-51)
-# Rectus and inversus alternately, each in its own register, each entering alone: the recorder's
-# inversion from F6 (47.1.5) and the violin's subject from the bass a beat later (the device in the
-# outer voices); the oboe's inversion from F5 (48.2.5); last, the trumpet's subject at its opening
-# pitch (49.1.5), in F at last, with the violin's countersubject beneath it as in the tutti of bar 9.
-# (The first voice of the one-beat pair leaves its statement on the last beat, which would otherwise
-# double the violin's tail in octaves; the oboe's last note is F instead of C, for the harmony.)
-FS = 47
-theme('Fl', FS, 1.5, ' '.join(I.split()[:-5]) + ' D6:1 Bb5:1 C6:1 D6:1 C6:2', 'final stretto: inversus (Flauto)')
-theme('Vn', FS, 2.5, oc(S, -2), 'final stretto: subject, a beat later (Violino)')
-theme('Ob', FS + 1, 2.5, ' '.join(oc(I, -1).split()[:-1]) + ' F5:2', 'final stretto: inversus (Oboe)')
-theme('Tr', FS + 2, 1.5, S, 'final stretto: subject, in F at last (Tromba)')
-put('Vn', FS, 1, 'F2:2')
-put('Ob', FS, 1, 'A4:4 C5:12')
-put('Vn', FS + 2, 2.5, 'A2:2 F3:3 Eb3:5 D3:6 Bb2:6 C3:4 F2:4')
-put('Fl', FS + 3, 1, 'F6:4 D6:8 C6:2 Bb5:2')
+# ================================================================ FINAL STRETTO in four (b52-55)
+# All four statements overlap for two beats (53.3.5-54.1.5), each entering alone in its own register: the
+# recorder's inversion from F5 (52.1.5); the trumpet's subject at its opening pitch two beats later
+# (52.3.5), in F at last; the violin's inversion from the bass one beat after the trumpet (52.4.5), so
+# that the device of the piece (rectus and inversus a beat apart) is heard once more in the outer
+# voices, the trumpet climbing as the bass falls; and last the oboe's subject in the tenor (53.3.5),
+# entered after six beats of rest.  (The violin's tail repeats its rising group, G A Bb G, instead of
+# climbing on to E, which would double the trumpet's cadence E C D E in octaves.)
+FS = 52
+theme('Fl', FS, 1.5, oc(I, -1), 'final stretto: inversus (Flauto)')
+theme('Tr', FS, 3.5, S, 'final stretto: subject, in F at last (Tromba)')
+I3 = oc(I, -3).split()
+theme('Vn', FS, 4.5, ' '.join(I3[:-9] + ['G2:1', 'A2:1', 'Bb2:1', 'G2:1'] + I3[-5:]),
+      'final stretto: inversus, a beat after the trumpet (Violino)')
+theme('Ob', FS + 1, 3.5, oc(S, -1), 'final stretto: subject (Oboe)')
+put('Vn', FS, 1, 'F2:12')
+put('Ob', FS, 1, 'A4:4')
+put('Vn', FS + 2, 4.5, 'D3:2 C3:8 F2:4')
+put('Fl', FS + 2, 1.5, 'R:2 G5:4 Bb5:4 G5:4 E5:4 G5:4 A5:4 G5:4')
+put('Tr', FS + 3, 2, TATTOO)
 
 
-# ================================================================ THE DOMINANT, AND THE END (b51-54)
-# F - B-flat - G7/B, then two bars of dominant over the violin's string crossings on C (C3 C4): the
-# call and response of the joke once more, now in one key.  The oboe, then the recorder, sound the
-# head on C; the trumpet answers each time with its three Cs, and C is right at last.  Its last C is
-# the fifth of the final chord.
-put('Fl', FS + 4, 1, 'A5:8 F5:8 E5:4 R:12 R:2 G5:1 G5:1 C6:2 C6:1 C6:1 E6:2 E6:1 G6:5 F6:16')
-put('Ob', FS + 4, 1, 'C5:8 D5:8 R:2 G4:1 G4:1 C5:2 C5:1 C5:1 E5:2 E5:1 G5:5 Bb4:16 A4:16')
-put('Vn', FS + 4, 2, 'A2:4 Bb2:4 B2:4 '
+# ================================================================ THE DOMINANT, AND THE END (b55-58)
+# Two bars of dominant over the violin's string crossings on C (C3 C4): the call and response of the
+# joke once more, now in one key.  The recorder, then the oboe, sound the head on C; the trumpet
+# answers each time with its three Cs, and C is right at last.  Its last C is the fifth of the final
+# chord.
+put('Vn', FS + 3, 4, 'Bb2:2 B2:2 '
                      'C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 '
                      'C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:8 F2:16')
-put('Tr', FS + 5, 4, TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:16')
+put('Fl', FS + 4, 1, 'R:2 G5:1 G5:1 C6:2 C6:1 C6:1 E6:2 E6:1 G6:5 Bb5:16 A5:16')
+put('Ob', FS + 3, 3.5, 'R:2 G4:4 E4:16 R:2 G4:1 G4:1 C5:2 C5:1 C5:1 E5:2 E5:1 G5:5 F5:16')
+put('Tr', FS + 4, 4, TATTOO + '~ C6:2 R:10 ' + TATTOO + '~ C6:16')
 
 
 def build(nbars, path=None):
@@ -351,12 +353,49 @@ def build(nbars, path=None):
 
 
 BPM = 100
-TEMPO = {'tempo_map': []}
-DYN = {1: 0}
-ACCENTS = []
+# breaths at the cadences of the two tuttis, the D-minor and G-minor cadences and the end of the violin's
+# solo; in the joke the trumpet's wrong high C is stretched, the general pause lasts about three
+# seconds (1.5 beats at 30), the correction is a tempo and the echo hesitates; a breath into the final
+# stretto, and a broadening only over the last dominant bar.
+TEMPO = {'tempo_map': [[38, BPM], [40, 84, 'ramp'], [40, BPM],
+                       [70, BPM], [72, 86, 'ramp'], [72, BPM],
+                       [95, BPM], [97, 84, 'ramp'], [97, BPM],
+                       [118, BPM], [120, 86, 'ramp'], [120, BPM],
+                       [144, BPM], [145, 84, 'ramp'], [145, BPM],
+                       [168, BPM], [172, 82, 'ramp'], [172, 30], [173.5, BPM], [175, 66], [176, BPM],
+                       [202, BPM], [204, 84, 'ramp'], [204, BPM],
+                       [224, BPM], [228, 72, 'ramp'], [228, 66]],
+         'markers': [{'t': 0.0, 'label': 'Exposition: the soloists one by one'},
+                     {'t': 32.0, 'label': 'Tutti: the trumpet in F'},
+                     {'t': 40.0, 'label': 'Episode (solo)'},
+                     {'t': 56.0, 'label': 'Oboe in C'},
+                     {'t': 64.0, 'label': 'Tutti in C: rectus and inversus a beat apart'},
+                     {'t': 80.0, 'label': 'D minor (the trumpet rests)'},
+                     {'t': 88.0, 'label': 'D minor: inversus and rectus a beat apart'},
+                     {'t': 96.0, 'label': 'Soli: flute, oboe, violin'},
+                     {'t': 120.0, 'label': 'B-flat'},
+                     {'t': 128.0, 'label': 'Duet without bass'},
+                     {'t': 136.0, 'label': 'G minor: canon at the octave'},
+                     {'t': 148.0, 'label': 'The joke: the trumpet stuck on C'},
+                     {'t': 168.0, 'label': 'The wrong entry'},
+                     {'t': 172.0, 'label': 'General pause; the correction'},
+                     {'t': 176.0, 'label': 'A minor, corrected'},
+                     {'t': 184.0, 'label': 'D minor in the bass'},
+                     {'t': 204.0, 'label': 'Final stretto in four'},
+                     {'t': 216.0, 'label': 'The dominant: C is right at last'}]}
+# phrase dynamics (velocity offsets from the given bar on): on one piano, loudness and density are the
+# concertino's only means of contrast, so the solo passages are clearly lighter than the tuttis
+DYN = {1: 0, 7: 2, 9: 8, 11: -6, 15: -2, 17: 8, 19: -5, 21: -3, 23: 2, 25: -8, 31: 0, 33: -6, 35: 4,
+       38: 0, 43: 6, 44: 0, 45: -2, 47: 0, 49: 3, 52: 8, 58: 10}
+# (voice, bar, beat, to bar, to beat, velocity +/-): the tattoos of the joke stand out a little, the
+# wrong entry loudly, the violin's correction firmly, the trumpet's echo meekly; the trumpet leads its
+# final entry and its last tattoos
+ACCENTS = [('Tr', 38, 4, 43, 1, 4), ('Tr', 43, 1.5, 44, 1, 12), ('Vn', 44, 2.5, 44, 4, 8),
+           ('Tr', 44, 4, 45, 1, -22), ('Tr', 52, 3.5, 54, 3.5, 6), ('Tr', 55, 2, 58, 1, 6)]
 BASEVEL = [70, 64, 64, 66]
-# (keyboard pan, [azimuth deg, distance m] for the binaural render, General MIDI program for --instruments)
-SEATS = [(52, [-40.0, 4.5], 56), (60, [-14.0, 4.0], 73), (70, [14.0, 4.0], 68), (78, [40.0, 4.5], 40)]
+# (keyboard pan, [azimuth deg, distance m] for the binaural render, General MIDI program for the
+# --instruments render): the concertino standing in a shallow arc, trumpet, recorder, oboe, violin
+SEATS = [(50, [-42.0, 4.5], 56), (60, [-14.0, 4.0], 73), (70, [14.0, 4.0], 68), (80, [42.0, 4.5], 40)]
 
 if __name__ == '__main__':
     end = max((s + dur16(t)) for v in VO.values() for s, t in v)

@@ -201,7 +201,7 @@
    ]
   },
   {
-   "name": "Pair XI \u00b7 F major (new, twelve voices)",
+   "name": "Pair XI \u00b7 F major (new)",
    "pieces": [
     {
      "id": "prelude-11",
@@ -212,10 +212,10 @@
     },
     {
      "id": "fugue-11",
-     "title": "Fugue XI \u00b7 Concerto fuga a 12",
-     "score": "cycle/11-f-major/archive-n-plus-1/fugue.json",
+     "title": "Fugue XI \u00b7 Concerto fuga (4 voices: the concertino of Brandenburg 2)",
+     "score": "cycle/11-f-major/fugue.json",
      "tag": "new",
-     "notes": "After the fugal finale of Brandenburg Concerto No. 2 in F major (BWV 1047): a concertino of four solo lines (named Tromba, Flauto, Oboe, Violino) against a ripieno of eight separate real lines. The subject is a fanfare head with repeated notes and a running tail. Its inversion keeps the F-major triad, so the upright and inverted subject can run in stretto a beat apart.\n\nThe joke (bars 41-47): the trumpet keeps hammering its tattoo on C while everyone else modulates away, through C minor, F, D minor and A, landing in E major. The trumpet then blurts its head in F, a semitone off everything. General pause. The band holds its E chord, the bass corrects the trumpet (E E | A), and the trumpet echoes meekly. Its tattoo returns on C over the final dominant, where C is finally right.\n\nThe 'tutti in twelve' (bars 53-57) has a concertino stretto a beat apart, the inversion augmented in the violone, inversions in the inner ripieno, and the countersubject four times in diminution, with 10-11 of the twelve lines moving in every bar.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "After the fugal finale of Brandenburg Concerto No. 2 in F major (BWV 1047), whose concertino is four soloists: trumpet, recorder, oboe and violin. Here the four voices are those soloists (on one keyboard the violin also plays the bass, as in Bach's keyboard transcriptions of concertos), and the concerto contrast is between solo passages and the moments when all four play. The subject is a fanfare head with repeated notes and a running tail; its inversion keeps the F-major triad, so the upright and inverted subject can run in stretto a beat apart. The trumpet keeps to natural-trumpet notes and sits out the keys it cannot play.\n\nThe joke (bars 38-44): the band passes the subject's opening through C minor, F, D minor and A minor, and each time the trumpet answers with its three repeated Cs. The flute arrives in E major; the trumpet blurts its F-major opening over E-major chords, a semitone off everything. Silence. The violin corrects it from the bass (E E A), and the trumpet echoes meekly. Over the final dominant the same call returns in a key where C is finally right, and the four soloists close in stretto.\n\nRecomposed in four voices (it was twelve); the earlier version is in the pair's archive folder. The renders folder also has a version with trumpet, flute, oboe and violin sounds."
     }
    ]
   },
