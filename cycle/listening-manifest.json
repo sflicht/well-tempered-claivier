@@ -182,7 +182,7 @@
    ]
   },
   {
-   "name": "Pair X \u00b7 E minor (new, eleven voices)",
+   "name": "Pair X \u00b7 E minor (new)",
    "pieces": [
     {
      "id": "prelude-10",
@@ -193,10 +193,10 @@
     },
     {
      "id": "fugue-10",
-     "title": "Fugue X \u00b7 a due cori con corale",
-     "score": "cycle/10-e-minor/archive-n-plus-1/fugue.json",
+     "title": "Fugue X \u00b7 Sehet! (3 voices, after the St Matthew Passion)",
+     "score": "cycle/10-e-minor/fugue.json",
      "tag": "new",
-     "notes": "An homage to the opening chorus of the St Matthew Passion: two five-voice choirs, with the chorale 'O Lamm Gottes, unschuldig' (soprano of Bach's harmonisation BWV 401) floating above in long notes, phrase by phrase. The fugue subject's main notes are the chorale's first line moved down a third, so fugue and chorale are relatives.\n\nChoir I's exposition is followed by a dialogue of fragments, 'Sehet! / Wen? / den Br\u00e4utigam / Wie? / als wie ein Lamm', in the manner of Bach's chorus. Choir II then gives a mirror exposition in inversion.\n\nUnder the chorale's last line the choirs swap forms in a final stretto, thinned so that each entry can be heard directly under the chorale; all eleven lines meet at the cadence. The eleven voices arrive at the last chord one or two per beat, each by step. In the binaural render Choir I is on the left, Choir II on the right and the chorale in front.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "An homage to the opening chorus of the St Matthew Passion, where two choirs call to each other ('Sehet! Wen? den Br\u00e4utigam. Seht ihn! Wie? als wie ein Lamm') beneath the chorale 'O Lamm Gottes, unschuldig'. Bach's own E-minor fugue in Book I has two voices; this has three: one voice for each choir, and the chorale (checked against Bach's harmonisation BWV 401) floating above in long notes, line by line.\n\nCoro I sings the subject ('Sehet!'); Coro II answers in inversion, its questions ('Wen?', 'Wie?', later 'Was?', 'Wohin?') the inversion's rising semitone. The countersubject opens with the head of Bach's own two-voice E-minor fugue. At the Recognition the subject, twice as fast, turns out to be the chorale line sounding above it: fugue and chorale are relatives. Later, the subject at half speed, an exchange of forms in stretto, and a pulsing pedal as at the start of Bach's chorus. Under the chorale's last line only the two choirs sing, in stretto, and they cadence with the chorale's final note.\n\nRecomposed in three voices (it was eleven); the earlier version is in the pair's archive folder. The binaural render places Coro I left, Coro II right and the chorale in front, sung on 'oo'."
     }
    ]
   },
