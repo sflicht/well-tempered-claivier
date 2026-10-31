@@ -8,7 +8,7 @@
 
 **Durations:** prelude 1:34 (unchanged), fugue about 2:33 (53 bars at quarter = 84, with the tempo map's breaths and final ritardando).
 
-**Reviews.** `REVIEW.md` and `REVIEW-2.md` in this folder concern the prelude and the earlier six-voice fugue, which is kept in `archive-n-plus-1/` (source, score, NOTES, reviews, renders).
+**Reviews.** `REVIEW-3.md` reviews this fugue (see the Review section below). `REVIEW.md` and `REVIEW-2.md` concern the prelude and the earlier six-voice fugue, which is kept in `archive-n-plus-1/` (source, score, NOTES, reviews, renders).
 
 ---
 
@@ -19,13 +19,13 @@
 Bach's D-major fugue (WTC I/5, BWV 850) has four voices, so this one has at most five. It has four home voices (soprano, alto, tenor, bass) and a fifth, **the Guest**, who sings only J. S. Bach's subject of BWV 850 (`cycle/reference/bach-subjects.md`) and Bach's idiom (32nd-note runs, dotted rhythms). The Guest is silent except at three moments, and each time the texture is thinned so that it can be heard:
 
 1. **b10**, as the fifth entry of the exposition: the bass's answer cadences in A, the alto and tenor stop, and where our subject is expected, Bach's subject enters in D, in the middle register, over a bass that plays the cadence Bach's subject implies (I–IV–V–I).
-2. **b43.4**, at the summit, between the soprano's subject and the bass's augmentation of it, with alto and tenor silent.
+2. **b43.4**, at the summit, between the soprano's subject and the bass's augmentation of it, with the tenor silent and the alto only holding D5 above it.
 3. **b52**, the last word: everything stops except the tonic pedal, and Bach's subject closes the piece; its final F# is the third of the last chord.
 
 The pair's two devices are kept and made audible on one piano:
 
 - **The cascade** (b38–42): four entries step through the keys F♯m – Bm – Em – A, one bar apart, each a fifth lower and in the next voice down. Every overlap is a duet (the new head under the old tail) with at most one quiet supporting voice. The fifth step, D, is the bass's augmentation at b43, so the falling chain lands in the bass and slows to half speed.
-- **Prolation** (b43–47): the subject at more than one speed at once. The bass's ×2 runs four bars; over it the soprano's ×1 (b43.3); then the tenor's ×1 (b45.3) and, on top, the soprano's ×½ (b46.1.5), so that ×2, ×1 and ×½ sound together in three registers (b46).
+- **Prolation** (b43–47): the subject at more than one speed at once. The bass's ×2 runs four bars; over it the soprano's ×1 (b43.3): that pairing, the two heads' tattoos, is what the ear can follow. Then the tenor's ×1 (b45.3) and, on top, the soprano's ×½ (b46.1½). In b46 the three speeds coincide in the score, but the bass's ×2 is by then in its scalar tail, so what is heard is a fast soprano statement over the tenor's tail and a walking bass (see below).
 
 The Guest's ideas also change the home voices' course: in Episode 4 (b34–37) the tenor and alto try the head of Bach's subject themselves (in B minor and F-sharp minor), so the listener has heard it three times before the summit.
 
@@ -63,7 +63,7 @@ The Guest's ideas also change the home voices' course: in Episode 4 (b34–37) t
 | 50–51 | A B | Trumpet and drums: the alto states the subject at its first pitch; the bass plays the tattoo on the pedal in the same rhythm (50), then holds | D |
 | 52–53 | S A G B; T joins the final chord | The Guest's last word over the pedal (IV at 52.3, V7 at 52.4); final chord D2 D3 F♯4 A4 D5 | D |
 
-Bars by number of sounding voices: 1 voice 2 bars, 2 voices 5, 3 voices 33, 4 voices 11, 5 voices 2 (b43, b53).
+Bars by number of sounding voices: 1 voice 2 bars, 2 voices 5, 3 voices 32, 4 voices 12, 5 voices 2 (b43, b53).
 
 **Tempo map** (quarter = 84, "Maestoso"): a short ritardando into the Guest's first entry (b9.3½–b10.1, to 76), a breath before the cascade (b37.2–b38.1, to 72), a broadening through the summit's cadence (b47.1–b48.1, to 78, then 82 from b48.3), and the final ritardando over the Guest's last word (b52–53, to 59).
 
@@ -72,7 +72,7 @@ Bars by number of sounding voices: 1 voice 2 bars, 2 voices 5, 3 voices 33, 4 vo
 ### The Guest (b10, b43.4, b52)
 
 - **b10.2.** The bass's answer ends in A at b9; the alto and tenor stop; the soprano holds G5 (the seventh of A7) and resolves it to F♯5 as the Guest's 32nd-note run (D4–G4) enters on beat 2, Bach's own metric place. B. falls on beat 3 over G (IV), A. on beat 4 over A (V7), F♯. on b11.1 over D. The Guest continues for a bar in Bach's idiom (dotted figure, a 32nd run up to D5, A7) and hands its last note, F♯4, to the tenor, which begins Episode 1 on the same pitch at b12.2.
-- **b43.4.** Half a bar later than Bach's metric place, so that the run sits under the soprano's D6 tattoo and B. lands on the downbeat of b44, where it is a 4–3 appoggiatura over the bass's F♯ (B.–B–A, resolving on beat 2). Alto and tenor are silent from 43.4 to 45.2: soprano (×1, up to A6), Guest (D4–D5) and bass (×2, F♯3–A3) are three different materials in three registers.
+- **b43.4.** Half a bar later than Bach's metric place, so that the run sits under the soprano's D6 tattoo and B. lands on the downbeat of b44. The alto holds D5 (soft) above the Guest through b44, so B. is the sixth of a B-minor 6/4 over the bass's F♯ and resolves B–A onto D/F♯ on beat 2 (third review, item 1). The tenor is silent from 43.4 to 45.2: soprano (×1, up to A6), Guest (D4–D5) and bass (×2, F♯3–A3) are three different materials in three registers, with the alto's D as the summit's root.
 - **b52.2.** Bach's subject alone over the pedal; the soprano and alto, above it, add G/D at its B (52.3) and A7/D at its A–G (52.4); its F♯ is the third of the last chord.
 
 Velocities (performance data in `build()`, no notes): the Guest is 4–6 steps louder at each entry, the soprano 4 softer at b10–11.
@@ -89,7 +89,7 @@ Velocities (performance data in `build()`, no notes): the Guest is 4–6 steps l
 - **b43–45:** bass ×2 (A2 – D3 D3 D3 – F♯3 F♯3 F♯3 – A3, then the tail as a stepwise bass A G F♯ E D C♯ B A B C♯ D) and soprano ×1 from b43.3, two beats later, so that its D D D falls on the bass's D (two speeds at once).
 - **b45.3:** the tenor's ×1. `stretto_finder` placed the subject against the ×2 line at every offset and diatonic level; at b45.3 the cleanest level is a fourth up (cost 7, no parallels, no unresolved dissonance), so the tenor sings `D4 G4 G4 G4 B4 B4 B4 D5 | D5. C♯5 B4 A4 G4 F♯4 E4 D4 E4 F♯4 G4`. Its last note, G4, is the seventh of A7 at b47.2 and resolves to F♯4 on the tonic at b47.3.
 - **b46.1½:** the soprano's ×½ in its B-minor form (F♯5–F♯6). A first version on the downbeat doubled the tenor's B–D at the octave; an eighth later it is clean against both the bass (cost 13) and the tenor (cost 8).
-- So in b46 the subject sounds at three speeds in three registers: ×½ on top, ×1 in the middle, ×2 in the bass.
+- So in b46 the subject is present at three speeds in three registers: ×½ on top, ×1 in the middle, ×2 in the bass. **Honestly, that is on paper.** The bass's ×2 is in its tail (`D3 C#3 B2 A2 B2 C#3 D3`), which sounds like a walking bass, and the tenor is in its tail too; only the soprano's ×½ is recognisably the subject. The prolation that can be heard is b43–44, where the bass's augmented head (A2, D3 D3 D3, F♯3 F♯3 F♯3) sounds under the soprano's normal-speed head two beats later.
 - The third edition's ×4 cantus (A5–A6, eight bars of whole and half notes) is not used: on a piano its long notes decay, and over the bass it made the summit unplayable.
 
 ### Coda (b47.3–53)
@@ -101,27 +101,25 @@ Over a tonic pedal on D2: the soprano's chromatic descent C6–B5–B♭5–A5 (
 | Measure | Third edition (a 6) | Now (a 5) |
 |---|---|---|
 | `parallels_error` | 0 | **0** |
-| `parallels_weak` | 0 | 2 (b15.1, b44.1, below) |
+| `parallels_weak` | 0 | 1 (b44.1, below) |
 | `beat_parallels` | 0 | **1** (b44.1, below) |
 | `pc_tripled_on_beats_pct` | 7.5 | 4.8 |
 | `bad_doublings` | 1 | **0** |
 | `low_register_seconds` | 6 | **0** |
-| `dissonance_unresolved` | 0 | **1** (b44.1, below) |
+| `dissonance_unresolved` | 0 | **0** |
 | `crossings` | 0 | 0 |
 | `stepwise_pct` | 47.5 | 53.0 |
-| `repeated_note_pct` | 18.0 | 19.7 |
+| `repeated_note_pct` | 18.0 | 19.8 |
 | `leap_4th_plus_pct` | 15.7 | 11.3 |
-| `mean_moving_voices` | 4.44 | **3.06** |
-| `keyboard_unplayable_pct` | 53.7 | **3.3** (18 of 540 onsets) |
-| `tertian_fit_pct` | 55.5 | 42.0 |
+| `mean_moving_voices` | 4.44 | **3.08** |
+| `keyboard_unplayable_pct` | 53.7 | **4.6** (25 of 540 onsets) |
+| `tertian_fit_pct` | 55.5 | 42.5 |
 | `longest_static_harmony_beats` | 6 | 4 |
 | Length | 55 bars, q = 108, 2:06 | 53 bars, q = 84, about 2:33 |
 
 **The flagged items, justified:**
 
-- **b44.1, `UNPREPARED+UNRESOLVED` (Guest B4 over bass F♯3).** This is Bach's own figure, B.–B–A: the dotted B is repeated as a 16th and then resolves down by step to A4 on beat 2. The critic looks only at the note after the dissonance (the repeated B) and calls it unresolved. Bach's notes are not changed.
 - **b44.1, `beat_parallels` and weak parallel (soprano/bass, D6/D3 → F♯6/F♯3).** The soprano's ×1 and the bass's ×2 arpeggiate the same D chord, so the D tattoo of one meets the D tattoo of the other and both rise to F♯. It is a consequence of combining the subject with its own augmentation two beats apart.
-- **b15.1, weak parallel (soprano B5 → G5, tenor B4 → G4).** The soprano's B5 is the last 16th of its run.
 - **14 "chord (7th not resolved down)" notes:** sevenths left by leap inside figuration or resolved in another voice (e.g., b30.3 the soprano's A5 in the tattoo cell over B7, b31 the descant). None is an error.
 - **`stepwise_pct` 53 (target ≥ 65).** The subject's tattoo is repeated notes, and 19.7% of all melodic intervals are repeated notes. Of the intervals that move, 66% are steps; leaps of a fourth or more are 11.3% (Bach about 14%).
 
@@ -129,12 +127,13 @@ Over a tonic pedal on D2: the soprano's chromatic descent C6–B5–B♭5–A5 (
 
 ## Honest weak spots
 
-- **Not heard.** In particular the Guest's 32nd-note runs at q = 84 (about 11 notes a second) and whether the B.–B–A over F♯ at b44.1 sounds like Bach's appoggiatura or a clash.
+- **Not heard.** In particular the Guest's 32nd-note runs at q = 84 (about 11 notes a second), and whether the alto's held D5 at b44 colours the summit or thickens it.
 - **Thin middle.** From b20 to b37 the texture is three voices except Stretto II (four). That is the point of the recomposition, but the strettos I (b24–26) and the episodes may sound like a trio.
 - **A two-voice moment at the summit.** At b45.3–4 only the bass's ×2 and the tenor's entry sound (the Guest has just finished, the soprano rests before its ×½).
 - **Modified subject forms.** The cascade's first three entries have turned tails and minor-key intervals (critic: 9/18 interval matches); the summit's tenor entry is the diatonic form on the fourth degree (C♯, a lydian colour, 16/18); minor-key entries change the subject's intervals (10/18), as in the third edition.
 - **The coda is chordal.** b48–49 move the soprano and alto in thirds over the pedal; the tenor rests from b48 to the final chord.
-- **High soprano.** The soprano reaches A6 in its exposition entry (b6–7) and at the summit (b44); most of the 18 unplayable onsets are there and in Stretto II's descant (b31–33).
+- **Three speeds only on paper (b46).** See the prolation section: the audible prolation is ×2 under ×1 at b43–44.
+- **High soprano.** The soprano reaches A6 in its exposition entry (b6–7) and at the summit (b44); most of the 25 unplayable onsets are there (b44 now has the alto's D5 as a fourth sounding note), in Stretto II's descant (b31–33) and under the soprano's run at b14.4.
 - **Spatial render.** The Guest's harpsichord stem peaks about 4–5 dB above a piano stem (measured). It is placed at 5 m rather than nearer so that proximity does not add to that.
 
 ## From the N+1 version (third edition, six voices)
@@ -144,12 +143,25 @@ Over a tonic pedal on D2: the soprano's chromatic descent C6–B5–B♭5–A5 (
 **Changed, and why:**
 
 - **Six voices → four plus the Guest.** The baritone and contrabass are gone; their exposition entries (b10–12) are replaced by the Guest's entry, and the episodes are rewritten for three voices. The owner found the six-voice texture washed out the counterpoint: mean moving voices 4.44 → 3.06.
-- **The Guest is heard.** REVIEW-2 found the third edition's BWV 850 entry "buried in the baritone under the tenor's tattoo". Now it enters three times, each time with the neighbouring voices silent, and once into the exposition, where it is new.
+- **The Guest is heard.** REVIEW-2 found the third edition's BWV 850 entry "buried in the baritone under the tenor's tattoo". Now it enters three times, each time with the neighbouring voices silent or held (at the summit the alto only holds D5 above it), and once into the exposition, where it is new.
 - **The cascade is a chain of duets.** REVIEW-2 found the lower half of the six-entry cascade blurred in an A2–E4 band, with crossings at every overlap. Now there are four entries, the tails turn upward (no crossings), the voices that have finished rest, and the fifth step is the bass's augmentation.
 - **Prolation without the ×4 cantus.** The ×4 soprano (A5–A6 over a moving bass) made the summit unplayable and depends on long notes that a piano does not sustain. The summit now combines ×2, ×1 and ×½ in three registers (b46), plus Bach's subject at b44.
-- **Playable.** `keyboard_unplayable_pct` 53.7 → 3.3.
+- **Playable.** `keyboard_unplayable_pct` 53.7 → 4.6.
 - **Shorter, slower, with breaths.** q = 108 → 84, with ritardandos into the Guest, the cascade and the final cadence; 2:06 → about 2:33.
 - **New coda.** The third edition's five-bar pedal (REVIEW-2: "about 20 s of D/A") is replaced by two bars of IV/iv colour over the pedal, the trumpet-and-drums statement (alto and bass tattoo), and the Guest's last word.
+
+## Review (REVIEW-3.md): what changed
+
+| # | Bars | Review | Done |
+|---|---|---|---|
+| 1 | 43.4–44.4 | Summit hollow (no D on 44.1–44.3) and S/B in octaves; the critic's only error at 44.1 | **Applied** the tested fix: alto `C#5:8 D5:8 \| D5:16` (D5 re-struck at 44.1, held through b44), with velocity −8 at b44. The Guest's B. is now the sixth of Bm6/4 over F♯ and resolves to A; the `UNPREPARED+UNRESOLVED` flag is gone. The S/B octave D→F♯ at 44.1 remains (one beat parallel, justified above): the review found that moving the soprano a beat either way makes consecutive octaves. |
+| 2 | 14.4–15.1 | Exposed S/T octaves B5/B4 → G5/G4 | **Applied:** tenor b14 `A4:2 A4:1 A4:1 A4:12` (A4 held as a suspension, falling to G4). This undoes my own change to b14.4, which had removed two unplayable onsets; the octaves matter more. |
+| 3 | 45.3–46.1 | Two voices only | Left, as the review suggests (a breath before the ×½); listed under weak spots. |
+| 4 | 24.1–2 | The diminution entry re-strikes the alto's B4 | **Applied:** `B4:2 R:2` before the diminution, so it enters from a breath like every other entry. |
+| 5 | 47.3–53 | 6½ bars on the D2 pedal | Left, as the review suggests: each event in it is new, and the last chord is the only five-voice tutti. |
+| — | 46 | "Three speeds at once" on paper only | Agreed. The prolation and weak-spot texts now say so, and point to b43–44 as the audible prolation. I did not add notes to force it: the only place the ×2 head is recognisable (b43–44) is already occupied by the soprano and the Guest. |
+
+The "must not be touched" passages (b9.4–12.2, b38–42, b50–53) are unchanged. After the changes: parallels_error 0, beat_parallels 1, weak parallels 1, unresolved 0, bad_doublings 0, low-register seconds 0, crossings 0, suspensions 15 → 16, keyboard unplayable 3.3% → 4.6%. All three renders were made again from the new score.
 
 ## Renders
 

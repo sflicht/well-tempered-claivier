@@ -299,7 +299,10 @@ put('A', 31, 1, 'C5:16 Bb4:8 Eb5:8 Db5:8 C5:8 Eb5:8 D5:8')
 put('Mz', 33, 1, 'F5:8 Eb5:4 F5:4 Gb5:8 F5:8')
 put('T', 33, 1, 'F3:8 F#3:8 A3:8 Ab3:8')
 put('B', 33, 1, 'Db3:8 Eb3:8 Eb3:8 F3:8')
-put('S', 32, 1, 'Bb5:8 A5:8 Bb5:8 C6:8 C6:8 D6:8')
+# b33: the soprano sings B-A-C-H itself in quarters over the cantus's B-A-C-H in half notes, from one
+# downbeat (the canon per augmentationem of b27, now in the outer voices); the crab turns it into
+# H-C-A-B on top at b36, ending with the cantus's H-C-A-B.  (Review 3, fix 1.)
+put('S', 32, 1, 'Bb5:8 A5:8 Bb5:4 A5:4 C6:4 B5:4 C6:8 D6:8')
 # The five upper voices hold their notes of the axis chord across the axis (each note tied into its own
 # mirror image); the cantus alone strikes its H again on the axis, where the piece turns round.
 AXIS_TIE.update({'S', 'Mz', 'A', 'T', 'B'})

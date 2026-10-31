@@ -3246,8 +3246,13 @@
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>240</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
       <direction placement="above">
         <direction-type>
@@ -4221,18 +4226,16 @@
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
-      </note>
-      <note>
-        <rest />
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>960</duration>
+        <type>half</type>
       </note>
     </measure>
     <measure number="44">
       <note>
-        <rest />
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+        </pitch>
         <duration>1920</duration>
         <type>whole</type>
       </note>
@@ -5153,16 +5156,9 @@
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>960</duration>
+        <duration>1440</duration>
         <type>half</type>
-      </note>
-      <note>
-        <pitch>
-          <step>B</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <dot />
       </note>
     </measure>
     <measure number="15">

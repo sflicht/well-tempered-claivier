@@ -187,28 +187,34 @@ put(ST, S='R:4 F5:2 E5:2 D5:4  E5:8 D5:4~  D5:4 C#5:4 D5:2 F5:2~  F5:4 E5:4 C#5:
 # ===========================================================================
 # SUMMIT (bars 41-56).  The ground returns to the Bass in augmentation
 # (16 bars).  Over its D the Tenor sings the inversus (the ground at double
-# speed); the Soprano falls silent, then enters (bar 45) with the ground at
-# normal speed at the dominant: the two outer voices descend chromatically at
-# two speeds in sixths.  The Alto brings the subject between them (bar 47);
-# from bar 49.3 the Tenor's inversus adds the third speed (Bass x2, Soprano
-# x1, Tenor x1/2).  Over the long A the voices close on D major (bar 55).
+# speed); the Alto steps aside on 41.3 so that it is heard.  The Soprano
+# falls silent, then enters (45.2, a beat after the Bass's C) with the ground
+# at normal speed at the dominant; offset by a beat, the outer voices make a
+# chain of 7-6 suspensions instead of moving together.  The Alto brings the
+# subject between them (bar 47); from 49.3 the Tenor's inversus descends under
+# the two grounds' long notes.  Over the long A the voices close on D major
+# (bar 55).
 tag(SU, 'Summit: the ground augmented in the Bass; inversus (Tenor)')
 put(SU, B=scale_rhythm(G('D3'), 2))
 entry('B', SU, 'Ground augmented (Bass)', n=16)
-put(SU, T=I('A4') + '  R:4 E4:2 D4:2 C4:2 B3:2  A3:2 G#3:2 B3:2 C#4:2 D4:2 B3:2  G3:2 A3:2 Bb3:2 A3:2 C4:2 Bb3:2'
+put(SU, T=I('A4') + '  R:8 E4:2 C4:2  A3:2 G#3:2 B3:2 C#4:2 D4:2 B3:2  G3:2 A3:2 Bb3:2 A3:2 C4:2 Bb3:2'
           '  C4:4 C#4:4 R:4')
 entry('T', SU, 'Inversus (Tenor) over the augmented ground')
-put(SU, A='D5:6 C#5:2 B4:4  C#5:4 D5:4 C#5:4  D5:4 Bb4:4 A4:4  G4:4 A4:2 G4:2 E4:4  R:12  R:12')
+put(SU, A='D5:8 R:4  C#5:4 D5:4 C#5:4  D5:4 Bb4:4 A4:4  G4:4 A4:2 G4:2 E4:4  R:12  R:12')
 put(SU, S='F5:8 E5:4~  E5:4 A5:4 G5:4  F5:4 G5:4 E5:4  R:12')
 tag(SU + 4, 'Ground in the Soprano (at the dominant): two speeds in the outer voices')
-put(SU + 4, S=last_octave(G('A5'), 1) + '  F5:8 G5:4  Bb5:8 A5:4  G5:4 E5:4 F#5:4~  F#5:8 R:4')
-entry('S', SU + 4, 'Ground (Soprano), at the dominant, over its augmentation', n=8)
+# The Soprano enters a beat after the bass's C and gives the beat back on its
+# long E: the two speeds no longer change note together, and the outer voices
+# form a chain of 7-6 suspensions (third review).
+put(SU + 4, S='R:4 A5:16 G#5:8 G5:8 F#5:4 F5:4 E5:8 F5:4 D5:8 E5:24 A5:8'
+              '  F5:8 G5:4  Bb5:8 A5:4  G5:4 E5:4 F#5:4~  F#5:8 R:4')
+entry('S', SU + 4, 'Ground (Soprano), at the dominant, over its augmentation', beat=2, n=8)
 tag(SU + 6, 'Subject (Alto) between the two grounds')
 put(SU + 6, A=S('D4') + '  C#5:2 B4:2 A4:2 B4:2 C#5:4~  C#5:2 B4:2 C#5:2 D5:2 E5:4  D5:8 C#5:4  E5:4 D5:2 C#5:2 E5:4  E5:4 C#5:4 A4:4~  A4:12')
 entry('A', SU + 6, 'Subject (Alto) between the two grounds')
-tag(SU + 8, 'Inversus (Tenor): the ground at three speeds at once')
+tag(SU + 8, 'Inversus (Tenor): the ground at double speed under the two grounds')
 put(SU + 8, T='R:8 ' + I('D4') + '  E3:4  G3:8 E3:4  C#3:4 E3:4 D3:4~  D3:12')
-entry('T', SU + 8, 'Inversus (Tenor): the third speed', beat=3)
+entry('T', SU + 8, 'Inversus (Tenor) under the two grounds', beat=3)
 
 # ===========================================================================
 # CODA (bars 57-64), D major, over the tonic: the subject (the ground turned

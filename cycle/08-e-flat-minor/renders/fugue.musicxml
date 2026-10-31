@@ -1246,18 +1246,8 @@
           <step>F</step>
           <octave>5</octave>
         </pitch>
-        <duration>720</duration>
-        <type>quarter</type>
-        <dot />
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>-1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>960</duration>
+        <type>half</type>
       </note>
       <note>
         <pitch>
@@ -1265,8 +1255,8 @@
           <alter>-1</alter>
           <octave>5</octave>
         </pitch>
-        <duration>240</duration>
-        <type>eighth</type>
+        <duration>480</duration>
+        <type>quarter</type>
       </note>
       <note>
         <pitch>
@@ -3384,21 +3374,21 @@
     <measure number="38">
       <direction placement="above">
         <direction-type>
-          <words>S augmentation x2 under Bach's subject</words>
+          <words>I augmentation x2 under Bach's subject: our mirror, slowly</words>
         </direction-type>
       </direction>
       <note>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>960</duration>
         <type>half</type>
       </note>
       <note>
         <pitch>
-          <step>B</step>
+          <step>A</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
@@ -3409,9 +3399,9 @@
     <measure number="39">
       <note>
         <pitch>
-          <step>C</step>
+          <step>G</step>
           <alter>-1</alter>
-          <octave>5</octave>
+          <octave>4</octave>
         </pitch>
         <duration>720</duration>
         <type>quarter</type>
@@ -3419,7 +3409,7 @@
       </note>
       <note>
         <pitch>
-          <step>B</step>
+          <step>A</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
@@ -3428,7 +3418,7 @@
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
@@ -3437,9 +3427,8 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
-          <alter>-1</alter>
-          <octave>4</octave>
+          <step>C</step>
+          <octave>5</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -3448,16 +3437,16 @@
     <measure number="40">
       <note>
         <pitch>
-          <step>F</step>
-          <octave>4</octave>
+          <step>D</step>
+          <octave>5</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
       </note>
       <note>
         <pitch>
-          <step>D</step>
-          <octave>4</octave>
+          <step>F</step>
+          <octave>5</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -3466,7 +3455,7 @@
         <pitch>
           <step>E</step>
           <alter>-1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>

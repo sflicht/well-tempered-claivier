@@ -194,7 +194,8 @@ put('S', 23, 4, 'Gb5:12 F5:4 Bb5:4 D6:12')                                      
 # G-flat 6 -- the summit of the piece -- lands on the downbeat where the slow bass reaches its last E-flat.
 theme('B', 27, 1, aug(octv(SQ, -2), 4).rsplit(' ', 1)[0] + ' Eb2:16', 'S quarter speed (x4): the slow voice', 6)
 theme('S', 27, 1, octv(S, 1), 'S rectus, with its own quarter-speed augmentation')
-put('S', 29, 1, 'Gb5:16 F5:6 Gb5:4 Ab5:2 Bb5:4 C6:6')                       # a long breath above the inner entries
+put('S', 29, 1, 'Gb5:16 F5:8 Ab5:4 Bb5:4 C6:6')                             # a long breath above the inner entries; on the
+#   beats only in b30, so that it never shadows the alto's off-beat answer (REVIEW-3, item 1)
 put('A', 27, 1, 'Bb4:8')
 theme('A', 27, 4, octv(IC, 1), 'I inversus: the mirror of the soprano')
 put('T', 27, 1, 'Gb3:24 F3:4')
@@ -223,11 +224,12 @@ put('A', 35, 1, 'Eb4:8 Ab4:12 Db5:4 Cb5:8 Bb4:4')
 # ================================================================ RETURN AND GUEST (b37-39)
 # The bass sings the subject's retrograde inversion at half speed -- the Prelude's melody; one beat later the
 # soprano sings J. S. Bach's complete BWV 853 subject, whose first six notes are our head; three beats after
-# that the alto sings our subject at half speed below it.  The tenor is silent: the guest is heard in Bach's
-# own number of voices.
+# that the alto sings our subject's INVERSION at half speed below it, falling from the E-flat from which Bach's
+# head rises (in b39 the two move in contrary motion; our subject itself, at x2, ran in parallel sixths with
+# Bach's here -- REVIEW-3, item 2).  The tenor is silent: the guest is heard in Bach's own number of voices.
 theme('B', 37, 1, aug(octv(RI, -1), 2), 'RI retrograde inversion x2 = the Prelude\'s melody, in the bass', 3, 'retrograde')
 theme('S', 37, 2, octv(BACH, 1), "BWV 853's own subject (J. S. Bach, WTC I/8): the guest", 3)
-theme('A', 38, 1, aug(SQ, 2).rsplit(' ', 1)[0] + ' Eb4:4', 'S augmentation x2 under Bach\'s subject', 3)
+theme('A', 38, 1, aug(octv(IC, 1), 2).rsplit(' ', 1)[0] + ' Eb5:4', 'I augmentation x2 under Bach\'s subject: our mirror, slowly', 3)   # Eb5 Ab4 Gb4 Ab4 Bb4 C5 D5 F5 Eb5
 
 # ================================================================ CODA (b40-43): the head, rectus and inversus, over i - iv - V7 - I (Picardy third on top)
 put('B', 40, 1, 'Bb2:8 Eb2:16 Ab2:8 Bb2:8 Eb2:24')                            # V - i | iv - V - I, slowly
@@ -301,6 +303,8 @@ def balance(data):
         voice['spatial'] = spatial[v]
         for e in voice['events']:
             t, d = float(e['t']), 0
+            if v == 'S' and 107 <= t < 108.5:        # the soprano's tail recedes as the alto's inversion enters (REVIEW-3, 3)
+                d -= 5
             if 104 <= t < 128:                       # the stretto: entries forward, free notes back
                 if any(v == lv and a <= t < a + n for lv, a, n in LIFT):
                     d += 8

@@ -43,7 +43,7 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 **The guest** (b37, about 2:07).
 - The bass begins the Prelude's melody (the subject's retrograde inversion ×2).
 - One beat later the soprano sings J. S. Bach's complete BWV 853 subject (`cycle/reference/bach-subjects.md`). It enters alone, on top, after nine beats of silence in that voice. Its first six notes are our head.
-- Three beats later the alto sings our subject at half speed underneath. So Bach's subject turns away from ours (A♭ B♭ E♭ A♭ G♭ F E♭) just as ours begins below it, and ours finishes alone, with its own cadence F D E♭ (b40.1–3).
+- Three beats later the alto sings our subject's **inversion** at half speed underneath, falling slowly from the E♭5 from which Bach's head rose. In b39 the two lines move in contrary motion, and the alto closes alone with the inversion's own cadence D F E♭ (b40.1–3). (Until the third review this was our subject itself, which ran in parallel sixths with Bach's; see "Third review".)
 - The tenor is silent, so the guest is heard in Bach's own number of voices.
 - Then the coda gives our head the last word (b41).
 
@@ -68,7 +68,7 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 | **Subject** S (kept) | `Eb4:4 Bb4:4 Cb5:3 Bb4:1 Ab4:2 Gb4:2 F4:2 D4:2 Eb4:4`; the last note is elided to an 8th when a line continues | Its first six notes are the head of BWV 853's subject |
 | **Answer** A (kept) | `Bb4:4 Eb5:4 Gb5:3 F5:1 Eb5:2 Db5:2 C5:2 A4:2 Bb4:4` (tonal) | b2.3, b30.1.5 |
 | **Countersubject** CS (kept) | `R:2 Bb5:1 Ab5:1 Gb5:2 F5:2 Eb5:4 Cb6:2 Bb5:2 Ab5:4 Gb5:2 F5:2` over S on E♭4; `CSA` against the answer | b2.3, b4, b16 (a♭), b33.3 (C♭, below the subject); ×2 in the tenor at b5.4; diminution in the dance |
-| Inversion I / IC | `invert_diatonic(S, 'Eb4', harmonic minor)` = E♭ A♭ G♭ A♭ B♭ C♭ D F E♭; IC has C♮ when rising (melodic minor) | b6.1, b27.4, b29.1.5; ×2 in the bass b18.3; diminution b17.4 |
+| Inversion I / IC | `invert_diatonic(S, 'Eb4', harmonic minor)` = E♭ A♭ G♭ A♭ B♭ C♭ D F E♭; IC has C♮ when rising (melodic minor) | b6.1, b27.4, b29.1.5; ×2 in the bass b18.3 and in the alto under Bach b38.1; diminution b17.4 |
 | Major forms SM / IM | written out in G♭ (`SM`, `IM`), transposed to C♭ | b10–11 (G♭), b33.3 (C♭) |
 | Retrograde inversion RI | `invert_diatonic(retrograde(S))` = E♭ F D C♭ B♭ A♭ G♭ A♭ E♭, the Prelude's melody | ×2 in the bass, b37 |
 | Tail (retort) | A♭ G♭ F D E♭ in 8ths, in a♭ and D♭ | Episode 1 (b8.3, b9.2) |
@@ -88,7 +88,7 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 | 26 | 1:25 | General pause | |
 | 27–32 | 1:29 | **Arrival and stretto maestrale** | b27.1 is the only block chord of the fugue: E♭2 G♭3 B♭4 E♭5, wide open, and every note of it begins a line. The bass sings the subject at quarter speed (E♭ \| B♭ \| C♭·B♭ \| A♭ G♭ \| F D \| E♭) and the soprano sings it at its own speed from the same downbeat. Then come the alto's inversion (b27.4), the tenor's inversion off the beat (b29.1.5), the alto's answer off the beat (b30.1.5) and the soprano's subject on B♭ (b31.3). Harmony: i \| i6/4 – V \| ♭VI – V \| V4/2 – ii ø6/5 – i6 \| V/V – V6 \| i. The summit G♭6 falls on b32.1, then a common-tone diminished seventh over the tonic as the soprano's B♭-minor tail passes (C6, A5) and comes to rest on B♭5. |
 | 33–36 | 1:47 | Aftermath, **C♭ major**, a♭ | iv6 – V7 – **deceptive ♭VI** (b33.3), subito pp. Over the slow bass (C♭ F♭ G♭ C♭: I – IV – V7 – I in C♭), the soprano sings the subject in C♭ major and the alto the countersubject in C♭ below it. Then a duet in A♭ minor: the tenor sings the subject in a♭ and the alto a slow line above it (b35.2–36.3). V7 of e♭ follows (b36.4). Soprano and bass are silent from b35.1. |
-| 37–39 | 2:07 | **Return and guest** | The bass sings the retrograde inversion ×2, the Prelude's melody (b37.1). One beat later the soprano sings **BWV 853's complete subject** (b37.2). Three beats after that the alto sings **our subject ×2** below it (b38.1). The tenor rests. |
+| 37–39 | 2:07 | **Return and guest** | The bass sings the retrograde inversion ×2, the Prelude's melody (b37.1). One beat later the soprano sings **BWV 853's complete subject** (b37.2). Three beats after that the alto sings **our inversion ×2** below it (b38.1), in contrary motion to Bach in b39. The tenor rests. |
 | 40–43 | 2:17 | Coda | V – i over the bass (b40.1–3). Over i, iv, V7 the soprano has the head (b41.1) and the alto the inverted head a beat later. A real cadence V7 – I in the bass, with the **Picardy G5** on top (b42.3). The tenor's leading tone D3 rises to E♭3; the alto leaps to B♭4. The last chord is held through b43. |
 
 ## The device, and where to hear it
@@ -96,13 +96,14 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 **The four speeds** (the `scale` column of the critic's theme check):
 - ×½: tenor b13.3, alto b14.2, soprano b15.1, alto b17.4 (inverted).
 - ×1: everywhere else.
-- ×2: bass b5.3, b18.3 (inverted), b37.1 (retrograde inversion); alto b38.1.
+- ×2: bass b5.3, b18.3 (inverted), b37.1 (retrograde inversion); alto b38.1 (inverted).
 - ×4: bass b27.
 
 **The tenor's countersubject ×2** (b5.4–7.1) is the only other augmented line. It is free use of the countersubject, cut off for the cadence, and it is not declared as an entry.
 
 **Audibility of the entries.** I ran a scratch probe for every declared entry. It measures the entry's position among the sounding voices, the other attacks at the same instant, the rest before the entry, and the nearest other voice.
 - 34 of the 35 declared statements are the top voice, the bottom voice, or a voice that has rested at least one beat and is at least a 5th from its nearest neighbour. The exception is the alto's inversion at b27.4.
+- Since the third review no free line shadows an entry in its rhythm: the soprano above the alto's answer (b30) now moves only on the beats.
 - Thirteen enter with no other attack at all, among them the bass's S×2 (b5.3), its I×2 (b18.3), the tenor's stretto entry (b29.1.5), the tenor's a♭ subject in the duet (b35.2) and Bach's subject (b37.2).
 - The weaker entries are listed under weak spots.
 
@@ -110,6 +111,7 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 - The first two beats of each stretto entry in b27–31 get +8. Free notes in b27–32 get −4, and the quarter-speed bass gets +4.
 - The C♭ subject (soprano) and the a♭ subject (tenor) get +4.
 - Bach's subject gets +6 and the alto's ×2 under it +5.
+- The soprano's subject tail gets −5 where the alto's inversion enters under it (b27.4–28.2½; third review, item 3).
 - From the deceptive cadence (b33.3) to the end of that bar, −18 makes the subito pp begin with the C♭ chord, not at the barline.
 - No pitch or rhythm is touched by this pass.
 
@@ -131,10 +133,10 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 | Unresolved dissonances | ≤ 3, justified | **0** | 1 | 1 | 16 |
 | Bad doublings (7ths, leading tones) | ≤ 2 | **0** | 2 | 1 | 0 |
 | Low-register 2nds/7ths/9ths | ≤ 9 | **0** | 11 | 9 | 3 |
-| Stepwise motion | ≥ 65 % | **67.7 %** (leaps of a 4th or more 19.0 %) | 60.0 % | 75.0 % | 70.9 % |
+| Stepwise motion | ≥ 65 % | **67.4 %** (leaps of a 4th or more 19.0 %) | 60.0 % | 75.0 % | 70.9 % |
 | Tripled pitch class on beats | | 1.9 % | 24.0 % | 1.3 % | 1.7 % |
 | Voice crossings | few | **0** | 29 | | |
-| `keyboard_unplayable_pct` | < ~5 % | **0.4 %** (1 of 273 onsets) | 37 % | 0 % | 0 % |
+| `keyboard_unplayable_pct` | < ~5 % | **0.0 %** (0 of 271 onsets) | 37 % | 0 % | 0 % |
 | Mean moving voices per bar | | **2.93** (14 of 43 bars with all four moving) | 6.02 | 3.6 | 3.2 |
 
 **Moving voices by section.**
@@ -155,13 +157,13 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 
 The full texture is kept for the stretto and the coda.
 
-**The one keyboard onset** is b38.2.5: B♭2 / E♭4 / A♭5. The alto's half-speed subject and Bach's subject are an 11th apart, one semitone more than the critic's 10th per hand. A pianist would take the E♭4 in the left hand with a stretch, or release the B♭2 early.
+**Keyboard.** No onset exceeds two hands. The one onset that did (b38.2½, B♭2 / E♭4 / A♭5) disappeared with the third review's change under Bach's subject.
 
 **Melody flags.**
 - One augmented 2nd, at b38.1: the bass's D3–C♭3 in the retrograde inversion. It is the Prelude's melody, and the same interval is in the Prelude's b1–2.
 - The harmonic-minor inversion's C♭–D is avoided elsewhere by using the melodic-minor C♮ when the inversion rises (IC): soprano b6, the dance's turn at b17.4, bass b20, alto b28, tenor b30.
 
-**"7th not resolved down" (notes, not errors), 8 in all.**
+**"7th not resolved down" (notes, not errors), 6 in all since the third review** (the two at b39.3 are gone; the list below is the earlier eight).
 - b6.4: a passing B♭4 in the soprano's inversion over C♭3.
 - b19.4: the soprano's A♭5–G♭5 eighths over G♭2.
 - b23.3: the soprano's G♭5 is held as the common tone into vii°7/V and falls to F5 at b24.3.
@@ -178,9 +180,9 @@ The full texture is kept for the stretto and the coda.
 
 - **Unheard.** I have not listened to any of it. Listen first to the silence and the arrival (b25–27, about 1:20–1:32), the stretto entries, the subito pp at b33.3, and Bach's entry at b37.2.
 - **Two stretto entries are weaker than the rest.**
-  - The alto's inversion at b27.4 enters a 4th below the soprano while the soprano moves in eighths (A♭5 G♭5). It may be heard as part of the soprano's line rather than as a new voice. The +8 balance helps, but it is not a register gap.
-  - The alto's answer at b30.1.5 attacks together with the tenor's eighth-note tail, a 6th above it.
-- **Our subject at half speed under Bach** (alto, b38) is an inner voice under Bach's eighth notes. Whether a listener hears "our subject, slowly" there, rather than a slow inner line, I cannot judge. The top voice and the bass are safe.
+  - The alto's inversion at b27.4 enters a 4th below the soprano while the soprano moves in eighths (A♭5 G♭5). It may be heard as part of the soprano's line rather than as a new voice until the soprano stops at b28.3. The +8 lift on the alto and −5 on the soprano's tail help, but it is not a register gap.
+  - The alto's answer at b30.1.5 attacks together with the tenor's eighth-note tail, a 6th above it. (The soprano no longer shadows it; third review, item 1.)
+- **Our inversion at half speed under Bach** (alto, b38) is an inner voice under Bach's eighth notes. In contrary motion it should read as a second line, but whether a listener recognises it as our subject upside down I cannot judge. The top voice and the bass are safe.
 - **Thin in places, by design.**
   - Mean 2.93 moving voices per bar. Bars 2–4, 9, 11 and 35–36 have two moving voices.
   - The alto rests for three bars after its first subject (b4–7.2).
@@ -204,7 +206,7 @@ The full texture is kept for the stretto and the coda.
 - The single E♭-minor chord after the silence over the subject at quarter speed in the bass.
 - The summit G♭6 over the end of the stretto, and the common-tone diminished seventh before the tonic settles.
 - iv6 – V7 – deceptive ♭VI into a pp subject in C♭ major, left through A♭ minor.
-- Bach's complete subject as a guest over the Prelude's melody (retrograde inversion ×2) in the bass, with our subject ×2 three beats later.
+- Bach's complete subject as a guest over the Prelude's melody (retrograde inversion ×2) in the bass, with our material at half speed three beats later. Since the third review that material is the inversion, not the subject (see "Third review").
 - The Picardy G at the end.
 
 **Changed, and why.**
@@ -219,8 +221,8 @@ The full texture is kept for the stretto and the coda.
   - Parallels and beat-to-beat parallels stay at 0.
   - Unresolved dissonances 1 → 0; bad doublings 2 → 0; low-register clashes 11 → 0.
   - Tripled beats 24 % → 1.9 %; crossings 29 → 0.
-  - Stepwise motion 60 % → 67.7 %.
-  - Onsets beyond two hands 37 % → 0.4 %.
+  - Stepwise motion 60 % → 67.4 %.
+  - Onsets beyond two hands 37 % → 0.0 %.
 
 **Dropped.** Every second-pass "keep all nine voices moving" line, the piles of up to six simultaneous statements, and the sighs separated by rests that the nine-voice texture needed (see the old NOTES, "Some second-pass lines are workmanlike").
 
@@ -253,11 +255,30 @@ python3 tools/render_spatial.py cycle/08-e-flat-minor/fugue.json --output cycle/
 
 The concept suggests no other instrument, so the main render and the spatial render are both piano.
 
+## Third review (`REVIEW-3.md`): what changed
+
+The review ranks this fugue the best made of its batch and finds no critic errors. I agreed with all three of its items. The "must not touch" passages are untouched: the lone D6, the bar of silence and the open chord (b25–27), the deceptive cadence into C♭ (b33.3), and the bass alone for a beat before Bach's entry (b37.1–2). Every note change is written by hand in `fugue.py`.
+
+| # | Item | What changed | Result |
+|---|---|---|---|
+| 1 | b30: the soprano's free line attacked with the alto's off-beat answer and moved with it a 3rd above, so the entry sounded like the lower line of a duet | Soprano b29.1: `'Gb5:16 F5:6 Gb5:4 Ab5:2 Bb5:4 C6:6'` → `'Gb5:16 F5:8 Ab5:4 Bb5:4 C6:6'` (the reviewer's tested fix). In b30 the soprano now moves only on the beats; the answer moves only off them | No new flags |
+| 2 | b38–39: our subject ×2 under Bach doubled him at the octave on 38.3 and then ran in parallel sixths in his rhythm, so it sounded like Bach harmonised | I took the reviewer's tested option. The alto sings the **inversion** ×2 (IC, from E♭5): `Eb5:8 Ab4:8 \| Gb4:6 Ab4:2 Bb4:4 C5:4 \| D5:4 F5:4 Eb5:4`. Bach's head rises a 5th from E♭5; three beats later ours falls a 5th from the same note. In b39 the two move in contrary motion, a wedge from a 9th to a 3rd, and the alto closes alone with D F E♭ | The guest scene now holds three forms of one idea: Bach's subject on top, our inversion in the middle, our retrograde inversion (the Prelude's melody) in the bass. The cost: our subject *rectus* is no longer heard under Bach; it has the last word in the coda (b41), and the inversion ×2 was already heard in the bass (b18.3). The b39.4 chord is E♭ with C♮ (melodic minor) |
+| 3 | b27.4: the alto's inversion may merge with the soprano's falling tail | Not a note change. Both options the reviewer examined are worse: an octave lower collides with the tenor's G♭3, and a later entry becomes a canon with the tenor. Instead the balance pass lowers the soprano's tail by 5 in b27.4–28.2½, under the alto's existing +8 lift. Still a listen-first item | Velocities only |
+| 4 | Tonic weight after b18 | Left, as the review advises | |
+
+**Critic after the changes:**
+- still 0 parallels, 0 beat-to-beat parallels, 0 unresolved, 0 bad doublings, 0 low-register seconds, 0 crossings;
+- stepwise 67.7 → 67.4 %;
+- keyboard 0.4 → 0.0 %;
+- "7th not resolved down" notes 8 → 6.
+
+All three renders were remade.
+
 ## Credits
 
 - **J. S. Bach, WTC I/8, Fugue in D-sharp minor, BWV 853.**
   - The subject's first six notes (E♭ B♭ C♭ B♭ A♭ G♭) are the head of Bach's subject, spelled in E-flat minor.
-  - Bach's complete subject (`cycle/reference/bach-subjects.md`) enters as a real voice in the soprano, b37.2–39.4. It is credited in the score's composer line and in the entry label.
+  - Bach's complete subject (`cycle/reference/bach-subjects.md`) enters as a real voice in the soprano, b37.2–39.4, over our retrograde inversion and with our inversion at half speed below it. It is credited in the score's composer line and in the entry label.
   - The techniques (stretto with inversion and augmentation, including the subject in the bass in augmentation) are BWV 853's own.
 - **Second-edition Fugue VIII** (`editions/complete-cycle/scores/08-fugue-eflat-minor.json`, b45–62). Kept:
   - the bar of silence followed by the full E-flat-minor sonority;

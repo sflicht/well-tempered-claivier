@@ -109,7 +109,7 @@ tag(10, 'THE GUEST: subject of WTC I/5 (BWV 850, J. S. Bach) in D')
 put(12,
     S='A5:4 D6:2 D6:1 D6:1 F#5:4 B5:2 B5:1 B5:1  D5:4 G5:2 G5:1 G5:1 B4:4 E5:2 E5:1 E5:1 '
       'E5:1 D5:1 C#5:1 B4:1 A4:1 B4:1 C#5:1 D5:1 F#5:1 G5:1 A5:1 B5:1 C#6:1 D6:2 B5:1  G5:4 B5:2 A5:2 F#5:4 E5:2 C#5:2',
-    T='R:4 F#4:4 B4:2 B4:1 B4:1 D4:4  G4:2 G4:1 G4:1 B3:4 E4:2 E4:1 E4:1 E4:4  A4:2 A4:1 A4:1 A4:8 B4:4  G4:8 E4:4 F#4:4',
+    T='R:4 F#4:4 B4:2 B4:1 B4:1 D4:4  G4:2 G4:1 G4:1 B3:4 E4:2 E4:1 E4:1 E4:4  A4:2 A4:1 A4:1 A4:12  G4:8 E4:4 F#4:4',
     B='D3:2 E3:2 F#3:2 D3:2 B2:2 C#3:2 D3:2 B2:2  G2:2 A2:2 B2:2 G2:2 E2:2 F#2:2 G2:2 G#2:2 '
       'A2:2 B2:2 C#3:2 A2:2 D3:2 C#3:2 B2:2 A2:2  E2:2 F#2:2 G2:2 E2:2 F#2:2 A2:2 C#3:2 A2:2')
 tag(12, 'Episode 1: head-cell canon (a 3)')
@@ -146,7 +146,7 @@ G_SUBJ = transpose(SUBJ, -7, -4)
 EM_DIM = scale_rhythm('B4:4 E5:2 E5:1 E5:1 G5:2 G5:1 G5:1 B5:4 B5:3 A5:1 G5:2 F#5:2 E5:1 D5:1 C5:1 B4:1 C5:1 D5:1 E5:2', '1/2')
 G_INV = 'B3:4 F#3:2 F#3:1 F#3:1 D3:2 D3:1 D3:1 B2:4 B2:3 C3:1 D3:2 E3:2 F#3:1 G3:1 A3:1 B3:1 A3:1 G3:1 F#3:2'
 put(24, T=G_SUBJ + ' G4:8 E4:4 F#4:4',
-        A='B4:4 ' + EM_DIM + ' D5:4 E5:8  D5:8 C5:8',
+        A='B4:2 R:2 ' + EM_DIM + ' D5:4 E5:8  D5:8 C5:8',
         B='G2:4 B2:4 R:4 ' + G_INV + ' R:4')
 tag(24, 'Stretto I (G): rectus, diminution, inversion (a 3)')
 
@@ -208,9 +208,10 @@ tag(41, 'A (B)')
 # ===========================================================================
 # SUMMIT b43-47: PROLATION. The cascade's fifth entry, in D, is the bass's
 # augmentation (x2, b43-46). Over it the soprano's subject (x1, from b43.3)
-# climbs to A6. Between them, with alto and tenor silent, the Guest states
-# Bach's subject from b43.4 (half a bar later than Bach's own metric place):
-# its B. lands on the downbeat as a 4-3 appoggiatura over F#. At b45.3 the
+# climbs to A6. Between them, with the tenor silent and the alto only holding
+# D5 above it (third review: the summit's root), the Guest states Bach's
+# subject from b43.4 (half a bar later than Bach's own metric place): its B.
+# lands on the downbeat as the sixth of a B-minor 6/4 over F#, resolving to A. At b45.3 the
 # tenor takes the subject a fourth higher (diatonic, so with C#: the form
 # stretto_finder ranks cleanest over the augmentation's falling tail), and at
 # b46.1.5 the soprano adds the subject in diminution (B-minor form) on top:
@@ -222,7 +223,7 @@ put(43,
     B=SUBJ_X2 + '  E3:4 A2:4 D2:8~',
     S='R:8 ' + T8(SUBJ, 1) + ' R:8  R:2 ' + BM_HALF_S + ' R:6 F#5:4 A5:4',
     G='R:12 ' + BWV850 + ' A4:0.5 G4:0.5 F#4:0.5 G4:0.5 A4:0.5 B4:0.5 C#5:0.5 A4:0.5  D5:4 R:12  R:16  R:16',
-    A='C#5:8 D5:4 R:4  R:16  R:16  R:16  R:8 A4:4 D5:4',
+    A='C#5:8 D5:8  D5:16  R:16  R:16  R:8 A4:4 D5:4',
     T='G4:8 F#4:4 R:4  R:16  R:8 ' + SUBJ_ON_D + ' F#4:8')
 tag(43, 'SUMMIT: subject x2 (bass) + subject (soprano)')
 tag(44, 'The Guest (from 43.4): BWV 850 between them')
@@ -308,7 +309,7 @@ def build(path=HERE / 'fugue.json'):
     adj = {('Soprano', 10): -4, ('Soprano', 11): -4, ('Guest', 10): 4, ('Guest', 11): 4,
            ('Alto', 38): -6, ('Tenor', 38): -6, ('Bass', 38): -4, ('Bass', 39): -6, ('Bass', 40): -6,
            ('Alto', 41): -8, ('Alto', 42): -6, ('Tenor', 42): -6,
-           ('Alto', 43): -6, ('Tenor', 43): -6, ('Guest', 43): 6, ('Guest', 44): 6, ('Guest', 45): 4,
+           ('Alto', 43): -6, ('Alto', 44): -8, ('Tenor', 43): -6, ('Guest', 43): 6, ('Guest', 44): 6, ('Guest', 45): 4,
            ('Tenor', 45): 4, ('Soprano', 46): 2, ('Alto', 50): 6, ('Alto', 51): 6, ('Guest', 52): 6}
     for v in data['voices']:
         for e in v['events']:

@@ -25,7 +25,7 @@ Form (91 bars, q = 100):
   33-38   G rising;    subject G (bass), episode a 5, subject D (alto)
   39-44   A falling;   inversion A (tenor), episode, inversion D (soprano): the first staircase ends
   45-50   Bull's leap: C rising, subject C in the deep bass, triplet division; subject G (tenor)
-  51-56   D falling;   inversion D (bass), episode, inversion G (soprano)
+  51-56   D falling;   inversion D (bass), episode, a dotted division instead of a second entry
   57-62   E rising;    subject E (tenor), episode a 5, subject B (bass)
   63-68   F# falling;  inversion F# (alto), episode, inversion B (soprano)
   69-74   A-flat rising: a bare A-flat/E-flat drone (the meantone wolf), subject Bb, B-flat minor, subject Eb
@@ -239,7 +239,7 @@ sc.put('S', 25, 1, 'R:4 D5:1 F5:1 Eb5:1 G5:4 A5:1 Bb5:4~ '                      
 sc.mark(27, 'F (falling)')
 sc.theme('C', 27, 1, hex_dn('D5', last=12), 'Cantus: F, la-ut (falling)', 6)
 sc.theme('T', 27, 1, key(INV, 'G#5', 'D4'), 'Inversion (F), tenor, with the falling cantus')
-sc.put('B', 27, 1, octv(key(CSI, 'G#5', 'D4'), -1).rsplit(' ', 1)[0] + ' F3:1')   # CSI below; last note to F
+sc.put('B', 27, 1, key(CSI, 'G#5', 'D4').rsplit(' ', 1)[0] + ' F4:1')            # CSI below; last note to F
 sc.put('S', 27, 1, 'F5:6 G5:1 A5:1 Bb5:2 A5:2 G5:2 E5:2 '
                    'G5:4 E5:4 C6:4 Bb5:4~ '
                    'Bb5:4 C6:2 Bb5:2 G5:4 R:4')
@@ -312,8 +312,8 @@ sc.put('A', 45, 1, 'R:4 E4:4/3 F4:4/3 G4:4/3 A4:4/3 B4:4/3 C5:4/3 A4:4/3 G4:4/3 
 sc.put('S', 47, 1, 'R:4 G5:4 C6:4 A5:4~ '
                    'A5:4 G5:2 F5:2 A5:4 C6:4 '
                    'B5:4 R:12')
-sc.put('B', 47, 1, 'R:8 A3:2 B3:2 C4:2 A3:2 '
-                   'F3:2 G3:2 A3:2 F3:2 D3:2 E3:2 D3:4')
+sc.put('B', 47, 1, 'R:8 A2:2 B2:2 C3:2 A2:2 '
+                   'F2:2 G2:2 A2:2 F2:2 D2:2 E2:2 D2:4')
 sc.theme('T', 49, 1, key(SUBJ, 'B4', 'G3'), "Subject on the dominant (G), tenor, at the cantus's sol")
 sc.put('A', 49, 1, 'R:4 B4:1 D5:1 C5:1 E5:4 F#5:1 G5:4~ '                       # CS above, in G
                    'G5:4 F#5:4 D5:1 C5:1 B4:1 C5:1 D5:1 E5:1 F#5:1 D5:1')
@@ -335,10 +335,13 @@ sc.put('A', 53, 1, 'D5:2 C#5:2 B4:2 D5:2 C#5:2 B4:2 A4:2 E5:2 '
 sc.put('B', 53, 1, 'G2:2 A2:2 B2:2 G2:2 E2:2 F#2:2 C#3:4 '
                    'D3:4 F#3:2 E3:2 B2:2 F#2:2 D#2:4 '
                    'E2:2 F#2:2 G2:2 A2:2 G2:2 F#2:2 B1:4 '
-                   'D2:4 F#2:2 E2:2 D2:4 A1:4')
-sc.theme('S', 55, 1, key(INV, 'G#5', 'E5'), "Inversion (G), soprano, at the cantus's re")
+                   'D2:4 F#2:2 A2:2 D2:4 A1:4')
+# b55-56: no second entry here (the only falling region without one); instead the soprano's
+# division turns dotted, Em | D - A, and runs on into the E region.
+sc.put('S', 55, 1, 'B4:3 D5:1 E5:3 F#5:1 G5:3 F#5:1 E5:3 D5:1 '
+                   'F#5:3 E5:1 D5:3 E5:1 F#5:3 E5:1 A5:4')
 sc.put('T', 55, 1, 'B3:2 C4:2 B3:2 G3:2 B3:2 C4:2 B3:2 G3:2 '
-                   'F#3:4 A3:4 F#3:4 R:4')
+                   'A3:4 F#3:4 A3:4 R:4')
 sc.put('A', 56, 4, 'C#5:4')
 
 # ===================================================================== IX. E (bars 57-62), rising
@@ -396,7 +399,7 @@ sc.theme('C', 69, 1, hex_up('Ab4'), 'Cantus: A-flat, ut-la (rising)', 6)
 sc.put('S', 69, 1, 'Eb5:16')
 sc.put('A', 69, 1, 'Ab3:16')
 sc.put('T', 69, 1, 'Eb3:12 R:4')
-sc.put('B', 69, 1, 'Ab2:12 C2:4')
+sc.put('B', 69, 1, 'Ab2:12 C3:4')
 sc.theme('T', 70, 1, key(SUBJ, 'B4', 'Bb3'), "Subject (B-flat), tenor, at the cantus's re")
 sc.put('S', 70, 1, 'R:4 D5:1 F5:1 Eb5:1 G5:4 A5:1 Bb5:4~ '                      # CS above
                    'Bb5:4 A5:4 F5:1 Eb5:1 D5:1 Eb5:1 F5:1 G5:1 A5:1 F5:1')
@@ -463,7 +466,7 @@ sc.put('B', 84, 3, 'C#3:8 '
 # The cantus reaches G#5, the top of the piece; the bass sings the inversion (la..ut) under it, and
 # from here the cantus falls home: sol fa mi re ut.
 sc.theme('B', 86, 1, key(INV, 'G#5', 'G#2'), "Inversion (B), bass, under the cantus's la: the turn")
-sc.put('S', 86, 1, 'D#6:16 '
+sc.put('S', 86, 1, 'R:16 '
                    'A#5:6 C#6:2 E6:4 C#6:4')
 sc.put('A', 86, 1, 'B4:4 D#5:4 B4:4 G#4:4 '
                    'C#5:16')

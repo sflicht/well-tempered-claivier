@@ -148,7 +148,7 @@ put('Fl', 7, 1.5, 'G5:1 F5:1 E5:1 D5:1 C5:1 E5:1 G5:2 R:6 '
 theme('Tr', 9, 1.5, S, 'tutti: subject (Tromba)')
 put('Vn', 9, 2, ' '.join(oc(CS, -1).split()[:-1]) + ' F2:4')
 put('Fl', 9, 1.5, 'R:2 C5:4 F5:3 C5:1 A4:1 Bb4:1 C5:1 A4:1 Bb4:4 D5:4 G4:4 Bb4:4 A4:2')
-put('Ob', 9, 1.5, 'R:2 F4:4 A4:4 F4:4 F4:6 D4:2 D4:4 G4:4 F4:2')
+put('Ob', 9, 1.5, 'R:2 F4:8 C4:4 F4:6 D4:2 D4:4 G4:4 F4:2')
 
 
 # ================================================================ EPISODE 1, solo (b11-14): F -> C
@@ -160,10 +160,10 @@ put('Fl', 11, 3, 'F6:1 E6:1 D6:1 C6:1 D6:1 C6:1 Bb5:1 A5:1 '
                  'G5:1 A5:1 Bb5:1 C6:1 Bb5:1 C6:1 D6:1 E6:1 E6:1 D6:1 C6:1 B5:1 C6:1 B5:1 A5:1 G5:1 '
                  'F5:1 G5:1 A5:1 Bb5:1 A5:1 Bb5:1 C6:1 D6:1 D6:1 C6:1 B5:1 A5:1 B5:1 A5:1 G5:1 F5:1 '
                  'E5:1 F5:1 G5:1 A5:1 G5:1 A5:1 B5:1 C6:1 B5:1 A5:1 G5:1 F5:1 G5:1 F5:1 E5:1 D5:1 C5:2')
-put('Vn', 11, 2, 'A3:1 F4:1 C4:1 F4:1 Bb3:1 F4:1 D4:1 F4:1 Bb3:1 F4:1 D4:1 F4:1 '
-                 'G3:1 E4:1 Bb3:1 E4:1 G3:1 E4:1 Bb3:1 E4:1 A3:1 E4:1 C4:1 E4:1 A3:1 E4:1 C4:1 E4:1 '
-                 'F3:1 D4:1 A3:1 D4:1 F3:1 D4:1 A3:1 D4:1 G3:1 D4:1 B3:1 D4:1 G3:1 D4:1 B3:1 D4:1 '
-                 'E3:1 C4:1 G3:1 C4:1 E3:1 C4:1 G3:1 C4:1 F3:1 D4:1 B3:1 D4:1 F3:1 D4:1 B3:1 D4:1')
+put('Vn', 11, 2, 'A3:1 C4:1 F4:1 C4:1 Bb3:1 D4:1 F4:1 D4:1 Bb3:1 D4:1 F4:1 D4:1 '
+                 'G3:1 C4:1 E4:1 C4:1 G3:1 C4:1 E4:1 C4:1 A3:1 C4:1 E4:1 C4:1 A3:1 C4:1 E4:1 C4:1 '
+                 'F3:1 A3:1 D4:1 A3:1 F3:1 A3:1 D4:1 A3:1 G3:1 B3:1 D4:1 B3:1 G3:1 B3:1 D4:1 B3:1 '
+                 'E3:1 G3:1 C4:1 G3:1 E3:1 G3:1 C4:1 G3:1 F3:1 B3:1 D4:1 B3:1 F3:1 B3:1 D4:1 B3:1')
 put('Ob', 13, 1, 'A4:10 G4:2 B4:4 C5:6 B4:2 D5:4 B4:2')
 
 
@@ -174,7 +174,7 @@ S_C = W.transpose(S, -5, -3)                                   # G4 ... C5
 CS_C = W.transpose(CS, -5, -3)                                 # E3 C4 Bb3 A3 F3 G3 E3
 theme('Ob', 15, 1.5, S_C, 'subject in C (Oboe)')
 put('Vn', 15, 1, 'E3:4 ' + ' '.join(CS_C.split()[:-1]))      # (its first note taken back to the downbeat)
-put('Fl', 15, 3, 'C6:3 E6:5 F6:6 D6:6 D6:2 B5:2')
+put('Fl', 15, 3, 'C6:3 E6:5 C6:6 A5:6 D6:4')
 
 
 # ================================================================ TUTTI II in C (b17-18): the device
@@ -182,10 +182,10 @@ put('Fl', 15, 3, 'C6:3 E6:5 F6:6 D6:6 D6:2 B5:2')
 # the trumpet's inversion (C major, all natural notes) falls from its high C; then the tails run in
 # contrary motion.  The recorder holds a descant above, the oboe the tenor.
 I_C = dshift(I, -3)                                            # C6 C6 G5 ... G5
-theme('Vn', 17, 1.5, oc(S_C, -2), 'tutti: subject in C (Violino)')
+theme('Vn', 17, 1.5, ' '.join(oc(S_C, -2).split()[:-5]) + ' G2:1 B2:1 D3:1 B2:1 C3:2', 'tutti: subject in C (Violino)')
 theme('Tr', 17, 2.5, I_C, 'tutti: inversus in C, a beat later (Tromba)')
-put('Ob', 17, 1.5, 'R:2 G4:8 E4:4 E4:4 D4:4 F4:4 D4:4 E4:4')
-put('Fl', 17, 1, 'C6:2 R:2 E6:8 D6:4 C6:4 D6:4 F6:4 D6:4 E6:4')
+put('Ob', 17, 1.5, 'R:2 E4:8 G4:4 E4:4 D4:4 F4:4 D4:4 E4:4')
+put('Fl', 17, 1, 'E6:8 G6:4 F6:4 E6:4 F6:4 D6:4 G6:4 E6:4')
 
 
 # ================================================================ EPISODE 2, solo (b19-20): C -> d
@@ -194,8 +194,8 @@ put('Fl', 17, 1, 'C6:2 R:2 E6:8 D6:4 C6:4 D6:4 F6:4 D6:4 E6:4')
 put('Vn', 19, 2, 'E3:1 C4:1 G3:1 C4:1 C#3:1 A3:1 E3:1 A3:1 C#3:1 A3:1 G3:1 A3:1 '
                  'D3:1 A3:1 F3:1 A3:1 D3:1 A3:1 F3:1 A3:1 Bb2:1 G3:1 D3:1 G3:1 A2:1 E3:1 C#3:1 E3:1')
 put('Tr', 19, 4, 'A5:1 A5:1 A5:2')
-put('Fl', 19, 2, 'D6:1 C6:1 B5:1 A5:1 G5:1 F5:1 E5:1 D5:1 C#5:2 E5:2 D5:4')
-put('Ob', 19, 2, 'G4:8 E4:4 F4:4 E4:2 D4:2 D4:4 C#4:4')
+put('Fl', 19, 2, 'C6:1 B5:1 A5:1 G5:1 A5:1 G5:1 F5:1 G5:1 E5:2 G5:2 F5:4')
+put('Ob', 19, 2, 'C5:4 G4:8 F4:4 E4:2 D4:2 D4:4 C#4:4')
 
 
 # ================================================================ D MINOR (b21-25); the trumpet is silent
@@ -209,7 +209,7 @@ CSd = 'F3:4 D4:3 C4:5 Bb3:6 G3:6 A3:4 F3:2'
 theme('Fl', 21, 1.5, Sd, 'subject in d (Flauto)')
 put('Vn', 21, 1, 'D3:4 ' + CSd)
 put('Ob', 21, 1, 'D4:4')
-theme('Ob', 23, 1.5, oc(Id, -1), 'inversus in d (Oboe)')
+theme('Ob', 23, 1.5, ' '.join(oc(Id, -1).split()[:-5]) + ' A4:1 G4:1 E4:1 G4:1 A4:2', 'inversus in d (Oboe)')
 theme('Vn', 23, 2.5, oc(Sd, -2), 'subject in d, a beat later (Violino)')
 put('Fl', 23, 2, 'F5:8 E5:4 D5:4 C#5:4 D5:4 E5:4 F5:4 E5:4')
 
@@ -228,10 +228,10 @@ S_Bb = W.transpose(S, 5, 3)                                    # F5 ... Bb5
 CS_Bb = W.transpose(CS, 5, 3)                                  # D4 Bb4 Ab4 G4 Eb4 F4 D4
 theme('Fl', 29, 1.5, S_Bb, 'subject in B-flat (Flauto)')
 put('Vn', 29, 1, 'Bb2:4 ' + oc(CS_Bb, -1))
-put('Ob', 29, 2, 'Bb4:4 F4:3 D5:5 Bb4:6 G4:2 G4:4 A4:4 Bb4:8 G4:8 A4:4 F#4:4 G4:4 F4:4')
+put('Ob', 29, 2, 'Bb4:4 F4:3 D5:5 Bb4:6 G4:2 G4:4 C5:4 Bb4:8 G4:8 A4:4 C5:4 B4:4 F4:4')
 put('Vn', 31, 1.5, 'R:6 Eb3:8 F#2:8 G2:8')
 put('Fl', 31, 1.5, 'R:2 D6:1 C6:1 Bb5:1 A5:1 Bb5:1 A5:1 G5:1 F5:1 G5:1 A5:1 Bb5:1 G5:1 '
-                   'A5:4 C6:4 B5:2 G5:2 D5:2 B4:2')
+                   'D6:4 A5:4 G5:4 D5:2 B4:2')
 
 
 # ================================================================ THE JOKE (b33-39): the trumpet and the key
@@ -277,7 +277,7 @@ put('Fl', 40, 2, 'E5:4 A5:8 A5:6 F5:6 E5:4')
 # the approach: a - D7/F# - g - g/Bb - G7/B - C, then a bar of C7 (bass A F# G Bb B C)
 put('Vn', 42, 1, 'A2:8 F#2:8 G2:8 Bb2:8 B2:8 C3:8 C3:4 G2:4 E2:4 C2:4')
 put('Ob', 42, 1.5, 'R:2 C5:12 Bb4:8 D5:16 C5:8 Bb4:16')
-put('Fl', 42, 1, 'E5:8 A5:8 G5:16 F5:8 E5:8 G5:8 E5:8')
+put('Fl', 42, 1, 'E5:8 A5:8 G5:16 F5:8 E5:12 G5:4 C6:4')
 
 
 # ================================================================ FINAL STRETTO in four (b46-50)
@@ -285,21 +285,21 @@ put('Fl', 42, 1, 'E5:8 A5:8 G5:16 F5:8 E5:8 G5:8 E5:8')
 # inversion from F6 (46.1.5) and the violin's subject from the bass a beat later (the device in the
 # outer voices); the oboe's inversion from F5 (47.2.5); last, the trumpet's subject at its opening
 # pitch (48.1.5), in F at last, with the violin's countersubject beneath it as in the tutti of bar 9.
-theme('Fl', 46, 1.5, I, 'final stretto: inversus (Flauto)')
+theme('Fl', 46, 1.5, ' '.join(I.split()[:-5]) + ' D6:1 Bb5:1 C6:1 D6:1 C6:2', 'final stretto: inversus (Flauto)')
 theme('Vn', 46, 2.5, oc(S, -2), 'final stretto: subject, a beat later (Violino)')
-theme('Ob', 47, 2.5, oc(I, -1), 'final stretto: inversus (Oboe)')
+theme('Ob', 47, 2.5, ' '.join(oc(I, -1).split()[:-1]) + ' Bb4:2', 'final stretto: inversus (Oboe)')
 theme('Tr', 48, 1.5, S, 'final stretto: subject, in F at last (Tromba)')
 put('Vn', 46, 1, 'F2:2')
-put('Ob', 46, 1, 'A4:4 C5:8 Bb4:4 A4:4')
+put('Ob', 46, 1, 'A4:4 C5:12 G4:4')
 put('Vn', 48, 2.5, 'A2:2 F3:3 Eb3:5 D3:6 Bb2:6 C3:4 F2:4')
-put('Fl', 49, 1, 'F6:4 D6:4 Bb5:4 G5:4')
+put('Fl', 49, 1, 'F6:4 F6:4 D6:4 C6:2 Bb5:2')
 
 
 # ================================================================ DOMINANT PEDAL AND CADENCE (b50-53)
 # The violin crosses strings on its low C (C3 C4); over it the trumpet's tattoo is on C again, the
 # same three notes as in the joke, and C is right at last.  V7 - I; the trumpet ends on its C.
-put('Fl', 50, 1, 'A5:8 Bb5:8 A5:8 G5:8 G5:8 E5:8 F5:16')
-put('Ob', 50, 1.5, 'R:2 C5:4 D5:8 F4:8 E4:8 Bb4:16 A4:16')
+put('Fl', 50, 1, 'A5:8 D6:8 A5:8 G5:8 Bb5:16 A5:16')
+put('Ob', 50, 1.5, 'R:2 F4:4 D4:8 F4:8 E4:8 G4:16 F4:16')
 put('Vn', 50, 2, 'A2:4 Bb2:8 '
                    'C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 '
                    'C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:1 C4:1 C3:8 F2:16')
