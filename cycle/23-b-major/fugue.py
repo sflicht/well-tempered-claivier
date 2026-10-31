@@ -8,15 +8,33 @@ has stood on all twelve pitch levels.  Bull's order, transposed so that home is 
 
     B | C# Eb F G A | (Bull's leap of a minor third) C D E F# Ab Bb | B
 
-Four voices (soprano, alto, tenor, bass) make a fugue in B major on a subject that begins with
-the hexachord in quick notes.  The fifth voice, the Cantus, enters after the exposition and carries
+Four voices (soprano, alto, tenor, bass) make a fugue in B major on a subject whose head is the
+hexachord in quick notes.  The fifth voice, the Cantus, enters after the exposition and carries
 the hexachord through Bull's thirteen statements in semibreves, alternately rising (ut..la) and
 falling (la..ut), so that every joint between two statements is a single step except Bull's leap
-(A -> C) and the last joint, the semitone B-flat -> B that brings the circle home.  The fugue
-follows the cantus into each key.
+(A -> C) and the last joint, the semitone B-flat (= A#) -> B that brings the circle home.  The
+fugue follows the cantus into each key: over a rising statement the subject enters rectus (its
+head is the cantus in quick notes); over a falling one it enters inverted (la..ut).
+
+Form (91 bars, q = 100):
+  1-8     exposition a 4 (tenor B, alto F#, soprano B, bass F#)
+  9-14    cantus B rising; subject B (soprano) on its ut, subject F# (tenor) on its sol
+  15-20   C# falling;  inversion C# (soprano) on la, inversion F# (bass) on re
+  21-26   E-flat rising; subject Eb (tenor), episode, subject Bb (bass)
+  27-32   F falling;   inversion F (tenor), episode, inversion Bb (soprano)
+  33-38   G rising;    subject G (bass), episode a 5, subject D (alto)
+  39-44   A falling;   inversion A (tenor), episode, inversion D (soprano): the first staircase ends
+  45-50   Bull's leap: C rising, subject C in the deep bass, triplet division; subject G (tenor)
+  51-56   D falling;   inversion D (bass), episode, inversion G (soprano)
+  57-62   E rising;    subject E (tenor), episode a 5, subject B (bass)
+  63-68   F# falling;  inversion F# (alto), episode, inversion B (soprano)
+  69-74   A-flat rising: a bare A-flat/E-flat drone (the meantone wolf), subject Bb, B-flat minor, subject Eb
+  75-80   B-flat falling (the cantus on top): inversion Bb (bass); C (Neapolitan of B) - F#7
+  81-86   B rising, home: subject B (bass), subject E (tenor), inversion B (bass) under the cantus's la
+  87-91   coda: the cantus falls home, sol fa mi re ut
 
 Every note is written in this file.  Thematic statements are explicit transforms of the
-hand-written material below (`key` = transposition into a key, `oct` = octave shift); the cantus
+hand-written material below (`key` = transposition into a key, `octv` = octave shift); the cantus
 statements are `hex_up` / `hex_dn` (the hexachord transposed and set in semibreves).  All other
 lines are literal token strings placed at bar.beat positions.  No code chooses pitches.
 
@@ -35,7 +53,7 @@ import wtclib as W  # noqa: E402
 
 METER = (4, 4)
 NAMES = ['S', 'A', 'C', 'T', 'B']
-LONG = ['Soprano', 'Alto', 'Cantus (ut re mi fa sol la)', 'Tenor', 'Bass']
+LONG = ['Soprano', 'Alto', 'Cantus', 'Tenor', 'Bass']
 ABBR = ['S.', 'A.', 'Cant.', 'T.', 'B.']
 CLEF = ['treble', 'treble', 'treble', 'treble_8', 'bass']
 BASEVEL = [66, 64, 72, 64, 66]
@@ -173,7 +191,7 @@ sc.put('T', 8, 3, 'G#3:4 E3:4')
 # the same note: its head is the cantus in quick notes.  At the cantus's sol the subject enters on
 # F# (the "hard" hexachord), whose dominant, C#, is the next key.
 sc.mark(9, 'Cantus enters: B (rising)')
-sc.theme('C', 9, 1, hex_up('B3'), 'Cantus: B, ut-re-mi-fa-sol-la (rising)', 6)
+sc.theme('C', 9, 1, hex_up('B3'), 'Cantus: B, ut-la (rising)', 6)
 sc.theme('S', 9, 1, SUBJ, 'Subject (B) over the cantus, soprano')
 sc.put('A', 9, 1, 'R:4 D#4:1 F#4:1 E4:1 G#4:4 A#4:1 B4:4~ B4:4 A#4:4 F#4:4')      # CS (low), cut short
 sc.put('B', 9, 1, 'B1:2 B2:2 G#2:4 E3:2 D#3:2 B2:4 '
@@ -190,7 +208,7 @@ sc.put('A', 13, 1, 'R:4 A#4:1 C#5:1 B4:1 D#5:4 E#5:1 F#5:4~ '                   
 # ===================================================================== II. C# (bars 15-20), falling
 # The cantus falls la-sol-fa-mi-re-ut on C#; the subject falls with it (the inversion, la..ut).
 sc.mark(15, 'C# (falling)')
-sc.theme('C', 15, 1, hex_dn('A#4', last=12), 'Cantus: C#, la-sol-fa-mi-re-ut (falling)', 6)
+sc.theme('C', 15, 1, hex_dn('A#4', last=12), 'Cantus: C#, la-ut (falling)', 6)
 sc.theme('S', 15, 1, key(INV, 'G#5', 'A#5'), 'Inversion (C#) over the falling cantus, soprano')
 sc.put('B', 15, 1, 'A#1:2 B1:2 C#2:2 D#2:2 E#2:4 F#2:2 D#2:2 '
                    'G#1:2 A#1:2 B#1:2 G#1:2 D#2:2 E#2:2 F#2:2 D#2:2 '
@@ -286,15 +304,15 @@ sc.put('T', 43, 1, 'R:4 F#3:4 B3:4 F#3:4 '
 sc.mark(45, "Bull's leap: C (rising), the second staircase")
 sc.theme('C', 45, 1, hex_up('C4'), "Cantus: C, ut-la (rising), after Bull's leap", 6)
 sc.theme('B', 45, 1, key(SUBJ, 'B4', 'C2'), 'Subject (C), deep bass')
-sc.put('A', 45, 1, 'R:4 E4:4/3 G4:4/3 C5:4/3 B4:4/3 C5:4/3 A4:4/3 F4:4/3 A4:4/3 B4:4/3 '
-                   'D5:4/3 B4:4/3 G4:4/3 F4:4/3 G4:4/3 B4:4/3 D5:4/3 C5:4/3 B4:4/3 A4:4/3 G4:4/3 F4:4/3 '
-                   'G4:4/3 C5:4/3 E5:4/3 D5:4/3 C5:4/3 B4:4/3 A4:4/3 C5:4/3 E5:4/3 D5:4/3 C5:4/3 A4:4/3 '
-                   'A4:4/3 C5:4/3 F5:4/3 E5:4/3 D5:4/3 C5:4/3 B4:4/3 D5:4/3 F5:4/3 E5:4/3 D5:4/3 B4:4/3 '
+sc.put('A', 45, 1, 'R:4 E4:4/3 F4:4/3 G4:4/3 A4:4/3 B4:4/3 C5:4/3 A4:4/3 G4:4/3 F4:4/3 '
+                   'F4:4/3 G4:4/3 A4:4/3 B4:4/3 C5:4/3 B4:4/3 D5:4/3 C5:4/3 B4:4/3 G4:4/3 A4:4/3 B4:4/3 '
+                   'G4:4/3 A4:4/3 B4:4/3 C5:4/3 D5:4/3 E5:4/3 C5:4/3 B4:4/3 A4:4/3 E5:4/3 D5:4/3 C5:4/3 '
+                   'A4:4/3 B4:4/3 C5:4/3 A4:4/3 B4:4/3 C5:4/3 D5:4/3 C5:4/3 D5:4/3 A4:4/3 B4:4/3 C5:4/3 '
                    )
 sc.put('S', 47, 1, 'R:4 G5:4 C6:4 A5:4~ '
                    'A5:4 G5:2 F5:2 A5:4 C6:4 '
                    'B5:4 R:12')
-sc.put('B', 47, 1, 'E3:2 F3:2 G3:2 E3:2 A3:2 B3:2 C4:2 A3:2 '
+sc.put('B', 47, 1, 'R:8 A3:2 B3:2 C4:2 A3:2 '
                    'F3:2 G3:2 A3:2 F3:2 D3:2 E3:2 D3:4')
 sc.theme('T', 49, 1, key(SUBJ, 'B4', 'G3'), "Subject on the dominant (G), tenor, at the cantus's sol")
 sc.put('A', 49, 1, 'R:4 B4:1 D5:1 C5:1 E5:4 F#5:1 G5:4~ '                       # CS above, in G
@@ -365,8 +383,8 @@ sc.theme('S', 67, 1, key(INV, 'G#5', 'G#5'), "Inversion (B, home), soprano, at t
 
 sc.put('A', 67, 1, 'B3:4 D#4:4 B3:4 D#4:4 '
                    'A#3:4 C#4:4 C#4:4 E#4:4')
-sc.put('B', 67, 1, 'G#1:4 B1:4 G#1:4 B1:4 '
-                   'F#2:4 A#1:4 C#2:8')
+sc.put('B', 67, 1, 'G#1:2 A#1:2 B1:2 C#2:2 D#2:2 E2:2 F#2:4 '
+                   'F#2:2 G#2:2 A#2:2 B2:2 C#3:8')
 
 # ===================================================================== XI. A-flat (bars 69-74), rising: the wolf
 # The cantus reaches A-flat = G#.  The first bar is a bare fifth A-flat / E-flat in every voice, a
@@ -385,9 +403,9 @@ sc.put('S', 70, 1, 'R:4 D5:1 F5:1 Eb5:1 G5:4 A5:1 Bb5:4~ '                      
 sc.put('B', 70, 1, 'Bb2:8 G2:8 '
                    'F3:4 A2:4 D3:4 A2:4')
 # b72: B-flat minor (the cantus's D-flat), ii7 of A-flat, leading to E-flat
-sc.put('S', 72, 1, 'F5:4 Bb5:2 Ab5:2 F5:4 Ab5:4')
-sc.put('T', 72, 1, 'Bb3:4 Ab3:2 Gb3:2 F3:4 Bb3:4')
-sc.put('B', 72, 1, 'Bb2:4 Db3:4 Bb2:4 Db3:4')
+sc.put('S', 72, 1, 'F5:4 Bb5:2 Ab5:2 Db6:4 Ab5:4')
+sc.put('T', 72, 1, 'Db4:8 Bb3:4 Ab3:4')
+sc.put('B', 72, 1, 'Bb2:4 Ab2:4 Gb2:4 F2:4')
 sc.theme('A', 73, 1, key(SUBJ, 'B4', 'Eb4'), "Subject on the dominant (E-flat), alto, at the cantus's sol")
 sc.put('S', 73, 1, 'R:4 G5:1 Bb5:1 Ab5:1 C6:4 D6:1 Eb6:4~ '                      # CS above, in E-flat
                    'Eb6:4 D6:4 Bb5:1 Ab5:1 G5:1 Ab5:1 Bb5:1 C6:1 D6:1 Bb5:1')
@@ -407,15 +425,15 @@ sc.put('A', 75, 1, 'Bb4:8 G4:4 Bb4:4 '
                    'A4:4 F4:4 C5:4 G4:4 '
                    'G4:4 C5:4 Bb4:2 Ab4:2 F4:4 '
                    'F4:4 D4:4 G4:4 F4:4 '
-                   'G4:4 A4:2 G4:2 G4:4 E4:4 '
+                   'G4:4 A4:2 G4:2 G4:8 '
                    'E4:4 F#4:4 E4:4 C#4:4')
 sc.put('T', 77, 1, 'Eb4:4 C4:2 D4:2 C4:8 '
                    'B3:4 D4:2 C4:2 B3:4 D4:4 '
                    'E4:4 C4:2 D4:2 E4:4 C4:4 '
                    'C#4:8 F#3:4 R:4')
 sc.put('B', 77, 1, 'C3:2 D3:2 Eb3:2 C3:2 Ab2:2 G2:2 F2:4 '
-                   'G2:4 B1:4 D2:4 F2:4 '
-                   'E2:4 G2:4 C2:4 E2:4 '
+                   'G2:2 A2:2 B2:2 G2:2 D2:2 E2:2 F2:4 '
+                   'E2:2 F2:2 G2:2 A2:2 G2:2 F2:2 E2:4 '
                    'F#2:4 E2:4 C#3:4 R:4')
 
 # ===================================================================== XIII. B (bars 81-86), rising: home
@@ -431,13 +449,13 @@ sc.put('T', 81, 1, 'D#4:4 B3:4 B3:4 B3:4 '
 
 # b83 (B/D# - G#m): the soprano's last division
 sc.put('S', 83, 1, 'B5:1 A#5:1 B5:1 C#6:1 D#6:1 C#6:1 B5:1 A#5:1 G#5:2 B5:2 D#6:2 B5:2')
-sc.put('T', 83, 1, 'D#4:4 B3:4 G#3:4 R:4')
-sc.put('B', 83, 1, 'D#3:4 F#3:4 G#2:4 B2:4')
+sc.put('T', 83, 1, 'D#4:4 F#3:4 G#3:4 R:4')
+sc.put('B', 83, 1, 'D#3:4 B2:4 G#2:4 B2:4')
 sc.theme('T', 84, 1, key(SUBJ, 'B4', 'E3'), "Subject on the subdominant (E), tenor, at the cantus's fa")
 sc.put('S', 84, 1, 'R:4 G#5:1 B5:1 A5:1 C#6:4 D#6:1 E6:4~ '                      # CS above, in E
                    'E6:4 D#6:4 B5:1 A5:1 G#5:1 A5:1 B5:1 C#6:1 D#6:1 B5:1')
-sc.put('A', 84, 1, 'G#4:4 B4:4 A4:4 C#5:4 '
-                   'F#4:4 B4:4 D#5:4 B4:4')
+sc.put('A', 84, 1, 'G#4:4 B4:4 C#5:8 '
+                   'F#4:4 B4:4 D#5:4 F#4:4')
 sc.put('B', 84, 3, 'C#3:8 '
                    'D#3:4 B2:8 R:4')
 
@@ -459,20 +477,44 @@ sc.put('S', 88, 1, 'E6:4 D#6:2 C#6:2 C#6:4 G#5:4 '
                    'B5:4 F#5:4 B5:4 G#5:4 '
                    'B5:4 A#5:4 C#6:4 A#5:4 '
                    'B5:16')
-sc.put('A', 88, 1, 'G#4:4 E4:4 G#4:4 E4:4 '
-                   'F#4:4 F#4:4 G#4:4 B4:4 '
-                   'F#4:8 E4:8 '
+sc.put('A', 88, 1, 'G#4:4 B4:2 A4:2 G#4:4 E4:4 '
+                   'F#4:4 D#4:4 E4:2 D#4:2 F#4:4 '
+                   'C#4:8 E4:8 '
                    'D#4:16')
-sc.put('T', 88, 1, 'E3:4 B3:4 G#3:4 B2:4 '
-                   'B3:4 D#4:4 B3:4 B3:4 '
+sc.put('T', 88, 1, 'B3:4 G#3:4 G#3:2 F#3:2 B2:4 '
+                   'F#3:4 B3:12 '
                    'C#4:4 C#4:4 A#3:4 C#4:4 '
                    'F#3:16')
-sc.put('B', 88, 1, 'E2:4 G#2:4 C#2:4 B1:4 '
-                   'D#2:4 B1:4 G#1:4 F#2:4 '
+sc.put('B', 88, 1, 'E2:2 F#2:2 G#2:4 C#2:2 D#2:2 B1:4 '
+                   'D#2:2 C#2:2 B1:2 A#1:2 G#1:2 A#1:2 B1:2 C#2:2 '
                    'F#2:8 F#1:8 '
                    'B1:16')
 
 NBARS = 91
+
+
+# phrase dynamics (velocity offsets by bar): quiet after Bull's leap, loud at the wolf and at home
+LEVEL = {1: 0, 5: 2, 9: 4, 11: 1, 15: -2, 21: 0, 27: -1, 33: 2, 39: 5, 43: 7, 45: -6, 49: -3, 51: -3,
+         57: 0, 61: 2, 63: 1, 69: 6, 70: 3, 75: 2, 79: 5, 81: 8, 87: 6, 89: 3, 91: 2}
+
+
+def dynamics(b):
+    bar, v = b + 1, 0
+    for k in sorted(LEVEL):
+        if k <= bar:
+            v = LEVEL[k]
+    return v
+
+
+def q(bar, beat=1):
+    return float((bar - 1) * 4 + (beat - 1))
+
+
+BPM = 100
+TEMPO = [[q(1), BPM], [q(44), BPM], [q(44, 4), 80, 'ramp'], [q(45), BPM],      # breath at Bull's leap
+         [q(68, 3), BPM], [q(69), 90, 'ramp'], [q(70), BPM],                    # the wolf bar, a little broader
+         [q(80, 2), BPM], [q(81), 92, 'ramp'],                                  # home
+         [q(88), 92], [q(91), 66, 'ramp'], [q(92), 60, 'ramp']]                 # the cantus falls home
 
 
 def main():
@@ -481,8 +523,8 @@ def main():
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'Fugue XXIII in B major, five voices: Fantasia ut re mi fa sol la per tutti i tuoni',
         'composer': 'Claude / Sam, after John Bull',
-        'instrument': 'Keyboard - five voices (four-voice fugue and cantus)',
-        'key': 'B', 'mode': 'major', 'meter': list(METER), 'bpm': 100,
+        'instrument': 'Keyboard - five voices (a four-voice fugue and a cantus)',
+        'key': 'B', 'mode': 'major', 'meter': list(METER), 'bpm': BPM, 'tempo_map': TEMPO,
         'tempo_text': 'Allegro moderato, alla fantasia',
         'movement_number': 23, 'piece_type': 'fugue', 'edition': 'third',
         'score_tagline': 'The Well-Tempered clAIvier - third edition',
@@ -492,7 +534,8 @@ def main():
     voices = [(LONG[i], ABBR[i], CLEF[i], BASEVEL[i]) for i in range(len(NAMES))]
     named = {LONG[i]: bars[NAMES[i]] for i in range(len(NAMES))}
     entries = [(LONG[NAMES.index(v)], b, off, lab, n) for v, b, off, lab, n in sc.entries]
-    W.build_score(HERE / 'fugue.json', meta, voices, named, entries=entries, subject=SUBJ)
+    W.build_score(HERE / 'fugue.json', meta, voices, named, entries=entries, subject=SUBJ,
+                  dynamics=dynamics, tags=None)
     print(f"wrote {HERE / 'fugue.json'}: {NBARS} bars")
 
 

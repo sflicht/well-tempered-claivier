@@ -1,225 +1,235 @@
-# Fugue XXIII in B major, twenty-four voices: *Fantasia ut re mi fa sol la per tutti i tuoni*
+# Fugue XXIII in B major, five voices: *Fantasia ut re mi fa sol la per tutti i tuoni*
 
 After John Bull's keyboard fantasia *Ut, re, mi, fa, sol, la* (Fitzwilliam Virginal Book no. LI).
+Five voices (Bach's B-major fugue, BWV 868, has four): a four-voice fugue and a cantus.
+91 bars in 4/4, ♩ = 100 (92 at home), about 3:47 in the Bach-Lehman render.
 
-## The premise
+I have not heard any render. Everything below comes from the score and from the tools.
 
-Bull's piece is one of the earliest pieces of keyboard music that cannot be played in the tuning of its
-day. The hexachord *ut re mi fa sol la* is held in semibreves while the other voices move around it.
-After each statement it starts again a whole tone higher, and it goes on climbing until it has stood
-on all twelve pitch levels. The Fitzwilliam editors (1899) noted that the passage "proves that some
-kind of 'equal temperament' must have been employed". The Well-Tempered Clavier is the next chapter
-of the same story, so the cycle's penultimate fugue borrows Bull's machine.
+## Concept at the new size
 
-**24 voices = 24 keys.** Each voice owns one of the cycle's keys. In its key it sings the hexachord
-as a long-note cantus: rising (*ut re mi fa sol la*) in a major key and falling (*la sol fa mi re ut*)
-in a minor key. The step pattern W W H W W is a palindrome, so the falling minor hexachord is both
-the inversion and the retrograde of its relative major's rising one, on the same six pitches. Each
-major key is therefore paired with its relative minor. The pair sings a mirror canon:
+Bull's fantasia is one of the earliest keyboard pieces that needs every key to be usable: the
+hexachord *ut re mi fa sol la*, held in semibreves, starts again a whole tone higher after each
+statement until it has stood on all twelve pitch levels, a century before the Well-Tempered
+Clavier. This fugue borrows his machine and gives it to one voice.
 
-- the major voice climbs in semibreves;
-- a bar and a half later the minor voice enters an octave and a sixth higher and falls;
-- its notes land on the rising notes as a 9-8 / 7-6 chain of suspensions.
-
-A new pair begins every five and a half bars, alternately on beat 1 and on beat 3, and each one sits a
-whole tone higher than the last, as in Bull's order.
+- **The Cantus** (the fifth voice) enters after the exposition and walks through Bull's thirteen
+  statements in semibreves, one note per bar. It rises on one level (*ut→la*) and falls on the next
+  (*la→ut*). Because *la* of one key and *la* of the key a tone higher are a step apart, and so
+  are their two *ut*s, every joint between statements is a single step: the line is one continuous
+  zigzag through all twelve keys. The only exceptions are Bull's own leap (A → C) and the last joint,
+  B♭ → B, a semitone, where the B♭ is re-read as A♯, the leading note of home.
+- **The fugue** (soprano, alto, tenor, bass) follows the cantus into each key. Its subject begins
+  with the hexachord in quick notes, so over a rising statement the subject enters **rectus** on the
+  cantus's own note: the cantus sings in six bars the six notes the subject's head runs through in
+  one. Over a falling
+  statement the subject enters **inverted** (*la sol fa mi re ut*), falling with the cantus.
+- **One bar is a tuning experiment**: the A♭ statement opens with a bare A♭/E♭ fifth in all five
+  voices. In Bach-Lehman it is an open fifth; in quarter-comma meantone it is the wolf.
 
 ## Bull's order, and how it was verified
 
-The order of Bull's hexachord statements was read from two public-domain sources, which agree:
+Kept from the earlier version, which read it from two public-domain sources that agree:
 
 - *The Fitzwilliam Virginal Book*, ed. J. A. Fuller Maitland and W. Barclay Squire (Breitkopf &
-  Härtel, 1899), vol. I p. 183 (no. LI) and the introduction p. xix. I worked from the scan on the
-  Internet Archive, item `imslp-virginal-book-various`, file *TheFitzwilliamVirginalBookVol1.pdf*,
-  PDF page 208. IMSLP's own download was bot-blocked.
-- Edward W. Naylor, *An Elizabethan Virginal Book* (Dent, 1905), pp. 103–104, from Internet Archive
-  item `elizabethanvirgi00nayluoft`.
+  Härtel, 1899), vol. I p. 183 (no. LI) and the introduction p. xix (Internet Archive item
+  `imslp-virginal-book-various`, *TheFitzwilliamVirginalBookVol1.pdf*, PDF page 208).
+- Edward W. Naylor, *An Elizabethan Virginal Book* (Dent, 1905), pp. 103–104 (Internet Archive item
+  `elizabethanvirgi00nayluoft`).
 
-Bull's order is G, A, B, D♭ (written C♯ in the source), E♭, F. The next step would return home, so
-instead he leaps a minor third to A♭. Then come A♭, B♭, C, D, E, F♯, and finally home to G. Some
-sources attribute the piece to Poglietti (Schulenberg, *JSCM* 11). The FVB copy carries Bull's name,
-and so does this credit.
+Bull's order is G, A, B, D♭ (written C♯), E♭, F; the next step would return home, so he leaps a
+minor third to A♭; then A♭, B♭, C, D, E, F♯, and home to G. Transposed so that home is B:
 
-Transposed so that "home" is B, the order becomes:
+**B** | C♯ E♭ F G A | (leap) C D E F♯ A♭ B♭ | **B**.
 
-**B** | C♯(D♭) E♭ F G A | (Bull's leap of a minor third) C D E F♯ A♭ B♭ | **B**.
+Here the leap is taken downward (A4 → C4, a major sixth) so that the second staircase starts again
+in the middle register.
 
-That order is the tonal plan of the fugue. The *Canon per tonos* of the *Musical Offering* also
-climbs by whole tones, which is the Bach link.
+## Material (all in `fugue.py`, written in B)
 
-## Material (`x23.py`, all hand-written)
+- **Subject** (2 bars, kept from the earlier version): `B4:6 C#5 D#5 E5:2 F#5:2 G#5:4 | F#5 E5 D#5 E5
+  C#5 D#5 B4 C#5 A#4:2 B4:2 F#4:4`. The head climbs the hexachord (ut held, re mi in sixteenths,
+  fa sol in eighths, la); the tail falls back through it in a virginalist division and drops to the
+  dominant. Harmony: I – IV | V. Its only common tone of I and IV is *ut*, and its second bar wants
+  *re* under it, which is why it fits a rising cantus exactly at *ut re*.
+- **Answer**: real, on F♯, i.e. the "hard" hexachord on *sol*.
+- **Countersubject** (new): `R:4 D#5 F#5 E5 G#5:4 A#5 B5:4~ | B5:4 A#5:4 F#5 E5 D#5 C#5 E5 D#5 C#5 A#4`.
+  It waits a beat (the subject's *ut* is heard alone), runs in broken thirds, holds G♯, rises into a B
+  tied over the barline (4–3 against the dominant), then falls in sixteenths while the subject's
+  own sixteenths have stopped. Written above the subject; used below it at the octave (5–6 instead of
+  4–3), with its last beat rewritten by hand where the harmony or the cantus required it.
+- **Inversion**: the diatonic mirror around the axis between *mi* and *fa* (B↔G♯, C♯↔F♯, D♯↔E):
+  *la sol fa mi re ut* in quick notes; harmony vi | V. **CSI**, the countersubject's mirror, is used
+  with it in the tenor and bass (its tie resolves upward, a retardation).
+- **Cantus**: the hexachord in semibreves, `hex_up` / `hex_dn`, transposed into each key.
 
-- **Cantus:** the hexachord in long notes (`hex_up`, `hex_dn` are transpositions of it).
-- **S, the subject (2 bars):** it opens by spelling the hexachord in quick notes, B C♯ D♯ E F♯ G♯,
-  then turns back in sixteenths to the dominant: `B4:6 C#5 D#5 E5:2 F#5:2 G#5:4 | F#5 E5 D#5 E5 C#5
-  D#5 B4 C#5 A#4:2 B4:2 F#4:4`.
-- **I:** the exact diatonic mirror of S, whose axis falls between *mi* and *fa*. It falls *la sol fa mi
-  re ut* and is used for the minor keys.
-- **CS / CSI:** a lively virginalist countersubject and its mirror.
-- **HEAD / IHEAD:** the first bar of S and the first bar of I.
+**Where the subject can enter over the cantus.** Over a rising statement (*ut re mi fa sol la*) the
+rectus fits wherever the cantus moves up a step from the subject's *ut*: on *ut* (its own key), on
+*re* (the next key), on *fa* (the subdominant, the "soft" hexachord) and on *sol* (the dominant, the
+"hard" hexachord). Over a falling statement the inversion fits wherever the cantus moves *la → sol*
+of its key: on *la* (its own key), *mi* (dominant) and *re* (subdominant). The piece uses these slots
+and no others. A rising region's entry on *sol* ends on the dominant of the dominant, which is the
+next key's tonic (so the next falling region begins on its vi); a falling region's entry on *re*
+ends on the next key's subdominant (so the next rising region begins with a plagal step).
 
-## Section map
+## Section map (bar, time in the Bach-Lehman render)
 
-| bars | section | what happens |
-|---|---|---|
-| 1–12 | Exposition | Alto V (the B voice) sings B C♯ D♯ E F♯ G♯ in breves. Over each of these notes the subject enters in that note's key: S in B (bass), I in c♯, I in d♯, S in E, S in F♯, I in g♯ (deep bass). The hexachord thereby spells out B major's family of keys. |
-| 13–40 | First staircase | Pairs 1–5: D♭/b♭, E♭/c, F/d, G/e, A/f♯. Each pair carries a full S in its major key, placed at the cantus's *ut* (D♭, A) or *fa* (E♭, F, G), where the subject fits the suspension chain. The figuration changes from pair to pair: eighth-note divisions, sixteenth divisions, dotted alto, broken chords, and "hunting" repeated notes. |
-| 41–43 | Seam | The bass descends F♯–E–D–C♯, comes to rest on F♯7 (the home dominant: five whole steps would bring B back too soon), slips a semitone to G7 and dives to C. This is Bull's leap. |
-| 44–78 | Second staircase | Pairs 6–11: C/a (the dive, deep bass), D/b, E/c♯, F♯/d♯, A♭/f, B♭/g. S enters in each major key; pair 11 gathers HEADs (B♭ bass, E♭, F). At b78 the E♭7 is respelled as D♯7, the dominant of G♯ minor. |
-| 79–91 | Summit | Six of the B family's hexachords return together, with I and S in stretto and a ii–V chorus (detail below). |
-| 89–90 | Arrival | S in B in four voices at 1/8 and 1/2 bar, over the B1 pedal. |
-| 92–96 | Coda | E rises and c♯ falls in minims, the "soft" plagal hexachords, over the pedal. The bass closes E2–F♯2–B1. |
+| bars | time | cantus | entries and texture |
+|---|---|---|---|
+| 1–8 | 0:00 | – | Exposition a 4: subject tenor (B), answer alto (F♯) with CS below, subject soprano with CS below, answer bass (F♯) with CS above. Closes on V4/3 → I. |
+| 9–14 | 0:19 | **enters**: B, rising | Subject soprano on *ut* (B4, while the cantus enters on B3 an octave below); a soprano division over a three-part texture; subject on F♯ (tenor) at *sol*, CS above. |
+| 15–20 | 0:34 | C♯, falling | Inversion (C♯) soprano on *la*; three parts; inversion on F♯ in the bass at *re*. The cantus's F♯ is the seventh of G♯7 and falls to E♯. |
+| 21–26 | 0:48 | E♭, rising | Subject tenor (E♭) with CS; the soprano's first sixteenth division; subject on B♭ (bass) at *sol*. |
+| 27–32 | 1:02 | F, falling | Inversion tenor (F) with CSI in the bass; tenor/bass dialogue; inversion on B♭ (soprano) at *re*. |
+| 33–38 | 1:17 | G, rising | Subject bass (G) with CS; episode in five voices; subject on D (alto) at *sol*. |
+| 39–44 | 1:31 | A, falling | Inversion tenor (A) with CSI; the cantus's D is the seventh of E7; inversion on D (soprano) at *re*, ending on a lone E6. |
+| 45–50 | 1:46 | **Bull's leap**: C, rising | Quiet. Subject in the deep bass (C2); a triplet division (Bull's sesquialtera) in the alto; subject on G (tenor) at *sol*. |
+| 51–56 | 2:00 | D, falling | Inversion bass (D); the cantus's G is the seventh of A7; inversion on G (soprano) at *re*. |
+| 57–62 | 2:15 | E, rising | Subject tenor (E) with CS; episode a 5; subject on **B** (bass) at *sol*: the home key's subject returns under the cantus. |
+| 63–68 | 2:29 | F♯, falling | Inversion alto (F♯) with CSI; the cantus's B is the seventh of C♯7; inversion on B (soprano) at *re*. |
+| 69–74 | 2:44 | A♭, rising | **b69: the drone**, a bare A♭/E♭ fifth in all voices (the meantone wolf). Subject on B♭ (tenor) at *re*; a turn to B♭ minor (b72, ii7 of A♭); subject on E♭ (alto) at *sol*. |
+| 75–80 | 2:58 | B♭, falling (on top) | The soprano rests; the cantus is the top voice. Inversion bass (B♭); a cadence into C (b79) which is the **Neapolitan of B**; the cantus's B♭ becomes **A♯** in F♯7 (b80). |
+| 81–86 | 3:13 | **B, rising: home** (an octave above its first entry) | Subject bass (B) with CS; subject on E (tenor) at *fa*; at the cantus's *la* (G♯5, the top of the piece) the bass sings the inversion: the turn. |
+| 87–91 | 3:28 | B, falling: *sol fa mi re ut* | Coda: IV – ii7 | I6 – vi – I | V7 (4–3 in the soprano) | I under the falling cantus; the last *ut* (B4) sits in the middle of the final chord. |
 
-Tempo: q = 92. It breathes at the seam (ramps to 74 into b44), broadens to 86 from the summit, and
-slows to 62 in the last two bars. The audio lasts about 4:18.
+Tempo: ♩ = 100; a breath into Bull's leap (b44 ramps to 80), the wolf bar a little broader (90),
+home at 92, and the last three bars slow to 60.
 
-## The summit (bars 79–91): who sings what
+## The device and where to hear it
 
-- **Frame:** Bass VI (the g♯ voice) falls *la→ut* in breves, G♯2 F♯2 E2 D♯2 C♯2 B1. This is the other
-  half of the B voice's opening statement. It ends on the B1 pedal, which lasts until the end.
-- **The dominant pair:** Tenor IV (F♯) rises F♯4… from b80, and Sop V (d♯) falls D♯6… from b81.3. They
-  form the same suspension canon as in the tour. Alto V (B) rises B3… from b81.
-- **I in G♯ minor:** Sop I at b79, Alto I at b79.3 (stretto at the octave below), and Sop III at b87.
-  Alto III plays CSI.
-- **IHEAD:** Sop IV (b81), Ten I in d♯ (b85), Bass I (b86).
-- **Chorus over the ii–V (b86–89, G♯m7 | C♯m7 | F♯7 | B):** Sop IV, Sop VI, Alto II, Alto IV,
-  Alto VI and Ten II. They are written as suspension chains, and each group attacks on its own beat
-  (1, 2, 3 or 4), so that no two of the added lines ever move together.
-- **Arrival (b89–90):** S in B in Alto III; S a fifth higher (diatonic, in B) in Sop II an eighth
-  later; S an octave higher in Sop I half a bar later; S in Ten III a bar later.
-- **Coda:** E rises in Ten VI and c♯ falls in Alto II, both in minims (their second statements).
-
-The summit is the only place where any voice sings its hexachord a second time: F♯, d♯, B, E and c♯
-come back there. Bass VI (g♯) and Alto V (B, in the exposition) sing their own hexachord only in
-these outer sections.
+- **The cantus walking through the twelve keys.** It is the only voice in semibreves, struck a
+  little louder (base velocity 72 against 64–66 for the fugue voices). Every new note is a new key
+  centre at the start of a region, and the statements join by step. It is the top voice in b75–80
+  and lies just under the soprano in b81–91.
+- **The subject as the cantus in quick notes.** b9 (soprano and cantus start together on B), b21
+  (tenor on E♭ under the cantus's E♭), b33 (bass on G), b45 (deep bass on C), b57 (tenor on E), b81
+  (bass on B). Each time the head runs through in one bar the six notes that the cantus will take six
+  bars to sing.
+- **Rectus with the rising cantus, inversion with the falling one.** Every falling region opens with
+  the inversion entering on the cantus's *la* (b15, b27, b39, b51, b63, b75).
+- **Hexachord mutation as tonal plan.** Entries on *fa* (E at b84: the soft hexachord) and on *sol*
+  (F♯ at b13, B♭ at b25, D at b37, G at b49, B at b61, E♭ at b73: the hard hexachord) are the
+  modulations.
+- **Bull's leap** (b44–45): the first staircase ends on a lone E6; C major arrives under it, quiet,
+  with the subject in the deep bass and a new triplet figure.
+- **The homecoming** (b79–81): a cadence into C turns out to be the Neapolitan of B; the cantus's
+  B♭ is spelled B♭ in the cantus but sounds as A♯ in F♯7, and steps up a semitone to B.
 
 ## Meantone and well temperament: where they part
 
-Rendered in quarter-comma meantone (`--temperament meantone`: eleven ¼-comma fifths, with the wolf
-between G♯ and E♭), several passages break. The figures below are computed from
-`tools/render_music.py`'s temperament table:
+`renders/fugue-meantone.mp3` is the same performance in quarter-comma meantone (eleven ¼-comma
+fifths, the wolf between G♯ and E♭); the listening room can switch tuning. Interval sizes from
+`tools/render_music.py`'s temperament table (cents), and beat rates computed from the tuned
+frequencies (A4 = 440):
 
 | interval | meantone | Bach-Lehman | equal |
 |---|---|---|---|
-| G♯–E♭ (A♭–E♭) fifth | **737.6 ¢ (wolf)** | 700.0 | 700 |
-| A♭–C, D♭–F, B–D♯, F♯–A♯ major thirds | **427.4 ¢** | 402–404 | 400 |
-| C–E, E♭–G, B♭–D major thirds | 386.3 ¢ (pure) | 392–400 | 400 |
+| A♭–E♭ (G♯–E♭) fifth | **737.6** (the wolf) | 700.0 | 700 |
+| E♭–A♭ fourth | 462.4 | 500.0 | 500 |
+| A♭–C, C♯–E♯, B–D♯, F♯–A♯ major thirds | 427.4 | 402.0–403.9 | 400 |
+| C–E, E♭–G, D–F♯, G–B major thirds | 386.3 (pure) | 392.2–400.0 | 400 |
 
-- **Bars 66–71 (pair 10, A♭ major / F minor) are the wolf passage.** The pair opens at b66.1 on a
-  bare fifth with no third: A♭2 A♭3 A♭4 A♭4 against E♭4 E♭5 (Bass II, Ten II's cantus, Alto IV's S in
-  A♭, Sop V, Ten IV, Sop VI). In meantone that is the wolf, G♯–E♭ = 737.6 ¢, sounding in six voices.
-  Every A♭-major and D♭-major chord in bars 66–70 rests on a 427-cent third (for example A♭/C at
-  b68.3). In Bach-Lehman the fifth is pure (700 ¢) and the thirds are 402–404 ¢.
-- **Bars 41–44 (the seam):** the F♯7 halt is sour in meantone (F♯–A♯ = 427 ¢). The G7 → C that
-  follows is the sweetest chord in the system. The ear goes from the worst to the best in two beats.
-- **Bars 78–79:** E♭7 is respelled as D♯7 and resolves to G♯ minor. In meantone this pivot crosses
-  the wolf directly. Bull's piece, and the whole circle, depends on that pivot being possible.
-- The home key itself (B major) and its dominant are meantone's "bad" keys. The summit and coda
-  would sound uniformly rough in meantone.
-- **Renders for comparison:** `renders/fugue-meantone.mp3` (audio only, with
-  `--temperament meantone`), `renders/fugue.mp3` (Bach-Lehman) and `renders/fugue-equal.mp3`.
+- **b69 (2:44): the wolf.** A full bar of bare fifths, no third: bass A♭2, tenor E♭3, alto A♭3,
+  cantus A♭4, soprano E♭5. In meantone the fifths A♭2–E♭3, A♭3–E♭5 and A♭4–E♭5 beat at about 6, 13
+  and 26 times a second; in Bach-Lehman at about 0.35, 0.7 and 1.4. What to listen for: whether the
+  drone is steady (Bach-Lehman) or wavers and grinds (meantone). On beat 4 the bass moves to C2, the
+  first third (A♭–C, 427 cents in meantone).
+- **b45–50 (1:46) and b21–26 (0:48)**, C major and E♭ major: meantone's best keys; their major thirds
+  are pure (386.3 cents) in the meantone render, against 392–400 in Bach-Lehman.
+- **b80–81 (3:10–3:13)**: F♯7 → B. In meantone the "A♯" is the B♭ key, so F♯–A♯ is 427 cents, and the
+  home chord B–D♯ is 427 cents too. Home itself is one of meantone's worst keys.
+- **b15–20 (0:34)**: C♯ major, with C♯–E♯ at 427 cents in meantone.
 
-## Method
-
-- **Composition order:** the summit was drafted first (frame, themes, then free lines one voice at a
-  time). Then the exposition, then the tour pair by pair, then the seam, then the summit chorus.
-- **Every note is written in `fugue.py` or `x23.py`.** Thematic statements are explicit transforms of
-  the hand-written material: `in_key` (transposition by letter and semitone), `octv`, `hex_up` and
-  `hex_dn`. The only scripted placement of thematic material is `tour_cantus()`, which places the 22
-  tour cantus statements from the `TOUR` table: voice, *ut*, *la*, bar and beat, all chosen by hand.
-  Each minor voice enters 1.5 bars after its major partner. The one programmed exception is the
-  shortened *ut*: the minor voice's last note is shortened where the next pair's *la* enters (and to
-  a dotted half at b78, so that Sop I can breathe before the summit's I).
-- **Scratch tools (scratchpad only; none choose notes).**
-  - A bench builds partial scores and runs `tools/critic.py`.
-  - A sequential checker accepts or rejects whole hand-written lines and prints their clashes.
-  - A helper appends an accepted pair to `fugue.py` as literal token strings.
-  - A per-slot listing shows which chord tones are free.
-  - Every rejected line was rewritten by hand: parallels with the rising cantus at the barline were
-    the most common fault.
-- **No tool changes** were made.
-
-## Credits
-
-- **John Bull**, *Ut, re, mi, fa, sol, la* (FVB LI): the hexachord through all twelve pitch levels,
-  the order of keys, and the leap of a minor third. Verified as described above.
-- **The hexachord itself** is Guido's.
-- **The virginalist figurations** (divisions, broken chords, "hunting" repeated notes) are generic
-  style; no specific source is quoted.
-
-## Measurements (`python3 tools/critic.py cycle/23-b-major/fugue.json`)
-
-Fugue (96 bars, about 4:18 in the Bach-Lehman render):
+## Critic numbers (`python3 tools/critic.py cycle/23-b-major/fugue.json`)
 
 | measure | value | target |
 |---|---|---|
 | parallels_error | **0** | 0 |
-| beat_parallels | **1** (b88.3 S5/T4, D♯5/G♯4 → C♯5/F♯4, a dominant cantus against a free line) | ≤ 8 |
-| parallels_weak | 1 (b90.2.75 S2/T3, sixteenth passing notes inside the arrival stretto) | – |
-| dissonance_unresolved | **0** | ≤ 15 |
-| bad_doublings | **8** | ≤ 8 |
-| low_register_seconds | **7** | ≤ 16 |
-| stepwise_pct | **60.2** | ≥ 60 |
+| parallels_weak | 0 | – |
+| beat_parallels | **0** | ≤ 2 |
+| dissonance_unresolved | **0** | ≤ 3 |
+| bad_doublings | **0** | ≤ 2 |
+| low_register_seconds | **5** (b39.3.5, b40.2.5, b40.3.75, b58.2.5, b58.3.5: passing sixteenths of the inversion/CSI pair in tenor and bass, and of the tenor's subject over the bass) | ≤ 9 |
+| stepwise_pct | **62.5** (leap ≥ 4th: 11.3) | ≥ 65 (missed) |
+| crossings | 9 (all "alto above cantus"; see weak spots) | few |
+| keyboard_unplayable_pct | **11.3** (109 of 965 onsets) | < 15 for 5 voices |
+| mean moving voices | **3.81** | – |
+| pc tripled on beats | 13.9 % | – |
+| themes | 30 subject/inversion entries, all 16/16 intervals and rhythm | – |
 
-Notes on the counts:
+The 14 cantus statements were checked separately (the critic compares everything with the
+subject): each is exactly *ut re mi fa sol la* rising or *la…ut* falling in its key, 14/14, and the
+coda's five notes are *sol fa mi re ut* of B.
 
-- **Bad doublings.** Four are two thematic lines meeting on the same seventh: b80.2, I against the F♯
-  cantus; b85.4, IHEAD in d♯ against Alto V's B-major cantus; b89.4, the arrival's S in B5 over the B1 pedal;
-  b93.4, the E and c♯ coda cantus meeting on A. The other four are b7.4, b82.2, b84.3 and b84.4, in the
-  exposition and the summit.
-- **Low-register clashes.** These are at b48.1 (the 7–6 suspension of the deep C/a pair, G2 against F3),
-  b82.3, b86, b88.2 and b94.1.
-- **Themes.** The critic's theme check compares everything against S. The 29 cantus statements were
-  checked separately: each is exactly *ut re mi fa sol la* rising (major) or falling (minor) in its key
-  (29/29). The S and I entries match at 16/16.
+Moving voices per section: exposition 2.4; B 3.3; C♯ 3.0; E♭ 3.2; F 3.8; G 4.0; A 4.3; C (after the
+leap) 3.5; D 4.2; E 4.0; F♯ 4.3; A♭ 4.5; B♭ 3.7; home 4.8; coda 4.8. All five voices move in 21 bars
+(b35–36, 43–44, 56, 59–60, 65–66, 69, 73–74, 81–82, 84–86, 88–91).
 
-**Moving voices (mean per bar).**
+Remaining critic notes: 44 "seventh not resolved down" notes (mostly the cantus, whose sevenths rise
+with the hexachord, or sevenths held into the next chord); melody: three seventh leaps (b69 soprano
+D♭6 → E♭5 into the drone; b70 and b71 bass), one tritone (b41 bass, after the CSI), one leap over
+an octave (b19, the bass's inversion entry after a rest), two compound same-way leaps and two large
+leaps not recovered at once.
 
-| section | mean | maximum |
-|---|---|---|
-| Exposition, b1–12 | 3.5 | 6 |
-| First staircase, b13–40 | 5.5 | 7 |
-| Seam, b41–43 | 4.3 | 5 |
-| Second staircase, b44–78 | 5.8 | 7 |
-| Summit, b79–91 | 9.9 | 16 |
-| Coda, b92–96 | 8.0 | 9 |
+## Method and disclosure
 
-Summit per bar: b79 7, b80 7, b81 10, b82 8, b83 10, b84 8, b85 11, **b86 15, b87 16, b88 16**, b89 10,
-b90 6, b91 5.
+- Every note is written in `fugue.py`. Thematic statements are explicit transforms of the
+  hand-written subject, countersubject, inversion and CSI (`key`: chromatic + letter transposition;
+  `octv`: octave shift). The cantus statements are `hex_up` / `hex_dn`, the hexachord transposed to
+  each *ut* or *la*, chosen by hand; `last=12` shortens a statement's last note by a beat where the
+  next harmony needs the space (b20, b32, b44, b56, b68). Everything else is a literal token string
+  placed at a bar and beat.
+- Tools: `tools/critic.py` after every passage (parallels, doublings, keyboard reach); a scratch
+  grid printer (scratchpad only) showing every voice at each eighth; `tools/stretto_finder.py` was
+  run on the subject (it proposes a rectus stretto at the octave after two beats), but no stretto
+  survived against the cantus and none is used. No tool wrote or chose notes.
+- `x23.py` (the 24-voice version's helper) is removed from the pair folder; the archive keeps its
+  copy.
+- Renders: `renders/fugue.*` (Bach-Lehman, piano, with PDF/MIDI/MusicXML), `fugue-equal.mp3`,
+  `fugue-meantone.mp3`, and `fugue-spatial.mp3` (binaural, `--layout arc`, General MIDI program 6,
+  harpsichord, as the nearest sound to Bull's virginals; the main render stays piano).
 
+## Honest weak spots
 
-## Weak spots
+- **Lines with life, partly.** The divisions (b11–12, b23–24, b35–36, b45–48, b59–60, b83) and the
+  countersubject move; but several inner parts in the episodes still move in quarter-note chord tones
+  (alto and tenor in b41–44, b53–54, b65–66, b75–80, b86–87), and stepwise motion is 62.5 %, under
+  the 65 % target. The subject's own tail and the countersubject move partly in thirds, and the
+  divisions are partly broken chords, as virginal divisions are.
+- **The scheme is regular.** Thirteen regions, each with a rectus or inversion entry tied to the
+  cantus and one modulating entry: 26 entries in 82 bars. Voices, registers and figures change from
+  region to region, but the six-bar rhythm of the tour does not.
+- **No stretto.** The cantus fixes the harmony a bar at a time; two subject entries closer than a bar
+  conflict with it. The combination the piece offers is subject with cantus, not subject with
+  subject.
+- **The cantus is often an inner voice.** Until b74 it lies under the soprano and often under the
+  alto too; on one piano an inner semibreve decays. The alto crosses above it in nine passages (the
+  critic's 9 crossings), always while the cantus lies in the lower part of its range (B3–A♯4). It is
+  the top voice in b75–80 and lies directly under the soprano in b81–91.
+- **Keyboard.** 11.3 % of onsets exceed two hands, mostly where the soprano is high over a low bass
+  and an inner voice falls between the hands: b17–18 (the high inversion), b28 and b64–65 (the
+  inversion/CSI pairs), b52, b58, b74, and the coda b88–89.
+- **Leaps in the bass** at b70–71 (two sevenths) were kept to avoid parallels with the rising cantus.
+- **Not heard.** The balance of the cantus, the triplet passage and the meantone effect are
+  unverified by ear.
 
-- **The summit is not dense enough.** The plan was 20 or more moving lines for several bars. The
-  peak is 16, in bars 86–88. I tried more lines over the ii–V (eight further candidates in tenor and
-  bass registers). Each one made parallels or unresolved suspensions against the 16 already there,
-  and I did not keep any of them. Reaching 20 would need the summit's existing free lines (Bass V,
-  Alto III, Ten VI) to be recomposed together with new ones. That is the first thing I would redo.
-- **The tour is thinner than planned:** 5–7 moving voices, against 7–9 and then 10–13 in the plan. The
-  climb into the summit is weak: bars 72–78 have only 3–6 moving voices, so the summit arrives more
-  as a change of texture than as the end of a crescendo of voices. The dynamics map (velocity) carries
-  the build-up more than the voice count does.
-- **The arrival thins out.** After the stretto at b89–90 the texture falls to 5–6 voices until the coda's
-  minim hexachords enter.
-- **Several tour bass lines move only in half notes (Bass II, Bass IV).** That is functional but plain.
-  I added passing notes by hand to the bass lines and to Ten III and Alto V, in b27, b37–38, b51,
-  b54, b56, b58, b63, b68, b73 and b77. Each was checked with the critic and kept only if no
-  measure got worse.
-- **The free lines often keep to safe chord tones.** The most common fault I had to remove was a
-  parallel octave or fifth with the rising cantus at the barline. As a result, many free lines move
-  against the cantus by contrary motion or by a held note, rather than having melodic shapes of their
-  own.
-- **Pair 11 (B♭/g) has no complete subject.** No slot fitted the suspension chain, so it uses three
-  HEADs instead (B♭ in the bass, E♭, F).
-- **The theme labels are not all checked by the critic.** The critic checks themes only against S, so
-  the cantus entries show as partial matches. They were verified separately (29/29).
-- **Leaps at the joins.** There is a minor-seventh leap in Sop I at b79.1: the g-minor cantus's *ut*
-  B♭4, then the summit's I on G♯5, across a quarter rest. There is also one augmented-second spelling
-  (A2 E5 → D♭5) at the D♭ entry, b13.1.
-- **I cannot hear the result.** The balance of 24 piano voices, the audibility of the cantus inside
-  the texture, and the meantone effect are unverified by ear. The spatial render (`--layout ring`)
-  was made to help the voices separate.
+## From the N+1 version
 
+- **Kept:** the title and concept (Bull's tour of twelve keys as a cantus, with a fugue around it);
+  Bull's verified order and his leap as a dive into C with the subject in the deep bass; the subject
+  and its mirror inversion; the A♭ region as the meantone wolf; the separate meantone render.
+- **Changed:** twenty-four voices became five, 96 bars became 91 (4:18 → 3:47). The 24 one-key voices
+  and the rising/falling mirror-canon pairs became a single cantus that alternates rising and falling
+  statements, so the whole tour is one stepwise line. A four-voice exposition now comes first. The
+  countersubject is new. Entries are tied to the cantus's direction (rectus over rising, inversion
+  over falling) and to the hexachord slots where they fit. The wolf is now a full bar of bare fifths
+  in every voice. The homecoming is new: C as the Neapolitan of B and B♭ heard as A♯. The 16-voice
+  summit chorus became a five-voice home statement whose cantus falls back to *ut* in the coda.
+- **Why:** with 24 voices the tour ran at 5–7 voices of mostly safe chord tones over half-note basses,
+  and the summit's lines could not be followed. At five voices the cantus can be followed through all
+  twelve keys, every entry has a rest before it and its own register, and the texture can thin to
+  three or four voices (b15–20, b45–48, b75–80) and fill to five where it matters (b35–36, b43–44,
+  b81–91).
 
 # Prelude XXIII in B major: *A Ground upon Ut re mi fa sol la*
 
@@ -241,7 +251,7 @@ It is stated four times, each time with a new division, and then closes:
 | 7–12 | Quaver divisions in the treble (broken chords, as on the virginals). The mean is rewritten so that it moves against them. |
 | 13–18 | The ground moves to the treble. The bass divides in quavers, and the mean follows the ground in sixths. |
 | 19–24 | Semiquaver runs in the treble over the ground, as in Bull's fastest variations. |
-| 25–26 | Close: IV – V7 – I. The final B-major chord leaves room for the fugue's first breve, on the same B. |
+| 25–26 | Close: IV – V7 – I. The final B-major chord leads into the fugue on the same B. |
 
 Tempo: q = 72 ("like a pavan; the divisions in time"). It broadens in the last two bars. The audio
 lasts about 1:27.

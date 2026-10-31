@@ -58,6 +58,7 @@ def aug(s, k):
 
 I = W.invert_diatonic(S, 'Eb4', SC)       # inversion: Eb Ab Gb Ab Bb Cb D F Eb
 I5 = W.invert_diatonic(S, 'Gb4', SC)      # inversion at the 5th (inverted answer): Bb Eb D Eb F Gb Ab Cb Bb
+IC = 'Eb4:4 Ab3:4 Gb3:3 Ab3:1 Bb3:2 C4:2 D4:2 F4:2 Eb4:2'          # inversion with the melodic-minor C (rising)
 SM = 'Gb4:4 Db5:4 Eb5:3 Db5:1 Cb5:2 Bb4:2 Ab4:2 F4:2 Gb4:2'        # the subject in G-flat major
 IM = 'Gb4:4 Cb4:4 Bb3:3 Cb4:1 Db4:2 Eb4:2 F4:2 Ab4:2 Gb4:2'        # its inversion in G-flat major
 RI = W.invert_diatonic(W.retrograde(SQ), 'Eb4', SC)   # retrograde inversion = the Prelude's melody
@@ -119,9 +120,49 @@ theme('T', 4, 1, octv(SQ, -1), 'S rectus')
 # at half speed above it -- the exposition's pair slowed down.  Two beats later the soprano sings the subject
 # at its own speed over it, the alto the countersubject below the soprano: the pair at two speeds at once.
 theme('B', 5, 3, aug(octv(SQ, -2), 2), 'S augmentation x2 (the slow voice enters)', 3)
-put('T', 5, 4, aug(octv(CS, -2), 2).rsplit(' ', 2)[0] + ' Gb3:8')
-theme('S', 6, 1, octv(S, 1), 'S rectus over its own augmentation')
-put('A', 6, 1.5, octv(CS, -1))
+put('T', 5, 4, ' '.join(aug(octv(CS, -2), 2).split()[:6]) + ' Bb3:8 F3:4')     # CS x2, turned into the cadence
+theme('S', 6, 1, octv(IC, 1).rsplit(' ', 1)[0] + ' Eb5:4', 'I inversus over the augmentation (first inversion)')
+put('S', 7, 3, 'D5:4 F5:4 Eb5:8')                        # into the cadence (b8.1): V4/3 - vii - i
+put('A', 7, 3, 'Ab4:8 Gb4:4 Bb4:4')                      # the alto returns for the cadence
+put('T', 8, 1, 'Bb2:4 Gb3:4 Eb3:8 Cb3:4')
+
+# ================================================================ EPISODE 1 (b8.3-9): the subject's tail relayed, a-flat -> D-flat -> G-flat
+# A duet: the alto sings the tail in a-flat, the tenor answers with it in D-flat as the bass (G-flat F E-flat C D-flat
+# = V4/2 - I6 - ii - V6 - I of D-flat); the alto's C-flat turns D-flat into the dominant of G-flat.
+theme('A', 8, 3, 'Db5:2 Cb5:2 Bb4:2 G4:2 Ab4:8 C5:4 Cb5:4', 'tail (retort) in a-flat', 1)
+theme('T', 9, 2, 'Gb3:2 F3:2 Eb3:2 C3:2 Db3:4', 'tail in D-flat as the bass, 3 beats later', 1)
+
+# ================================================================ MIDDLE ENTRIES I (b10-12): G-flat major, rectus over inversus
+theme('S', 10, 1, octv(SM, 1), 'SM rectus, G-flat major')
+put('T', 10, 1, 'Gb2:8')
+theme('T', 10, 4, octv(IM, -1), 'IM inversus, G-flat major, 3 beats later (the mirror in the bass)')
+put('A', 10, 1, 'Bb4:8 Cb5:4 Db5:12 Cb5:4')
+put('S', 11, 2.5, 'Ab5:2 Bb5:4 Cb6:4 Bb5:8 Db6:4 C6:2 Bb5:2 C6:4 Db6:4')
+put('T', 12, 1.5, 'Gb3:2 Db3:4 Eb3:4 C3:4 F3:4 Bb2:2')
+
+# b12-13: the alto turns G-flat into b-flat minor with the subject there; the soprano holds a long line above it
+theme('A', 12, 1, tr(SQ, 7, 4), 'S rectus, b-flat minor (VI of b-flat = G-flat)')
+
+# ================================================================ EPISODE 2 (b13.3-16): the dance -- subject and countersubject in diminution
+SD = aug(S, Fr(1, 2))                 # Eb Bb Cb.Bb Ab Gb F D Eb in 8ths/16ths (2.75 beats)
+CSD = aug(CS, Fr(1, 2))
+theme('T', 13, 3, octv(tr(SD, 7, 4), -2), 'S diminution (b-flat), the dance begins', 1)    # Bb2 F3 Gb3 F3 Eb3 Db3 C3 A2 Bb2
+put('A', 13, 3.25, octv(tr(CSD, -5, -3), -1))                                              # CS diminution above it (F4 ...)
+theme('A', 14, 2, SD, 'S diminution (e-flat), 3 beats later', 1)
+put('S', 14, 2.25, CSD)                                                                     # Bb5 Ab5 Gb5 F5 Eb5 Cb6 ...
+theme('S', 15, 1, octv(tr(SD, 5, 3), 1), 'S diminution (a-flat), 3 beats later', 1)        # Ab5 Eb6 Fb6 ...
+put('A', 15, 1.25, octv(tr(CSD, 5, 3), -1))                                                # CS diminution below it
+put('T', 14, 3, 'Cb3:2 R:2 Bb2:2 Eb3:2 Ab2:2 R:2 Ab3:2 R:2 Eb3:2 Ab2:2')                   # a light bass, in eighths
+# the dance turns over: the alto's inversion in diminution leads back to e-flat, where the slow voice returns
+theme('A', 15, 4, octv(W.scale_rhythm(IC, Fr(1, 2)), 1), 'I diminution (e-flat): the dance turns over', 1)
+put('T', 15, 4, 'Ab2:4 Eb3:4 Bb2:4')
+
+# ================================================================ MIDDLE ENTRIES II (b16.3-19): the slow voice upside down
+# Mirror of the exposition's end (b5.3): there the bass sang S x2 and the soprano I over it, two beats later;
+# here the bass sings I x2 and the soprano S over it, two beats later.
+theme('B', 16, 3, aug(octv(IC, -1), 2).rsplit(' ', 1)[0] + ' Eb3:8', 'I augmentation x2 (the slow voice, inverted)', 3)   # Eb3 Ab2 Gb2 Ab2 Bb2 C3 D3 F3 Eb3
+theme('S', 17, 1, octv(S, 1).rsplit(' ', 1)[0] + ' Eb5:4 F5:4 Ab5:4 Gb5:8', 'S rectus over the inverted augmentation')
+put('A', 17, 1, 'Cb5:2 Bb4:2 D5:4 Eb5:6 Cb5:2 Ab4:4 Gb4:4 Bb4:4 Cb5:4 Bb4:8')
 
 
 def build(nbars):
