@@ -331,7 +331,7 @@ sc.theme('C', 57, 1, hex_up('E4'), 'Cantus: E, ut-la (rising)', 6)
 sc.theme('T', 57, 1, key(SUBJ, 'B4', 'E3'), 'Subject (E), tenor, with the cantus')
 sc.put('A', 57, 1, 'R:4 G#4:1 B4:1 A4:1 C#5:4 D#5:1 E5:4~ '                     # CS above the cantus
                    'E5:4 D#5:4 B4:1 A4:1 G#4:1 A4:1 B4:1 C#5:1 D#5:1 B4:1')
-sc.put('B', 57, 4, 'F#2:4 '
+sc.put('B', 57, 4, 'E2:4 '
                    'B1:4 D#2:4 F#2:4 D#2:4')
 # episode b59-60 (E/G# - C#m | A - F#m7), five voices
 sc.put('S', 59, 1, 'B5:2 A5:1 G#5:1 E5:2 G#5:2 C#6:2 B5:1 A5:1 B5:2 E5:2 '
@@ -361,7 +361,7 @@ sc.put('A', 65, 1, 'F#4:2 G#4:2 F#4:2 D#4:2 E#4:2 G#4:2 E#4:2 C#4:2 '
                    'C#5:4 F#4:4 F#4:4 D#4:4')
 sc.put('T', 65, 1, 'R:4 D#4:4 G#3:8 '
                    'A#3:2 B3:2 C#4:2 A#3:2 F#3:4 A#3:2 F#3:2')
-sc.put('B', 65, 1, 'G#1:4 B1:4 C#2:4 E#2:4 '
+sc.put('B', 65, 1, 'G#1:4 B1:4 C#2:8 '
                    'F#2:2 E#2:2 D#2:2 E#2:2 D#2:2 C#2:2 D#2:4')
 sc.theme('S', 67, 1, key(INV, 'G#5', 'G#5'), "Inversion (B, home), soprano, at the cantus's re")
 
