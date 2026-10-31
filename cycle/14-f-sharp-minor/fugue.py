@@ -118,6 +118,9 @@ put('C', B(40, 3), "A5:8 F#5:16 E#5:8 C#5:8 D5:8")
 # Quintus, the fifth voice, enters with the answer over the comes' chromatic ascent (b32), and Altus takes up
 # countersubject I against it, as in b9-17
 put('Q', B(32, 3), oc(TA, -1) + ' ' + "D4:16 B3:16 B3:16 C4:4")
+# the tenor resolves the pivot's minor ninth (A-flat) to G at b44.1 and then rests through the first per-tonos
+# block, which is in three voices
+put('T', B(44), "G3:4")
 # b43, the tritone pivot: C#7 (b42) becomes G7 with a minor ninth (b43), V of C minor: E#=F, G#=Ab and B are
 # common tones; only C# rises to D and the bass falls C#-G.
 put('B', B(43), "G2:16")
@@ -137,7 +140,7 @@ COMES = droplast(W.scale_rhythm(TC, Fr(1, 2)))     # C4 ... D4, 64 sixteenths
 BLOCK = {
     'C': DUX + ' R:12 R:16',
     'A': 'R:16 R:16 ' + COMES,
-    'T': ("G3:8 C4:4 B3:4 B3:8 C4:4 D4:4 G3:4 C4:4 B3:4 C4:4 G3:4 Eb3:4 C3:4 D3:4 "
+    'T': ("G3:8 C4:4 B3:4 G3:8 C4:4 D4:4 G3:4 C4:4 B3:4 C4:4 G3:4 Eb3:4 C3:4 D3:4 "
           "G3:4 C4:4 B3:4 G3:2 F3:2 D3:4 F3:4 Bb3:4 A3:4"),
     'B': ("C3:8 Eb3:4 D3:4 G2:8 A2:4 B2:4 C3:4 Ab2:4 G2:4 F2:4 G2:4 Ab2:4 A2:4 B2:4 "
           "C3:4 Ab2:4 G2:4 F2:4 G2:4 F2:4 G2:4 A2:4"),
@@ -162,6 +165,8 @@ PT_ENTRIES = []
 for k, sh in enumerate(PT_SHIFT):
     b0 = PT0 + 6 * k
     for v, toks in BLOCK.items():
+        if k == 0 and v == 'T':      # block 1 in three voices: the King's theme, its comes and the bass
+            continue
         lead, body = strip_rests(toks)
         put(v, B(b0) + lead, trs(body, sh))
     PT_ENTRIES.append(('C', b0, 0, f'canon per tonos {k + 1} ({PT_KEYS[k]}): dux, thema per diminutionem', 4))
@@ -178,14 +183,14 @@ SUMMIT = {  # bars 62-78
     'C': ['R:4 F#5:4 A5:4 C#6:4', 'D6:4 E#5:4 R:2 C#6:2 B#5:4', 'B5:4 A#5:4 A5:6 G#5:2',
           'G5:2 F#5:2 E#5:2 C#5:2 F#5:2 B5:2 A5:4', 'G#5:4 R:4 B5:8~', 'B5:2 A5:2 G#5:2 R:2 A5:4 G#5:4', 'F#5:16',
           'E#5:8 G#5:8', 'A#5:8 R:4 C#6:4', 'A5:4 F#5:4 E#5:4 D6:4', 'R:2 F#5:2 G5:4 G#5:4 A5:4',
-          'A#5:6 B5:2 B#5:2 C#6:2 D6:2 F#6:2', 'C#6:2 G#5:2 A5:4 B5:4 C#6:4~', 'C#6:8 D6:8', 'C#6:8 B5:8~',
+          'A#5:6 B5:2 B#5:2 C#6:2 D6:2 F#6:2', 'C#6:2 G#5:2 A5:4 B5:4 C#6:4~', 'C#6:8 D6:4 F#6:4', 'C#6:8 B5:8~',
           'B5:16', 'A#5:16'],
     'A': ['F#4:4 R:12', 'R:16', 'R:4 F#4:4 A4:4 C#5:4', 'D5:4 E#4:4 R:2 C#5:2 B#4:4', 'B4:4 A#4:4 A4:6 G#4:2',
           'G4:2 F#4:2 E#4:2 C#4:2 F#4:2 B4:2 A4:4', 'G#4:4 F#4:4 D#4:8', 'C#4:8 E#4:8', 'C#5:16',
           'C#5:12 F#5:4', 'A4:8 B4:8', 'E5:8 D#5:4 C#5:2 R:2', 'E#5:16', 'F#5:16~', 'F#5:8 D5:8',
           'D5:8 C#5:8', 'C#5:16'],
     'T': ['A3:16', 'F#3:4 E#3:8 F#3:4', 'G#3:4 A#3:4 F#3:4 E#3:4', 'F#3:4 G#3:4 B3:4 F#3:4', 'G#3:16',
-          'B2:4 G#2:4 R:8', 'R:8 D#3:8', 'R:16', 'C#3:16', 'C#3:16', 'D3:16', 'C#3:8 R:4 C#3:4',
+          'B2:4 G#2:4 R:8', 'R:8 D#3:8', 'R:16', 'C#3:16', 'C#3:16', 'D3:16', 'R:16',
           'C#3:16', 'C#3:8 R:8', 'F#3:16', 'E#3:16', 'F#3:16'],
     'Q': ['A4:8 C#5:8', 'B4:4 C#5:8 D#5:4', 'E#5:4 R:12', 'R:16', 'R:16', 'D4:4 B3:4 C#4:8', 'G#3:16',
           'G#3:8 C#4:8', 'E3:16', 'F#3:8 G#3:4 F#3:4', 'F#3:8 B3:8', 'A#3:8 A3:8', 'G#3:8 R:8', 'A3:8 B3:8',
@@ -237,9 +242,9 @@ def q(bar, beat=1):
     return (bar - 1) * 4 + (beat - 1)
 
 
-TEMPO = {'tempo_map': [[q(1), 84], [q(21), 84], [q(22), 80, 'ramp'], [q(22), 88], [q(42), 88], [q(43, 3), 72, 'ramp'],
-                       [q(44), 92], [q(61), 92], [q(62), 96, 'ramp'], [q(75), 96], [q(77), 76, 'ramp'],
-                       [q(78, 3), 58, 'ramp']]}
+TEMPO = {'tempo_map': [[q(1), 92], [q(21), 92], [q(22), 88, 'ramp'], [q(22), 96], [q(42), 96], [q(43, 3), 78, 'ramp'],
+                       [q(44), 100], [q(61), 100], [q(62), 104, 'ramp'], [q(75), 104], [q(77), 80, 'ramp'],
+                       [q(78, 3), 60, 'ramp']]}
 DYN = {1: -8, 9: -6, 17: -4, 22: -2, 26: 0, 35: 2, 44: 0, 50: 2, 56: 4, 62: 8}
 
 
@@ -249,7 +254,7 @@ def build(path=None):
             'subtitle': 'Fugue XIV in F-sharp minor, five voices: Ricercar a 5 sopra il Thema Regio',
             'composer': "Claude / Sam (on Frederick the Great's Royal Theme, after J. S. Bach's Musical Offering, BWV 1079)",
             'instrument': 'Piano (five voices)',
-            'key': 'F#', 'mode': 'minor', 'meter': list(METER), 'bpm': 84,
+            'key': 'F#', 'mode': 'minor', 'meter': list(METER), 'bpm': 92,
             'tempo_text': 'Alla breve, grave e poi animato', 'movement_number': 14, 'piece_type': 'fugue',
             'edition': 'third', 'motto': 'Quaerendo invenietis',
             'markers': [{'t': q(1), 'label': 'Exordium: the King\'s theme'},

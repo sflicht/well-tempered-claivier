@@ -308,10 +308,43 @@ X('A', 66, 3, 'F#4:4 G4:4 G4:4 Eb4:4 C5:4 A4:4 D5:16')
 
 # ================================================================ BUILD
 BPM = 72
-TEMPO = {'tempo_map': [[0, 72]]}
-DYN = {1: -2}
-# registration: manuals singing, pedal full
-BASEVEL = [70, 66, 66, 70, 72]
+# Tempo map, t in quarters (bar b starts at 4*(b-1)).  Grave for the Stollen; the echo passage
+# slower; lines 5-6 a little quicker; the half cadence of line 6 broadens into the general pause;
+# lines 7-8 move on; line 9 slows into its half cadence; the guest a little brisker; the summit
+# broadens into its cadence; a long final ritardando over the tonic pedal.
+TEMPO = {'tempo_map': [[0, 72], [40, 69, 'ramp'], [42, 72], [72, 66], [96, 74], [148, 74],
+                       [154, 56, 'ramp'], [156, 76], [204, 74], [224, 64, 'ramp'], [225, 76],
+                       [238, 72], [256, 64, 'ramp'], [262, 60], [268, 50, 'ramp'], [272, 40, 'ramp']]}
+# phrase dynamics (velocity offsets from this bar on)
+DYN = {1: -6, 6: -3, 11: -4, 14: -1, 19: -4, 25: -3, 32: 0, 36: 3, 38: 1, 40: -3, 46: -1, 52: 1,
+       57: 3, 60: 6, 63: 8, 66: 5, 68: 7}
+# registration: Diskant leads, Alt and Tenor a little softer, the pedals full; Pedal I (the canon's
+# follower, in the tenor register) as strong as the leader so the canon can be heard
+BASEVEL = [70, 63, 64, 68, 70]
+MARKS = [(1, 'Line 1: subject 1 (Tenor, Alt, Diskant)'), (6, 'Line 1 in the pedal, canon at 6 1/2 beats'),
+         (11, 'Line 2: limping subject, canon at the octave'), (14, 'Line 2 in the pedal, canon at 5 beats'),
+         (19, 'Lines 3-4: echo (manuals alone)'), (25, 'Line 5: syncopated subject'),
+         (27, 'Line 5 in the pedal, canon at 4 1/2 beats'), (32, 'Line 6: the harps (tirate)'),
+         (34, 'Line 6 in the pedal, canon at 4 beats; augmented sixth at b37'), (39, 'General pause'),
+         (40, 'Line 7: triplets and their mirror; canon at 3 1/2 beats'),
+         (46, 'Line 8: E natural, knocking; canon at 3 beats'),
+         (52, 'Line 9: chromatic fall; canon at 2 1/2 beats'), (57, 'Guest: BWV 542 subject (Diskant)'),
+         (60, 'Summit: line 10, canon at 1 1/2 beats, stretto of subject 10'), (66, 'Coda: line 1 returns; G major')]
+
+
+def soften_echoes(path):
+    """Performance data, not notes: the echo bars are played on a softer manual."""
+    import json
+    data = json.loads(Path(path).read_text())
+    for v, b0, b1, dv in ECHO:
+        name = LONG[NAMES.index(v)]
+        for voice in data['voices']:
+            if voice['name'] != name:
+                continue
+            for e in voice['events']:
+                if (b0 - 1) * 4 <= e['t'] < (b1 - 1) * 4:
+                    e['v'] = max(24, e['v'] + dv)
+    Path(path).write_text(json.dumps(data, indent=1))
 
 
 def build(nbars, path=None):
@@ -324,7 +357,8 @@ def build(nbars, path=None):
             'key': 'G', 'mode': 'minor', 'meter': list(METER), 'bpm': BPM,
             'tempo_text': 'Fantasia: Grave',
             'movement_number': 16, 'piece_type': 'fugue', 'edition': 'third',
-            'voice_order': 'high_to_low'}
+            'voice_order': 'high_to_low',
+            'markers': [{'t': float((b - 1) * 4), 'label': txt} for b, txt in MARKS]}
     meta.update(TEMPO)
     voices = [(LONG[i], ABBR[i], CLEF[i], BASEVEL[i]) for i in range(len(NAMES))]
 
@@ -334,8 +368,10 @@ def build(nbars, path=None):
             if b + 1 >= k:
                 v = DYN[k]
         return v
-    return W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES,
-                         subject=S1, dynamics=dynamics)
+    out = path or HERE / 'fugue.json'
+    data = W.build_score(out, meta, voices, bars, entries=ENTRIES, subject=S1, dynamics=dynamics)
+    soften_echoes(out)
+    return data
 
 
 if __name__ == '__main__':

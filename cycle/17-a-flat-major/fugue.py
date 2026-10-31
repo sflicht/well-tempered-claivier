@@ -288,7 +288,7 @@ def father():
                     ' Eb5:12 F5:12 | C6:12 ' + trill('C6', 'Bb5', 12, ('Ab5', 'Bb5')) + ' | Ab5:6 G5:6 F5:6 Eb5:6 |'
                     ' Db5:12 C5:6 Db5:6 | C5:24')
     theme('A', 37, 6, subj('Ab', octave=4, inv=True), 'over the father: the subject inverted (alto)', 2, 'inversus')
-    put('A', 39, 6, 'F4:6 F4:6 | Ab4:6 G4:2 Ab4:4 Db5:12 | C5:12 Db5:12')
+    put('A', 39, 6, 'F4:6 F4:6 | Ab4:6 G4:2 Ab4:4 F4:12 | Ab4:12 Db5:12')
     put('T', 40, 0, 'C4:6 Bb3:2 C4:4 Db4:6 Ab3:6 | Eb3:12 G3:12')
 
 
@@ -314,18 +314,87 @@ coda()
 NB = 44
 
 
+def q(bar, beat=1, extra=0.0):
+    """Quarter-note time of a bar and dotted-quarter beat (1-4) in 12/8."""
+    return float((bar - 1) * 6 + (beat - 1) * Fr(3, 2)) + extra
+
+
+# Allegretto giocoso, dotted quarter = 58 (quarter = 87).  Each prepared cadence broadens a little into its
+# evasion; the gag hurries; A-flat minor and the dream are slower; the stuck trill pushes; the trap door is
+# a sudden hush.  The hanging seventh is held (quarter = 26: about 3.5 s) and the beat after it is silence
+# (quarter = 24: about 3.75 s).  The father is broad (dotted quarter = 43), the last cadence broader still.
+TEMPO = [[0, 87],
+         [q(9, 3), 87], [q(10), 78, 'ramp'], [q(10), 87],
+         [q(11, 3), 87], [q(12), 80, 'ramp'], [q(12), 87],
+         [q(14), 87], [q(17), 94, 'ramp'],
+         [q(17), 74], [q(17, 4), 74], [q(18), 66, 'ramp'],
+         [q(22, 3), 68], [q(23), 60, 'ramp'],
+         [q(23), 72], [q(24), 87, 'ramp'], [q(24, 3), 87], [q(25), 76, 'ramp'],
+         [q(25), 84], [q(27), 87],
+         [q(29), 87], [q(30), 91, 'ramp'],
+         [q(30, 4), 91], [q(31), 68], [q(31, 3), 68], [q(32), 86, 'ramp'],
+         [q(33), 88], [q(35, 3), 93, 'ramp'], [q(36), 86], [q(36, 3), 70, 'ramp'],
+         [q(36, 3), 26], [q(36, 4), 24],
+         [q(37), 64], [q(40, 3), 64], [q(41, 3), 54, 'ramp'],
+         [q(42), 60], [q(43, 3), 60], [q(45), 42, 'ramp']]
+DYN = {1: -2, 9: 2, 10: 0, 14: 2, 15: 3, 16: 5, 17: -12, 23: -6, 24: 2, 25: -2, 26: 0, 27: 1, 29: 3,
+       30: 4, 31: -12, 32: -4, 33: 2, 34: 4, 35: 6, 36: 8, 37: -2, 38: -2, 40: 2, 41: 5, 42: 6, 43: -3,
+       44: -5}
+MARKERS = [(q(1), 'Exposition: four children'),
+           (q(9, 3), 'The first cadence, evaded (V - vi)'),
+           (q(14), 'The running gag: the bass steps up, faster and faster'),
+           (q(17), 'A-flat minor: home, but minor'),
+           (q(18), 'The dream (E major): the subject in augmentation'),
+           (q(23), 'The way home'),
+           (q(25), 'Guest: Bach, BWV 862, at pitch (tenor)'),
+           (q(27), 'At home: the trill that will not stop'),
+           (q(31), 'Trap door: flat VI'),
+           (q(33), 'All four children: stretto'),
+           (q(36, 3), 'The hanging seventh; silence'),
+           (q(37), 'The father'),
+           (q(42), 'The first perfect cadence'),
+           (q(43), 'The tune gets its do')]
+
+
+def accents(data):
+    """12/8 metric accents on the written velocities (beats 1 and 3 strong, 2 and 4 medium)."""
+    for v in data['voices']:
+        for e in v['events']:
+            ph = Fr(e['t']).limit_denominator(48) % 6
+            add = 4 if ph == 0 else 2 if ph == 3 else 1 if ph in (Fr(3, 2), Fr(9, 2)) else 0
+            if e['d'] < 0.5:
+                add -= 2
+            e['v'] = max(24, min(118, int(e['v']) + add))
+
+
 def build(path=None):
-    path = path or HERE / 'fugue.json'
+    path = Path(path or HERE / 'fugue.json')
     bars = {LONG[n]: assemble(n, NB) for n in NAMES}
     meta = {'title': 'The Well-Tempered clAIvier',
             'subtitle': 'XVII. Fugue in A-flat major: Fuga, fuggendo la cadenza',
             'composer': 'Claude / composed for Sam (guest subject: J. S. Bach, BWV 862)',
-            'instrument': 'Piano (four voices, and a fifth at the end)',
+            'instrument': 'Piano (four voices; a fifth, the father, at the end)',
             'key': 'Ab', 'mode': 'major', 'meter': list(METER), 'bpm': 87,
             'tempo_text': 'Allegretto giocoso (dotted quarter = 58)', 'movement_number': 17,
-            'piece_type': 'fugue', 'edition': 'third'}
+            'piece_type': 'fugue', 'edition': 'third', 'motto': 'Fuggir la cadenza (Zarlino)',
+            'tempo_map': TEMPO, 'score_layout': {'hide_empty_staves': True},
+            'markers': [{'t': t, 'label': lab} for t, lab in MARKERS]}
     voices = [(LONG[n], n, clef, vel) for n, _, clef, vel in VOICES]
-    return W.build_score(path, meta, voices, bars, entries=ENTRIES, subject=subj('Ab', octave=3))
+
+    def dynamics(b):
+        v = 0
+        for k in sorted(DYN):
+            if b + 1 >= k:
+                v = DYN[k]
+        return v
+    data = W.build_score(path, meta, voices, bars, entries=ENTRIES, subject=subj('Ab', octave=3),
+                         dynamics=dynamics, accents=False)
+    accents(data)
+    pans = {'S': 76, 'A': 68, 'T': 58, 'B': 50, 'P': 64}
+    for v in data['voices']:
+        v['piano_pan'] = pans[v['abbr']]
+    path.write_text(json.dumps(data, indent=1))
+    return data
 
 
 if __name__ == '__main__':

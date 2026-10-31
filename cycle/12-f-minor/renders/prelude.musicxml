@@ -42,10 +42,10 @@
         <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
-            <per-minute>54</per-minute>
+            <per-minute>63</per-minute>
           </metronome>
         </direction-type>
-        <sound tempo="54.0" />
+        <sound tempo="63.0" />
       </direction>
       <note>
         <pitch>

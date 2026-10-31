@@ -10,8 +10,8 @@
    4,
    4
   ],
-  "bpm": 54,
-  "tempo_text": "Adagio, come un corale",
+  "bpm": 63,
+  "tempo_text": "Andante, come un corale",
   "character": "The name, three times",
   "movement_number": 12,
   "piece_type": "prelude",
@@ -19,32 +19,32 @@
   "tempo_map": [
    [
     26,
-    54
+    63
    ],
    [
     32,
-    46,
+    54,
     "ramp"
    ],
    [
     32,
-    50
+    58
    ],
    [
     44,
-    50
+    58
    ],
    [
     48,
-    54
+    63
    ],
    [
     58,
-    54
+    63
    ],
    [
     64,
-    40,
+    46,
     "ramp"
    ]
   ],

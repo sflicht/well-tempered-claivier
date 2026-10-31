@@ -7,10 +7,10 @@
   - `*-equal.mp3`: equal temperament, audio only (piano).
   - `fugue-spatial.mp3`: binaural, `--layout arc --program 19` (church organ). Why the organ: BWV 769, the model, is an organ work, and on organ pipes the long notes of the cantus lines and of the summit hold at full strength for their whole length instead of decaying as piano notes do, so the four simultaneous lines stay present to their ends. The main render stays piano. The sixteen-voice version's `fugue-spatial-choir.mp3` was deleted here because this render replaces it (a copy stays in `archive-n-plus-1/renders/`).
 - `archive-n-plus-1/`: the earlier sixteen-voice version (source, score, notes, reviews, renders), untouched.
-- `REVIEW-2.md` at the pair root is the second review of the sixteen-voice version (the same file is in `archive-n-plus-1/`); it does not describe this fugue.
+- `REVIEW.md`: the independent review of this four-voice version; see "Review" at the end for what changed.
 - Build: `python3 prelude.py`, `python3 fugue.py`, then the render commands in `cycle/CONVENTIONS.md`.
 
-**Length.** Prelude about 1:19 rendered (79 s; dotted quarter = 52, broadening into the half cadence). Fugue about 2:51 rendered (171 s): *Moderato, con allegrezza*, quarter = 76, with breaths at the cadences of b14 (G), b24 (D) and b34 (B minor), the siciliano section a little calmer (72), a longer breath on the D7 before the summit (to 60), the summit in tempo, a breath at its cadence (b48), and a broadening only over the last two bars (to 50).
+**Length.** Prelude about 1:19 rendered (79 s; dotted quarter = 52, broadening into the half cadence). Fugue about 2:51 rendered (171 s): *Moderato, con allegrezza*, quarter = 76, with breaths at the cadences of b14 (G), b24 (D) and b34 (B minor), the siciliano section a little calmer (72), a short breath on the D7 before the summit (to 66), the summit in tempo, a breath at its cadence (b48), and a broadening only over the last two bars (to 50).
 
 I have not heard any of this. Everything below comes from the scores, `tools/critic.py` and my scratch checks.
 
@@ -31,7 +31,7 @@ I have not heard any of this. Everything below comes from the scores, `tools/cri
 | Voice | Line | Its subject (the line quickened, with a character) | Its cantus (the line in half notes) | At the summit |
 |---|---|---|---|---|
 | Soprano | L1 "Vom Himmel hoch, da komm ich her" | S1: a dotted skip and a peal of bells | b11–14, at pitch (G5) | b44.2, in C, with the chorale's upbeat, on top |
-| Tenor | L2 "Ich bring euch gute neue Mär" | S2: a fanfare with trumpet tattoos | b21–24, in D | b43.3, at pitch (G4) |
+| Tenor | L2 "Ich bring euch gute neue Mär" | S2: a fanfare with trumpet tattoos | b21–24, in D | b43.2, at pitch (G4), off the beat |
 | Alto | L3 "Der guten Mär bring ich so viel" | S3: a siciliano in triplets | b31–34, at pitch (B4), on top | b43.1, at pitch (B4) |
 | Bass | L4 "Davon ich singn und sagen will" | S4: the falling octave as bell-rounds | b39–42, in C | b44.3, at pitch (G3) |
 
@@ -57,7 +57,7 @@ All four are hand-written diminutions of the chorale lines; S1–S3 are the sixt
 | 15–16 | **II. Tenor: S2, with S1** | The tenor alone with its fanfare; the soprano answers with S1 on B, a tenth above, two beats later (two voices: the first pair). | G |
 | 17–18 | | Alto: S2's answer in D (line 2 in D, real, C♯); its tattoos bend back to G with C natural. The bass enters walking down the scale D C♯ B A G F♯; the tenor's countersubject climbs in sixteenths. V4/2 → I6 in D, then Am → D7. | D → G |
 | 19–20 | | Bass: S2 in G. Alto: the pair again, S1 on B, its peal turned to D (C♯). | G → D |
-| 21–24 | **L2, tenor** | The tenor sings its line in D (D4 D4 A3 A3 F♯3 A3 G3 F♯3) in a register of its own, with the alto silent and the soprano in a descant above: D Bm \| F♯m F♯m/A \| Bm A/C♯ \| A7 D. The line's own G–F♯ is the seventh of A7 resolving. Cadence in D (b24.3). | D |
+| 21–24 | **L2, tenor** | The tenor sings its line in D (D4 D4 A3 A3 F♯3 A3 G3 F♯3) in a register of its own, the only voice holding every half note: the alto is silent, the bass walks in quarters for half of the beats and the soprano has a descant above: D Bm \| F♯m F♯m/A \| Bm A/C♯ \| A7 D. The line's own G–F♯ is the seventh of A7 resolving. Cadence in D (b24.3). | D |
 | 25–26 | **III. Alto: S3, with S2** | The alto alone with its siciliano in E minor over a held E in the bass (a drone, as in the prelude's musette). | e |
 | 27–28 | | Soprano: S3's **real answer in B minor** (C♯, A♯), up to D6. Tenor: S2 in B minor against it (the second pair: line 2 in B minor, A♯). Alto countersubject; the bass falls to F♯. | b |
 | 29–30 | | F♯ becomes B major, the dominant of E minor (D♯ in the alto). Bass: S3 in E minor under the soprano and tenor; B7 → B. | e |
@@ -77,18 +77,19 @@ All four are hand-written diminutions of the chorale lines; S1–S3 are the sixt
 | Voice | Line | Level and band | Enters |
 |---|---|---|---|
 | Alto | L3: B4 E5 E5 D5 F♯5 G5 E5 D5 | at pitch; B4–G5 | b43.1, alone |
-| Tenor | L2: G4 G4 D4 D4 B3 D4 C4 B3 | at pitch; B3–G4 | b43.3 |
+| Tenor | L2: G4 G4 D4 D4 B3 D4 C4 B3 | at pitch; B3–G4 | b43.2, on beats 2 and 4 throughout |
 | Soprano | L1 in C with the chorale's upbeat: (C6) B5 A5 B5 G5 A5 B5 C6 | a fourth higher; G5–C6 | b44.2 (upbeat), b44.3 |
 | Bass | L4: G3 F♯3 E3 D3 D3 C3 B2 A2 G2 | at pitch; G2–G3 | b44.3 |
 
-- **All four lines sound together from b44.3 to b47.1** (ten beats), and no other note sounds. Harmony of the lines alone: (C/G upbeat) G \| D/F♯ Em \| Em7/D D7 \| G/D (C passing) G/B, D7/A \| G.
+- **All four lines sound together from b44.3 to b47.1** (ten beats), and no other note sounds. Soprano, alto and bass move on beats 1 and 3, the tenor on beats 2 and 4, so the four lines never move together and every note of line 2 is struck alone. Harmony on the main beats: G \| D/F♯ Em \| Em7/D D7 \| G/D (C passing) G/B, D7/A \| G; the tenor's off-beat notes make anticipations (45.2, 46.2) and a passing seventh (46.3–46.4).
 - **What makes each line audible.**
   - Each enters alone into a silence: the bars before end on D7/C and stop, the alto starts by itself, and each later entry comes into a texture of one, two and three long-note voices.
   - Each line has an octave band of its own, with gaps between the bands; there are no crossings and no unisons.
   - Each voice has sung its own line before as a cantus (L1 at b11, L2 at b21, L3 at b31 at the same pitch, L4 at b39), so each line returns in the voice that owns it.
   - Every note of the summit is a chorale note, so all four play 8 velocity steps above their base; the dynamics make a crescendo from the lone first entry.
+  - Touch (performance data only): line 2 slightly detached (gate 0.78), line 4 portato (0.86), lines 1 and 3 legato.
 - **Line 1 is in C, a fourth higher.** That is the only exact level at which it combines with the other three above them. With all four lines at their own pitch, four separate bands need four octaves (G1–G5) and my searches found only clusters there (see "How the notes were written").
-- **Rhythmic liberties at the end, all in the lines' last notes.** The bass's D C B becomes a dotted figure (D. C \| B; the C an eighth, as in the Essen source) so that its C passes off the beat; the soprano holds its last C over the bass's G as a 4–3 suspension and resolves it to B. The alto's line ends at b47.1 and the tenor's at b47.3; after them the alto (G5 F♯5 G5) and the tenor (a breath, then B3) complete the cadence D7/A → G.
+- **Rhythmic liberties at the end, all in the lines' last notes.** The bass's D C B becomes a dotted figure (D. C \| B; the C an eighth, as in the Essen source) so that its C passes off the beat; the soprano holds its last C over the bass's G as a 4–3 suspension and resolves it to B. The alto's line ends at b47.1 and the tenor's at b47.2; after them the alto (G5 F♯5 G5) and the tenor (a breath, then B3) complete the cadence D7/A → G.
 
 **2. The pairs** (each new subject with the one before, two voices first):
 - S1 + S2: b15.3 (soprano over tenor) and b19.3 (alto over bass), S1 a tenth above, two beats after S2.
@@ -111,17 +112,17 @@ The signature is the final cadence, on top (b50.3–52), as in the sixteen-voice
 | parallels_weak | 0 | |
 | beat_parallels | **1** | ≤ 2. b28.3, soprano/tenor F♯→C♯ in octaves on successive beats, with notes between: the S3 answer and the S2 pair, combined on the same beat. |
 | dissonance_unresolved | **0** | ≤ 3 |
-| bad_doublings | **3** | ≤ 2; see weak spots. b12.4 is the kept stretto of section I (the critic reads C–A–F♯ as C°7, so the doubled A counts as its seventh). b46.1 and b46.2 are the summit: the tenor's and the bass's lines both sing D under E5/G5, which the critic reads as Em7/D (the D a seventh); as G6/D it is a doubled fifth. |
+| bad_doublings | **2** | ≤ 2. b12.4 is the kept stretto of section I (the critic reads C–A–F♯ as C°7, so the doubled A counts as its seventh). b46.1 is the summit: the tenor's and the bass's lines both sing D under E5/G5, which the critic reads as Em7/D (the D a seventh); as G6/D it is a doubled fifth. |
 | low_register_seconds | **0** | ≤ 9 |
 | stepwise_pct | **60.0 %** | ≥ 65; missed, see weak spots. Leaps of a fourth or more 12.4 % (Bach about 14 %), repeated notes 8.1 %. |
 | crossings | 3 | b12.2, b13.3, b14.1: the tenor above the alto for one beat each, in the stretto of section I (kept from the sixteen-voice version). |
-| keyboard_unplayable_pct | **4.7 %** | 20 of 422 onsets; under 5 %. Where: b11, b14 (the soprano's cantus high over the bass), b27 (the B-minor answer up to D6), b41–42 (the bass's cantus at C2 under the descant), b47–48 (summit cadence), b49–50 (coda stretto with the bass at G1), b52 (final chord on G1). |
-| mean moving voices | 3.17 | per section: I 3.0, II 3.1, III 3.1, IV 3.0, summit 3.67, coda 3.75 |
-| pc_tripled_on_beats | 0.6 % | |
-| tertian fit | 52.4 % | |
-| melody flags | 1 | b8.1 soprano A4 → F♯5 → G5 (kept exposition) |
+| keyboard_unplayable_pct | **4.7 %** | 20 of 429 onsets; under 5 %. Where: b11, b14 (the soprano's cantus high over the bass), b27 (the B-minor answer up to D6), b41–42 (the bass's cantus at C2 under the descant), b47–48 (summit cadence), b49–50 (coda stretto with the bass at G1), b52 (final chord on G1). |
+| mean moving voices | 3.15 | per section: I 3.0, II 3.1, III 3.1, IV 3.0, summit 3.5, coda 3.75 |
+| pc_tripled_on_beats | 0.0 % | |
+| tertian fit | 51.9 % | |
+| melody flags | 2 | b8.1 soprano A4 → F♯5 → G5 (kept exposition); b43.2 tenor F♯3 → G4, a ninth across a crotchet rest into its summit entry (a new phrase) |
 
-Moving voices per bar: `1 1 2 2 2 3 3 4 4 4 4 4 4 4 | 2 2 4 4 3 3 4 3 3 3 | 2 2 4 4 4 3 3 3 3 3 | 2 2 4 3 4 3 3 3 | 2 4 4 4 4 4 | 4 4 4 3`. Every section after the first starts with two voices, and the full four are saved for the stretti, the summit and the coda.
+Moving voices per bar: `1 1 2 2 2 3 3 4 4 4 4 4 4 4 | 2 2 4 4 3 3 4 3 3 3 | 2 2 4 4 4 3 3 3 3 3 | 2 2 4 3 4 3 3 3 | 2 4 4 4 3 4 | 4 4 4 3`. Every section after the first starts with two voices, and the full four are saved for the stretti, the summit and the coda.
 
 The critic's theme check verifies every declared entry against S1; the entries of S2, S3, S4 and of the chorale lines are labelled as such and do not match S1 by design.
 
@@ -162,11 +163,11 @@ It is a musette for one pianist:
    - whether line 1 in C at the summit is recognised as line 1;
    - the coda's stretto of heads, b49: four subjects within a beat and a half may sound as a peal rather than as four subjects (the soprano's S1 on top and the bass's S4 should be the clearest);
    - the siciliano section (b25–34): its triplets against the duple sixteenths elsewhere change the metre's character, on purpose, but it may sound like a different piece.
-2. **The summit is short.** All four lines sound together for ten beats (b44.3–47.1); from the first entry to the cadence it is five bars. At one speed the lines combine only in this staggered alignment, and I did not pad it with free voices or canons.
+2. **The summit is short and slow-moving.** All four lines sound together for ten beats (b44.3–47.1); from the first entry to the cadence it is five bars of half notes, the fewest notes per bar in the piece. At one speed the lines combine only in this staggered alignment, and I did not pad it with free voices or canons. The tenor's off-beat rhythm (after the review) separates the lines; it does not make the passage faster.
 3. **Line 1 is a fourth higher at the summit** (in C), not at its own pitch. It returns at pitch nowhere after b14, except as S1's head in the coda.
 4. **The summit's last notes are adjusted:** the bass's C–B rhythm and the soprano's held C. The alto and tenor finish the cadence with free notes after their lines end.
 5. **stepwise_pct is 60 %, under the target of 65 %.** The material accounts for much of it: S2 moves by step on 6 of its 18 intervals (another 6 are repeated notes in its fanfare and tattoos), L2 on 2 of 7, L3 on 3 of 7. Section I scores 67 %, sections II and III 53–54 %. The free basses at cadences leap by fourths and fifths.
-6. **Three bad doublings** (above), two of them in the summit's own line notes, which I did not alter.
+6. **Two bad doublings** (above), one of them in the summit's own line notes, which I did not alter.
 7. **Three one-beat crossings** of tenor and alto in the stretto of b12–14, kept from the sixteen-voice version.
 8. **Some free lines are plain:** the tenor in quarters in b39–42 and the soprano moving in tenths with the bass's cantus. In b39–42 the bass's line matters more than the counterpoint around it, but the passage may feel static before the summit.
 9. **Keyboard:** 4.7 % of onsets need more than two hands, mostly where a cantus sits far from the bass and at the very end (G1).
@@ -197,3 +198,25 @@ It is a musette for one pianist:
 ## Prelude: second review (unchanged here)
 
 The prelude quotes BWV 248/23 at b13 and uses Bach's passing notes at b7–8 (see the table above). **Prelude:** unchanged faults (0 in every category). Stepwise is 38 % before and 39 % after. The melody flags rise from 1 to 3, all in Bach's leaping flute bar.
+
+## Review (REVIEW.md): what changed
+
+| Item | Verdict | What changed |
+|---|---|---|
+| 1. Summit in lockstep: from 44.3 to 46.3 all four lines attack together, the inner lines fuse into chords, and the climax is the slowest passage | Agreed | The tenor's line 2 now starts at **b43.2**, a beat earlier, so its half notes fall on beats 2 and 4 against the others' 1 and 3. The four lines never move together, and every note of line 2 is struck alone. The cost: the alto's lone entry lasts one beat instead of two, and the soprano's upbeat C6 is struck with the tenor's D4. Touch was added as performance data: line 2 at gate 0.78, line 4 at 0.86, lines 1 and 3 legato. The summit stays in tempo (76), and the breath before it is shorter (to 66 instead of 60). |
+| 1, "offset a second line" (coordinator) | Tested, not adopted | (a) Soprano a beat later (b44.3) as well: critic-clean, but it turns the top line into a chain of suspensions and puts the soprano's upbeat on the same beat as the bass's entry, so one of the four entries would no longer be heard alone. (b) Alto's first note held a beat longer, so that line 3 also moves off the beat: it makes an unresolved dissonance at 46.1 (D3/G5). With the tenor alone off the beat, the four lines already never move together. |
+| 2. b21–24: the tenor's cantus moves with the bass in half notes and sounds like the top of the bass's dyads | Agreed | The bass walks in quarters for half of the beats: `D3 C#3 B2 F#2 \| A2 C#3 B2 A2 \| C#3 A2 D2`. The tenor is now the only voice holding every half note. The harmonies are unchanged and the cadence is untouched. |
+| 3. b28.3 beat octaves; b12–14 crossings | Left, as the review suggests | Both come from combining fixed subjects (the b12–14 crossings are in the protected bars 1–14). |
+| Must not be touched: b1–14, the coda b49–52 | Respected | No note changed there. |
+| Note on NOTES (REVIEW-2.md location) | Corrected | The Files list now names `REVIEW.md`. |
+
+**Critic before → after:**
+- parallels 0 / 0 → 0 / 0;
+- beat_parallels 1 → 1;
+- unresolved 0 → 0;
+- bad_doublings 3 → 2;
+- low-register clashes 0 → 0;
+- keyboard 4.7 % → 4.7 %;
+- one new melody flag (the tenor's ninth into its summit entry, after a rest).
+
+Every changed note was typed into `fugue.py` by hand. The variants were built from scratch copies and checked with `critic.py`.

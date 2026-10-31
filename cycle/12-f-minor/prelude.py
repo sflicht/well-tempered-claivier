@@ -18,7 +18,7 @@ Each cross resolves to C.  The bass walks in quavers, stops to sing the name in
 half notes (b9-10), and becomes a repeated-quaver tonic pedal for the last
 phrase (b13-14).
 
-4/4, crotchet = 54, 16 bars, about 1:17.  Every note is written below.
+4/4, crotchet = 63 (a walking chorale; the fugue that follows is Grave), 16 bars, about 1:05.  Every note is written below.
 """
 import json
 import sys
@@ -102,11 +102,11 @@ def build(out=HERE / 'prelude.json'):
     meta = {
         'title': 'The Well-Tempered clAIvier', 'subtitle': 'XII. Prelude in F minor',
         'composer': 'Claude / composed for Sam', 'instrument': 'Piano (three voices)',
-        'key': 'F', 'mode': 'minor', 'meter': [4, 4], 'bpm': 54,
-        'tempo_text': 'Adagio, come un corale', 'character': 'The name, three times',
+        'key': 'F', 'mode': 'minor', 'meter': [4, 4], 'bpm': 63,
+        'tempo_text': 'Andante, come un corale', 'character': 'The name, three times',
         'movement_number': 12, 'piece_type': 'prelude', 'edition': 'third',
         # breath at the half cadence (b8), the name in the bass a little broader, broadening to the end
-        'tempo_map': [[26, 54], [32, 46, 'ramp'], [32, 50], [44, 50], [48, 54], [58, 54], [64, 40, 'ramp']],
+        'tempo_map': [[26, 63], [32, 54, 'ramp'], [32, 58], [44, 58], [48, 63], [58, 63], [64, 46, 'ramp']],
         'markers': [{'t': 0.0, 'label': 'The cross of BWV 857'}, {'t': 4.0, 'label': 'B-A-C-H (soprano)'},
                     {'t': 32.0, 'label': 'B-A-C-H (bass)'}, {'t': 48.0, 'label': 'Tonic pedal'}],
     }

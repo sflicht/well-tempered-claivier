@@ -45,8 +45,10 @@ BASS1 = "F#2:16 A2:8 B2:8 C#3:16 D#3:8 E#3:8 F#3:8 D3:8 C#3:8 B2:8 C#3:8 B2:8 C#
 
 
 def build(path=None):
-    top = THEME + ' ' + W.transpose(W.retrograde(LINE), 12, 7)
-    mid = LINE + ' ' + W.transpose(W.retrograde(THEME), -12, -7)
+    # the canon's second reading (its retrograde, which is the piece with the upper voices exchanged): the theme is
+    # hidden in the Altus first and comes back on top, backwards, in the second half
+    top = W.transpose(LINE, 12, 7) + ' ' + W.retrograde(THEME)
+    mid = W.transpose(THEME, -12, -7) + ' ' + W.retrograde(LINE)
     bass = BASS1 + ' ' + W.retrograde(BASS1)
     bars = {name: W.concat_bars(s, METER) for name, s in (('Cantus', top), ('Altus', mid), ('Bassus', bass))}
     for k, v in bars.items():
@@ -60,13 +62,14 @@ def build(path=None):
             'tempo_text': 'Andante, quaerendo invenietis', 'movement_number': 14, 'piece_type': 'prelude',
             'edition': 'third', 'motto': 'Quaerendo invenietis',
             'tempo_map': [[0, 69], [60, 69], [68, 50, 'ramp']],
-            'markers': [{'t': 0, 'label': 'Thema Regium (and, below, the line that will return backwards)'},
+            'markers': [{'t': 0, 'label': 'Thema Regium, hidden in the Altus'},
                         {'t': 34, 'label': 'Turning point: everything now runs backwards'}]}
     voices = [('Cantus', 'C', 'treble', 66), ('Altus', 'A', 'treble', 60), ('Bassus', 'B', 'bass', 62)]
-    entries = [('Cantus', 1, 0, 'Thema Regium', 9),
-               ('Altus', 9, 2, 'Thema Regium cancrizans (backwards, an octave lower)', 9, 'retrograde')]
+    entries = [('Altus', 1, 0, 'Thema Regium (hidden in the middle voice)', 9),
+               ('Cantus', 9, 2, 'Thema Regium cancrizans (backwards, an octave higher, on top)', 9, 'retrograde')]
     dyn = [-4, -3, -2, -1, 0, 1, 2, 1, 0, 0, 1, 2, 1, 0, -1, -2, -3]
-    data = W.build_score(path or HERE / 'prelude.json', meta, voices, bars, entries=entries, subject=THEME,
+    data = W.build_score(path or HERE / 'prelude.json', meta, voices, bars, entries=entries,
+                         subject=W.transpose(THEME, -12, -7),
                          dynamics=lambda b: dyn[b])
     return data
 

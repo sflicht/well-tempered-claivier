@@ -177,10 +177,10 @@ def duo_slow():
 def trio():
     """IV. Three at a time (q102-120): the gigue's mirror in B minor, the allemande's mirror in E,
     then the head of the subject over the courante's dominant, into the ball."""
-    put('B', 102, 'A2:8 B2:4 G2:4 F#2:4 B2:4 F#2:4 B2:4 E3:12 B2:4 E2:12 E2:12')
+    put('B', 102, 'A2:8 B2:4 G2:4 E2:4 B2:4 F#2:4 B2:4 E3:12 B2:4 E2:12 E2:12')
     theme('T', 103 + Fr(2, 3), 'B3:4/3 F#4:8/3 G4:4/3 E4:4/3 F#4:4/3 D4:4/3 E4:8/3 C#4:4/3 D4:4/3 E4:4/3 '
                                'G4:4/3 F#4:8/3 A#3:4/3 B3:4', 'Gigue: mirror (B minor)')
-    put('T', 110, 'G#3:8/3 B3:4/3 E4:4/3 D#4:4/3 C#4:4/3 B3:8/3 A3:4/3 F#3:8/3')
+    put('T', 110, 'G#3:8/3 B3:4/3 E4:4/3 D#4:4/3 C#4:4/3 B3:8/3 G#3:4/3 D#3:8/3')
     theme('A', Fr(439, 4), 'E4:1 B4:2 C#5:1 A4:1 B4:1 G#4:1 A4:1 F#4:1 G#4:2 A4:1 C#5:1 B4:1 D#5:1 E5:2',
           'Allemande: mirror (E)')
     # over the dominant the gigue and then the allemande try the head of the subject

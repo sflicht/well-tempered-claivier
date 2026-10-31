@@ -230,7 +230,8 @@ put('T', 11, [
     'B3:4 R:8',                                                  # b13 vi   (makes room for the comes)
     'R:12', 'R:12', 'R:12',                                      # b14-16
     'A#3:4 F#3:4 A#3:4',                                         # b17 V7
-    'B3:4 R:8',                                                  # b18 I
+    'B3:4 C#4:4 D#4:4~',                                         # b18 I    (carries D# into G# minor)
+    'D#4:4 R:8',                                                 # b19 i
 ])
 put('S', 12, [shift(tr(b, 5, 3), 1, 'B') for b in SUBJ_BARS] + [
     'C#5:4 E5:2 D#5:2 C#5:2 E5:2',                               # b14 V    (I6 in the comes)
@@ -257,13 +258,14 @@ put('S', 19, [tr(b, 5, 3) for b in SUBJ_BARS] + [
     'B5:6 A#5:2 G#5:2 F#5:2',                                    # b23 i6   free from here
     'E5:4 G#5:4 B5:4',                                           # b24 iv7
     'A#5:4 F##5:4 D#5:2 C#5:2',                                  # b25 V7
-    'B#4:12',                                                    # b26 I    (Picardy third)
+    'B#4:8 D#5:4',                                               # b26 I    (Picardy third)
+    'C#5:4 R:8',                                                 # b27      (into C#)
 ])
 canon('III', 'S', 'A', lambda s: shift(s, -2, 'G#m'), 2, 19, 22, 'Canon III at the third below',
       ficta=[(22, 'F#4', 'F##4')])
 entry('S', 19, 'Canon III dux: subject on B (mediant)')
 entry('A', 21, 'Canon III comes: subject a third below, on G#')
-put('A', 25, ['A#4:6 B4:2 A#4:2 F##4:2', 'G#4:12'])
+put('A', 25, ['A#4:6 B4:2 A#4:2 F##4:2', 'G#4:8 R:4'])
 
 # =============================================================================================
 # Statement 4 (bars 27-34), C-sharp major: Canon IV at the fourth below, by inversion, one bar
@@ -291,7 +293,7 @@ entry('T', 30, 'Canon IV comes: subject inverted, on G# (a fourth below)', form=
 put('B', 35, ['C#3:3 B2:1 A#2:3 G#2:1 E#2:3 F#2:1', 'G#2:2 C#3:2 B2:1 D#3:1 G#3:2 F#3:1 E#3:1 D#3:2',
               'C#3:12', 'C#3:12'])
 entry('B', 35, 'Bass: subject on C# (retransition)')
-put('S', 34, ['R:12',
+put('S', 34, ['G#4:6 A#4:2 C#5:2 D#5:2',                     # b34 I (C#) -> V of F#
               'E#5:4 F#5:4 G#5:4',                               # b35 V - I6 - V6/5
               'B5:4 G#5:4 A#5:2 B5:2',                           # b36 ii - ii6 - I
               'G#5:3 F#5:1 E#5:3 D#5:1 B4:3 C#5:1',              # b37 head on G#, over the pedal
@@ -330,7 +332,8 @@ put('S', 39, [
     'F#5:4 A#5:8',                                               # b43 I6
     'F#5:4 G#5:4 A#5:2 G#5:2',                                   # b44 IV
     'E#5:6 F#5:2 G#5:4',                                         # b45 V7
-    'F#5:12',                                                    # b46 I
+    'F#5:12~',                                                   # b46 I
+    'F#5:4 R:8',                                                 # b47 i    (the F# turns minor)
 ])
 
 
@@ -433,9 +436,10 @@ def build(path=None):
             # gentler in G# minor (b19), brisker in C# (b27), broadening over the dominant pedal into
             # the return (b37-38), a breath before the Adagio in F# minor (b47), the quodlibet a
             # tempo (b55) and a final ritardando
-            'tempo_map': [[52, 72], [54, 64, 'ramp'], [78, 74], [108, 74], [114, 58, 'ramp'],
-                          [114, 72], [133, 72], [138, 56, 'ramp'], [138, 52], [156, 52],
-                          [162, 42, 'ramp'], [162, 76], [180, 76], [186, 50, 'ramp'], [189, 40, 'ramp']],
+            'tempo_map': [[52, 72], [54, 64, 'ramp'], [75, 64], [78, 72, 'ramp'], [108, 72],
+                          [114, 58, 'ramp'], [114, 72], [133, 72], [138, 56, 'ramp'], [138, 52],
+                          [156, 52], [160.5, 44, 'ramp'], [160.5, 76], [180, 76], [186, 50, 'ramp'],
+                          [189, 40, 'ramp']],
             'tempo_text': 'Allegretto; Adagio in F-sharp minor; Quodlibet',
             'movement_number': 13, 'piece_type': 'fugue', 'edition': 'third',
             'score_tagline': 'Third edition - Fugue XIII (see NOTES.md)',
@@ -447,6 +451,13 @@ def build(path=None):
     pans = {'Soprano': 74, 'Alto': 66, 'Tenor': 60, 'Bass': 54}
     for v in data['voices']:
         v['piano_pan'] = pans[v['name']]
+    # Canon II's comes crosses its dux (b13-14) and Canon IV's starts in octaves with it (b30):
+    # bring the comes forward, the dux back (performance data only).
+    lift = {('Alto', 13): 6, ('Alto', 14): 6, ('Soprano', 13): -3, ('Soprano', 14): -3,
+            ('Tenor', 30): 6, ('Soprano', 30): -3}
+    for v in data['voices']:
+        for e in v['events']:
+            e['v'] = max(24, min(118, e['v'] + lift.get((v['name'], e['bar']), 0)))
     (path or HERE / 'fugue.json').write_text(__import__('json').dumps(data, indent=1))
     return data
 

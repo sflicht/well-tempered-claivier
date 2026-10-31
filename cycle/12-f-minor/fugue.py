@@ -27,8 +27,8 @@ Plan (66 bars, 4/4):
               it breaks off on a dominant seventh, as Bach's manuscript breaks off
   V   50-63   the fifth voice: the main theme in the alto, answered a bar later by its
               augmentation in the new lowest voice; over the augmentation's close and its
-              last note held as a tonic pedal, the quadruple combination returns:
-              five voices, four subjects at once
+              last note held as a tonic pedal, the quadruple combination returns with its
+              voices exchanged (S2 on top): five voices, four subjects at once
   Coda 63-66  over the pedal, the name at its own pitch (B-flat A C B) and a Picardy third
 
 Every note is written here.  Subject statements are the quoted subjects or explicit
@@ -217,26 +217,28 @@ seq('B', Q4 + 7, 'C3:8 R:8')
 # with the main theme in augmentation (a canon per augmentationem, one bar apart).
 V5 = 50
 theme('A', V5, 1, MT, 'main theme')
-# the augmentation's last note is held on as the tonic pedal of the close
-theme('Q', V5 + 1, 1, octv(MT_AUG, -2).rsplit(' ', 1)[0] + ' F2:124', 'main theme in augmentation (fifth voice)', 9)
+# the augmentation's last note is held on as the tonic pedal of the close, re-struck where the music needs its
+# bass (b61.1 as the subjects end, b63.3 at the coda, b66.1 with the last chord): a piano's F2 dies away.
+theme('Q', V5 + 1, 1, octv(MT_AUG, -2).rsplit(' ', 1)[0] + ' F2:32 F2:40 F2:40 F2:12', 'main theme in augmentation (fifth voice)', 9)
 # The fifth voice enters alone under the alto.  Then the tenor (V - i6/4 - V7 - i6 - iv4/2 - i), and with
 # the bass over the augmentation's E and G (i - vii-dim7 - i - V4/3 - i6)
-seq('T', V5 + 2, 'G3:8 Ab3:8', 'C4:8 Bb3:8', 'Ab3:8 C4:8', 'Db4:16', 'C4:8 R:8')
+seq('T', V5 + 2, 'G3:8 Ab3:8', 'C4:8 Bb3:8', 'Ab3:8 C4:8', 'Db4:8 Bb3:8', 'C4:8 R:8')
 put('B', V5 + 4, 3, 'Ab3:8')
 seq('B', V5 + 5, 'G3:16', 'Ab3:8 Bb3:8', 'C4:8 R:8')
-put('A', V5 + 6, 3, 'E4:8')
-put('A', V5 + 7, 1, 'F4:4')
+put('A', V5 + 6, 3, 'Db5:8')
+put('A', V5 + 7, 1, 'C5:4')
 # The quadruple combination over the end of the augmentation and its pedal: five voices, four subjects.
-# The voices are exchanged against section IV (B-A-C-H now above S2, S1 an octave higher), as Bach
-# restates his combinations in invertible counterpoint.
+# The voices are exchanged against section IV, as Bach restates his combinations in invertible counterpoint:
+# from the top S2 (an octave higher, the soprano's return), B-A-C-H, the main theme (tenor, in canon with its
+# own augmentation below), S1 (an octave higher), and the fifth voice.
 QV = V5 + 7
-theme('S', QV, 1, octv(MT, 1), 'main theme (with its augmentation)')
-theme('T', QV, 2, S2, 'S2 (five voices)')
+theme('T', QV, 1, MT, 'main theme (with its augmentation)')
+theme('S', QV, 2, octv(S2, 1), 'S2 (five voices)')
 theme('B', QV + 1, 3, S1, 'S1 (five voices)')
 theme('A', QV + 2, 3, octv(S3, 1), 'S3 B-A-C-H (five voices)')
-# Soprano after the main theme, into the signature
-put('S', QV + 4, 3, 'Db6:8')
-seq('S', QV + 5, 'Ab5:8 C6:8', 'Ab5:8 R:8')
+# Tenor after the main theme, into the coda; the soprano's S2 steps up into the signature
+put('T', QV + 4, 3, 'Bb4:8')
+seq('T', QV + 5, 'Ab4:8 C5:8', 'C5:4 R:12')
 
 # ================================================================ CODA (b63-66): the name at its own pitch
 # Over the fifth voice's pedal the soprano signs B-flat A C B (V7 - V7/iv - ii-half-dim 4/3 - vii-dim7/V)
@@ -285,6 +287,15 @@ def build(nbars):
         return v
     data = W.build_score(HERE / 'fugue.json', meta, voices, bars, entries=ENTRIES, subject=S1,
                          dynamics=dynamics, entry_boost=7)
+    # Bach's triple combination (b34.3-38.1): B-A-C-H lies a third to a sixth above S1, low in the texture;
+    # bring the tenor forward and the bass back so the two slow lines do not fuse.
+    for v in data['voices']:
+        for e in v['events']:
+            if 134 <= e['t'] < 148:
+                if v['name'] == 'Tenor':
+                    e['v'] = min(118, e['v'] + 6)
+                elif v['name'] == 'Bass':
+                    e['v'] = max(24, e['v'] - 3)
     for vn, b0, off, lab, n in ENTRIES:
         t0 = float((b0 - 1) * 4 + off)
         for e in data['voices'][LONG.index(vn)]['events']:

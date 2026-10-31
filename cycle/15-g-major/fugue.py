@@ -201,7 +201,7 @@ put('S', 19, 1, 'G5:4 A5:2 B5:2 G5:4 E5:4 F#5:4 G5:4 A5:8~')
 # b21-24: the tenor sings its line in D, in half notes, in a register of its own; the soprano sings
 # a descant above it; the alto finishes its subject and falls silent.  D Bm | F#m F#m/A | Bm A/C# | A7 D.
 cantus('T', 21, 1, W.transpose(oc(L2, -1), 7, 4), 'L2: chorale line 2 in D (cantus), tenor', 4)
-put('B', 21, 1, 'D3:8 B2:8 F#2:8 A2:8 B2:8 C#3:8 A2:8 D2:8')
+put('B', 21, 1, 'D3:4 C#3:4 B2:8 F#2:8 A2:4 C#3:4 B2:4 A2:4 C#3:8 A2:8 D2:8')
 put('S', 21, 1, 'A5:4 G5:2 F#5:2 F#5:4 B5:4 A5:4 C#6:4 B5:2 A5:2 F#5:4 D5:4 F#5:4 E5:4 A5:4 E5:4 C#5:4 D5:8')
 
 
@@ -262,10 +262,12 @@ put('T', 39, 1, 'G4:4 E4:2 F4:2 G4:8 E4:4 C4:4 D4:4 G4:4 D4:4 B3:4 C4:8 B3:4 G3:
 
 # ================================================================ SUMMIT: the four lines at once (b43-48)
 # Each voice sings its own line, in half notes, entering alone into a silence and in an octave band of
-# its own: the alto line 3 (B4-G5, b43.1), the tenor line 2 (B3-G4, b43.3), the soprano line 1 a fourth
+# its own: the alto line 3 (B4-G5, b43.1), the tenor line 2 (B3-G4, b43.2), the soprano line 1 a fourth
 # higher, in C, with the chorale's own upbeat, at the top (G5-C6, b44.2), and the bass line 4 (G3-G2,
-# b44.3).  From b44.3 to b47.1 all four lines sound together and nothing else does:
-#   G | D/F# Em | Em7/D D7 | G/D ... D7/A | G.
+# b44.3).  From b44.3 to b47.1 all four lines sound together and nothing else does.  After the review
+# the tenor's line starts a beat earlier: its half notes fall on beats 2 and 4 against the others' 1 and
+# 3, so the four lines never move together and every note of line 2 is struck alone (anticipations at
+# 45.2 and 46.2, a passing seventh at 46.3-46.4).  Harmony on the beats: G | D/F# Em | Em7/D D7 | ... | G.
 # The placement (which line, when, at what level) was proposed by a scratch search over the four
 # hand-copied lines (the sixteen-voice version found the same core); nothing was added to the lines.
 # At the end the bass's D C B become a dotted figure (the C an eighth, as in the source), and the
@@ -281,7 +283,7 @@ def chorale_upbeat(line):
 L1C = dshift(L1, 3)                                    # line 1 in C (exact): C B A B G A B C
 L4S = ' '.join(oc(L4, -1).split()[:5]).replace('D3:8 D3:8', 'D3:8 D3:10') + ' C3:2 B2:4 A2:8 G2:16'
 cantus('A', 43, 1, L3, 'SUMMIT: line 3, alto', 4)
-cantus('T', 43, 3, oc(L2, 0), 'SUMMIT: line 2, tenor', 4)
+cantus('T', 43, 2, oc(L2, 0), 'SUMMIT: line 2, tenor (off the beat)', 4)
 cantus('S', 44, 2, chorale_upbeat(L1C).replace('C6:8', 'C6:12'), 'SUMMIT: line 1 in C with its upbeat, soprano', 4)
 cantus('B', 44, 3, L4S, 'SUMMIT: line 4, bass', 4)
 put('S', 48, 2, 'B5:12')
@@ -316,7 +318,7 @@ BPM = 76
 TEMPO = {'tempo_map': [[0, 76], [52, 76], [56, 68, 'ramp'], [56, 76],
                        [92, 76], [96, 66, 'ramp'], [96, 72],
                        [132, 72], [136, 64, 'ramp'], [136, 76],
-                       [164, 76], [168, 60, 'ramp'], [168, 76],
+                       [164, 76], [168, 66, 'ramp'], [168, 76],
                        [186, 76], [188, 68, 'ramp'], [188, 76],
                        [200, 76], [208, 50, 'ramp']]}
 # phrase dynamics (velocity offsets by bar): the pairs at the start of each section quieter, the cantus
@@ -354,12 +356,17 @@ def build(nbars, path=None):
     data = W.build_score(out, meta, voices, bars, entries=ENTRIES, subject=S1, dynamics=dynamics)
     # balance (velocities only; no notes change): chorale statements +8; while a cantus sounds outside
     # the summit, the voices around it -3, so that the long notes can be followed.
+    s_summit = pos(43, 1)
     for vi, v in enumerate(data['voices']):
         name = NAMES[vi]
         for e in v['events']:
             t16 = Fr(e['t']).limit_denominator(48) * 4
             if any(n == name and s <= t16 < s + d for n, s, d in CHORALE):
                 e['v'] = min(118, e['v'] + 8)
+                # articulation at the summit (performance data, not notes): line 2 slightly detached,
+                # line 4 portato, lines 1 and 3 legato, so that touch separates the lines too.
+                if s_summit <= t16 < pos(48, 1):
+                    e['gate'] = {'T': 0.78, 'B': 0.86}.get(name, 0.985)
             elif any(n != name and s <= t16 < s + d and s < pos(43, 1) for n, s, d in CHORALE):
                 e['v'] = max(24, e['v'] - 3)
     Path(out).write_text(json.dumps(data, indent=1))
