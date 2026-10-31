@@ -1,8 +1,14 @@
 # The Well-Tempered clAIvier
 
 A cycle of 24 preludes and fugues in the key order of Bach's Well-Tempered
-Clavier (I C major, II C minor, III C♯ major … XXIV B minor). Fugue N has
-N + 1 real voices, from two to twenty-five. The aim is not to depart from
+Clavier (I C major, II C minor, III C♯ major … XXIV B minor). Each fugue has
+at most one voice more than Bach's fugue in the same key (WTC Book I), so two
+to six voices, except three monuments where the crowd is the idea: XX (one
+violin splitting into 21), XXI (the 22 natural overtones of a posthorn) and
+XXIV (the 25-voice finale). (Until October 2026 the rule was "Fugue N has
+N + 1 voices"; the textures grew too thick, and those fugues are being
+recomposed; the earlier versions are kept in each pair's `archive-n-plus-1/`.)
+The aim is not to depart from
 Bach's ethos but to push it further than one composer with pen and paper
 could: learned counterpoint, allusion and the key cycle, with computation
 used to search, verify, tune and render. Every note in the current edition is

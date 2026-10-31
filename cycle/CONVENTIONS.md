@@ -3,7 +3,17 @@
 `cycle/` holds the canonical, current source of every movement that has been
 recomposed since the two rejected complete drafts. One folder per pair,
 numbered by Bach's WTC key order (I C major, II C minor, III C# major, IV C#
-minor, V D major, ... XXIV B minor). Fugue N has N+1 real voices.
+minor, V D major, ... XXIV B minor).
+
+**Voices.** Each fugue has at most one real voice more than Bach's fugue in
+the same key in WTC Book I ("Bach + 1"): I 5, II 4, III 4, IV 6, V 5, VI 4,
+VII 4, VIII 4, IX 4, X 3, XI 4, XII 5, XIII 4, XIV 5, XV 4, XVI 5, XVII 5,
+XVIII 5, XIX 4, XXII 6, XXIII 5 at most (fewer is fine: Fugue I has 2).
+Three monuments are exempt because their idea is the crowd: XX (21), XXI
+(22), XXIV (25). The extra voice is where a piece's trick usually lives (a
+guest subject, a cantus, a canon partner). Every voice must be audible as a
+line; clarity beats density. The earlier rule ("Fugue N has N+1 voices") is
+retired; its fugues are kept in `cycle/NN-key/archive-n-plus-1/`.
 
 ```
 cycle/NN-key/
