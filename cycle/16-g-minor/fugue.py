@@ -234,7 +234,7 @@ X('P1', 28, 3.5, cantus(5, -1, last=6), 'cantus line 5 (Pedal I, canon at the oc
 # apart, where the line's B-flat - C-sharp ("Orgeln") makes an augmented sixth over C-sharp in the
 # bass.  Half cadence on D; then the organ is "hung up": a general pause.
 X('S', 32, 3, oc(S6, 1), 'line 6 Vorimitation: subject 6, the harps (Diskant)')
-X('A', 32, 4.5, dsh(S6, -3), 'line 6 Vorimitation: answer, a fourth lower (Alt)')
+X('A', 32, 4.5, dsh(S6, -3), 'line 6 Vorimitation: answer on D (Alt)')
 X('T', 33, 4, oc(S6, -1), 'line 6 Vorimitation: subject 6 (Tenor)')
 X('S', 33, 3, 'E6:4 C#6:4 D6:4 E6:4 D6:4 C6:4 Bb5:8 G5:4 F#5:4 G5:8 G5:4 Eb5:4 F5:8 G5:16 F#5:16')
 X('A', 33, 4.5, 'G4:2 F4:4 G4:8 F#4:4 G4:8 Eb4:4 D4:4 D4:8 G4:8 F4:8 Bb4:16 A4:16')
@@ -295,7 +295,7 @@ X('P2', 58, 3, 'C3:2 Eb3:2 F2:4 Bb2:4 Eb3:4 A2:4 D3:4 D2:4 G2:4')
 X('P2', 60, 3, cantus(10, -2, last=48), 'cantus line 10 (Pedal II, canon dux)')
 X('P1', 60, 4.5, cantus(10, -1, last=42), 'cantus line 10 (Pedal I, canon at the octave, 1 1/2 beats)')
 X('S', 60, 3.5, oc(S10, 1), 'summit: subject 10 (Diskant), with its own augmentation in the pedal')
-X('A', 61, 2.5, S10, 'summit: subject 10 an octave lower, 4 beats later (Alt)')
+X('A', 61, 2.5, S10, 'summit: subject 10 an octave lower, 3 beats later (Alt)')
 X('S', 62, 2, 'F5:4 G5:4 Eb5:4 D5:4 F#5:4 A5:4 Bb5:4 C6:4 D6:8 Eb6:4 D6:8 C6:4 A5:2 C6:2 Bb5:8')
 X('A', 63, 1, 'G4:4 A4:4 F#4:4 G4:4 Eb5:4 D5:8 C5:8 A4:4 F#4:8 G4:8')
 X('T', 64, 1, 'G4:8 F4:8 D4:28')
