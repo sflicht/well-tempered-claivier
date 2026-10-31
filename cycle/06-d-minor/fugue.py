@@ -138,7 +138,7 @@ put(17, S='A5:2 G5:2 E5:2 F5:2 D5:2 F5:2  G5:2 F5:2 D5:2 E5:2 C5:2 E5:2  F5:2 Eb
 tag(21, 'Station III (F major): the ground in the Alto; the Soprano rests')
 put(21, A=last_octave(G('F4'), 1))
 entry('A', 21, 'Ground (Alto), F major', n=8)
-put(21, T='F3:4 G3:2 A3:2 Bb3:4  A3:4 G3:2 F3:2 E3:2 G3:2  C4:4 Bb3:2 Ab3:2 G3:4  F3:8 E3:4~  E3:4 F3:4 E3:4'
+put(21, T='F3:4 G3:2 A3:2 Bb3:4  A3:4 G3:2 F3:2 E3:2 G3:2  C4:4 Bb3:4 G3:4  F3:8 E3:4~  E3:4 F3:4 E3:4'
           '  D3:4 G3:4 A3:4  G3:4 Bb3:4 A3:4  E3:4 A3:8')
 tag(23, 'Inversus (Bass), in tenths under the ground')
 put(23, B=last_octave(I('C3'), 1) + '~  C3:12~  C3:4 F2:8')
@@ -215,9 +215,29 @@ put(CO, T='R:12  R:12  R:12  R:12  R:12  R:4 D3:8  B2:8 D3:4  D3:12')
 
 # ---------------------------------------------------------------------------
 BPM = 76
-TEMPO_MAP = [[0, BPM], [NBARS * 3 - 6, BPM], [NBARS * 3, 54, 'ramp']]
 
-_DYN = [(1, -6), (8, -3), (16, 0), (24, 1), (34, 4), (40, 8), (49, 12), (51, 4), (58, -2)]
+
+def q(bar, beat=1):
+    """Bar/beat -> quarters from the start (3/4)."""
+    return 3 * (bar - 1) + (beat - 1)
+
+
+# Tempo: one pulse, with breaths at the joints of the form.  Station III (the
+# tender F major) is a little calmer; the summit is broader; the coda slows
+# to the end.
+TEMPO_MAP = [[0, BPM],
+             [q(16, 1), BPM], [q(17), 68, 'ramp'], [q(17), BPM],          # A minor cadence
+             [q(20, 1), BPM], [q(21), 64, 'ramp'], [q(21), 72],          # into Station III
+             [q(28, 1), 72], [q(29), 62, 'ramp'], [q(29), BPM],          # F major cadence
+             [q(40, 1), BPM], [q(41), 60, 'ramp'], [q(41), 70],          # half cadence: the summit
+             [q(53, 1), 70], [q(55, 3), 56, 'ramp'], [q(57), 56],        # arrival on D major
+             [q(57), 60], [q(63, 1), 60], [q(65), 42, 'ramp']]           # coda
+
+# Phrase dynamics (velocity offsets), piecewise linear between (bar, offset).
+_DYN = [(1, -8), (4, -6), (5, -4), (8, -2), (9, -2), (16, 1), (17, -3), (20, -4),
+        (21, -6), (24, -3), (25, -1), (28, 1), (29, 0), (34, 4), (35, 4), (40, 7),
+        (41, 10), (44, 8), (45, 7), (48, 9), (50, 11), (54, 14), (55, 12), (56, 8),
+        (57, 0), (64, -6)]
 
 
 def DYN(b):
@@ -233,7 +253,7 @@ def build(path=HERE / 'fugue.json'):
             'composer': 'Claude / Sam (ground after J. S. Bach, Crucifixus BWV 232)',
             'instrument': 'Keyboard - four voices',
             'key': 'D', 'mode': 'minor', 'meter': list(METER), 'bpm': BPM,
-            'tempo_text': 'Passacaglia e fuga sopra il Crucifixus',
+            'tempo_text': 'Passacaglia e fuga sopra il Crucifixus. Grave, ma sempre in moto',
             'tempo_map': TEMPO_MAP,
             'movement_number': 6, 'piece_type': 'fugue', 'edition': 'third',
             'markers': [{'t': (b - 1) * 3, 'label': t} for b, t in enumerate(TAGS, 1) if t]}
@@ -241,6 +261,17 @@ def build(path=HERE / 'fugue.json'):
               ('Tenor', 'T', 'treble_8', 68), ('Bass', 'B', 'bass', 72)]
     data = build_score(path, meta, voices, BARS, entries=ENTRIES, subject=SUBJ,
                        dynamics=DYN, tags=TAGS)
+    # Voicing (velocity only, no notes): while a station of the ground sounds,
+    # its voice is brought out (+7 on top of the entry boost, +12 in all) and
+    # the other voices are set back by 3, so the migrating ground can be followed.
+    for vn, b0, off, lab, n in ENTRIES:
+        if not lab.startswith('Ground'):
+            continue
+        lo, hi = q(b0) + off, q(b0 + n) + off
+        for v in data['voices']:
+            for e in v['events']:
+                if lo <= e['t'] < hi:
+                    e['v'] = max(24, min(118, e['v'] + (7 if v['name'] == vn else -3)))
     Path(path).write_text(json.dumps(data, indent=1))
     return data
 

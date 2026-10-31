@@ -4,15 +4,18 @@
 Bach's D-major fugue (WTC I/5, BWV 850) has four voices; this one has four
 home voices (soprano, alto, tenor, bass) and a fifth voice, the Guest, who
 sings only J. S. Bach's subject of BWV 850 and Bach's own idiom (32nd-note
-runs, dotted rhythms). The Guest enters twice, each time into a texture
+runs, dotted rhythms). The Guest enters three times, each time into a texture
 thinned to make room for it: as the fifth entry of the exposition (b10, in D,
-where our subject was expected) and at the summit (b44), where Bach's subject
-sounds with ours at two speeds.
+where our subject was expected), at the summit (b43.4), where Bach's subject
+sounds between ours at two speeds, and at the end (b52), where it has the last
+word. Devices: a cascade stretto through F#m-Bm-Em-A that lands on the bass's
+augmentation in D (b38-43), and prolation, the subject at x2, x1 and x1/2 at
+once (b43-47). See NOTES.md.
 
 Every note is written below as literal bar strings (sixteenth units). The
 only operations applied to written material are explicit transformations
-named in place: `transpose`, `scale_rhythm` (augmentation/diminution) and
-`invert_diatonic` from tools/wtclib.py. Their output is what the score holds.
+named in place: `transpose` and `scale_rhythm` (augmentation/diminution)
+from tools/wtclib.py; the inversions are written out. Their output is what the score holds.
 
 Run:  python3 cycle/05-d-major/fugue.py   -> cycle/05-d-major/fugue.json
 """
@@ -186,8 +189,8 @@ tag(34, 'Episode 4: the home voices try the Guest\'s idiom')
 # lower and a bar later: F#m (S, C#5), Bm (A, F#4), Em (T, B3), A (B, E3); the
 # next is D, the bass's augmentation at b43. In each overlap the new head
 # enters below the old tail, and the old tail turns upward at its end instead
-# of falling under the new head (no crossings). Each tail takes the colour of
-# the next key (G natural in F#m, C# in Em, G natural in A).
+# of falling under the new head (no crossings). The F#m and A tails take the
+# colour of the next key (G natural).
 FSM_SUBJ_T = 'C#5:4 F#5:2 F#5:1 F#5:1 A5:2 A5:1 A5:1 C#6:4 C#6:3 B5:1 A5:2 G5:2 F#5:1 E5:1 F#5:1 G5:1 A5:4'
 BM_SUBJ_T = 'F#4:4 B4:2 B4:1 B4:1 D5:2 D5:1 D5:1 F#5:4 F#5:3 E5:1 D5:2 C#5:2 B4:1 A4:1 B4:1 C#5:1 D5:4'
 EM_SUBJ_T = 'B3:4 E4:2 E4:1 E4:1 G4:2 G4:1 G4:1 B4:4 B4:3 A4:1 G4:2 F#4:2 E4:1 D4:1 E4:1 F#4:1 G4:4'

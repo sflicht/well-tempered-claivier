@@ -256,8 +256,6 @@ sc.put('B', 35, 1, 'B2:2 A2:2 G2:2 B2:2 E2:2 F#2:2 E2:2 G2:2 '
 sc.theme('A', 37, 1, key(SUBJ, 'B4', 'D4'), "Subject on the dominant (D), alto, at the cantus's sol")
 sc.put('S', 37, 1, 'R:4 F#5:1 A5:1 G5:1 B5:4 C#6:1 D6:4~ '                      # CS above, in D
                    'D6:4 C#6:4 A5:1 G5:1 F#5:1 G5:1 A5:1 B5:1 C#6:1 A5:1')
-sc.put('B', 37, 1, 'R:8 E2:2 A2:2 D3:2 C#3:2 '
-                   'A2:4 C#3:2 A2:2 E2:4 A1:4')
 
 # ===================================================================== VI. A (bars 39-44), falling
 sc.mark(39, 'A (falling): the first staircase ends')
@@ -365,41 +363,38 @@ sc.put('B', 65, 1, 'G#1:4 B1:4 C#2:8 '
                    'F#2:2 E#2:2 D#2:2 E#2:2 D#2:2 C#2:2 D#2:4')
 sc.theme('S', 67, 1, key(INV, 'G#5', 'G#5'), "Inversion (B, home), soprano, at the cantus's re")
 
-sc.put('A', 67, 1, 'B3:4 D#4:4 D#4:4 B3:4 '
+sc.put('A', 67, 1, 'B3:4 D#4:4 B3:4 D#4:4 '
                    'A#3:4 C#4:4 C#4:4 E#4:4')
-sc.put('B', 67, 1, 'G#1:4 B1:4 D#2:4 G#2:4 '
+sc.put('B', 67, 1, 'G#1:4 B1:4 G#1:4 B1:4 '
                    'F#2:4 A#1:4 C#2:8')
 
 # ===================================================================== XI. A-flat (bars 69-74), rising: the wolf
 # The cantus reaches A-flat = G#.  The first bar is a bare fifth A-flat / E-flat in every voice, a
-# bagpipe drone: in Bach-Lehman a calm open fifth (700 cents), in quarter-comma meantone the wolf
+# drone: in Bach-Lehman a calm open fifth (700 cents), in quarter-comma meantone the wolf
 # (G# - Eb, 737.6 cents).  Then the subject on B-flat (the next key, at the cantus's re), a turn to
 # B-flat minor, and the subject on E-flat at the cantus's sol.
 sc.mark(69, 'A-flat (rising): the wolf fifth')
 sc.theme('C', 69, 1, hex_up('Ab4'), 'Cantus: A-flat, ut-la (rising)', 6)
-sc.put('S', 69, 1, 'Eb5:12 Eb5:4')
-sc.put('A', 69, 1, 'Ab3:12 G3:4')
+sc.put('S', 69, 1, 'Eb5:16')
+sc.put('A', 69, 1, 'Ab3:16')
 sc.put('T', 69, 1, 'Eb3:12 R:4')
-sc.put('B', 69, 1, 'Ab2:12 Eb2:4')
+sc.put('B', 69, 1, 'Ab2:12 C2:4')
 sc.theme('T', 70, 1, key(SUBJ, 'B4', 'Bb3'), "Subject (B-flat), tenor, at the cantus's re")
 sc.put('S', 70, 1, 'R:4 D5:1 F5:1 Eb5:1 G5:4 A5:1 Bb5:4~ '                      # CS above
                    'Bb5:4 A5:4 F5:1 Eb5:1 D5:1 Eb5:1 F5:1 G5:1 A5:1 F5:1')
-sc.put('A', 70, 1, 'F3:4 D4:4 Eb4:4 G4:4 '
-                   'F4:4 A3:4 C4:4 Eb4:4')
-sc.put('B', 70, 1, 'Bb1:4 D2:4 Eb2:4 C2:4 '
-                   'F2:4 Eb2:4 D2:4 A1:4')
-# b72: B-flat minor (the cantus's D-flat), the only minor tonic of the tour
-sc.put('S', 72, 1, 'Db5:2 F5:1 Gb5:1 F5:2 Db5:2 Bb5:2 Ab5:1 G5:1 Ab5:2 F5:2')
-sc.put('A', 72, 1, 'F4:2 Gb4:2 F4:2 Eb4:2 Db4:4 R:4')
+sc.put('B', 70, 1, 'Bb2:8 G2:4 C3:4 '
+                   'F3:4 Eb3:4 D3:4 A2:4')
+# b72: B-flat minor (the cantus's D-flat), ii7 of A-flat, leading to E-flat
+sc.put('S', 72, 1, 'F5:4 Bb5:2 Ab5:2 F5:4 Ab5:4')
 sc.put('T', 72, 1, 'Bb3:4 Ab3:2 Gb3:2 F3:4 Bb3:4')
-sc.put('B', 72, 1, 'Bb2:2 C3:2 Db3:2 Bb2:2 Gb2:4 F2:4')
+sc.put('B', 72, 1, 'Bb1:4 Db2:4 F2:4 Db2:4')
 sc.theme('A', 73, 1, key(SUBJ, 'B4', 'Eb4'), "Subject on the dominant (E-flat), alto, at the cantus's sol")
 sc.put('S', 73, 1, 'R:4 G5:1 Bb5:1 Ab5:1 C6:4 D6:1 Eb6:4~ '                      # CS above, in E-flat
                    'Eb6:4 D6:4 Bb5:1 Ab5:1 G5:1 Ab5:1 Bb5:1 C6:1 D6:1 Bb5:1')
-sc.put('T', 73, 1, 'G3:4 Bb3:4 Ab3:4 C4:4 '
-                   'Bb3:4 F3:4 D3:4 R:4')
-sc.put('B', 73, 1, 'Eb2:2 F2:2 G2:2 Eb2:2 Ab2:2 G2:2 F2:2 Ab2:2 '
-                   'Bb2:4 D2:2 C2:2 Bb1:4 R:4')
+sc.put('T', 73, 1, 'G3:4 Bb3:4 C4:4 Ab3:4 '
+                   'F3:4 Ab3:4 F3:4 R:4')
+sc.put('B', 73, 1, 'R:8 Ab2:2 G2:2 F2:4 '
+                   'Bb2:4 D3:4 F2:4 R:4')
 
 NBARS = 74
 

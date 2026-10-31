@@ -91,10 +91,10 @@
     },
     {
      "id": "fugue-5",
-     "title": "Fugue V \u00b7 six voices, cascade stretto",
-     "score": "cycle/05-d-major/archive-n-plus-1/fugue.json",
+     "title": "Fugue V \u00b7 Cascade, with Bach as guest (5 voices)",
+     "score": "cycle/05-d-major/fugue.json",
      "tag": "fixed",
-     "notes": "The trumpet-and-drum subject is kept, now with a tonal answer, a syncopated countersubject and uneven entry spacing. Middle entries in B minor and E minor (inverted). The strettos no longer sit on a held triad: in G the subject combines with its diminution and inversion over a walking bass, and in E minor the inversion enters off the beat.\n\nThe climax is a cascade stretto: six entries from soprano down to contrabass, one bar apart and each a fifth lower, through F#m, Bm, Em, A, D, G. Bach's own D-major subject (BWV 850) then enters as a genuine baritone voice. The subject appears at four speeds (x4, x2, x1, x1/2) in bars 47-54, at most three at once. The tonic pedal is coloured with C natural and B flat, and the timpani play the tattoo.\n\nAccented parallels down from 38 to 0; tripled pitch classes from 38% to 9%.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "Four home voices and a guest. The guest sings only the subject of Bach's own D-major fugue in Book I (BWV 850, the French-overture subject), and each time it sings, its neighbours fall silent so it can be heard: first as the exposition's fifth entry, where our own subject was expected; again at the summit; and last of all, its final F-sharp the third of the closing chord. Before the summit the inner voices try the head of Bach's subject themselves.\n\nThe cascade: four entries step down through the voices and through four keys, F-sharp minor, B minor, E minor, A, one bar apart; the fifth step, D, is the bass with the subject at half speed. Over it the subject runs at normal speed and then at double speed, three speeds at once in three registers. The alto, which opened the fugue, restates the subject over a drum-like tattoo on the bass's held D, and the guest has the last word.\n\nRecomposed in five voices (it was six, and nearly unplayable by one pianist); the earlier version is in the pair's archive folder."
     }
    ]
   },
@@ -149,9 +149,9 @@
     {
      "id": "fugue-8",
      "title": "Fugue VIII \u00b7 nine real voices",
-     "score": "cycle/08-e-flat-minor/fugue.json",
+     "score": "cycle/08-e-flat-minor/archive-n-plus-1/fugue.json",
      "tag": "fixed",
-     "notes": "The subject's first six notes are the head of Bach's D-sharp-minor fugue subject (BWV 853), now credited. All nine voices enter in the exposition at shrinking distances, including a subject and its inversion one beat apart. The middle has augmentations, a 'dance' episode in which subject and countersubject run in sixteenths and thirty-seconds, and a false return in mirror image.\n\nA chain of entries one beat apart climbs to a bar of silence. Then comes the arrival: one nine-voice chord whose every note begins a line, over the bass of the arrival Sam liked in the second draft, now singing the subject at quarter speed. Eleven more statements, upright, inverted and augmented, sound above it with all nine voices moving for seven bars. A deceptive cadence leads to a quiet C-flat interlude. Then Bach's complete subject enters as a guest under ours, with the prelude's melody in the bass.\n\nAgainst the old 100-bar version: parallel fifths/octaves 218 -> 0, accented parallels 294 -> 0, low-register clashes 286 -> 11."
+     "notes": "The subject's first six notes are the head of Bach's D-sharp-minor fugue subject (BWV 853), now credited. All nine voices enter in the exposition at shrinking distances, including a subject and its inversion one beat apart. The middle has augmentations, a 'dance' episode in which subject and countersubject run in sixteenths and thirty-seconds, and a false return in mirror image.\n\nA chain of entries one beat apart climbs to a bar of silence. Then comes the arrival: one nine-voice chord whose every note begins a line, over the bass of the arrival Sam liked in the second draft, now singing the subject at quarter speed. Eleven more statements, upright, inverted and augmented, sound above it with all nine voices moving for seven bars. A deceptive cadence leads to a quiet C-flat interlude. Then Bach's complete subject enters as a guest under ours, with the prelude's melody in the bass.\n\nAgainst the old 100-bar version: parallel fifths/octaves 218 -> 0, accented parallels 294 -> 0, low-register clashes 286 -> 11.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
     }
    ]
   },

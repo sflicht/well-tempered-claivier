@@ -234,7 +234,7 @@ def ball():
     theme('B', 131, oc(SC_F, -2), 'Courante: subject (F# level, ends on vi)')
     put('B', 146, 'G#2:4 A2:4 D3:4 R:4 C#3:8 D3:4 E3:12')
     # gigue
-    put('T', 120, 'A3:8/3 B3:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 G#3:4/3 F#3:8/3 G#3:4/3 R:4 R:8/3')
+    put('T', 120, 'A3:8/3 B3:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 B3:4/3 C#4:8/3 B3:4/3 R:4 R:8/3')
     theme('T', 125 + Fr(2, 3), oc(dshift(SG, 3), -1), 'Gigue: subject (D level)')
     # three cells of three beats (long-short | three eighths | dotted quarter) that cut across the
     # gigue's own 12/8 bars and the allemande's 4/4 bars; then a rest before the race
@@ -255,42 +255,47 @@ def ball():
     put('A', 150, 'A4:2 B4:1 C#5:1 E5:2 D5:1 E5:1 F#5:2 E5:1 F#5:1 E5:2 D5:1 C#5:1 B4:8')
 
 
-# J. S. Bach, English Suite No. 1 in A, BWV 806, Bourree I, bars 1-5 (Mutopia edition after the
+# J. S. Bach, English Suite No. 1 in A, BWV 806, Bourree I, bars 1-4 (right hand) and 2-5 (left hand) (Mutopia edition after the
 # Bach-Gesellschaft, see NOTES.md), at pitch.  The bourree's minim is the common beat, so its quarter
 # is our eighth and its eighth our sixteenth: the allemande's running sixteenths were its pace all along.
 BOURREE_RH = ('E4:2 A4:1 G#4:1 B4:1 A4:1 C#5:1 B4:1 A4:1 G#4:1 A4:2 E4:2 C#4:1 E4:1 A4:1 B4:1 '
-              'C#5:1 B4:1 D5:1 C#5:1 E5:1 D5:1 C#5:1 B4:1 D5:1 C#5:1 B4:1 C#5:1 A4:1 B4:1 C#5:1 D5:1 '
-              'E5:2 F#5:2 G5:3 A5:1')
+              'C#5:1 B4:1 D5:1 C#5:1 E5:1 D5:1 C#5:1 B4:1 D5:1 C#5:1 B4:1 C#5:1 A4:1 B4:1 C#5:1 D5:1')
 # ... and its left hand, which imitates the tune at the octave below from the last beat of bar 2
 BOURREE_LH = ('E3:2 A3:1 G#3:1 B3:1 A3:1 C#4:1 B3:1 A3:1 G#3:1 A3:2 E3:2 C#3:1 E3:1 A3:1 B3:1 '
               'C#4:1 B3:1 D4:1 C#4:1 E4:1 D4:1 C#4:1 A3:1')
 
 
 def coda():
-    """VI. Coda (q156-176): the ball ends on A; then the allemande, alone, plays the tune it has been
-    dancing all along, at its true pace (Bach's Bourree I), the courante answers with Bach's own bass,
-    and on the fifth bar the whole ball joins the bourree in one metre (2/2) for the last cadence."""
+    """VI. Coda (q156-180): the ball ends on A; then the allemande, alone, plays the tune it has been
+    dancing all along, at its true pace (Bach's Bourree I, bars 1-4), and the courante answers with
+    Bach's own bass.  Two bars later the sarabande enters with the bourree's head, and two bars after
+    that the gigue, in straight eighths at last: the four dancers come into the bourree's one metre
+    in the order in which they came into the fugue, and close together."""
     put('S', 156, 'A5:6')
     put('A', 156, 'A4:6')
     put('T', 156, 'C#4:6')
     put('B', 156, 'A2:6')
-    theme('A', Fr(315, 2), BOURREE_RH, "Bach, Bourree I (BWV 806), bars 1-5: the subject's source")
-    theme('B', Fr(323, 2), BOURREE_LH, 'Bach, Bourree I: the bass imitation')
-    # the whole ball in the bourree's metre: IV, ii6, I6/4, V7, I
-    put('S', 168, 'D6:4 B5:4 A5:4 G#5:4 A5:16')
-    put('A', 168, 'F#5:2 E5:2 B4:4 C#5:2 E5:2 D5:2 B4:2 C#5:16')
-    put('T', 168, 'A3:4 D4:4 C#4:4 E4:20')
-    put('B', 168, 'D3:8 E3:4 E2:4 A2:16')
+    theme('A', Fr(315, 2), BOURREE_RH, "Bach, Bourree I (BWV 806), bars 1-4: the subject's source")
+    theme('B', Fr(323, 2), BOURREE_LH, 'Bach, Bourree I: the bass imitation (bars 2-5)')
+    theme('S', Fr(331, 2), oc(BOURREE_RH.split(' C#5:1 B4:1 D5:1')[0], 1) + ' C#6:1 B5:1 D6:1 C#6:1 E6:1 D6:1 '
+          'C#6:1 B5:1 D6:1 C#6:1 B5:1 C#6:1 A5:1 B5:1 C#6:1 D6:1', 'The bourree: sarabande')
+    theme('T', Fr(339, 2), 'E3:2 A3:1 G#3:1 B3:1 A3:1 C#4:1 B3:1 A3:1 G#3:1 A3:2 E3:2 C#3:1 E3:1 A3:1 B3:1',
+          'The bourree: gigue, in straight eighths')
+    put('A', 166, 'E5:2 D5:2 C#5:2 D5:2 C#5:2 E4:2 A4:2 C#5:2 E5:4 C#5:2 E5:2 F#5:4 E5:8 '
+                  'D5:4 C#5:16')
+    put('B', 168, 'F#3:4 C#3:4 A2:16 E2:8 A2:16')
+    put('S', 174, 'C#6:4 B5:4 A5:16')
+    put('T', 174, 'A3:4 G#3:4 A3:16')
 
 
 SECTIONS = [exposition, duo_quick, duo_slow, trio, ball, coda]
-END = 176
+END = 180
 BPM = 69
 # One pulse for all four dances; the music breathes at its cadences, holds the last chord of the
 # ball, and broadens at the end.
 TEMPO_MAP = [[0, 69], [46.5, 69], [48, 62, 'ramp'], [48, 69], [69, 69], [71, 62, 'ramp'], [71, 69],
              [102, 69], [104, 63, 'ramp'], [104, 69], [118.5, 69], [120, 62, 'ramp'], [120, 69],
-             [153, 69], [156, 52, 'ramp'], [157.5, 52], [157.5, 69], [170, 69], [176, 42, 'ramp']]
+             [153, 69], [156, 52, 'ramp'], [157.5, 52], [157.5, 69], [174, 69], [178, 46, 'ramp'], [180, 40, 'ramp']]
 CODA = 156
 
 
@@ -310,8 +315,17 @@ def accent(n, t):
     if t >= CODA:                          # the bourree: a bar is two common beats
         r = (Fr(t) - CODA) % 2
         return 4 if r == 0 else (1 if r == 1 else (0 if r.denominator == 1 else -1))
+    if n == 'T':
+        # the gigue's 12/8 bar has the allemande's length, so it is not accented like a bar:
+        # the gigue leans on the long note of each long-short pair, and in the ball on the three-beat
+        # cells that cut across both voices' bars (q132-141)
+        if Fr(t) in GIGUE_CELLS:
+            return 4
+        if Fr(t) in GIGUE_CELL_ENDS:
+            return 2
+        return 1 if Fr(t).denominator == 1 else -1
     num, den = OWN_METER[n]
-    bar = Fr(num * 4, den) * (Fr(2, 3) if n == 'T' else 1)
+    bar = Fr(num * 4, den)
     r = Fr(t) % bar
     if r == 0:
         return 4
@@ -321,9 +335,11 @@ def accent(n, t):
         return 1 if r % 2 == 0 else 0      # courante: half-note beats
     if n == 'A':
         return 1 if r == 2 else (0 if r.denominator == 1 else -1)
-    if n == 'T':
-        return 1 if r == 2 else (0 if r.denominator == 1 else -1)
     return 0
+
+
+GIGUE_CELLS = {Fr(132), Fr(135), Fr(138)}          # three-beat cells of the gigue in the ball
+GIGUE_CELL_ENDS = {Fr(134), Fr(137), Fr(140)}       # ... each ending on a dotted quarter
 
 
 def velocity_shape(b):
@@ -331,7 +347,7 @@ def velocity_shape(b):
     shape = {11: 2, 12: -2, 13: -2, 14: -2, 15: 0, 16: 0, 17: -1,          # cadence in E; the quick duet
              26: -2, 27: -1, 28: 1, 29: 3,                                  # trio, the dominant
              30: 3, 31: 3, 32: 4, 33: 4, 34: 5, 35: 5, 36: 6, 37: 6, 38: 5,  # the ball
-             39: -3, 40: -2, 41: -1, 42: 4, 43: 4}                          # the bourree; the bow
+             39: -3, 40: -2, 41: 0, 42: 3, 43: 4, 44: 4}                          # the bourree; the bow
     if 18 <= b <= 25:
         return -5                                                           # the slow duet
     return shape.get(b, 0)
