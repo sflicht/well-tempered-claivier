@@ -79,6 +79,11 @@ def I(to):            # the inversus with D5 moved to `to`
     return move(INV, 'D5', to)
 
 
+def last_tie(s):
+    """Tie the last note of a line into the next (same-pitch) note."""
+    return s + '~'
+
+
 def last_octave(s, k):
     """The same line with its last note moved k octaves (the closing leap of a
     fifth taken as a fourth the other way): an explicit, named variant."""
@@ -97,10 +102,10 @@ tag(1, 'Station I (D minor): the ground in the Bass')
 put(1, B=G('D3'))
 entry('B', 1, 'Ground (Bass)', n=8)
 tag(3, 'Inversus = the ground at double speed (Alto)')
-put(3, A=I('A4') + '  A3:4 C#4:2 E4:2 F4:4  E4:4 F4:6 A4:2')
+put(3, A=last_tie(I('A4')) + '  A3:4 C#4:2 E4:2 F4:4  E4:4 F4:6 A4:2')
 entry('A', 3, 'Inversus (Alto): the ground at double speed')
 tag(5, 'Subject (Soprano)')
-put(5, S=S('A4'))
+put(5, S=last_tie(S('A4')))
 entry('S', 5, 'Subject (Soprano)')
 
 # ===========================================================================
@@ -110,10 +115,10 @@ entry('S', 5, 'Subject (Soprano)')
 tag(9, 'Station II (A minor): the ground in the Tenor; the Bass rests')
 put(9, T=G('A3'))
 entry('T', 9, 'Ground (Tenor), A minor', n=8)
-put(9, S='A5:4 G5:2 F5:2 E5:4  C5:4 B4:4 R:4')
-put(9, A='C5:4 B4:2 A4:2 G#4:2 A4:2  E4:4 E4:4 D4:4  C4:2 D4:2 E4:4 A4:4  A4:8 G#4:2 R:2')
+put(9, S='A5:4 G5:2 F5:2 E5:2 D5:2  C5:4 B4:4 R:4')
+put(9, A='C5:4 B4:2 A4:2 G#4:2 F#4:2  E4:8 D4:4  C4:2 D4:2 E4:2 G4:2 A4:4~  A4:8 G#4:2 R:2')
 tag(11, 'Inversus (Soprano)')
-put(11, S=last_octave(I('E5'), 1) + '  C5:2 B4:2 D5:4 C5:4  B4:4 C5:8')
+put(11, S=last_octave(I('E5'), 1) + '  C5:2 B4:2 D5:4 C5:4  B4:4 C5:6 E5:2')
 entry('S', 11, 'Inversus (Soprano)')
 tag(13, 'Answer (Alto)')
 put(13, A=last_octave(S('E4'), -1))
@@ -125,7 +130,7 @@ entry('A', 13, 'Answer (Alto)')
 # (G F | F E | Eb D: the lament once more); the Soprano turns above, the
 # Bass returns to carry the falling fifths, the Tenor rests after its ground.
 tag(17, 'Episode 1: falling fifths to F major')
-put(17, A='G4:8 F4:4~  F4:8 E4:4  Eb4:8 D4:4  D4:4 E4:4 R:4')
+put(17, A='G4:8 F4:4~  F4:8 E4:4  Eb4:8 D4:4~  D4:4 E4:4 R:4')
 put(17, B='A2:4 C#3:4 D3:4  B2:4 G2:4 C3:4  A2:4 F2:4 Bb2:4  G2:4 C3:8')
 put(17, S='A5:2 G5:2 E5:2 F5:2 D5:2 F5:2  G5:2 F5:2 D5:2 E5:2 C5:2 E5:2  F5:2 Eb5:2 C5:2 D5:2 Bb4:2 D5:2'
           '  Bb4:2 A4:2 C5:4 R:4')
@@ -138,7 +143,7 @@ put(17, S='A5:2 G5:2 E5:2 F5:2 D5:2 F5:2  G5:2 F5:2 D5:2 E5:2 C5:2 E5:2  F5:2 Eb
 tag(21, 'Station III (F major): the ground in the Alto; the Soprano rests')
 put(21, A=last_octave(G('F4'), 1))
 entry('A', 21, 'Ground (Alto), F major', n=8)
-put(21, T='F3:4 G3:2 A3:2 Bb3:4  A3:4 G3:2 F3:2 E3:2 G3:2  C4:4 Bb3:4 G3:4  F3:8 E3:4~  E3:4 F3:4 E3:4'
+put(21, T='F3:4 G3:2 A3:2 Bb3:4  A3:4 G3:2 F3:2 E3:2 F3:2  G3:4 Bb3:4 G3:4  F3:8 E3:4~  E3:4 F3:4 E3:4'
           '  D3:4 G3:4 A3:4  G3:4 Bb3:4 A3:4  E3:4 A3:8')
 tag(23, 'Inversus (Bass), in tenths under the ground')
 put(23, B=last_octave(I('C3'), 1) + '~  C3:12~  C3:4 F2:8')
@@ -161,8 +166,8 @@ put(EP2, S='D5:1 C5:1 Bb4:1 A4:1 Bb4:1 G4:1 A4:1 Bb4:1 C5:1 Bb4:1 C5:1 E5:1'
            '  Bb4:1 A4:1 G4:1 F4:1 G4:1 E4:1 F4:1 G4:1 A4:1 G4:1 A4:1 C#5:1'
            '  A4:1 G4:1 F4:1 E4:1 F4:1 D4:1 E4:1 F4:1 G4:1 F4:1 G4:1 A4:1'
            '  D5:1 C5:1 Bb4:1 A4:1 G4:1 A4:1 Bb4:1 A4:1 C#5:1 E5:1 G5:1 E5:1  F5:4 D5:4 E5:4')
-put(EP2, T='F4:8 E4:4  Eb4:8 D4:4  D4:8 C#4:4  C4:8 Bb3:4  D4:8 C#4:4  A3:4 D4:4 R:4')
-put(EP2, A='R:12  R:12  R:12  R:12  R:12  A4:4 F4:4 R:4')
+put(EP2, T='R:4 F4:4 E4:4  Eb4:8 D4:4~  D4:8 C#4:4  C4:8 Bb3:4  D4:8 C#4:4  D4:4 A3:4 R:4')
+put(EP2, A='R:12  R:12  R:12  R:12  R:12  A4:2 G4:2 F4:4 R:4')
 
 # ===========================================================================
 # STRETTO (bars 35-40).  The Tenor, which has had only the ground, takes the
@@ -171,11 +176,11 @@ put(EP2, A='R:12  R:12  R:12  R:12  R:12  A4:4 F4:4 R:4')
 tag(ST, 'Stretto: subject (Tenor) and answer (Alto), one bar apart')
 put(ST, T=last_octave(S('A3'), -1) + '  C4:4 A3:4 B3:4  A3:12')
 entry('T', ST, 'Subject (Tenor), stretto')
-put(ST + 1, A=last_octave(S('E4'), -1) + '  E4:4 C#4:4 A4:4')
+put(ST + 1, A=last_tie(last_octave(S('E4'), -1)) + '  E4:2 F#4:2 G4:2 A4:2 B4:2 C#5:2')
 entry('A', ST + 1, 'Answer (Alto), stretto at one bar')
 put(ST, A='R:12')
 put(ST, B='D3:4 C3:4 Bb2:4  G2:4 A2:4 D3:4  B2:4 A2:4 D3:4  B2:4 G#2:4 A2:4  F2:8 E2:4  R:12')
-put(ST, S='R:4 F5:2 E5:2 D5:4  E5:8 D5:4~  D5:4 C#5:4 D5:2 F5:2  F5:4 E5:4 C#5:4  D5:4 C5:4 D5:4  C#5:12')
+put(ST, S='R:4 F5:2 E5:2 D5:4  E5:8 D5:4~  D5:4 C#5:4 D5:2 F5:2~  F5:4 E5:4 C#5:4  D5:4 C5:4 D5:4  C#5:8 E5:4')
 
 # ===========================================================================
 # SUMMIT (bars 41-56).  The ground returns to the Bass in augmentation
@@ -188,19 +193,19 @@ put(ST, S='R:4 F5:2 E5:2 D5:4  E5:8 D5:4~  D5:4 C#5:4 D5:2 F5:2  F5:4 E5:4 C#5:4
 tag(SU, 'Summit: the ground augmented in the Bass; inversus (Tenor)')
 put(SU, B=scale_rhythm(G('D3'), 2))
 entry('B', SU, 'Ground augmented (Bass)', n=16)
-put(SU, T=I('A4') + '  R:4 E4:2 D4:2 C4:2 B3:2  A3:2 B3:2 D4:2 E4:2 D4:2 B3:2  G3:2 A3:2 Bb3:2 G3:2 C4:2 A3:2'
+put(SU, T=I('A4') + '  R:4 E4:2 D4:2 C4:2 B3:2  A3:2 G#3:2 B3:2 C#4:2 D4:2 B3:2  G3:2 A3:2 Bb3:2 A3:2 C4:2 Bb3:2'
           '  C4:4 C#4:4 R:4')
 entry('T', SU, 'Inversus (Tenor) over the augmented ground')
-put(SU, A='D5:8 B4:4  C#5:4 D5:4 C#5:4  D5:4 Bb4:4 A4:4  G4:4 A4:2 G4:2 E4:4  R:12  R:12')
-put(SU, S='F5:8 E5:4  E5:4 A5:4 G5:4  F5:4 G5:4 E5:4  R:12')
+put(SU, A='D5:6 C#5:2 B4:4  C#5:4 D5:4 C#5:4  D5:4 Bb4:4 A4:4  G4:4 A4:2 G4:2 E4:4  R:12  R:12')
+put(SU, S='F5:8 E5:4~  E5:4 A5:4 G5:4  F5:4 G5:4 E5:4  R:12')
 tag(SU + 4, 'Ground in the Soprano (at the dominant): two speeds in the outer voices')
-put(SU + 4, S=last_octave(G('A5'), 1) + '  F5:8 G5:4  Bb5:8 A5:4  G5:4 E5:4 F#5:4  F#5:12')
+put(SU + 4, S=last_octave(G('A5'), 1) + '  F5:8 G5:4  Bb5:8 A5:4  G5:4 E5:4 F#5:4~  F#5:8 R:4')
 entry('S', SU + 4, 'Ground (Soprano), at the dominant, over its augmentation', n=8)
 tag(SU + 6, 'Subject (Alto) between the two grounds')
-put(SU + 6, A=S('D4') + '  C#5:4 A4:2 B4:2 C#5:4  C#5:2 B4:2 C#5:4 E5:4  D5:8 C#5:4  E5:4 D5:2 C#5:2 E5:4  E5:4 C#5:4 A4:4  A4:12')
+put(SU + 6, A=S('D4') + '  C#5:2 B4:2 A4:2 B4:2 C#5:4~  C#5:2 B4:2 C#5:2 D5:2 E5:4  D5:8 C#5:4  E5:4 D5:2 C#5:2 E5:4  E5:4 C#5:4 A4:4~  A4:12')
 entry('A', SU + 6, 'Subject (Alto) between the two grounds')
 tag(SU + 8, 'Inversus (Tenor): the ground at three speeds at once')
-put(SU + 8, T='R:8 ' + I('D4') + '  E3:4  G3:8 E3:4  C#3:4 E3:4 D3:4  D3:12')
+put(SU + 8, T='R:8 ' + I('D4') + '  E3:4  G3:8 E3:4  C#3:4 E3:4 D3:4~  D3:12')
 entry('T', SU + 8, 'Inversus (Tenor): the third speed', beat=3)
 
 # ===========================================================================
@@ -210,8 +215,8 @@ tag(CO, 'Coda: the subject augmented (Soprano) over the tonic')
 put(CO, S=scale_rhythm(S('A4'), 2))
 entry('S', CO, 'Subject augmented (Soprano), D major', n=8)
 put(CO, B='D2:24  D2:24  D2:24  G2:12  D2:12')
-put(CO, A='F#4:12  F#4:4 G4:8  G4:8 F#4:4  G4:4 F#4:8  F#4:4 E4:4 G4:4~  G4:4 F#4:8  G4:4 B4:8  A4:4 F#4:8')
-put(CO, T='R:12  R:12  R:12  R:12  R:12  R:4 D3:8  B2:8 D3:4  D3:12')
+put(CO, A='F#4:12~  F#4:4 G4:8~  G4:8 F#4:4  G4:4 F#4:8~  F#4:4 E4:4 G4:4~  G4:4 F#4:8  G4:4 B4:8  A4:4 F#4:8')
+put(CO, T='R:12  R:12  R:12  R:12  R:12  R:4 D3:8  B2:8 D3:4~  D3:12')
 
 # ---------------------------------------------------------------------------
 BPM = 76

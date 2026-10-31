@@ -19,7 +19,7 @@ per-staff time signatures go to the LilyPond score through metadata.score_layout
   III  q71-104   the slow dances alone: courante (B minor) and sarabande (D)
   IV   q102-120  three at a time: the mirrors of gigue and allemande, then the dominant
   V    q120-156  the ball: all four at once; the gigue and the allemande race (q143 2/3-150)
-  VI   q156-176  the source revealed: Bach's Bourree I (BWV 806), then all four in its metre
+  VI   q156-180  the source revealed: Bach's Bourree I (BWV 806); the four dancers enter it in turn
 
 Every note is written here as a literal token string.  Thematic statements are the hand-written
 subject versions or explicit transforms of them (oc, dshift = diatonic transposition inside A major).

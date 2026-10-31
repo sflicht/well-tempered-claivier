@@ -394,9 +394,44 @@ sc.put('S', 73, 1, 'R:4 G5:1 Bb5:1 Ab5:1 C6:4 D6:1 Eb6:4~ '                     
 sc.put('T', 73, 1, 'G3:4 Bb3:4 C4:4 Ab3:4 '
                    'F3:4 Ab3:4 F3:4 R:4')
 sc.put('B', 73, 1, 'R:8 Ab2:2 G2:2 F2:4 '
-                   'Bb2:4 D3:4 F2:4 R:4')
+                   'Bb2:4 D3:8 R:4')
 
-NBARS = 74
+
+# ===================================================================== XII. B-flat (bars 75-80), falling
+# The cantus, now the top voice, falls from G5.  Its last two notes are re-read: C is the
+# Neapolitan of B, and B-flat is A-sharp, the third of F#7, so that the circle closes by a semitone.
+sc.mark(75, 'B-flat (falling): the circle closes')
+sc.theme('C', 75, 1, hex_dn('G5'), 'Cantus: B-flat, la-ut (falling); its B-flat becomes A#, the leading note of B', 6)
+sc.theme('B', 75, 1, key(INV, 'G#5', 'G2'), 'Inversion (B-flat), bass, with the falling cantus')
+sc.put('A', 75, 1, 'Bb4:8 G4:4 Bb4:4 '
+                   'A4:4 F4:4 C5:4 G4:4 '
+                   'G4:4 C5:4 Bb4:2 Ab4:2 F4:4 '
+                   'F4:4 D4:4 G4:4 F4:4 '
+                   'G4:4 A4:2 G4:2 G4:4 E4:4 '
+                   'E4:4 F#4:4 E4:4 C#4:4')
+sc.put('T', 75, 1, 'Bb3:2 C4:2 D4:4 Bb3:2 C4:2 G3:2 A3:2 '
+                   'C4:2 Bb3:2 A3:2 F3:2 C4:2 Bb3:2 G3:2 C4:2 '
+                   'Eb4:4 C4:2 D4:2 Eb4:4 Ab3:4 '
+                   'G3:4 D4:2 C4:2 B3:4 D4:4 '
+                   'E4:4 C4:2 D4:2 E4:4 C4:4 '
+                   'C#4:4 A#3:4 F#3:4 R:4')
+sc.put('B', 77, 1, 'C3:2 D3:2 Eb3:2 C3:2 Ab2:2 G2:2 F2:4 '
+                   'G2:4 B1:4 D2:4 F2:4 '
+                   'E2:4 G2:4 C2:4 E2:4 '
+                   'F#2:4 E2:4 C#3:4 R:4')
+
+# ===================================================================== XIII. B (bars 81-86), rising: home
+sc.mark(81, 'B (rising): home, five voices')
+sc.theme('C', 81, 1, hex_up('B4'), 'Cantus: B, ut-la (rising), home an octave higher', 6)
+sc.theme('B', 81, 1, key(SUBJ, 'B4', 'B2'), 'Subject (B), bass, with the cantus: home')
+sc.put('S', 81, 1, 'R:4 D#5:1 F#5:1 E5:1 G#5:4 A#5:1 B5:4~ '                      # CS above
+                   'B5:4 A#5:4 F#5:1 E5:1 D#5:1 E5:1 F#5:1 G#5:1 A#5:1 F#5:1')
+sc.put('A', 81, 1, 'F#4:8 E4:8 '
+                   'C#4:4 E4:12')
+sc.put('T', 81, 1, 'D#4:4 B3:4 B3:4 B3:4 '
+                   'A#3:4 C#4:4 C#4:4 A#3:4')
+
+NBARS = 86
 
 
 def main():
