@@ -94,7 +94,7 @@ The dramaturgy is a dialogue that becomes agreement: the choirs first sing separ
 - **Augmentation** (`scale_rhythm` ×2, b24.4): the subject at the chorale's speed. In 12/8 its quarter-note groups (E F♯ G, B A G, F♯ E D♯) run two against the dotted-quarter beat, a hemiola under the chorale.
 - **Diminution** (×½, written out): the subject's head ("Sehet!") and the inversion's head ("Wen?", "Was?", "Wohin?") in sixteenths, in the episode (b15.3–17.2) and the second dialogue (b29–30).
 - **Countersubject** (Coro I, b3.1–5.1, against the inversion): sixteenths against the answer's eighths and quarters. It opens with the head of **Bach's BWV 855 subject** (E G B E D♯ E), a nod to the two-voice fugue this one is "plus one" of.
-- **Natural-minor and altered statements:** the subject under line 1 and in the Recognition ends on D natural (against the chorale's D); the B-minor inversion in the Recognition has A natural (against the chorale's D); the final inversion's tail turns down (… A3 G3 F♯3) to reach the dominant (14/16 intervals).
+- **Natural-minor and altered statements:** the subject under line 1 and in the Recognition ends on D natural (against the chorale's D); the B-minor inversion in the Recognition has A natural (against the chorale's D); the final inversion keeps its head strict (B B C B A G E F♯), but its second half is re-voiced to fill the thirds the two forms leave open, and its tail turns down (… A3 G3 F♯3) to the dominant (8/16 intervals; see Review).
 
 ### Section map
 
@@ -105,15 +105,15 @@ Bar.beat in dotted quarters (b45.3 = third dotted quarter of bar 45).
 | 1–5.2 | **I. Exposition** (two voices) | Coro I: subject, alone (1.1). Coro II: inversion from the dominant (3.2), after the subject's E has sounded alone for a beat; Coro I's sixteenth countersubject above (from 3.1, BWV 855's head). Half cadence on V (5.2). |
 | 5.3–7.4 | **II. Dialogue 1** | Coro I sings the subject in pieces (in B minor, turning to E minor for its last three beats); Coro II interrupts: "Sehet!" (5.3) – **"Wen?"** (6.1, F♯3–G3) – "den Bräutigam. Seht ihn!" (6.2) – **"Wie?"** (7.1, B3–C4) – "als wie ein Lamm" (7.2, the sigh C–B), whose leading tone resolves into… |
 | 8–11 | **III. Chorale line 1** | …Coro I's subject (8.1), starting together with the chorale: the subject and its source at two speeds. Coro II runs below. Second half: Coro I in sixteenths over a walking Coro II, G – e – C♯ø7 – F♯7 (the chorale's E is its seventh) – **B minor** (11.1). |
-| 12–15.2 | **IV. Line 2** | Coro II's inversion (12.2, after a rest) under the chorale; Coro I in sixteenths above. Cadence in **G major** (15.2). |
+| 12–15.2 | **IV. Line 2** | Coro II's inversion (12.2, after a rest) under the chorale; Coro I holds D5 for its first beat, then runs in sixteenths above. Cadence in **G major** (15.2). |
 | 15.3–18.4 | **V. Episode 1** (two voices) | The questions in diminution: "Wen?" (Coro II, G, 15.3), "Sehet!" (Coro I, G, 16.1), "Wen?" (e, 16.3), "Sehet!" (e, 17.1); a falling sequence onto V; a **general pause** (18.4). |
 | 19–23.1 | **VI. Recognition** (line 3 = line 1) | Coro I sings the subject **in G major**, whose beat-notes are the chorale line (an octave below the chorale for its first three beats); Coro II sings it **in E minor a tenth below**. After a beat in which only the chorale sounds (21.1), both choirs answer **in inversion**, in sixths (G-major and B-minor inversions, 21.2). |
-| 23–28.4 | **VII. Line 4** (= line 2) | Coro I runs in sixteenths in BWV 855's manner (broken chords against a repeated note). Coro II enters after a rest with the **subject in augmentation** (24.4), at the chorale's own speed, and finishes it on the tonic after the chorale has ended (28.4). |
+| 23–28.4 | **VII. Line 4** (= line 2) | Coro I runs in sixteenths in BWV 855's manner (broken chords against a repeated note). Coro II enters after a rest with the **subject in augmentation** (24.4), under a held G4 in Coro I, at the chorale's own speed, and finishes it on the tonic after the chorale has ended (28.4). |
 | 28.4–30.3 | **VIII. Dialogue 2** (two voices, diminution) | "Sehet!" (29.1) – **"Was?"** (29.2) – "seht die Geduld. Seht!" (29.3) – **"Wohin?"** (30.1) – "auf unsre Schuld" (30.2): the subject at double speed, one beat at a time, with Coro II's questions between. |
 | 30.4–35.4 | **IX. Line 5** | The choirs **exchange forms**: Coro I sings the inversion (G major, 30.4, a beat before the chorale), Coro II the subject (E minor, 31.2): stretto at two beats. Second half to **B minor** (34.3; again E over F♯7). Link in sixteenths. |
 | 36–40.2 | **X. Line 6** | Both choirs rectus **in tenths** (37.1): the subject on B over the subject in G. Half cadence VI6 – iv – V (39.1–39.3), the chorale's B over the dominant. |
 | 40.3–42.4 | **XI. Dominant pedal** (two voices) | Coro II pulses on B in eighths (as the tonic pedal pulses at the opening of BWV 244/1); Coro I falls in sixteenths from the "Sehet" figure. A **general pause** (42.4). |
-| 43–47.3 | **XII. Line 7: final stretto** | V → VI under the chorale's E (43.1). Then, after a rest each, **Coro II's inversion (45.1)** and **Coro I's subject (45.3)**, the only voices under the last line. V7 with the chorale's A as the seventh (47.1–2); the subject's D♯ resolves with the chorale's final G, the third of E minor (47.3). |
+| 43–47.3 | **XII. Line 7: final stretto** | V → VI under the chorale's E (43.1). Then, after a rest each, **Coro II's inversion (45.1)** and **Coro I's subject (45.3)**, the only voices under the last line. V7 with the chorale's A as the seventh, over B2 then B3 (47.1–2); the subject's D♯ resolves with the chorale's final G, the third of E minor (47.3). |
 | 47.3–49.4 | **XIII. Coda** | Tonic pedal (Coro II E3, then E2). Coro I: BWV 855's head once more (E G B E D♯ E), then the "Lamm" sigh four times (C–B, A–G, F♯–E, C–B), ending on B4 under the chorale's G5. |
 
 **Thematic statements:** Coro I: 7 (subject in E minor ×3 at b1, 8, 45; subject in G major, b19; G-major inversion ×2, b21, 30; subject on B, b37) plus the dialogue fragments. Coro II: 8 (inversion in E minor ×3 at b3, 12, 45; B-minor inversion, b21; subject in E minor ×2, b19, 31; subject in augmentation, b24; subject in G major, b37) plus the questions. Chorale: 7 lines. The critic finds every declared entry (`themes`), with the interval scores noted above.
@@ -137,17 +137,17 @@ Bar.beat in dotted quarters (b45.3 = third dotted quarter of bar 45).
 | bad_doublings | 0 | ≤ 2 |
 | pc_tripled_on_beats_pct | 0.0 | — |
 | low_register_seconds | 0 | ≤ 9 |
-| stepwise_pct | 67.9 | ≥ 65 |
-| leap_4th_plus_pct | 8.4 | ~14 in Bach |
+| stepwise_pct | 67.7 | ≥ 65 |
+| leap_4th_plus_pct | 8.5 | ~14 in Bach |
 | crossings | 0 | few |
-| **keyboard_unplayable_pct** | **0.0** (0 of 679 onsets) | < 5 |
+| **keyboard_unplayable_pct** | **0.0** (0 of 670 onsets) | < 5 |
 | **mean_moving_voices** | **2.55** (of 3); 29 of 49 bars with all three moving | — |
 | tertian_fit_pct | 37.6 | — |
 | melody notes | 3 leaps larger than an octave, each across a rest (21.2, 43.1 ×2) | — |
 
 Moving voices by section: exposition 1.5; dialogue 1 2.0; line 1 3.0; line 2 3.0; episode 2.0; Recognition 3.0; line 4 2.7; dialogue 2 2.0; line 5 2.8; line 6 3.0; dominant pedal 2.0; line 7 3.0; coda 2.0 (three sounding). The full texture is kept for the chorale lines; every episode and dialogue is in two voices.
 
-**Rhythm.** Of 975 notes, 392 are sixteenths (373 in Coro I, 19 in Coro II), 352 eighths; Coro II also has quarter-note hemiolas (the augmentation) and the eighth-note pulse of the dominant pedal. The chorale moves in dotted halves throughout.
+**Rhythm.** Of 967 notes, 382 are sixteenths (363 in Coro I, 19 in Coro II), 351 eighths; Coro II also has quarter-note hemiolas (the augmentation) and the eighth-note pulse of the dominant pedal. The chorale moves in dotted halves throughout.
 
 **Registers and playability.** The chorale sits high (D5–E6). Where it holds D6 or E6 and Coro I is below A♯4, Coro II stays within a tenth of Coro I (tenor register), so that one hand takes the chorale and the other both choirs; elsewhere the right hand takes the chorale and Coro I. The critic finds no onset that two hands cannot reach.
 
@@ -161,12 +161,12 @@ Moving voices by section: exposition 1.5; dialogue 1 2.0; line 1 3.0; line 2 3.0
 
 1. **Bare dialogue.** In b5.3–7.1 and in b29–30 one choir sings at a time, so the texture is a single line for a beat or two at a time (by design: question, then answer). On a piano this may sound thin rather than antiphonal.
 2. **Parallel motion.** In three passages (b19–20, b21.2–23.1, b37–38) the choirs move in parallel tenths or sixths: for about six bars the two choirs are one harmonised line under the chorale. It is the "agreement" of the concept, but it is less independent counterpoint than the rest.
-3. **The final stretto is consonant but hollow in places.** With the inversion two beats ahead of the subject the choirs meet in octaves or fifths on several eighths (b45.4, 46.1, 46.3, 47.1); the chorale above completes the harmony. This was the cleanest of the E-minor placements I tested; closer distances gave more octaves or parallels. The inversion's tail is altered so that the bass reaches B.
+3. **The final stretto is still partly bare.** After the third review's changes the choirs meet in a perfect interval on 5 of 24 eighths (was 9): the octave E4/E3 at 45.4 (both forms' own notes) and the dominant at 47.1–47.2 (B4/B2, F♯4/B3) remain. The price is a less literal inversion: its second half is re-voiced (8/16 intervals).
 4. **Clashes with the held chorale notes.** Passing C♯ sixteenths in Coro I against the chorale's D in B minor (b11.1–11.3) and Coro II's passing C♯3 under it (b34.4); Coro I's D5 against the chorale's E6 for a quarter in the Recognition's inversion (b21.3, 21.4), which then rises to E. None is flagged by the critic, but they are audible frictions.
-5. **Coro I is busy.** It has 373 sixteenths and runs almost continuously under lines 1 (second half), 2 and 4 and in the dominant pedal. The risk is étude-like figuration, the criticism the prelude's aria once drew.
+5. **Coro I is busy.** It has 363 sixteenths and runs almost continuously under lines 1 (second half), 2 and 4 and in the dominant pedal; since the third review it holds one beat over each of Coro II's entries below it (12.2, 24.4). The risk of étude-like figuration remains.
 6. **Long two-voice opening.** The exposition has two entries (as BWV 855 does), and the chorale enters only at b8, after about 28 s of two-voice music.
 7. **Tonal range.** E minor, B minor and G major, with A minor and C major only touched (b43, b48); there is no real subdominant key area.
-8. **Modal and altered statements.** The G-major forms and the subject on B score 9–10/16 intervals as transfers; four statements have natural or altered tails (b8, b19, b21.2, b45).
+8. **Modal and altered statements.** The G-major forms and the subject on B score 9–10/16 intervals as transfers; four statements have natural or altered tails (b8, b19, b21.2), and the final inversion's second half is re-voiced (b46).
 9. **Spatial render.** With `--program 53` (Voice Oohs) the sixteenths may blur; I cannot judge from the files whether the front-centre chorale balances the two side choirs.
 10. **Unheard.** Balance, whether the chorale reads as a cantus firmus above the sixteenths, whether the questions sound like questions, and the general pauses (b18.4, b42.4) are for Sam's ears.
 
@@ -176,9 +176,27 @@ Moving voices by section: exposition 1.5; dialogue 1 2.0; line 1 3.0; line 2 3.0
 - **Changed:**
   - 11 voices → 3: each choir is one line, so every entry is a new voice after a rest, with no other voice in its register.
   - Two five-voice expositions → a counter-fugue exposition of two entries, as in BWV 855.
-  - One 12/8 surface of eighths and dotted quarters → sixteenth countersubject and episodes (392 sixteenths, against 18 in the old version), diminution dialogues, an augmentation with a hemiola, and a pulsing pedal.
+  - One 12/8 surface of eighths and dotted quarters → sixteenth countersubject and episodes (382 sixteenths, against 18 in the old version), diminution dialogues, an augmentation with a hemiola, and a pulsing pedal.
   - New: the Recognition's second half in inversion; the second dialogue with "Was?" and "Wohin?" (the old version used only "Wen?" and "Wie?"); the augmentation under line 4; the exchange of forms under line 5; the dominant-pedal breath before line 7.
   - The final stretto now has nothing else under the chorale (the old one had 6–10 moving voices around it).
   - The chorale breathes between lines; L7 follows BWV 401's rhythm.
-  - Length 231 s → 207 s; keyboard-unplayable 35 % → 0 %; stepwise 60.9 % → 67.9 %; low-register seconds 9 → 0; bad doublings 3 → 0; the one beat-to-beat octave is gone.
+  - Length 231 s → 207 s; keyboard-unplayable 35 % → 0 %; stepwise 60.9 % → 67.7 %; low-register seconds 9 → 0; bad doublings 3 → 0; the one beat-to-beat octave is gone.
 - **Why:** the owner found the thick textures washed out the counterpoint; the second review found the final stretto buried (F1), four minutes of one rhythmic surface (F2) and two choirs indistinguishable on one piano (F3). Three voices answer F1 and F3 by construction (register, rests before entries, the seats in the spatial render); the sixteenths, diminutions and augmentation answer F2.
+
+---
+
+## Review (REVIEW-3.md) and what changed
+
+The third review found nothing for the critic to report and ranked the fugue the clearest of its batch. Its "must not be touched" passages (b7.2–8.1, the Recognition b18.4–21.2, the cadence at 47.3) are unchanged.
+
+1. **Coro I's perpetual motion (applied, as tested).** Coro I now holds one beat over each of Coro II's entries below it: D5 at 12.2 (under the chorale's D6, while the inversion enters on B3) and G4 at 24.4 (under the chorale's B5, while the augmentation enters on E3). Each entry has a beat to itself, and the two longest runs (b9.3–15.2, b22.4–28.4) are each broken once.
+2. **The hollow final stretto (applied, my own remedy).** The reviewer's other distances tested worse, and a lower Coro II approach cost five unplayable onsets, so I kept the placement and re-voiced Coro II, by hand:
+   - 46.1: G3–E3 for E3–G3 (Coro II takes the third of E minor under Coro I's E4, and a tenth under G4 replaces the octave G4/G3);
+   - 46.3: F♯3–G3–E3 for E3–F♯3–G3 (the chord under the chorale's A and Coro I's B4 becomes B7 with its bass on F♯, and G4 gets E3 under it instead of G3);
+   - 47.1: the dominant drops to B2 for a beat, then returns to B3, so the cadence has a bass below E3 without leaving two hands' reach (B2 under Coro I's E4 at 47.2 would not have been playable).
+   - Perfect intervals between the choirs on the eighths of 45.3–47.2 fall from 9 of 24 to 5. The inversion's head (45.1–45.4), the part that announces it, is still strict; its second half scores 8/16 intervals, as declared in its label. A passing G3 at 45.4 was tried and rejected: the critic read it as an unresolved dissonance against the chorale's D.
+3. **Key range (not changed).** I agree with the reviewer that it follows the chorale: its phrase-ends are D, G, D, G, D, B and G, which the fugue harmonises in B minor, G major and E minor, and BWV 244/1 itself stays close to E minor and G. A real move to A minor or C would have to fight the chorale's own phrase-ends.
+4. **The bare dialogues (not changed),** for the reviewer's reason: the register gap and the accented questions make them a dialogue, and their thinness makes the arrival of the chorale at b8 felt.
+
+Critic after the changes: parallels 0 / 0, beat parallels 0, unresolved 0, bad doublings 0, low-register seconds 0, crossings 0, stepwise 67.7 %, keyboard-unplayable 0 of 670 onsets, mean moving voices 2.55. Every note was written by hand; a scratch script only counted the perfect intervals in the stretto. Renders rebuilt: `fugue.*` (Bach/Lehman), `fugue-equal.mp3`, `fugue-spatial.mp3` (`--layout score --program 53`).
+

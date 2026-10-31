@@ -233,7 +233,7 @@ circle is the same.
 |---|---|---|---|---|
 | 1–4.2 | 0:00 | A | Subject alone (front left), as *Spem* begins with one voice | E |
 | 4.3–8.1 | 0:08 | A T | Tenor (front right): the answer. Alto: countersubject | E→B |
-| 8.1–11.2 | 0:17 | A T B | Bass (back right): subject. Tenor: countersubject. The alto rests at 9.1–9.2, then a syncopated line into a double suspension (9–8, 4–3) at 11.1 | E |
+| 8.1–11.2 | 0:17 | A T B | Bass (back right): subject. Tenor: countersubject. The alto rests at 9.1–9.2, then a syncopated line into a double suspension (9–8, 4–3) at 11.1; it passes on down (B4 A4 G♯4), so the soprano's B4 at 11.3 is heard as a new voice | E |
 | 11.3–14.3 | 0:25 | S A T B | **The ring complete: the guest.** Soprano (back left, silent until now) enters on top on B4 with Bach's answer form in whole and half notes (B4 C♯5 E5 D♯5 C♯5 B4). Under it the alto runs a suspension chain (4–3 at 12.3, 9–8 at 13.3, 7–6 at 14.1) and the bass descends E3 D♯3 C♯3 (held across the bar) to G♯2 | E |
 | 13.3–17.1 | 0:30 | S A T B | Tenor: our subject under the guest, two bars after it (the placement `stretto_finder` ranked cleanest). The soprano rests at 14.4–15.2, then climbs by syncopation | E |
 | 16.3–19 | 0:39 | S A T B | V–V7 → vi (deceptive, 17.1). Peak A5 over IV (17.3). The tenor's E3, held from 17.1, becomes the 4 of the cadential 6/4 and resolves to D♯3 (18.2). V7 – I (19.1) | E |
@@ -246,7 +246,7 @@ circle is the same.
 | 45 | 1:51 | S A | **L3**: our head in half the time (E5 A5), soprano | A (IV) |
 | 46 | 1:53 | T B | **R3**: the guest's head in half the time (F♯3 G♯3 B3), bass | f♯ (ii) |
 | 47 | 1:56 | S A / T B | **L4, R4**: half a bar each. The rising fourth (alto F♯4 B4); the guest's 1–2–4 in eighths and a quarter (tenor F♯3 G♯3 B3) | V |
-| 48–53 | 1:58 | S A T B (T rests in b52) | **Final tutti.** Soprano: the guest as a long-note cantus, ×2 (E5 for two bars, then F♯5 A5 G♯5 F♯5, a bar each). Our subject goes round the ring beneath it, clockwise: alto on E4 (48.1), tenor on B3 (48.3), bass on B2 (50.1, after half a bar's rest, at its exposition pitch). The bass's subject ends on V (53) under the cantus's F♯5 | E |
+| 48–53 | 1:58 | S A T B (T rests in b52) | **Final tutti.** Soprano: the guest as a long-note cantus, ×2 (E5 for two bars, then F♯5 A5 G♯5 F♯5, a bar each). Our subject goes round the ring beneath it, clockwise: alto on E4 (48.1), tenor on B3 a beat later (48.2), bass on B2 (50.1, after half a bar's rest, at its exposition pitch). The bass's subject ends on V (53) under the cantus's F♯5 | E |
 | 54–57.1 | 2:14 | S A T B | **Coda.** The cantus's last note, E5 (54.1), is the first note of our subject, in the voice that brought the guest. The subject is on E (its plagal form), over I – IV6 – I6/4 – ii6 – V7 – ii – V7 – I | E |
 | 57.3–58 | 2:25 | S A T B | Plagal Amen (IV – I) under the held E5 | E |
 
@@ -275,7 +275,7 @@ both halves sing in it, one after the other.
    - **Clockwise** in the exposition: alto (b1, B4), tenor (b4.3, E3), bass (b8, B2), soprano (b11.3,
      B4 on top).
    - **Counterclockwise** in the inversion: soprano (b21), bass (b23.3), tenor (b26.3), alto (b29.3).
-   - **Clockwise again, faster**, in the final stretto: alto, tenor half a bar later, bass 1½ bars
+   - **Clockwise again, faster**, in the final stretto: alto, tenor a beat later, bass 1¾ bars
      after that.
    - Each entry is either the new top voice or the new bottom voice, or enters after a rest in a
      register no other voice is using. The exceptions are listed under weak spots.
@@ -301,45 +301,49 @@ both halves sing in it, one after the other.
    The halves never overlap: each exchange is a duet alone. The next half enters as the last one
    stops, and completes its cadence (L1's B-major sixth resolves at R1's E). The short exchanges
    spell one long cadence, V – vi – IV – ii – V – V7, which lands on the final tutti's I.
-4. **Stretto under the cantus.** Our subject on E (alto), on B (tenor, half a bar later) and on B
-   (bass, two bars after the alto) under the augmented guest. The three subject lines are complete
-   and exact; only the alto's last note is lengthened.
+4. **Stretto under the cantus.** Our subject on E (alto), on B (tenor, a beat later) and on B
+   (bass, two bars after the alto) under the augmented guest. The two rising fourths interlock, one
+   attack per beat (E4, B3, A4, E4), and the two descents then run in thirds. The three subject lines
+   are complete and exact; only the alto's last note is lengthened. The cantus is played 6 velocity
+   steps above them.
 5. **Rhythm.** Measured on the built scores (scratch script, below):
 
    | | Ten-voice version | Now |
    |---|---|---|
    | Onset moments with three or more voices attacking | 59 % | 19 % |
-   | Onset moments with one voice attacking | 34 % | 51 % |
-   | Notes shorter than a quarter | 0 % | 8 % |
-   | Quarter notes | 15 % | 42 % |
+   | Onset moments with one voice attacking | 34 % | 52 % |
+   | Notes shorter than a quarter | 0 % | 9 % |
+   | Quarter notes | 15 % | 41 % |
    | Half notes or longer | 85 % | 50 % |
 
 ### Critic numbers (`python3 tools/critic.py cycle/09-e-major/fugue.json`)
 
 | Measure | Ten-voice version | **Now (a 4)** | Target |
 |---|---|---|---|
-| parallels_error / weak | 0 / 0 | **0 / 0** | 0 |
+| parallels_error / weak | 0 / 0 | **0 / 1** (b50.4, off-beat) | 0 |
 | beat_parallels | 0 | **0** | ≤ 2 |
 | dissonance_unresolved | 2 | **0** | ≤ 3, justified |
 | bad_doublings | 5 | **0** | ≤ 2 |
-| low_register_seconds | 4 | **1** (b50.4.5) | ≤ 9 |
+| low_register_seconds | 4 | **1** (b50.3.5) | ≤ 9 |
 | pc_tripled_on_beats_pct | 42.2 | **10.9** | |
-| stepwise_pct | 58.7 | **73.4** | ≥ 65 (Bach 71–75) |
-| leap_4th_plus_pct | 21.3 | 16.3 | (Bach ≈ 14) |
+| stepwise_pct | 58.7 | **73.8** | ≥ 65 (Bach 71–75) |
+| leap_4th_plus_pct | 21.3 | 16.2 | (Bach ≈ 14) |
 | crossings | 19 | **0** | few |
 | mean moving voices | 5.9 | **2.67** (16 of 58 bars with all four moving) | |
-| **keyboard_unplayable_pct** | 24.4 | **0.0** (0 of 198 onsets) | < 5 |
-| tertian_fit_pct / longest static harmony | 65.3 / 3 beats | 33.3 / 2 beats | |
+| **keyboard_unplayable_pct** | 24.4 | **0.0** (0 of 200 onsets) | < 5 |
+| tertian_fit_pct / longest static harmony | 65.3 / 3 beats | 35.1 / 2 beats | |
 | Length | 50 bars, about 2:25 at ♩ 92 | 58 bars, about 2:32 at ♩ 100 with breaths | 2.5–4 min |
 
 **The flagged items:**
-- **Low-register second, b50.4.5.** The bass's held E3 (its subject) against the tenor's passing F♯3,
+- **Low-register second, b50.3.5.** The bass's held E3 (its subject) against the tenor's passing F♯3,
   an eighth note.
-- **Four "chord (7th not resolved down)" notes.**
-  - b11.1 is the double suspension tenor E4 / alto C♯5 over B2. It resolves at 11.2 (D♯4, B4).
-  - b51.1 is the cantus's A5 over E3 in the stretto (a IV6/4 sonority). It resolves to G♯5 at 52.1.
-- **One "accented passing" note** (b48.3, the alto's A4 against E3, the subject's own suspension
-  figure) and **one "pedal"** (b49.3, the cantus's held E5 against the alto's F♯4). Both are ordinary.
+- **Weak fifth, b50.3.5 → 50.4.** Alto/tenor C♯4/F♯3 → D♯4/G♯3, on off-beat eighths, made by the
+  tenor's own turn (G♯ F♯ G♯) against the alto's rising tail. It is the price of the stretto at a
+  beat (see Review).
+- **Two "chord (7th not resolved down)" notes**, both at b11.1: the double suspension tenor E4 /
+  alto C♯5 over B2. It resolves at 11.2 (D♯4, B4).
+- **Five "accented passing" notes and two "pedal"** in b48–51: the stretto's suspended A4 and the
+  subjects' falling quarters against the bass and the held cantus. All resolve by step.
 - **Entries.** `fugue.py` prints a scale-step and exact-rhythm check of all 22 declared statements;
   it is stored in `fugue.json` as `entry_verification`.
 
@@ -363,7 +367,8 @@ both halves sing in it, one after the other.
   - the inversion against itself.
 - **The final stretto under the cantus.** A scratch search (my script, calling
   `tools/critic.py`'s `analyse` on the three subject lines plus the cantus, nothing else) listed clean
-  levels and spacings. I chose alto on E4 at 48.1 and tenor on B3 at 48.3. A second scratch probe,
+  levels and spacings. I chose alto on E4 at 48.1 and tenor on B3 at 48.3; after REVIEW-3 the tenor
+  enters a beat earlier, at 48.2 (the reviewer's tested fix). A second scratch probe,
   which also checked two-hand spans, settled the bass on B2 at 50.1: the first choice, F♯2, made b50
   unplayable.
 - All free counterpoint was written by hand and corrected against the critic.
@@ -381,21 +386,21 @@ both halves sing in it, one after the other.
 - **A long thin middle.** From b21 to b47 (about 65 s) no more than three voices sound, and b33–46 is
   all duets. That is the design: contrast with the tuttis, and two halves that must be heard as two
   halves. Still, it is the longest stretch of two- and three-part writing in the piece.
-- **Three inner entries.** These enter as the second or third voice from the top, with other voices
-  attacking at the same moment or just before; they are less salient than the rest:
+- **Two inner entries.** These enter as the second or third voice from the top, with other voices
+  attacking at the same moment; they are less salient than the rest:
   - the tenor's subject under the guest (b13.3);
-  - the alto's and the tenor's subjects under the cantus (b48.1, b48.3).
+  - the alto's subject under the cantus (b48.1). The tenor's at 48.2 now attacks alone.
 
   The tenor's inversion at b26.3 is also an inner voice, but it enters after six and a half bars'
   rest, alone in its register.
-- **Collisions inside the stretto**, both written by the thematic lines themselves:
-  - b49.4: the alto's passing E4 against the tenor's D♯4, a semitone with no bass under it. The
-    tenor's D♯4 resolves its own suspended E4.
-  - b52.1: the bass's passing A2 under the cantus's new G♯5, a major-seventh sonority for a quarter.
+- **A collision inside the stretto**, written by the thematic lines themselves: b52.1, the bass's
+  passing A2 under the cantus's new G♯5, a major-seventh sonority for a quarter. (The seconds and
+  unison of the alto and tenor at b49.4–50.2 are gone; see Review.)
 - **The right half sits high at R3** (b46: bass F♯3–B3). There the low pair is only about a sixth
   below the high pair.
 - **Long notes on a piano.** The cantus's two-bar E5 lasts about 5 s at ♩ 90 and decays. It is the top
-  voice and re-attacked at every change of note. The binaural render's choir voice sustains it.
+  voice, re-attacked at every change of note, and played 6 velocity steps above the stretto. The
+  binaural render's choir voice sustains it.
 - **The ring's directions are spatial only in the binaural render.** On the piano they are a register
   pattern plus the high/low antiphony, not positions.
 - **Length** is at the low end of the target (about 2:32).
@@ -405,6 +410,34 @@ both halves sing in it, one after the other.
   - the tenor holds A3 through b55–56 to avoid fifths with the alto;
   - the coda's bass goes to F♯2 at 56.3 to avoid octaves with the alto;
   - the first tutti's alto was revoiced three times to remove fifths and octaves.
+
+### Review (REVIEW-3.md)
+
+**Applied** (every note written by hand; critic afterwards: 0 parallel errors, 0 beat-to-beat, 0
+unresolved, 0 bad doublings, keyboard 0 of 200; all three stretto statements still 10/10):
+1. **The final stretto smeared.** At b49.4–50.2½ the alto's and tenor's subjects fell in parallel
+   seconds into a unison B3. The tenor now enters a beat earlier (48.2; its G♯3 at 48.1 is an eighth).
+   The rising fourths interlock one attack per beat and the descents run in thirds. The cost is the
+   one off-beat weak fifth at 50.3½–50.4 listed above. I agree: two statements blurred into one
+   exactly where the cantus needs a clean texture.
+2. **The guest's entrance was camouflaged.** The alto's C♯5 → B4 led straight into the soprano's
+   B4, so the guest sounded like the alto holding on. The alto now goes on down, `B4:2 A4:2`, so its
+   line is B4 A4 G♯4 and the soprano's B4 appears above it as a new voice. A4 is a passing seventh
+   over B2 D♯4.
+4. **The cantus on a piano.** The soprano is 6 velocity steps louder from 48.1 to 54.1. This is
+   performance data only; no notes changed.
+
+**Not applied: a fourth voice in the antiphony** (item 3, the ~65 s of at most three voices). I tried
+the idea against the score and decided against it:
+- A third voice in either half dissolves the device. The exchanges are heard as halves only because
+  one pair is silent.
+- The reviewer marks b41–47 "must not touch" and advises against thickening the duets.
+- The only clean place for a fourth voice nearby is the end of the ring turned back (b30–32), a
+  soprano descant over the alto's inversion. It would cost that entry its place as the new top voice,
+  which the review singles out as lucid.
+
+The stretch stays as it is, listed under weak spots; the tempo already presses on (♩ 100 → 104) as the
+exchanges shrink. If it sags in listening, a faster antiphony is the first remedy.
 
 ### From the N+1 version (third edition, ten voices)
 
