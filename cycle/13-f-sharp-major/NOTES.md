@@ -80,8 +80,9 @@ a fugue.
   puts the comes a sixth above.
 - **The ground travels.** Its keys spell a cadence across the whole fugue, I – IV – ii – V – I, then
   the tonic minor (an Adagio, after Bach's minor variations) and the major again for the quodlibet.
-  Each statement ends on its own tonic, which is the pivot into the next key; only the return to
-  F♯ is prepared by a link with a dominant pedal.
+  Each statement ends on its own tonic, which is the pivot into the next key; the return to F♯ is
+  prepared by a link with a dominant pedal. After the review, one voice carries a note or a line
+  across each join (b18–19, 26–27, 34–35, 46–47), so the statements join instead of stopping.
 
 ## 2. Material
 
@@ -111,15 +112,15 @@ of the inversion) before placing any canon.
 |---|---|---|---|---|
 | 1–2 | F♯ | – | B | The bass alone: the subject. |
 | 3–10 | F♯ | **I, unison**, 2 bars apart, S → A | S, A, B; T at b9 | The comes enters alone on the same F♯: the dux rests a beat and then lilts in triplets above it. b9: the **tenor's first entry, inverted**, on C♯ over V7–I, ending on B, the next key. |
-| 11–18 | B | **II, second below**, 1 bar apart, S → A | T, then S, A, B | b11 tenor and bass alone. The dux enters on C♯ over V6 (b12), the comes a step lower a bar later (b13); flowing quavers; cadence with a 4–3 in the soprano. |
-| 19–26 | G♯ m | **III, third below**, 2 bars apart, S → A | S, A, B (trio) | Lament bass. The dux rests as the comes enters (b21), then sighs. Picardy G♯ major = V of C♯. |
-| 27–34 | C♯ | **IV, fourth below by inversion**, 1 bar apart, S → T | A, B; then S, T, B | b27 alto: subject on E♯. b29 dux on C♯ (top), b30 comes inverted on G♯ in the tenor, rising where the dux falls. |
+| 11–18 | B | **II, second below**, 1 bar apart, S → A | T, then S, A, B | b11 tenor and bass alone. The dux enters on C♯ over V6 (b12), the comes a step lower a bar later (b13); flowing quavers; cadence with a 4–3 in the soprano; the tenor carries D♯ over the join into G♯ minor (b18–19). |
+| 19–26 | G♯ m | **III, third below**, 2 bars apart, S → A | S, A, B (trio) | Lament bass. The dux rests as the comes enters (b21), then sighs. Picardy G♯ major = V of C♯; the soprano's B♯ moves on through D♯ to C♯ over the join (b26–27). |
+| 27–34 | C♯ | **IV, fourth below by inversion**, 1 bar apart, S → T | A, B; then S, T, B | b27 alto: subject on E♯. b29 dux on C♯ (top), b30 comes inverted on G♯ in the tenor, rising where the dux falls. b34: the soprano climbs into the link. |
 | 35–38 | → F♯ | – | S, A, T, B | **The bass's entry**: the subject on C♯ (b35–36) under sustained chords; then a C♯ pedal with the subject's head in stretto one beat apart (soprano G♯, alto B, tenor E♯, b37); broadening. |
 | 39–46 | F♯ | **V, fifth below by inversion**, 2 bars apart, A → T | S, A, T, B | **The return**: the alto brings the subject back in the tonic, on A♯; the tenor answers it inverted on D♯ (b41); the soprano sings a descant above. Full texture. |
-| 47–54 | F♯ m | **VI, sixth above**, 2 bars apart, A → S | A, B; then S, A, T, B | **Adagio.** Alto subject on A; the soprano answers a sixth higher (b49) while the alto holds long notes beneath. Ends in F♯ major; the tenor's upbeat opens the quodlibet. |
+| 47–54 | F♯ m | **VI, sixth above**, 2 bars apart, A → S | A, B; then S, A, T, B | **Adagio.** The soprano's F♯ is held over the join and turns minor under it; alto subject on A; the soprano answers a sixth higher (b49) while the alto holds long notes beneath. Ends in F♯ major; the tenor's upbeat opens the quodlibet. |
 | 55–63 | F♯ | **octave**: "Ich bin", 2 bars apart, T → A | S, A, T, B | **Quodlibet** (section 5): subject over "Ich bin" (b55), "Ich bin" in canon at the octave (b56–60), Kraut 1 in the soprano and Kraut 2 in the bass (b59–62), final chord held (b63). |
 
-Mean moving voices: 3.08 per bar. Two-voice bars: 3–4, 10–11, 19–20, 27–28, 34, 47. All four voices
+Mean moving voices: 3.11 per bar. Two-voice bars: 3–4, 10–11, 19–20, 28, 47. All four voices
 move in 22 of the 63 bars, mostly in the return and the quodlibet.
 
 ## 4. The canons and where to hear them
@@ -175,9 +176,12 @@ in Bach's minor canons; both are declared in `fugue.py` and in the checker, whic
 
 ## 6. Tempo and dynamics
 
-♩ = 72; G♯ minor ♩ = 64; C♯ major ♩ = 74; broadening to 58 over the dominant pedal; the return
-a tempo; a breath into the Adagio (♩ = 52, slowing to 42); the quodlibet ♩ = 76; a final ritardando
-to 40. Phrase dynamics rise to the return (b39) and drop for the Adagio. Every declared entry is
+♩ = 72; G♯ minor ♩ = 64, easing back to 72 over b26–27 (no jump at the join); broadening to 58 over
+the dominant pedal; the return a tempo; a breath into the Adagio (♩ = 52, slowing to 44 by the
+release of its last chord, 54.2½); the quodlibet ♩ = 76 from there, so "Ich bin"'s upbeat is in
+tempo; a final ritardando to 40. Two comes entries that the texture partly hides get more weight
+in performance data only: Canon II's alto (b13–14) and Canon IV's tenor (b30) +6 velocity, their
+dux −3. Phrase dynamics rise to the return (b39) and drop for the Adagio. Every declared entry is
 5 velocity points louder for its length (`build_score`), so each subject and comes entry stands out.
 
 ## 7. Critic numbers (`tools/critic.py fugue.json`)
@@ -192,24 +196,28 @@ to 40. Phrase dynamics rise to the return (b39) and drop for the Adagio. Every d
 | low_register_seconds | **2** | ≤ 9 |
 | stepwise_pct / leap_4th_plus_pct | **67.1** / 12.8 | ≥ 65 |
 | crossings | 1 | few |
-| keyboard_unplayable_pct | **0.5** (2 of 384 onsets) | < 5 |
-| mean moving voices | 3.08 | – |
-| pc_tripled_on_beats_pct | 8.8 | – |
+| keyboard_unplayable_pct | **0.5** (2 of 387 onsets) | < 5 |
+| mean moving voices | 3.11 | – |
+| pc_tripled_on_beats_pct | 8.5 | – |
 | melody warnings | 1 tritone leap | – |
-| tertian fit / longest static harmony | 48.7 % / 4 beats (the final chord) | – |
+| tertian fit / longest static harmony | 49.7 % / 4 beats (the final chord) | – |
 
 What the remaining findings are:
 - **Beat-to-beat octaves.** b30 (S/T, G♯ → B♯): Canon IV's dux and comes start their bars on the
   same notes an octave apart; it is built into this mirror at a one-bar delay. b56 (S/T, A♯ → C♯):
-  the subject and "Ich bin" both step B → C♯ into bar 2, an octave apart.
+  the subject and "Ich bin" both step A♯ – B → C♯ into bar 2, an octave apart. I keep it: "Ich
+  bin" is Bach's tune, no other placement of the subject fits (on A♯ it doubles the leading tone of
+  V6, on C♯ it puts E♯ on beat 3 over the tonic), and two tunes agreeing for three notes is
+  acceptable in a quodlibet.
 - **Weak parallels.** b42 (T/B fifths, A♯/D♯ → G♯/C♯): the comes's inverted subject over the
   ground at that point. b56: the same octave as above.
 - **Low register.** b31 (the inverted subject's low D♯3 in the tenor over C♯2) and b58 (a passing D♯3
   of "Ich bin" over C♯3).
 - **Crossing.** b14: the alto, in its subject's tail, goes a beat above the soprano in the canon at
   the second.
-- **"7th not resolved down" notes (15).** None is an error: b8 (the V4/2's bass B rises to C♯, as
-  the ground demands); b17 (the alto's E leaps to C♯ while the soprano resolves its own E to D♯);
+- **"7th not resolved down" notes (17).** None is an error: b8 (the V4/2's bass B rises to C♯, as
+  the ground demands); b34 (the soprano's link over the tenor's last canon bar, read as a seventh
+  chord); b17 (the alto's E leaps to C♯ while the soprano resolves its own E to D♯);
   b37 (the stretto heads over the pedal); b41–44 (the descant's sevenths over the canon, resolved a
   beat later or in another voice); b61 (the alto's 9–8 suspension, which the critic reads as a seventh).
 - **Tritone leap.** b40, alto (B → E♯): the subject on the mediant, see section 2.
@@ -241,7 +249,8 @@ What the remaining findings are:
    brighter close.
 6. **No episodes in the usual sense.** Apart from the four-bar link (b35–38) the ground never stops;
    the texture breathes through rests and two- and three-voice bars, not through ground-free
-   episodes.
+   episodes. The joins now overlap by a note or a short line, but each statement still ends with a
+   cadence in its key.
 7. **Audio.** I cannot hear the renders and make no claim about how they sound.
 
 ## 9. From the fourteen-voice version
@@ -271,7 +280,21 @@ What the remaining findings are:
 - Dropped: the summit with all canons at once, the fourteen-part final chord, the canon at the
   seventh in the coda.
 
-## 10. Method
+## 10. Review (REVIEW.md) and what changed
+
+| # | Review item | What I did |
+|---|---|---|
+| 1 | "Ich bin"'s upbeat inside the Adagio's ritardando | Agreed. Tempo map `[156, 52], [160.5, 44, 'ramp'], [160.5, 76]`: the ritardando ends at the release of the F♯-major chord; in the render the upbeat now lasts 0.59 s, like the notes after it. |
+| 2 | The piece stops and restarts with two voices every eight bars | Agreed. Joins written by hand: b18–19 the tenor's link `B3 C#4 D#4~ D#4` (as tested), holding the fifth of G♯ minor under the soprano's entry; b26–27 the soprano's B♯4 goes on through D♯5 to C♯5 over the alto's entry, and the alto breathes a beat before it; b34 the soprano climbs G♯4 A♯4 C♯5 D♯5 into the link; b46–47 the soprano's F♯5 is held into the Adagio and turns minor under it. The tempo no longer jumps at b27 (64 eases back to 72). |
+| 3 | Canon II's and Canon IV's answers partly hidden | Agreed; by loudness, since the register is fixed by strict canon with this subject: comes +6, dux −3 in b13–14 (Canon II) and b30 (Canon IV). |
+| 4 | Octaves A♯–B–C♯ at 55.3–56.1 | Kept, as the review recommends (section 7). |
+| 5 | Low, quiet ending | Kept, as the review recommends: the tune ends there, and in Bach the quodlibet leads back to the Aria. |
+
+The "must not touch" passages (Canon I, b3–10; the quodlibet layout, b54¾–62) are unchanged.
+After the changes: parallels_error 0, beat_parallels 2, unresolved 0, bad_doublings 0,
+low_register_seconds 2, keyboard_unplayable 0.5 %; `check_canons.py`: `ALL CANONS EXACT`.
+
+## 11. Method
 
 - Every bar string in `fugue.py` was written by hand. Subject forms, tunes and every comes are
   produced by explicit transforms (`shift`, `mirror`, `modal`, `tr`) of hand-written material, and
@@ -283,7 +306,7 @@ What the remaining findings are:
 
 ---
 
-## 11. Prelude XIII: Aria (unchanged)
+## 12. Prelude XIII: Aria (unchanged)
 
 A sarabande over the same ground, stated twice: b1–8 the aria, then a "double" in running figures.
 

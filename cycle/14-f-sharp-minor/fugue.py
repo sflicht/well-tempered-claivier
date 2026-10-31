@@ -15,7 +15,8 @@ Plan (2/2, alla breve):
   b44-61  Canon per tonos ("Ascendenteque modulatione ascendat Gloria Regis"): a six-bar canonic block, written
           once in C minor (the King's key, the theme at Frederick's own pitch) and stated in C, D and E minor.
           Dux: the theme in diminution on top (Cantus); comes: the same an octave lower, two bars later (Altus);
-          tenor and bass free.  Each block ends on the next key's dominant; the fourth step is home.
+          bass free; the tenor joins in the second block and the Quintus in the third (3 -> 4 -> 5 voices).  Each
+          block ends on the next key's dominant; the fourth step is home.
   b62-78  Summit in F-sharp minor: the theme in augmentation in the bass ("crescat"); above it the canonic pair of
           the per tonos at home (dux Cantus b62.2, comes Altus b64.2), then the inversion in diminution on top
           (b70.4), rising chromatically to F#6; the augmentation's last notes carry the final cadence (b76-78).

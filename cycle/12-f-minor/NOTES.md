@@ -46,7 +46,7 @@ combination carries over exactly); the literal name B♭ A C B is signed once, i
 **Verification.** A scratch check compares every one of the 23 labelled entries in `fugue.json` with the
 tokens placed in `fugue.py`, and the tokens with Bach's subjects (intervals and rhythm, at ×1 or ×2). All
 23 are complete, exact statements. The single change: the augmentation's last note (F) is held on as the
-tonic pedal of the close (b59-66). No subject heads or fragments are labelled as entries.
+tonic pedal of the close and re-struck at b61.1, b63.3 and b66.1 (a piano's F2 dies away; see Review). No subject heads or fragments are labelled as entries.
 
 ## Section map (bar, time in the Bach-Lehman render)
 
@@ -57,7 +57,7 @@ tonic pedal of the close (b59-66). No subject heads or fragments are labelled as
 | 26-38 | 1:22 | **III. B-A-C-H, then Bach's triple combination** | B-A-C-H alone in the tenor b26.3 (two bars, as at XIX b193), soprano answer b28.3; Bach's triple combination (XIX b233-239) in c minor, three voices: alto S2 b32.2, bass S1 b33.3, tenor S3 b34.3; cadence in c (b38.1) |
 | 38-41 | 2:02 | episode | three voices down the circle of fifths, c - f7 - b♭ - E♭7 - A♭ - D♭maj7 - C7: the alto turns S2's head on each chord, the tenor makes a chain of sevenths against the bass; a beat of silence |
 | 42-49 | 2:16 | **IV. The quadruple combination, four voices** | the main theme's first appearance, soprano b42.1, alone for a beat; S2 alto b42.2; S1 bass b43.3; S3 tenor b44.3: all four subjects at once b44.3-46.3, each in its own register (main theme E5-C6, S2 C4-D♭5, S3 C4-F4, S1 F2-C3); the soprano then falls silent; i (b48) - iv6 - V7, and the music breaks off on a dominant seventh (b49), as Bach's manuscript breaks off; two beats of silence |
-| 50-63 | 2:46 | **V. The fifth voice** | the alto sings the main theme alone (b50.1); a bar later the Quinta vox enters beneath it with the main theme in augmentation (b51.1, F2, nine bars): a canon per augmentationem; tenor and bass join quietly; the soprano returns with the main theme (b57.1), S2 tenor b57.2, S1 bass b58.3, B-A-C-H alto b59.3, while the augmentation closes (A♭ B♭ A♭ G F) and its F becomes the tonic pedal: **five voices, b59.3-61.3, every one singing a subject** |
+| 50-63 | 2:46 | **V. The fifth voice** | the alto sings the main theme alone (b50.1); a bar later the Quinta vox enters beneath it with the main theme in augmentation (b51.1, F2, nine bars): a canon per augmentationem; tenor and bass join quietly; the quadruple combination returns with its voices exchanged: the main theme in the tenor (b57.1, in canon with its own augmentation below), the soprano's return with S2 an octave higher on top (b57.2), S1 bass b58.3, B-A-C-H alto b59.3, while the augmentation closes (A♭ B♭ A♭ G F) and its F becomes the tonic pedal, re-struck at b61.1: **five voices, b59.3-61.3, every one singing a subject**; S2's last A♭ steps up into the coda |
 | 63-66 | 3:34 | **Coda** | over the pedal the soprano signs the name at its own pitch, B♭ A C B (V7 - V7/iv - iiø4/3 - vii°7/V), the B rises to C, and the bass's A♮ is the Picardy third |
 
 Key plan: f - (c) - f - b♭ │ b♭/f - c - circle of fifths to V │ f │ f with tonic pedal - F.
@@ -71,11 +71,14 @@ Key plan: f - (c) - f - b♭ │ b♭/f - c - circle of fifths to V │ f │ f 
   alignment (main theme, S2 a beat later, S1 five beats after S2, B-A-C-H four beats after S1) is the one
   my placement test found best by far; I do not claim it is Nottebohm's printed alignment.
 - **The fifth voice** enters at b51.1 on F2, alone beneath the alto's main theme, which it imitates a bar
-  later in notes twice as long, so the augmentation is recognisable as the theme just heard. Over its last five notes and its held F, the quadruple combination returns with S2 and
-  B-A-C-H exchanged (B-A-C-H now above S2, S1 an octave higher), the way Bach restates combinations in
-  invertible counterpoint.
+  later in notes twice as long, so the augmentation is recognisable as the theme just heard. Over its last five notes and its held F, the quadruple combination returns in a new order,
+  the way Bach restates combinations in invertible counterpoint: from the top S2 (A♭5-D♭6), B-A-C-H
+  (C5-F5), the main theme (tenor, E4-C5), S1 (F3-C4), the augmentation. IV read main theme / S2 /
+  B-A-C-H / S1.
 - **Audibility.** Every entry follows a rest in that voice and lies in its own register; subject entries
-  get +7 velocity over the free voices; the Quinta vox has a higher base velocity (it sits at E2-C3).
+  get +7 velocity over the free voices; the Quinta vox has a higher base velocity (it sits at E2-C3); in
+  the triple combination (b34.3-38.1) the tenor's B-A-C-H gets +6 more and the bass -3, so the two slow
+  low lines do not fuse.
 
 ## Critic numbers (`tools/critic.py`, final build)
 
@@ -87,23 +90,23 @@ Key plan: f - (c) - f - b♭ │ b♭/f - c - circle of fifths to V │ f │ f 
 | unresolved dissonances | 0 | ≤ 3 |
 | bad_doublings | 0 | ≤ 2 |
 | low_register_seconds | 1 | ≤ 9 |
-| stepwise_pct | 75.9 % | ≥ 65 % |
-| leap_4th_plus_pct | 12.1 % | |
+| stepwise_pct | 75.2 % | ≥ 65 % |
+| leap_4th_plus_pct | 12.0 % | |
 | crossings | 1 | few |
-| keyboard_unplayable_pct | 10.0 % | < 15 % for 5 voices |
-| mean moving voices | 3.05 | |
+| keyboard_unplayable_pct | 10.5 % | < 15 % for 5 voices |
+| mean moving voices | 3.09 | |
 | pc tripled on beats | 3.7 % | |
 
-Mean moving voices per section: I 2.83, II 2.92, III 2.58, episode 3.0, IV 3.25, V 3.54, coda 3.5. Five
-voices move together only in b57 and b59; the full texture is saved for V.
+Mean moving voices per section: I 2.83, II 2.92, III 2.58, episode 3.0, IV 3.25, V 3.62, coda 4.0. Five
+voices move together only in b57, 59, 61 and 63; the full texture is saved for V.
 
 - **The beat-to-beat parallel** (b54.1, alto/Quinta vox, octaves A♭ → F) is inside the canon: the
   augmentation moves A♭-F a bar after the main theme does, and the main theme's passing B♭ A♭ G lies
   between. It is the price of the one-bar canon.
 - **The low-register seventh** (b58.4) is S1's F3 against the augmentation's passing G2.
 - **The crossing** (b32.2) is the alto's S2 entry (E♭5) one beat before the soprano's answer ends (C5).
-- **Keyboard.** 33 of 331 onsets exceed two hands. Most lie in b59-66 over the held F2: with that pedal
-  caught by the sostenuto pedal (or played on an organ pedalboard) the passage fits two hands. The rest
+- **Keyboard.** 35 of 332 onsets exceed two hands. Most lie in b59-66 over the F2 pedal: with that pedal
+  caught by the sostenuto pedal at each re-strike (or played on an organ pedalboard) the passage fits two hands. The rest
   are in IV, where Bach's own spacing puts S1 in the low bass (F2-C3) under three upper subjects.
 
 ## Method and disclosure
@@ -121,15 +124,15 @@ and all free counterpoint was written and corrected by hand against the critic.
 
 ## Honest weak spots
 
-- **The quadruple combination is heard twice in F minor** (IV and V) with the same alignment. V changes
-  the voicing (S2 and B-A-C-H exchanged), adds the fifth voice and ends over a tonic pedal, but the
-  harmonic progression above the bass is the same. I kept it because the point of V is to let the
-  listener hear what the fifth voice changes; a listener may still hear it as a repeat.
+- **The quadruple combination is heard twice in F minor** (IV and V) with the same alignment, so the
+  pitch classes above the bass are the same beat by beat. V now reorders the voices (S2 on top, the main
+  theme in the tenor) and adds the fifth voice and the pedal, so the lines a listener follows differ; the
+  harmony does not.
+- **The main theme is not on top at the climax.** In V it sings in the tenor (E4-C5), between B-A-C-H
+  and S1; it was on top in IV and in the canon's alto just before.
 - **The five-subject moment is short.** The augmentation's own notes end at b60.1; from there its held F
   is a pedal. All five voices sing subjects for two bars (b59.3-61.3), four subjects at once for two bars
   in IV (b44.3-46.3).
-- **In V, B-A-C-H's second note (C5) meets S2's C5 in unison** at b60.1 for one beat, a side effect of the
-  exchanged voicing.
 - **Bars 3-6 are two long-note voices** (stile antico subject against its answer). Static by design, as
   at the start of XIX, but slow.
 - **Only one episode** (b38-41). The form is mostly entries and cadences, closer to XIX than to a WTC
@@ -160,7 +163,8 @@ A short chorale prelude for one pianist, in three voices: a new chorale-like mel
 (crotchets), a slow inner voice, and a bass that walks in quavers and becomes a pulsing tonic pedal, after
 the manner of an Orgelbüchlein chorale (Bach's *Ich ruf zu dir*, BWV 639, is also in F minor; nothing of it
 is quoted). The first edition of *The Art of Fugue* (1751) followed the unfinished fugue with a chorale;
-here the chorale comes first. 16 bars in 4/4, *Adagio, come un corale*, crotchet = 54, about 1:17.
+here the chorale comes first. 16 bars in 4/4, *Andante, come un corale*, crotchet = 63 (58 for the name
+in the bass), about 1:05 in the render: a walking chorale before a Grave fugue.
 
 **Material.** The melody is made of two crosses, each resolving to C:
 - **C D♭ C B**, the first four notes of the subject of Bach's WTC I fugue in F minor (BWV 857; checked
@@ -189,3 +193,20 @@ been heard.
 
 **Renders.** `renders/prelude.pdf`, `.ly`, `.musicxml`, `.mid`; `prelude.mp3` (Bach-Lehman),
 `prelude-equal.mp3` (equal temperament). No binaural render for the prelude.
+
+# Review (response to `REVIEW.md`)
+
+| # | Item | What changed |
+|---|---|---|
+| 1 | The Quinta vox's held F2 has died away by the coda, so the last chord is heard over A3 | Agreed. The pedal is re-struck: `F2:32 F2:40 F2:40 F2:12`, at b59.1 (the augmentation's last note), b61.1 (as the subjects end), b63.3 (the coda's signature) and b66.1 (the Picardy chord). The reviewer's tested `F2:72 F2:40 F2:12` plus the optional strike at b61.1. |
+| 2 | V repeats IV's top two lines at the same pitch; B-A-C-H and S2 meet on C5 at b60.1 | Agreed, with the reviewer's tested exchange: S2 on top an octave higher (the soprano's return, b57.2), the main theme in the tenor (b57.1). The tenor's free close (B♭4 A♭4 C5 C5) and the alto's link (D♭5 C5, b56.3-57.1) were rewritten by hand for it. The unison becomes an octave, and S2's last A♭5 steps into the coda's B♭5. The cost (the main theme is no longer on top at the climax) is listed under weak spots. |
+| 3 | B-A-C-H in the triple combination (b34.3-38.1) sits too close above S1 and too quietly | Agreed; voicing only, as proposed: the tenor gets +6 and the bass -3 velocity there. The notes are unchanged. An octave shift would collide with the alto's run. |
+| 4 | The pair is slow | Agreed for the prelude: crotchet 54 → 63, tempo map scaled (about 1:05 instead of 1:17). The fugue's tempi are unchanged, as the reviewer advised. |
+| 5 | b55 is a whole bar of held diminished seventh | Applied the tested `Db4:8 Bb3:8` in the tenor. The critic adds one *note*, not an error: the D♭ leaves by leap, within the chord. |
+| — | Must not be touched | Left as written: the break-off and the fifth voice's entry (b48-51), the solo expositions (b1-41), and the prelude's name in the bass (b9-10). |
+
+The critic after the changes: parallels 0 errors and 0 weak, beat-to-beat 1 (the canon at b54.1, as
+before), unresolved 0, bad doublings 0, low-register 1, crossings 1. Repeated notes rise from 1.2 % to
+2.0 % (the re-struck pedal), and keyboard_unplayable from 10.0 % to 10.5 %. All 23 entries are still
+exact. All renders were redone: the fugue in Bach-Lehman (full), in equal temperament (audio only) and
+binaural (organ, arc); the prelude in Bach-Lehman and equal temperament.

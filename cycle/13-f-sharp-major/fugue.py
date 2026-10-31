@@ -433,9 +433,10 @@ def build(path=None):
             'composer': 'Claude / Sam (ground and folk songs after J. S. Bach, BWV 988)',
             'instrument': 'Keyboard (four voices)',
             'key': 'F#', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
-            # gentler in G# minor (b19), brisker in C# (b27), broadening over the dominant pedal into
-            # the return (b37-38), a breath before the Adagio in F# minor (b47), the quodlibet a
-            # tempo (b55) and a final ritardando
+            # gentler in G# minor (b19), easing back by b27, broadening over the dominant pedal into
+            # the return (b37-38), a breath before the Adagio in F# minor (b47); the Adagio's
+            # ritardando ends where its last chord is released (54.2.5), so the quodlibet's upbeat
+            # is already a tempo; a final ritardando
             'tempo_map': [[52, 72], [54, 64, 'ramp'], [75, 64], [78, 72, 'ramp'], [108, 72],
                           [114, 58, 'ramp'], [114, 72], [133, 72], [138, 56, 'ramp'], [138, 52],
                           [156, 52], [160.5, 44, 'ramp'], [160.5, 76], [180, 76], [186, 50, 'ramp'],

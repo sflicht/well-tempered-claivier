@@ -12,7 +12,7 @@ those devices.
 | --- | --- |
 | `fugue.py` → `fugue.json` | Fugue, five voices (Cantus, Altus, Tenor, Quintus, Bassus), 2/2, 78 bars. Every free note is written in bar strings; thematic statements are named transforms of the theme (`oc`, `trs`, `aug`, `scale_rhythm`). |
 | `prelude.py` → `prelude.json` | Prelude, three voices, 4/4, 17 bars. The first half is written by hand; the second half is the first half's retrograde (`wtclib.retrograde`), which is the canon. |
-| `renders/` | `fugue.*` and `prelude.*`: PDF, MusicXML, MIDI, LilyPond, MP3 in Bach-Lehman temperament; `fugue-equal.mp3`, `prelude-equal.mp3` in equal temperament; `fugue-spatial.mp3`, binaural, arc layout, piano. Rendered lengths: fugue 3:36, prelude 1:03. |
+| `renders/` | `fugue.*` and `prelude.*`: PDF, MusicXML, MIDI, LilyPond, MP3 in Bach-Lehman temperament; `fugue-equal.mp3`, `prelude-equal.mp3` in equal temperament; `fugue-spatial.mp3`, binaural, arc layout, piano. Rendered lengths: fugue 3:19, prelude 1:03. |
 | `archive-n-plus-1/` | The earlier fifteen-voice fugue, its NOTES and second review. |
 
 I cannot hear the renders. Nothing below describes how the pieces sound; it comes from the score and the tools.
@@ -65,15 +65,15 @@ per-tonos block and joins the summit.
 | 22–31 | f♯ | **Cantus: the theme** (F♯5), the dux of the canon. **b26 Bassus: the comes**, the theme inverted and in doubled values (b26–42). Altus and Tenor free above it. | 4 |
 | 32–42 | f♯ | **Quintus enters with the answer** (b32.3, C♯4) over the comes' long chromatic rise G2–C♯3; Altus above it, Tenor below; the Cantus rests b33–40. Half cadence on C♯7 (b42). | 4 (5 at b32 and b40–42) |
 | 43 | → c | **The pivot.** C♯7 (V of F-sharp minor) becomes G7♭9 (V of C minor): E♯ = F, G♯ = A♭ and B stay; C♯ rises to D and the bass falls C♯–G. | 5 |
-| 44–49 | c | **Canon per tonos 1**, the King's key: Cantus dux C5 (b44); Altus comes C4, two bars later, after a two-bar rest (b46); Tenor and Bassus free. The dux closes at b48.1 on C, harmonised as C major (V of iv) because the comes is passing through E natural; the comes' last two notes (E♭, D) are harmonised as the Neapolitan sixth and the dominant of D minor. | 3–4 |
-| 50–55 | d | **Canon per tonos 2**, the same block a tone higher (dux D5, comes D4 at b52). | 3–4 |
+| 44–49 | c | **Canon per tonos 1**, the King's key, in three voices: Cantus dux C5 (b44); Altus comes C4, two bars later, after a two-bar rest (b46); Bassus free (the Tenor only resolves the pivot's A♭ to G at b44.1 and rests). The dux closes at b48.1 on C, harmonised as C major (V of iv) because the comes is passing through E natural; the comes' last two notes (E♭, D) are harmonised as the Neapolitan sixth and the dominant of D minor. | 2–3 |
+| 50–55 | d | **Canon per tonos 2**, the same block a tone higher (dux D5, comes D4 at b52); the Tenor joins as a fourth line. | 3–4 |
 | 56–61 | e | **Canon per tonos 3** (dux E5, comes E4 at b58). The **Quintus** joins at b60.3 above the comes and climbs into the summit. | 3–5 |
-| 62–75 | f♯ | **Summit.** Bassus: **the theme in augmentation** (b62–78). Cantus: the per-tonos dux, home on **F♯5** (b62.2); Altus: its comes, F♯4 (b64.2). Cantus: **the inversion in diminution** (b70.4), rising A♯5–B5–B♯5–C♯6–D6 to **F♯6** (b73.4½). Tenor and Quintus free. | 4–5 |
+| 62–75 | f♯ | **Summit.** Bassus: **the theme in augmentation** (b62–78). Cantus: the per-tonos dux, home on **F♯5** (b62.2); Altus: its comes, F♯4 (b64.2). Cantus: **the inversion in diminution** (b70.4), rising A♯5–B5–B♯5–C♯6–D6 to **F♯6** (b73.4½); the Tenor rests in b73 so the augmentation's G2–F♯2 sound under the Quintus alone. A held **F♯6** returns at b75.4, the start of the ritardando. Tenor and Quintus free. | 4–5 |
 | 76–78 | f♯ | **Cadence** over the augmentation's last notes A2–G♯2–F♯2: i6 – iv4/2 – vii°6/5 – V4/3 – I, with a Picardy third (A♯5) on top. | 4–5 |
 
-**Tempo map.** Quarter = 84 for the exordium (with a slight ritenuto into b22), 88 for the canon per
-augmentationem, a ritardando to 72 into the pivot (b43), 92 for the per tonos, 96 from the summit (b62), held to
-b75, then a ritardando to 76 (b77) and 58 on the last chord. The render lasts 3:36.
+**Tempo map** (after the review). Quarter = 92 for the exordium (with a slight ritenuto into b22), 96 for the canon
+per augmentationem, a ritardando to 78 into the pivot (b43), 100 for the per tonos, 104 from the summit (b62),
+held to b75, then a ritardando to 80 (b77) and 60 on the last chord. The render lasts 3:19.
 
 ### The devices and where to hear them
 
@@ -85,7 +85,8 @@ b75, then a ritardando to 76 (b77) and 58 on the last chord. The render lasts 3:
    later, the Altus sings it again an octave lower. The Altus rests for the first two bars of each block and the
    Cantus for the last two, so each entry comes after a rest. The imitation sounds while the dux descends
    chromatically and the comes rises through the head, so the two lines move in contrary motion. The dux
-   climbs C5 → D5 → E5 and then F♯5 at the summit, a whole tone at each step and with no break in register.
+   climbs C5 → D5 → E5 and then F♯5 at the summit, a whole tone at each step and with no break in register, while
+   the texture grows: three voices in C minor, four in D minor, five from the end of the E-minor block.
 3. **Summit, b62–78.** The theme sounds at two speeds at once: the augmentation in the bass and, above it, the
    per-tonos canon in diminution (dux b62.2, comes b64.2). Then the inversion in diminution on top climbs
    against the augmentation's chromatic descent (b70–75), the two moving in contrary motion. The augmentation is
@@ -100,22 +101,22 @@ b75, then a ritardando to 76 (b77) and 58 on the last chord. The render lasts 3:
 | unresolved dissonances | 0 |
 | bad doublings | 0 |
 | low-register seconds | 0 |
-| stepwise / leaps of a 4th or more | 61.6 % / 18.3 % |
-| pitch class tripled on beats | 1.7 % |
+| stepwise / leaps of a 4th or more | 62.0 % / 18.3 % |
+| pitch class tripled on beats | 1.8 % |
 | crossings | 1 |
 | **keyboard_unplayable_pct** | **1.4 %** (4 of 277 onsets) |
-| **mean moving voices** | **3.51** (17 bars with all five moving) |
+| **mean moving voices** | **3.44** (16 bars with all five moving) |
 
 | section | moving voices, mean (max) | sounding, mean | duration |
 | --- | --- | --- | --- |
-| Exordium b1–21 | 1.81 (3) | 1.75 | 60 s |
-| Canon per augmentationem b22–42 | 4.00 (5) | 3.88 | 57 s |
+| Exordium b1–21 | 1.81 (3) | 1.75 | 55 s |
+| Canon per augmentationem b22–42 | 4.00 (5) | 3.88 | 53 s |
 | Pivot b43 | 5 | 4.5 | 3 s |
-| Per tonos b44–61 | 3.72 (5) | 3.40 | 47 s |
-| Summit b62–75 | 4.71 (5) | 4.29 | 35 s |
+| Per tonos b44–61 (blocks: 3.00 / 3.50 / 3.83) | 3.44 (5) | 3.08 | 43 s |
+| Summit b62–75 | 4.64 (5) | 4.23 | 32 s |
 | Cadence b76–78 | 4.67 (5) | 4.67 | 10 s |
 
-Moving voices per bar: `1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 2 3 3 3 4 4 4 4 4 4 4 4 4 3 5 3 4 4 4 4 4 4 5 4 4 5 | 5 3 4 4 4 3 3 3 4 4 4 3 3 3 4 4 5 4 | 5 4 5 4 4 5 5 4 5 5 5 5 5 5 5 4 5`.
+Moving voices per bar: `1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 2 3 3 3 4 4 4 4 4 4 4 4 4 3 5 3 4 4 4 4 4 4 5 4 4 5 | 5 2 3 3 3 2 3 3 4 4 4 3 3 3 4 4 5 4 | 5 4 5 4 4 5 5 4 5 5 5 4 5 5 5 4 5`.
 
 Flagged items, each kept on purpose:
 - **Weak parallel b65.1**, Altus/Bassus octaves C♯→D. Both voices are thematic (the summit comes against the
@@ -157,14 +158,15 @@ Flagged items, each kept on purpose:
 - **The exordium is long and thin by design:** 21 bars of one to three voices, about a minute.
 - **The per tonos has three statements, not six.** Starting in C minor (the King's key) and rising C–D–E–F♯ makes
   the fourth step home. Six six-bar blocks would take 36 bars, so the full circle of tones is not heard.
-- **The per-tonos texture repeats exactly.** In each block the dux and comes overlap for only two bars, and the free
-  tenor and bass are identical in all three blocks. Only the Quintus' entry in the third block adds a line.
+- **The per-tonos free voices still repeat.** The texture now grows (3 → 4 → 5 voices), but the bass, and the tenor
+  of blocks 2–3, are the same transposed lines; the dux and comes overlap for only two bars per block.
 - **The block's tenor is leapy.** It runs in quarters between a quarter-note bass and two thematic lines.
-  Stepwise motion overall is 61.6 %, below the 65 % target. The theme itself is 58 % stepwise (11 of 19 intervals)
+  Stepwise motion overall is 62.0 %, below the 65 % target. The theme itself is 58 % stepwise (11 of 19 intervals)
   and is stated 17 times, 9 of them in diminution.
 - **The pivot is one bar.** The tritone shift from F-sharp minor to C minor is abrupt by design.
-- **The climax is brief.** The top note F♯6 is an eighth inside the inversion's run (b73.4½), not a held arrival.
-  Whether the bass augmentation's whole notes carry against four moving voices on a piano needs a listener.
+- **The climax is late and quiet.** F♯6 first passes as an eighth inside the inversion's run (b73.4½); the held F♯6
+  (b75.4) comes at the start of the ritardando, over B minor, not on a downbeat. Whether the bass augmentation's
+  whole notes carry against four moving voices on a piano needs a listener.
 - **Rubs the critic accepts** (as appoggiaturas, chord tones or passing notes) **but a listener may notice:**
   - b28.1, the dux's E♯5 over the comes' F♯2 (dominant over a tonic pedal);
   - b26.3, A5 over C♯3 (♭13);
@@ -194,7 +196,7 @@ Flagged items, each kept on purpose:
       finishes before the next dux begins.
   - **Summit.** The second review found the old summit slow and padded: 17 bars of mostly whole notes in fifteen
     voices, with the tempo slowing. Now the augmentation in the bass is the only line in whole notes; the per-tonos
-    canon returns in quarters and eighths over it, then the inversion climbs to F♯6; the tempo rises to 96 and
+    canon returns in quarters and eighths over it, then the inversion climbs to F♯6; the tempo rises to 104 and
     holds until b75.
   - **Coda.** The coda over a double pedal (old b84–89) is gone; the augmentation's last notes carry the final
     cadence.
@@ -202,12 +204,12 @@ Flagged items, each kept on purpose:
 | measure | N+1 version | this version |
 | --- | --- | --- |
 | voices | 15 | 5 |
-| bars / length | 89 / 4:34 | 78 / 3:36 |
+| bars / length | 89 / 4:34 | 78 / 3:19 |
 | keyboard_unplayable_pct | 41.6 % | 1.4 % |
-| mean moving voices | 6.09 | 3.51 |
+| mean moving voices | 6.09 | 3.44 |
 | parallels error / weak / beat-to-beat | 0 / 0 / 3 | 0 / 1 / 1 |
 | bad doublings / low-register seconds / unresolved | 2 / 8 / 0 | 0 / 0 / 0 |
-| stepwise | 58.1 % | 61.6 % |
+| stepwise | 58.1 % | 62.0 % |
 | crossings | 37 | 1 |
 
 ---
@@ -219,10 +221,14 @@ Flagged items, each kept on purpose:
 The Musical Offering's crab canon (Canon 1 a 2 cancrizans) plays the King's theme forwards in one voice while the
 other plays the same line backwards. This prelude does the same for one pianist in three voices:
 
-- the **Cantus** plays the theme (b1–9) and then a counter-line (b9–17);
-- the **Altus** plays that counter-line backwards an octave lower (b1–9), then the theme backwards an octave
-  lower (b9–17);
+- the **Altus** plays the theme (F♯4, b1–9), hidden under a counter-line, and then that counter-line backwards
+  (b9–17);
+- the **Cantus** plays the counter-line an octave higher (b1–9), then the theme backwards an octave higher, on top
+  (b9–17);
 - the **Bassus** is its own retrograde (a palindrome).
+
+(After the review this is the canon's second reading: the first version had the theme on top first. Read
+backwards, the piece is itself with the upper voices exchanged, so the exchange keeps every interval.)
 
 Read from the last note to the first, the piece is the same piece, with the two upper voices exchanged and moved
 by an octave. The turning point is the middle of bar 9. Because the bass is a palindrome, every sonority of the
@@ -232,17 +238,18 @@ therefore ends on its opening chord, F-sharp minor, without a Picardy third, whi
 ### Construction
 
 - **Written by hand:**
-  - `LINE`, the Altus of b1–9.2. It lies a sixth, an octave or a tenth below the theme on the main beats, so that its
-    retrograde an octave higher lies a tenth, an octave or a sixth above the retrograde theme. That keeps both
-    halves in two hands.
+  - `LINE`, the counter-line. Written a sixth, an octave or a tenth below the theme (at F♯5) on the main beats, so
+    that each half fits two hands in either reading. In this reading it is sung an octave higher, above the theme
+    at F♯4.
   - `BASS1`, the bass of b1–9.2, in half and whole notes. Its two middle halves (F♯2, b9) are tied into one whole
     note.
 - **The second half is the transform** `wtclib.retrograde`, with an octave transposition. Dissonances are passing and
   neighbour notes, so they are passing and neighbour notes backwards too.
 - **First-half harmony:** i – i6 – iv | V | vii°7/V – V6/5 | V/iv – iv6/5 | V – N6 | V – iv | i6/4 – V7 | i. The
   second half runs the same chords backwards.
-- **The theme backwards.** In the second half the theme, backwards in the Altus, turns its chromatic descent into a
-  rise, F♯4–G–G♯–A–A♯–B–B♯–C♯5 (b12–15).
+- **The theme backwards.** In the second half the theme, backwards on top, turns its chromatic descent into a
+  rise, F♯5–G–G♯–A–A♯–B–B♯–C♯6 (b12–15), and the top voice ends D6 C♯6 A5 F♯5: the theme's head backwards. The
+  fugue then begins with the same head forwards.
 - **Tempo and length:** 4/4, quarter = 69, with a ritardando over the last two bars; 17 bars, about 1:03.
 
 ### Critic numbers (`prelude.json`)
@@ -256,19 +263,39 @@ therefore ends on its opening chord, F-sharp minor, without a Picardy third, whi
 | keyboard_unplayable_pct | 0 % |
 | mean moving voices | 3.0 |
 
-Both thematic statements are verified by the critic: the theme at b1, and the retrograde in the Altus at b9.3
-(19/19 intervals and rhythm, form "retrograde").
+Both thematic statements are verified by the critic: the theme in the Altus at b1, and the retrograde in the
+Cantus at b9.3 (19/19 intervals and rhythm, form "retrograde").
 
 ### Weak spots
 
 - **Reversed dissonances.** Running the first half backwards turns a seventh that resolved down into one that is
   approached by step and left by leap. The critic notes six chord sevenths "not resolved down" (b1.4, b10.1, b12.1,
   b17.1); those in the second half are first-half sevenths run backwards. Its melody check flags one unrecovered
-  leap, Cantus D6–F♯5–E♯5 at b11, which is the Altus' b7 read backwards.
-- **Recognisability.** The theme backwards is not a tune a listener will recognise, except for its chromatic line,
-  which now rises.
+  leap, Altus D5–F♯4–E♯4 at b11, which is the counter-line's b7 read backwards.
+- **Recognisability.** The theme is hidden in the middle voice in the first half, and backwards in the second; only
+  its rising chromatic line on top (b12–15) is likely to be noticed.
 - **Character.** The piece is short and quiet, with a slow bass. It is a riddle placed before the ricercar, not a
   display piece.
+
+---
+
+## Review (cycle/14-f-sharp-minor/REVIEW.md) → what changed
+
+All five items were applied or kept as the review proposed; every changed note was written by hand, and the critic
+shows no new fault (fugue: parallels 0 / 1 / 1, unresolved 0, bad doublings 0, low-register 0, keyboard 1.4 %;
+prelude: all zero). The "must not touch" items (the exordium b1–21, the pivot b43, the per-tonos entries, the
+palindrome) are unchanged.
+
+| # | Review item | Change |
+| --- | --- | --- |
+| 1 | Pacing: about three minutes of half-note Royal Theme before b44 | Fugue tempo map 84/88/92/96 → **92/96/100/104** (3:36 → 3:19; the exordium's notes untouched). Prelude: **upper voices exchanged** (the canon's other reading), so the theme is hidden in the Altus in the first half instead of sounding on top in half notes just before the fugue's solo opening; its rising chromatic line becomes the prelude's top-line goal. |
+| 2 | Per tonos: one block three times in crotchet homophony; doubled leading tone at 45.1, 51.1, 57.1 | **Block 1 has no tenor** (three voices; the tenor only resolves the pivot's A♭ to G at b44.1), block 2 adds the tenor, block 3 the Quintus: 3 → 4 → 5 voices. The block tenor's bar 2 begins G3 instead of B3 (no doubled leading tone). |
+| 3 | The F♯6 peak is an eighth in passing | Cantus b75 `C#6:8 D6:8` → `C#6:8 D6:4 F#6:4`: a held F♯6 at the start of the ritardando, falling to C♯6 at b76. |
+| 4 | Tenor C♯3 struck six times over the augmentation's descent; bare G2/C♯3 at 73.1 | Tenor rests in b73. |
+| 5 | Cadence without a root-position dominant | Kept, as the review advised: the bass is the augmentation's last notes, A–G♯–F♯. |
+
+Not taken up: the review's untested suggestion to give block 3's tenor countersubject I in diminution; block 3
+already grows by the Quintus, and the blocks' growth is now audible in voice count.
 
 ---
 

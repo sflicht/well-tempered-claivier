@@ -202,7 +202,7 @@ put('Q', 31, 0, 'G#4:16 E#4:8 '
 put('T', 33, 0, 'G#3:8 A#3:8 B3:8 '
                 'A#3:8 F#3:8 C#4:8 '
                 'A#3:8')
-theme('A', 33, 4, tr(K, 10, 6)[:-len('F#5:8')] + 'F#5:20',
+theme('A', 33, 4, tr(K, 10, 6)[:-len('F#5:8')] + 'F#5:12',
       'III: door subject on C#, landing on a downbeat: cadence in F-sharp major', 2)
 
 
@@ -214,16 +214,26 @@ theme('A', 33, 4, tr(K, 10, 6)[:-len('F#5:8')] + 'F#5:20',
 # in C-sharp major (= D-flat, IV of A-flat) at b42.1.
 theme('T', 35, 2, octv(K, -1), 'IV. Mane (morning): door subject in the tenor', 2)
 theme('S', 36, 0, S_MIX, 'IV: subject, Mixolydian (B#): G-sharp major at b36.3')
-put('A', 36, 0, 'C#4:8 D#4:8 D#4:8 '
-                'G#4:8 F#4:16')
-put('Q', 37, 0, 'C#4:8 A#3:8 C#4:8 '
-                'D#4:8')
-put('T', 37, 0, 'C#3:8 D#3:8')
-CHAIN = [('B', 38, 0, 'G#2:8 A#2:8 B#2:8 E#3:12 D#3:4 C#3:8 B#2:4 A#2:4 G#2:8 F#2:8', 'on G#'),
-         ('T', 38, 4, 'B#3:8 C#4:8 D#4:8 G#4:12 F#4:4 E#4:8 D#4:4 C#4:4 B#3:8 A#3:8', 'on B#'),
-         ('S', 39, 2, 'D#5:8 E#5:8 F#5:8 B#5:12 A#5:4 G#5:8 F#5:4 E#5:4 D#5:8 C#5:8', 'on D#, B#5 at the top')]
+put('Q', 36, 0, 'C#4:8 A#3:8 D#4:8 '
+                'C#4:8 A#3:8 C#4:8 '
+                'D#4:8 C#4:8 A#3:8 '
+                'B#3:8 A#3:8')
+put('T', 37, 0, 'C#3:8 D#3:8 F#3:8 '
+                'G#3:8 E#3:8 D#3:8')
+put('A', 37, 0, 'G#4:8 F#4:16 '
+                'R:24 '
+                'D#4:8 C#4:8 D#4:8 '
+                'G#4:12 F#4:4 C#5:8 '
+                'D#5:4 C#5:4 B#4:8 G#4:4 A#4:4 '
+                'G#4:8 A#4:8 F#4:8 '
+                'E#4:8')
+CHAIN = [('B', 39, 0, 'G#2:8 A#2:8 B#2:8 E#3:12 D#3:4 C#3:8 B#2:4 A#2:4 G#2:8 F#2:8', 'on G#'),
+         ('T', 39, 4, 'B#3:8 C#4:8 D#4:8 G#4:12 F#4:4 E#4:8 D#4:4 C#4:4 B#3:8 A#3:8', 'on B#'),
+         ('S', 40, 2, 'D#5:8 E#5:8 F#5:8 B#5:12 A#5:4 G#5:8 F#5:4 E#5:4 D#5:8 C#5:8', 'on D#: B#5 at the top')]
 for v, b, q, t, where in CHAIN:
     theme(v, b, q, t, f'IV: summit, the subject a third higher every two beats ({where})')
+put('B', 42, 0, 'G#2:8 D#3:8 G#2:8 '
+                'C#3:8')
 
 
 def build(nbars, path=None):
