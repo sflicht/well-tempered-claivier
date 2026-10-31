@@ -103,7 +103,7 @@ put('S', 7, 0, tune('Ab'))
 ENTRIES.append((LONG['S'], 7, 0, 'verse 2 (over I6), with a second voice', 4))
 put('A', 7, 0, 'Eb4:12 C5:8 Bb4:4 | Ab4:4 G4:4 F4:4 Ab4:8 Bb4:4 | Db4:8 Eb4:4 F4:4 G4:4 Ab4:4 | Eb4:12')
 put('B', 7, 0, 'C3:12 Ab2:12 | Db3:12 Ab2:12 | Bb2:24 | Eb3:12 Eb2:12')
-put('C', 7, 0, 'Ab3:4 C4:2 Eb3:4 Ab3:2 Ab3:4 C4:2 Eb3:4 Ab3:2 | F3:4 Ab3:2 F3:4 Ab3:2 C4:4 Eb3:2 Eb3:2 Ab3:2 C4:2 |'
+put('C', 7, 0, 'Ab3:4 C4:2 Eb3:4 Ab3:2 Ab3:4 C4:2 Eb3:4 Ab3:2 | F3:4 Ab3:2 F3:4 Ab3:2 C4:4 Ab3:2 Eb3:2 Ab3:2 C4:2 |'
                ' Db4:4 F3:2 Bb3:4 Db4:2 F3:4 Bb3:2 Db4:4 F3:2 | Ab3:4 C4:2 C4:4 Ab3:2 G3:4 Bb3:2 Eb3:4 G3:2')
 
 # Verse 3 (bars 11-14): F minor; the alto sings the tune's first half (the soprano listens), then the
