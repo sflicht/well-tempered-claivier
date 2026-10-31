@@ -53,8 +53,8 @@ real counterpoint, not harmony.
 
 ## Not yet done
 
-- Sam has not heard any third-edition movement. The renders are untested by
-  ear; the next step is listening and feedback.
-- Reviews of XII, XIII and XVI–XXIII; Preludes XII, XIV and XVII.
-- The spatial film remains a goal; `tools/render_spatial.py` renders every
-  fugue binaurally as a first step toward its sound.
+- Sam has heard some binaural renders (and liked Fugue XX's strings) but
+  not yet the recomposed fugues. The renders are untested by ear; listening
+  and feedback come next.
+- Review fixes for VII, IX, X and XI; reviews of the monuments XX and XXI.
+- Binaural renders of Fugues I–IV and of the preludes.
