@@ -313,7 +313,7 @@ def build(path=HERE / 'fugue.json'):
     # For the optional spatial render (--layout score --instruments): the home voices on an
     # arc behind, as pianos; the Guest in front, centre, on a harpsichord. The main renders
     # ignore both keys and play every voice on the piano.
-    place = {'Soprano': [-60, 6.5], 'Alto': [-20, 7.0], 'Tenor': [20, 7.0], 'Bass': [60, 6.5], 'Guest': [0, 3.5]}
+    place = {'Soprano': [-60, 6.5], 'Alto': [-20, 7.0], 'Tenor': [20, 7.0], 'Bass': [60, 6.5], 'Guest': [0, 5.0]}
     for v in data['voices']:
         v['spatial'] = place[v['name']]
         v['gm_program'] = 6 if v['name'] == 'Guest' else 0

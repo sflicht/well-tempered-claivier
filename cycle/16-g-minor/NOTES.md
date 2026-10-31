@@ -54,8 +54,9 @@ to G major.
   `fugue-equal.mp3` (equal temperament); `fugue-spatial.mp3` (binaural, `--layout arc --program 19`,
   General MIDI church organ, `--rt60 2.2 --wet 0.18`: a little more room than the default, for a church;
   Diskant −80°, Tenor −40°, Pedal II centre, Alt +40°, Pedal I +80°, so the two canon voices are apart).
-- The echo bars (21, 24) are softened by 16 velocity steps after `build_score` (`soften_echoes`):
-  performance data only, no notes.
+- The echo bars (21, 24) are softened by 16 velocity steps after `build_score` (`soften_echoes`),
+  and the `VOICING` table lifts line 2's entering voices (b12 Alt, b13 Diskant) and, at the summit,
+  Pedal I (+6) over Pedal II (−4): performance data only, no notes.
 
 ## 4. Material
 
@@ -99,7 +100,7 @@ D B♭ C A B♭ G G' F♯ G E F♯ D … A B♭ G. I re-read it for this version
 | 46-51 | 2:31 | 8 | S8 Tenor alone b46.1 (E after B♭), Diskant at the octave b46.3 | b47.3, follower b48.2 (3): **E E E knocked in canon**; Phrygian B♭–A over A, b51 | foreign key |
 | 52-57 | 2:50 | 9 | S9 in the Alt from the C♯ of line 8 (b52.1), over a chromatic Tenor bass | b53.3, follower b54.1½ (2½); lament bass G F E♭ D; half cadence on D | |
 | 57-60 | 3:08 | — | **BWV 542 guest**, Diskant, b57.2½-b60.2½ | Pedal II holds D, then walks the circle of fifths C E♭ F B♭ E♭ A D G | 3-4 voices |
-| 60-66 | 3:17 | 10 | S10 Diskant b60.3½ (with the pedal's line starting under it), Alt an octave lower b61.2½; Tenor joins b64 | b60.3, follower b60.4½ (**1½**): the summit; V4/3 – i at b66 | 4 voices, 5 in b64-66 |
+| 60-66 | 3:17 | 10 | S10 Diskant b60.3½ (with the pedal's line starting under it), Alt an octave lower b61.2½; the Alt then takes up the guest's head (b63.2½); Tenor joins b64 | b60.3, follower b60.4½ (**1½**): the summit; V4/3 – i at b66 | 4 voices, 5 in b64-66 |
 | 66-68 | 3:39 | coda | Tenor: head of line 1, its last B♭ turned to B♮ | both pedals hold G | G major; ends 3:52 (+ ring) |
 
 **Tempo map:** ♩ = 72; 66 for the echoes; 74 for lines 5-6; broadening to 56 into the general pause;
@@ -120,8 +121,11 @@ broadening to 64 at its cadence; 60 → 40 over the tonic pedal.
 - **The guest** (b57.2½-b60.2½) is the top voice at its own pitch (D4-G5), entered after a beat's
   rest; only the Alt (below it, resting when the subject dips to C5, F4 and D4) and the pedal sound
   with it, no voice in its register.
-- **The summit** (b60.3-b66): line 10 at three speeds: S10 in eighths in Diskant and Alt (the Alt an
+- **The summit** (b60.3-b66): line 10 at two speeds: S10 in eighths in Diskant and Alt (the Alt an
   octave lower, 3 beats later), the line in half notes in Pedal II and, 1½ beats later, in Pedal I.
+  At 1½ beats the canon is closer to a shadow than to a canon you can follow; Pedal I is voiced 6
+  steps louder and Pedal II 4 softer from b60.3, so the late upper line stands out as a line.
+  In b63.2½-4 the Alt sings the head of the BWV 542 subject at its own pitch (D B♭ C A B♭ G).
   The Diskant climbs to E♭6 at b64.4, the only bars where all five voices move (b64-66).
 
 ## 7. Critic numbers (`tools/critic.py`, final build)
@@ -134,15 +138,15 @@ broadening to 64 at its cadence; 60 → 40 over the tonic pedal.
 | dissonance_unresolved | 0 | ≤ 3 |
 | bad_doublings | 1 | ≤ 2 |
 | low_register_seconds | 2 | ≤ 9 |
-| stepwise_pct | 72.4 % | ≥ 65 % |
-| leap_4th_plus_pct | 9.7 % | |
+| stepwise_pct | 72.2 % | ≥ 65 % |
+| leap_4th_plus_pct | 9.8 % | |
 | pc_tripled_on_beats_pct | 6.9 % | |
 | crossings | 1 (see below) | few |
-| **keyboard_unplayable_pct** | **6.5 %** (26 of 402 onsets) | < ~15 % for 5-6 voices |
+| **keyboard_unplayable_pct** | **6.3 %** (26 of 415 onsets) | < ~15 % for 5-6 voices |
 | **mean_moving_voices** | **3.4** | |
 
 Moving voices per bar (b1-68):
-`1 2 2 3 3 3 4 4 4 3 4 2 3 4 4 4 4 3 3 3 2 3 3 2 1 2 3 4 4 4 4 3 3 4 4 4 4 4 1 3 4 4 4 4 2 3 4 4 4 4 4 3 4 4 4 4 4 3 3 3 4 4 4 5 5 5 3 3`
+`1 2 2 3 3 3 4 4 4 3 4 2 3 4 4 4 4 3 3 3 2 3 3 2 2 2 3 4 4 4 4 3 3 4 4 4 4 4 1 3 4 4 4 4 2 3 4 4 4 4 4 3 4 4 4 4 4 3 3 3 4 4 4 5 5 5 3 3`
 
 **Keyboard, honestly:** 21 of the 26 onsets beyond two hands are in b64-67 (the summit's last bars and
 the coda: two pedal voices an octave apart plus three manual voices spread over more than a tenth);
@@ -191,7 +195,8 @@ No script placed or altered a note to move a number; each fix after a critic run
 - **The pedal canon's dissonances.** With the follower a semitone or tone off the leader, there are
   brief minor ninths between the pedals (e.g. b29.3½, b54.3½, b64.1½) that the manuals have to absorb
   as passing harmony; on a piano in the low register they may sound rough.
-- **Static inner voices.** The Alt in lines 1-2 (b6-18) and line 9 (b54) leans on F♯–G.
+- **Inner voices.** After the review the Alt moves in b7, b15-17 and b54, but in b6, b8-9 and b55-56
+  it still leans on F♯–G under the pedal canon.
 - **The critic checks only subject 1.** The other subjects and the chorale lines are verified by
   construction (they are transforms of the hand-written subjects), not by the critic's theme check,
   which reports mismatches for them.
@@ -209,10 +214,26 @@ No script placed or altered a note to move a number; each fix after a critic run
   from Pedal I two octaves down (very likely inaudible) to the Diskant at its own pitch with a thin
   accompaniment. The summit was 17 voices with every earlier subject returning (13-14 moving); it is
   now line 10 at three speeds. The 17-voice final chord became the Tenor's line 1 ending in G major.
-  4:31 → 3:55; the keyboard check went from meaningless to 6.5 %.
+  4:31 → 3:55; the keyboard check went from meaningless to 6.3 %.
 - **Why:** with seventeen voices no line could be followed and nothing at the summit could be heard as
   a device; at five, each entry has room, and the canon, the guest and the stretto can each be pointed
   to in the score and, I hope, heard.
+
+## Review (REVIEW.md) and what changed
+
+| item | what I did |
+|---|---|
+| 1. The manuals stall under the cantus (b14-18, also b6-9, b54-56) | Applied the reviewer's tested Alt for b15-17: S2's dotted 3+1 limp on the chord tones. By hand, also b7 (Alt `F#4 E4 D4 E4` in eighths) and b54 (Alt `G4. F#4 F4 D4`, a chromatic fall like S9's). I tried eighths in b8 too: they made fifths with Pedal II and an unresolved F♯ against C, so b8 stays as it was. b6, b8-9 and b55-56 still lean on F♯–G (§9). |
+| 2. Line 5's syncopes have no beat (b25-27) | Applied the tested Alt `D4 F4 D4 F4` in b25: a plain quarter pulse against the Tenor's syncopes; the Alt rests a beat and enters with S5 at b26.2 as before. |
+| 3. The closest canon sounds like a late octave bass (b60-66) | I agree that 1½ beats is a shadow, not a canon you can follow, and I did not change the notes: a longer distance would break the ladder, and an even one puts the pedals a second apart on every attack. I went the opposite way from the review's "soften Pedal I": Pedal I is voiced +6 and Pedal II −4 from b60.3 (VOICING, performance data), so the late upper line is heard as a line; in the spatial render the two pedals are also far apart. NOTES (§6) now says what the review says: the audible canons are lines 1, 6 and 8, and the last rung is a sound. |
+| 4. The guest is not prepared or used (b57-60) | It now continues into the summit: in b63.2½-4 the Alt sings the guest's head at its own pitch, D B♭ C A B♭ G, in its own rhythm, over D7 → Gm/B♭. I did not add an earlier preparation: S1 and line 10 already move in the same D–C–B♭ and B♭–C–A–G steps that the head decorates, and a second quotation before the guest would weaken its entrance. |
+| Line 2's masked entries (b12, b13) | Voicing only: the Alt +6 in b12, the Diskant +6 in b13. |
+| "Line 10 at three speeds" | Corrected to two speeds. |
+| Must not be touched (echo passage b19-24; line 8, b46-51) | Untouched. |
+
+Critic after the changes: no new faults. parallels_error 0, beat_parallels 1, unresolved 0,
+bad_doublings 1 and low-register seconds 2 are as before; repeated notes fell from 4.9 % to 4.3 %;
+keyboard 6.3 %. All three renders were remade.
 
 ## 10. Prelude XVI: *Fantasia* (16 bars, 4/4, organ: two hands and pedal)
 
