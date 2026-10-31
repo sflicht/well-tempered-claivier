@@ -9,16 +9,16 @@ Plan (2/2, alla breve):
   b1-21   Exordium: the theme alone (Altus), the tonal answer with countersubject I "Ascensus" (Tenor / Altus),
           the trio: theme in the bass, countersubject I (Tenor), countersubject II "Descensus" (Altus).
   b22-42  Canon per augmentationem et contrario motu ("Notulis crescentibus crescat Fortuna Regis"): dux = the
-          theme on top (Cantus, b22); comes = the theme inverted and in doubled values in the bass (b26-42);
-          the theme against its inversion (Quintus, b25); the answer (Altus, b32) over the comes' chromatic rise.
+          theme on top (Cantus, b22); comes = the theme inverted and in doubled values in the bass (b26-42).  The
+          fifth voice, Quintus, enters with the answer (b32.3) over the comes' chromatic rise.
   b43     The tritone pivot: C#7 (V of F-sharp minor) becomes G7b9 (V of C minor): three common tones.
   b44-61  Canon per tonos ("Ascendenteque modulatione ascendat Gloria Regis"): a six-bar canonic block, written
           once in C minor (the King's key, the theme at Frederick's own pitch) and stated in C, D and E minor.
           Dux: the theme in diminution on top (Cantus); comes: the same an octave lower, two bars later (Altus);
           tenor and bass free.  Each block ends on the next key's dominant; the fourth step is home.
-  b62-78  Summit in F-sharp minor: the theme in augmentation in the bass ("crescat"), and around it the
-          canonic pair of the per tonos at home (dux Cantus b62, comes Altus b64), the inversion in diminution
-          on top, rising to F#6, and countersubject I in diminution in the inner voices.
+  b62-78  Summit in F-sharp minor: the theme in augmentation in the bass ("crescat"); above it the canonic pair of
+          the per tonos at home (dux Cantus b62.2, comes Altus b64.2), then the inversion in diminution on top
+          (b70.4), rising chromatically to F#6; the augmentation's last notes carry the final cadence (b76-78).
 Thematic statements are explicit transforms of the theme; every other note is written out by hand.
 """
 import json
@@ -33,7 +33,7 @@ import wtclib as W  # noqa: E402
 METER = (2, 2)
 NAMES = ['C', 'A', 'T', 'Q', 'B']
 LONG = ['Cantus', 'Altus', 'Tenor', 'Quintus', 'Bassus']
-CLEF = ['treble', 'treble', 'treble_8', 'bass', 'bass']
+CLEF = ['treble', 'treble', 'treble_8', 'treble_8', 'bass']
 BASEVEL = [64, 60, 60, 58, 64]
 
 

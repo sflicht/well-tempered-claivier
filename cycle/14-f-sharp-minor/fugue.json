@@ -4354,7 +4354,7 @@
   {
    "name": "Quintus",
    "abbr": "Q",
-   "clef": "bass",
+   "clef": "treble_8",
    "events": [
     {
      "t": 126.0,

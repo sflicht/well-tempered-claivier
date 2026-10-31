@@ -258,14 +258,21 @@
    ]
   },
   {
-   "name": "Fugue XIV \u00b7 F-sharp minor (new, fifteen voices)",
+   "name": "Pair XIV \u00b7 F-sharp minor (new)",
    "pieces": [
     {
+     "id": "prelude-14",
+     "title": "Prelude XIV \u00b7 Canon cancrizans",
+     "score": "cycle/14-f-sharp-minor/prelude.json",
+     "tag": "new",
+     "notes": "A short three-voice crab canon after the one in Bach's Musical Offering: the piece reads the same backwards, so the Royal Theme heard in the first half returns in the second half run backwards."
+    },
+    {
      "id": "fugue-14",
-     "title": "Fugue XIV \u00b7 Ricercar a 15 sopra il Thema Regio",
+     "title": "Fugue XIV \u00b7 Ricercar a 5 sopra il Thema Regio",
      "score": "cycle/14-f-sharp-minor/fugue.json",
      "tag": "new",
-     "notes": "In 1747 Frederick the Great gave Bach a theme to improvise on. Bach managed a three-voice fugue on the spot and later wrote the six-voice Ricercar and the canons of the Musical Offering. This ricercar takes the Royal Theme, checked against Bach's text and moved to F-sharp minor, to fifteen voices in three choirs.\n\nThe first choir enters one voice at a time, then comes the Musical Offering's canon by augmentation and contrary motion (the theme against its inversion at half speed). The middle section is a canon per tonos, after Bach's canon that rises a tone with each repetition 'so may the King's glory rise': a four-bar canonic block heard in F-sharp, G-sharp, A-sharp, C, D and E minor, its leading voice climbing a step each time and gaining a line with each statement. In the fourth statement the theme sounds at Frederick's own pitch, from middle C. The seventh step returns to F-sharp minor and is the summit: the theme and both countersubjects in augmentation, against the theme and countersubject in diminution, with the inversion on top. It ends on a fifteen-voice Picardy chord.\n\nStill short of its aim: at the summit about ten of the fifteen voices move at once, and the quarter-note canon tends to sound like the theme in thirds."
+     "notes": "In 1747 Frederick the Great gave Bach a theme to improvise on; Bach later wrote the six-voice Ricercar and the canons of the Musical Offering. This five-voice ricercar takes the Royal Theme to F-sharp minor.\n\nAfter a quiet opening, the Musical Offering's canon by augmentation and contrary motion: the theme on top, its inversion at half speed in the bass. Then a turn to C minor, Frederick's own key, and a canon per tonos after Bach's canon that rises a tone with each statement 'so may the King's glory rise': the same canonic block in C, D and E minor, the top voice climbing from C to E, and the next step up is home, F-sharp minor, where the summit begins. There the theme sounds at half speed in the bass under the returning canon, the inversion climbs to the top, and the fugue ends in F-sharp major.\n\nRecomposed in five voices (it was fifteen); the earlier version is in the pair's archive folder."
     }
    ]
   },

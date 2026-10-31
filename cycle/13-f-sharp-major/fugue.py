@@ -2,7 +2,28 @@
 """Fugue XIII in F-sharp major, four voices:
 "Fuga canonica a 4 sopra il fondamento di Goldberg".
 
-(Draft in progress; the full description is written when the piece is complete.)
+The fundamentum is the ground of J. S. Bach's Goldberg Variations, BWV 988 (the eight bass notes
+G F# E D B C D G of BWV 1087), in F-sharp major (F# E# D# C# A# B C# F#), one note to a 3/4 bar.
+The fugue subject is that ground in dotted diminution plus a springing tail, and the bass states it
+alone first (bars 1-2).  Seven statements of the ground follow, each carrying a strict canon whose
+interval climbs as the Goldberg canons climb, while the ground itself travels through a cadence
+(I - IV - ii - V - I, then the tonic minor and major again):
+
+    bars  3-10  F#   Canon I    at the unison,             2 bars apart (S -> A)
+    bars 11-18  B    Canon II   at the second below,       1 bar apart  (S -> A)
+    bars 19-26  G#m  Canon III  at the third below,        2 bars apart (S -> A)
+    bars 27-34  C#   Canon IV   at the fourth below, by inversion, 1 bar apart (S -> T)
+    bars 35-38       the bass's own entry (subject on C#) and the dominant pedal
+    bars 39-46  F#   Canon V    at the fifth below, by inversion, 2 bars apart (A -> T)
+    bars 47-54  F#m  Canon VI   at the sixth above,        2 bars apart (A -> S), Adagio
+    bars 55-62  F#   Quodlibet after Var. 30: "Ich bin so lang" in canon at the octave (T -> A),
+                     "Kraut und Ruben" (both phrases), the subject, over the ground
+
+Every canon's dux begins with the subject, so its comes answers it at the canon's interval (or
+inverted); the voice outside the canon is free or brings another entry.  Every comes is generated
+from its dux by the transform in canon() and nothing else (check_canons.py verifies this from the
+built JSON).  Every other note is written here as a literal token string, or as the subject or a
+tune moved by an explicit transform (shift, mirror, modal, tr).  No code chose a pitch.
 """
 from __future__ import annotations
 
@@ -213,9 +234,9 @@ put('T', 11, [
 ])
 put('S', 12, [shift(tr(b, 5, 3), 1, 'B') for b in SUBJ_BARS] + [
     'C#5:4 E5:2 D#5:2 C#5:2 E5:2',                               # b14 V    (I6 in the comes)
-    'D#5:4 F#5:2 E5:2 D#5:2 F#5:2',                              # b15 I6   (ii6)
-    'G#5:6 F#5:2 G#5:2 A#5:2',                                   # b16 IV   free from here
-    'B5:4 A#5:2 G#5:2 F#5:2 E5:2',                               # b17 V7   (appoggiatura)
+    'D#5:2 E5:2 F#5:8',                                          # b15 I6   (IV)
+    'E5:4 G#5:2 A#5:2 B5:4~',                                    # b16 IV   free from here
+    'B5:4 A#5:2 G#5:2 F#5:2 E5:2',                               # b17 V7   (4-3)
     'D#5:4 R:8',                                                 # b18 I
 ])
 canon('II', 'S', 'A', lambda s: shift(s, -1, 'B'), 1, 12, 15, 'Canon II at the second below')
@@ -268,7 +289,7 @@ entry('T', 30, 'Canon IV comes: subject inverted, on G# (a fourth below)', form=
 # Link (bars 35-38): the bass's own entry, the subject on C# (the dominant of F#), then a dominant
 # pedal with the head in stretto above it - the retransition.
 put('B', 35, ['C#3:3 B2:1 A#2:3 G#2:1 E#2:3 F#2:1', 'G#2:2 C#3:2 B2:1 D#3:1 G#3:2 F#3:1 E#3:1 D#3:2',
-              'C#3:12', 'C#3:8 C#2:4'])
+              'C#3:12', 'C#3:12'])
 entry('B', 35, 'Bass: subject on C# (retransition)')
 put('S', 34, ['R:12',
               'E#5:4 F#5:4 G#5:4',                               # b35 V - I6 - V6/5
@@ -294,8 +315,8 @@ put('A', 39, [shift(b, 2) for b in SUBJ_BARS] + [
     'E#5:2 D#5:2 C#5:2 B4:2 C#5:4',                              # b42 V    (ii6)
     'C#5:10 D#5:1 C#5:1',                                        # b43 I6   (V7)
     'B4:4 F#4:4 D#4:2 R:2',                                      # b44 IV   (I)
-    'E#4:4 G#4:4 E#4:4',                                         # b45 V7   free
-    'F#4:4 R:8',                                                 # b46 I
+    'G#4:4 C#5:8',                                               # b45 V7   free
+    'A#4:4 R:8',                                                 # b46 I
 ])
 canon('V', 'A', 'T', lambda s: mirror(s, 'A#4', 'D#4'), 2, 39, 44,
       'Canon V at the fifth below, by inversion')
@@ -352,28 +373,29 @@ put('T', 47, [
 # one: his quaver becomes a dotted quaver, so the tunes swing in 6/8 against the 3/4 ground):
 #   "Ich bin so lang nicht bei dir g'west" - tenor, from the upbeat, and in canon at the octave above
 #      in the alto two bars (one of Bach's bars) later, as Bach's tenor and soprano have it;
-#   "Kraut und Ruben haben mich vertrieben" - its first phrase in the soprano on the tonic (Bach's
-#      second soprano, bar 2, with his flat seventh), its second phrase (Bach's tenor, bars 7-8) in
+#   "Kraut und Ruben haben mich vertrieben" - its first phrase in the soprano (Bach's soprano,
+#      bars 3-4, over the same four ground notes), its second phrase (Bach's tenor, bars 7-8) in
 #      the bass, which here leaves the ground: three of its four downbeats are the ground's notes.
 # The fugue subject joins them at the start, in the soprano over "Ich bin".
 ICH = ['F#3:3 G#3:3 A#3:3 B3:3', 'C#4:3 B3:3/2 A#3:3/2 G#3:3 F#3:3/2 G#3:3/2',
        'A#3:3 G#3:3 F#3:6~', 'F#3:6 E#3:3 D#3:3/2 E#3:3/2']
 KRAUT1 = ['C#5:6 C#5:6', 'D#5:6 D#5:6', 'C#5:3 D#5:3 C#5:3 B4:3', 'A#4:3 G#4:3 F#4:6']
-KRAUT2 = ['A#2:3 B2:3 C#3:3 A#2:3', 'B2:3 A#2:3 G#2:3 F#2:3', 'E#2:3 F#2:3 G#2:3 E#2:3', 'F#2:12']
-put('B', 55, ['F#2:12', 'E#2:4 C#3:8', 'D#3:12', 'C#3:12'] + KRAUT2)
+KRAUT2 = ['A#2:3 B2:3 C#3:3 A#2:3', 'B2:3 A#2:3 G#2:3 F#2:3', 'E#2:3 F#2:3 G#2:3 E#2:3', 'F#2:12~']
+put('B', 55, ['F#2:12', 'E#2:4 C#3:4 A#2:4', 'D#3:12', 'C#3:12'] + KRAUT2 + ['F#2:12'])
 entry('B', 59, 'Quodlibet: Kraut und Ruben, second phrase (the ground becomes the tune)', n=4)
 put('T', 55, ICH + [
     'F#3:6 R:6',                                                 # b59 the tune's last note
     'R:12',                                                      # b60
     'C#4:6 G#3:6',                                               # b61 V
-    'A#3:12',                                                    # b62 I
+    'A#3:12~', 'A#3:12',                                         # b62-63 I
 ])
 entry('T', 54, "Quodlibet: Ich bin so lang nicht bei dir g'west", beat=Fr(9, 4), n=5)
 put('A', 56, ['R:9 C#4:3'])                                    # the follower's upbeat (= T's b54)
 canon('8ve', 'T', 'A', lambda s: shift(s, 7), 2, 55, 58, "Ich bin so lang, in canon at the octave")
 entry('A', 56, "Ich bin so lang, canon at the octave above", beat=Fr(9, 4), n=5)
-put('A', 61, ['F#4:6 E#4:3 G#4:3', 'F#4:3 D#4:3 C#4:6'])     # b61 the follower's last note as a 9-8
-put('S', 55, [shift(b, 7) for b in SUBJ_BARS] + ['R:12', 'R:12'] + KRAUT1)
+put('A', 61, ['F#4:6 E#4:3 G#4:3', 'F#4:3 D#4:3 C#4:6~', 'C#4:12'])     # b61 the follower's last note as a 9-8
+put('S', 55, [shift(b, 7) for b in SUBJ_BARS] + ['R:12', 'R:12'] + KRAUT1[:3]
+    + ['A#4:3 G#4:3 F#4:6~', 'F#4:12'])                          # b62-63: the tune ends on the tonic
 entry('S', 55, 'Quodlibet: the subject over Ich bin')
 entry('S', 59, 'Quodlibet: Kraut und Ruben, first phrase', n=4)
 
@@ -408,11 +430,46 @@ def build(path=None):
             'composer': 'Claude / Sam (ground and folk songs after J. S. Bach, BWV 988)',
             'instrument': 'Keyboard (four voices)',
             'key': 'F#', 'mode': 'major', 'meter': list(METER), 'bpm': BPM,
-            'tempo_text': 'Allegretto', 'movement_number': 13, 'piece_type': 'fugue',
-            'edition': 'third'}
+            # gentler in G# minor (b19), brisker in C# (b27), broadening over the dominant pedal into
+            # the return (b37-38), a breath before the Adagio in F# minor (b47), the quodlibet a
+            # tempo (b55) and a final ritardando
+            'tempo_map': [[52, 72], [54, 64, 'ramp'], [78, 74], [108, 74], [114, 58, 'ramp'],
+                          [114, 72], [133, 72], [138, 56, 'ramp'], [138, 52], [156, 52],
+                          [162, 42, 'ramp'], [162, 76], [180, 76], [186, 50, 'ramp'], [189, 40, 'ramp']],
+            'tempo_text': 'Allegretto; Adagio in F-sharp minor; Quodlibet',
+            'movement_number': 13, 'piece_type': 'fugue', 'edition': 'third',
+            'score_tagline': 'Third edition - Fugue XIII (see NOTES.md)',
+            'markers': [{'t': float((b - 1) * 3), 'label': txt} for b, txt in MARKS]}
     voices = [(n, a, c, v) for k, n, a, c, v in VOICES]
     ents = [(NAME[e[0]],) + tuple(e[1:]) for e in ENTRIES]
-    return W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=ents, subject=SUBJECT)
+    data = W.build_score(path or HERE / 'fugue.json', meta, voices, bars, entries=ents,
+                         subject=SUBJECT, dynamics=dynamics)
+    pans = {'Soprano': 74, 'Alto': 66, 'Tenor': 60, 'Bass': 54}
+    for v in data['voices']:
+        v['piano_pan'] = pans[v['name']]
+    (path or HERE / 'fugue.json').write_text(__import__('json').dumps(data, indent=1))
+    return data
+
+
+MARKS = [(1, 'Intonazione: the subject in the bass'), (3, 'Canon I at the unison (F#)'),
+         (11, 'Canon II at the second (B)'), (19, 'Canon III at the third (G# minor)'),
+         (27, 'Canon IV at the fourth, by inversion (C#)'), (35, 'Bass entry, dominant pedal'),
+         (39, 'Return: Canon V at the fifth, by inversion (F#)'),
+         (47, 'Canon VI at the sixth (F# minor, Adagio)'), (55, 'Quodlibet (after Var. 30)')]
+
+# Phrase dynamics: velocity offset from each listed bar on.
+LEVEL = {1: 0, 3: -2, 5: 0, 9: 2, 11: 0, 12: 2, 15: 4, 17: 5, 18: 2, 19: -4, 21: -3, 23: -1,
+         25: 0, 26: -2, 27: 2, 29: 4, 31: 5, 33: 4, 35: 6, 37: 8, 38: 9, 39: 10, 41: 9, 43: 8,
+         45: 6, 46: 4, 47: -6, 49: -5, 51: -4, 53: -5, 54: -6, 55: 3, 57: 4, 59: 6, 61: 5, 62: 3}
+
+
+def dynamics(b):
+    """Bar index (0-based) -> velocity offset."""
+    v = 0
+    for k in sorted(LEVEL):
+        if k <= b + 1:
+            v = LEVEL[k]
+    return v
 
 
 if __name__ == '__main__':
