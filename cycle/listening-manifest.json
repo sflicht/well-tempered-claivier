@@ -130,9 +130,9 @@
     {
      "id": "fugue-7",
      "title": "Fugue VII \u00b7 Fuga a due cori",
-     "score": "cycle/07-e-flat-major/fugue.json",
+     "score": "cycle/07-e-flat-major/archive-n-plus-1/fugue.json",
      "tag": "new",
-     "notes": "Two complete four-voice choirs, after Gabrieli's and Sch\u00fctz's cori spezzati and Bach's double-choir motet Singet dem Herrn (BWV 225). The subject opens with the first line of Wachet auf. Choir II sings a literal mirror image of Choir I's whole exposition, as in the Art of Fugue's mirror fugues. The choirs then trade at shrinking distances: a bar, half a bar, a beat.\n\nIn bars 25-29 the choirs disagree about the key, Choir I insisting on B-flat and Choir II on A-flat, until they reconcile on the home dominant. Then a joke: Choir I's pompous augmentation is cut off twice by Choir II's chattering diminution, and its last bar only arrives in the coda.\n\nThe summit is an eight-voice stretto, every voice entering half a bar apart, Choir I upright and Choir II inverted. In the binaural render Choir I is on the left and Choir II on the right."
+     "notes": "Two complete four-voice choirs, after Gabrieli's and Sch\u00fctz's cori spezzati and Bach's double-choir motet Singet dem Herrn (BWV 225). The subject opens with the first line of Wachet auf. Choir II sings a literal mirror image of Choir I's whole exposition, as in the Art of Fugue's mirror fugues. The choirs then trade at shrinking distances: a bar, half a bar, a beat.\n\nIn bars 25-29 the choirs disagree about the key, Choir I insisting on B-flat and Choir II on A-flat, until they reconcile on the home dominant. Then a joke: Choir I's pompous augmentation is cut off twice by Choir II's chattering diminution, and its last bar only arrives in the coda.\n\nThe summit is an eight-voice stretto, every voice entering half a bar apart, Choir I upright and Choir II inverted. In the binaural render Choir I is on the left and Choir II on the right.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
     }
    ]
   },
@@ -410,7 +410,7 @@
    ]
   },
   {
-   "name": "Pair XXII \u00b7 B-flat minor (new, twenty-three voices)",
+   "name": "Pair XXII \u00b7 B-flat minor (new)",
    "pieces": [
     {
      "id": "prelude-22",
@@ -421,15 +421,15 @@
     },
     {
      "id": "fugue-22",
-     "title": "Fugue XXII \u00b7 Ma fin est mon commencement (23 voices)",
-     "score": "cycle/22-b-flat-minor/archive-n-plus-1/fugue.json",
+     "title": "Fugue XXII \u00b7 Ma fin est mon commencement (6 voices)",
+     "score": "cycle/22-b-flat-minor/fugue.json",
      "tag": "new",
-     "notes": "'My end is my beginning': Machaut's rondeau of that title is a palindrome. This is a tombeau for Bach as a crab fugue for twenty-three voices: the second half is the first half played exactly backwards, in every voice. It begins with one alto on B-flat; the voices enter one by one in four choirs; all twenty-three sound together at the axis, the exact middle (between bars 48 and 49), on a diminished chord over an F pedal; then the retrograde takes them away in reverse order, and the piece ends on the same lone B-flat.\n\nThe subject joins the head of Bach's five-voice B-flat-minor fugue in Book I (BWV 867) to B-A-C-H, designed so that, read backwards, it ends with a cadence. Writing counterpoint that is correct in both directions is the hard part: a suspension played backwards is a different figure, and V-I becomes I-V; the rules used are set out in the notes. At the axis the subject sounds in augmentation with its H on the turning point, with the subject at normal speed in two tenors and three voices tolling F. The tempo and dynamics are palindromes too.\n\nListen for the exposition coming back reversed in the last minutes.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "'My end is my beginning': Machaut's rondeau of that title is a palindrome. This is a tombeau for Bach as a crab fugue in six voices: the second half is the first half played exactly backwards, in every voice. One alto begins alone on B-flat; the voices enter one by one; all six sound together around the exact middle (between bars 34 and 35); then the retrograde takes them away in reverse order, each leaving on its own entry played backwards, and the alto ends alone on the same B-flat.\n\nThe subject joins the head of Bach's five-voice B-flat-minor fugue in Book I (BWV 867) to B-A-C-H; read backwards it climbs and ends with a cadence. The sixth voice, the lowest, sings the subject at half speed so that its H lands on the axis, while three copies of B-A-C-H a minor third apart end on the four notes of the axis chord. Writing counterpoint that is correct in both directions is the hard part; both halves pass every check. The tempo and dynamics are palindromes too.\n\nListen for the exposition coming back reversed in the last minute or so. Recomposed in six voices (it was twenty-three); the earlier version is in the pair's archive folder."
     }
    ]
   },
   {
-   "name": "Pair XXIII \u00b7 B major (new, twenty-four voices)",
+   "name": "Pair XXII \u00b7 B-flat minor (new)",
    "pieces": [
     {
      "id": "prelude-23",

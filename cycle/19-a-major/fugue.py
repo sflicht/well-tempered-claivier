@@ -238,9 +238,9 @@ def ball():
     theme('T', 125 + Fr(2, 3), oc(dshift(SG, 3), -1), 'Gigue: subject (D level)')
     # three cells of three beats (long-short | three eighths | dotted quarter) that cut across the
     # gigue's own 12/8 bars and the allemande's 4/4 bars; then a rest before the race
-    put('T', 132, 'D4:8/3 C#4:4/3 B3:4/3 E4:4/3 D4:4/3 C#4:4 '
+    put('T', 132, 'F#3:8/3 B3:4/3 E4:4/3 D4:4/3 B3:4/3 C#4:4 '
                   'A3:8/3 C#4:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:4 '
-                  'E4:8/3 C#4:4/3 B3:4/3 A3:4/3 B3:4/3 G#3:4 '
+                  'E4:8/3 A3:4/3 B3:4/3 A3:4/3 B3:4/3 G#3:4 '
                   'A3:8/3 C#4:4/3 R:4 R:8/3')
     theme('T', 143 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A), the race')
     put('T', 150, 'E4:8/3 D4:4/3 C#4:4/3 B3:4/3 A3:4/3 F#3:8/3 G#3:4/3 B3:8/3 C#4:4/3 '
