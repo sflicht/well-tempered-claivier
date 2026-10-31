@@ -1,7 +1,31 @@
 #!/usr/bin/env python3
 """Fugue XIX in A major, four voices: "Ballo a quattro" (a suite in one fugue).
 
-(work in progress: material only)
+Four voices, each one dance of the suite, each keeping its own metre and character throughout:
+
+  Sarabande  soprano  3/4   long notes, weight on the second beat
+  Allemande  alto     4/4   sixteenth upbeats, running sixteenths
+  Gigue      tenor    12/8  compound eighths (the dotted quarter is the common quarter)
+  Courante   bass     3/2   French courante, dotted pairs, hemiola (6/4) bars
+
+One subject, one pitch sequence (E | A G# B A C# B D C# B G# A F# | E), is set in the rhythm of
+each dance (SA, SC, SS, SG below).  All four dances share one quarter-note pulse; their bar lines
+coincide only every twelve quarters (4/4, 3/2, 3/4 and 12/8 all divide 12).  The master metre of
+this file and of the critic is 4/4; every note is placed at an absolute quarter position, and the
+per-staff time signatures go to the LilyPond score through metadata.score_layout.staff_meters.
+
+  I    q0-48     the dances enter one at a time (allemande, courante, sarabande, gigue)
+  II   q48-71    the quick dances alone: gigue and allemande, F# minor and C# minor
+  III  q71-104   the slow dances alone: courante (B minor) and sarabande (D)
+  IV   q102-120  three at a time: the mirrors of gigue and allemande, then the dominant
+  V    q120-156  the ball: all four at once; the gigue and the allemande race (q143 2/3-150)
+  VI   q156-176  the source revealed: Bach's Bourree I (BWV 806), then all four in its metre
+
+Every note is written here as a literal token string.  Thematic statements are the hand-written
+subject versions or explicit transforms of them (oc, dshift = diatonic transposition inside A major).
+Scratch scripts (session scratchpad, not part of the build) tested placements of whole statements
+against each other and proposed levels and entry times; I chose among them and wrote every note,
+including all free counterpoint.  See NOTES.md ("How it was made").
 """
 from __future__ import annotations
 
@@ -16,7 +40,6 @@ import wtclib as W  # noqa: E402
 
 METER = (4, 4)
 AMAJ = [9, 11, 1, 2, 4, 6, 8]          # A major from the tonic
-T3 = Fr(4, 3)                          # one compound eighth, in sixteenths
 
 # ---------------------------------------------------------------- the subject in four dances
 # Core pitches: E | A G# B A C# B D C# B G# A F# | E.  The head (E | A G# B A C# B) is the opening
@@ -172,6 +195,8 @@ def duo_slow():
     theme('S', 86, 'A4:4 D5:6 C#5:2 E5:4 D5:4 F#5:8 E5:6 G5:2 F#5:4 E5:4 C#5:8 D5:4 B4:8 A4:8',
           'Sarabande: subject (D)')
     put('B', 86, 'C#3:4 D3:6 A2:2 C#3:4 B2:4 D3:8 C#3:4 A2:4 D3:4 A2:4 G2:8 F#2:4 G2:8')
+    # the gigue slips in under the end of the sarabande's subject, announcing the trio
+    put('T', 99, 'A3:8/3 B3:4/3 D4:8/3 B3:4/3 G3:8/3 B3:4/3 C#4:8/3')
 
 
 def trio():
@@ -211,7 +236,7 @@ def ball():
     put('T', 120, 'A3:8/3 B3:4/3 D4:4/3 C#4:4/3 B3:4/3 A3:8/3 G#3:4/3 F#3:8/3 G#3:4/3 A3:8/3 B3:4/3 '
                   'G#3:4/3 R:4/3')
     theme('T', 125 + Fr(2, 3), oc(dshift(SG, 3), -1), 'Gigue: subject (D level)')
-    put('T', 134, 'C#4:8/3 B3:4/3 A3:8/3 C#4:4/3 A3:8/3 G#3:4/3 F#3:4/3 G#3:4/3 A3:4/3 C#4:8/3 A3:4/3 '
+    put('T', 132, 'F#3:8/3 A3:4/3 E4:8/3 D4:4/3 C#4:8/3 B3:4/3 A3:8/3 C#4:4/3 A3:8/3 G#3:4/3 F#3:4/3 G#3:4/3 A3:4/3 C#4:8/3 A3:4/3 '
                   'B3:8/3 A3:4/3 B3:8/3 G#3:4/3 A3:8/3 E4:4/3 A3:8/3 E4:4/3 B3:4/3 R:4/3')
     theme('T', 143 + Fr(2, 3), oc(SG, -1), 'Gigue: subject (A), the race')
     put('T', 150, 'E4:8/3 D4:4/3 C#4:4/3 B3:4/3 A3:4/3 F#3:8/3 G#3:4/3 B3:8/3 C#4:4/3 '

@@ -1,116 +1,201 @@
-# Pair XIX in A major: "Le Maître à danser", and "Ballo a quattro cori" (Suite in una fuga, twenty voices)
+# Pair XIX in A major: "Le Maître à danser", and "Ballo a quattro" (a suite in one fugue, four voices)
 
 **Files.**
-- Sources: `prelude.py`, `fugue.py`. Built scores: `prelude.json` (22 bars of 4/4 in the file, one pianist, 3 staves) and `fugue.json` (66 bars of 4/4 in the file, twenty staves: four five-part string bands).
+- Sources: `prelude.py`, `fugue.py`. Built scores: `prelude.json` (22 bars of 4/4 in the file, one pianist, 3 staves) and `fugue.json` (44 bars of 4/4 in the file, four staves, one per dance).
 - `renders/`:
-  - `prelude.*`, `fugue.*`: PDF, LilyPond, MusicXML, MIDI and MP3 in Bach/Lehman temperament. Both PDFs carry **per-staff time signatures** (see "Notation"). The fugue PDF is A2, 3 pages. LilyPond compiled both with no errors. The only warning, in the fugue, is one "omitting tuplet bracket".
+  - `prelude.*`, `fugue.*`: PDF, LilyPond, MusicXML, MIDI and MP3 in Bach/Lehman temperament. Both PDFs carry **per-staff time signatures** (see "Notation"). The fugue PDF is 3 pages; LilyPond compiled it without errors.
   - `*-equal.mp3`: equal temperament, audio only.
-  - `fugue-spatial.mp3`: binaural, `--layout ring`. The twenty voices are spread round the listener in score order, so each band takes one quadrant: Allemande, Courante, Sarabande, Gigue.
-- Build: `python3 prelude.py`, `python3 fugue.py`, then the render commands in `cycle/CONVENTIONS.md`.
+  - `fugue-spatial.mp3`: binaural piano, `--layout arc` (the default dry room).
+  - `fugue-spatial-strings.mp3`: binaural string quartet, made by `render_strings.py` (sarabande on the first violin, allemande on the second, gigue on the viola, courante on the cello, `--layout arc`). The score is unchanged; only the instruments differ.
+- Build: `python3 prelude.py`, `python3 fugue.py`, then the render commands in `cycle/CONVENTIONS.md` and `python3 cycle/19-a-major/render_strings.py`.
 
-**Length.** The fugue renders at 4:05 (245 s), with one pulse throughout (quarter = 66). There is a breath before the reveal (q232–236, 66 → 58), the coda is at 64, and the last two bars broaden to 48. The prelude renders at 1:18 (quarter = 72, broadening at the end).
+**Length.** The fugue renders at about 2:38 (158 s), on one pulse (quarter = 69) with breaths at the cadences of q48, q71, q104 and q120, a held last chord of the ball (q156, slowing to 52), the bourrée a tempo (its minim = 69), and a final broadening to 42. The prelude renders at 1:18 (quarter = 72, broadening at the end).
 
 I have not heard any of this. Everything below comes from the scores, `tools/critic.py` and my scratch checks.
 
-## Concept
+## Fugue XIX: "Ballo a quattro"
 
-**A suite danced as one fugue.** The four core dances of the Baroque suite are allemande, courante, sarabande and gigue. Each belongs to one band of five string parts, laid out like Lully's court band: dessus, haute-contre, taille, quinte, basse. One subject is set in each dance's rhythm and metre, as in the variation suites of Schein (*Banchetto musicale*) and Froberger, where every dance is the same tune re-danced. The fugue introduces the dances one at a time, each as a fugal exposition, with the other bands answering or accompanying in that dance. Then the dances meet: two, then three, then all four at once, **each in its own metre**. All four share one quarter-note pulse, and their bar lines coincide only every twelve quarters (4/4, 3/2, 3/4 and 12/8 all divide 12).
+### Concept at the new size
 
-**The pulse.** The quarter is common to all four dances:
-- allemande: 4/4, a bar of 4 quarters;
-- courante: 3/2, a bar of 6 quarters, with hemiola;
-- sarabande: 3/4, 3 quarters, the weight on beat 2;
-- gigue: 12/8, in which the dotted quarter equals the common quarter. Its eighths are the triplet eighths of the common beat, so a gigue bar also lasts 4 quarters.
+Bach's A-major fugue in Book I (BWV 864) has three voices, so this one has four. The twenty-voice version gave each dance a five-part band. Now **each voice is one dance**, and it keeps its dance's metre and character from its first entry to the coda:
 
-In the score each band's bar lines therefore fall in different places, and they meet every 12 quarters (q0, 12, 24 …).
+| Voice | Dance | Metre | Character |
+|---|---|---|---|
+| Soprano | Sarabande | 3/4 | long notes, the weight on beat 2 |
+| Alto | Allemande | 4/4 | sixteenth upbeats, running sixteenths |
+| Tenor | Gigue | 12/8 | compound eighths, long–short figures |
+| Bass | Courante | 3/2 | French courante: dotted pairs, half notes, hemiola (6/4) bars |
 
-**The source, revealed at the end.** The subject's head is the opening of the **Bourrée I of Bach's English Suite No. 1 in A, BWV 806**: E | A G♯ B A C♯ B. The coda plays Bach's actual first bars. The subject has been that tune all along, cut off and re-danced.
+All four share one quarter-note pulse. The gigue's dotted quarter is the common quarter, so its eighths are triplet eighths of the beat. Bar lines therefore fall in four different places and coincide only every twelve quarters (q0, 12, 24, …). The score shows each staff in its own metre.
 
-## Credits and verification
+The plan follows the brief:
+1. the dances enter one at a time as a fugal exposition, in suite order (allemande, courante, sarabande, gigue);
+2. they meet two at a time (the quick pair, then the slow pair) and three at a time;
+3. at the summit, the ball, all four dance at once, each in its own metre;
+4. at the end the subject is revealed as the opening of the Bourrée I of Bach's English Suite No. 1 in A, BWV 806, and all four voices dance that bourrée in one metre.
 
-- **Bach, English Suite No. 1 in A major, BWV 806, Bourrée I.** Public domain. The source is the Mutopia Project edition, entered by Allen Garvin from the Bach-Gesellschaft edition, file `bach-english-suite-1-bourree-1.ly` (Mutopia-2011/06/15-85, public domain dedication). I downloaded the `.ly` and the `.mid` to the session scratchpad and read the pitches and rhythms from the `.ly`:
-  - right hand, `\relative c'`, 2/2: `\partial 4 e4 | a8 gs b a cs b a gs | a4 e cs8 e a b | cs b d cs e d cs b | d cs b cs a b cs d | …`
-  - left hand, `\relative c`: `r4 | R1 | r2 r4 e | a8 gs b a cs b a gs | a4 e cs8 e a b | …`, which is the tune imitated at the lower octave, entering on the last beat of bar 2.
-- The `.mid` file agrees with these pitches.
-- **Quoted literally:**
-  - in the prelude (q71–84): bars 1–3 of both hands, at pitch;
-  - in the fugue coda (q235–252): bars 1–4 of the right hand an octave higher, in the allemande dessus, and the left hand's entry two octaves lower, in the allemande basse.
-- Everything else is mine.
+### Material
 
-## Material
+**The subject.** Its pitches are E | A G♯ B A C♯ B D C♯ B G♯ A F♯ | E. The head (E | A G♯ B A C♯ B) is the opening of Bach's bourrée. The tail climbs to D and falls through the leading tone to the dominant, so every statement ends on its fifth degree. The four dances keep the pitches and change only the rhythm (token durations in sixteenths; 4/3 is a triplet eighth):
 
-**The subject.** Its core pitches are E | A G♯ B A C♯ B D C♯ B G♯ A F♯ | E. The head is Bach's tune. The tail climbs to D and then falls back through the leading tone to the dominant. Its four dance versions keep these pitches and differ only in rhythm (token durations in sixteenths; 4/3 is a triplet eighth):
+| | Rhythm | Length |
+|---|---|---|
+| **SA, Allemande** (4/4) | `E:1 \| A:2 G♯:1 B:1 A:1 C♯:1 B:1 D:1 C♯:2 B:1 G♯:1 A:1 F♯:1 E:2`. A sixteenth upbeat, then one bar of running sixteenths with eighths on the beats. | 4¼ quarters |
+| **SC, Courante** (3/2) | `E:4 \| A:6 G♯:2 B:6 A:2 C♯:8 \| B:4 D:6 C♯:2 B:6 G♯:2 A:2 F♯:2 \| E:8`. Bar 1 moves in three half-note beats (3/2), bar 2 in two dotted halves (6/4): the courante's hemiola. | 15 quarters |
+| **SS, Sarabande** (3/4) | `E:4 \| A:6 G♯:2 B:4 \| A:4 C♯:8 \| B:6 D:2 C♯:4 \| B:4 G♯:8 \| A:4 F♯:8 \| E:12`. Dotted bars alternate with bars whose long note falls on beat 2. | 19 quarters |
+| **SG, Gigue** (12/8) | `E \| A(q) G♯(e) \| B A C♯ \| B(q) D(e) \| C♯ B G♯ \| A(q) F♯(e) \| E(q.)` in compound eighths. | 6⅓ quarters |
 
-| | Rhythm |
-|---|---|
-| **SA, Allemande** (4/4) | `E:1 \| A:2 G♯:1 B:1 A:1 C♯:1 B:1 D:1 C♯:2 B:1 G♯:1 A:1 F♯:1 E:2`. A sixteenth upbeat and running sixteenths, 4¼ quarters. |
-| **SC, Courante** (3/2) | `E:4 \| A:6 G♯:2 B:6 A:2 C♯:8 \| B:4 D:6 C♯:2 B:6 G♯:2 A:2 F♯:2 E:8`. Dotted pairs; bar 2 is a hemiola, 15 quarters. |
-| **SS, Sarabande** (3/4) | `E:4 \| A:6 G♯:2 B:4 \| A:8 C♯:4 \| B:6 D:2 C♯:4 \| B:8 G♯:4 \| A:6 F♯:2 E:12`. The long note on beat 2 (A, B), 18 quarters. |
-| **SG, Gigue** (12/8) | `E | A:q G♯:e B A C♯ | B:q D:e C♯ B G♯ | A:q F♯:e E:q.` in compound eighths, 6⅓ quarters. |
+SA, SC and SG are those of the twenty-voice version (SA and SG are also used by the prelude). SS is new: the earlier sarabande put its long notes on beat 1; this one weights beat 2.
 
-**Answers.**
-- Allemande: tonal; the upbeat E→A is answered A→E, with D♯ in the body.
-- Courante: tonal head, modal body. It keeps D natural, so that it can sound against the subject's own D in the overlapping exposition.
-- Sarabande: answered at the subdominant (the D level).
-- Gigue: a modal answer a fifth up inside A major (B | E D F♯ E …).
+**Answers.** Tonal: the upbeat E→A is answered A→E, and the body lies a fifth higher with D♯ (`AA`, `AC`, `AG` in the source). In the minor-key middle entries the subject keeps its scale degrees (5 | 1 7 2 1 3 2 4 3 2 7 1 6 | 5) in harmonic minor.
 
-**The mirror** (diatonic inversion on the axis C♯: A↔E, B↔D, G♯↔F♯) begins on A and **ends on the tonic**. This makes it a bass. It is the second half of the gigue (as in the second halves of Bach's gigues) and the ground of the ball.
+**The mirror.** It is a diatonic inversion on the axis C♯ (A↔E, B↔D, G♯↔F♯): A | E F♯ D E C♯ D B C♯ D F♯ E G♯ | A. It begins and ends on the tonic. Here it is used for the trio, where the gigue and then the allemande dance it, as in the second half of Bach's gigues.
 
-## Section map (fugue)
+### Section map
 
-Bar numbers are 4/4 bars of the file; "q" is the quarter position. Each band's own bar lines follow its own metre (see "Notation").
+Bar numbers are 4/4 bars of the file; "q" is the quarter position.
 
 | q (bars) | Section | What happens | Keys |
 |---|---|---|---|
-| 0–36 (1–9) | **I. Allemande**, all staves in 4/4 | Coro I alone. A five-voice exposition of SA from the middle outwards: taille, haute-contre (answer), dessus, quinte (answer), basse, each four beats apart. Then the mirror in the haute-contre, the subject in the basse and a dessus stretto. Running sixteenths. | A, E |
-| 36–84 (10–21) | **II. Courante**, all in 3/2 | Coro II's exposition from the top down, one courante bar apart (dessus, haute-contre answer, taille, quinte answer, basse). The allemande basse plays a continuo. Coro I then takes up the courante subject itself: dessus at the C♯ level, basse at the D level. | A, F♯ m, D |
-| 84–120 (22–30) | **III. Sarabande**, all in 3/4 | Coro III: subject (dessus), answer at the subdominant (haute-contre), and the mirror in the basse, "the future ground". Coros I and II accompany in sarabande rhythm, the long chords on beat 2. Half close on E. | A, D, E |
-| 120–156 (31–39) | **IV. Gigue**, all in 12/8 | Coro IV's exposition from the top down, one gigue bar apart (subject, modal answer, alternating) over a continuo in the sarabande basse. The second half is the mirror in a **five-voice stretto at half-bar distance**, top down (dessus A, haute-contre E, taille A, quinte E, basse A). The last bass mirror closes on the tonic at q155. | A |
-| 156–180 (40–45) | **V. Ballo a due, a tre**, each band in its own metre | The courante subject (Coro II taille) under the allemande subject (Coro I dessus). The allemande answers in its basse and taille. From q167 the sarabande joins with the head of its subject (Coro III dessus), which stops on the dominant G♯ at q179–180. Coro IV is silent, so that its entry in the ball is fresh. | A, E, F♯ m → E |
-| 180–236 (46–59) | **The ball (summit)**: all four dances at once | See the next section. | A, F♯ m, D, B m, E, A |
-| 236–264 (60–66) | **Coda**, 2/2 (the bourrée) | The allemande band alone plays Bach's bourrée: the tune in the dessus, the bass imitation from q243 (the reveal). Its IV–V cadence brings in the other bands on the dominant at q258, and all twenty voices bow on the tonic at q260. | A |
+| 0–48 (1–12) | **I. The dances enter** | Allemande subject, alone (alto, q1¾). Courante answer (bass, q5) under the allemande's counterpoint in tenths and sixths. Sarabande subject on top (q20); the allemande rests for its first bars and the courante walks to a half close on E (q36). Gigue answer (tenor, q39⅔) with the bass alone under it. All four voices first sound together from q45 and cadence in E at q48. | A → E |
+| 48–71 (13–18) | **II. The quick dances alone** | Gigue subject in F♯ minor, low in the tenor (q51⅔). Allemande answer in C♯ minor (q57¾). Episode: down the circle of fifths, the allemande turns the subject's head (A G♯ B A) into a chain of sevenths over the gigue's walking roots. Cadence in F♯ minor (q70). | F♯m, C♯m, F♯m |
+| 71–104 (18–26) | **III. The slow dances alone** | Courante subject in B minor (q71) under a sarabande counter-melody that enters on beat 2. Then the sarabande's subject in D (q86) over a courante bass. The gigue slips in at q99. Half close in D (q102). | Bm, D |
+| 102–120 (26–30) | **IV. Three at a time** | Gigue mirror in B minor (q103⅔): the A-major half close turns deceptively to B minor. Allemande mirror in E (q109¾). Dominant pedal in the courante (E2, two dotted halves: a hemiola), over which the gigue tries the subject's head as 6/4–V. | Bm → E |
+| 120–156 (31–39) | **V. The ball** | See below. | A, vi at q144, A |
+| 156–176 (40–44) | **VI. Coda: the source** | The ball's last chord, held. Then the allemande voice, alone, plays Bach's bourrée, bars 1–5 (q157½), and the courante answers with Bach's own bass (q161½). At bar 6 of the bourrée the sarabande and the gigue join, and all four close in its 2/2: IV – ii6 – I6/4 – V7 – I. | A |
 
-## The summit (q180–236): who dances what
+### The ball (q120–156), and where to hear the device
 
-**The ground and the one true bass.** The subject's mirror is the ground. It passes from basse to basse and quickens as it goes. At any moment exactly one basse carries the bass line:
+All four voices dance from q120 to q156; each statement enters after a rest in its own voice.
 
-| q | True bass | Ground | Key |
-|---|---|---|---|
-| 180–197 | Coro III basse | the **sarabande** mirror in half and quarter notes | A |
-| 197–212 | Coro II basse | the **courante** mirror, with E♯ for the cadence | F♯ minor |
-| 211⅔–224 | Coro IV basse | the **gigue** mirror | D major, then B minor (with A♯) |
-| 223¾–236 | Coro I basse | the **allemande** mirror in sixteenths | E, then A; then a IV–V–I close |
+| q | Statement | Voice |
+|---|---|---|
+| 117¾ | Allemande subject (A). It runs over the end of the dominant pedal into the arrival at q120. | alto |
+| 122 | Sarabande subject (A), on top | soprano |
+| 125⅔ | Gigue subject at the D level (A \| D C♯ E D F♯ E G♯ F♯ E C♯ D B \| A) | tenor |
+| 131 | Courante subject one step higher (F♯ \| B A C♯ B D C♯ E D C♯ A B G♯ \| F♯), nine quarters behind the sarabande's, under its second half. It ends on vi: at q144, a common bar line, all four voices strike together on a deceptive F♯ minor. | bass |
+| 143⅔ | **The race.** The gigue's subject in A. | tenor |
+| 145¾ | The allemande's subject at the fifth (B \| E D F♯ E G♯ F♯ A G♯ F♯ D E C♯ \| B), two and a twelfth beats later. Being quicker, it catches up: both end together on the dominant at q150. | alto |
+| 150–156 | The courante's hemiola cadence (C♯ D \| E, two dotted halves). The sarabande holds A over E (a 4–3 suspension) and resolves to G♯ on its weighted beat 2. All four arrive on A at q156, a common bar line. | all |
 
-There are two small exceptions. Coro II's basse sings three notes at q192–196, an octave above the sarabande ground (B2 E3 C♯3 over F♯2 E2 A2). At q197 the two grounds overlap for one beat at the handover. The plan of keys (I–vi–IV–ii–V–I) is the circle the ground walks.
+**What should make the four metres audible on one piano.** These are design intentions; I cannot check them by ear.
+- The four rhythmic profiles stay distinct: sixteenths (allemande), triplet eighths (gigue: three against the allemande's four in every beat), long notes on beat 2 (sarabande), and half and dotted-quarter notes with hemiolas (courante, q138–144 and q150–156).
+- The voices keep apart in register. In the ball the soprano sits at E5–D6, the alto mostly at B4–F♯5 (it rises to A5 only in the race, while the soprano rests), the tenor at E3–G♯4, the bass at F♯2–F♯3.
+- Each voice's velocity accents follow its own metre: downbeats, the sarabande's second beat, and the courante's half-note beats. So the accents of the four voices fall in different places, and they coincide only at q120, 132, 144 and 156.
+- Subject entries are +6 in velocity.
 
-**Statements over the ground** (each in its own band's rhythm and metre):
-- Σ1, A:
-  - allemande subject at the D level (Coro I dessus, q179¾), answered by the gigue subject at the D level (Coro IV dessus, q183⅔);
-  - allemande subject in A (Coro I taille, q185¾) and the allemande mirror (Coro I haute-contre, q191¾);
-  - courante subject at the B level, ending on F♯ (Coro II dessus, q191);
-  - gigue answer (Coro IV haute-contre, q193⅔).
-- Σ2, F♯ minor: allemande subject at the D level (Coro I taille, q203¾) and the allemande mirror in F♯ minor (Coro I haute-contre, q207¾).
-- Σ3: allemande subject in D major (Coro I dessus, q211¾) and in B minor (Coro I taille, q217¾).
-- Σ4: the gigue subject at the D level (Coro IV dessus, q229⅔) is the last statement. It ends on A as the ground closes.
+**How many statements at once.** All four voices dance at once throughout the ball, but at most three subject statements sound together: q131–132 (sarabande, courante, gigue) and q145¾–146 (courante, gigue, allemande). See "Weak spots".
 
-**The free lines.**
-- The sarabande band holds long notes with suspensions, weighted on beat 2.
-- The courante band sings in half and quarter notes.
-- The gigue band runs in compound eighths.
-- The allemande band runs in sixteenths and eighths.
+### Credits and verification
 
-**Density.**
-- Moving voices per bar, critic definition (sounding ≥ ¼ of the bar, with an attack, and not doubling another voice): **12, 13, 11, 10, 12, 9, 10, 9, 16, 12, 14, 17, 16, 17** (bars 46–59).
-- The last three bars (q224–236) have 17, 16 and 17 real lines, and b54 has 16.
-- Mean over the summit: 12.7.
-- The three silent voices in the last bars are the other three basses, kept out so that there is one bass.
+**J. S. Bach, English Suite No. 1 in A major, BWV 806, Bourrée I.** Public domain.
+- **Source.** The Mutopia Project edition, entered by Allen Garvin from the Bach-Gesellschaft edition, file `bach-english-suite-1-bourree-1.ly` (footer "Mutopia-2011/06/15-85", copyright "Public Domain"). I downloaded the `.ly` again in this session and read the pitches and rhythms from it:
+  - right hand, `\relative c'`, 2/2: `\partial 4 e4 | a8 gs b a cs b a gs | a4 e cs8 e a b | cs b d cs e d cs b | d cs b cs a b cs d | e4 \grace g8 fs4 g4.\mordent a8 | …`
+  - left hand, `\relative c`: `r4 | R1 | r2 r4 e | a8 gs b a cs b a gs | a4 e cs8 e a b | cs b d cs e d cs a | …`, which is the tune at the octave below, entering on the last beat of bar 2.
+- **Quoted literally in the fugue (coda).** Both hands are at pitch, with the bourrée's minim equal to the common quarter, so its quarter is our eighth and its eighth our sixteenth:
+  - the right hand, upbeat and bars 1–5, in the allemande voice (q157½–168): `E4 | A4 G♯4 B4 A4 C♯5 B4 A4 G♯4 | A4 E4 C♯4 E4 A4 B4 | C♯5 B4 D5 C♯5 E5 D5 C♯5 B4 | D5 C♯5 B4 C♯5 A4 B4 C♯5 D5 | E5 F♯5 G5. A5`, without the grace note and the mordent of bar 5;
+  - the left hand from its entry to bar 5, in the courante voice (q161½–168).
+  - The following bars (q168–176) are mine.
+- **Quoted in the prelude.** Bars 1–3 of both hands, at pitch (q71–84). This is unchanged.
+- **The subject.** Its head is the bourrée's first seven notes; the rest of the subject, and everything else, is mine.
 
-**Audibility.** These are design decisions; I cannot check them by ear.
-- Each band keeps its own rhythmic profile, so the four dances are separable by rhythm as well as by register: sixteenths, half notes, beat-2 long notes, triplets.
-- In the spatial render, by direction as well.
-- Every thematic statement carries an `entry_boost` of +6 velocity.
+### Critic (`tools/critic.py`), fugue
 
-## Notation: per-staff time signatures (tool change)
+| Measure | Result | Target |
+|---|---|---|
+| parallels_error | 0 | 0 |
+| parallels_weak | 0 | |
+| beat_parallels | 0 | ≤ 2 |
+| dissonance_unresolved | 0 | ≤ 3 |
+| bad_doublings | 0 | ≤ 2 |
+| low_register_seconds | 0 | ≤ 9 |
+| crossings | 0 | few |
+| **stepwise_pct** | **63.2** | **≥ 65: missed** |
+| leap_4th_plus_pct | 11.0 | |
+| pc_tripled_on_beats_pct | 4.1 | |
+| keyboard_unplayable_pct | 2.6 (13 of 501 onsets) | < 5 |
+| mean_moving_voices | 2.82 | |
+
+- **Moving voices per bar, by section:** exposition 2.4 (1 → 4), quick duet 2.5, slow duet 2.25, trio 2.75, ball 4.0 (all nine bars), coda 3.0.
+- **Stepwise motion by voice:** allemande 75.7%, sarabande 55.6%, gigue 53.8%, courante 46.9%.
+- **The critic's notes.** There are nine "7th not resolved down". All are sevenths that move on by a third or reach their resolution after a passing note:
+  - q46: the gigue's E4 under the sarabande's F♯5 over A (F♯m7/A), on the way to the cadence in E;
+  - q125 and q143: D in the allemande over the dominant;
+  - q154: D in the tenor, which reaches C♯ at q156;
+  - q171: D in the allemande, which falls to B and then C♯.
+- **Dissonances the critic classes as appoggiaturas or accented passing notes.** The two clearest are:
+  - the race at q148, where the allemande's G♯5 sounds over the gigue's A3 and the bass D3 before falling to F♯;
+  - the sarabande's suspended A5 over E at q153.
+- **Theme check.** The rectus entries at the original or a real level verify 13/13 in intervals. The modal and minor statements match fewer intervals while keeping the contour and the rhythm:
+  - the courante at the F♯ level, 5/13;
+  - the minor entries, 7/13;
+  - the allemande at the fifth, 9/13.
+
+  Rhythm matches are low by design: the critic compares every entry with SA, the allemande's rhythm.
+
+### Weak spots (honest)
+
+- **Stepwise motion is 63.2%, under the 65% target.**
+  - The subject moves by step in only 7 of its 13 intervals.
+  - The gigue's free lines are long–short chord figures.
+  - The courante is a harmonic bass: 27% of its intervals are leaps of a fourth or more.
+  - The allemande, which carries most of the notes, is at 76%.
+- **A long stretch of two voices.** From q52 to q99 (about 40 s) the texture is mostly two voices: the quick duet, then the slow duet. That is the plan (the dances meet two at a time, and the slow pair is meant to be tender), but it is long for a four-voice fugue.
+- **The four guises never state the subject together.**
+  - The scratch searches found no clean four-way combination within the dances' metric positions.
+  - The two slow subjects started together run in parallel tenths; they combine only with the courante a step higher and nine quarters later.
+  - Most rectus pairs of the two quick subjects clash.
+  - So the ball is four dancers with at most three statements at once.
+- **The race is the most dissonant moment:** the appoggiatura at q148, described above.
+- **Keyboard.** 13 onsets exceed two hands. Most are at q130–149, where the soprano sits at B5–C♯6 over a bass at F♯2–C♯3 with two inner voices between. The E2 pedal under the tenor's head figures (q114–120) also needs the damper pedal.
+- **One pulse for four dances is a compromise.** Quarter = 69 makes a slow gigue (dotted quarter = 69) and a stately courante (half = 34½). The bourrée at minim = 69 is a measured one. Whether listeners recognise BWV 806 depends on whether they know it.
+- **I have not heard it.** In particular I cannot say whether the three-against-four in the ball sounds like two dances or like a blur.
+
+### How it was made (disclosure)
+
+- **The notes.** Every note is a literal token string in `fugue.py`. Thematic statements are the four hand-written subject versions, their answers, the mirror forms (written out by scale degree), or explicit transforms of them: `oc` (octave), `dshift` (diatonic transposition inside A major).
+- **Scratch tools** (session scratchpad, not part of the build):
+  - **Combination searches.** These placed whole subject statements (form, diatonic level, octave, entry time restricted to each dance's metric positions) against one another and scored each pair or set by a dissonance and parallels cost. From their proposals I chose:
+    - the courante's F♯-level statement, nine quarters behind the sarabande, in the ball;
+    - the "race" relation (the allemande at the fifth, 2¹⁄₁₂ quarters after the gigue);
+    - the gigue's D-level entry in the ball.
+
+    They also showed what does not work (see "Weak spots").
+  - **Checking.** A viewer printed every attack with the sounding pitches and flagged dissonant pairs, and a wrapper ran `tools/critic.py`.
+- **No script wrote or changed a note.** All free counterpoint was written by hand. Each fault the critic or the viewer showed (parallels, unresolved dissonances, doublings) was corrected by hand, one passage at a time.
+- **Performance data computed by code.** Each voice's velocity accents are computed from its own metre. Phrase dynamics are set by bar.
+
+### From the twenty-voice version
+
+**Kept.**
+- The concept: one subject danced as the four core dances of the suite, on one pulse, with bar lines meeting every twelve quarters.
+- The per-staff time signatures.
+- The subject and the allemande, courante and gigue rhythms.
+- The reveal of the Bach bourrée.
+- The prelude, untouched.
+
+**Changed, and why.**
+- **One voice per dance.** Each dance is one voice instead of a five-part band, and it keeps its metre from its entry to the coda. Before, each section put every staff into one dance's metre, and the polymetre came only after q156. The four metres now accumulate from the second entry on, and the polymetre is between lines you can follow rather than between massed bands.
+- **One exposition.** A single four-voice exposition in suite order replaces four thin band expositions (the courante and gigue expositions were a named weakness).
+- **A new middle.** Duets (quick, then slow) and a trio of mirrors replace band-against-band episodes.
+- **A new summit.** The ground bass handed from basse to basse is gone. In its place come overlapping statements of the two slow subjects, the gigue and allemande entries, and the race. This removes the old summit's harmonic filler: every line in the ball is either a statement or a dancer in its own rhythm.
+- **The sarabande subject** is rewritten to weight beat 2.
+- **The coda.** It plays Bach at a bourrée's real pace (minim = beat, where the old coda had quarter = beat) and in Bach's own registers. Then the whole ball joins in 2/2.
+- **No script choices.** The old version let a script choose among my alternatives for most free lines; this one does not.
+
+**The numbers.**
+
+| Measure | Twenty-voice version | Now |
+|---|---|---|
+| stepwise_pct | 50.4% | 63.2% |
+| dissonance_unresolved | 11 | 0 |
+| beat_parallels | 3 | 0 |
+| low_register_seconds | 16 | 0 |
+| keyboard_unplayable_pct | 48.4% | 2.6% |
+| mean_moving_voices | 7.21 | 2.82 |
+| length | 4:05 | 2:38 |
+
+## Notation: per-staff time signatures
 
 `tools/render_music.py` now accepts an optional `metadata.score_layout.staff_meters`.
 - **Format.** A map from voice name, abbreviation or index to a list of changes `[t_quarters, num, den]`, or `[t, num, den, "2/3"]`.
@@ -118,11 +203,12 @@ There are two small exceptions. Coro II's basse sings three notes at q192–196,
   - LilyPond's `Timing_translator` moves from the Score to each Staff, so every staff can have its own bar lines.
   - Each staff's notes are split at its own bar lines.
   - `\time` is emitted per staff at each change.
-  - The optional fourth item engraves those bars inside `\scaleDurations` with a scaled `measureLength`. This is how the 12/8 gigue is written with plain eighths and dotted quarters while its dotted quarter equals the other bands' quarter.
+  - The optional fourth item engraves those bars inside `\scaleDurations` with a scaled `measureLength`. This is how the 12/8 gigue is written with plain eighths and dotted quarters while its dotted quarter equals the other staves' quarter.
   - In `duration_parts`, a dotted whole note is allowed only inside such scaled bars.
 - **Unchanged.** MusicXML, MIDI and audio still use the master metre (4/4).
 - **Backward compatibility.** When the field is absent, nothing changes. I checked this on `cycle/02-c-minor/fugue.json`: the `.ly`, `.musicxml` and `.mid` written by the old and new versions are byte-identical. The `.ly` output is also identical for every other prelude and fugue in `cycle/`.
 - **LilyPond 2.24 detail.** `Default_bar_line_engraver` does not exist in 2.24, so only `Timing_translator` is moved.
+- **In this fugue.** The staves carry 3/4 (sarabande), 4/4 (allemande), 12/8 inside `\scaleDurations 2/3` (gigue) and 3/2 (courante). From q156 every staff changes to 2/2 inside `\scaleDurations 1/2`, so that the bourrée's minim is the common quarter and its eighths are engraved as eighths.
 
 ## Prelude XIX: "Le Maître à danser"
 
@@ -141,55 +227,7 @@ Then two duets in two metres at once, the staves notated separately:
 
 Finally the tune itself: Bach's bourrée, bars 1–3, both hands at pitch, and a IV–V–I close. The prelude gives away the source that the fugue keeps until its coda. That is deliberate: the prelude is the lesson, the fugue the ball.
 
-## How it was made (disclosure)
-
-- **Writing.** Every note is a literal token string that I wrote. Thematic statements are explicit transforms (diatonic transposition and the C♯ mirror) of the four subject versions, which I wrote by hand.
-- **Scratch tools.** These are in the session scratchpad and not part of the build.
-  - **Placement search (`tsearch.py`).** It proposed placements of thematic statements (level, octave, start) against the music already written and against harmonic plans I wrote. I chose among its proposals. Example: the gigue mirror stretto levels.
-  - **Choosing among my alternatives (`alt.py`, `auto.py`).** For many free lines I wrote two to seven alternative segments (one or two beats, or one dance bar, each). A script inserted the first listed alternative whose critic cost (parallels, beat parallels, dissonances, doublings, low clashes) was at most 3 above the existing score. Where every alternative cost more than 5, it inserted a rest instead. So a script decided *which of my candidates* stands, or that a voice rests. This was used for most free lines from the gigue onward, and for parts of the summit and the coda accompaniment.
-  - **What was done by hand.** The final cadence of the fugue, the coda's inner voices and the prelude were written and checked by hand. The critic was used only to verify them.
-- **No script generated pitches.** No script altered notes to improve a number. Where a number was bad (for example low-register clashes), I rewrote the passage myself and re-checked it.
-
-## Critic (`tools/critic.py`)
-
-**Fugue** (66 bars, 20 voices):
-
-| Measure | Result | Target |
-|---|---|---|
-| parallels_error | 0 | 0 |
-| beat_parallels | 3 | ≤ 8 |
-| dissonance_unresolved | 11 | ≤ 15 |
-| bad_doublings | 2 | ≤ 8 |
-| low_register_seconds | 16 | ≤ 16 |
-| **stepwise_pct** | **50.4** | **≥ 60: missed** |
-| parallels_weak | 131 | (not targeted) |
-
-- Mean moving voices: 7.21 overall.
-- Mean moving voices by section:
-
-| Section | Mean | Per bar |
-|---|---|---|
-| Allemande | 4.0 | 1→6 |
-| Courante | 4.3 | |
-| Sarabande | 8.2 | |
-| Gigue | 4.7 | |
-| Ballo | 7.7 | |
-| Summit | 12.7 | 12 13 11 10 12 9 10 9 16 12 14 17 16 17 |
-| Coda | 6.9 | the reveal is 5 voices; the bow is 18 |
-
-- **The 3 beat parallels** are all in b55 (q216–219), between free lines in different bands: courante taille and gigue taille, allemande haute-contre and courante taille, courante dessus and the gigue basse's ground.
-- **The 11 unresolved dissonances, with their justification:**
-  - b9.4 (q35): the allemande haute-contre's D4 against the upbeat E5 of the first courante entry.
-  - b18.2 (q69): a passing B2 in the courante basse under the haute-contre's C♯5.
-  - b51.4 (q203): the courante haute-contre's A4 held under the courante dessus's B5.
-  - b52.2 (q205, ×2): the gigue dessus's G♯4 against D4 in the allemande taille and F♯5 in the courante dessus.
-  - b54.2 (q213): the gigue haute-contre's B4 against the courante dessus's A5.
-  - b56.2 (q221, ×3): the courante quinte's A3 against B3/B4 in three voices, over the B-minor ground.
-  - b57.1 and b57.3 (q225–226): the sarabande taille holds D4, then F♯4, against the allemande dessus's running D♯5 and G♯5.
-  - In each case one band holds a long note while another band's figure passes against it; this is the polymetre at work. None falls at a cadence.
-- **The 2 bad doublings** are doubled sevenths at q185 and q194, in the summit's first section, where a held note in one band and a passing note in another meet on the beat.
-
-**Prelude** (22 bars, 3 voices):
+**Critic, prelude** (22 bars, 3 voices):
 
 | Measure | Result |
 |---|---|
@@ -200,14 +238,3 @@ Finally the tune itself: Bach's bourrée, bars 1–3, both hands at pitch, and a
 | low_register_seconds | 0 |
 | unplayable onsets | 0 |
 | stepwise_pct | 48.6 |
-
-## Weak spots (what I would still improve)
-
-- **Stepwise motion is 50.4%, well under the 60% target.** The subject itself moves by step only about half the time (its zigzag of thirds is Bach's head). Inner parts in a twenty-voice texture leap between chord tones. The sarabande and courante accompaniments use repeated notes (6.2% of intervals). A next edition should rewrite the free lines of the courante, sarabande and summit with more scalar motion, and fewer re-struck notes in the sustained bands.
-- **The summit reaches 16 or more real lines in only four bars** (b54, b57–59). Its middle (b51–53, the F♯-minor courante ground) drops to 9–10.
-- **The summit's free lines are often harmonic filler.** They were chosen to be correct in a dense texture, not always to be beautiful lines. Weak (off-beat) parallels are numerous (131).
-- **The expositions are thin by design.** Courante and gigue average 4–5 voices. The courante section in particular (b10–21) is long for its density.
-- **66 bars, a little under the brief's 70.** At 4:05 the duration is inside the 4–5-minute range.
-- **The gigue's final cadence.** The last bass mirror reaches the tonic on beat 4 of the 12/8 bar (q155), and the ballo enters on the next downbeat. In the score this reads as an elision; I have not heard whether it sounds like one.
-- **Low register.** The allemande-mirror ground in the last section (B1, sixteenths down to F♯2) still makes some low seconds against the quinte parts. The count is exactly at the limit (16).
-- **Notation.** The per-staff metres engrave correctly. But the open score is dense on A2, and the gigue staves inside `\scaleDurations` show no triplet brackets, by design.
