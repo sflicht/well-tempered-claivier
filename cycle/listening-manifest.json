@@ -137,7 +137,7 @@
    ]
   },
   {
-   "name": "Pair VIII \u00b7 E-flat minor (rebuilt, nine voices)",
+   "name": "Pair VIII \u00b7 E-flat minor (rebuilt)",
    "pieces": [
     {
      "id": "prelude-8",
@@ -148,10 +148,10 @@
     },
     {
      "id": "fugue-8",
-     "title": "Fugue VIII \u00b7 nine real voices",
-     "score": "cycle/08-e-flat-minor/archive-n-plus-1/fugue.json",
+     "title": "Fugue VIII \u00b7 Stretto over the slow voice (4 voices)",
+     "score": "cycle/08-e-flat-minor/fugue.json",
      "tag": "fixed",
-     "notes": "The subject's first six notes are the head of Bach's D-sharp-minor fugue subject (BWV 853), now credited. All nine voices enter in the exposition at shrinking distances, including a subject and its inversion one beat apart. The middle has augmentations, a 'dance' episode in which subject and countersubject run in sixteenths and thirty-seconds, and a false return in mirror image.\n\nA chain of entries one beat apart climbs to a bar of silence. Then comes the arrival: one nine-voice chord whose every note begins a line, over the bass of the arrival Sam liked in the second draft, now singing the subject at quarter speed. Eleven more statements, upright, inverted and augmented, sound above it with all nine voices moving for seven bars. A deceptive cadence leads to a quiet C-flat interlude. Then Bach's complete subject enters as a guest under ours, with the prelude's melody in the bass.\n\nAgainst the old 100-bar version: parallel fifths/octaves 218 -> 0, accented parallels 294 -> 0, low-register clashes 286 -> 11.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
+     "notes": "The subject's first six notes are the head of Bach's D-sharp-minor fugue subject (BWV 853), here in E-flat minor. Soprano, alto and tenor sing the fugue at normal speed, as Bach's three voices do; the bass is the slow voice and never sings the subject at normal speed: at half speed as the fourth entry of the exposition, the inversion at half speed later, the subject at quarter speed under the stretto, and the prelude's melody under Bach's subject at the end. It rests in between, so each return stands out.\n\nAlong the way: the subject and its inversion as a mirror in G-flat major, a 'dance' episode in diminution, and a quiet surprise in C-flat major entered by a deceptive cadence and left through A-flat minor. The stretto: after a bar of silence the bass and soprano start the subject together, one at quarter speed and one at normal speed, and four more entries follow one at a time, each after a rest and in its own register, the soprano peaking on its highest note as the slow bass arrives. Then Bach's complete subject enters alone in the soprano, revealing where ours came from, over the prelude's melody in the bass; the head of our subject has the last word, ending in major.\n\nRecomposed in four voices (it was nine); the earlier version is in the pair's archive folder."
     }
    ]
   },
@@ -213,9 +213,9 @@
     {
      "id": "fugue-11",
      "title": "Fugue XI \u00b7 Concerto fuga a 12",
-     "score": "cycle/11-f-major/fugue.json",
+     "score": "cycle/11-f-major/archive-n-plus-1/fugue.json",
      "tag": "new",
-     "notes": "After the fugal finale of Brandenburg Concerto No. 2 in F major (BWV 1047): a concertino of four solo lines (named Tromba, Flauto, Oboe, Violino) against a ripieno of eight separate real lines. The subject is a fanfare head with repeated notes and a running tail. Its inversion keeps the F-major triad, so the upright and inverted subject can run in stretto a beat apart.\n\nThe joke (bars 41-47): the trumpet keeps hammering its tattoo on C while everyone else modulates away, through C minor, F, D minor and A, landing in E major. The trumpet then blurts its head in F, a semitone off everything. General pause. The band holds its E chord, the bass corrects the trumpet (E E | A), and the trumpet echoes meekly. Its tattoo returns on C over the final dominant, where C is finally right.\n\nThe 'tutti in twelve' (bars 53-57) has a concertino stretto a beat apart, the inversion augmented in the violone, inversions in the inner ripieno, and the countersubject four times in diminution, with 10-11 of the twelve lines moving in every bar."
+     "notes": "After the fugal finale of Brandenburg Concerto No. 2 in F major (BWV 1047): a concertino of four solo lines (named Tromba, Flauto, Oboe, Violino) against a ripieno of eight separate real lines. The subject is a fanfare head with repeated notes and a running tail. Its inversion keeps the F-major triad, so the upright and inverted subject can run in stretto a beat apart.\n\nThe joke (bars 41-47): the trumpet keeps hammering its tattoo on C while everyone else modulates away, through C minor, F, D minor and A, landing in E major. The trumpet then blurts its head in F, a semitone off everything. General pause. The band holds its E chord, the bass corrects the trumpet (E E | A), and the trumpet echoes meekly. Its tattoo returns on C over the final dominant, where C is finally right.\n\nThe 'tutti in twelve' (bars 53-57) has a concertino stretto a beat apart, the inversion augmented in the violone, inversions in the inner ripieno, and the countersubject four times in diminution, with 10-11 of the twelve lines moving in every bar.\n\n(This is the earlier, larger version; a recomposition under the new voice rule is in progress.)"
     }
    ]
   },
