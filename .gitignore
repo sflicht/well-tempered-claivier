@@ -50,3 +50,10 @@ recovered-full-cycle/
 !cycle/**/renders/*.pdf
 !cycle/**/renders/*.mid
 !cycle/**/renders/*.musicxml
+!extras/**/renders/*.mp3
+!extras/**/renders/*.mp4
+!extras/**/renders/*.pdf
+!extras/**/renders/*.mid
+!extras/**/renders/*.musicxml
+!extras/**/renders/*.png
+!extras/**/renders/strip/*.png
