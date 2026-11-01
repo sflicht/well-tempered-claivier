@@ -233,7 +233,7 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
   - `\time` is emitted per staff at each change.
   - The optional fourth item engraves those bars inside `\scaleDurations` with a scaled `measureLength`. This is how the 12/8 gigue is written with plain eighths and dotted quarters while its dotted quarter equals the other staves' quarter.
   - In `duration_parts`, a dotted whole note is allowed only inside such scaled bars.
-- **Unchanged.** MusicXML, MIDI and audio still use the master metre (4/4).
+- **Unchanged.** MIDI and audio still use the master metre (4/4). (Since November 2026 the MusicXML carries the per-staff metres too; see the end of this file.)
 - **Backward compatibility.** When the field is absent, nothing changes. I checked this on `cycle/02-c-minor/fugue.json`: the `.ly`, `.musicxml` and `.mid` written by the old and new versions are byte-identical. The `.ly` output is also identical for every other prelude and fugue in `cycle/`.
 - **LilyPond 2.24 detail.** `Default_bar_line_engraver` does not exist in 2.24, so only `Timing_translator` is moved.
 - **In this fugue.** The staves carry 3/4 (sarabande), 4/4 (allemande), 12/8 inside `\scaleDurations 2/3` (gigue) and 3/2 (courante). From q156 every staff changes to 2/2 inside `\scaleDurations 1/2`, so that the bourrée's minim is the common quarter and its eighths are engraved as eighths.
@@ -283,8 +283,11 @@ or metre, and no subject or quoted note changes.
   the left hand has E3 and the tenor's A3 (the six-four's fourth, falling to G♯3) and the right hand the
   alto's E5 and the soprano's C♯6. The bass still falls a fifth, E3 to A2, into the last chord. This bass is
   my own continuation after the quoted bars (from q168), so Bach's notes are untouched.
-- **MusicXML metres.** The review's point that the MusicXML export gives all four parts 4/4 belongs to the
-  shared export tool, not to this pair's sources; the per-staff metres are in `fugue.json` and the PDF.
+- **MusicXML metres.** The review's point that the MusicXML export gave all four parts 4/4 belonged to the
+  shared export tool, and is fixed there (commit b675839): each part now has its own time signatures and
+  bar lines (Sarabande 3/4, Allemande 4/4, Gigue 12/8 with its notes as 3:2 tuplets, Courante 3/2, then
+  2/2 for all at q156), with the metric equivalences printed in the MusicXML and the PDF.
+  `tools/test_notation_export.py` checks the metre changes and every sounding onset.
 
 Critic before → after: reach_errors 2 → 0; keyboard_unplayable_pct 1.9 → 1.2; unresolved 0 → 0; unverified
 0 → 0; parallels 0/0, beat-to-beat 0, bad doublings 0, low-register 0, crossings 0; no melody flags; stepwise
