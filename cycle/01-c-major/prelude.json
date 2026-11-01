@@ -560,7 +560,385 @@
     ]
    ],
    "rule": "A = (1-g)[q==p] + g*exp(-((q-c)/s)^2/2); v = v_written*sqrt(A); drop v<9"
-  }
+  },
+  "doublings": [
+   [
+    "Bass / oct 0",
+    "Bass / oct 1"
+   ],
+   [
+    "Bass / oct 0",
+    "Bass / oct 2"
+   ],
+   [
+    "Bass / oct 0",
+    "Bass / oct 3"
+   ],
+   [
+    "Bass / oct 0",
+    "Bass / oct 4"
+   ],
+   [
+    "Bass / oct 0",
+    "Bass / oct 5"
+   ],
+   [
+    "Bass / oct 0",
+    "Bass / oct 6"
+   ],
+   [
+    "Bass / oct 1",
+    "Bass / oct 2"
+   ],
+   [
+    "Bass / oct 1",
+    "Bass / oct 3"
+   ],
+   [
+    "Bass / oct 1",
+    "Bass / oct 4"
+   ],
+   [
+    "Bass / oct 1",
+    "Bass / oct 5"
+   ],
+   [
+    "Bass / oct 1",
+    "Bass / oct 6"
+   ],
+   [
+    "Bass / oct 2",
+    "Bass / oct 3"
+   ],
+   [
+    "Bass / oct 2",
+    "Bass / oct 4"
+   ],
+   [
+    "Bass / oct 2",
+    "Bass / oct 5"
+   ],
+   [
+    "Bass / oct 2",
+    "Bass / oct 6"
+   ],
+   [
+    "Bass / oct 3",
+    "Bass / oct 4"
+   ],
+   [
+    "Bass / oct 3",
+    "Bass / oct 5"
+   ],
+   [
+    "Bass / oct 3",
+    "Bass / oct 6"
+   ],
+   [
+    "Bass / oct 4",
+    "Bass / oct 5"
+   ],
+   [
+    "Bass / oct 4",
+    "Bass / oct 6"
+   ],
+   [
+    "Bass / oct 5",
+    "Bass / oct 6"
+   ],
+   [
+    "Tenor / oct 0",
+    "Tenor / oct 1"
+   ],
+   [
+    "Tenor / oct 0",
+    "Tenor / oct 2"
+   ],
+   [
+    "Tenor / oct 0",
+    "Tenor / oct 3"
+   ],
+   [
+    "Tenor / oct 0",
+    "Tenor / oct 4"
+   ],
+   [
+    "Tenor / oct 0",
+    "Tenor / oct 5"
+   ],
+   [
+    "Tenor / oct 0",
+    "Tenor / oct 6"
+   ],
+   [
+    "Tenor / oct 0",
+    "Tenor / oct 7"
+   ],
+   [
+    "Tenor / oct 1",
+    "Tenor / oct 2"
+   ],
+   [
+    "Tenor / oct 1",
+    "Tenor / oct 3"
+   ],
+   [
+    "Tenor / oct 1",
+    "Tenor / oct 4"
+   ],
+   [
+    "Tenor / oct 1",
+    "Tenor / oct 5"
+   ],
+   [
+    "Tenor / oct 1",
+    "Tenor / oct 6"
+   ],
+   [
+    "Tenor / oct 1",
+    "Tenor / oct 7"
+   ],
+   [
+    "Tenor / oct 2",
+    "Tenor / oct 3"
+   ],
+   [
+    "Tenor / oct 2",
+    "Tenor / oct 4"
+   ],
+   [
+    "Tenor / oct 2",
+    "Tenor / oct 5"
+   ],
+   [
+    "Tenor / oct 2",
+    "Tenor / oct 6"
+   ],
+   [
+    "Tenor / oct 2",
+    "Tenor / oct 7"
+   ],
+   [
+    "Tenor / oct 3",
+    "Tenor / oct 4"
+   ],
+   [
+    "Tenor / oct 3",
+    "Tenor / oct 5"
+   ],
+   [
+    "Tenor / oct 3",
+    "Tenor / oct 6"
+   ],
+   [
+    "Tenor / oct 3",
+    "Tenor / oct 7"
+   ],
+   [
+    "Tenor / oct 4",
+    "Tenor / oct 5"
+   ],
+   [
+    "Tenor / oct 4",
+    "Tenor / oct 6"
+   ],
+   [
+    "Tenor / oct 4",
+    "Tenor / oct 7"
+   ],
+   [
+    "Tenor / oct 5",
+    "Tenor / oct 6"
+   ],
+   [
+    "Tenor / oct 5",
+    "Tenor / oct 7"
+   ],
+   [
+    "Tenor / oct 6",
+    "Tenor / oct 7"
+   ],
+   [
+    "Figure 1 / oct 2",
+    "Figure 1 / oct 3"
+   ],
+   [
+    "Figure 1 / oct 2",
+    "Figure 1 / oct 4"
+   ],
+   [
+    "Figure 1 / oct 2",
+    "Figure 1 / oct 5"
+   ],
+   [
+    "Figure 1 / oct 2",
+    "Figure 1 / oct 6"
+   ],
+   [
+    "Figure 1 / oct 2",
+    "Figure 1 / oct 7"
+   ],
+   [
+    "Figure 1 / oct 3",
+    "Figure 1 / oct 4"
+   ],
+   [
+    "Figure 1 / oct 3",
+    "Figure 1 / oct 5"
+   ],
+   [
+    "Figure 1 / oct 3",
+    "Figure 1 / oct 6"
+   ],
+   [
+    "Figure 1 / oct 3",
+    "Figure 1 / oct 7"
+   ],
+   [
+    "Figure 1 / oct 4",
+    "Figure 1 / oct 5"
+   ],
+   [
+    "Figure 1 / oct 4",
+    "Figure 1 / oct 6"
+   ],
+   [
+    "Figure 1 / oct 4",
+    "Figure 1 / oct 7"
+   ],
+   [
+    "Figure 1 / oct 5",
+    "Figure 1 / oct 6"
+   ],
+   [
+    "Figure 1 / oct 5",
+    "Figure 1 / oct 7"
+   ],
+   [
+    "Figure 1 / oct 6",
+    "Figure 1 / oct 7"
+   ],
+   [
+    "Figure 2 / oct 2",
+    "Figure 2 / oct 3"
+   ],
+   [
+    "Figure 2 / oct 2",
+    "Figure 2 / oct 4"
+   ],
+   [
+    "Figure 2 / oct 2",
+    "Figure 2 / oct 5"
+   ],
+   [
+    "Figure 2 / oct 2",
+    "Figure 2 / oct 6"
+   ],
+   [
+    "Figure 2 / oct 2",
+    "Figure 2 / oct 7"
+   ],
+   [
+    "Figure 2 / oct 3",
+    "Figure 2 / oct 4"
+   ],
+   [
+    "Figure 2 / oct 3",
+    "Figure 2 / oct 5"
+   ],
+   [
+    "Figure 2 / oct 3",
+    "Figure 2 / oct 6"
+   ],
+   [
+    "Figure 2 / oct 3",
+    "Figure 2 / oct 7"
+   ],
+   [
+    "Figure 2 / oct 4",
+    "Figure 2 / oct 5"
+   ],
+   [
+    "Figure 2 / oct 4",
+    "Figure 2 / oct 6"
+   ],
+   [
+    "Figure 2 / oct 4",
+    "Figure 2 / oct 7"
+   ],
+   [
+    "Figure 2 / oct 5",
+    "Figure 2 / oct 6"
+   ],
+   [
+    "Figure 2 / oct 5",
+    "Figure 2 / oct 7"
+   ],
+   [
+    "Figure 2 / oct 6",
+    "Figure 2 / oct 7"
+   ],
+   [
+    "Figure 3 / oct 2",
+    "Figure 3 / oct 3"
+   ],
+   [
+    "Figure 3 / oct 2",
+    "Figure 3 / oct 4"
+   ],
+   [
+    "Figure 3 / oct 2",
+    "Figure 3 / oct 5"
+   ],
+   [
+    "Figure 3 / oct 2",
+    "Figure 3 / oct 6"
+   ],
+   [
+    "Figure 3 / oct 2",
+    "Figure 3 / oct 7"
+   ],
+   [
+    "Figure 3 / oct 3",
+    "Figure 3 / oct 4"
+   ],
+   [
+    "Figure 3 / oct 3",
+    "Figure 3 / oct 5"
+   ],
+   [
+    "Figure 3 / oct 3",
+    "Figure 3 / oct 6"
+   ],
+   [
+    "Figure 3 / oct 3",
+    "Figure 3 / oct 7"
+   ],
+   [
+    "Figure 3 / oct 4",
+    "Figure 3 / oct 5"
+   ],
+   [
+    "Figure 3 / oct 4",
+    "Figure 3 / oct 6"
+   ],
+   [
+    "Figure 3 / oct 4",
+    "Figure 3 / oct 7"
+   ],
+   [
+    "Figure 3 / oct 5",
+    "Figure 3 / oct 6"
+   ],
+   [
+    "Figure 3 / oct 5",
+    "Figure 3 / oct 7"
+   ],
+   [
+    "Figure 3 / oct 6",
+    "Figure 3 / oct 7"
+   ]
+  ]
  },
  "voices": [
   {

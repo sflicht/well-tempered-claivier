@@ -75,7 +75,7 @@ Bar numbers are 4/4 bars of the file; "q" is the quarter position.
 
 ### The ball (q120–156), and where to hear the device
 
-All four voices dance from q120 to q156; each statement enters after a rest in its own voice. The gigue is silent for a beat and two thirds before each of its two entries (q124–125⅔ and q142–143⅔). The courante begins the ball in its own rhythm (A. B C♯. D | E, as in its subject's first bar).
+All four voices dance from q120 to q156; each statement enters after a rest in its own voice. The gigue is silent for a beat and two thirds before each of its two entries (q124–125⅔ and q142–143⅔), and the courante for two beats before its own (q129–131). The courante begins the ball in its own rhythm (A. B C♯. D | E, as in its subject's first bar).
 
 | q | Statement | Voice |
 |---|---|---|
@@ -120,10 +120,11 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
 | bad_doublings | 0 | ≤ 2 |
 | low_register_seconds | 0 | ≤ 9 |
 | crossings | 0 | few |
-| **stepwise_pct** | **63.0** | **≥ 65: missed** |
-| leap_4th_plus_pct | 11.2 | |
+| **stepwise_pct** | **63.2** | **≥ 65: missed** |
+| leap_4th_plus_pct | 10.9 | |
 | pc_tripled_on_beats_pct | 8.1 (mostly the held final chord, A2 A3 C♯5 A5, and the tonic bars of the coda) | |
-| keyboard_unplayable_pct | 1.9 (10 of 521 onsets) | < 5 |
+| reach_errors | 0 (2 before Nov 2026) | 0 |
+| keyboard_unplayable_pct | 1.2 (6 of 521 onsets) | < 5 |
 | mean_moving_voices | 2.91 | |
 
 - **Moving voices per bar, by section:** exposition 2.4 (1 → 4), quick duet 2.5, slow duet 2.4, trio 2.75, ball 4.0 (all nine bars), coda 3.5.
@@ -145,7 +146,7 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
 
 ### Weak spots (honest)
 
-- **Stepwise motion is 63.0%, under the 65% target.**
+- **Stepwise motion is 63.2%, under the 65% target.**
   - The subject moves by step in only 7 of its 13 intervals.
   - The gigue's free lines are long–short chord figures.
   - The courante is a harmonic bass: 27% of its intervals are leaps of a fourth or more.
@@ -159,7 +160,7 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
   - Most rectus pairs of the two quick subjects clash.
   - So the ball is four dancers with at most three statements at once.
 - **The race is the most dissonant moment:** the appoggiatura at q148, described above.
-- **Keyboard.** 10 onsets exceed two hands. Most are at q130–149, where the soprano sits at B5–C♯6 over a bass at F♯2–C♯3 with two inner voices between. The E2 pedal under the tenor's head figures (q114–120) also needs the damper pedal.
+- **Keyboard.** Every attack is within reach of two hands. Six onsets have more *sounding* notes than two hands can hold, mostly at q130–149, where the soprano sits at B5–C♯6 over a bass at F♯2–C♯3 with two inner voices between: a held note there must be caught by the pedal. The E2 pedal under the tenor's head figures (q114–120) also needs the damper pedal.
 - **One pulse for four dances is a compromise.** Quarter = 69 makes a slow gigue (dotted quarter = 69) and a stately courante (half = 34½). The bourrée at minim = 69 is a measured one. Whether listeners recognise BWV 806 depends on whether they know it.
 - **I have not heard it.** In particular I cannot say whether the three-against-four in the ball sounds like two dances or like a blur.
 
@@ -232,7 +233,7 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
   - `\time` is emitted per staff at each change.
   - The optional fourth item engraves those bars inside `\scaleDurations` with a scaled `measureLength`. This is how the 12/8 gigue is written with plain eighths and dotted quarters while its dotted quarter equals the other staves' quarter.
   - In `duration_parts`, a dotted whole note is allowed only inside such scaled bars.
-- **Unchanged.** MusicXML, MIDI and audio still use the master metre (4/4).
+- **Unchanged.** MIDI and audio still use the master metre (4/4). (Since November 2026 the MusicXML carries the per-staff metres too; see the end of this file.)
 - **Backward compatibility.** When the field is absent, nothing changes. I checked this on `cycle/02-c-minor/fugue.json`: the `.ly`, `.musicxml` and `.mid` written by the old and new versions are byte-identical. The `.ly` output is also identical for every other prelude and fugue in `cycle/`.
 - **LilyPond 2.24 detail.** `Default_bar_line_engraver` does not exist in 2.24, so only `Timing_translator` is moved.
 - **In this fugue.** The staves carry 3/4 (sarabande), 4/4 (allemande), 12/8 inside `\scaleDurations 2/3` (gigue) and 3/2 (courante). From q156 every staff changes to 2/2 inside `\scaleDurations 1/2`, so that the bourrée's minim is the common quarter and its eighths are engraved as eighths.
@@ -265,3 +266,29 @@ Finally the tune itself: Bach's bourrée, bars 1–3, both hands at pitch, and a
 | low_register_seconds | 0 |
 | unplayable onsets | 0 |
 | stepwise_pct | 48.6 |
+
+## Review response (Nov 2026)
+
+1 November 2026. The owner's review of PR #1 found no conspicuous three-register impossibilities here but said
+some held notes may need pedal; the corrected critic found two attacks no division between two hands can strike,
+both by one semitone (17 in a hand). Both are fixed in the courante's free notes; no dance changes its rhythm
+or metre, and no subject or quoted note changes.
+
+- **q129 (bar 33, the ball).** The courante's free B2 under the sarabande's B5 left the gigue's F♯4 (inside its
+  D-level subject) out of reach of either hand. The courante now rests for two beats before its subject
+  (q129–131) instead of playing B2 and resting one beat, so its entry on F♯2 comes after a longer rest, like
+  every entry in the ball. (Holding E3 instead would have fitted the hands but made a seventh leap into the
+  entry.)
+- **q174 (bar 44, the last cadence).** Under the bourrée's close the courante's dominant is E3, not E2, so
+  the left hand has E3 and the tenor's A3 (the six-four's fourth, falling to G♯3) and the right hand the
+  alto's E5 and the soprano's C♯6. The bass still falls a fifth, E3 to A2, into the last chord. This bass is
+  my own continuation after the quoted bars (from q168), so Bach's notes are untouched.
+- **MusicXML metres.** The review's point that the MusicXML export gave all four parts 4/4 belonged to the
+  shared export tool, and is fixed there (commit b675839): each part now has its own time signatures and
+  bar lines (Sarabande 3/4, Allemande 4/4, Gigue 12/8 with its notes as 3:2 tuplets, Courante 3/2, then
+  2/2 for all at q156), with the metric equivalences printed in the MusicXML and the PDF.
+  `tools/test_notation_export.py` checks the metre changes and every sounding onset.
+
+Critic before → after: reach_errors 2 → 0; keyboard_unplayable_pct 1.9 → 1.2; unresolved 0 → 0; unverified
+0 → 0; parallels 0/0, beat-to-beat 0, bad doublings 0, low-register 0, crossings 0; no melody flags; stepwise
+63.0 → 63.2 %. The prelude and the string render script are unchanged. Renders not yet redone.

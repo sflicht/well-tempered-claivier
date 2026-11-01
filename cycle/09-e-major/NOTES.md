@@ -246,7 +246,7 @@ circle is the same.
 | 45 | 1:51 | S A | **L3**: our head in half the time (E5 A5), soprano | A (IV) |
 | 46 | 1:53 | T B | **R3**: the guest's head in half the time (F♯3 G♯3 B3), bass | f♯ (ii) |
 | 47 | 1:56 | S A / T B | **L4, R4**: half a bar each. The rising fourth (alto F♯4 B4); the guest's 1–2–4 in eighths and a quarter (tenor F♯3 G♯3 B3) | V |
-| 48–53 | 1:58 | S A T B (T rests in b52) | **Final tutti.** Soprano: the guest as a long-note cantus, ×2 (E5 for two bars, then F♯5 A5 G♯5 F♯5, a bar each). Our subject goes round the ring beneath it, clockwise: alto on E4 (48.1), tenor on B3 a beat later (48.2), bass on B2 (50.1, after half a bar's rest, at its exposition pitch). The bass's subject ends on V (53) under the cantus's F♯5 | E |
+| 48–53 | 1:58 | S A T B (T rests in b52) | **Final tutti.** Soprano: the guest as a long-note cantus, ×2 (E5 for two bars, then F♯5 A5 G♯5 F♯5, a bar each). Our subject goes round the ring beneath it, clockwise: alto on E4 (48.1), tenor on B3 a beat later (48.2), bass on B2 (50.3, growing out of a tonic pedal E3 held from 48.1, at its exposition pitch; see Review response, Nov 2026). The bass's subject reaches V at 53.3 under the cantus's F♯5 | E |
 | 54–57.1 | 2:14 | S A T B | **Coda.** The cantus's last note, E5 (54.1), is the first note of our subject, in the voice that brought the guest. The subject is on E (its plagal form), over I – IV6 – I6/4 – ii6 – V7 – ii – V7 – I | E |
 | 57.3–58 | 2:25 | S A T B | Plagal Amen (IV – I) under the held E5 | E |
 
@@ -563,3 +563,21 @@ them is under "From the N+1 version" above. The prelude items, as they were:
 | Prelude: bad doublings | 6 | 1 |
 | Prelude: beyond two hands | 0 % | 1.8 % (drone, sostenuto) |
 | Prelude: drift per cycle / purity | −21.51 c / 0.001 c | unchanged |
+
+## Review response (Nov 2026)
+
+**The final tutti (b48–54).** The stricter dissonance check found one unresolved dissonance, at b50.3. The bass's subject entered on B2 at 50.1. Its held E3 then sounded under the cantus's F♯5, a ninth with every voice thematic. It stepped to D♯3 only after the cantus had climbed to A5, so its resolution made a tritone.
+
+I tried the bass's entry at seven places, 49.1 to 50.3. The cleanest is half a bar later, out of a longer tonic pedal:
+- The bass's E3 now lasts from 48.1 to 50.3, so the cantus's F♯5 at 50.1 sounds as V over I.
+- The subject grows straight out of the pedal (E3–B2–E3), entering at 50.3.
+- Its E3 arrives together with the cantus's A5.
+- Its tail walks D♯ C♯ B A G♯ F♯ G♯ A B into the coda's E, so the bass ends 3–4–5–1.
+- The alto's free notes after its subject are now F♯4 E4 F♯4 D♯4. They were D♯4 E4 D♯4, which would now make octaves with the bass's D♯3.
+
+The cost: the bass no longer breathes before its last entry, and the dominant arrives at 53.3 instead of 53.1.
+
+**Numbers.**
+- Unresolved 1 → 0, unverified 1 → 0, low-register seconds 1 → 0 (the b50.3½ second is gone), keyboard still 0 %, stepwise 73.8 → 73.5.
+- All 22 declared statements still match their form.
+- The section map gives the new entry. The method note and the Review section above describe the earlier placement at 50.1.

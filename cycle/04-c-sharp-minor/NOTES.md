@@ -257,3 +257,21 @@ Three points were implemented. The augmented crux in the bass (bars 35-41) is un
 **Not done.**
 - REVIEW-2 F3 (the pedal stretto in three octaves, bars 44-46) still produces the one beat parallel and the one bad doubling.
 - REVIEW-2 P3 (the bare-octave final bar) is unchanged.
+
+## Review response (Nov 2026)
+
+The owner's review says the high/low spread at the summit (bars 41–42) is a practical obstacle and should be revoiced before relying on velocities. The corrected critic agrees:
+- 41.1 was struck C♯2 C♯3 E4 G♯4 C♯6 (one hand would need 21 semitones);
+- 42.1 was struck F♯2 F♯3 C♯4 A4 A5 (19).
+
+The revoicing below keeps every note of the augmented crux and of the soprano's line. Each struck chord now fits two hands even counting the held notes, except the crux's bass, which the sostenuto pedal holds as before.
+- **40.3–4.** The alto's A4, the flat ninth over V, now resolves to G♯4 on the last eighth of bar 40, as a 9–8 under the soprano's G♯5. It no longer resolves on the summit's downbeat. Resolving on 40.3 instead would have made octaves with the soprano.
+- **41.1.** The alto rises to E5 and the tenor breathes for one beat. The summit is struck C♯2 C♯3 | E5 C♯6: the left hand takes the crux and its octave, the right hand the soprano's peak with the third under it. On beat 2 the tenor enters on G♯3 and the alto falls to C♯5, completing C♯m7 and then, with the Br's E♯3, C♯7.
+- **42.1.** The alto's C♯5 is held into bar 42 and the tenor steps G♯3–A3, so iv is struck F♯2 F♯3 A3 | A5. The alto's figure in bar 42 now starts C♯5 B4 C♯5 D5 instead of A4 B4 C♯5 D5. Against the soprano's dotted fall, the alto now turns and then rises; before, it only rose.
+- **The cost.** The arrival has four sounding voices for one beat (five from beat 2). I prefer that to a summit no pianist can strike.
+- **b5.2, newly counted as unresolved.** The soprano's A5, a seventh over the subject's B3, stepped to G♯5 over the tenor's F♯4. The soprano now holds B5 a beat longer and takes A5 on the B7 (`B5:6 A5:4 G#5:2`).
+- **The delayed Picardy third (bar 50)** is unchanged, as the review asks.
+
+**Numbers.**
+- Reach errors 2 → 0, unresolved 1 → 0, unverified 2 → 2, keyboard 14.1 % → 13.1 %.
+- Parallels (0), beat parallels (1, 45.2), bad doublings (1, 44.3) and low-register seconds (4) are unchanged.

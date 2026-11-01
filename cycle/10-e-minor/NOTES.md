@@ -200,3 +200,15 @@ The third review found nothing for the critic to report and ranked the fugue the
 
 Critic after the changes: parallels 0 / 0, beat parallels 0, unresolved 0, bad doublings 0, low-register seconds 0, crossings 0, stepwise 67.7 %, keyboard-unplayable 0 of 670 onsets, mean moving voices 2.55. Every note was written by hand; a scratch script only counted the perfect intervals in the stretto. Renders rebuilt: `fugue.*` (Bach/Lehman), `fugue-equal.mp3`, `fugue-spatial.mp3` (`--layout score --program 53`).
 
+
+## Review response (Nov 2026)
+
+**Fugue, b45.4½.** In the final stretto, the lower neighbour D♯4 of Coro I's subject sounded a diminished octave against the chorale's held D6 ("Erbarm dich"). The stricter check counts this as unresolved. The neighbour is now D natural (E E D E), as the subject already takes D natural against the chorale at b8 and b19. The cadential leading tone D♯4–E4 at 47.3 stays. Unresolved 1 → 0. The theme check now reads 14/16 intervals for this entry, which its label declares.
+
+**Prelude, b21.1 and b27.1: kept.** These two downbeats are newly counted as unresolved. Both are the hand-exchanged statements of the Presto (bars 20–21 and 26–27).
+- The counter-line resolves its leading tone on the downbeat (A♯4–B4, D♯4–E4), while the motive's head note (F♯4, B3), the subject's skeleton, lies a fourth below.
+- In bars 18–19 the same two notes are a fifth apart. Exchanging the hands at the octave turns that fifth into a fourth.
+- What sounds is a tonic 6/4, arpeggiated within one sixteenth: the motive steps to the leading tone under it and on to the third. It is not a dissonance waiting for a resolution.
+- Changing either note would break the counter-line's leading-tone resolution or the motive's skeleton.
+
+**Not done.** The review's other point for X is a listening question: does the inversion-plus-chorale combination keep both arguments recognisable? I made no change for it.

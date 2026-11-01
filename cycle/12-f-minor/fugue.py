@@ -151,7 +151,9 @@ put('T', 6, 3, 'Ab3:8')
 seq('T', 7, 'G3:8 E3:8', 'F3:8 R:8', 'R:8 Ab3:8', 'G3:8 Bb3:8', 'Ab3:8 F3:8~', 'F3:8 E3:8')
 # Alto after its answer
 put('A', 8, 3, 'Eb4:8')
-seq('A', 9, 'Db4:12 C4:4~', 'C4:8 Eb4:8', 'C4:16', 'Db4:8 C4:8', 'E4:4 R:12')
+# (b10-11: the alto's E-flat is tied over the bass's final F as a 7-6 suspension; a fresh C4 there, under
+# the soprano's F5 and over the bass's F2, was out of reach of two hands.)
+seq('A', 9, 'Db4:12 C4:4~', 'C4:8 Eb4:8~', 'Eb4:4 Db4:4 C4:8', 'Db4:8 C4:8', 'E4:4 R:12')
 # Bass after its subject: i6 - ii65 - V (half cadence, b13)
 put('B', 11, 3, 'Ab2:8')
 seq('B', 12, 'Bb2:8 C3:8~', 'C3:4 R:12')
@@ -218,13 +220,15 @@ seq('B', Q4 + 7, 'C3:8 R:8')
 V5 = 50
 theme('A', V5, 1, MT, 'main theme')
 # the augmentation's last note is held on as the tonic pedal of the close, re-struck where the music needs its
-# bass (b61.1 as the subjects end, b63.3 at the coda, b66.1 with the last chord): a piano's F2 dies away.
-theme('Q', V5 + 1, 1, octv(MT_AUG, -2).rsplit(' ', 1)[0] + ' F2:32 F2:40 F2:40 F2:12', 'main theme in augmentation (fifth voice)', 9)
+# bass (b61.1 as the main theme ends, b63.1 with S1's last note, b66.1 with the last chord): a piano's F2 dies
+# away.  Each re-strike falls where the other fresh notes lie within reach of the hands (the coda's first chord,
+# b63.3, is struck over the pedal, not with it).
+theme('Q', V5 + 1, 1, octv(MT_AUG, -2).rsplit(' ', 1)[0] + ' F2:32 F2:32 F2:48 F2:12', 'main theme in augmentation (fifth voice)', 9)
 # The fifth voice enters alone under the alto.  Then the tenor (V - i6/4 - V7 - i6 - iv4/2 - i), and with
 # the bass over the augmentation's E and G (i - vii-dim7 - i - V4/3 - i6)
-seq('T', V5 + 2, 'G3:8 Ab3:8', 'C4:8 Bb3:8', 'Ab3:8 C4:8', 'Db4:8 Bb3:8', 'C4:8 R:8')
+seq('T', V5 + 2, 'G3:8 Ab3:8', 'C4:8 Bb3:8', 'Ab3:8 C4:8', 'Db4:8 Bb3:8', 'C4:8 Bb3:8', 'C4:8 R:8')
 put('B', V5 + 4, 3, 'Ab3:8')
-seq('B', V5 + 5, 'G3:16', 'Ab3:8 Bb3:8', 'C4:8 R:8')
+seq('B', V5 + 5, 'G3:16', 'Ab3:8 R:8')
 put('A', V5 + 6, 3, 'Db5:8')
 put('A', V5 + 7, 1, 'C5:4')
 # The quadruple combination over the end of the augmentation and its pedal: five voices, four subjects.
@@ -232,13 +236,16 @@ put('A', V5 + 7, 1, 'C5:4')
 # from the top S2 (an octave higher, the soprano's return), B-A-C-H, the main theme (tenor, in canon with its
 # own augmentation below), S1 (an octave higher), and the fifth voice.
 QV = V5 + 7
-theme('T', QV, 1, MT, 'main theme (with its augmentation)')
+# (Nov 2026: the main theme and S1 exchange octaves and voices.  With S1 in the bass at F3-C4, its C4 at b59.1
+# fell between the fifth voice's F2 and the soprano's G5, out of reach of two hands; the main theme now sings in
+# the bass voice, directly over its own augmentation, and S1's long notes lie in the tenor at F4-C5.)
+theme('B', QV, 1, octv(MT, -1), 'main theme (with its augmentation)')
 theme('S', QV, 2, octv(S2, 1), 'S2 (five voices)')
-theme('B', QV + 1, 3, S1, 'S1 (five voices)')
+theme('T', QV + 1, 3, octv(S1, 1), 'S1 (five voices)')
 theme('A', QV + 2, 3, octv(S3, 1), 'S3 B-A-C-H (five voices)')
-# Tenor after the main theme, into the coda; the soprano's S2 steps up into the signature
-put('T', QV + 4, 3, 'Bb4:8')
-seq('T', QV + 5, 'Ab4:8 C5:8', 'C5:4 R:12')
+# Bass after the main theme, into the coda (i6 under S1's own close); the soprano's S2 steps up into the signature
+put('B', QV + 4, 3, 'Bb3:8')
+seq('B', QV + 5, 'Ab3:8 C4:8', 'Ab3:8 R:8')
 
 # ================================================================ CODA (b63-66): the name at its own pitch
 # Over the fifth voice's pedal the soprano signs B-flat A C B (V7 - V7/iv - ii-half-dim 4/3 - vii-dim7/V)

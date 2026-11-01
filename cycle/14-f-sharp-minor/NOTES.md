@@ -98,13 +98,14 @@ held to b75, then a ritardando to 80 (b77) and 60 on the last chord. The render 
 | measure | value |
 | --- | --- |
 | parallels error / weak / beat-to-beat | 0 / 1 / 1 |
-| unresolved dissonances | 0 |
+| unresolved dissonances | 1 (b10.1, kept; see below) |
+| reach errors (fresh attacks two hands cannot strike) | 0 |
 | bad doublings | 0 |
 | low-register seconds | 0 |
-| stepwise / leaps of a 4th or more | 62.0 % / 18.3 % |
+| stepwise / leaps of a 4th or more | 62.0 % / 18.5 % |
 | pitch class tripled on beats | 1.8 % |
 | crossings | 1 |
-| **keyboard_unplayable_pct** | **1.4 %** (4 of 277 onsets) |
+| **keyboard_unplayable_pct** | **0.4 %** (1 of 278 onsets) |
 | **mean moving voices** | **3.44** (16 bars with all five moving) |
 
 | section | moving voices, mean (max) | sounding, mean | duration |
@@ -126,8 +127,14 @@ Flagged items, each kept on purpose:
 - **Melody:** the bass's tritone C♯3→G2 at b43 is the pivot itself; Tenor G♯3–B2–G♯2 (b66–67) is a leap into the
   N6 bass under the augmentation's rest.
 - **Crossing b60.3:** the Quintus enters above the Altus for seven beats, as a descant into the summit.
-- **Keyboard:** the four onsets that do not fit two hands are b22.3–23.2, where the Cantus enters at F♯5–C♯6 while
-  the trio is still in the low-middle register.
+- **Keyboard:** every fresh attack fits two hands. One onset has more *sounding* notes than two hands can hold
+  (b23.2, the bass's C♯2 struck under the held G♯3, C♯5 and C♯6); a pedal catches it. The Cantus's entrance at
+  F♯5–C♯6 (b22–23) used to leave the Altus two octaves below it, out of reach; see the review response below.
+- **Unresolved b10.1** (Altus E4 held against the Tenor's F♯4): countersubject I against the tonal answer. The
+  Altus's E, a unison with the answer when struck, becomes a second when the answer takes its tonal F♯; it rises
+  through E♯ (a chromatic passing quarter) to F♯ on the next half-note beat, a third below the answer's A. The
+  critic accepts only a one-step resolution and so calls it unresolved; it is an ornamented rising resolution in
+  alla breve, kept so that the countersubject's chromatic rise is whole at its first statement.
 - 16 chord sevenths are "not resolved down" in the critic's sense, mostly sevenths that pass to another chord tone
   in chromatic progressions.
 
@@ -205,10 +212,10 @@ Flagged items, each kept on purpose:
 | --- | --- | --- |
 | voices | 15 | 5 |
 | bars / length | 89 / 4:34 | 78 / 3:19 |
-| keyboard_unplayable_pct | 41.6 % | 1.4 % |
+| keyboard_unplayable_pct | 41.6 % | 0.4 % |
 | mean moving voices | 6.09 | 3.44 |
 | parallels error / weak / beat-to-beat | 0 / 0 / 3 | 0 / 1 / 1 |
-| bad doublings / low-register seconds / unresolved | 2 / 8 / 0 | 0 / 0 / 0 |
+| bad doublings / low-register seconds / unresolved | 2 / 8 / 0 (old critic) | 0 / 0 / 1 (Nov 2026 critic) |
 | stepwise | 58.1 % | 62.0 % |
 | crossings | 37 | 1 |
 
@@ -308,3 +315,28 @@ already grows by the Quintus, and the blocks' growth is now audible in voice cou
   verify the theme.
 - **This pair** (both countersubjects, the per-tonos block, the summit, the prelude's counter-line and bass, and
   all free counterpoint) is by Claude, for Sam.
+
+---
+
+## Review response (Nov 2026)
+
+1 November 2026. The owner's review of PR #1 and the corrected critic agreed on two simultaneous attacks that no
+division between two hands can strike, both at the Cantus's high entrance: b22.3 (G2 A3 C♯4 A5, 18 semitones in
+one hand) and b23.1 (E♯2 G♯3 C♯4 C♯6, 20). The Cantus, the bass's theme and the Tenor's countersubject I are
+unchanged. What moved is the Altus, which was finishing countersubject II two octaves below the Cantus:
+
+- **b22.2–25.2, Altus.** Countersubject II's chromatic descent (A G♯ F♯ E♯ E D♯, b19–22.1) is as before. Its
+  cadential tail now rises an octave toward the entering Cantus (F♯4, then C♯5 B4 C♯5 … B4 A4, the tail at
+  countersubject II's written pitch) instead of continuing D4 C♯4 B3 C♯4 under it. The tail's A–D at b23.3 became a
+  9–8 suspension: C♯5 tied over the Cantus's D6, falling to B4. The spacing between Altus and Cantus is also
+  better, an octave or less instead of up to two octaves. The free Altus line from b25.3 is unchanged.
+- **b66.3, Cantus.** The corrected critic found a second unresolved dissonance here: a free B5 struck over the
+  augmentation's E♯2 (a diminished fifth over the bass), left when the bass falls silent for the theme's rest. The
+  Cantus now takes C♯6 (a sixth over E♯, V6) and falls to B5 an eighth before the Neapolitan sixth (b67.1), where
+  B is consonant; the line after it is unchanged.
+- **b10.1 is kept** and explained above (an ornamented rising resolution in countersubject I against the tonal
+  answer, inside the exordium the earlier review asked to keep).
+
+Critic before → after: reach_errors 2 → 0; keyboard_unplayable_pct 1.4 → 0.4; unresolved 2 → 1 (b10.1, kept);
+unverified 0 → 0; parallels 0 errors / 1 weak / 1 beat-to-beat (unchanged); bad doublings 0; low-register 0;
+stepwise 62.0 %, leaps of a fourth or more 18.3 → 18.5 %. The prelude is unchanged. Renders not yet redone.

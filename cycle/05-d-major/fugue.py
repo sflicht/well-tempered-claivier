@@ -84,8 +84,10 @@ tag(3, 'Answer (tenor) + countersubject')
 put(5, A='A5:3 G5:1 F#5:2 E5:2 D5:1 C#5:1 B4:1 A4:1 G4:4',
        T='F#4:4 D4:4 E4:4 A3:4')
 tag(5, 'Codetta')
+# (Nov 2026) the tenor's G3 is tied into b7 (it was re-struck under the soprano's A6 and
+# the alto's E5, which together already need a hand each).
 put(6, S=T8(SUBJ, 1), A=CS_D,
-       T='D4:4 B3:4 A3:4 F#3:2 G3:2  G3:4 A3:2 B3:2 A3:2 B3:2 A3:4')
+       T='D4:4 B3:4 A3:4 F#3:2 G3:2~  G3:4 A3:2 B3:2 A3:2 B3:2 A3:4')
 tag(6, 'Subject (soprano)')
 put(8, B=T8(ANS, -1), T=T8(CS_A, -1),
        A='D5:4 E5:4 E5:2 D5:2 C#5:2 B4:2  E5:4 E5:2 D5:2 E5:4 E5:4',
@@ -167,8 +169,10 @@ tag(27, 'Episode 3: tattoo cells over a 4-3 chain (a 3)')
 EM_SUBJ = 'B4:4 E5:2 E5:1 E5:1 G5:2 G5:1 G5:1 B5:4 B5:3 A5:1 G5:2 F#5:2 E5:1 D5:1 C5:1 B4:1 C5:1 D5:1 E5:2'
 EM_INV5 = 'E4:4 B3:2 B3:1 B3:1 G3:2 G3:1 G3:1 E3:4 E3:3 F#3:1 G3:2 A3:2 B3:1 C4:1 D4:1 E4:1 D4:1 C4:1 B3:2'
 put(31, A=EM_SUBJ + ' E5:4 C5:4 C#5:8',
-        T='R:6 ' + EM_INV5 + ' A3:2 E3:4 C#4:4',
-        B='E2:4 C3:4 B2:4 E2:4  G2:4 A2:4 C3:4 B2:4  A2:8 C#3:4 F#2:4',
+        T='R:6 ' + EM_INV5 + ' A3:2 E3:4 F#3:4',
+        # (Nov 2026, reach) 31.4 E3 (was E2, 19 below the tenor's B3); 33.1 C3, iv6 under the
+        # tenor's D4 (A2 was 17 below it); the tenor's F#3 at 33.4 (was C#4, 19 above F#2).
+        B='E2:4 C3:4 B2:4 E3:4  G2:4 A2:4 C3:4 B2:4  C3:4 A2:4 C#3:4 F#2:4',
         S='G5:6 A5:2 D6:6 E6:2  D6:4 C6:4 E6:4 D6:4  A5:4 C6:4 B5:4 A#5:4')
 tag(31, 'Stretto II (E minor): rectus + inversion off the beat, soprano descant (a 4)')
 
@@ -222,9 +226,14 @@ BM_HALF_S = scale_rhythm(T8(BM_SUBJ, 1), '1/2')
 put(43,
     B=SUBJ_X2 + '  E3:4 A2:4 D2:8~',
     S='R:8 ' + T8(SUBJ, 1) + ' R:8  R:2 ' + BM_HALF_S + ' R:6 F#5:4 A5:4',
-    G='R:12 ' + BWV850 + ' A4:0.5 G4:0.5 F#4:0.5 G4:0.5 A4:0.5 B4:0.5 C#5:0.5 A4:0.5  D5:4 R:12  R:16  R:16',
-    A='C#5:8 D5:8  D5:16  R:16  R:16  R:8 A4:4 D5:4',
-    T='G4:8 F#4:4 R:4  R:16  R:8 ' + SUBJ_ON_D + ' F#4:8')
+    # (Nov 2026, reach) The Guest enters an eighth earlier than before: its B. now falls on
+    # the last eighth of b43 and is tied over the barline, so the downbeat of b44 is struck
+    # F#3 | D5 F#6 (two hands) instead of F#3 B4 D5 F#6 (three registers struck at once).
+    # The tenor leaves F#4 an eighth sooner to make room for the run; the alto's held D5
+    # gives way to the Guest's D5 at 44.4.5.
+    G='R:10 ' + BWV850 + ' A4:0.5 G4:0.5 F#4:0.5 G4:0.5 A4:0.5 B4:0.5 C#5:0.5 A4:0.5  D5:4 R:14  R:16  R:16',
+    A='C#5:8 D5:8  D5:14 R:2  R:16  R:16  R:8 A4:4 D5:4',
+    T='G4:8 F#4:2 R:6  R:16  R:8 ' + SUBJ_ON_D + ' F#4:8')
 tag(43, 'SUMMIT: subject x2 (bass) + subject (soprano)')
 tag(44, 'The Guest (from 43.4): BWV 850 between them')
 tag(45, 'Subject on D (tenor) over the augmentation')
@@ -259,7 +268,7 @@ ENTRY_LIST = [
     ('S', 38, 0, 'Cascade 1: F# minor', 1), ('A', 39, 0, 'Cascade 2: B minor', 1), ('T', 40, 0, 'Cascade 3: E minor', 1),
     ('B', 41, 0, 'Cascade 4: A', 1),
     ('B', 43, 0, 'Cascade 5 = summit: subject x2 in D', 4), ('S', 43, 2, 'Summit: subject', 2),
-    ('G', 43, 3, 'The Guest: BWV 850 subject (J. S. Bach)', 1),
+    ('G', 43, 2.5, 'The Guest: BWV 850 subject (J. S. Bach)', 1),
     ('T', 45, 2, 'Summit: subject on the fourth degree (diatonic)', 2),
     ('S', 46, 0.5, 'Summit: subject x1/2 (B-minor form)', 1),
     ('A', 50, 0, 'Coda: subject over the drums', 2),

@@ -256,7 +256,10 @@ put('B', 37, 1, 'G2:4 C3:4 G2:4 A2:4 F2:4 C3:4 A2:4 G2:4')
 # in quarters (the alto rests until the summit).  C G/B | Am G | G7 F C/E | G7/D C, and D7/C over the last C.
 cantus('B', 39, 1, W.transpose(oc(L4, -2), 5, 3), 'L4: chorale line 4 in C (cantus), bass', 4)
 put('S', 39, 1, 'E5:8 D5:8 C5:8 B4:8 D5:4 F5:4 A5:4 G5:4 F5:4 D5:4 E5:4 D5:4')
-put('T', 39, 1, 'G4:4 E4:2 F4:2 G4:8 E4:4 C4:4 D4:4 G4:4 D4:4 B3:4 C4:8 B3:4 G3:4 G3:4 F#3:4')
+# (Nov 2026: from b41 the tenor stays up, G4 B4 C5 | B4 G4 G4 F#4, instead of falling to B3-F#3 between the
+# bass's cantus at F2-C2 and the descant at A5-E5, where no division between two hands could strike b41.3,
+# b42.1 or b42.3.  Its F#4 now steps into its summit entry, G4.)
+put('T', 39, 1, 'G4:4 E4:2 F4:2 G4:8 E4:4 C4:4 D4:4 G4:4~ G4:4 B4:4 C5:8 B4:4 G4:4 G4:4 F#4:4')
 
 
 
@@ -295,16 +298,21 @@ put('T', 48, 1, 'B3:16')
 # ================================================================ CODA (b49-52): the four subjects at once, B-A-C-H
 # After the summit has sung the four lines slowly, the four subjects' heads -- each one chorale line
 # in a single bar -- ring together in close stretto, each in its own voice: bass S4 (b49.1), soprano
-# S1 an eighth later, tenor S2 (b49.2), alto S3 (b49.3).  (Levels and distances proposed by a scratch
+# S1 an eighth later, tenor S2 (b49.2.5), alto S3 (b49.3).  (Levels and distances proposed by a scratch
 # search with the critic over the hand-written heads; this is the trick of BWV 769's last bars, the
-# lines in diminution.)  The heads end on G, B, D, G again; then the soprano signs the cadence:
+# lines in diminution.)  (Nov 2026: the bass's head now rings G3-G2 instead of G2-G1, and the tenor's head
+# enters an eighth later, at b49.2.5 instead of b49.2: with the bass at G2-G1 and the tenor from b49.2,
+# b49.2.5, b49.4 and b49.4.5 each put a tenor note out of reach between the bass's low bells and the soprano.
+# The placement was re-tested with the critic over whole heads, as before.  The final chord's bass is G2, not
+# G1: G1 under the tenor's G3 was out of reach of one hand.)
+# The heads end on G, B, D, G again; then the soprano signs the cadence:
 # B-flat as the seventh of C7/E, A over D/F#, C as the seventh of D7, B as the third of G.
-theme('B', 49, 1, oc(head(S4, 9), -1), 'CODA: S4 head, bass', 1)
+theme('B', 49, 1, head(S4, 9), 'CODA: S4 head, bass', 1)        # G3-G2 (Nov 2026; was G2-G1)
 theme('S', 49, 1.5, dshift(head(S1), 7), 'CODA: S1 head, soprano', 1)
-theme('T', 49, 2, dshift(head(S2), -7), 'CODA: S2 head, tenor', 1)
+theme('T', 49, 2.5, dshift(head(S2), -7), 'CODA: S2 head, tenor', 1)   # an eighth later (Nov 2026; was b49.2)
 theme('A', 49, 3, head(S3), 'CODA: S3 head, alto', 1)
-put('B', 50, 1, 'G2:8 E2:8 F#2:8 D2:8 G1:16')
-put('T', 50, 2, 'D4:4 G3:8 A3:8 F#3:8 G3:16')
+put('B', 50, 1, 'G2:8 E2:8 F#2:8 D2:8 G2:16')
+put('T', 50, 2.5, 'D4:2 G3:8 A3:8 F#3:8 G3:16')
 put('A', 50, 3, 'C5:8 D5:24')
 put('S', 50, 1.5, 'B5:6')
 theme('S', 50, 3, 'Bb5:8 A5:8 C6:8 B5:16', 'B-A-C-H, soprano', 3)

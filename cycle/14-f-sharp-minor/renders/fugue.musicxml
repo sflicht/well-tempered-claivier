@@ -48,6 +48,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Exordium: the King's theme</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Alla breve, grave e poi animato</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>92</per-minute>
@@ -195,6 +203,21 @@
       </note>
     </measure>
     <measure number="21">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="91.5" />
+      <sound tempo="90.5">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="89.5">
+        <offset sound="yes">960</offset>
+      </sound>
+      <sound tempo="88.5">
+        <offset sound="yes">1440</offset>
+      </sound>
       <note>
         <rest />
         <duration>1920</duration>
@@ -202,6 +225,20 @@
       </note>
     </measure>
     <measure number="22">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Canon per augmentationem et contrario motu</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>96</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="96.0" />
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Thema Regium: dux of the canon per augmentationem et contrario motu</words>
@@ -454,6 +491,11 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Quintus: the answer</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>960</duration>
@@ -536,6 +578,15 @@
       </note>
     </measure>
     <measure number="42">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="94.49" />
+      <sound tempo="91.49">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -545,6 +596,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="88.49" />
+      <sound tempo="85.49">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -556,6 +611,15 @@
       </note>
     </measure>
     <measure number="43">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">C#7 = G7: to C minor</words>
+        </direction-type>
+      </direction>
+      <sound tempo="82.49" />
+      <sound tempo="79.49">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>D</step>
@@ -564,6 +628,15 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>78</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="78.0" />
+      </direction>
       <note>
         <rest />
         <duration>960</duration>
@@ -571,6 +644,20 @@
       </note>
     </measure>
     <measure number="44">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Canon per tonos: C minor</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>100</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="100.0" />
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>canon per tonos 1 (C minor, the King's key): dux, thema per diminutionem</words>
@@ -773,6 +860,11 @@
     <measure number="50">
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">D minor</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>canon per tonos 2 (D minor): dux, thema per diminutionem</words>
         </direction-type>
       </direction>
@@ -973,6 +1065,11 @@
     <measure number="56">
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">E minor</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>canon per tonos 3 (E minor): dux, thema per diminutionem</words>
         </direction-type>
       </direction>
@@ -1164,6 +1261,21 @@
       </note>
     </measure>
     <measure number="61">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">accel.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="100.5" />
+      <sound tempo="101.5">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="102.5">
+        <offset sound="yes">960</offset>
+      </sound>
+      <sound tempo="103.5">
+        <offset sound="yes">1440</offset>
+      </sound>
       <note>
         <rest />
         <duration>1920</duration>
@@ -1171,6 +1283,20 @@
       </note>
     </measure>
     <measure number="62">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Summit: F-sharp minor, theme in augmentation</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>104</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="104.0" />
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1366,12 +1492,22 @@
       </note>
       <note>
         <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>6</octave>
+        </pitch>
+        <duration>720</duration>
+        <type>quarter</type>
+        <dot />
+      </note>
+      <note>
+        <pitch>
           <step>B</step>
           <octave>5</octave>
         </pitch>
-        <duration>960</duration>
+        <duration>240</duration>
         <tie type="start" />
-        <type>half</type>
+        <type>eighth</type>
         <notations>
           <tied type="start" />
         </notations>
@@ -1476,6 +1612,11 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Inversion to F#6</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>inversus per diminutionem, rising to F#6</words>
@@ -1673,6 +1814,15 @@
       </note>
     </measure>
     <measure number="75">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="102.49" />
+      <sound tempo="99.49">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -1686,6 +1836,7 @@
           <tied type="stop" />
         </notations>
       </note>
+      <sound tempo="96.49" />
       <note>
         <pitch>
           <step>D</step>
@@ -1694,6 +1845,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="93.49" />
       <note>
         <pitch>
           <step>F</step>
@@ -1705,6 +1857,15 @@
       </note>
     </measure>
     <measure number="76">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Cadence</words>
+        </direction-type>
+      </direction>
+      <sound tempo="90.49" />
+      <sound tempo="87.49">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -1714,6 +1875,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="84.49" />
+      <sound tempo="81.49">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -1728,6 +1893,16 @@
       </note>
     </measure>
     <measure number="77">
+      <sound tempo="78.32" />
+      <sound tempo="74.99">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="71.65">
+        <offset sound="yes">960</offset>
+      </sound>
+      <sound tempo="68.32">
+        <offset sound="yes">1440</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -1742,6 +1917,15 @@
       </note>
     </measure>
     <measure number="78">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>60</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="60.0" />
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -2331,7 +2515,8 @@
       </note>
       <note>
         <pitch>
-          <step>D</step>
+          <step>F</step>
+          <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>480</duration>
@@ -2341,7 +2526,7 @@
         <pitch>
           <step>C</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -2349,7 +2534,7 @@
       <note>
         <pitch>
           <step>B</step>
-          <octave>3</octave>
+          <octave>4</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -2360,22 +2545,15 @@
         <pitch>
           <step>C</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
-        <duration>960</duration>
+        <duration>1440</duration>
         <type>half</type>
+        <dot />
       </note>
       <note>
         <pitch>
-          <step>A</step>
-          <octave>3</octave>
-        </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
+          <step>B</step>
           <octave>4</octave>
         </pitch>
         <duration>480</duration>
@@ -2387,7 +2565,7 @@
         <pitch>
           <step>C</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>960</duration>
         <type>half</type>
@@ -2395,7 +2573,7 @@
       <note>
         <pitch>
           <step>B</step>
-          <octave>3</octave>
+          <octave>4</octave>
         </pitch>
         <duration>960</duration>
         <type>half</type>
@@ -2405,7 +2583,7 @@
       <note>
         <pitch>
           <step>A</step>
-          <octave>3</octave>
+          <octave>4</octave>
         </pitch>
         <duration>960</duration>
         <type>half</type>

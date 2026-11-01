@@ -40,6 +40,9 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words font-weight="bold">Aria: Adagio cantabile (quarter = 56) - Presto (quarter = 132)</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>56</per-minute>
@@ -569,6 +572,12 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="55.33" />
       <note>
         <pitch>
           <step>C</step>
@@ -577,6 +586,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="54.0" />
       <note>
         <pitch>
           <step>E</step>
@@ -585,6 +595,10 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="52.66" />
+      <sound tempo="51.33">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>D</step>
@@ -596,6 +610,20 @@
       </note>
     </measure>
     <measure number="17">
+      <sound tempo="50.0" />
+      <sound tempo="48.66">
+        <offset sound="yes">480</offset>
+      </sound>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>48</per-minute>
+          </metronome>
+        </direction-type>
+        <offset sound="yes">960</offset>
+        <sound tempo="48.0" />
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -606,6 +634,15 @@
       </note>
     </measure>
     <measure number="18">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>132</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="132.0" />
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -2464,6 +2501,12 @@
       </note>
     </measure>
     <measure number="34">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="129.74" />
       <note>
         <pitch>
           <step>E</step>
@@ -2498,6 +2541,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="125.24" />
       <note>
         <pitch>
           <step>G</step>
@@ -2532,6 +2576,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="120.74" />
       <note>
         <pitch>
           <step>E</step>
@@ -2565,6 +2610,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="116.24" />
       <note>
         <pitch>
           <step>C</step>
@@ -2599,6 +2645,7 @@
       </note>
     </measure>
     <measure number="35">
+      <sound tempo="111.73" />
       <note>
         <pitch>
           <step>F</step>
@@ -2616,6 +2663,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="107.23" />
       <note>
         <pitch>
           <step>G</step>
@@ -2633,6 +2681,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="102.73" />
       <note>
         <pitch>
           <step>E</step>
@@ -2641,6 +2690,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>96</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="96.0" />
+      </direction>
       <note>
         <pitch>
           <step>D</step>

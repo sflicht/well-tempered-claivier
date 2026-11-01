@@ -266,3 +266,36 @@ The previous versions remain under `work/wtc-work/pairV/`. The review that drive
 | unresolved | 2 (b. 19.4, b. 28.3, justified above) |
 
 The prelude rows in the v1 → third-edition table above that came from scratch scripts (tertian fit, leaps, hand gap and so on) were measured before the cut. The prelude is rendered in Bach–Lehman with PDF, and in equal temperament as audio only; its duration is 1:34.
+
+---
+
+## Review response (Nov 2026)
+
+### Fugue: five attacks no two hands can strike, all revoiced
+
+- **b7.1.** The tenor's G3 is now tied over from 6.4½ instead of being struck again. The soprano's A6 and the alto's E5 are both thematic, and each now takes a hand. The damper pedal can hold the tenor's G3 through the A7 (6.4½–7.1½).
+- **b31.4.** The bass's free E2 moves up an octave to E3. As E2 it lay 19 semitones below the tenor's inversion.
+- **b33.1.** The bass enters bar 33 on C3 (iv6) and moves to A2 on beat 2. Its A2 on the downbeat lay 17 below the tenor's D4.
+- **b33.4.** The tenor takes F♯3, a step from E3, under the alto's held C♯5. It had C♯4, 19 above the bass's F♯2.
+- **b44.1, the summit.** The Guest's whole BWV 850 statement now enters an eighth earlier. Its run starts at 43.3½ and its B. falls on the last eighth of bar 43, tied over the barline.
+  - Before, the downbeat of bar 44 was struck F♯3 B4 D5 F♯6: three thematic registers at once (bass ×2, the Guest, soprano ×1). Now it is struck F♯3 | D5 F♯6.
+  - B. still sounds on that downbeat as the sixth of B minor over F♯, and resolves to A an eighth later. REVIEW-3's harmonic point is kept.
+  - The Guest's dotted notes now fall between the soprano's tattoo strokes rather than on them.
+  - To make room, the tenor leaves F♯4 an eighth sooner (43.3½). The alto's held D5 ends at 44.4½, where the Guest's own D5 takes it over.
+  - In performance the tied B. needs the pedal across the barline. D3 and B4 belong to both chords, so the overlap is short and in the harmony. The old version could not be struck at all.
+
+**Fugue numbers.** Reach errors 5 → 0, keyboard 4.6 % → 3.9 %, unresolved 0, unverified 2. Parallels are unchanged (1 weak and 1 beat-to-beat at 44.1, as justified above).
+
+**Not done: the review's idea of reserving A6 for the culmination.** The soprano's exposition entry (b6–7) lies a full octave above the alto's countersubject because CS_D's tail rises to G5; a subject on A4 would be crossed by it. Moving the entry down means recomposing the exposition, not repairing an attack. The summit's A6 is also a different event from the exposition's: it sounds over the bass's augmentation, with the Guest between them. I agree a first A6 at the summit would be a stronger arc, and leave it as a possible later change.
+
+### Prelude
+
+Under the stricter check, three more dissonances count as unresolved (2 → 5). All three are a chord seventh or tritone on a beat in two-part figuration, and each resolves in the compound line at the next harmony.
+
+I re-figured two of them, because the new figure is also a better line:
+- b8, beat 4, is now B4 D5 C♯5 B4. The E7's seventh D5 comes off the beat and falls to C♯5 over E3, and the repeated D5 is gone.
+- b10, beat 3, is now E5 G5 F♯5 E5. There is no bare G/C♯ tritone on the beat and no tritone leap C♯5–G5 into beat 4.
+
+I kept b34.3. Its C natural on beat 3 over F♯2 is the point of the bar: the I7, and the first C♮ of the return. It falls to B5 over IV at 35.1.
+
+**Prelude numbers.** Unresolved 5 → 3: b19.4 and b28.3 as before, and b34.3. Tritone leaps 40 → 39.

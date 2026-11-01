@@ -63,7 +63,7 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
 12. **[next] A cantus firmus across the cycle.** One phrase of "Vor deinen Thron
     tret ich hiermit" (the chorale appended to the Art of Fugue) in long notes
     in each fugue's coda; Fugue XXIV states the whole chorale.
-13. **[in progress] Fugue XXIV as a quodlibet.** The 25-voice finale combines the
+13. **[in progress] Fugue XXIV as a quodlibet.** The finale for 25 parts combines the
     subjects of the 23 earlier fugues plus its own, each in a fitted
     transposition and rate, as the Goldberg Variations end in a quodlibet.
 14. **[next] A self-similar key plan.** The order of a fugue's middle-entry

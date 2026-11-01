@@ -23,7 +23,7 @@ These are the pieces whose idea should be audible on a first hearing:
 4. **Fugue XXII** (B♭ minor): the second half is the first half backwards;
    listen for the opening returning in reverse (4½ min).
 5. **Pair XXIV** (B minor): the prelude walks through all 24 keys quoting
-   Bach's Book I subjects, then the 25-voice finale (6½ min).
+   Bach's Book I subjects, then the finale for twenty-five parts (6½ min).
 
 ## What each pair is trying to do
 
@@ -43,19 +43,19 @@ than Bach's fugue in the same key; XX, XXI and XXIV keep their crowds.
 | IX E (4) | four singers in a ring (binaural); Bach's E-major subject as guest and as the final cantus | mostly three voices in the middle |
 | X E minor (3) | one voice per choir in dialogue under the chorale *O Lamm Gottes* | Coro I very busy |
 | XI F (4) | the trumpet stuck in the wrong key (b38–44) | leapy (trumpet's repeated notes) |
-| XII F minor (5) | the Art of Fugue's unfinished fugue completed; the fifth voice entering with the main theme | the five-subject moment is short |
+| XII F minor (5) | a conjectural completion of the Art of Fugue's unfinished fugue; the fifth voice entering with the main theme | the four subjects over the pedal are brief (b56–63) |
 | XIII F♯ (4) | canons at rising intervals over the Goldberg bass; the folk-song quodlibet | |
 | XIV F♯ minor (5) | the Royal Theme in a canon that climbs C, D, E minor and arrives home | |
 | XV G (4) | the four lines of *Vom Himmel hoch* together, one per voice (b43–48) | |
 | XVI G minor (5) | each chorale line in canon between two pedal voices; Bach's G-minor organ fugue on top before the summit | the last canon sounds like an octave doubling |
 | XVII A♭ (5) | fourteen dodged cadences; the father's entry and first real cadence | |
-| XVIII G♯ minor (5) | one note brightening per night watch; the knocker; the A♭ dawn | the dawn is short |
+| XVIII G♯ minor (5) | one note brightening per night watch; the knocker; the dawn in the tonic major (written A♭) | the dawn is short |
 | XIX A (4) | four dances in four metres at once; Bach's Bourrée revealed at the end | the middle is mostly two voices |
-| XX A minor (21) | voices splitting out of one violin line | summit may sound thick |
+| XX A minor (21) | voices splitting out of one violin line; at the summit the strings thin while the double basses' lament descends, then all 21 land together on the dominant (bar 46) | the folds back into one violin may be hard to follow |
 | XXI B♭ (22) | the horn "cracking" to its flat 7th harmonic; the final natural-harmonic chord | leapy (posthorn idiom) |
 | XXII B♭ minor (6) | the palindrome: B-A-C-H before the axis, H-C-A-B after it | the second half's harmony is a little harsher |
-| XXIII B (5) | Bull's six-note scale through all twelve keys; meantone at bar 69 (or the short demo files) | the most mechanical; dense for one pianist |
-| XXIV B minor (25) | the 24-key walk; Bach's and the cycle's subjects arriving over the slow bass | 10–14 real lines at once, not 25 |
+| XXIII B (5) | Bull's six-note scale through all twelve keys; meantone at bar 69 (or the short demo files); the one double-time statement (bars 75–78) that brings B back early | the six-bar clock is regular until bar 75 |
+| XXIV B minor (25 parts) | the 24-key walk; Bach's and the cycle's subjects arriving over the slow bass; Fugue I's ladder climbing from the basses | at most 14 real lines at once; all 25 only on the last chord |
 
 ## The most useful feedback
 

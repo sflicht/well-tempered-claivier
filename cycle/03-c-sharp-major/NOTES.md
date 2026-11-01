@@ -212,3 +212,21 @@ I did not make the optional change to bar 31 (Episode\*, F4): it still repeats E
 I did not add the review's optional octave doubling of the deep bell (P2): it was conditional on the render rumbling, which I cannot hear.
 
 **Process note.** While measuring the stasis metric I ran one read-only `git show` by mistake; it changed nothing.
+
+---
+
+## Review response (Nov 2026)
+
+The owner's review of PR #1 asks for a piano-arrangement pass on the widely separated fresh attacks. The corrected critic (reach check, commit 09df800) found four attacks that no split between two hands can strike. All four are revoiced, and every subject and countersubject note is unchanged.
+
+- **Fugue, b13.4** (A♯2 E♯4 A♯4 C♯6). The bass strikes its A♯2 an eighth early, together with the tenor's short C♯4 stamp, as a long–short gigue figure tied over the beat (`C#3:4 A#2:8`). The tenor's subject note and the soprano's countersubject note on the beat stay as they were.
+- **Fugue, b19.2–19.4** (B♯2 D♯4 G♯4 D♯6). The free alto moves up an octave for three beats, G♯5 F𝄪5 instead of G♯4 F𝄪4, so the I6 is struck B♯2 D♯4 | G♯5 D♯6. It comes back to B♯4 in bar 20.
+- **Fugue, b35.1** (G♯2 D♯4 F♯4 D♯6). The tenor now steps A♯3–B♯3 and then climbs B♯3–D♯4 to the hop's F♯4. The alto rests for the first beat; its F♯4 in bar 34 ends its phrase. The pedal therefore opens on V, struck G♯2 B♯3 | D♯6, and the seventh arrives with the tenor's hop on beat 3. I first tied the alto's F♯4 over the barline instead. The critic accepted that, but no finger can hold it while the hands strike G♯2 B♯3 and D♯6, and a pedal would also hold bar 34's A♯3 against the new B♯3. The left hand's G♯2–B♯3 is a tenth, the critic's limit.
+- **Prelude, b24** (C♯2 E♯3 G♯3 C♯5 struck together), FIX 7. The last bar is now a final cascade in the piece's own bell rhythm. Bass and melody sound on the downbeat, E♯3 on the second bell, so the seventh F♯3 still falls to it within a beat, and G♯4 on the third bell. The upper layer's G♯3 became G♯4, its register in the tonic bars (1, 2, 6, 17, 22). With G♯3 the right hand would have needed a 17th as soon as the held bass was counted. `--second-draft` still restores the old bar.
+
+**Numbers.**
+- Fugue: reach errors 3 → 0, keyboard 1.7 % → 0.7 %, unresolved 0, unverified 0.
+- Prelude: reach errors 1 → 0, keyboard 29.3 % → 28.6 % (still all from the sostenuto bass), unresolved 0.
+- `search/verify_reflection.py` reports ALL CHECKS PASS; the coda is untouched.
+
+**Not done.** The review also suggests strengthening the episodic route if the middle sounds static. That needs a listening judgement, and the second review already reduced the stasis. I made no change without hearing it.

@@ -11,14 +11,14 @@ def wave3(sc):
     P = sc.put
     # ---- bars 18-20: I in E (S1) + S in D (T3), half a bar apart
     sc.theme('S1', 18, 1, I_E, 'Inversion (E minor)', 'I', semis=5)
-    P('S1', 20, 3, "E5:2 D5:2 C5:2 E5:2")
+    P('S1', 20, 3, "E5:2 D5:2 C5:2 E5:2~")
     sc.theme('T3', 18, 3, S_D, 'Subject in D, stretto with the inversion', 'S', semis=-9)
     P('B1', 18, 1, "E2:4 A2:2 D2:8 E2:2~")
     P('B1', 19, 1, "E2:6 B2:8 E2:2")
     P('B1', 20, 1, "Eb2:4 D2:4 C2:2 B1:2 A1:4")
     P('A1', 18, 1, "G4:6 F4:8 C4:2")
     P('A1', 19, 1, "B3:6")
-    P('A3', 18, 1, "B3:4 A3:4")
+    P('A3', 18, 1, "G3:4 A3:4")                       # G: the resolution of A3's seventh (review 3)
     P('T2', 18, 1, "B3:4")
     P('Br2', 18, 1, "E4:4")
     P('A5', 19, 1, "E4:1 F#4:1 G#4:1 B4:1 D5:1 E5:1 D5:1 B4:1 A4:6 G4:2~")
@@ -27,7 +27,7 @@ def wave3(sc):
 
     # ---- bars 21-23: arrival in D minor; the bass hands over to the subject in C (Bass II),
     # a CS1-shaped suspension line above it (S3), U in T2 landing on the 7th of C7
-    P('S1', 21, 1, "F5:4")
+    P('S1', 21, 1, "E5:2 D5:2")                       # 9-8 over A5's 4-3 (was F5: the 4-3's resolution note above it)
     P('S2', 21, 1, "A4:4 B4:4 C5:8~"); P('S2', 22, 1, "C5:6 B4:2 C5:6 A4:2")
     P('S3', 21, 4, "G5:8 A5:2 D6:6 C6:8 Bb5:4 Ab5:2 C6:2 D6:4")
     P('A1', 21, 3, "G4:8"); P('A1', 22, 1, "A4:1 F#4:1 A4:1 D5:2 C5:1 A4:1 F#4:1 G4:6 A4:2")

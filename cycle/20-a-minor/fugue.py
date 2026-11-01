@@ -208,7 +208,7 @@ def gen2():
     put('Vc2', 19, 2.25, 'D4:2 C#4:2 C4:2 B3:5')                 # SPLIT 6: Vc II born from Va I
     put('Cb1', 18, 1, 'A1:8 G1:4 B1:4 E1:12 B1:4')
     put('Vc1', 18, 1, 'A2:4 C3:4 B2:4 D#3:4 E3:8 A3:4 F#3:4')
-    put('Vl2', 18, 1, 'C5:8 R:6 F#4:2 B4:6 A4:10')
+    put('Vl2', 18, 1, 'C5:8 R:6 F#4:2 B4:8 A4:8')
     put('Vl1', 18, 1, 'A5:6 G5:2 B5:4 A5:2 F#5:2 G#5:2 E5:2 B5:4 F#5:8')
 
     # b20-21: violin II, the subject at its first pitch (E5); at b21.2 viola II catches the lament.
@@ -231,7 +231,7 @@ def gen2():
     put('Vc1', 22, 1, 'E3:4 C3:4 E3:4 B2:4 G#2:8 A2:4 B2:4')
     put('Vc2', 22, 1, 'C4:8 B3:4 A3:4 B3:4 A3:12')
     put('Va2', 22, 1, 'C4:6 E4:2 E4:4 D#4:4 E4:4')
-    put('Va1', 22, 1, 'R:4 A4:4 B4:8 B4:6 A4:6 F#4:4')
+    put('Va1', 22, 1, 'R:4 A4:4 B4:16 A4:4 F#4:4')
     put('Vl2', 22, 1, 'A4:8 R:8')
 
 
@@ -276,7 +276,7 @@ def gen3():
     theme('Vl2', 26, 1, tr(HEAD, -7, -4), 'Vl II: subject (D minor)')
     put('Vl3', 26, 1, 'E5:8 F5:6 E5:2')
     put('Vl4', 26, 1, 'A5:12 G5:4')
-    put('Va1', 26, 1, 'C4:8 D4:6 C#4:2')
+    put('Va1', 26, 1, 'C4:8 D4:4 C#4:4')
     put('Va2', 26, 1, 'A3:8 F3:4 A3:4')
     put('Vc2', 26, 1, 'C3:8 A2:8')
     put('Cb1', 26, 1, 'E2:8 D2:4 A1:4~')
@@ -412,7 +412,7 @@ def summit():
     # behind the first, which keeps the upper strand (C2 E2 D2 C2 B1 A1 G#1).
     theme('Cb1', 39, 1, aug(oc(HEAD, -3), 4), 'Cb I: subject x4', 4)
     put('Cb1', 43, 1, 'C2:8 E2:8 D2:8 C2:8 B1:8 A1:8 G#1:16')
-    put('Cb2', 43, 2, 'A1:8 G#1:8 G1:8 F#1:8 F1:8 E1:20 A1:4')           # SPLIT 21: Cb II from Cb I
+    put('Cb2', 43, 2, 'A1:8 G#1:8 G1:8 F#1:8 F1:8 E1:4 E1:16 A1:4')           # SPLIT 21: Cb II from Cb I
     # (b47.1: the two double basses meet on A; the second stops there -- FOLD 1)
     # cello V (from b38) is the bass for the two beats before the augmentation enters.
     # b39: the dominant.  Every voice holds a tone of E major and turns once around it with the
@@ -457,41 +457,57 @@ def summit():
     put('Vc1', 40, 1, 'B2:8')
     put('Vc3', 40, 1, 'G#3:4')
     put('Vc5', 40, 1, 'E3:8')
-    # b41-47: slow harmony (Am | F/C | B half-diminished | the lament of the double basses | E | A)
-    # carried by suspensions that resolve at staggered moments, each voice on its own beat.
+    # b41-47: the governing arrival is the dominant on the downbeat of b46, where the augmented
+    # subject in the basses reaches its last note (G#1 over E1), prepared by a cadential 6/4
+    # (b45.4) and resolving to A at b47.1, where the basses meet.  Three dissonances carry it:
+    # the top's F6 over E1 (a flat ninth held from b45.2, resolving on the downbeat), the
+    # 6/4 itself (A and C over E), and the solo violin's A4 held into the E chord, the one
+    # suspension left there, resolving to G#4 alone on beat 2.  The texture breathes around
+    # the themes: tutti on Am (b41.1), thin for the stretto answer (b41.3-42), tutti from b43.1
+    # (all 21 sound at b43.2, the 21st voice's entry), thinning beat by beat as the lament
+    # descends (b43.4-45.4: seven voices at the peak F#6, six at the 6/4), tutti again on b46.1.
     theme('Vl3', 41, 1, tr(HEAD, 5, 3), 'Vl III: subject on A (stretto with the solo violin)')
     for line in SUMMIT_LINES:
         v, bar, beat, toks = line if len(line) == 4 else (line[0], 41, 1, line[1])
         put(v, bar, beat, toks)
 
 
-# The summit's lines from b41, one voice per entry (added and checked one at a time).
+# The summit's lines from b41.1 to b47.2 (a trailing ~ ties into the voice's folding line).
+# Harmony per beat, b41: Am Am Dm/C Am/C | Bø7 . Bø7/D . | Am/C Am Am E/G# | E7/G# G C/G F#ø7 |
+# Bm7/F# Bø7/F Bø7/F Am/E (6/4) | E . . E7 | Am.  Inner voices hold common tones or move against
+# the fixed lines (top, Vl III, solo, basses), so no pitch class moves the same way in two voices
+# at once; a voice with nothing to say rests.
 SUMMIT_LINES = [
     # violin III, after its subject on A: F-E-D, then a line that climbs to C6/D6 and settles on the dominant
-    ('Vl3', 42, 1, 'F5:6 E5:2 D5:8 E5:8 A5:6 G#5:2 B5:4 G5:4 C6:8 D6:8 A5:8 B5:20 A5:4'),
-    # the top: E6-F6-E6 | D6 F6 | E6 C6 A5 B5 | E6 D6 E6 F#6 (the peak) | D6 F6 (9-8 over the bass's E) | E6 D6 | C6
-    ('Vl7', 'E6:10 F6:4 E6:2 D6:8 F6:8 E6:4 C6:4 A5:4 B5:4 E6:4 D6:4 E6:4 F#6:4 D6:4 F6:12 E6:16 C6:4'),
-    ('Vl8', 'E5:4 A5:12 D5:12 F5:4 A5:4 C6:8 G#5:4 E5:4 G5:8 A5:4 F#5:4 B5:8 C6:4 G#5:4 B5:12 C6:4'),
-    ('Vl4', 'A5:12 C6:4 D6:8 F5:8 C6:16 B5:12 A5:4 B5:4 C6:12 B5:16 E5:4'),
-    ('Vl5', 'C5:4 E5:4 D5:4 C5:4 E5:4 F5:12 C5:4 E5:8 B4:4 B4:8 E5:4 C5:8 D5:8 C5:4 E5:20'),
-    ('Vl2', 'A4:16 D5:16 A4:8 E4:8 F4:4 G4:4 E4:4 A4:4'),
-    # violin VI: a slow chromatic inner line, an echo of the lament: A G# G | A G# F# E
-    # violin VI: a slow descending scale, A B A G# F# E D E, in syncopation
-    ('Vl6', 'A4:16 B4:6 A4:16 G#4:12 F#4:6 E4:8 D4:10 F4:10 E4:16'),
-    ('Vl9', 'A3:20 B3:12 A3:6 B3:12 C4:28 D4:6 E4:16'),
-    ('Va1', 'G4:4 A4:10 G4:6 F4:10 D4:6 E4:18 F#4:12 G4:6 A4:16 G#4:6 F#4:2 E4:4'),
-    ('Va5', 'C4:4 A3:20 B3:10 C4:4 B3:12 A3:16 B3:4 C4:12 D4:6 E4:12'),
-    ('Va2', 'C4:20 D4:14 C4:4 G#3:12 A3:12 G#3:4 A3:18 B3:6 C4:4 D4:2 C4:4'),
-    ('Va3', 'A3:16 F3:20 E3:12 G#3:4 B3:10 A3:4 G3:6 F3:16 E3:12'),
-    ('Va4', 'E3:6 F3:24 G3:10 A3:12 B3:14 A3:26 G#3:6 A3:2'),
-    ('Vc2', 'A3:10 B3:16 C4:16 D4:4 C4:6 D4:14 C4:18 B3:8 G#3:8'),
-    ('Vc4', 'C4:10 B3:16 A3:8 B3:26 C4:10 B3:20 A3:4 G#3:2 C4:4'),
-    ('Vl2', 45, 1, 'D4:10 E4:20 D4:2 E4:4'),
-    ('Vc3', 'A3:6 B3:16 C4:6 B3:8 A3:22 G3:4 A3:12 G#3:20 A3:2 C4:4'),
-    ('Vc5', 'A3:10 G#3:6 B3:30 C4:12 B3:20 C4:12 D4:4 C4:6'),
-    ('Vc1', 'E4:14 D4:16 B3:10 C4:4 E4:10 D4:16 E4:20 D4:4 E4:6'),
-    # the solo violin, after its subject: a slow line of suspensions, C-B-C-B-C-B-A-G#-A
-    ('Vl1', 'C5:8 A4:8 C5:4 B4:12 C5:12 B4:4 B4:8 C5:4 A4:4 C5:4 B4:8 A4:8 G#4:8 B4:4 A4:4'),
+    ('Vl3', 42, 1, 'F5:6 E5:2 D5:8 E5:8 A5:6 G#5:2 B5:4 G5:4 C6:8 D6:12 C6:4 B5:20 A5:4'),
+    # the top: E6-F6-E6 | D6 F6 | E6 C6 A5 B5 | E6 D6 E6 F#6 (the peak) | D6 F6 (b9-8 over the bass's E) | E6 | C6
+    ('Vl7', 'E6:8 F6:6 E6:2 D6:8 F6:8 E6:4 C6:4 A5:4 B5:4 E6:4 D6:4 E6:4 F#6:4 D6:4 F6:12 E6:16 C6:4~'),
+    # the solo violin, after its subject: C A | B | C . . B | . . C A | B . . A | . G# . B | A
+    ('Vl1', 'C5:8 A4:8 B4:16 C5:12 B4:12 C5:4 A4:4 B4:12 A4:8 G#4:8 B4:4 A4:4'),
+    # Vl IV takes over Vl III's A5 as the answer drops to A4, holds it as a pedal through the stretto,
+    # and rises to C6 for the tutti
+    ('Vl4', 'R:6 A5:26 C6:12 R:36 E5:20~'),
+    ('Vl8', 'E5:8 D5:4 C5:4 D5:16 R:4 E5:16 R:28 B4:16 C5:4~'),
+    ('Vl5', 'A4:8 R:28 A4:8 R:36 E5:20~'),
+    # violin II carries the lament window, against the bass: E (F#) G | A . B | C (D) | E . . D | C
+    ('Vl2', 'E4:8 R:24 E4:18 F#4:2 G4:8 A4:12 B4:4 C5:2 D5:2 E5:12 D5:4 C5:4'),
+    ('Vl6', 'C4:8 R:24 A4:12 R:36 E4:20~'),
+    ('Vl9', 'A3:8 R:28 E4:16 R:28 E4:20~'),
+    # viola I: C D E F under the stretto; C held into the E chord (6-5 over the bass's E), then
+    # silent until the arrival
+    ('Va1', 'C4:8 D4:6 E4:2 F4:16 C4:14 B3:10 R:24 E4:20~'),
+    # viola II, in the window: E (the seventh of F#ø7) D (the third of Bm7), silent for the 6/4
+    ('Va2', 'C4:8 R:28 C4:8 R:12 E4:8 D4:12 R:4 E4:20~'),
+    ('Va3', 'A3:8 R:24 E3:16 R:32 E3:20~'),
+    ('Va4', 'E3:8 R:20 B3:4 A3:12 R:36 E3:20~'),
+    ('Va5', 'A3:8 R:28 A3:8 R:36 E4:20~'),
+    # cello I: B G# E in the dominant bar, filling in the chord after the solo violin's resolution
+    ('Vc1', 'E3:8 R:24 E4:20 R:28 B3:4 G#3:8 E3:8~'),
+    # cello II: under the stretto (A F), then D3 under the two B chords, then E-A into the fold
+    ('Vc2', 'A3:16 F3:16 A3:12 R:20 D3:8 R:8 E4:16 A3:4~'),
+    ('Vc3', 'A2:8 R:28 C3:8 R:4 B2:8 R:24 E4:20~'),
+    ('Vc4', 'C3:8 R:28 E3:12 R:32 E4:20'),
+    ('Vc5', 'E3:8 R:24 E4:20 R:28 E3:20~'),
 ]
 
 # =================================================================== V. FOLDING BACK (b47-58)
@@ -578,34 +594,34 @@ def coda():
 # The free stretches between the folds, one entry per voice segment (added one at a time).
 FOLD_LINES = [
     ('Vl8', 47, 2, 'C5:4 E5:10 F5:4 D5:3'),
-    ('Va5', 47, 2, 'E4:8 C4:5'),
+    ('Va5', 47, 2, 'E4:10 C4:3'),
     ('Vl9', 47, 2, 'E4:5'),
     ('Vl7', 47, 2, 'C6:18 B5:6 A5:5'),
-    ('Vc3', 47, 2, 'D4:10 C4:4 A3:16 G3:4 G#3:3'),
+    ('Vc3', 47, 2, 'E4:8 D4:2 C4:4 A3:20 G#3:3'),
 
     ('Vc4', 47, 2, 'A3:6 G#3:4 C4:4 D4:24 C4:7'),
-    ('Vc5', 47, 2, 'E3:10 C3:4 B2:6 A2:16 B2:4 E2:13'),
+    ('Vc5', 47, 2, 'E3:14 C3:2 B2:4 A2:16 B2:4 E2:13'),
     ('Vl5', 47, 2, 'E5:14 D5:28 C5:6 E5:20 A4:10 G4:4 G#4:3'),
-    ('Va4', 47, 2, 'E3:14 A3:12 G#3:6 A3:4 E3:22 G3:3'),
-    ('Va3', 48, 2, 'D4:18 C4:12 B3:8 A3:6 G3:6 D4:3'),
+    ('Va4', 47, 2, 'E3:14 A3:12 G#3:2 A3:8 E3:22 G3:3'),
+    ('Va3', 48, 2, 'R:4 D4:14 C4:12 B3:8 A3:6 G3:6 D4:3'),
     ('Va3', 47, 2, 'E3:10 G3:2'),
     ('Va2', 51, 2, 'E4:4 A4:6 F4:4 E4:24 F4:4 G4:3'),
     ('Vl6', 47, 2, 'E4:4'),
     ('Vl6', 47, 4, 'F#4:4 G4:8 D4:10 E4:24 F4:6 G4:12 A4:5'),
-    ('Va2', 47, 2, 'E4:20 A3:20 G#3:4 C4:8 E4:8'),
-    ('Vc2', 50, 2, 'B3:20 A3:14 F3:6 E3:18 G3:8 A3:3'),
+    ('Va2', 47, 2, 'E4:20 A3:16 R:8 C4:8 E4:8'),
+    ('Vc2', 50, 2, 'A3:8 B3:12 A3:14 F3:6 E3:18 G3:8 A3:3'),
     ('Vc2', 47, 2, 'A3:12 G3:8 D4:10 B3:12 A3:2'),
     ('Vl4', 49, 2, 'B5:16 A5:4 E5:16 F#5:4 A5:12 E5:9'),
-    ('Vl4', 47, 2, 'E5:16 C5:4 D5:8'),
-    ('Vl3', 47, 3, 'E5:16 A5:36 B5:4 C6:8 A5:16 G#5:6 A5:2'),
+    ('Vl4', 47, 2, 'E5:20 D5:8'),
+    ('Vl3', 47, 3, 'E5:16 A5:38 B5:2 C6:8 A5:16 G#5:6 A5:2'),
     ('Vl3', 53, 2, 'A5:2 B5:3'),
     ('Vl2', 54, 2, 'C5:4 D5:16 E5:8'),
     ('Vl2', 52, 2, 'A4:4 B4:8 C5:8 B4:6 C5:2'),
     ('Vl2', 47, 2, 'A4:4 B4:12 C5:12 D5:12 E5:18 C5:14 D5:4'),
     ('Va1', 54, 4, 'A3:12 B3:8 C4:8 E4:8'),
     ('Va1', 51, 4, 'C4:4 D4:16 E4:18 D4:6'),
-    ('Va1', 47, 2, 'E4:16 G4:4 A4:16 G#4:8 A4:8 B4:8 G4:6 A4:2'),
-    ('Vc1', 47, 2, 'E3:20 D3:14 E3:2'),
+    ('Va1', 47, 2, 'E4:16 G4:4 A4:18 G#4:6 A4:8 B4:8 G4:6 A4:2'),
+    ('Vc1', 47, 2, 'E3:26 D3:8 E3:2'),
     ('Vc1', 49, 4, 'G#3:4 E3:28 D3:12 B2:8 A2:8 E3:8 C3:16 A2:4'),
 ]
 

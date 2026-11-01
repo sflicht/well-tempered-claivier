@@ -44,6 +44,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Coro I (tenor, bass): exposition</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegro festivo</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>76</per-minute>
@@ -79,6 +87,11 @@
       </note>
     </measure>
     <measure number="5">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Coro II (soprano, alto): the mirror exposition</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -213,6 +226,11 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The choirs meet: entries a bar apart</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -350,6 +368,11 @@
       </note>
     </measure>
     <measure number="12">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode: the lament bass, tenor and soprano</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>240</duration>
@@ -540,6 +563,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+        <offset sound="yes">480</offset>
+      </direction>
+      <sound tempo="73.47">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -549,6 +581,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="68.47" />
       <note>
         <pitch>
           <step>D</step>
@@ -567,6 +600,20 @@
       </note>
     </measure>
     <measure number="18">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Cadence in B-flat</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>66</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="66.0" />
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -583,6 +630,23 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The quarrel: B-flat (Coro I) against A-flat (Coro II), a bar each</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>76</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="76.0" />
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -640,6 +704,11 @@
       </note>
     </measure>
     <measure number="21">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">half a bar</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>960</duration>
@@ -706,11 +775,23 @@
       </note>
     </measure>
     <measure number="23">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">a beat</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="74.83" />
       <note>
         <rest />
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="72.49" />
       <note>
         <pitch>
           <step>E</step>
@@ -737,11 +818,13 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="70.16" />
       <note>
         <rest />
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="67.83" />
       <note>
         <pitch>
           <step>E</step>
@@ -774,6 +857,15 @@
       </note>
     </measure>
     <measure number="24">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Reconciliation: A-flat over B-flat</words>
+        </direction-type>
+      </direction>
+      <sound tempo="65.49" />
+      <sound tempo="63.16">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -786,6 +878,15 @@
           <tied type="stop" />
         </notations>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>62</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="62.0" />
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -797,6 +898,23 @@
       </note>
     </measure>
     <measure number="25">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The joke: augmentation, interrupted by diminution</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>76</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="76.0" />
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -986,6 +1104,11 @@
       </note>
     </measure>
     <measure number="30">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Coro I gives up: heads a beat apart</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1049,6 +1172,11 @@
       </note>
     </measure>
     <measure number="31">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode: the choirs swap forms</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Coro II sings the head rectus (g)</words>
@@ -1134,6 +1262,11 @@
       </note>
     </measure>
     <measure number="33">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Stretto a 4: the levels fall by fifths to the tonic</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -1294,6 +1427,11 @@
       </note>
     </measure>
     <measure number="37">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Dominant pedal</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -1311,6 +1449,12 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="74.79" />
       <note>
         <pitch>
           <step>D</step>
@@ -1319,6 +1463,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="72.39" />
       <note>
         <pitch>
           <step>F</step>
@@ -1329,6 +1474,12 @@
       </note>
     </measure>
     <measure number="38">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Climax: A-flat over B-flat</words>
+        </direction-type>
+      </direction>
+      <sound tempo="69.99" />
       <direction placement="above">
         <direction-type>
           <words>Coro II sings the rectus head, up to the climax</words>
@@ -1343,6 +1494,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="67.59" />
       <note>
         <pitch>
           <step>G</step>
@@ -1360,6 +1512,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="65.19" />
       <note>
         <pitch>
           <step>C</step>
@@ -1368,6 +1521,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>64</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="64.0" />
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -1379,6 +1541,20 @@
       </note>
     </measure>
     <measure number="39">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Coda: ritornello, then "Wachet auf" in the tenor</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>72</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="72.0" />
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1604,6 +1780,11 @@
       </note>
     </measure>
     <measure number="43">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The augmentation finished</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1648,6 +1829,20 @@
       </note>
     </measure>
     <measure number="44">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">A-flat over B-flat, then E-flat</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="71.08" />
+      <sound tempo="69.25">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -1657,6 +1852,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="67.41" />
+      <sound tempo="65.58">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>D</step>
@@ -1667,6 +1866,10 @@
       </note>
     </measure>
     <measure number="45">
+      <sound tempo="63.75" />
+      <sound tempo="61.91">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -1676,6 +1879,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="60.08" />
       <direction placement="above">
         <direction-type>
           <words>Coro II: the head, upside down</words>
@@ -1690,6 +1894,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="58.25" />
       <note>
         <pitch>
           <step>G</step>
@@ -1709,6 +1914,7 @@
       </note>
     </measure>
     <measure number="46">
+      <sound tempo="56.41" />
       <note>
         <pitch>
           <step>D</step>
@@ -1717,6 +1923,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>50</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="50.0" />
+      </direction>
       <note>
         <pitch>
           <step>E</step>

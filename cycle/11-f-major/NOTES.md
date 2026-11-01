@@ -394,3 +394,24 @@ Second review, prelude items (from the earlier notes):
 | 8 | Prelude: echo game hollow | The left hand's echoes now carry the third: `A2 A2 F3` and `D3 D3 B♭2` (were C3 C3 F3, F3 F3 B♭2). The prelude critic is unchanged: 0 parallels, 0 unresolved, 0 crossings. |
 
 **Untouched, as the review asked:** the prelude's P/Q pair and b12–13.
+
+## Review response (Nov 2026)
+
+**Reach, b18.4.** The beat was struck G2 D4 F5 G6, which needs 19 semitones in one hand. The oboe's free D4 is now a rest. Its F4, the seventh of G7, resolves to E4 across the rest on 19.1. The beat is struck G2 | F5 G6.
+
+**Reach, b53.4: kept.** It is struck E2 F4 D5 B♭5 (17 semitones, one over the critic's limit). All four notes are thematic:
+- the violin's inversion in the bass;
+- the first F of the oboe's subject, entering;
+- the flute's inversion;
+- the trumpet's subject, "in F at last".
+
+What I tried:
+- The oboe's entry a beat earlier made new parallels and an unresolved dissonance.
+- A beat later made two new reach errors.
+- An octave shift of any statement crosses another statement or takes away the bass.
+
+In performance the right hand has an eleventh (F4–B♭5), or the oboe's F is rolled in slightly. I did not write a micro-offset to hide it. If the stretto is ever recomposed, this beat is the place to start.
+
+**The eighth unresolved dissonance** (new under the stricter check) was at b23.4, not part of the joke. The flute's free E5 was a major seventh over the violin's F3 in the D-minor stretto, and it stepped to D5, a fourth over A3. The flute now holds F5 through beat 4 and takes E5 with the A-minor chord on 24.1. The seven that remain are all in bars 42–43. They belong to the trumpet's wrong-key entry, which is the joke, and they stay, as the review recommends.
+
+**Numbers.** Reach errors 2 → 1. Unresolved 8 → 7. Unverified 3 → 2. Keyboard 3.0 % → 2.7 %. "Seventh not resolved down" notes 11 → 7.

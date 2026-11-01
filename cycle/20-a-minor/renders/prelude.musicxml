@@ -32,6 +32,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">subject head inside the bariolage</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegro moderato (one line: violin, or one hand)</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>72</per-minute>
@@ -566,6 +574,11 @@
       </note>
     </measure>
     <measure number="5">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">the lament ground</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -1096,6 +1109,11 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">circle of fifths</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1618,6 +1636,11 @@
       </note>
     </measure>
     <measure number="13">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">C major</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2013,6 +2036,11 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E minor</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -2411,6 +2439,11 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">A minor</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -2938,6 +2971,11 @@
       </note>
     </measure>
     <measure number="23">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">dominant pedal (open E)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -3331,6 +3369,11 @@
       </note>
     </measure>
     <measure number="26">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">the lament ground, four strings</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -3728,6 +3771,17 @@
       </note>
     </measure>
     <measure number="29">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">the fugue's tail</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="70.74" />
       <note>
         <pitch>
           <step>C</step>
@@ -3761,6 +3815,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="68.24" />
       <note>
         <pitch>
           <step>D</step>
@@ -3794,6 +3849,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="65.74" />
       <note>
         <pitch>
           <step>B</step>
@@ -3826,6 +3882,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="63.24" />
       <note>
         <pitch>
           <step>G</step>
@@ -3837,6 +3894,7 @@
       </note>
     </measure>
     <measure number="30">
+      <sound tempo="60.74" />
       <note>
         <pitch>
           <step>A</step>
@@ -3869,6 +3927,15 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>52</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="52.0" />
+      </direction>
       <note>
         <pitch>
           <step>A</step>

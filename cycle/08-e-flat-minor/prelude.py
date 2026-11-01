@@ -88,8 +88,10 @@ B.bar('19 VI (deceptive) | iv', Melody='Eb5:6 Gb5:6 Cb5:12',
       Figure=f('Cb4 Eb4 Gb4 Eb4 Gb4 Eb4', 'Cb4 Eb4 Ab4 Eb4 Cb4 Eb4'), Bass='Cb2:12 Ab1:12')
 B.bar('20 V | V7(b9): rising tirade to the ninth, the high point C-flat6', Melody='D5:6 F5:6 D5:1 Eb5:1 F5:1 Gb5:1 Ab5:1 Bb5:1 Cb6:6',
       Figure=f('Bb3 D4 F4 D4 F4 D4', 'Bb3 D4 F4 D4 Bb3 Ab3'), Bass='Bb1:12 Bb2:12')
+# (Nov 2026) the figure starts an octave lower, E-flat3 (was E-flat4), and rises unbroken to A-flat4:
+# the downbeat is struck E-flat2 E-flat3 | B-flat5, one hand each, instead of three registers at once.
 B.bar('21 bass = the fugue subject head Eb Bb Cb Bb; half cadence, attacca', Melody='Bb5:6 Ab5:6 Gb5:6 D5:6',
-      Figure=f('Eb4 Gb4 Bb4 D4 F4 Ab4', 'Eb4 Gb4 Eb4 F4 D4 F4'), Bass='Eb2:6 Bb2:6 Cb3:6 Bb2:6')
+      Figure=f('Eb3 Gb3 Bb3 D4 F4 Ab4', 'Eb4 Gb4 Eb4 F4 D4 F4'), Bass='Eb2:6 Bb2:6 Cb3:6 Bb2:6')
 
 DYN = {1: -4, 5: 0, 8: 4, 9: 0, 13: -2, 14: 2, 17: 4, 18: 6, 19: 2, 20: 6, 21: 4}
 

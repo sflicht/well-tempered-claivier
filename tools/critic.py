@@ -10,8 +10,11 @@ Checks
                  fifths between crossed voices and flagged fourths instead).
   direct         hidden 5ths/8ves into the outer voices with a leaping top.
   dissonance     every beat-level dissonance, classified as suspension,
-                 chord seventh, accented passing/appoggiatura (resolved by
-                 step), pedal friction, or UNRESOLVED.
+                 chord seventh, accented passing/appoggiatura, pedal friction,
+                 or UNRESOLVED. A resolution counts only if the step comes
+                 within a beat and lands on a consonance with the partner;
+                 a step that cannot be verified (partner moves to another
+                 dissonance or falls silent) is 'unverified', not 'ok'.
   melody         augmented seconds, tritone and seventh leaps, leaps beyond
                  an octave, unrecovered large leaps, compound same-way leaps.
   crossing       sustained crossings between adjacent voices.
@@ -19,6 +22,15 @@ Checks
   themes         verifies each declared subject entry against the subject.
   keyboard       whether the sounding notes fit two hands (<=5 notes and a
                  <=10th span per hand).
+  reach          fresh attacks only (held notes can be caught by a pedal):
+                 notes struck together that no split between two hands can
+                 reach (span > 16 semitones in a hand). Reported for every
+                 score; it matters for the solo-keyboard ones.
+
+Parallels between the same pair are merged into one row per run, keeping the
+worst severity and the number of transitions. Only a run of octaves/unisons
+between voices the score declares as doublings (metadata 'doublings':
+[[voiceA, voiceB], ...], or a voice's 'doubles': name) is exempted.
   harmony        per-beat chord labels, longest static harmony.
 
 Usage: critic.py score.json [--json out.json] [--bars 12-20] [--quiet]
@@ -68,6 +80,21 @@ class Score:
                             'label': e.get('label')})
             self.voices.append(evs)
             self.names.append(v.get('abbr') or v.get('name', f'V{i+1}')[:3])
+        alias = {}
+        for i, v in enumerate(data['voices']):
+            for key in (v.get('name'), v.get('abbr'), self.names[i]):
+                if key:
+                    alias[key] = self.names[i]
+        self.doublings = set()
+        for a, b in self.meta.get('doublings', []):
+            if a in alias and b in alias:
+                self.doublings.add(frozenset((alias[a], alias[b])))
+        for i, v in enumerate(data['voices']):
+            if v.get('doubles') in alias:
+                self.doublings.add(frozenset((self.names[i], alias[v['doubles']])))
+        inst = str(self.meta.get('instrument', '')).lower()
+        self.solo_keyboard = any(w in inst for w in ('piano', 'keyboard')) and \
+            not any(w in inst for w in ('organ', 'open score', 'strings', 'shepard', 'players'))
         self.end = max((n['e'] for v in self.voices for n in v), default=0)
         self.nbars = math.ceil(self.end / self.bar) if self.bar else 0
         self.flats = any(ch in str(self.meta.get('key', '')) for ch in 'b') or \
@@ -161,30 +188,41 @@ def check_parallels(S, rng=None):
                         sev = 'error' if same_dir and strong >= 2 else ('warn' if same_dir else 'note')
                         if not same_dir:
                             kind = 'contrary ' + kind
-                        # long doubling runs are reported once per run
                         out.append({'t': t, 'loc': S.loc(t), 'voices': (S.names[i], S.names[j]),
                                     'kind': kind, 'sev': sev,
                                     'what': f"{pname(pa, S.flats)}/{pname(pb, S.flats)} -> {pname(a, S.flats)}/{pname(b, S.flats)}"})
                 prev = (ki, kj, a, b, t)
-    return collapse_runs(out)
+    return collapse_runs(out, S.doublings)
 
 
-def collapse_runs(items):
-    """Merge consecutive parallels between the same pair into one 'doubling run'."""
+SEV_RANK = {'ok': 0, 'note': 1, 'warn': 2, 'error': 3}
+
+
+def collapse_runs(items, declared=frozenset()):
+    """Merge consecutive parallels between the same pair into one row per run.
+
+    The row keeps the worst severity among its transitions ('count' of them,
+    'errors' of which were errors), so merging reduces rows, never the
+    classification. Only an octave/unison run between a pair declared as a
+    doubling is relabelled 'doubling'."""
     items.sort(key=lambda x: (x['voices'], x['t']))
     out = []
     for it in items:
         if out and out[-1]['voices'] == it['voices'] and it['t'] - out[-1].get('t_last', out[-1]['t']) <= 2 * TPQ \
                 and out[-1]['kind'].split()[-1] == it['kind'].split()[-1]:
-            out[-1]['count'] = out[-1].get('count', 1) + 1
-            out[-1]['t_last'] = it['t']
-            if it['sev'] == 'error':
-                out[-1]['sev'] = 'error'
+            o = out[-1]
+            o['count'] += 1
+            o['errors'] += it['sev'] == 'error'
+            o['t_last'] = it['t']
+            if SEV_RANK[it['sev']] > SEV_RANK[o['sev']]:
+                o['sev'] = it['sev']
             continue
-        out.append(dict(it))
+        out.append(dict(it, count=1, errors=int(it['sev'] == 'error')))
     for o in out:
-        if o.get('count', 1) >= 3:
-            o['kind'] = 'doubling run (' + o['kind'] + f" x{o['count']})"
+        base = o['kind']
+        if o['count'] >= 3:
+            o['kind'] = f"run ({base} x{o['count']})"
+        if base.split()[-1] == 'P8' and not base.startswith('contrary') and frozenset(o['voices']) in declared:
             o['sev'] = 'doubling'
     out.sort(key=lambda x: x['t'])
     return out
@@ -214,7 +252,7 @@ def check_beat_parallels(S):
                                 'voices': (S.names[i], S.names[j]),
                                 'kind': 'beat-to-beat ' + ('P8' if iclass(qa, qb) == 0 else 'P5'),
                                 'what': f"{pname(pa, S.flats)}/{pname(pb, S.flats)} -> {pname(qa, S.flats)}/{pname(qb, S.flats)}"})
-    return collapse_runs(out)
+    return collapse_runs(out, S.doublings)
 
 
 def sonority_stats(S):
@@ -297,6 +335,54 @@ def step(a, b):
     return b is not None and 1 <= abs(b - a) <= 2
 
 
+def pitch_at(S, i, t):
+    k = S.sounding(t).get(i)
+    return None if k is None else S.note(i, k[0])['p']
+
+
+def continuation(S, i, k, partner):
+    """How note k of voice i leaves a dissonance against voice `partner`.
+
+    'resolved'   the next note follows within a beat, by step, and is
+                 consonant with the partner's note sounding then (or, if the
+                 partner has fallen silent, with the bass);
+    'unverified' it steps on time but lands on another dissonance while the
+                 partner also moved (parallel seconds, change of bass, chains):
+                 the step alone does not show a resolution;
+    None         no timely step (a rest, a leap, or the end)."""
+    n = S.note(i, k)
+    nxt = S.next_note(i, k)
+    if nxt is None or not step(n['p'], nxt['p']) or nxt['s'] - n['e'] > S.beat:
+        return None
+    t = nxt['s']
+    snd = S.sounding(t)
+    pp = pitch_at(S, partner, t)
+    if pp is None:
+        others = [S.note(j, kk)['p'] for j, (kk, _) in snd.items() if j != i]
+        if not others:
+            return 'resolved'
+        pp = min(others)
+    lo, hi = min(pp, nxt['p']), max(pp, nxt['p'])
+    bass = min(S.note(j, kk)['p'] for j, (kk, _) in snd.items())
+    if not is_dissonant(lo, hi, lo == bass):
+        return 'resolved'
+    partner_moved = partner in snd and snd[partner][1]
+    return 'unverified' if partner_moved else None
+
+
+def prepared(S, i, k, partner):
+    """A held dissonance is a prepared suspension only if it was consonant
+    with the partner when it was struck (or the partner was silent then)."""
+    n = S.note(i, k)
+    pp = pitch_at(S, partner, n['s'])
+    if pp is None:
+        return True
+    snd = S.sounding(n['s'])
+    bass = min(S.note(j, kk)['p'] for j, (kk, _) in snd.items())
+    lo, hi = min(pp, n['p']), max(pp, n['p'])
+    return not is_dissonant(lo, hi, lo == bass)
+
+
 def check_dissonance(S):
     """Classify beat-level dissonances."""
     out = []
@@ -344,29 +430,35 @@ def check_dissonance(S):
                         held, new = (ihi, khi, hi), (ilo, klo, lo)
                     elif ahi and not alo:
                         held, new = (ilo, klo, lo), (ihi, khi, hi)
-                    resolved = False
                     if held:
                         hi_, hk, hp = held
-                        nxt = S.next_note(hi_, hk)
-                        if nxt is not None and step(hp, nxt['p']) and nxt['s'] - S.note(hi_, hk)['e'] <= S.beat:
-                            kind = 'suspension' if nxt['p'] < hp else 'retardation'
-                            resolved = True
                         ni, nk, np_ = new
-                        nn = S.next_note(ni, nk)
-                        if not resolved and nn is not None and step(np_, nn['p']):
-                            kind = 'accented passing'
-                            resolved = True
-                        if not resolved:
-                            kind = 'UNRESOLVED (held)'
+                        res = continuation(S, hi_, hk, ni)
+                        if res == 'resolved':
+                            nxt = S.next_note(hi_, hk)
+                            kind = 'suspension' if nxt['p'] < hp else 'retardation'
+                            if not prepared(S, hi_, hk, ni):
+                                kind += ' (unprepared)'
+                        else:
+                            res2 = continuation(S, ni, nk, hi_)
+                            if res2 == 'resolved':
+                                kind = 'accented passing'
+                            elif 'unverified' in (res, res2):
+                                kind = 'unverified stepwise continuation'
+                            else:
+                                kind = 'UNRESOLVED (held)'
                     else:
-                        r1 = S.next_note(ilo, klo)
-                        r2 = S.next_note(ihi, khi)
-                        if (r1 is not None and step(lo, r1['p'])) or (r2 is not None and step(hi, r2['p'])):
+                        r = {continuation(S, ilo, klo, ihi), continuation(S, ihi, khi, ilo)}
+                        if 'resolved' in r:
                             kind = 'appoggiatura'
+                        elif 'unverified' in r:
+                            kind = 'unverified stepwise continuation'
                         else:
                             kind = 'UNPREPARED+UNRESOLVED'
                 out.append({'t': t, 'loc': S.loc(t), 'kind': kind,
-                            'sev': 'error' if kind.startswith('UN') else ('note' if '7th not' in kind else 'ok'),
+                            'sev': 'error' if kind.startswith('UN') else
+                            'unverified' if kind.startswith('unverified') else
+                            'note' if ('7th not' in kind or 'unprepared' in kind) else 'ok',
                             'what': f"{S.names[ilo]}{pname(lo, S.flats)}/{S.names[ihi]}{pname(hi, S.flats)}"})
     return out
 
@@ -492,6 +584,38 @@ def keyboard(S, max_span=16, max_notes=5):
             'examples': bad[:12]}
 
 
+def hand_split(ps, span, per_hand=5):
+    """Smallest achievable 'largest hand span' for keys struck together."""
+    ps = sorted(set(ps))
+    best = None
+    for k in range(len(ps) + 1):
+        L, R = ps[:k], ps[k:]
+        if len(L) > per_hand or len(R) > per_hand:
+            continue
+        m = max(L[-1] - L[0] if L else 0, R[-1] - R[0] if R else 0)
+        best = m if best is None else min(best, m)
+    return best if best is not None else 99
+
+
+def reach(S, span=16):
+    """Fresh attacks that no division between two hands can reach.
+
+    Only notes struck at the same instant count: a held note can be caught by
+    the sustain or sostenuto pedal, but the hand still has to strike every new
+    key. Write a roll or an anticipation as separate onsets if one is meant."""
+    by_t = collections.defaultdict(list)
+    for v in S.voices:
+        for n in v:
+            by_t[n['s']].append(n['p'])
+    out = []
+    for t in sorted(by_t):
+        need = hand_split(by_t[t], span)
+        if need > span:
+            out.append({'t': t, 'loc': S.loc(t), 'sev': 'error', 'span': need,
+                        'what': ' '.join(pname(p, S.flats) for p in sorted(set(by_t[t])))})
+    return out
+
+
 def harmony(S):
     rows = []
     static = (0, None, None)
@@ -602,6 +726,7 @@ def analyse(data, bars=None):
     R['crossing'] = check_crossing(S)
     R['texture'] = texture(S)
     R['keyboard'] = keyboard(S)
+    R['reach'] = reach(S)
     R['harmony'] = harmony(S)
     R['themes'] = check_themes(S, data)
     ranges = {}
@@ -611,7 +736,7 @@ def analyse(data, bars=None):
     R['ranges'] = ranges
     if bars:
         lo, hi = bars
-        for k in ('parallels', 'beat_parallels', 'direct', 'dissonance', 'melody', 'crossing'):
+        for k in ('parallels', 'beat_parallels', 'direct', 'dissonance', 'melody', 'crossing', 'reach'):
             R[k] = [x for x in R[k] if lo <= x['t'] // S.bar + 1 <= hi]
     steps = leaps = reps = nint = 0
     for v in S.voices:
@@ -631,6 +756,7 @@ def analyse(data, bars=None):
         'leap_4th_plus_pct': round(100 * leaps / max(1, nint), 1),
         'repeated_note_pct': round(100 * reps / max(1, nint), 1),
         'parallels_error': sum(1 for x in par if x['sev'] == 'error'),
+        'parallels_error_transitions': sum(x['errors'] for x in par if x['sev'] == 'error'),
         'parallels_weak': sum(1 for x in par if x['sev'] == 'warn'),
         'doubling_runs': sum(1 for x in par if x['sev'] == 'doubling'),
         'beat_parallels': sum(1 for x in R['beat_parallels'] if x['sev'] != 'doubling'),
@@ -638,12 +764,15 @@ def analyse(data, bars=None):
         'bad_doublings': R['sonority']['bad_doublings'],
         'low_register_seconds': R['sonority']['low_register_seconds'],
         'dissonance_unresolved': sum(1 for x in dis if x['sev'] == 'error'),
+        'dissonance_unverified': sum(1 for x in dis if x['sev'] == 'unverified'),
         'dissonance_kinds': dict(c(x['kind'] for x in dis)),
         'melody': dict(c(x['kind'] for x in mel)),
         'crossings': len(R['crossing']),
         'mean_moving_voices': round(sum(r['moving'] for r in R['texture']) / max(1, len(R['texture'])), 2),
         'bars_with_all_voices_moving': sum(1 for r in R['texture'] if r['moving'] == len(S.voices)),
         'keyboard_unplayable_pct': round(100 * R['keyboard']['unplayable_onsets'] / max(1, R['keyboard']['onsets']), 1),
+        'solo_keyboard': S.solo_keyboard,
+        'reach_errors': len(R['reach']),
         'tertian_fit_pct': R['harmony']['tertian_fit_pct'],
         'longest_static_harmony_beats': R['harmony']['longest_static_beats'],
     }
@@ -679,6 +808,9 @@ def print_report(R, quiet=False):
     kb = R['keyboard']
     print(f"-- keyboard: max {kb['max_simultaneous']} notes, {kb['unplayable_onsets']}/{kb['onsets']} onsets exceed two hands",
           '; '.join(f"{e['loc']} {e['what']}" for e in kb['examples'][:4]))
+    if R['reach'] and R['summary']['solo_keyboard']:
+        print(f"-- reach: {len(R['reach'])} attacks no two hands can strike:",
+              '; '.join(f"{e['loc']} {e['what']} (needs {e['span']})" for e in R['reach'][:8]))
     h = R['harmony']
     print(f"-- harmony: tertian fit {h['tertian_fit_pct']}%, longest static {h['longest_static_beats']} beats at {h['longest_static_at']}")
     if R['themes']:

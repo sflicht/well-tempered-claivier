@@ -102,7 +102,13 @@ def put(v, start16, toks):
 # Altus: the theme alone; countersubject I against the answer; countersubject II against the bass entry;
 # free counterpoint under the canon; countersubject I again, against the Quintus' answer (b33).
 put('A', B(1), T + ' ' + drop1(oc(CS1A, -1)))
-put('A', B(19), drop1(drop1(oc(CS2, -1))) + ' ' +
+# Countersubject II's chromatic descent (b19-22.1) as written; when the Cantus enters on F#5 (b22) its
+# cadential tail rises an octave toward it (b22.2-25.2, the tail at countersubject II's written pitch), with the
+# 23.3 A-D replaced by a 9-8 suspension (C#5 tied over the Cantus's D6, falling to B4).  At the old octave
+# (C#4, under the Cantus's A5 and C#6 and over the bass's G2 and E#2) no division between two hands could
+# strike b22.3 or b23.1.
+put('A', B(19), ' '.join(oc(CS2, -1).split()[2:10]) + ' ' +
+    "F#4:4 C#5:4 B4:4 C#5:12 B4:4 C#5:8 B4:8 A4:8 " +
     "D4:8 C#4:8 E#4:8 F#4:8 E4:4 F#4:4 B4:8 C#5:4 D5:4 D5:8 B4:8 D5:8 B4:8~ B4:8 C#5:8 E5:8")
 put('A', B(33), "B4:8 D5:8 C#5:8 D#5:8 E5:16~ E5:8 D5:8 D#5:8 E5:8 F#5:8 D#5:8 E5:8 C#5:8 C#5:8 R:8 "
                 "R:16 G#4:8 E#4:8 F4:16 Eb4:4")
@@ -182,7 +188,7 @@ put('Q', B(60, 3), "B4:4 C5:4 B4:4 C#5:4 B4:4 A4:4~")
 # comes at the octave below, two bars after the dux (b64.2).  Tenor and Quintus: free.
 SUMMIT = {  # bars 62-78
     'C': ['R:4 F#5:4 A5:4 C#6:4', 'D6:4 E#5:4 R:2 C#6:2 B#5:4', 'B5:4 A#5:4 A5:6 G#5:2',
-          'G5:2 F#5:2 E#5:2 C#5:2 F#5:2 B5:2 A5:4', 'G#5:4 R:4 B5:8~', 'B5:2 A5:2 G#5:2 R:2 A5:4 G#5:4', 'F#5:16',
+          'G5:2 F#5:2 E#5:2 C#5:2 F#5:2 B5:2 A5:4', 'G#5:4 R:4 C#6:6 B5:2~', 'B5:2 A5:2 G#5:2 R:2 A5:4 G#5:4', 'F#5:16',
           'E#5:8 G#5:8', 'A#5:8 R:4 C#6:4', 'A5:4 F#5:4 E#5:4 D6:4', 'R:2 F#5:2 G5:4 G#5:4 A5:4',
           'A#5:6 B5:2 B#5:2 C#6:2 D6:2 F#6:2', 'C#6:2 G#5:2 A5:4 B5:4 C#6:4~', 'C#6:8 D6:4 F#6:4', 'C#6:8 B5:8~',
           'B5:16', 'A#5:16'],

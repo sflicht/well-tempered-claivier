@@ -40,6 +40,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">C major (BWV 846)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Preludio per i 24 tuoni. Andante</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>80</per-minute>
@@ -110,6 +118,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">C minor (BWV 847)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>240</duration>
@@ -254,6 +267,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">C-sharp major (BWV 848)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -407,6 +425,11 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">C-sharp minor (BWV 849)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>C-sharp minor: Bach, WTC I fugue subject (BWV 849), 2 oct. up, note values x1/2</words>
         </direction-type>
       </direction>
@@ -472,6 +495,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">D major (BWV 850)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -557,6 +585,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">D minor (BWV 851)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>240</duration>
@@ -683,6 +716,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E-flat major (BWV 852)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -744,6 +782,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E-flat minor (BWV 853)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>E-flat minor: Bach, WTC I fugue subject (BWV 853), 1 oct. up</words>
@@ -850,6 +893,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E major (BWV 854)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -1002,6 +1050,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E minor (BWV 855)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1076,6 +1129,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">F major (BWV 856)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>F major: Bach, WTC I fugue subject (BWV 856), 1 oct. up</words>
@@ -1207,6 +1265,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">F minor (BWV 857)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1249,6 +1312,12 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="77.47" />
       <note>
         <pitch>
           <step>A</step>
@@ -1258,6 +1327,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="72.47" />
       <note>
         <pitch>
           <step>G</step>
@@ -1275,6 +1345,23 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Part II (the tritone from C)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>80</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="80.0" />
+      </direction>
       <note>
         <rest />
         <duration>240</duration>
@@ -1419,6 +1506,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">F-sharp minor (BWV 859)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1499,6 +1591,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">G major (BWV 860)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>G major: Bach, WTC I fugue subject (BWV 860), 1 oct. up</words>
@@ -1645,6 +1742,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">G minor (BWV 861)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1726,6 +1828,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">A-flat major (BWV 862)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1874,6 +1981,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">G-sharp minor (BWV 863)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -1953,6 +2065,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">A major (BWV 864)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>A major: Bach, WTC I fugue subject (BWV 864)</words>
@@ -2066,6 +2183,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">A minor (BWV 865)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -2152,6 +2274,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">B-flat major (BWV 866)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -2235,6 +2362,11 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">B-flat minor (BWV 867)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>B-flat minor: Bach, WTC I fugue subject (BWV 867), note values x1/2</words>
         </direction-type>
       </direction>
@@ -2288,6 +2420,11 @@
       </note>
     </measure>
     <measure number="44">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">B-A-C-H in the bass</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -2330,6 +2467,17 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">B major (BWV 868)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="79.12" />
       <note>
         <rest />
         <duration>240</duration>
@@ -2348,6 +2496,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="77.37" />
       <note>
         <pitch>
           <step>A</step>
@@ -2365,6 +2514,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="75.62" />
       <note>
         <pitch>
           <step>C</step>
@@ -2374,6 +2524,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="73.87" />
       <note>
         <pitch>
           <step>F</step>
@@ -2403,6 +2554,7 @@
       </note>
     </measure>
     <measure number="46">
+      <sound tempo="72.12" />
       <note>
         <pitch>
           <step>B</step>
@@ -2429,6 +2581,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="70.37" />
       <note>
         <pitch>
           <step>E</step>
@@ -2446,6 +2599,10 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="68.62" />
+      <sound tempo="66.87">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -2463,6 +2620,20 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">B minor (BWV 869)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>66</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="66.0" />
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -2507,6 +2678,15 @@
       </note>
     </measure>
     <measure number="48">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="63.47" />
+      <sound tempo="58.46">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -2524,6 +2704,15 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>46</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="46.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>

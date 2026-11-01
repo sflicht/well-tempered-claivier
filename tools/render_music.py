@@ -19,6 +19,7 @@ from fractions import Fraction
 import json
 import math
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -261,6 +262,182 @@ def notation_markers(meta):
     return out
 
 
+def staff_hosts(voices):
+    """share_staff: {host index: [guest indices]} (a guest is engraved on its host's staff)."""
+    hosts = {}
+    for i, voice in enumerate(voices):
+        ref = voice.get("share_staff")
+        if ref is None:
+            continue
+        h = next((k for k, v in enumerate(voices) if k != i and ref in (v.get("name"), v.get("abbr"))), None)
+        if h is None or voices[h].get("share_staff") is not None:
+            raise ValueError(f"share_staff of voice {i} names no host staff: {ref!r}")
+        hosts.setdefault(h, []).append(i)
+    return hosts
+
+
+def staff_meter_plan(meta, voices, i, end):
+    """Per-staff time signatures (polymetre), shared by the LilyPond and MusicXML writers.
+    score_layout.staff_meters maps a voice name, abbreviation or index to a list of changes
+    [t_quarters, num, den] or [t, num, den, "2/3"]; the optional fourth item is a duration scale
+    (sounding = written * scale), e.g. a 12/8 whose dotted quarter equals the score's quarter.
+    Returns (bars, changes, scale_at) for staff i, or None to use the global metre:
+    bars = sorted bar start times, changes = {t: (t, num, den, scale)}, scale_at(t) = scale."""
+    staff_meters = meta.get("score_layout", {}).get("staff_meters") or {}
+    if not staff_meters:
+        return None
+    beats, denominator = meter_of(meta)
+    v = voices[i]
+    spec = next((staff_meters[k] for k in (v.get("name"), v.get("abbr"), str(i)) if k in staff_meters), None)
+    changes = sorted(((frac(c[0]), int(c[1]), int(c[2]), Fraction(str(c[3])) if len(c) > 3 else Fraction(1))
+                      for c in (spec or [])), key=lambda c: c[0])
+    if not changes or changes[0][0] > 0:
+        changes.insert(0, (Fraction(0), beats, denominator, Fraction(1)))
+    bars, t, k = [], Fraction(0), 0
+    while t < end:
+        while k + 1 < len(changes) and changes[k + 1][0] <= t:
+            k += 1
+        bars.append(t)
+        _, num, den, sc = changes[k]
+        t += Fraction(num * 4, den) * sc
+    starts = [c[0] for c in changes]
+
+    def scale_at(x):
+        return changes[bisect.bisect_right(starts, x) - 1][3]
+    return bars, {c[0]: c for c in changes}, scale_at
+
+
+# Written note values a tempo mark or a metric equivalence can name: quarters -> LilyPond duration.
+NOTE_VALUES = {Fraction(4): '1', Fraction(3): '2.', Fraction(2): '2', Fraction(3, 2): '4.',
+               Fraction(1): '4', Fraction(3, 4): '8.', Fraction(1, 2): '8', Fraction(1, 4): '16'}
+XML_TYPES = {'1': 'whole', '2': 'half', '4': 'quarter', '8': 'eighth', '16': '16th', '32': '32nd', '64': '64th'}
+UNICODE_NOTES = {'1': '\U0001D15D', '2': '\U0001D15E', '4': '♩', '8': '♪', '16': '\U0001D161'}
+
+
+def tempo_unit(scale, bpm):
+    """(LilyPond duration, per-minute) for a tempo mark where the written durations are scaled:
+    the written value that sounds one quarter (a half in 2/2 at scale 1/2, a dotted quarter in
+    12/8 at 2/3); otherwise the written quarter at its own rate."""
+    name = NOTE_VALUES.get(1 / Fraction(scale))
+    return (name, bpm) if name else ('4', bpm / float(scale))
+
+
+def metric_equivalence(old_scale, new_scale):
+    """(old, new) LilyPond durations that sound the same across a change of duration scale."""
+    for u in (Fraction(1), Fraction(1, 2), Fraction(2), Fraction(3, 2), Fraction(1, 4), Fraction(3), Fraction(4)):
+        a, b = NOTE_VALUES.get(u / old_scale), NOTE_VALUES.get(u / new_scale)
+        if a and b:
+            return a, b
+    return None
+
+
+TEMPO_SNAP = Fraction(1, 32)
+
+
+def tempo_directions(meta, onsets):
+    """Sparse, performer-readable tempo directions from metadata.tempo_map, for the engraved score
+    and the MusicXML.  Returns (marks, steps).
+    marks: sorted [{'t', 'bpm' (or None), 'words', 'sound' (or None)}]: the opening tempo; a
+    metronome mark at each real change ('a tempo' when it restores the tempo in force before the
+    previous change); for a ramp, 'rit.'/'accel.' where it starts and its arrival tempo where it
+    ends (omitted when a jump follows at once).  Map points that do not change the tempo print
+    nothing, and consecutive ramps in one direction read as one.  Times within TEMPO_SNAP of an
+    attack move onto it; a time after the last attack moves back to it.
+    steps: [(t, bpm)] unprinted playback tempi through each ramp, one per quarter, each the
+    logarithmic mean of its span so that the span lasts exactly as long as in the MIDI/audio."""
+    onsets = sorted(set(onsets))
+
+    def snap(t):
+        if onsets and t > onsets[-1]:
+            return onsets[-1]
+        k = bisect.bisect_left(onsets, t - TEMPO_SNAP)
+        near = [o for o in onsets[k:k + 2] if abs(o - t) <= TEMPO_SNAP]
+        return min(near, key=lambda o: abs(o - t)) if near else t
+    pts = [(frac(t), b, ramp) for t, b, ramp in tempo_points(meta)]
+    changes = []   # [kind, t0, t1, b0, b1]
+    cur, prev_t = pts[0][1], Fraction(0)
+    for t, b, ramp in pts[1:]:
+        if b != cur:
+            if ramp and t > prev_t:
+                last = changes[-1] if changes else None
+                if last and last[0] == 'ramp' and last[2] == prev_t and (b - cur) * (last[4] - last[3]) > 0:
+                    last[2], last[4] = t, b
+                else:
+                    changes.append(['ramp', prev_t, t, cur, b])
+            else:
+                changes.append(['jump', t, t, cur, b])
+        cur, prev_t = b, t
+    steps = []
+    for (t0, b0, _), (t1, b1, ramp) in zip(pts, pts[1:]):
+        if ramp and b1 != b0 and t1 > t0:
+            n = max(1, math.ceil(t1 - t0))
+            for j in range(n):
+                ba, bb = b0 + (b1 - b0) * j / n, b0 + (b1 - b0) * (j + 1) / n
+                steps.append((t0 + (t1 - t0) * j / n, round((bb - ba) / math.log(bb / ba), 2)))
+    marks = {}
+
+    def mark(t, bpm=None, word=None):
+        t = snap(t)
+        m = marks.setdefault(t, {'t': t, 'bpm': None, 'words': [], 'sound': None})
+        if bpm is not None:
+            m['bpm'] = m['sound'] = bpm
+        if word and word not in m['words']:
+            m['words'].append(word)
+        return t
+    mark(Fraction(0), pts[0][1])
+    for k, (kind, t0, t1, b0, b1) in enumerate(changes):
+        if kind == 'jump':
+            # 'a tempo': back to the tempo before the previous change, which held longer than
+            # the interruption did (not in an alternation where the interruption is the longer)
+            prev = changes[k - 1] if k else None
+            held_from = changes[k - 2][2] if k >= 2 else Fraction(0)
+            back = prev and prev[3] == b1 and t0 - prev[1] < prev[1] - held_from
+            mark(t0, b1, 'a tempo' if back else None)
+            continue
+        mark(t0, word='rit.' if b1 < b0 else 'accel.')
+        nxt = changes[k + 1] if k + 1 < len(changes) else None
+        if not (nxt and nxt[0] == 'jump' and nxt[1] - t1 <= TEMPO_SNAP):
+            at = mark(t1, b1)
+            # arrival moved back onto the last attack: it holds from there
+            steps = [s for s in steps if not at <= s[0] < t1]
+    return sorted(marks.values(), key=lambda m: m['t']), steps
+
+
+def note_onsets(voices):
+    return [e['t'] for v in voices for e in v['events'] if e.get('p') is not None]
+
+
+def score_tempo_marks(meta, voices, markers):
+    """tempo_directions() for a score, dropping a word that a sectional marker at the same time
+    already prints (e.g. 'a tempo' under the marker 'a tempo: the downbeat regained')."""
+    marks, steps = tempo_directions(meta, note_onsets(voices))
+    for m in marks:
+        label = markers.get(m['t'])
+        m['words'] = [w for w in m['words'] if not (label and re.search(
+            r'(?<!\w)' + re.escape(w.rstrip('.')) + r'(?!\w)', label, re.IGNORECASE))]
+    return [m for m in marks if m['bpm'] is not None or m['words']], steps
+
+
+def lily_tempo(mark, scale=1, text=None):
+    """A LilyPond \\tempo for one mark of tempo_directions(); text = the opening tempo_text."""
+    words = [f'\\normal-text \\italic "{escape_lily(w)}"' for w in mark['words']]
+    if mark['bpm'] is None:
+        return '\\tempo \\markup { ' + ' '.join(words) + ' }'
+    unit, per_minute = tempo_unit(scale, mark['bpm'])
+    metronome = f'{unit} = {round(per_minute)}'
+    if not words:
+        return f'\\tempo "{escape_lily(text)}" {metronome}' if text else f'\\tempo {metronome}'
+    head = [f'"{escape_lily(text)}"'] if text else []
+    return '\\tempo \\markup { ' + ' '.join(head + words) + ' } ' + metronome
+
+
+def lily_skip(d):
+    whole = Fraction(d) / 4
+    if whole == 1:
+        return 's1'
+    return f's1*{whole.numerator}' + ('' if whole.denominator == 1 else f'/{whole.denominator}')
+
+
 def create_lilypond(data, output):
     meta = meta_of(data)
     voices = normalized_voices(data)
@@ -300,15 +477,7 @@ def create_lilypond(data, output):
     # engraved on that voice's staff as a second layer (stems down), e.g. the lower notes of a
     # violinist's double stops.  Its rests are printed only in bars where it has notes.
     # Scores without "share_staff" are engraved exactly as before.
-    hosts = {}
-    for i, voice in enumerate(voices):
-        ref = voice.get("share_staff")
-        if ref is None:
-            continue
-        h = next((k for k, v in enumerate(voices) if k != i and ref in (v.get("name"), v.get("abbr"))), None)
-        if h is None or voices[h].get("share_staff") is not None:
-            raise ValueError(f"share_staff of voice {i} names no host staff: {ref!r}")
-        hosts.setdefault(h, []).append(i)
+    hosts = staff_hosts(voices)
     guests = {g for gs in hosts.values() for g in gs}
 
     # Optional per-staff time signatures (polymetre): score_layout.staff_meters maps a voice name,
@@ -318,28 +487,28 @@ def create_lilypond(data, output):
     # from staff to staff.  Without staff_meters the score is engraved exactly as before.
     staff_meters = layout.get("staff_meters") or {}
 
+    # (staff_meter_plan() is shared with the MusicXML writer.)
     def staff_plan(i):
         """(bars, changes, scale_at) for staff i, or None to use the global metre."""
-        if not staff_meters:
-            return None
-        v = voices[i]
-        spec = next((staff_meters[k] for k in (v.get("name"), v.get("abbr"), str(i)) if k in staff_meters), None)
-        changes = sorted(((frac(c[0]), int(c[1]), int(c[2]), Fraction(str(c[3])) if len(c) > 3 else Fraction(1))
-                          for c in (spec or [])), key=lambda c: c[0])
-        if not changes or changes[0][0] > 0:
-            changes.insert(0, (Fraction(0), beats, denominator, Fraction(1)))
-        bars, t, k = [], Fraction(0), 0
-        while t < end:
-            while k + 1 < len(changes) and changes[k + 1][0] <= t:
-                k += 1
-            bars.append(t)
-            _, num, den, sc = changes[k]
-            t += Fraction(num * 4, den) * sc
-        starts = [c[0] for c in changes]
+        return staff_meter_plan(meta, voices, i, end)
 
-        def scale_at(x):
-            return changes[bisect.bisect_right(starts, x) - 1][3]
-        return bars, {c[0]: c for c in changes}, scale_at
+    # Tempo: the opening mark heads the first staff; later marks of tempo_directions() (changes,
+    # rit./accel. and arrivals) are \tempo commands in a parallel sequence of skips on that staff,
+    # so they fall at their exact moments whatever the notes are doing there.
+    marks, _ = score_tempo_marks(meta, voices, markers)
+    plan0 = staff_plan(0)
+    scale0 = plan0[2] if plan0 else (lambda t: 1)
+
+    def with_tempo_marks(lines, indent):
+        later = [m for m in marks if m['t'] > 0]
+        if not later:
+            return lines
+        items, cursor = [], Fraction(0)
+        for m in later:
+            items += [lily_skip(m['t'] - cursor), lily_tempo(m, scale0(m['t']))]
+            cursor = m['t']
+        return [indent + '<<', indent + '{', *lines, indent + '}',
+                indent + '{ ' + ' '.join(items) + ' }', indent + '>>']
 
     def music_lines(i, voice, indent, spacer_rests=False, plan_of=None):
         lines = []
@@ -354,6 +523,7 @@ def create_lilypond(data, output):
             return t // bar_len if sbars is None else bisect.bisect_right(sbars, t) - 1
         bars_with_notes = {bar_of(s["t"]) for s in segs if s.get("p") is not None}
         in_scale = False
+        scale, equivalence = Fraction(1), None
         for s in segs:
             bar = bar_of(s["t"])
             if bar != currentbar:
@@ -374,10 +544,15 @@ def create_lilypond(data, output):
                     bar_items.append(f'\\scaleDurations {sc.numerator}/{sc.denominator} {{')
                     in_scale = True
                 if plan_of is None:
+                    # where the duration scale changes, print what the common pulse is now written as
+                    eq = metric_equivalence(scale, sc) if sc != scale else None
+                    if eq:
+                        equivalence = ('^\\markup { \\small \\concat { \\note {%s} #UP " = " \\note {%s} #UP } }' % eq)
                     bar_items.append(f'\\time {num}/{den}')
                     if sc != 1:
                         ml = Fraction(num, den) * sc
                         bar_items.append(f'\\set Timing.measureLength = #(ly:make-moment {ml.numerator}/{ml.denominator})')
+                scale = sc
             if s.get('triplet') and not in_tuplet:
                 bar_items.append('\\tuplet 3/2 4 {')
                 in_tuplet = True
@@ -393,6 +568,9 @@ def create_lilypond(data, output):
             token = (lily_pitch(s["p"], meta, s.get("spell")) if s.get("p") is not None else rest) + s["durstr"]
             if s.get("tie_start"):
                 token += '~'
+            if equivalence:
+                token += equivalence
+                equivalence = None
             label = printed_labels.get((i, s['t'])) if s.get('first') else None
             if label:
                 token += ('^' if not spacer_rests else '_') + '\\markup { \\tiny \\italic "' + escape_lily(label) + '" }'
@@ -413,13 +591,15 @@ def create_lilypond(data, output):
         abbr = escape_lily(voice.get("abbr", str(i+1)))
         clef = voice.get("clef", "treble")
         head = f'\\clef "{clef}" \\key {keynames.get(key, "cis")} \\{mode}' + ('' if staff_meters else f' \\time {beats}/{denominator}')
-        tempo = f'\\tempo "{escape_lily(meta.get("tempo_text", "Con moto, sempre chiaro"))}" 4 = {round(bpm_of(meta))}'
+        tempo = lily_tempo(marks[0], scale0(0), text=meta.get("tempo_text", "Con moto, sempre chiaro"))
         if i not in hosts:
             text += [f'    \\new Staff \\with {{ instrumentName = "{name}" shortInstrumentName = "{abbr}" }} {{',
                      f'      {head}']
             if i == 0:
                 text.append(f'      {tempo}')
-            text += music_lines(i, voice, '      ')
+                text += with_tempo_marks(music_lines(i, voice, '      '), '      ')
+            else:
+                text += music_lines(i, voice, '      ')
             text.append('    }')
             continue
         gs = hosts[i]
@@ -429,7 +609,9 @@ def create_lilypond(data, output):
                  f'      \\new Voice {{ \\voiceOne {head}']
         if i == 0:
             text.append(f'      {tempo}')
-        text += music_lines(i, voice, '      ')
+            text += with_tempo_marks(music_lines(i, voice, '      '), '      ')
+        else:
+            text += music_lines(i, voice, '      ')
         text.append('      }')
         for g in gs:
             text.append(f'      \\new Voice {{ \\voiceTwo \\key {keynames.get(key, "cis")} \\{mode}')
@@ -456,7 +638,53 @@ def add(parent, tag, text=None, **attrib):
     return el
 
 
+def xml_note_value(durstr, sounding):
+    """(type, dots, ratio) of one segment: ratio = sounding / written value, or None when they
+    agree.  A triplet is 2/3; a bar inside \\scaleDurations has its scale (2/3 for the 12/8 gigue,
+    1/2 for the 2/2 coda), so its <time-modification> keeps the written values of the engraving."""
+    if '*' in durstr:   # exact fallback '1*n/d': the largest plain value that fits, then the ratio
+        num, den = durstr.split('*')[1].split('/')
+        written = 4 * Fraction(int(num), int(den))
+        base = next(b for b in ('1', '2', '4', '8', '16', '32', '64') if Fraction(4, int(b)) <= written
+                    or b == '64')
+        dots, value = 0, Fraction(4, int(base))
+    else:
+        base = durstr.rstrip('.')
+        dots = len(durstr) - len(base)
+        value = Fraction(4, int(base)) * (2 - Fraction(1, 2 ** dots))
+    ratio = Fraction(sounding) / value
+    return XML_TYPES[base], dots, (ratio if ratio != 1 else None)
+
+
+def xml_offset(el, offset):
+    """Place a <direction> or bare <sound> `offset` quarters after the current position."""
+    if not offset:
+        return el
+    off = ET.Element('offset', {'sound': 'yes'})
+    off.text = str(round(offset * QUARTER_TICKS))
+    kids = list(el)
+    sound = next((k for k, c in enumerate(kids) if c.tag == 'sound'), None) if el.tag == 'direction' else None
+    if sound is None:
+        el.append(off)
+    else:
+        el.insert(sound, off)
+    return el
+
+
+def xml_words_direction(*words, **style):
+    dr = ET.Element('direction', placement='above')
+    for w in words:
+        add(add(dr, 'direction-type'), 'words', w, **style)
+    return dr
+
+
 def create_musicxml(data, output):
+    """MusicXML following the engraved score: per-part time signatures and bar lines from
+    score_layout.staff_meters (scaled bars as written values with <time-modification>, measures
+    whose left bar line meets no other part's marked non-controlling, and metric-equivalence
+    words where a part's duration scale changes); sectional markers as boxed words; the tempo
+    map as sparse tempo directions (words, <metronome>, <sound tempo>) plus unprinted <sound
+    tempo> steps through each ramp, all in the first part."""
     meta = meta_of(data)
     voices = normalized_voices(data)
     printed_labels = notation_labels(data)
@@ -477,18 +705,67 @@ def create_musicxml(data, output):
     key_changes = {frac(change['t']):key_of(change) for change in meta.get('key_changes', [])}
     if any(t % bar_len for t in key_changes):
         raise ValueError('Key-signature changes must occur at a bar boundary.')
+    # A guest voice (share_staff) is its own part here but keeps its host staff's bars.
+    host_of = {g: h for h, gs in staff_hosts(voices).items() for g in gs}
+    plans = [staff_meter_plan(meta, voices, host_of.get(i, i), end) for i in range(len(voices))]
+    common_bars = set.intersection(*(set(p[0]) for p in plans)) if plans and plans[0] else None
+
+    # Timed directions of the first part: markers, tempo marks, ramp playback steps.
+    markers = notation_markers(meta)
+    marks, steps = score_tempo_marks(meta, voices, markers)
+    scale0 = plans[0][2] if plans and plans[0] else (lambda t: 1)
+    timed = []
+    for t, label in markers.items():
+        timed.append((t, 0, xml_words_direction(label, enclosure='rectangle')))
+    for m in marks:
+        dr = ET.Element('direction', placement='above')
+        if m['t'] == 0 and meta.get('tempo_text', 'Con moto, sempre chiaro'):
+            add(add(dr, 'direction-type'), 'words', meta.get('tempo_text', 'Con moto, sempre chiaro'),
+                **{'font-weight': 'bold'})
+        for w in m['words']:
+            add(add(dr, 'direction-type'), 'words', w, **{'font-style': 'italic'})
+        if m['bpm'] is not None:
+            unit, per_minute = tempo_unit(scale0(m['t']), m['bpm'])
+            metronome = add(add(dr, 'direction-type'), 'metronome')
+            add(metronome, 'beat-unit', XML_TYPES[unit.rstrip('.')])
+            if unit.endswith('.'):
+                add(metronome, 'beat-unit-dot')
+            add(metronome, 'per-minute', round(per_minute))
+        if m['sound'] is not None:
+            add(dr, 'sound', tempo=str(float(m['sound'])))
+        timed.append((m['t'], 1, dr))
+    for t, bpm in steps:
+        timed.append((t, 2, ET.Element('sound', tempo=str(float(bpm)))))
+    timed.sort(key=lambda x: (x[0], x[1]))
+
     for i, v in enumerate(voices):
         pid = f'P{i+1}'
         partdef = add(partlist, 'score-part', id=pid)
         add(partdef, 'part-name', v.get('name', f'Voice {i+1}'))
         add(partdef, 'part-abbreviation', v.get('abbr', str(i+1)))
         part = add(root, 'part', id=pid)
-        segments = voice_segments(v, end, bar_len)
+        plan = plans[i]
+        split = markers.keys() if i == 0 else ()
+        if plan:
+            bars, changes, scale_at = plan
+            segments = voice_segments(v, end, bar_len, split_at=split, bars=bars, scale_at=scale_at)
+            meters = sorted(changes.values())
+        else:
+            bars = [bar_len * b for b in range(int(end // bar_len))]
+            segments = voice_segments(v, end, bar_len, split_at=split)
+            meters = [(Fraction(0), beats, den, Fraction(1))]
+        starts = [m[0] for m in meters]
         bybar = {}
         for s in segments:
-            bybar.setdefault(int(s['t'] // bar_len), []).append(s)
-        for b in range(int(end // bar_len)):
+            bybar.setdefault(bisect.bisect_right(bars, s['t']) - 1, []).append(s)
+        pending = list(timed) if i == 0 else []
+        keys_due = sorted(key_changes)
+        previous = None
+        for b, start in enumerate(bars):
             measure = add(part, 'measure', number=b+1)
+            if common_bars is not None and start not in common_bars:
+                measure.set('non-controlling', 'yes')   # its left bar line meets no other part's
+            _, num, dn, scale = meters[bisect.bisect_right(starts, start) - 1]
             if b == 0:
                 attributes = add(measure, 'attributes')
                 add(attributes, 'divisions', QUARTER_TICKS)
@@ -496,26 +773,32 @@ def create_musicxml(data, output):
                 add(k, 'fifths', fifths)
                 add(k, 'mode', mode)
                 time = add(attributes, 'time')
-                add(time, 'beats', beats)
-                add(time, 'beat-type', den)
+                add(time, 'beats', num)
+                add(time, 'beat-type', dn)
                 clef = add(attributes, 'clef')
                 kind = v.get('clef', 'treble')
                 add(clef, 'sign', 'F' if kind == 'bass' else ('C' if kind in ['alto','tenor'] else 'G'))
                 add(clef, 'line', '4' if kind in ['bass','tenor'] else ('3' if kind == 'alto' else '2'))
-                if i == 0:
-                    dr = add(measure, 'direction', placement='above')
-                    dtype = add(dr, 'direction-type')
-                    metronome = add(dtype, 'metronome')
-                    add(metronome, 'beat-unit', 'quarter')
-                    add(metronome, 'per-minute', round(bpm_of(meta)))
-                    add(dr, 'sound', tempo=str(bpm_of(meta)))
-            if b * bar_len in key_changes:
-                new_key, new_mode = key_changes[b * bar_len]
-                attributes = add(measure, 'attributes')
-                k = add(attributes, 'key')
-                add(k, 'fifths', (minor_keys if new_mode == 'minor' else major_keys)[new_key])
-                add(k, 'mode', new_mode)
+            elif (num, dn) != previous[:2]:
+                time = add(add(measure, 'attributes'), 'time')
+                add(time, 'beats', num)
+                add(time, 'beat-type', dn)
+            if i not in host_of and scale != (previous[2] if previous else 1):
+                eq = metric_equivalence(previous[2] if previous else Fraction(1), scale)
+                if eq:
+                    def sym(d):
+                        return UNICODE_NOTES[d.rstrip('.')] + '.' * d.count('.')
+                    measure.append(xml_words_direction(f'{sym(eq[0])} = {sym(eq[1])}'))
+            previous = (num, dn, scale)
             for s in bybar.get(b, []):
+                while keys_due and keys_due[0] <= s['t']:
+                    new_key, new_mode = key_changes[keys_due.pop(0)]
+                    k = add(add(measure, 'attributes'), 'key')
+                    add(k, 'fifths', (minor_keys if new_mode == 'minor' else major_keys)[new_key])
+                    add(k, 'mode', new_mode)
+                while pending and pending[0][0] < s['t'] + s['d']:
+                    t, _, el = pending.pop(0)
+                    measure.append(xml_offset(el, t - s['t']))
                 label = printed_labels.get((i, s['t'])) if s.get('first') else None
                 if label:
                     dr = add(measure, 'direction', placement='above')
@@ -531,22 +814,24 @@ def create_musicxml(data, output):
                     if alter:
                         add(pitch, 'alter', alter)
                     add(pitch, 'octave', octave)
-                add(note, 'duration', int(s['d'] * QUARTER_TICKS))
+                add(note, 'duration', round(s['d'] * QUARTER_TICKS))
                 if s.get('tie_stop'): add(note, 'tie', type='stop')
                 if s.get('tie_start'): add(note, 'tie', type='start')
-                types = {'1':'whole','2':'half','4':'quarter','8':'eighth','16':'16th','32':'32nd'}
-                ds = s['durstr']
-                add(note, 'type', types.get(ds.rstrip('.'), 'quarter'))
-                if ds.endswith('.'): add(note, 'dot')
-                if s.get('triplet'):
+                kind, dots, ratio = xml_note_value(s['durstr'], s['d'])
+                add(note, 'type', kind)
+                for _ in range(dots):
+                    add(note, 'dot')
+                if ratio is not None:
                     tm = add(note, 'time-modification')
-                    add(tm, 'actual-notes', 3)
-                    add(tm, 'normal-notes', 2)
+                    add(tm, 'actual-notes', ratio.denominator)
+                    add(tm, 'normal-notes', ratio.numerator)
                 if s.get('tie_start') or s.get('tie_stop'):
                     notation = add(note, 'notations')
                     if s.get('tie_stop'): add(notation, 'tied', type='stop')
                     if s.get('tie_start'): add(notation, 'tied', type='start')
-            if b == int(end // bar_len)-1:
+            if b == len(bars) - 1:
+                for t, _, el in pending:   # nothing is timed after the last attack; kept for safety
+                    measure.append(el)
                 bl = add(measure, 'barline', location='right')
                 add(bl, 'bar-style', 'light-heavy')
     ET.indent(root, space='  ')

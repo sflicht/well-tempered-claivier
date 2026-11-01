@@ -48,6 +48,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Exposition: subject (alto)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Maestoso; trumpets and drums</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>84</per-minute>
@@ -69,6 +77,11 @@
       </note>
     </measure>
     <measure number="3">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Answer (tenor) + countersubject</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -83,6 +96,11 @@
       </note>
     </measure>
     <measure number="5">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Codetta</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -90,6 +108,11 @@
       </note>
     </measure>
     <measure number="6">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Subject (soprano)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Subject</words>
@@ -258,6 +281,11 @@
       </note>
     </measure>
     <measure number="8">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Answer (bass): four voices</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -309,6 +337,12 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="81.98" />
       <note>
         <pitch>
           <step>A</step>
@@ -317,6 +351,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="77.98" />
       <note>
         <pitch>
           <step>A</step>
@@ -327,6 +362,23 @@
       </note>
     </measure>
     <measure number="10">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">THE GUEST: subject of WTC I/5 (BWV 850, J. S. Bach) in D</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>84</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="84.0" />
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -397,6 +449,11 @@
       </note>
     </measure>
     <measure number="12">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 1: head-cell canon (a 3)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -708,6 +765,11 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Middle entry: B minor (alto) + countersubject (soprano)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -822,6 +884,11 @@
       </note>
     </measure>
     <measure number="18">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Middle entry: E minor, inverted (tenor)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -853,6 +920,11 @@
       </note>
     </measure>
     <measure number="20">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 2: tail over syncopation, falling fifths (a 3)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -1127,6 +1199,11 @@
       </note>
     </measure>
     <measure number="24">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Stretto I (G): rectus, diminution, inversion (a 3)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -1148,6 +1225,11 @@
       </note>
     </measure>
     <measure number="27">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 3: tattoo cells over a 4-3 chain (a 3)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -1419,6 +1501,11 @@
       </note>
     </measure>
     <measure number="31">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Stretto II (E minor): rectus + inversion off the beat, soprano descant (a 4)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1524,6 +1611,11 @@
       </note>
     </measure>
     <measure number="34">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 4: the home voices try the Guest's idiom</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -1545,6 +1637,21 @@
       </note>
     </measure>
     <measure number="37">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+        <offset sound="yes">480</offset>
+      </direction>
+      <sound tempo="81.98">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="77.98">
+        <offset sound="yes">960</offset>
+      </sound>
+      <sound tempo="73.98">
+        <offset sound="yes">1440</offset>
+      </sound>
       <note>
         <rest />
         <duration>1920</duration>
@@ -1552,6 +1659,23 @@
       </note>
     </measure>
     <measure number="38">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">CASCADE: F#m (S)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>84</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="84.0" />
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Cascade 1: F# minor</words>
@@ -1628,6 +1752,11 @@
       </note>
     </measure>
     <measure number="39">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Bm (A)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1706,6 +1835,11 @@
       </note>
     </measure>
     <measure number="40">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Em (T)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -1713,6 +1847,11 @@
       </note>
     </measure>
     <measure number="41">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">A (B)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -1727,6 +1866,11 @@
       </note>
     </measure>
     <measure number="43">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">SUMMIT: subject x2 (bass) + subject (soprano)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>960</duration>
@@ -1771,6 +1915,11 @@
       </note>
     </measure>
     <measure number="44">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The Guest (from 43.4): BWV 850 between them</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1842,6 +1991,11 @@
       </note>
     </measure>
     <measure number="45">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Subject on D (tenor) over the augmentation</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -1907,6 +2061,11 @@
       </note>
     </measure>
     <measure number="46">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Diminution (soprano): x2, x1 and x1/2 at once</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>240</duration>
@@ -2053,6 +2212,12 @@
       </note>
     </measure>
     <measure number="47">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="83.25" />
       <note>
         <pitch>
           <step>G</step>
@@ -2077,12 +2242,16 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="81.75">
+        <offset sound="yes">240</offset>
+      </sound>
       <note>
         <rest />
         <duration>720</duration>
         <type>quarter</type>
         <dot />
       </note>
+      <sound tempo="80.25" />
       <note>
         <pitch>
           <step>F</step>
@@ -2092,6 +2261,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="78.75" />
       <note>
         <pitch>
           <step>A</step>
@@ -2102,6 +2272,20 @@
       </note>
     </measure>
     <measure number="48">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Coda: tonic pedal; IV and minor iv (B flat)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>78</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="78.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2118,6 +2302,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>82</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="82.0" />
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -2172,6 +2365,11 @@
       </note>
     </measure>
     <measure number="50">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Trumpet and drums: the subject (alto) over the tattoo on the pedal</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -2186,11 +2384,26 @@
       </note>
     </measure>
     <measure number="52">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The Guest has the last word</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="80.55" />
+      <sound tempo="77.68">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <rest />
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="74.8" />
       <note>
         <pitch>
           <step>G</step>
@@ -2199,6 +2412,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="71.93" />
       <note>
         <pitch>
           <step>E</step>
@@ -2209,6 +2423,15 @@
       </note>
     </measure>
     <measure number="53">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>59</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="59.0" />
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -4236,8 +4459,30 @@
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>1920</duration>
-        <type>whole</type>
+        <duration>1440</duration>
+        <tie type="start" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>240</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note>
+        <rest />
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
     </measure>
     <measure number="45">
@@ -4830,7 +5075,11 @@
           <octave>3</octave>
         </pitch>
         <duration>240</duration>
+        <tie type="start" />
         <type>eighth</type>
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
     <measure number="7">
@@ -4840,7 +5089,11 @@
           <octave>3</octave>
         </pitch>
         <duration>480</duration>
+        <tie type="stop" />
         <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <note>
         <pitch>
@@ -5809,9 +6062,9 @@
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -6255,13 +6508,14 @@
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
       <note>
         <rest />
-        <duration>480</duration>
+        <duration>720</duration>
         <type>quarter</type>
+        <dot />
       </note>
     </measure>
     <measure number="44">
@@ -7592,7 +7846,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>2</octave>
+          <octave>3</octave>
         </pitch>
         <duration>480</duration>
         <type>quarter</type>
@@ -7635,11 +7889,19 @@
     <measure number="33">
       <note>
         <pitch>
+          <step>C</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>480</duration>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
           <step>A</step>
           <octave>2</octave>
         </pitch>
-        <duration>960</duration>
-        <type>half</type>
+        <duration>480</duration>
+        <type>quarter</type>
       </note>
       <note>
         <pitch>
@@ -8916,9 +9178,13 @@
     <measure number="43">
       <note>
         <rest />
-        <duration>1440</duration>
+        <duration>960</duration>
         <type>half</type>
-        <dot />
+      </note>
+      <note>
+        <rest />
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
       <direction placement="above">
         <direction-type>
@@ -8992,6 +9258,18 @@
         <duration>60</duration>
         <type>32nd</type>
       </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>240</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
     </measure>
     <measure number="44">
       <note>
@@ -8999,9 +9277,12 @@
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>360</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>120</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <note>
         <pitch>
@@ -9112,6 +9393,18 @@
         <duration>60</duration>
         <type>32nd</type>
       </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>240</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
     </measure>
     <measure number="45">
       <note>
@@ -9119,14 +9412,23 @@
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>480</duration>
-        <type>quarter</type>
+        <duration>240</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <note>
         <rest />
         <duration>1440</duration>
         <type>half</type>
         <dot />
+      </note>
+      <note>
+        <rest />
+        <duration>240</duration>
+        <type>eighth</type>
       </note>
     </measure>
     <measure number="46">

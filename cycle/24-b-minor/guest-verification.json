@@ -65,6 +65,17 @@
   "offset16": 6,
   "steps": 0
  },
+ "FI rung 3": {
+  "cost": 12,
+  "parallels": 0,
+  "unresolved": 0,
+  "roughness": 3.09,
+  "overlap_q": 6.5,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 6,
+  "steps": 0
+ },
  "V release": {
   "cost": 10,
   "parallels": 0,
@@ -74,6 +85,28 @@
   "form": "rectus",
   "time": 1.0,
   "offset16": 0,
+  "steps": 0
+ },
+ "V vs rung 1 leader": {
+  "cost": 11,
+  "parallels": 0,
+  "unresolved": 0,
+  "roughness": 2.72,
+  "overlap_q": 7.5,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 2,
+  "steps": 0
+ },
+ "V vs rung 1 follower": {
+  "cost": 18,
+  "parallels": 0,
+  "unresolved": 1,
+  "roughness": 3.0,
+  "overlap_q": 7.0,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 4,
   "steps": 0
  }
 }

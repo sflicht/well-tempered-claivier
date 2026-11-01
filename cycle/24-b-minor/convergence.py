@@ -37,7 +37,7 @@ def main():
     bars = sc.bars(NB)
     voices = [(n, n, clef, 64 if n != 'B5' else 70) for n, long, clef in VOICES]
     names = {n: long for n, long, clef in VOICES}
-    meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue XXIV in B minor: the convergence (study, 25 voices)',
+    meta = {'title': 'The Well-Tempered clAIvier', 'subtitle': 'Fugue XXIV in B minor: the convergence (study, 25 parts)',
             'composer': 'Claude / Sam', 'instrument': '25 players or ranks', 'key': 'B', 'mode': 'minor',
             'meter': [4, 4], 'bpm': 58, 'tempo_text': 'Largo, con fuoco',
             'tempo_map': [[36, 58], [44, 50, 'ramp'], [48, 50], [56, 40, 'ramp']],

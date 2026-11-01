@@ -161,7 +161,9 @@ put('Fl', 15, 3, 'C6:3 E6:5 C6:6 F6:6 D6:4')
 I_C = W.invert_diatonic(S_C, 'E5', [0, 2, 4, 5, 7, 9, 11])    # the C-major mirror: C6 C6 G5 ... B4 ... G5
 theme('Vn', 17, 1.5, ' '.join(oc(S_C, -2).split()[:-5]) + ' G2:1 B2:1 D3:1 G2:1 C3:2', 'tutti: subject in C (Violino)')
 theme('Tr', 17, 2.5, I_C, 'tutti: inversus in C, a beat later (Tromba)')
-put('Ob', 17, 1.5, 'R:2 C5:8 E4:8 G4:4 F4:4 D4:4')
+# (Nov 2026) the oboe rests on 18.4 (was D4): G2 D4 F5 G6 struck at once needs 19 semitones in one
+# hand.  Its F4 (the seventh) now resolves to E4 across the rest, on 19.1.
+put('Ob', 17, 1.5, 'R:2 C5:8 E4:8 G4:4 F4:4 R:4')
 put('Fl', 17, 1, 'E6:4 R:16 D6:4 F6:4 G6:4 E6:4')
 
 
@@ -190,7 +192,9 @@ put('Vn', 21, 1, 'D3:4 ' + CSd)
 put('Ob', 21, 1, 'D4:4')
 theme('Ob', 23, 1.5, ' '.join(oc(Id, -1).split()[:-6]) + ' G4:1 A4:1 G4:1 E4:1 G4:1 A4:2', 'inversus in d (Oboe)')
 theme('Vn', 23, 2.5, oc(Sd, -2), 'subject in d, a beat later (Violino)')
-put('Fl', 23, 2, 'F5:8 E5:4 D5:4 G5:4 F5:4 E5:8 D5:4')
+# (Nov 2026) F5 held through 23.4 (was F5:8 E5:4 D5:4): the E5 was a major seventh over the violin's F3
+# whose step to D5 landed on a fourth over A3; now E5 arrives with the A-minor chord on 24.1.
+put('Fl', 23, 2, 'F5:12 E5:4 G5:4 F5:4 E5:8 D5:4')
 put('Ob', 25, 1.5, 'R:2 F4:4')
 
 

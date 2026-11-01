@@ -164,7 +164,7 @@ symmetric as well: quietest at both ends, loudest at the axis. Basic tempo quart
 | parallels_error | 0 | 0 | 0 | 0 |
 | parallels_weak | 0 | 0 | 0 | |
 | beat_parallels | 0 | 0 | 0 | ≤ 2 |
-| dissonance_unresolved | 0 | 0 | 0 | ≤ 3 |
+| dissonance_unresolved (Nov 2026 critic, whole piece) | 1 (b39.1, kept; see the review response) | | | ≤ 3 |
 | bad_doublings | 0 | 0 | 0 | ≤ 2 |
 | low_register_seconds | 0 | 0 | 0 | ≤ 9 |
 | stepwise_pct | 69.3 | 69.4 | 69.4 | ≥ 65 |
@@ -175,6 +175,9 @@ symmetric as well: quietest at both ends, loudest at the axis. Basic tempo quart
 | pc tripled on beats | 7.6 % | 10.9 % | 4.3 % | |
 | "7th not resolved down" (notes) | 25 | 6 | 17 | |
 
+* The half-by-half columns were computed with the critic of the third edition's review; the corrected
+  critic (Nov 2026) also reports 2 "unverified stepwise continuations" for the whole piece, b17.3 and its
+  mirror image b52.1 (alto under soprano, both moving by step), to be checked by ear.
 * Because the critic checks dissonance only on half-note beats in 2/2, I also ran it on both halves
   with the metre read as 4/4 (every quarter a beat): 0 parallels, 0 beat parallels, 0 unresolved,
   0 bad doublings in either half.
@@ -320,3 +323,30 @@ LilyPond engraved the fugue without errors (3 pages).
 * Prelude: stepwise motion is low (56 %); the brisé is written out in fixed values, so the
   freedom of an unmeasured prelude depends entirely on the tempo map; the falling scale passes in
   one bar and might want more room.
+
+## Review response (Nov 2026)
+
+1 November 2026. No notes changed in this pair; the crab check in `build()` still passes and the rebuilt
+score is identical.
+
+- **The corrected critic's new flag, b39.1 (alto B♮4 over the cantus's G♭3), is kept.** It is the first note
+  of the alto's cancrizans subject, H, struck over the cantus's cancrizans augmentation at its G♭ (BWV 867's
+  minor ninth). Its image in the first half is the subject's last note, H, on the weak fourth quarter of b30
+  over the same G♭, an unaccented chromatic neighbour (C B C) inside the French sixth G♭ B♭ C E that resolves
+  to V. The crab turns it into an accented neighbour on the downbeat, rising to C on the next quarter. The
+  critic counts C against G♭ (a tritone, but a member of the augmented-sixth chord) as another dissonance and
+  so calls the H unresolved. Both notes belong to subject statements in both halves, and the second half must
+  be the exact retrograde of the first, so the only ways to remove the flag would be to alter the subject's
+  B-A-C-H or the augmentation's G♭. I would rather keep the crab's one sharp downbeat: it is the moment the
+  name begins to be read backwards.
+- **Unverified (b17.3 and its mirror b52.1):** alto and soprano moving by step together; to check by ear.
+- **"Phrase the reverse half as return and release"** (the owner's review). The performance data already
+  do this within the palindrome: the dynamic arch falls from the axis to the end and the tempo map slows into
+  the last lone B♭, mirroring the opening's rise. I did not make the dynamics or tempo asymmetric, because
+  "the performance reads the same backwards" is part of the concept, but the crab check covers pitch, onset
+  and duration only, so an asymmetric arch can be tried later by ear without touching a note.
+- **The leaps separated by rests** (the 14 ninths and tenths of BWV 867's head, seven each way): agreed that
+  they are the subject's, not defects; they are documented as such above.
+
+Critic (whole piece) before → after: unchanged, reach_errors 0, keyboard_unplayable_pct 0.0, unresolved 1
+(b39.1, kept), unverified 2.

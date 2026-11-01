@@ -1,6 +1,6 @@
 # Project status
 
-Updated 31 October 2026.
+Updated 1 November 2026.
 
 ## Current edition
 
@@ -16,9 +16,21 @@ Bach's key order. See the README for the table of pairs and the
   large because their idea is the crowd. Seventeen fugues (V–XIX, XXII,
   XXIII) were recomposed under the new rule; the earlier versions are kept
   in each pair's `archive-n-plus-1/`.
-- **Reviews.** Every recomposed fugue gets an independent bar-by-bar review
-  (`REVIEW.md` or `REVIEW-3.md`) and a fix round; XII–XIX, V, VI, VIII, XXII
-  and XXIII are done, VII and IX–XI are under review.
+- **Reviews.** Every recomposed fugue had an independent bar-by-bar review
+  (`REVIEW.md` or `REVIEW-3.md`) and a fix round.
+- **PR #1 review round (November 2026).** The owner's review found real
+  defects, now fixed: the critic merged runs of parallel fifths into a zero
+  count and accepted "resolutions" that never came (it now keeps severity,
+  verifies each resolution, and has positive controls in
+  `tools/test_critic.py`); 56 solo-piano attacks no two hands could strike
+  (now 1, kept on purpose in XI); the listening room dropped gates, per-note
+  tuning and notes already sounding on seek; the notation lost tempo maps and
+  XIX's metres in MusicXML; the binaural renderer clamped rear sources to the
+  sides. Musically: XX's summit now chooses its arrival (all 21 on the
+  dominant at b46), XXIV is described as a fugue for 25 parts (at most 14
+  real lines) and its basses gained a canon rung, and XXIII's B-flat
+  statement runs in double time so home comes early. Every pair changed has
+  a "Review response (Nov 2026)" section in its NOTES.
 - **Appendix:** Contrapunctus permutationum, a table canon and a tempo canon.
   **Extras:** `extras/mobius-fugue/`, a string-quartet fugue for a walking
   listener, with a video of its score folding into a Möbius band.

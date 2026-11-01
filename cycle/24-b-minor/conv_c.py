@@ -23,8 +23,8 @@ def part_c(sc, b0, close=True):
     P('S3', c(10), 1, "E5:16~")
     P('S3', c(11), 1, "E5:4 D#5:12")
     # ---- S4: C B | C# . | (C#) B
-    P('S4', c(9), 1, "C5:8 B4:4 C#5:4~")
-    P('S4', c(10), 1, "C#5:8 R:8")              # seven voices release on c10.3 and re-enter on the arrival
+    P('S4', c(9), 1, "C5:8 B4:8")                   # B held under Fugue IV's entry; C# arrives with A7
+    P('S4', c(10), 1, "R:16")                   # (its C# here made octaves with S2's B-C#); it re-enters on the arrival
     P('S4', c(11), 1, "B4:16")
     # ---- S5: upbeat figures into c10 and c11 (the knocking quickens)
     P('S5', c(9), 3, "R:2 D5:2 D5:2 D5:2")
@@ -33,8 +33,7 @@ def part_c(sc, b0, close=True):
     # ---- A1: G . | E D | C# . | (C#) D#
     P('A1', c(9), 1, "G4:8")                          # then rests: its E and D doubled T1 and T4
     # ---- A2: chain, from c9.3
-    P('A2', c(9), 3, "G#4:8~")
-    P('A2', c(10), 1, "G#4:4 A4:4 E4:4 G4:4")       # G#->A over A7; G enters as the only 7th of A#o7
+    P('A2', c(10), 1, "R:4 A4:4 E4:4 G4:4")         # G enters as the only 7th of A#o7 (its G# doubled the cantus's leading tone)
     P('A2', c(11), 1, "F#4:16")                       # G resolves on the downbeat
     # ---- A3: C D | (D) C# . | (C#) D#
     # (A3 rests in c9-c11: its C, D, C# and D# all doubled S4, S5 or S3 at the unison)
@@ -62,7 +61,6 @@ def part_c(sc, b0, close=True):
     P('T5', c(11), 1, "F#4:16")
     # ---- baritones and basses: fewer low voices in c9-c10 (the cantus is the bass);
     #      the resting ones re-enter on the arrival (c11)
-    P('Br1', c(9), 4, "B3:4")
     P('Br2', c(11), 1, "F#3:16")
     P('Br5', c(10), 1, "B3:4 A3:4 R:8")
     P('B1', c(9), 1, "R:4 C3:8 D3:4~")

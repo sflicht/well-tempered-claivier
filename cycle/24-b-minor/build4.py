@@ -2,7 +2,8 @@
 inversion on B (Alto IV); the subject in E minor (Alto V) with CS1 (Alto II); then the
 dominant pedal on C# (bars 32-36, Bass II): the subject's head climbs T5 -> A3 -> S4, CS1
 sounds complete in S3, Fugue V's head (in C# major, A1) and Fugue VIII's head (in F# minor,
-Br2) join, and the pedal choir grows by about a voice a bar (9 -> 15 moving voices)."""
+Br2) join, and the pedal choir grows by about a voice a bar (8 -> 11 moving voices a bar; since the second
+review a voice that could only double another rests)."""
 from xxiv import *
 
 S_A = tr(S, -2, -1)        # A4 C5 B4 D#4 E4 C#5 D5 Bb4 A4 F4 F#4 G4 G#4
@@ -31,7 +32,7 @@ def wave4(sc):
     sc.theme('A5', 29, 1, S_E, 'Subject in E minor', 'S', semis=-7)
     P('A2', 29, 1, CS1_E + '~')
     sc.entries.append(('A2', sc.pos(29, 2), 'CS1 (E minor)', 'CS1', 1, -7, False))
-    P('Br2', 29, 1, "F#3:6 E3:2 C#3:6 F#3:2"); P('Br2', 30, 1, "E3:6 C3:6 D3:4"); P('Br2', 31, 1, "E3:4 G3:2 B2:2 E3:4")
+    P('Br2', 29, 1, "F#3:6 E3:2 C#3:6 F#3:2"); P('Br2', 30, 1, "E3:6 C3:8 B2:2"); P('Br2', 31, 1, "R:4 G3:2 B2:2 E3:4")   # C (7th) -> B; was C -> D, doubling CS1's D5
     P('B2', 29, 1, "E2:8 F#2:6 B1:2"); P('B2', 30, 1, "E2:6 A2:2 D2:4 E2:4"); P('B2', 31, 1, "A2:2 A#2:2 D3:2 B2:2 E2:4 C#2:4"); P('B2', 32, 1, "F#2:8 G#2:6 C#2:2~")
     P('S1', 29, 1, "G5:8 F#5:6 B5:2"); P('S1', 30, 1, "B5:6 C6:6 B5:4"); P('S1', 31, 1, "A5:2 G5:4 F#5:2 G#5:8")
     P('A4', 29, 1, "B4:4 E5:10 D#5:2"); P('A4', 30, 1, "D5:6 C5:2")
@@ -49,17 +50,18 @@ def wave4(sc):
     # Harmony: 32 i | V/V-V ; 33-34 i6/4 | V(7) ; 35 V7 | i6/4 ; 36 V7 . . i  (-> 37 i, subject x2)
     P('T5', 32, 1, "F#3:4 A3:2 G#3:2 B#2:6 C#3:2")          # Tenor V enters: head in F# minor
     P('S3', 32, 1, "R:4 C#5:8 B#4:2 G#5:2~")                  # CS1, complete, in F# minor (S3, b32-34)
-    P('S3', 33, 1, "G#5:4 F#5:8 E5:4"); P('S3', 34, 1, "D5:4 C#5:8 B4:4~")
+    P('S3', 33, 1, "G#5:4 F#5:8 E5:4"); P('S3', 34, 1, "D5:4 C#5:12")   # last note B delayed to 35.1 (no B/B#/C# at 34.4)
     P('S3', 35, 1, "B4:8 A4:8"); P('S3', 36, 1, "A4:4 G#4:8 A4:4~")
     P('T3', 32, 3, "G#3:1 A#3:1 B#3:1 C#4:1 D#4:1 C#4:1 B#3:1 G#3:1")
-    P('S1', 32, 1, "A5:4 C#6:12~"); P('S1', 33, 1, "C#6:8 D#6:4 C#6:4~"); P('S1', 34, 1, "C#6:8 E#6:6 C#6:2")
+    P('S1', 32, 1, "A5:8 R:6 C#6:2~")      # breathes, re-enters with the pedal (its C# was a 4th over G#)
+    P('S1', 33, 1, "C#6:8 D#6:4 C#6:4~"); P('S1', 34, 1, "C#6:8 E#6:6 C#6:2")
     P('S1', 35, 1, "C#6:8 F#6:8"); P('S1', 36, 1, "E#6:8 C#6:8~")
     for k in (33, 34, 35):
         P('B2', k, 1, "C#2:16~")
     P('B2', 36, 1, "C#2:16")
     # bar 33: head in Alto III
     P('A3', 33, 1, "F#4:4 A4:2 G#4:2 B#3:6 C#4:2")
-    P('A3', 34, 1, "C#4:16"); P('A3', 35, 1, "C#4:12 B#3:4"); P('A3', 36, 1, "C#4:16")
+    P('A3', 34, 1, "C#4:16"); P('A3', 35, 1, "C#4:16"); P('A3', 36, 1, "C#4:16")
     P('T5', 33, 1, "C#3:12 G#3:4~"); P('T5', 34, 1, "G#3:4 F#3:4 E#3:4 G#3:4~"); P('T5', 35, 1, "G#3:8 A3:8")
     P('T5', 36, 1, "G#3:16")
     P('A2', 33, 1, "C#5:8 G#4:8~"); P('A2', 34, 1, "G#4:4 A4:4")

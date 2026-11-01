@@ -44,6 +44,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Big Ben (x4)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Tempo giusto: one pulse, four clocks</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>96</per-minute>
@@ -147,6 +155,11 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Tenor clock (x3)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -243,6 +256,11 @@
       </note>
     </measure>
     <measure number="17">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Alto clock (x2)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -339,6 +357,11 @@
       </note>
     </measure>
     <measure number="25">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Little clock (x1)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Westminster Quarters, x1</words>
@@ -792,6 +815,11 @@
       </note>
     </measure>
     <measure number="33">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Punctum convergentiae</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>

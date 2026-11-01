@@ -64,9 +64,9 @@ All four are hand-written diminutions of the chorale lines; S1–S3 are the sixt
 | 31–34 | **L3, alto** | The alto sings its line **on top**, with the soprano silent: Em C \| Am Bm \| D Em/G \| F♯7 Bm. The line's E is the seventh of F♯7 (A♯ in the tenor), its last D the third of B minor. Cadence in B minor (b34.3). | e → b |
 | 34.4–36 | **IV. Bass: S4, with S3** | Link B minor → G → C (the alto's last D is the fifth of G). The bass alone with its bells in C (F natural, leading tone B); the soprano answers with S3 in C two beats later (two voices: the third pair). | C |
 | 37–38 | | The pair with the voices exchanged: tenor S4 on G inside C, alto S3 from B two beats later (L3 at its own pitch, with F natural); the bass walks. | C |
-| 39–42 | **L4, bass** | The bass sings its line in C, C3 down to C2, under a soprano moving with it in tenths and a tenor in quarters; the alto is silent. C G/B \| Am G \| G7 F C/E \| G7/D C, then D7/C over the last C, and a breath. | C → V of G |
+| 39–42 | **L4, bass** | The bass sings its line in C, C3 down to C2, under a soprano moving with it in tenths and a tenor in quarters that stays near G4–C5 from b41 (so that the hands can reach every chord); the alto is silent. C G/B \| Am G \| G7 F C/E \| G7/D C, then D7/C over the last C, and a breath. | C → V of G |
 | 43–48 | **Summit** | The four lines together (next section). Cadence on G at b48.1, the soprano's last C held as a 4–3. | G |
-| 49–52 | **Coda** | The four subjects' heads, each one chorale line in one bar, ring together in stretto: bass S4 (b49.1), soprano S1 an eighth later, tenor S2 (b49.2), alto S3 (b49.3). They end on G, B, D, G, the tonic triad, as the lines themselves do. Then the soprano signs **B-A-C-H** as the cadence: B♭5 the seventh of C7/E, A5 over D/F♯, C6 the seventh of D7, B5 the third of G. | G |
+| 49–52 | **Coda** | The four subjects' heads, each one chorale line in one bar, ring together in stretto: bass S4 (b49.1, G3 down to G2), soprano S1 an eighth later, tenor S2 (b49.2.5), alto S3 (b49.3). They end on G, B, D, G, the tonic triad, as the lines themselves do. Then the soprano signs **B-A-C-H** as the cadence: B♭5 the seventh of C7/E, A5 over D/F♯, C6 the seventh of D7, B5 the third of G. | G |
 
 **Tonal plan.** G → D (C♯) → G → D → E minor (D♯) → B minor (A♯, C♯) → E minor → B minor → C (F natural) → D7 → G. 53 of the 752 notes (7.0 %) lie outside the G-major scale (the sixteen-voice version: 1.9 %; Fugues V and I of this edition: 6.6–7.9 %): 35 C♯, 10 F♮, 3 A♯, 3 D♯, 1 G♯, 1 B♭.
 
@@ -116,11 +116,13 @@ The signature is the final cadence, on top (b50.3–52), as in the sixteen-voice
 | low_register_seconds | **0** | ≤ 9 |
 | stepwise_pct | **60.0 %** | ≥ 65; missed, see weak spots. Leaps of a fourth or more 12.4 % (Bach about 14 %), repeated notes 8.1 %. |
 | crossings | 3 | b12.2, b13.3, b14.1: the tenor above the alto for one beat each, in the stretto of section I (kept from the sixteen-voice version). |
-| keyboard_unplayable_pct | **4.7 %** | 20 of 429 onsets; under 5 %. Where: b11, b14 (the soprano's cantus high over the bass), b27 (the B-minor answer up to D6), b41–42 (the bass's cantus at C2 under the descant), b47–48 (summit cadence), b49–50 (coda stretto with the bass at G1), b52 (final chord on G1). |
+| reach_errors | **0** | every chord struck at one instant fits two hands (16 semitones each); 7 before the Nov 2026 revision |
+| keyboard_unplayable_pct | **2.1 %** | 9 of 430 onsets have more *sounding* notes than two hands can hold (a held note must be caught by the pedal): b11, b14 (the soprano's cantus high over the bass), b27 (the B-minor answer up to D6), b50 (coda, the soprano's held G5 and B5 over the tenor's head). |
 | mean moving voices | 3.15 | per section: I 3.0, II 3.1, III 3.1, IV 3.0, summit 3.5, coda 3.75 |
 | pc_tripled_on_beats | 0.0 % | |
 | tertian fit | 51.9 % | |
-| melody flags | 2 | b8.1 soprano A4 → F♯5 → G5 (kept exposition); b43.2 tenor F♯3 → G4, a ninth across a crotchet rest into its summit entry (a new phrase) |
+| melody flags | 1 | b8.1 soprano A4 → F♯5 → G5 (kept exposition). The tenor now steps F♯4 → G4 into its summit entry. |
+| dissonance_unverified | 2 | b3.3 (alto A3 / soprano D5) and b8.3 (bass A2 / tenor D4), both in the kept exposition: CS1's suspensions, whose partner moves as they resolve. |
 
 Moving voices per bar: `1 1 2 2 2 3 3 4 4 4 4 4 4 4 | 2 2 4 4 3 3 4 3 3 3 | 2 2 4 4 4 3 3 3 3 3 | 2 2 4 3 4 3 3 3 | 2 4 4 4 3 4 | 4 4 4 3`. Every section after the first starts with two voices, and the full four are saved for the stretti, the summit and the coda.
 
@@ -169,8 +171,8 @@ It is a musette for one pianist:
 5. **stepwise_pct is 60 %, under the target of 65 %.** The material accounts for much of it: S2 moves by step on 6 of its 18 intervals (another 6 are repeated notes in its fanfare and tattoos), L2 on 2 of 7, L3 on 3 of 7. Section I scores 67 %, sections II and III 53–54 %. The free basses at cadences leap by fourths and fifths.
 6. **Two bad doublings** (above), one of them in the summit's own line notes, which I did not alter.
 7. **Three one-beat crossings** of tenor and alto in the stretto of b12–14, kept from the sixteen-voice version.
-8. **Some free lines are plain:** the tenor in quarters in b39–42 and the soprano moving in tenths with the bass's cantus. In b39–42 the bass's line matters more than the counterpoint around it, but the passage may feel static before the summit.
-9. **Keyboard:** 4.7 % of onsets need more than two hands, mostly where a cantus sits far from the bass and at the very end (G1).
+8. **Some free lines are plain:** the tenor in quarters in b39–42 (now a little higher, G4 B4 C5 \| B4 G4 G4 F♯4) and the soprano moving in tenths with the bass's cantus. In b39–42 the bass's line matters more than the counterpoint around it, but the passage may feel static before the summit.
+9. **Keyboard:** every attack is within reach of two hands; 2.1 % of onsets have held notes that need the pedal, mostly where a cantus sits far from the bass.
 10. **The Prelude** is short (16 bars) and largely arpeggiated: 39 % stepwise.
 
 ## From the sixteen-voice (N+1) version
@@ -220,3 +222,35 @@ The prelude quotes BWV 248/23 at b13 and uses Bach's passing notes at b7–8 (se
 - one new melody flag (the tenor's ninth into its summit entry, after a rest).
 
 Every changed note was typed into `fugue.py` by hand. The variants were built from scratch copies and checked with `critic.py`.
+
+## Review response (Nov 2026)
+
+1 November 2026. The owner's review of PR #1 said that several attacks, the final tonic among them, exceed two
+hands, and asked for the supporting parts to be revoiced before deciding whether the climax needs to be denser
+or brighter. The corrected critic found seven such attacks: b41.3 (F2 C4 A5), b42.1 (D2 B3 F5), b42.3 (C2 G3
+E5), b49.2.5 (D2 G3 E5), b49.4 (A1 B3 E5), b49.4.5 (G1 D4 G5) and b52.1 (G1 G3 B5), each needing 17–24
+semitones in one hand. Agreed; all seven are fixed, and no chorale line, subject or summit note changed.
+
+- **b41–42 (the bass's cantus).** The bass sings line 4 down to C2 under a descant up to A5; the free tenor
+  fell to B3–F♯3 between them. It now stays up, G4 (tied over the bar) B4 C5 \| B4 G4 G4 F♯4, so that the left
+  hand has only the cantus and the right hand the tenor and the descant. Its F♯4 now steps into its summit entry
+  on G4 (before, F♯3 to G4, a ninth, was a melody flag).
+- **b49 (the coda's stretto of heads).** The bass's head (S4's falling octave) now rings G3–G2 instead of G2–G1,
+  and the tenor's head (S2) enters an eighth later, at b49.2.5 instead of b49.2, at the same pitch. I re-ran the
+  placement test of whole heads that chose the coda (octaves and entry times, scored with the critic) with reach
+  and same-key collisions added. Three arrangements were clean; this one keeps the tenor's head in its own band
+  (G3–D4, below the alto's). Moving only the tenor's head up an octave, at b49.2, also cleared the reach check
+  but put it in unison with the soprano and the alto (one key struck by two voices), so I rejected it. The
+  tenor's tail starts an eighth later (D4 as an eighth).
+- **b52, the final chord.** The bass ends on G2 instead of G1. G1 with the tenor's G3 needed 24 semitones in one
+  hand, and the tenor's G3 is the resolution of its leading tone F♯3, so the bass moved: D2 rises a fourth to G2.
+  The low G1 is lost; the cadence keeps its complete D7 (F♯3 in the tenor) and B-A-C-H on top.
+- **Denser or brighter climax:** not needed, in my judgment. The summit's four lines needed no change (they
+  were never out of reach), and the review's question was whether the summit registers as a meeting of known
+  characters. That depends on listening, not on adding notes; the weak spots above already name it as the first
+  thing to check by ear.
+
+Critic before → after: reach_errors 7 → 0; keyboard_unplayable_pct 4.7 → 2.1; unresolved 0 → 0; unverified
+2 → 2 (b3.3, b8.3, in the kept exposition); parallels 0 / beat-to-beat 1 (unchanged); bad doublings 2
+(unchanged); crossings 3 (unchanged); melody flags 2 → 1; stepwise 60.0 → 60.3 %. The prelude is unchanged.
+Renders not yet redone.

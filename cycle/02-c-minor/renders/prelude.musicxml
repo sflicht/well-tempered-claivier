@@ -36,6 +36,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Andante: groups of four</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Andante; the accents follow the groups</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>63</per-minute>
@@ -708,6 +716,11 @@
       </note>
     </measure>
     <measure number="6">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">groups of three against the beat</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -984,6 +997,11 @@
       </note>
     </measure>
     <measure number="8">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">the subject in the accents</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1535,6 +1553,11 @@
       </note>
     </measure>
     <measure number="12">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E-flat: downbeat regained</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1676,6 +1699,11 @@
       </note>
     </measure>
     <measure number="13">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">groups of five</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -2507,6 +2535,11 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">dominant pedal</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -3046,6 +3079,11 @@
       </note>
     </measure>
     <measure number="23">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Presto</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -3312,6 +3350,20 @@
       </note>
     </measure>
     <measure number="24">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Adagio</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>40</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="40.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -3346,6 +3398,20 @@
       </note>
     </measure>
     <measure number="25">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">a tempo: the downbeat regained</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>63</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="63.0" />
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -3748,6 +3814,11 @@
       </note>
     </measure>
     <measure number="28">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">deceptive cadence</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -4021,6 +4092,11 @@
       </note>
     </measure>
     <measure number="30">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">tonic pedal</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -4221,6 +4297,12 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="61.57" />
       <note>
         <pitch>
           <step>G</step>
@@ -4254,6 +4336,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="58.74" />
       <note>
         <pitch>
           <step>E</step>
@@ -4290,6 +4373,7 @@
       </note>
     </measure>
     <measure number="32">
+      <sound tempo="55.9" />
       <note>
         <pitch>
           <step>C</step>
@@ -4315,6 +4399,15 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>46</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="46.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>

@@ -40,6 +40,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Fugue a 3</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegro moderato</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>80</per-minute>
@@ -594,6 +602,11 @@
       </note>
     </measure>
     <measure number="7">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">third voice: bass subject</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -810,6 +823,11 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 1</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1044,6 +1062,11 @@
     <measure number="11">
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">E-flat</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>Subject (E-flat), soprano</words>
         </direction-type>
       </direction>
@@ -1195,6 +1218,11 @@
       </note>
     </measure>
     <measure number="13">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 2</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1292,6 +1320,11 @@
       </note>
     </measure>
     <measure number="15">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">G minor: subject, augmentation, inversion</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -1605,6 +1638,11 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 3</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1742,6 +1780,11 @@
       </note>
     </measure>
     <measure number="21">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Mirror trio (F minor)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Mirror trio (f): inversion, soprano; CS2 mirrored in the alto, CS in the bass</words>
@@ -1906,6 +1949,11 @@
     <measure number="23">
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Stretto</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>Stretto: subject (c), soprano</words>
         </direction-type>
       </direction>
@@ -2052,6 +2100,11 @@
       </note>
     </measure>
     <measure number="25">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">cresc.</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2237,6 +2290,11 @@
     <measure number="27">
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Peak: stretto a 3</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>Peak stretto a 3: subject (c), soprano</words>
         </direction-type>
       </direction>
@@ -2383,6 +2441,11 @@
       </note>
     </measure>
     <measure number="29">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">deceptive cadence (beat 4)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -2435,6 +2498,11 @@
       </note>
     </measure>
     <measure number="30">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Neapolitan</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -2504,6 +2572,11 @@
       </note>
     </measure>
     <measure number="31">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Coda: BWV 847 subject in the bass</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2745,6 +2818,12 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="78.49" />
       <note>
         <pitch>
           <step>G</step>
@@ -2753,6 +2832,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="75.49" />
       <note>
         <pitch>
           <step>F</step>
@@ -2771,6 +2851,20 @@
       </note>
     </measure>
     <measure number="36">
+      <sound tempo="72.49" />
+      <sound tempo="69.49">
+        <offset sound="yes">480</offset>
+      </sound>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>62</per-minute>
+          </metronome>
+        </direction-type>
+        <offset sound="yes">960</offset>
+        <sound tempo="62.0" />
+      </direction>
       <note>
         <pitch>
           <step>E</step>

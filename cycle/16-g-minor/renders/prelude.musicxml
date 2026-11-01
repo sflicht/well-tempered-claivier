@@ -44,6 +44,9 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words font-weight="bold">Fantasia: libero</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>56</per-minute>
@@ -596,6 +599,15 @@
       </note>
     </measure>
     <measure number="4">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>52</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="52.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -688,6 +700,15 @@
       </note>
     </measure>
     <measure number="5">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>60</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="60.0" />
+      </direction>
       <note>
         <rest />
         <duration>240</duration>
@@ -1036,6 +1057,19 @@
       </note>
     </measure>
     <measure number="8">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>58</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="58.0" />
+      </direction>
+      <sound tempo="55.98" />
       <note>
         <pitch>
           <step>D</step>
@@ -1102,6 +1136,7 @@
         <duration>60</duration>
         <type>32nd</type>
       </note>
+      <sound tempo="51.97" />
       <note>
         <pitch>
           <step>C</step>
@@ -1144,6 +1179,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="47.97" />
       <note>
         <pitch>
           <step>D</step>
@@ -1177,6 +1213,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="43.97" />
       <note>
         <pitch>
           <step>G</step>
@@ -1204,6 +1241,15 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>60</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="60.0" />
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -1285,6 +1331,15 @@
       </note>
     </measure>
     <measure number="12">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="58.74" />
+      <sound tempo="56.24">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -1293,6 +1348,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="53.74" />
+      <sound tempo="51.24">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -1304,6 +1363,15 @@
       </note>
     </measure>
     <measure number="13">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>58</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="58.0" />
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -1640,6 +1708,19 @@
       </note>
     </measure>
     <measure number="15">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>48</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="48.0" />
+      </direction>
+      <sound tempo="47.12" />
       <note>
         <pitch>
           <step>E</step>
@@ -1649,11 +1730,13 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="45.37" />
       <note>
         <rest />
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="43.62" />
       <note>
         <pitch>
           <step>E</step>
@@ -1662,6 +1745,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="41.87" />
       <note>
         <rest />
         <duration>480</duration>
@@ -1669,6 +1753,15 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>34</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="34.0" />
+      </direction>
       <note>
         <pitch>
           <step>D</step>

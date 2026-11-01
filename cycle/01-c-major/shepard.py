@@ -167,5 +167,11 @@ def performance_score(notation, pcs, struck, meta, mix_keys, sigma_keys, floors=
                     'mix_keyframes': mix_keys, 'sigma_keyframes': sigma_keys,
                     'layer_floors': [list(f) for f in floors],
                     'rule': 'A = (1-g)[q==p] + g*exp(-((q-c)/s)^2/2); v = v_written*sqrt(A); drop v<9'}
+    # The octave layers of one written line double it by design: tell the critic.
+    by_label = {}
+    for label, band in order:
+        by_label.setdefault(label, []).append(f'{label} / oct {band}')
+    m['doublings'] = [[a, b] for names in by_label.values()
+                      for i, a in enumerate(names) for b in names[i + 1:]]
     return {'metadata': m, 'voices': out,
             'performance_of': 'prelude-notation.json (same notes, octave-layered and pedalled)'}
