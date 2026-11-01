@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Fugue XXIV in B minor, twenty-five voices (the finale of The Well-Tempered clAIvier).
+"""Fugue XXIV in B minor, for twenty-five parts (the finale of The Well-Tempered clAIvier).
+
+The twenty-five parts enter one by one; at most fourteen carry independent lines at once
+(eight to twelve through the convergence, fourteen at the arrival), and all twenty-five sound
+together only in the last chord.  A part that could only double another at the unison rests.
 
 The convergence (bars 42-53) was composed first, as a standalone study (convergence.py);
 the build-up was then written backwards from what it needs the listener to know, and the
@@ -10,12 +14,14 @@ release forwards from its arrival.  Every note is a literal token string in
     build3.py   bars 18-25  I (E minor) in stretto with S in D; S in C in the bass; U knocks
     build4.py   bars 26-36  S in A with I on B; S in E with CS1; dominant pedal on C#:
                             the subject's head climbing T5 -> A3 -> S4, CS1 complete,
-                            the heads of Fugues V and VIII; 9 -> 15 moving voices
+                            the heads of Fugues V and VIII; 8 -> 11 moving voices
     build5.py   bars 37-41  S in two-fold augmentation (F# minor, Bass II) under CS1 x2,
-                            the inversion's head twice, U and R figures; 15 -> 20 voices
+                            the inversion's head twice, U and R figures; 11-12 moving
     conv_a/b/c  bars 42-53  the cantus (S x4, Contrabass) with guests from Fugues V, VIII, II, IV
     release.py  bars 54-63  Fugue V in B major, Fugue I's canon ladder, the mirror wedge, the
-                            last chord reached line by line (8-9 lines throughout)
+                            last chord reached line by line (5-10 moving lines a bar);
+                            Fugue I's ladder has three rungs, the first in Bass IV and
+                            Baritone I (bars 53-56)
 
 Themes are explicit transpositions/augmentations of the material in xxiv.py; the guests are
 quoted exactly from the finished fugues of this edition (see NOTES.md for sources).
@@ -101,8 +107,8 @@ def main():
     c0 = (C0 - 1) * 4
     meta = {
         'title': 'The Well-Tempered clAIvier',
-        'subtitle': 'Fugue XXIV in B minor, twenty-five voices',
-        'composer': 'Claude / Sam (guest subjects from Fugues I, II, IV, V, VIII of this edition)', 'instrument': 'Twenty-five voices (open score)', 'key': 'B', 'mode': 'minor',
+        'subtitle': 'Fugue XXIV in B minor, for twenty-five parts',
+        'composer': 'Claude / Sam (guest subjects from Fugues I, II, IV, V, VIII of this edition)', 'instrument': 'Twenty-five parts (open score; at most fourteen independent lines at once)', 'key': 'B', 'mode': 'minor',
         'meter': [4, 4], 'bpm': 63, 'tempo_text': 'Largo, poi con fuoco',
         'tempo_map': [[100, 63], [144, 69, 'ramp'], [c0 + 40, 69], [c0 + 48, 58, 'ramp'],
                       [c0 + 72, 58], [c0 + 80, 46, 'ramp'], [c0 + 88, 38, 'ramp']],
@@ -119,7 +125,9 @@ def main():
                     {'t': c0 + 4, 'label': 'cantus: subject x4'}, {'t': c0 + 5.5, 'label': 'Fugue V'},
                     {'t': c0 + 20, 'label': 'Fugue VIII'}, {'t': c0 + 30, 'label': 'Fugue II'},
                     {'t': c0 + 39, 'label': 'Fugue IV'}, {'t': c0 + 44, 'label': 'arrival'},
-                    {'t': c0 + 48, 'label': 'release: Fugue V in B'}, {'t': c0 + 55.5, 'label': 'Fugue I ladder'},
+                    {'t': c0 + 47.5, 'label': 'release: Fugue I ladder, rung 1 (Bass IV, Baritone I)'},
+                    {'t': c0 + 48, 'label': 'Fugue V in B'}, {'t': c0 + 55.5, 'label': 'ladder, rung 2'},
+                    {'t': c0 + 63.5, 'label': 'ladder, rung 3'},
                     {'t': c0 + 72, 'label': 'mirror wedge'}, {'t': c0 + 80, 'label': 'last chord'}],
         'score_layout': {'paper': 'a2', 'hide_empty_staves': True, 'staff_size': 16, 'staff_distance': 10},
         'score_tagline': 'The Well-Tempered clAIvier — third edition',

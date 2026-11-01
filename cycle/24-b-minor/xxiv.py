@@ -1,4 +1,4 @@
-"""Shared material and placement helpers for Fugue XXIV in B minor (25 voices).
+"""Shared material and placement helpers for Fugue XXIV in B minor (for twenty-five parts).
 
 Nothing here chooses a note.  The materials below are written by hand (or quoted
 exactly from the finished fugues of this edition); `Score.put` places literal token
@@ -19,7 +19,9 @@ import wtclib as W  # noqa: E402
 METER = (4, 4)
 
 # ------------------------------------------------------------------ voices
-# 25 real voices, named by register, highest first.
+# 25 parts, named by register, highest first.  They enter one by one; at most fourteen carry
+# independent lines at once (eight to twelve through the convergence, fourteen at the arrival),
+# and all twenty-five sound together only in the last chord (NOTES.md, 'Review response').
 VOICES = [
     ('S1', 'Soprano I', 'treble'), ('S2', 'Soprano II', 'treble'), ('S3', 'Soprano III', 'treble'),
     ('S4', 'Soprano IV', 'treble'), ('S5', 'Soprano V', 'treble'),

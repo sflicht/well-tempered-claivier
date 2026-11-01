@@ -59,10 +59,15 @@ def main():
         res[label] = run(label, subj, slice_line(CANTUS, at, int(dur(subj))))
     # release guests
     IB = tr(GUESTS['FI'][0], -1, -1)
-    res['FI rung 1'] = run('Fugue I in B: Br2 leads, T5 an octave above, 3 eighths later', IB, octv(IB, -1), 6)
-    res['FI rung 2'] = run('Fugue I in B: A2 leads, S1 an octave above, 3 eighths later', octv(IB, 1), IB, 6)
+    res['FI rung 1'] = run('Fugue I in B: B4 leads, Br1 an octave above, 3 eighths later', octv(IB, -1), octv(IB, -2), 6)
+    res['FI rung 2'] = run('Fugue I in B: Br2 leads, T5 an octave above, 3 eighths later', IB, octv(IB, -1), 6)
+    res['FI rung 3'] = run('Fugue I in B: A2 leads, S1 an octave above, 3 eighths later', octv(IB, 1), IB, 6)
     VB = tr(GUESTS['V'][0], -3, -2)
     res['V release'] = run('Fugue V in B major, T3 at bar 54 (release), over the cantus pedal B1', VB, 'B1:16 B1:16')
+    # the two guests of bars 54-55 against each other: Fugue V (T3, from 54.1) and the first rung
+    # (B4 from 53.4.5, Br1 from 54.2)
+    res['V vs rung 1 leader'] = run('Fugue V in B (T3) against rung 1 leader (B4), an eighth later', VB, octv(IB, -2), 2)
+    res['V vs rung 1 follower'] = run('Rung 1 follower (Br1) against Fugue V in B (T3), a quarter later', octv(IB, -1), VB, 4)
     (HERE / 'renders').mkdir(exist_ok=True)
     (HERE / 'guest-verification.json').write_text(json.dumps(res, indent=1))
 

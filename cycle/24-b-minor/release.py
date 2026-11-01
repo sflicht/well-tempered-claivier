@@ -1,15 +1,22 @@
 """The release (bars 54-63, B major), after the arrival at c11 (bar 53).
-Bars 54-55: the voices let go one after another; Fugue V's subject, transposed to B major,
-sounds once more as a fanfare (T3).  Bars 55-59: Fugue I's subject in B major climbs a
-two-rung ladder of canons at the octave three eighths apart (its own rung R3): Baritone II
-leads, Tenor V follows; then Alto II leads, Soprano I follows, an octave higher, each
-entry taking over the last note of the one before.  Bars 60-61: the mirror wedge -- the
-subject's chromatic tail rises (G G# A A#) in Tenor I while the inversion's tail falls
+Bars 53-59: Fugue I's subject in B major climbs a three-rung ladder of canons at the octave,
+three eighths apart (Fugue I's own rung R3), each rung an octave above the last and each
+leader starting on the last note of the leader before: Bass IV leads from 53.4.5 (the bass
+line of bars 54-55, over the cantus's B pedal) and Baritone I follows; Baritone II leads on
+Bass IV's last note and Tenor V follows; Alto II leads on Baritone II's last note and
+Soprano I follows.  Over the first rung, the arrival's lines let go and Fugue V's subject,
+transposed to B major, sounds once more as a fanfare (T3).  Bars 60-61: the mirror wedge --
+the subject's chromatic tail rises (G G# A A#) in Tenor I while the inversion's tail falls
 (D# D C# C) in Alto III, both in four-fold augmentation like the cantus, over B and E
-pedals: Em(maj7) - E7 - A - French sixth, closing together on one B.  Bars 62-63: the
-final chord gathers all twenty-five voices, each arriving by step on its own beat.
-Baritone III, Tenor IV, Tenor II and Alto IV join for the wedge; the Contrabass strikes its
-pedal B again at the wedge, and the five lowest voices reach the last chord directly."""
+pedals: Em(maj7) - E7 - A - French sixth, closing together on one B.  Baritone III, Tenor IV,
+Tenor II and Alto IV join for the wedge; the Contrabass strikes its pedal B again there.
+Bars 62-63: the last chord, the only place where all twenty-five parts sound together.
+Eleven lines carry on into it; the other fourteen arrive one to three per beat, the upper
+nine from a neighbour note a step away, the five lowest directly.
+
+Review 3 (Nov 2026): Bass IV and Baritone I, which had sung only the last chord (and one
+B3 under Fugue IV), now carry the ladder's first rung; Bass I's walk, A1's and A5's inner
+lines and Baritone II's held F#3 in bars 54-55 made way for it."""
 from xxiv import *
 
 I_B = tr(GUESTS['FI'][0], -1, -1)        # Fugue I's subject in B major (upbeat F#4)
@@ -25,30 +32,32 @@ def release(sc, b0=52):
     for k in range(9):
         P('B5', r(k), 1, "B1:16" if k == 5 else "B1:16~")   # the pedal is struck again at the wedge (b60)
     P('B5', r(9), 1, "B1:16")
-    # ---- bar 54: B major; the arrival's lines let go one after another, eight keep going
+    # ---- bar 54: B major; the arrival's lines let go one after another
     sc.theme('T3', r(0), 1, V_B, 'Fugue V guest (in B major)', 'V', semis=-3)
-    P('S1', r(0), 1, "B5:16"); P('S1', r(1), 1, "C#6:4 B5:8 C#6:2 B5:2")
-    P('S2', r(0), 1, "D#6:16~"); P('S2', r(1), 1, "D#6:8 E6:4 F#6:4"); P('S2', r(2), 1, "F#6:4 D#6:8 G#5:4")
+    P('S1', r(0), 1, "B5:16"); P('S1', r(1), 1, "A#5:4 B5:8")
+    P('S2', r(0), 1, "D#6:16"); P('S2', r(1), 1, "E6:8 D#6:8"); P('S2', r(2), 1, "F#6:4 D#6:8 G#5:4")
     P('S2', r(3), 1, "A#5:2 G#5:6 F#5:8")
     P('S3', r(0), 1, "D#5:4")
     P('S4', r(0), 1, "B4:4")
-    P('A1', r(0), 1, "D#4:8 E4:4 F#4:4"); P('A1', r(1), 1, "F#4:8 G#4:4 F#4:4"); P('A1', r(2), 1, "D#4:4")
     P('A2', r(0), 1, "F#4:12")
-    P('A5', r(0), 1, "R:8 C#4:4 D#4:4"); P('A5', r(1), 1, "D#4:16")
-    P('T1', r(0), 1, "B3:12")
-    P('Br2', r(0), 1, "F#3:16~"); P('Br2', r(1), 1, "F#3:12")
-    P('B1', r(0), 1, "D#3:8 B2:8"); P('B1', r(1), 1, "B2:8 G#2:4 A#2:4")
-    # ---- bars 53-55: Fugue I, rung 1 (Br2 leads, T5 follows an octave higher, 3 eighths later)
-    sc.theme('Br2', r(1), 4.5, octv(I_B, -1), 'Fugue I guest (in B major), canon leader', 'FI', semis=-13)
-    sc.theme('T5', r(2), 2, I_B, 'Fugue I guest, canon at the octave (its rung R3)', 'FI', semis=-1)
+    P('T1', r(0), 1, "B3:4")
+    # (review 3: A1's and A5's inner lines and Bass I's walk in b54-55, and Br2's held F#3, made way
+    #  for the ladder's first rung, which is now the bass line of these two bars)
+    # ---- bars 53-56: Fugue I, rung 1, in the two lowest free voices: Bass IV leads (the bass line
+    #      over the pedal), Baritone I follows an octave higher, 3 eighths later (Fugue I's rung R3)
+    sc.theme('B4', r(-1), 4.5, octv(I_B, -2), 'Fugue I guest (in B major), first rung: leader', 'FI', semis=-25)
+    sc.theme('Br1', r(0), 2, octv(I_B, -1), 'Fugue I guest, first rung: canon at the octave (its rung R3)', 'FI', semis=-13)
+    # ---- bars 55-58: rung 2, an octave higher (Br2 leads on Bass IV's last note, T5 on Baritone I's)
+    sc.theme('Br2', r(1), 4.5, octv(I_B, -1), 'Fugue I guest, second rung: leader', 'FI', semis=-13)
+    sc.theme('T5', r(2), 2, I_B, 'Fugue I guest, second rung: canon at the octave', 'FI', semis=-1)
     P('S4', r(2), 1, "R:8 F#5:6 E5:2"); P('S4', r(3), 1, "E5:8 D#5:4 C#5:4")
     P('B1', r(2), 1, "B2:12 G#2:4"); P('B1', r(3), 1, "F#2:4 C#3:4 D#3:4 A#2:4")
     P('Br4', r(2), 1, "D#3:12 E3:4"); P('Br4', r(3), 1, "E3:8 F#3:8")
     P('Br4', r(4), 1, "D#3:12 E3:4"); P('Br4', r(5), 1, "E3:8 D#3:8")
-    # ---- bars 55-58: rung 2, an octave higher (A2 leads, S1 follows); Br2 and T5 walk down
-    sc.theme('A2', r(3), 4.5, I_B, 'Fugue I guest, second rung', 'FI', semis=-1)
-    sc.theme('S1', r(4), 2, octv(I_B, 1), 'Fugue I guest, canon at the octave above', 'FI', semis=11)
-    P('Br2', r(4), 1, "E4:8 D#4:8"); P('Br2', r(5), 1, "C#4:10 B3:6")
+    # ---- bars 57-60: rung 3, an octave higher again (A2 leads, S1 follows); Br2 and T5 walk down
+    sc.theme('A2', r(3), 4.5, I_B, 'Fugue I guest, third rung: leader', 'FI', semis=-1)
+    sc.theme('S1', r(4), 2, octv(I_B, 1), 'Fugue I guest, third rung: canon at the octave', 'FI', semis=11)
+    P('Br2', r(4), 1, "E4:4 F#4:8 D#4:4")   # (was E4 D#4: sevenths with T5's D#5 C#5); P('Br2', r(5), 1, "C#4:10 B3:6")
     P('T5', r(4), 2, "D#5:4 C#5:4 B4:4"); P('T5', r(5), 1, "A#4:4 G#4:4 F#4:8")
     P('B1', r(4), 1, "B2:8 A2:4 G#2:4"); P('B1', r(5), 1, "A#2:4 E2:4 F#2:8")
     # ---- bars 58-59: the mirror wedge over B and E: Em(maj7) - E7 - A - French sixth
@@ -90,9 +99,8 @@ B, C, Cs, D, Ds, E, F, Fs, G, Gs, A, As = 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
 def plan_release(o):
-    rows = [(0, 4, [B, Ds, Fs], 'B'),
-            (4, 6, [B, Ds, Fs], 'B'), (6, 7, [E, Gs, B], 'E/B'), (7, 7.5, [Fs, As, Cs, E], 'F#7/B'), (7.5, 8, [B, Ds, Fs], 'B')]
-    for k in (8, 16):        # the two Fugue I rungs share one harmonisation
+    rows = []
+    for k in (0, 8, 16):     # the three Fugue I rungs share one harmonisation (Fugue V in B fits the first)
         rows += [(k, k + 3, [B, Ds, Fs], 'B'), (k + 3, k + 3.5, [E, Gs, B], 'E/B'), (k + 3.5, k + 4, [B, Ds, Fs], 'B'),
                  (k + 4, k + 4.5, [Fs, As, Cs, E], 'F#7/B'), (k + 4.5, k + 5, [Fs, As, Cs, E], 'F#7'),
                  (k + 5, k + 6, [Cs, E, Gs, B], 'C#m7/G#'), (k + 6, k + 7, [B, Ds, Fs], 'B/D#'), (k + 7, k + 8, [Fs, As, Cs], 'F#')]

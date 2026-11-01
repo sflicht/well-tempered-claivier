@@ -5,7 +5,7 @@ Clavier (I C major, II C minor, III C♯ major … XXIV B minor). Each fugue has
 at most one voice more than Bach's fugue in the same key (WTC Book I), so two
 to six voices, except three monuments where the crowd is the idea: XX (one
 violin splitting into 21), XXI (the 22 natural overtones of a posthorn) and
-XXIV (the 25-voice finale). (Until October 2026 the rule was "Fugue N has
+XXIV (the finale for 25 parts). (Until October 2026 the rule was "Fugue N has
 N + 1 voices"; the textures grew too thick, and those fugues are being
 recomposed; the earlier versions are kept in each pair's `archive-n-plus-1/`.)
 The aim is not to depart from
@@ -48,7 +48,7 @@ and what to listen for in each pair.
 | [XXI](cycle/21-b-flat-major/) | B♭ major | à 22, *Capriccio sopra la lontananza* after BWV 992: voice n is partial n of B♭; the horns crack to the 7th partial where Bach writes G; it ends on the posthorn's harmonic series, partials 1–22, in just intonation | *Arioso*, the friends' coaxing | first version |
 | [XXII](cycle/22-b-flat-minor/) | B♭ minor | à 6, *Ma fin est mon commencement*: a tombeau for Bach as a crab fugue; the second half is the first exactly backwards in every voice; the cantus's H of B-A-C-H on the axis; ends on the lone note it began with | *Tombeau*, after Froberger | recomposed (was à 23) |
 | [XXIII](cycle/23-b-major/) | B major | à 5, *Fantasia ut re mi fa sol la per tutti i tuoni* after John Bull: a fifth voice carries the hexachord through Bull's order of all twelve keys while a four-voice fugue follows it; a bar of bare A♭–E♭ fifths that breaks in meantone | *A Ground upon Ut re mi fa sol la* | recomposed (was à 24) |
-| [XXIV](cycle/24-b-minor/) | B minor | à 25, twelve-tone subject (after BWV 869) and its twelve-tone mirror; the subject at quarter speed in the 25th voice while the subjects of Fugues V, VIII, II and IV arrive over it; Fugue I's ladder in the release | *per i 24 tuoni*: a walking-bass trio through all 24 keys in the WTC's order, two bars each, quoting the head of Bach's Book I fugue in each key | new |
+| [XXIV](cycle/24-b-minor/) | B minor | for 25 parts (at most 14 independent at once), twelve-tone subject (after BWV 869) and its twelve-tone mirror; the subject at quarter speed in the 25th voice while the subjects of Fugues V, VIII, II and IV arrive over it; Fugue I's canon ladder climbs from Bass IV to Soprano I in the release | *per i 24 tuoni*: a walking-bass trio through all 24 keys in the WTC's order, two bars each, quoting the head of Bach's Book I fugue in each key | new |
 
 Appendix ([`cycle/appendix/`](cycle/appendix/)), after Bach's appended canons:
 

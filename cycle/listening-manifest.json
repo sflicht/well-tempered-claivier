@@ -449,7 +449,7 @@
    ]
   },
   {
-   "name": "Pair XXIV \u00b7 B minor (new, twenty-five voices)",
+   "name": "Pair XXIV \u00b7 B minor (new, for twenty-five parts)",
    "pieces": [
     {
      "id": "prelude-24",
@@ -460,10 +460,10 @@
     },
     {
      "id": "fugue-24",
-     "title": "Fugue XXIV \u00b7 twenty-five voices",
+     "title": "Fugue XXIV \u00b7 for twenty-five parts",
      "score": "cycle/24-b-minor/fugue.json",
      "tag": "new",
-     "notes": "Bach ends Book I with a B-minor fugue whose subject uses all twelve notes. This subject does the same: three dotted 'leans' and a chromatic climb, ending on the leading note. Its exact mirror is also twelve-tone.\n\nThe voices gather one at a time over 41 bars: exposition, a mirror stretto (subject against its own inversion), a dominant pedal over which the heads of Fugues V and VIII appear, and the subject in two-fold augmentation in the bass. At bar 43 the 25th voice, the contrabass, enters with the subject at quarter speed, and over it the subjects of Fugues V, VIII, II and IV each arrive at the point where the cantus's note makes their own key a harmony. After the arrival on B major, Fugue V's subject returns in B major, Fugue I's stretto ladder climbs once more, the subject's and the mirror's tails close in on one B, and all twenty-five voices gather on the last chord.\n\nWherever a voice could only have doubled another at the unison, it rests: at the convergence about ten to fourteen independent lines sound at once, and all twenty-five are heard together only on the last chord."
+     "notes": "Bach ends Book I with a B-minor fugue whose subject uses all twelve notes. This subject does the same: three dotted 'leans' and a chromatic climb, ending on the leading note. Its exact mirror is also twelve-tone.\n\nThe voices gather one at a time over 41 bars: exposition, a mirror stretto (subject against its own inversion), a dominant pedal over which the heads of Fugues V and VIII appear, and the subject in two-fold augmentation in the bass. At bar 43 the 25th voice, the contrabass, enters with the subject at quarter speed, and over it the subjects of Fugues V, VIII, II and IV each arrive at the point where the cantus's note makes their own key a harmony. After the arrival on B major, Fugue V's subject returns in B major, Fugue I's canon ladder climbs once more, now with a new lowest rung, so that it rises three octaves from the basses to the top soprano; the subject's and the mirror's tails close in on one B, and all twenty-five parts sound together, for the only time, on the last chord.\n\nIt is a fugue for twenty-five parts, not a twenty-five-voice texture: wherever a part could only have doubled another, it rests, so the convergence has eight to twelve independent lines and the arrival fourteen. A few parts accompany (an inner drone, the pedal choir) rather than argue."
     }
    ]
   },

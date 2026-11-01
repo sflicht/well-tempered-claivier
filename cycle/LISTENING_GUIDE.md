@@ -23,7 +23,7 @@ These are the pieces whose idea should be audible on a first hearing:
 4. **Fugue XXII** (B♭ minor): the second half is the first half backwards;
    listen for the opening returning in reverse (4½ min).
 5. **Pair XXIV** (B minor): the prelude walks through all 24 keys quoting
-   Bach's Book I subjects, then the 25-voice finale (6½ min).
+   Bach's Book I subjects, then the finale for twenty-five parts (6½ min).
 
 ## What each pair is trying to do
 
@@ -55,7 +55,7 @@ than Bach's fugue in the same key; XX, XXI and XXIV keep their crowds.
 | XXI B♭ (22) | the horn "cracking" to its flat 7th harmonic; the final natural-harmonic chord | leapy (posthorn idiom) |
 | XXII B♭ minor (6) | the palindrome: B-A-C-H before the axis, H-C-A-B after it | the second half's harmony is a little harsher |
 | XXIII B (5) | Bull's six-note scale through all twelve keys; meantone at bar 69 (or the short demo files); the one double-time statement (bars 75–78) that brings B back early | the six-bar clock is regular until bar 75 |
-| XXIV B minor (25) | the 24-key walk; Bach's and the cycle's subjects arriving over the slow bass | 10–14 real lines at once, not 25 |
+| XXIV B minor (25 parts) | the 24-key walk; Bach's and the cycle's subjects arriving over the slow bass; Fugue I's ladder climbing from the basses | at most 14 real lines at once; all 25 only on the last chord |
 
 ## The most useful feedback
 

@@ -9,10 +9,10 @@ from xxiv import *
 def part_a(sc, b0):
     c = lambda k: b0 + k            # bar number of cantus bar c_k
     P = sc.put
-    # cantus: the subject in four-fold augmentation, Contrabass, from c1 (the 25th voice)
+    # cantus: the subject in four-fold augmentation, Contrabass, from c1 (the 25th part, which enters only for it)
     sc.theme('B5', c(1), 1, octv(aug(S, 4), -2), 'Subject x4 (cantus)', 'S', scale=4, semis=-24)
     # S1: climbs to the dominant seventh, then Fugue V's subject in its own key
-    P('S1', c(0), 1, "C#6:4 D6:2 E6:10")
+    P('S1', c(0), 1, "C#6:6 D6:2 E6:8")             # its E from beat 3, as the voicing rule says
     P('S1', c(1), 1, "D6:4 R:2")
     sc.theme('S1', c(1), 2.5, octv(GUESTS['V'][0], 1), 'Fugue V guest (D major, own key)', 'V', semis=12)
     P('S1', c(3), 2.5, "C#6:2 B5:8~")
@@ -55,7 +55,7 @@ def part_a(sc, b0):
     P('A4', c(0), 1, "F#4:1 G#4:1 A#4:1 G#4:1 F#4:1 E#4:1 F#4:1 G#4:1 F#4:1 A#4:1 C#5:1 A#4:1 R:4")
     P('A4', c(4), 1, "R:6 B4:1 G#4:1 A#4:1 B4:1 C#5:1 E5:1 F#5:1 E5:1 C#5:1 A#4:1")
     # A5: the seventh E at c0, the G of C#o7, the E# of the diminished bar
-    P('A5', c(0), 1, "E4:6 R:10")
+    P('A5', c(0), 1, "E4:4 R:12")                    # the E on beat 1 only (no E against A4's E#)
     P('A5', c(2), 1, "R:8 G4:8")
     P('A5', c(3), 1, "R:4 E#4:8")
     # T2 upbeat figure into c1 (lands A, the 7th of Bm7, before the guest's A); E of F#7 at c4.3
