@@ -44,6 +44,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Bells</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Moderato, luminoso</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>96</per-minute>
@@ -547,6 +555,11 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Contrasting span</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1043,6 +1056,11 @@
       </note>
     </measure>
     <measure number="17">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Return</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1290,6 +1308,11 @@
       </note>
     </measure>
     <measure number="21">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Cadence</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -1414,6 +1437,12 @@
       </note>
     </measure>
     <measure number="23">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="95.0" />
       <note>
         <pitch>
           <step>D</step>
@@ -1424,6 +1453,9 @@
         <type>eighth</type>
         <dot />
       </note>
+      <sound tempo="93.0">
+        <offset sound="yes">120</offset>
+      </sound>
       <note>
         <rest />
         <duration>360</duration>
@@ -1439,12 +1471,19 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="91.0" />
+      <sound tempo="89.0">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <rest />
         <duration>720</duration>
         <type>quarter</type>
         <dot />
       </note>
+      <sound tempo="87.0">
+        <offset sound="yes">240</offset>
+      </sound>
       <note>
         <pitch>
           <step>G</step>
@@ -1459,6 +1498,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="85.0" />
       <note>
         <pitch>
           <step>B</step>
@@ -1476,6 +1516,17 @@
       </note>
     </measure>
     <measure number="24">
+      <sound tempo="83.0" />
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>72</per-minute>
+          </metronome>
+        </direction-type>
+        <offset sound="yes">480</offset>
+        <sound tempo="72.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2835,10 +2886,15 @@
     </measure>
     <measure number="24">
       <note>
+        <rest />
+        <duration>480</duration>
+        <type>quarter</type>
+      </note>
+      <note>
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>3</octave>
+          <octave>4</octave>
         </pitch>
         <duration>1920</duration>
         <tie type="start" />
@@ -2851,11 +2907,11 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>3</octave>
+          <octave>4</octave>
         </pitch>
-        <duration>960</duration>
+        <duration>480</duration>
         <tie type="stop" />
-        <type>half</type>
+        <type>quarter</type>
         <notations>
           <tied type="stop" />
         </notations>
@@ -4631,6 +4687,11 @@
     </measure>
     <measure number="24">
       <note>
+        <rest />
+        <duration>240</duration>
+        <type>eighth</type>
+      </note>
+      <note>
         <pitch>
           <step>E</step>
           <alter>1</alter>
@@ -4649,9 +4710,10 @@
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>960</duration>
+        <duration>720</duration>
         <tie type="stop" />
-        <type>half</type>
+        <type>quarter</type>
+        <dot />
         <notations>
           <tied type="stop" />
         </notations>

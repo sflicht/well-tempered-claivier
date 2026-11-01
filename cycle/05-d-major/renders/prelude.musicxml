@@ -36,6 +36,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">A: D</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegro; bright</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>104</per-minute>
@@ -851,6 +859,11 @@
       </note>
     </measure>
     <measure number="7">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">B: B minor</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -1090,6 +1103,14 @@
       </note>
       <note>
         <pitch>
+          <step>B</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>120</duration>
+        <type>16th</type>
+      </note>
+      <note>
+        <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
@@ -1108,15 +1129,6 @@
       <note>
         <pitch>
           <step>B</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>120</duration>
-        <type>16th</type>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>120</duration>
@@ -1326,6 +1338,14 @@
       </note>
       <note>
         <pitch>
+          <step>E</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>120</duration>
+        <type>16th</type>
+      </note>
+      <note>
+        <pitch>
           <step>G</step>
           <octave>5</octave>
         </pitch>
@@ -1344,15 +1364,6 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>120</duration>
-        <type>16th</type>
-      </note>
-      <note>
-        <pitch>
-          <step>C</step>
-          <alter>1</alter>
           <octave>5</octave>
         </pitch>
         <duration>120</duration>
@@ -1936,6 +1947,11 @@
       </note>
     </measure>
     <measure number="15">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">C: tattoo in the right hand</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -2548,6 +2564,11 @@
       </note>
     </measure>
     <measure number="21">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">D: 7th chain F#m7</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -3893,6 +3914,11 @@
       </note>
     </measure>
     <measure number="31">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E: return, the subject head in the bass</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -4696,6 +4722,17 @@
       </note>
     </measure>
     <measure number="37">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">F: flourish over the dominant</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="100.46" />
       <note>
         <pitch>
           <step>E</step>
@@ -4762,6 +4799,7 @@
         <duration>60</duration>
         <type>32nd</type>
       </note>
+      <sound tempo="93.46" />
       <note>
         <pitch>
           <step>D</step>
@@ -4828,6 +4866,7 @@
         <duration>60</duration>
         <type>32nd</type>
       </note>
+      <sound tempo="86.45" />
       <note>
         <pitch>
           <step>D</step>
@@ -4894,6 +4933,7 @@
         <duration>60</duration>
         <type>32nd</type>
       </note>
+      <sound tempo="79.45" />
       <note>
         <pitch>
           <step>E</step>
@@ -4921,6 +4961,15 @@
       </note>
     </measure>
     <measure number="38">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>92</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="92.0" />
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -4988,6 +5037,12 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="90.15" />
       <note>
         <pitch>
           <step>A</step>
@@ -5022,6 +5077,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="86.49" />
       <note>
         <pitch>
           <step>D</step>
@@ -5082,6 +5138,15 @@
       </note>
     </measure>
     <measure number="39">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>70</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="70.0" />
+      </direction>
       <note>
         <pitch>
           <step>D</step>
