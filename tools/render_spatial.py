@@ -87,21 +87,37 @@ def one_pole_lowpass(x, fc):
 
 
 def place(x, az_deg, dist):
-    """Return (left, right) for a source at azimuth (deg, + = right) and distance (m)."""
-    th = math.radians(max(-90.0, min(90.0, az_deg)))
-    back = abs(az_deg) > 90
+    """Return (left, right) for a source at azimuth (deg; 0 ahead, + right, +-180 behind) and distance (m).
+
+    Interaural time and level cues depend only on the lateral angle, asin|sin az|: a
+    source behind at 135 deg gets the same cues as one ahead at 45 deg (the cone of
+    confusion), and a source dead ahead or dead behind reaches both ears alike, so
+    nothing jumps at +-180. Behind the listener both ears are dulled, more so towards
+    180 deg and continuously from 90 deg, as the pinnae shade sound from the rear.
+    Head shadow is a blend towards a 1800 Hz low-pass weighted by the lateral
+    component (as in render_walk.render_path), so it fades to nothing on the median
+    plane instead of leaving one ear filtered.
+    """
+    az = (az_deg + 180.0) % 360.0 - 180.0          # wrap: +180 and -180 are one place
+    rad = math.radians(az)
+    s = abs(math.sin(rad))                          # 0 ahead/behind .. 1 at the side
+    lat = math.asin(min(1.0, s))
     a, c = 0.0875, 343.0
-    itd = a / c * (abs(th) + math.sin(abs(th)))
-    d = int(round(itd * RATE))
-    shadow_fc = 20000 * (1 - abs(math.sin(th))) + 1800 * abs(math.sin(th))
-    near = x * (1 + 0.25 * abs(math.sin(th)))
-    far = one_pole_lowpass(x, shadow_fc) * (1 - 0.35 * abs(math.sin(th)))
-    far = np.concatenate([np.zeros(d), far])[:len(x)]
-    if back:  # rear sources: duller on both ears
-        near = one_pole_lowpass(near, 6000)
-        far = one_pole_lowpass(far, 5000)
+    if s < 1e-9:                                    # on the median plane: no interaural cues
+        near, far = x.copy(), x.copy()
+    else:
+        itd = a / c * (lat + s)
+        d = int(round(itd * RATE))
+        near = x * (1 + 0.25 * s)
+        far = (x * (1 - s) + one_pole_lowpass(x, 1800) * s) * (1 - 0.35 * s)
+        far = np.concatenate([np.zeros(d), far])[:len(x)]
+    back = max(0.0, -math.cos(rad))                 # 0 at the side .. 1 straight behind
+    if back > 1e-9:
+        w = 0.6 * back
+        near = near * (1 - w) + one_pole_lowpass(near, 5500) * w
+        far = far * (1 - w) + one_pole_lowpass(far, 5500) * w
     g = 1.0 / max(1.0, dist / 2.0)
-    L, R = (far, near) if az_deg >= 0 else (near, far)
+    L, R = (far, near) if az > 0 else (near, far)
     return L * g, R * g
 
 
