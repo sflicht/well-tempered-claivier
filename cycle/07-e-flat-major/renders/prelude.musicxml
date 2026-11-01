@@ -40,6 +40,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Ritornello: the fugue subject in diminution</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Andante con moto, the chorale sung out</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>80</per-minute>
@@ -474,6 +482,11 @@
       </note>
     </measure>
     <measure number="5">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Wachet auf, ruft uns die Stimme</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -911,6 +924,11 @@
       </note>
     </measure>
     <measure number="10">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">der Waechter sehr hoch auf der Zinne</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1434,6 +1452,11 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">wach auf, du Stadt Jerusalem</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -1901,6 +1924,11 @@
       </note>
     </measure>
     <measure number="21">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Ritornello</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -2013,6 +2041,11 @@
       </note>
     </measure>
     <measure number="22">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Wohlauf, der Braeut'gam koemmt</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -2382,6 +2415,11 @@
       </note>
     </measure>
     <measure number="26">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">steht auf, die Lampen nehmt</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -2726,6 +2764,11 @@
       </note>
     </measure>
     <measure number="30">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Halleluja</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2857,6 +2900,11 @@
       </note>
     </measure>
     <measure number="33">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">macht euch bereit</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -3109,6 +3157,11 @@
       </note>
     </measure>
     <measure number="36">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">zu der Hochzeit</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -3300,6 +3353,11 @@
       </note>
     </measure>
     <measure number="38">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">ihr muesset ihm entgegen gehn</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -3583,11 +3641,29 @@
       </note>
     </measure>
     <measure number="42">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The last line answered by its own mirror</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="79.31" />
+      <sound tempo="77.94">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <rest />
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="76.56" />
+      <sound tempo="75.19">
+        <offset sound="yes">480</offset>
+      </sound>
       <direction placement="above">
         <direction-type>
           <words>Line 9 answered by its inversion</words>
@@ -3604,6 +3680,10 @@
       </note>
     </measure>
     <measure number="43">
+      <sound tempo="73.81" />
+      <sound tempo="72.44">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -3613,6 +3693,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="71.06" />
+      <sound tempo="69.69">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>A</step>
@@ -3624,6 +3708,10 @@
       </note>
     </measure>
     <measure number="44">
+      <sound tempo="68.31" />
+      <sound tempo="66.94">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>G</step>
@@ -3632,6 +3720,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="65.56" />
+      <sound tempo="64.19">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -3642,6 +3734,7 @@
       </note>
     </measure>
     <measure number="45">
+      <sound tempo="62.81" />
       <note>
         <pitch>
           <step>B</step>
@@ -3651,6 +3744,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="61.43" />
       <note>
         <pitch>
           <step>C</step>
@@ -3659,6 +3753,10 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="60.06" />
+      <sound tempo="58.68">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>D</step>
@@ -3669,6 +3767,15 @@
       </note>
     </measure>
     <measure number="46">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>58</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="58.0" />
+      </direction>
       <note>
         <pitch>
           <step>E</step>

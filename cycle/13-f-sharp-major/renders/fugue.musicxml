@@ -44,6 +44,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Intonazione: the subject in the bass</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegretto; Adagio in F-sharp minor; Quodlibet</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>72</per-minute>
@@ -67,6 +75,11 @@
       </note>
     </measure>
     <measure number="3">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Canon I at the unison (F#)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Canon I dux: subject</words>
@@ -442,6 +455,11 @@
       </note>
     </measure>
     <measure number="11">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Canon II at the second (B)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1440</duration>
@@ -755,6 +773,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="69.98" />
+      <sound tempo="65.98">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <rest />
         <duration>960</duration>
@@ -762,6 +789,20 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Canon III at the third (G# minor)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>64</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="64.0" />
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Canon III dux: subject on B (mediant)</words>
@@ -1057,6 +1098,15 @@
       </note>
     </measure>
     <measure number="26">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">accel.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="65.32" />
+      <sound tempo="67.99">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -1066,6 +1116,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="70.66" />
       <note>
         <pitch>
           <step>D</step>
@@ -1077,6 +1128,20 @@
       </note>
     </measure>
     <measure number="27">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Canon IV at the fourth, by inversion (C#)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>72</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="72.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1409,6 +1474,11 @@
       </note>
     </measure>
     <measure number="35">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Bass entry, dominant pedal</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1474,6 +1544,12 @@
       </note>
     </measure>
     <measure number="37">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="70.83" />
       <note>
         <pitch>
           <step>G</step>
@@ -1493,6 +1569,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="68.49" />
       <note>
         <pitch>
           <step>E</step>
@@ -1512,6 +1589,7 @@
         <duration>120</duration>
         <type>16th</type>
       </note>
+      <sound tempo="66.16" />
       <note>
         <pitch>
           <step>B</step>
@@ -1532,6 +1610,7 @@
       </note>
     </measure>
     <measure number="38">
+      <sound tempo="63.83" />
       <note>
         <pitch>
           <step>B</step>
@@ -1540,6 +1619,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="61.49" />
       <note>
         <pitch>
           <step>C</step>
@@ -1549,6 +1629,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="59.16" />
       <note>
         <pitch>
           <step>E</step>
@@ -1560,6 +1641,23 @@
       </note>
     </measure>
     <measure number="39">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Return: Canon V at the fifth, by inversion (F#)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>72</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="72.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1709,6 +1807,15 @@
       </note>
     </measure>
     <measure number="45">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+        <offset sound="yes">480</offset>
+      </direction>
+      <sound tempo="70.39">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -1728,6 +1835,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="67.19" />
       <note>
         <pitch>
           <step>G</step>
@@ -1739,6 +1847,13 @@
       </note>
     </measure>
     <measure number="46">
+      <sound tempo="63.99" />
+      <sound tempo="60.79">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="57.59">
+        <offset sound="yes">960</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -1755,6 +1870,20 @@
       </note>
     </measure>
     <measure number="47">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Canon VI at the sixth (F# minor, Adagio)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>52</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="52.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1962,6 +2091,15 @@
       </note>
     </measure>
     <measure number="53">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="51.2" />
+      <sound tempo="49.6">
+        <offset sound="yes">432</offset>
+      </sound>
       <note>
         <pitch>
           <step>G</step>
@@ -1972,6 +2110,9 @@
         <type>quarter</type>
         <dot />
       </note>
+      <sound tempo="48.0">
+        <offset sound="yes">144</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -1981,6 +2122,9 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="46.4">
+        <offset sound="yes">336</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -1992,6 +2136,9 @@
       </note>
     </measure>
     <measure number="54">
+      <sound tempo="44.8">
+        <offset sound="yes">288</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -2002,6 +2149,15 @@
         <type>quarter</type>
         <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>76</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="76.0" />
+      </direction>
       <note>
         <rest />
         <duration>720</duration>
@@ -2010,6 +2166,11 @@
       </note>
     </measure>
     <measure number="55">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Quodlibet (after Var. 30)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Quodlibet: the subject over Ich bin</words>
@@ -2211,6 +2372,12 @@
       </note>
     </measure>
     <measure number="61">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="73.81" />
       <note>
         <pitch>
           <step>C</step>
@@ -2221,6 +2388,9 @@
         <type>eighth</type>
         <dot />
       </note>
+      <sound tempo="69.48">
+        <offset sound="yes">120</offset>
+      </sound>
       <note>
         <pitch>
           <step>D</step>
@@ -2231,6 +2401,9 @@
         <type>eighth</type>
         <dot />
       </note>
+      <sound tempo="65.14">
+        <offset sound="yes">240</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -2252,6 +2425,7 @@
       </note>
     </measure>
     <measure number="62">
+      <sound tempo="60.81" />
       <note>
         <pitch>
           <step>A</step>
@@ -2262,6 +2436,9 @@
         <type>eighth</type>
         <dot />
       </note>
+      <sound tempo="56.47">
+        <offset sound="yes">120</offset>
+      </sound>
       <note>
         <pitch>
           <step>G</step>
@@ -2272,6 +2449,15 @@
         <type>eighth</type>
         <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>40</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="40.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>

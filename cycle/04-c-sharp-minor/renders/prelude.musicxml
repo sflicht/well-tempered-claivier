@@ -36,6 +36,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Allegro inquieto</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegro inquieto</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>100</per-minute>
@@ -515,6 +523,11 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">E major</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -829,6 +842,11 @@
       </note>
     </measure>
     <measure number="15">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Development</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1082,6 +1100,11 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Dominant pedal: crux</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1605,6 +1628,11 @@
       </note>
     </measure>
     <measure number="27">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Return</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -2067,6 +2095,11 @@
       </note>
     </measure>
     <measure number="34">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Lament bass</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2155,6 +2188,12 @@
       </note>
     </measure>
     <measure number="37">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="98.16" />
       <note>
         <pitch>
           <step>G</step>
@@ -2165,6 +2204,9 @@
         <type>eighth</type>
         <dot />
       </note>
+      <sound tempo="94.49">
+        <offset sound="yes">120</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -2175,6 +2217,9 @@
         <type>eighth</type>
         <dot />
       </note>
+      <sound tempo="90.82">
+        <offset sound="yes">240</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -2196,6 +2241,20 @@
       </note>
     </measure>
     <measure number="38">
+      <sound tempo="87.15" />
+      <sound tempo="83.49">
+        <offset sound="yes">480</offset>
+      </sound>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>78</per-minute>
+          </metronome>
+        </direction-type>
+        <offset sound="yes">720</offset>
+        <sound tempo="78.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>

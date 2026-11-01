@@ -44,6 +44,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Station I (D minor): the ground in the Bass</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Passacaglia e fuga sopra il Crucifixus. Grave, ma sempre in moto</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>76</per-minute>
@@ -67,6 +75,11 @@
       </note>
     </measure>
     <measure number="3">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Inversus = the ground at double speed (Alto)</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1440</duration>
@@ -83,6 +96,11 @@
       </note>
     </measure>
     <measure number="5">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Subject (Soprano)</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Subject (Soprano)</words>
@@ -215,6 +233,11 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Station II (A minor): the ground in the Tenor; the Bass rests</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -286,6 +309,11 @@
     <measure number="11">
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Inversus (Soprano)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>Inversus (Soprano)</words>
         </direction-type>
       </direction>
@@ -347,6 +375,11 @@
       </note>
     </measure>
     <measure number="13">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Answer (Alto)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -445,6 +478,12 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="74.66" />
       <note>
         <pitch>
           <step>B</step>
@@ -453,6 +492,10 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="71.99" />
+      <sound tempo="69.32">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -472,6 +515,23 @@
       </note>
     </measure>
     <measure number="17">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 1: falling fifths to F major</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>76</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="76.0" />
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -624,6 +684,12 @@
       </note>
     </measure>
     <measure number="20">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="73.98" />
       <note>
         <pitch>
           <step>B</step>
@@ -641,6 +707,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="69.98" />
       <note>
         <pitch>
           <step>C</step>
@@ -649,6 +716,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="65.98" />
       <note>
         <rest />
         <duration>480</duration>
@@ -656,6 +724,20 @@
       </note>
     </measure>
     <measure number="21">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Station III (F major): the ground in the Alto; the Soprano rests</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>72</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="72.0" />
+      </direction>
       <note>
         <rest />
         <duration>1440</duration>
@@ -672,6 +754,11 @@
       </note>
     </measure>
     <measure number="23">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Inversus (Bass), in tenths under the ground</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1440</duration>
@@ -688,6 +775,11 @@
       </note>
     </measure>
     <measure number="25">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Subject (Soprano), F major</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Subject (Soprano), F major</words>
@@ -793,6 +885,15 @@
       </note>
     </measure>
     <measure number="28">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="70.32" />
+      <sound tempo="66.99">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -805,6 +906,7 @@
           <tied type="stop" />
         </notations>
       </note>
+      <sound tempo="63.65" />
       <note>
         <pitch>
           <step>C</step>
@@ -815,6 +917,20 @@
       </note>
     </measure>
     <measure number="29">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode 2: the surface quickens (sixteenths), through G minor</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>76</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="76.0" />
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -1343,6 +1459,11 @@
       </note>
     </measure>
     <measure number="35">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Stretto: subject (Tenor) and answer (Alto), one bar apart</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1496,6 +1617,15 @@
       </note>
     </measure>
     <measure number="40">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="73.3" />
+      <sound tempo="67.97">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -1505,6 +1635,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="62.63" />
       <note>
         <pitch>
           <step>E</step>
@@ -1515,6 +1646,20 @@
       </note>
     </measure>
     <measure number="41">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Summit: the ground augmented in the Bass; inversus (Tenor)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>70</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="70.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1601,6 +1746,11 @@
       </note>
     </measure>
     <measure number="45">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Ground in the Soprano (at the dominant): two speeds in the outer voices</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1652,6 +1802,11 @@
       </note>
     </measure>
     <measure number="47">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Subject (Alto) between the two grounds</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1706,6 +1861,11 @@
       </note>
     </measure>
     <measure number="49">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Inversus (Tenor): the ground at double speed under the two grounds</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1805,6 +1965,15 @@
       </note>
     </measure>
     <measure number="53">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="69.12" />
+      <sound tempo="67.37">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -1813,6 +1982,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="65.62" />
       <note>
         <pitch>
           <step>G</step>
@@ -1823,6 +1993,10 @@
       </note>
     </measure>
     <measure number="54">
+      <sound tempo="63.87" />
+      <sound tempo="62.12">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -1832,6 +2006,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="60.37" />
       <note>
         <pitch>
           <step>A</step>
@@ -1842,6 +2017,7 @@
       </note>
     </measure>
     <measure number="55">
+      <sound tempo="58.62" />
       <note>
         <pitch>
           <step>G</step>
@@ -1850,6 +2026,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="56.87" />
       <note>
         <pitch>
           <step>E</step>
@@ -1858,6 +2035,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>56</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="56.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1893,6 +2079,20 @@
       </note>
     </measure>
     <measure number="57">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Coda: the subject augmented (Soprano) over the tonic</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>60</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="60.0" />
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Subject augmented (Soprano), D major</words>
@@ -2038,6 +2238,18 @@
       </note>
     </measure>
     <measure number="63">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="58.49" />
+      <sound tempo="55.49">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="52.49">
+        <offset sound="yes">960</offset>
+      </sound>
       <note>
         <pitch>
           <step>D</step>
@@ -2055,6 +2267,7 @@
       </note>
     </measure>
     <measure number="64">
+      <sound tempo="49.48" />
       <note>
         <pitch>
           <step>D</step>
@@ -2067,6 +2280,15 @@
           <tied type="stop" />
         </notations>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>42</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="42.0" />
+      </direction>
       <note>
         <pitch>
           <step>A</step>

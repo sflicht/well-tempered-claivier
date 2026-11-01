@@ -44,6 +44,9 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words font-weight="bold">Lento, sempre piano: the knocks detached</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>66</per-minute>
@@ -520,6 +523,15 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="64.74" />
+      <sound tempo="62.24">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -529,6 +541,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="59.74" />
+      <sound tempo="57.24">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>G</step>
@@ -544,6 +560,20 @@
       </note>
     </measure>
     <measure number="20">
+      <sound tempo="54.74" />
+      <sound tempo="52.24">
+        <offset sound="yes">480</offset>
+      </sound>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>46</per-minute>
+          </metronome>
+        </direction-type>
+        <offset sound="yes">960</offset>
+        <sound tempo="46.0" />
+      </direction>
       <note>
         <pitch>
           <step>G</step>

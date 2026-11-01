@@ -40,6 +40,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">The cross of BWV 857</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Andante, come un corale</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>63</per-minute>
@@ -82,6 +90,11 @@
       </note>
     </measure>
     <measure number="2">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">B-A-C-H (soprano)</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -252,6 +265,12 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="62.25" />
       <note>
         <pitch>
           <step>A</step>
@@ -261,6 +280,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="60.75" />
       <note>
         <pitch>
           <step>G</step>
@@ -271,6 +291,10 @@
       </note>
     </measure>
     <measure number="8">
+      <sound tempo="59.25" />
+      <sound tempo="57.75">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>A</step>
@@ -280,6 +304,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="56.25" />
+      <sound tempo="54.75">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>G</step>
@@ -290,6 +318,20 @@
       </note>
     </measure>
     <measure number="9">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">B-A-C-H (bass)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>58</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="58.0" />
+      </direction>
       <note>
         <pitch>
           <step>B</step>
@@ -417,6 +459,20 @@
       </note>
     </measure>
     <measure number="13">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Tonic pedal</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>63</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="63.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -504,6 +560,12 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="61.57" />
       <note>
         <pitch>
           <step>G</step>
@@ -512,6 +574,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="58.74" />
       <note>
         <pitch>
           <step>E</step>
@@ -522,6 +585,15 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>46</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="46.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>

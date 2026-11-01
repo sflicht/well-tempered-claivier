@@ -40,6 +40,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Thema Regium, hidden in the Altus</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Andante, quaerendo invenietis</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>69</per-minute>
@@ -307,6 +315,11 @@
       </note>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Turning point: everything now runs backwards</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>Thema Regium cancrizans (backwards, an octave higher, on top)</words>
         </direction-type>
       </direction>
@@ -484,6 +497,15 @@
       </note>
     </measure>
     <measure number="16">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="67.81" />
+      <sound tempo="65.43">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>D</step>
@@ -492,6 +514,10 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="63.06" />
+      <sound tempo="60.68">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -503,6 +529,10 @@
       </note>
     </measure>
     <measure number="17">
+      <sound tempo="58.3" />
+      <sound tempo="55.93">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>A</step>
@@ -511,6 +541,20 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="53.55" />
+      <sound tempo="51.18">
+        <offset sound="yes">480</offset>
+      </sound>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>50</per-minute>
+          </metronome>
+        </direction-type>
+        <offset sound="yes">720</offset>
+        <sound tempo="50.0" />
+      </direction>
       <note>
         <pitch>
           <step>F</step>

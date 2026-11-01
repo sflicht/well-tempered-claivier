@@ -44,6 +44,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">The cradle</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Andante tranquillo, cullando (dotted quarter = 50)</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>75</per-minute>
@@ -75,6 +83,11 @@
       </note>
     </measure>
     <measure number="3">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Verse 1</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>verse 1: the fugue subject in augmentation</words>
@@ -226,6 +239,18 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="73.49" />
+      <sound tempo="70.49">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="67.49">
+        <offset sound="yes">960</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -238,6 +263,23 @@
       </note>
     </measure>
     <measure number="7">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Verse 2 (before verse 1 can end)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>75</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="75.0" />
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>verse 2 (over I6), with a second voice</words>
@@ -389,6 +431,18 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="73.15" />
+      <sound tempo="69.48">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="65.82">
+        <offset sound="yes">960</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -401,6 +455,23 @@
       </note>
     </measure>
     <measure number="11">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Verse 3: F minor (after V - vi)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">a tempo</words>
+        </direction-type>
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>75</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="75.0" />
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -447,11 +518,24 @@
       </note>
     </measure>
     <measure number="14">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+        <offset sound="yes">1440</offset>
+      </direction>
+      <sound tempo="72.81">
+        <offset sound="yes">1440</offset>
+      </sound>
       <note>
         <rest />
         <duration>1920</duration>
         <type>whole</type>
       </note>
+      <sound tempo="68.48" />
+      <sound tempo="64.14">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <rest />
         <duration>960</duration>
@@ -459,6 +543,20 @@
       </note>
     </measure>
     <measure number="15">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Verse 4: over the dominant (V7 - I6/4)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>68</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="68.0" />
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>verse 4, over the dominant pedal</words>
@@ -538,6 +636,15 @@
       </note>
     </measure>
     <measure number="17">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="67.33" />
+      <sound tempo="66.0">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -547,6 +654,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="64.66" />
       <note>
         <pitch>
           <step>C</step>
@@ -555,6 +663,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="63.33" />
       <note>
         <pitch>
           <step>D</step>
@@ -564,6 +673,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="62.0" />
       <note>
         <pitch>
           <step>E</step>
@@ -573,6 +683,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="60.66" />
       <note>
         <pitch>
           <step>F</step>
@@ -583,6 +694,10 @@
       </note>
     </measure>
     <measure number="18">
+      <sound tempo="59.33" />
+      <sound tempo="58.0">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>E</step>
@@ -602,6 +717,7 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <sound tempo="56.66" />
       <note>
         <pitch>
           <step>C</step>
@@ -610,6 +726,13 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="55.33" />
+      <sound tempo="54.0">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="52.66">
+        <offset sound="yes">960</offset>
+      </sound>
       <note>
         <pitch>
           <step>B</step>
@@ -622,6 +745,20 @@
       </note>
     </measure>
     <measure number="19">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">The hands resolve; the bass never comes</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>30</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="30.0" />
+      </direction>
       <note>
         <pitch>
           <step>A</step>
