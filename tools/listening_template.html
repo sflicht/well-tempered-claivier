@@ -63,6 +63,7 @@ input[type=range] { accent-color: var(--accent); width: 120px }
 .seg { display: flex; flex-wrap: wrap; gap: 6px }
 .seg button { background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: 13.5px }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink) }
+.seg button:disabled { cursor: default; opacity: .55 }
 #tchart { height: 120px }
 .tnote { font-size: 13.5px; color: var(--muted); margin: 0 }
 .tnote b { color: var(--ink); font-family: var(--f-mono); font-weight: 600; font-variant-numeric: tabular-nums }
@@ -85,7 +86,7 @@ footer { color: var(--muted); font-size: 12.5px; max-width: 70ch }
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">24 keys · N + 1 voices · synthesised from the written score</div>
+    <div class="eyebrow">24 keys · each fugue at most one voice more than Bach’s, except XX, XXI and XXIV</div>
     <h1>The Well-Tempered <em>clAIvier</em></h1>
     <p class="lede">Each movement plays from its event score, here in your browser. Switch the tuning to hear what “well-tempered” meant: in meantone the remote keys sour, in Bach–Lehman every key is usable but each has its own colour. Tap a voice to solo it, tap again to mute it.</p>
   </header>
@@ -152,7 +153,7 @@ const $ = id => document.getElementById(id);
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const vcol = i => css('--v' + (1 + i % 9));
 let cur = null, temp = 'bach-lehman', tempo = 1, state = {};
-let ctx = null, master = null, wave = null, playing = false, startCtx = 0, startPos = 0, ptr = 0, timer = null, live = new Set(), flat = [];
+let ctx = null, master = null, wave = null, playing = false, startCtx = 0, startPos = 0, ptr = 0, timer = null, live = new Set(), queue = [];
 try { const t = localStorage.getItem('clav-temp'); if (t && DATA.temps[t]) temp = t; } catch (e) {}
 
 // ---------- piece selection ----------
@@ -170,8 +171,7 @@ function load(id) {
   cur.barQ = cur.meter[0] * 4 / cur.meter[1];
   cur.end = Math.max(...cur.voices.map(v => v.e.length ? v.e[v.e.length - 1][0] + v.e[v.e.length - 1][1] : 0));
   const all = cur.voices.flatMap(v => v.e.map(e => e[2])); cur.lo = Math.min(...all) - 2; cur.hi = Math.max(...all) + 2;
-  cur.hasCents = cur.voices.some(v => v.e.some(e => e.length > 4));
-  flat = []; cur.voices.forEach((v, i) => v.e.forEach(e => flat.push([e[0], e[1], e[2], e[3], i, cur.hasCents ? (e[4] || 0) : null]))); flat.sort((a, b) => a[0] - b[0]);
+  prep(cur);
   $('ptitle').innerHTML = esc(cur.title) + (cur.tag ? `<span class="tag ${cur.tag}">${esc(cur.tag)}</span>` : '');
   $('psub').textContent = `${cur.group} · ${cur.key.trim()} · ${cur.meter[0]}/${cur.meter[1]} · ♩ = ${Math.round(cur.bpm)}${cur.sub ? ' · ' + cur.sub : ''}`;
   const s = cur.stats || {};
@@ -210,21 +210,17 @@ function ensureAudio() {
   [0, 1, .42, .26, .18, .1, .07, .045, .03, .02, .012, .008].forEach((a, k) => im[k] = a);
   wave = ctx.createPeriodicWave(re, im);
 }
-const hz = (p, c) => 440 * Math.pow(2, (p - 69 + (c !== null && c !== undefined ? c : DATA.temps[temp][((p % 12) + 12) % 12]) / 100) / 12);
-function note(when, dur, p, v, cents) {
-  const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
-  o.setPeriodicWave(wave); o.frequency.value = hz(p, cents);
-  f.type = 'lowpass'; f.frequency.value = Math.min(9000, 900 + v * 40 + (p - 40) * 30);
-  const peak = Math.pow(v / 127, 1.6) * 0.16, tau = Math.max(0.25, Math.min(2.4, 1.9 - (p - 60) * 0.03));
-  g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(peak, when + 0.005);
-  g.gain.setTargetAtTime(peak * 0.25, when + 0.005, tau);
-  const off = when + Math.max(0.05, dur); g.gain.setTargetAtTime(0, off, 0.07);
-  o.connect(f); f.connect(g); g.connect(master); o.start(when); o.stop(off + 0.6);
-  live.add(o); o.onended = () => live.delete(o);
-}
-// Score time (quarters) -> seconds under the movement's tempo map (abrupt changes and ramps).
-function secOf(q) {
-  const m = cur.tmap || [[0, cur.bpm, 0]]; let sec = 0;
+// ---------- performance: the same rules as tools/render_music.py performance_events() ----------
+// Note data: [t, d, p, v] (quarters, quarters, MIDI, velocity), then optional [gate, cents].
+// gate null/absent: the movement's default for that written length (gt, [[d, gate], ...]), else .97.
+// cents absent: the note follows the keyboard temperament.  cents present (0 included): with
+// cr "equal" the note sounds at exactly equal temperament + cents under any temperament; without
+// it the cents are added to the keyboard temperament.  kt fixes a movement's keyboard temperament.
+const DEFAULT_GATE = 0.97, MIN_SOUND = 1 / 32, EPS = 1e-6;
+const pcOf = p => ((p % 12) + 12) % 12;
+// Score time (quarters) -> seconds under a movement's tempo map (abrupt changes and ramps).
+function secAt(piece, q) {
+  const m = piece.tmap || [[0, piece.bpm, 0]]; let sec = 0;
   for (let k = 0; k < m.length; k++) {
     const [t0, b0] = m[k]; const nx = m[k + 1] || [Infinity, b0, 0]; const [t1, b1, ramp] = nx;
     if (q <= t0) break; const e = Math.min(q, t1);
@@ -234,24 +230,75 @@ function secOf(q) {
   }
   return sec;
 }
+const secOf = q => secAt(cur, q);
+// Every note of a movement in onset order, with its gate and performed end: the gate shortens the
+// note in score time (end = t + max(1/32, d * gate)), which the tempo map then turns into seconds.
+function prep(piece) {
+  if (piece.flat) return piece.flat;
+  const gm = new Map(piece.gt || []), flat = [];
+  piece.voices.forEach((v, i) => v.e.forEach(e => {
+    const g = e[4] != null ? e[4] : gm.has(e[1]) ? gm.get(e[1]) : DEFAULT_GATE, off = e[0] + Math.max(MIN_SOUND, e[1] * g);
+    flat.push({ t: e[0], d: e[1], p: e[2], v: e[3], i, g, c: e.length > 5 ? e[5] : null, off, s: secAt(piece, e[0]), so: secAt(piece, off) });
+  }));
+  flat.sort((a, b) => a.t - b.t || a.i - b.i);
+  piece.flat = flat; piece.tagged = flat.filter(n => n.c !== null).length;
+  return flat;
+}
+// Cents from equal temperament at which one note sounds under keyboard temperament tname.
+function centsOf(piece, n, tname) {
+  const dev = DATA.temps[piece.kt || tname][pcOf(n.p)];
+  if (n.c === null) return dev;
+  return piece.cr === 'equal' ? n.c : dev + n.c;
+}
+const hzOf = (p, cents) => 440 * Math.pow(2, (p - 69 + cents / 100) / 12);
+// What the player sounds when it starts at score position q0 (tempo factor tf): first every note
+// already sounding there (onset < q0 < performed end), chased for what remains of it, then every
+// later attack.  start/dur/elapsed are seconds after the start.  Pure: the regression test calls it.
+function schedule(piece, q0, tname, tf = 1, q1 = Infinity) {
+  const s0 = secAt(piece, q0), out = [];
+  for (const n of prep(piece)) {
+    if (n.t >= q1) break;
+    const chased = n.t < q0 - EPS;
+    if (chased && n.off <= q0 + EPS) continue;
+    const a = chased ? s0 : n.s;
+    out.push({ n, chased, start: (a - s0) / tf, dur: (n.so - a) / tf, elapsed: chased ? (s0 - n.s) / tf : 0, hz: hzOf(n.p, centsOf(piece, n, tname)) });
+  }
+  return out;
+}
+function note(when, dur, freq, p, v, elapsed) {
+  const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
+  o.setPeriodicWave(wave); o.frequency.value = freq;
+  f.type = 'lowpass'; f.frequency.value = Math.min(9000, 900 + v * 40 + (p - 40) * 30);
+  const peak = Math.pow(v / 127, 1.6) * 0.16, tau = Math.max(0.25, Math.min(2.4, 1.9 - (p - 60) * 0.03));
+  // A chased note fades in at the level it would have decayed to, rather than being struck again.
+  const a = elapsed > 0 ? 0.02 : 0.005, lvl = elapsed > 0 ? peak * (0.25 + 0.75 * Math.exp(-elapsed / tau)) : peak;
+  g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(lvl, when + a);
+  g.gain.setTargetAtTime(peak * 0.25, when + a, tau);
+  const off = when + Math.max(0.05, dur); g.gain.setTargetAtTime(0, off, 0.07);
+  o.connect(f); f.connect(g); g.connect(master); o.start(when); o.stop(off + 0.6);
+  live.add(o); o.onended = () => live.delete(o);
+}
 function qOf(sec) { let lo = 0, hi = cur.end + 8; for (let k = 0; k < 40; k++) { const mid = (lo + hi) / 2; if (secOf(mid) < sec) lo = mid; else hi = mid; } return (lo + hi) / 2; }
-function pos() { return playing ? qOf(secOf(startPos) + (ctx.currentTime - startCtx) * tempo) : startPos; }
+function pos() { return playing ? qOf(secOf(startPos) + Math.max(0, ctx.currentTime - startCtx) * tempo) : startPos; }
 function play() {
   ensureAudio(); if (ctx.state === 'suspended') ctx.resume();
   if (startPos >= cur.end - 0.01) startPos = 0;
-  playing = true; startCtx = ctx.currentTime + 0.08; ptr = flat.findIndex(n => n[0] >= startPos - 1e-6); if (ptr < 0) ptr = flat.length;
+  queue = schedule(cur, startPos, temp, tempo); ptr = 0;
+  playing = true; startCtx = ctx.currentTime + 0.08;
   $('play').textContent = 'Pause'; timer = setInterval(sched, 30); sched(); requestAnimationFrame(tick);
 }
 function sched() {
-  const ahead = ctx.currentTime + 0.25, s0 = secOf(startPos);
-  while (ptr < flat.length) { const [t, d, p, v, i, c] = flat[ptr]; const st = secOf(t), when = startCtx + (st - s0) / tempo;
-    if (when > ahead) break; if (audible(i) && when >= ctx.currentTime - 0.02) note(when, (secOf(t + d) - st) / tempo * 0.97, p, v, c); ptr++; }
+  const ahead = ctx.currentTime + 0.25;
+  while (ptr < queue.length) { const s = queue[ptr], when = startCtx + s.start;
+    if (when > ahead) break; if (audible(s.n.i) && when >= ctx.currentTime - 0.02) note(when, s.dur, s.hz, s.n.p, s.n.v, s.elapsed); ptr++; }
   if (pos() >= cur.end + 0.5) { stop(); startPos = 0; draw(); }
 }
 function stop() { if (!ctx) { playing = false; return; } if (playing) startPos = pos(); playing = false; clearInterval(timer);
   live.forEach(o => { try { o.stop(); } catch (e) {} }); live.clear(); $('play').textContent = 'Play'; }
+// Every restart (seek, pause/resume, tempo, temperament) goes through play(), which chases.
+function seek(q) { const w = playing; stop(); startPos = Math.max(0, Math.min(q, cur.end)); draw(); if (w) play(); }
 $('play').onclick = () => playing ? stop() : play();
-$('rewind').onclick = () => { const w = playing; stop(); startPos = 0; draw(); if (w) play(); };
+$('rewind').onclick = () => seek(0);
 $('tempo').oninput = e => { const w = playing; if (w) stop(); tempo = e.target.value / 100; $('tempoval').textContent = e.target.value + '%'; if (w) play(); };
 function tick() { draw(); if (playing) requestAnimationFrame(tick); }
 
@@ -283,7 +330,7 @@ function drawMap() { const [g, W, H] = fit($('map')); g.clearRect(0, 0, W, H);
 function drawMapHead(now) { const c = $('map'), g = c.getContext('2d'), d = window.devicePixelRatio || 1; if (!mapImg) return;
   g.setTransform(1, 0, 0, 1, 0, 0); g.putImageData(mapImg, 0, 0); g.setTransform(d, 0, 0, d, 0, 0);
   const W = c.width / d, H = c.height / d; g.fillStyle = css('--ink'); g.fillRect(now / cur.end * W - 1, 0, 2, H); }
-$('map').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); const w = playing; stop(); startPos = (e.clientX - r.left) / r.width * cur.end; draw(); if (w) play(); };
+$('map').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); seek((e.clientX - r.left) / r.width * cur.end); };
 
 // ---------- tuning ----------
 const tb = $('temps');
@@ -291,8 +338,9 @@ Object.keys(DATA.temps).forEach(k => { const b = document.createElement('button'
   b.onclick = () => { temp = k; try { localStorage.setItem('clav-temp', k); } catch (e) {} const w = playing; if (w) stop(); tchart(); if (w) play(); }; tb.appendChild(b); });
 const KEYPC = {'C':0,'C#':1,'Db':1,'D':2,'D#':3,'Eb':3,'E':4,'F':5,'F#':6,'Gb':6,'G':7,'G#':8,'Ab':8,'A':9,'A#':10,'Bb':10,'B':11};
 function tchart() {
-  [...tb.children].forEach(b => b.setAttribute('aria-pressed', b.dataset.k === temp ? 'true' : 'false'));
-  const dev = DATA.temps[temp]; const [g, W, H] = fit($('tchart')); g.clearRect(0, 0, W, H);
+  const kt = cur && cur.kt, shown = kt || temp;  // kt: a keyboard tuning fixed by the movement's score
+  [...tb.children].forEach(b => { b.setAttribute('aria-pressed', b.dataset.k === shown ? 'true' : 'false'); b.disabled = !!kt; });
+  const dev = DATA.temps[shown]; const [g, W, H] = fit($('tchart')); g.clearRect(0, 0, W, H);
   const mid = H / 2 - 6, sc = (H / 2 - 18) / 22, bw = W / 12;
   g.strokeStyle = css('--rule'); g.beginPath(); g.moveTo(0, mid); g.lineTo(W, mid); g.stroke();
   g.font = '10px ' + css('--f-mono'); g.textAlign = 'center';
@@ -303,10 +351,18 @@ function tchart() {
   const minor = cur && /minor/.test(cur.key); const third = minor ? 3 : 4;
   const size = 100 * third + dev[(tonic + third) % 12] - dev[tonic], fifth = 700 + dev[(tonic + 7) % 12] - dev[tonic];
   const pure3 = minor ? 315.6 : 386.3;
-  if (cur && cur.hasCents) { $('tnote').innerHTML = 'This movement carries its own tuning for some or all of its notes (just intonation or natural harmonics, measured from equal temperament), so the temperament buttons do not apply to it.'; return; }
-  $('tnote').innerHTML = `${esc(TBLURB[temp] || '')} In this movement’s key the tonic ${minor ? 'minor' : 'major'} third is <b>${size.toFixed(1)}¢</b> (pure ${pure3}¢) and the fifth <b>${fifth.toFixed(1)}¢</b> (pure 702.0¢).`;
+  // Per-note tuning (see centsOf): say how many notes carry their own cents and what they are measured from.
+  const total = cur ? cur.flat.length : 0, tagged = cur ? cur.tagged : 0, fromET = cur && (cur.cr === 'equal' || kt === 'equal');
+  const own = tagged === total ? 'every note carries its own tuning' : `<b>${tagged}</b> of ${total} notes carry their own tuning`;
+  if (kt) { $('tnote').innerHTML = `This movement’s score fixes its tuning, so the temperament buttons do not apply here: ${tagged ? own + (fromET ? ', in cents from equal temperament' : `, in cents added to ${esc(TNAMES[kt] || kt)}`) : 'it is played in ' + esc(TNAMES[kt] || kt)}.`; return; }
+  $('tnote').innerHTML = `${esc(TBLURB[temp] || '')} In this movement’s key the tonic ${minor ? 'minor' : 'major'} third is <b>${size.toFixed(1)}¢</b> (pure ${pure3}¢) and the fifth <b>${fifth.toFixed(1)}¢</b> (pure 702.0¢).` +
+    (!tagged ? '' : ' ' + own[0].toUpperCase() + own.slice(1) + (cur.cr === 'equal' ? ', in cents from equal temperament: they sound the same in every temperament, while the rest follow the one selected.' : ', in cents added to the selected temperament.'));
 }
 window.addEventListener('resize', () => { if (cur) { drawMap(); draw(); tchart(); } });
+// Hook for tools/test_listening_page.mjs: the player's own schedule, without audio.
+window.clavier = { pieces, prep, centsOf, hzOf, secAt, seek, load,
+  schedule: (id, q0, o = {}) => schedule(pieces.find(p => p.id === id), q0, o.temp || temp, o.tempo || 1, o.until),
+  state: () => ({ id: cur.id, playing, startPos, temp, tempo, queue }) };
 load((location.hash.slice(1) && pieces.some(p => p.id === location.hash.slice(1))) ? location.hash.slice(1) : pieces[0].id);
 window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (h && cur && h !== cur.id && pieces.some(p => p.id === h)) load(h); });
 </script>
