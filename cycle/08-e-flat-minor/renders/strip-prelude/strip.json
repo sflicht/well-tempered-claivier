@@ -1045,7 +1045,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/08-e-flat-minor/prelude.json",
-  "source_sha256": "7cb00f90e8a47cb36e7170453a2740ea0de7b689ef9c30cb0a2bc16ef8d11a09",
+  "source_sha256": "843a35b39183795c56acc91f48591b4da4dc736b8508751eda4b372c8795fa7c",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

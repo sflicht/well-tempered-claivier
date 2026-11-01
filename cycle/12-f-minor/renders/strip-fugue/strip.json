@@ -91,6 +91,10 @@
    4956.26
   ],
   [
+   41.0,
+   5075.89
+  ],
+  [
    42.0,
    5195.52
   ],
@@ -1520,11 +1524,11 @@
    "y_px": 395.88
   },
   {
-   "voice": 2,
+   "voice": 3,
    "t": 224.0,
    "label": "main theme (with its augmentation)",
    "x_px": 26967.59,
-   "y_px": 216.44
+   "y_px": 306.16
   },
   {
    "voice": 0,
@@ -1534,11 +1538,11 @@
    "y_px": 37.0
   },
   {
-   "voice": 3,
+   "voice": 2,
    "t": 230.0,
    "label": "S1 (five voices)",
    "x_px": 27685.35,
-   "y_px": 306.16
+   "y_px": 216.44
   },
   {
    "voice": 1,
@@ -1551,7 +1555,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/12-f-minor/fugue.json",
-  "source_sha256": "ed8d839c5a921beb5d838a4b5a08401c38286daaa7888e9e10b0125a7587e95e",
+  "source_sha256": "9cd5eb71d95e9f1b7e0c532a652793703cdf00e7fa5e3f9274beba31d5a3108b",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

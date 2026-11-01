@@ -1,6 +1,6 @@
 {
  "width_px": 26704,
- "height_px": 405,
+ "height_px": 395,
  "time_to_x": [
   [
    0.0,
@@ -1679,12 +1679,12 @@
    25119.09
   ],
   [
-   195.75,
-   25129.72
-  ],
-  [
    196.0,
    25161.63
+  ],
+  [
+   196.25,
+   25193.54
   ],
   [
    196.5,
@@ -1697,6 +1697,10 @@
   [
    197.0,
    25289.27
+  ],
+  [
+   197.5,
+   25353.09
   ],
   [
    197.66666666666666,
@@ -1951,9 +1955,9 @@
   },
   {
    "voice": 2,
-   "t": 193.0,
+   "t": 193.5,
    "label": "CODA: S2 head, tenor",
-   "x_px": 24778.72,
+   "x_px": 24842.54,
    "y_px": 214.08
   },
   {
@@ -1974,7 +1978,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/15-g-major/fugue.json",
-  "source_sha256": "a46718f912795ca1700203baf93a8bd5a635d08d892a20b5ba500649e76c66c8",
+  "source_sha256": "c7f851bca7cce5357ed1b4a563b85746d0c4e0d1ee9d3a38569a620eb84bf1d7",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 1.6,

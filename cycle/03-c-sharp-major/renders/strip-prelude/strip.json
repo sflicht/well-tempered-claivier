@@ -1,6 +1,6 @@
 {
  "width_px": 17462,
- "height_px": 447,
+ "height_px": 446,
  "time_to_x": [
   [
    0.0,
@@ -1571,8 +1571,24 @@
    16733.93
   ],
   [
+   138.5,
+   16793.71
+  ],
+  [
+   139.0,
+   16853.5
+  ],
+  [
    142.0,
    17212.23
+  ],
+  [
+   142.5,
+   17272.01
+  ],
+  [
+   143.0,
+   17331.8
   ],
   [
    144.0,
@@ -1589,19 +1605,19 @@
    190.31
   ],
   [
-   241.24,
-   282.26
+   240.08,
+   281.1
   ],
   [
-   330.92,
-   371.94
+   329.76,
+   370.78
   ]
  ],
  "entries": [],
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/03-c-sharp-major/prelude.json",
-  "source_sha256": "a78a73104418dc9a53cc927dcf8a7f036d9728d2a8e58545c133bbf31ee0f558",
+  "source_sha256": "4c6179562e7479765b624b75ce00d7ec6e013e57c84503ec477af4755c26184b",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

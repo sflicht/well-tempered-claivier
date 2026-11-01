@@ -1301,18 +1301,18 @@
    "y_px": 28.95
   },
   {
-   "voice": 4,
+   "voice": 3,
    "t": 228.0,
    "label": "IV: summit, the subject a third higher every two beats (on G#)",
    "x_px": 13824.08,
-   "y_px": 394.13
+   "y_px": 304.41
   },
   {
-   "voice": 3,
+   "voice": 4,
    "t": 232.0,
-   "label": "IV: summit, the subject a third higher every two beats (on B#)",
+   "label": "IV: summit, the subject a third higher every two beats (on B#, beneath)",
    "x_px": 14063.34,
-   "y_px": 304.41
+   "y_px": 394.13
   },
   {
    "voice": 0,
@@ -1360,7 +1360,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/18-g-sharp-minor/fugue.json",
-  "source_sha256": "d8e757c26adcdc07777c9da89084ad2087ef3cd7a59948f0307726ef54a795d4",
+  "source_sha256": "c5aab89371d3a228d6a43078491f2e3196fa3b59b71e2571a754bf7a23dfde3e",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

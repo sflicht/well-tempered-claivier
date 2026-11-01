@@ -1083,6 +1083,10 @@
    14425.73
   ],
   [
+   119.5,
+   14485.51
+  ],
+  [
    120.0,
    14545.29
   ],
@@ -1437,7 +1441,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/04-c-sharp-minor/fugue.json",
-  "source_sha256": "cb74eed2bae4ca19a8c9fc642285a3717087470382603a5fbc4127bd8fc87f88",
+  "source_sha256": "ebc96760f4ccddd698eb0920bf3e1b434ef2def2412df069def70bd93547edb4",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

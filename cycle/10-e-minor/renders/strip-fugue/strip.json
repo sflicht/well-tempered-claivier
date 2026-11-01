@@ -2879,7 +2879,7 @@
   {
    "voice": 1,
    "t": 267.0,
-   "label": "Final stretto: Coro I, subject (E minor), two beats later: the final cadence",
+   "label": "Final stretto: Coro I, subject (E minor; neighbour D natural against the chorale's D), two beats later: the final cadence",
    "x_px": 32094.72,
    "y_px": 126.72
   }
@@ -2887,7 +2887,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/10-e-minor/fugue.json",
-  "source_sha256": "e1ffc20020953391adee3ab1229fab8a3e576dc6720c6cdf215041fae10dda76",
+  "source_sha256": "5d24612b2868bd2524ac6e6bea3cad7b579e172eacd283445b40497f768bc9b1",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

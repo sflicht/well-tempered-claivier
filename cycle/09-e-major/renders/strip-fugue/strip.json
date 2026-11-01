@@ -743,10 +743,6 @@
    12177.87
   ],
   [
-   202.0,
-   12237.57
-  ],
-  [
    203.0,
    12297.27
   ],
@@ -759,10 +755,6 @@
    12416.67
   ],
   [
-   205.5,
-   12446.52
-  ],
-  [
    206.0,
    12476.38
   ],
@@ -771,8 +763,16 @@
    12536.08
   ],
   [
+   207.5,
+   12565.93
+  ],
+  [
    208.0,
    12595.78
+  ],
+  [
+   209.0,
+   12655.48
   ],
   [
    210.0,
@@ -1000,9 +1000,9 @@
   },
   {
    "voice": 3,
-   "t": 196.0,
+   "t": 198.0,
    "label": "Final stretto 3: subject (E), bass, back right, at its exposition pitch",
-   "x_px": 11879.36,
+   "x_px": 11998.76,
    "y_px": 292.65
   },
   {
@@ -1016,7 +1016,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/09-e-major/fugue.json",
-  "source_sha256": "4b545aeb44312b5aa25f8b213e929604d422ae27d9c94335360ff3e24315741f",
+  "source_sha256": "75ee61d5d4683520b9409735dc52e2685b143c2b2b20f789d4822c9d72e14942",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,
