@@ -250,7 +250,11 @@ put('C2', 43, 1, 'C4:4 B3:2 A3:6 B3:4 G3:2 A3:6 E3:6 G3:6 F#3:6 R:6')
 INV_END = ('B3:6 B3:4 C4:2 B3:2 A3:2 G3:2 E3:4 F#3:2 G3:4 E3:2 D#3:6 '
            'F#3:2 G3:2 E3:2 A3:2 G3:2 F#3:2')
 theme('C2', 45, 1, INV_END, 'Final stretto: Coro II, inversion (E minor) under the last chorale line (second half re-voiced to fill the thirds; tail turned down to the dominant)')
-theme('C1', 45, 3, S, 'Final stretto: Coro I, subject (E minor), two beats later: the final cadence')
+# (Nov 2026) the head's lower neighbour is D natural here (E E D E), as the subject already takes
+# D natural against the chorale at b8 and b19: with D sharp it sounded a diminished octave against
+# the chorale's held D6 ("Erbarm dich").  The leading tone of the final cadence (D#4-E4, 47.3) stays.
+S_FINAL = 'E4:6 E4:4 D4:2 E4:2 F#4:2 G4:2 B4:4 A4:2 B4:4 G4:2 C5:6 B4:2 A4:2 G4:2 F#4:2 E4:2 D#4:2'
+theme('C1', 45, 3, S_FINAL, 'Final stretto: Coro I, subject (E minor; neighbour D natural against the chorale\'s D), two beats later: the final cadence')
 
 # ================================================================ XIII. CODA (b47.3-49.4)
 put('C2', 47, 1, 'B2:6 B3:6 E3:12 E3:24 E2:24')

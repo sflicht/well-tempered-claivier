@@ -355,3 +355,11 @@ The text below is the Prelude part of the previous NOTES, unchanged. (Its bar re
 | P1 / 6 | Prelude has no high point | b20 tirade `'D5:6 F5:6 D5:1 Eb5:1 F5:1 Gb5:1 Ab5:1 Bb5:1 Cb6:6'`; b21 melody `'Bb5:6 Ab5:6 Gb5:6 D5:6'` | C♭6 (the ♭9 of V7) is now the piece's peak and resolves to B♭5 over the tonic. Still 0 parallels, 0 beat-to-beat parallels, 0 unresolved, 0 bad doublings. Cost: two onsets need a wide stretch (0.8 % of onsets beyond two hands). |
 | P2 / 7 | Reprise b14–17 hides the bass canon in tenths | Prelude balance pass: Bass +8, Melody −4 in b14–17 | |
 | P3 | Small points (b8.1 C♭5, the bass sevenths) | Left as the reviewer judged them acceptable | |
+
+## Review response (Nov 2026)
+
+**Prelude, last bar.** The downbeat was struck E♭2 E♭4 B♭5. Whatever the split, one hand needed 19 semitones; this is the review's own example. The figure's first half bar now starts an octave lower, E♭3 G♭3 B♭3, and rises without a break into D4 F4 A♭4. The left hand strikes the bass and the figure (E♭2 E♭3), the right hand the melody's B♭5. As the review says, pedal could not fix this, because all three were fresh attacks.
+
+Reach errors 1 → 0. The prelude's other numbers are unchanged, including keyboard 0.8 % (two onsets where the pedalled tonic bass is counted).
+
+The Fugue is untouched, including bars 25–33.

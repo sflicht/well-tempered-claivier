@@ -39,7 +39,7 @@ bar('4',
     S='G#5:6 F##5:2 A#5:2 B5:2~',
     A='E5:4 C#5:2 A#4:2 F##4:2 G#4:2')
 bar('5 N  T (C#m) + CS in A; S free',
-    S='B5:4 A5:6 G#5:2',
+    S='B5:6 A5:4 G#5:2',          # (Nov 2026) A5 waits for the B7 (was B5:4 A5:6: an unresolved 7th over B3)
     A='E5:6 D#5:1 B4:1 C#5:1 B4:1 A4:1 B4:1',
     T='G#4:2 E4:1 D#4:1 B3:2 F#4:6')
 bar('6',
@@ -234,20 +234,25 @@ bar('39 X-aug: D#.  the S reaches A5 on the diminished seventh',
     B='D#2:12~')
 bar('40 X-aug: D# (iio7 - V)',
     S='C#5:2 D#5:1 E5:1 F#5:2 A5:2 G#5:4',
-    A='A4:12',
+    A='A4:10 G#4:2',              # (Nov 2026) the b9 resolves to G#4 on the last eighth, before the summit
     T='F#4:8 D#4:4',
     Br='D#3:6 B#2:6',
     B='D#2:12')
+# (Nov 2026 revoicing, review of PR #1) The summit used to strike C#2 C#3 | E4 G#4 C#6 at
+# once (one hand would need 21 semitones) and bar 42 F#2 F#3 C#4 | A4 A5 (19).  Now the
+# arrival is struck C#2 C#3 | E5 C#6: the alto rises to the soprano's hand, the tenor
+# breathes on the downbeat and enters on beat 2 (G#3, stepping to A3 for iv), and the
+# alto's C#5 is held into bar 42 so the iv chord is struck F#2 F#3 A3 | A5.
 bar('41 X-aug: C# -- arrival; S peak C#6 on the crux\'s resolution; i - V7 of iv',
     S='C#6:4 B5:8',
-    A='G#4:12',
-    T='E4:4 C#4:8',
+    A='E5:4 C#5:8~',
+    T='R:4 G#3:8',
     Br='C#3:4 E3:4 E#3:4',
     B='C#2:12')
-bar('42 iv - Neapolitan sixth: S falls in dotted rhythm, A rises',
+bar('42 iv - Neapolitan sixth: S falls in dotted rhythm, A turns and rises',
     S='A5:3 G#5:1 F#5:2 F#5:3 E5:1 F#5:2',
-    A='A4:3 B4:1 C#5:2 D5:3 C#5:1 D5:2',
-    T='C#4:6 A3:6',
+    A='C#5:3 B4:1 C#5:2 D5:3 C#5:1 D5:2',
+    T='A3:12',
     Br='F#3:6 R:6',
     B='F#2:12')
 bar('43 N6 - viio7 of V (bass F#-F##-G#)',

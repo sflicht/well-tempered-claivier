@@ -138,7 +138,10 @@ put('T', at(11), "E#4:12 C#4:2 D#4:2 E#4:2 F#4:4 E#4:2 D#4:12 B#3:2 C#4:2 D#4:2 
 put('T', at(12, 11), "E#3:2"); put('T', at(13), S_AM)
 put('S', at(13), CS_AM)
 put('A', at(13), "F#4:6 E#4:6 A#4:4 G##4:2 A#4:6 E#5:6 A#4:10 E#4:6")
-put('B', at(13), "F#2:6 C#3:6 A#2:6 C#3:6 A#2:6 B#2:4 C#3:2 E#3:6 A#2:4")
+# (Nov 2026) the bass's A#2 is struck an eighth early, with the tenor's short C#4
+# stamp: on the beat the tenor's E#4 and the soprano's C#6 lie 19 and 20 semitones
+# from it, beyond any split of two hands; the A#-minor chord is already sounding.
+put('B', at(13), "F#2:6 C#3:4 A#2:8 C#3:6 A#2:6 B#2:4 C#3:2 E#3:6 A#2:4")
 
 # Episode 2 (15-16), A#m -> G#: the subject's hop (high note, silent eighth, octave
 # drop, flick) is tossed soprano -> alto over ii - V7; V7 -> I6 - ii - V7.
@@ -156,7 +159,9 @@ put('T', at(17), "G#3:6 F##3:6 D#4:6 A#3:6 R:12 D#4:10")
 # Close of Part 1 (19-20): the head in the bass, I - I6 - IV - V, and the dancers stamp.
 put('B', at(19), "G#2:4 G#2:2 B#2:4 B#2:2 C#3:4 R:2 D#3:6 G#2:4 G#2:2 G#2:4 G#2:2 G#2:4")
 put('T', at(19), "G#3:6 D#4:6 E#4:6 A#3:6 B#3:4 B#3:2 B#3:4 B#3:2 B#3:4")
-put('A', at(19), "D#5:6 G#4:12 F##4:6 B#4:4 B#4:2 D#5:4 D#5:2 G#5:4")
+# (Nov 2026) alto G#5 F##5 (was G#4 F##4): the I6 of beat 2 is struck B#2 D#4 | G#5 D#6,
+# two hands' reach (with G#4 one hand needed 19 semitones).
+put('A', at(19), "D#5:6 G#5:12 F##5:6 B#4:4 B#4:2 D#5:4 D#5:2 G#5:4")
 put('S', at(19), "B#5:6 D#6:6 C#6:6 B#5:4 A#5:2 G#5:4 G#5:2 B#5:4 B#5:2 D#6:4")
 
 # ======================= PART 2: inversus  (G# -> C#) ===========================
@@ -209,8 +214,11 @@ put('B', at(34, 8), "R:2 D#3:6")
 put('B', at(35), "G#2:4 G#2:2 G#2:4 G#2:2 G#2:4 G#2:2 G#2:4 G#2:2 "
                  "G#2:4 G#2:2 G#2:4 G#2:2 G#2:4 G#2:2 G#2:4")
 put('S', at(35), "D#6:4 R:2 D#5:4 E#5:1 F#5:1 G#5:6 B#5:6 G#5:4 A#5:2 B#5:6 C#6:4 B#5:2 D#6:6")
-put('A', at(35), "F#4:6 G#4:6 B#4:6 D#5:6 D#5:6 F#5:6 E#5:6 F#5:6")
-put('T', at(35), "D#4:12 F#4:4 R:2 F#3:4 G#3:1 A#3:1 B#3:6 G#3:12 B#3:6")
+put('A', at(35), "R:6 G#4:6 B#4:6 D#5:6 D#5:6 F#5:6 E#5:6 F#5:6")   # (Nov 2026) rest was F#4
+# (Nov 2026) the downbeat was struck G#2 D#4 F#4 D#6 (a hand needed 19+): now the tenor
+# steps A#3-B#3 and climbs B#3-D#4 to the hop's F#4, and the alto breathes for the first
+# beat, so the pedal opens on V struck G#2 B#3 | D#6; the seventh comes with the hop.
+put('T', at(35), "B#3:6 D#4:6 F#4:4 R:2 F#3:4 G#3:1 A#3:1 B#3:6 G#3:12 B#3:6")
 
 # Last entry of Part 2 (37-39): rectus in the bass -- its pickup is the pedal's last
 # stamp -- and its real mirror (A# minor reading) in the soprano three beats later.

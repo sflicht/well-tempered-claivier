@@ -32,7 +32,7 @@ Form (58 bars; t = bar.quarter):
                (S, A), the guest on the right (B, T), each shrinking with its exchange; the harmony
                of the short exchanges is one long cadence: V vi IV ii V V7
   V    48-53    final tutti: the guest as a long-note cantus on top (BWV 878 x2, S) while our
-               subject goes round the ring beneath it in stretto: A (48.1), T (48.2), B (50.1)
+               subject goes round the ring beneath it in stretto: A (48.1), T (48.2), B (50.3, out of a tonic pedal)
   VI   54-58    coda: the cantus's last note, E5, is the first note of our subject in the soprano;
                authentic cadence (57.1), plagal Amen (57.3-58)
 
@@ -195,13 +195,19 @@ theme('A', 48, 1, 'E4:8 A4:12 G#4:4 F#4:4 E4:4 D#4:4 C#4:2 B3:2 C#4:4 D#4:4 E4:1
       'Final stretto 1: subject (on E), alto, front left')
 theme('T', 48, 2, 'B3:8 E4:12 D#4:4 C#4:4 B3:4 A3:4 G#3:2 F#3:2 G#3:4 A3:4 B3:8',
       'Final stretto 2: subject (E), tenor, front right, a beat later')
-theme('B', 50, 1, 'B2:8 E3:12 D#3:4 C#3:4 B2:4 A2:4 G#2:2 F#2:2 G#2:4 A2:4 B2:16',
+# (Nov 2026) The bass's tonic pedal E3 now lasts to 50.3 and the bass's subject grows straight
+# out of it (E3 - B2 - E3), half a bar later than before (was: pedal to 49.3, rest, entry at 50.1).
+# Entering at 50.1 put the subject's held E3 under the cantus's F#5 (a 9th) and its resolution
+# E-D# only after the cantus had climbed to A5.  Now the cantus's F#5 sounds over the pedal (V over
+# I), the subject's E3 arrives with the cantus's A5, and the bass walks D# C# B A G# F# G# A B
+# into the coda's E.
+theme('B', 50, 3, 'B2:8 E3:12 D#3:4 C#3:4 B2:4 A2:4 G#2:2 F#2:2 G#2:4 A2:4 B2:8',
       'Final stretto 3: subject (E), bass, back right, at its exposition pitch')
-put('B', 48, 1, 'E3:24')
+put('B', 48, 1, 'E3:40')
 put('T', 48, 1, 'G#3:2')
 
 
-put('A', 51, 4, 'D#4:4 E4:16 D#4:16')
+put('A', 51, 4, 'F#4:4 E4:8 F#4:8 D#4:16')    # (Nov 2026) was D#4 E4 D#4: octaves with the bass's D#3
 put('T', 53, 1, 'B3:8 A3:8')
 
 # ======================================================================

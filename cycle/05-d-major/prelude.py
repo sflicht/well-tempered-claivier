@@ -50,9 +50,13 @@ bar('G4 B4 D5 G5  B5 A5 G5 F#5  E5 G5 C#6 E6  D6 C#6 B5 A5', 'G2 D3 G3 D3 A2 E3 
 bar('F#5 A5 D6 A5  F#5 D5 A4 D5  F#5 E5 D5 C#5  A#4 C#5 E5 F#5', 'D3 F#3 A3 F#3 F#2 E3 A#2 E3', 'I - V7/vi')
 # ---- B (7-14) B minor region
 bar('D5 C#5 B4 C#5  D5 F#5 E5 D5  C#5 B4 A#4 B4  C#5 E5 D5 C#5', 'B2 F#3 B3 F#3 C#3 F#3 A#2 F#3', 'B: B minor')
-bar('B4 D5 F#5 D5  B5 A5 G5 F#5  G#5 F#5 E5 D5  D5 C#5 B4 G#4', 'D3 B3 F#3 B3 E3 B3 G#2 E3', 'i - V7/iv')
+# (Nov 2026) beat 4 turns B4-D5-C#5-B4 (was D5 C#5 B4 G#4): the E7's seventh D5 now comes
+# off the beat and falls to C#5 over E3, instead of sounding a bare tritone on the beat.
+bar('B4 D5 F#5 D5  B5 A5 G5 F#5  G#5 F#5 E5 D5  B4 D5 C#5 B4', 'D3 B3 F#3 B3 E3 B3 G#2 E3', 'i - V7/iv')
 bar('C#5 E5 A5 E5  C#6 B5 A5 G5  F#5 E5 D5 C#5  D5 F#5 A5 D6', 'A2 E3 C#3 A3 D3 A3 F#3 D4', 'VII - III (A - D)')
-bar('B5 A5 G5 F#5  G5 B5 D6 B5  G5 F#5 E5 C#5  G5 E5 C#5 B4', 'G2 D3 B2 G3 C#3 G3 E3 A#3', 'VI - ii-ish (C#o7)')
+# (Nov 2026) beat 3 turns E5-G5-F#5-E5 (was G5 F#5 E5 C#5): no bare tritone G/C# on the
+# beat, and no tritone leap C#5-G5 into beat 4.
+bar('B5 A5 G5 F#5  G5 B5 D6 B5  E5 G5 F#5 E5  G5 E5 C#5 B4', 'G2 D3 B2 G3 C#3 G3 E3 A#3', 'VI - ii-ish (C#o7)')
 bar('A#4 C#5 E5 C#5  F#5 E5 D5 C#5  A#4 C#5 E5 G5  F#5 E5 D5 C#5', 'F#2 C#3 A#2 C#3 F#2 E3 A#2 E3', 'V7 of B minor')
 bar('D5 C#5 B4 C#5  D5 F#5 B5 F#5  D5 B4 A4 G4  F#4 A4 D5 F#5', 'B2 F#3 D3 B3 D3 A3 F#3 A3', 'i - (to D)')
 bar('G5 F#5 E5 F#5  G5 B5 E6 B5  G5 F#5 E5 D5  C#5 E5 A5 G5', 'E3 B3 G3 B3 A2 E3 C#3 G3', 'ii - V7')
