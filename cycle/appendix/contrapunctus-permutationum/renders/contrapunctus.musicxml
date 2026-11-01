@@ -44,6 +44,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">1  C major  ADBC</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegro moderato</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>80</per-minute>
@@ -206,6 +214,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">2  A minor  DACB</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -584,6 +597,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">3  G major  DCAB</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -911,6 +929,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">4  E minor  CDBA</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1123,6 +1146,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">5  D major  CBDA</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -1311,6 +1339,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">6  B minor  BCAD</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1402,6 +1435,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">7  A major  BACD</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1459,6 +1497,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">8  F-sharp minor  ABDC</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>8. f# ABDC</words>
@@ -1528,6 +1571,11 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">9  E major  ABCD</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>9. E ABCD</words>
         </direction-type>
       </direction>
@@ -1594,6 +1642,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">10  C-sharp minor  BADC</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1687,6 +1740,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">11  B major  BDAC</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -1746,6 +1804,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">12  G-sharp minor  DBCA</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -2243,6 +2306,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">13  F-sharp major  DCBA</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -2507,6 +2575,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">14  E-flat minor  CDAB</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -2726,6 +2799,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">15  D-flat major  CADB</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -2877,6 +2955,11 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">16  B-flat minor  ACBD</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>16. bb ACBD</words>
         </direction-type>
       </direction>
@@ -2945,6 +3028,11 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">17  A-flat major  ACDB</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>17. Ab ACDB</words>
         </direction-type>
       </direction>
@@ -2992,6 +3080,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">18  F minor  CABD</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -3202,6 +3295,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">19  E-flat major  CBAD</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -3399,6 +3497,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">20  C minor  BCDA</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -3488,6 +3591,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">21  B-flat major  BDCA</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>480</duration>
@@ -3628,6 +3736,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">22  G minor  DBAC</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -4009,6 +4122,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">23  F major  DABC</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -4335,6 +4453,11 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">24  D minor  ADCB</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>24. d ADCB</words>
         </direction-type>
       </direction>
@@ -4401,6 +4524,11 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Coda  C major  ADBC (come round)</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>coda: B-A-C-H augmented</words>
         </direction-type>
       </direction>
@@ -4445,6 +4573,21 @@
       </note>
     </measure>
     <measure number="73">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="78.74" />
+      <sound tempo="76.24">
+        <offset sound="yes">480</offset>
+      </sound>
+      <sound tempo="73.74">
+        <offset sound="yes">960</offset>
+      </sound>
+      <sound tempo="71.24">
+        <offset sound="yes">1440</offset>
+      </sound>
       <note>
         <pitch>
           <step>C</step>
@@ -4455,6 +4598,15 @@
       </note>
     </measure>
     <measure number="74">
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>60</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="60.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>
