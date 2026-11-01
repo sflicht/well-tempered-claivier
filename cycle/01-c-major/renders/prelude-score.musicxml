@@ -44,6 +44,9 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words font-weight="bold">Andante, sempre legato</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>70</per-minute>
@@ -85,6 +88,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">per omnes tonos</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>Royal Theme (Musical Offering)</words>
@@ -252,6 +260,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Lamento</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -352,6 +365,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">stringendo</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -424,6 +442,11 @@
           <mode>minor</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Pedale</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -458,6 +481,11 @@
           <mode>major</mode>
         </key>
       </attributes>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Arrivo</words>
+        </direction-type>
+      </direction>
       <note>
         <rest />
         <duration>1920</duration>
@@ -592,6 +620,11 @@
       </note>
     </measure>
     <measure number="50">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Da capo, con cantus</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -763,6 +796,11 @@
       </note>
     </measure>
     <measure number="54">
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Chiusa</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -857,6 +895,15 @@
       </note>
     </measure>
     <measure number="56">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="68.87" />
+      <sound tempo="66.62">
+        <offset sound="yes">480</offset>
+      </sound>
       <note>
         <pitch>
           <step>F</step>
@@ -865,6 +912,7 @@
         <duration>960</duration>
         <type>half</type>
       </note>
+      <sound tempo="64.37" />
       <note>
         <pitch>
           <step>D</step>
@@ -873,6 +921,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="62.12" />
       <note>
         <pitch>
           <step>B</step>
@@ -883,6 +932,17 @@
       </note>
     </measure>
     <measure number="57">
+      <sound tempo="59.87" />
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>52</per-minute>
+          </metronome>
+        </direction-type>
+        <offset sound="yes">480</offset>
+        <sound tempo="52.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>

@@ -36,6 +36,14 @@
       </attributes>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">BWV 846 starts in the bass... and is interrupted</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
+          <words font-weight="bold">Allegro con brio</words>
+        </direction-type>
+        <direction-type>
           <metronome>
             <beat-unit>quarter</beat-unit>
             <per-minute>104</per-minute>
@@ -526,6 +534,11 @@
       </note>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Flight I - rung 8: one bar</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>R8 (a)</words>
         </direction-type>
       </direction>
@@ -810,6 +823,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Rung 7: seven eighths</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1154,6 +1172,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Rung 6: six eighths</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -1356,6 +1379,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Episode: suspensions</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1561,6 +1589,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Flight II - rung 5: five eighths</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>R5 (d)</words>
@@ -1817,6 +1850,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Rung 4: four eighths</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -2071,6 +2109,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Rung 3: three eighths</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -2381,6 +2424,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Flight III - rung 2: two eighths</words>
+        </direction-type>
+      </direction>
       <direction placement="above">
         <direction-type>
           <words>R2 (G)</words>
@@ -2715,6 +2763,11 @@
       </note>
       <direction placement="above">
         <direction-type>
+          <words enclosure="rectangle">Rung 1: one eighth (mirror) - climax</words>
+        </direction-type>
+      </direction>
+      <direction placement="above">
+        <direction-type>
           <words>R1 (C)</words>
         </direction-type>
       </direction>
@@ -2890,6 +2943,11 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words enclosure="rectangle">Coda: Bach over the augmentation</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -3292,6 +3350,12 @@
         <duration>240</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+        </direction-type>
+      </direction>
+      <sound tempo="102.28" />
       <note>
         <pitch>
           <step>C</step>
@@ -3300,6 +3364,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="98.85" />
       <note>
         <pitch>
           <step>B</step>
@@ -3309,6 +3374,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="95.42" />
       <note>
         <pitch>
           <step>A</step>
@@ -3319,6 +3385,7 @@
       </note>
     </measure>
     <measure number="45">
+      <sound tempo="91.99" />
       <note>
         <pitch>
           <step>C</step>
@@ -3327,6 +3394,7 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <sound tempo="88.56" />
       <note>
         <pitch>
           <step>B</step>
@@ -3335,6 +3403,15 @@
         <duration>480</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome>
+            <beat-unit>quarter</beat-unit>
+            <per-minute>80</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="80.0" />
+      </direction>
       <note>
         <pitch>
           <step>C</step>
