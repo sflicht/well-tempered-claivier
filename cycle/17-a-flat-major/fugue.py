@@ -288,7 +288,7 @@ def father():
     had: sol -> do in the bass, under the soprano's re -> do.  The first perfect cadence (bar 42)."""
     theme('P', 37, 0, subj('Ab', octave=1, aug=2) + ' Eb2:24', 'the father: subject in augmentation, then the bass 5 - 1', 5, 'augmentation')
     put('P', 42, 0, 'Ab1:24 | Ab1:24 | Ab1:24')
-    put('S', 37, 6, 'C5:6 Eb5:6 | F5:6 Db5:6 Eb5:6 Eb5:4 Db5:2 | F5:6 Eb5:6 F5:6 Db5:6 |'
+    put('S', 37, 6, 'C5:6 Eb5:6~ | Eb5:2 F5:4 Db5:6 Eb5:6 Eb5:4 Db5:2 | F5:6 Eb5:6 F5:6 Db5:6 |'
                     ' Eb5:12 F5:12 | C6:12 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5'
                     ' C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 C6:0.5 Bb5:0.5 Ab5:1 Bb5:1 | Ab5:6 G5:6 F5:6 Eb5:6 |'
                     ' Db5:12 C5:6 Db5:6 | C5:24')
@@ -300,10 +300,15 @@ def father():
 def coda():
     """Bars 42-44.  The family together over the father's tonic.  The first child (the tenor, who began the
     fugue) sings the subject's second half once more, and this time it is allowed to end: re -> do."""
+    # (Nov 2026) Every downbeat of bars 42-44 strikes the father's A-flat1 with the soprano high above, so the
+    # left hand can add nothing above C3 and the right hand nothing far below the soprano.  At the cadence the
+    # tenor's leading tone G3 therefore falls to C3, the third, instead of rising to A-flat3 (which no hand could
+    # strike with A-flat1 and A-flat5); the fourth child enters on E-flat2 and moves an octave lower than before,
+    # within the left hand's reach of the father's re-struck A-flat1.
     put('A', 42, 0, 'C5:6 Bb4:6 Ab4:12 | F4:12 Ab4:6 G4:6 | Ab4:24')
-    put('T', 42, 0, 'Ab3:12')
+    put('T', 42, 0, 'C3:12')
     theme('T', 43, 0, ' '.join(subj('Ab', octave=3).split()[8:]) + ' Ab3:24', 'coda: the second half of the subject, and its do at last (tenor)', 2)
-    put('B', 42, 0, 'Eb3:6 C3:6 Db3:12 | F3:6 Ab2:6 Eb3:12 | Eb3:24')
+    put('B', 42, 0, 'Eb2:6 Ab2:6 Db3:12 | F2:6 Ab2:6 Eb2:12 | Eb2:24')
 
 
 exposition()

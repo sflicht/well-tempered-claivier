@@ -229,8 +229,10 @@ def ball():
     # sarabande: the subject, then the last suspension (A5 over E: 4-3 on the weighted second beat)
     theme('S', 122, oc(SS, 1), 'Sarabande: subject (A), the ball')
     put('S', 141, 'C#6:4 A5:4 G#5:4 A5:8 R:16 E5:4 A5:12 G#5:8')
-    # courante: a free bass in quarters, a rest, its subject (F# level), the hemiola cadence
-    put('B', 120, 'A2:6 B2:2 C#3:6 D3:2 E3:8 F#3:4 C#3:4 E3:4 B2:4 R:4')
+    # courante: a free bass in quarters, a rest, its subject (F# level), the hemiola cadence.  (Nov 2026: the
+    # rest before the subject is a half note, from q129, instead of B2 and a quarter rest: under the sarabande's
+    # B5, B2 left the gigue's F#4 out of reach of both hands at q129.)
+    put('B', 120, 'A2:6 B2:2 C#3:6 D3:2 E3:8 F#3:4 C#3:4 E3:4 R:8')
     theme('B', 131, oc(SC_F, -2), 'Courante: subject (F# level, ends on vi)')
     put('B', 146, 'G#2:4 A2:4 D3:4 R:4 C#3:8 D3:4 E3:12')
     # gigue
@@ -283,7 +285,7 @@ def coda():
           'The bourree: gigue, in straight eighths')
     put('A', 166, 'E5:2 D5:2 C#5:2 D5:2 C#5:2 E4:2 A4:2 C#5:2 E5:4 C#5:2 E5:2 F#5:4 E5:8 '
                   'D5:4 C#5:16')
-    put('B', 168, 'F#3:4 C#3:4 A2:16 E2:8 A2:16')
+    put('B', 168, 'F#3:4 C#3:4 A2:16 E3:8 A2:16')     # (Nov 2026: the dominant E3, not E2, under the tenor's A3)
     put('S', 174, 'C#6:4 B5:4 A5:16')
     put('T', 174, 'A3:4 G#3:4 A3:16')
 

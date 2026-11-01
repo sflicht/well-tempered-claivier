@@ -212,7 +212,7 @@ theme('A', 33, 4, tr(K, 10, 6)[:-len('F#5:8')] + 'F#5:12',
 # ================================================================ IV. MANE (morning), Mixolydian: b35-43
 # The alto holds the F-sharp chord while the tenor knocks.  The subject now has B#: over the door
 # subject's arrival on G# it makes G-sharp MAJOR its own chord (b36.3).  Then the summit: three entries
-# a third apart, two beats apart, climbing from the bass (G#2, B#3, D#5); the soprano's carries B# to
+# a third apart, two beats apart (tenor G#3, bass B#2 beneath it, soprano D#5); the soprano's carries B# to
 # the top of the piece (B#5 on the second beat of b41) and its last note is C#: cadence in C-sharp
 # major (= D-flat, IV of A-flat) at b43.1.
 theme('T', 35, 2, octv(K, -1), 'IV. Mane (morning): door subject in the tenor', 2)
@@ -220,7 +220,7 @@ theme('S', 36, 0, S_MIX, 'IV: subject, Mixolydian (B#): G-sharp major at b36.3')
 put('Q', 36, 0, 'C#4:8 A#3:8 D#4:8 '
                 'C#4:8 A#3:16 '
                 'D#4:8 G#3:8 A#3:8 '
-                'B#3:8 A#3:8')
+                'B#3:8')                                                  # (Nov 2026: rests at b39.2; the tenor enters)
 put('T', 37, 0, 'C#3:8 D#3:8 F#3:8 '
                 'G#3:8 E#3:8 D#3:8')
 put('A', 37, 0, 'G#4:8 F#4:16 '
@@ -230,12 +230,19 @@ put('A', 37, 0, 'G#4:8 F#4:16 '
                 'D#5:8 G#4:12 A#4:4 '                                # (review 3: no doubled B#, no accented fifths)
                 'D#5:8 A#4:8 F#4:8 '
                 'E#4:8')
-CHAIN = [('B', 39, 0, 'G#2:8 A#2:8 B#2:8 E#3:12 D#3:4 C#3:8 B#2:4 A#2:4 G#2:8 F#2:8', 'on G#'),
-         ('T', 39, 4, 'B#3:8 C#4:8 D#4:8 G#4:12 F#4:4 E#4:8 D#4:4 C#4:4 B#3:8 A#3:8', 'on B#'),
+# (Nov 2026) The first two entries exchange voices and octaves: the entry on G# is now in the tenor (G#3) and
+# the entry on B# in the bass beneath it (B#2), instead of G#2 in the bass and B#3 in the tenor.  With entries
+# a tenth apart, b41.2 put G#2, E#4 and B#5 (all three subject notes) together, which no two hands can strike
+# or hold; now the two lower entries lie within one hand (E#3 G#3 under B#5).  Pitch classes, rhythms and
+# entry times are unchanged; the pair is inverted at the fifteenth.
+CHAIN = [('T', 39, 0, 'G#3:8 A#3:8 B#3:8 E#4:12 D#4:4 C#4:8 B#3:4 A#3:4 G#3:8 F#3:8', 'on G#'),
+         ('B', 39, 4, 'B#2:8 C#3:8 D#3:8 G#3:12 F#3:4 E#3:8 D#3:4 C#3:4 B#2:8 A#2:8', 'on B#, beneath'),
          ('S', 40, 2, 'D#5:8 E#5:8 F#5:8 B#5:12 A#5:4 G#5:8 F#5:4 E#5:4 D#5:8 C#5:8~', 'on D#: B#5 at the top')]
 for v, b, q, t, where in CHAIN:
     theme(v, b, q, t, f'IV: summit, the subject a third higher every two beats ({where})')
-put('B', 42, 0, 'G#2:8 D#3:8 G#2:8 '
+put('T', 42, 0, 'G#3:8 C#4:8 G#3:8 '                                     # G#7/B# - C# (the bass rises A#-B#-C#)
+                'G#3:8')
+put('B', 42, 4, 'B#2:8 '
                 'C#3:8')
 
 

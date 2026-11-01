@@ -43,13 +43,13 @@ than Bach's fugue in the same key; XX, XXI and XXIV keep their crowds.
 | IX E (4) | four singers in a ring (binaural); Bach's E-major subject as guest and as the final cantus | mostly three voices in the middle |
 | X E minor (3) | one voice per choir in dialogue under the chorale *O Lamm Gottes* | Coro I very busy |
 | XI F (4) | the trumpet stuck in the wrong key (b38–44) | leapy (trumpet's repeated notes) |
-| XII F minor (5) | the Art of Fugue's unfinished fugue completed; the fifth voice entering with the main theme | the five-subject moment is short |
+| XII F minor (5) | a conjectural completion of the Art of Fugue's unfinished fugue; the fifth voice entering with the main theme | the four subjects over the pedal are brief (b56–63) |
 | XIII F♯ (4) | canons at rising intervals over the Goldberg bass; the folk-song quodlibet | |
 | XIV F♯ minor (5) | the Royal Theme in a canon that climbs C, D, E minor and arrives home | |
 | XV G (4) | the four lines of *Vom Himmel hoch* together, one per voice (b43–48) | |
 | XVI G minor (5) | each chorale line in canon between two pedal voices; Bach's G-minor organ fugue on top before the summit | the last canon sounds like an octave doubling |
 | XVII A♭ (5) | fourteen dodged cadences; the father's entry and first real cadence | |
-| XVIII G♯ minor (5) | one note brightening per night watch; the knocker; the A♭ dawn | the dawn is short |
+| XVIII G♯ minor (5) | one note brightening per night watch; the knocker; the dawn in the tonic major (written A♭) | the dawn is short |
 | XIX A (4) | four dances in four metres at once; Bach's Bourrée revealed at the end | the middle is mostly two voices |
 | XX A minor (21) | voices splitting out of one violin line | summit may sound thick |
 | XXI B♭ (22) | the horn "cracking" to its flat 7th harmonic; the final natural-harmonic chord | leapy (posthorn idiom) |

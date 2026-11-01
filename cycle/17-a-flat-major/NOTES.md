@@ -90,7 +90,7 @@ Times come from the tempo map. "Moving" is the critic's count of voices that mov
 | 30-32 | 2:08 | **Evasion 12, the trap door.** ii6/5 - V7 → ♭VI: the bass falls a seventh (E♭3 → F♭2), subito pianissimo. A German sixth climbs back to 6/4 - V7. | 4 |
 | 32-36 | 2:16 | **Evasion 13, the echo, and the stretto.** The V7 of bar 32 is forte. After a small breath it comes back on the next downbeat as an echo, pianissimo, all four children re-striking it. Under the echo the bass starts the subject on E-flat, and the stretto grows out of the whisper. Alto (E♭4), tenor (B♭2) and soprano (B♭4) follow every half bar. ii6/5 - I6/4 - V7, then **evasion 14**: all four stop on E♭7 with D♭5 on top (held, about 3.5 s), then silence (about 3.75 s). | 2-4 |
 | 37-41 | 2:43 | **The father.** He enters alone on A♭1 with the subject in augmentation. The soprano's D♭ falls to C at last. The alto sings the subject inverted against him (she climbs while he walks down); the tenor joins in bar 40. His tune ends on *re* over ii7, then E♭2 under the cadential 6/4 and V7, with the soprano's trill on B♭5. | 1-3-4 |
-| 42 | 3:12 | **The first perfect authentic cadence**: bass E♭2 → A♭1, soprano B♭5 → A♭5, all five voices. | 5 |
+| 42 | 3:12 | **The first perfect authentic cadence**: bass E♭2 → A♭1, soprano B♭5 → A♭5, all five voices (the tenor's leading tone falls to the third, C3; see the review response). | 5 |
 | 42-44 | 3:12 | **Coda** over the father's A♭: the tenor sings *re mi fa sol la, sol fa mi, re* ... and *do*. | 5 |
 
 ### The fourteen evasions, and where to hear the devices
@@ -128,12 +128,14 @@ Devices:
 | dissonance_unresolved | 1 | ≤ 3, justified |
 | bad_doublings | 0 | ≤ 2 |
 | low_register_seconds | 3 (b13.4.75, b34.6.5, b35.4.75) | ≤ 9 |
-| stepwise_pct | 68.7 | ≥ 65 |
-| leap_4th_plus_pct | 12.0 | - |
+| stepwise_pct | 68.4 | ≥ 65 |
+| leap_4th_plus_pct | 12.1 | - |
 | crossings | 0 | few |
-| keyboard_unplayable_pct | 3.8 (16 of 420 onsets) | < 5 (4 voices), < 15 (5-6) |
+| reach_errors | 0 (4 before Nov 2026) | 0 |
+| keyboard_unplayable_pct | 1.4 (6 of 420 onsets) | < 5 (4 voices), < 15 (5-6) |
+| dissonance_unverified | 1 (b20.2.5, check by ear) | - |
 | mean_moving_voices | 3.66 | - |
-| pc_tripled_on_beats_pct | 4.9 | - |
+| pc_tripled_on_beats_pct | 4.2 | - |
 | tertian_fit_pct | 58.9 | - |
 | longest static harmony | 4 beats (the final chord) | - |
 
@@ -144,10 +146,14 @@ Devices:
   - The tenor's leap from E4 down to D♭3 across a rest into its bar-12 entry.
   - The trap-door seventh in the bass (E♭3 → F♭2, the point of evasion 12).
   - The bass's E♭2 → D♭3 into the final ii6/5.
-- **Unplayable onsets.**
-  - Two in the trill over the bass's low A♭1 (bar 13).
-  - A few in bars 38-40, where the father's low line and three children span more than two hands.
-  - Most of the rest are in the five-voice cadence and coda over the father's held A♭1, which a pianist would hold with the sustain pedal.
+- **Unplayable onsets.** Every fresh attack fits two hands (reach_errors 0). Six onsets have more *sounding*
+  notes than two hands can hold, and a pedal must catch the held note:
+  - two in the trill over the bass's low A♭1 (bar 13);
+  - four in bars 38-40, where the father's long notes lie below three children.
+  - The earlier note here said the five-voice cadence and coda fit because a pianist holds the father's A♭1
+    with the sustain pedal. That overlooked that the father re-strikes A♭1 on every downbeat of bars 42-44,
+    together with inner voices no hand could reach from it; the pedal holds only what the hands have struck.
+    See the review response.
 - **Theme check.**
   - All exposition, middle and augmented entries verify 16/16.
   - The stretto entries on E-flat and B-flat are diatonic (modal) forms, so the critic shows 14/16 and 8/16 intervals.
@@ -239,3 +245,34 @@ python3 tools/render_spatial.py cycle/17-a-flat-major/fugue.json --output cycle/
   - The written-out trills are produced by a small helper (`trill()`) that alternates the two notes I chose for the length I chose.
   - `tools/stretto_finder.py` proposed clean distances for the stretto, the dream and the father's passage; I chose among them and wrote the counterpoint around them.
   - `tools/critic.py`, `tools/reduce.py` and scratch scripts (a vertical-grid viewer, a low-register pair lister, the cadence scan) only reported problems; I made every correction by hand.
+
+## Review response (Nov 2026)
+
+1 November 2026. The owner's review of PR #1 said that some of the pedal solutions in these notes do not cover
+the simultaneous re-attacks in the score, and asked for them to be corrected while keeping the father's late
+low arrival. Agreed. The corrected critic found four attacks no division between two hands can strike: b38.1
+(F2 C4 F5), b42.1 (A♭1 E♭3 A♭3 C5 A♭5, 24 semitones), b43.1 (A♭1 F3 B♭3 F4 D♭5) and b44.1 (A♭1 E♭3 A♭3 A♭4
+C5). In bars 42-44 the father re-strikes A♭1 on each downbeat, so the left hand can add nothing above C3 there,
+and the right hand nothing more than a tenth below the soprano.
+
+- **b42.1, the cadence.** The father's E♭2 → A♭1 and the soprano's B♭5 → A♭5 are unchanged, and so is the
+  alto's D♭5 → C5. The tenor's leading tone G3 now falls to C3, the third, instead of rising to A♭3, which
+  no hand could strike with A♭1 and A♭5; the fourth child enters on E♭2, so the left hand plays A♭1 E♭2 C3,
+  a full triad, and the right hand C5 A♭5. The leading tone is resolved by the soprano's B♭ → A♭ over it in
+  the sense that the cadence's do arrives on top; in an inner voice it is a frustrated leading tone, as Bach
+  writes at keyboard cadences when the hands need it, though a leap to the third is rarer than to the fifth.
+  The tenor's *do* comes in the coda, where it always belonged (b44.1).
+- **Bars 42-44, the fourth child.** Its coda line moves an octave lower (E♭2 A♭2 D♭3 | F2 A♭2 E♭2 | E♭2,
+  instead of E♭3 C3 D♭3 | F3 A♭2 E♭3 | E♭3), so that it lies within the left hand's tenth above the father's
+  re-struck A♭1. The final chord is A♭1 E♭2 | A♭3 A♭4 C5.
+- **b38.1.** The soprano's E♭5 is tied over the bar and its F5 comes an eighth late (a rising retardation), so
+  the father's F2 and the alto's inverted subject (C4) can be struck under it. The critic notes the tied E♭
+  as a seventh that does not fall; it rises to F as a retardation, which is what I want.
+- **Kept.** The father's entry and every note of his augmentation, his A♭1 at the cadence, Bach's quoted
+  bars with their passing ninth (b26.2.5, the one unresolved flag, as documented above), the prelude's two
+  cadential six-four fourths (as documented under the prelude: contextual, not mistakes), and the one
+  "unverified" step (b20.2.5, the soprano's B5 in the dream; to check by ear).
+
+Critic before → after: reach_errors 4 → 0; keyboard_unplayable_pct 3.8 → 1.4; unresolved 1 → 1 (Bach's
+ninth); unverified 1 → 1; parallels 0/0, beat-to-beat 0, bad doublings 0, low-register 3 (unchanged);
+melody flags unchanged; stepwise 68.7 → 68.4 %. The prelude is unchanged. Renders not yet redone.

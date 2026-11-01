@@ -29,21 +29,23 @@ brightens from Phrygian to major:
 | II. *Media nocte* (midnight), b15-26 | Aeolian | **A#** | b16.2, alto, the top voice of a duet, half note on the beat over the door subject's F# |
 | III. *Galli cantu* (cockcrow), b26-35 | Dorian | **E#** | b28.1, soprano, downbeat, after the leap B-E# (an augmented fourth: the cockcrow) over C# major; again b31.1 in the tenor |
 | IV. *Mane* (morning), b35-43 | Mixolydian | **B#** | b36.3, soprano, over the door subject's G#: G-sharp *major* as the subject's own chord (before, B# only passed by in a door subject's rise, b19); b41.2, B#5, the highest note of the piece |
-| dawn, b46-52 | Ionian | **F## = G** | needs an eighth sharp, so the score turns to **A-flat major**; the subject's last note G now rises to A-flat (b46.1 in the fifth voice, b52.1 in the soprano) |
+| dawn, b46-52 | Ionian | **F## = G** | the tonic major, G♯ major, whose signature would need an eighth sharp, so it is written enharmonically as **A-flat major**: the same tonic key on the keyboard, a change of mode (to major) and of spelling (to flats), not of key; the subject's last note G now rises to A-flat (b46.1 in the fifth voice, b52.1 in the soprano) |
 
 Bach's G-sharp-minor fugue in WTC I (BWV 863) has four voices, so this one has five. **The four
 watchmen (Soprano, Alto, Tenor, Bass) keep the first watch alone, in Bach's number. The fifth voice, the
 Quintus, is the one at the door.** It enters at midnight with the second subject, the knock (BWV 61 no. 4,
 "Siehe, ich stehe vor der Tür und klopfe an"), first low, at D#3, in the register of the bass who sings
 that recitative. It brings the last knock before dawn (b44.3, an octave higher), and that knock's last
-note, G# written A-flat, runs straight on into the subject in A-flat major: at daybreak the two subjects
+note, G# written A-flat, runs straight on into the subject in the major mode (G♯ major, written A-flat major): at daybreak the two subjects
 become one line in the fifth voice.
 
 Two further rules shape the night:
 
-- **The cadences climb by fifths: E (b15), B (b26), F# (b35), C# (b43), A-flat (b52).** Each watch closes in
+- **The cadences climb by fifths: E (b15), B (b26), F# (b35), C# (b43), and the next fifth up is the tonic
+  itself, G♯, reached as a major chord and written A-flat (b52).** Each watch closes in
   the major key whose scale it uses (G# Phrygian = the E-major scale, Aeolian = B, Dorian = F#,
-  Mixolydian = C#), and C# = D-flat is IV of A-flat, so the last watch hands over to the dawn's dominant.
+  Mixolydian = C#), and C# (= D-flat) is IV of the tonic, so the last watch hands over to the tonic's own
+  dominant, the D♯ (= E-flat) pedal.
 - **The night has no perfect cadence on G#.** The door subject always ends F## → G#, but that G# is
   harmonized V6-i (b16.3, b27.3), as a deceptive VI (b20.1) or under the major chords of the late watches.
   The first perfect authentic cadence on the tonic is the last one (b52.1): E-flat → A-flat in the bass,
@@ -79,9 +81,9 @@ combined with the first from its first entry.
 | 1-15 | 0:00-0:49 | **I. Sero.** Alto subject (G#4, Phrygian); soprano answer on D# with CS1 below; tenor subject with CS1 above (soprano) and CS2 (alto); bass answer on D# with the same trio a fourth lower and a soprano descant of 9-8 suspensions. iii-vi-ii7-I6/4-V7 → **E major** at b15.1. q = 104. | 2.9 (4; 5 in b15 as the fifth voice knocks) |
 | 15-26 | 0:49-1:26 | **II. Media nocte.** Silence; the fifth voice knocks alone on D#3 (b15.2). b16: duet, the alto's Aeolian subject over the door's rise in tenths (A# at b16.2). The bass enters b17. Door subject 2 (tenor, on A#, b18.2) → half close on D# (b19.3) → deceptive VI (b20.1). Door subject 3 (soprano, b20.2) above the subject in the bass (b21): the combination inverted, all five voices. The tenor and fifth voice rest (b22-23). Door subject 4 (alto, on F#, from b24.3): its rise G-G#, A-A# turns iv into IV and v into V: **B major** at b26.1. q = 108. | 3.6 (5) |
 | 26-35 | 1:26-1:55 | **III. Galli cantu.** The soprano holds its D# while the bass knocks (b26.2). Soprano subject, Dorian: **B-E#** at b28.1 over C# major. Fifth voice knocks again (b29.2), tenor subject below it (b30): the cock crows twice (Mark 14:72), b31.1. Stretto: the soprano answers two beats later a tenth higher, on B (b30.3). Door subject 5 (alto, on C#, from b33.3), iv→IV, v→V: **F-sharp major** at b35.1. q = 112. | 3.9 (4) |
-| 35-43 | 1:55-2:20 | **IV. Mane.** The alto holds the F# chord while the tenor knocks (b35.2). Soprano subject, Mixolydian: **B#** over the door's G# = G# major (b36.3). **Summit (b39-43):** three entries a third apart and two beats apart, climbing: bass G#2 (b39.1), tenor B#3 (b39.3), soprano D#5 (b40.2), whose B#5 (b41.2) is the top of the piece and whose last note C#5 is the cadence: **C-sharp major** at b43.1. q = 116. | 3.8 (4) |
+| 35-43 | 1:55-2:20 | **IV. Mane.** The alto holds the F# chord while the tenor knocks (b35.2). Soprano subject, Mixolydian: **B#** over the door's G# = G# major (b36.3). **Summit (b39-43):** three entries a third apart and two beats apart: tenor G#3 (b39.1), bass B#2 beneath it (b39.3), soprano D#5 (b40.2), whose B#5 (b41.2) is the top of the piece and whose last note C#5 is the cadence: **C-sharp major** at b43.1, over the bass rising A#-B#-C#. q = 116. | 3.8 (4) |
 | 43-45 | 2:20-2:32 | **The last knock.** D# (= E-flat) pedal; the soprano holds C#, the dominant's seventh; the tenor sighs 4-3 over the pedal; the fifth voice knocks (b44.3) and rises E-E# (iv→IV), F#-F## (v→V). The tempo broadens to q = 82. | 3.0 (4) |
-| 46-52 | 2:32-3:05 | **Dawn, A-flat major.** b46.1: five-voice A-flat chord, held by bass and alto for the whole bar; the soprano's C# resolves to C and holds E-flat while the fifth voice's door, ending on A-flat, becomes the Ionian subject (voiced louder); the soprano's eighth-note descant starts only at the subject's leap to F (b47.1). The light comes down: tenor entry on C a sixth lower, two beats later (b46.3; in A-flat major its scale from C has exactly the Phrygian intervals of bar 1), bass answer on E-flat (b47.2). Soprano subject last (b49); its G rises to A-flat over E-flat → A-flat (b52.1); five-voice final chord. q = 88, ritardando to 58. | 4.1 (5) |
+| 46-52 | 2:32-3:05 | **Dawn: the tonic in major, written A-flat major** (G♯ major respelled; on the keyboard the same tonic). b46.1: five-voice A-flat chord, held by bass and alto for the whole bar; the soprano's C# resolves to C and holds E-flat while the fifth voice's door, ending on A-flat, becomes the Ionian subject (voiced louder); the soprano's eighth-note descant starts only at the subject's leap to F (b47.1). The light comes down: tenor entry on C a sixth lower, two beats later (b46.3; in A-flat major its scale from C has exactly the Phrygian intervals of bar 1), bass answer on E-flat (b47.2). Soprano subject last (b49); its G rises to A-flat over E-flat → A-flat (b52.1); five-voice final chord. q = 88, ritardando to 58. | 4.1 (5) |
 
 Moving voices per bar: `1 1 1 2 2 2 3 3 3 4 4 4 4 4 5 | 2 3 4 4 5 5 3 3 4 4 3 | 3 4 4 4 4 4 4 4 4 | 3 4 3 4 4 4 4 4 | 2 4 | 5 4 4 4 4 4 4`.
 All five voices sound together only where the plan needs them: b21 (the first full combination, the
@@ -101,8 +103,13 @@ fifth voice saves itself for the last knock.
    the dawn's descending stretto (b46-50).
 4. **The door opens.** The cadential door subjects turn iv into IV and v into V (b25, b34, b45); the last
    one's G# is written A-flat (b46.1) and continues as the subject in major in the same voice.
-5. **Tuning.** On a keyboard, G# and A-flat are the same key: the dawn changes the notation, not the
-   instrument. In Bach-Lehman the remote keys keep their own colour; I have not heard either render.
+5. **What the dawn changes.** On a keyboard G♯ and A-flat are the same key, and in every temperament this
+   cycle renders (equal, Bach-Lehman) they are the same pitch, so the dawn is not a modulation and not a
+   change of tuning: the tonic stays where it was. What changes is the mode, from the minor (Phrygian at the
+   start) to the major on the same tonic, and the spelling, from sharps to flats, because G♯ major would
+   need F𝄪 in its signature. The brightening a listener can hear is the mode: the third (B → B♯ = C) and the
+   other raised degrees (A → A♯ = B-flat, E → E♯ = F, F♯ → F𝄪 = G), now all at once. In Bach-Lehman the
+   tonic's chords sound as G♯/A-flat always sound there; I have not heard either render.
 
 ### Critic numbers (`tools/critic.py`, final build)
 
@@ -110,23 +117,28 @@ fifth voice saves itself for the last knock.
 | --- | --- | --- |
 | parallels_error / weak | **0** / 0 | 0 |
 | beat_parallels | **0** | ≤ 2 |
-| dissonance_unresolved | **0** | ≤ 3 |
+| dissonance_unresolved | **1** (b45.2, a pedal-point ninth; see below) | ≤ 3 |
+| dissonance_unverified | 2 (b10.2, b10.3, in the exposition) | check by ear |
+| reach_errors | **0** | 0 |
 | bad_doublings | **1** | ≤ 2 |
 | low_register_seconds | **0** | ≤ 9 |
-| stepwise_pct / leap_4th_plus_pct | **69.1 %** / 14.0 % | ≥ 65 % |
+| stepwise_pct / leap_4th_plus_pct | **69.0 %** / 14.0 % | ≥ 65 % |
 | repeated_note_pct | 5.6 % (the knocks) | |
 | pc tripled on beats | 5.6 % | |
 | crossings | 1 | few |
-| **keyboard_unplayable_pct** | **1.1 %** (3 of 265 onsets) | < 15 % |
+| **keyboard_unplayable_pct** | **0 %** (0 of 265 onsets) | < 15 % |
 | **mean moving voices** | **3.52** (4 bars with all five moving) | |
 | subject entries | 17 subject + 9 door-subject entries; all subject entries 9/9 in rhythm | |
 
 Flagged items, each kept on purpose:
 
-- **Doubled seventh b40.2** (tenor D#4 and soprano D#5 over E#3): in a chain of entries a third apart and
-  two beats apart, the upper entry's first note is always the lower entry's third note.
-- **Keyboard b41.2-41.3:** G#2 (bass) - E#4 (tenor) - B#5 (soprano): the summit's top note is out of reach
-  for three onsets. Everything else fits two hands.
+- **Doubled seventh b40.2** (the bass's D#3 and the soprano's D#5): in a chain of entries a third apart and
+  two beats apart, each entry's first note is the previous entry's third note.
+- **Unresolved b45.2** (the fifth voice's E4 over the bass's D#3; the critic's b45.3): the last knock's rise E-E#-F#-F##-G# over the
+  dominant pedal, iv - IV - v - V - I; E is a ninth over the pedal and rises chromatically, as the door subject
+  always does. The critic counts a pedal only when one note lasts two bars, and this one is re-struck every
+  bar (with the last KNOCK at b45.1, against the piano's decay), so it calls the ninth unresolved.
+- **Keyboard:** every onset fits two hands, sounding notes included.
 - **Tritone leaps (3):** B-E# in the Dorian subject (b28.1, b31.1) is the cockcrow; F#-B# (b41.2) is the
   same leap in the summit's Mixolydian entry on D#.
 - **Crossing b46:** the alto holds the E-flat of the dawn chord under the fifth voice's A-flat-B-flat-C for
@@ -158,9 +170,10 @@ rise in tenths) was designed by hand. No script chose or placed a note.
 3. **The dawn is seven bars** (about 30 s). Its subject statements are in half notes like every entry; the
    motion comes from the soprano's eighth-note descant (b47-48) and the quarter-note inner voices (b49-51).
    Earlier the dawn was the weak spot; it is now a real cadence plan, but still not long.
-4. **The summit chain's entries begin in octave with the voice below** (tenor B#3 on the bass's B#2 at
-   b39.3, soprano D#5 on the tenor's D#4 at b40.2): built into a chain a third apart; the tenor is voiced
-   louder in b39-40.
+4. **The summit chain's entries begin in octave with a voice already sounding** (the bass's B#2 under the
+   tenor's B#3 at b39.3, the soprano's D#5 over the bass's D#3 at b40.2): built into a chain a third apart;
+   the tenor, which begins the chain, is voiced louder in b39-40. Since Nov 2026 the second entry lies
+   beneath the first (see the review response), so the chain rises by thirds in pitch, not voice by voice.
 5. **Watch I is 49 seconds of exposition** in one to four voices before the fifth voice appears: normal for
    a fugue, and the slowest part of this one.
 6. **The bass of watch III moves mostly in half notes** (b28-35).
@@ -170,7 +183,7 @@ rise in tenths) was designed by hand. No script chose or placed a note.
 
 ### From the nineteen-voice version (`archive-n-plus-1/`)
 
-- **Kept:** the title and plan (four watches, one sharp per watch, the enharmonic dawn in A-flat); the
+- **Kept:** the title and plan (four watches, one sharp per watch, the dawn in the tonic major spelled as A-flat); the
   subject's pitches and rhythm and its five modal forms; the door subject's pitches (knocks and the
   chromatic rise, after BWV 61 no. 4); a summit chain of entries a third apart, two beats apart; the
   prelude.
@@ -271,3 +284,38 @@ morning, are left to the fugue.
 7. **The prelude is modest.** It has three layers, mostly in half notes and knocks, and
    stepwise_pct is 54%. It does its job as a doorway, but it has none of the fugue's ambition. It could
    become a real invention on the door subject.
+
+---
+
+## Review response (Nov 2026)
+
+1 November 2026. Positions in half-note beats, as above.
+
+The owner's review of PR #1 asked for two things here: to describe the final dawn accurately, as a change of
+mode and spelling around the same keyboard tonic, and to make the summit playable. Both agreed.
+
+- **The dawn.** The earlier notes said the score "turns to A-flat major" and listed A-flat as one more key in the
+  climb of cadences, which made the dawn sound like a modulation. It is not one. The dawn is the tonic major, G♯
+  major, which would need an eighth sharp (F𝄪) in its signature and so is written as A-flat major: the same
+  keyboard key, the same pitch in every temperament the cycle renders, a change of mode (minor → major on the
+  same tonic) and of spelling (sharps → flats). The climb of cadences by fifths (E, B, F♯, C♯) arrives back at
+  the tonic, now major. The concept table, the cadence rule, the section map and the device notes now say so.
+  No notes changed in the dawn.
+- **The summit (b39-43).** The corrected critic found one attack no two hands can strike, b41.2 (G♯2, E♯4, G♯4,
+  B♯5: 19 semitones at best), and the sounding notes of b41.2-41.3 were out of reach too. All three notes that
+  matter there belong to subject entries: with the chain's entries a tenth apart (bass G♯2, tenor B♯3, soprano
+  D♯5), the bass's G♯2, the tenor's E♯4 and the soprano's top B♯5 meet, and no change to the free alto could
+  help. The first two entries now exchange voices and octaves: the entry on G♯ is in the tenor (G♯3) and the
+  entry on B♯ in the bass beneath it (B♯2). Pitch classes, rhythms and entry times are unchanged (the pair is
+  inverted at the fifteenth), the soprano's entry and its B♯5 are untouched, and the two lower entries now lie
+  within one hand under the soprano. The cost: the chain no longer climbs voice by voice (the second entry
+  enters beneath the first), and its lowest line is different: B♯2 C♯3 D♯3 G♯3 … instead of G♯2 A♯2 B♯2 E♯3 ….
+  The free notes around it were rewritten by hand: the fifth voice now rests at b39.2 (it would have doubled the
+  tenor's A♯3 in unison), and in b42 the tenor holds G♯3 while the bass rises A♯2-B♯2-C♯3 into the cadence
+  (V6/5 - I in C♯ major), which avoids the octaves with the soprano that a falling bass made.
+- **The new unresolved flag** (b45.2) is a ninth over the re-struck dominant pedal, kept and explained above.
+
+Critic before → after: reach_errors 1 → 0; keyboard_unplayable_pct 1.1 → 0.0 (every onset, sounding notes
+included, now fits two hands); unresolved 1 → 1 (b45.2, the pedal ninth; the old notes said 0 under the older
+critic); unverified 2 → 2 (b10.2-10.3); parallels 0, beat-to-beat 0, bad doublings 1 (b40.2, unchanged),
+low-register 0, crossings 1; stepwise 69.0 %. The prelude is unchanged. Renders not yet redone.
