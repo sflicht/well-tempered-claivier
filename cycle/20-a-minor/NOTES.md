@@ -86,19 +86,22 @@ Every statement is an explicit transposition, octave shift or augmentation (`tr`
 | 16–23 | generation 2: each of the four states the subject or answer and splits in its tail | 4 → 8 | 72 |
 | 24–32 | generation 3: a cascade of entries a bar apart (Em, Am, Dm, G, C, F, turn to E7; Vc I in A over a tonic pedal) | 8 → 15 | 72 |
 | 33–38 | generation 4: stretto from the top down (E6, E5, E4, E5, E3) over dominant then tonic pedals; Cb I's tail gives Vc V | 15 → 20 | 72 → 60 |
-| 39–47 | **summit** (below) | 20–21 | 60 |
+| 39–47 | **summit** (below): tutti, thinned for the stretto and for the lament, all 21 on the arrival (b46) | 6–21 | 60 |
 | 47–58 | **folding**, over the lament as a three-bar chaconne bass (A G# │ G F# │ F E, three times) | 21 → 1 | 60 → 54 |
 | 59–67 | **violino solo:** the ground as swept chords (b59–61), as a running scale (b62–64), then compressed into the subject itself: Bach's head at its first pitch (b65) and the tail, whose lower strand is the lament (b66). A last sweep, then A. | 1 | 63 → 44 |
 
 ## The summit (bars 39–47)
 
-- **Bass:** Cb I has the **subject in four-fold augmentation** (E2 D#2 E2 E1 A1 C2 B1 D2, from b39.3). At **b43.2** its tail splits for the last time. The new Cb II, the **21st voice**, catches the lament A1 G#1 G1 F#1 F1 E1 in half notes, a quarter behind Cb I, which keeps the upper strand C E D C B A G#. The harmony therefore changes on every beat: Am │ Bø │ Am/C Am E/G# │ E7 G C/G F#o │ Bm/F# Bø/F Dm/F Am/E │ E │ A.
+- **Bass:** Cb I has the **subject in four-fold augmentation** (E2 D#2 E2 E1 A1 C2 B1 D2, from b39.3). At **b43.2** its tail splits for the last time. The new Cb II, the **21st voice**, catches the lament A1 G#1 G1 F#1 F1 E1 in half notes, a quarter behind Cb I, which keeps the upper strand C E D C B A G#. From there the harmony changes on every beat: Am │ Dm7/C Am/C │ Bø7 │ Bø7/D │ Am/C Am Am E/G# │ E7/G# G C/G F#ø7 │ Bm7/F# Bø7/F Bø7/F Am/E (6/4) │ E │ A.
+- **The governing arrival is the dominant on the downbeat of b46**, where the augmented subject reaches its last note (G#1 over E1). It is prepared by a cadential 6/4 at b45.4 and resolves to A at b47.1, where the two double basses meet. Three dissonances carry it: the top's **F6 over E1** (a flat ninth held from b45.2, resolving on the downbeat), the **6/4 itself** (A and C over E), and the **solo violin's A4 held into the E chord**, the only suspension left there, resolving to G#4 alone on beat 2. Every other voice arrives on E or B.
 - **b39:** a dominant field. Every voice holds a tone of E major and turns once around it (E–D#–E or an upper neighbour), each at its own sixteenth, so that no two voices an octave or fifth apart move at the same moment (19 voices moving).
-- **b40:** the texture thins and the **solo violin states the subject at its first pitch (E5)** inside the tutti. **b41:** violin III answers **in stretto on A**.
-- **Top line (Vl VII):** E6 F6 E6 │ D6 F6 │ E6 C6 A5 B5 │ E6 D6 E6 **F#6** │ D6 F6 (a 9–8 over the basses' E) │ E6 │ C6.
-- **Solo violin (Vl I):** a chain of suspensions C A │ C B │ C B │ B C A │ C B A │ G# B │ A.
-- **The other 16 upper voices** sing slow, mostly stepwise lines, each moving at its own moment. Most notes are held across the bass's changes as suspensions or retardations and resolve by step. Examples: Vl VI A B A G# F# E D F E; Vl IX A B A B C D E; Va III A F E G# B A G F E; Vc II A B C D C D C B G#.
-- **Moving voices per bar** (critic: at least one attack and sounding ≥ ¼ bar): b39 19, b40 20, **b41 20, b42 19, b43 21, b44 21, b45 21**, b46 20, b47 20. Mean over b39–46: **20.1**.
+- **b40:** the texture thins and the **solo violin states the subject at its first pitch (E5)** inside the tutti. **b41:** a tutti A minor on beats 1–2, then **violin III answers in stretto on A** in a texture of eight voices (b41.3–42), as the solo violin's subject was heard in b40. Violin IV takes over violin III's A5 as the answer drops to A4 and holds it as a pedal.
+- **b43:** the tutti returns; **all 21 sound together from b43.2**, the 21st voice's entry, on A minor.
+- **b43.4–45.4, the lament window:** as the double basses' lament descends, the inner voices leave in turn (13 voices at b43.4, 8 at b44.2, 7 at the peak F#6 and 6 at the 6/4). A voice stops when it has no step left that does not double another voice's motion or blur the next chord. What remains is the lament, the top line, violin III, the solo violin and two inner lines: violin II (E │ F# G A . B │ C D │ E D │ C) and viola II (E D, the seventh of F#ø7 and the third of Bm7). Cello II adds D3 under the two B chords.
+- **b46:** all 21 voices land on E (most on E or B; the third, G#, is in the bass, and above it only after the solo violin's resolution). Cello I fills in B G# E after that resolution; violin II's D5 on beat 4 makes it E7.
+- **Top line (Vl VII):** E6 F6 E6 │ D6 F6 │ E6 C6 A5 B5 │ E6 D6 E6 **F#6** │ D6 F6 (the flat ninth over the basses' E) │ E6 │ C6.
+- **Solo violin (Vl I):** C A │ B │ C . . B │ . . C A │ B . . A │ . G# . B │ A.
+- **Moving voices per bar** (critic: at least one attack and sounding ≥ ¼ bar): b39 19, b40 20, b41 20, b42 8, **b43 21**, b44 8, b45 8, **b46 21**, b47 13. Every beat of b41–46 now sounds a recognisable chord, plus at most two suspensions resolving within the beat (before: five to eight pitch classes on most beats, eight at b44.1½).
 
 ## Timbre and space
 
@@ -124,24 +127,26 @@ A perpetual-motion *preludio* for one violin in sixteenths: **one line**, playab
 |---|---|---|
 | parallels_error | **0** | 0 |
 | beat_parallels | **1** (b22.3 Va II/Vc I, C→E octaves; left) | ≤ 8 |
-| dissonance_unresolved | **0** | ≤ 15 |
+| dissonance_unresolved | **4** (the lament's F#–F over the E pedal, b34–37; kept, see Review response) | ≤ 15 |
+| dissonance_unverified | **3** (b24.4, b34.4, b40.4; kept, see Review response) | check by ear |
 | bad_doublings | **2** (b27.3, b32.3: doubled 7th, from the A pedal; left) | ≤ 8 |
 | low_register_seconds | **0** | ≤ 16 |
-| stepwise_pct | **45.7** | ≥ 60 — **missed**, see weak spots |
-| leap_4th_plus_pct | 32.0 | |
-| mean moving voices (whole piece) | 6.99 | |
+| stepwise_pct | **44.1** (45.7 before the Nov 2026 revision) | ≥ 60 — **missed**, see weak spots |
+| leap_4th_plus_pct | 34.1 (32.0 before) | |
+| mean moving voices (whole piece) | 6.33 (6.99 before) | |
+| crossings | 43 (51 before) | |
 
-Stepwise motion by section (same rule as the critic, repeated notes counted): solo violin b1–12 14%, string sweeps b13–15 14%, generation 2 53%, generation 3 54%, generation 4 56%, **summit 64%**, folding 36%, coda 36%.
+Stepwise motion by section (same rule as the critic, repeated notes counted): solo violin b1–12 14%, string sweeps b13–15 14%, generation 2 53%, generation 3 54%, generation 4 56%, **summit 62%** (b39–46; 166 melodic intervals, 284 before the revision), folding 36%, coda 36%.
 
-Mean moving voices by section: b1–12 1.2, b13–15 3.0, b16–23 5.8, b24–32 7.9, b33–37 7.8, b38 7.0, **b39–46 20.1**, b47–58 9.3, b59–67 1.0.
+Mean moving voices by section: b1–12 1.2, b13–15 3.0, b16–23 5.8, b24–32 7.9, b33–37 7.8, b38 7.0, **b39–46 15.6**, b47–58 8.7, b59–67 1.0.
 
 **Prelude:** parallels/dissonance n/a (one line). Range G3–C6. stepwise 9.5% (the line is arpeggiated compound melody by design). tertian fit 88%.
 
 ## Honest weak spots (what I would still improve)
 
-1. **The summit may be thick.** To keep 21 lines moving with no parallels over a harmony that changes every beat, the inner voices hold notes across the changes as suspensions. On most beats of b41–46, two to four pitch classes outside the chord are sounding, each resolving by step. The critic accepts this, but the result may blur into clusters. A cleaner version would slow the double basses' lament to half the speed (whole-note strands) so that the harmony changes every half bar.
-2. **Stepwise motion is 45.7%, below the 60% target.** The concept is compound melody: the solo-violin sections, the string sweeps and the folding figures are made of leaps. The counterpoint sections are 53–64%. Making the coda's first cycle a scale (as in b62–64) and the folding figures shorter would raise it.
-3. **The inner lines of the summit and the folding are functional rather than thematic.** I chose them from candidate lines proposed by a scratch search tool (see "Tools"), then edited them. A few have chromatic wobbles: G–G# approaches in Vl V (b52) and Vc III (b49), and an F#–G anticipation in Va I (b44). There are no subject entries in the inner voices after b41.
+1. **The summit's lament window is sparse.** Since the Nov 2026 revision the inner voices rest while the lament descends (b43.4–45.4), so the peak F#6 sounds in seven voices directly after the 21-voice moment. That contrast is the point, but it should be checked by ear against the full arrival in b46.
+2. **Stepwise motion is 44.1%, below the 60% target.** The concept is compound melody: the solo-violin sections, the string sweeps and the folding figures are made of leaps. The counterpoint sections are 53–64%. Making the coda's first cycle a scale (as in b62–64) and the folding figures shorter would raise it.
+3. **The inner lines of the summit and the folding are functional rather than thematic.** I chose them from candidate lines proposed by a scratch search tool (see "Tools"), then edited them. The summit's inner lines were rewritten by hand in Nov 2026; the folding's are still the edited proposals, and the first fold cycle (b47–49) is still crowded on some beats (b47.4 sounds seven pitch classes). One chromatic wobble is left: G–G# in Vl V (b52). There are no subject entries in the inner voices after b41.
 4. **The bass register is thin at the summit.** The cellos sit in the tenor range (G3–E4) to avoid seconds against the double basses. The bottom octave is the two double basses alone.
 5. **The folds may be hard to hear.** The compound beat P X P X lasts one beat inside a thick texture. The first fold (Cb II) is a unison meeting rather than a compound beat.
 6. **Leftovers:** the beat-to-beat octave at b22.3 and the two doubled sevenths at b27.3 and b32.3. The modal heads (G, C, F major) bend the subject's intervals.
@@ -167,3 +172,22 @@ Mean moving voices by section: b1–12 1.2, b13–15 3.0, b16–23 5.8, b24–32
 - `line.py`, `grid.py` and `grid2.py`: proposers. For one voice they search pitches (and, in `grid*`, rhythms on an eighth grid) against the texture as it stands and a harmony plan I wrote. They minimise critic faults and prefer steps, and print a few candidates. **Many inner-voice lines of the summit (b41–47) and of the folding (b47–58) started as such proposals.** I chose among them, edited them (endings, held notes, fold pitches), and wrote every note into `fugue.py` by hand. No script inserts or alters notes in the score.
 - `arp()` in `fugue.py` only writes out chords I spelled as sixteenth sweeps, and `s16()` in `prelude.py` only appends `:1` to pitches I wrote.
 - Thematic placements (`theme()`, `tr`, `oc`, `aug`) are explicit in the source.
+
+## Review response (Nov 2026)
+
+*1 November 2026.* The owner's review of PR #1 (written by ChatGPT) asked for the summit to be heard as one harmony: choose the governing arrival, decide which dissonances carry it, and rest or stagger inner parts whose resolutions obscure it. The claim checked out. At b44.1½ the 21 parts sounded eight pitch classes (C D E F F# G# A B). Most beats of b41–46 sounded five to seven, because 16 inner voices held notes across a bass that changes every beat and resolved them at staggered moments. The arrival on E at b46.1 sounded seven pitch classes and did not clear until beat 3. The critic, corrected in commit 09df800 so that a resolution must land within a beat on a consonance, found 31 unresolved and 19 unverified dissonances, most of them here.
+
+**What changed.**
+- The inner parts of b41–47.1 are rewritten (the double basses' subject and lament, the top line and violin III's stretto are kept). The arrival is the E chord on the downbeat of b46, the end of the augmented subject, prepared by a cadential 6/4 and carried by the top's flat ninth F6–E6, the 6/4 itself and the solo violin's A4–G#4. The voices now hold common tones and move only when no other voice makes the same motion. A voice with no such move rests. The texture therefore breathes: tutti on b41.1, eight voices for the stretto, all 21 from b43.2, a thinning window for the lament (seven voices at the peak F#6, six at the 6/4), all 21 again on b46. The solo violin's line is simplified to C A │ B │ C B │ B C A │ B A │ G# B │ A (its C on b42.1 and b45.1 had blocked the chords there), and violin III steps D6 C6 B5 into the arrival.
+- Smaller fixes elsewhere, each a real clash: violin II at b19 and viola I at b23 resolve half a beat later, on the beat (they were stepping down in parallel seconds and sevenths with the tail); viola I reaches C# with the bass at b26.4. In the first fold cycle, cello III keeps its E4 from the arrival instead of striking D4 against it at b47.2 (which also made fifths with violin III). Viola V's C4 at b47.4 becomes an anticipation on the half beat. Viola III rests a beat after its fold and takes D4 with the D chord (b48). Viola IV's G#3 neighbour goes off the beat. Cello III goes A3–G#3 directly (b49). Violin III's passing B5 and cello II's line are adjusted so that violin IV's 9–8 at b50 resolves onto a consonance.
+- Every note of the new lines is written in `fugue.py` by hand. To read the score I used two display-only scratch scripts (a per-voice grid by sixteenths and an interval counter) together with `tools/critic.py` and `tools/reduce.py`. Nothing proposed pitches.
+- Critic, before → after: unresolved 31 → 4, unverified 19 → 3, parallels 0 → 0, beat-to-beat parallels 1 → 1, bad doublings 2 → 2, low-register seconds 0 → 0, crossings 51 → 43, tertian fit 39 → 46%. In b39–48 the critic logs 173 dissonance events instead of 694, and 'unprepared' suspensions fall from 99 to 4.
+
+**What I kept, and why.**
+- *Four 'unresolved' flags* (b34.3, b35.3 twice, b37.3): the lament's chromatic F# in a newly split voice, sounding across beat 3 while another voice strikes E over the E pedal. The line goes F#–F–E within half a beat. The critic checks only the next note (F, still a second from E), so it cannot see the arrival on E. The lament is thematic, so I left it.
+- *Three 'unverified'*: b34.4 and b40.4 are 4–3 suspensions (A–G#) whose resolution meets the subject's D, the seventh of E7. They resolve half a beat late because violin VII and violin IV take A–G# on the beat in the octave above. b24.4 is a voice exchange (A3/B4 to B3/A4) inside B7 over the E pedal. These are check-by-ear cases, not errors.
+- *The beat-to-beat octave at b22.3 and the doubled sevenths at b27.3 and b32.3*, as before.
+- *Stepwise motion fell from 45.7% to 44.1%, and leaps of a fourth or more rose from 32.0% to 34.1%.* All of the change is in the summit, where the review asked for rests. The summit's remaining lines are as stepwise as before (62% steps, 9.6% leaps, against 64% and 9.9%), but they have 118 fewer melodic intervals, and those were mostly steps. A note-by-note check of b44–46 shows why the old version needed its staggered suspensions: the fixed lines (top, violin III, solo, both basses) already make nearly every stepwise motion available on each beat, so any further moving voice either doubles one of them in octaves or holds a note across the change. I did not rewrite unrelated bars to win the ratio back.
+- *Fewer moving voices*: the critic's 'bars with all 21 voices moving' falls from 3 (b43–45) to 2 (b43, b46), and the whole-piece mean from 6.99 to 6.33. The review's point was that a count of attacks does not make 21 arguments. All 21 parts still sound together, at the 21st voice's entry and at the arrival.
+- *The 21 parts, the split/fold form and the last bass split's lament* are unchanged.
+
