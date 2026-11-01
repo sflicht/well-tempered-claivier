@@ -2,13 +2,15 @@
 """Engrave a whole score as ONE long horizontal system (a "score strip") for video.
 
     python3 tools/score_strip.py cycle/03-c-sharp-major/fugue.json --out-dir DIR [--height-px 460]
-        [--margin-px 10] [--gap-ss 3.0] [--check] [--keep-work]
+        [--staff-space-px 10] [--margin-px 10] [--gap-ss 3.0] [--check] [--keep-work]
 
 Outputs
   DIR/strip.png   the piece engraved by LilyPond as a single system, white background, exactly
                   --height-px tall.  Notes (heads, stems, flags, beams, accidentals, dots, ties,
                   rests) are coloured per voice; notes inside a subject entry are drawn in the full
                   colour, all others in a ~55% tint toward white.  Everything else is black.
+                  With --staff-space-px the staff space has that size instead, and the height is
+                  whatever the system needs (so a 25-staff score is as legible as a duet).
   DIR/strip.json  {"width_px", "height_px",
                    "time_to_x": [[t_quarters, x_px], ...]   one point per onset (note or rest, every
                                                             staff, so also every bar line) plus the
@@ -370,7 +372,10 @@ def rasterise(pdf, dpi, out_png):
 # Main
 # ----------------------------------------------------------------------------------------------
 
-def build_strip(score_path, out_dir, height_px=460, margin_px=10, gap_ss=3.0, keep_work=False):
+def build_strip(score_path, out_dir, height_px=460, margin_px=10, gap_ss=3.0, keep_work=False,
+                staff_space_px=None):
+    """Engrave the strip.  staff_space_px, if given, fixes the size of a staff space in pixels
+    instead of the height: height_px is then whatever the ink needs (plus the margins)."""
     from PIL import Image
     Image.MAX_IMAGE_PIXELS = None
     data = json.loads(Path(score_path).read_text())
@@ -404,6 +409,10 @@ def build_strip(score_path, out_dir, height_px=460, margin_px=10, gap_ss=3.0, ke
         # whole number of pixels (then pixel rows map exactly from the top edge of the page).
         mm_per_unit, (page_w_u, page_h_u), groups = parse_svg(svg)
         page_h_pt = page_h_u * mm_per_unit / MM_PER_INCH * PT_PER_INCH
+        if staff_space_px:
+            # A staff space is staff_size / 4 points: choose the resolution from it, and the
+            # height from the ink.
+            height_px = round((y1 - y0) * staff_space_px / (staff_size / 4)) + 2 * margin_px
         dpi = (height_px - 2 * margin_px) * PT_PER_INCH / (y1 - y0)
         dpi = round(page_h_pt * dpi / PT_PER_INCH) * PT_PER_INCH / page_h_pt
         px_per_pt = dpi / PT_PER_INCH
@@ -547,13 +556,16 @@ def main():
     ap.add_argument('score', help='score JSON (render_music.py format)')
     ap.add_argument('--out-dir', required=True)
     ap.add_argument('--height-px', type=int, default=460, help='height of strip.png (default 460)')
+    ap.add_argument('--staff-space-px', type=float, default=None,
+                    help='fix the staff space in pixels instead of the height (height follows the ink)')
     ap.add_argument('--margin-px', type=int, default=10, help='white margin around the ink (default 10)')
     ap.add_argument('--gap-ss', type=float, default=3.0,
                     help='staff spaces given to the shortest distance between two onsets (default 3)')
     ap.add_argument('--check', action='store_true', help='also write check.png and measure accuracy')
     ap.add_argument('--keep-work', action='store_true', help='keep the SVG/PDF/page PNG in out-dir')
     a = ap.parse_args()
-    info, extra = build_strip(a.score, a.out_dir, a.height_px, a.margin_px, a.gap_ss, a.keep_work)
+    info, extra = build_strip(a.score, a.out_dir, a.height_px, a.margin_px, a.gap_ss, a.keep_work,
+                              staff_space_px=a.staff_space_px)
     print(f'{a.out_dir}/strip.png: {info["width_px"]} x {info["height_px"]} px, '
           f'{len(info["time_to_x"])} time points, {len(info["staff_y"])} staves, '
           f'{len(info["entries"])} entries, {extra["dpi"]:.2f} dpi')

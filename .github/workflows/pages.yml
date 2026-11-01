@@ -1,0 +1,44 @@
+# Build the listening app (tools/build_app.py) and publish it with GitHub Pages.
+# One-time setup by the repository owner: Settings -> Pages -> Source: GitHub Actions.
+# The score strips are committed, so the build needs only Python and Pillow (no LilyPond).
+name: Listening app (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow (cuts the score strips into tiles)
+        run: python -m pip install --upgrade 'Pillow>=9.2'
+      - name: Build the site
+        run: python tools/build_app.py --out _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
