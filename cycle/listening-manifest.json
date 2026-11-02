@@ -1,0 +1,565 @@
+{
+ "title": "The Well-Tempered clAIvier",
+ "groups": [
+  {
+   "name": "Pair I \u00b7 C major (new)",
+   "pieces": [
+    {
+     "id": "prelude-1",
+     "title": "Prelude I \u00b7 Praeludium per omnes tonos",
+     "score": "cycle/01-c-major/prelude.json",
+     "group_voices": true,
+     "stats_score": "cycle/01-c-major/prelude-notation.json",
+     "tag": "new",
+     "notes": "BWV 846's broken chords climb through all 24 keys in the WTC's own order, C, c, C#, c#, D, d and on to b, then home. In every minor key the Neapolitan chord (bII) becomes the next major tonic, a semitone up.\n\nIt is voiced as a Shepard-Risset illusion: each note sounds in several octaves under a fixed loudness curve, so the music rises a semitone with every key and yet arrives back in C at the register where it began. C minor opens with the Royal Theme of the Musical Offering. E-flat minor is the darkest point; the climax is a pedal in G-sharp minor; A major is the loudest bar.\n\nAt the da capo the fugue subject floats above Bach's own bars at half speed, the way Gounod laid a melody over this prelude. Try the meantone tuning: the remote keys sour, which is why the well-tempered keyboard existed."
+    },
+    {
+     "id": "fugue-1",
+     "title": "Fugue I \u00b7 Scala strettarum (2 voices)",
+     "score": "cycle/01-c-major/fugue.json",
+     "tag": "new",
+     "notes": "The subject was found by search so that it combines with itself in stretto at every distance from a whole bar down to a single eighth note. The fugue climbs that ladder one rung at a time: bar, 7, 6, 5, 4, 3, 2 and finally 1 eighth apart, through A minor, E minor, G, D minor, F and back to C.\n\nBach's own C-major subject (BWV 846) opens the piece alone in the bass and becomes the countersubject. It returns over the subject's augmentation in the coda, and B-A-C-H is the top line of the last cadence."
+    }
+   ]
+  },
+  {
+   "name": "Pair II \u00b7 C minor (rebuilt, formerly 'Pair I')",
+   "pieces": [
+    {
+     "id": "prelude-2",
+     "title": "Prelude II \u00b7 the beat lost and found",
+     "score": "cycle/02-c-minor/prelude.json",
+     "tag": "fixed",
+     "notes": "The left hand keeps a steady quarter-note beat while the right hand's sixteenths regroup in 4s, then 3s, then 5s. The accented first note of each group spells out the fugue subject, first in long values, then in E-flat starting a sixteenth late. The written-out Presto and Adagio in bars 23-24 come from BWV 847's prelude, before the downbeat returns. It ends on C5, the fugue's first note.\n\nFixed from v3: the chord chart filled by a voicing optimiser, the lack of any melody, and the sagging dominant pedal."
+    },
+    {
+     "id": "fugue-2",
+     "title": "Fugue II \u00b7 three voices (was two)",
+     "score": "cycle/02-c-minor/fugue.json",
+     "tag": "fixed",
+     "notes": "Renumbered to No. II, as in Bach's key order, so it now has three real voices like BWV 847. The exposition has the answer as the subject's mirror image at the dominant, then the bass entry with two countersubjects. In G minor the subject sounds together with its augmentation and its inversion. Then the whole three-voice block returns upside down in F minor, a mirror trio in the manner of Contrapunctus 12/13.\n\nThe peak is now the fullest bar, a three-voice stretto half a bar apart. A deceptive cadence and a Neapolitan follow. In the coda Bach's own BWV 847 subject enters slowly in the bass under ours.\n\nEvery note was written by hand; the old version had 15 bars of code-chosen pitches. 0 parallels, 0 unresolved dissonances, playable by two hands."
+    }
+   ]
+  },
+  {
+   "name": "Pair III \u00b7 C-sharp major (new fugue, prelude repaired)",
+   "pieces": [
+    {
+     "id": "prelude-3",
+     "title": "Prelude III \u00b7 Glass bells",
+     "score": "cycle/03-c-sharp-major/prelude.json",
+     "tag": "fixed",
+     "notes": "The second-draft prelude Sam liked, transcribed note for note, with four repairs: outer-voice fifths across the barline at bar 12, inner layers that doubled the melody at bar 20, outer-voice octaves into the cadential 6/4 at bar 21, and a major-seventh leap at bar 5. The bells, the silences and the harmony are otherwise untouched; a final ritardando is added. The deep bass is meant to be caught with the middle (sostenuto) pedal."
+    },
+    {
+     "id": "fugue-3",
+     "title": "Fugue III \u00b7 Giga a 4, rectus et inversus",
+     "score": "cycle/03-c-sharp-major/fugue.json",
+     "tag": "new",
+     "notes": "A four-voice gigue-fugue in 12/8. As in Bach's suite gigues, Part 1 presents the subject upright and cadences in G-sharp, and Part 2 presents it upside down, with the entries in mirrored order: bass, tenor, alto, soprano.\n\nIn the coda (bars 40-41) the gigue meets its own reflection: bars 9-10 of Part 1 sound simultaneously with bars 23-24 of Part 2, at pitch. The countersubject was designed backwards from this moment so that the four lines fit.\n\nBach's own C-sharp-major subject (BWV 848) appears too: the soprano's inverted subject ends G#-A#-G#, which is the head of Bach's subject, so it runs straight on into it (bars 28-29)."
+    }
+   ]
+  },
+  {
+   "name": "Pair IV \u00b7 C-sharp minor (rebuilt)",
+   "pieces": [
+    {
+     "id": "prelude-4",
+     "title": "Prelude IV \u00b7 Allegro inquieto",
+     "score": "cycle/04-c-sharp-minor/prelude.json",
+     "tag": "fixed",
+     "notes": "The motif, its syncopation, augmentation, diminution and hemiola are kept. New in this version: root-position cadences at the return and the close, the hands imitating each other at the half bar, and a dominant pedal that moves every half bar. Bach's BWV 849 'cross' motif (C#-B#-E-D#) is planted as 4-3 and 6-5 suspensions over that pedal, so the prelude previews the fugue's second subject."
+    },
+    {
+     "id": "fugue-4",
+     "title": "Fugue IV \u00b7 double fugue with Bach's cross",
+     "score": "cycle/04-c-sharp-minor/fugue.json",
+     "tag": "fixed",
+     "notes": "Five voices that build up and stay; all five first sound together at bar 10 (bar 33 before). The countersubject now has one fixed shape.\n\nBach's own stile-antico subject from the five-voice C-sharp minor fugue BWV 849 (C#-B#-E-D#) becomes a genuine second subject. It has a quiet second exposition in bars 17-25 with Bach's own answer, appears in diminution in the episode basses, and at the climax (bars 35-41) sounds augmented in the bass under two complete strettos of our subject an eighth apart. The final stretto is in three voices over the dominant pedal.\n\nAccented parallels down from 22 to 1; tripled pitch classes down from 19% to 8%."
+    }
+   ]
+  },
+  {
+   "name": "Pair V \u00b7 D major (rebuilt)",
+   "pieces": [
+    {
+     "id": "prelude-5",
+     "title": "Prelude V \u00b7 Allegro",
+     "score": "cycle/05-d-major/prelude.json",
+     "tag": "fixed",
+     "notes": "The climb and climax of the old version are kept. New: an irregular 6+8+6+12+6+3-bar form instead of five identical 8-bar blocks, a B-minor region, and a written top line over a walking left hand. The fugue's head cell and tattoo rhythm pass between the hands. It ends with a 32nd-note flourish that becomes the fugue subject in diminution and runs straight into the fugue, as BWV 850's prelude does."
+    },
+    {
+     "id": "fugue-5",
+     "title": "Fugue V \u00b7 Cascade, with Bach as guest (5 voices)",
+     "score": "cycle/05-d-major/fugue.json",
+     "tag": "fixed",
+     "notes": "Four home voices and a guest. The guest sings only the subject of Bach's own D-major fugue in Book I (BWV 850, the French-overture subject), and each time it sings, its neighbours fall silent so it can be heard: first as the exposition's fifth entry, where our own subject was expected; again at the summit; and last of all, its final F-sharp the third of the closing chord. Before the summit the inner voices try the head of Bach's subject themselves.\n\nThe cascade: four entries step down through the voices and through four keys, F-sharp minor, B minor, E minor, A, one bar apart; the fifth step, D, is the bass with the subject at half speed. Over it the soprano sings the subject at normal speed, two speeds at once; a double-speed version follows, though it is more visible in the score than audible. The alto, which opened the fugue, restates the subject over a drum-like tattoo on the bass's held D, and the guest has the last word.\n\nRecomposed in five voices (it was six, and nearly unplayable by one pianist); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair VI \u00b7 D minor (new)",
+   "pieces": [
+    {
+     "id": "prelude-6",
+     "title": "Prelude VI \u00b7 Toccata con recitativo",
+     "score": "cycle/06-d-minor/prelude.json",
+     "tag": "new",
+     "notes": "Opens with the famous gesture of the Toccata in D minor BWV 565 in octaves, then runs in the triplet figuration of WTC I's D-minor prelude (BWV 851) over the fugue's ground. Two recitatives interrupt it, declaiming the fugue subject's pitches in free rhythm: first in the right hand, then in the bass. It stops on a half cadence, with the 565 figure breaking off on C sharp, and the fugue begins on the missing D."
+    },
+    {
+     "id": "fugue-6",
+     "title": "Fugue VI \u00b7 Passacaglia and fugue on the Crucifixus ground (4 voices)",
+     "score": "cycle/06-d-minor/fugue.json",
+     "tag": "new",
+     "notes": "The ground is the falling chromatic lament of the Crucifixus in Bach's B-minor Mass, here in D minor. It does not stay in the bass: it climbs one voice per station, bass (D minor), tenor (A minor), alto (F major), soprano at the summit, each time entering after a rest, on the outside of the texture, a little louder than the rest. The fugue subject is the ground upside down at double speed; its inversion is the ground itself at double speed, and in each station it runs in tenths or sixths with the ground while the subject climbs against both.\n\nBetween the stations, episodes in two and three voices, then a stretto. At the summit the ground sounds at two speeds at once: at half speed in the bass and at normal speed in the soprano, a beat behind, so the two rub in a chain of suspensions; the tenor then carries it down at double speed under held notes. The arrival is in D major, and in the coda the subject at half speed rises over a held D: the lament turned upwards, pointing to the Et resurrexit that follows the Crucifixus in the Mass.\n\nRecomposed in four voices (it was seven); the earlier version is in the pair's archive folder. The binaural render uses an organ sound."
+    }
+   ]
+  },
+  {
+   "name": "Pair VII \u00b7 E-flat major (new)",
+   "pieces": [
+    {
+     "id": "prelude-7",
+     "title": "Prelude VII \u00b7 Chorale prelude on Wachet auf",
+     "score": "cycle/07-e-flat-major/prelude.json",
+     "tag": "new",
+     "notes": "Philipp Nicolai's chorale 'Wachet auf, ruft uns die Stimme' (1599), the tune of Bach's Sch\u00fcbler prelude BWV 645, which is also in E-flat major. As in BWV 645, the chorale sounds in long notes in the tenor. The dancing obbligato above it is the fugue subject in diminution, so the prelude secretly previews the fugue. The chorale's last line is answered by its own mirror image while the bass plays the diminished subject and then its inversion."
+    },
+    {
+     "id": "fugue-7",
+     "title": "Fugue VII \u00b7 Fuga a due cori (4 voices)",
+     "score": "cycle/07-e-flat-major/fugue.json",
+     "tag": "new",
+     "notes": "A fugue for two choirs of two, after the Venetian double choirs and Bach's double-choir motets: Coro I (tenor and bass) sings the subject upright and believes in B-flat; Coro II (soprano and alto) sings it upside down and believes in A-flat. On the piano each choir is one hand; in the binaural render they stand left and right. Coro II's exposition is Coro I's exactly mirrored.\n\nThe choirs meet, then quarrel about the key, a bar, half a bar and a beat apart (A natural against D-flat), and make up on A-flat over B-flat, the chord that also ties this fugue to its prelude. The joke: Coro I starts a slow, pompous statement of the subject in dotted French-overture rhythm and is cut off twice by Coro II's chatter, played detached. A stretto of four entries steps down by fifths to the home key, and the climax lands again on A-flat over B-flat.\n\nCoda: the first line of the chorale Wachet auf in the tenor while the others keep moving; the pompous statement cut off in the joke is finally finished underneath it, and Coro II has a soft, upside-down last word.\n\nRecomposed in four voices (it was eight); the earlier version is in the pair's archive folder. The binaural render uses an organ sound, as for the two organ lofts of St Mark's in Venice."
+    }
+   ]
+  },
+  {
+   "name": "Pair VIII \u00b7 E-flat minor (rebuilt)",
+   "pieces": [
+    {
+     "id": "prelude-8",
+     "title": "Prelude VIII \u00b7 Night loom",
+     "score": "cycle/08-e-flat-minor/prelude.json",
+     "tag": "fixed",
+     "notes": "Rebuilt on the 12/8 'Night loom' prelude from the first complete draft, which Sam liked, in place of the French overture that had replaced it. The melody is the fugue subject played backwards and upside down; the woven eighth-note figure changes shape almost every half bar. The bass ends with the subject's head and stops on the dominant, so the fugue's first note completes it."
+    },
+    {
+     "id": "fugue-8",
+     "title": "Fugue VIII \u00b7 Stretto over the slow voice (4 voices)",
+     "score": "cycle/08-e-flat-minor/fugue.json",
+     "tag": "fixed",
+     "notes": "The subject's first six notes are the head of Bach's D-sharp-minor fugue subject (BWV 853), here in E-flat minor. Soprano, alto and tenor sing the fugue at normal speed, as Bach's three voices do; the bass is the slow voice and never sings the subject at normal speed: at half speed as the fourth entry of the exposition, the inversion at half speed later, the subject at quarter speed under the stretto, and the prelude's melody under Bach's subject at the end. It rests in between, so each return stands out.\n\nAlong the way: the subject and its inversion as a mirror in G-flat major, a 'dance' episode in diminution, and a quiet surprise in C-flat major entered by a deceptive cadence and left through A-flat minor. The stretto: after a bar of silence the bass and soprano start the subject together, one at quarter speed and one at normal speed, and four more entries follow one at a time, each after a rest and in its own register, the soprano peaking on its highest note as the slow bass arrives. Then Bach's complete subject enters alone in the soprano, revealing where ours came from, over our subject's inversion at half speed in the alto and the prelude's melody in the bass; the head of our subject has the last word, ending in major.\n\nRecomposed in four voices (it was nine); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair IX \u00b7 E major (new)",
+   "pieces": [
+    {
+     "id": "prelude-9",
+     "title": "Prelude IX \u00b7 Pastorale in just intonation",
+     "score": "cycle/09-e-major/prelude.json",
+     "temperament": "equal",
+     "tag": "new",
+     "notes": "A 12/8 pastorale, after WTC I's E-major prelude, tuned note by note in pure 5-limit just intonation: every chord has pure thirds and fifths, and any note held or repeated across a chord change keeps its pitch. The tune's progression I-vi-ii7-V7-I then forces the pitch to sink by a syntonic comma (21.5 cents) every time round. This is the comma pump, the problem tempered keyboards exist to solve.\n\nFour cycles of the theme each sit a comma lower, 86 cents down by the end, nearly a semitone. A low E that stays at well-tempered pitch is struck at the start of each cycle, so the drift can be heard as it beats against the drone: not at all, then about 2, 4 and 6 times a second. In the last breath the drone sounds alone, and the coda returns to agree with it at well-tempered pitch. Compare 'Prelude IX (tempered)' below, which has the same notes with no drift."
+    },
+    {
+     "id": "prelude-9-tempered",
+     "title": "Prelude IX \u00b7 same notes, well-tempered",
+     "score": "cycle/09-e-major/prelude-tempered.json",
+     "tag": "new",
+     "notes": "The pastorale with no per-note tuning: it follows the temperament buttons, so it never drifts. Use it for comparison with the just-intonation version above."
+    },
+    {
+     "id": "fugue-9",
+     "title": "Fugue IX \u00b7 Ricercar in circulo (4 voices)",
+     "score": "cycle/09-e-major/fugue.json",
+     "tag": "new",
+     "notes": "Stile antico, after Tallis's 40-voice motet Spem in alium, whose music travels round a ring of singers. Here four singers stand round the listener (heard as a ring in the binaural render): the exposition enters clockwise round the ring, and the fourth singer, on top, turns out to be singing the subject of Bach's E-major fugue in Book II (BWV 878, which Bach took from J.C.F. Fischer), in Bach's answer form. That starts the first tutti, which ends, as in Spem, with a bar of silence.\n\nThe inversion then travels the other way round the ring. In the antiphony the two halves of the ring answer each other in exchanges that shrink from four bars to half a bar, our subject on one side and Bach's on the other. In the final tutti Bach's subject sounds in long notes on top as a cantus while our subject runs in stretto beneath it; the cantus's last note becomes the first note of our subject, and a plagal Amen closes the piece.\n\nRecomposed in four voices (it was ten), and no longer plodding: syncopations and suspension chains, far fewer notes struck together. The earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair X \u00b7 E minor (new)",
+   "pieces": [
+    {
+     "id": "prelude-10",
+     "title": "Prelude X \u00b7 Aria e Presto",
+     "score": "cycle/10-e-minor/prelude.json",
+     "tag": "new",
+     "notes": "After WTC I's E-minor prelude (BWV 855), an aria over a steady figure that breaks into a Presto. The aria paraphrases lines of the chorale 'O Lamm Gottes, unschuldig' over a chromatic lament ground and a walking eighth-note figure. The Presto is in two-part invertible counterpoint through E minor, B minor, A minor and G, then a canon and a dominant pedal. It stops on D sharp and runs straight into the fugue."
+    },
+    {
+     "id": "fugue-10",
+     "title": "Fugue X \u00b7 Sehet! (3 voices, after the St Matthew Passion)",
+     "score": "cycle/10-e-minor/fugue.json",
+     "tag": "new",
+     "notes": "An homage to the opening chorus of the St Matthew Passion, where two choirs call to each other ('Sehet! Wen? den Br\u00e4utigam. Seht ihn! Wie? als wie ein Lamm') beneath the chorale 'O Lamm Gottes, unschuldig'. Bach's own E-minor fugue in Book I has two voices; this has three: one voice for each choir, and the chorale (checked against Bach's harmonisation BWV 401) floating above in long notes, line by line.\n\nCoro I sings the subject ('Sehet!'); Coro II answers in inversion, its questions ('Wen?', 'Wie?', later 'Was?', 'Wohin?') the inversion's rising semitone. The countersubject opens with the head of Bach's own two-voice E-minor fugue. At the Recognition the subject, twice as fast, turns out to be the chorale line sounding above it: fugue and chorale are relatives. Later, the subject at half speed, an exchange of forms in stretto, and a pulsing pedal as at the start of Bach's chorus. Under the chorale's last line only the two choirs sing, in stretto, and they cadence with the chorale's final note.\n\nRecomposed in three voices (it was eleven); the earlier version is in the pair's archive folder. The binaural render places Coro I left, Coro II right and the chorale in front, sung on 'oo'."
+    }
+   ]
+  },
+  {
+   "name": "Pair XI \u00b7 F major (new)",
+   "pieces": [
+    {
+     "id": "prelude-11",
+     "title": "Prelude XI \u00b7 Invention a 2",
+     "score": "cycle/11-f-major/prelude.json",
+     "tag": "new",
+     "notes": "A two-part invention in 12/8, after WTC I's F-major prelude (BWV 856). The theme is the fugue subject with a triplet head; the countersubject is invertible at the octave and heard both ways round in six keys. The surprise: a half cadence on a lone 'C C', answered by the theme in D-flat major. It ends by stating the fugue's opening 'C C | F' straight, in sixteenths."
+    },
+    {
+     "id": "fugue-11",
+     "title": "Fugue XI \u00b7 Concerto fuga (4 voices: the concertino of Brandenburg 2)",
+     "score": "cycle/11-f-major/fugue.json",
+     "tag": "new",
+     "notes": "After the fugal finale of Brandenburg Concerto No. 2 in F major (BWV 1047), whose concertino is four soloists: trumpet, recorder, oboe and violin. Here the four voices are those soloists (on one keyboard the violin also plays the bass, as in Bach's keyboard transcriptions of concertos), and the concerto contrast is between solo passages and the moments when all four play. The subject is a fanfare head with repeated notes and a running tail; its inversion keeps the F-major triad, so the upright and inverted subject can run in stretto a beat apart. The trumpet keeps to natural-trumpet notes and sits out the keys it cannot play.\n\nThe joke (bars 38-44): the band passes the subject's opening through C minor, F, D minor and A minor, and each time the trumpet answers with its three repeated Cs. The flute arrives in E major; the trumpet blurts its F-major opening over E-major chords, a semitone off everything. Silence. The violin corrects it from the bass (E E A), and the trumpet echoes meekly. In the final stretto of all four the trumpet enters in F at last, in tune with everyone, and over the closing dominant its three Cs are finally right.\n\nRecomposed in four voices (it was twelve); the earlier version is in the pair's archive folder. The renders folder also has a version with instrument sounds (trumpet, flute, oboe, and a cello taking the bass, as a continuo player would)."
+    }
+   ]
+  },
+  {
+   "name": "Pair XII \u00b7 F minor (new)",
+   "pieces": [
+    {
+     "id": "prelude-12",
+     "title": "Prelude XII \u00b7 Chorale on two motifs",
+     "score": "cycle/12-f-minor/prelude.json",
+     "tag": "new",
+     "notes": "A short three-voice chorale on two motifs: the first four notes of Bach's F-minor fugue in Book I (C, D-flat, C, B), and B-A-C-H at its own pitch, sung three times (soprano, bass, soprano) over a walking bass."
+    },
+    {
+     "id": "fugue-12",
+     "title": "Fugue XII \u00b7 Fuga a 4 soggetti, compiuta (5 voices)",
+     "score": "cycle/12-f-minor/fugue.json",
+     "tag": "new",
+     "notes": "The Art of Fugue breaks off in its last fugue just after the third subject, B-A-C-H, has joined the first two. In 1880 Gustav Nottebohm showed that the three subjects also combine with the work's main theme, and inferred that Bach planned a quadruple fugue in four voices. This is one conjectural completion along those lines, in F minor, with Bach's exact subjects, in his four voices plus one of its own.\n\nSection I is the first subject in stile antico; II the running second subject, alone and then with the first; III B-A-C-H alone, then Bach's own triple combination. In IV the main theme appears for the first time, on top, and all four subjects sound together, each in its own register; the music breaks off on a dominant seventh, then silence.\n\nIn V the fifth voice, silent until now, enters below with the main theme in augmentation, a bar after the alto sings it at normal speed. Its last note becomes a tonic pedal, and over it the four-subject combination returns with the voices exchanged, the main theme now low, just above its own augmentation. The coda spells the literal B-flat, A, C, B-natural over the pedal and ends on a Picardy third.\n\nRecomposed in five voices (it had thirteen staves); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair XIII \u00b7 F-sharp major (new)",
+   "pieces": [
+    {
+     "id": "prelude-13",
+     "title": "Prelude XIII \u00b7 Aria",
+     "score": "cycle/13-f-sharp-major/prelude.json",
+     "tag": "new",
+     "notes": "A 16-bar ornamented sarabande over the Goldberg ground, the bass on which Bach built all thirty Goldberg Variations, here in F-sharp major. Like the Aria that opens the Variations it is decorated with turns, appoggiaturas and written-out trills, but its melody is new."
+    },
+    {
+     "id": "fugue-13",
+     "title": "Fugue XIII \u00b7 Fuga canonica sopra il fondamento di Goldberg (4 voices)",
+     "score": "cycle/13-f-sharp-major/fugue.json",
+     "tag": "new",
+     "notes": "Every third Goldberg Variation is a canon, two voices in canon over a free bass, and the interval between them rises from the unison to the ninth. Here the Goldberg ground (in dotted diminution, the fugue's subject) carries seven canons whose interval climbs: unison, second, third, fourth and fifth by inversion, sixth, and in the quodlibet the octave. Each canon's leading voice begins with the subject, so the follower answers it at the canon's interval or upside down; the fourth voice adds its own entries. The ground also travels through keys, F-sharp, B, G-sharp minor, C-sharp and home, spelling a cadence across the piece, with an Adagio in F-sharp minor before the end.\n\nThe close is Bach's Variation 30 idea: the quodlibet on two folk songs, 'Ich bin so lang nicht bei dir g'west' (in canon at the octave) and 'Kraut und R\u00fcben', with the fugue subject over them.\n\nRecomposed in four voices (it was fourteen); the earlier version is in the pair's archive folder. The binaural render uses harpsichords."
+    }
+   ]
+  },
+  {
+   "name": "Pair XIV \u00b7 F-sharp minor (new)",
+   "pieces": [
+    {
+     "id": "prelude-14",
+     "title": "Prelude XIV \u00b7 Canon cancrizans",
+     "score": "cycle/14-f-sharp-minor/prelude.json",
+     "tag": "new",
+     "notes": "A short three-voice crab canon after the one in Bach's Musical Offering: the piece reads the same backwards. The Royal Theme is hidden in the middle voice at first and its rising chromatic line comes to the top later; the prelude ends on the theme's head run backwards, and the fugue begins with it forwards."
+    },
+    {
+     "id": "fugue-14",
+     "title": "Fugue XIV \u00b7 Ricercar a 5 sopra il Thema Regio",
+     "score": "cycle/14-f-sharp-minor/fugue.json",
+     "tag": "new",
+     "notes": "In 1747 Frederick the Great gave Bach a theme to improvise on; Bach later wrote the six-voice Ricercar and the canons of the Musical Offering. This five-voice ricercar takes the Royal Theme to F-sharp minor.\n\nAfter a quiet opening, the Musical Offering's canon by augmentation and contrary motion: the theme on top, its inversion at half speed in the bass. Then a turn to C minor, Frederick's own key, and a canon per tonos after Bach's canon that rises a tone with each statement 'so may the King's glory rise': the same canonic block in C, D and E minor, gaining a voice each time (three, four, five) while the top voice climbs from C to E, and the next step up is home, F-sharp minor, where the summit begins. There the theme sounds at half speed in the bass under the returning canon, the inversion climbs to the top, and the fugue ends in F-sharp major.\n\nRecomposed in five voices (it was fifteen); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair XV \u00b7 G major (new, four voices)",
+   "pieces": [
+    {
+     "id": "prelude-15",
+     "title": "Prelude XV \u00b7 Musette",
+     "score": "cycle/15-g-major/prelude.json",
+     "tag": "new",
+     "notes": "A short 12/8 shepherds' musette over a drone, alluding to the first line of Luther's Christmas chorale 'Vom Himmel hoch'. Bar 13 quotes the flutes' shepherd music from Part II of Bach's Christmas Oratorio (BWV 248)."
+    },
+    {
+     "id": "fugue-15",
+     "title": "Fugue XV \u00b7 on 'Vom Himmel hoch' (4 voices)",
+     "score": "cycle/15-g-major/fugue.json",
+     "tag": "new",
+     "notes": "Bach's Canonic Variations on Luther's Christmas chorale 'Vom Himmel hoch' (BWV 769) end with all four lines of the chorale sounding at once. Here each of the four voices owns one line, and that line becomes its fugue subject: a dotted skip ending in bells (soprano, line 1), a fanfare (tenor, line 2), a siciliano (alto, line 3) and falling bell-rounds (bass, line 4). Each voice also sings its own line once in long notes.\n\nThe subjects enter in the chorale's order, each paired with the one before, and each section ends in a new key: D, E minor and B minor, C, home to G. At the summit (bars 43-48) only the four chorale lines sound, each entering alone in its own register; the tenor's line moves between the others' beats, so the four lines never move together and each stays audible. In the coda the four subjects' heads ring together, and the soprano closes on B-A-C-H.\n\nRecomposed in four voices (it was sixteen); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair XVI \u00b7 G minor (new)",
+   "pieces": [
+    {
+     "id": "prelude-16",
+     "title": "Prelude XVI \u00b7 Fantasia",
+     "score": "cycle/16-g-minor/prelude.json",
+     "tag": "new",
+     "notes": "A short organ fantasia in four sections: a flourish over a G pedal (its first two beats allude to the opening of Bach's G-minor Fantasia BWV 542), a recitative with a Neapolitan sixth, the first line of the chorale 'An Wasserfl\u00fcssen Babylon' over a falling chromatic bass, and a close over a D pedal that stops on the dominant, waiting for the fugue."
+    },
+    {
+     "id": "fugue-16",
+     "title": "Fugue XVI \u00b7 Fantasia e fuga a 5 per Reincken",
+     "score": "cycle/16-g-minor/fugue.json",
+     "tag": "new",
+     "notes": "In 1720 Bach improvised for nearly half an hour on the chorale 'An Wasserfl\u00fcssen Babylon' in Hamburg, before the old organist Johann Adam Reincken, who told him: 'I thought this art was dead, but I see that it lives on in you.' Bach's written setting of the chorale with double pedal is in five voices, and so is this.\n\nThree manual voices treat each chorale line in turn by fugal imitation, on a short subject made from the line's own notes; then the line itself sounds in long notes as a canon at the octave between two pedal voices, the follower closing in from six and a half beats behind to one and a half. Lines 3-4 are an echo passage for the manuals; after line 6 the music stops on an augmented sixth, then silence.\n\nJust before the summit, the subject of Bach's own G-minor organ fugue (BWV 542, the piece often linked with that Hamburg visit) enters on top at its own pitch. At the summit the last chorale line sounds at two speeds while the head of Bach's subject returns in the alto, and the coda turns to G major.\n\nRecomposed in five voices (it was seventeen); the earlier version is in the pair's archive folder. The binaural render uses an organ sound."
+    }
+   ]
+  },
+  {
+   "name": "Pair XVII \u00b7 A-flat major (new)",
+   "pieces": [
+    {
+     "id": "prelude-17",
+     "title": "Prelude XVII \u00b7 Wiegenlied",
+     "score": "cycle/17-a-flat-major/prelude.json",
+     "tag": "new",
+     "notes": "A lullaby over a rocking left hand whose tune is the fugue's subject in augmentation, the tune the father will sing at the end of the fugue. Each verse is turned away at its last note; at the end the hands resolve, but the bass never arrives."
+    },
+    {
+     "id": "fugue-17",
+     "title": "Fugue XVII \u00b7 Fuga, fuggendo la cadenza (4 voices and the father)",
+     "score": "cycle/17-a-flat-major/fugue.json",
+     "tag": "new",
+     "notes": "Zarlino called an evaded cadence 'fuggire la cadenza', to flee the cadence. A story told about Bach (probably a legend) has his children getting him out of bed by playing an unresolved chord: he could not sleep until he had gone down and resolved it.\n\nThe four voices are the children, and every cadence is dodged, fourteen times. The running gag: the soprano trills on the second degree while the bass steps up instead of falling home, faster and faster, until the music stops in A-flat minor. Then a dream in E major with the subject in augmentation over itself; back home, the tenor alone begins the subject of Bach's own A-flat fugue (BWV 862) at Bach's pitch, with Bach's own bass; more dodges, a trill that won't stop, a trap door where the bass drops to F-flat; a stretto of all four that starts on the dominant and never resolves it; then the hanging seventh, and silence.\n\nThe fifth voice, the father, enters alone on low A-flat with the subject in augmentation, and the piece makes its first perfect cadence. In the coda the tenor finally gives the tune its missing last note.\n\nRecomposed in five voices (it was eighteen); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair XVIII \u00b7 G-sharp minor (new)",
+   "pieces": [
+    {
+     "id": "prelude-18",
+     "title": "Prelude XVIII \u00b7 Der W\u00e4chter",
+     "score": "cycle/18-g-sharp-minor/prelude.json",
+     "tag": "new",
+     "notes": "The watchman. The right hand sings the fugue's subject over a knocking middle voice and a walking bass; at 'midnight' the middle voice plays the whole of the fugue's second subject, the knock at the door. It ends on an open fifth with three knocks that nobody answers."
+    },
+    {
+     "id": "fugue-18",
+     "title": "Fugue XVIII \u00b7 Vigilate (5 voices)",
+     "score": "cycle/18-g-sharp-minor/fugue.json",
+     "tag": "new",
+     "notes": "'Watch therefore, for ye know not when the master of the house cometh: at even, or at midnight, or at the cockcrowing, or in the morning' (Mark 13:35). The fugue passes through those four watches. In each watch one note of the subject is raised, in the order sharps are added to a key signature, so the subject brightens step by step, and each raised note is placed on a strong beat where you can catch it: A-sharp in a duet (bar 16), E-sharp after a leap at cockcrow (bar 28), B-sharp, which makes G-sharp major the subject's own chord, up to the highest note of the piece (bar 41). The last step would need an eighth sharp, impossible in G-sharp, so the dawn turns enharmonically to A-flat major, the key of the previous pair.\n\nFour voices keep the first watch alone. At midnight a fifth voice, the knocker, enters alone with the knock at the door from Bach's cantata BWV 61 ('Siehe, ich stehe vor der T\u00fcr und klopfe an'): three knocks, then a chromatic rise. Like Bach's G-sharp-minor fugue in Book II, a double fugue with a chromatic second subject; the two subjects run together in tenths and sixths and in stretto. Before dawn the knocker's last G-sharp, written as A-flat, runs straight on into the subject in A-flat major.\n\nRecomposed in five voices (it was nineteen); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair XIX \u00b7 A major (new)",
+   "pieces": [
+    {
+     "id": "prelude-19",
+     "title": "Prelude XIX \u00b7 Le Ma\u00eetre \u00e0 danser",
+     "score": "cycle/19-a-major/prelude.json",
+     "tag": "new",
+     "notes": "The dancing master shows the steps: allemande, courante, sarabande and gigue, twelve beats each, then pairs of them at once in different metres, then the first three bars of a Bach bourr\u00e9e at pitch, which turns out to matter in the fugue."
+    },
+    {
+     "id": "fugue-19",
+     "title": "Fugue XIX \u00b7 Ballo a quattro (4 voices, 4 metres)",
+     "score": "cycle/19-a-major/fugue.json",
+     "tag": "new",
+     "notes": "A Baroque suite is a chain of dances often built on one tune. Here each of the four voices is one dance and keeps its own metre throughout: a sarabande on top (3/4, weight on the second beat), an allemande in the alto (4/4), a gigue in the tenor (12/8) and a courante in the bass (3/2). They share one beat, and their bar lines meet only every twelve beats. One subject, re-rhythmed for each dance, enters in each voice in turn.\n\nIn the middle the two quick dances meet alone, then the two slow ones, then a trio on the inverted subject. At the summit all four dance at once, each in its own metre: the ballroom trick of Mozart's Don Giovanni, in strict four-voice counterpoint. The sarabande and courante close together on a shared bar line; then the gigue, grouping its notes in threes across everyone's bar lines, races the allemande, which starts two beats late, catches up, and finishes with it.\n\nIn the coda the subject reveals where it came from: the opening of the Bourr\u00e9e I from Bach's English Suite No. 1 in A major (BWV 806), at its own pitch and tempo, with Bach's own bass; then the sarabande and the gigue take up Bach's tune too. Solo a voice in the listening room to hear one dance alone.\n\nRecomposed in four voices (it was twenty); the earlier version is in the pair's archive folder. The renders folder also has a string-quartet version."
+    }
+   ]
+  },
+  {
+   "name": "Pair XX \u00b7 A minor (new, twenty-one voices)",
+   "pieces": [
+    {
+     "id": "prelude-20",
+     "title": "Prelude XX \u00b7 Preludio for solo violin",
+     "score": "cycle/20-a-minor/prelude.json",
+     "tag": "new",
+     "notes": "A single line in perpetual motion, as in Bach's solo-violin preludes; one hand can play it at the keyboard. The first bar hides the head of the fugue's subject inside the figuration, and the lament and the fugue's tail are foreshadowed. (The renders folder also has a violin-sound version.)"
+    },
+    {
+     "id": "fugue-20",
+     "title": "Fugue XX \u00b7 Fuga per un violino solo, moltiplicata (21 voices)",
+     "score": "cycle/20-a-minor/fugue.json",
+     "tag": "new",
+     "notes": "Bach's Sonata No. 2 for solo violin in A minor (BWV 1003) contains a fugue for one violin: a single line that, by leaping between registers, implies three or four voices. This fugue begins exactly like that, a solo violin fugue on the head of Bach's subject.\n\nThen the hidden voices come out. Wherever the violin's line is really two strands, a new string player catches one strand at the exact sixteenth and carries it on as a real voice, so each new voice is something you have just heard implied. The new voices in turn imply further strands, which split off again, violins, violas, cellos, basses, until twenty-one real voices move at the summit, over the subject in four-fold augmentation in the double bass (19-21 voices moving in every bar).\n\nThen the process reverses: over the summit's lament as a ground, voices fold back into the lines they came from, in reverse order, until the violin is alone again, implying the whole harmony by itself, as in the Chaconne. Its last A is the last sound. In the listening room it plays on one keyboard sound; the rendered MP3 gives each voice a string instrument."
+    }
+   ]
+  },
+  {
+   "name": "Pair XXI \u00b7 B-flat major (new, twenty-two voices)",
+   "pieces": [
+    {
+     "id": "prelude-21",
+     "title": "Prelude XXI \u00b7 Arioso",
+     "score": "cycle/21-b-flat-major/prelude.json",
+     "tag": "new",
+     "notes": "After the young Bach's Capriccio on the Departure of a Beloved Brother (BWV 992), whose friends first try to coax the traveller into staying. The friends' theme in Bach's sixths, a lament bar over Bach's own chromatic lament bass, a posthorn call in the distance, and a farewell."
+    },
+    {
+     "id": "fugue-21",
+     "title": "Fugue XXI \u00b7 Capriccio sopra la lontananza (22 voices)",
+     "score": "cycle/21-b-flat-major/fugue.json",
+     "tag": "new",
+     "notes": "Bach's Capriccio ends with a 'fugue in imitation of the postilion's horn'. A natural posthorn can only play the harmonic series of its fundamental, so here the twenty-two voices are the first twenty-two partials of B-flat: voice n lives around partial n. The horns state a posthorn subject made only of partials (Bach's head, then a climb up the series); the friends answer with a theme built on Bach's Arioso, which reaches G, the one note the horn can never play.\n\nSeven 'strangers' play Bach's real subject in foreign keys. Where Bach writes G, each horn cracks to its out-of-tune 7th partial, a minor seventh 31 cents flat, the friends laugh, and the crack pulls the music one fifth round the circle. The climb passes a lament bar, the post station, Bach's Aria with the alphorn's 11th partial (49 cents flat) and rockets in stretto. At the summit Bach's whole subject sounds in the bass with the posthorn subject twice and the friends' theme in stretto (18-19 voices moving).\n\nThe departure: a farewell in the Arioso's sixths, then a relay in which each voice settles on its own partial, until the last sound is the posthorn's own harmonic series, partials 1 to 22, tuned exactly, nature's B-flat over the well-tempered one. The first horn plays the subject's head once more, very softly.\n\nThe cracks, the alphorn's fa and the final series carry their own tuning, with the series standing on the Bach\u2013Lehman B-flat; every other note follows the temperament you select."
+    }
+   ]
+  },
+  {
+   "name": "Pair XXII \u00b7 B-flat minor (new)",
+   "pieces": [
+    {
+     "id": "prelude-22",
+     "title": "Prelude XXII \u00b7 Tombeau",
+     "score": "cycle/22-b-flat-minor/prelude.json",
+     "tag": "new",
+     "notes": "A tombeau, the French lament for the dead, after Froberger and Louis Couperin (their manner, not their notes), written out in measured notation with a free tempo. A gathering chord, the head of Bach's B-flat-minor fugue in Book I, a chromatic lament bass, a consolation in D-flat, the chord that will be the fugue's axis, Froberger's falling scale, and an ending on a lone B-flat, the fugue's first note."
+    },
+    {
+     "id": "fugue-22",
+     "title": "Fugue XXII \u00b7 Ma fin est mon commencement (6 voices)",
+     "score": "cycle/22-b-flat-minor/fugue.json",
+     "tag": "new",
+     "notes": "'My end is my beginning': Machaut's rondeau of that title is a palindrome. This is a tombeau for Bach as a crab fugue in six voices: the second half is the first half played exactly backwards, in every voice. One alto begins alone on B-flat; the voices enter one by one; all six sound together around the exact middle (between bars 34 and 35); then the retrograde takes them away in reverse order, each leaving on its own entry played backwards, and the alto ends alone on the same B-flat.\n\nThe subject joins the head of Bach's five-voice B-flat-minor fugue in Book I (BWV 867) to B-A-C-H; read backwards it climbs and ends with a cadence. The sixth voice, the lowest, sings the subject at half speed so that its H lands on the axis, while copies of B-A-C-H a minor third apart end on the four notes of the axis chord; just before the axis the soprano sings B-A-C-H quickly, and just after it the crab returns it as H-C-A-B. A half-bar silence and the piece's first eighth notes are landmarks that come back reversed. Writing counterpoint that is correct in both directions is the hard part; both halves pass every check. The tempo and dynamics are palindromes too.\n\nListen for the exposition coming back reversed in the last minute or so. Recomposed in six voices (it was twenty-three); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair XXIII \u00b7 B major (new)",
+   "pieces": [
+    {
+     "id": "prelude-23",
+     "title": "Prelude XXIII \u00b7 A Ground upon Ut re mi fa sol la",
+     "score": "cycle/23-b-major/prelude.json",
+     "tag": "new",
+     "notes": "Divisions on a ground in the manner of the English virginalists (Byrd, Bull): the six-note hexachord ut-re-mi-fa-sol-la repeats as a ground while the figuration gets quicker, plainsong, quavers, the ground moved to the treble, semiquaver runs, and a short close."
+    },
+    {
+     "id": "fugue-23",
+     "title": "Fugue XXIII \u00b7 Fantasia ut re mi fa sol la per tutti i tuoni (5 voices)",
+     "score": "cycle/23-b-major/fugue.json",
+     "tag": "new",
+     "notes": "Around 1610 John Bull wrote a keyboard fantasia in which the hexachord ut-re-mi-fa-sol-la, in long notes, moves up a whole tone after each statement until it has stood on all twelve pitch levels, an experiment that only works if every key is usable, a century before Bach's Well-Tempered Clavier. Here one voice, the cantus, carries Bull's thirteen statements in his order (checked in the 1899 Fitzwilliam Virginal Book edition), transposed to B, one note per bar, rising and falling by turns so that each new key is a step from the last. Around it four voices make a fugue whose subject begins with the same hexachord in quick notes.\n\nAfter a four-voice exposition the cantus enters at bar 9. Over each rising statement the subject enters on the cantus's own note; over each falling one it enters upside down. Landmarks: Bull's leap of a third (bar 45), where the tour starts again quietly on C with the subject in the deep bass; the bare A-flat fifth (bar 69); and the B-flat statement (bars 75-78), the only one that breaks the six-bar clock. There the cantus, now the top voice, falls twice as fast and home comes two bars early: its last two notes turn C into the Neapolitan of B and B-flat into A-sharp, which steps up to B at bar 79. In the coda (bars 85-89) the cantus falls back to its first note while the soprano comes down to end just above it.\n\nTry this: switch the temperament to meantone and listen to bar 69, a full bar of bare A-flat\u2013E-flat fifths in all five voices. In quarter-comma meantone that fifth is the 'wolf', about 36 cents wider than pure, the reason keyboard players before Bach could not use every key; in Bach-Lehman it is an ordinary fifth.\n\nRecomposed in five voices (it was twenty-four); the earlier version is in the pair's archive folder."
+    }
+   ]
+  },
+  {
+   "name": "Pair XXIV \u00b7 B minor (new, for twenty-five parts)",
+   "pieces": [
+    {
+     "id": "prelude-24",
+     "title": "Prelude XXIV \u00b7 Preludio per i 24 tuoni",
+     "score": "cycle/24-b-minor/prelude.json",
+     "tag": "new",
+     "notes": "The cycle's farewell, and the doorway to its last fugue. Bach's B-minor prelude in Book I is a trio over a walking bass; this one walks through all 24 keys in the Well-Tempered Clavier's own order, two bars each: 48 bars, for 'the 48'.\n\nIn each key one of the upper voices quotes the opening of Bach's Book I fugue in that key, at Bach's own pitches, all 24 checked against the scores. The order holds a gift: each major key turns into its parallel minor, and each minor key's Neapolitan chord becomes the next major tonic, so the tonics climb by semitones from C to B, the twelve notes of Fugue XXIV's subject. In bar 44 the bass spells B-A-C-H. The prelude slows from bar 45 and stops on F-sharp major, whose A-sharp the fugue's first note resolves."
+    },
+    {
+     "id": "fugue-24",
+     "title": "Fugue XXIV \u00b7 for twenty-five parts",
+     "score": "cycle/24-b-minor/fugue.json",
+     "tag": "new",
+     "notes": "Bach ends Book I with a B-minor fugue whose subject uses all twelve notes. This subject does the same: three dotted 'leans' and a chromatic climb, ending on the leading note. Its exact mirror is also twelve-tone.\n\nThe voices gather one at a time over 41 bars: exposition, a mirror stretto (subject against its own inversion), a dominant pedal over which the heads of Fugues V and VIII appear, and the subject in two-fold augmentation in the bass. At bar 43 the 25th voice, the contrabass, enters with the subject at quarter speed, and over it the subjects of Fugues V, VIII, II and IV each arrive at the point where the cantus's note makes their own key a harmony. After the arrival on B major, Fugue V's subject returns in B major, Fugue I's canon ladder climbs once more, now with a new lowest rung, so that it rises three octaves from the basses to the top soprano; the subject's and the mirror's tails close in on one B, and all twenty-five parts sound together, for the only time, on the last chord.\n\nIt is a fugue for twenty-five parts, not a twenty-five-voice texture: wherever a part could only have doubled another, it rests, so the convergence has eight to twelve independent lines and the arrival fourteen. A few parts accompany (an inner drone, the pedal choir) rather than argue."
+    }
+   ]
+  },
+  {
+   "name": "Appendix \u00b7 canons and contrapuncti (new)",
+   "pieces": [
+    {
+     "id": "contrapunctus-permutationum",
+     "title": "Contrapunctus permutationum (4 voices, 24 keys)",
+     "score": "cycle/appendix/contrapunctus-permutationum/score.json",
+     "tag": "new",
+     "notes": "Four lines written in quadruple invertible counterpoint: a cantus on B-A-C-H in half notes, a sighing line of suspensions, a walking eighth-note line, and a spinning sixteenth-note figure. Any of the four can be the bass. A script proved all 24 vertical orderings clean, in major and in minor.\n\nThe movement uses every ordering once, one in each of the 24 keys, going round the circle of fifths with each major followed by its relative minor. The orderings follow the change-ringing method Plain Bob Minimus, so B-A-C-H walks down and up through the four staves like a bell working through a peal.\n\nThe climax is statement 13 in F-sharp major, with B-A-C-H in the bass, followed by a sudden hush in E-flat minor. In the coda B-A-C-H is augmented and its last note, H (B natural), finally resolves to C."
+    },
+    {
+     "id": "table-canon",
+     "title": "Canon cancrizans per motum contrarium (table canon)",
+     "score": "cycle/appendix/canones/table-canon.json",
+     "tag": "new",
+     "notes": "Two players read one page from opposite sides of a table. The second voice is the first played backwards and upside down, so the whole score turned through 180 degrees is the same piece. It begins in A minor and ends in C major, mirrored around D, the hinge note sounded in unison in bar 17.\n\nA sarabande, then a double in sixteenths, the hinge, the double rotated, and finally the ground of the Goldberg Variations, which the second player arrives at simply by reading the first player's line upside down and backwards."
+    },
+    {
+     "id": "tempo-canon",
+     "title": "Canon per tempora \u00b7 Four clocks, one hour",
+     "score": "cycle/appendix/canones/tempo-canon.json",
+     "tag": "new",
+     "notes": "One melody at four speeds at once, in the ratio 4:3:2:1, bass slowest, voices an octave apart. The melody opens with the Westminster Quarters, so each new entry (bars 1, 9, 17, 25) is another clock beginning to chime, each faster than the last.\n\nThe entries are staggered so that all four clocks strike the final E at the same instant in bar 33. Bach's augmentation canons use only the ratio 1:2; no single player could perform four tempi at once."
+    }
+   ]
+  },
+  {
+   "name": "Before: the October 23 auditions",
+   "pieces": [
+    {
+     "id": "before-prelude-cminor",
+     "title": "Prelude in C minor v3 (was 'Pair I')",
+     "score": "work/wtc-work/renders/pairI_v3/prelude-i_v3.json",
+     "tag": "before",
+     "notes": "The previous version, kept for comparison. Mis-numbered: C minor is No. II in Bach's order."
+    },
+    {
+     "id": "before-fugue-cminor",
+     "title": "Fugue in C minor v5, 2 voices",
+     "score": "work/wtc-work/pairI/f5.json",
+     "tag": "before",
+     "notes": "The previous version. Review found 15 of 34 bars with code-chosen pitches, 12 bars without a subject entry and a peak that was the thinnest bar."
+    },
+    {
+     "id": "before-prelude-iv",
+     "title": "Prelude IV v6",
+     "score": "work/wtc-work/v6/prelude-iv_v6.json",
+     "tag": "before",
+     "notes": "The previous version. No root-position cadence on a strong beat; same metre and tempo as its fugue."
+    },
+    {
+     "id": "before-fugue-iv",
+     "title": "Fugue IV v7, 5 voices",
+     "score": "work/wtc-work/v7/fugue-iv_v7.json",
+     "tag": "before",
+     "notes": "The previous version. 22 accented parallels the old checker missed; all five voices first sound together only at bar 33; the countersubject changes its pitches at every entry."
+    },
+    {
+     "id": "before-prelude-v",
+     "title": "Prelude V v1",
+     "score": "work/wtc-work/pairV/prelude-v_v1.json",
+     "tag": "before",
+     "notes": "The previous version. One 8-bar progression three times; pure arpeggio with no top line."
+    },
+    {
+     "id": "before-fugue-v",
+     "title": "Fugue V v3, 6 voices",
+     "score": "work/wtc-work/pairV/fugue-v_v3.json",
+     "tag": "before",
+     "notes": "The previous version. Every stretto collapses onto a held triad over a pedal; half the beats are D or A chords; 38 accented parallels."
+    },
+    {
+     "id": "before-prelude-viii",
+     "title": "Prelude VIII v1 (French overture)",
+     "score": "work/wtc-work/renders/pairVIII_v3/prelude-viii_v1.json",
+     "tag": "before",
+     "notes": "The previous version. It replaced the 12/8 'Night loom' prelude Sam liked."
+    },
+    {
+     "id": "before-fugue-viii",
+     "title": "Fugue VIII v3, 9 staves",
+     "score": "work/wtc-work/renders/pairVIII_v3/fugue-viii_v3.json",
+     "tag": "before",
+     "notes": "The previous version: in practice a four-voice fugue on nine staves, with a climax of the subject in octaves over block chords."
+    },
+    {
+     "id": "before-fugue-viii-100",
+     "title": "Fugue VIII, 100-bar procession",
+     "score": "work/fugue_viii_passage_revision/08-fugue-passage-revised.json",
+     "tag": "before",
+     "notes": "The older chamber audition. The critic finds 220 parallel fifths and octaves, 195 unresolved dissonances and 286 low-register clashes, which likely explains the harmonies Sam heard as mistakes."
+    }
+   ]
+  }
+ ]
+}

@@ -80,9 +80,9 @@ def run(f,verbose=False):
                 if not(A[i,x] or A[j,x]):continue
                 cur=(G[i,x],G[j,x])
                 if prev and prev!=cur:
-                    a=(prev[1]-prev[0])%12;b=(cur[1]-cur[0])%12
+                    a=abs(prev[1]-prev[0])%12;b=abs(cur[1]-cur[0])%12
                     da=np.sign(cur[0]-prev[0]);db=np.sign(cur[1]-prev[1])
-                    if a==b and a in(0,5) and da==db and da!=0 and prev[0]!=prev[1]:
+                    if a==b and a in(0,7) and da==db and da!=0 and prev[0]!=prev[1]:
                         par.append(f"b{x//bl+1}.{(x%bl)/4+1:.2f} {ab[i]}{ab[j]} {'8ve' if a==0 else '5th'} {nm(prev[0])}/{nm(prev[1])}->{nm(cur[0])}/{nm(cur[1])}")
                 prev=cur
     R['parallel_5ths_8ves(eighth grid, attack to attack)']=par
@@ -96,9 +96,9 @@ def run(f,verbose=False):
                 if not(A[i,x] or A[j,x]):continue
                 cur=(G[i,x],G[j,x])
                 if prev and prev!=cur:
-                    a=(prev[1]-prev[0])%12;b=(cur[1]-cur[0])%12
+                    a=abs(prev[1]-prev[0])%12;b=abs(cur[1]-cur[0])%12
                     da=np.sign(cur[0]-prev[0]);db=np.sign(cur[1]-prev[1])
-                    if a==b and a in(0,5) and da==db and da!=0 and prev[0]!=prev[1]:
+                    if a==b and a in(0,7) and da==db and da!=0 and prev[0]!=prev[1]:
                         par16.append(f"b{x//bl+1}.{(x%bl)/4+1:.2f} {ab[i]}{ab[j]}")
                 prev=cur
     R['parallel_5ths_8ves(16th grid)']=len(par16)

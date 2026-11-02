@@ -43,3 +43,17 @@ work/animation/
 # Immutable recovered full-cycle source delivery
 !archive/well-tempered-clAIvier-complete-source.zip
 recovered-full-cycle/
+
+# Third-edition deliverables are committed so they can be heard and read
+# straight from the repository (WAV and LilyPond intermediates stay out).
+!cycle/**/renders/*.mp3
+!cycle/**/renders/*.pdf
+!cycle/**/renders/*.mid
+!cycle/**/renders/*.musicxml
+!extras/**/renders/*.mp3
+!extras/**/renders/*.mp4
+!extras/**/renders/*.pdf
+!extras/**/renders/*.mid
+!extras/**/renders/*.musicxml
+!extras/**/renders/*.png
+!extras/**/renders/strip/*.png
