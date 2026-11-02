@@ -17,6 +17,7 @@ output/
 *.engraving.log
 
 # Installed dependencies, caches and temporary rendering output
+_site/
 vendor/
 __pycache__/
 *.py[cod]
@@ -57,3 +58,5 @@ recovered-full-cycle/
 !extras/**/renders/*.musicxml
 !extras/**/renders/*.png
 !extras/**/renders/strip/*.png
+# Engraved score strips for the listening app (tools/build_app.py --strips)
+!cycle/**/renders/strip-*/strip.png

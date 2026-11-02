@@ -21,6 +21,34 @@ engraved PDFs are in each pair's `renders/` folder.
 [cycle/LISTENING_GUIDE.md](cycle/LISTENING_GUIDE.md) suggests where to start
 and what to listen for in each pair.
 
+## Listening app
+
+A static web app that serves every render, hosted with GitHub Pages at
+<https://sflicht.github.io/well-tempered-claivier/>: the 24 pairs, the appendix and the
+extras with their notes; every MP3 (piano in Bach–Lehman and in equal temperament, meantone,
+the binaural renders, the Möbius walk and its video) or a live synth in any temperament with
+voices soloed or muted; the engraved score scrolling in time with whatever is playing;
+prelude-then-fugue or whole-cycle play-through with lock-screen controls; the earlier versions
+of the recomposed fugues; PDF, MIDI and MusicXML downloads. Links such as `#/pair/15/fugue`
+open a piece directly.
+
+- `tools/build_app.py` reads `cycle/listening-manifest.json`, scans the render folders and
+  writes the site to `_site/` (git-ignored); the page itself is in `app/` (no build step). The
+  score strips are engraved once with LilyPond (`python3 tools/build_app.py --strips` redoes
+  only those whose score changed) and committed as `renders/strip-<piece>/strip.png` and
+  `strip.json`, so building the site needs only Python and Pillow.
+- `.github/workflows/pages.yml` builds and deploys the site on every push to `main` (or by hand
+  from the Actions tab). The repository owner must switch it on once: **Settings → Pages →
+  Source: GitHub Actions**. The site is about 870 MB, under Pages' 1 GB limit; the build fails
+  if it grows past that, and `--exclude-archive` leaves out the earlier versions' media
+  (about 320 MB).
+- To run it locally (the media are symlinked rather than copied):
+
+  ```bash
+  python3 tools/build_app.py --link && python3 -m http.server -d _site 8000
+  # then open http://localhost:8000/
+  ```
+
 ## The third edition (`cycle/`)
 
 | Pair | Key | Fugue | Prelude | Status |
@@ -104,6 +132,11 @@ Tools:
   moderately dry room so many lines stay distinct; `--program 52` or `53`
   sings every voice with a choir sound, `--instruments` uses each voice's own
   instrument.
+- `tools/score_strip.py`: the whole score engraved as one long line, with an
+  exact time-to-pixel map (`--staff-space-px` fixes the staff size, so a
+  25-staff fugue is as legible as a duet); used by the listening app and the
+  Möbius video.
+- `tools/build_app.py`: builds the listening app (see above).
 - `cycle/reference/bach-subjects.md`: Bach's WTC subjects in the project's
   token format, for allusion and combination.
 
