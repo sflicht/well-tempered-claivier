@@ -5,7 +5,7 @@ craft (learned counterpoint, allusion, the key cycle, the keyboard), pushed
 past what one composer with pen and paper could check or play. Computation is
 used to search and verify; the notes are still chosen and written.
 
-Status: **[built]** implemented, **[in progress]** being composed now, **[next]** designed, not built.
+Status: **[built]** implemented, **[next]** designed, not built.
 
 ## Top ten
 
@@ -63,9 +63,12 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
 12. **[next] A cantus firmus across the cycle.** One phrase of "Vor deinen Thron
     tret ich hiermit" (the chorale appended to the Art of Fugue) in long notes
     in each fugue's coda; Fugue XXIV states the whole chorale.
-13. **[in progress] Fugue XXIV as a quodlibet.** The finale for 25 parts combines the
-    subjects of the 23 earlier fugues plus its own, each in a fitted
-    transposition and rate, as the Goldberg Variations end in a quodlibet.
+13. **[built, smaller] Fugue XXIV as a quodlibet.** The plan was to combine the
+    subjects of all 23 earlier fugues with its own, as the Goldberg Variations
+    end in a quodlibet. Built: the subjects of Fugues I, II, IV, V and VIII
+    arrive where the cantus makes their keys harmonies; the full 23-subject
+    combination was not attempted, because the convergence was thinned for
+    clarity.
 14. **[next] A self-similar key plan.** The order of a fugue's middle-entry
     keys spells its own subject in mega-augmentation.
 15. **[next] Polymetric convergence.** A prelude whose 3-, 4- and 5-beat
@@ -81,68 +84,71 @@ Status: **[built]** implemented, **[in progress]** being composed now, **[next]*
 ## Raising the ambition: the rest of the cycle
 
 With the top ten built, the next step is the cycle itself, each pair with a
-device of its own:
+device of its own. All of these are built. They were first composed under the
+retired rule "Fugue N has N + 1 voices" (the old counts, à 7 to à 24, are kept
+in each pair's `archive-n-plus-1/`); since November 2026 each fugue has at most
+one voice more than Bach's in the same key, and the device was kept in the
+smaller texture. Current voice counts are given below.
 
-19. **[built] Pair III: Giga rectus et inversus.** Part 2 mirrors Part 1, and
-    in the coda bars of both halves sound simultaneously.
-20. **[built] Pair VI: passacaglia and fugue à 7.** A lament ground that
-    migrates through all seven voices; toccata prelude after BWV 565.
-21. **[built] Pair VII: fuga a due cori à 8.** Two complete four-voice
-    choirs, subject against inversion, merging in an eight-voice stretto;
-    chorale prelude on *Wachet auf*.
-22. **[built] Pair IX: the comma pump and the ring.** A pastorale in
+19. **[built] Pair III: Giga rectus et inversus** (4 voices). Part 2 mirrors
+    Part 1, and in the coda bars of both halves sound simultaneously.
+20. **[built] Pair VI: passacaglia and fugue** (4 voices). A lament ground that
+    migrates through the voices; toccata prelude after BWV 565.
+21. **[built] Pair VII: fuga a due cori** (4 voices). Two choirs of two,
+    subject against inversion, quarrelling about the key; chorale prelude on
+    *Wachet auf*.
+22. **[built] Pair IX: the comma pump and the ring** (4 voices). A pastorale in
     adaptive just intonation that sinks a syntonic comma per cycle until the
-    well-tempered keyboard corrects it; a ten-voice stile-antico ricercar
-    whose motif travels round a ring of voices (Spem in alium), rendered
-    binaurally in a circle.
-23. **[built] Pair X: St Matthew homage à 11.** Two choirs in fugal
-    dialogue beneath the chorale *O Lamm Gottes*, the subject derived from
-    the chorale.
-24. **[built] Pair XI: concerto fuga à 12.** Brandenburg 2's finale as
-    a twelve-voice fugal concerto, concertino of four against a ripieno of
-    eight.
-25. **[in progress] Pair XII: the unfinished fugue, finished à 13.** The
-    Art of Fugue breaks off just after B-A-C-H joins the first two subjects;
-    Nottebohm showed the three combine with the main theme. Fugue XII
-    completes that quadruple fugue in F minor, in thirteen real voices.
-26. **[first version] Pair XIII: fuga canonica à 14 on the Goldberg ground.**
-    Canons at every interval, as in the Goldberg Variations, accumulating over
-    the ground in F-sharp, ending in a quodlibet with the two folk songs of
-    Variation 30.
-27. **[first version] Pair XIV: Ricercar a 15 on the Royal Theme.** Frederick
-    the Great asked Bach for six voices; this answers with fifteen, including
-    the Musical Offering's canonic devices and a canon per tonos.
-28. **[built] Fugue XXIV à 25.** A twelve-tone B-minor subject (after
-    BWV 869), strata moving at different rates, the convergence composed
-    first, the cycle's subjects gathered at the end.
-29. **[built] Pair XV: Vom Himmel hoch à 16.** Four choirs of four, each
-    with a subject from one chorale line; all four lines sound together at the
-    summit, the trick that ends Bach's Canonic Variations BWV 769.
-30. **[first version] Pair XVI à 17: Reincken's Hamburg chorale fantasia.**
-31. **[first version] Pair XVII à 18: fuggendo la cadenza.** Every cadence
-    evaded, each evasion admitting a voice; the eighteenth voice, the father,
-    resolves the children's hanging dominant seventh.
-    **[first version] Pair XVIII à 19: Vigilate.** The four night watches of
-    Mark 13:35, the subject brightening one sharp per watch until the dawn
-    turns enharmonically to A-flat major; the knock at the door (BWV 61) as
-    second subject.
-32. **[first version] Pair XIX à 20: a suite in one fugue.** Four five-part
-    French dance bands (allemande, courante, sarabande, gigue) on one subject;
-    at the summit all four dance at once, each in its own metre, the ballroom
-    trick of Don Giovanni done in strict counterpoint.
-33. **[first version] Pair XX à 21: the solo violin multiplied.** A fugue that
+    well-tempered keyboard corrects it; a stile-antico ricercar for four
+    singers in a ring, rendered binaurally in a circle.
+23. **[built] Pair X: St Matthew homage** (3 voices). One voice per choir in
+    fugal dialogue beneath the chorale *O Lamm Gottes*, the subject derived
+    from the chorale.
+24. **[built] Pair XI: concerto fuga** (4 voices). Brandenburg 2's finale as a
+    fugue for its four soloists, with a trumpet stuck in the wrong key.
+25. **[built] Pair XII: the unfinished fugue, finished** (5 voices). The Art of
+    Fugue breaks off just after B-A-C-H joins the first two subjects;
+    Nottebohm inferred that the three combine with the main theme. Fugue XII is
+    this work's conjectural completion of that quadruple fugue, with a fifth
+    voice entering at the end.
+26. **[built] Pair XIII: fuga canonica on the Goldberg ground** (4 voices).
+    Canons at rising intervals over the ground in F-sharp, ending in a
+    quodlibet with the two folk songs of Variation 30.
+27. **[built] Pair XIV: ricercar on the Royal Theme** (5 voices). The Musical
+    Offering's canonic devices and a canon per tonos that climbs and arrives
+    home.
+28. **[built] Fugue XXIV for twenty-five parts.** A twelve-tone B-minor subject
+    (after BWV 869), strata moving at different rates, the convergence composed
+    first, guest subjects from earlier fugues gathered at the end; at most 14
+    real lines at once.
+29. **[built] Pair XV: Vom Himmel hoch** (4 voices). Each voice has a subject
+    from one chorale line; all four lines sound together at the summit, the
+    trick that ends Bach's Canonic Variations BWV 769.
+30. **[built] Pair XVI: Reincken's Hamburg chorale fantasia** (5 voices, organ
+    in spirit). Each chorale line in canon between two pedal voices.
+31. **[built] Pair XVII: fuggendo la cadenza** (5 voices). Every cadence
+    evaded; the fifth voice, the father, arrives late and resolves the
+    children's hanging dominant seventh.
+    **[built] Pair XVIII: Vigilate** (5 voices). The four night watches of
+    Mark 13:35, the subject brightening one note per watch until the dawn
+    reaches the tonic major (written as A-flat); the knock at the door
+    (BWV 61) as second subject.
+32. **[built] Pair XIX: a suite in one fugue** (4 voices). Four dancers
+    (sarabande, allemande, gigue, courante) on one pitch succession; at the
+    ball all four dance at once, each in its own metre.
+33. **[built] Pair XX: the solo violin multiplied** (21 parts). A fugue that
     begins as one line (after BWV 1003), whose implied voices split off into
-    real ones until twenty-one move, then fold back into one line.
-34. **[first version] Pair XXI à 22: the posthorn capriccio.** After BWV 992;
+    real ones until twenty-one sound, then fold back into one line.
+34. **[built] Pair XXI: the posthorn capriccio** (22 parts). After BWV 992;
     twenty-two voices for the first twenty-two partials of B-flat, ending on
     the posthorn's own harmonic series in just intonation.
-35. **[first version] Pair XXII à 23: Ma fin est mon commencement.** A tombeau
+35. **[built] Pair XXII: Ma fin est mon commencement** (6 voices). A tombeau
     for Bach as a crab fugue: the second half is the first half backwards in
     every voice, ending on the lone note it began with.
-36. **[first version] Pair XXIII à 24: ut re mi fa sol la per tutti i tuoni.**
-    After John Bull's hexachord fantasia, each voice owns one of the 24 keys;
-    one passage is built to break in meantone, to show why the Well-Tempered
-    Clavier was needed.
+36. **[built] Pair XXIII: ut re mi fa sol la per tutti i tuoni** (5 voices).
+    After John Bull's hexachord fantasia, a cantus carries the hexachord
+    through all twelve keys around a four-voice fugue; one passage is built to
+    break in meantone, to show why the Well-Tempered Clavier was needed.
 37. **[built] Prelude XXIV: per i 24 tuoni.** A walking-bass trio
     through all 24 keys in the WTC order, two bars each (48 bars), quoting the
     head of Bach's Book I fugue in each key, landing in B minor for the last

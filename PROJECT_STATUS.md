@@ -49,7 +49,7 @@ with their fixes. The most important:
   longer puts four-voice counterpoint on nine staves.
 - The "collisions that sound like mistakes" in the 100-bar Fugue VIII were
   measurable: 218 parallel fifths/octaves, 294 accented parallels and 286
-  low-register clashes. The new Fugue VIII has 0, 0 and 8.
+  low-register clashes. The new Fugue VIII has 0, 0 and 0.
 - The checker missed parallels between crossed voices and on successive
   beats; `tools/critic.py` replaces it and is calibrated on Bach.
 - Every movement can now breathe (tempo maps) and is rendered in a historical
@@ -68,5 +68,6 @@ real counterpoint, not harmony.
 - Sam has heard some binaural renders (and liked Fugue XX's strings) but
   not yet the recomposed fugues. The renders are untested by ear; listening
   and feedback come next.
-- Review fixes for VII, IX, X and XI; reviews of the monuments XX and XXI.
+- An independent bar-by-bar review of the monument XXI (XX's summit was
+  revised in the November review round, XXIV's description and release too).
 - Binaural renders of Fugues I–IV and of the preludes.
