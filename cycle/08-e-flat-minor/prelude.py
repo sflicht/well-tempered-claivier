@@ -16,7 +16,7 @@ New: the melody IS the fugue subject in retrograde inversion
 (Eb F D Cb Bb Ab Gb Ab Eb) -- its segment Bb Ab Gb Ab is the draft's arc --
 and in bars 14-17 the bass sings that melody while the soprano sings it in
 G-flat major a tenth (plus octaves) above.  The fugue's bass returns the same
-line in bars 45-47 under Bach's own subject.  The last bar's bass is the
+line in bars 37-39 under Bach's own subject.  The last bar's bass is the
 subject's head, E-flat B-flat C-flat B-flat, leading attacca into the fugue.
 
 Every pitch is written here.  The inner figure is written as six-note

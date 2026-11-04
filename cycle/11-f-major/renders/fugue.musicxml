@@ -1894,6 +1894,9 @@
         </pitch>
         <duration>120</duration>
         <type>16th</type>
+        <notations>
+          <arpeggiate />
+        </notations>
       </note>
       <note>
         <pitch>
@@ -5199,6 +5202,9 @@
         </pitch>
         <duration>120</duration>
         <type>16th</type>
+        <notations>
+          <arpeggiate />
+        </notations>
       </note>
       <note>
         <pitch>
@@ -7793,6 +7799,9 @@
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
+        <notations>
+          <arpeggiate />
+        </notations>
       </note>
       <note>
         <pitch>
@@ -11006,6 +11015,9 @@
         </pitch>
         <duration>120</duration>
         <type>16th</type>
+        <notations>
+          <arpeggiate />
+        </notations>
       </note>
       <note>
         <pitch>

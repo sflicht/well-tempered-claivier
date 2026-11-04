@@ -227,9 +227,11 @@ theme('B', 29, 1, oc(S3, -2), 'S3: subject, bass, E minor', 2)
 put('S', 29, 1, 'F#5:4 E5:4 D#5:4 E5:12 D#5:4 F#5:4')
 put('T', 29, 1, 'F#3:8/3 G3:16/3 A3:4 G3:4 A3:4 G3:4 A3:4 F#3:4')
 # b31-34: the alto sings its line on top (the soprano rests); E minor turns to B minor:
-# Em C | Am Bm | D Em/G | F#7 Bm (the line's E is the seventh of F#7, its D the third of B minor).
+# Em C | Am Bm | D Em | F#7 Bm (the line's E is the seventh of F#7, its D the third of B minor).
 cantus('A', 31, 1, L3, 'L3: chorale line 3 (cantus), alto', 4)
-put('B', 31, 1, 'E3:4 D3:4 C3:8 A2:8 B2:8 D3:8 G2:8 F#2:8 B2:4')
+# (Nov 2026: the bass climbs D3 E3 F#3 into the cadence, III - iv - V7 - i in B minor, instead of
+# D3 G2 F#2: one leap of a fourth fewer, the cadence's own fall F#-B kept.)
+put('B', 31, 1, 'E3:4 D3:4 C3:8 A2:8 B2:8 D3:8 E3:8 F#3:8 B2:4')
 put('T', 31, 1, 'G3:4 B3:4 C4:4 G3:4 A3:4 C4:4 B3:8 A3:4 F#3:4 B3:8 A#3:8 B3:4')
 
 

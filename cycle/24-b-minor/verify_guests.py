@@ -68,6 +68,13 @@ def main():
     # (B4 from 53.4.5, Br1 from 54.2)
     res['V vs rung 1 leader'] = run('Fugue V in B (T3) against rung 1 leader (B4), an eighth later', VB, octv(IB, -2), 2)
     res['V vs rung 1 follower'] = run('Rung 1 follower (Br1) against Fugue V in B (T3), a quarter later', octv(IB, -1), VB, 4)
+    # Bach's BWV 869 head (codetta, b11.1.5, Soprano II an octave up) against the bass line it was set
+    # over (Bass I from 11.1.5: F#2, then the circle of fifths B2 D3 F#2 B2 E2); its notes must be the
+    # verified head of cycle/reference/bach-subjects.md
+    ref = (HERE.parents[1] / 'cycle' / 'reference' / 'bach-subjects.md').read_text()
+    assert f"`{GUESTS['869'][0]}`" in ref, 'BWV 869 head differs from cycle/reference/bach-subjects.md'
+    res['BWV 869'] = run("Bach's BWV 869 head, S2 at b11.1.5 (codetta), against Bass I", octv(GUESTS['869'][0], 1),
+                         'F#2:2 B2:4 D3:4 F#2:4 B2:4 E2:2')
     (HERE / 'renders').mkdir(exist_ok=True)
     (HERE / 'guest-verification.json').write_text(json.dumps(res, indent=1))
 

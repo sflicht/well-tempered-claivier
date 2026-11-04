@@ -60,7 +60,7 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 | 33–36 | all | **Stretto à 4** (§4): alto inversion on D (33.1), tenor subject on C (33.3), soprano inversion on E♭ (34.1), bass subject in E-flat (35.3). The levels fall by fifths, G minor → C minor → A-flat → E-flat. |
 | 37–38 | all | **Dominant pedal.** The bass's subject ends on the leading tone and becomes a B♭ pedal. The tenor's head over it (37.3); then the soprano, Coro II, sings the **rectus** head up to C6 over A-flat over B-flat (38.3, the climax) and B♭7. |
 | 39 | all | **Ritornello**, the prelude remembered: the alto sings the inversion in diminution, as the prelude's obbligato does in its opening ritornello. |
-| 40–44 | all | **Coda.** *Wachet auf*, line 1, in long notes in the tenor (the register of BWV 645), played louder (+10). Above it the soprano runs in eighths, the countersubject's figure; the alto moves in quarters and halves; the bass walks. Under the chorale's C (b43) the bass **finishes the augmentation**, F3–E♭3–D3, in the octave where it broke off in b29. Cadence on A-flat over B-flat again (b44), then B♭7. |
+| 40–44 | all | **Coda.** *Wachet auf*, line 1, in long notes in the tenor (the register of BWV 645), played louder (+10). Above it the soprano runs in eighths, the countersubject's figure; the bass walks. The alto, syncopated over the barlines, falls by step B♭4–A♭–G–F–E♭–D4 while the chorale climbs E♭–G–B♭, with a 7–6 suspension at 42.1, then rises to the A♭ and C of the reconciliation chord. Under the chorale's C (b43) the bass **finishes the augmentation**, F3–E♭3–D3, in the octave where it broke off in b29. Cadence on A-flat over B-flat again (b44), then B♭7. |
 | 45–46 | all | E-flat. Coro II's last word: the head upside down (B♭5 G5 E♭5 D5 E♭5), soft. |
 
 **Tonal plan.** E-flat (Coro I's half of the exposition reaches B-flat; Coro II's reaches A-flat) – C minor (b12–15) – G minor (b16) – B-flat (b18) – the quarrel, B-flat against A-flat, resolved on V11 → V7 → I (b24–25) – E-flat with deceptive turns to C minor (the joke) – G minor (b31–32) – the stretto's falling fifths back to E-flat (b33–36) – the dominant pedal (b37–38) – E-flat (coda).
@@ -79,7 +79,7 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
   - Entering at 34.3, half a bar after the soprano, the bass would have moved in octaves with the tenor (G–B♭). Entering at 35.1, its E♭2 would have sounded under the tenor's D4, out of reach of one hand. At 35.3 both problems are gone.
 - **The chorale** in the tenor against a moving texture (b40–44), with the prelude's ritornello as its upbeat (b39).
 
-## 5. Critic numbers (`python3 tools/critic.py cycle/07-e-flat-major/fugue.json`)
+## 5. Critic numbers (`python3 tools/critic.py cycle/07-e-flat-major/fugue.json`; critic, 4 Nov 2026)
 
 | | Fugue VII a 4 | (eight-voice version) |
 |---|---|---|
@@ -87,8 +87,8 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 | dissonance_unresolved | **0** | 0 |
 | bad_doublings | **1** (b44.1, see weak spots) | 4 |
 | low_register_seconds | **0** | 4 |
-| stepwise_pct / leap_4th_plus_pct | 54.4 / 10.1 | 52.2 / 13.6 |
-| pc_tripled_on_beats_pct | 5.5 | 15.5 |
+| stepwise_pct / leap_4th_plus_pct | 54.9 / 10.3 | 52.2 / 13.6 |
+| pc_tripled_on_beats_pct | 4.4 | 15.5 |
 | crossings | 0 | 17 |
 | **keyboard_unplayable_pct** (more than two hands) | **0.0** (0 of 318 onsets) | 9.7 |
 | **mean moving voices** | **3.04** of 4 (20 of 46 bars with all four moving) | 4.82 of 8 |
@@ -100,20 +100,20 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 
 ## 6. Honest weak spots
 
-1. **Steps: 54.4%,** against Bach's 71–75% and the brief's 65. Most of the leaps are by design:
+1. **Steps: 54.9%,** against Bach's 71–75% and the brief's 65. Most of the leaps are by design:
    - the quarrel's arpeggiated key assertions (b19–23, 0–50% steps per bar);
    - the joke's French-overture leaps (b25, b27, b29);
    - the tossed heads (b30);
    - the walking bass in the coda.
 
-   The free voices elsewhere were revised by hand towards steps (the episode at b12–13 is now a lament bass in half notes under true 4–3 suspensions; the coda's soprano runs by step). Nothing was inserted to move the number.
+   The free voices elsewhere were revised by hand towards steps (the episode at b12–13 is now a lament bass in half notes under true 4–3 suspensions; the coda's soprano runs by step, and its alto falls by step through a sixth). Nothing was inserted to move the number.
 2. **A long two-voice opening.** For eight bars only one choir sings (one or two voices), about 25 s before the first four-voice chord at b9. That is the cori-spezzati idea, but it is a long stretch of two-part writing.
 3. **Compass.** The exact mirror puts the soprano on E♭6 (b7.1), and the stretto's soprano entry repeats it (b34.1). That is above Bach's keyboard compass (c''' or d'''), though not a piano's.
 4. **Registers in the quarrel.** Coro II's alto sits at C4–F4 in b20, where Coro I's tenor was a bar earlier. In the quarrel the choirs are told apart by alternation and key (A♮ against D♭) rather than by register.
 5. **One bad doubling, b44.1.** The final A-flat-over-B-flat chord has the chorale's B♭3 in the tenor over the bass's B♭2, and the alto takes C before A♭. The critic reads C minor 7 over its seventh, doubled. To avoid it I would have to drop either the chorale's last note or the C (the chord's colour).
 6. **Stretto harmony, b34.** The soprano's inversion in A-flat runs over the alto's in G minor and the tenor's C-level subject, so A♭ rubs against G (the critic: chord sevenths, b34.1–3) with no bass under them. It is the most dissonant bar of the piece, and I cannot judge on paper whether it sounds intended or sour. Since the third review the alto is played 4 softer in this bar, so that the two outer statements carry it.
 7. **The stretto never has four statements at once.** At most three overlap (b34). This was chosen for clarity and two-hand playability (§4), at the cost of density.
-8. **The coda's alto** is a plain inner voice (quarters and halves, mostly thirds). The soprano and the chorale carry the coda.
+8. **The coda's alto** (fixed in November 2026; see the self-critique section). It used to be a filler voice of chord tones, mostly a third under the soprano. It is now a line of its own, but it stays below the soprano and the chorale in importance: it moves in quarters and halves so as not to cover the tenor's chorale a sixth to a tenth below it.
 9. **No listening.** I cannot judge balance, whether the chorale stands out at +10 velocity, or how the organ sound of the spatial render treats the chatter in b26 and b28.
 
 ## 7. From the eight-voice version
@@ -148,6 +148,12 @@ Two choirs of two voices, after the Venetian *cori spezzati* (Giovanni Gabrieli'
 - **Issue 3, the quarrel's registers (not applied).** The quarrel is on the review's own must-not-touch list. The choirs are already told apart there by the bass (Coro I only), by turn-taking, and by A♮ against D♭. Moving Coro II's b20 up an octave would add a third E♭6 before the climax's C6, and an E♭6 → E♭5 leap. I keep it unless the render shows the quarrel sounding like one choir.
 - **Issue 4, the augmentation's ending.** This is now described as a hidden detail (§4). The joke is presented as pomp against chatter and the stolen subject. The review's tested attempt to make b43 audible added a fifth and a clash, so the notes stay.
 - **After the changes:** parallels 0 (also weak and beat-to-beat), unresolved 0, bad_doublings 1 (b44.1, as before), low-register seconds 0, crossings 0, keyboard 0 of 318, stepwise 54.4%. All three fugue renders were made again (153 s, binaural 154 s).
+
+## 9. Self-critique pass (Nov 2026)
+
+- **Fixed: the coda's alto (b40–42).** It was a filler voice (G–B♭–G–F–G–B♭–G, chord tones a third or sixth under the soprano), and no reason was given for keeping it. It is now `G4:12 Bb4:4~ | Bb4:6 Ab4:2 G4:4 F4:4~ | F4:4 Eb4:4 D4:4 G4:4`, and b43–44 are unchanged. The B♭ is tied over the barline into b41, the F over the barline into b42, where it makes a 7–6 suspension over the bass's G2 (42.1, resolving to E♭ on beat 2). Between them the line falls by step through a sixth, B♭4–A♭–G–F–E♭–D4: Coro II's inverted head (B♭–G–E♭) filled in, falling while Coro I's chorale climbs E♭–G–B♭. Then it turns and rises G–A♭–C to the reconciliation chord. The rhythm stays in quarters and halves, so the alto does not compete with the soprano's eighths or cover the chorale. It also echoes the suspension chain of the b12–13 episode. Critic: still 0 parallels of every kind and 0 unresolved. Suspensions go from 4 to 6, stepwise from 54.4% to 54.9%, tripling from 5.5% to 4.4%, and the bad doubling stays at 1 (b44.1, unchanged).
+- **Fixed (listening guide, proposed):** the guide's row still advertised "the pompous augmentation that keeps being interrupted". After REVIEW-3 #4 it should point listeners to pomp against chatter and to the stolen subject at b28. The augmentation's ending at b43 is a detail for the score-reader (§4).
+- **Kept:** the bad doubling at b44.1 (weak spot 5) and bar 34 (weak spot 6, which needs a listener).
 
 ---
 

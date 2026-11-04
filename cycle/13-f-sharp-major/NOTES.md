@@ -114,10 +114,10 @@ of the inversion) before placing any canon.
 | 3–10 | F♯ | **I, unison**, 2 bars apart, S → A | S, A, B; T at b9 | The comes enters alone on the same F♯: the dux rests a beat and then lilts in triplets above it. b9: the **tenor's first entry, inverted**, on C♯ over V7–I, ending on B, the next key. |
 | 11–18 | B | **II, second below**, 1 bar apart, S → A | T, then S, A, B | b11 tenor and bass alone. The dux enters on C♯ over V6 (b12), the comes a step lower a bar later (b13); flowing quavers; cadence with a 4–3 in the soprano; the tenor carries D♯ over the join into G♯ minor (b18–19). |
 | 19–26 | G♯ m | **III, third below**, 2 bars apart, S → A | S, A, B (trio) | Lament bass. The dux rests as the comes enters (b21), then sighs. Picardy G♯ major = V of C♯; the soprano's B♯ moves on through D♯ to C♯ over the join (b26–27). |
-| 27–34 | C♯ | **IV, fourth below by inversion**, 1 bar apart, S → T | A, B; then S, T, B | b27 alto: subject on E♯. b29 dux on C♯ (top), b30 comes inverted on G♯ in the tenor, rising where the dux falls. b34: the soprano climbs into the link. |
+| 27–34 | C♯ | **IV, fourth below by inversion**, 1 bar apart, S → T | A, B; then S, T, B | b27 alto: subject on E♯. b29 dux on C♯ (top), b30 comes inverted on G♯ in the tenor, rising where the dux falls. b31: the dux sings the subject's head inverted, so the comes answers with the head the right way up (tenor, b32); b32–33 the dux rises to F♯5 and turns at the cadence. b34: the soprano climbs a scale into the link. |
 | 35–38 | → F♯ | – | S, A, T, B | **The bass's entry**: the subject on C♯ (b35–36) under sustained chords; then a C♯ pedal with the subject's head in stretto one beat apart (soprano G♯, alto B, tenor E♯, b37); broadening. |
 | 39–46 | F♯ | **V, fifth below by inversion**, 2 bars apart, A → T | S, A, T, B | **The return**: the alto brings the subject back in the tonic, on A♯; the tenor answers it inverted on D♯ (b41); the soprano sings a descant above. Full texture. |
-| 47–54 | F♯ m | **VI, sixth above**, 2 bars apart, A → S | A, B; then S, A, T, B | **Adagio.** The soprano's F♯ is held over the join and turns minor under it; alto subject on A; the soprano answers a sixth higher (b49) while the alto holds long notes beneath. Ends in F♯ major; the tenor's upbeat opens the quodlibet. |
+| 47–54 | F♯ m | **VI, sixth above**, 2 bars apart, A → S | A, B; then S, A, T, B | **Adagio.** The soprano's F♯ is held over the join and turns minor under it; alto subject on A; the soprano answers a sixth higher (b49) while the alto goes on beneath in a slow line (A G♯ F♯, then the sigh D–C♯ over the dominant), which the soprano sings a sixth higher in b51–52. Ends in F♯ major; the tenor's upbeat opens the quodlibet. |
 | 55–63 | F♯ | **octave**: "Ich bin", 2 bars apart, T → A | S, A, T, B | **Quodlibet** (section 5): subject over "Ich bin" (b55), "Ich bin" in canon at the octave (b56–60), Kraut 1 in the soprano and Kraut 2 in the bass (b59–62), final chord held (b63). |
 
 Mean moving voices: 3.11 per bar. Two-voice bars: 3–4, 10–11, 19–20, 28, 47. All four voices
@@ -135,9 +135,9 @@ notes on the beats.
 | I | unison (shift 0, F♯) | 2 bars | S → A | 3–6 | b5: the same descending dotted scale again, at the same pitch, under the soprano's triplets |
 | II | second below (shift −1, B) | 1 bar | S → A | 12–15 | b13: the subject a step lower, overlapping the dux's tail |
 | III | third below (shift −2, G♯ m) | 2 bars | S → A | 19–22 | b21: the subject a third lower, after the dux falls silent |
-| IV | fourth below by inversion (C♯ ↔ G♯) | 1 bar | S → T | 29–33 | b30: the scale rises in the tenor as the soprano's fell |
+| IV | fourth below by inversion (C♯ ↔ G♯) | 1 bar | S → T | 29–33 | b30: the scale rises in the tenor as the soprano's fell; b32: the soprano's inverted head (b31) comes back upright in the tenor |
 | V | fifth below by inversion (A♯ ↔ D♯, F♯ fixed) | 2 bars | A → T | 39–44 | b41: the return's subject turned upside down in the tenor |
-| VI | sixth above (shift +5, F♯ m) | 2 bars | A → S | 47–50 | b49: the Adagio's subject a sixth higher in the soprano |
+| VI | sixth above (shift +5, F♯ m) | 2 bars | A → S | 47–50 | b49: the Adagio's subject a sixth higher in the soprano; b52: the alto's sigh D–C♯ returns on top as B–A |
 | octave | "Ich bin", octave above (shift +7) | 2 bars | T → A | 54¾–58 | b56¾: the tune again in the alto, as Bach's soprano |
 
 `check_canons.py` checks, for every dux note in the span, a comes note at the delay with the same
@@ -146,11 +146,11 @@ own inside the span. Its output:
 
 ```
 Canon I        unison                             Soprano -> Alto    delay 2 bar(s), dux bars 3-6         24 notes  OK
-Canon II       2nd below                          Soprano -> Alto    delay 1 bar(s), dux bars 12-15       24 notes  OK
+Canon II       2nd below                          Soprano -> Alto    delay 1 bar(s), dux bars 12-15       22 notes  OK
 Canon III      3rd below                          Soprano -> Alto    delay 2 bar(s), dux bars 19-22       19 notes  OK   (minor-mode accidentals: b22 fis -> fisis)
-Canon IV       4th below by inversion (C#<->G#)   Soprano -> Tenor   delay 1 bar(s), dux bars 29-33       26 notes  OK
+Canon IV       4th below by inversion (C#<->G#)   Soprano -> Tenor   delay 1 bar(s), dux bars 29-33       31 notes  OK
 Canon V        5th below by inversion (A#<->D#)      Alto -> Tenor   delay 2 bar(s), dux bars 39-44       29 notes  OK
-Canon VI       6th above                             Alto -> Soprano delay 2 bar(s), dux bars 47-50       16 notes  OK   (minor-mode accidentals: b50 e -> eis)
+Canon VI       6th above                             Alto -> Soprano delay 2 bar(s), dux bars 47-50       21 notes  OK   (minor-mode accidentals: b50 e -> eis)
 Canon Ich bin  octave above                         Tenor -> Alto    delay 2 bar(s), dux bars 54.75-58    17 notes  OK
 ALL CANONS EXACT
 ```
@@ -184,7 +184,9 @@ in performance data only: Canon II's alto (b13–14) and Canon IV's tenor (b30) 
 dux −3. Phrase dynamics rise to the return (b39) and drop for the Adagio. Every declared entry is
 5 velocity points louder for its length (`build_score`), so each subject and comes entry stands out.
 
-## 7. Critic numbers (`tools/critic.py fugue.json`)
+## 7. Critic numbers (critic, 2026-11-04)
+
+`python3 tools/critic.py cycle/13-f-sharp-major/fugue.json`, after the self-critique pass of November 2026.
 
 | Measure | Value | Target |
 |---|---|---|
@@ -192,15 +194,16 @@ dux −3. Phrase dynamics rise to the return (b39) and drop for the Adagio. Ever
 | beat_parallels | **2** | ≤ 2 |
 | parallels_weak | 2 | – |
 | dissonance_unresolved | **0** | ≤ 3 |
+| dissonance_unverified | 1 (b38.1, explained below) | – |
 | bad_doublings | **0** | ≤ 2 |
 | low_register_seconds | **2** | ≤ 9 |
-| stepwise_pct / leap_4th_plus_pct | **67.1** / 12.8 | ≥ 65 |
+| stepwise_pct / leap_4th_plus_pct | **67.7** / 12.7 | ≥ 65 / about 14 |
 | crossings | 1 | few |
-| keyboard_unplayable_pct | **0.5** (2 of 387 onsets) | < 5 |
+| keyboard_unplayable_pct / reach_errors | **0.5** (2 of 395 onsets) / 0 | < 5 / 0 |
 | mean moving voices | 3.11 | – |
-| pc_tripled_on_beats_pct | 8.5 | – |
+| pc_tripled_on_beats_pct | 7.7 | – |
 | melody warnings | 1 tritone leap | – |
-| tertian fit / longest static harmony | 49.7 % / 4 beats (the final chord) | – |
+| tertian fit / longest static harmony | 49.7 % of beats (62.6 % of chord beats; two-note beats 34.9 %) / 4 beats (the final chord) | – |
 
 What the remaining findings are:
 - **Beat-to-beat octaves.** b30 (S/T, G♯ → B♯): Canon IV's dux and comes start their bars on the
@@ -211,15 +214,20 @@ What the remaining findings are:
   acceptable in a quodlibet.
 - **Weak parallels.** b42 (T/B fifths, A♯/D♯ → G♯/C♯): the comes's inverted subject over the
   ground at that point. b56: the same octave as above.
-- **Low register.** b31 (the inverted subject's low D♯3 in the tenor over C♯2) and b58 (a passing D♯3
-  of "Ich bin" over C♯3).
+- **Low register.** b31.3 (the inverted subject's passing D♯3 in the tenor, a sixteenth, over the
+  bass's C♯3) and b58 (a passing D♯3 of "Ich bin" over C♯3).
+- **Unverified b38.1** (alto D♯4 against tenor C♯4, over the dominant pedal): two heads of the
+  subject in stretto. The alto's D♯ is the subject's own dotted note; it rises to E♯, the third of
+  C♯7, while the tenor's head moves on to B, the seventh, so the step lands on the dominant
+  seventh's tritone. Both are chord tones; the notes belong to the subject and stay.
 - **Crossing.** b14: the alto, in its subject's tail, goes a beat above the soprano in the canon at
   the second.
-- **"7th not resolved down" notes (17).** None is an error: b8 (the V4/2's bass B rises to C♯, as
-  the ground demands); b34 (the soprano's link over the tenor's last canon bar, read as a seventh
-  chord); b17 (the alto's E leaps to C♯ while the soprano resolves its own E to D♯);
-  b37 (the stretto heads over the pedal); b41–44 (the descant's sevenths over the canon, resolved a
-  beat later or in another voice); b61 (the alto's 9–8 suspension, which the critic reads as a seventh).
+- **"7th not resolved down" notes (16).** None is an error: b8 (the V4/2's bass B rises to C♯, as
+  the ground demands); b12 (the tenor's E, the seventh of V6/5 in B, turns down to C♯ and A♯ before
+  the dux enters); b35 (the alto's B over the bass's entry, falling through G♯); b37 (the stretto
+  heads over the pedal); b41–44 (the descant's sevenths over the canon, resolved a beat later or in
+  another voice); b51 (iv4/2 in the Adagio, whose bass A rises to B because the ground goes there);
+  b61 (the alto's 9–8 suspension, which the critic reads as a seventh).
 - **Tritone leap.** b40, alto (B → E♯): the subject on the mediant, see section 2.
 - **Theme check.** The critic compares entries with the subject in semitones, so diatonic forms on
   other degrees show 5–9 of 13 intervals and the folk-tune labels show nonsense values. The canons
@@ -233,12 +241,14 @@ What the remaining findings are:
    which is singing the dux's continuation; at the second the alto passes above the soprano for a
    beat (b14). Both are as in Bach's Var. 3 and Var. 6, but on a piano the two lines are told apart
    only by rhythm there.
-2. **The strict stretches are short**: 4 to 6 bars of dux (16 to 29 notes per canon), then both
-   voices cadence freely. After the subject, Canon VI's dux only holds long notes, so it is a canon
-   of the subject plus two held notes.
+2. **The strict stretches are short**: 4 to 6 bars of dux (17 to 31 notes per canon), then both
+   voices cadence freely. Canon VI is the shortest (21 notes): after the subject its dux is a slow
+   line of seven notes, as fits the Adagio.
 3. **Constrained lines.** In Canon IV the mirror sends the soprano's high notes to the tenor's low
-   register, so after its subject the soprano stays between G♯4 and D♯5 in long notes and short
-   figures (b31–33). It is the least melodic stretch of the piece.
+   register, so the two voices share a band around E♯4: the soprano stays between F♯4 and F♯5 in
+   b31–34, the tenor between D♯3 and C♯4, and the bass moves up to C♯3 in b31 so that the hands can
+   reach the soprano's new line. The line itself now sings (section 13); the band is the price of
+   the canon.
 4. **The return is on the mediant.** The subject comes back in F♯ on A♯ (Canon V's dux), because no
    entry on the tonic fitted with the canon; the exact subject on F♯ returns only in the quodlibet.
    I had planned the bass to state the subject again at the return, as at the opening, but every
@@ -285,7 +295,7 @@ What the remaining findings are:
 | # | Review item | What I did |
 |---|---|---|
 | 1 | "Ich bin"'s upbeat inside the Adagio's ritardando | Agreed. Tempo map `[156, 52], [160.5, 44, 'ramp'], [160.5, 76]`: the ritardando ends at the release of the F♯-major chord; in the render the upbeat now lasts 0.59 s, like the notes after it. |
-| 2 | The piece stops and restarts with two voices every eight bars | Agreed. Joins written by hand: b18–19 the tenor's link `B3 C#4 D#4~ D#4` (as tested), holding the fifth of G♯ minor under the soprano's entry; b26–27 the soprano's B♯4 goes on through D♯5 to C♯5 over the alto's entry, and the alto breathes a beat before it; b34 the soprano climbs G♯4 A♯4 C♯5 D♯5 into the link; b46–47 the soprano's F♯5 is held into the Adagio and turns minor under it. The tempo no longer jumps at b27 (64 eases back to 72). |
+| 2 | The piece stops and restarts with two voices every eight bars | Agreed. Joins written by hand: b18–19 the tenor's link `B3 C#4 D#4~ D#4` (as tested), holding the fifth of G♯ minor under the soprano's entry; b26–27 the soprano's B♯4 goes on through D♯5 to C♯5 over the alto's entry, and the alto breathes a beat before it; b34 the soprano climbs into the link (G♯4 A♯4 C♯5 D♯5; since November a whole scale, F♯4 to D♯5); b46–47 the soprano's F♯5 is held into the Adagio and turns minor under it. The tempo no longer jumps at b27 (64 eases back to 72). |
 | 3 | Canon II's and Canon IV's answers partly hidden | Agreed; by loudness, since the register is fixed by strict canon with this subject: comes +6, dux −3 in b13–14 (Canon II) and b30 (Canon IV). |
 | 4 | Octaves A♯–B–C♯ at 55.3–56.1 | Kept, as the review recommends (section 7). |
 | 5 | Low, quiet ending | Kept, as the review recommends: the tune ends there, and in Bach the quodlibet leads back to the Aria. |
@@ -324,10 +334,61 @@ A sarabande over the same ground, stated twice: b1–8 the aria, then a "double"
 
 The critic finds 0 unplayable onsets.
 
-| Prelude (critic) | Value |
+| Prelude (critic, 2026-11-04) | Value |
 |---|---|
 | parallels_error / weak / beat-to-beat | 0 / 0 / 0 |
-| dissonance_unresolved | 0 |
+| dissonance_unresolved / unverified | 0 / 1 (b10.2, below) |
 | bad_doublings / low_register_seconds | 0 / 0 |
-| stepwise_pct | 53.1 (a leaping sarabande line; appoggiaturas) |
+| stepwise_pct / leap_4th_plus_pct | 53.1 / 17.7 (a leaping sarabande line; appoggiaturas) |
 | keyboard_unplayable_pct | 0.0 |
+
+**b10.2** (bass G♯2 against the alto's C♯5, the double's V6): the bass arpeggiates the dominant
+(E♯2 G♯2 E♯2), so the fourth G♯–C♯ is a chord tone over a broken bass, not a 6/4. The alto then
+steps C♯–B to add the seventh on beat 3, and B falls to A♯ on the next downbeat (b11). Kept.
+
+---
+
+## 13. Self-critique pass (Nov 2026)
+
+4 November 2026. An audit listed what NOTES and the corrected critic still left open; each item was
+fixed in the score or is explained here. `check_canons.py`: `ALL CANONS EXACT`.
+
+**Fixed.**
+- **Canon IV's dux after the subject (b31–33), weak spot 3.** The soprano held G♯4 for most of b31
+  and then moved between G♯4 and C♯5 in short figures. It now sings the subject's head inverted in
+  b31 (G♯ A♯ B♯ C♯ E♯ D♯, in the subject's dotted rhythm), so the mirror returns the head the right
+  way up in the tenor at b32 (C♯ B♯ A♯ G♯ E♯ F♯); then it rises to F♯5 in b32 (C♯ F♯ E♯ C♯ A♯, the
+  subject's springing C♯–F♯) and turns at the cadence in b33 (B♯ C♯ D♯ C♯ B♯ G♯). The free soprano
+  of b34 is now one scale, F♯4 to D♯5, that runs on into the link (E♯ F♯ G♯, b35). Before writing, I
+  listed which dux notes are chord tones in their own bar and, mirrored, in the next: on the beats
+  of b31 only G♯ is one in both, so B♯ enters as an appoggiatura to C♯ and E♯ only once the bass
+  under the comes moves to A♯; every tone of IV works in b32; in b33, G♯ and B♯ (D♯ makes a passing
+  IV6/4 in the comes's bar). Two free bass notes moved with it: b31 C♯3 instead of C♯2 (with C♯2 the
+  soprano's new line and the tenor's F♯3 were out of reach of two hands), and b32 F♯2 A♯2 instead of
+  a held F♯2 (the comes's E♯3 on beat 3 is then a fifth over A♯, not a seventh over F♯). This also
+  removed the unverified dissonance at b34.3.
+- **Canon VI's dux after the subject (b49–50), weak spot 2.** The alto held A4 and then C♯5, so the
+  canon was the subject plus two held notes. It now goes on as a slow line under the soprano's
+  subject: A4 (dotted half) G♯4 F♯4, then, after a breath, C♯5 D5 C♯5 B4, whose D–C♯ over the
+  dominant is the minor key's sigh. The comes sings it a sixth higher in b51–52 (F♯5 E5 D5, then A5
+  B5 A5 G♯5). The choice is narrow here too: on the beats only A and F♯ in b49 (F♯ once the comes's
+  bar is harmonised as iv4/2), C♯ or B in b50. The free voices around the comes were rewritten: alto
+  b51 C♯5 A4 B4 (i6, then iv4/2 under the comes's D), b52–53 D5 C♯5 D5 | C♯5 B4; soprano b53 B5 A5
+  G♯5 F♯5 E♯5, the sigh A–G♯ again, into the Picardy third.
+- **b17.1, unverified.** The alto's C♯5 under the soprano's suspended B5 leapt to E5 as B resolved,
+  so the resolution landed on a tritone, and the tenor sounded the resolution note A♯3 under the
+  suspension. Now the alto steps E5 D♯5 C♯5 (a 6–5 under the soprano's 4–3) and the tenor holds F♯3
+  before A♯3.
+
+**Explained, kept.** b38.1 (stretto heads, section 7) and the prelude's b10.2 (a broken bass,
+section 12).
+
+**Numbers corrected.** The critic table (section 7) and the prelude table (section 12) were
+written before the corrected critic: they left out the unverified dissonances (fugue b17.1, b34.3,
+b38.1; prelude b10.2) and gave leaps of a fourth or more as 12.8 % (12.6 % at the start of this
+pass). The checker output in section 4 now shows the current note counts (Canon II 22, IV 31,
+VI 21).
+
+Critic before → after: unverified 3 → 1; stepwise 67.1 → 67.7 %; leaps of a fourth or more
+12.6 → 12.7 %; parallels 0 / 2 weak / 2 beat-to-beat, unresolved 0, bad doublings 0, low-register 2
+and keyboard 0.5 % unchanged; tripled pitch classes 8.5 → 7.7 %. Prelude unchanged.

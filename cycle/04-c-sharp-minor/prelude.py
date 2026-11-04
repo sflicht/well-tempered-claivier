@@ -17,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'tools'))
 from wtclib import Bars, build_score  # noqa: E402
 
-P = Bars(['U', 'L'], (3, 4))
+P = Bars(['U', 'U2', 'L'], (3, 4))   # U2: the R.H.'s lower note in the last bar only
 bar = P.bar
 
 
@@ -105,7 +105,9 @@ bar('36 V7: the CRUX (BWV 849) in dotted eighths, 4-3 then 6-5, the fugue\'s sec
     L=S('G#2 D#3 F#3 D#3 G#2 D#3 F#3 D#3 G#2 B#2 D#3 F#3'))
 bar('37 closing tetrachord over i - iv6 - V7 (6-5 on beat 3)', U='G#5:3 F#5:3 E5:3 D#5:3',
     L=S('C#3 E3 G#3 E3 A2 C#3 F#3 C#3 G#2 B#2 D#3 F#3'))
-bar('38 final tonic', U='C#5:12', L='C#3:6 C#2:6')
+# (Nov 2026, REVIEW-2 P3) the last chord has its third: E4 under the R.H.'s C#5 (U2, engraved on
+# the R.H. staff), which also takes the place of the L.H. seventh F#3 of bar 37 (it falls to E).
+bar('38 final tonic', U='C#5:12', U2='E4:12', L='C#3:6 C#2:6')
 
 
 def dynamics(b):
@@ -128,7 +130,8 @@ if __name__ == '__main__':
             'markers': [{'t': 0, 'label': 'Allegro inquieto'}, {'t': 8 * 3, 'label': 'E major'},
                         {'t': 14 * 3, 'label': 'Development'}, {'t': 18 * 3, 'label': 'Dominant pedal: crux'},
                         {'t': 26 * 3, 'label': 'Return'}, {'t': 33 * 3, 'label': 'Lament bass'}]}
-    build_score(out, meta, [('U', 'R.H.', 'treble', 72), ('L', 'L.H.', 'bass', 64)], P.bars,
+    build_score(out, meta, [('U', 'R.H.', 'treble', 72), ('U2', 'R.H. inner', 'treble', 62),
+                            ('L', 'L.H.', 'bass', 64)], P.bars,
                 dynamics=dynamics, tags=P.tags)
     # velocity shaping only: the crux in the R.H. (bars 19-20 and 36) is brought forward by 6
     import json
@@ -136,5 +139,6 @@ if __name__ == '__main__':
     for e in d['voices'][0]['events']:
         if 18 * 3 <= e['t'] < 20 * 3 or 35 * 3 <= e['t'] < 36 * 3:
             e['v'] = min(118, e['v'] + 6)
+    d['voices'][1]['share_staff'] = 'U'      # the inner note is a second layer on the R.H. staff
     out.write_text(json.dumps(d, indent=1))
     print('bars', len(P))

@@ -200,7 +200,7 @@ sc.put('A', 9, 1, 'R:4 D#4:1 F#4:1 E4:1 G#4:4 A#4:1 B4:4~ B4:4 A#4:4 F#4:4')    
 sc.put('B', 9, 1, 'B1:2 B2:2 G#2:4 E3:2 D#3:2 B2:4 '
                   'F#3:6 E3:1 D#3:1 C#3:4 E3:4 '
                   'D#3:2 C#3:2 B2:4 B2:2 A#2:2 B2:2 G#2:2 '
-                  'E3:2 F#3:2 G#3:2 E3:2 C#3:2 D#3:2 E3:2 C#3:2')
+                  'E3:2 F#3:2 G#3:2 F#3:2 E3:2 D#3:2 C#3:4')
 # soprano: a division over b11-12 (I6 - vi | IV - ii7), then rests before the inversion
 sc.put('S', 11, 1, 'B4:2 C#5:1 D#5:1 F#5:2 E5:2 D#5:2 B4:2 G#4:2 B4:2 '
                    'E5:1 F#5:1 G#5:1 F#5:1 E5:2 B4:2 C#5:2 E5:2 G#4:2 B4:2')
@@ -247,11 +247,11 @@ sc.put('B', 27, 1, key(CSI, 'G#5', 'D4').rsplit(' ', 1)[0] + ' F3:1')           
 sc.put('S', 27, 1, 'F5:6 G5:1 A5:1 Bb5:2 A5:2 G5:2 E5:2 '
                    'G5:4 E5:4 C6:4 Bb5:4~ '
                    'Bb5:4 C6:2 Bb5:2 G5:4 R:4')
-# episode b29-30 (Bb - C7 | F - Dm): tenor and bass in dialogue
+# episode b29-30 (Bb - C7 | F - Dm): the tenor's division over a bass that walks by step
 sc.put('T', 29, 1, 'D4:2 C4:1 Bb3:1 A3:2 Bb3:2 C4:2 Bb3:1 A3:1 G3:2 E3:2 '
                    'F3:2 G3:1 A3:1 C4:2 A3:2 D4:2 C4:1 Bb3:1 A3:2 C4:2')
-sc.put('B', 29, 1, 'Bb2:2 D3:2 F3:2 D3:2 E3:2 C3:2 G2:2 C3:2 '
-                   'A2:2 F2:2 C3:2 F2:2 D2:2 F2:2 E2:2 F2:2')
+sc.put('B', 29, 1, 'Bb2:2 C3:2 D3:4 C3:2 D3:2 E3:2 C3:2 '
+                   'A2:2 G2:2 F2:2 E2:2 D2:2 E2:2 F2:4')
 sc.theme('S', 31, 1, key(INV, 'G#5', 'G5'), "Inversion (B-flat), soprano, at the cantus's re")
 sc.put('T', 31, 1, 'R:4 Eb4:1 C4:1 D4:1 Bb3:4 A3:1 G3:4~ '                      # CSI below, in B-flat
                    'G3:4 A3:4 C4:1 D4:1 Eb4:1 D4:1 C4:1 Bb3:1 A3:1 G3:1')
@@ -293,10 +293,10 @@ sc.put('A', 41, 1, 'A4:2 B4:2 A4:2 F#4:2 G#4:2 A4:2 G#4:2 B4:2 '
                    'A4:2 G#4:2 A4:2 E4:2 F#4:2 G#4:2 A4:2 F#4:2 '
                    'D4:4 C#4:2 D4:2 B3:4 F#4:4 '
                    'C#4:8 R:8')                                                  # rests before its triplets
-sc.put('B', 41, 1, 'D3:4 F#2:2 E2:2 G#2:4 B2:4 '
-                   'C#3:2 D3:2 E3:2 C#3:2 A2:2 B2:2 F#2:2 A2:2 '
+sc.put('B', 41, 1, 'D3:4 F#2:2 E2:6 B2:4 '     # E7 in root position (G#2 doubled the alto's G#4)
+                   'C#3:2 D3:2 E3:2 C#3:2 A2:2 G#2:2 F#2:2 E2:2 '
                    'B2:2 A2:2 B2:2 C#3:2 D3:2 C#3:2 D3:4 '
-                   'A2:4 C#3:2 A2:2 E2:4 R:4')
+                   'A2:2 B2:2 C#3:2 A2:2 E2:4 R:4')
 sc.theme('S', 43, 1, key(INV, 'G#5', 'B5'), "Inversion (D), soprano, at the cantus's re")
 sc.put('T', 43, 1, 'R:4 F#3:4 B3:4 F#3:4 '
                    'A3:4 E3:4 C#3:4 R:4')
@@ -337,9 +337,9 @@ sc.put('T', 51, 1, 'D4:2 C#4:2 B3:4 D4:4 F#3:2 A3:2 '
 sc.put('A', 53, 1, 'D5:2 C#5:2 B4:2 D5:2 C#5:2 B4:2 A4:2 E5:2 '
                    'D5:2 C#5:2 A4:2 B4:2 B4:2 C#5:2 A4:2 B4:2')
 sc.put('B', 53, 1, 'G2:2 A2:2 B2:2 G2:2 E2:2 F#2:2 C#3:4 '
-                   'D3:4 F#3:2 E3:2 B2:2 F#2:2 D#2:4 '
+                   'D3:4 C#3:2 B2:2 F#2:2 E2:2 D#2:4 '
                    'E2:2 F#2:2 G2:2 A2:2 G2:2 F#2:2 B1:4 '
-                   'D2:4 F#2:2 A2:2 D2:4 A1:4')
+                   'D2:4 C#2:2 B1:2 A1:8')
 # b55-56: no second entry here (the only falling region without one); instead the soprano's
 # division turns dotted, Em | D - A, and runs on into the E region.
 sc.put('S', 55, 1, 'B4:3 D5:1 E5:3 F#5:1 G5:3 F#5:1 E5:3 D5:1 '
@@ -384,13 +384,13 @@ sc.put('S', 65, 1, 'B5:6 A#5:2 G#5:4 C#6:4 '
 sc.put('A', 65, 1, 'R:2 G#4:2 F#4:2 D#4:2 E#4:2 G#4:2 E#4:2 C#4:2 '
                    'C#5:4 F#4:4 F#4:4 D#4:4')
 sc.put('T', 65, 1, 'R:4 D#4:4 G#3:8 '
-                   'A#3:2 B3:2 C#4:2 A#3:2 F#3:4 A#3:2 F#3:2')
+                   'A#3:2 B3:2 C#4:2 A#3:2 F#3:2 E#3:2 F#3:4')
 sc.put('B', 65, 1, 'G#2:4 B2:4 C#3:8 '
                    'F#3:2 E#3:2 D#3:2 E#3:2 D#3:2 C#3:2 D#3:4')
 sc.theme('S', 67, 1, key(INV, 'G#5', 'G#5'), "Inversion (B, home), soprano, at the cantus's re")
 
-sc.put('A', 67, 1, 'B3:4 D#4:4 B3:4 D#4:4 '
-                   'A#3:4 C#4:4 C#4:4 E#4:4')
+sc.put('A', 67, 1, 'B3:4 D#4:12 '
+                   'C#4:12 E#4:4')
 sc.put('B', 67, 1, 'G#2:2 A#2:2 B2:2 C#3:2 D#3:2 E3:2 F#3:4 '
                    'F#2:2 G#2:2 A#2:2 B2:2 C#3:8')
 
@@ -420,7 +420,7 @@ sc.put('S', 73, 1, 'R:4 G5:1 Bb5:1 Ab5:1 C6:4 D6:1 Eb6:4~ '                     
 sc.put('T', 73, 1, 'G3:4 Bb3:4 C4:4 Ab3:4 '
                    'F3:4 Ab3:4 F3:4 R:4')
 sc.put('B', 73, 1, 'R:8 Ab2:4 Eb3:4 '
-                   'Bb2:4 D3:8 R:4')
+                   'Bb2:8 R:8')                          # B-flat held (its D3 doubled the CS's D6, the leading tone)
 
 
 # ===================================================================== XII. B-flat (bars 75-78), falling, compressed

@@ -231,7 +231,10 @@ def main():
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'II. Fugue in C minor (a 3)',
         'number': 2, 'movement_number': 2, 'piece_type': 'fugue',
-        'key': 'C', 'mode': 'minor', 'meter': list(METER), 'bpm': 80, 'tempo_map': [[138, 80], [144, 62, 'ramp']],
+        'key': 'C', 'mode': 'minor', 'meter': list(METER), 'bpm': 80,
+        # (Nov 2026, REVIEW-2 F1) a small agogic dip: beat 3 of b29 (V7) slows into the deceptive VI
+        # on 29.4 (quarter = 72), a tempo at the Neapolitan (30.1); final ritardando as before.
+        'tempo_map': [[114, 80], [115, 72, 'ramp'], [116, 80], [138, 80], [144, 62, 'ramp']],
         'tempo_text': 'Allegro moderato',
         'composer': 'Original composition (Claude) for Sam; guest subject J. S. Bach, BWV 847',
         'instrument': 'Keyboard - three voices',

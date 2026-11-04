@@ -2,8 +2,9 @@
 """Fuga sul nastro di Möbius: a fugue a 4 for string quartet, heard by a listener who walks.
 
 An extra outside the cycle.  The four players sit at the corners of a 5 m square in a 10 x 8 m
-room; the listener (metadata.walk, rendered binaurally by tools/render_walk.py) always walks
-up to, and faces, the player who has the subject, and drifts back to the middle in episodes.
+room; the listener (metadata.walk, rendered binaurally by tools/render_walk.py) hears each lap's
+solo opening from the centre of the room, then walks up to, and faces, the player who has the
+subject, and drifts back to the middle in episodes.
 The entries go round the players in order (Vl I, Vl II, Va, Vc), so the entry plan is a loop.
 
   Lap 1 (b1-16)   rectus, normal room: exposition C minor / G minor, episode (circle of fifths),
@@ -181,7 +182,7 @@ def lap1_episode():
     put('Va', 10, 1, 'G4:1 F4:1 Eb4:1 D4:1 C4:1 D4:1 Eb4:1 C4:1 A3:1 Bb3:1 C4:1 D4:1 Eb4:1 D4:1 C4:1 Eb4:1 '
                      'F4:1 Eb4:1 D4:1 C4:1 Bb3:1 C4:1 D4:1 Bb3:1 G3:1 Ab3:1 Bb3:1 C4:1 D4:1 C4:1 Bb3:1 D4:1 '
                      'Eb4:1 D4:1 C4:1 Bb3:1 Ab3:1 Bb3:1 C4:1 Ab3:1 Bb3:1 C4:1 D4:1 Eb4:1 F4:1 Eb4:1 D4:1 F4:1')
-    put('Vl2', 10, 1, 'R:4 Eb5:12 Eb5:4 D5:12 C5:8 Bb4:8')
+    put('Vl2', 10, 1, 'R:4 Eb5:12~ Eb5:4 D5:12 C5:8 Bb4:8')     # the 7th of F7 tied over: 4-3 over B-flat
     put('Vc', 10, 1, 'C3:2 Bb2:2 Ab2:2 G2:2 F2:2 G2:2 A2:4 Bb2:2 A2:2 G2:2 F2:2 Eb2:4 G2:4 '
                      'C3:4 F2:4 Bb2:8')
 
@@ -278,7 +279,7 @@ def finale():
     theme('Vc', 40, 1, oc(S, -2), 'S rectus (Vc)')
     theme('Vl2', 41, 1, SI, 'S inversus (Vl II, diagonal)')
     # free voices
-    put('Vl1', 36, 1, 'G5:4 C6:8 G5:4 D6:4 Eb6:4 G5:4 F5:4 G5:8')      # rest b38.3-4 before its entry
+    put('Vl1', 36, 1, 'G5:4 C6:8 G5:4 D6:4 Eb6:4 G5:4 Ab5:4 G5:8')     # rest b38.3-4 before its entry
     put('Va', 37, 1, 'B3:4 Eb4:4 D4:4 F4:4')
     put('Vl2', 38, 1, 'Eb5:8 F5:4 D5:4 Eb5:4 G4:8 F4:4 G4:8 C5:4 D5:4')
     put('Vc', 39, 1, 'C3:2 D3:2 Eb3:4 G2:4 Ab2:4')

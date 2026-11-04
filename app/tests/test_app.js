@@ -143,6 +143,8 @@ const ok = (name, cond, detail) => { results.push({ name, ok: !!cond, detail });
   await page.click('[data-queue="pair"]');
   await page.click('.player-panel .play-btn');
   await page.waitForFunction(() => !document.getElementById('audio').paused);
+  // over a real network the length is not known the instant playback starts
+  await page.waitForFunction(() => isFinite(document.getElementById('audio').duration), null, { timeout: 30000 });
   await page.evaluate(() => { const a = document.getElementById('audio'); a.currentTime = a.duration - 0.6; });
   const advanced = await page.waitForFunction(() => location.hash === '#/pair/4/fugue' && /fugue\.mp3|^blob:/.test(document.getElementById('audio').src) && !document.getElementById('audio').paused, null, { timeout: 15000 }).then(() => true).catch(() => false);
   ok('play-through: prelude continues into the fugue automatically', advanced, await page.evaluate(() => ({ hash: location.hash, src: document.getElementById('audio').src })));

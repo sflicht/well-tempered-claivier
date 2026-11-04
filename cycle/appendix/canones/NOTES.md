@@ -137,15 +137,17 @@ release, so:
   for the far reader. Ties and beams rotate correctly; the hinge tie is its
   own mirror.
 
-### Critic (tools/critic.py)
+### Critic (critic, 2026-11-04)
 
-parallels_error 0, parallels_weak 0, beat_parallels 0, unresolved 0;
+parallels_error 0, parallels_weak 0, beat_parallels 0, unresolved 0,
+unverified 0, bad_doublings 0, reach_errors 0;
 dissonances: 2 accented passing (b2.2 and b31.2, the same quarter-note passing
 fourth seen from both sides); melody: 1 note ("large leap not recovered",
 b15.3, the comes A2–A3–C♯4 climbing to the hinge); crossings 0; two hands
-throughout. `reduce.py` cannot name two-note sonorities, so the reduction is
-mostly "?" and the "tertian fit 10%" is an artefact of two voices, not a
-finding.
+throughout. Most beats are two-note
+sonorities (the critic now counts them apart, dyad beats 76%), so the
+"tertian fit" figure (30%, of the beats with three or more pitch classes)
+says little about two-voice music.
 
 ### Weak spots (honest)
 
@@ -176,7 +178,8 @@ Ockeghem's Missa prolationum uses mensural ratios. Nancarrow's player-piano
 tempo canons converge on a point. Here the entries are staggered so that
 **every voice attacks M's last note at the same instant**, the *punctum
 convergentiae* at bar 33 (the score's last bar), held there as an equal
-fermata in all voices. Every duration before it is exactly proportional.
+fermata in all voices (each final note carries `"fermata": true`). Every
+duration before it is exactly proportional.
 
 **M begins with the Westminster Quarters** (the Cambridge Quarters, Great St
 Mary's, 1793, traditionally credited to Joseph Jowett with William Crotch, the
@@ -210,20 +213,24 @@ else's earlier material:
   (q. e e e) whose long notes C♯ B G♯ F♯ E C♯ are the bass line of bars 9–20.
   The bass's long notes under each chime entry are chime-compatible (I, vi,
   iii, V). Then come the **bells**: two dominant strikes (B), two tonic
-  strikes (E), a long G♯, a flourish B G♯ F♯, and E.
+  strikes (E), a long G♯, a flourish B G♯ D♯ that falls to the leading tone,
+  and E.
 - In the piece this gives: bass chime alone (1–8); a moving bass under the
   tenor's chime (9–16); the bass continues (17–20) under the alto's chime;
   **dominant pedal B** (21–24), over which the alto's development resolves
   D♯ → E into bar 25. The **tonic arrives in the bass exactly where the
   little clock enters (bar 25)**, and a tonic pedal runs to the end. Over the
   pedal the tenor, alto and soprano reach their own B and E strikes one after
-  another, and the four speeds land on E together.
+  another, and the four speeds land on E together. Because the voices reach
+  the flourish one after another, its D♯ → E sounds four times in stretto:
+  bass b31.5 → b32.1, tenor b32.1 → b32.2.5, alto b32.3 → b32.4, soprano
+  b32.5 → b32.5.5.
 - **The convergence and parallels.** In an octave canon, just before a
   simultaneous convergence every voice holds M's penultimate note in octaves.
   If that note moves to the final one, every pair of voices makes parallel
   octaves (the first full build had exactly these errors). M therefore ends
-  E → E: the voices *land* on E one by one (bass first, soprano last) and
-  then all strike it together.
+  D♯ → E → E: the voices *land* on E one by one (bass first, soprano last),
+  each from its own leading tone, and then all strike it together.
 - **The ratio rule.** A melodic move at distance x from the end in one voice
   sounds at the same moment as a move at distance 2x, 3x, 4x, 3x/2 or 4x/3 in
   another. Identical moves at such distances are therefore parallel octaves.
@@ -245,30 +252,73 @@ else's earlier material:
   I made **seven single-note edits** after reading those reports: in the
   development (C♯4 at the end of the third cell, E4 ending the fourth, A4
   and B4 in the fifth, F♯4 and G♯4 in the sixth) and in the flourish (G♯4
-  for A4). The result is 0 / 0. Flourishes containing the leading tone
-  (A F♯ D♯, B F♯ D♯ and others) were tried; each produced 1–7 unresolved
-  clashes against the E strikes, so the pentatonic flourish stayed.
+  for A4). The result was 0 / 0 under the critic of that time. Flourishes
+  containing the leading tone (A F♯ D♯, B F♯ D♯ and others) produced 1–7
+  unresolved clashes against the E strikes, so a pentatonic flourish
+  (B G♯ F♯) stayed. In the Nov 2026 pass the stricter critic found an
+  unresolved clash at b18.3 and an unverifiable one at b31.5, and I made two
+  more single-note edits: E4 for A4 in the fifth development cell, and D♯4
+  for F♯4 in the flourish. B G♯ D♯ E is the leading-tone flourish the first
+  attempts were after, and it makes no clash against the E strikes.
 - `verify_canones.py` confirms from the JSON that each voice equals M (pitch
   sequence up to whole octaves; durations ×r; no gaps), that all four last
   notes are attacked at quarter 192 and that all end at quarter 198.
 
-### Critic (tools/critic.py)
+### Critic (critic, 2026-11-04)
 
-parallels_error 0, parallels_weak 0, beat_parallels 0; unresolved 1; pedal 22,
-suspension 8, retardation 3, accented passing 15, appoggiatura 15, chord 3,
-"chord (7th not resolved down)" 4 notes (b17.3, b21.6, b26.1, b28.6: passing
-sevenths over the pedals).
+parallels_error 0, parallels_weak 0, beat_parallels 0; unresolved 1 (b19.3);
+unverified 1 (b25.2); bad_doublings 1 (b26.3); crossings 2; reach_errors 2;
+pedal 20, suspension 5 (+1 unprepared), retardation 1 (+1 unprepared),
+accented passing 9, appoggiatura 10, chord 4, "chord (7th not resolved down)"
+8 notes; no melodic findings.
 
+- **Fixed: b18.3** (bass A2 under the alto's G♯4, an unprepared major seventh
+  that the alto left by leap). The fifth development cell now reads
+  E F♯ E B instead of E F♯ A B, so the bass has E2 there (E major under the
+  alto's chime). The same note change also removed an unprepared suspension
+  at b18.3 and the passing seventh at b21.6.
+- **Fixed: b31.5** (bass F♯2 under the tenor's B3, which the critic could not
+  follow to a resolution). The flourish is now B G♯ D♯ E, see above.
 - **The one UNRESOLVED (b19.3), justified.** Bass and tenor share C♯3 in
   unison while the alto has F♯4, a fourth above. The bass resolves it
-  (C♯ → B, the next note of its line). The critic gives the "bass" role to
-  whichever unison voice is listed first; with the score ordered top-down
-  (soprano first) that is the tenor, whose next note leaps, so the critic
-  reports the fourth unresolved. With bass-first ordering the same event is
-  classed as a suspension and the count is 0.
+  (C♯ → B, the next note of its line); the tenor, in unison with it, leaves
+  by leap, and the critic gives the "bass" role to the tenor. The tools
+  agent is fixing the critic's choice between unison bass voices in this
+  pass; the event itself is a fourth resolved by the bass.
+- **b25.2 unverified, declined.** The soprano's first chime, E5 G♯5 F♯5 B4 in
+  eighths: its F♯5 is the Westminster chime's own passing note, on a weak
+  eighth inside the dotted-half beat, against the alto's long E4. The critic
+  cannot verify a resolution because the two voices then exchange the notes
+  (alto E4 → F♯4, soprano → E5 on b25.4). The chime is the quotation and every
+  voice sings it; the alto's E4 is the development's long E, the bass note
+  of bar 17.
+- **b26.3 bad doubling, declined.** E2 B2 under B4 and C♯5: the critic reads
+  C♯m7 over E with its "seventh" B doubled. Over the tonic pedal it is E with
+  an added sixth: the alto's C♯5 falls to B4 on the next beat (6–5), and B is
+  the chord's fifth. Every note is structural (the chime's B, the
+  development's C♯ peak, the bells).
+- **Crossings 2, declined.** b9.5.5 (bass C♯3 above tenor B2) and b26.2.5 (alto
+  C♯5 above soprano B4), 1.5 beats each, by a whole tone. In a canon at the
+  octave a melody that spans more than an octave must overlap the voice an
+  octave above it. M runs from B3 (the chime's low B) to C♯5 (the
+  development's peak), a ninth, and both crossings are exactly these two
+  notes meeting. Changing either breaks the Westminster chime or the bass
+  line of bars 9–20.
+- **"7th not resolved down" (8 notes).** Three are passing sevenths over the
+  pedals (b17.3, b26.1, b28.6). Five are the flourish's D♯ over the tonic
+  pedal (b31.5 twice, b32.1, b32.3 twice): the critic reads D♯ as the major
+  seventh of Emaj7 and expects it to fall, but it is the leading tone and
+  rises to E in every voice.
 - low_register_seconds 9 (bars 9–20 plus b32.1: bass and tenor a second apart
-  around B1–C♯3). keyboard_unplayable 15%: it is a player-piano piece by
-  design (four tempi, four registers).
+  around B1–C♯3).
+- **Keyboard: for player piano or two players, not one pianist.** 25 of 149
+  onsets need more than two hands, and no division between two hands can
+  reach the attacks at b21.1 (B1 E3 C♯5) and b27.1 (E2 E3 B3 C♯6). The canon
+  fixes the voices an octave apart with the bass two octaves below the alto,
+  so these spans cannot be closed. `metadata.instrument` says so: "Player
+  piano or piano four hands (two players)". Primo takes soprano and alto,
+  secondo tenor and bass, one voice per hand, and every attack is reachable.
+  The critic therefore no longer treats the score as solo keyboard.
 
 ### Weak spots (honest)
 
@@ -280,24 +330,55 @@ sevenths over the pedals).
 - **Bars 1–8 are a solo bass** (with ratios 4:3:2:1 the slowest clock is
   necessarily alone for a quarter of the piece). Bars 29–30 move slowly (B
   strikes over E/G♯).
-- **The final approach has no leading tone.** The flourish is pentatonic, like
-  the chime; the structural V–I with D♯ → E is at bars 24–25. Whether the
-  convergence sounds like a goal or only like a coincidence of strikes cannot
-  be judged here.
-- The fermata is written as an equal held note in all voices (the renderer has
-  no fermata sign).
+- **The final approach.** The structural V–I with D♯ → E is at bars 24–25.
+  Since Nov 2026 the flourish also falls to the leading tone, so each voice
+  reaches the final E from D♯, one after another, over the tonic pedal.
+  Whether the convergence sounds like a goal or only like a coincidence of
+  strikes cannot be judged here. The bass's D♯2 lasts two beats under the
+  soprano's E5 (b31.5–6), a semitone clash three octaves wide: the harshest
+  moment of the piece.
+- The fermata is an equal held note in all voices, and each final note now
+  carries `"fermata": true` for the engraving (`tempo_canon.mark_fermata`).
 
 ---
 
 ## Notes for the tools (not edited; outside this folder)
 
 - `critic.check_dissonance`: when two voices share the lowest pitch, the
-  "bass" role goes to whichever voice is listed first, so classification
-  (suspension vs UNRESOLVED) can depend on voice order (canon II, b19.3).
-- `critic.check_crossing` assumes the voices are listed top-down. A bass-first
-  score reports hundreds of beats of false crossings.
+  "bass" role goes to one of them regardless of which resolves, so the
+  classification (suspension vs UNRESOLVED) can depend on voice order (canon
+  II, b19.3). Being fixed by the tools agent (Nov 2026).
+- `critic.check_crossing` once assumed the voices were listed top-down; it now
+  orders voices by mean pitch (fixed).
 - `chords.chord_candidates` needs three pitch classes, so in two-voice music
   every dissonance falls through to the suspension/passing logic, and
-  `reduce.py` prints "?" for most dyads.
-- `render_music.py` has no fermata. Also, the voice names are not wrapped: long
-  `name`s are clipped at the left margin of the PDF.
+  `reduce.py` printed "?" for most dyads. The tools agent is adding two-voice
+  chord naming (Nov 2026); the critic now reports dyad beats separately.
+- `render_music.py` had no fermata; the tools agent is adding engraving for the
+  event field `"fermata": true`, which canon II now sets. Also, the voice names
+  are not wrapped: long `name`s are clipped at the left margin of the PDF.
+
+---
+
+## Self-critique pass (Nov 2026)
+
+Canon II (tempo canon) was checked against the critic after its fix of
+09df800, which also follows each dissonance to its resolution and checks hand
+reach. Any change to M sounds in all four voices, so each edit was tried in
+all four and `verify_canones.py` still passes.
+
+- **Fixed:** the unprepared, unresolved seventh at b18.3 (M's fifth cell:
+  A4 → E4) and the unverifiable dissonance at b31.5 (flourish F♯4 → D♯4). The
+  second edit also answers the old weak spot "no leading tone": each voice now
+  reaches the final E from D♯, in stretto.
+- **Fixed:** the final notes carry `"fermata": true` (set by
+  `tempo_canon.mark_fermata` after the build), ready for the engraving support
+  the tools agent is adding.
+- **Declined, with reasons in the Critic section:** b25.2 (the quoted chime's
+  passing F♯, exchanged with the alto), the b26.3 doubling (E with an added
+  sixth, B is the fifth), the two crossings (a ninth-wide melody in an octave
+  canon) and the two unreachable attacks (the piece is for player piano or two
+  players; `metadata.instrument` now says so).
+- **Left to the tools agent:** b19.3 (the critic's choice between unison bass
+  voices) and two-voice chord naming, which mostly concerns canon I.
+- Canon I (table canon) needed nothing: its critic figures are unchanged.

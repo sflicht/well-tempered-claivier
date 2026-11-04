@@ -726,7 +726,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/appendix/canones/tempo-canon.json",
-  "source_sha256": "59072b80cf6fb1bc651c758f4348520c94dc2f7bf4a2cbd4c39f41f3e88975cd",
+  "source_sha256": "60e4578d090a1a35a3b5519bbb7d5c682333c5872474f2ab8b1f3f6861dd94bd",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

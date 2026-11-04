@@ -47,12 +47,13 @@ There is one player throughout: the right hand takes the aria and the upper Pres
 7. **P2: the Presto canon's clashes (applied as proposed).** The left hand plays 8 softer in b28–30.1, as an echo canon. I kept the notes: as the reviewer found, other canon distances are no cleaner, because the clashes come from the motive's own neighbour notes.
 8. **P3: b2.3 and b30–34.** Accepted as they are, as the reviewer suggested.
 
-**Prelude critic numbers** (re-run, unchanged): parallels_error / weak 0 / 0; beat_parallels 0; dissonance_unresolved 0; pc_tripled_on_beats_pct 1.6; bad_doublings 0; low_register_seconds 0; stepwise_pct 51.9 (keyboard figuration); mean_moving_voices 2.46 (of 3); crossings 0; keyboard-unplayable 0 %.
+**Prelude critic numbers** (critic, 4 Nov 2026): parallels_error / weak 0 / 0; beat_parallels 0; dissonance_unresolved 2 (b21.1 and b27.1, the downbeats of the hand-exchanged Presto statements; kept on purpose, see "Review response (Nov 2026)"); pc_tripled_on_beats_pct 1.6; bad_doublings 0; low_register_seconds 0; stepwise_pct 51.9 (keyboard figuration); mean_moving_voices 2.46 (of 3); crossings 0; keyboard-unplayable 0 %.
 
 **Prelude weak spots.**
 - The Presto canon (b28–29) and the pedal bars give non-tertian verticals in `reduce.py`. They are linear, and clean by the critic.
 - The Prelude runs about 1′50″, against the ~2′ asked for.
-- Stepwise motion is 52.6 %, because the Presto is arpeggiated figuration.
+- Stepwise motion is 51.9 %, because the Presto is arpeggiated figuration.
+- Two downbeats (b21.1, b27.1) are counted as unresolved by the critic. They are the tonic 6/4 of the hand-exchanged Presto statements, arpeggiated within a sixteenth, and are kept (see "Review response (Nov 2026)").
 
 ---
 
@@ -94,7 +95,7 @@ The dramaturgy is a dialogue that becomes agreement: the choirs first sing separ
 - **Augmentation** (`scale_rhythm` ×2, b24.4): the subject at the chorale's speed. In 12/8 its quarter-note groups (E F♯ G, B A G, F♯ E D♯) run two against the dotted-quarter beat, a hemiola under the chorale.
 - **Diminution** (×½, written out): the subject's head ("Sehet!") and the inversion's head ("Wen?", "Was?", "Wohin?") in sixteenths, in the episode (b15.3–17.2) and the second dialogue (b29–30).
 - **Countersubject** (Coro I, b3.1–5.1, against the inversion): sixteenths against the answer's eighths and quarters. It opens with the head of **Bach's BWV 855 subject** (E G B E D♯ E), a nod to the two-voice fugue this one is "plus one" of.
-- **Natural-minor and altered statements:** the subject under line 1 and in the Recognition ends on D natural (against the chorale's D); the B-minor inversion in the Recognition has A natural (against the chorale's D); the final inversion keeps its head strict (B B C B A G E F♯), but its second half is re-voiced to fill the thirds the two forms leave open, and its tail turns down (… A3 G3 F♯3) to the dominant (8/16 intervals; see Review).
+- **Natural-minor and altered statements:** the subject under line 1 and in the Recognition ends on D natural (against the chorale's D); the B-minor inversion in the Recognition has A natural (against the chorale's D); the final subject (Coro I, b45.3) takes D natural as its lower neighbour (E E D E) against the chorale's held D6, so it scores 14/16 intervals, while its cadential leading tone D♯ (47.3) stays; the final inversion keeps its head strict (B B C B A G E F♯), but its second half is re-voiced to fill the thirds the two forms leave open, and its tail turns down (… A3 G3 F♯3) to the dominant (8/16 intervals; see Review).
 
 ### Section map
 
@@ -127,7 +128,7 @@ Bar.beat in dotted quarters (b45.3 = third dotted quarter of bar 45).
 5. **Augmentation** under line 4 (Coro II, b24.4–28.3) and **diminution** in the episode and the second dialogue.
 6. **Final stretto** (b45.1/45.3) with only two voices under the chorale; both entries come after a rest, the inversion in the tenor register (B3), the subject in the alto (E4).
 
-### Critic numbers (final)
+### Critic numbers (critic, 4 Nov 2026)
 
 | | Fugue | Target |
 |---|---|---|
@@ -143,7 +144,7 @@ Bar.beat in dotted quarters (b45.3 = third dotted quarter of bar 45).
 | **keyboard_unplayable_pct** | **0.0** (0 of 670 onsets) | < 5 |
 | **mean_moving_voices** | **2.55** (of 3); 29 of 49 bars with all three moving | — |
 | tertian_fit_pct | 37.6 | — |
-| melody notes | 3 leaps larger than an octave, each across a rest (21.2, 43.1 ×2) | — |
+| melody notes | 3 leaps larger than an octave, each across a rest (21.2, 43.1 ×2); 6 leaps of a sixth or more not turned back by step (b8.4, b21.2½ ×2, b29.1, b29.4, b36.4), at a choir's entry or question or in Coro II's bass line | — |
 
 Moving voices by section: exposition 1.5; dialogue 1 2.0; line 1 3.0; line 2 3.0; episode 2.0; Recognition 3.0; line 4 2.7; dialogue 2 2.0; line 5 2.8; line 6 3.0; dominant pedal 2.0; line 7 3.0; coda 2.0 (three sounding). The full texture is kept for the chorale lines; every episode and dialogue is in two voices.
 
@@ -166,7 +167,7 @@ Moving voices by section: exposition 1.5; dialogue 1 2.0; line 1 3.0; line 2 3.0
 5. **Coro I is busy.** It has 363 sixteenths and runs almost continuously under lines 1 (second half), 2 and 4 and in the dominant pedal; since the third review it holds one beat over each of Coro II's entries below it (12.2, 24.4). The risk of étude-like figuration remains.
 6. **Long two-voice opening.** The exposition has two entries (as BWV 855 does), and the chorale enters only at b8, after about 28 s of two-voice music.
 7. **Tonal range.** E minor, B minor and G major, with A minor and C major only touched (b43, b48); there is no real subdominant key area.
-8. **Modal and altered statements.** The G-major forms and the subject on B score 9–10/16 intervals as transfers; four statements have natural or altered tails (b8, b19, b21.2), and the final inversion's second half is re-voiced (b46).
+8. **Modal and altered statements.** The G-major forms and the subject on B score 9–10/16 intervals as transfers; four statements have natural or altered tails (b8, b19, b21.2); the final subject (b45.3) has a D♮ neighbour against the chorale's D6 (14/16); and the final inversion's second half is re-voiced (b46, 8/16).
 9. **Spatial render.** With `--program 53` (Voice Oohs) the sixteenths may blur; I cannot judge from the files whether the front-centre chorale balances the two side choirs.
 10. **Unheard.** Balance, whether the chorale reads as a cantus firmus above the sixteenths, whether the questions sound like questions, and the general pauses (b18.4, b42.4) are for Sam's ears.
 
@@ -212,3 +213,11 @@ Critic after the changes: parallels 0 / 0, beat parallels 0, unresolved 0, bad d
 - Changing either note would break the counter-line's leading-tone resolution or the motive's skeleton.
 
 **Not done.** The review's other point for X is a listening question: does the inversion-plus-chorale combination keep both arguments recognisable? I made no change for it.
+
+## Self-critique pass (Nov 2026)
+
+No notes were changed. This pass corrected stale prose.
+- **Fixed: the Prelude's critic line** said "unresolved 0". The current critic counts 2, at b21.1 and b27.1. These are the tonic 6/4 downbeats of the hand-exchanged Presto statements, kept on purpose for the reasons given in the review response. The line and the Prelude weak spots now say so.
+- **Fixed: the Prelude's stepwise figure.** The weak spot gave 52.6 % and the critic line 51.9 %. The critic gives 51.9 %, and both now say so.
+- **Fixed: the final stretto's subject (b45.3).** Since the review response it takes D♮ as its lower neighbour against the chorale's D6 and scores 14/16 intervals. Material and weak spot 8 now list it with the other altered statements.
+- **Refreshed: the Fugue's critic table** (critic, 4 Nov 2026). The current critic adds six notes for large leaps not recovered by step. All six are at a choir's entry or question, or in Coro II's bass line, and none is an error.

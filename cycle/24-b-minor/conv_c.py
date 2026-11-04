@@ -63,7 +63,7 @@ def part_c(sc, b0, close=True):
     #      the resting ones re-enter on the arrival (c11)
     P('Br2', c(11), 1, "F#3:16")
     P('Br5', c(10), 1, "B3:4 A3:4 R:8")
-    P('B1', c(9), 1, "R:4 C3:8 D3:4~")
+    P('B1', c(9), 1, "R:4 E3:8 D3:4~")            # E (C/G, then E7) after the D# of c8: was C3, an augmented 2nd
     P('B1', c(10), 1, "D3:8 C#3:8")
     P('B1', c(11), 1, "D#3:16")
     P('B2', c(10), 3, "E3:8")

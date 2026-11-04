@@ -65,6 +65,12 @@ GUESTS = {
           'Fugue V in D major (cycle/05-d-major), subject'),
     'VIII': ("Eb4:4 Bb4:4 Cb5:3 Bb4:1 Ab4:2 Gb4:2 F4:2 D4:2 Eb4:4",
              'Fugue VIII in E-flat minor (cycle/08-e-flat-minor), subject (head = BWV 853)'),
+    # Not from this edition: the head of Bach's own twelve-tone B-minor subject, the last fugue of
+    # WTC I, exactly as in cycle/reference/bach-subjects.md (checked against the Humdrum kern
+    # encoding and the Mutopia MIDI; Prelude XXIV quotes the same head in bar 47).  In Bach it
+    # starts after an eighth rest.
+    '869': ("F#4:2 D4:2 B3:2 G4:2 F#4:2 B4:2 A#4:2 E4:2 D#4:2 C5:2 B4:2",
+            'J. S. Bach, WTC I/24, fugue in B minor BWV 869, head of the subject'),
 }
 
 

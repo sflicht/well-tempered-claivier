@@ -783,6 +783,7 @@
         <type>half</type>
         <notations>
           <tied type="stop" />
+          <fermata type="upright" />
         </notations>
       </note>
       <barline location="right">
@@ -1222,6 +1223,7 @@
         <type>half</type>
         <notations>
           <tied type="stop" />
+          <fermata type="upright" />
         </notations>
       </note>
       <barline location="right">
@@ -2534,6 +2536,7 @@
         <type>half</type>
         <notations>
           <tied type="stop" />
+          <fermata type="upright" />
         </notations>
       </note>
       <barline location="right">

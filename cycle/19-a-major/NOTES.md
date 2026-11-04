@@ -109,7 +109,7 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
 - **Quoted in the prelude.** Bars 1–3 of both hands, at pitch (q71–84). This is unchanged.
 - **The subject.** Its head is the bourrée's first seven notes; the rest of the subject, and everything else, is mine.
 
-### Critic (`tools/critic.py`), fugue
+### Critic (`tools/critic.py`), fugue (critic, 4 Nov 2026)
 
 | Measure | Result | Target |
 |---|---|---|
@@ -130,9 +130,10 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
 - **Moving voices per bar, by section:** exposition 2.4 (1 → 4), quick duet 2.5, slow duet 2.4, trio 2.75, ball 4.0 (all nine bars), coda 3.5.
 - **Stepwise motion by voice:** allemande 75.4%, sarabande 58.7%, gigue 54.3%, courante 46.9%.
 - **The critic's notes.** There are five "7th not resolved down". All are sevenths that move on by a third or reach their resolution after a passing note:
+  - q35: the allemande's A4 over the courante's D♯3 (a rootless B7, the dominant of E), which turns up to B4 before falling to G♯4 at the half close (q36);
   - q46: the gigue's E4 under the sarabande's F♯5 over A (F♯m7/A), on the way to the cadence in E;
-  - q125 and q143: D in the allemande over the dominant;
-  - q154: D in the tenor, which reaches C♯ at q156.
+  - q125: D in the allemande over the dominant;
+  - q154 (counted twice, against the courante's E3 and the sarabande's G♯5): D in the tenor, which reaches C♯ at q156.
 - **Dissonances the critic classes as appoggiaturas or accented passing notes.** The two clearest are:
   - the race at q148, where the allemande's G♯5 sounds over the gigue's A3 and the bass D3 before falling to F♯;
   - the sarabande's suspended A5 over E at q153.
@@ -200,11 +201,11 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
 
 | Measure | Twenty-voice version | Now |
 |---|---|---|
-| stepwise_pct | 50.4% | 63.0% |
+| stepwise_pct | 50.4% | 63.2% |
 | dissonance_unresolved | 11 | 0 |
 | beat_parallels | 3 | 0 |
 | low_register_seconds | 16 | 0 |
-| keyboard_unplayable_pct | 48.4% | 1.9% |
+| keyboard_unplayable_pct | 48.4% | 1.2% |
 | mean_moving_voices | 7.21 | 2.91 |
 | length | 4:05 | 2:42 |
 
@@ -217,11 +218,11 @@ All four voices dance from q120 to q156; each statement enters after a rest in i
 | 2 | The convergence is four chords; two dancers never dance the bourrée | Rewritten. The sarabande takes up Bach's tune at q165½ and the gigue at q169½ in straight eighths. All four enter the bourrée in the exposition's order, and the coda grows by four quarters (q156–180). Bach's right hand is now quoted to bar 4, because his bar 5 (with G♮) would clash with the sarabande's entry. |
 | 3 | The courante starts the ball without courante rhythm | Applied the tested fix: `A2:6 B2:2 C#3:6 D3:2 E3:8` (q120–126). I also changed the tenor at q122–124 (A3 B3 \| C♯4 B3), because its F♯3 now sat as a fourth over the courante's C♯3. |
 | 4 | Long two-voice middle; short ball | The gigue now slips in at q93, under the second half of the sarabande's subject in D (three voices from q93 instead of q99). I did not lengthen the ball. Its length is set by the sarabande's 19-quarter subject, the courante's entry nine quarters behind it, and the race. A further wave of statements would need a new combination, and the searches found none clean in these metres; a second dominant preparation would repeat the trio's. I spent the extra time on the convergence instead, which is now four quarters longer and has all four voices dancing. |
-| 5 | Stepwise 63% | Left, as the review advises (63.0% now). |
+| 5 | Stepwise 63% | Left, as the review advises (63.2% now). |
 
 **Must not be touched.** The exposition (q0–48) and the ball's last six quarters (q150–156) are unchanged.
 
-**Critic after the changes.** No new faults: parallels 0/0, beat parallels 0, unresolved 0, bad doublings 0, low-register seconds 0. Keyboard is down to 1.9%. The tripling figure rose to 8.1%, mostly from the held final chord.
+**Critic after the changes.** No new faults: parallels 0/0, beat parallels 0, unresolved 0, bad doublings 0, low-register seconds 0. Keyboard came down to 1.9% (1.2% since the November fixes, see "Review response"). The tripling figure rose to 8.1%, mostly from the held final chord.
 
 ## Notation: per-staff time signatures
 
@@ -255,7 +256,7 @@ Then two duets in two metres at once, the staves notated separately:
 
 Finally the tune itself: Bach's bourrée, bars 1–3, both hands at pitch, and a IV–V–I close. The prelude gives away the source that the fugue keeps until its coda. That is deliberate: the prelude is the lesson, the fugue the ball.
 
-**Critic, prelude** (22 bars, 3 voices):
+**Critic, prelude** (22 bars, 3 voices; critic, 4 Nov 2026):
 
 | Measure | Result |
 |---|---|
@@ -291,4 +292,8 @@ or metre, and no subject or quoted note changes.
 
 Critic before → after: reach_errors 2 → 0; keyboard_unplayable_pct 1.9 → 1.2; unresolved 0 → 0; unverified
 0 → 0; parallels 0/0, beat-to-beat 0, bad doublings 0, low-register 0, crossings 0; no melody flags; stepwise
-63.0 → 63.2 %. The prelude and the string render script are unchanged. Renders not yet redone.
+63.0 → 63.2 %. The prelude and the string render script are unchanged.
+
+## Self-critique pass (Nov 2026)
+
+*4 November 2026.* No note changed. The audit of open self-critique points found only stale prose here, now corrected in place: "The numbers" (stepwise 63.2%, keyboard 1.2%, the values since the November fixes), the review table's stepwise figure, the keyboard figure after the review changes, and the sentence saying the renders had not been redone (they were redone in commit 863aa97). The critic tables are refreshed: the corrected critic now also reads the courante's D♯ at q35 as a rootless dominant seventh, so the allemande's A4 there (turning up to B4 before it falls to G♯4) is listed among the "7th not resolved down" notes, and q143 no longer is; the count is still five. Stepwise motion stays under the 65% target, as the review advised: the courante is a harmonic bass and the gigue's figures are long–short chord figures, which is what makes them those dances.

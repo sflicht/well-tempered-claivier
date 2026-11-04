@@ -190,12 +190,16 @@ put('A', at(29), "C#5:6 E#5:6 A#4:6 F#5:6 E#5:4")
 put('B', at(29), "A#2:6 E#2:6 B#2:6 G#2:6")
 
 # Episode* (30-31), mirror of Episode 1: the soprano stamps the head up the circle of
-# fifths (C# G#7 D#m A#7), alternately inverted (falling) and rectus (rising); the
-# tenor's rising runs grow out of the inversus' last note.
+# fifths (C# G#7 | D#m A#7), alternately inverted (falling) and rectus (rising); the
+# tenor's rising runs grow out of the inversus' last note.  (Nov 2026, REVIEW-2 F4) In
+# bar 31 the two exchange parts, so the second bar answers instead of repeating: the
+# tenor takes the stamps (F#4 D#4 C##4 E#4), and the soprano sings the tenor's rising
+# run an octave up to A#5, then the subject's hop (high note, silent eighth) and the
+# octave drop to A#4, where its countersubject in F# begins.
 put('S', at(30), "G#5:4 G#5:2 E#5:4 E#5:2 D#5:4 D#5:2 F#5:4 F#5:2 "
-                 "F#5:4 F#5:2 D#5:4 D#5:2 C##5:4 C##5:2 E#5:4 E#5:2")
+                 "A#4:2 B#4:2 C#5:2 D#5:6 E#5:2 F##5:2 G#5:2 A#5:4 R:2")
 put('T', at(30), "G#3:2 A#3:2 B#3:2 C#4:6 D#4:2 E#4:2 F#4:2 G#4:4 F#4:2 "
-                 "A#3:2 B#3:2 C#4:2 D#4:6 E#4:2 F##4:2 G#4:2 A#4:6")
+                 "F#4:4 F#4:2 D#4:4 D#4:2 C##4:4 C##4:2 E#4:4 E#4:2")
 put('B', at(30), "C#3:6 E#3:6 G#3:6 B#2:6 D#3:6 F#3:6 A#3:6 C##3:4 A#2:2")
 
 # Stretto rectus + real inversus (32-34): rectus in F# (alto), its real mirror -- which

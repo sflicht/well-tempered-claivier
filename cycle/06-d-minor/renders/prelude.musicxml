@@ -167,7 +167,7 @@
     <measure number="2">
       <direction placement="above">
         <direction-type>
-          <words enclosure="rectangle">an octave lower</words>
+          <words enclosure="rectangle">an octave lower, shortened as in BWV 565 (A-G-A, E F C# D)</words>
         </direction-type>
       </direction>
       <direction placement="above">
@@ -229,35 +229,19 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
+        <duration>120</duration>
+        <type>16th</type>
       </note>
       <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
+        <duration>120</duration>
+        <type>16th</type>
       </note>
       <note>
         <pitch>
@@ -3486,35 +3470,19 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>E</step>
           <octave>3</octave>
         </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
+        <duration>120</duration>
+        <type>16th</type>
       </note>
       <note>
         <pitch>
           <step>F</step>
           <octave>3</octave>
         </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <octave>3</octave>
-        </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <octave>3</octave>
-        </pitch>
-        <duration>60</duration>
-        <type>32nd</type>
+        <duration>120</duration>
+        <type>16th</type>
       </note>
       <note>
         <pitch>

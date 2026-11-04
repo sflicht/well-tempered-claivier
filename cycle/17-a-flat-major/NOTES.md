@@ -20,7 +20,7 @@
 | 15-18 | 1:08 | **Verse 4.** The V7 does not resolve: the bass stays on E♭ under I6/4, and the last verse is sung over that dominant pedal, softer. The cradle climbs a little and the second voice drops out. |
 | 19 | 1:30 | The hands resolve to A-flat (C4 E♭4 A♭4). The bass never comes; only the father, at the end of the fugue, supplies it. |
 
-**Critic (prelude.json).**
+**Critic (critic, 2026-11-04, prelude.json).**
 - parallels_error 0 / weak 0, beat_parallels 0, bad_doublings 0, low_register_seconds 0, crossings 0.
 - dissonance_unresolved 2: the fourth of the cadential six-four (A♭3) inside the rocking figure in bars 6 and 10. It reaches G3 at the change to V, but only after a rocking C4, so the critic does not count it as resolved.
 - keyboard_unplayable_pct 0.0, mean_moving_voices 3.0.
@@ -30,7 +30,7 @@
 **Weak spots.**
 - The cradle figure is mostly one rhythm (a quarter and an eighth per beat). Since the review it ripples in even eighths at a few points (bars 8, 11, 12) and slows to held beats in bars 16-18, but it is still a lullaby's single pattern.
 - Verses 1, 2 and 4 use the same tune at the same pitch; only the harmony under it, the second voice and the dominant pedal change.
-- The final chord has no bass by design. On paper it is a bar of three notes under a long hold in the tempo map; the marker text says so, but there is no fermata sign.
+- The final chord has no bass by design. On paper it is a bar of three notes under a long hold in the tempo map; since Nov 2026 each of the three notes carries a fermata in the score data, and the marker text says why the bass is missing.
 
 ## Fugue XVII: "Fuga, fuggendo la cadenza" (four children and their father)
 
@@ -85,7 +85,7 @@ Times come from the tempo map. "Moving" is the critic's count of voices that mov
 | 17 | 1:06 | **A-flat minor: home, but minor.** Everyone stops except the bass, who sings the head alone, pianissimo. Evasion 8: E♭7 → F♭. | 1-2 |
 | 18-22 | 1:11 | **The dream.** F-flat = E major, slower, pianissimo. Soprano: the subject in augmentation (E5-E6, bars 19-22). Tenor: the subject at its own speed beneath it (bars 19-20). Then a dominant pedal, and evasion 9: B7 → c♯. | 3-4 |
 | 23-24 | 1:38 | **The way home.** c♯ = d♭, iv of A-flat. Chromatic bass D♭-D-E♭; C♭ → C turns minor into major. Cadential 6/4 and the soprano's longest trill. | 4 |
-| 25-26 | 1:47 | **Evasion 10, the guest.** At the cadence soprano, alto and bass stop. The tenor's leading tone rises alone to A♭3, which is the first note of Bach's BWV 862, at pitch; the bass answers with Bach's answer. Bach's own V7 → I (bar 26, beat 3) is turned to vi. The soprano lands her trill, a bar late, on A♭5. | 1-3 |
+| 25-26 | 1:47 | **Evasion 10, the guest.** At the cadence soprano, alto and bass stop. The tenor's leading tone rises alone to A♭3, which is the first note of Bach's BWV 862, at pitch; the bass answers with Bach's answer. At bar 26, beat 3, where Bach's cadence would reach the tonic, the bass steps to F3 under the tenor's held G4, which falls to F4: a two-voice 9-8 onto an octave, implying vi without sounding it as a chord (the evasion you hear is the stop and the guest). The soprano lands her trill, a bar late, on A♭5. | 1-3 |
 | 27-30 | 1:56 | **At home: evasion 11, the trill that will not stop.** Soprano subject in A-flat. Its *re* becomes a trill that lasts five beats while the others call (falling thirds) and the bass knocks. When it lets go, the tonic arrives with G♭ in the bass (V → V4/2 of IV). | 4 |
 | 30-32 | 2:08 | **Evasion 12, the trap door.** ii6/5 - V7 → ♭VI: the bass falls a seventh (E♭3 → F♭2), subito pianissimo. A German sixth climbs back to 6/4 - V7. | 4 |
 | 32-36 | 2:16 | **Evasion 13, the echo, and the stretto.** The V7 of bar 32 is forte. After a small breath it comes back on the next downbeat as an echo, pianissimo, all four children re-striking it. Under the echo the bass starts the subject on E-flat, and the stretto grows out of the whisper. Alto (E♭4), tenor (B♭2) and soprano (B♭4) follow every half bar. ii6/5 - I6/4 - V7, then **evasion 14**: all four stop on E♭7 with D♭5 on top (held, about 3.5 s), then silence (about 3.75 s). | 2-4 |
@@ -119,7 +119,7 @@ Devices:
   - I chose the order after a first version (tenor second, alto third) crossed the tenor above the alto.
 - **The guest** (bars 25-26). Alone in the tenor for a bar, at Bach's pitch, then with Bach's bass answer.
 
-### Critic (tools/critic.py on fugue.json)
+### Critic (critic, 2026-11-04, on fugue.json)
 
 | Measure | Value | Target |
 |---|---|---|
@@ -136,7 +136,7 @@ Devices:
 | dissonance_unverified | 1 (b20.2.5, check by ear) | - |
 | mean_moving_voices | 3.66 | - |
 | pc_tripled_on_beats_pct | 4.2 | - |
-| tertian_fit_pct | 58.9 | - |
+| tertian_fit_pct | 71.6 (of beats with three or more pitch classes; 19.4 % of beats are two-voice) | - |
 | longest static harmony | 4 beats (the final chord) | - |
 
 **Details behind the numbers.**
@@ -168,11 +168,11 @@ Devices:
   - The alto's inversion over the father (bars 37-39) and the tenor's "*do* at last" in the coda (bar 43) are inner voices, under a soprano line.
   - Their audibility rests on the entry velocity boost and on the soprano moving in longer notes there.
   - I have not verified this by ear.
-- **The fermatas are text, not signs.** The renderer cannot engrave a fermata, so bar 36 carries two boxed marks over the chord and over the rest ("Fermata: hold the chord", "Fermata on the rest: silence"); the timings are in the tempo map.
+- **The fermata on the rest is text.** Since Nov 2026 the four notes of the hanging chord (b36.3) carry a fermata in the score data (`"fermata": true`, which the renderer engraves), and the boxed text over the chord gives only its length (about 3.5 s). A rest is not an event in the score, so the silence after it keeps its boxed text ("Fermata on the rest: silence, about 4 s"); the timings are in the tempo map.
 - **Static alto.** In bars 7-8 the alto sits on E♭4 for most of two bars while the bass has the answer.
 - **Ranges.**
   - The dream's augmentation reaches E6.
-  - The tenor is notated in the bass clef up to C5 (many ledger lines).
+  - The tenor (A♭2-C5, mostly A♭3-C4) is notated in the treble clef with an 8 below since Nov 2026 (it was in the bass clef, with many ledger lines up to C5).
   - The father's line lies in octave 1-2 (A♭1-A♭2). It may be muddy on some pianos.
 - **Spelling at the enharmonic turns.** The dream is spelled in E major (sharps) between flat-key bars 17 and 23, so the score switches spelling abruptly at bar 18 and again at bar 23.
 - **The guest is re-barred on paper.** Bach's eighths in 4/4 are notated in 12/8 groups of three. The pitches, durations and vertical intervals are Bach's. Since the review the render no longer gives tenor and bass 12/8 accents in bars 25-26, so his even eighths are not regrouped by the performance data.
@@ -204,7 +204,7 @@ The review ranks this pair the best of its batch. I agreed with all five of its 
 |---|---|---|
 | 1 | The cadential trills at b24 and b41 were sixteenths: 3.6 notes/s at the father's cadence, a wobble | Both are now written-out thirty-seconds, same length and same close (A♭5 B♭5). About 7 notes/s at b41 and 10-11 notes/s at b24. The gag's sixteenth trills (bars 9-16) and the plodding stuck trill (bars 28-29) are kept, as the review advised. |
 | 2 | The 12/8 velocity accents re-barred Bach's guest | `accents()` now skips tenor and bass in bars 25-26 (performance data only). |
-| 3 | The fermata and the silence were only in the tempo map | Boxed text marks in the score at 36.3 ("Fermata: hold the chord, about 3.5 s") and 36.4 ("Fermata on the rest: silence, about 4 s"). The renderer cannot print a fermata sign. |
+| 3 | The fermata and the silence were only in the tempo map | Boxed text marks in the score at 36.3 and 36.4 ("Fermata on the rest: silence, about 4 s"). Since Nov 2026 the chord's four notes carry real fermatas (`"fermata": true`) and the mark at 36.3 gives only the length ("The chord held, about 3.5 s"). |
 | 4 | Evasion 13 sounded like the stretto starting | It is now an echo. The V7 of bar 32 beats 3-4 is forte; the tempo breathes into bar 33; the same V7 is struck again pianissimo on the downbeat of bar 33, now complete with the tenor's G3. The stretto starts under it from pianissimo (bar dynamics 33: −11, 34: −3, 35: +3, 36: +8). No pitches changed except the tenor's added G3, which is a repeated note before its rest and entry. |
 | 5 | The prelude's rocking rhythm was identical in every bar | Even-eighth ripples on single beats in bars 8, 11 and 12. In verse 4 the cradle slows to held dotted quarters on alternate beats (bars 16-18), so the lullaby audibly falls asleep before the bassless chord. In bar 18 the six-four's A♭3 now falls to G3 by step. |
 
@@ -275,4 +275,25 @@ and the right hand nothing more than a tenth below the soprano.
 
 Critic before → after: reach_errors 4 → 0; keyboard_unplayable_pct 3.8 → 1.4; unresolved 1 → 1 (Bach's
 ninth); unverified 1 → 1; parallels 0/0, beat-to-beat 0, bad doublings 0, low-register 3 (unchanged);
-melody flags unchanged; stepwise 68.7 → 68.4 %. The prelude is unchanged. Renders not yet redone.
+melody flags unchanged; stepwise 68.7 → 68.4 %. The prelude is unchanged.
+
+## Self-critique pass (Nov 2026)
+
+4 November 2026. No pitch or rhythm changed in either movement; the critic numbers above are unchanged.
+
+- **Evasion 10 described as it is written.** The section map said Bach's V7 → I at b26.3 "is turned to
+  vi". Only bass and tenor sound there: the bass steps to F3 under the tenor's held G4, which falls to
+  F4, a two-voice 9-8 onto an octave. It implies vi but does not sound it as a chord. I considered
+  holding the soprano's landing A♭5 over it, which would make a real F-minor chord, but the A♭ would
+  then sound against Bach's V first, and the review is right that the evasion one hears is the stop and
+  the guest. So the description changed (section map and the `guest()` docstring), not the score.
+- **Fermatas as signs.** The four notes of the hanging chord (b36.3: E♭2, G3, E♭4, D♭5) and the three
+  notes of the prelude's bassless last chord (b19) now carry `"fermata": true`, set after the build in
+  each `.py`. The boxed text over the fugue's chord now says only how long it is held ("The chord held,
+  about 3.5 s"). The silence after it keeps its text ("Fermata on the rest: silence, about 4 s"): a rest
+  is not an event in the score, so it cannot carry the sign.
+- **The tenor's clef.** The tenor (A♭2-C5, mostly A♭3-C4) is now notated in the treble clef with an 8
+  below (`"clef": "treble_8"`) instead of the bass clef, which needed four or five ledger lines above
+  the staff for its highest notes.
+- **Stale prose.** "Renders not yet redone" is removed (the renders were redone after the review
+  response); the weak-spot and review-table lines about fermatas and the clef are updated.

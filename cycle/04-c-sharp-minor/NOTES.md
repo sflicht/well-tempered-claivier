@@ -19,27 +19,29 @@ planted in the prelude, bars 19-20. Both JSON scores carry this credit in `metad
 
 ## Checks before and after
 
-`tools/critic.py`. The calibration is in `cycle/CONVENTIONS.md`.
+`tools/critic.py`. The calibration is in `cycle/CONVENTIONS.md`. The "now" columns are the current
+scores (critic, 2026-11-04).
 
-| metric | Fugue v7 | **Fugue (3rd ed.)** | Prelude v6 | **Prelude (3rd ed.)** |
+| metric | Fugue v7 | **Fugue (now)** | Prelude v6 | **Prelude (now)** |
 |---|---|---|---|---|
 | parallels_error | 0 | **0** | 0 | **0** |
 | parallels_weak | 0 | **0** | 0 | **0** |
-| beat_parallels | 22 | **1** | 1 | **0** |
-| pc_tripled_on_beats_pct | 19.4 | **8.0** | 0 | **0** |
-| low_register_seconds | 8 | **9** | 0 | **0** |
+| beat_parallels | 22 | **0** | 1 | **0** |
+| pc_tripled_on_beats_pct | 19.4 | **8.8** | 0 | **0** |
+| low_register_seconds | 8 | **4** | 0 | **0** |
 | dissonance_unresolved | 2 | **0** | 1 | **0** |
 | crossings | 0 | **0** | 0 | **0** |
-| keyboard_unplayable_pct | 30.3 | **15.8** | 0 | **0** |
+| keyboard_unplayable_pct | 30.3 | **13.1** | 0 | **0** |
 | bar where all 5 voices first sound | 33 | **10** | n/a | n/a |
-| onset slots with 3+ simultaneous attacks | 41.4 % | **35.8 %** (BWV 849: 22.4 %) | n/a | n/a |
+| onset slots with 3+ simultaneous attacks | 41.4 % | **34.9 %** (BWV 849: 22.4 %) | n/a | n/a |
 | bars | 56 | 50 | 38 | 38 |
-| bad_doublings (doubled 7th or leading tone on a beat) | — | **1** (was 4 before the follow-up) | — | — |
+| bad_doublings (doubled 7th or leading tone on a beat) | — | **0** (4 before the follow-up below) | — | **0** |
 
 How these numbers were taken:
-- **Keyboard.** 42 of the fugue's 50 unplayable onsets become playable if the held bass note
-  (the augmented crux or a pedal) is sustained with the sostenuto pedal. With that pedal, 2.5 %
-  of onsets remain unplayable. BWV 849 has 0 %.
+- **Keyboard.** 32 of the fugue's 41 unplayable onsets become playable if the held bass note
+  (the augmented crux or a pedal, any bass note of a bar or longer) is sustained with the
+  sostenuto pedal. With that pedal, 2.9 % of onsets (9 of 312) remain unplayable. BWV 849 has 0 %.
+  No struck chord is beyond two hands (critic: reach errors 0).
 - **Simultaneous attacks.** This and the "first five-voice bar" row come from ad-hoc scripts
   run the same way on v7 and on the BWV 849 reference data.
 - **Voices sounding per bar** (new fugue):
@@ -55,7 +57,7 @@ How these numbers were taken:
 - 40.1: Br D#3 instead of a held C#3, so the seventh of D#ø7 is no longer doubled;
 - 43.3: Br A#2 instead of E3, so the seventh of F##o7 is no longer doubled.
 
-bad_doublings went from 4 to 1. The remaining one is at 44.3: the subject's long F# sounds in S and A at once in the octave canon over the pedal. It cannot be removed without changing the tested stretto. Parallels stay at 0, beat_parallels at 1, unresolved at 0.
+bad_doublings went from 4 to 1. The last one, at 44.3 (the subject's long F# in S and A at once in the octave canon over the pedal, with the tenor's third copy making the chord G#7), went in the Nov 2026 pass, when the tenor's copy was replaced by a 4-3 suspension (see the last section).
 
 ## Form map: Fugue
 
@@ -71,9 +73,9 @@ bad_doublings went from 4 to 1. The remaining one is at 44.3: the subject's long
 | 28-29 | Episode 2: the head in S over a bass that sings the crux in diminution (F#-E#-A-G#, then G#-F##-B-A#), sequenced up a step. |
 | 30-32 | Answer in **G# minor** in the bass (Br) with a stretto two beats later in A, a fifth higher, in key (stretto_finder cost 7, its best rectus placement). It ends on D# (half cadence in G#m). |
 | 33-34 | Episode 3: head imitation S/T over the crux in diminution in the bass (C#-B#-E-D#). The S leaps the crux's own interval B#-E into the climax. |
-| 35-41 | **Climax.** The crux augmented in the bass, exactly double its bar-17 values: C# (2 bars), B#, E, D# (2 bars), C#. Above it are two complete strettos of the subject an eighth apart: T + A (35-36) with the CS in S, and Br + S (38-39) with the CS in T. The subject's E-major-seventh head bar lands on the crux's E (38), and its diminished-seventh bar on the crux's D# (39), where the S reaches A5. The S peaks on C#6 as the crux resolves (41). |
+| 35-41 | **Climax.** The crux augmented in the bass, exactly double its bar-17 values: C# (2 bars), B#, E, D# (2 bars), C#. Above it are two complete strettos of the subject: T (G#4, 35.1) + S a dotted quarter later and an octave higher (35.2.5), with the CS in A; and Br (38.1) + S an eighth later, two octaves higher (38.1.5), with the CS in T. The subject's E-major-seventh head bar lands on the crux's E (38), and its diminished-seventh bar on the crux's D# (39), where the S reaches A5. The S peaks on C#6 as the crux resolves (41). |
 | 42-43 | iv - Neapolitan sixth (S falls in dotted rhythm while A rises), then viio7 of V. The bass rises chromatically F#-F##-G#. |
-| 44-46 | **Dominant pedal** on G#1: the subject in its dominant form (B# for B), complete, in S, A (an eighth later) and T (a quarter later). This combination was tested before writing: 0 parallels, 0 unresolved. |
+| 44-46 | **Dominant pedal** on G#1: the subject in its dominant form (B# for B), complete, in S and in A an eighth later (a canon at the octave). The T sustains D#3-C#3-B#2 below them, a 4-3 suspension over the pedal (iv over V, then V7 at 45.2.5). |
 | 47-50 | **Tonic pedal coda** on C#2: the crux in S (i - iv6/4 - i \| viio7 - i \| iio4/2 - V7 \| I). The Picardy third arrives late: the alto's held F# falls to E# on beat 2 of the last bar. |
 
 ## Form map: Prelude
@@ -90,7 +92,7 @@ bad_doublings went from 4 to 1. The remaining one is at 44.3: the subject's long
 | 27-29 | **Return on root-position i**: bar 1's left hand comes back. Then M on V; the tenor M (29) now has a bass and C#m figuration above it. |
 | 30-33 | Neapolitan sixth - French sixth (F## in the R.H. only) - cadential 6/4 - V7 - **i in root position at 33** (the structural cadence), then M with its rising tail. |
 | 34-35 | **Lament bass** in quarters: A-G#-G \| F#-E#-E (VI - III6 - C#o/G \| N6 - V/iv - i6). |
-| 36-38 | M on V7 - i (37) - the closing tetrachord G#-F#-E-D# over i - iv6 - V7 (6-5 on beat 3) - **final V7-i in root position** (37-38). |
+| 36-38 | The crux in dotted eighths over V7 (36) - the closing tetrachord G#-F#-E-D# in the same rhythm over i - iv6 - V7 (6-5 on beat 3, 37) - **final V7-i in root position** (37-38); the last chord has its third, E4 under the R.H.'s C#5. |
 
 **Pair contrast (problem 13).** The prelude stays in 3/4 because its motif and hemiola are
 built in sixteenths of 3/4. The two movements now differ in pace and character instead:
@@ -118,7 +120,7 @@ five-voice texture readable.
    It sounds above the subject or answer at 3, 5, 7, 10, 26, 35 and 38, mapped modally at 13.
    Its first bar is also the counterpoint to the first crux statement (17).
 3. **Collisions and voice leading.**
-   - beat_parallels 22 → 1; tripling 19.4 % → 8.0 %.
+   - beat_parallels 22 → 0 (1 until the Nov 2026 pass); tripling 19.4 % → 8.8 %.
    - No simultaneous doubled leading tones in either movement (checked for B#, E# and F##).
    - No unresolved dissonances.
    - The final V7 has its leading tone, and the seventh resolves to the Picardy third.
@@ -126,8 +128,8 @@ five-voice texture readable.
    (i - VII - iv6 \| iv - iio7 - V - i): bars 13 (in E) and 26 (in F#m). Over the climax the
    subject's E-major head bar is placed deliberately on the crux's E (38). Subject endings
    now land on a tonic: 6.3.5 (C#m), 11.3.5, 27.3.5 (F#m), 36.3.5 (over the tonic pedal).
-5. **Spacing and playability.** Unplayable onsets 30.3 % → 15.8 % (2.5 % with a sustained
-   bass). Upper-voice gaps wider than an octave: S-A on 14/150 beats (v7: 37/168), A-T on 29/150
+5. **Spacing and playability.** Unplayable onsets 30.3 % → 13.1 % (15.8 % at the rebuild; 2.9 % with
+   a sustained bass). Upper-voice gaps wider than an octave: S-A on 14/150 beats (v7: 37/168), A-T on 29/150
    (v7: 40/168).
 6. **The climax was not an event.**
    - The bass augmentation is now exact: the crux at double the values of its own bar-17
@@ -139,17 +141,18 @@ five-voice texture readable.
 7. **Prelude cadences** (prelude bars). The return is now on root C#3 (27.1). The cadential 6/4
    now goes to V7 and on to i at 33.1. The ending has V7-i in root position at 36-37 and 37-38.
    There is also a root-position V-i at 6.2.5.
-8. **Timid strettos.** There are now five complete strettos:
+8. **Timid strettos.** There are now four complete strettos:
    - 30-31: two beats apart, at the fifth, in key;
-   - 35-36 and 38-39: an eighth apart;
-   - 44-46: three voices an eighth and a quarter apart over the dominant pedal.
+   - 35-37: a dotted quarter apart (T, then S an octave higher);
+   - 38-39: an eighth apart (Br, then S two octaves higher);
+   - 44-46: S and A an eighth apart over the dominant pedal.
 
    None stops after the head. Bar 40, the old dominant without B#, no longer exists; the climax
    reaches V through iio7 (40).
 9. **Static chord bars and filler voices.**
    - The whole-bar chord arpeggios of v7 bars 12, 17, 30, 38 and 40 are gone.
    - The crux exposition got running counterpoint (21-25).
-   - Onsets with three or more simultaneous attacks fell from 41.4 % to 35.8 %.
+   - Onsets with three or more simultaneous attacks fell from 41.4 % to 34.9 % (35.8 % at the rebuild).
 10. **The ending.** There is no longer a block-chord ending with a doubled leading tone. The
     coda states the crux over the tonic pedal, and the resolutions are staggered (the alto's
     F#→E# arrives after the others).
@@ -179,7 +182,7 @@ five-voice texture readable.
   - fixed countersubject over a lament-bass harmonisation;
   - modal (E major, minor-sixth) transformation of the subject;
   - real answer, and an in-key answer used for the stretto at the fifth;
-  - strettos at two beats, an eighth and a quarter;
+  - strettos at two beats, a dotted quarter and an eighth;
   - Bach's crux (BWV 849) as a genuine second subject in normal values, with Bach's answer, in
     diminution (episode basses) and in augmentation (climax bass);
   - the double-fugue combination of crux and subject;
@@ -205,16 +208,15 @@ five-voice texture readable.
   applies where a free bass exists (13, 26).
 - **One subject note is altered.** The alto's final C# at 37.1 is split into C#-D# sixteenths so
   that it passes over the crux's B# (the "unresolved spot" named in the review).
-- **The remaining beat parallel** (45.2, A/T octaves) is built into the octave canon at an
-  eighth over the pedal. Every tested alternative produced unresolved dissonances.
-- **Low-register seconds** are 9, the top of Bach's 3-9 range. They are mostly in the climax,
-  where the crux bass lies under the tenor's subject.
+- **Low-register seconds** are 4, inside Bach's 3-9 range: the bass entry's sixteenths under the
+  Br's held CS note (10.1.75), and the Br's subject over the crux's E and D# in the climax (38.1.75,
+  38.2.5, 39.3.5).
 - **Tripled roots at three cadences** (41.1, 47.1, 50.1).
-- **Still more homorhythmic than Bach:** 35.8 % against 22.4 % of onsets with three or more
+- **Still more homorhythmic than Bach:** 34.9 % against 22.4 % of onsets with three or more
   simultaneous attacks. The crux bars (17-25), the approach 42-43 and the coda move in long,
   shared values by design.
-- **Still not fully two-hand playable:** 15.8 % of onsets need more than two hands as written,
-  or 2.5 % if the held bass note is sustained.
+- **Still not fully two-hand playable:** 13.1 % of onsets need more than two hands as written,
+  or 2.9 % if the held bass note is sustained.
 - **The middle of the fugue is mostly four voices.** The Br rests in 13-24 and 27-29.
 - **The B#→E leap** (the crux interval) in the S at 34-35 and in the prelude R.H. at 19-20 and
   32-33 leaves the leading tone unresolved in that voice. Another voice takes the tonic.
@@ -255,8 +257,7 @@ Three points were implemented. The augmented crux in the bass (bars 35-41) is un
 | Prelude | 0 | 0 | 0 | 0 | 0 | 0 |
 
 **Not done.**
-- REVIEW-2 F3 (the pedal stretto in three octaves, bars 44-46) still produces the one beat parallel and the one bad doubling.
-- REVIEW-2 P3 (the bare-octave final bar) is unchanged.
+- REVIEW-2 F3 (the pedal stretto in three octaves, bars 44-46) and P3 (the prelude's bare-octave final bar) were left at this point; both were done in the Nov 2026 self-critique pass (last section).
 
 ## Review response (Nov 2026)
 
@@ -275,3 +276,61 @@ The revoicing below keeps every note of the augmented crux and of the soprano's 
 **Numbers.**
 - Reach errors 2 → 0, unresolved 1 → 0, unverified 2 → 2, keyboard 14.1 % → 13.1 %.
 - Parallels (0), beat parallels (1, 45.2), bad doublings (1, 44.3) and low-register seconds (4) are unchanged.
+
+## Self-critique pass (Nov 2026)
+
+**Fixed (score).**
+- **Fugue, bars 44–46 (REVIEW-2 F3).** The pedal stretto was one line in three octaves:
+  S, A an eighth later, and T a quarter later. The tenor's third copy is gone. The S/A
+  canon at the octave stays, and below it the tenor holds D♯3 (from 44.1½, an eighth after
+  the pedal, so the left hand can strike it), then C♯3 tied into bar 45 and resolving to
+  B♯2 at 45.2½: a 4–3 suspension over the pedal, iv over V turning into V7. The B♯2 is
+  tied into bar 46 and rises to C♯3 as before. This removes the fugue's only beat parallel
+  (45.2, A/T F♯→A octaves) and the doubled seventh at 44.3 (with C♯ instead of the tenor's
+  B♯ under the S/A F♯s, they are the root of iv over the pedal, not a doubled seventh).
+  The tenor's entry is no longer declared; the S and A entries verify as before. The
+  review's own tenor (an octave higher) crossed the alto at 44.2½ and 45.3½, made a reach
+  error at 44.1 and left two unresolved flags (B♯ against the held F♯ under the ♭9),
+  so I placed the same idea an octave lower and resolved the 4–3 only when the ♭9 has
+  gone.
+- **Fugue, 40.2.** The critic's revised chord naming reads beat 2 of the ii°7 (no C♯
+  sounding there) as a rootless B7 and counted the Br's D♯3 over the crux's D♯2 as a
+  doubled leading tone. The Br now passes through F♯3 on that beat (D♯3 F♯3 B♯2), the
+  diminished chord's third, which is the textbook doubling. (C♯3 was tried first: it
+  completed D♯ø7 but made a low ninth against the crux's D♯2.)
+- **Prelude, bar 38 (REVIEW-2 P3).** The bare octave C♯5/C♯3–C♯2 now has its third:
+  E4 under the right hand's C♯5, written as a second voice on the R.H. staff
+  (`share_staff`) for this one bar. It also takes up the left hand's F♯3 of bar 37 (the
+  V7's seventh, which leaps away in the left hand). I chose the third over declaring the
+  octave an attacca: the fugue begins with a lone voice anyway, and after 37 bars in
+  C♯ minor the open octave would sound unfinished rather than open.
+
+**Fugue numbers (before → after, same critic):** beat parallels 1 → 0, bad doublings
+2 → 0 (44.3 and the newly read 40.2), parallels 0, unresolved 0, low-register seconds 4,
+unverified 2, keyboard 13.1 %, reach errors 0; tripling 8.0 % → 8.8 % (the F♯ on 40.2).
+**Prelude:** unchanged (0 parallels, 0 unresolved, 5 unverified, 0 % unplayable).
+
+**Explained: the unverified flags.**
+- Fugue **10.2**: the tenor's C♯4 is a 9–8 suspension over the bass's B1 (the subject).
+  It resolves to B3 just as the subject leaps on to F♯2, so the resolution sounds as the
+  fourth of a passing B/F♯; the tenor then steps to A3 over F♯m on beat 3.
+- Fugue **36.3**: the S's A5 (subject) against the A's D♯5 (countersubject): a tritone
+  inside the half-diminished D♯ø7 over the crux's held C♯. Both are theme notes; the
+  chord goes to G♯7/B♯ with the crux at 37.1.
+- Prelude **9.3, 18.3, 19.1, 19.2, 28.3**: right-hand notes over the left hand's broken
+  chords, which change every sixteenth. B5 at 9.3 is a 9–8 over the IV chord's A2 (it
+  resolves to A5 when the left hand is on E3); F♯5 at 18.3 is the seventh of G♯m7,
+  falling through E5; the crux's C♯5 at 19.1–19.2 is the 4–3 over the G♯ pedal, resolving
+  to B♯4 when the left hand plays the V7's F♯3; B♯4 at 28.3 is the inverted motif's lower
+  neighbour over the left hand's vii° (F♯3 B♯3 D♯4). In each case the step lands on a
+  chord tone that the critic, comparing one left-hand sixteenth at a time, reads as a
+  tritone or a fourth.
+
+**Prose corrected:** the form map, problem 8 and the devices list said both climax strettos
+are an eighth apart (pair 1 is a dotted quarter apart, T 35.1 and S 35.2½); the low-register
+count (9 → 4), the unplayable share (15.8 % → 13.1 %, 2.9 % with the held bass on the
+sostenuto pedal) and the simultaneous-attack share (35.8 % → 34.9 %, re-measured the same
+way); the 44–46 entries; the prelude's form map for bars 36–38.
+
+Nothing was declined.
+

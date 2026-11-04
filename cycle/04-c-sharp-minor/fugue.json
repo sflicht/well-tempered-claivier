@@ -4543,92 +4543,38 @@
      "bar": 43
     },
     {
-     "t": 130.0,
-     "d": 0.5,
-     "p": 56,
-     "spell": "gis",
-     "v": 79,
-     "gate": 0.94,
-     "bar": 44
-    },
-    {
-     "t": 130.5,
-     "d": 0.25,
-     "p": 52,
-     "spell": "e",
-     "v": 78,
-     "gate": 0.9,
-     "bar": 44
-    },
-    {
-     "t": 130.75,
-     "d": 0.25,
+     "t": 129.5,
+     "d": 1.5,
      "p": 51,
      "spell": "dis",
-     "v": 78,
-     "gate": 0.9,
+     "v": 73,
+     "gate": 0.975,
      "bar": 44
     },
     {
      "t": 131.0,
-     "d": 0.5,
-     "p": 48,
-     "spell": "bis",
-     "v": 79,
-     "gate": 0.94,
-     "bar": 44
-    },
-    {
-     "t": 131.5,
-     "d": 1.5,
-     "p": 54,
-     "spell": "fis",
-     "v": 78,
+     "d": 2.5,
+     "p": 49,
+     "spell": "cis",
+     "v": 74,
      "gate": 0.985,
      "bar": 44
     },
     {
-     "t": 133.0,
-     "d": 1.0,
-     "p": 57,
-     "spell": "a",
-     "v": 79,
-     "gate": 0.975,
-     "bar": 45
-    },
-    {
-     "t": 134.0,
-     "d": 0.5,
-     "p": 54,
-     "spell": "fis",
-     "v": 79,
-     "gate": 0.94,
-     "bar": 45
-    },
-    {
-     "t": 134.5,
-     "d": 0.5,
-     "p": 51,
-     "spell": "dis",
-     "v": 78,
-     "gate": 0.94,
-     "bar": 45
-    },
-    {
-     "t": 135.0,
-     "d": 0.5,
+     "t": 133.5,
+     "d": 2.0,
      "p": 48,
      "spell": "bis",
-     "v": 81,
-     "gate": 0.94,
-     "bar": 46
+     "v": 73,
+     "gate": 0.985,
+     "bar": 45
     },
     {
      "t": 135.5,
      "d": 0.5,
      "p": 49,
      "spell": "cis",
-     "v": 78,
+     "v": 73,
      "gate": 0.94,
      "bar": 46
     },
@@ -5235,11 +5181,20 @@
     },
     {
      "t": 117.0,
-     "d": 1.5,
+     "d": 1.0,
      "p": 51,
      "spell": "dis",
      "v": 78,
      "gate": 0.975,
+     "bar": 40
+    },
+    {
+     "t": 118.0,
+     "d": 0.5,
+     "p": 54,
+     "spell": "fis",
+     "v": 76,
+     "gate": 0.94,
      "bar": 40
     },
     {
@@ -6167,11 +6122,6 @@
   },
   {
    "voice": 2,
-   "t": 130.0,
-   "label": "dominant form, stretto"
-  },
-  {
-   "voice": 2,
    "t": 48.0,
    "label": "crux (BWV 849)"
   },
@@ -6347,8 +6297,8 @@
     "R:4 G#3:8",
     "A3:12",
     "A3:6 A#3:6",
-    "R:4 G#3:2 E3:1 D#3:1 B#2:2 F#3:2~",
-    "F#3:4 A3:4 F#3:2 D#3:2",
+    "R:2 D#3:6 C#3:4~",
+    "C#3:6 B#2:6~",
     "B#2:2 C#3:2 E3:2 B#2:6",
     "C#3:2 E3:2 A3:4 G#3:4",
     "A3:6 G#3:6",
@@ -6395,7 +6345,7 @@
     "G#2:4 D#3:8",
     "G#3:2 E3:1 D#3:1 B2:2 F#3:6",
     "A3:4 F#3:2 D#3:2 B#2:2 C#3:2",
-    "D#3:6 B#2:6",
+    "D#3:4 F#3:2 B#2:6",
     "C#3:4 E3:4 E#3:4",
     "F#3:6 R:6",
     "D3:6 A#2:6",
@@ -6504,7 +6454,7 @@
    "41 X-aug: C# -- arrival; S peak C#6 on the crux's resolution; i - V7 of iv",
    "42 iv - Neapolitan sixth: S falls in dotted rhythm, A turns and rises",
    "43 N6 - viio7 of V (bass F#-F##-G#)",
-   "44 PEDAL STRETTO: S, A (+eighth), T (+quarter)",
+   "44 PEDAL STRETTO: S, A (+eighth); T sustains a 4-3 over the pedal",
    "45",
    "46 i6/4 - V7 over the pedal",
    "47 crux in S over the tonic pedal: C# (i - iv6/4 - i)",

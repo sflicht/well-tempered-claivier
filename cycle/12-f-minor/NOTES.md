@@ -90,7 +90,7 @@ Key plan: f - (c) - f - b♭ │ b♭/f - c - circle of fifths to V │ f │ f 
   the triple combination (b34.3-38.1) the tenor's B-A-C-H gets +6 more and the bass -3, so the two slow
   low lines do not fuse.
 
-## Critic numbers (`tools/critic.py`, final build)
+## Critic numbers (`tools/critic.py`; critic, 4 Nov 2026)
 
 | measure | result | target |
 |---|---|---|
@@ -143,8 +143,8 @@ and all free counterpoint was written and corrected by hand against the critic.
 
 - **The quadruple combination is heard twice in F minor** (IV and V) with the same alignment, so the
   pitch classes above the bass are the same beat by beat. V now reorders the voices (S2 on top, the main
-  theme in the tenor) and adds the fifth voice and the pedal, so the lines a listener follows differ; the
-  harmony does not.
+  theme in the bass voice, directly over its own augmentation) and adds the fifth voice and the pedal, so
+  the lines a listener follows differ; the harmony does not.
 - **The main theme is not on top at the climax.** In V it sings in the bass voice (E3-C4), under S1 and
   B-A-C-H and directly over its own augmentation; it was on top in IV and in the canon's alto just before.
 - **There is no real five-subject moment.** The augmentation's written notes end at b60.1 and its last
@@ -215,8 +215,8 @@ been heard.
 
 | # | Item | What changed |
 |---|---|---|
-| 1 | The Quinta vox's held F2 has died away by the coda, so the last chord is heard over A3 | Agreed. The pedal is re-struck: `F2:32 F2:40 F2:40 F2:12`, at b59.1 (the augmentation's last note), b61.1 (as the subjects end), b63.3 (the coda's signature) and b66.1 (the Picardy chord). The reviewer's tested `F2:72 F2:40 F2:12` plus the optional strike at b61.1. |
-| 2 | V repeats IV's top two lines at the same pitch; B-A-C-H and S2 meet on C5 at b60.1 | Agreed, with the reviewer's tested exchange: S2 on top an octave higher (the soprano's return, b57.2), the main theme in the tenor (b57.1). The tenor's free close (B♭4 A♭4 C5 C5) and the alto's link (D♭5 C5, b56.3-57.1) were rewritten by hand for it. The unison becomes an octave, and S2's last A♭5 steps into the coda's B♭5. The cost (the main theme is no longer on top at the climax) is listed under weak spots. |
+| 1 | The Quinta vox's held F2 has died away by the coda, so the last chord is heard over A3 | Agreed. The pedal is re-struck. At first this was `F2:32 F2:40 F2:40 F2:12`, at b59.1 (the augmentation's last note), b61.1 (as the subjects end), b63.3 (the coda's signature) and b66.1 (the Picardy chord): the reviewer's tested `F2:72 F2:40 F2:12` plus the optional strike at b61.1. Since the Nov 2026 response (below) the re-strikes are at b61.1, b63.1 and b66.1, so that every one can be struck with the notes that begin with it. |
+| 2 | V repeats IV's top two lines at the same pitch; B-A-C-H and S2 meet on C5 at b60.1 | Agreed, with the reviewer's tested exchange: S2 on top an octave higher (the soprano's return, b57.2), the main theme below it (b57.1; first in the tenor, and since the Nov 2026 response in the bass voice, an octave lower). The tenor's free close (B♭4 A♭4 C5 C5) and the alto's link (D♭5 C5, b56.3-57.1) were rewritten by hand for it. The unison becomes an octave, and S2's last A♭5 steps into the coda's B♭5. The cost (the main theme is no longer on top at the climax) is listed under weak spots. |
 | 3 | B-A-C-H in the triple combination (b34.3-38.1) sits too close above S1 and too quietly | Agreed; voicing only, as proposed: the tenor gets +6 and the bass -3 velocity there. The notes are unchanged. An octave shift would collide with the alto's run. |
 | 4 | The pair is slow | Agreed for the prelude: crotchet 54 → 63, tempo map scaled (about 1:05 instead of 1:17). The fugue's tempi are unchanged, as the reviewer advised. |
 | 5 | b55 is a whole bar of held diminished seventh | Applied the tested `Db4:8 Bb3:8` in the tenor. The critic adds one *note*, not an error: the D♭ leaves by leap, within the chord. |
@@ -262,4 +262,12 @@ that begins at that instant.
 
 Critic before → after: reach_errors 3 → 0; keyboard_unplayable_pct 10.5 → 4.5; unresolved 0 → 0;
 unverified 6 → 6 (the same places, b58.4's partner is now the bass voice); parallels 0 errors, beat-to-beat
-1 (unchanged); low-register seconds/sevenths 1 → 2 (b59.1, above); crossings 1. Renders not yet redone.
+1 (unchanged); low-register seconds/sevenths 1 → 2 (b59.1, above); crossings 1.
+
+# Self-critique pass (Nov 2026)
+
+No notes were changed.
+- **Removed** the stale "Renders not yet redone" from the review response: the renders were redone after it.
+- **Fixed: where the main theme sings in V.** The first weak spot put it "in the tenor", the next ones "in the bass voice". The score has it in the Bass voice at b57.1 (E3–C4), directly over its own augmentation. That has been the case since the Nov 2026 response; the tenor placement came first, from REVIEW item 2. The weak spot, the review table (items 1 and 2: the re-strike bars and the theme's voice) and the comment in `fugue.py` now agree with the score. The rebuilt `fugue.json` is identical.
+- **Listening guide (proposed in the report).** It said "b56–63" for the brief four-subject passage. Four subjects move together over the pedal only in b59.3–61.3.
+- **Refreshed: the critic table** (critic, 4 Nov 2026). The numbers are unchanged.

@@ -1,8 +1,8 @@
 """Wave 4 (bars 26-36): the subject in A minor (Tenor IV) answered half a bar later by the
 inversion on B (Alto IV); the subject in E minor (Alto V) with CS1 (Alto II); then the
 dominant pedal on C# (bars 32-36, Bass II): the subject's head climbs T5 -> A3 -> S4, CS1
-sounds complete in S3, Fugue V's head (in C# major, A1) and Fugue VIII's head (in F# minor,
-Br2) join, and the pedal choir grows by about a voice a bar (8 -> 11 moving voices a bar; since the second
+sounds complete in S3, Fugue V's head (in C# major, on top in S1) and Fugue VIII's head (in F#
+minor, Br2) join, and the pedal choir grows by about a voice a bar (8 -> 11 moving voices a bar; since the second
 review a voice that could only double another rests)."""
 from xxiv import *
 
@@ -54,8 +54,10 @@ def wave4(sc):
     P('S3', 35, 1, "B4:8 A4:8"); P('S3', 36, 1, "A4:4 G#4:8 A4:4~")
     P('T3', 32, 3, "G#3:1 A#3:1 B#3:1 C#4:1 D#4:1 C#4:1 B#3:1 G#3:1")
     P('S1', 32, 1, "A5:8 R:6 C#6:2~")      # breathes, re-enters with the pedal (its C# was a 4th over G#)
-    P('S1', 33, 1, "C#6:8 D#6:4 C#6:4~"); P('S1', 34, 1, "C#6:8 E#6:6 C#6:2")
-    P('S1', 35, 1, "C#6:8 F#6:8"); P('S1', 36, 1, "E#6:8 C#6:8~")
+    # Soprano I, on top, sings Fugue V's head (D major -> C# major, an octave up) at 34.3-35.3: a foretaste
+    # of the full Fugue V that it sings on top at b43 (review 2, #6; it was in Alto I, under three sopranos)
+    P('S1', 33, 1, "C#6:8 D#6:4 C#6:4~"); P('S1', 34, 1, "C#6:8 G#5:4 C#6:2 C#6:1 C#6:1")
+    P('S1', 35, 1, "E#6:2 E#6:1 E#6:1 G#6:4 F#6:8"); P('S1', 36, 1, "E#6:8 C#6:8~")
     for k in (33, 34, 35):
         P('B2', k, 1, "C#2:16~")
     P('B2', 36, 1, "C#2:16")
@@ -71,11 +73,10 @@ def wave4(sc):
     P('Br5', 33, 1, "F#2:12 G#2:4"); P('Br5', 34, 1, "A2:8 C#3:8~"); P('Br5', 35, 1, "C#3:8")              # Baritone V enters
     P('Br3', 33, 1, "A2:8 G#2:8"); P('Br3', 34, 1, "F#2:8 G#2:8~"); P('Br3', 35, 1, "G#2:12 F#2:4"); P('Br3', 36, 1, "C#3:8")   # Baritone III rejoins
     P('S2', 33, 1, "A5:12 G#5:4")                                         # Soprano II returns
-    # bar 34: head in Soprano IV; Fugue V's head (in C# major) in Alto I
+    # bar 34: head in Soprano IV; Fugue V's head (in C# major) on top, in Soprano I (above)
     P('S4', 34, 1, "F#5:4 A5:2 G#5:2 B#4:6 C#5:2")
     P('S4', 35, 1, "C#5:8 A5:8"); P('S4', 36, 1, "C#6:8 B5:4 A5:4")
-    P('A1', 34, 3, "G#4:4 C#5:2 C#5:1 C#5:1"); P('A1', 35, 1, "E#5:2 E#5:1 E#5:1 G#5:4 F#5:8")   # Fugue V's head (D major -> C# major)
-    P('A1', 36, 1, "G#5:16"); P('A1', 37, 1, "A5:8")
+    P('A1', 36, 1, "G#5:16"); P('A1', 37, 1, "A5:8")            # Alto I returns after Fugue V's head (now in S1)
     P('A4', 35, 2, "E#4:4 F#4:8")      # Alto IV returns
     P('B3', 36, 2.5, "C#3:2 C#3:2 C#3:2 A3:4~"); P('B3', 37, 1, "A3:2 G#3:2 F#3:4")  # U again, landing on the tonic
     P('A2', 35, 3, "C#5:8"); P('A2', 36, 1, "C#5:8")

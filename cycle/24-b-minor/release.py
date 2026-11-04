@@ -59,7 +59,7 @@ def release(sc, b0=52):
     sc.theme('S1', r(4), 2, octv(I_B, 1), 'Fugue I guest, third rung: canon at the octave', 'FI', semis=11)
     P('Br2', r(4), 1, "E4:4 F#4:8 D#4:4")   # (was E4 D#4: sevenths with T5's D#5 C#5); P('Br2', r(5), 1, "C#4:10 B3:6")
     P('T5', r(4), 2, "D#5:4 C#5:4 B4:4"); P('T5', r(5), 1, "A#4:4 G#4:4 F#4:8")
-    P('B1', r(4), 1, "B2:8 A2:4 G#2:4"); P('B1', r(5), 1, "A#2:4 E2:4 F#2:8")
+    P('B1', r(4), 1, "B2:8 A2:4 G#2:4"); P('B1', r(5), 1, "A#2:8 F#2:8")   # A#2 held (A#-half-dim7), then F#: was A#2 E2 F#2, a tritone leap (review 4)
     # ---- bars 58-59: the mirror wedge over B and E: Em(maj7) - E7 - A - French sixth
     P('T1', r(6), 1, S_TAIL4); P('A3', r(6), 1, I_TAIL4)
     P('Br2', r(6), 1, "E3:16~"); P('Br2', r(7), 1, "E3:16")
@@ -103,7 +103,8 @@ def plan_release(o):
     for k in (0, 8, 16):     # the three Fugue I rungs share one harmonisation (Fugue V in B fits the first)
         rows += [(k, k + 3, [B, Ds, Fs], 'B'), (k + 3, k + 3.5, [E, Gs, B], 'E/B'), (k + 3.5, k + 4, [B, Ds, Fs], 'B'),
                  (k + 4, k + 4.5, [Fs, As, Cs, E], 'F#7/B'), (k + 4.5, k + 5, [Fs, As, Cs, E], 'F#7'),
-                 (k + 5, k + 6, [Cs, E, Gs, B], 'C#m7/G#'), (k + 6, k + 7, [B, Ds, Fs], 'B/D#'), (k + 7, k + 8, [Fs, As, Cs], 'F#')]
+                 ((k + 5, k + 6, [As, Cs, E, Gs], 'A#o7') if k == 16 else (k + 5, k + 6, [Cs, E, Gs, B], 'C#m7/G#')),
+                 (k + 6, k + 7, [B, Ds, Fs], 'B/D#'), (k + 7, k + 8, [Fs, As, Cs], 'F#')]   # (b59.2: Bass I holds A#)
     rows += [(24, 26, [E, G, B, Ds], 'Em(maj7)/B'), (26, 28, [E, Gs, B, D], 'E7/B'), (28, 30, [A, Cs, E], 'A/B'),
              (30, 32, [C, E, Fs, As], 'Fr6/B'), (32, 40, [B, Ds, Fs], 'B')]
     return [[o + a, o + b, pcs, lab] for a, b, pcs, lab in rows]

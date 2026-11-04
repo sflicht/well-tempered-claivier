@@ -147,7 +147,9 @@ COMES = droplast(W.scale_rhythm(TC, Fr(1, 2)))     # C4 ... D4, 64 sixteenths
 BLOCK = {
     'C': DUX + ' R:12 R:16',
     'A': 'R:16 R:16 ' + COMES,
-    'T': ("G3:8 C4:4 B3:4 G3:8 C4:4 D4:4 G3:4 C4:4 B3:4 C4:4 G3:4 Eb3:4 C3:4 D3:4 "
+    # (Nov 2026: bar 2 ends on A-flat, the diminished seventh's seventh, which falls to G; bar 4 runs
+    # G F C A-flat instead of G E-flat C D, so the line leaps a fourth five times instead of eight.)
+    'T': ("G3:8 C4:4 B3:4 G3:8 C4:4 Ab3:4 G3:4 C4:4 B3:4 C4:4 G3:4 F3:4 C4:4 Ab3:4 "
           "G3:4 C4:4 B3:4 G3:2 F3:2 D3:4 F3:4 Bb3:4 A3:4"),
     'B': ("C3:8 Eb3:4 D3:4 G2:8 A2:4 B2:4 C3:4 Ab2:4 G2:4 F2:4 G2:4 Ab2:4 A2:4 B2:4 "
           "C3:4 Ab2:4 G2:4 F2:4 G2:4 F2:4 G2:4 A2:4"),
@@ -185,7 +187,9 @@ put('Q', B(60, 3), "B4:4 C5:4 B4:4 C#5:4 B4:4 A4:4~")
 # ================================================================ IV. SUMMIT (b62-78), written bar by bar
 # Bassus: the theme in augmentation (17 bars).  Cantus: the dux of the per tonos comes home (the theme in
 # diminution from F#5, b62.2), then the inversion in diminution (b70.4), rising chromatically to F#6.  Altus: the
-# comes at the octave below, two bars after the dux (b64.2).  Tenor and Quintus: free.
+# comes at the octave below, two bars after the dux (b64.2).  Tenor and Quintus: free.  (Nov 2026: the
+# Quintus holds F#3, not E3, in b70: over the augmentation's A# the chord is the tonic major, I6 after the V4/2
+# of b69, turning minor over A in b71, instead of a dominant seventh of B minor with its leading tone doubled.)
 SUMMIT = {  # bars 62-78
     'C': ['R:4 F#5:4 A5:4 C#6:4', 'D6:4 E#5:4 R:2 C#6:2 B#5:4', 'B5:4 A#5:4 A5:6 G#5:2',
           'G5:2 F#5:2 E#5:2 C#5:2 F#5:2 B5:2 A5:4', 'G#5:4 R:4 C#6:6 B5:2~', 'B5:2 A5:2 G#5:2 R:2 A5:4 G#5:4', 'F#5:16',
@@ -200,7 +204,7 @@ SUMMIT = {  # bars 62-78
           'B2:4 G#2:4 R:8', 'R:8 D#3:8', 'R:16', 'C#3:16', 'C#3:16', 'D3:16', 'R:16',
           'C#3:16', 'C#3:8 R:8', 'F#3:16', 'E#3:16', 'F#3:16'],
     'Q': ['A4:8 C#5:8', 'B4:4 C#5:8 D#5:4', 'E#5:4 R:12', 'R:16', 'R:16', 'D4:4 B3:4 C#4:8', 'G#3:16',
-          'G#3:8 C#4:8', 'E3:16', 'F#3:8 G#3:4 F#3:4', 'F#3:8 B3:8', 'A#3:8 A3:8', 'G#3:8 R:8', 'A3:8 B3:8',
+          'G#3:8 C#4:8', 'F#3:16', 'F#3:8 G#3:4 F#3:4', 'F#3:8 B3:8', 'A#3:8 A3:8', 'G#3:8 R:8', 'A3:8 B3:8',
           'C#4:8 R:8', 'R:8 G#3:8', 'A#3:16'],
     'B': W.concat_bars(trs(aug(T), -24), METER),
 }

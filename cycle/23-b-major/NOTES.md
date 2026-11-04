@@ -83,7 +83,7 @@ ends on the next key's subdominant (so the next rising region begins with a plag
 | 9–14 | 0:19 | **enters**: B, rising | Subject soprano on *ut* (B4, while the cantus enters on B3 an octave below); a soprano division over a three-part texture; subject on F♯ (tenor) at *sol*, CS above. |
 | 15–20 | 0:34 | C♯, falling | Inversion (C♯) soprano on *la*; three parts; inversion on F♯ in the bass at *re*. The cantus's F♯ is the seventh of G♯7 and falls to E♯. |
 | 21–26 | 0:48 | E♭, rising | Subject tenor (E♭) with CS; the soprano's first sixteenth division; subject on B♭ (bass) at *sol*. |
-| 27–32 | 1:02 | F, falling | Inversion tenor (F) with CSI in the bass; tenor/bass dialogue; inversion on B♭ (soprano) at *re*. |
+| 27–32 | 1:02 | F, falling | Inversion tenor (F) with CSI in the bass; the tenor's division over a bass that walks by step (b29–30); inversion on B♭ (soprano) at *re*. |
 | 33–38 | 1:17 | G, rising | Subject bass (G) with CS; episode in five voices; subject on D (alto) at *sol*. |
 | 39–44 | 1:31 | A, falling | Inversion tenor (A) with CSI; the cantus's D is the seventh of E7; inversion on D (soprano) at *re*, ending on a lone E6. |
 | 45–50 | 1:46 | **Bull's leap**: C, rising | Quiet. Subject in the deep bass (C2), whose free continuation stays low (b47–48) to leave the cantus room; a triplet division (Bull's sesquialtera) in the alto; subject on G (tenor) at *sol*. |
@@ -149,7 +149,7 @@ frequencies (A4 = 440):
 - **The excerpt pair** `renders/meantone-demo-bach-lehman.mp3` and `renders/meantone-demo-meantone.mp3`
   plays b66–72 alone (about 20 seconds; the drone is the fourth bar), for a direct comparison.
 
-## Critic numbers (`python3 tools/critic.py cycle/23-b-major/fugue.json`)
+## Critic numbers (critic, 4 Nov 2026: `python3 tools/critic.py cycle/23-b-major/fugue.json`)
 
 | measure | value | target |
 |---|---|---|
@@ -157,14 +157,14 @@ frequencies (A4 = 440):
 | parallels_weak | 0 | – |
 | beat_parallels | **0** | ≤ 2 |
 | dissonance_unresolved | **0** (3 unverified, to check by ear: b43.2, a lower-neighbour C♯4 in the alto; b74.1 and b80.1, the countersubject's tied note resolving 4–3 while the partner the critic pairs it with moves on) | ≤ 3 |
-| bad_doublings | **0** | ≤ 2 |
+| bad_doublings | **0** (the corrected critic found two doubled leading tones in the October score, b41.3 and b74.2; both fixed in the self-critique pass) | ≤ 2 |
 | low_register_seconds | **6** (b39.3.5, b40.2.5, b40.3.75, b58.2.5, b58.3.5: passing sixteenths of the inversion/CSI pair in tenor and bass, and of the tenor's subject over the bass; b87.2.5: the bass's passing A♯1 under the tenor's held B2) | ≤ 9 |
-| stepwise_pct | **63.3** (leap ≥ 4th: 10.9) | ≥ 65 (missed) |
+| stepwise_pct | **65.1** (leap ≥ 4th: 10.5; was 63.3) | ≥ 65 |
 | crossings | 9 (all "alto above cantus"; see weak spots) | few |
 | reach_errors | **0** (was 23) | 0 |
-| keyboard_unplayable_pct | **5.5** (52 of 944 onsets, each with a held note a pedal can catch; was 11.8) | < 15 for 5 voices |
+| keyboard_unplayable_pct | **5.8** (55 of 943 onsets, each with a held note a pedal can catch; 5.5 before the self-critique pass, 11.8 before that) | < 15 for 5 voices |
 | mean moving voices | **3.76** | – |
-| pc tripled on beats | 13.3 % | – |
+| pc tripled on beats | 13.6 % | – |
 | themes | 29 subject/inversion entries, all 16/16 intervals and rhythm | – |
 
 The 14 cantus statements were checked separately (the critic compares everything with the
@@ -203,11 +203,15 @@ leaps and two large leaps not recovered at once.
 
 ## Honest weak spots
 
-- **Lines with life, partly.** The divisions (b11–12, b23–24, b35–36, b45–48, b59–60, b81) and the
-  countersubject move; but several inner parts in the episodes still move in quarter-note chord tones
-  (alto and tenor in b41–44, b53–54, b65–66, b76–78, b84), and stepwise motion is 63.3 %, under
-  the 65 % target. The subject's own tail and the countersubject move partly in thirds, and the
-  divisions are partly broken chords, as virginal divisions are.
+- **Lines with life, partly.** The divisions (b11–12, b23–24, b35–36, b45–48, b55–56, b59–60, b81)
+  and the countersubject move; in b53–54 the alto moves in eighths while the tenor rests (b53–56,
+  so that the D region thins to a trio). Some inner parts still move in quarter-note chord tones: the
+  tenor in b43–44, the alto in b66, alto and tenor in b76–78 and b84. Each sits under a thematic
+  entry or the cantus's turn, where a busier inner line would compete with it. Stepwise motion is
+  65.1 % (it was 63.3 %: in the self-critique pass the free basses of b12, b29–30, b42, b44, b54
+  and b56 were rewritten to walk by step, and the alto's zigzag in b67–68 and the tenor's last
+  beats in b66 were smoothed). The subject's own tail and the countersubject move partly in
+  thirds, and the divisions are partly broken chords, as virginal divisions are.
 - **The scheme is regular, until it is not.** Twelve of the thirteen regions last six bars; most have
   a rectus or inversion entry tied to the cantus and one modulating entry (25 entries in b9–84). The
   plan breaks in D (no second entry, a dotted division instead), A♭ (the drone, an entry on *re*, the
@@ -222,7 +226,7 @@ leaps and two large leaps not recovered at once.
   critic's 9 crossings), always while the cantus lies in the lower part of its range (B3–A♯4). It is
   the top voice in b75–78 and at b84, lies directly under the soprano in b79–83, and in the coda the
   soprano comes down to a third above it.
-- **Keyboard.** Every attack now fits two hands (0 reach errors). 5.5 % of onsets still need a held
+- **Keyboard.** Every attack now fits two hands (0 reach errors). 5.8 % of onsets still need a held
   note caught by the sostenuto pedal, nearly always the cantus's semibreve between a low bass and a
   high soprano: b16–18 (the C♯ division over the cantus), b47–48 (the bass lowered to clear the cantus
   after Bull's leap), b52, b58–60 and b74 (the soprano's tied E♭6 over the alto's subject).
@@ -299,6 +303,31 @@ The listening-guide entry described the archived 24-voice version. It now descri
 checked the review's claim about the wolf: the bare A♭/E♭ fifth is bar 69, as it says, and the
 compression comes after it, so bar 69 is unchanged.
 
+## Self-critique pass (Nov 2026)
+
+4 November 2026. An audit listed what was still open in this pair. What I did:
+
+- **"Lines with life": corrected and partly done.** The weak spot named the alto and tenor of
+  b53–54 as quarter-note filler; that was stale (the tenor rests b53–56 and the alto moves in
+  eighths there). I corrected it in place and worked on the rest of the point, by hand, one free
+  line at a time, each checked with the critic: the bass now walks by step in b12 (E F♯ G♯ F♯ E
+  D♯ C♯), b29–30 (B♭ C D C D E C | A G F E D E F, under the tenor's division instead of answering it
+  in broken chords), b42 (A G♯ F♯ E), b44 (A B C♯ A E), b54 (D C♯ B F♯ E D♯) and b56 (D C♯ B A);
+  the alto's zigzag in b67–68 (B D♯ B D♯ | A♯ C♯ C♯ E♯) became a held line (B D♯ | C♯ E♯) under the
+  soprano's inversion; the tenor's last beats in b66 turn F♯ E♯ F♯. Stepwise motion is 65.1 %
+  (it was 63.3 %), the cycle's target. The inner quarters left in b43–44, b66, b76–78 and b84
+  accompany an entry, the B♭ statement in minims or the cantus's turn. In b43–44 the stepwise
+  tenors I worked out put a passing note on the beat against the alto's eighths, so it stays; the
+  others I left as they are, since a quieter inner part is what those bars want.
+- **Two doubled leading tones** that the corrected critic finds in the October score are fixed:
+  b41.3 (the bass's G♯2 under the alto's G♯4 in E7: the bass now holds E2) and b74.2 (the bass's
+  D3 under the countersubject's D6 in B♭7: the bass now holds B♭2). The held B♭2 adds three
+  pedal-held onsets (keyboard_unplayable 5.5 → 5.8 %); reach errors stay 0.
+
+Before → after (critic, 4 Nov 2026): parallels 0 → 0, beat parallels 0 → 0, unresolved 0 → 0,
+unverified 3 → 3, bad doublings 2 → 0, low-register seconds 6 → 6, stepwise 63.3 → 65.1 %,
+reach errors 0 → 0, crossings 9 → 9; all 29 subject and inversion entries still exact.
+
 ## From the N+1 version
 
 - **Kept:** the title and concept (Bull's tour of twelve keys as a cantus, with a fugue around it);
@@ -327,7 +356,9 @@ fugue). It is for one player.
 
 - **The ground** is the fugue's cantus: the hexachord in minims, up and down, B C♯ D♯ E F♯ G♯ |
   G♯ F♯ E D♯ C♯ B, six bars.
-- **Its harmony:** I – V4/3 | I6 – IV | V – vi | IV6 – V7 | ii6/5 – I6 | V4/3 – I.
+- **Its harmony:** I – V4/3 | I6 – IV | V – vi | IV6 – V7 | ii6/5 – I6 | V4/3 – I. Statement 3, with
+  the ground on top, takes its falling half over a falling bass instead: IV – iii | ii – I | V7 – I
+  (the ground's F♯ over D♯, b16.3).
 
 It is stated four times, each time with a new division, and then closes:
 
@@ -335,14 +366,14 @@ It is stated four times, each time with a new division, and then closes:
 |---|---|
 | 1–6 | The plainsong: treble in minims with a few crotchets, a mean voice, the ground in the bass. |
 | 7–12 | Quaver divisions in the treble (broken chords, as on the virginals). The mean is rewritten so that it moves against them. |
-| 13–18 | The ground moves to the treble. The bass divides in quavers, and the mean follows the ground in sixths. |
-| 19–24 | Semiquaver runs in the treble over the ground, as in Bull's fastest variations. |
+| 13–18 | The ground moves to the treble. The bass divides in quavers, and the mean follows the ground in sixths. The falling half is reharmonised over a falling bass (IV – iii, b16, with the outer voices in tenths). |
+| 19–24 | Semiquaver runs in the treble over the ground, as in Bull's fastest variations; the mean returns in minims between them, so the last division has three voices again: the ground and the mean in minims, the treble in semiquavers. |
 | 25–26 | Close: IV – V7 – I. The final B-major chord leads into the fugue on the same B. |
 
 Tempo: q = 72 ("like a pavan; the divisions in time"). It broadens in the last two bars. The audio
 lasts about 1:27.
 
-## Critic numbers (`tools/critic.py cycle/23-b-major/prelude.json`)
+## Critic numbers (critic, 4 Nov 2026: `tools/critic.py cycle/23-b-major/prelude.json`)
 
 | measure | value |
 |---|---|
@@ -351,11 +382,12 @@ lasts about 1:27.
 | unresolved dissonances | 0 |
 | bad_doublings | 0 |
 | low_register_seconds | 0 |
-| keyboard_unplayable_pct | 0 (at most 3 notes at once) |
-| stepwise_pct | 49 |
+| keyboard_unplayable_pct / reach errors | 0 / 0 (at most 3 notes at once) |
+| stepwise_pct | 48.5 (49.0 before the mean was added to b19–24) |
+| mean moving voices | 3.0 (2.77 before) |
 
 The stepwise figure is low because the divisions in bars 7–12 are broken chords, as virginal
-divisions are.
+divisions are, and the mean of a ground moves between chord tones.
 
 ## Method and credits
 
@@ -364,8 +396,23 @@ divisions are.
   the bass quavers and the treble ground (b6, b16, b18). They were rewritten by hand.
 - The genre (ground and divisions on the hexachord) comes from Byrd and Bull. No notes are quoted.
 
+## Self-critique pass (Nov 2026)
+
+- **Bars 19–24 had only two voices; the ground's harmony was the same in all four statements.**
+  Both changed. The mean returns in b19–24 in minims (D♯ E | D♯ G♯ | C♯ B | B C♯ | G♯ B | C♯ D♯),
+  a slow layer between the ground and the semiquaver runs, within a tenth of the bass so the left
+  hand takes both. It is written so that it never moves with the runs into an octave or a fifth
+  (my first two drafts did, at b20.3 and b21.3). In statement 3, where the ground is on top, its
+  falling half now goes over a falling bass: IV – iii (b16, the ground's F♯ over D♯, where it
+  was V7), then ii – I and V7 – I, with the outer voices in tenths. I kept the rest of the ground's
+  harmony: in a ground the bass and its chords are the constant and the divisions vary.
+  Critic: still 0 everywhere; stepwise 49.0 → 48.5 %, mean moving voices 2.77 → 3.0.
+
 ## Weak spots
 
 - It is short: four divisions. A virginalist set would usually go further, with triplets and a
-  galliard-like proportion. Bars 19–24 drop the mean voice, so only two voices sound there.
-- The harmony of the ground is the same in all four statements. Only the close is new.
+  galliard-like proportion.
+- The harmony of the ground is nearly the same in all four statements: one chord changes (b16.3,
+  iii instead of V7) and the inversions change when the ground moves to the treble. That is the
+  ground's nature (Byrd's and Bull's grounds keep their bass and its harmony and vary the
+  divisions), but it is still the most regular thing in the pair.

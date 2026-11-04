@@ -193,20 +193,29 @@ descent to F♭2). The notation can stay on the staff and end at Bach's register
 
 ## Critic numbers
 
-**Notation score** (`python3 tools/critic.py cycle/01-c-major/prelude-notation.json`):
+**Notation score** (`python3 tools/critic.py cycle/01-c-major/prelude-notation.json`; critic, 2026-11-04):
 
 | measure | result |
 |---|---|
 | `parallels_error` | 0 |
 | `parallels_weak` | 0 |
 | doubling runs | 0 |
-| suspensions | 6 (including the tenor 4–3 at 13.1) |
+| `beat_parallels` | 0 |
+| suspensions | 5 (including the tenor 4–3 at 13.1, unprepared in the critic's reading) |
 | retardations | 5 |
 | pedal dissonances | 12 |
-| tertian fit | 82.5 % |
-| `UNRESOLVED` flags | 4, for three events (below) |
+| tertian fit | 90.7 % (moves as the critic's chord naming is revised) |
+| `UNRESOLVED` flags | 5, for three events (below) |
+| unverified | 2 (5.3, 54.4; below) |
+| `low_register_seconds` | 2 (10.3¼, 56.1¼; below) |
 | `keyboard_unplayable_pct` | 5.0 % (the cantus: bars 5–7 and 54–57) |
 | `bad_doublings` | 1: the cantus's passing F6 at 53.2 (review P4; it belongs to the exact augmentation) |
+
+**Performance score** (`prelude.json`): its octave layers are declared as doublings in the
+metadata (`doublings`, written by `shepard.py`), so the critic labels their octave runs
+`doubling` (570 runs) and reports 0 `parallels_error` and 0 weak parallels. Its dissonance
+and register figures describe octave-transposed copies of the written notes and are not a
+counterpoint measure; the notation score is the one to judge.
 
 The three `UNRESOLVED` events are all justified:
 - **6.2** (two flags): A♭–G in the A♭maj⁷ chord (VI⁷) that carries the Royal
@@ -215,8 +224,24 @@ The three `UNRESOLVED` events are all justified:
 - **21.2**: the F half-diminished seventh in the falling figure. At beat 2 the
   figure's note is C♭ against the tenor F. The chord is complete within the
   half bar; the flag comes from reading the compound line one note at a time.
-- **51.2**: the cantus's G6 appoggiatura over D⁷/C (the subject's accent),
-  resolving to F6 on beat 3.
+- **51.2** (two flags): the cantus's G6 appoggiatura over Dm⁷/C (the subject's
+  accent), resolving to F6 on beat 3. With the G6 sounding, the critic can no
+  longer name the chord, so it also flags Bach's own ⁴₂ of bar 2 (the figure's F5
+  over the bass C4, the seventh in the bass), which it accepts in bar 2 itself.
+
+The two unverified spots are steps the critic cannot follow to a consonance:
+- **5.3**: the cantus's E♭6 over the passing B♭2 (C minor over its seventh, ⁴₂ in
+  passing). The bass steps on to A♭2 under the cantus's G6, the major seventh of
+  VI⁷ that rises to A♭ with the Royal Theme.
+- **54.4**: F6, a passing sixteenth in the cantus's fall G6 F6 E6 D6 C6 (the fugue
+  subject's head at true speed) over the C⁷ figure. Its next step, E6, meets the
+  figure's B♭3, the tritone inside C⁷.
+
+The two low-register sevenths are chord sevenths of the written core:
+- **10.3¼**: V⁷ of c♯ in root position, G♯2 in the bass and the seventh F♯3 in the
+  tenor. In the performance the layers spread it over the keyboard.
+- **56.1¼**: C2 and B2, the G⁷ over the tonic pedal of BWV 846's own penultimate
+  bar (checked against the music21 corpus copy of BWV 846).
 
 All of the unplayable onsets lie in the cantus bars (5–7 and 54–57). There the
 cantus needs a third hand, or a second player as in Gounod. The core alone fits
@@ -263,8 +288,6 @@ itself and are not meaningful.
   it is untested by ear.
 - **Possible boom at the climax.** The pedal climax still puts loud layers on
   D♯1–D♯3, now alone in that register (see the second review below).
-- **Empty cantus staff.** The PDF carries a Cantus staff that is empty in bars
-  1–4 and 8–48, because `render_music.py` cannot hide empty staves.
 
 ## Tool notes (not edited; for whoever maintains `tools/`)
 
@@ -277,8 +300,6 @@ itself and are not meaningful.
 - **`render_music.py` markers.** Markers are printed only where voice 0 has a
   segment start. With a resting top staff, a mid-bar marker silently
   disappears. All markers here are on barlines.
-- **`render_music.py` empty staves.** There is no way to hide empty staves
-  (`\RemoveEmptyStaves`).
 - **`render_music.py` duplicate by-products.** Every audio render rewrites
   `.ly`, `.musicxml` and `.mid`, which are identical across temperaments. I
   deleted the duplicates for `-meantone` and `-equal`.
@@ -351,3 +372,16 @@ no written pitch changed.
 - the performance MIDI and MusicXML;
 - the three MP3s, with `--audio-only` (the `-meantone`/`-equal` `.render.json`
   files are from the first render; the audio is new).
+
+## Self-critique pass (Nov 2026)
+
+No notes changed.
+- **Critic section refreshed.** It still listed 4 `UNRESOLVED` flags and 6
+  suspensions. The current critic reports 5 flags for the same three events (51.2
+  now counts twice), 5 suspensions, 2 unverified steps (5.3, 54.4) and 2 low-register
+  sevenths (10.3¼, 56.1¼); each is explained above. The performance score's octave
+  layers are now declared as doublings, and that is noted there too.
+- **Deleted** the weak spot "Empty cantus staff" and the tool note saying
+  `render_music.py` cannot hide empty staves. `prelude.py` sets
+  `score_layout.hide_empty_staves`, and the renderer removes the empty Cantus staff.
+

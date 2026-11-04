@@ -22,7 +22,7 @@
 - It ends on a half cadence that withholds its final D. The fugue's ground begins on that D.
 
 **Prelude.**
-- **The opening of the Toccata in D minor BWV 565 (attributed to J. S. Bach).** The mordent A–G–A, then the fall G F E D C# D in octaves, three times, each an octave lower, then a diminished seventh built up over a low D. This is written from memory of the gesture, not copied from a score. The rhythm is fitted to 12/8.
+- **The opening of the Toccata in D minor BWV 565 (attributed to J. S. Bach).** Checked in Nov 2026 against the Bach-Gesellschaft text (BGA 1867) as typeset by the Mutopia Project (`BachJS/BWV565/ToccataFugue`, LilyPond source and MIDI). Bach states the figure three times in octaves, each an octave lower: A5/A4 with its ornament and the fall G F E D C♯ D; A4/A3 with the fall shortened to E F C♯ D; A3/A2 with the full fall. Then the pedal D, and the diminished seventh C♯3 E3 G3 B♭3 C♯4 E4 rolled up over it. Bars 1–3 here follow that, the second statement now shortened as Bach has it (it repeated the full fall before the check). The ornament is engraved there as a short trill sign on the A; it is written out here as A–G–A, the usual reading. The rhythm is fitted to 12/8. Two differences are kept on purpose: the diminished seventh is extended up to B♭5, and it resolves to D minor, the key of the Allegro that follows (Bach's resolves to D major, through the left hand's G–E–F♯).
 - **The running triplets of the WTC I D-minor prelude BWV 851.**
   - This is an allusion of texture, not a quotation: a continuous three-to-the-beat right hand over a stepwise bass.
   - Bars 6, 9, 18 and 20 use a turning, stepwise figure; the other Allegro bars are broken chords.
@@ -34,7 +34,7 @@
 
 | Bars | Section | Content |
 |---|---|---|
-| 1–4 | Toccata (Adagio) | The BWV 565 figure in octaves, three statements a register lower each time; a diminished seventh rolled up over D2, resolved to D minor. |
+| 1–4 | Toccata (Adagio) | The BWV 565 figure in octaves, three statements a register lower each time, the second shortened (A–G–A, E F C♯ D) as in Bach; a diminished seventh rolled up over D2, resolved to D minor. |
 | 5–12 | Allegro | Running triplets over a tonic pedal, then the bass walks the lament (D C# C B Bb A). The run is cut off by C#°7/G (fermata). |
 | 13–15 | Recitativo I | Right hand: A Bb B C C# D C# E D A in free rhythm, over chords (Dm/F, Bb, A7/G, A, Dm, F). It ends on A over F: the music turns to F major. |
 | 16–23 | Allegro | F major, a fifths sequence, Bb → E7 → A minor, halted on E. |
@@ -43,23 +43,35 @@
 
 ### Prelude: critic numbers
 
-**Prelude:**
+**Prelude** (critic, 2026-11-04):
 
 | Measure | Value |
 |---|---|
-| `parallels_error` | **0** |
-| `doubling_runs` | 4: the octave statements of the BWV 565 figure (bars 1–3, 28), intended |
-| `beat_parallels` | 1 (b28, inside the same octave figure) |
+| `parallels_error` / `parallels_weak` | **0 / 0** |
+| `doubling_runs` | 7: the octave statements of the BWV 565 figure (bars 1–3, 28), declared as doublings in the metadata (R.H./R.H. inner, R.H./L.H. inner, L.H. inner/L.H.) |
+| `beat_parallels` | 0 (the one at b28 lies inside the same declared octave figure) |
 | `dissonance_unresolved` | 0 |
-| `bad_doublings` | 1 |
-| Keyboard | **0/276 onsets exceed two hands**; max 4 notes at once |
-| `stepwise_pct` | 46.7% (was 38% before the turn figures) |
+| unverified | 1 (13.5½, below) |
+| `bad_doublings` | 1 (28.2½, below) |
+| Keyboard | **0/274 onsets exceed two hands**; max 4 notes at once; reach errors 0 |
+| `stepwise_pct` | 45.2% (38% before the turn figures; 46.7% before the second BWV 565 statement was shortened) |
 | `low_register_seconds` | 3: b4 (C#3 against the D2 pedal, the BWV 565 chord) and b21 (E2–D3) |
+
+- **Doublings.** An earlier critic recognised these octave runs by itself; the current
+  one exempts only pairs the score declares, and before the declaration it reported the
+  same octaves as 7 weak parallels and 1 beat parallel. They are one line doubled at the
+  octave, as on the organ; these three voice pairs make no other parallel in the piece.
+- **28.2½, the doubled seventh.** The BWV 565 figure in octaves passes G5/G4 (32nds,
+  the start of its fall G F E D C♯) over A1 and E2, so the critic reads A7 with its
+  seventh doubled. It is one doubled line, and the G is a passing note of the fall.
+- **13.5½, unverified.** The recitative's C5, the subject's chromatic step between B
+  and C♯, sounds over B♭2 (a ninth) and moves by a semitone to C♯5 over A7/G (the
+  dominant's ⁴₂), where the bass is the seventh and C♯/G a tritone, so the critic cannot
+  call the step a resolution. The subject's pitches are fixed; the C♯ is the chord's third.
 
 ### Prelude: weak spots
 
 **Prelude.**
-- **The allusions are from memory.** The BWV 565 opening is paraphrased, not checked against a score.
 - **Most Allegro bars are still broken chords.** Only four bars use the turning figure.
 - **Still more slow than fast.** About 35 of its 106 seconds are fast (the two Allegros and the Presto); the rest is the Adagio, the two recitatives and the closing fermata.
 
@@ -110,7 +122,7 @@ INVERSUS  D5:8 C#5:4 C5:4 B4:2 Bb4:2 A4:6 Bb4:2 G4:4 A4:12 D4:4           (= the
 | 9–16 | **Station II**: ground in the **Tenor** | A minor | 3 (Bass rests) | The Tenor is now the lowest voice. b11: inversus in the **Soprano** (E5). b13: **answer** in the Alto (E4). | Am · Am–E/G# · C/G–D#°7 · Dm/F–A/E–E · E–Fmaj7–Bø/D · Bm/D–Em–E · Am/E–E7–Am/E · Esus4–Am |
 | 17–20 | **Episode 1** | → F major | 3 (Tenor rests) | Falling fifths with sevenths: A7–Dm, G7–C, F7–Bb, Gm–C. The Alto's sevenths fall a step a bar (G F, F E, Eb D); the Bass returns. | A7 · Dm · G7 · C · F7 · Bb · Gm · C |
 | 21–28 | **Station III**: ground in the **Alto** | F major | 2 → 3 → 4 | The Soprano rests four bars, so the Alto's ground is the top voice over the Tenor alone. b23: the **Bass** returns with the inversus, in tenths *below* the ground. b25: **subject** in the Soprano (C5). First four-voice bars. | F · C/E · Cm–G/B · Bbm–F/A–Fm/Ab–C/G · Dbmaj7/F–E°7/G · Gm–C/G–F/C · C7 · F |
-| 29–34 | **Episode 2**: the surface quickens | → G minor → D minor | 3 → 4 | The Soprano runs in sixteenths: a one-bar figure sequenced down a step, over a Bass falling by fifths (Gm7–C7, F–Bb, Eø7–A7, Dm–Gm). The Tenor's sevenths fall a step a bar (F E Eb D C# C Bb). The Alto rests, back at b34. | Gm7 · C7 · F · Bb · Eø7 · A7 · Dm · Gm · Gm/Bb · A7 · Dm · A |
+| 29–34 | **Episode 2**: the surface quickens | → G minor → D minor | 3 → 4 | The Soprano runs in sixteenths: a one-bar figure sequenced down a step three times, then climbing in the same cells (b32), over a Bass falling by fifths (Gm7–C7, F–Bb, Eø7–A7, Dm–Gm). The Tenor's sevenths fall a step a bar (F E Eb D C# C Bb). The Alto rests, back at b34. | Gm7 · C7 · F · Bb · Eø7 · A7 · Dm · Gm · Gm/Bb · A7 · Dm · A |
 | 35–40 | **Stretto** | D minor → A | 3 → 4 → 3 | **Subject** in the **Tenor** (A3, its first fugal entry), **answer** in the Alto one bar later (E4). The Bass walks, then rests b40; the Tenor rests on b40.3. Half cadence on A; the Alto runs up a scale into the summit. | Dm · Bb · Em/G–A · Bm–A7–Dm · Bø–E/G#–A · Dm7/F–F–E7 · A |
 | 41–44 | **Summit I** | D minor | 4 → 3 | **Ground in the Bass at half speed** (D, 2⅔ bars; C#). **Inversus in the Tenor** (A4) over it: ×2 and ×½ together; the Alto holds D5 and rests on 41.3 so the Tenor's descent is exposed. Alto and Soprano in quarters over the pedal. The Soprano rests b44. | Dm · E7/D · A7/D · D–Dm · A7/D · Dm · Gm/D · A/C# |
 | 45–52 | **Summit II**: the two grounds, then four forms | (D minor, at A) | 1 → 4 | 45.2: the **Soprano** enters with the **ground at normal speed** (A5), a beat after the Bass's C, over the Bass alone: the outer voices fall chromatically at two speeds, offset by a beat, as a chain of 7–6 suspensions (A5/B2 → G#5, G#5/Bb2 → G5, G5/A2 → F#5). b47: **subject** in the **Alto** (D4 level). 49.3: **inversus** in the **Tenor** (D4), descending under the two grounds' long notes; all four voices carry a form of the ground in 49.3–50.3. | Am/C · E7/B · Gm/Bb–F#°7/A · Fmaj7/A–A7 · Gm/Bb · C#°7/G · A7/G · A |
@@ -160,7 +172,7 @@ Eight entries take their closing leap the other way (a fourth instead of a fifth
 
 ### Critic numbers
 
-`python3 tools/critic.py cycle/06-d-minor/fugue.json`:
+`python3 tools/critic.py cycle/06-d-minor/fugue.json` (critic, 2026-11-04):
 
 | Measure | Value |
 |---|---|
@@ -176,9 +188,9 @@ Eight entries take their closing leap the other way (a fourth instead of a fifth
 | `mean_moving_voices` | **2.95** (4 voices) |
 | Onset slots with 3+ voices attacking together | 21.5% (the seven-voice version: 42%) |
 | Sixteenths | 60, all in b29–33 |
-| `tertian_fit_pct` | 50% |
-| `chord (7th not resolved down)` | 24 notes. The chromatic ground and the inversus move sevenths by semitone or sideways (D–C# under a C, for instance), and in the sequences of Episodes 1–2 the seventh sometimes passes to another voice. None is a free dissonance; the critic classifies each as a chord member. |
-| Suspensions (critic) | 10 (5 before the third review: the summit's offset adds the 7–6 chain) |
+| `tertian_fit_pct` | 67% (the critic's revised chord naming, Nov 2026; 50% the old way) |
+| `chord (7th not resolved down)` | 28 notes (24 before the critic's revised chord naming). The chromatic ground and the inversus move sevenths by semitone or sideways (D–C# under a C, for instance), and in the sequences of Episodes 1–2 the seventh sometimes passes to another voice. None is a free dissonance; the critic classifies each as a chord member. |
+| Suspensions (critic) | 10, one of them unprepared (5 before the third review: the summit's offset adds the 7–6 chain; the climbing fourth statement of Episode 2, b32, adds two) |
 | Themes | 17 labelled entries, rhythm 9/9 for sixteen (8/9 for the Soprano's summit ground); intervals 9/9 for nine, 8/9 for the eight variant endings above |
 
 **Texture by section.** "Eighth slots" is the share of eighth-note positions on which some voice attacks.
@@ -194,7 +206,7 @@ Eight entries take their closing leap the other way (a fourth instead of a fifth
 | Summit | 41–56 | 62% | 3.6 |
 | Coda | 57–64 | 31% | 3.3 |
 
-**Off-beat dissonances.** The critic checks beats. `search/offbeat.py` scans every off-beat attack that is not approached and left by step. It finds 27, and all are one of three kinds:
+**Off-beat dissonances.** The critic checks beats. `search/offbeat.py` scans every off-beat attack that is not approached and left by step. It finds 24 (27 when first run; run now on the score as it was before the Nov 2026 change to b32, it also finds 24), and all are one of three kinds:
 - chord sevenths: the A7, G7, F7 chain of Episode 1, and the sixteenth-note figure of Episode 2 sounding against the Tenor's held seventh;
 - anticipations;
 - a passing eighth that the scan cannot see because the step out is to a held note.
@@ -233,7 +245,7 @@ Eight entries take their closing leap the other way (a fourth instead of a fifth
 - **The Bass's long A fades on a piano.** The augmented ground's A2 is held from 51.3 to 55.2 (about 13–15 s with the broadening), through the cadential 6/4 and the B-flat of b54. On the organ render it holds; on the piano it will have decayed before V resolves. Re-striking it would break the augmentation's rhythm, so it stays.
 - **The two speeds may blend.** Inside a station the inversus moves in parallel tenths or sixths with the ground, and in the same rhythm for its first three notes. That is why it is consonant, but it may be heard as a harmonisation of the ground rather than as the ground again at double speed.
 - **The stations repeat one plan.** Each has ground, inversus at bar 3, subject at bar 5. Only the voices and keys change. Each station also ends with the ground's cadence. Ties and overlaps at the joins soften the sections: the Soprano's A5 runs from b8 into b9, the Bass picks up the Tenor's last A at b17.
-- **Episode 2 is mechanical.** Its sixteenth-note figure is sequenced strictly, a step lower each bar for four bars.
+- **Episode 2 is still a sequence.** Its sixteenth-note figure falls a step a bar three times (b29–31); the fourth statement now climbs instead (see the self-critique pass), but the bass's falling fifths run on unchanged under all four bars.
 - **The coda is spare.** For five and a half bars it has three voices (Soprano, Alto, a D2 re-struck every two bars), and the Alto mostly turns between F# and G. The piece ends on the subject's last note, A5, the fifth of the chord, on top.
 - **Thin by design.** Bars 1–4 and 21–22 have two voices or fewer.
 - **Bass line.** It moves by step only 40% of the time.
@@ -277,3 +289,54 @@ Eight entries take their closing leap the other way (a fourth instead of a fifth
 | 5 | The station pairs sound like a harmonised lament | **Left, as the reviewer recommends** (a one-beat offset gives parallel fifths at b5.3). The description now says compound sixths in b3–6 and b11–14, tenths in b23–26, and that the pairs are heard as the lament harmonised. |
 
 The "must not be touched" items (Station II's texture, the coda, the Bass's rest in b40 and the Alto's scale into the summit) are unchanged. All notes of the changes were written by hand in `fugue.py`. Critic after the changes: 0 parallels, 0 beat parallels, 0 unresolved, 0 bad doublings, 0 low-register seconds, 0 crossings, 0.0% unplayable; suspensions 5 → 10; stepwise 67.0 → 66.5%.
+
+---
+
+## Self-critique pass (Nov 2026)
+
+**Fixed: the BWV 565 allusion, checked against a score.** Source: the Bach-Gesellschaft
+edition (BGA, 1867) as typeset by the Mutopia Project, `BachJS/BWV565/ToccataFugue`
+(its LilyPond source and MIDI, read note by note for bars 1–3). The three statements in
+octaves, each an octave lower, the pedal D and the rolled diminished seventh over it were
+right. The second statement was not: Bach shortens it to A (ornament), E F C♯ D. Bar 2 now
+has that (`E4:1 F4:1 C#4:2 D4:6` in octaves, the rhythm fitted to 12/8 as in bar 1). Two
+differences are kept and now described as differences: our diminished seventh climbs on
+to B♭5, and it resolves to D minor, where Bach's resolves to D major (G–E–F♯ in the left
+hand); the Allegro that follows is in D minor. The weak spot "the allusions are from
+memory" is gone.
+
+**Fixed: the prelude's critic table.** It said 4 doubling runs and 1 beat parallel; the
+current critic counts the BWV 565 octaves as 7 weak parallels and 1 beat parallel unless
+the score declares the doubling. The prelude now declares its three octave pairs
+(`metadata.doublings`), so they read as 7 doubling runs, 0 weak and 0 beat parallels. The
+bad doubling (28.2½, the doubled figure's passing G over A1/E2) and the unverified step
+(13.5½, the recitative's C5 moving chromatically to C♯5 over A7/G) are explained under the
+table.
+
+**Fixed (optional): Episode 2 of the fugue.** Its figure fell a step a bar four times. Now
+it falls three times (b29–31) and the fourth statement (b32) climbs a beat at a time in the
+same sixteenth cells (A4 B♭4 C5 A4 | D5 C5 D5 E5 | F5 E5 D5 C5), against the tenor's
+still-falling sevenths, and steps into bar 33's D5. Critic: 0 parallels, 0 beat
+parallels, 0 unresolved, stepwise 66.5 % as before; the off-beat scan lists the same 24
+spots; the `fugue.py` assertion (inversus = ground at double speed) holds.
+
+**Declined.**
+- **REVIEW-2 P3, secco recitative chords** (optional). The recitatives declaim the
+  subject's chromatic pitches in long values (A4 for ten sixteenths, C♯5 for nine), and
+  what makes each of them speak is the harmony under it: B♮ against the B♭ chord, C against
+  B♭, C♯ over A7/G. With short chords the long declaimed notes would decay over silence
+  and those clashes would go. The contrast with the toccata already comes from tempo
+  (quarter = 84 against 168) and texture (two-note chords against running triplets), and
+  on a piano the held chords fade under the voice by themselves. The review rated it
+  optional and "fine on a piano".
+- **More turning figures in the Allegros.** Twelve of the sixteen Allegro bars are
+  broken chords because that is BWV 851's own figuration (triplet broken chords over a
+  stepwise bass), the texture the prelude alludes to. The turning figure is kept for the
+  bars that move: the bass walking the lament (6) and the turns of the two sequences (9,
+  18, 20). Spread over more bars it would stop marking them.
+- **The fugue's spare coda.** REVIEW-3 lists the coda among the things not to touch,
+  and its spareness is the idea: the subject in augmentation, the lament turned upwards,
+  rising alone over the D pedal (the piece's only augmentation of the subject). A fourth
+  voice earlier would cover it.
+
+

@@ -182,7 +182,10 @@ X('P2', 6, 1, cantus(1, -2, last=36), 'cantus line 1 (Pedal II, canon dux)')
 X('P1', 7, 3.5, cantus(1, -1, last=10), 'cantus line 1 (Pedal I, canon at the octave, 6 1/2 beats)')
 X('S', 6, 1, 'A4:8 C5:8 A4:8 Bb4:4 A4:4 A4:4 C5:6 A4:2 D5:4 Eb5:4 D5:2 C5:2 Eb5:4 D5:4 '
              'D5:4 Eb5:4 D5:4 C5:4 Bb4:8')
-X('A', 6, 1, 'F#4:8 G4:8 F#4:2 E4:2 D4:2 E4:2 G4:4 F#4:4 F#4:8 G4:2 F#4:2 G4:4 G4:12 F4:4 F4:4 A4:4 Bb4:4 A4:4 F4:8')
+# (Nov 2026) Under the pedal canon the Alt keeps the Tenor's running eighths (b6-7, b9) instead of
+# leaning on F#-G in half notes; b8 stays (Pedal I's E-flat4 - D4 lies a third below it).
+X('A', 6, 1, 'F#4:2 D4:2 E4:2 F#4:2 G4:2 Eb4:2 F4:2 G4:2 F#4:2 E4:2 D4:2 E4:2 G4:4 F#4:4 F#4:8 G4:2 F#4:2 G4:4 '
+             'Eb4:2 F4:2 G4:2 A4:2 G4:4 F4:4 F4:4 A4:4 Bb4:4 A4:4 F4:8')
 
 
 # ================================================================ B: line 2 (bars 11-18)
@@ -280,7 +283,8 @@ X('T', 52, 1, 'D3:4 G3:4 F3:4 E3:4 Eb3:4 D3:4')
 X('P2', 53, 3, cantus(9, -2, last=24), 'cantus line 9 (Pedal II, canon dux)')
 X('P1', 54, 1.5, cantus(9, -1, last=14), 'cantus line 9 (Pedal I, canon at the octave, 2 1/2 beats)')
 X('S', 54, 1, 'Bb4:4 Eb5:8 D5:4 D5:4 C5:8 Bb4:4 D5:4 C5:8 A4:4 Bb4:2')
-X('A', 54, 1, 'G4:6 F#4:2 F4:4 D4:4 G4:4 A4:4 F#4:4 G4:4 Bb4:4 F4:4 G4:4 C4:4 D4:4 F#4:4 G4:4 D4:4 A4:8 R:8 F4:4 G4:4 '
+# (Nov 2026) b55-56: the dotted 3+1 limp of b15-17 instead of quarters.
+X('A', 54, 1, 'G4:6 F#4:2 F4:4 D4:4 G4:3 F#4:1 E4:4 F#4:3 E4:1 G4:4 Bb4:3 A4:1 F4:4 G4:3 F4:1 C4:4 D4:4 F#4:4 G4:4 D4:4 A4:8 R:8 F4:4 G4:4 '
               'Eb4:4 R:4 G4:4 D4:4')
 
 # ================================================================ I: the guest (bars 57-60)
@@ -298,7 +302,8 @@ X('P1', 60, 4.5, cantus(10, -1, last=42), 'cantus line 10 (Pedal I, canon at the
 X('S', 60, 3.5, oc(S10, 1), 'summit: subject 10 (Diskant), with its own augmentation in the pedal')
 X('A', 61, 2.5, S10, 'summit: subject 10 an octave lower, 3 beats later (Alt)')
 X('S', 62, 2, 'F5:4 G5:4 Eb5:4 D5:4 F#5:4 A5:4 Bb5:4 C6:4 D6:8 Eb6:4 D6:8 C6:4 A5:2 C6:2 Bb5:8')
-X('A', 63, 1, 'G4:4 A4:2 D5:2 Bb4:1 C5:1 A4:1 Bb4:1 G4:4 Eb5:4 D5:8 C5:8 A4:4 F#4:8 G4:8')
+# (Nov 2026) b65: the seventh C5 falls through B-flat4 to A4 (it leapt to A4).
+X('A', 63, 1, 'G4:4 A4:2 D5:2 Bb4:1 C5:1 A4:1 Bb4:1 G4:4 Eb5:4 D5:8 C5:6 Bb4:2 A4:4 F#4:8 G4:8')
 X('T', 64, 1, 'G4:8 F4:8 D4:28')
 
 # ================================================================ K: coda (bars 66-68)

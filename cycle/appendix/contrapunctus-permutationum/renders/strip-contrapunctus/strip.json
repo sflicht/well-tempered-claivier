@@ -716,7 +716,7 @@
   ],
   [
    47.0,
-   5773.04
+   5771.53
   ],
   [
    47.25,
@@ -4593,7 +4593,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/appendix/contrapunctus-permutationum/score.json",
-  "source_sha256": "923ed4ac16904274c64f180f64a991e05408406f7946ddfc8f820b0ab249a717",
+  "source_sha256": "98a3038e26cb56c247c7b91da519dd2c5805ee34d23696cc5bc425fc63f65ab6",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

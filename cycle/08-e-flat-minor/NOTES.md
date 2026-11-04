@@ -124,7 +124,7 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 - the guest a tempo but calmer (66);
 - a final ritardando over b40.3–43 (→ 46).
 
-## Critic numbers (`python3 tools/critic.py cycle/08-e-flat-minor/fugue.json`)
+## Critic numbers (`python3 tools/critic.py cycle/08-e-flat-minor/fugue.json`; critic, 4 Nov 2026)
 
 | Measure | Target (brief) | Fugue VIII a 4 | Earlier version a 9 | BWV 878 (4 v.) | BWV 869 (4 v.) |
 |---|---|---|---|---|---|
@@ -136,7 +136,7 @@ Bach's D-sharp-minor fugue (WTC I/8, BWV 853) has three voices, so this one has 
 | Stepwise motion | ≥ 65 % | **67.4 %** (leaps of a 4th or more 19.0 %) | 60.0 % | 75.0 % | 70.9 % |
 | Tripled pitch class on beats | | 1.9 % | 24.0 % | 1.3 % | 1.7 % |
 | Voice crossings | few | **0** | 29 | | |
-| `keyboard_unplayable_pct` | < ~5 % | **0.0 %** (0 of 271 onsets) | 37 % | 0 % | 0 % |
+| `keyboard_unplayable_pct` | < ~5 % | **0.0 %** (0 of 273 onsets) | 37 % | 0 % | 0 % |
 | Mean moving voices per bar | | **2.93** (14 of 43 bars with all four moving) | 6.02 | 3.6 | 3.2 |
 
 **Moving voices by section.**
@@ -163,12 +163,11 @@ The full texture is kept for the stretto and the coda.
 - One augmented 2nd, at b38.1: the bass's D3–C♭3 in the retrograde inversion. It is the Prelude's melody, and the same interval is in the Prelude's b1–2.
 - The harmonic-minor inversion's C♭–D is avoided elsewhere by using the melodic-minor C♮ when the inversion rises (IC): soprano b6, the dance's turn at b17.4, bass b20, alto b28, tenor b30.
 
-**"7th not resolved down" (notes, not errors), 6 in all since the third review** (the two at b39.3 are gone; the list below is the earlier eight).
+**"7th not resolved down" (notes, not errors), 6 in all.** The two at b39.3 (passing notes of Bach's subject and ours over E♭3) went with the third review's change under Bach's subject.
 - b6.4: a passing B♭4 in the soprano's inversion over C♭3.
 - b19.4: the soprano's A♭5–G♭5 eighths over G♭2.
 - b23.3: the soprano's G♭5 is held as the common tone into vii°7/V and falls to F5 at b24.3.
 - b32.3 (×2): the common-tone diminished seventh over the tonic, made by the passing C6 of the soprano's subject on B♭.
-- b39.3 (×2): passing notes of Bach's subject and ours over E♭3.
 - b41.3: the soprano's C♭6 over ii ø6/5 in the coda.
 
 **Themes.** Every complete statement verifies with full rhythm (8/8). The exceptions are expected:
@@ -191,7 +190,7 @@ The full texture is kept for the stretto and the coda.
 - **The dance's 32nd notes at ♩ = 72** (countersubject in diminution) are quick, about ten notes a second. They are written for lightness, not display, and they are marked p.
 - **The approach uses heads**, not complete statements (three beats each).
 - **The exposition is unusual.** Its fourth entry is in augmentation, and the inversion enters over it as a fifth statement. This is the concept ("the fourth voice is the slow one"), but it is not a textbook exposition.
-- **Tertian fit 47 %.** Most of the "unnamed" beats are passing and appoggiatura sonorities in a three-voice texture. The per-beat reduction (`tools/reduce.py`) reads as a clear progression, but the number is lower than in the earlier, fuller version.
+- **Tertian fit 46 %.** Most of the "unnamed" beats are passing and appoggiatura sonorities in a three-voice texture. The per-beat reduction (`tools/reduce.py`) reads as a clear progression, but the number is lower than in the earlier, fuller version.
 
 ## From the N+1 version (third edition, nine voices)
 
@@ -289,7 +288,7 @@ All three renders were remade.
 
 # Prelude VIII (third edition; unchanged by this recomposition)
 
-The text below is the Prelude part of the previous NOTES, unchanged. (Its bar references to the Fugue, b45–47, belong to the earlier nine-voice Fugue; in this Fugue the Prelude's melody returns in the bass at b37–39.)
+The text below is the Prelude part of the previous NOTES. Its bar references to the Fugue have been brought up to date: in this Fugue the Prelude's melody returns in the bass at b37–39, under Bach's subject. (In the earlier nine-voice Fugue it was b45–47.)
 
 **Tempo map** (`metadata.tempo_map`).
 - Prelude: a ritardando through the last bar into the half cadence (♩ 90 → 64).
@@ -323,15 +322,15 @@ The text below is the Prelude part of the previous NOTES, unchanged. (Its bar re
 | 14–17 | The bass sings the retrograde inversion while the soprano sings it in G♭ major in tenths (plus octaves) above. The figure lies between them, playable by the left hand. |
 | 18–21 | i6/4 – V7 – deceptive VI – iv – V, a rising tirade to C♭6, the ♭9 of V7 and the piece's high point (b20.4; since the second review), resolving to B♭5 over the tonic at b21.1. The last bar's bass is the subject's head, E♭ B♭ C♭ B♭, and the Prelude stops on V (D5 on top). The Fugue's solo E♭4 completes it. |
 
-**Retrograde inversion.** It is the Prelude's melody, and it returns as the Fugue's bass at b45–47 under Bach's subject, so the pair is a palindrome.
+**Retrograde inversion.** It is the Prelude's melody, and it returns as the Fugue's bass at b37–39 under Bach's subject, so the pair is a palindrome.
 
 ## Ranked problems from REVIEW.md (Prelude items), and what changed
 
 7. **The Prelude discarded the Night loom.** Rebuilt on it; credits above.
 8. **The Prelude's pumped inner voices.** The figure is a continuous line of eighths whose shape changes almost every half bar. There is no re-struck repeated chord.
-9. **The Prelude's jagged melody.** The melody is now the stepwise retrograde inversion. The only leaps are F–D, the line's returning 4th A♭–E♭, and the D–C♭ augmented 2nd, which belongs to the line (see weak spots). One ascending tirade.
+9. **The Prelude's jagged melody.** The melody is now the stepwise retrograde inversion. The only leaps are F–D, the line's returning 4th A♭–E♭, the D–C♭ augmented 2nd, which belongs to the line (b2.1), and the same augmented 2nd rising, C♭–D, from iv to V at b20.1 (see weak spots). One ascending tirade.
 10. **The broken link and the uncredited allusion.**
-    - BWV 853 is credited and audibly quoted (b45–47).
+    - BWV 853 is credited and audibly quoted (Fugue b37–39).
     - The Prelude's melody returns in the Fugue's bass.
     - The Prelude's last bass gesture is the Fugue subject's head.
 
@@ -339,14 +338,16 @@ The text below is the Prelude part of the previous NOTES, unchanged. (Its bar re
 
 | Score | Bars | Parallel errors | Beat-to-beat parallels | Beats with a tripled pitch class | Low 2nds/7ths/9ths | Unresolved | Mean moving voices | ≥5 pitch classes | ≥6 pitch classes | Free phrases ≤1.5 beats | Need >2 hands |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| **Prelude VIII new** | 21 | **0** | **0** | 7.1 % | **0** | **0** | 3.0 | 0 % | 0 % | 0 % | 0.8 % (two onsets of the b20 tirade) |
+| **Prelude VIII new** | 21 | **0** | **0** | 7.1 % | **0** | **0** | 3.0 | 0 % | 0 % | 0 % | 0.8 % (two onsets, each counted with a held bass: see below) |
 | Prelude v1 (overture) | 16 | 0 | 9 | 23.4 % | 0 | 0 | 4.9 | | | | 47 % |
 | Prelude first draft | 24 | 3 | 13 | 17.7 % | 0 | 0 | 3.0 | | | | 19 % |
 
 ## Weak spots (Prelude)
 
 - **The Prelude is 21 bars, not 24–28.** Its figure is broken-chord arpeggiation by design (the Night loom). The bass leaps a 7th twice (b3, b4).
-- **Augmented 2nds** (abridged: the previous bullet also listed lines of the nine-voice Fugue). The retrograde inversion (D–C♭) puts an augmented 2nd into the Prelude melody, b2. It is kept as thematic.
+- **Augmented 2nds** (abridged: the previous bullet also listed lines of the nine-voice Fugue). There are two in the Prelude melody and one in its bass.
+  - b2.1, D5–C♭5: the retrograde inversion's own interval. It is kept as thematic, and the bass sings it again in the reprise (b15.1, D3–C♭3).
+  - b20.1, C♭5–D5: the same interval rising, from the C♭ of iv (b19) to the leading tone of V at the start of the tirade. It turns the melody's thematic interval round at the cadence, so it is kept.
 
 ## Second review (`REVIEW-2.md`): Prelude items
 
@@ -360,6 +361,16 @@ The text below is the Prelude part of the previous NOTES, unchanged. (Its bar re
 
 **Prelude, last bar.** The downbeat was struck E♭2 E♭4 B♭5. Whatever the split, one hand needed 19 semitones; this is the review's own example. The figure's first half bar now starts an octave lower, E♭3 G♭3 B♭3, and rises without a break into D4 F4 A♭4. The left hand strikes the bass and the figure (E♭2 E♭3), the right hand the melody's B♭5. As the review says, pedal could not fix this, because all three were fresh attacks.
 
-Reach errors 1 → 0. The prelude's other numbers are unchanged, including keyboard 0.8 % (two onsets where the pedalled tonic bass is counted).
+Reach errors 1 → 0. The prelude's other numbers are unchanged, including keyboard 0.8 %: two onsets out of 255, both counted only because a bass note struck earlier is still held. At b20.5¼ the tirade's B♭5 is struck over the figure's F4 while the bass's B♭2 (struck at b20.4) is held. At b21.2 the figure's B♭3 is struck under the melody's held B♭5 while the bass's E♭2 (struck at b21.1) is held. With the pedal holding the bass, the left hand is free for the figure and both are playable.
 
 The Fugue is untouched, including bars 25–33.
+
+## Self-critique pass (Nov 2026)
+
+No notes were changed in either movement. This pass corrected stale prose.
+- **Fixed: the Prelude section's references to the Fugue.** It still gave the nine-voice Fugue's bars (b45–47) for the return of the Prelude's melody under Bach's subject. They now read b37–39, here and in the docstring of `prelude.py`. The rebuilt `prelude.json` is identical.
+- **Fixed: the "7th not resolved down" list.** It still listed b39.3, which the text said had gone. The list now has the six that the critic reports.
+- **Fixed: the Prelude's keyboard figure.** The numbers table blamed "two onsets of the b20 tirade" and the review response blamed "the pedalled tonic bass". The critic names b20.5¼ (the tirade's B♭5 over the held B♭2) and b21.2 (the figure's B♭3 under the held B♭5, over the held E♭2). Only the first is in the tirade, and in both a struck bass is still held, B♭2 once and the tonic E♭2 once. Both places now say so.
+- **Fixed: the Prelude's leaps.** The melody's second augmented 2nd, C♭5–D5 rising from iv to V at b20.1, is now listed beside the thematic D–C♭ of b2.1.
+- **Listening guide (proposed in the report).** The guide promises "six clear stretto entries" with no weak spot, while weak spots here name two weaker entries (the alto at b27.4 and at b30.1½).
+- **Unchanged, needing a listener:** the alto's inversion at b27.4 (weak spots) and the inversion under Bach at b38.

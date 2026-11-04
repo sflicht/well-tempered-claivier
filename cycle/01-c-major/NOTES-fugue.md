@@ -139,7 +139,7 @@ The coda combines the subject with its augmentation (`augment*.py`,
 |---|---|---|
 | 1–3 | Subject (treble, C) | the bass begins BWV 846's subject alone, on beat 2 in Bach's rhythm; ours cuts in on the upbeat |
 | 4–6 | Answer (bass, G, real) | the countersubject above it is Bach's own answer, also in his rhythm |
-| 7 | link G→a | the subject's sixteenth fall + rebound + drop, twice |
+| 7 | link G→a | the countersubject's dotted snap in the treble, falling against the bass's rising E–F–F♯ (a decorated 7–6) to G♯ |
 | 7–10 | **Flight I: R8** a | cadence in A minor |
 | 10–11 | Episode A (a→e) | bass: the tail's sixteenth turn; treble: a slow descending line |
 | 11–14 | **R7** e | the bass leads, low register |
@@ -147,7 +147,7 @@ The coda combines the subject with its augmentation (`augment*.py`,
 | 15–18 | **R6** G | |
 | 18–21 | **Episode C** (G→d), the middle | see the paragraph below the table |
 | 21–24 | **Flight II: R5** d | |
-| 24–25 | Episode D (d→F) | bass: tail turn, then a C7 arpeggio |
+| 24–25 | Episode D (d→F) | bass: tail turn, then a C7 arpeggio; treble: held B♭5–A5, then a descent against the bass, B♭4–A4 resolving C7 into R4's F |
 | 25–28 | **R4** F | head on beat 3 |
 | 28 | Episode E (F→C) | a rest, then BWV 846's head (C D E F G F E A) in the treble bends into the next upbeat |
 | 28–31 | **R3** C | the bass leads; voices high and close |
@@ -202,7 +202,7 @@ The other episodes:
   - BWV 855, WTC I's only two-voice fugue;
   - BWV 846, whose love of stretto the ladder makes systematic.
 
-## Critic numbers (`tools/critic.py cycle/01-c-major/fugue.json`)
+## Critic numbers (`tools/critic.py cycle/01-c-major/fugue.json`; critic, 2026-11-04)
 
 | measure | result |
 |---|---|
@@ -211,19 +211,30 @@ The other episodes:
 | `beat_parallels` (accented) | 0 |
 | doubling runs | 0 |
 | `dissonance_unresolved` | 0 |
-| beat dissonances | 10 appoggiaturas, 3 retardations, 5 suspensions (four of them in Episode C) |
+| beat dissonances | 8 appoggiaturas, 4 retardations (one unprepared, 13.1), 4 suspensions (all in Episode C); 3 unverified (below) |
 | crossings | 0 |
 | keyboard | 0/460 onsets unplayable; at most 2 notes |
 | bars with both voices moving | 44 of 45 |
 | `low_register_seconds` | 0 |
 | melody warnings | none |
 | melody notes | 4 unrecovered leaps and 1 compound leap, all in free bass lines; 6 direct 5ths/8ves where a stretto's leaps meet, including the V6–I arrival on the climax's downbeat |
-| tertian fit | 38% (not meaningful for two voices) |
+| tertian fit | 48% (not meaningful for two voices; the figure moves as the critic's chord naming is revised) |
 | subject entries | 19 of 20 matched at 18/18 rhythm; R6's headless follower reports 4/18 |
 
 The critic's theme check compares the notes one by one from the first. It
 therefore cannot match R6's follower, which starts without its upbeat. I
 checked by hand that the follower's notes match the subject's notes 2–19.
+
+The three **unverified** beat dissonances lie between two subject statements in
+canon, so no free note can change them:
+- **26.4** (R4): the leader's tail turn D3 E3 F3 rises against the follower's
+  fall C5 B♭4 A4. The seventh D3/C5 passes through the tritone E3/B♭4 to the
+  third F3/A4 within the beat: contrary-motion passing notes in sixteenths.
+- **30.1 and 30.2** (R3): two of R3's accented fourths (see the weak spots).
+  The follower's G5 over the leader's D4, then its D5 over A3; each moves on by
+  step against a bass that also moves, and the sixteenths reach a sixth (B3/D5)
+  only at 30.2¾. The critic cannot verify a step that lands on another
+  dissonance, so it lists them instead of calling them appoggiaturas.
 
 The strict evaluator (`search/check.py`) finds no parallels and no unresolved
 dissonance on any sixteenth over the whole score. What it still lists are:
@@ -247,11 +258,10 @@ dissonance on any sixteenth over the whole score. What it still lists are:
   several followers are diatonic transpositions. Their intervals read 10/18.
 - **The subject is never heard completely alone.** That is by design, since
   Bach's line is under it.
-- **Some free counterpoint is plain.**
-  - The fall figure still links sections three times (the link and Episodes B
-    and F).
-  - Episodes B and F use parallel tenths.
-  - The treble counterline in bars 23–25 meanders.
+- **Some free counterpoint is still plain** (two of the four places named here
+  were rewritten in the Nov 2026 pass; see the last section).
+  - Episodes B and F keep the fall figure over a bass in tenths: they are one
+    pair, F being B a fifth higher.
   - The run-up's rhythmic unison in tenths is deliberate, but it is a plain
     sequence.
 - **Distances of 2 and 1 eighth may not be heard as entries.** That is for the
@@ -310,3 +320,43 @@ The critic still reports:
 - 0 accented parallels;
 - 0 unresolved dissonances;
 - full two-hand playability.
+
+## Self-critique pass (Nov 2026)
+
+**Fixed: two of the plain stretches of free counterpoint, rewritten by hand.**
+- **The link, bar 7.** The treble used to play the subject's sixteenth fall,
+  rebound and drop twice, the same figure that joins Episodes B and F. It now takes
+  the countersubject's snap (Bach's dotted figure with its two 32nds): C5, E5
+  held over the bass's step from E3 to F3 as a 7–6 suspension that the snap
+  decorates, then D5 C5 B4 G♯4 against the bass's rising E–F–F♯, ending on the
+  leading tone of A minor under R8's upbeat. The fall figure now joins sections
+  only in Episodes B and F.
+- **The treble after R5, bars 23.4½–25.** It zig-zagged in thirds and tenths with
+  the bass (A5 E5 D5 E5 F5 D5 C5 E5 D5 B♭4 G4 E4 A4 F4). It now holds B♭5 and A5
+  over the bass's sixteenth turn and rise, then descends against the bass (F5 D5
+  C5, G4 B♭4 D5 C5), and C7's seventh B♭4 falls to A4 as R4 lands in F. The last
+  two notes and the rest before R4's entry are as before.
+- **Checks.** `tools/critic.py` is unchanged apart from one more retardation (the
+  decorated 7–6 at 7.2): 0 parallels, 0 beat parallels, 0 unresolved, the same three
+  unverified spots, both voices moving in 44 of 45 bars, 0 % unplayable. The strict
+  evaluator (`search/check.py`) flags the same spots (at 24.1¼ a fourth now instead of
+  a seventh, same cost); its total rises from 235.1 to 239.8, all of it unitemised
+  roughness.
+
+**Explained:** the three unverified beat dissonances (26.4, 30.1, 30.2), in the critic
+section above. All three lie between two subject statements in canon.
+
+**Declined.**
+- **Episodes B and F keep the fall figure and the tenths.** They are one pair, F
+  being B a fifth higher, and each is a one-bar modulating breath between two
+  dense rungs (R7/R6, R3/R2). The bass in tenths keeps every rebound of the figure
+  consonant and the sequence transparent at speed, which is what those bars are
+  for. A contrary-motion bass would thicken the two places meant to let the ladder
+  breathe. With the link rewritten, the figure's reuse is now this one deliberate
+  rhyme.
+- **The run-up's rhythmic unison in tenths** stays: it is the only place the two
+  voices share a rhythm, and it is meant to sound like one gesture.
+
+The subject, every entry and the coda are unchanged; the entries verify as before
+(19 of 20 at 18/18 rhythm, R6's headless follower 4/18).
+

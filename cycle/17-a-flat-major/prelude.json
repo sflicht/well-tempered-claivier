@@ -584,7 +584,8 @@
      "spell": "aes",
      "v": 55,
      "gate": 0.975,
-     "bar": 19
+     "bar": 19,
+     "fermata": true
     }
    ],
    "piano_pan": 72
@@ -817,7 +818,8 @@
      "spell": "ees",
      "v": 46,
      "gate": 0.975,
-     "bar": 19
+     "bar": 19,
+     "fermata": true
     }
    ],
    "piano_pan": 66
@@ -2112,7 +2114,8 @@
      "spell": "c",
      "v": 41,
      "gate": 0.975,
-     "bar": 19
+     "bar": 19,
+     "fermata": true
     }
    ],
    "piano_pan": 58

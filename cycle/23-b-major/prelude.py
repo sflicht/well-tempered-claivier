@@ -8,8 +8,10 @@ six bars, harmonised I - V4/3 | I6 - IV | V - vi | IV6 - V7 | ii6/5 - I6 | V4/3 
 Four statements, each a new division:
   1 (b1-6)    the plainsong: treble in minims with a few crotchets, a mean voice, the ground below
   2 (b7-12)   quaver divisions in the treble (broken chords, as on the virginals)
-  3 (b13-18)  the ground moves to the treble; the bass divides in quavers; the mean in sixths
-  4 (b19-24)  semiquaver runs in the treble over the ground, as in Bull's fastest variations
+  3 (b13-18)  the ground moves to the treble; the bass divides in quavers; the mean in sixths;
+              the falling half is reharmonised over a falling bass, IV - iii | ii - I | V7 - I
+  4 (b19-24)  semiquaver runs in the treble over the ground, as in Bull's fastest variations,
+              with the mean in minims between them
 then a two-bar close (IV - V7 - I) that leaves the B-major chord for the fugue's first breve.
 
 Every note is written below as a literal bar string (the ground is written out each time).
@@ -49,7 +51,7 @@ M += ['F#4:8 E4:8', 'F#4:8 G#4:8', 'A#4:8 B4:8', 'B4:8 A#4:8', 'G#4:8 F#4:8', 'E
 B += ['B2:2 D#3:2 F#3:2 D#3:2 A#2:2 C#3:2 F#3:2 C#3:2',
       'B2:2 F#3:2 D#3:2 B2:2 G#2:2 B2:2 E3:2 B2:2',
       'F#2:2 A#2:2 C#3:2 A#2:2 G#2:2 B2:2 D#3:2 B2:2',
-      'E2:2 G#2:2 B2:2 A#2:2 F#2:2 A#2:2 C#3:2 E3:2',
+      'E2:2 G#2:2 B2:2 G#2:2 D#2:2 F#2:2 A#2:2 F#2:2',      # IV - iii: the ground's F# over D# (was V7)
       'C#3:2 E3:2 G#3:2 E3:2 B2:2 D#3:2 F#3:2 D#3:2',
       'F#2:2 C#3:2 E3:2 D#3:2 B2:4 F#2:4']
 
@@ -60,7 +62,9 @@ T += ['B4:1 C#5:1 D#5:1 E5:1 F#5:1 G#5:1 F#5:1 E5:1 E5:1 D#5:1 C#5:1 D#5:1 A#4:1
       'E5:1 F#5:1 G#5:1 E5:1 B4:1 C#5:1 D#5:1 B4:1 A#4:1 B4:1 C#5:1 D#5:1 E5:1 D#5:1 C#5:1 A#4:1',
       'B4:1 C#5:1 E5:1 G#5:1 B5:1 G#5:1 E5:1 C#5:1 D#5:1 E5:1 F#5:1 D#5:1 B4:1 C#5:1 D#5:1 B4:1',
       'A#4:1 C#5:1 E5:1 C#5:1 F#5:1 E5:1 C#5:1 A#4:1 B4:1 D#5:1 F#5:1 D#5:1 B4:4']
-M += ['R:16'] * 6
+M += ['D#4:8 E4:8', 'D#4:8 G#3:8', 'C#4:8 B3:8', 'B3:8 C#4:8', 'G#3:8 B3:8', 'C#4:8 D#4:8']
+# (the mean returns in minims under the runs, a third layer between the ground and the semiquavers;
+#  it was silent here until the self-critique pass of Nov 2026)
 B += GROUND
 
 # close (b25-26): IV - V7 | I

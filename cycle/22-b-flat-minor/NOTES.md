@@ -140,10 +140,10 @@ are the rules that let one hand-written half work both ways.
    (half 1: 6). The rest belong to the subject's own scale (G-flat, E-flat as passing sevenths), a
    lower neighbour (b24) and the diminished-seventh slides at the axis, whose mirror (A-flat rising to
    A, B°7 → V7) is the correct resolution.
-9. **Eighth notes.** In this metre an eighth that ends on a half-note beat comes back on it. So in
+8. **Eighth notes.** In this metre an eighth that ends on a half-note beat comes back on it. So in
    the two eighth-note figures (b19–20) the last eighth before each half-note beat is a chord tone;
    the passing eighths fall inside the beat in both directions.
-8. **Keyboard.** The left hand takes the cantus and the two voices above it within a tenth, the right
+9. **Keyboard.** The left hand takes the cantus and the two voices above it within a tenth, the right
    hand the upper three; this fixed the summit's voicing.
 
 ## Tempo map and dynamics: symmetric, deliberately
@@ -157,14 +157,15 @@ slows into the cadence forwards and slows out of the mirrored cadence backwards.
 like the score, reads the same backwards (apart from the piano's decay). The dynamic arch is
 symmetric as well: quietest at both ends, loudest at the axis. Basic tempo quarter = 88 (half = 44).
 
-## Critic numbers (`tools/critic.py`)
+## Critic numbers (critic, 4 Nov 2026: `tools/critic.py`)
 
 | | whole | half 1 | half 2 | target |
 |---|---|---|---|---|
 | parallels_error | 0 | 0 | 0 | 0 |
 | parallels_weak | 0 | 0 | 0 | |
 | beat_parallels | 0 | 0 | 0 | ≤ 2 |
-| dissonance_unresolved (Nov 2026 critic, whole piece) | 1 (b39.1, kept; see the review response) | | | ≤ 3 |
+| dissonance_unresolved | 1 (b39.1, kept; see the review response) | 0 | 1 (b39.1) | ≤ 3 |
+| dissonance_unverified (check by ear) | 2 (b17.3, b52.1) | 1 | 1 | |
 | bad_doublings | 0 | 0 | 0 | ≤ 2 |
 | low_register_seconds | 0 | 0 | 0 | ≤ 9 |
 | stepwise_pct | 69.3 | 69.4 | 69.4 | ≥ 65 |
@@ -173,14 +174,17 @@ symmetric as well: quietest at both ends, loudest at the axis. Basic tempo quart
 | keyboard_unplayable_pct | 0.0 | 0.0 | 0.0 | ≤ 15 |
 | mean moving voices | 3.12 | 3.12 | 3.12 | |
 | pc tripled on beats | 7.6 % | 10.9 % | 4.3 % | |
-| "7th not resolved down" (notes) | 25 | 6 | 17 | |
+| "7th not resolved down" (notes) | 22 | 6 | 18 | |
+| reach_errors | 0 | 0 | 0 | 0 |
 
-* The half-by-half columns were computed with the critic of the third edition's review; the corrected
-  critic (Nov 2026) also reports 2 "unverified stepwise continuations" for the whole piece, b17.3 and its
-  mirror image b52.1 (alto under soprano, both moving by step), to be checked by ear.
+* All columns were recomputed with the critic of 4 November 2026 (the score has not changed since
+  the review). The two unverified stepwise continuations are b17.3 and its mirror image b52.1 (alto
+  under soprano, both moving by step), to be checked by ear.
 * Because the critic checks dissonance only on half-note beats in 2/2, I also ran it on both halves
-  with the metre read as 4/4 (every quarter a beat): 0 parallels, 0 beat parallels, 0 unresolved,
-  0 bad doublings in either half.
+  with the metre read as 4/4 (every quarter a beat): 0 parallels, 0 beat parallels and 0 bad
+  doublings in either half; the one unresolved note is again b39.1 (half 2), and the critic lists
+  5 and 4 unverified stepwise continuations (passing quarters it cannot confirm against a moving
+  partner).
 * Mean moving voices by section: b1–14 2.1, b15–20 3.7, b21–26 3.5, b27–32 3.7, **b33–36 6.0**,
   b37–42 3.8, b43–48 3.3, b49–54 3.7, b55–68 2.1. Six voices move in four bars (b33–36).
 * The one crossing: the bass sings above the cantus in b33–36, by design (the cantus is the lowest
@@ -209,15 +213,18 @@ F's; I rejected them and wrote the four-transposition idea by hand. No note was 
   gentler (72), but the inner B-A-C-H tails may still fuse into one chromatic chord stream.
 * **The second half's harmony runs backwards.** Every passing quarter of the first half comes back
   accented (strong-beat ones at b38.1, b39.1, b46.1, b52.1, b62.1, b63.3; all stepwise), dominants
-  move to pre-dominants at the reversed joins (e.g. b43–44, V → ii°6/5 → iv6), and 17 sevenths in half
+  move to pre-dominants at the reversed joins (e.g. b43–44, V → ii°6/5 → iv6), and 18 sevenths in half
   2 do not fall. The most exposed note is the alto's B-natural on the downbeat of b39 over the
   cantus's G-flat (the mirror of the subject's H in b30).
 * **The alto's return at b27 is half masked**: it starts on B-flat4 under the mezzo's D-flat5 and
   only becomes recognisable at b28 (the rest and the leap of a ninth).
 * **The soprano sings little**: an answer (b15–20), the summit (b32–37) and the answer backwards
-  (b49–54); it rests eleven bars on each side of the axis.
+  (b49–54); it rests eleven bars on each side of the axis. This is kept on purpose (see
+  **Self-critique pass**): the silence leaves the mezzo's middle entry and the canon per
+  augmentationem uncovered, and makes the soprano's return at b32–33 the start of the summit.
 * **One middle entry only** (D-flat major). There is no stretto of the subject at normal speed; the
-  piece's devices are the crab, the canon per augmentationem and the B-A-C-H convergence.
+  piece's devices are the crab, the canon per augmentationem and the B-A-C-H convergence. Kept on
+  purpose too (see **Self-critique pass**).
 * **One surface speed.** Apart from the eighth-note waves of b19–20 (and b49–50) nothing is shorter
   than a quarter; b25–26 is still chordal.
 * **The cadence in B-flat minor at b41–42** (the canon backwards) is a strong close in the middle of
@@ -252,6 +259,46 @@ F's; I rejected them and wrote the four-transposition idea by hand. No note was 
 * After the changes: whole piece and both halves 0 parallels, 0 beat parallels, 0 unresolved, 0 bad
   doublings, 0 low-register seconds, 0 % unplayable (also clean in the 4/4 reading); all six voices
   are exact palindromes; all 14 entries verify. Renders redone (195 s).
+
+## Self-critique pass (Nov 2026)
+
+4 November 2026. No notes changed; `build()`'s palindrome check passes and the rebuilt score is
+identical. An audit listed three open points.
+
+- **Fixed: the counterpoint rules were numbered 7, 9, 8.** They are now 7 (sevenths), 8 (eighth
+  notes), 9 (keyboard).
+- **The listening guide's word for the second half.** Its row calls the second half's harmony "a
+  little harsher". The score and the critic say otherwise: what the crab does is put the first
+  half's passing quarters on the beats (all stepwise), make sevenths rise or leave by leap, and send
+  dominants to pre-dominants at the reversed joins. None of that is an error in the 4/4 reading, and
+  the one flag (b39.1) is a chromatic neighbour inside an augmented sixth. REVIEW-3 §4 hears it as
+  "softer-edged and wandering", and I agree; I proposed that wording for the guide, which I do not
+  edit myself.
+- **Declined: a longer soprano part and a second middle entry.** The soprano rests b21–31 and,
+  mirrored, b38–48. I kept both silences, for three reasons.
+  1. Those eleven bars hold the two devices a listener can follow: the mezzo's D♭-major entry
+     (b21–24), which is the top voice only because the soprano is silent, and the canon per
+     augmentationem (b27–30), where the alto has only the mezzo above it and is already half
+     masked. A soprano above either would cover it, and its mirror image would cover the reversed
+     canon and its cadence (b39–42) and the reversed middle entry (b45–48).
+  2. The only free span is the episode before the general pause (b25–26), and on one keyboard it
+     has no room for a soprano. I tried one there (B♭5 – G♭5 – F5, the subject's own sigh, half
+     notes, mirrored at b43–44). The counterpoint stayed clean in the whole piece, in both halves
+     and in the 4/4 reading. But the episode's bass (E♭2) and tenor (B♭3) are a twelfth apart, so
+     the right hand already holds the tenor with the mezzo's C5, and a soprano over them is out of
+     reach (reach errors at b25.3 and its mirror b44.1; with a quarter-note G♭, still at b44.1).
+     Making room would mean re-voicing the episode's lower voices and so the chord that the
+     half-bar pause follows.
+  3. A second middle entry needs four bars. Between the end of the mezzo's entry (b24) and the
+     crux (b27) there are two and a half, so a second entry would have to overlap one of them as a
+     stretto and take its exposure. And `fit.py` showed earlier that no complete subject or answer
+     fits over the cantus in b31–34.
+
+  The soprano's long silence also gives its return at b32–33 (B-A-C-H in quarters, on top) the
+  weight of an entry: it opens the summit.
+
+Critic (whole piece) before → after: unchanged (parallels 0, unresolved 1 at b39.1, unverified 2,
+bad doublings 0, stepwise 69.3 %, reach errors 0, keyboard_unplayable 0.0 %).
 
 ## From the N+1 version
 

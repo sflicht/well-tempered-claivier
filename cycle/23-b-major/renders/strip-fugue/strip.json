@@ -2987,10 +2987,6 @@
    33789.69
   ],
   [
-   263.5,
-   33853.49
-  ],
-  [
    264.0,
    33917.29
   ],
@@ -4115,7 +4111,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/23-b-major/fugue.json",
-  "source_sha256": "e8b4ea1344261f2fc0b8dd534f44bcc05a26877c3c714a0fd48c6a7e4b5b69bd",
+  "source_sha256": "44eeba6d3bcf7958b0247790cfe1afc87d6bb4b8bc96e7943611ae97a0b4b58d",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 1.6,

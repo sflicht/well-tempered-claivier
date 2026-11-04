@@ -14,8 +14,10 @@ entry is audibly another clock starting to chime: the bass at quarter speed
 25, each faster than the last.  After the chime, M sings a descending
 sequence in the chime's rhythm reversed (q. e e e) whose long notes are the
 bass line of bars 9-20 (C# B G# F# E C#), then the bells: two dominant
-strikes (B), two tonic strikes (E), a long G#, a flourish (B G# F#), E -- and
-the convergence on E.
+strikes (B), two tonic strikes (E), a long G#, a flourish that falls to the
+leading tone (B G# D#), E -- and the convergence on E.  Because the voices
+reach the flourish one after another, the four D# -> E resolutions arrive as
+a stretto (bass b31-32, tenor b32.1, alto b32.3, soprano b32.5).
 
 Because the bass sings M at quarter speed, M's later sections become the
 pedals under everyone else's earlier material: a dominant pedal (bars 21-24)
@@ -28,6 +30,7 @@ octaves; their bars are written into the JSON.  tempo_search.py and
 tempo_repair.py were used as aids (see NOTES.md); nothing they print enters
 the score except through this file.
 """
+import json
 import sys
 
 from canon_tools import W, HERE
@@ -41,10 +44,10 @@ M = ' '.join([
     # C# B G# F# E C# are the bass line of bars 9-20.
     'C#5:6 B4:2 A4:2 G#4:2', 'B4:6 A4:2 G#4:2 F#4:2',
     'G#4:6 F#4:2 E4:2 C#4:2', 'F#4:6 E4:2 D#4:2 E4:2',
-    'E4:6 F#4:2 A4:2 B4:2', 'C#5:6 B4:2 F#4:2 G#4:2',
+    'E4:6 F#4:2 E4:2 B4:2', 'C#5:6 B4:2 F#4:2 G#4:2',
     # The bells: two dominant strikes, two tonic strikes, the long third,
-    # a pentatonic flourish, and E.
-    'B3:12 B3:12', 'E4:12 E4:12', 'G#4:12 B4:2 G#4:2 F#4:2 E4:6',
+    # a flourish falling to the leading tone, and E.
+    'B3:12 B3:12', 'E4:12 E4:12', 'G#4:12 B4:2 G#4:2 D#4:2 E4:6',
     # Punctum convergentiae (fermata, all voices together).
     'E4:1',
 ])
@@ -77,7 +80,8 @@ def build(out=HERE / 'tempo-canon.json'):
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'Appendix: Canones. II. Canon per tempora (Four clocks, one hour)',
         'composer': 'Claude / Sam. Melody begins with the Westminster Quarters (Cambridge, 1793)',
-        'instrument': 'Player piano: one melody at four speeds (4:3:2:1), converging',
+        'instrument': 'Player piano or piano four hands (two players): one melody at four speeds '
+                      '(4:3:2:1), converging',
         'score_tagline': 'All four voices attack the last note together: the punctum convergentiae',
         'key': 'E', 'mode': 'major', 'meter': [6, 4], 'bpm': 96,
         'tempo_text': 'Tempo giusto: one pulse, four clocks',
@@ -99,7 +103,17 @@ def build(out=HERE / 'tempo-canon.json'):
                   extra={'canon': {'kind': 'mensuration / tempo canon', 'ratios': [4, 3, 2, 1],
                                    'melody': M, 'convergence_t_quarters': float(T) / 4,
                                    'fermata_sixteenths': FERMATA}})
+    mark_fermata(out)
     return bars, T
+
+
+def mark_fermata(path):
+    """Post-process: the shared final note of every voice carries a fermata."""
+    data = json.loads(path.read_text())
+    for v in data['voices']:
+        last = max((e for e in v['events'] if e.get('p') is not None), key=lambda e: float(e['t']))
+        last['fermata'] = True
+    path.write_text(json.dumps(data, indent=1))
 
 
 if __name__ == '__main__' and '--no-write' not in sys.argv:

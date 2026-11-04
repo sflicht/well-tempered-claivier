@@ -1289,7 +1289,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/06-d-minor/fugue.json",
-  "source_sha256": "58b7e828c56fa852474cb5b4c1f0a6f70f940eee0e456c4abcf2c628efcc1913",
+  "source_sha256": "6fc42e2e9faf2a877a7397a6f57322ea0e16e0f044ef503151f8ff5e5c08e16d",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 3.0,

@@ -82,8 +82,11 @@ seg(L, 46, "C3:2 E3:2 G3:2 E3:2 F#3:2 G3:2 A3:4")
 entry(L, 62, "D3:2 G3:3 A3:1 B3:2 G3:2 D4:4 C4:1 B3:1 A3:1 G3:1 A3:2 D3:2 "
              "E3:1 F#3:1 G3:1 F#3:1 B3:2 C4:2 D4:2", 'Answer (real)')
 
-# Link (G -> a): the subject's sixteenth fall, rebound and drop, twice.
-seg(U, 94, "G4:2 C5:1 B4:1 A4:1 G4:1 A4:2 D4:2 B4:1 A4:1 G#4:1 F#4:1 G#4:2")
+# Link (G -> a).  (Nov 2026) The treble takes the countersubject's snap (Bach's dotted
+# figure with its two 32nds) instead of the subject's sixteenth fall, which the episodes
+# B and F keep: E5 is held over the bass's F3 as a 7-6 suspension (the snap decorates it)
+# and the line falls against the rising bass E-F-F# to G#4, the leading tone of a.
+seg(U, 94, "G4:2 C5:2 E5:3 F5:0.5 E5:0.5 D5:2 C5:2 B4:2 G#4:2")
 seg(L, 94, "G3:2 E3:4 F3:2 F#3:2 E3:2 B2:2 E2:2 E3:2 C3:4 A3:2 F3:2 C3:2 E3:2 G#3:2")
 
 # =====================================================================
@@ -146,7 +149,10 @@ entry(U, 334, "A4:2 D5:3 E5:1 F5:2 D5:2 A5:4 G5:1 F5:1 E5:1 D5:1 E5:2 A4:2 "
 seg(L, 334, "C#3:2 F3:2 D3:2 A2:2 R:2")
 entry(L, 344, "D3:2 G3:3 A3:1 Bb3:2 G3:2 D4:4 C4:1 Bb3:1 A3:1 G3:1 A3:2 D3:2 "
               "E3:1 F3:1 G3:1 F3:1 Bb3:2 C4:2 D4:2", 'R5 +5 at the 12th')
-seg(U, 366, "A5:2 E5:2 D5:2 E5:2 F5:4 D5:2 C5:2 E5:2 D5:2 Bb4:2 G4:2 E4:2 A4:2 F4:2 R:2")
+# (Nov 2026) The free treble after R5 (was A5 E5 D5 E5 F5 D5 C5 E5 D5 Bb4 G4 E4 A4 F4, a
+# zig-zag in thirds with the bass): held notes at the top (Bb5, A5) over the bass's turn and
+# rise, then a descent against it, C7's seventh Bb4 falling to A4 as R4 lands in F.
+seg(U, 366, "A5:2 Bb5:4 A5:4 F5:2 D5:2 C5:2 G4:2 Bb4:2 D5:2 C5:2 Bb4:2 A4:2 F4:2 R:2")
 
 # Episode D (d -> F): the bass leads off with the tail's turn.
 seg(L, 376, "D3:2 F3:1 G3:1 A3:1 Bb3:1 C4:2 Bb3:2 G3:2 E3:2")

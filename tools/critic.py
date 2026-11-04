@@ -31,7 +31,14 @@ Parallels between the same pair are merged into one row per run, keeping the
 worst severity and the number of transitions. Only a run of octaves/unisons
 between voices the score declares as doublings (metadata 'doublings':
 [[voiceA, voiceB], ...], or a voice's 'doubles': name) is exempted.
-  harmony        per-beat chord labels, longest static harmony.
+  harmony        per-beat chord labels, longest static harmony.  A beat where two
+                 pitch classes sound together (and only short notes pass) is
+                 labelled as an interval ('C-E (M3)'), never as a chord made up
+                 with its passing notes, and so is a beat with only one or two
+                 pitch classes. tertian_fit_pct is the share of all sounding beats
+                 that fit a chord template (its original meaning, so older numbers
+                 stay comparable); tertian_fit_chords_pct leaves the interval beats
+                 out, and dyad_beats_pct is the share of interval beats.
 
 Usage: critic.py score.json [--json out.json] [--bars 12-20] [--quiet]
 """
@@ -45,7 +52,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from chords import chord_candidates, name_chord, pname  # noqa: E402
+from chords import SEVENTH, TEMPLATES, chord_candidates, name_chord, name_dyad, pname  # noqa: E402
 
 TPQ = 48  # ticks per quarter note
 LETTER = {'c': 0, 'd': 1, 'e': 2, 'f': 3, 'g': 4, 'a': 5, 'b': 6}
@@ -277,10 +284,13 @@ def sonority_stats(S):
         if not cands:
             continue
         root, q = cands[0]
-        seventh = {'7': 10, 'm7': 10, 'ø7': 10, 'o7': 9, 'maj7': 11, '7(no5)': 10, 'm(no5)7': 10}.get(q)
+        seventh = SEVENTH.get(q) if q != 'o' else None
         if seventh is not None and cnt[(root + seventh) % 12] >= 2:
             bad.append(S.loc(t) + ' 7th')
-        if q in ('7', '7(no5)') and cnt[(root + 4) % 12] >= 2:
+        # the leading tone: a dominant seventh's third, or a diminished triad's root (B in B-D-F,
+        # a rootless G7)
+        lt = {'7': 4, '7(no5)': 4, 'o': 0}.get(q)
+        if lt is not None and cnt[(root + lt) % 12] >= 2:
             bad.append(S.loc(t) + ' leading tone')
     low = []
     for t in S.onsets:
@@ -297,6 +307,9 @@ def sonority_stats(S):
 
 
 def check_direct(S):
+    """Direct 5ths/8ves into the outer voices.  When several voices share the top or the bottom
+    pitch, each of them counts as the outer voice, so the result does not depend on the order
+    the voices are listed in (the reported pair is the first by voice name)."""
     out = []
     prev = None
     for t in S.onsets:
@@ -305,18 +318,23 @@ def check_direct(S):
             prev = None
             continue
         notes = [(S.note(i, k)['p'], i, k) for i, (k, _) in snd.items()]
-        top = max(notes)
-        bot = min(notes)
+        top_p = max(p for p, _, _ in notes)
+        bot_p = min(p for p, _, _ in notes)
+        tops = {i: k for p, i, k in notes if p == top_p}
+        bots = {i: k for p, i, k in notes if p == bot_p}
         if prev is not None:
-            ptop, pbot = prev
-            if top[1] == ptop[1] and bot[1] == pbot[1] and top[2] != ptop[2] and bot[2] != pbot[2]:
-                if is_perfect(top[0], bot[0]) and not is_perfect(ptop[0], pbot[0]):
-                    dt, db = top[0] - ptop[0], bot[0] - pbot[0]
-                    if dt * db > 0 and abs(dt) > 2 and S.strength(t) >= 2:
-                        out.append({'t': t, 'loc': S.loc(t), 'sev': 'note',
-                                    'what': f"direct {'8ve' if iclass(top[0], bot[0]) == 0 else '5th'} "
-                                            f"{S.names[top[1]]}/{S.names[bot[1]]} top leaps {dt:+d}"})
-        prev = (top, bot)
+            ptop_p, ptops, pbot_p, pbots = prev
+            # a voice that stays on top (and one that stays at the bottom) striking a new note
+            tv = sorted((S.names[i], i) for i in tops if i in ptops and tops[i] != ptops[i])
+            bv = sorted((S.names[i], i) for i in bots if i in pbots and bots[i] != pbots[i])
+            pair = next(((a, b) for a in tv for b in bv if a[1] != b[1]), None)
+            if pair and is_perfect(top_p, bot_p) and not is_perfect(ptop_p, pbot_p):
+                dt, db = top_p - ptop_p, bot_p - pbot_p
+                if dt * db > 0 and abs(dt) > 2 and S.strength(t) >= 2:
+                    out.append({'t': t, 'loc': S.loc(t), 'sev': 'note',
+                                'what': f"direct {'8ve' if iclass(top_p, bot_p) == 0 else '5th'} "
+                                        f"{pair[0][0]}/{pair[1][0]} top leaps {dt:+d}"})
+        prev = (top_p, tops, bot_p, bots)
     return out
 
 
@@ -383,6 +401,42 @@ def prepared(S, i, k, partner):
     return not is_dissonant(lo, hi, lo == bass)
 
 
+def rises_semitone(S, i, k):
+    """Note k of voice i moves on, within a beat, up by one semitone (a leading tone's step)."""
+    n, nxt = S.note(i, k), S.next_note(i, k)
+    return nxt is not None and nxt['s'] - n['e'] <= S.beat and nxt['p'] - n['p'] == 1
+
+
+def seventh_readings(S, items, cands):
+    """[(root, seventh pc)] under which a sonority's chord seventh is judged, or None when its
+    reading has no seventh.  A diminished triad is a rootless dominant seventh (chords.SEVENTH:
+    B-D-F's seventh is F, whatever the bass).  A diminished seventh chord is symmetrical, so its
+    root is taken to be a member that rises a semitone next (a leading tone; the seventh is the
+    note a diminished seventh above it): each such member gives a reading, and the seventh counts
+    as resolved if it resolves under any of them.  If no member rises so, the bass is the root."""
+    if not cands:
+        return None
+    root, q = cands[0]
+    if q not in SEVENTH:
+        return None
+    if q == 'o7':
+        members = {(root + x) % 12 for x in TEMPLATES['o7']}
+        lts = sorted({p % 12 for p, i, k, _ in items if rises_semitone(S, i, k)} & members)
+        if lts:
+            return [(r, (r + SEVENTH['o7']) % 12) for r in lts]
+    return [(root, (root + SEVENTH[q]) % 12)]
+
+
+def seventh_falls(S, items, sev_pc):
+    """Every note on the seventh's pitch class that moves on within a beat holds or falls by step."""
+    for p, i, k, _ in items:
+        if p % 12 == sev_pc:
+            nxt = S.next_note(i, k)
+            if nxt is not None and nxt['s'] - S.note(i, k)['e'] <= S.beat and not (-2 <= nxt['p'] - p <= 0):
+                return False
+    return True
+
+
 def check_dissonance(S):
     """Classify beat-level dissonances."""
     out = []
@@ -399,7 +453,8 @@ def check_dissonance(S):
         pcs = {p % 12 for p, *_ in items}
         cands = chord_candidates(pcs, bass % 12)
         chord_ok = bool(cands)
-        seventh_chord = chord_ok and cands[0][1] in ('7', 'o7', 'ø7', 'm7', 'maj7', '7(no5)', 'm(no5)7')
+        readings = seventh_readings(S, items, cands)
+        seventh_chord = readings is not None
         for x in range(len(items)):
             for y in range(x + 1, len(items)):
                 lo, ilo, klo, alo = items[x]
@@ -412,18 +467,12 @@ def check_dissonance(S):
                 if (nlo['e'] - nlo['s']) >= pedal_len or (nhi['e'] - nhi['s']) >= pedal_len:
                     kind = 'pedal'
                 elif chord_ok and iclass(lo, hi) in (6, 10, 11, 1, 2, 5) and seventh_chord:
-                    # chord member: check the seventh resolves down by step
-                    root = cands[0][0]
-                    sev_pc = {'7': 10, 'm7': 10, 'ø7': 10, 'o7': 9, 'maj7': 11, '7(no5)': 10, 'm(no5)7': 10}[cands[0][1]]
+                    # chord member: check the seventh resolves down by step (under some reading)
                     kind = 'chord'
-                    for p, i, k, a in items:
-                        if (p - root) % 12 == sev_pc:
-                            nxt = S.next_note(i, k)
-                            if nxt is not None and nxt['s'] - S.note(i, k)['e'] <= S.beat and \
-                                    not (-2 <= nxt['p'] - p <= 0):
-                                kind = 'chord (7th not resolved down)'
+                    if not any(seventh_falls(S, items, sev) for _, sev in readings):
+                        kind = 'chord (7th not resolved down)'
                 elif chord_ok and iclass(lo, hi) in (5, 6):
-                    kind = 'chord'  # 6/4 or diminished triad
+                    kind = 'chord'  # a 6/4
                 else:
                     held, new = (None, None)
                     if alo and not ahi:
@@ -622,25 +671,43 @@ def harmony(S):
     run = 0
     last = None
     run_start = 0
-    fit = tot = 0
+    fit = tot = dyads = 0
+    fit_all = tot_all = 0       # the original measure: every sounding beat
     for t in range(0, S.end, S.beat):
         pcs = collections.Counter()
         lows = []
+        onset = []
         for i, v in enumerate(S.voices):
             for n in v:
                 if n['s'] < t + S.beat and n['e'] > t:
                     w = min(n['e'], t + S.beat) - max(n['s'], t)
                     pcs[n['p'] % 12] += w + (S.beat if n['s'] <= t else 0)
                     lows.append(n['p'])
+                    if n['s'] <= t:
+                        onset.append(n['p'])
         if not pcs:
             rows.append(None)
             continue
         bass = min(lows) % 12
         keep = {pc for pc, w in pcs.items() if w >= S.beat * 0.5}
-        name = name_chord(keep, bass, S.flats) or name_chord(set(pcs), bass, S.flats)
-        tot += 1
-        if name:
-            fit += 1
+        tot_all += 1
+        if name_chord(keep, bass, S.flats) or name_chord(set(pcs), bass, S.flats):
+            fit_all += 1
+        if len(keep) == 2 and len({p % 12 for p in onset}) == 2:
+            # two pitch classes sound together and only short notes pass: an interval, not a
+            # chord (the passing notes would otherwise make up a triad that never sounds)
+            two = keep
+        else:
+            two = set(pcs) if len(pcs) <= 2 else None
+        if two:
+            # one or two pitch classes neither fit nor fail a chord template: left out of the fit
+            name = name_dyad(two, min(onset or lows) % 12, S.flats)
+            dyads += 1
+        else:
+            name = name_chord(keep, bass, S.flats) or name_chord(set(pcs), bass, S.flats)
+            tot += 1
+            if name:
+                fit += 1
         rows.append(name)
         key = (frozenset(keep), bass)
         if key == last:
@@ -651,7 +718,12 @@ def harmony(S):
             run, run_start, last = 1, t, key
     if run > static[0]:
         static = (run, S.loc(run_start), rows[-1])
-    return {'labels': rows, 'tertian_fit_pct': round(100 * fit / max(1, tot), 1),
+    return {'labels': rows,
+            # tertian_fit_pct keeps its original meaning (all sounding beats) so the numbers quoted
+            # in the NOTES stay comparable; tertian_fit_chords_pct leaves two-note beats out.
+            'tertian_fit_pct': round(100 * fit_all / max(1, tot_all), 1),
+            'tertian_fit_chords_pct': round(100 * fit / max(1, tot), 1),
+            'dyad_beats_pct': round(100 * dyads / max(1, tot + dyads), 1),
             'longest_static_beats': static[0], 'longest_static_at': static[1]}
 
 
@@ -774,6 +846,8 @@ def analyse(data, bars=None):
         'solo_keyboard': S.solo_keyboard,
         'reach_errors': len(R['reach']),
         'tertian_fit_pct': R['harmony']['tertian_fit_pct'],
+        'tertian_fit_chords_pct': R['harmony']['tertian_fit_chords_pct'],
+        'dyad_beats_pct': R['harmony']['dyad_beats_pct'],
         'longest_static_harmony_beats': R['harmony']['longest_static_beats'],
     }
     return R
@@ -812,7 +886,9 @@ def print_report(R, quiet=False):
         print(f"-- reach: {len(R['reach'])} attacks no two hands can strike:",
               '; '.join(f"{e['loc']} {e['what']} (needs {e['span']})" for e in R['reach'][:8]))
     h = R['harmony']
-    print(f"-- harmony: tertian fit {h['tertian_fit_pct']}%, longest static {h['longest_static_beats']} beats at {h['longest_static_at']}")
+    print(f"-- harmony: tertian fit {h['tertian_fit_pct']}% of beats ({h['tertian_fit_chords_pct']}% of chord beats; "
+          f"interval beats {h['dyad_beats_pct']}%), "
+          f"longest static {h['longest_static_beats']} beats at {h['longest_static_at']}")
     if R['themes']:
         print('-- themes:')
         for x in R['themes']:

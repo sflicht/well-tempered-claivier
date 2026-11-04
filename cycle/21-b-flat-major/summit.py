@@ -78,14 +78,14 @@ def free_a(sc, e):
 
 FREE_B = {
     12: ("R:8 D5:8 Bb4:8"),
-    21: ("R:8 C6:6 Bb5:2 D6:4 C6:4 Bb5:4 F5:12 D6:4 R:12 D6:4"),
-    3: ("D3:2 F3:2 G3:2 F3:2 "
-        "D3:2 C3:2 Bb2:2 D3:2 F3:2 D3:2 D3:2 F3:2 "
-        "Bb2:2 D3:2 D3:4 F3:2 A3:2 C3:2 Bb2:2 "
-        "F3:2 G3:2 Bb2:2 C3:2 D3:2 C3:2 F2:4 D3:4"),
+    21: ("R:8 F5:8 D6:4 C6:4 Bb5:4 F5:12 D6:4 R:12 D6:4"),
+    3: ("D3:2 F3:2 G3:2 Bb2:2 "
+        "D3:2 Bb2:4 D3:2 F3:2 D3:2 D3:2 F3:2 "
+        "Bb2:2 D3:2 D3:4 F3:2 C3:2 F3:2 Bb2:2 "
+        "F3:2 G3:2 Bb2:2 C3:2 D3:2 F3:2 F2:4 D3:4"),
     4: ("Bb4:8 F4:8 Bb3:8 Bb3:8 C4:8 F4:4 E4:4 D4:4 C4:4 F3:4"),
     5: ("R:8 R:2 D4:4 Bb3:2 R:8 R:2 Bb3:4 G3:2 R:8 R:2 G3:4 Bb3:2 R:8 D4:4"),
-    6: ("Bb3:8 R:8 D4:8 R:16 R:8 D4:4 F4:4 R:4"),
+    6: ("Bb3:8 R:8 D4:8 R:16 R:8 D4:4 R:8"),
     9: ("R:8 F4:2 F5:1 F4:1 Bb3:2 Bb4:1 Bb3:1 R:8 G4:2 G5:1 G4:1 Bb3:2 Bb4:1 Bb3:1 R:8 "
         "Bb3:2 Bb4:1 Bb3:1 C4:2 C5:1 C4:1 R:8 D4:4"),
     8: ("R:2 F4:4 Eb4:2 R:8 R:2 F4:4 D4:2 R:8 R:2 C4:6 R:8 R:2 F4:4 C4:2 R:4"),
@@ -93,7 +93,13 @@ FREE_B = {
          "F5:1 Eb5:1 D5:1 C5:1 C5:1 D5:1 E5:1 C5:1 R:8 F5:4"),
     7: ("D4:1 C4:1 Bb3:1 A3:1 Bb3:1 C4:1 D4:1 Eb4:1 R:8 F4:1 G4:1 A4:1 Bb4:1 C5:1 Bb4:1 A4:1 G4:1 R:8 "
         "A4:1 Bb4:1 C5:1 A4:1 F4:1 G4:1 A4:1 F4:1 R:8 D4:1 F4:1 Bb4:1 F4:1 F4:1 Eb4:1 C4:1 Eb4:1 F4:4"),
-    13: ("F4:1 F4:1 F4:2 Eb4:2 D4:2 F4:1 F4:1 F4:2 F4:1 F4:1 F4:2 F4:1 F4:1 F4:2 F4:1 F4:1 F4:2 G4:1 G4:1 G4:2 G4:1 G4:1 G4:2 R:8 D4:1 D4:1 D4:2 G4:1 G4:1 G4:2 F4:1 F4:1 F4:2 Eb4:1 Eb4:1 Eb4:2 D4:4"),
+    # Forestiero 13: the posthorn's dactyl (two sixteenths and an eighth) as a natural horn's
+    # lip-trill turn in the clarino register (F G A = partials 8 9 10 of a horn in F, E-flat its
+    # 7th), not one note re-struck (Nov 2026)
+    13: ("F4:1 Eb4:1 F4:2 Eb4:4 "
+         "F4:1 G4:1 F4:11 G4:1 F4:2 "
+         "G4:1 F4:1 G4:4 Eb4:2 R:8 "
+         "D4:4 G4:1 A4:1 G4:2 F4:1 Eb4:1 F4:2 Eb4:1 F4:1 Eb4:2 D4:4"),
     14: ("R:4 R:2 Eb5:2~ Eb5:2 D5:2 R:2 C5:2~ C5:2 Bb4:2 R:2 C5:2~ C5:2 Bb4:2 R:2 Bb4:2~ "
         "Bb4:2 A4:2 R:2 A4:2~ A4:2 G4:2 R:2 C5:2~ C5:2 Bb4:2 R:2 C5:2~ C5:2 Bb4:2"),
     15: ("D5:4 R:2 C5:2~ C5:2 Bb4:2 R:2 Eb5:2~ Eb5:2 D5:2 R:2 Eb5:2~ Eb5:2 D5:2 R:2 D5:2~ "
@@ -110,7 +116,7 @@ def free_b(sc, e):
     """E5.3-E9.1: every voice in its own layer around Bach's subject in the bass.
     lows: Co3 eighths, Co4 halves, Am5 syncopated sighs (beats 1-2), Co6 quarters (beats 3-4);
     middles: Co9 octave calls (beats 1-2) answered by Co8 eighths (beats 3-4), Fo11 sixteenths
-    (beats 1-2) answered by Fo7 sixteenths (beats 3-4), Fo13 tonguing, Fo14 a suspension chain,
+    (beats 1-2) answered by Fo7 sixteenths (beats 3-4), Fo13 lip-trill turns, Fo14 a suspension chain,
     Am15 halves; highs: Fo19 halves, Am20 quarters."""
     for v in B_ORDER[:N_B]:
         sc.put(V(v), e(5), 3, FREE_B[v])

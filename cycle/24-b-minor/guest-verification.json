@@ -108,5 +108,16 @@
   "time": 1.0,
   "offset16": 4,
   "steps": 0
+ },
+ "BWV 869": {
+  "cost": 7,
+  "parallels": 0,
+  "unresolved": 0,
+  "roughness": 1.76,
+  "overlap_q": 5.0,
+  "form": "rectus",
+  "time": 1.0,
+  "offset16": 0,
+  "steps": 0
  }
 }

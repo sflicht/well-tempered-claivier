@@ -73,7 +73,7 @@ checked against the images; the Aria was cross-checked with Busoni's 1915 arrang
 | Bars | Section | What happens | mean moving voices |
 |---|---|---|---|
 | 1–13 | **A. I postiglioni** | S at Bach's pitch (Co4), A at his pitch (Co3, Bach's CS in Co4), S (Co16), A in the bass (Co2); post station: five horns stack S's head on F a beat apart over the bass's tonguing; the fundamental (Co1) enters with S two octaves down | 4.0 |
-| 14–21 | **B. Schmeichelung** | the friends' theme T in D minor and its answer in A minor, four entries (Am10, Am15, Am5, Am20) with a sighing countersubject; Corno 4 taps his impatient call | 5.4 |
+| 14–21 | **B. Schmeichelung** | the friends' theme T in D minor and its answer in A minor (Am10, Am15, Am5) with a sighing countersubject; the fourth friend (Am20) turns to F major, the horns' key, climbs to D6, its own partial, and F7 leads into section C; Corno 4 taps his impatient call | 5.2 |
 | 22–35 | **C. I forestieri** | seven strangers: Bach's head with the cracked seventh in B-flat (Fo7), E-flat (Fo19), A-flat (Fo13), D-flat (Fo17), G-flat (Fo11: the crack F-flat is an augmented sixth that lands on F), then F (Fo21) and B-flat (Fo14), each crack on the stranger's own partial; laughter (Am), posthorn calls, each stranger then takes over the countersubject or a suspension chain | 6.9 |
 | 36–41 | **Climb: La posta** | lament bar (Eb D Db C); post station on the dominant (Co1 returns on F1, five S heads on F, Fo22 enters with the Aria's call on F); the Aria run with the alphorn fa (Fo11); the strangers' rockets in stretto over the six-four; the friends' Arioso turn; dominant seventh | 8.5 |
 | 42–50 | **Summit: Il congedo** | composed first; see below | 13.6 (18, 19, 19 in b47–49) |
@@ -95,7 +95,7 @@ alone: 7.3).
   stretto); **S six beats after Bach's** (Co12), landing on the cadence; Bach's answer head high
   (Co18); every other voice in its own rhythmic layer: Co3 eighths, Co4 halves, Am5 syncopated
   sighs, Co6 quarters, Co9 octave calls answered by Co8 eighths, Fo11 sixteenths answered by Fo7,
-  Fo13 posthorn tonguing, Fo14 a suspension chain, Am15 halves, Fo19 halves, Am20 quarters,
+  Fo13 the posthorn's dactyl as lip-trill turns (F G A, partials 8–10 of a horn in F), Fo14 a suspension chain, Am15 halves, Fo19 halves, Am20 quarters,
   Fo21 a free line, Co1 the fundamental. Harmonic rhythm 2–4 chords per bar; 18, 19, 19 moving
   voices in b47–49 (Am10 and Fo17 rest).
 
@@ -145,15 +145,16 @@ use the piano as specified.
 
 ## Critic numbers
 
-Fugue (`python3 tools/critic.py cycle/21-b-flat-major/fugue.json`):
+Fugue (`python3 tools/critic.py cycle/21-b-flat-major/fugue.json`; critic, 4 Nov 2026):
 parallels_error **0**, parallels_weak 1 (b48.3 Co16/Co12, two thematic S entries a bar apart in
-octaves on a weak beat), beat_parallels **2** (b49.1 Co4/Co3, b49.4 Fo7/Co6, both in the summit's
-last bar), bad_doublings **5** (b26.2, b34.2, b43.4, b48.2, b49.2; the last three are thematic notes
-of S, T and A sounding together), low_register_seconds **10**, dissonance_unresolved **0**,
-stepwise_pct **39.6** (below the 60 asked; see weak spots), leap_4th_plus 17.7, repeated notes 26.9,
-seventh leaps 9 (seven of them are the strangers' cracks: Bach's sixth leap becomes a seventh).
+octaves on a weak beat), beat_parallels **0** (2 before the self-critique pass), bad_doublings **5**
+(b26.2, b34.2, b43.4, b48.2, b49.2; the last three are thematic notes of S, T and A sounding
+together), low_register_seconds **10**, dissonance_unresolved **0**, dissonance_unverified **0** (6
+before the pass), stepwise_pct **40.6** (39.6 before; below the 60 asked, see weak spots),
+leap_4th_plus 18.3, repeated notes 25.3 (26.9 before), seventh leaps 9 (seven of them are the
+strangers' cracks: Bach's sixth leap becomes a seventh), crossings 42, mean moving voices 6.09.
 Prelude: parallels_error 0, weak 2, beat_parallels 0, bad_doublings 1, low_register_seconds 0,
-unresolved 0, stepwise 54.8, keyboard-unplayable onsets 0.
+unresolved 0, unverified 0, stepwise 54.8, keyboard-unplayable onsets 0.
 
 ## How it was made (disclosure)
 
@@ -175,17 +176,67 @@ disclosed here:
 
 ## Honest weak spots / what I would still improve
 
-* **Stepwise motion is 40 %, not 60 %.** The posthorn idiom is the cause (S has no steps at all:
+* **Stepwise motion is 41 %, not 60 %.** The posthorn idiom is the cause (S has no steps at all:
   repeated notes, fifths, thirds and an arpeggio; Bach's subject has one), plus tonguing figures,
   octave calls, laughing fourths and rockets. The friends' lines and the free counterpoint are
-  mostly stepwise; a further pass could replace some tonguing in non-thematic voices.
+  mostly stepwise. The non-thematic tonguing that a natural horn can turn into steps (in its
+  clarino register) has been turned in the self-critique pass; what is left is thematic (S, Bach's
+  head and subject), the bass's pedal tonguing, Corno 4's call and the departure's relay (see
+  "Self-critique pass").
 * **66 bars**, slightly under the 70 asked (the duration, about 4 min 10 s, is in range).
-* **Section B is thin** (4–6 moving voices) and its eight bars stay in D/A minor with only the
-  friends and a few horns; section C's sequence (6–8 voices) is regular by design, and its seven
-  two-bar units may sound mechanical; the free lines vary them only modestly.
+* **Section B is thin** (4–6 moving voices), on purpose: the friends coax quietly, with only a few
+  horns, before the strangers' accumulation. Since the self-critique pass its last entry turns to
+  F major, but it is still a two-key exposition with one short excursion. Section C's sequence
+  (6–8 voices) is regular by design, and its seven two-bar units may sound mechanical; the free
+  lines vary them only modestly.
 * The departure's relay is deliberately static (0–5 moving voices); whether the slow build of the
   series and the 5-bar held chord carry is something only listening can decide.
 * The summit's first half (E1–E4) has 9 moving voices; the peak (18–19) lasts three bars.
 * The just tuning is rendered by per-note pitch bend on a piano soundfont; the effect of the
   cracked sevenths and the final series on a piano timbre cannot be judged here.
 * The prelude is short (12 bars, about 64 s).
+
+## Self-critique pass (Nov 2026)
+
+*3–4 November 2026.* The open points of my own critique, each fixed or declined.
+
+- **Six unverified dissonances in the summit, b46.4–49.3 (fixed).** The critic block above was
+  written before the critic's fix of 09df800 (a resolution must land within a beat on a consonance).
+  The corrected critic found six suspensions or appoggiaturas whose resolution was made dissonant
+  again because another voice moved by step at the same moment: parallel sevenths or seconds
+  sliding down together. Each is fixed in a free layer; no thematic note changed.
+  - b46.4: Corno 8's F4 is a 9–8 suspension over E-flat, and its E-flat resolution met Corno 3's F3
+    and Forestiero 13's D4. Corno 3 now drops to B-flat2 and Forestiero 13 holds E-flat4.
+  - b47.1: the suspensions of Amico 15 (C5–B-flat4) and Forestiero 14 (E-flat5–D5) resolved
+    against Corno 3's passing C3. Corno 3 now holds B-flat2 for the beat.
+  - b47.2: Forestiero 21 entered on C6 and stepped to B-flat5 in seconds with the friends' theme on
+    top (Forestiero 22, D6 C6). It now holds F5 under the theme and climbs to D6 at b47.3.
+  - b49.3: Forestiero 14's C5–B-flat4 resolved against Corno 3's passing C3. Corno 3 now goes D3–F3.
+  - The two beat-to-beat octaves of the summit's last bar went with these changes: b49.1
+    (Corno 4/Corno 3; Corno 3 now has F3 on both beats, with a passing B-flat2 between) and b49.4 (Forestiero 7/Corno 6; Corno 6 now rests on
+    the last beat).
+- **Tonguing turned into steps where the posthorn allows it (fixed in part, declined in part).**
+  A natural horn has adjacent notes only from its eighth partial up (the clarino register), so a
+  tonguing figure can become stepwise without leaving the horn's series only there.
+  - Forestiero 13's tonguing in the summit (b46.3–50.1, 26 repeated notes) keeps its rhythm, the
+    posthorn's dactyl, but turns: F G F, G A G, E-flat F E-flat, the lip-trill neighbours of a horn
+    in F (partials 7–10), instead of one note struck three times. Where a turn would have moved in
+    octaves or fifths with a neighbouring layer (Forestiero 7's runs, Forestiero 11's sixteenths,
+    Corno 9's octave calls) it holds its note instead.
+  - Corno 12's tonguing on the dominant in b24 (B-flat4 three times, twice) turns B-flat C B-flat,
+    partials 8 9 8 of the B-flat horn.
+  - Declined: the bass's tonguing under the two post stations (Corno 2, b9–11 and b37–39) is a
+    pedal on F2 and F3, where a natural horn has no adjacent notes (partials 2–4 of F), and the
+    pedal is what holds the stacked heads together; Corno 4's impatient call in section B is the
+    postilion's signal, recognisable because it is one note tongued; the strangers' heads, S and
+    Bach's subject are thematic; and the relay's "tongue the note below, then arrive" is the
+    departure's device.
+  - Stepwise motion 39.6 → 40.6 %, repeated notes 26.9 → 25.3 %.
+- **Section B leaves D and A minor once (fixed).** The fourth friend (Amico 20, b20–21) no longer
+  answers in A minor. It sings T in F major, the key of the horns' third partial: the friends coax
+  the traveller in his own key, and Amico 20's climb ends on D6, its own partial, which it will
+  hold at the end of the piece. The bass walks F/A | F | C7 | F ‖ Dm | C7/E | F | F7, Corno 3 sounds
+  its own partial, F3, under the F chords, Corno 9 holds its C5 through the C7, and the F7 now
+  leads into section C's B-flat as a real dominant. This stays inside the premise: the friends'
+  keys are the keys of their partials (D, A) and the excursion goes to the horns' key. I kept the
+  section thin; its quiet is the contrast to the strangers' accumulation in section C.
