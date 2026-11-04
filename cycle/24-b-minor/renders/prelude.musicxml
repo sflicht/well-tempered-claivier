@@ -7160,9 +7160,9 @@
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>G</step>
           <alter>1</alter>
-          <octave>3</octave>
+          <octave>2</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
@@ -7177,8 +7177,8 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
-          <octave>3</octave>
+          <step>B</step>
+          <octave>2</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
@@ -7337,7 +7337,16 @@
       </note>
       <note>
         <pitch>
-          <step>B</step>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>240</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
           <octave>2</octave>
         </pitch>
         <duration>240</duration>
@@ -7346,14 +7355,6 @@
       <note>
         <pitch>
           <step>G</step>
-          <octave>2</octave>
-        </pitch>
-        <duration>240</duration>
-        <type>eighth</type>
-      </note>
-      <note>
-        <pitch>
-          <step>B</step>
           <octave>2</octave>
         </pitch>
         <duration>240</duration>
@@ -7573,17 +7574,7 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>3</octave>
-        </pitch>
-        <duration>240</duration>
-        <type>eighth</type>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <alter>-1</alter>
+          <step>G</step>
           <octave>2</octave>
         </pitch>
         <duration>240</duration>
@@ -7591,7 +7582,16 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>F</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>240</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
           <octave>2</octave>
         </pitch>
         <duration>240</duration>
