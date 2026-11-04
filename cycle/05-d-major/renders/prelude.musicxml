@@ -5405,8 +5405,8 @@
       </note>
       <note>
         <pitch>
-          <step>A</step>
-          <octave>3</octave>
+          <step>D</step>
+          <octave>4</octave>
         </pitch>
         <duration>240</duration>
         <type>eighth</type>
@@ -5438,7 +5438,8 @@
       </note>
       <note>
         <pitch>
-          <step>B</step>
+          <step>F</step>
+          <alter>1</alter>
           <octave>3</octave>
         </pitch>
         <duration>240</duration>

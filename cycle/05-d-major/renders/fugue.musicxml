@@ -1917,7 +1917,7 @@
     <measure number="44">
       <direction placement="above">
         <direction-type>
-          <words enclosure="rectangle">The Guest (from 43.4): BWV 850 between them</words>
+          <words enclosure="rectangle">The Guest (from 43.3.5): BWV 850 between them</words>
         </direction-type>
       </direction>
       <note>
@@ -4815,6 +4815,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
