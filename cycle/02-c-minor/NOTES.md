@@ -32,7 +32,7 @@ These notes cover the rebuilt C-minor pair, renumbered from "Pair I" to Pair II 
 | 19–20 | new | **Episode 3**, the third permutation. Turn motif in the alto; the bass takes the suspension line as V4/2 → I6 resolutions. g → f. | g→f |
 | 21–22 | new (replaces 19–24) | **Mirror trio in f.** The whole b7–8 block upside down: soprano answer-mirror, alto CS2 mirrored, bass CS. Cadence VI–V → c. | f→c |
 | 23–24 | new | **Stretto: subject + mirror answer** (soprano 23.1, bass 23.3.5) with the countersubject in the alto. Changed after the second review (§9). | c |
-| 25–26 | 25–26 | **Build.** 4-3 suspension chain over the lament bass C–Bb–Ab–G. Diminished-7th ascent; the turn motif on V7. | c |
+| 25–26 | 25–26 | **Build.** The bass ends the mirror answer and the alto the countersubject at 25.3; then the lament bass C–B♭–A♭–G in eighths under the soprano's rising eighths (25.3–4). b26: diminished-7th ascent (F°7, F♯°7) and the turn motif on V7. | c |
 | 27–28 | 27–28 | **Peak: stretto à 3** at half-bar distances: soprano C6 (27.1), bass C3 (27.3), alto C5 (28.1). | c |
 | 29–30 | 29–30 | V7 → **deceptive VI on beat 4** (29.4, a quarter) → **Neapolitan** (30.1–2) → V with the dominant bariolage. | c |
 | 31–35 | new | **Coda.** Bass: **J. S. Bach's BWV 847 fugue subject, augmented**, as a moving tonic pedal (from 31.2, after a literal quarter rest). Alto: the mirror answer (31.3.5). Soprano: a free descant, then the final cadence i6 – ii°6/5 – V7. | c |
@@ -57,7 +57,7 @@ Declared entries are checked by `critic.py` (subject declared in the score):
 | 19–22 | 3+5+3+3+5+5 / 3+5+3+3+5+5 / 3+3+5+5 | Dominant pedal (LH G2/G1 re-struck on group starts). Harmony over the pedal speeds up (i6/4–V7, iv6/4–vii°7/V, then by quarters, then V7♭9). The waves climb from G5 to **A-flat 6**, the highest note of the pair, with a crescendo. |
 | 23 | written-out *Presto* | 32nd-note diminished-7th sweep over G1. |
 | 24 | written-out *Adagio* | The subject's head C–B–D–G alone in quarter notes over a bare bass (after BWV 847's Presto/Adagio). |
-| 25–29 | 4, both hands; LH 8ths | **The downbeat regained**, at the loudest level. Kept rhetoric: i \| iv6 N6 \| i6/4 V7 \| **VI deceptive** \| iv6 N6 i6/4 V7 in quarters. |
+| 25–29 | 4, both hands; LH sixteenths | **The downbeat regained**, at the loudest level. Kept rhetoric: i \| iv6 N6 \| i6/4 V7 \| **VI deceptive** \| iv6 N6 i6/4 V7 in quarters. |
 | 30–32 | 4 | Tonic pedal: i, iv6/4, vii°7, i in aligned groups of four, each chord at least half a bar. The last note is a held **C5, the fugue's first note**. |
 
 ## 3. Devices
@@ -76,17 +76,17 @@ Declared entries are checked by `critic.py` (subject declared in the score):
 |---|---|---|
 | P1 | Two voices | **Three real voices** throughout from b7 (critic: mean 2.78 moving voices, 30/36 bars with all three moving). The one-note "Pedal" staff is gone. |
 | P2 | No subject b15–26; 15 bars machine-filled | **All 15 code-filled bars recomposed by hand** (no `gen`/`fill`). A thematic statement (subject, answer, augmentation, mirror or Bach's subject) runs through every section. Stretches without a complete statement never exceed two bars: the b5–6 link (head motifs only), the three episodes, b26, b30 and b35. The episodes use subject material: the turn and the dotted motif. |
-| P3 | Square two-bar stop-start; texture collapses at arrivals | Entries off the downbeat: 15.4, 17.1.5, 23.3, 27.3, 31.2, 31.3.5. The CS end (b4) and the CSI/CS2 openings (b7.1) were rewritten so that they run across the join instead of cadencing or resting. Attacks per bar at the arrivals: b7 15, b11 15, b15 12, b21 14, b23 10, b27 16 (v5: 7 at b1, 13, 27, 31). Below 9 attacks: only the solo opening b1 (7) and the final cadence b35 (6). |
+| P3 | Square two-bar stop-start; texture collapses at arrivals | Entries off the downbeat: 15.4, 17.1.5, 23.3.5, 27.3, 31.2, 31.3.5. The CS end (b4) and the CSI/CS2 openings (b7.1) were rewritten so that they run across the join instead of cadencing or resting. Attacks per bar at the arrivals: b7 15, b11 15, b15 12, b21 14, b23 10, b27 16 (v5: 7 at b1, 13, 27, 31). Below 9 attacks: only the solo opening b1 (7) and the final cadence b35 (6). |
 | P4 | Peak was the thinnest bar | b27 is a stretto à 3 and the **fullest bar of the piece (16/16 sixteenth positions attacked)**. Soprano C6–F6, bass from C3, alto in 16ths. |
-| P5 | Exposition never left c; keys entered without cadences | Answer at the **dominant**. Every arrival is cadenced: G7→c (b7), Bb7→Eb (b11), D7(6/5)→g (b15), C7→f (b21), VI–V→c (b23), V7→c (b27), deceptive VI (29.3.5), G7→c (b31), V7→I (b36). |
+| P5 | Exposition never left c; keys entered without cadences | Answer at the **dominant**. Every arrival is cadenced: G7→c (b7), Bb7→Eb (b11), D7(6/5)→g (b15), C7→f (b21), VI–V→c (b23), V7→c (b27), deceptive VI (29.4), G7→c (b31), V7→I (b36). |
 | P6 | Prelude was a chord chart | Every note hand-written. Passing, neighbour and appoggiatura notes in every section. Critic tertian fit 90.3% → **69.5%** (BWV 847 prelude: 70.4%). Audible top lines: the accented subject in A and B, the climbing waves in C and D. |
 | P7 | Literal repetition; the pedal recedes | No bar repeats another's notes except the deliberate 28 → 29 compression. Pedal cut to **4 bars** (b19–22), climbing to A-flat 6 with a crescendo (level +6 → +15), then the Presto/Adagio break. |
-| P8 | No beat to lose; inert LH | LH in steady 8ths (A) and **quarters on every beat** (B) under the groups of three. It joins the groups in C and D, plays plain quarters in the Adagio and returns in 8ths in E. The odd 16th bass pops are gone. |
+| P8 | No beat to lose; inert LH | LH in steady 8ths (A) and **quarters on every beat** (B) under the groups of three. It joins the groups in C and D, plays the held dominant in the Adagio (G2, then F2 and G2 under the right hand's quarters) and returns in E in sixteenths, BWV 847's neighbour figure a sixth below the right hand. The odd 16th bass pops are gone. |
 | P9 | Augmentation section: 4th, accented 7th, filler, hollow end | b15–18 rebuilt: subject + augmentation + inversion, no free filler, no bare octave at the end. Two small adjustments to the augmentation are documented in §5. |
 | P10 | E2 collisions | E2 (b13–14) rewritten. No F#–Ab, no minor 9ths. The route is diatonic (Eb, G7/B, c, D7/F#) and cadences into g. |
 | P11 | Unplayable pedal; fake voice | No separate pedal. Critic keyboard check: **0%** of onsets exceed two hands (v5: 0.8%). |
 | P12 | Double ending; bare 10th | One final cadence (b35: i6 – ii°6/5 – V7). A full C-major chord ends the piece (Picardy). |
-| P13 | Build was broken chords | b25: 4-3 suspension chain over the lament bass, while the alto finishes the stretto subject. b26: diminished-7th ascent and the turn motif on V7 into the peak. Still less thematic than the rest; see weak spots. |
+| P13 | Build was broken chords | b25: the bass finishes the stretto's mirror answer and the alto its countersubject (to 25.3); then the lament bass C–B♭–A♭–G under the soprano's eighths. b26: diminished-7th ascent and the turn motif on V7 into the peak. Still less thematic than the rest; see weak spots. |
 | P14 | 13th-span waves; octaves on accents | 5-note waves span no more than an octave (b13–18). Critic parallels between hands: 0 (v3: 3 weak + 3 beat-to-beat). |
 | P15 | Squeezed final cadence; no link | Tonic-pedal close over two bars (b30–31), vii°7 for half a bar. Final C5 = the fugue's first note. The subject appears in the prelude (b1–4, b8–11, b24). |
 | P16 | Too slow | Quarter = 80, "Allegro moderato" (prelude stays at 63). |
@@ -105,32 +105,40 @@ Declared entries are checked by `critic.py` (subject declared in the score):
 
 ## 6. Critic, before and after
 
+The Fugue II and Prelude II columns are the current scores (critic, 2026-11-04).
+
 | | Fugue v5 | **Fugue II** | Prelude v3 | **Prelude II** |
 |---|---|---|---|---|
 | parallels_error | 0 | **0** | 0 | **0** |
 | parallels_weak | 2 | **0** | 3 | **0** |
 | beat_parallels | 1 | **0** | 3 | **0** |
-| dissonance_unresolved | 1 | **0** | 13 | 18 (all justified below) |
+| dissonance_unresolved | 1 | **0** | 13 | 19 (all justified below) |
 | low_register_seconds | 0 | **3** (limit 3) | 0 | **0** |
 | pc_tripled_on_beats_pct | 0 | **0** | 0 | **0** |
-| keyboard unplayable | 0.8% | **0%** | 0% | **0%** |
+| bad_doublings | — | **0** | — | **0** |
+| keyboard unplayable | 0.8% | **0%** (reach errors 0) | 0% | **0%** (reach errors 0) |
 | crossings | 0 | **0** | 0 | **0** |
 | mean moving voices | 1.97 | **2.78** | 2.0 | 2.0 |
-| tertian fit | 39% | 52% | 90.3% | **69.5%** |
+| tertian fit | 39% | 58% | 90.3% | 88% |
 
 **Targets.** `beat_parallels` ≤ 1 is met (0). `low_register_seconds` ≤ 3 is met (3).
 
+The tertian-fit figures of the current scores come from the critic's revised chord
+naming (Nov 2026) and are not comparable with the older ones in this table or with the
+69.5 % and 70.4 % (BWV 847) quoted under P6, which were measured the old way.
+
 **The three low-register seconds** are all in the mirror trio (21.1.5, 22.2.25, 22.2.75). The alto's held F3 sits over the bass countersubject's 16th-note scale (G2, Eb2). They are passing 16ths in the dark low register chosen for the "upside-down" block.
 
-**The 18 prelude flags** are figuration that the critic cannot parse:
+**The 19 prelude flags** are figuration that the critic cannot parse:
 - **9: dominant pedal**, b20–23. The 4ths, 7ths and 9ths of the upper harmonies (i6/4, iv6/4, vii°7/V, V7♭9) sit against the re-struck G pedal. The critic only treats notes held two bars or longer as a pedal.
 - **3: V4/2 chord** (Eb7 over Db, b13). The bass is the chord's 7th and resolves to C in b14.
 - **1: accented passing note**: G4 in the Bbm/Db wave, 15.2.
 - **2: tonic pedal**: iv6/4 over C2, 30.3–4.
-- **3: chord 7ths resolved in another register**:
+- **4: chord 7ths resolved in another register**:
   - vii°4/3 at 4.1 (B4 → C5 at 4.2);
   - V7 at 11.4 (Ab → G5 at 12.1);
-  - V7 at 27.4 (F5 → Eb5 at 28.1).
+  - V7 at 27.4 (F5 → Eb5 at 28.1);
+  - V7 at 29.4 (F5 → Eb5 at 30.1), added by the second review (§9).
 
 **Fugue "chord (7th not resolved down)"** notes (12) are chord 7ths left by leap inside the figuration; none is an error.
 
@@ -140,9 +148,9 @@ Declared entries are checked by `critic.py` (subject declared in the score):
 
 - **Unheard.** Whether the velocity accents make the threes, fives and the accent-spelled subject audible is untested. The subject at dotted-8th speed in its E-flat modal form (b8–11) may simply sound like figuration.
 - **The mirror trio is low and dark.** Alto E3–C4, bass Db2–Db3. It may be muddy on a piano; it produced the three low-register seconds. Raising it a 4th would make the soprano reach F6 before the peak, so I kept it low.
-- **The Adagio is only notated.** The renderer supports a single tempo, so b24 is one bar of quarter notes at quarter = 63 (about 4 s), not a real tempo change.
+- **The Adagio is one bar.** The tempo map makes b24 a real Adagio (quarter = 40, about 6 s, a tempo at b25), as BWV 847's prelude does; whether one bar is enough to be heard as a change of pace is for a listener.
 - **The episodes are not strict triple counterpoint.** They are the same three lines (turn motif, suspension line, broken bass) permuted, with adjustments at the joins. The alto in Episode 1 is mostly a harmonic filler.
-- **The build (b25–26) is still the least thematic stretch**: suspensions and a diminished-7th run, not subject strettos.
+- **The build (b25.3–26) is still the least thematic stretch**: the lament bass under soprano eighths and a diminished-7th run, not subject strettos.
 - **Coda clashes.** Bach's line under our answer produces two brief clashes inherent to the combination: Ab4 over G2 at 31.4.5 (a passing ♭9) and C5 over B2 at 32.2.5 (Bach's lower neighbour). Both are 8ths.
 - **The final cadence broadens to 6 attacks a bar** (b35). This is deliberate, but the coda is less dense than the peak.
 - **The subject still starts on a downbeat quarter.** The rhythmic variety comes from entry placement, not from changing the theme.
@@ -151,14 +159,14 @@ Declared entries are checked by `critic.py` (subject declared in the score):
 
 All in `renders/`.
 - `fugue.{mp3,pdf,mid,musicxml,ly}` and `prelude.{...}`: Bach–Lehman temperament, with score.
-- `fugue-equal.{mp3,mid,musicxml,ly}` and `prelude-equal.{...}`: equal temperament.
+- `fugue-equal.mp3` and `prelude-equal.mp3`: equal temperament, audio only.
 
 Rebuild:
 ```
 python3 cycle/02-c-minor/fugue.py && python3 cycle/02-c-minor/prelude.py
 python3 tools/critic.py cycle/02-c-minor/fugue.json
 python3 tools/render_music.py cycle/02-c-minor/fugue.json --output-prefix cycle/02-c-minor/renders/fugue --temperament bach-lehman
-python3 tools/render_music.py cycle/02-c-minor/fugue.json --no-pdf --output-prefix cycle/02-c-minor/renders/fugue-equal --temperament equal
+python3 tools/render_music.py cycle/02-c-minor/fugue.json --audio-only --output-prefix cycle/02-c-minor/renders/fugue-equal --temperament equal
 ```
 (The same two render commands apply to the prelude.)
 
@@ -203,3 +211,28 @@ The prelude's 19th flag is new: 29.4, the V7's 7th F5. It resolves to E-flat 5 o
 **Renders.**
 - `renders/{fugue,prelude}.{mp3,pdf,mid,musicxml,ly}`: Bach–Lehman temperament, regenerated.
 - `renders/{fugue,prelude}-equal.mp3`: equal temperament, audio only. The older equal-temperament ancillary files were removed.
+
+## Self-critique pass (Nov 2026)
+
+**Fixed (score).** REVIEW-2 F1 asked for a small tempo dip on the deceptive cadence
+(29.4) so that the turn registers. `fugue.py`'s tempo map now eases from quarter = 80 to
+72 across beat 3 of bar 29 (the V7), holds 72 for the VI on beat 4, and returns a tempo
+at the Neapolitan (30.1). The notes are unchanged; the critic is unchanged.
+
+**Fixed (prose).** These statements no longer matched the score and are corrected in place:
+- §7 said the Adagio was only notated at a single tempo. The prelude's tempo map makes
+  bar 24 a real Adagio (quarter = 40, a tempo at 25).
+- §4 P3 gave the stretto entry as 23.3 (it is 23.3½), and P5 the deceptive VI as 29.3½
+  (it is on 29.4 since the second review).
+- §2 (bars 25–29) and §4 P8 said the left hand returns in eighths; since the second
+  review it plays BWV 847's neighbour figure in sixteenths.
+- §1 and §4 P13 described bar 25 as a 4–3 suspension chain while the alto finishes the
+  stretto subject. Since the stretto was changed, the bass finishes the mirror answer
+  and the alto the countersubject (to 25.3), and the lament bass follows under the
+  soprano's eighths; there is no suspension chain.
+- §8 listed equal-temperament side files (`-equal.{mid,musicxml,ly}`) that were deleted;
+  only the `-equal.mp3` files exist.
+- §6 now counts the prelude's 19 flags (the 19th, 29.4, was listed only in §9).
+
+Nothing was declined.
+

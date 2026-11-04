@@ -6,7 +6,7 @@ home voices (soprano, alto, tenor, bass) and a fifth voice, the Guest, who
 sings only J. S. Bach's subject of BWV 850 and Bach's own idiom (32nd-note
 runs, dotted rhythms). The Guest enters three times, each time into a texture
 thinned to make room for it: as the fifth entry of the exposition (b10, in D,
-where our subject was expected), at the summit (b43.4), where Bach's subject
+where our subject was expected), at the summit (b43.3.5), where Bach's subject
 sounds between ours at two speeds, and at the end (b52), where it has the last
 word. Devices: a cascade stretto through F#m-Bm-Em-A that lands on the bass's
 augmentation in D (b38-43), and prolation, the subject at x2, x1 and x1/2 at
@@ -214,8 +214,9 @@ tag(41, 'A (B)')
 # augmentation (x2, b43-46). Over it the soprano's subject (x1, from b43.3)
 # climbs to A6. Between them, with the tenor silent and the alto only holding
 # D5 above it (third review: the summit's root), the Guest states Bach's
-# subject from b43.4 (half a bar later than Bach's own metric place): its B.
-# lands on the downbeat as the sixth of a B-minor 6/4 over F#, resolving to A. At b45.3 the
+# subject from b43.3.5 (an eighth short of half a bar later than Bach's own metric
+# place): its B., struck on the last eighth of b43 and tied over the barline, sounds on
+# the downbeat as the sixth of a B-minor 6/4 over F#, resolving to A. At b45.3 the
 # tenor takes the subject a fourth higher (diatonic, so with C#: the form
 # stretto_finder ranks cleanest over the augmentation's falling tail), and at
 # b46.1.5 the soprano adds the subject in diminution (B-minor form) on top:
@@ -235,7 +236,7 @@ put(43,
     A='C#5:8 D5:8  D5:14 R:2  R:16  R:16  R:8 A4:4 D5:4',
     T='G4:8 F#4:2 R:6  R:16  R:8 ' + SUBJ_ON_D + ' F#4:8')
 tag(43, 'SUMMIT: subject x2 (bass) + subject (soprano)')
-tag(44, 'The Guest (from 43.4): BWV 850 between them')
+tag(44, 'The Guest (from 43.3.5): BWV 850 between them')
 tag(45, 'Subject on D (tenor) over the augmentation')
 tag(46, 'Diminution (soprano): x2, x1 and x1/2 at once')
 

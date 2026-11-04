@@ -45,7 +45,9 @@ def bar(u, l, tag=''):
 bar('F#5 E5 D5 E5  F#5 A5 G5 F#5  E5 D5 C#5 D5  A4 D5 F#5 A5', 'D3 A3 F#3 D4 D3 A3 A2 A3', 'A: D')
 bar('B5 A5 G5 A5  B5 D6 C#6 B5  A5 G5 F#5 G5  A5 F#5 E5 D5', 'G2 D3 B2 G3 F#2 D3 D3 A3', 'IV - I6')
 bar('E5 F#5 G5 B5  D6 C#6 B5 G5  C#6 B5 A5 G5  E5 C#5 A4 C#5', 'E2 B2 G2 E3 A2 E3 C#3 G3', 'ii7 - V7')
-bar('D5 F#5 A5 F#5  D6 C#6 B5 A5  B5 A5 G5 F#5  F#5 E5 D5 B4', 'D3 A3 F#3 A3 B2 F#3 D3 B3', 'I - vi')
+# (Nov 2026) L.H. D4 on 2.5, as in bar 1 (was A3: A5/A3 -> B5/B2, contrary octaves into the vi),
+# and F#3 on 4.5 (was B3: B4/B3 -> G4/G2, octaves in similar motion into bar 5).
+bar('D5 F#5 A5 F#5  D6 C#6 B5 A5  B5 A5 G5 F#5  F#5 E5 D5 B4', 'D3 A3 F#3 D4 B2 F#3 D3 F#3', 'I - vi')
 bar('G4 B4 D5 G5  B5 A5 G5 F#5  E5 G5 C#6 E6  D6 C#6 B5 A5', 'G2 D3 G3 D3 A2 E3 A2 G3', 'IV - V7')
 bar('F#5 A5 D6 A5  F#5 D5 A4 D5  F#5 E5 D5 C#5  A#4 C#5 E5 F#5', 'D3 F#3 A3 F#3 F#2 E3 A#2 E3', 'I - V7/vi')
 # ---- B (7-14) B minor region

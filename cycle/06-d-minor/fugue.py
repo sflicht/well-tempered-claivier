@@ -159,14 +159,17 @@ entry('S', 25, 'Subject (Soprano), F major')
 # quickens: the Soprano runs in sixteenths, a one-bar figure sequenced down a
 # step over a bass falling by fifths (Gm7-C7, F-Bb, E half-dim-A7, Dm-Gm);
 # the Tenor's sevenths fall a step a bar (F E Eb D C# C Bb: the lament once
-# more).  The Alto rests after its ground and returns at bar 34.
+# more).  (Nov 2026) The figure falls three times; its fourth statement (b32)
+# climbs instead, a beat at a time in the same sixteenth cells (A4, D5, F5),
+# against the Tenor's still-falling line, and steps into bar 33's D5.  The Alto
+# rests after its ground and returns at bar 34.
 EP2, ST, SU, CO = 29, 35, 41, 57
 tag(EP2, 'Episode 2: the surface quickens (sixteenths), through G minor')
 put(EP2, B='Bb2:4 G2:4 C3:4  A2:4 F2:4 Bb2:4  G2:4 E2:4 A2:4  F2:4 D2:4 G2:4  Bb2:8 A2:4  D3:8 A2:4')
 put(EP2, S='D5:1 C5:1 Bb4:1 A4:1 Bb4:1 G4:1 A4:1 Bb4:1 C5:1 Bb4:1 C5:1 E5:1'
            '  C5:1 Bb4:1 A4:1 G4:1 A4:1 F4:1 G4:1 A4:1 Bb4:1 A4:1 Bb4:1 D5:1'
            '  Bb4:1 A4:1 G4:1 F4:1 G4:1 E4:1 F4:1 G4:1 A4:1 G4:1 A4:1 C#5:1'
-           '  A4:1 G4:1 F4:1 E4:1 F4:1 D4:1 E4:1 F4:1 G4:1 F4:1 G4:1 A4:1'
+           '  A4:1 Bb4:1 C5:1 A4:1 D5:1 C5:1 D5:1 E5:1 F5:1 E5:1 D5:1 C5:1'
            '  D5:1 C5:1 Bb4:1 A4:1 G4:1 A4:1 Bb4:1 A4:1 C#5:1 E5:1 G5:1 E5:1  F5:4 D5:4 E5:4')
 put(EP2, T='R:4 F4:4 E4:4  Eb4:8 D4:4~  D4:8 C#4:4  C4:8 Bb3:4  D4:8 C#4:4  D4:4 A3:4 R:4')
 put(EP2, A='R:12  R:12  R:12  R:12  R:12  A4:2 G4:2 F4:4 R:4')

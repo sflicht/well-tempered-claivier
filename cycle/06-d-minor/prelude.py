@@ -53,13 +53,18 @@ def T(s):
 
 
 # ---------------------------------------------------------------------------
-# 1-4  TOCCATA (after BWV 565): three statements, each an octave lower.
+# 1-4  TOCCATA (after BWV 565): three statements, each an octave lower.  Checked (Nov 2026)
+#      against the Bach-Gesellschaft text (BGA 1867, typeset by the Mutopia Project,
+#      BachJS/BWV565/ToccataFugue): statement 1 A5/A4 with the fall G F E D C# D; statement 2
+#      A4/A3, shortened to E F C# D; statement 3 A3/A2 with the full fall, then the pedal D, and
+#      the diminished seventh C#3 E3 G3 Bb3 C#4 E4 rolled up over it.  Bach's chord resolves to
+#      D major (the left hand's G-E-F#); ours resolves to D minor, the key of the Allegro.
 bar('Toccata: after BWV 565 (A-G-A, G F E D C# D, in octaves)',
     RH='A5:1 G5:1 A5:10 R:2  G5:0.5 F5:0.5 E5:0.5 D5:0.5 C#5:2 D5:6',
     RH2='A4:1 G4:1 A4:10 R:2  G4:0.5 F4:0.5 E4:0.5 D4:0.5 C#4:2 D4:6')
-bar('an octave lower',
-    RH='A4:1 G4:1 A4:10 R:2  G4:0.5 F4:0.5 E4:0.5 D4:0.5 C#4:2 D4:6',
-    LH2='A3:1 G3:1 A3:10 R:2  G3:0.5 F3:0.5 E3:0.5 D3:0.5 C#3:2 D3:6')
+bar('an octave lower, shortened as in BWV 565 (A-G-A, E F C# D)',
+    RH='A4:1 G4:1 A4:10 R:2  E4:1 F4:1 C#4:2 D4:6',
+    LH2='A3:1 G3:1 A3:10 R:2  E3:1 F3:1 C#3:2 D3:6')
 bar('two octaves lower, onto the low D',
     LH2='A3:1 G3:1 A3:10 R:2  G3:0.5 F3:0.5 E3:0.5 D3:0.5 C#3:2 D3:6',
     LH='A2:1 G2:1 A2:10 R:2  G2:0.5 F2:0.5 E2:0.5 D2:0.5 C#2:2 D2:6~')
@@ -197,6 +202,9 @@ def build(path=HERE / 'prelude.json'):
             'tempo_text': 'Toccata con recitativo. Adagio - Allegro - Recitativo - Presto',
             'movement_number': 6, 'piece_type': 'prelude', 'edition': 'third',
             'tempo_map': TEMPO_MAP,
+            # the BWV 565 statements are written in octaves (b1 RH/RH2, b2 RH/LH2, b3 LH2/LH, b28
+            # RH/RH2): one line doubled, as on the organ, not parallel octaves between real voices
+            'doublings': [['RH', 'RH2'], ['RH', 'LH2'], ['LH2', 'LH']],
             'markers': [{'t': (b - 1) * 6, 'label': t} for b, t in enumerate(TAGS, 1) if t]}
     voices = [('RH', 'R.H.', 'treble', 76), ('RH2', 'R.H. inner', 'treble', 66),
               ('LH2', 'L.H. inner', 'bass', 62), ('LH', 'L.H.', 'bass', 70)]

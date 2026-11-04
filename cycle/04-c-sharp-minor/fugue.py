@@ -236,7 +236,7 @@ bar('40 X-aug: D# (iio7 - V)',
     S='C#5:2 D#5:1 E5:1 F#5:2 A5:2 G#5:4',
     A='A4:10 G#4:2',              # (Nov 2026) the b9 resolves to G#4 on the last eighth, before the summit
     T='F#4:8 D#4:4',
-    Br='D#3:6 B#2:6',
+    Br='D#3:4 F#3:2 B#2:6',        # (Nov 2026) F#3 on beat 2: the diminished chord's third, not a second D# over the crux
     B='D#2:12')
 # (Nov 2026 revoicing, review of PR #1) The summit used to strike C#2 C#3 | E4 G#4 C#6 at
 # once (one hand would need 21 semitones) and bar 42 F#2 F#3 C#4 | A4 A5 (19).  Now the
@@ -262,17 +262,22 @@ bar('43 N6 - viio7 of V (bass F#-F##-G#)',
     Br='D3:6 A#2:6',
     B='F#2:6 F##2:6')
 # ---------------------------------------------------------------- DOMINANT PEDAL
-# N in its dominant form (B# for B) in S, A, T at an eighth's distance, complete,
-# over G#1; tested 0 parallels / 0 unresolved before writing.
-bar('44 PEDAL STRETTO: S, A (+eighth), T (+quarter)',
+# N in its dominant form (B# for B) in S and A, an eighth apart (canon at the octave),
+# complete, over G#1.  (Nov 2026, REVIEW-2 F3) The tenor no longer adds a third copy a
+# quarter later (heard as one line in three octaves; it made the beat parallel at 45.2
+# and the doubled seventh at 44.3).  It sustains D#3 - C#3 - B#2: a 4-3 suspension over
+# the pedal (iv over V, resolving into V7 at 45.2.5), entering an eighth after the pedal
+# so that the left hand can strike it.  The review's version an octave higher crossed the
+# alto at 44.2.5 and 45.3.5.
+bar('44 PEDAL STRETTO: S, A (+eighth); T sustains a 4-3 over the pedal',
     S='G#5:2 E5:1 D#5:1 B#4:2 F#5:6',
     A='R:2 G#4:2 E4:1 D#4:1 B#3:2 F#4:4~',
-    T='R:4 G#3:2 E3:1 D#3:1 B#2:2 F#3:2~',
+    T='R:2 D#3:6 C#3:4~',
     B='G#1:12~')
 bar('45',
     S='A5:4 F#5:2 D#5:2 B#4:2 C#5:2',
     A='F#4:2 A4:4 F#4:2 D#4:2 B#3:2',
-    T='F#3:4 A3:4 F#3:2 D#3:2',
+    T='C#3:6 B#2:6~',
     B='G#1:12~')
 bar('46 i6/4 - V7 over the pedal',
     S='E5:6 D#5:6',
@@ -315,7 +320,6 @@ ENTRIES = [
     ('T', 35, 0, 'subject (climax pair 1)', 2), ('S', 35, 1.5, 'subject, stretto at a dotted quarter', 2),
     ('Br', 38, 0, 'subject (climax pair 2)', 2), ('S', 38, 0.5, 'subject, stretto at an eighth', 2),
     ('S', 44, 0, 'subject, dominant form (B#)', 2), ('A', 44, 0.5, 'dominant form, stretto', 2),
-    ('T', 44, 1, 'dominant form, stretto', 2),
     ('T', 17, 0, 'crux (BWV 849)', 3), ('A', 20, 0, 'crux, Bach\'s answer (BWV 849)', 3),
     ('S', 23, 0, 'crux (BWV 849)', 3), ('B', 35, 0, 'crux augmented (BWV 849)', 7),
     ('S', 47, 0, 'crux over the tonic pedal (BWV 849)', 4),
