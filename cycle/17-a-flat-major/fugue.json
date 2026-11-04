@@ -242,7 +242,7 @@
    },
    {
     "t": 213.0,
-    "label": "Fermata: hold the chord (about 3.5 s)"
+    "label": "The chord held (about 3.5 s)"
    },
    {
     "t": 214.5,
@@ -2147,7 +2147,8 @@
      "spell": "des",
      "v": 74,
      "gate": 0.975,
-     "bar": 36
+     "bar": 36,
+     "fermata": true
     },
     {
      "t": 219.0,
@@ -3721,7 +3722,8 @@
      "spell": "ees",
      "v": 72,
      "gate": 0.975,
-     "bar": 36
+     "bar": 36,
+     "fermata": true
     },
     {
      "t": 219.0,
@@ -4017,7 +4019,7 @@
   {
    "name": "Tenor (third child)",
    "abbr": "T",
-   "clef": "bass",
+   "clef": "treble_8",
    "events": [
     {
      "t": 0.0,
@@ -5664,7 +5666,8 @@
      "spell": "g",
      "v": 72,
      "gate": 0.975,
-     "bar": 36
+     "bar": 36,
+     "fermata": true
     },
     {
      "t": 234.0,
@@ -7022,7 +7025,8 @@
      "spell": "ees",
      "v": 71,
      "gate": 0.975,
-     "bar": 36
+     "bar": 36,
+     "fermata": true
     },
     {
      "t": 246.0,

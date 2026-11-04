@@ -185,12 +185,15 @@ put('Q', 27, 0, 'C#4:16 B3:8 '
                 'G#3:8')
 put('A', 28, 0, 'R:8 C#5:8 A#4:8 '
                 'D#4:8')
-put('B', 28, 0, 'C#3:8 A#2:16 '
-                'G#2:8 B2:8 F#2:8 '
-                'C#3:8 A#2:8 G#2:8 '
-                'C#3:8 B2:8 A#2:8 '
-                'B2:8 C#3:8 A#2:8 '
-                'G#2:8 F#2:8 G#2:8 '
+# (Nov 2026) The bass walks in quarters for about half the beats of b28-33 (it was all half notes):
+# the half-note roots stay on the beats; it holds still under the knocks (b29.2-3, b33.3-34) and
+# under the door subject's iv-IV, v-V (b34), where the harmony must be plain.
+put('B', 28, 0, 'C#3:8 A#2:4 B2:4 A#2:4 F#2:4 '
+                'G#2:4 A#2:4 B2:8 F#2:8 '
+                'C#3:4 B2:4 A#2:4 D#3:4 G#2:4 A#2:4 '
+                'C#3:4 G#2:4 B2:8 A#2:8 '
+                'B2:4 F#2:4 C#3:4 B2:4 A#2:8 '
+                'G#2:4 B2:4 F#2:8 G#2:8 '
                 'A#2:8 B2:8 C#3:8 '
                 'F#2:8')
 theme('Q', 29, 2, K, 'III: door subject above the tenor (parts exchanged)', 2)
@@ -225,11 +228,11 @@ put('T', 37, 0, 'C#3:8 D#3:8 F#3:8 '
                 'G#3:8 E#3:8 D#3:8')
 put('A', 37, 0, 'G#4:8 F#4:16 '
                 'R:24 '
-                'D#4:8 C#4:8 D#4:8 '
-                'G#4:12 F#4:4 C#5:8 '
-                'D#5:8 G#4:12 A#4:4 '                                # (review 3: no doubled B#, no accented fifths)
-                'D#5:8 A#4:8 F#4:8 '
-                'E#4:8')
+                'D#4:4 E#4:4 F#4:4 E#4:4 D#4:4 E#4:2 F#4:2 '           # (Nov 2026) a line, not filler:
+                'G#4:12 F#4:4 C#5:4 B#4:4 '                            # 4-3 under the tenor's 9-8, a turn,
+                'D#5:6 C#5:2 G#4:12 A#4:4 '                            # held under the top B#5 (review 3: no
+                'D#5:4 C#5:4 A#4:4 G#4:4 F#4:8 '                       # doubled B#), then down by step to
+                'E#4:8')                                               # the cadence's third
 # (Nov 2026) The first two entries exchange voices and octaves: the entry on G# is now in the tenor (G#3) and
 # the entry on B# in the bass beneath it (B#2), instead of G#2 in the bass and B#3 in the tenor.  With entries
 # a tenth apart, b41.2 put G#2, E#4 and B#5 (all three subject notes) together, which no two hands can strike

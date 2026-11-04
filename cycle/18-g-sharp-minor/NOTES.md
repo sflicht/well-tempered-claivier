@@ -80,7 +80,7 @@ combined with the first from its first entry.
 | --- | --- | --- | --- |
 | 1-15 | 0:00-0:49 | **I. Sero.** Alto subject (G#4, Phrygian); soprano answer on D# with CS1 below; tenor subject with CS1 above (soprano) and CS2 (alto); bass answer on D# with the same trio a fourth lower and a soprano descant of 9-8 suspensions. iii-vi-ii7-I6/4-V7 → **E major** at b15.1. q = 104. | 2.9 (4; 5 in b15 as the fifth voice knocks) |
 | 15-26 | 0:49-1:26 | **II. Media nocte.** Silence; the fifth voice knocks alone on D#3 (b15.2). b16: duet, the alto's Aeolian subject over the door's rise in tenths (A# at b16.2). The bass enters b17. Door subject 2 (tenor, on A#, b18.2) → half close on D# (b19.3) → deceptive VI (b20.1). Door subject 3 (soprano, b20.2) above the subject in the bass (b21): the combination inverted, all five voices. The tenor and fifth voice rest (b22-23). Door subject 4 (alto, on F#, from b24.3): its rise G-G#, A-A# turns iv into IV and v into V: **B major** at b26.1. q = 108. | 3.6 (5) |
-| 26-35 | 1:26-1:55 | **III. Galli cantu.** The soprano holds its D# while the bass knocks (b26.2). Soprano subject, Dorian: **B-E#** at b28.1 over C# major. Fifth voice knocks again (b29.2), tenor subject below it (b30): the cock crows twice (Mark 14:72), b31.1. Stretto: the soprano answers two beats later a tenth higher, on B (b30.3). Door subject 5 (alto, on C#, from b33.3), iv→IV, v→V: **F-sharp major** at b35.1. q = 112. | 3.9 (4) |
+| 26-35 | 1:26-1:55 | **III. Galli cantu.** The soprano holds its D# while the bass knocks (b26.2). Soprano subject, Dorian: **B-E#** at b28.1 over C# major. Fifth voice knocks again (b29.2), tenor subject below it (b30): the cock crows twice (Mark 14:72), b31.1. Stretto: the soprano answers two beats later a tenth higher, on B (b30.3); under it the bass walks in quarters (b28-33). Door subject 5 (alto, on C#, from b33.3), iv→IV, v→V: **F-sharp major** at b35.1. q = 112. | 3.9 (4) |
 | 35-43 | 1:55-2:20 | **IV. Mane.** The alto holds the F# chord while the tenor knocks (b35.2). Soprano subject, Mixolydian: **B#** over the door's G# = G# major (b36.3). **Summit (b39-43):** three entries a third apart and two beats apart: tenor G#3 (b39.1), bass B#2 beneath it (b39.3), soprano D#5 (b40.2), whose B#5 (b41.2) is the top of the piece and whose last note C#5 is the cadence: **C-sharp major** at b43.1, over the bass rising A#-B#-C#. q = 116. | 3.8 (4) |
 | 43-45 | 2:20-2:32 | **The last knock.** D# (= E-flat) pedal; the soprano holds C#, the dominant's seventh; the tenor sighs 4-3 over the pedal; the fifth voice knocks (b44.3) and rises E-E# (iv→IV), F#-F## (v→V). The tempo broadens to q = 82. | 3.0 (4) |
 | 46-52 | 2:32-3:05 | **Dawn: the tonic in major, written A-flat major** (G♯ major respelled; on the keyboard the same tonic). b46.1: five-voice A-flat chord, held by bass and alto for the whole bar; the soprano's C# resolves to C and holds E-flat while the fifth voice's door, ending on A-flat, becomes the Ionian subject (voiced louder); the soprano's eighth-note descant starts only at the subject's leap to F (b47.1). The light comes down: tenor entry on C a sixth lower, two beats later (b46.3; in A-flat major its scale from C has exactly the Phrygian intervals of bar 1), bass answer on E-flat (b47.2). Soprano subject last (b49); its G rises to A-flat over E-flat → A-flat (b52.1); five-voice final chord. q = 88, ritardando to 58. | 4.1 (5) |
@@ -111,7 +111,7 @@ fifth voice saves itself for the last knock.
    other raised degrees (A → A♯ = B-flat, E → E♯ = F, F♯ → F𝄪 = G), now all at once. In Bach-Lehman the
    tonic's chords sound as G♯/A-flat always sound there; I have not heard either render.
 
-### Critic numbers (`tools/critic.py`, final build)
+### Critic numbers (critic, 2026-11-04)
 
 | measure | value | target |
 | --- | --- | --- |
@@ -122,11 +122,11 @@ fifth voice saves itself for the last knock.
 | reach_errors | **0** | 0 |
 | bad_doublings | **1** | ≤ 2 |
 | low_register_seconds | **0** | ≤ 9 |
-| stepwise_pct / leap_4th_plus_pct | **69.0 %** / 14.0 % | ≥ 65 % |
+| stepwise_pct / leap_4th_plus_pct | **69.2 %** / 14.1 % | ≥ 65 % |
 | repeated_note_pct | 5.6 % (the knocks) | |
 | pc tripled on beats | 5.6 % | |
 | crossings | 1 | few |
-| **keyboard_unplayable_pct** | **0 %** (0 of 265 onsets) | < 15 % |
+| **keyboard_unplayable_pct** | **0 %** (0 of 277 onsets) | < 15 % |
 | **mean moving voices** | **3.52** (4 bars with all five moving) | |
 | subject entries | 17 subject + 9 door-subject entries; all subject entries 9/9 in rhythm | |
 
@@ -143,8 +143,8 @@ Flagged items, each kept on purpose:
   same leap in the summit's Mixolydian entry on D#.
 - **Crossing b46:** the alto holds the E-flat of the dawn chord under the fifth voice's A-flat-B-flat-C for
   one bar: the fifth voice takes the alto's register at daybreak.
-- **"7th not resolved down" (15 notes):** chord sevenths that pass on inside the subject (b31.3, b40-41,
-  b48.1) or move to another chord tone in a secondary seventh (b11.1, b14.3, b32.3).
+- **"7th not resolved down" (17 notes):** chord sevenths that pass on inside the subject (b31.2, b40-41,
+  b48.1) or move to another chord tone in a secondary seventh (b11.1, b14.2, b32.3).
 - **Themes:** the critic compares every entry to the Phrygian subject, so the Aeolian to Ionian forms show
   3-7/9 intervals, and it reads the door subject as a weak "inversus". All are as written.
 
@@ -166,7 +166,8 @@ rise in tenths) was designed by hand. No script chose or placed a note.
    changes who knocks, the register and what holds above the knocks, but by IV the pattern "cadence,
    knock, subject" may sound like a refrain rather than a development.
 2. **The summit is short and in four voices.** Three entries (b39-43); the fifth voice rests through it so
-   that its last knock enters fresh. The free alto in b39-42 is partly harmonic filler.
+   that its last knock enters fresh. (The free alto in b39-42, which was partly harmonic filler, is a line
+   since Nov 2026.)
 3. **The dawn is seven bars** (about 30 s). Its subject statements are in half notes like every entry; the
    motion comes from the soprano's eighth-note descant (b47-48) and the quarter-note inner voices (b49-51).
    Earlier the dawn was the weak spot; it is now a real cadence plan, but still not long.
@@ -176,7 +177,8 @@ rise in tenths) was designed by hand. No script chose or placed a note.
    beneath the first (see the review response), so the chain rises by thirds in pitch, not voice by voice.
 5. **Watch I is 49 seconds of exposition** in one to four voices before the fifth voice appears: normal for
    a fugue, and the slowest part of this one.
-6. **The bass of watch III moves mostly in half notes** (b28-35).
+6. **The bass of watch III** walks in quarters for about half the beats of b28-33 since Nov 2026; it is
+   still in half notes under the knocks and the cadence (b29.2-3, b33.3-35), on purpose.
 7. **The modal changes are single pitch classes.** Each is placed on a beat at the top of the texture, but I
    cannot confirm by ear that a listener hears A → A# or B → B#.
 8. **Nothing has been heard.**
@@ -210,7 +212,7 @@ All tested fixes were applied by hand in `fugue.py`; the critic shows no new fla
 | --- | --- | --- |
 | 1 | the dawn chord evaporated at b46.2 (two voices, no bass for a bar) | bass `Ab2:24`, alto `Eb4:24` in b46: root and fifth held under the first bar of daybreak |
 | 2 | the fifth voice's A-flat subject was hidden under the soprano's descant | soprano `C5:8 Eb5:16` in b46 (the descant starts at b47.1, with the subject's leap to F); fifth voice +6 velocity in b46-48 |
-| 3 | at b41 the alto doubled the top B#5 and made accented fifths with the tenor | alto b41 `D#5:8 G#4:12 A#4:4` |
+| 3 | at b41 the alto doubled the top B#5 and made accented fifths with the tenor | alto b41 `D#5:8 G#4:12 A#4:4` (since Nov 2026 `D#5:6 C#5:2 G#4:12 A#4:4`, inside the new alto line) |
 | 4 | the summit chain's octave starts | notes kept (inherent in the chain); tenor +6 velocity in b39-40 |
 | 5 | the three watch openings share one frame | kept, as the review asks: it is what makes A-A#, E-E#, B-B# comparable. Varied around it: watch IV's knock is now softer (dynamic level -6, was -2), as if heard from further off at dawn |
 
@@ -264,10 +266,11 @@ One player, 20 bars of 4/4, q = 66, about 1:17 (`prelude.py`, `prelude.json`).
 The prelude ends on an **open fifth** G♯-D♯, with three knocks that nobody answers. The third, and the
 morning, are left to the fugue.
 
-**Critic numbers.**
+**Critic numbers (critic, 2026-11-04).**
 - parallels: 0
 - beat parallels: 0
-- unresolved: 0
+- unresolved: 0 (unverified 0)
+- reach errors: 0; keyboard unplayable: 0 %
 - bad doublings: 0
 - low-register seconds: 0
 - stepwise: 53.5%
@@ -318,4 +321,33 @@ mode and spelling around the same keyboard tonic, and to make the summit playabl
 Critic before → after: reach_errors 1 → 0; keyboard_unplayable_pct 1.1 → 0.0 (every onset, sounding notes
 included, now fits two hands); unresolved 1 → 1 (b45.2, the pedal ninth; the old notes said 0 under the older
 critic); unverified 2 → 2 (b10.2-10.3); parallels 0, beat-to-beat 0, bad doublings 1 (b40.2, unchanged),
-low-register 0, crossings 1; stepwise 69.0 %. The prelude is unchanged. Renders not yet redone.
+low-register 0, crossings 1; stepwise 69.0 %. The prelude is unchanged.
+
+## Self-critique pass (Nov 2026)
+
+4 November 2026. Positions in half-note beats, as above.
+
+- **Watch III's bass walks (weak spot 6).** In b28-33 the bass was all half notes under the cockcrow,
+  the tenor's subject and the soprano's stretto, so the whole passage moved in halves. It now walks in
+  quarters for about half the beats (10 of 18): `C♯3 (half) A♯2 B2 A♯2 F♯2 | G♯2 A♯2 B2 (half) F♯2
+  (half) | C♯3 B2 A♯2 D♯3 G♯2 A♯2 | C♯3 G♯2 B2 (half) A♯2 (half) | B2 F♯2 C♯3 B2 A♯2 (half) | G♯2 B2
+  F♯2 (half) G♯2 (half)`. The half-note roots stay on the beats, so the harmony and the watch's plan are
+  unchanged; b30 gains a ii-V-i into the soprano's stretto entry (A♯2 D♯3 G♯2). It keeps still where
+  stillness is the point: under the fifth voice's knocks (b29.2-3), under the alto's knocks (b33.3) and
+  under the door subject's iv-IV, v-V into the F-sharp cadence (b34). Every candidate was checked
+  against the critic: the first drafts made fifths with the soprano (b28), octaves with the soprano and
+  the tenor (b31.1, b32.1) and a left hand wider than a tenth (the last quarter of b31), and were
+  rewritten by hand.
+- **The summit's alto is a line (weak spot 2).** b39-42 were `D♯4 C♯4 D♯4 | G♯4. F♯4 C♯5 | D♯5 G♯4.
+  A♯4 | D♯5 A♯4 F♯4`, mostly half notes leaping between chord tones. Now: a stepwise wave in quarters
+  above the tenor's entry (`D♯4 E♯4 F♯4 E♯4 D♯4 E♯4-F♯4`); the 4-3 suspension G♯4-F♯4 that already
+  sat under the tenor's 9-8 (b40.2), then a turn `C♯5 B♯4 D♯5 C♯5`; G♯4 held under the soprano's top
+  B♯5 (no doubled B♯, as the review asked); and a stepwise descent `D♯5 C♯5 A♯4 G♯4 F♯4` to E♯4, the
+  third of the C-sharp cadence (b43.1). The critic's direct fifth at b40.1 is gone.
+- **Stale prose.** "Renders not yet redone" is removed; weak spots 2 and 6, the section map and the
+  review table are updated.
+
+Critic before → after (same critic, 2026-11-04): parallels 0 / 0, beat-to-beat 0, unresolved 1 (b45.2),
+unverified 2, bad doublings 1, reach errors 0 and keyboard 0 % unchanged; stepwise 69.0 → 69.2 %, leaps
+of a fourth or more 14.0 → 14.1 %, repeated notes 5.8 → 5.6 %; sevenths not resolved down 17 → 17.
+The prelude is unchanged.

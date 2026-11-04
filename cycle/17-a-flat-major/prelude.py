@@ -175,6 +175,9 @@ def build(path=None):
             ph = Fr(e['t']).limit_denominator(48) % 6
             e['v'] = max(24, min(118, int(e['v']) + (3 if ph == 0 else 1 if ph == 3 else 0)))
         v['piano_pan'] = {'S': 72, 'A': 66, 'C': 58, 'B': 54}[v['abbr']]
+        for e in v['events']:             # the bassless last chord: a fermata over each of its three notes
+            if e['t'] == q(19):
+                e['fermata'] = True
     path.write_text(json.dumps(data, indent=1))
     return data
 

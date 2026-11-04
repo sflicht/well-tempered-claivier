@@ -33,7 +33,7 @@ VOICES = [
     # abbr, name, clef, base velocity
     ('S', 'Soprano (first child)', 'treble', 64),
     ('A', 'Alto (second child)', 'treble', 62),
-    ('T', 'Tenor (third child)', 'bass', 62),
+    ('T', 'Tenor (third child)', 'treble_8', 62),     # A-flat2-C5, mostly A-flat3-C4: a tenor clef, not bass
     ('B', 'Bass (fourth child)', 'bass', 64),
     ('P', 'The father', 'bass', 70),
 ]
@@ -223,7 +223,8 @@ def guest():
     """Bars 25-26, evasion 10 (Zarlino's own kind): at the cadence the other three simply stop, and the tenor's
     leading tone rises alone to A-flat, which is the first note of Bach's A-flat fugue (BWV 862): its subject
     at Bach's pitch, in Bach's voice (the tenor), with the bass answering as Bach's bass does.  At bar 26,
-    beat 3, Bach's own V7 -> I is turned aside to vi (the tenor's G becomes a 9-8 over F)."""
+    beat 3, where Bach's bass would land on the tonic, ours steps to F under the tenor's held G, which falls
+    to F: a two-voice 9-8 onto an octave, implying vi (F minor) without sounding it as a chord."""
     theme('T', 25, 0, BWV862, 'evasion 10 (the others stop): guest, J. S. Bach, BWV 862 subject at pitch (tenor)', 1)
     put('B', 25, 8, BWV862_ANSWER + ' F3:6 Db3:6')
     put('S', 26, 0, 'Ab5:6')
@@ -361,8 +362,8 @@ MARKERS = [(q(1), 'Exposition: four children'),
            (q(31), 'Trap door: flat VI'),
            (q(32, 3), 'V7, forte ...'),
            (q(33), '... and again as an echo, pianissimo: the stretto starts under it'),
-           (q(36, 3), 'Fermata: hold the chord (about 3.5 s)'),
-           (q(36, 4), 'Fermata on the rest: silence (about 4 s)'),
+           (q(36, 3), 'The chord held (about 3.5 s)'),             # the fermata itself is on the notes
+           (q(36, 4), 'Fermata on the rest: silence (about 4 s)'),  # a rest has no event to carry one
            (q(37), 'The father'),
            (q(42), 'The first perfect cadence'),
            (q(43), 'The tune gets its do')]
@@ -408,6 +409,10 @@ def build(path=None):
         for e in v['events']:
             if q(32, 3) <= e['t'] < q(33):
                 e['v'] = max(24, min(118, e['v'] + 6))
+    for v in data['voices']:              # the hanging chord: a fermata over each of its four notes
+        for e in v['events']:
+            if e['t'] == q(36, 3):
+                e['fermata'] = True
     pans = {'S': 76, 'A': 68, 'T': 58, 'B': 50, 'P': 64}
     for v in data['voices']:
         v['piano_pan'] = pans[v['abbr']]
