@@ -74,7 +74,7 @@ def place(sc, b0=22):
     # ---- free voices (written for each unit; they accumulate as the strangers stay)
     # B-flat -> E-flat: Amico 5 (after its countersubject) and Corno 12
     sc.put(V(5), b(3), 1, "Eb4:4 Bb3:4 Eb4:4 D4:4 G3:4 Bb3:4 Bb3:8")
-    sc.put(V(12), b(3), 2, "Bb4:2 Bb4:1 Bb4:1 R:8 Bb4:2 Bb4:1 Bb4:1 Bb4:4")      # tonguing on the dominant
+    sc.put(V(12), b(3), 2, "Bb4:2 C5:1 Bb4:1 R:8 Bb4:2 C5:1 Bb4:5")      # the dominant, turned (partials 8 9 8)
     # E-flat -> A-flat: Forestiero 7 (after its countersubject), a chain of suspensions
     sc.put(V(7), b(5), 1, "C5:6 Bb4:4 Ab4:4 G4:2 Eb4:4 Ab3:4 Eb4:8")
     # A-flat -> D-flat: Forestiero 7 walks in the tenor
