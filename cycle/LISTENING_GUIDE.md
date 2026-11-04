@@ -32,11 +32,11 @@ than Bach's fugue in the same key; XX, XXI and XXIV keep their crowds.
 
 | Pair | Listen for | Known weak spot |
 | --- | --- | --- |
-| I C (2) | the endless rise; one subject at every stretto distance | |
-| II C minor (3) | the whole trio turned upside down; Bach's subject as a guest | |
-| III C♯ (4) | the gigue and its mirror sounding at once in the coda | |
-| IV C♯ minor (5) | Bach's "cross" subject against ours | |
-| V D (5) | the Guest voice singing only Bach's subject, into silence; entries stepping down through four keys | leapy subject (repeated notes) |
+| I C (2) | the endless rise; one subject at every stretto distance | keys in bars 8–17 pass by the same pivot; the 2- and 1-eighth strettos may not read as entries |
+| II C minor (3) | the whole trio turned upside down; Bach's subject as a guest | the build (b25–26) is the least thematic stretch |
+| III C♯ (4) | the gigue and its mirror sounding at once in the coda | each subject entry opens on a bar of plain tonic |
+| IV C♯ minor (5) | Bach's "cross" subject against ours | more homorhythmic than Bach; some held basses need the sostenuto pedal |
+| V D (5) | the Guest voice singing only Bach's subject, into silence; entries stepping down through four keys | the subject's repeated notes; the ×½ at b46 is on paper only |
 | VI D minor (4) | the Crucifixus lament climbing from bass to soprano; two speeds at once at the summit | every station follows the same plan |
 | VII E♭ (4) | two choirs of two quarrelling about the key; Coro I's pomp against Coro II's chatter, and the alto stealing Coro I's subject at double speed (b28) | long two-voice opening |
 | VIII E♭ minor (4) | the slow voice in the bass; six stretto entries, one at a time, over the subject at quarter speed (b27–32); Bach's subject alone near the end | two inner stretto entries may blur (alto, b27.4 and b30) |
