@@ -173,7 +173,10 @@ try {
     const plain = ns.find(n => n.p % 12 === 10 && n.c === null), series = ns.find(n => n.p % 12 === 10 && n.c === 3.91);
     return { cr: P.cr, tagged: P.tagged, total: ns.length, rows: temps.map(t => [t, c.centsOf(P, plain, t), c.centsOf(P, series, t)]) };
   }, TEMPS);
-  ok(xxi.cr === 'equal' && xxi.tagged === 125 && xxi.total === 1725, `fugue-21: cents_reference ${xxi.cr}, ${xxi.tagged} of ${xxi.total} tagged`);
+  const score21 = JSON.parse(readFileSync(resolve(ROOT, 'cycle/21-b-flat-major/fugue.json'), 'utf8'));
+  const notes21 = score21.voices.flatMap(v => v.events.filter(e => e.p != null));
+  const tagged21 = notes21.filter(e => 'cents' in e).length, total21 = notes21.length;
+  ok(xxi.cr === 'equal' && xxi.tagged === tagged21 && xxi.total === total21, `fugue-21: cents_reference ${xxi.cr}, ${xxi.tagged} of ${xxi.total} tagged (score: ${tagged21} of ${total21})`);
   const dev10 = { 'equal': 0, 'bach-lehman': 3.91, 'werckmeister3': 7.82, 'vallotti': 5.865, 'meantone': 17.108 };
   for (const [t, plain, series] of xxi.rows) {
     ok(near(plain, dev10[t], 1e-9), `fugue-21 (${t}): untagged B♭ at ${plain}¢, expected the temperament's ${dev10[t]}¢`);
@@ -196,7 +199,7 @@ try {
   ok(ui9.disabled && /fixes its tuning/.test(ui9.note), 'prelude-9: temperament buttons should be disabled, with a note saying why');
   await page.evaluate(() => window.clavier.load('fugue-21'));
   const ui21 = await page.evaluate(() => ({ enabled: [...document.querySelectorAll('#temps button')].every(b => !b.disabled), note: document.getElementById('tnote').textContent }));
-  ok(ui21.enabled && /125 of 1725 notes/.test(ui21.note), `fugue-21: buttons enabled, note names the 125 tagged notes: ${ui21.note}`);
+  ok(ui21.enabled && ui21.note.includes(`${tagged21} of ${total21} notes`), `fugue-21: buttons enabled, note names the ${tagged21} tagged notes: ${ui21.note}`);
 
   ok(errors.length === 0, 'page errors: ' + errors.join('; '));
 } finally {
