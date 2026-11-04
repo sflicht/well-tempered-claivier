@@ -139,7 +139,11 @@ Times are in the Bach-Lehman render.
    | 3 | 52.4.5 | violin, I, a beat after the trumpet | from F3, falling to F2 |
    | 4 | 53.3.5 | oboe, S | from C4 in the tenor, after six beats of rest |
 
-   - The oboe enters with nothing else between F2 and D5.
+   - The oboe enters with nothing else between F2 and D5. It is played 6 louder from 53.3.5 to 54.2,
+     as the trumpet is, so that it is not the softest voice at its entry.
+   - Its first F (53.4) is struck with E2, D5 and B♭5, all four thematic (17 semitones in the right
+     hand's part). That chord is rolled: its four notes carry `"arpeggio": true` in `fugue.json`, which
+     the renderer engraves as an arpeggio sign.
    - All four statements sound together for two beats, 53.3.5-54.1.5.
    - Each of bars 52-55 has four moving voices; there are no parallels and no unresolved dissonances.
    - The recorder rests from 54.1.5 to 54.4, so the trumpet's cadence, E C D E → F5 at 54.3, is the top
@@ -191,7 +195,7 @@ each time with its C C C. C is right at last, and the trumpet's last C is the fi
 
 ## Critic numbers
 
-`python3 tools/critic.py cycle/11-f-major/fugue.json`:
+`python3 tools/critic.py cycle/11-f-major/fugue.json` (critic, 4 Nov 2026):
 
 | measure | value | target / comment |
 |---|---|---|
@@ -202,9 +206,10 @@ each time with its C C C. C is right at last, and the trumpet's last C is the fi
 | pc_tripled_on_beats | 3.6 % | |
 | low_register_seconds | **0** | ≤ 9 |
 | dissonance_unresolved | **7** | All seven are the joke, and intended: the trumpet's C6 against the recorder's B5 (b42.4), and its F-major head against the struck E-major chords (b43.2-43.4, six). |
-| stepwise / leap ≥ 4th / repeated | 50.2 % / 13.4 % / 14.9 % | Target ≥ 65 %, not met; see weak spot 1. By voice: Tromba 50 % (29.5 % repeated notes), Flauto 61.3 %, Oboe 51.4 %, Violino 38.8 %. |
+| stepwise / leap ≥ 4th / repeated | 50.2 % / 13.3 % / 15.0 % | Target ≥ 65 %, not met; see weak spot 1. By voice: Tromba 50 % (29.5 % repeated notes), Flauto 61.3 %, Oboe 51.4 %, Violino 38.8 %. |
 | crossings | 2 | The recorder's descant above the trumpet's tail in tutti II (from 18.2, 4.5 beats), and briefly at b56.4, where the recorder's head on C sounds over the trumpet's C C C. |
-| **keyboard_unplayable_pct** | **3.0 %** (21 of 697 onsets) | < 5 % |
+| **keyboard_unplayable_pct** | **2.7 %** (19 of 697 onsets) | < 5 %. All but one (b53.4, below) are made wide by a note still held from earlier; the notes struck together there are within two hands' reach (b8.3, b16.2–3, b18.2–3, b41.1 and others). |
+| **reach_errors** | **1** (b53.4) | E2 F4 D5 B♭5, four thematic notes at the oboe's entry in the final stretto; marked as a rolled chord (see Review response). |
 | **mean moving voices** | **2.95** | |
 | longest static harmony | 4 beats | the final chord |
 
@@ -276,8 +281,8 @@ Every note is written by hand in `fugue.py`.
    trumpet's tail in b18 (by design: a descant) and at b56.4.
 4. **The four stretto heads arpeggiate one triad**, as in the twelve-voice version. Distance, register and
    rests now separate them, and only four voices sound. I cannot tell whether the oboe's tenor entry
-   (53.3.5), under three lines of sixteenths, is heard as an entry. It is the softest voice there (see
-   Review, item 4).
+   (53.3.5), under three lines of sixteenths, is heard as an entry. Since November 2026 it is lifted by
+   6 (Review, item 4), so it is no longer the softest voice there, but it is still an inner voice.
 5. **The middle has no tutti.** Without the trumpet (b20-37) at most three voices sound (the canon in G
    minor), and three of the middle's sections are two-voice textures (the D-minor duo, the soli, the
    duet). That is the design, since the natural trumpet sits out the flat keys. Still, it makes the middle
@@ -335,7 +340,7 @@ not be touched; neither is touched. I applied items 1-3 as tested, writing the n
 | 1 | Tutti II (17.3-19.1): the recorder's descant above the trumpet's inversion, so the device was not in the outer voices | Agreed; the review's first form: `E6:4 R:16 D6:4 F6:4 G6:4 E6:4`. The recorder strikes the first chord, rests through the trumpet's whole head, and returns as a descant over the tails at 18.2. I kept the recorder for the tails rather than the stronger form (silent to 19.1), because the second tutti should stay four voices. |
 | 2 | 54.2-54.3: the recorder's descant covers the trumpet's cadence, "in F at last" | Agreed: `R:10 G5:4 E5:4 G5:4 A5:4 G5:4`. The recorder rests from 54.1.5 to 54.4, so E5 C5 D5 E5 → F5 is on top. |
 | 3 | The Violino in the instruments render: about two thirds of its notes below G3, on one violin sample rooted at G♯3 | Agreed: `gm_program` 42 (cello) for that voice in `SEATS`. On one keyboard the bass is the violinist's part. The instruments render gives it to a cello, as a continuo player would, and as Bach's keyboard transcriptions merge solo violin and continuo. The voice keeps its name in the score. The piano renders are unaffected. |
-| 4 | The oboe's tenor entry in the stretto (53.3.5) is the softest voice | Not changed. The review says to listen first, and I cannot listen. If it is lost, the review's performance-only fix is +6 for the oboe from 53.3.5 to 54.2 in `ACCENTS`. |
+| 4 | The oboe's tenor entry in the stretto (53.3.5) is the softest voice | Applied in November 2026 (self-critique pass): the review's performance-only fix, +6 for the oboe from 53.3.5 to 54.2 in `ACCENTS`. The oboe's velocity there rises from 77–80 to 83–86, above the recorder and the violin (77–78) and below the trumpet (about 90), which has the same +6. No notes changed. |
 | 5 | The final chord's three-octave hole | Left, as the review advises; the figure in weak spot 8 is corrected (three octaves, not two). |
 
 **Critic, before → after.** Every count is unchanged except:
@@ -410,8 +415,14 @@ What I tried:
 - A beat later made two new reach errors.
 - An octave shift of any statement crosses another statement or takes away the bass.
 
-In performance the right hand has an eleventh (F4–B♭5), or the oboe's F is rolled in slightly. I did not write a micro-offset to hide it. If the stretto is ever recomposed, this beat is the place to start.
+In performance the right hand has an eleventh (F4–B♭5), or the chord is rolled so that the oboe's F comes in slightly late. Since the self-critique pass (Nov 2026) the score says so: the four notes struck at b53.4 carry the event field `"arpeggio": true` (set after the build by `ROLLED` in `fugue.py`), which the renderer engraves as an arpeggio sign. I did not write a micro-offset in the notes. If the stretto is ever recomposed, this beat is the place to start.
 
 **The eighth unresolved dissonance** (new under the stricter check) was at b23.4, not part of the joke. The flute's free E5 was a major seventh over the violin's F3 in the D-minor stretto, and it stepped to D5, a fourth over A3. The flute now holds F5 through beat 4 and takes E5 with the A-minor chord on 24.1. The seven that remain are all in bars 42–43. They belong to the trumpet's wrong-key entry, which is the joke, and they stay, as the review recommends.
 
 **Numbers.** Reach errors 2 → 1. Unresolved 8 → 7. Unverified 3 → 2. Keyboard 3.0 % → 2.7 %. "Seventh not resolved down" notes 11 → 7.
+
+## Self-critique pass (Nov 2026)
+
+- **Applied: the oboe's entry in the final stretto (53.3.5).** REVIEW-3 item 4 had a ready, performance-only fix, and I had held it back "until listened to". It is velocity, not notes, and it only stops the entry being the softest voice where the stretto needs it heard. So it is applied: `('Ob', 53, 3.5, 54, 2, 6)` in `ACCENTS`.
+- **Marked: the chord at b53.4 is rolled.** It is E2 F4 D5 B♭5, four thematic notes, and the critic's one reach error (17 semitones). The four notes now carry the event field `"arpeggio": true`, set after the build from `ROLLED = [(53, 4)]` in `fugue.py`. The renderer engraves it as an arpeggio sign. No pitch or rhythm changed, so the reach error stays at 1, as it should: the roll is how it is played.
+- **Refreshed: the critic table** (critic, 4 Nov 2026). Keyboard is 2.7 % (19 of 697 onsets) after the b18.4 fix in the review response; that table still said 3.0 %. A reach-errors row (1, b53.4) is added. Leaps of a fourth or more are 13.3 %, repeated notes 15.0 % and stepwise 50.2 %.

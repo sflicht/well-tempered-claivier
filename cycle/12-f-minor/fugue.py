@@ -233,8 +233,8 @@ put('A', V5 + 6, 3, 'Db5:8')
 put('A', V5 + 7, 1, 'C5:4')
 # The quadruple combination over the end of the augmentation and its pedal: five voices, four subjects.
 # The voices are exchanged against section IV, as Bach restates his combinations in invertible counterpoint:
-# from the top S2 (an octave higher, the soprano's return), B-A-C-H, the main theme (tenor, in canon with its
-# own augmentation below), S1 (an octave higher), and the fifth voice.
+# from the top S2 (an octave higher, the soprano's return), B-A-C-H (alto), S1 (tenor, an octave higher), the
+# main theme (bass voice, in canon with its own augmentation directly below), and the fifth voice.
 QV = V5 + 7
 # (Nov 2026: the main theme and S1 exchange octaves and voices.  With S1 in the bass at F3-C4, its C4 at b59.1
 # fell between the fifth voice's F2 and the soprano's G5, out of reach of two hands; the main theme now sings in

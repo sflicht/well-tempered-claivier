@@ -349,6 +349,15 @@ def build(nbars, path=None):
         for e in data['voices'][NAMES.index(abbr)]['events']:
             if t0 <= e['t'] < t1:
                 e['v'] = max(24, min(118, e['v'] + dv))
+    # notation and performance: every note struck at these beats is rolled (an arpeggio sign in the
+    # score).  b53.4: E2 F4 D5 B-flat5, four thematic notes (the oboe's entry) that span 17 semitones
+    # in the right hand's part; the roll lets the oboe's F sound slightly after the others.
+    for b, beat in ROLLED:
+        t0 = (b - 1) * 4 + beat - 1
+        for v in data['voices']:
+            for e in v['events']:
+                if abs(e['t'] - t0) < 1e-9:
+                    e['arpeggio'] = True
     for v, (pan, seat, prog) in zip(data['voices'], SEATS):
         v['piano_pan'] = pan
         v['spatial'] = seat
@@ -394,9 +403,13 @@ DYN = {1: 0, 7: 2, 9: 8, 11: -6, 15: -2, 17: 8, 19: -5, 21: -3, 23: 2, 25: -8, 3
        38: 0, 43: 6, 44: 0, 45: -2, 47: 0, 49: 3, 52: 8, 58: 10}
 # (voice, bar, beat, to bar, to beat, velocity +/-): the tattoos of the joke stand out a little, the
 # wrong entry loudly, the violin's correction firmly, the trumpet's echo meekly; the trumpet leads its
-# final entry and its last tattoos
+# final entry and its last tattoos; the oboe's tenor entry in the final stretto (53.3.5, under three
+# lines of sixteenths) is lifted as much as the trumpet's, so that it is heard as an entry (REVIEW-3, 4)
 ACCENTS = [('Tr', 38, 4, 43, 1, 4), ('Tr', 43, 1.5, 44, 1, 12), ('Vn', 44, 2.5, 44, 4, 8),
-           ('Tr', 44, 4, 45, 1, -22), ('Tr', 52, 3.5, 54, 3.5, 6), ('Tr', 55, 2, 58, 1, 6)]
+           ('Tr', 44, 4, 45, 1, -22), ('Tr', 52, 3.5, 54, 3.5, 6), ('Ob', 53, 3.5, 54, 2, 6),
+           ('Tr', 55, 2, 58, 1, 6)]
+# (bar, beat): chords to be rolled (event field "arpeggio")
+ROLLED = [(53, 4)]
 BASEVEL = [70, 64, 64, 66]
 # (keyboard pan, [azimuth deg, distance m] for the binaural render, General MIDI program for the
 # --instruments render): the concertino standing in a shallow arc, trumpet, recorder, oboe, violin.

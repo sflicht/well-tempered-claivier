@@ -227,7 +227,10 @@ tag(38, 'Climax: A-flat over B-flat')
 # 8. CODA (b39-46): the prelude remembered.  A ritornello bar (the alto: the
 # inversion in diminution, as in the prelude's opening bars), then the first line of "Wachet auf" in long notes
 # in the tenor (the register of BWV 645), louder, with the soprano running above
-# it, the alto in quarters and the bass walking.  Under the chorale's C (b43)
+# it and the bass walking.  The alto has a line of its own: syncopated over the
+# barlines (b40-41, b41-42, a 7-6 suspension at 42.1), it falls by step
+# B-flat - A-flat - G - F - E-flat - D while the chorale climbs, then rises to
+# the A-flat and C of the reconciliation chord.  Under the chorale's C (b43)
 # the bass at last finishes the augmentation it was never allowed to finish
 # (F - E-flat - D, in the octave where it broke off).  The cadence is the
 # reconciliation chord again (A-flat over B-flat, b44), then E-flat, and Coro
@@ -241,7 +244,7 @@ put(39,
       'Eb5:8 D5:8  '
       'Eb5:8 Bb5:4 G5:2 Eb5:2  D5:4 Eb5:12',
     A='Bb4:2 G4:1 Eb4:1 D4:2 Eb4:2 D4:1 C4:0.5 D4:0.5 Eb4:1 C4:1 Ab3:2 Bb3:1 C4:1  '
-      'G4:12 Bb4:4  Bb4:4 G4:8 F4:4  G4:4 Bb4:8 G4:4  Ab4:8 C5:4 Ab4:4  '
+      'G4:12 Bb4:4~  Bb4:6 Ab4:2 G4:4 F4:4~  F4:4 Eb4:4 D4:4 G4:4  Ab4:8 C5:4 Ab4:4  '
       'C5:4 Ab4:12  G4:16  Bb4:16',
     T='G3:4 R:12  Eb3:8 G3:8  Bb3:12 Bb3:4  Bb3:8 Bb3:8  C4:16  Bb3:16  G3:16  G3:16',
     B='Eb3:4 Bb2:4 Bb2:2 Ab2:2 F2:4  '

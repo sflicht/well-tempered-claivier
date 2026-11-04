@@ -275,8 +275,8 @@ both halves sing in it, one after the other.
    - **Clockwise** in the exposition: alto (b1, B4), tenor (b4.3, E3), bass (b8, B2), soprano (b11.3,
      B4 on top).
    - **Counterclockwise** in the inversion: soprano (b21), bass (b23.3), tenor (b26.3), alto (b29.3).
-   - **Clockwise again, faster**, in the final stretto: alto, tenor a beat later, bass 1¾ bars
-     after that.
+   - **Clockwise again, faster**, in the final stretto: alto, tenor a beat later, bass 2¼ bars
+     after that (50.3), growing out of its tonic pedal.
    - Each entry is either the new top voice or the new bottom voice, or enters after a rest in a
      register no other voice is using. The exceptions are listed under weak spots.
    - In `renders/fugue-spatial.mp3` each voice sits at its ring position, sung with General MIDI 52
@@ -302,7 +302,7 @@ both halves sing in it, one after the other.
    stops, and completes its cadence (L1's B-major sixth resolves at R1's E). The short exchanges
    spell one long cadence, V – vi – IV – ii – V – V7, which lands on the final tutti's I.
 4. **Stretto under the cantus.** Our subject on E (alto), on B (tenor, a beat later) and on B
-   (bass, two bars after the alto) under the augmented guest. The two rising fourths interlock, one
+   (bass, 2½ bars after the alto, out of a tonic pedal) under the augmented guest. The two rising fourths interlock, one
    attack per beat (E4, B3, A4, E4), and the two descents then run in thirds. The three subject lines
    are complete and exact; only the alto's last note is lengthened. The cantus is played 6 velocity
    steps above them.
@@ -316,7 +316,7 @@ both halves sing in it, one after the other.
    | Quarter notes | 15 % | 41 % |
    | Half notes or longer | 85 % | 50 % |
 
-### Critic numbers (`python3 tools/critic.py cycle/09-e-major/fugue.json`)
+### Critic numbers (`python3 tools/critic.py cycle/09-e-major/fugue.json`; critic, 4 Nov 2026)
 
 | Measure | Ten-voice version | **Now (a 4)** | Target |
 |---|---|---|---|
@@ -324,26 +324,29 @@ both halves sing in it, one after the other.
 | beat_parallels | 0 | **0** | ≤ 2 |
 | dissonance_unresolved | 2 | **0** | ≤ 3, justified |
 | bad_doublings | 5 | **0** | ≤ 2 |
-| low_register_seconds | 4 | **1** (b50.3.5) | ≤ 9 |
+| low_register_seconds | 4 | **0** | ≤ 9 |
 | pc_tripled_on_beats_pct | 42.2 | **10.9** | |
-| stepwise_pct | 58.7 | **73.8** | ≥ 65 (Bach 71–75) |
+| stepwise_pct | 58.7 | **73.5** | ≥ 65 (Bach 71–75) |
 | leap_4th_plus_pct | 21.3 | 16.2 | (Bach ≈ 14) |
 | crossings | 19 | **0** | few |
 | mean moving voices | 5.9 | **2.67** (16 of 58 bars with all four moving) | |
 | **keyboard_unplayable_pct** | 24.4 | **0.0** (0 of 200 onsets) | < 5 |
-| tertian_fit_pct / longest static harmony | 65.3 / 3 beats | 35.1 / 2 beats | |
+| tertian_fit_pct / longest static harmony | 65.3 / 3 beats | 32.5 / 2 beats | |
 | Length | 50 bars, about 2:25 at ♩ 92 | 58 bars, about 2:32 at ♩ 100 with breaths | 2.5–4 min |
 
 **The flagged items:**
-- **Low-register second, b50.3.5.** The bass's held E3 (its subject) against the tenor's passing F♯3,
-  an eighth note.
 - **Weak fifth, b50.3.5 → 50.4.** Alto/tenor C♯4/F♯3 → D♯4/G♯3, on off-beat eighths, made by the
   tenor's own turn (G♯ F♯ G♯) against the alto's rising tail. It is the price of the stretto at a
   beat (see Review).
 - **Two "chord (7th not resolved down)" notes**, both at b11.1: the double suspension tenor E4 /
   alto C♯5 over B2. It resolves at 11.2 (D♯4, B4).
-- **Five "accented passing" notes and two "pedal"** in b48–51: the stretto's suspended A4 and the
-  subjects' falling quarters against the bass and the held cantus. All resolve by step.
+- **Seven "pedal" and three "accented passing" notes** in b48–52: the stretto's suspended A4 and the
+  subjects' falling quarters against the bass's tonic pedal E3 (48.1–50.3) and the held cantus, and
+  the bass's passing A2 under the cantus's G♯5 (52.3). All resolve by step.
+- **One "suspension (unprepared)" note, b12.3.** The alto's F♯4 is struck at 11.4 as a passing ninth
+  over E3, becomes consonant when the bass moves to D♯3 (12.1), and is the 4 of a 4–3 over C♯3 at
+  12.3, resolving to E4. It is prepared in the bar before it sounds as a dissonance; the critic looks
+  at the attack.
 - **Entries.** `fugue.py` prints a scale-step and exact-rhythm check of all 22 declared statements;
   it is stored in `fugue.json` as `entry_verification`.
 
@@ -369,8 +372,9 @@ both halves sing in it, one after the other.
   `tools/critic.py`'s `analyse` on the three subject lines plus the cantus, nothing else) listed clean
   levels and spacings. I chose alto on E4 at 48.1 and tenor on B3 at 48.3; after REVIEW-3 the tenor
   enters a beat earlier, at 48.2 (the reviewer's tested fix). A second scratch probe,
-  which also checked two-hand spans, settled the bass on B2 at 50.1: the first choice, F♯2, made b50
-  unplayable.
+  which also checked two-hand spans, settled the bass on B2: the first choice, F♯2, made b50
+  unplayable. The bass first entered at 50.1; since the review response (Nov 2026, below) it enters
+  at 50.3, out of a tonic pedal E3 held from 48.1.
 - All free counterpoint was written by hand and corrected against the critic.
 - Other scratch scripts in the session scratchpad wrote no notes: a grid view, the rhythm statistics
   above, and an entry-salience scan (rank from the top, rest before the entry, other voices
@@ -393,8 +397,9 @@ both halves sing in it, one after the other.
 
   The tenor's inversion at b26.3 is also an inner voice, but it enters after six and a half bars'
   rest, alone in its register.
-- **A collision inside the stretto**, written by the thematic lines themselves: b52.1, the bass's
-  passing A2 under the cantus's new G♯5, a major-seventh sonority for a quarter. (The seconds and
+- **A collision inside the stretto**, written by the thematic lines themselves: b52.3, the bass's
+  passing A2 (its subject's descent C♯3 B2 A2 G♯2) under the cantus's G♯5, struck at 52.1 and held,
+  a major-seventh sonority for a quarter. (The seconds and
   unison of the alto and tenor at b49.4–50.2 are gone; see Review.)
 - **The right half sits high at R3** (b46: bass F♯3–B3). There the low pair is only about a sixth
   below the high pair.
@@ -418,7 +423,8 @@ unresolved, 0 bad doublings, keyboard 0 of 200; all three stretto statements sti
 1. **The final stretto smeared.** At b49.4–50.2½ the alto's and tenor's subjects fell in parallel
    seconds into a unison B3. The tenor now enters a beat earlier (48.2; its G♯3 at 48.1 is an eighth).
    The rising fourths interlock one attack per beat and the descents run in thirds. The cost is the
-   one off-beat weak fifth at 50.3½–50.4 listed above. I agree: two statements blurred into one
+   one off-beat weak fifth at 50.3½–50.4 listed above. (The bass's entry then was at 50.1; see the
+   review response below for its move to 50.3.) I agree: two statements blurred into one
    exactly where the cantus needs a clean texture.
 2. **The guest's entrance was camouflaged.** The alto's C♯5 → B4 led straight into the soprano's
    B4, so the guest sounded like the alto holding on. The alto now goes on down, `B4:2 A4:2`, so its
@@ -525,8 +531,9 @@ exchanges shrink. If it sags in listening, a faster antiphony is the first remed
     much, striking it only at b1, b25 and b32 is the gentler version.
   - Cycle 3's descant often moves in parallel thirds and sixths with the tune (pifferari style),
     which some will hear as doubling.
-  - The pitch bend is applied per voice channel, so a piano note's release tail shifts slightly when
-    the next note of that voice is bent differently.
+  - The pitch bend is applied per voice channel, so a piano note's release tail used to shift
+    slightly when the next note of that voice was bent differently. This is fixed in the renderer
+    (`tools/render_music.py`, Nov 2026), not in the score; the renders made after that fix carry it.
   - The coda's tempered E-major chord has the wide Lehman third (405.9 c, against 386.3 c pure),
     exactly as intended.
 
@@ -580,4 +587,12 @@ The cost: the bass no longer breathes before its last entry, and the dominant ar
 **Numbers.**
 - Unresolved 1 → 0, unverified 1 → 0, low-register seconds 1 → 0 (the b50.3½ second is gone), keyboard still 0 %, stepwise 73.8 → 73.5.
 - All 22 declared statements still match their form.
-- The section map gives the new entry. The method note and the Review section above describe the earlier placement at 50.1.
+- The section map, the devices (1 and 4), the method note and the weak spots now give the new entry at 50.3.
+
+## Self-critique pass (Nov 2026)
+
+No notes were changed. This pass brought the Fugue's prose up to date with the review response above, where the bass's last entry moved from 50.1 to 50.3.
+- **Fixed: the critic table** (critic, 4 Nov 2026). Low-register seconds are now 0 (the b50.3½ second went with that change), stepwise is 73.5 %, and tertian fit is 32.5 %. The "Low-register second" bullet is deleted. The flagged-items list now gives the current pedal and accented-passing notes, and it adds the one "unprepared suspension" note at b12.3, explained there.
+- **Fixed: the bass's entry in the final stretto.** Device 1 now says the bass enters 2¼ bars after the tenor, and device 4 says 2½ bars after the alto, out of the tonic pedal. The method note gives 50.3. The weak spot's major-seventh collision is at b52.3, where the bass's passing A2 sounds under the cantus's held G♯5. At b52.1 the bass has C♯3, a consonance.
+- **Noted: the release-tail pitch shift** in the just-intonation Prelude (Prelude weak spots). It came from per-voice pitch bends, and it is fixed in `tools/render_music.py`, not in the score.
+- **Listening guide (proposed in the report).** The guide says "mostly three voices in the middle". In fact b21–32 has at most three voices and b33–46 has only duets.
