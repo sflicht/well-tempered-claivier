@@ -1800,7 +1800,8 @@
       </note>
       <note>
         <pitch>
-          <step>F</step>
+          <step>A</step>
+          <alter>-1</alter>
           <octave>5</octave>
         </pitch>
         <duration>480</duration>
@@ -2629,8 +2630,12 @@
           <octave>5</octave>
         </pitch>
         <duration>1440</duration>
+        <tie type="start" />
         <type>half</type>
         <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
     <measure number="11">
@@ -2641,7 +2646,11 @@
           <octave>5</octave>
         </pitch>
         <duration>480</duration>
+        <tie type="stop" />
         <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <note>
         <pitch>
