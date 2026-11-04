@@ -11,6 +11,9 @@
   as the MIDI/audio.
 - The LilyPond output of both compiles and carries the tempo marks.
 - If music21 is installed, the XIX MusicXML is read back and the meters and onsets compared.
+- A small made-up score: the "treble_8" clef, "fermata" (on the last tied segment, and on a rest)
+  and "arpeggio" (one roll sign across the staves, also on a shared staff) in LilyPond and
+  MusicXML; scores without these fields are engraved exactly as before.
 Output files go to a temporary directory (removed afterwards unless --keep); nothing under
 cycle/ is written.
 """
@@ -229,6 +232,92 @@ def test_lilypond_tempo_and_compile():
             report.append(f'{ly.name}: compiled, no warnings')
         else:
             report.append(f'{ly.name}: lilypond not installed, compile skipped')
+    return report
+
+
+NOTATION = {
+    'metadata': {'title': 'Test', 'subtitle': 'clef, fermata, arpeggio', 'key': 'C', 'mode': 'major',
+                 'meter': [4, 4], 'bpm': 60},
+    'voices': [
+        {'name': 'Upper', 'clef': 'treble', 'events': [
+            {'t': 0, 'd': 2, 'p': 72, 'arpeggio': True},
+            {'t': 2, 'd': 6, 'p': 74, 'fermata': True}]},          # tied over the bar line
+        {'name': 'Tenor', 'clef': 'treble_8', 'events': [
+            {'t': 0, 'd': 2, 'p': 64, 'arpeggio': True},
+            {'t': 2, 'd': 2, 'p': 65},
+            {'t': 4, 'd': 4, 'p': None, 'fermata': True}]},        # a rest with a fermata
+        {'name': 'Alto', 'share_staff': 'Tenor', 'events': [
+            {'t': 0, 'd': 2, 'p': 55, 'arpeggio': True}]},
+        {'name': 'Bass', 'clef': 'bass', 'events': [
+            {'t': 0, 'd': 2, 'p': 48, 'arpeggio': True},
+            {'t': 2, 'd': 6, 'p': 43, 'fermata': True}]},
+    ]}
+
+
+def test_clef_fermata_arpeggio():
+    report = []
+    ly = OUT / 'notation-fields.ly'
+    rm.create_lilypond(NOTATION, ly)
+    text = ly.read_text()
+    assert '\\clef "treble_8"' in text
+    assert 'Span_arpeggio_engraver' in text and 'connectArpeggios = ##t' in text
+    assert text.count('\\arpeggio') == 4, text.count('\\arpeggio')
+    # D5 and G2 on their tied second segments only, and the tenor's rest
+    assert text.count('\\fermata') == 3, text.count('\\fermata')
+    assert "d''2~" in text and "d''2~\\fermata" not in text
+    assert "d''1\\fermata" in text and 'g,1\\fermata' in text and 'r1\\fermata' in text, text
+    assert "c''2\\arpeggio" in text and 'g2\\arpeggio' in text
+    # a score without the fields: no arpeggio engraver, no new marks
+    plain = OUT / 'xix-plain.ly'
+    rm.create_lilypond(load(XIX), plain)
+    ptext = plain.read_text()
+    assert 'Span_arpeggio_engraver' not in ptext and '\\fermata' not in ptext and '\\arpeggio' not in ptext
+    if shutil.which('lilypond'):
+        proc = subprocess.run(['lilypond', '-dno-point-and-click', '-o', str(ly.with_suffix('')), str(ly)],
+                              capture_output=True, text=True)
+        log = proc.stdout + proc.stderr
+        assert proc.returncode == 0, log[-2000:]
+        problems = [line for line in log.splitlines() if 'error' in line.lower() or 'warning' in line.lower()]
+        assert not problems, problems
+        report.append(f'{ly.name}: compiled, no warnings')
+
+    out = OUT / 'notation-fields.musicxml'
+    rm.create_musicxml(NOTATION, out)
+    parts = {pl.findtext('part-name'): part for pl, part in
+             zip(ET.parse(out).getroot().findall('part-list/score-part'), ET.parse(out).getroot().findall('part'))}
+    clefs = {name: (part.findtext('measure/attributes/clef/sign'), part.findtext('measure/attributes/clef/line'),
+                    part.findtext('measure/attributes/clef/clef-octave-change'))
+             for name, part in parts.items()}
+    assert clefs == {'Upper': ('G', '2', None), 'Tenor': ('G', '2', '-1'), 'Alto': ('G', '2', None),
+                     'Bass': ('F', '4', None)}, clefs
+    for name, part in parts.items():
+        notes = part.findall('measure/note')
+        arps = [n for n in notes if n.find('notations/arpeggiate') is not None]
+        ferm = [n for n in notes if n.find('notations/fermata') is not None]
+        assert len(arps) == 1 and arps[0] is notes[0] and arps[0].find('pitch') is not None, name
+        if name in ('Upper', 'Bass'):
+            # the fermata sits on the held (tie-stop) segment, not where the note is struck
+            assert len(ferm) == 1 and [t.get('type') for t in ferm[0].findall('tie')] == ['stop'], name
+        elif name == 'Tenor':
+            assert len(ferm) == 1 and ferm[0].find('rest') is not None, name
+        else:
+            assert not ferm, name
+    report.append('MusicXML: treble_8 = G2 with clef-octave-change -1; fermatas on the held segment and '
+                  'the rest; one <arpeggiate/> per rolled note')
+    try:
+        import music21
+    except ImportError:
+        return report + ['music21 not installed: read-back skipped']
+    import warnings
+    warnings.simplefilter('ignore')
+    sc = music21.converter.parse(str(out))
+    tenor = sc.parts[1]
+    clef = tenor.recurse().getElementsByClass('Clef').first()
+    assert clef.octaveChange == -1, clef
+    nf = sum(1 for n in sc.recurse().notesAndRests for x in n.expressions if 'Fermata' in type(x).__name__)
+    na = sum(1 for n in sc.recurse().notes for x in n.expressions if 'Arpeggio' in type(x).__name__)
+    assert nf == 3 and na == 4, (nf, na)
+    report.append(f'music21 reads back {clef.name} (octaveChange -1), {nf} fermatas, {na} arpeggio marks')
     return report
 
 

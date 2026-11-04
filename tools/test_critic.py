@@ -123,6 +123,78 @@ def test_open_score_is_not_solo_keyboard():
     assert summary(data)['solo_keyboard'] is False
 
 
+def permuted(data):
+    """The score with its voices listed in every order."""
+    import itertools
+    for perm in itertools.permutations(range(len(data['voices']))):
+        yield dict(data, voices=[data['voices'][k] for k in perm])
+
+
+def order_free_report(data):
+    """Dissonance and direct-motion rows, keyed by voice names rather than voice indices."""
+    R = critic.analyse(data)
+    dis = sorted((x['loc'], x['kind'], tuple(sorted(x['what'].split('/')))) for x in R['dissonance'])
+    return dis, sorted((x['loc'], x['what']) for x in R['direct'])
+
+
+def test_unison_bass_is_order_independent():
+    # A and B share the bass C3 while C strikes F3 (a fourth against the bass) and resolves to E3;
+    # whichever bass voice is listed first, the classification is the same.
+    data = score(('A', [(0, 2, 48), (2, 2, 48)]), ('B', [(1, 1, 48), (2, 2, 43)]),
+                 ('C', [(0, 1, 55), (1, 1, 53), (2, 2, 52)]))
+    reports = [order_free_report(d) for d in permuted(data)]
+    assert all(r == reports[0] for r in reports), reports
+    # the fourth is judged against both bass voices
+    pairs = {k[2] for k in reports[0][0] if k[0] == 'b1.2'}
+    assert pairs == {('AC3', 'CF3'), ('BC3', 'CF3')}, reports[0]
+
+
+def test_direct_octave_with_a_unison_top_is_order_independent():
+    # A and B share the top E4, then A leaps to C5 while the bass rises G2 -> C3: a direct
+    # octave A/Bass.  It used to be found only when A was listed after B.
+    data = score(('A', [(0, 1, 64), (1, 1, 72)]), ('B', [(0, 1, 64), (1, 1, 60)]),
+                 ('Bass', [(0, 1, 43), (1, 1, 48)]))
+    reports = [order_free_report(d)[1] for d in permuted(data)]
+    assert all(r == [('b1.2', 'direct 8ve A/Bas top leaps +8')] for r in reports), reports
+
+
+def test_rootless_dominant_seventh_in_first_inversion():
+    # B-D-F over D (vii6 in C = a rootless G7) going to C: B3 rises to C4, F4 falls to E4.
+    # The seventh is F (it resolves); B is the leading tone.  It used to be read as
+    # D-F-Ab-B with B as the "seventh", flagged for rising.
+    good = score(('S', [(0, 1, 65), (1, 1, 64)]), ('A', [(0, 1, 59), (1, 1, 60)]),
+                 ('B', [(0, 1, 50), (1, 1, 48)]))
+    kinds = dis_kinds(good)
+    assert kinds and all(k[1] == 'chord' for k in kinds if k[0] == 'b1.1'), kinds
+    # the same chord with the seventh F rising to G is flagged
+    bad = score(('S', [(0, 1, 65), (1, 1, 67)]), ('A', [(0, 1, 59), (1, 1, 60)]),
+                ('B', [(0, 1, 50), (1, 1, 48)]))
+    assert any(k[1] == 'chord (7th not resolved down)' for k in dis_kinds(bad)), dis_kinds(bad)
+
+
+def test_diminished_seventh_root_is_its_rising_leading_tone():
+    # B-D-F-Ab over D (vii-o6/5 in C): B3 rises to C4, Ab4 (the seventh) falls to G4.
+    good = score(('S', [(0, 1, 68), (1, 1, 67)]), ('A', [(0, 1, 65), (1, 1, 64)]),
+                 ('T', [(0, 1, 59), (1, 1, 60)]), ('B', [(0, 1, 50), (1, 1, 48)]))
+    kinds = dis_kinds(good)
+    assert kinds and all(k[1] == 'chord' for k in kinds if k[0] == 'b1.1'), kinds
+    bad = score(('S', [(0, 1, 68), (1, 1, 70)]), ('A', [(0, 1, 65), (1, 1, 64)]),
+                ('T', [(0, 1, 59), (1, 1, 60)]), ('B', [(0, 1, 50), (1, 1, 48)]))
+    assert any(k[1] == 'chord (7th not resolved down)' for k in dis_kinds(bad)), dis_kinds(bad)
+
+
+def test_two_pitch_classes_get_an_interval_label():
+    # C4 under E4, with a passing G4 sixteenth: two pitch classes sound together, so the beat
+    # is the dyad C-E, not a C major chord made up with the passing note.
+    data = score([(0, 0.75, 64), (0.75, 0.25, 67), (1, 1, 65)], [(0, 2, 60)])
+    H = critic.analyse(data)['harmony']
+    assert H['labels'][0] == 'C-E (M3)', H['labels']
+    assert H['dyad_beats_pct'] == 100.0, H
+    # a third voice makes it a chord again
+    data = score([(0, 1, 67)], [(0, 1, 64)], [(0, 1, 60)])
+    assert critic.analyse(data)['harmony']['labels'][0] == 'C'
+
+
 def main():
     tests = [(n, f) for n, f in globals().items() if n.startswith('test_') and callable(f)]
     failed = 0

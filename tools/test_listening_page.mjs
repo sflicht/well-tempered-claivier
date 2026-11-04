@@ -27,10 +27,10 @@ function oracle(score, temperament) {
   const py = `
 import json, sys
 sys.path.insert(0, ${JSON.stringify(resolve(ROOT, 'tools'))})
-from render_music import CHANNELS, performance_events, seconds_at, tempo_points, temperament_offsets, meta_of
+from render_music import voice_channels, performance_events, seconds_at, tempo_points, temperament_offsets, meta_of
 data = json.load(open(sys.argv[1])); temp = sys.argv[2]
 pts = tempo_points(meta_of(data)); tdev = temperament_offsets(temp)
-voice_of = {CHANNELS[i % 15] + 16 * (i // 15): i for i in range(len(data['voices']))}
+voice_of = {ch: i for i, chs in enumerate(voice_channels(data)) for ch in chs}
 bend, ons, out = {}, {}, []
 for t, _, ch, kind, p, v in performance_events(data, temperament=temp):
     if kind == 'bend': bend[ch] = p * 100 / 4096

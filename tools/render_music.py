@@ -8,6 +8,11 @@ Input: {"metadata": {"title": ..., "subtitle": ..., "key": "C#",
 
 Times/durations are in quarter-note beats. Gaps are rests. Each voice must be
 monophonic. Optional note spelling is a LilyPond pitch class, e.g. "bis".
+Optional notation fields: a voice's "clef" is any LilyPond clef name ("treble", "bass",
+"alto", "tenor", "treble_8" for the octave-transposing treble of a tenor line, ...);
+an event's "fermata": true prints a fermata over it (over its last tied segment), and
+"arpeggio": true on every note of a chord prints one roll sign across the staves it spans.
+Both are notation only: the MIDI/audio play the durations as written and the chord unrolled.
 Dependencies: mido, numpy, scipy, pyfluidsynth; LilyPond and FFmpeg executables;
 libfluidsynth and a GM soundfont. Workspace vendor directory is optional.
 """
@@ -216,7 +221,7 @@ def voice_segments(voice, end, bar_len, split_at=(), bars=None, scale_at=None):
                 segments.append({**e, "t": cursor, "d": q, "durstr": durstr,
                                  "tie_stop": not first and e.get("p") is not None,
                                  "tie_start": tail and e.get("p") is not None,
-                                 "first": first, "triplet": triplet})
+                                 "first": first, "last": not tail, "triplet": triplet})
                 cursor += q
                 remaining -= q
                 first = False
@@ -225,6 +230,37 @@ def voice_segments(voice, end, bar_len, split_at=(), bars=None, scale_at=None):
 
 def escape_lily(s):
     return str(s).replace("\\", "\\\\").replace('"', '\\"')
+
+
+def has_arpeggio(voices):
+    return any(e.get('arpeggio') for v in voices for e in v['events'])
+
+
+def lily_articulations(s):
+    """Fermata (on an event's last segment, where a tied note is held) and arpeggio (on the
+    attack of a pitched note) as LilyPond post-events."""
+    out = ''
+    if s.get('arpeggio') and s.get('first') and s.get('p') is not None:
+        out += '\\arpeggio'
+    if s.get('fermata') and s.get('last'):
+        out += '\\fermata'
+    return out
+
+
+# LilyPond clef names -> MusicXML (sign, line); an octave suffix _8/^8/_15/^15 adds <clef-octave-change>.
+XML_CLEFS = {'treble': ('G', 2), 'violin': ('G', 2), 'G': ('G', 2), 'G2': ('G', 2), 'french': ('G', 1),
+             'bass': ('F', 4), 'F': ('F', 4), 'varbaritone': ('F', 3), 'subbass': ('F', 5),
+             'alto': ('C', 3), 'C': ('C', 3), 'tenor': ('C', 4), 'soprano': ('C', 1),
+             'mezzosoprano': ('C', 2), 'baritone': ('C', 5), 'percussion': ('percussion', None)}
+
+
+def xml_clef(name):
+    """(sign, line, octave change) of a LilyPond clef name, e.g. 'treble_8' -> ('G', 2, -1)."""
+    m = re.fullmatch(r'([A-Za-z0-9]+?)(?:([_^])(8|15))?', str(name).strip().strip('"'))
+    base, way, n = m.groups() if m else ('treble', None, None)
+    sign, line = XML_CLEFS.get(base, ('G', 2))
+    octave = 0 if not way else (1 if n == '8' else 2) * (-1 if way == '_' else 1)
+    return sign, line, octave
 
 
 def notation_labels(data):
@@ -470,7 +506,10 @@ def create_lilypond(data, output):
             '  print-page-number = ##t', '  ragged-last-bottom = ##f',
             '  system-system-spacing.basic-distance = #18',
             '  system-system-spacing.padding = #7', '}',
-            '\\score {', '  \\new StaffGroup <<']
+            '\\score {',
+            # rolled chords: one arpeggio sign across every staff that marks the chord
+            '  \\new StaffGroup \\with { \\consists "Span_arpeggio_engraver" connectArpeggios = ##t } <<'
+            if has_arpeggio(voices) else '  \\new StaffGroup <<']
     markers = notation_markers(meta)
     printed_labels = notation_labels(data)
     # Optional staff sharing: a voice with "share_staff": <name or abbr of another voice> is
@@ -568,6 +607,8 @@ def create_lilypond(data, output):
             token = (lily_pitch(s["p"], meta, s.get("spell")) if s.get("p") is not None else rest) + s["durstr"]
             if s.get("tie_start"):
                 token += '~'
+            if s.get("p") is not None or rest == 'r':   # nothing on a spacer rest
+                token += lily_articulations(s)
             if equivalence:
                 token += equivalence
                 equivalence = None
@@ -776,9 +817,12 @@ def create_musicxml(data, output):
                 add(time, 'beats', num)
                 add(time, 'beat-type', dn)
                 clef = add(attributes, 'clef')
-                kind = v.get('clef', 'treble')
-                add(clef, 'sign', 'F' if kind == 'bass' else ('C' if kind in ['alto','tenor'] else 'G'))
-                add(clef, 'line', '4' if kind in ['bass','tenor'] else ('3' if kind == 'alto' else '2'))
+                sign, line, octave = xml_clef(v.get('clef', 'treble'))
+                add(clef, 'sign', sign)
+                if line is not None:
+                    add(clef, 'line', line)
+                if octave:
+                    add(clef, 'clef-octave-change', octave)
             elif (num, dn) != previous[:2]:
                 time = add(add(measure, 'attributes'), 'time')
                 add(time, 'beats', num)
@@ -825,10 +869,14 @@ def create_musicxml(data, output):
                     tm = add(note, 'time-modification')
                     add(tm, 'actual-notes', ratio.denominator)
                     add(tm, 'normal-notes', ratio.numerator)
-                if s.get('tie_start') or s.get('tie_stop'):
+                fermata = s.get('fermata') and s.get('last')
+                arpeggio = s.get('arpeggio') and s.get('first') and s.get('p') is not None
+                if s.get('tie_start') or s.get('tie_stop') or fermata or arpeggio:
                     notation = add(note, 'notations')
                     if s.get('tie_stop'): add(notation, 'tied', type='stop')
                     if s.get('tie_start'): add(notation, 'tied', type='start')
+                    if fermata: add(notation, 'fermata', type='upright')
+                    if arpeggio: add(notation, 'arpeggiate')
             if b == len(bars) - 1:
                 for t, _, el in pending:   # nothing is timed after the last attack; kept for safety
                     measure.append(el)
@@ -836,6 +884,30 @@ def create_musicxml(data, output):
                 add(bl, 'bar-style', 'light-heavy')
     ET.indent(root, space='  ')
     Path(output).write_bytes(ET.tostring(root, encoding='utf-8', xml_declaration=True))
+
+
+# A damped note of the FluidR3 piano falls about 50 dB within 0.3 s of its note-off (measured);
+# a pitch bend sent to its channel later than that no longer bends anything audible.
+RELEASE_SECONDS = 0.3
+
+
+def voice_channels(data):
+    """MIDI channels of each voice: [[channel, ...], ...], as port * 16 + channel.
+
+    A voice whose notes carry 'cents' plays them with pitch bend, and a bend applies to the whole
+    channel, release tails included.  Such a voice gets two channels and performance_events()
+    gives each note the channel whose last note ended earlier (or one already bent right), so a
+    note's bend is not changed while the previous note is still dying away.  Ports hold 15
+    channels (GM channel 10 is percussion) and a voice's channels share one port.  A score
+    without cents keeps one channel per voice, as before: CHANNELS[i % 15] + 16 * (i // 15)."""
+    out, port, used = [], 0, 0
+    for v in data['voices']:
+        n = 2 if any('cents' in e for e in v['events'] if e.get('p') is not None) else 1
+        if used + n > len(CHANNELS):
+            port, used = port + 1, 0
+        out.append([CHANNELS[used + k] + 16 * port for k in range(n)])
+        used += n
+    return out
 
 
 def performance_events(data, chamber=False, instruments=False, temperament=None):
@@ -852,34 +924,40 @@ def performance_events(data, chamber=False, instruments=False, temperament=None)
     absolute = temperament and meta_of(data).get('cents_reference') == 'equal'
     tdev = temperament_offsets(temperament) if absolute else None
     programs = [73, 68, 71, 42, 70, 41, 72] if chamber else [0]
+    plan = voice_channels(data)
     for i, voice in enumerate(voices):
-        channel = CHANNELS[i % 15] + 16 * (i // 15)
+        channels = plan[i]
         program = int(voice.get('gm_program', programs[i % len(programs)])) if chamber else 0
         if instruments and not chamber:
             program = int(voice.get('gm_program', 0))
-        events.append((Fraction(0), -2, channel, 'program', program, 0))
         pan = int(voice.get('pan', round(40 + 48 * i / max(1, len(voices)-1)))) if chamber else int(voice.get('piano_pan',64))
         if instruments and not chamber:
             pan = int(voice.get('pan', voice.get('piano_pan', 64)))
-        events.append((Fraction(0), -1, channel, 'pan', pan, 0))
-        bent = 0
+        for channel in channels:
+            events.append((Fraction(0), -2, channel, 'program', program, 0))
+            events.append((Fraction(0), -1, channel, 'pan', pan, 0))
+        bent = {c: 0 for c in channels}               # each channel's current bend
+        ended = {c: Fraction(-1) for c in channels}   # and when its last note was released
         for e in voice['events']:
             if e.get('p') is None: continue
             vel = int(e.get('v', voice.get('velocity', 72)))
             vel = max(1, min(127, vel))
             gate = float(e.get('gate', 0.97))
-            # Optional per-note microtonal offset in cents (just intonation etc.).
-            # Voices are monophonic, one channel each, so a pitch bend per note is exact.
+            # Optional per-note microtonal offset in cents (just intonation etc.), as a pitch
+            # bend on the note's own channel (voice_channels(): two per voice that has cents).
             cents = float(e.get('cents', 0.0))
             if tdev is not None and 'cents' in e:
                 cents -= tdev[int(e['p']) % 12]
             bend = max(-8192, min(8191, round(cents * 4096 / 100)))
-            if bend != bent:
+            # a channel already bent right needs no bend; otherwise the one released longest ago
+            channel = min(channels, key=lambda c: (bent[c] != bend, ended[c]))
+            if bend != bent[channel]:
                 events.append((e['t'], 0.5, channel, 'bend', bend, 0))
-                bent = bend
+                bent[channel] = bend
             events.append((e['t'], 1, channel, 'on', int(e['p']), vel))
             end = e['t'] + max(Fraction(1, 32), e['d'] * frac(gate))
             events.append((end, 0, channel, 'off', int(e['p']), 0))
+            ended[channel] = end
     return sorted(events)
 
 
@@ -930,17 +1008,16 @@ def create_midi(data, output, chamber=False, instruments=False):
             conductor.append(mido.MetaMessage('set_tempo', tempo=val, time=tick - last))
         last = tick
     events = performance_events(data, chamber=chamber, instruments=instruments)
-    for i, voice in enumerate(data['voices']):
-        channel = CHANNELS[i % 15] + 16*(i//15)
+    for i, (voice, channels) in enumerate(zip(data['voices'], voice_channels(data))):
         track = mido.MidiTrack()
         midi.tracks.append(track)
         track.append(mido.MetaMessage('track_name', name=voice.get('name',f'Voice {i+1}'), time=0))
-        track.append(mido.MetaMessage('midi_port', port=i//15, time=0))
+        track.append(mido.MetaMessage('midi_port', port=channels[0] // 16, time=0))
         last = 0
         for t, _, ch, kind, p, v in events:
-            if ch != channel: continue
+            if ch not in channels: continue
             tick = round(float(t) * QUARTER_TICKS)
-            args = {'channel':channel%16, 'time':tick-last}
+            args = {'channel':ch%16, 'time':tick-last}
             if kind == 'program': msg = mido.Message('program_change', program=p, **args)
             elif kind == 'bend': msg = mido.Message('pitchwheel', pitch=p, **args)
             elif kind == 'pan': msg = mido.Message('control_change', control=10, value=p, **args)
@@ -1000,8 +1077,8 @@ def render_audio(data, wav_path, mp3_path, soundfont, chamber=False, temperament
     import numpy as np
     from scipy.io import wavfile
     rate = 44100
-    voices = data['voices']
-    synth = fluidsynth.Synth(samplerate=rate, gain=0.4, **{'synth.midi-channels':16*math.ceil(len(voices)/15)})
+    ports = max((c for cs in voice_channels(data) for c in cs), default=0) // 16 + 1
+    synth = fluidsynth.Synth(samplerate=rate, gain=0.4, **{'synth.midi-channels': 16 * ports})
     sfid = synth.sfload(str(soundfont))
     if sfid < 0:
         raise RuntimeError('Could not load piano soundfont')
