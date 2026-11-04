@@ -53,9 +53,9 @@ than Bach's fugue in the same key; XX, XXI and XXIV keep their crowds.
 | XIX A (4) | four dances in four metres at once; Bach's Bourrée revealed at the end | the middle is mostly two voices |
 | XX A minor (21) | voices splitting out of one violin line; at the summit the strings thin while the double basses' lament descends, then all 21 land together on the dominant (bar 46) | the folds back into one violin may be hard to follow |
 | XXI B♭ (22) | the horn "cracking" to its flat 7th harmonic; the final natural-harmonic chord | leapy (posthorn idiom) |
-| XXII B♭ minor (6) | the palindrome: B-A-C-H before the axis, H-C-A-B after it | the second half's harmony is a little harsher |
+| XXII B♭ minor (6) | the palindrome: B-A-C-H before the axis, H-C-A-B after it | the second half's harmony is softer-edged and wandering (its passing notes land on the beats) |
 | XXIII B (5) | Bull's six-note scale through all twelve keys; meantone at bar 69 (or the short demo files); the one double-time statement (bars 75–78) that brings B back early | the six-bar clock is regular until bar 75 |
-| XXIV B minor (25 parts) | the 24-key walk; Bach's and the cycle's subjects arriving over the slow bass; Fugue I's ladder climbing from the basses | at most 14 real lines at once; all 25 only on the last chord |
+| XXIV B minor (25 parts) | the 24-key walk; Bach's own B-minor subject on top at bar 11; the cycle's subjects arriving over the slow bass; Fugue I's ladder climbing from the basses | at most 14 real lines at once; all 25 only on the last chord |
 
 ## The most useful feedback
 
