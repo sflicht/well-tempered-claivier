@@ -2513,7 +2513,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/05-d-major/prelude.json",
-  "source_sha256": "48b9675379d4879034972fcdc49c4cdf2cec9f8e5009cebb7c34e9a9c5618fff",
+  "source_sha256": "46c5ff4475f9b2cd8ef7ef385a7648d30829c71d3cc91d240660e6b9e2008fac",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 1.6,

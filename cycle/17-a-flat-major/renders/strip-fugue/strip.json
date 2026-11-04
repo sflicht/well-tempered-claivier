@@ -1,6 +1,6 @@
 {
  "width_px": 33978,
- "height_px": 520,
+ "height_px": 509,
  "time_to_x": [
   [
    0.0,
@@ -1761,16 +1761,16 @@
    184.88
   ],
   [
-   244.57,
-   285.55
+   233.51,
+   274.49
   ],
   [
-   334.18,
-   375.17
+   323.12,
+   364.1
   ],
   [
-   423.79,
-   464.78
+   412.73,
+   453.72
   ]
  ],
  "entries": [
@@ -1779,7 +1779,7 @@
    "t": 0.0,
    "label": "subject (tenor): the first child",
    "x_px": 181.98,
-   "y_px": 234.32
+   "y_px": 223.26
   },
   {
    "voice": 1,
@@ -1800,7 +1800,7 @@
    "t": 36.0,
    "label": "answer (bass): all four children",
    "x_px": 4770.06,
-   "y_px": 323.93
+   "y_px": 312.87
   },
   {
    "voice": 1,
@@ -1814,28 +1814,28 @@
    "t": 66.0,
    "label": "evasion 2 (V - VI in F minor): subject in D-flat (tenor)",
    "x_px": 8593.45,
-   "y_px": 234.32
+   "y_px": 223.26
   },
   {
    "voice": 3,
    "t": 78.0,
    "label": "evasion 3 (V - vi in D-flat): the head in the bass, B-flat minor",
    "x_px": 10122.81,
-   "y_px": 323.93
+   "y_px": 312.87
   },
   {
    "voice": 3,
    "t": 84.0,
    "label": "evasion 4 (V - VI in B-flat minor): the head in the bass, G-flat",
    "x_px": 10887.49,
-   "y_px": 323.93
+   "y_px": 312.87
   },
   {
    "voice": 3,
    "t": 96.0,
    "label": "evasion 7 (V - vi in C-flat): A-flat minor, home but minor; the head in the bass",
    "x_px": 12416.85,
-   "y_px": 323.93
+   "y_px": 312.87
   },
   {
    "voice": 0,
@@ -1849,14 +1849,14 @@
    "t": 108.0,
    "label": "the dream: subject at its own speed under the augmentation",
    "x_px": 13946.21,
-   "y_px": 234.32
+   "y_px": 223.26
   },
   {
    "voice": 2,
    "t": 144.0,
    "label": "evasion 10 (the others stop): guest, J. S. Bach, BWV 862 subject at pitch (tenor)",
    "x_px": 18604.23,
-   "y_px": 234.32
+   "y_px": 223.26
   },
   {
    "voice": 0,
@@ -1870,7 +1870,7 @@
    "t": 192.0,
    "label": "stretto 1: bass, on the dominant, under the echo (evasion 13: V7 - V7, pp)",
    "x_px": 24721.67,
-   "y_px": 323.93
+   "y_px": 312.87
   },
   {
    "voice": 1,
@@ -1884,7 +1884,7 @@
    "t": 198.0,
    "label": "stretto 3: tenor",
    "x_px": 25486.35,
-   "y_px": 234.32
+   "y_px": 223.26
   },
   {
    "voice": 0,
@@ -1898,7 +1898,7 @@
    "t": 216.0,
    "label": "the father: subject in augmentation, then the bass 5 - 1",
    "x_px": 27780.39,
-   "y_px": 413.54
+   "y_px": 402.48
   },
   {
    "voice": 1,
@@ -1912,13 +1912,13 @@
    "t": 252.0,
    "label": "coda: the second half of the subject, and its do at last (tenor)",
    "x_px": 32438.41,
-   "y_px": 234.32
+   "y_px": 223.26
   }
  ],
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/17-a-flat-major/fugue.json",
-  "source_sha256": "2137a74acc6d23a93c34a9d364db09c4386b1e077a766839ae99b08f6d097ebe",
+  "source_sha256": "6dcfe27e44eb95aea6c035e13780f50ac43c0b4c8cc7964c7dc73da0a5cec14a",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 1.6,

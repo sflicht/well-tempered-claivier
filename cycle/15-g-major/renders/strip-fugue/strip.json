@@ -1978,7 +1978,7 @@
  "made_by": {
   "tool": "tools/score_strip.py (via tools/build_app.py --strips)",
   "source": "cycle/15-g-major/fugue.json",
-  "source_sha256": "c7f851bca7cce5357ed1b4a563b85746d0c4e0d1ee9d3a38569a620eb84bf1d7",
+  "source_sha256": "3e65d24c9ef73ba0758a025213e528adfe37f1e45b9a45e4d0e77787aa1f29b0",
   "params": {
    "staff_space_px": 10.0,
    "gap_ss": 1.6,
