@@ -191,16 +191,17 @@ key('F#', 'UI', 1.5,
     B=("F#2:2 E#2:2 F#2:2 G#2:2 A#2:2 B2:2 C#3:4", "B2:2 D#3:2 C#3:2 B2:2 F#2:2 C#3:2 B2:2 C#3:2"))
 # 27-28 F-sharp minor.  BWV 859 in Upper II, an octave up, at half its note values.  Its
 # held A is the seventh of vii7/V; V - V7 - i on 28.3; the Neapolitan (G major) on 28.4.
+# The bass climbs F# G# A B to D (review 4: it arpeggiated F# C# A E).
 key('f#', 'UII', 2.0,
     UI=("C#5:8 D5:4 B#4:4", "C#5:2 D#5:2 E#5:4 F#5:4 D5:4"),
     UII=("A4:4 F#4:2 G#4:2 A4:8", "G#4:1 A#4:1 B4:4 A4:6 G4:2 A4:2"),
-    B=("F#2:2 C#3:2 A2:2 E3:2 D3:2 E3:2 F#3:2 D#3:2", "C#3:2 E#3:2 C#3:2 B2:2 A2:2 D3:2 B2:2 A2:2"))
+    B=("F#2:2 G#2:2 A2:2 B2:2 D3:2 E3:2 F#3:2 D#3:2", "C#3:2 E#3:2 C#3:2 B2:2 A2:2 D3:2 B2:2 A2:2"))
 # 29-30 G major.  BWV 860 in Upper I, an octave up.  IV - V - I on 30.3; the bass falls
-# G F Eb D: vii7 of g in third inversion, then V.
+# G F Eb D: vii7 of g in third inversion, then V.  (29.3-4: G F# E G, review 4; it was G B G B.)
 key('G', 'UI', 1.0,
     UI=("G5:2 A5:1 G5:1 F#5:1 G5:1 A5:2 B5:1 A5:1 G5:1 A5:1 B5:2 A5:2", "G5:4 F#5:4 G5:4 F#5:4"),
     UII=("B4:4 C5:4 B4:4 D5:4", "E5:4 D5:2 C5:2 B4:4 A4:4"),
-    B=("G2:2 B2:2 A2:2 F#2:2 G2:2 B2:2 G2:2 B2:2", "C3:2 B2:2 A2:2 D3:2 G2:2 F2:2 Eb2:2 D2:2"))
+    B=("G2:2 B2:2 A2:2 F#2:2 G2:2 F#2:2 E2:2 G2:2", "C3:2 B2:2 A2:2 D3:2 G2:2 F2:2 Eb2:2 D2:2"))
 # 31-32 G minor.  BWV 861 in Upper II at its own pitch, both of its phrases; its F# - G is
 # V - i on 31.3-4; ii-dim-7 - V7 - i on 32.3; the Neapolitan (A-flat) on 32.4.
 key('g', 'UII', 1.5,
@@ -208,11 +209,12 @@ key('g', 'UII', 1.5,
     UII=("R:2 D4:2 Eb4:2 G3:2 F#3:4 G3:4", "R:2 A3:1 Bb3:1 C4:2 Bb3:1 A3:1 Bb3:4 Ab3:2 Bb3:2"),
     B=("G2:2 Bb2:2 C3:2 Eb3:2 D3:4 Bb2:4", "C3:2 A2:2 D3:2 F#2:2 G2:2 Bb2:2 C3:2 Bb2:2"))
 # 33-34 A-flat major.  BWV 862 in Upper I, an octave up.  IV - V - V7 - I on 34.3, the bass
-# walking Eb Db C Bb Ab; V on 34.4 is also the dominant of g-sharp minor.
+# walking Eb Db C Bb Ab; V on 34.4 is also the dominant of g-sharp minor.  (33.1-2: the bass
+# falls Ab G F Eb under the head's arpeggio, review 4; it was Ab Eb Ab G.)
 key('Ab', 'UI', 2.0,
     UI=("C5:4 Ab4:2 Eb5:2 C5:2 Ab4:2 F5:2 Db5:2", "Eb5:5 Db5:1 C5:1 Db5:1 C5:4 Bb4:4"),
     UII=("C4:4 Eb4:8 Db4:4", "Bb3:8 C4:4 G3:4"),
-    B=("Ab2:2 Eb3:2 Ab2:2 G2:2 Ab2:2 C3:2 Db3:2 Bb2:2", "Eb3:2 Db3:2 C3:2 Bb2:2 Ab2:2 C3:2 Db3:2 Eb3:2"))
+    B=("Ab2:2 G2:2 F2:2 Eb2:2 Ab2:2 C3:2 Db3:2 Bb2:2", "Eb3:2 Db3:2 C3:2 Bb2:2 Ab2:2 C3:2 Db3:2 Eb3:2"))
 # 35-36 G-sharp minor.  BWV 863 in Upper II, an octave up (G3 = F##3 of bar 34 resolves to
 # G#3 first).  vii7/V - V - i on 36.3; the Neapolitan (A major) on 36.4.
 key('g#', 'UII', 2.0,

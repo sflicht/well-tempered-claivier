@@ -13,9 +13,9 @@ The prelude (`prelude.py` → `prelude.json`) is described in **Prelude XXIV** a
 I cannot hear the renders. Nothing here describes how the piece sounds. Every statement comes
 from the score and the tools.
 
-This is the second version, revised twice since: **Second pass** and **Second review** below,
-and **Review response (Nov 2026)** for the owner's review of PR #1. The before/after numbers are
-in **Measurements**.
+This is the second version, revised since: **Second pass** and **Second review** below,
+**Review response (Nov 2026)** for the owner's review of PR #1, and **Self-critique pass (Nov
+2026)** at the end of the fugue's notes. The before/after numbers are in **Measurements**.
 
 ## The premise
 
@@ -54,12 +54,12 @@ never doubles a theme in octaves.
 | bars | section | what happens |
 |---|---|---|
 | 1–11 | exposition | A3 S; T2 answer in F# minor with CS1 above it in A3; B1 S in the bass with CS1 in T2; S2 answer on top. Four voices |
-| 11–17 | codetta, S in D | U appears (T2, Br2), R appears (A5, T4); A1 S in D with CS1 in S2; episode through G7–C–F#ø–B7 to E minor |
+| 11–17 | codetta, S in D | S2 sings the head of **Bach's BWV 869** on top, an octave up (11.1½–12.2½), growing out of its answer's last note; its four sighs are 4–3 and 6–5 suspensions over a circle of fifths Bm/D – F# – B7 – Em – A into D. A1 S in D with CS1 in S2; R appears (A5, T4), U appears (Br2 at 15.3½, then T2); episode through G7–C–F#ø–B7 to E minor |
 | 18–20 | **mirror stretto** | S1 enters with I in E minor over a texture thinned to five voices. Half a bar later T3 enters with S in D (finder cost 6, no parallels). Neapolitan sixth – cadential 6/4 – E7 in A minor, turned aside to B7 – E minor, then on towards D minor |
 | 21–25 | S in C, bass | B2 enters with the subject in C as a bass. S3's line copies CS1's opening shape; the cadence turns to C major. Br3 enters knocking (U); Br2 returns with U |
 | 26–28 | S/I stretto | T4 sings S in A minor and A4 enters with I on B, half a bar later (in this register the finder's fifths become fourths). S1 returns over the E half-diminished chord |
 | 29–31 | S in E with CS1 | A5 S, A2 CS1 (new voice), S1 descant, T4's R, Br2 a line under the tenors, T2 a long breath (B–C–G–B–C#), A1 knocking |
-| 32–36 | **dominant pedal on C#** | B2 holds C#2 from 32.4½ to the end of bar 36. Over it: the subject's head climbs T5 (b32), A3 (b33), S4 (b34); S3 sings CS1 complete (32.2–35.3; its last note, B, now arrives on 35.1); A1 sings **Fugue V's head** transposed to C# major (34.3–35.2); Br2 sings **Fugue VIII's head** transposed to F# minor (35.3–36.4), whose last note resolves into bar 37; B3 knocks U on the pedal (b33–34, again b36–37). S1, S2, A2, A4, A5, T2, Br3 and Br5 sustain and suspend, each on its own pitch (since the second review a voice that could only double another rests). Harmony: 32 i \| V/V–V; 33–34 i⁶₄ \| V(7), the heads' B# as appoggiaturas; 35 V7 \| i⁶₄; 36 V7 – V – i |
+| 32–36 | **dominant pedal on C#** | B2 holds C#2 from 32.4½ to the end of bar 36. Over it: the subject's head climbs T5 (b32), A3 (b33), S4 (b34); S3 sings CS1 complete (32.2–35.3; its last note, B, now arrives on 35.1); S1, on top, sings **Fugue V's head** transposed to C# major, an octave up (34.3–35.3); Br2 sings **Fugue VIII's head** transposed to F# minor (35.3–36.4), whose last note resolves into bar 37; B3 knocks U on the pedal (b33–34, again b36–37). S2, A2, A4, A5, T2, Br3 and Br5 sustain and suspend, each on its own pitch (since the second review a voice that could only double another rests). Harmony: 32 i \| V/V–V; 33–34 i⁶₄ \| V(7), the heads' B# as appoggiaturas; 35 V7 \| i⁶₄; 36 V7 – V – i |
 | 37–41 | S ×2 in F# minor | B2 in augmentation; S3 sings CS1 in augmentation complete except its last note (the convergence takes that over). Long-breath lines in S1, S2, A4, T5; I's head in T3 (b37, F# minor) and A2 (b38, on D# over G#7); U in T2 (b38) and A3 (b39), after Bass III's (b36–37); R in A5 (b38), T4 (b40), T3 (b41). Harmony F#m – G#ø7 – G#7/B# – C#7 – F#7/A# – Bm – G (Neapolitan) – C#ø7 – F#7 – Bm/D – B#°7 – C#m/E – C#7/E# |
 | 42 (c0) | lead-in, F#7 | one A# (S2) and at most one E per beat (A5 on beat 1, S1 from beat 3); every other voice sits on F# or C#, one voice per key: nine to ten real voices |
 | 43–53 (c1–c11) | **the convergence** | cantus S ×4 in B5; guests from Fugues V, VIII, II, IV (below). Since the second review 8–12 real voices, each on its own key; at c10.3 the inner voices release (S4 from c10.1 since the third review) and re-enter on the arrival (b53), which resolves on the downbeat in 14 voices |
@@ -103,7 +103,7 @@ third review Bass IV and Baritone I, which had sung only the last chord (Bariton
 B3 under Fugue IV), enter as the ladder's first rung (see **Review response (Nov 2026)**).
 
 Voices moving per bar (critic): 1 1 2 2 2 3 3 4 4 4 4 4 6 5 7 7 7 7 5 5 9 7 6 6 7 8 7 8 8 9 9 8 10
-11 10 10 11 12 11 11 12 | **10 11 10 13 11 8 11 11 9 11 12 14** | 10 5 7 6 6 5 7 8 18 5.
+10 9 10 11 12 11 11 12 | **10 11 10 13 11 8 11 11 9 11 12 14** | 10 5 7 6 6 5 7 8 18 5.
 
 The longest rest of any voice between its first entry and c0 is 10 bars (S2, bars 23–33).
 
@@ -125,7 +125,7 @@ per key. A voice that could only double another at the unison rests.
 - **c2 (b44)** Bm7/D → C#ø7. S5 enters with a sixteenth turn. A1's U lands on G; Br2's F# is held over the C#ø7 and rises to G.
 - **c3 (b45)** E#°7 under the cantus's long E#. T4 has sixteenths; S5 rises D–E# into c4.
 - **c4 (b46)** C#7/E# → F#7. S1 has a 4–3 over F#7 (B→A#). A4 has sixteenths from beat 2½. The expected F#7 → Bm is prepared.
-- **c5 (b47)** Deceptive turn: the cantus's 1½-bar D# becomes the tonic of **Fugue VIII**. S4 sings it in E-flat minor at its own pitch, at the top of a texture thinned to nine voices so that it can be heard.
+- **c5 (b47)** Deceptive turn: the cantus's 1½-bar D# becomes the tonic of **Fugue VIII**. S4 sings it at its own pitch, at the top of a texture thinned to nine voices so that it can be heard. It is spelled in D# minor (D# A# B … E# C𝄪 D#), the key of the harmony around it and the key in which Bach wrote the fugue of BWV 853 whose head it is; its pitches are Fugue VIII's.
 - **c6 (b48)** A#7/D# – D#m – D#°7 – Em. VIII's D# is held and resolved up into E minor.
 - **c7 (b49)** C major (Neapolitan). At c7.3 **Fugue II** enters at the top in C minor at its own pitch (S1).
 - **c8 (b50)** B+ (B D# G): the cantus falls C→B. Fugue II's E♭ is the D#. Thinned to eleven voices.
@@ -135,8 +135,10 @@ per key. A voice that could only double another at the unison rests.
 
 ## Guests: sources, placement, verification
 
-Each guest is copied note for note from the first statement in the finished pair's `fugue.json`
-(the strings are in `xxiv.py`, `GUESTS`). Each is transposed only by an explicit `transpose`.
+Each guest from this edition is copied note for note from the first statement in the finished
+pair's `fugue.json`; the one guest from outside it, the head of Bach's BWV 869, is the verified row
+of `cycle/reference/bach-subjects.md` (the strings are in `xxiv.py`, `GUESTS`). Each is
+transposed (or, for Fugue VIII, respelled) only by an explicit `transpose`.
 `verify_guests.py` runs `tools/stretto_finder.py --against` for each placement. It passes the
 guest at its sounding pitch and the line it was fitted to, with `--forms rectus --steps 0` and
 the actual entry distance. Results are in `guest-verification.json`.
@@ -144,15 +146,17 @@ the actual entry distance. Results are in `guest-verification.json`.
 | guest | source | where | finder vs. its partner | cost | parallels | 2-voice unresolved |
 |---|---|---|---|---|---|---|
 | Fugue V | `cycle/05-d-major` | S1, b43.2½ (c1), D major (own key), 8ve up | the cantus | 26 | 0 | 1 |
-| Fugue VIII | `cycle/08-e-flat-minor` (head = Bach, BWV 853) | S4, b47 (c5), E♭ minor (own key) | the cantus | 22 | 0 | 1 |
+| Fugue VIII | `cycle/08-e-flat-minor` (head = Bach, BWV 853) | S4, b47 (c5), own pitch, spelled in D♯ minor | the cantus | 22 | 0 | 1 |
 | Fugue II | `cycle/02-c-minor` | S1, b49.3 (c7), C minor (own key) | the cantus | 15 | 0 | 0 |
 | Fugue IV | `cycle/04-c-sharp-minor` (3/4, re-barred) | S1, b51.4 (c9), down a whole step to B minor | the cantus | 24 | 0 | 1 |
 | Fugue V | as above | T3, b54, B major | the B1 pedal | 10 | 0 | 0 |
 | Fugue I | `cycle/01-c-major` | B4 b53.4½ → Br1 b54.2; Br2 b55.4½ → T5 b56.2; A2 b57.4½ → S1 b58.2 (B major) | its own canon at the octave, 3 eighths (Fugue I's rung R3) | 12 each | 0 | 0 |
 | Fugue V with Fugue I | as above | T3 against B4 (an eighth later); Br1 against T3 (a quarter later), b54–55 | each other | 11 / 18 | 0 / 0 | 0 / 1 |
+| **BWV 869** (Bach) | `cycle/reference/bach-subjects.md` (kern + Mutopia; the prelude's bar 47 quotes the same head) | S2, b11.1½ (codetta), B minor, an octave up | Bass I's circle of fifths | 7 | 0 | 0 |
 
 New in this version, in the pedal: the *heads* of Fugue V (its first bar, `A4:4 D5:2 D5:1 D5:1
-F#5:2 F#5:1 F#5:1 A5:4`, down a semitone to C# major, A1 b34.3) and of Fugue VIII (its whole
+F#5:2 F#5:1 F#5:1 A5:4`, down a semitone to C# major and an octave up, on top in S1 at b34.3;
+it was in A1 until the self-critique pass) and of Fugue VIII (its whole
 subject, `Eb4:4 Bb4:4 Cb5:3 Bb4:1 Ab4:2 Gb4:2 F4:2 D4:2 Eb4:4`, up a minor third to F# minor,
 Br2 b35.3). They are written as explicit transpositions in `build4.py` but are not declared as
 theme entries, because the Fugue V quotation is a fragment; the finder was not run on them.
@@ -218,11 +222,12 @@ theme entries, because the Fugue V quotation is a fragment; the finder was not r
 4. **The last chord's low neighbour notes** (19 of 58 low clashes): the five lowest voices
    (Br4, B2, Br5, B3, B4) now arrive directly, Bass III ends on F#2 instead of D#2, and the
    Contrabass strikes its B1 pedal again at the wedge (b60). Low clashes 58 → 33.
-5. **BWV 869** is named in the premise and the credits. It is not quoted.
+5. **BWV 869** is named in the premise and the credits. (It was not quoted then, for want of a
+   verified source; since the self-critique pass its head sounds in the codetta, b11–12.)
 
 Also from the review: Tenor II and Alto IV no longer double the pedal B in b55–59; they enter
-with the wedge, so Fugue I's ladder sounds in six to seven lines. Not done: moving Fugue V's head
-in the pedal to the top voice (it would need S1's line in b34–35 rewritten). The must-not-touch
+with the wedge, so Fugue I's ladder sounds in six to seven lines. Moving Fugue V's head in the
+pedal to the top voice was not done then; it was done in the self-critique pass (S1, b34.3). The must-not-touch
 passages are unchanged: Fugues VIII and II on top of thinned textures, S ×2 in the bass under
 CS1 ×2, the mirror wedge.
 
@@ -312,36 +317,37 @@ flag). Whether the low sixteenths sound clear there is a listening question.
 
 ## Measurements
 
-All numbers come from `tools/critic.py` (as it stands now), `texture.py` (it reproduces
+All numbers come from `tools/critic.py` (the last column with the critic as it stands on 4 Nov
+2026, the earlier columns with the critic of their day), `texture.py` (it reproduces
 `diagnosis/inspect_actual_texture.py`), `nct.py` (it classifies every non-chord tone against my
 written harmonic plan, stored in `fugue.json` as `harmonic_plan`), `issues.py` (one listing of
 the critic's flags with what each note does next) and `check.py` (each theme against its own
 prototype). The old finale is `editions/complete-cycle/scores/24-fugue-b-minor.json`.
 
-| measure | old finale | first version | second pass | second review | review 3 (now) |
-|---|---|---|---|---|---|
-| bars / duration (render) | – / 385.7 s | 61 / 250 s | 63 / 258 s | 63 / 244 s | 63 / tempo map unchanged (not re-rendered here) |
-| parallels_error / weak | 0 / – | 0 / 0 | 0 / 0 | 0 / 0 | **0 / 0** |
-| beat_parallels | 0 | 2 | 0 | 0 | **0** |
-| dissonance_unresolved, critic before 09df800 | 2 | 122 | 0 | 0 | – |
-| unresolved / unverified, corrected critic (09df800) | – | – | – | 17 / 26 | **3 / 17** |
-| bad_doublings (7th or leading tone doubled on a beat) | 11 | 26 | 1 | 1 | **1** |
-| stepwise_pct / leap ≥ 4th / repeated | 32.8 / 40.5 / – | 52.5 / 17.0 / 12.6 | 55.8 / 16.2 / 10.9 | 59.6 / 15.5 / 9.1 | 59.9 / 16.0 / 8.3 |
-| low_register_seconds | 50 | 28 | 58 | 33 | 35 |
-| voice crossings | 399 | 68 | 89 | 45 | 43 |
-| themes verified exact | – | 26 / 26 | 26 / 26 | 26 / 26 | 28 / 28 |
-| voices sounding / distinct pitches per beat, b32–41 | – | – | 12.6 / 10.1 | 9.8 / 9.4 | 9.5 / 9.2 |
-| … c0–c4 (b42–46) | – | – | 17.4 / 9.9 | 9.4 / 9.4 | 9.4 / 9.4 |
-| … c5–c11 (b47–53) | – | – | 12.9 / 8.7 | 9.0 / 8.6 | 8.8 / 8.4 |
-| … the arrival, b53 | – | – | 21.8 / 11.2 | 14.0 / 12.2 | 14.0 / 12.2 |
-| … release, b54–55 | – | – | – | 8.6 / 8.5 | 6.5 / 6.4 |
-| … the last chord, b62–63 | – | – | – | 20.8 / 14.1 | 20.8 / 14.1 |
-| mean moving voices, whole piece | – | 8.64 | 9.84 | 7.79 | 7.63 |
-| … build-up from b26 to c0 | – | 8.3 (b26–39) | 12.2 (b26–41) | 9.9 (b26–41) | 9.7 (b26–41) |
-| … convergence c0–c11 | 22.4 (old tutti) | 17.9 | 16.9 | 11.1 | 10.9 |
-| … release, between arrival and last chord | – | 4–6 | 8–9 | 6–8 | 5–10 (mean 6.8, b54–61) |
-| cantus window c1–c11: distinct pitch classes per instant | exactly 3 | 4.78 | 4.56 | 4.25 (≥4 at 83 %, ≥5 at 32 %) | 4.21 (≥4 at 83 %, ≥5 at 32 %) |
-| cantus window: mean sounding parts / moving per bar | 25.0 / 22.4 | 15.8 / 18.0 | 15.1 / 16.8 | 9.3 / 11.2 | 9.2 / 11.0 |
+| measure | old finale | first version | second pass | second review | review 3 | self-critique (critic, 4 Nov 2026) |
+|---|---|---|---|---|---|---|
+| bars / duration (render) | – / 385.7 s | 61 / 250 s | 63 / 258 s | 63 / 244 s | 63 / 243.6 s (render of 863aa97) | 63 / tempo map unchanged |
+| parallels_error / weak | 0 / – | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | **0 / 0** |
+| beat_parallels | 0 | 2 | 0 | 0 | 0 | **0** |
+| dissonance_unresolved, critic before 09df800 | 2 | 122 | 0 | 0 | – | – |
+| unresolved / unverified, corrected critic (09df800) | – | – | – | 17 / 26 | 3 / 17 | **3 / 16** |
+| bad_doublings (7th or leading tone doubled on a beat) | 11 | 26 | 1 | 1 | 1 | **1** |
+| stepwise_pct / leap ≥ 4th / repeated | 32.8 / 40.5 / – | 52.5 / 17.0 / 12.6 | 55.8 / 16.2 / 10.9 | 59.6 / 15.5 / 9.1 | 59.9 / 16.0 / 8.3 | 59.8 / 16.4 / 8.0 |
+| low_register_seconds | 50 | 28 | 58 | 33 | 35 | 35 |
+| voice crossings | 399 | 68 | 89 | 45 | 43 | 43 |
+| themes verified exact | – | 26 / 26 | 26 / 26 | 26 / 26 | 28 / 28 | 29 / 29 |
+| voices sounding / distinct pitches per beat, b32–41 | – | – | 12.6 / 10.1 | 9.8 / 9.4 | 9.5 / 9.2 | 9.4 / 9.1 |
+| … c0–c4 (b42–46) | – | – | 17.4 / 9.9 | 9.4 / 9.4 | 9.4 / 9.4 | 9.4 / 9.4 |
+| … c5–c11 (b47–53) | – | – | 12.9 / 8.7 | 9.0 / 8.6 | 8.8 / 8.4 | 8.8 / 8.4 |
+| … the arrival, b53 | – | – | 21.8 / 11.2 | 14.0 / 12.2 | 14.0 / 12.2 | 14.0 / 12.2 |
+| … release, b54–55 | – | – | – | 8.6 / 8.5 | 6.5 / 6.4 | 6.5 / 6.4 |
+| … the last chord, b62–63 | – | – | – | 20.8 / 14.1 | 20.8 / 14.1 | 20.8 / 14.1 |
+| mean moving voices, whole piece | – | 8.64 | 9.84 | 7.79 | 7.63 | 7.60 |
+| … build-up from b26 to c0 | – | 8.3 (b26–39) | 12.2 (b26–41) | 9.9 (b26–41) | 9.7 (b26–41) | 9.6 (b26–41) |
+| … convergence c0–c11 | 22.4 (old tutti) | 17.9 | 16.9 | 11.1 | 10.9 | 10.9 |
+| … release, between arrival and last chord | – | 4–6 | 8–9 | 6–8 | 5–10 (mean 6.8, b54–61) | 5–10 (mean 6.8, b54–61) |
+| cantus window c1–c11: distinct pitch classes per instant | exactly 3 | 4.78 | 4.56 | 4.25 (≥4 at 83 %, ≥5 at 32 %) | 4.21 (≥4 at 83 %, ≥5 at 32 %) | 4.19 (≥4 at 83 %, ≥5 at 30 %) |
+| cantus window: mean sounding parts / moving per bar | 25.0 / 22.4 | 15.8 / 18.0 | 15.1 / 16.8 | 9.3 / 11.2 | 9.2 / 11.0 | 9.2 / 11.0 |
 
 The moving counts fell because the second review asked for real voices rather than many
 staves: a voice that could only double another at the unison now rests (see **Second review**).
@@ -351,8 +357,8 @@ still thinned on purpose so that Fugues VIII and II can be heard.
 
 ### What the critic still flags, and why it stays
 
-Counts are from the corrected critic (09df800), which accepts a resolution only if the step comes
-within a beat and lands on a consonance with the partner.
+Counts are from the corrected critic (09df800, as it stands on 4 Nov 2026), which accepts a
+resolution only if the step comes within a beat and lands on a consonance with the partner.
 
 - **Unresolved dissonances: 3.**
   - b43.1, T2 A4 against S2 B5: the seventh and root of Bm7. Tenor II's U lands on the seventh
@@ -363,14 +369,15 @@ within a beat and lands on a consonance with the partner.
     tone, a tritone over the cantus) and steps to F#, where Alto I stops. The guest's A6 and
     Baritone II's retarded F#3 hide the chord from the critic. The F# is a real loose end; every
     continuation I tried made a unison with Soprano II or Soprano IV.
-  - b48.1, S4 F5 against the cantus's D#3: Fugue VIII's own cadence (F–D–E♭ around its tonic)
-    over the cantus's held E♭ = D#. Both are quotations and neither can move. `verify_guests.py`
+  - b48.1, S4 E#5 (= F5) against the cantus's D#3: Fugue VIII's own cadence (E#–C𝄪–D#, i.e.
+    F–D–E♭ around its tonic) over the cantus's held D#. Both are quotations and neither can move. `verify_guests.py`
     counts this as the guest's one two-voice unresolved against the cantus.
-- **Unverified stepwise continuations: 17** (check by ear). The resolving step is there; the
+- **Unverified stepwise continuations: 16** (check by ear). The resolving step is there; the
   partner moves at the same time, or the template list cannot name the chord.
-  - Exposition and middle entry, b6.3, b9.1 (2), b9.3, b11.2, b14.1: CS1's suspensions resolving
+  - Exposition and middle entry, b6.3, b9.1 (2), b9.3, b14.1: CS1's suspensions resolving
     while the bass moves. At b9.3 and b14.1 the 9–8 lands on the root of a V4/2 as the bass
-    passes to the seventh; at b11.2 CS1's last note falls to A as the bass moves F# to B; at b6.3
+    passes to the seventh (b11.2, where CS1's last note fell to A as the bass moved, is gone with
+    the new codetta); at b6.3
     CS1's 4–3 lands on the E#–B tritone of C#7/E#; at b9.1 Tenor II's free line passes D–C#
     against the answer's lean.
   - The circle of fifths, b20.3 and b21.1 (3): Soprano II and Alto V exchange A and G; Alto V's
@@ -391,6 +398,67 @@ within a beat and lands on a consonance with the partner.
   five lowest voices now arrive directly.
 - `hot.py` still lists three octaves reached in contrary motion (b29.3, b29.4½, b31.3); the
   critic does not count them as parallels.
+- **Melodic flags (7), each kept on purpose:**
+  - b12.1, S2 A#5 → E5 (tritone): inside Bach's BWV 869 head (A# E is its diminished fifth).
+  - b17.1, B1 C3 → F#2 (tritone): the bass of the episode's circle of fifths in E minor
+    (Dm – G7 – C – F#ø7 – B7 – Em); a diatonic circle in minor has one diminished fifth, C → F#,
+    and any bass that keeps the sequence has it (rising, it would be the same tritone).
+  - b45.4 (c3), S2 F5 → D5 and S5 D5 → F5 (augmented seconds), A3 B4 → F4 (tritone): the three
+    voices arpeggiate the E#°7 under the cantus's long E#; the intervals are the chord's own.
+  - b50.2½, S1 G5 → F6 (seventh): Fugue II's own leap (G → F), an octave up.
+  - b51.4, S1 G5 → F#6 (seventh): from Fugue II's last note into Fugue IV's first, the two
+    guests joined in one voice; F#6 is Fugue IV's head and must start where it starts.
+  - The free-line flags of the review-3 score are gone: T1's B3 → C𝄪4 at b48.1 (now its held
+    A♯3 resolves to B3 at 47.4 and passes through D♯4 to C𝄪4), B1's D♯3 → C3 at b51.2 (now E3,
+    the third of C and the root of E7) and B1's A♯2 → E2 at b59.2 (now A♯2 held as A♯ø7, then
+    F♯2).
+
+## Self-critique pass (Nov 2026)
+
+4 November 2026. An audit of this folder listed what earlier reviews proposed and was neither done
+nor declined, and prose that had gone stale. Each point, and what I did:
+
+- **BWV 869 is now quoted** (review 2, #7). Its head, from `cycle/reference/bach-subjects.md`
+  (checked against the kern file `wtc1f24.krn` and the Mutopia MIDI; `verify_prelude_heads.py
+  --kern` passes, and `verify_guests.py` checks that the quotation's source string is that row),
+  sounds once, in the codetta (b11.1½–12.2½), on top, in Soprano II an octave up. It grows out of
+  the answer: Soprano II's F♯5 at 11.1 resolves the answer's E♯ and is the head's first note (in
+  Bach it follows an eighth rest; here it is tied in from the downbeat). Its four sighs (G–F♯,
+  B–A♯, E–D♯, C–B) are set as 4–3 and 6–5 suspensions over a circle of fifths, Bm/D – F♯ – B7 –
+  Em – A, which leads into the middle entry in D as the old codetta did. So the finale states its
+  model's subject right after its own exposition, in four voices, before the build-up. Against
+  the bass it was set over, the finder gives cost 7, no parallels, nothing unresolved (the best
+  result of any guest). The upbeat figure U, which used to be first heard in Tenor II at 11.3½,
+  is now first heard in Baritone II at 15.3½: its knocks on D clashed with the head's A♯ at 11.4.
+  Bass I, Alto III and Tenor II were rewritten in b11–13 (Alto III ends CS1 on B and falls to F♯;
+  Tenor II's bar 13 starts on D). It is a declared theme (`check.py`: 29 of 29 exact).
+- **Fugue V's head on top** (review 2, #6). It moved from Alto I, under three sopranos, to
+  Soprano I an octave up (34.3–35.3, ending on Soprano I's own F♯6), as the reviewer proposed; it
+  is now a foretaste of the full Fugue V that Soprano I sings on top at b43. Soprano I's old
+  E♯6–C♯6 figure made way, and Alto I rests until 36.1 (each of its notes there would have
+  doubled a soprano). No new flag.
+- **Fugue VIII's guest is spelled in D♯ minor** (D♯ A♯ B A♯ G♯ F♯ E♯ C𝄪 D♯), by an explicit
+  respelling (0 semitones, one letter down). Its pitches are Fugue VIII's; the harmony around it
+  is D♯ minor, and D♯ minor is the key in which Bach wrote the fugue of BWV 853 whose head it is.
+  Its continuation at c6.3 is D♯5 → E5.
+- **Free-line melodic flags** fixed: T1's B3 → C𝄪4 at b48.1 (an augmented second) is now
+  B3 – D♯4 – C𝄪4 (Tenor I's held A♯3 still resolves to B3 on 47.4, then passes through D♯4, which
+  Tenor II has just left); Bass I's D♯3 → C3 at b51.2 (an augmented second across a rest) is now
+  E3, the third of C and the root of E7; Bass I's A♯2 → E2 at b59.2 (a tritone) is now A♯2 held
+  as A♯ø7, then F♯2 (C♯3 there made octaves with Soprano I). The written harmonic plan that
+  `nct.py` reads follows these two bars (b11–12 and b59.2), and its counts are unchanged.
+  Documented, not changed: Bass I's C3 → F♯2 at b17.1, the diminished fifth of the episode's
+  circle of fifths in E minor (see **What the critic still flags**).
+- **Stale prose corrected:** the measurements table (the review-3 render is 243.6 s, from commit
+  863aa97); the weak spot on long rests (now Alto V b46–62, Baritone III b47–59, Alto III b49–59,
+  Alto I b52–62, Baritone V ten bars twice); the credits (BWV 869 is quoted); the form table and
+  the build-up notes (U's first appearance).
+
+Before → after (critic, 4 Nov 2026): parallels 0 → 0, beat parallels 0 → 0, unresolved 3 → 3,
+unverified 17 → 16, bad doublings 1 → 1, low-register seconds 35 → 35, stepwise 59.9 → 59.8 %
+(the quoted head and its circle-of-fifths bass leap), melodic warnings 9 → 7, themes 28/28 → 29/29.
+This is an open score for twenty-five parts, not a keyboard piece, so the critic's reach figure
+(57 → 58) does not apply.
 
 ## Method
 
@@ -412,8 +480,10 @@ R3), Fugue II in C minor, Fugue IV in C-sharp minor, Fugue V in D major, and Fug
 minor, whose head is J. S. Bach's (WTC I/8, BWV 853). The model for the whole fugue is the
 last fugue of WTC I, BWV 869 in B minor, whose subject is also built on all twelve pitch
 classes; this finale answers it in the same key with a twelve-tone subject of its own. BWV 869's
-subject is not quoted (its notes were not taken from a verified source, and I did not write
-them from memory).
+head is quoted once, in the codetta (b11–12, Soprano II, an octave up), with the notes of
+`cycle/reference/bach-subjects.md`, which were checked against the Humdrum kern encoding
+(`wtc1f24.krn`) and the Mutopia MIDI; `verify_guests.py` checks that the quotation's source
+string is that row.
 
 ## Weak spots
 
@@ -422,7 +492,9 @@ them from memory).
   cantus, the guests and the harmony, not by the number of parts. All twenty-five sound together
   only in the last chord, where unisons cannot be avoided (20.8 voices on 14.1 pitches a beat).
   Baritone IV and Baritone V are accompanying lines with no thematic entry. Several voices rest
-  10–13 bars inside the convergence and release (A1 b52–61, A3 b49–59, Br3 b47–59).
+  10–17 bars inside the convergence and release: Alto V from b46 to b62 (every note it had there
+  doubled a tenor), Baritone III b47–59, Alto III b49–59, Alto I b52–62, and Baritone V ten bars
+  twice (b42–51 and b53–62); they come back for the wedge or the last chord.
 - **Two guests at once in bars 54–55** (Fugue V in the tenor, Fugue I's first rung in the bass and
   baritone), in sixteenths in the low register. Verified two at a time, not heard.
 - **The growth curve is gentler.** Real voices rise from about 8 (b26) to 12 (b38, b41)
@@ -430,7 +502,7 @@ them from memory).
 - The E#°7 bar (c3) arpeggiates the diminished chord: the critic notes two augmented seconds
   and a tritone leap in S2, S5 and A3 there.
 - Each guest scored 15–26 against the cantus alone, rougher than a stretto between partners
-  designed for each other. Fugue VIII keeps its E-flat spelling over a D#-minor harmony.
+  designed for each other.
 - I have not heard the piece. The tempo map and the dynamic plan (velocity offsets per bar) are
   untested by ear.
 
@@ -557,27 +629,33 @@ bass rises in tenths with BWV 846; the C-minor bass descends C B♭ A♭ G into 
 E-major and F♯-major basses are scales (E F♯ G♯ A B, F♯ E♯ F♯ G♯ A♯ B C♯); the A-minor bass
 falls C B A G♯; the A♭-major cadence walks E♭ D♭ C B♭ A♭.
 
-## Critic numbers (`tools/critic.py cycle/24-b-minor/prelude.json`)
+## Critic numbers (critic, 4 Nov 2026: `tools/critic.py cycle/24-b-minor/prelude.json`)
 
 | measure | value | target |
 |---|---|---|
 | parallels_error / weak | 0 / 0 | 0 |
 | beat_parallels | 0 | ≤ 2 |
-| dissonance_unresolved | 0 | ≤ 3 |
-| stepwise_pct | 66.0 (Upper I 74, Upper II 70, bass 57) | ≥ 65 |
-| leap ≥ 4th | 14.1 % | — |
+| dissonance_unresolved / unverified | 0 / 1 (b4.1, below) | ≤ 3 |
+| stepwise_pct | 66.5 (was 66.0; the bass's steps rose from about 57 % to 59 %) | ≥ 65 |
+| leap ≥ 4th | 13.9 % | — |
 | bad_doublings / tripled pc on beats | 0 / 1.2 % | — |
 | low_register_seconds | 0 | — |
-| keyboard_unplayable | 0 % (max 3 notes) | 0 |
+| keyboard_unplayable / reach errors | 0 % (max 3 notes) / 0 | 0 |
 | mean moving voices | 3.0 (all three voices move in all 48 bars) | — |
 
-The critic adds 14 notes of the kind "chord seventh not resolved down" (warnings, not errors),
-at 3.3, 6.1, 22.4, 23.4 (2), 24.1, 29.2, 34.2, 34.4, 38.4, 44.3 (2), 45.2 and 46.4. Most are
-a dissonant note that leaves by step upward or by leap to another chord tone, several of them
-inside Bach's heads (the C♯ head's appoggiatura at 6.1, the F-minor head's B–E at 24.1); the
-V4/2 chords at 23.4 and 46.4 move their bass seventh on through passing notes; 44.3 is the
-deliberate pivot, where the E♭ of V4/3 in B♭ minor is held as the third of C♭ = B major. Melodic flags (a leap over an octave at 43.3½, tritone leaps
-at 36.1½ and 48.1) are all inside Bach's heads (BWV 867's minor ninth, BWV 863's C𝄪, BWV 869).
+The critic adds 17 notes of the kind "chord seventh not resolved down" (notes, not errors), at
+3.3, 6.1, 6.2, 21.4, 23.4 (2), 24.1, 27.4, 29.4, 30.4, 34.2, 34.4, 38.4, 44.3 (2) and 45.3.
+Most are a dissonant note that leaves by step upward or by leap to another chord tone, several
+of them inside Bach's heads (the C♯ head's appoggiatura at 6.1, the F-minor head's B–E at 24.1);
+the V4/2 chord at 23.4 moves its bass seventh on through passing notes; 44.3 is the deliberate
+pivot, where the E♭ of V4/3 in B♭ minor is held as the third of C♭ = B major; 29.4 is the D of
+the new bass's passing E minor seventh (vi7), which rises to E with the next IV. The one
+"unverified stepwise continuation", b4.1, is Upper I's E♭5 over the Neapolitan sixth
+(D♭/F) of C minor: an appoggiatura that falls to D♭5 on the next eighth while the walking bass
+moves F → A♭, both notes of the same chord, so the critic cannot confirm the resolution against
+a held partner. The bass walks in eighths and keeps walking. Melodic flags (a leap over an octave
+at 43.3½, tritone leaps at 36.1½ and 48.1) are all inside Bach's heads (BWV 867's minor ninth,
+BWV 863's C𝄪, BWV 869).
 
 ## Method
 
@@ -597,10 +675,24 @@ of the 24 fugue subjects of J. S. Bach, *Das wohltemperirte Clavier* I, BWV 846�
 above). The key order is Bach's. The B-A-C-H motif is Bach's name. Bass, answering voices,
 harmonisation and joins: Claude, for Sam.
 
+## Self-critique pass (Nov 2026)
+
+- **The bass's arpeggios (b27–33):** bars 27, 29 and 33 now walk by step (see the weak spot
+  below for the bars that still leap and why). Stepwise motion 66.0 → 66.5 %, no new flag.
+- **The unverified flag at b4.1** is documented above (an appoggiatura over the Neapolitan
+  sixth, resolved on the next eighth while the bass walks within the chord).
+- **The G3 → G♯3 seam at b34–35** is kept and documented below: the alternative only moves the
+  seam inside the A♭ bar.
+
 ## Weak spots
 
-- **The bass is the least stepwise line** (57 %): two-bar keys need a cadence every eight
-  beats and a pivot on the eighth, and several bars still arpeggiate (27, 29, 31–33).
+- **The bass is the least stepwise line** (about 59 %): two-bar keys need a cadence every eight
+  beats and a pivot on the eighth. In the self-critique pass three bars were rewritten to walk by
+  step (27: F♯ G♯ A B to D; 29: G F♯ E G; 33: A♭ G F E♭ under the head's arpeggio). Bars 28, 31
+  and 32 still leap. 28 and 32 carry their key's cadence (V – V7 – i) and the turn to the
+  Neapolitan on beat 4, and a cadential bass leaps by fourths and fifths. For 31 the stepwise
+  version I tried (G A B♭ C D) put a passing 6/4 on beat 2 under the head. A walking bass of the
+  BWV 869 kind moves through its chords' tones as well as by step.
 - **The template is regular.** Every key cadences near beat 3 of its second bar and pivots on
   beat 4; the heads vary the surface, but over 48 bars the harmonic rhythm may sound
   predictable. That regularity is the "ground" of the walk, but I cannot judge it by ear.
@@ -612,5 +704,9 @@ harmonisation and joins: Claude, for Sam.
 - **Enharmonic seams.** The pivot notes are re-struck at the barline in the new spelling
   (D♭5 → C♯5 at bar 5, C♭6 → B5 at bar 17, G♭ → F♯ at bar 25); at bars 34–35 the leading tone
   of A♭ is written G3 and resolves to G♯3 under the new G♯-minor signature, which reads as a
-  chromatic step.
+  chromatic step (and so do B♭4 → B4 and the bass's E♭3 → G♯2). I kept the change of spelling at
+  the barline, where the key signature changes. An enharmonic modulation needs one seam somewhere.
+  Spelling the dominant on 34.4 in sharps (A♯4, F𝄪3, C♯3 D♯3) only moves it inside the A♭ bar,
+  between beats 3 and 4 and into all three voices (C5 → A♯4, C4 → F𝄪3, C3 → C♯3). At the barline
+  a player reads it as the new key.
 - **Length.** 2:30 rendered, at the 2.5-minute limit; there is no room for Bach's repeats.

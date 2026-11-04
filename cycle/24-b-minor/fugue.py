@@ -10,11 +10,12 @@ the build-up was then written backwards from what it needs the listener to know,
 release forwards from its arrival.  Every note is a literal token string in
 
     build1.py   bars  1-11  exposition: S, its answer, S in the bass, answer on top; CS1
-    build2.py   bars 11-17  codetta, U and R introduced, S in D, episode to E minor
+    build2.py   bars 11-17  codetta with the head of Bach's BWV 869 on top, S in D, R and U
+                            introduced, episode to E minor
     build3.py   bars 18-25  I (E minor) in stretto with S in D; S in C in the bass; U knocks
     build4.py   bars 26-36  S in A with I on B; S in E with CS1; dominant pedal on C#:
                             the subject's head climbing T5 -> A3 -> S4, CS1 complete,
-                            the heads of Fugues V and VIII; 8 -> 11 moving voices
+                            the heads of Fugues V (on top) and VIII; 8 -> 11 moving voices
     build5.py   bars 37-41  S in two-fold augmentation (F# minor, Bass II) under CS1 x2,
                             the inversion's head twice, U and R figures; 11-12 moving
     conv_a/b/c  bars 42-53  the cantus (S x4, Contrabass) with guests from Fugues V, VIII, II, IV
@@ -59,8 +60,9 @@ def build_plan():
     def rows(o, rr):
         return [[o + a, o + b, pcs, lab] for a, b, pcs, lab in rr]
     plan = sub_plan(0, 0) + sub_plan(10, -5) + sub_plan(20, 0) + sub_plan(30, -5)
-    plan += rows(40, [(0, 1, [Fs, A, Cs], 'F#m'), (1, 2, [B, D, Fs], 'Bm/F#'), (2, 4, [B, D, Fs], 'Bm'),
-                      (4, 6, [E, Gs, B, D], 'E7/G#'), (6, 8, [A, Cs, E, G], 'A7')])
+    plan += rows(40, [(0, 1, [Fs, A, Cs], 'F#m'), (1, 2, [B, D, Fs], 'Bm'), (2, 3, [B, D, Fs], 'Bm/D'),   # codetta:
+                      (3, 4, [Fs, As, Cs], 'F#'), (4, 5, [B, Ds, Fs, A], 'B7'), (5, 6, [E, G, B], 'Em'),  # BWV 869's
+                      (6, 8, [A, Cs, E], 'A')])                                                           # head
     plan += sub_plan(48, 3)
     plan += rows(58, [(0, 2, [D, F, A], 'Dm'), (2, 4, [G, B, D, F], 'G7'), (4, 6, [C, E, G], 'C'),
                       (6, 8, [Fs, A, C, E], 'F#o7'), (8, 10, [B, Ds, Fs, A], 'B7')])
@@ -98,7 +100,7 @@ def main():
     bars = sc.bars(NB)
     names = {n: long for n, long, clef in VOICES}
     voices = [(names[n], n, clef, 62 if n != 'B5' else 68) for n, long, clef in VOICES]
-    span = {'S': 2.5, 'I': 2.5, 'CS1': 3, 'V': 2, 'VIII': 1.5, 'II': 1.5, 'IV': 1.5, 'FI': 2}
+    span = {'S': 2.5, 'I': 2.5, 'CS1': 3, 'V': 2, 'VIII': 1.5, 'II': 1.5, 'IV': 1.5, 'FI': 2, '869': 1.5}
     entries = []
     for v, t, lab, k, scale, se, inv in sc.entries:
         entries.append((names[v], 1 + int(t // 16), float((t % 16) / 4), lab, span.get(k, 2) * scale))
@@ -108,15 +110,17 @@ def main():
     meta = {
         'title': 'The Well-Tempered clAIvier',
         'subtitle': 'Fugue XXIV in B minor, for twenty-five parts',
-        'composer': 'Claude / Sam (guest subjects from Fugues I, II, IV, V, VIII of this edition)', 'instrument': 'Twenty-five parts (open score; at most fourteen independent lines at once)', 'key': 'B', 'mode': 'minor',
+        'composer': 'Claude / Sam (guest subjects from Fugues I, II, IV, V, VIII of this edition; the head of Bach\'s BWV 869)', 'instrument': 'Twenty-five parts (open score; at most fourteen independent lines at once)', 'key': 'B', 'mode': 'minor',
         'meter': [4, 4], 'bpm': 63, 'tempo_text': 'Largo, poi con fuoco',
         'tempo_map': [[100, 63], [144, 69, 'ramp'], [c0 + 40, 69], [c0 + 48, 58, 'ramp'],
                       [c0 + 72, 58], [c0 + 80, 46, 'ramp'], [c0 + 88, 38, 'ramp']],
         'movement_number': 24, 'piece_type': 'fugue', 'edition': 'third',
         'credits': 'Guest subjects quoted from this edition: Fugue I (C major), II (C minor), '
                    'IV (C-sharp minor), V (D major), VIII (E-flat minor; its head is J. S. Bach, WTC I/8, BWV 853). '
-                   'Fugue I\'s canon at the octave three eighths apart is its own rung R3.',
-        'markers': [{'t': 0, 'label': 'exposition'}, {'t': 48, 'label': 'subject in D; U, R'},
+                   'Fugue I\'s canon at the octave three eighths apart is its own rung R3. '
+                   'Codetta (bars 11-12): the head of J. S. Bach\'s B-minor fugue subject, WTC I/24, BWV 869.',
+        'markers': [{'t': 0, 'label': 'exposition'}, {'t': 40.5, 'label': 'Bach, BWV 869 head (codetta)'},
+                    {'t': 48, 'label': 'subject in D; R, then U'},
                     {'t': 68, 'label': 'inversion (E minor) in stretto with the subject'},
                     {'t': 82, 'label': 'subject in C, bass'}, {'t': 100, 'label': 'subject in A with the inversion'},
                     {'t': 112, 'label': 'subject in E with CS1'}, {'t': 124, 'label': 'dominant pedal, heads climb'}, {'t': 134, 'label': 'Fugue V head (C# major)'},

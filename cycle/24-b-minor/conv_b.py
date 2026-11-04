@@ -1,9 +1,9 @@
 """Convergence, part B: cantus bars c5-c8.
 The expected cadence (F#7 -> Bm) is deflected to D# minor: the cantus's D# is the tonic
 of Fugue VIII (E-flat minor), whose subject enters at its own pitch, quietly, at the top of
-a thinned texture.  Its last note, D#, becomes the leading tone of E minor; E minor turns
-to C major (the Neapolitan), where Fugue II's subject (C minor, its own pitch) enters at
-the top; the cantus falls C -> B under it (B augmented: Fugue II's E-flat is the D#).
+a thinned texture, spelled in D# minor as Bach spelled the fugue of BWV 853.  Its last note,
+D#, becomes the leading tone of E minor; E minor turns to C major (the Neapolitan), where
+Fugue II's subject (C minor, its own pitch) enters at the top; the cantus falls C -> B under it (B augmented: Fugue II's E-flat is the D#).
 Harmony: c5 D#m . B/D# . G#m/D# | c6 A#7/D# . D#m . D#dim7 . Em | c7 C | c8 B+ (B D# G)"""
 from xxiv import *
 
@@ -11,10 +11,14 @@ from xxiv import *
 def part_b(sc, b0):
     c = lambda k: b0 + k
     P = sc.put
-    # ---- Fugue VIII's subject, own key (E-flat minor = D# minor), Soprano IV
-    viii = octv(GUESTS['VIII'][0], 1)                 # Eb5 Bb5 Cb6 Bb5 Ab5 Gb5 F5 D5 Eb5
-    sc.theme('S4', c(5), 1, viii + '~', 'Fugue VIII guest (E-flat minor, own key)', 'VIII', semis=12)
-    P('S4', c(6), 3, "Eb5:2 E5:2 D5:4")               # its D# held, resolved up into E minor
+    # ---- Fugue VIII's subject, own key (E-flat minor = D# minor), Soprano IV.  Its pitches are
+    #      Fugue VIII's; it is spelled in D# minor (an explicit enharmonic respelling, 0 semitones,
+    #      one letter down), because here it sounds over the cantus's D# in D# minor, and because
+    #      D# minor is the key in which Bach wrote the fugue of BWV 853 whose head it is.
+    viii = tr(octv(GUESTS['VIII'][0], 1), 0, -1)      # D#5 A#5 B5 A#5 G#5 F#5 E#5 C##5 D#5
+    sc.theme('S4', c(5), 1, viii + '~', 'Fugue VIII guest (own pitch; spelled in D-sharp minor, as Bach\'s BWV 853)',
+             'VIII', semis=12)
+    P('S4', c(6), 3, "D#5:2 E5:2 D5:4")               # its D# held, resolved up into E minor
     P('S4', c(7), 1, "C5:16~")
     P('S4', c(8), 1, "C5:4 B4:12")                    # C over B: 9-8
     # ---- Fugue II's subject, own key (C minor), Soprano I, from c7.3
@@ -38,8 +42,10 @@ def part_b(sc, b0):
     P('A4', c(7), 3, "B4:1 A4:1 B4:1 C5:1 D5:1 C5:1 B4:1 G4:1")     # passing notes on the beats, so as not to double C5/E5
     # ---- A5
     # (A5 rests in c5-c11: every note it had doubled T1, T3 or T5)
-    # ---- T1: chromatic inner line A# B C## . C B | C
-    P('T1', c(5), 1, "A#3:12 B3:4")
+    # ---- T1: inner line A# B D# C## . C B | C (its held A# resolves to B on c5.4, then D# falls to the
+    #      leading tone C##; it was B3 -> C##4, the harmonic minor's augmented second, self-critique
+    #      pass Nov 2026)
+    P('T1', c(5), 1, "A#3:12 B3:2 D#4:2")
     P('T1', c(6), 1, "C##4:4 R:2 C4:2 B3:8")
     P('T1', c(7), 1, "R:4 C4:8 R:4")
     # ---- T2: D# . G# | A# A G | G (neighbour) | G
