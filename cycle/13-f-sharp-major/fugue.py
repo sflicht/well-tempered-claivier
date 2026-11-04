@@ -229,7 +229,7 @@ put('T', 11, [
     'E4:4 C#4:4 A#3:2 C#4:2',                                    # b12 V6/5 (under the dux)
     'B3:4 R:8',                                                  # b13 vi   (makes room for the comes)
     'R:12', 'R:12', 'R:12',                                      # b14-16
-    'A#3:4 F#3:4 A#3:4',                                         # b17 V7
+    'F#3:8 A#3:4',                                               # b17 V7 (no A# under the 4-3)
     'B3:4 C#4:4 D#4:4~',                                         # b18 I    (carries D# into G# minor)
     'D#4:4 R:8',                                                 # b19 i
 ])
@@ -243,7 +243,7 @@ put('S', 12, [shift(tr(b, 5, 3), 1, 'B') for b in SUBJ_BARS] + [
 canon('II', 'S', 'A', lambda s: shift(s, -1, 'B'), 1, 12, 15, 'Canon II at the second below')
 entry('S', 12, 'Canon II dux: subject on C#')
 entry('A', 13, 'Canon II comes: subject a second below, on B')
-put('A', 17, ['C#5:4 E5:4 C#5:4', 'B4:4 R:8'])
+put('A', 17, ['D#5:4 C#5:8', 'B4:4 R:8'])                     # b17: 6-5 under the soprano's 4-3
 
 
 # =============================================================================================
@@ -271,15 +271,16 @@ put('A', 25, ['A#4:6 B4:2 A#4:2 F##4:2', 'G#4:8 R:4'])
 # Statement 4 (bars 27-34), C-sharp major: Canon IV at the fourth below, by inversion, one bar
 # apart (the tonal mirror C#<->G#, as in Var. 12).  The alto announces the subject (on E#), then the
 # dux enters on top, the comes a bar later in the tenor, rising where the dux falls.
-put('B', 27, ['C#3:12', 'B#2:12', 'A#2:12', 'G#2:4 R:8', 'E#2:4 C#2:8', 'F#2:12', 'G#2:12', 'C#2:12'])
+put('B', 27, ['C#3:12', 'B#2:12', 'A#2:12', 'G#2:4 R:8', 'E#2:4 C#3:8', 'F#2:8 A#2:4', 'G#2:12', 'C#2:12'])
 put('A', 27, [shift(tr(b, -5, -3), 2, 'C#') for b in SUBJ_MUT_BARS] + [
     'E#4:4 C#4:4 R:4',                                           # b29 vi   (makes room)
 ])
 entry('A', 27, 'Alto: subject on E# (C# major)')
 put('S', 29, [tr(b, 7, 4) for b in SUBJ_BARS] + [
-    'G#4:10 F#4:1 G#4:1',                                        # b31 I6-I (IV in the comes)
-    'A#4:2 B#4:2 C#5:4 A#4:4',                                   # b32 IV   (V7)
-    'B#4:4 A#4:2 G#4:2 A#4:2 G#4:2',                             # b33 V7   (I)
+    'G#4:3 A#4:1 B#4:3 C#5:1 E#5:3 D#5:1',                       # b31 I6-I: the head inverted (the comes
+                                                                 #     answers with the head upright, b32)
+    'C#5:4 F#5:3 E#5:1 C#5:2 A#4:2',                             # b32 IV-vi (V)
+    'B#4:2 C#5:2 D#5:2 C#5:2 B#4:2 G#4:2',                       # b33 V    (I)
 ])
 canon('IV', 'S', 'T', lambda s: mirror(s, 'C#5', 'G#3', 'C#'), 1, 29, 33,
       'Canon IV at the fourth below, by inversion')
@@ -293,7 +294,7 @@ entry('T', 30, 'Canon IV comes: subject inverted, on G# (a fourth below)', form=
 put('B', 35, ['C#3:3 B2:1 A#2:3 G#2:1 E#2:3 F#2:1', 'G#2:2 C#3:2 B2:1 D#3:1 G#3:2 F#3:1 E#3:1 D#3:2',
               'C#3:12', 'C#3:12'])
 entry('B', 35, 'Bass: subject on C# (retransition)')
-put('S', 34, ['G#4:6 A#4:2 C#5:2 D#5:2',                     # b34 I (C#) -> V of F#
+put('S', 34, ['F#4:2 G#4:2 A#4:2 B#4:2 C#5:2 D#5:2',         # b34 I (C#) -> V of F#: the scale climbs
               'E#5:4 F#5:4 G#5:4',                               # b35 V - I6 - V6/5
               'B5:4 G#5:4 A#5:2 B5:2',                           # b36 ii - ii6 - I
               'G#5:3 F#5:1 E#5:3 D#5:1 B4:3 C#5:1',              # b37 head on G#, over the pedal
@@ -341,23 +342,24 @@ put('S', 39, [
 # Statement 6 (bars 47-54), F-sharp minor, Adagio: Canon VI at the sixth above, two bars apart
 # (the Goldberg set's minor variations, 15, 21 and 25, are in the tonic minor).  The ground descends
 # through the lament tetrachord F# E D C#.  Dux alto (subject on A, the mediant), comes soprano a
-# sixth higher (on F#); after the subject the dux only holds long notes, so the comes sings alone
-# above it.  The tenor is a free low line.  The last bar turns to F-sharp major and the tenor's
+# sixth higher (on F#); after the subject the dux goes on as a slow line under it (A G# F#, then the
+# minor-key sigh D-C# over the dominant), which the comes sings a sixth higher in b51-52.  The tenor
+# is a free low line.  The last bar turns to F-sharp major and the tenor's
 # upbeat starts the quodlibet.
 put('B', 47, ['F#3:12', 'E3:8 C#3:4', 'D3:12', 'C#3:12', 'A2:12', 'B2:12', 'C#3:12', 'F#2:12'])
 put('A', 47, [shift(modal(b, 'F#', 'F#m'), 2, 'F#m') for b in SUBJ_BARS] + [
-    'A4:8 R:4',                                                  # b49 VI   (i6 in the comes)
-    'R:2 C#5:10',                                                # b50 V    (iv7)
-    'C#5:6 B4:2 A4:4',                                           # b51 i6   free from here
-    'D5:6 C#5:2 B4:4',                                           # b52 iv7
-    'B4:12',                                                     # b53 V7
+    'A4:6 G#4:2 F#4:4',                                          # b49 VI   (i6 - iv4/2 in the comes)
+    'R:2 C#5:2 D5:2 C#5:4 B4:2',                                 # b50 V    (iv7): the sigh D-C#
+    'C#5:6 A4:2 B4:4',                                           # b51 i6 - iv4/2   free from here
+    'D5:6 C#5:2 D5:4',                                           # b52 iv7
+    'C#5:4 B4:8',                                                # b53 V7
     'A#4:6 R:6',                                                 # b54 I    (Picardy third)
 ])
 canon('VI', 'A', 'S', lambda s: shift(s, 5, 'F#m'), 2, 47, 50, 'Canon VI at the sixth above',
       ficta=[(50, 'E5', 'E#5')])
 entry('A', 47, 'Canon VI dux: subject on A (F-sharp minor)')
 entry('S', 49, 'Canon VI comes: subject a sixth above, on F#')
-put('S', 53, ['G#5:6 F#5:2 E#5:4', 'F#5:6 R:6'])
+put('S', 53, ['B5:3 A5:1 G#5:2 F#5:2 E#5:4', 'F#5:6 R:6'])
 put('T', 47, [
     'R:12',                                                      # b47 i
     'R:4 B3:8',                                                  # b48 v7

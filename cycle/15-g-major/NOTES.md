@@ -61,7 +61,7 @@ All four are hand-written diminutions of the chorale lines; S1–S3 are the sixt
 | 25–26 | **III. Alto: S3, with S2** | The alto alone with its siciliano in E minor over a held E in the bass (a drone, as in the prelude's musette). | e |
 | 27–28 | | Soprano: S3's **real answer in B minor** (C♯, A♯), up to D6. Tenor: S2 in B minor against it (the second pair: line 2 in B minor, A♯). Alto countersubject; the bass falls to F♯. | b |
 | 29–30 | | F♯ becomes B major, the dominant of E minor (D♯ in the alto). Bass: S3 in E minor under the soprano and tenor; B7 → B. | e |
-| 31–34 | **L3, alto** | The alto sings its line **on top**, with the soprano silent: Em C \| Am Bm \| D Em/G \| F♯7 Bm. The line's E is the seventh of F♯7 (A♯ in the tenor), its last D the third of B minor. Cadence in B minor (b34.3). | e → b |
+| 31–34 | **L3, alto** | The alto sings its line **on top**, with the soprano silent: Em C \| Am Bm \| D Em \| F♯7 Bm, the bass climbing D–E–F♯ into the cadence. The line's E is the seventh of F♯7 (A♯ in the tenor), its last D the third of B minor. Cadence in B minor (b34.3). | e → b |
 | 34.4–36 | **IV. Bass: S4, with S3** | Link B minor → G → C (the alto's last D is the fifth of G). The bass alone with its bells in C (F natural, leading tone B); the soprano answers with S3 in C two beats later (two voices: the third pair). | C |
 | 37–38 | | The pair with the voices exchanged: tenor S4 on G inside C, alto S3 from B two beats later (L3 at its own pitch, with F natural); the bass walks. | C |
 | 39–42 | **L4, bass** | The bass sings its line in C, C3 down to C2, under a soprano moving with it in tenths and a tenor in quarters that stays near G4–C5 from b41 (so that the hands can reach every chord); the alto is silent. C G/B \| Am G \| G7 F C/E \| G7/D C, then D7/C over the last C, and a breath. | C → V of G |
@@ -104,7 +104,7 @@ The signature is the final cadence, on top (b50.3–52), as in the sixteen-voice
 
 ## Critic numbers
 
-**Fugue** (`python3 tools/critic.py cycle/15-g-major/fugue.json`):
+**Fugue** (`python3 tools/critic.py cycle/15-g-major/fugue.json`; critic, 2026-11-04):
 
 | Measure | Value | Target / comment |
 |---|---|---|
@@ -112,15 +112,15 @@ The signature is the final cadence, on top (b50.3–52), as in the sixteen-voice
 | parallels_weak | 0 | |
 | beat_parallels | **1** | ≤ 2. b28.3, soprano/tenor F♯→C♯ in octaves on successive beats, with notes between: the S3 answer and the S2 pair, combined on the same beat. |
 | dissonance_unresolved | **0** | ≤ 3 |
-| bad_doublings | **2** | ≤ 2. b12.4 is the kept stretto of section I (the critic reads C–A–F♯ as C°7, so the doubled A counts as its seventh). b46.1 is the summit: the tenor's and the bass's lines both sing D under E5/G5, which the critic reads as Em7/D (the D a seventh); as G6/D it is a doubled fifth. |
+| bad_doublings | **1** | ≤ 2. b46.1 is the summit: the tenor's and the bass's lines both sing D under E5/G5, which the critic reads as Em7/D (the D a seventh); as G6/D it is a doubled fifth. |
 | low_register_seconds | **0** | ≤ 9 |
-| stepwise_pct | **60.0 %** | ≥ 65; missed, see weak spots. Leaps of a fourth or more 12.4 % (Bach about 14 %), repeated notes 8.1 %. |
+| stepwise_pct | **60.4 %** | ≥ 65; missed, see weak spots. Leaps of a fourth or more 12.1 % (Bach about 14 %), repeated notes 8.1 %. |
 | crossings | 3 | b12.2, b13.3, b14.1: the tenor above the alto for one beat each, in the stretto of section I (kept from the sixteen-voice version). |
 | reach_errors | **0** | every chord struck at one instant fits two hands (16 semitones each); 7 before the Nov 2026 revision |
 | keyboard_unplayable_pct | **2.1 %** | 9 of 430 onsets have more *sounding* notes than two hands can hold (a held note must be caught by the pedal): b11, b14 (the soprano's cantus high over the bass), b27 (the B-minor answer up to D6), b50 (coda, the soprano's held G5 and B5 over the tenor's head). |
 | mean moving voices | 3.15 | per section: I 3.0, II 3.1, III 3.1, IV 3.0, summit 3.5, coda 3.75 |
 | pc_tripled_on_beats | 0.0 % | |
-| tertian fit | 51.9 % | |
+| tertian fit | 52.9 % of beats | 75.5 % of the beats that hold a chord; 33.2 % of beats are two-note intervals |
 | melody flags | 1 | b8.1 soprano A4 → F♯5 → G5 (kept exposition). The tenor now steps F♯4 → G4 into its summit entry. |
 | dissonance_unverified | 2 | b3.3 (alto A3 / soprano D5) and b8.3 (bass A2 / tenor D4), both in the kept exposition: CS1's suspensions, whose partner moves as they resolve. |
 
@@ -128,7 +128,7 @@ Moving voices per bar: `1 1 2 2 2 3 3 4 4 4 4 4 4 4 | 2 2 4 4 3 3 4 3 3 3 | 2 2 
 
 The critic's theme check verifies every declared entry against S1; the entries of S2, S3, S4 and of the chorale lines are labelled as such and do not match S1 by design.
 
-**Prelude:** parallels_error 0, beat_parallels 0, parallels_weak 0, unresolved 0, bad_doublings 0, low_register 0, crossings 0, keyboard_unplayable 0 %. Stepwise is 39 %: the piffero line is a musette arpeggiation. There are 2 unrecovered large leaps and 1 compound leap, both in Bach's flute bar at b13 (G5 → E6).
+**Prelude** (critic, 2026-11-04): parallels_error 0, beat_parallels 0, parallels_weak 0, unresolved 0, bad_doublings 0, low_register 0, crossings 0, keyboard_unplayable 0 %. Stepwise is 39 %: the piffero line is a musette arpeggiation. There are 2 unrecovered large leaps and 1 compound leap, both in Bach's flute bar at b13 (G5 → E6).
 
 ## Prelude XV: "Pastorale for the shepherds" (16 bars, 12/8)
 
@@ -168,8 +168,8 @@ It is a musette for one pianist:
 2. **The summit is short and slow-moving.** All four lines sound together for ten beats (b44.3–47.1); from the first entry to the cadence it is five bars of half notes, the fewest notes per bar in the piece. At one speed the lines combine only in this staggered alignment, and I did not pad it with free voices or canons. The tenor's off-beat rhythm (after the review) separates the lines; it does not make the passage faster.
 3. **Line 1 is a fourth higher at the summit** (in C), not at its own pitch. It returns at pitch nowhere after b14, except as S1's head in the coda.
 4. **The summit's last notes are adjusted:** the bass's C–B rhythm and the soprano's held C. The alto and tenor finish the cadence with free notes after their lines end.
-5. **stepwise_pct is 60 %, under the target of 65 %.** The material accounts for much of it: S2 moves by step on 6 of its 18 intervals (another 6 are repeated notes in its fanfare and tattoos), L2 on 2 of 7, L3 on 3 of 7. Section I scores 67 %, sections II and III 53–54 %. The free basses at cadences leap by fourths and fifths.
-6. **Two bad doublings** (above), one of them in the summit's own line notes, which I did not alter.
+5. **stepwise_pct is 60.4 %, under the target of 65 %.** The material accounts for much of it: S2 moves by step on 6 of its 18 intervals (another 6 are repeated notes in its fanfare and tattoos), L2 on 2 of 7, L3 on 3 of 7. Section I scores 67 %, sections II and III 54 %. In the free basses of sections II–III the leaps that remain are cadential (V–I into D at b24, into B minor at b34, the ii–V–I into the bass's own S2 at b18–19) or forced by reach and by the subjects (see "Self-critique pass"); one was smoothed in November (b33–34).
+6. **One bad doubling** (b46.1, above), in the summit's own line notes, which I did not alter.
 7. **Three one-beat crossings** of tenor and alto in the stretto of b12–14, kept from the sixteen-voice version.
 8. **Some free lines are plain:** the tenor in quarters in b39–42 (now a little higher, G4 B4 C5 \| B4 G4 G4 F♯4) and the soprano moving in tenths with the bass's cantus. In b39–42 the bass's line matters more than the counterpoint around it, but the passage may feel static before the summit.
 9. **Keyboard:** every attack is within reach of two hands; 2.1 % of onsets have held notes that need the pedal, mostly where a cantus sits far from the bass.
@@ -253,4 +253,34 @@ semitones in one hand. Agreed; all seven are fixed, and no chorale line, subject
 Critic before → after: reach_errors 7 → 0; keyboard_unplayable_pct 4.7 → 2.1; unresolved 0 → 0; unverified
 2 → 2 (b3.3, b8.3, in the kept exposition); parallels 0 / beat-to-beat 1 (unchanged); bad doublings 2
 (unchanged); crossings 3 (unchanged); melody flags 2 → 1; stepwise 60.0 → 60.3 %. The prelude is unchanged.
-Renders not yet redone.
+
+## Self-critique pass (Nov 2026)
+
+4 November 2026. An audit listed what this file and the score still left open; each item was fixed or is explained
+here.
+
+- **Free cadence basses of sections II–III (weak spot 5).** Every free bass leap of a fourth or more in b15–34 was
+  tried by hand against the critic; one change is kept, the rest are explained.
+  - *Kept:* b33–34. The bass climbs D3 E3 F♯3 into the cadence, III – iv – V7 – i in B minor, instead of D3 G2 F♯2
+    (Em/G). The cadence keeps its fall F♯–B; one leap of a fourth fewer. Under the alto's line on top the tenor still
+    moves F♯3 → B3 against D3 → E3 (a third to a fifth, not parallel fifths).
+  - *b26.4, B1 → B2:* the bass drops to B1 for the half cadence and returns to B2 for the answer. Taking B2 at once
+    makes octaves with the alto, whose S3 tail rises F♯4 → B4 on the same beats; kept.
+  - *b18.3–19.1, A2 D3 G2:* ii – V7 – I into the bass's own S2 entry. A descending scale instead (E2 then A2, or
+    E2 D2) makes octaves with the alto's tattoo F♯4–E4 (part of S2's answer), or puts the D7 out of reach of two
+    hands; kept.
+  - *b20.4.5–21.1, D2 → D3:* S2 ends on D2, and the next bass note must lie within a hand's span of the tenor's
+    cantus D4, because the right hand is at A5 with the soprano; so it jumps back up; kept.
+  - *b21.3–22.1 (B2 → F♯2) and b24 (A2 → D2):* root movements of the harmony under the tenor's cantus (Bm → F♯m)
+    and the section's final V–I. A stepwise bass in b22 (F♯2 G♯2 A2) puts G♯2 a minor ninth under the cantus's
+    A3, struck together on beat 3; kept.
+  - A smoother free tenor in b31 (C4 held instead of C4 G3) made octaves with the bass (C → A) and was dropped.
+  Sections II and III now score 54.0 % and 54.2 % (54.0 % and 53.4 % before); overall 60.3 → 60.4 %.
+- **Stale numbers.** The critic table and weak spot 5 gave stepwise 60.0 % and leaps 12.4 %; they now give the
+  current figures. The November critic counts one bad doubling instead of two (it no longer reads b12.4's C–A–F♯ as
+  a seventh chord), and its tertian fit now also reports the beats that hold a chord (75.5 %) apart from all beats (52.9 %). "Renders not yet redone" was
+  removed (the renders were redone after the November review response).
+
+Critic before → after (fugue): stepwise 60.3 → 60.4 %, leaps of a fourth or more 12.2 → 12.1 %; parallels 0 / 0 /
+1 beat-to-beat, unresolved 0, unverified 2, bad doublings 1, low-register 0, crossings 3, reach errors 0, keyboard
+2.1 % unchanged. Prelude unchanged.

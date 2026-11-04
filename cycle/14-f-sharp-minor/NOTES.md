@@ -93,16 +93,16 @@ held to b75, then a ritardando to 80 (b77) and 60 on the last chord. The render 
    the only thematic line in long notes; the thematic lines above it move in quarters and eighths, and the free
    tenor partly holds longer notes under them.
 
-### Critic numbers (`tools/critic.py`, final build)
+### Critic numbers (critic, 2026-11-04)
 
 | measure | value |
 | --- | --- |
 | parallels error / weak / beat-to-beat | 0 / 1 / 1 |
-| unresolved dissonances | 1 (b10.1, kept; see below) |
+| unresolved dissonances / unverified | 1 (b10.1, kept; see below) / 0 |
 | reach errors (fresh attacks two hands cannot strike) | 0 |
-| bad doublings | 0 |
+| bad doublings | 2 (b25.1, b72.3; see below) |
 | low-register seconds | 0 |
-| stepwise / leaps of a 4th or more | 62.0 % / 18.5 % |
+| stepwise / leaps of a 4th or more | 62.1 % / 18.2 % |
 | pitch class tripled on beats | 1.8 % |
 | crossings | 1 |
 | **keyboard_unplayable_pct** | **0.4 %** (1 of 278 onsets) |
@@ -135,7 +135,13 @@ Flagged items, each kept on purpose:
   through E♯ (a chromatic passing quarter) to F♯ on the next half-note beat, a third below the answer's A. The
   critic accepts only a one-step resolution and so calls it unresolved; it is an ornamented rising resolution in
   alla breve, kept so that the countersubject's chromatic rise is whole at its first statement.
-- 16 chord sevenths are "not resolved down" in the critic's sense, mostly sevenths that pass to another chord tone
+- **Bad doublings b25.1 and b72.3.** The November critic reads both chords as dominant sevenths without their root
+  and counts a doubled leading tone. At b25.1 the Cantus's B♯ (the dux, the theme's chromatic note) sounds over
+  F♯2 and F♯3, the last notes of the bass's theme and of the Tenor's countersubject I: the doubled note is the tonic
+  under a diminished seventh on B♯, not a leading tone. At b72.3 the augmentation's G♯2 (falling to G) and the
+  inversion's G♯5 (rising to A) meet three octaves apart, two thematic lines passing in contrary motion. Both
+  are kept. A third, at b70.1, was a free note and is gone (see "Self-critique pass").
+- 19 chord sevenths are "not resolved down" in the critic's sense, mostly sevenths that pass to another chord tone
   in chromatic progressions.
 
 ### Method
@@ -167,9 +173,11 @@ Flagged items, each kept on purpose:
   the fourth step home. Six six-bar blocks would take 36 bars, so the full circle of tones is not heard.
 - **The per-tonos free voices still repeat.** The texture now grows (3 → 4 → 5 voices), but the bass, and the tenor
   of blocks 2–3, are the same transposed lines; the dux and comes overlap for only two bars per block.
-- **The block's tenor is leapy.** It runs in quarters between a quarter-note bass and two thematic lines.
-  Stepwise motion overall is 62.0 %, below the 65 % target. The theme itself is 58 % stepwise (11 of 19 intervals)
-  and is stated 17 times, 9 of them in diminution.
+- **The block's tenor is still leapy.** It runs in quarters between a quarter-note bass and two thematic lines,
+  and has to stay below the comes (down to B3 and G3 in C minor) and within a hand's reach of the bass. After the
+  November revision it moves by step on 9 of its 22 intervals (8 before) and leaps a fourth five times (eight
+  before). Stepwise motion overall is 62.1 %, below the 65 % target: the theme itself is 58 % stepwise (11 of 19
+  intervals) and is stated 17 times, 9 of them in diminution, and the block's tenor sounds only twice.
 - **The pivot is one bar.** The tritone shift from F-sharp minor to C minor is abrupt by design.
 - **The climax is late and quiet.** F♯6 first passes as an eighth inside the inversion's run (b73.4½); the held F♯6
   (b75.4) comes at the start of the ritardando, over B minor, not on a downbeat. Whether the bass augmentation's
@@ -215,8 +223,8 @@ Flagged items, each kept on purpose:
 | keyboard_unplayable_pct | 41.6 % | 0.4 % |
 | mean moving voices | 6.09 | 3.44 |
 | parallels error / weak / beat-to-beat | 0 / 0 / 3 | 0 / 1 / 1 |
-| bad doublings / low-register seconds / unresolved | 2 / 8 / 0 (old critic) | 0 / 0 / 1 (Nov 2026 critic) |
-| stepwise | 58.1 % | 62.0 % |
+| bad doublings / low-register seconds / unresolved | 2 / 8 / 0 (old critic) | 2 / 0 / 1 (critic, 2026-11-04) |
+| stepwise | 58.1 % | 62.1 % |
 | crossings | 37 | 1 |
 
 ---
@@ -259,12 +267,12 @@ therefore ends on its opening chord, F-sharp minor, without a Picardy third, whi
   fugue then begins with the same head forwards.
 - **Tempo and length:** 4/4, quarter = 69, with a ritardando over the last two bars; 17 bars, about 1:03.
 
-### Critic numbers (`prelude.json`)
+### Critic numbers (`prelude.json`; critic, 2026-11-04)
 
 | measure | value |
 | --- | --- |
 | parallels error / weak / beat-to-beat | 0 / 0 / 0 |
-| unresolved / bad doublings / low-register seconds | 0 / 0 / 0 |
+| unresolved / unverified / bad doublings / low-register seconds | 0 / 0 / 0 / 0 |
 | stepwise / leaps of a 4th or more | 63.3 % / 13.3 % |
 | crossings | 0 |
 | keyboard_unplayable_pct | 0 % |
@@ -276,8 +284,8 @@ Cantus at b9.3 (19/19 intervals and rhythm, form "retrograde").
 ### Weak spots
 
 - **Reversed dissonances.** Running the first half backwards turns a seventh that resolved down into one that is
-  approached by step and left by leap. The critic notes six chord sevenths "not resolved down" (b1.4, b10.1, b12.1,
-  b17.1); those in the second half are first-half sevenths run backwards. Its melody check flags one unrecovered
+  approached by step and left by leap. The critic notes seven chord sevenths "not resolved down" (b1.4, b10.1,
+  b12.1, b14.1, b17.1); those in the second half are first-half sevenths run backwards. Its melody check flags one unrecovered
   leap, Altus D5–F♯4–E♯4 at b11, which is the counter-line's b7 read backwards.
 - **Recognisability.** The theme is hidden in the middle voice in the first half, and backwards in the second; only
   its rising chromatic line on top (b12–15) is likely to be noticed.
@@ -289,8 +297,10 @@ Cantus at b9.3 (19/19 intervals and rhythm, form "retrograde").
 ## Review (cycle/14-f-sharp-minor/REVIEW.md) → what changed
 
 All five items were applied or kept as the review proposed; every changed note was written by hand, and the critic
-shows no new fault (fugue: parallels 0 / 1 / 1, unresolved 0, bad doublings 0, low-register 0, keyboard 1.4 %;
-prelude: all zero). The "must not touch" items (the exordium b1–21, the pivot b43, the per-tonos entries, the
+of that time (October 2026) showed no new fault (fugue: parallels 0 / 1 / 1, unresolved 0, bad doublings 0,
+low-register 0, keyboard 1.4 %; prelude: all zero). The corrected critic of November later found one unresolved
+dissonance (b10.1, kept) and two attacks out of reach (fixed: keyboard 0.4 %); see "Review response (Nov 2026)" and
+the current numbers above. The "must not touch" items (the exordium b1–21, the pivot b43, the per-tonos entries, the
 palindrome) are unchanged.
 
 | # | Review item | Change |
@@ -339,4 +349,35 @@ unchanged. What moved is the Altus, which was finishing countersubject II two oc
 
 Critic before → after: reach_errors 2 → 0; keyboard_unplayable_pct 1.4 → 0.4; unresolved 2 → 1 (b10.1, kept);
 unverified 0 → 0; parallels 0 errors / 1 weak / 1 beat-to-beat (unchanged); bad doublings 0; low-register 0;
-stepwise 62.0 %, leaps of a fourth or more 18.3 → 18.5 %. The prelude is unchanged. Renders not yet redone.
+stepwise 62.0 %, leaps of a fourth or more 18.3 → 18.5 %. The prelude is unchanged.
+
+---
+
+## Self-critique pass (Nov 2026)
+
+4 November 2026. An audit listed what this file and the score still left open; each item was fixed or is explained
+here.
+
+- **The per-tonos block's tenor (weak spot "leapy"), fixed in part.** The block is written once, so one edit serves
+  both blocks that have a tenor (D minor, b50–55, and E minor, b56–61; the C-minor block has none). In C minor,
+  bar 2 now ends on A♭3, the seventh of the diminished seventh over B, which falls to G3 at the next downbeat
+  (it was D4, followed by a leap of a fifth), and bar 4 runs G3 F3 C4 A♭3 instead of G3 E♭3 C3 D3 (then a leap of a
+  fourth back to G3). The tenor now leaps a fourth five times instead of eight and moves by step on 9 of its 22
+  intervals instead of 8. Smoother versions were tried or weighed and rejected: G3 A♭3 in bar 4 moves in octaves with the
+  bass (G2 A♭2); G3 C4 there doubles the dux's G4 C5 in octaves; D4 at the start of bar 2 puts the
+  tenor out of reach of either hand under the dux's A5 in D minor; and a tenor starting on E♭4 would leap a sixth at
+  the join into the next block. The theme (58 % stepwise, 17 statements) sets the overall figure, which moves only
+  from 62.0 % to 62.1 % (the Quintus change below costs one step).
+- **b70, Quintus.** The November critic counted a doubled leading tone at b70.1: the Quintus's E3 made the
+  augmentation's A♯ the third of a dominant seventh of B minor, doubled by the Cantus's A♯5. The Quintus now
+  holds F♯3: the chord is the tonic major over A♯, I6 after the V4/2 of b69, and it turns minor over A in b71. The E
+  had no function (the next bass note is A, not B) and its seventh rose to F♯. Bad doublings 3 → 2; the other two
+  are thematic (see "Flagged items").
+- **Stale numbers.** The "Review → what changed" summary gave the October critic's figures (unresolved 0, keyboard
+  1.4 %) without saying so; it is now dated and points to the November figures. The critic tables carry the current
+  numbers. "Renders not yet redone" was removed (the renders were redone after the November review response).
+
+Critic before → after (fugue): stepwise 62.0 → 62.1 %, leaps of a fourth or more 18.5 → 18.2 %, bad doublings 3 → 2
+(the critic's new reading of dominant sevenths without a root had raised it from 0 to 3), sevenths "not resolved
+down" 21 → 19; parallels 0 / 1 / 1, unresolved 1 (b10.1), reach errors 0, keyboard 0.4 % unchanged. Prelude
+unchanged.
