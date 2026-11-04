@@ -34,26 +34,32 @@ strip, so the subject's head is the royal theme's opening, C–E♭–G–A♭�
 compressed into one bar.
 
 1. **The entry plan is the walk.** The four players sit at the corners of a square. The fugue's
-   entries go round them in order (Vl I → Vl II → Va → Vc → Vl I), and the listener always walks up
-   to and faces whoever has the subject. So the subject is always close (1.5 m) and in front, while
-   the other lines sit to the sides and behind (4.1–5.6 m). In episodes the listener drifts back to
-   the middle.
-2. **Lap 1** (rectus, normal room) ends exactly where it began: at Violino I's spot, facing Violino I,
-   one full turn to the right later.
+   entries go round them in order (Vl I → Vl II → Va → Vc → Vl I). Each lap's solo opening (b1,
+   b18, b34) is heard from the centre of the room, facing the far wall (0°), with Violino I at the
+   front left, 3.5 m away. From the answer on, the listener walks up to and faces whoever has the
+   subject, so the subject is close (1.5 m) and in front, while the other lines sit to the sides
+   and behind (4.1–5.6 m). In episodes the listener drifts back to the middle.
+2. **Lap 1** (rectus, normal room) starts at the centre facing 0° and reaches Violino I's spot
+   (facing 315°) with the E♭-major entry in b13–14. During the first general pause the listener
+   walks back to the centre and turns to 360°: the starting spot and facing, one full turn to the
+   right later.
 3. **First seam** (b17, a general pause of 5.0 s). `metadata.walk.mirror` starts in the middle of it
    (b17.3, 67.0 s). From here the renderer swaps every sound's left and right.
 4. **Lap 2.** The opening comes back literally: the same player, register, rhythm and
    accompaniment, except that the subject is upside down. In bars 18–24 every voice has the same
    rhythm as bars 1–7. The subject, answer, countersubject and codetta are exact mirror images;
-   the free voice of Violino I keeps its rhythm but was re-composed. The listener walks the same physical loop, but the room is heard reversed: the
-   answer that came from the right-behind in bar 3 now comes from the left, and each turn towards
-   the next player sounds like a turn the other way.
-5. **Second seam** (b33, 5.0 s). The mirror ends at b33.3 (133.3 s). The listener is once again at
-   the start position and facing.
+   the free voice of Violino I keeps its rhythm but was re-composed. The listener walks the same
+   physical loop, but the room is heard reversed: the solo subject that came from the front left in
+   bar 1 now comes from the front right, the answer that came from the front right in bar 3 now
+   comes from the left, and each turn towards the next player sounds like a turn the other way.
+5. **Second seam** (b33, 5.0 s). The mirror ends at b33.3 (133.3 s). During the pause the listener
+   walks from Violino I's spot back to the centre and faces 720°: the start position and facing,
+   two turns later.
 6. **Stretto** (b34). The very opening a third time: Violino I alone, right way up, in the normal
-   room. One bar later the inversion answers from the player diagonally opposite. The listener
-   steps into the centre and from then on stands between each pair, rectus on the left and inversus
-   on the right, making a quarter turn per pair: a third lap, done as a pirouette.
+   room, heard from the front left as in b1. One bar later the inversion answers from the player
+   diagonally opposite. The listener stays at the centre and from then on faces between each pair,
+   rectus on the left and inversus on the right, making a quarter turn per pair: a third lap, done
+   as a pirouette.
 7. **Coda** (b43–44): the head and its mirror at once over a tonic pedal. The two lines cross, and
    the only note they share is the axis, E♭. Picardy third.
 
@@ -123,48 +129,53 @@ Violino I (2.5, 6.5) far left, Violino II (7.5, 6.5) far right, Viola (7.5, 1.5)
 Violoncello (2.5, 1.5) near left. Players are 5 m apart (7.1 m diagonally). The listener's spot for
 each player is 1.5 m in front of it, on the line to the middle: Vl I (3.56, 5.44) facing −45°,
 Vl II (6.44, 5.44) +45°, Va (6.44, 2.56) +135°, Vc (3.56, 2.56) +225°. Facing is unwrapped, +360° per
-lap. Each walk to a new player starts on the entry's first note and arrives five beats later
-(2.9 m).
+lap. Each lap starts at the centre (5, 4) facing the far wall (0°, 360°, 720°). Each walk to a new
+player starts on the entry's first note and arrives five beats later (2.9 m between spots; 2.0 m for
+the first walk, from the centre to Violino II's spot). During each general pause the listener walks
+from Violino I's spot back to the centre (2.0 m in 5 s).
 
-Measured by `render_walk.py`: max speed 0.9 m/s, max turn 47°/s, closest approach 1.5 m, inside the
-room.
+Path checks (`render_walk.check_path` on the current `WALK`): max speed 0.9 m/s, max turn 47°/s,
+closest approach 1.5 m, inside the room.
 
 | bars | time (s) | listener | what is heard |
 |---|---|---|---|
-| 1–2 | 0–8 | at Vl I, facing −45° | S alone, Vl I in front |
-| 3–4.2 | 8–13 | turns right, walks to Vl II (+45°) | answer enters right-behind, then in front; CS in Vl I now on the left |
-| 5 | 16–20 | at Vl II | codetta |
+| 1–2 | 0–8 | at the centre, facing 0° (the far wall) | S alone, Vl I at the front left |
+| 3–4.2 | 8–13 | turns right and walks to Vl II's spot (+45°) | answer enters front right, then straight ahead; CS in Vl I, front left, then left-behind |
+| 4.2–5 | 13–20 | at Vl II | end of the answer; codetta |
 | 6–7.2 | 20–25 | to the viola (+135°) | S in the viola; CS Vl II |
 | 8–9.2 | 28–33 | to the cello (+225°) | answer in the cello; all four sound |
 | 10–12 | 36–44 | drifts back to the middle, still facing the cello | episode 1 (Vl I silent) |
-| 13–14.2 | 48–53 | turns right and walks to Vl I (315° = start) | S in E♭ major, Vl I |
-| 15–16 | 56–64.5 | stands at the start position | half cadence in C minor |
-| **17** | 64.5–69.5 | stands | **general pause; mirror on at 67.0 s (b17.3)** |
-| 18–19 | 69.5–77.5 | at Vl I | SI alone, front (unchanged by the mirror) |
-| 20–21.2 | 77.5–82.5 | walks to Vl II (405°) | inverted answer, now heard from the *left* |
+| 13–14.2 | 48–53 | turns right and walks to Vl I's spot (315°) | S in E♭ major, Vl I |
+| 14.2–16 | 53–64.5 | at Vl I's spot | half cadence in C minor |
+| **17** | 64.5–69.5 | walks back to the centre and turns to 360° (the start, one turn later) | **general pause; mirror on at 67.0 s (b17.3)** |
+| 18–19 | 69.5–77.5 | at the centre, facing 360° | SI alone, Vl I, now heard from the front *right* |
+| 20–21.2 | 77.5–82.5 | walks to Vl II's spot (405°) | inverted answer, heard from the *left* |
 | 22 | 85.5–89.5 | at Vl II | mirrored codetta |
 | 23–24.2 | 89.5–94.5 | to the viola (495°) | SI viola; inverted CS Vl II |
 | 25–26.2 | 97.5–102.5 | to the cello (585°) | inverted answer, cello |
-| 27–29 | 105.5–118.3 | b27: back to the middle; b28–29: stands still | **the rest**: 7-6 chain over G F E♭ D♭ C, dominant pedal of F minor, softer |
-| 30–31.2 | 118.3–123.3 | to Vl I (675° = start) | SI in F minor, Vl I |
-| 32 | 126.3–130.8 | stands at the start position | half cadence in C minor |
-| **33** | 130.8–135.8 | stands | **general pause; mirror off at 133.3 s (b33.3)** |
-| 34 | 135.8–139.8 | at Vl I, facing 675° | S alone, exactly as in b1 |
-| 35–36.1 | 139.8–143.8 | steps back to the centre, turns to face Vl II (765°) | SI from the viola (diagonal): Vl I left, viola right |
-| 36–37 | 143.8–151.8 | at the centre, turns to 855° (facing the viola) | Vl II rectus (left), cello inversus (right) |
-| 38–39 | 151.8–159.8 | turns to 945° (facing the cello) | viola rectus (left), Vl I inversus (right) |
-| 40–42 | 159.8–171.8 | turns to 1035° (facing Vl I) | cello rectus (left), Vl II inversus (right) |
-| 43–44 | 171.8–184.6 | centre, facing Vl I | coda: S head (Vl I) and SI head (Vl II) together |
+| 27–29 | 105.5–118.3 | b27: back to the middle (arrives b28.1, 109.7 s); b28–29: stands still | **the rest**: 7-6 chain over G F E♭ D♭ C, dominant pedal of F minor, softer |
+| 30–31.2 | 118.3–123.3 | to Vl I's spot (675°) | SI in F minor, Vl I |
+| 31.2–32 | 123.3–130.8 | at Vl I's spot | half cadence in C minor |
+| **33** | 130.8–135.8 | walks back to the centre and turns to 720° (the start, two turns later) | **general pause; mirror off at 133.3 s (b33.3)** |
+| 34 | 135.8–139.8 | at the centre, facing 720° | S alone, exactly as in b1: Vl I front left |
+| 35–36.1 | 139.8–143.8 | at the centre, turns to face Vl II (765°) | SI from the viola (diagonal): Vl I left, viola right |
+| 36–37 | 143.8–151.8 | turns to 855° (facing the viola) by b36.4 | Vl II rectus (left), cello inversus (right) |
+| 38–39 | 151.8–159.8 | turns to 945° (facing the cello) by b38.4 | viola rectus (left), Vl I inversus (right) |
+| 40–42 | 159.8–171.8 | turns to 1035° (facing Vl I) by b40.4 | cello rectus (left), Vl II inversus (right) |
+| 43–44 | 171.8–181.7 | at the centre, facing Vl I | coda: S head (Vl I) and SI head (Vl II) together; the render adds about 3 s of release |
 
-**Measured left/right levels** (L−R in dB over the first beat of each entry; positive means left
-louder; Vl I in front is in every window). These show the mirror at work:
+**Measured left/right levels** (L−R in dB on `renders/fugue-walk.mp3`, the current path; positive
+means left louder; every voice sounding in the window is included). The solo subject is measured
+over its two bars, the other entries over their first beat. These show the mirror at work: the sign
+flips every time. The sizes differ between the laps because the inverted lines lie in other
+registers (the head shadow grows with pitch) and the accompanying voices differ.
 
 | entry | lap 1 | lap 2 |
 |---|---|---|
-| answer, Vl II | −2.8 | +3.5 |
-| subject, viola | +1.0 | −2.0 |
-| answer, cello | +0.9 | −1.0 |
-| solo subject, Vl I | 0.0 | +0.6 |
+| solo subject, Vl I (b1–2 / b18–19; again +3.7 in b34) | +3.6 | −4.8 |
+| answer, Vl II (b3 / b20) | −6.4 | +2.2 |
+| subject, viola (b6 / b23) | +1.0 | −2.0 |
+| answer, cello (b8 / b25) | +0.9 | −1.0 |
 
 Both general pauses are 5.0 s long and below −85 dBFS from 0.8 s after the last chord, so the switch
 is inaudible as a switch. The walk render peaks at 0.86 FS.
@@ -200,7 +211,7 @@ becomes a fifth: a strict mirror of all four voices would turn every root-positi
 | 34–42 | stretto | S Vl I (b34) / SI Va (b35) / S Vl II (b36) / SI Vc (b37) / S Va (b38) / SI Vl I (b39) / S Vc (b40) / SI Vl II (b41) |
 | 43–44 | coda | S head (Vl I) and SI head (Vl II) together over a tonic pedal C2; Picardy third |
 
-## Critic numbers (`tools/critic.py`, whole piece)
+## Critic numbers (critic, 2026-11-04; `tools/critic.py`, whole piece)
 
 | measure | result | target / Bach |
 |---|---|---|
@@ -208,20 +219,28 @@ becomes a fifth: a strict mirror of all four voices would turn every root-positi
 | parallels_weak | 0 | |
 | beat_parallels | **0** | ≤ 2 |
 | dissonance_unresolved | **0** | ≤ 3 |
+| dissonance_unverified | **0** | |
 | bad_doublings | **0** | ≤ 2 |
-| stepwise_pct | **65.4 %** | ≥ 65 (Bach 71–75) |
-| leap_4th_plus_pct | 12.9 % | Bach ~14 |
+| stepwise_pct | **65.5 %** | ≥ 65 (Bach 71–75) |
+| leap_4th_plus_pct | 13.0 % | Bach ~14 |
 | pc_tripled_on_beats_pct | 3.4 % | Bach 1–2 |
 | low_register_seconds | 1 (b32.1.5, passing G2 under F3) | Bach 3–9 |
 | crossings | 2 (b43, the coda's deliberate crossing) | |
 | themes | 18 entries declared; 17 verify 15/15 in intervals and rhythm. The E♭-major entry verifies 7/15 intervals (major mode) and 15/15 rhythm | |
 
-Melody warnings, accepted:
-- **C5→B♭5 at b3.1.5.** The countersubject starts after a rest an octave above the subject's last
-  note.
+Melody findings, accepted:
+- **C5→B♭5 at b3.1.5** (seventh leap, and also listed as a large leap not recovered, since the line
+  goes on up to C6). The countersubject starts after an eighth rest, an octave above the subject's
+  last note.
 - **C6→D5 at b13.4.** The E♭-major form of the head's leap.
-- Three "large leap not recovered" notes, all first notes after a rest or a free-voice leap (b6,
-  b25, b37).
+- Three "large leap not recovered" notes in all, each the countersubject's first note after its
+  eighth rest: b3.1.5 (above), b6.1.5 (Vl II, G4→E♭5→F5) and b25.1.5 (viola, the inverted
+  countersubject, G4→B♭3→A3). The rest is shorter than a beat, so the critic joins the end of one
+  phrase to the start of the next; the countersubject itself then moves by step.
+- **Compound same-way leap at b42.4, cello D3→G2→C2.** The cadential bass of the stretto's last bar
+  (ii–V–i) falls two fifths onto the open C string, where the coda's tonic pedal begins. A rising
+  fourth G2→C3 would lose the low C, and moving the G earlier (b42.3) turned Violino II's F5 into
+  an unresolved seventh. Kept.
 
 The critic also lists 11 "chord (7th not resolved down)" notes (severity note). Most are sevenths
 inside the thematic lines that resolve after a decoration: C–A–B♭ in the countersubject, B♭–D♭–C in
@@ -230,12 +249,12 @@ critic's chord labels for ii°6/5 and iv7 sonorities.
 
 ## Weak spots
 
-- **The mirror is not audible in the first 8 seconds after the seam.** The solo inverted subject
-  comes from straight ahead, which a left–right mirror leaves unchanged; only the wall reflections
-  move (L−R +0.6 dB). The reveal therefore comes in two stages: first the subject is heard upside
-  down, then, at b20, the second violin enters from the wrong side. If Sam wants the flip heard at
-  once, the fix is a seat arrangement in which Violino I sits closer to one wall than the other, or
-  an accompanied opening. I kept the fugal convention of a solo first entry.
+- **Resolved (path revision): the mirror was not audible in the first 8 seconds after the seam.**
+  In the first path the solo inverted subject came from straight ahead, which a left–right mirror
+  leaves unchanged (L−R +0.6 dB). Each lap now opens at the centre of the room facing the far wall,
+  with Violino I at the front left, and the listener walks back there during each general pause.
+  So the inverted subject is heard from the front right from its first note (L−R −4.8 dB in
+  b18–19, against +3.6 dB in b1–2), and the solo fugal entry is kept.
 - **The stretto breaks the "face the subject" rule.** With two subjects at once, the listener
   faces between the pair so that rectus and inversus are mirror images left and right; I judged
   left/right easier to hear on headphones than front/back. Facing the rectus instead is a matter of
@@ -243,7 +262,7 @@ critic's chord labels for ii°6/5 and iv7 sonorities.
 - The finale's chain stays in C minor and its harmony is tonic-heavy (i – i – iv – V / i – i – V – VI
   per pair). Only two free voices accompany each overlap, and the free lines in b36–42 are serviceable
   rather than memorable.
-- Stepwise motion is just over target (65.4 %). The bass still leaps more than Bach's (cello 63 %).
+- Stepwise motion is just over target (65.5 %). The bass still leaps more than Bach's (cello 63 %).
 - In b23–24 the inverted subject is the bass, so its notes on the 5th degree produce passing 6/4s
   (b24.2, b24.4) that a strict mirror cannot avoid.
 - Episode 1 and the rest episode both silence Violino I before its return. This is deliberate (it
@@ -256,17 +275,25 @@ It ran without errors (about 30 s) and printed its path checks. One issue with t
 (`walk-map.png`): lap 2 follows exactly the same path as lap 1, and its red "mirror-reversed" trace
 is drawn over lap 1's trace, so the normal path is hidden. The time labels at the start spot also
 pile up into an unreadable blot. Drawing the mirrored lap slightly offset, or as a dashed line,
-would fix both. I did not edit the tool.
+would fix both. I did not edit the tool; the tools agent is fixing the map drawing in the Nov 2026
+pass.
 
-## Path revision (after delivery)
+## Self-critique pass (Nov 2026)
 
-The composer's own weak spot was that the first notes after the seam came from
-straight ahead, which a left-right mirror does not change, so the flip was only
-heard eight seconds later. The path now starts in the middle of the room facing
-the far wall, with Violino I at the front left. During each general pause the
-listener walks back to that spot, so the inverted opening (b18) is heard from
-the front right from its first note, and the stretto's solo opening (b34) from
-the front left again. Measured on `renders/fugue-walk.mp3`: Violino I alone is
-3.6 dB louder on the left in b1–2, 4.8 dB louder on the right in b18–19, and
-3.7 dB louder on the left in b34; the first pause is silent (−88 dBFS). The
-rest of the path is unchanged.
+- **Walk documentation brought up to date.** The path table, Concept points 1, 2, 4, 5 and 6, the
+  path paragraph and the left/right level table described the first path (start at Violino I's
+  spot; L−R 0.0 / +0.6 dB for the solo subject). They now follow `WALK` in `fugue.py`: each lap
+  opens at the centre facing the far wall, and the listener walks back there in each general pause.
+  The levels were re-measured on the current walk render (b1–2 +3.6 dB, b18–19 −4.8 dB, the answer
+  −6.4 / +2.2 dB). The former "Path revision" section is folded into these, and weak spot 1 is
+  marked resolved. The path checks (0.9 m/s, 47°/s, 1.5 m) are unchanged.
+- **Fixed: unverified dissonance at b10.4.** Violino II's E♭5, the seventh of F7/A, was re-struck on
+  b11.1 over B♭, so the critic could not follow it. It is now tied over the barline: a prepared
+  4–3 over B♭ that resolves to D5 on b11.2, which is what the episode's "chain of prepared sevenths"
+  meant. The critic now reads b10.4 and b11.1 as suspensions.
+- **Fixed: large leap at b37.3.** Violino I's free line E♭6→G5→F5 now goes E♭6→G5→A♭5→G5: the leap
+  is recovered by step and the line sighs A♭–G into its rest before its inversus entry. The chord on
+  b37.4 is still iv6 (A♭ doubled as the third).
+- **Documented: the other three unrecovered leaps and the compound leap** (see Critic numbers). NOTES
+  had said three unrecovered leaps; the count was four, because the critic now also lists the
+  countersubject's first leap at b3.1.5.

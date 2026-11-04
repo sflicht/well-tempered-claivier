@@ -3,7 +3,7 @@
   "title": "The Well-Tempered clAIvier",
   "subtitle": "Appendix: Canones. II. Canon per tempora (Four clocks, one hour)",
   "composer": "Claude / Sam. Melody begins with the Westminster Quarters (Cambridge, 1793)",
-  "instrument": "Player piano: one melody at four speeds (4:3:2:1), converging",
+  "instrument": "Player piano or piano four hands (two players): one melody at four speeds (4:3:2:1), converging",
   "score_tagline": "All four voices attack the last note together: the punctum convergentiae",
   "key": "E",
   "mode": "major",
@@ -351,8 +351,8 @@
     {
      "t": 170.0,
      "d": 0.5,
-     "p": 81,
-     "spell": "a",
+     "p": 76,
+     "spell": "e",
      "v": 76,
      "gate": 0.94,
      "bar": 29
@@ -468,8 +468,8 @@
     {
      "t": 190.0,
      "d": 0.5,
-     "p": 78,
-     "spell": "fis",
+     "p": 75,
+     "spell": "dis",
      "v": 77,
      "gate": 0.94,
      "bar": 32
@@ -490,7 +490,8 @@
      "spell": "e",
      "v": 77,
      "gate": 0.975,
-     "bar": 33
+     "bar": 33,
+     "fermata": true
     }
    ]
   },
@@ -808,8 +809,8 @@
     {
      "t": 148.0,
      "d": 1.0,
-     "p": 69,
-     "spell": "a",
+     "p": 64,
+     "spell": "e",
      "v": 76,
      "gate": 0.975,
      "bar": 25
@@ -925,8 +926,8 @@
     {
      "t": 188.0,
      "d": 1.0,
-     "p": 66,
-     "spell": "fis",
+     "p": 63,
+     "spell": "dis",
      "v": 79,
      "gate": 0.975,
      "bar": 32
@@ -947,7 +948,8 @@
      "spell": "e",
      "v": 79,
      "gate": 0.975,
-     "bar": 33
+     "bar": 33,
+     "fermata": true
     }
    ]
   },
@@ -1265,8 +1267,8 @@
     {
      "t": 126.0,
      "d": 1.5,
-     "p": 57,
-     "spell": "a",
+     "p": 52,
+     "spell": "e",
      "v": 78,
      "gate": 0.975,
      "bar": 22
@@ -1382,8 +1384,8 @@
     {
      "t": 186.0,
      "d": 1.5,
-     "p": 54,
-     "spell": "fis",
+     "p": 51,
+     "spell": "dis",
      "v": 83,
      "gate": 0.975,
      "bar": 32
@@ -1404,7 +1406,8 @@
      "spell": "e",
      "v": 81,
      "gate": 0.975,
-     "bar": 33
+     "bar": 33,
+     "fermata": true
     }
    ]
   },
@@ -1722,9 +1725,9 @@
     {
      "t": 104.0,
      "d": 2.0,
-     "p": 45,
-     "spell": "a",
-     "v": 81,
+     "p": 40,
+     "spell": "e",
+     "v": 78,
      "gate": 0.975,
      "bar": 18
     },
@@ -1839,9 +1842,9 @@
     {
      "t": 184.0,
      "d": 2.0,
-     "p": 42,
-     "spell": "fis",
-     "v": 86,
+     "p": 39,
+     "spell": "dis",
+     "v": 84,
      "gate": 0.975,
      "bar": 31
     },
@@ -1861,7 +1864,8 @@
      "spell": "e",
      "v": 84,
      "gate": 0.975,
-     "bar": 33
+     "bar": 33,
+     "fermata": true
     }
    ]
   }
@@ -1920,10 +1924,10 @@
     "G#5:2 E5:2 F#5:2 B4:6 B4:2 F#5:2 G#5:2 E5:6",
     "C#6:6 B5:2 A5:2 G#5:2 B5:6 A5:2 G#5:2 F#5:2",
     "G#5:6 F#5:2 E5:2 C#5:2 F#5:6 E5:2 D#5:2 E5:2",
-    "E5:6 F#5:2 A5:2 B5:2 C#6:6 B5:2 F#5:2 G#5:2",
+    "E5:6 F#5:2 E5:2 B5:2 C#6:6 B5:2 F#5:2 G#5:2",
     "B4:12 B4:12",
     "E5:12 E5:12",
-    "G#5:12 B5:2 G#5:2 F#5:2 E5:6",
+    "G#5:12 B5:2 G#5:2 D#5:2 E5:6",
     "E5:24"
    ],
    "Alto (x2)": [
@@ -1951,14 +1955,14 @@
     "B4:12 A4:4 G#4:4 F#4:4",
     "G#4:12 F#4:4 E4:4 C#4:4",
     "F#4:12 E4:4 D#4:4 E4:4",
-    "E4:12 F#4:4 A4:4 B4:4",
+    "E4:12 F#4:4 E4:4 B4:4",
     "C#5:12 B4:4 F#4:4 G#4:4",
     "B3:24",
     "B3:24",
     "E4:24",
     "E4:24",
     "G#4:24",
-    "B4:4 G#4:4 F#4:4 E4:12",
+    "B4:4 G#4:4 D#4:4 E4:12",
     "E4:24"
    ],
    "Tenor (x3)": [
@@ -1983,7 +1987,7 @@
     "E3:6 C#3:6 F#3:12~",
     "F#3:6 E3:6 D#3:6 E3:6",
     "E3:18 F#3:6",
-    "A3:6 B3:6 C#4:12~",
+    "E3:6 B3:6 C#4:12~",
     "C#4:6 B3:6 F#3:6 G#3:6",
     "B2:24~",
     "B2:12 B2:12~",
@@ -1993,7 +1997,7 @@
     "E3:24",
     "G#3:24~",
     "G#3:12 B3:6 G#3:6",
-    "F#3:6 E3:18",
+    "D#3:6 E3:18",
     "E3:24"
    ],
    "Bass: Big Ben (x4)": [
@@ -2014,7 +2018,7 @@
     "F#2:24",
     "E2:8 D#2:8 E2:8",
     "E2:24",
-    "F#2:8 A2:8 B2:8",
+    "F#2:8 E2:8 B2:8",
     "C#3:24",
     "B2:8 F#2:8 G#2:8",
     "B1:24~",
@@ -2027,7 +2031,7 @@
     "E2:24",
     "G#2:24~",
     "G#2:24",
-    "B2:8 G#2:8 F#2:8",
+    "B2:8 G#2:8 D#2:8",
     "E2:24",
     "E2:24"
    ]
@@ -2076,7 +2080,7 @@
    2,
    1
   ],
-  "melody": "E4:2 G#4:2 F#4:2 B3:6 E4:2 F#4:2 G#4:2 E4:6 G#4:2 E4:2 F#4:2 B3:6 B3:2 F#4:2 G#4:2 E4:6 C#5:6 B4:2 A4:2 G#4:2 B4:6 A4:2 G#4:2 F#4:2 G#4:6 F#4:2 E4:2 C#4:2 F#4:6 E4:2 D#4:2 E4:2 E4:6 F#4:2 A4:2 B4:2 C#5:6 B4:2 F#4:2 G#4:2 B3:12 B3:12 E4:12 E4:12 G#4:12 B4:2 G#4:2 F#4:2 E4:6 E4:1",
+  "melody": "E4:2 G#4:2 F#4:2 B3:6 E4:2 F#4:2 G#4:2 E4:6 G#4:2 E4:2 F#4:2 B3:6 B3:2 F#4:2 G#4:2 E4:6 C#5:6 B4:2 A4:2 G#4:2 B4:6 A4:2 G#4:2 F#4:2 G#4:6 F#4:2 E4:2 C#4:2 F#4:6 E4:2 D#4:2 E4:2 E4:6 F#4:2 E4:2 B4:2 C#5:6 B4:2 F#4:2 G#4:2 B3:12 B3:12 E4:12 E4:12 G#4:12 B4:2 G#4:2 D#4:2 E4:6 E4:1",
   "convergence_t_quarters": 192.0,
   "fermata_sixteenths": 24
  }

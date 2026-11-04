@@ -86,7 +86,7 @@ LINKS = {
     # 4  e -> D.   i | V7 of D
     4: {'S': ["G5:2 F#5:2 E5:2 G5:2 A5:2 E5:2 G5:2 E5:2"],
         'A': ["G4:1 F#4:1 E4:1 G4:1 B4:1 A4:1 G4:1 E4:1 C#5:8"],
-        'T': ["R:4 B3:4 A3:1 G3:1 E3:1 D3:1 C#3:1 E3:1 A3:1 G3:1"],
+        'T': ["R:4 B3:4 A3:1 G3:1 E3:1 D3:1 E3:1 C#3:1 E3:1 G3:1"],  # beat 4 on E3: C# not doubled
         'B': ["E3:8 A2:8"]},
     # 5  D -> b.   I | V7 of b
     5: {'S': ["F#5:2 A5:2 F#5:2 D5:2 C#5:8"],
@@ -127,7 +127,7 @@ LINKS = {
     # 14 eb -> Db (after the hush).  i | V7 of Db; alto silent
     14: {'S': ["Bb4:2 Eb5:2 Gb5:2 Bb4:2 C5:2 Eb5:2 Gb5:2 F5:2"],
          'A': ["Bb4:4 R:12"],
-         'T': ["Eb4:8 C4:1 Db4:1 Eb4:1 C4:1 Ab3:1 C4:1 Eb4:1 C4:1"],
+         'T': ["Eb4:8 C4:1 Db4:1 Eb4:1 C4:1 Ab3:1 Bb3:1 C4:1 Bb3:1"],  # C4 under the S's Gb->F
          'B': ["R:2 Gb2:6 Ab2:8"]},
     # 16 bb -> Ab.  i | V7 of Ab; the cantus voice slides G -> Gb into its motto
     16: {'S': ["Bb5:8 G5:8"],
@@ -140,7 +140,7 @@ LINKS = {
          'T': ["R:2 C4:6 D4:8"],
          'B': ["F2:1 G2:1 Ab2:1 Bb2:1 Ab2:1 G2:1 F2:1 Eb2:1 Bb2:1 D3:1 F3:1 D3:1 F2:1 Ab2:1 C3:1 D3:1"]},
     # 19 Eb -> c.  I | V7 of c; the bass drops out for the last beat
-    19: {'S': ["G5:2 Bb5:2 Eb5:2 G5:2 F5:4 D5:4"],
+    19: {'S': ["G5:2 Bb5:2 Eb5:2 G5:2 B4:4 D5:4"],  # leading tone on top; the alto keeps the 7th
          'A': ["R:2 Bb4:6 F4:2 D4:2 B3:2 D4:2"],
          'T': ["Eb4:8 D4:1 C4:1 B3:1 G3:1 F3:1 D3:1 G3:1 B2:1"],
          'B': ["Eb3:1 D3:1 C3:1 Bb2:1 G2:1 Ab2:1 Bb2:1 C3:1 G2:4 D2:4"]},
@@ -155,9 +155,9 @@ LINKS = {
          'T': ["D3:2 F3:2 Bb2:2 D3:2 F#3:8"],
          'B': ["Bb1:8 D2:2 A2:2 F#2:2 D2:2"]},
     # 22 g -> F.   i | V7 of F
-    22: {'S': ["Bb4:1 A4:1 G4:1 A4:1 D5:1 C5:1 Bb4:1 A4:1 G4:1 Bb4:1 C5:1 D5:1 E5:1 C5:1 D5:1 E5:1"],
+    22: {'S': ["Bb4:1 A4:1 G4:1 A4:1 D5:1 C5:1 Bb4:1 A4:1 G4:1 A4:1 Bb4:1 C5:1 D5:1 C5:1 D5:1 E5:1"],
          'A': ["R:2 D4:6 E4:8"],
-         'T': ["D4:8 Bb3:8"],
+         'T': ["D4:8 Bb3:4 G3:4"],  # beat 4: the bass takes the 7th, the tenor the 5th
          'B': ["G2:2 A2:2 Bb2:2 G2:2 C3:2 G2:2 Bb2:2 C3:2"]},
     # 23 F -> d.   I | V7 of d
     23: {'S': ["A5:1 G5:1 F5:1 A5:1 C6:1 A5:1 F5:1 A5:1 C#6:8"],
@@ -167,7 +167,7 @@ LINKS = {
     # 24 d -> C (coda).  i | V7 of C; B natural slides to B-flat: the motto returns
     24: {'S': ["D6:8 B5:8"],
          'A': ["F4:1 E4:1 D4:1 F4:1 A4:1 G4:1 F4:1 E4:1 B3:1 D4:1 G4:1 D4:1 F4:1 E4:1 G4:1 B4:1"],
-         'T': ["A2:2 D3:2 F3:2 A3:2 G3:4 B3:4"],
+         'T': ["A2:2 D3:2 F3:2 A3:2 G3:4 D4:4"],  # beat 4: complete V7, the H only in the soprano
          'B': ["D2:8 G2:8"]},
 }
 
@@ -194,7 +194,7 @@ CODA = {
     'B': ["C3:2 D3:2 E3:2 G3:2 E3:2 D3:2 C3:2 G2:2",
           "A2:2 C3:2 F2:2 A2:2 F#2:2 A2:2 D3:2 A2:2",
           "G2:2 D3:2 G3:2 D3:2 G2:2 D3:2 F3:2 D3:2",
-          "G2:2 D3:2 B2:2 D3:2 G3:2 D3:2 G2:4",
+          "G2:2 B2:2 D3:2 B2:2 G3:2 D3:2 G2:4",  # beat 2 on D3: the H is not doubled
           "C3:16",
           "C2:16"],
 }
@@ -284,7 +284,7 @@ def build(path=HERE / 'score.json'):
         'piece_type': 'appendix', 'edition': 'Appendix study', 'draft': True,
         'voice_order': 'high_to_low',
         'score_layout': {'paper': 'a4', 'staff_size': 15, 'staff_distance': 10},
-        'instrument': 'Keyboard - four independent voices',
+        'instrument': 'Four voices in open score: piano four hands (primo S, A; secondo T, B)',
         'score_tagline': 'Quadruple invertible counterpoint: 24 orderings (Plain Bob Minimus) in 24 keys',
         'key': 'C', 'mode': 'major', 'meter': list(METER), 'bpm': 80, 'tempo_map': [[288, 80], [296, 60, 'ramp']],
         'tempo_text': 'Allegro moderato',

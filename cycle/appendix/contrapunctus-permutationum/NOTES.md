@@ -1,6 +1,7 @@
 # Appendix — Contrapunctus permutationum
 
-Keyboard, four independent voices (one staff each). 4/4, Allegro moderato,
+Four independent voices in open score (one staff each), for piano four hands
+(primo soprano and alto, secondo tenor and bass). 4/4, Allegro moderato,
 quarter = 80. 74 bars, about 3 min 42 s of written music (3 min 45 s rendered
 with the release tail).
 
@@ -66,36 +67,37 @@ between any pair on beats · (critic "7th not resolved down" notes).
 
 | ordering | major | minor | minor melody |
 |---|---|---|---|
-| ABCD | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
+| ABCD | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
 | ABDC | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| ACBD | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| ACDB | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
+| ACBD | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| ACDB | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
 | ADBC | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| ADCB | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| BACD | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
+| ADCB | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| BACD | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
 | BADC | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| BCAD | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| BCDA | 0 · 0 · 0 · 0 · 0 · 0 · (1) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| BCAD | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| BCDA | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
 | BDAC | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| BDCA | 0 · 0 · 0 · 0 · 0 · 0 · (1) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| CABD | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| CADB | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| CBAD | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| CBDA | 0 · 0 · 0 · 0 · 0 · 0 · (1) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| CDAB | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| CDBA | 0 · 0 · 0 · 0 · 0 · 0 · (1) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| BDCA | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| CABD | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| CADB | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| CBAD | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| CBDA | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| CDAB | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| CDBA | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
 | DABC | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| DACB | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
+| DACB | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
 | DBAC | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| DBCA | 0 · 0 · 0 · 0 · 0 · 0 · (1) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
-| DCAB | 0 · 0 · 0 · 0 · 0 · 0 · (2) | 0 · 0 · 0 · 0 · 0 · 0 · (1) | tritone leap 1 |
-| DCBA | 0 · 0 · 0 · 0 · 0 · 0 · (1) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| DBCA | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| DCAB | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
+| DCBA | 0 · 0 · 0 · 0 · 0 · 0 · (0) | 0 · 0 · 0 · 0 · 0 · 0 · (0) | tritone leap 1 |
 
-The bracketed "7th" notes are critic naming artifacts. The rootless C⁷
-(E–G–B♭) and rootless D⁷ (F♯–A–C) are read as diminished sevenths built
-on whichever member is lowest, so the critic expects the wrong note to fall.
-The one melodic warning is the minor sigh line's E♭→A augmented fourth,
-described above.
+The bracketed "7th" column is 0 in every ordering since the Nov 2026 fix of
+`tools/chords.py`. Before it, the critic read the rootless C⁷ (E–G–B♭) and
+rootless D⁷ (F♯–A–C) as diminished sevenths built on whichever member was
+lowest, and expected the wrong note to fall (30 such notes in major, 12 in
+minor). The one melodic warning is the minor sigh line's E♭→A augmented
+fourth, described above.
 
 How the proof got there: `skeleton_search.py`, a pitch-class dynamic program,
 mapped which fifth-free beat plans exist over the motto. The lines were then
@@ -219,26 +221,36 @@ Files:
 - `renders/`: `contrapunctus.pdf/.musicxml/.mid/.mp3` (Bach–Lehman
   temperament) and `contrapunctus-equal.*` (equal temperament).
 
-## Whole-piece critic (`python3 tools/critic.py score.json`)
+## Whole-piece critic (critic, 2026-11-04; `python3 tools/critic.py score.json`)
 
 parallels_error 0, parallels_weak 0, beat_parallels 0, dissonance_unresolved 0,
-crossings 0, longest static harmony 4 beats (the final bar). Explained notes:
+dissonance_unverified 0, bad_doublings 0, crossings 0, longest static harmony
+4 beats (the final bar). Explained notes:
 
 - **12 tritone leaps:** the minor sigh line's E♭→A, once per minor statement.
 - **2 seventh leaps,** both at elided joins:
   - bar 21, bass E3→F♯2 at the deceptive cadence into F♯ minor;
   - bar 38, soprano C♯6→D♯5, the fall from the climax into the hushed E♭
     minor (intended).
-- **4ths against the bass on beats, coda only:** the cadential 6/4 in bar 71
-  and the plagal pedal 6/4 in bar 73. They lie outside the invertible
-  combination and are treated as normal tonal dissonances.
-- **40 "7th not resolved down" notes:** mostly the naming artifacts above. A
-  few are sevenths in link figuration that leap rather than step.
+- **4ths against the bass on beats, coda only:** the cadential 6/4 in bar 71,
+  the passing V4/3 on b72.2 (D in the bass under the alto's G; see below) and
+  the plagal pedal 6/4 in bar 73. They lie outside the invertible combination
+  and are treated as normal tonal dissonances.
+- **"7th not resolved down" notes:** sevenths in link figuration that leap
+  rather than step, and a few chord labels on passing sonorities.
 - **15 low-register seconds/ninths,** in statements 5, 9 and 20–22, where the
   half-note motto sits under a running line. Dropping the motto to B♭1/A♭1
   in 20–21 turned seconds into ninths, which is better but still dark.
-- **Keyboard:** 20% of onsets exceed two hands. This is a four-staff
-  realisation, not a pianist's reduction.
+- **Keyboard: for two players.** 20% of onsets exceed two hands, and 17
+  attacks cannot be reached by any division between two hands (the widest,
+  b64.4, C2 C4 C6). This is a four-staff realisation of four lines that must
+  keep a strict top-to-bottom order in every key, so in many statements the
+  outer voices lie three octaves or more apart. Respacing for one pianist
+  would mean moving whole lines by octaves, which breaks the ordering the
+  piece is about. `metadata.instrument` therefore reads "Four voices in open
+  score: piano four hands (primo S, A; secondo T, B)": one voice per hand,
+  and every attack is reachable. The critic no longer treats it as solo
+  keyboard.
 
 ## Honest weak spots
 
@@ -263,6 +275,38 @@ edited.
 - `critic.check_parallels` does not reset its previous-onset state across a
   silent stretch. While links were placeholder rests, it reported parallels
   "across" empty bars.
-- `chord_candidates` prefers a diminished-seventh reading on the bass note
-  for rootless dominant sevenths. That produces spurious "7th not resolved"
-  notes.
+- `chord_candidates` preferred a diminished-seventh reading on the bass note
+  for rootless dominant sevenths, which produced spurious "7th not resolved"
+  notes and "bad doublings" (the doubled third of the diminished triad, which
+  is the dominant's fifth and the right note to double). The tools agent
+  fixed this in the Nov 2026 pass.
+
+## Self-critique pass (Nov 2026)
+
+The critic of 09df800 also follows each dissonance to its resolution and
+checks hand reach. Every change below is in a hand-written link or the coda;
+`lines.py` is untouched, so `prove.py` still passes all 48 orderings.
+
+- **Fixed: 4 real bad doublings.**
+  - L4 (b12.4), V7 of D: the tenor's beat 4 starts on E3 instead of
+    doubling the alto's C♯ (the leading tone).
+  - L19 (b53.3), V7 of C minor: the soprano drops to the leading tone
+    (G5 B4 D5) instead of doubling the alto's seventh F.
+  - L24 (b68.4), V7 into the coda: the tenor takes D4 on beat 4, so the
+    soprano's H is the only B.
+  - Coda b72.2: the bass walks G2 B2 D3 B2 G3 D3 G2. Beat 2 is now a V4/3,
+    D under the alto's G, instead of B2 doubling the soprano's held H.
+- **Fixed: 2 unverified dissonances.**
+  - L14 (b40.4): the tenor's last beat is A♭3 B♭3 C4 B♭3, so the soprano's
+    seventh G♭5 resolves to F5 over C4, not over an E♭.
+  - L22 (b62.4): the soprano climbs G4 A4 B♭4 C5 to D5 on beat 4, and the
+    tenor moves B♭3 → G3. The beat is no longer a bare tritone with both
+    notes doubled (B♭2 B♭3 E4 E5).
+- **Declined: the other 9 "bad doublings" of the earlier critic run**
+  (b11.2, b13.2, b14.2, b33.2, b36.2, b37.2, b55.2, b57.2, b58.2). Each is a
+  statement's beat-2 diminished triad, a rootless dominant seventh, with its
+  third doubled by the sigh and the spinner. That third is the dominant's
+  fifth, the normal doubling. It is also forced by the invertible lines. The
+  tools agent's chords fix now reads these correctly (bad_doublings 0).
+- **Declined: 17 unreachable attacks.** The score is for two players; see
+  Whole-piece critic.
